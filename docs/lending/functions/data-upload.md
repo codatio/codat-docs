@@ -41,7 +41,11 @@ To delete the dataset in its entirety, [delete the existing data connection](/co
 
 To upload your customer's banking data using our API, follow these steps:
 
-1. **Set upload configuration**
+1. **Create Data Connection**
+
+First, [create a data connection](/lending-api#/operations/create-connection) for the company. The platform key for a 'Banking Data Upload' connection is `zpqy`.
+
+2. **Set upload configuration**
 
 Before creating the data, you must define its source type and account. This tells us what format to expect the data in. Use the [Set upload configuration](/lending-api#/operations/set-bank-statement-upload-configuration) endpoint to create the configuration. 
 
@@ -55,13 +59,13 @@ To change it, delete the connection, set the configuration for the new `connecti
 
 :::
 
-2. **Start the upload session**
+3. **Start the upload session**
 
 Use the [Start upload session](/lending-api#/operations/start-bank-statement-upload-session) endpoint to initiate a bank statement upload session for a given company. A session is a one-time process that lets accounts and transactions to be uploaded to Codat. 
 
 You can only have one active session per data type at a time. Additionally, the session will time out if no data is uploaded after 90 minutes. You can complete or cancel a session using the [End upload session](lending-api#/operations/end-bank-statement-upload-session) endpoint.
 
-3. **Upload the data**
+4. **Upload the data**
 
 During an active session, use the [Upload data](/lending-api#/operations/upload-bank-statement-data) endpoint to upload an object that matches the [Banking: Bank account](/lending-api#/schemas/BankingAccount) schema or an array of objects that match the [Banking: Transaction](/lending-api#/schemas/BankingTransaction) schema. 
 
@@ -71,7 +75,7 @@ If you need to add, amend or remove the banking transaction records, upload the 
 
 :::
 
-4. **End the upload session**
+5. **End the upload session**
 
 Use the [End upload session](/lending-api#/operations/end-bank-statement-upload-session) to indicate that you want to finalize the bank statement upload process. Include `Cancel` in the request body to cancel the processing of the dataset or `Process` to trigger the ingestion and enrichment of the data.
 
