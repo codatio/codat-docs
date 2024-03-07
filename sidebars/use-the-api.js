@@ -51,8 +51,16 @@ module.exports = [
       "using-the-api/webhooks/overview",
       "using-the-api/webhooks/event-types",
       "using-the-api/webhooks/create-consumer",
+      {
+        type: "category",
+        label: "Migration guide",
+        collapsed: true,
+        items: [
+          "using-the-api/webhooks/migration-guide",
+          "using-the-api/webhooks/migration-guide-advanced",
+        ]
+      },
       "using-the-api/webhooks/troubleshooting",
-      "using-the-api/webhooks/migration-guide",
       {
         type: "category",
         label: "Legacy webhooks",

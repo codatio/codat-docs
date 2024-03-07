@@ -92,11 +92,10 @@ We recommend you set up the endpoint to simply receive the message and respond t
 
 If your webhook consumer endpoint is behind a firewall or NAT, the message can fail if the traffic from our IP addresses is blocked. 
 
-Codat's webhook messages are served from static IP addresses. Apply an allowlisting rule to grant network access to messages from these addresses:
+Codat's webhook messages are served from static IP addresses. Apply an allowlisting rule to grant network access to messages from this address:
 
 ```
-20.77.82.168/32
-51.142.76.22/32
+4.159.114.108
 ```
 
 ## Logs and activity
