@@ -50,17 +50,17 @@ banner_text: "Codat solves challenges for developers building the next generatio
       <a href="https://github.com/codatio/oas">Open API Specification</a>.
     </p>
   </li>
-    <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/Bank.png"
-        className="mini-icon"
-      />
-      <h3>Implementation Guide</h3>
-    </div>
-    <p>
-      Learn how to implement Codat at scale with our{" "}
-      <a href="/enterprise/tech-implementation/getting-started">Implementation guide</a>.
-    </p>
-  </li>
+//    <li className="card">
+//    <div className="header">
+//      <img
+//        src="/img/wp-icons/Bank.png"
+//        className="mini-icon"
+//      />
+//      <h3>Implementation Guide</h3>
+//    </div>
+//    <p>
+//      Learn how to implement Codat at scale with our{" "}
+//      <a href="/enterprise/tech-implementation/getting-started">Implementation guide</a>.
+//    </p>
+//  </li>
 </ul>
