@@ -21,7 +21,7 @@ Say goodbye to complex development processes and hello to streamlined efficiency
 
 🧪 **Mocked events**: Test, debug, and refine your webhook consumers with ease using mocked events. Select the event type you want to trigger and we'll deliver it to your application. 
 
-🛡️ **Improved stability**: Our webhooks service is engineered for resilience and delivers unmatched performance and uptime to support your critical operations.
+🛡️ **Improved stability**: Our new webhooks service is engineered for resilience and delivers unmatched performance and uptime to support your critical operations.
 
 #### Migrating to the new service
 

@@ -15,12 +15,14 @@ The following endpoints will be deprecated on the specified date:
 - `GET /rules/{ruleId}/alerts`
 - `GET /rules/alerts/{alertId}`
 
-Moving forward, we encourage you to access webhook event logs through our Portal. Navigate to **Monitor > Webhooks > Events** and select the [**Logs** tab](https://app.codat.io/monitor/webhooks) to view the event logs.
+You can access webhook event logs through our Portal, where you can also see more information about the event, retry failed webhooks, and more.
+
+Navigate to **Monitor > Webhooks > Events** and select the [**Logs** tab](https://app.codat.io/monitor/webhooks) to view the event logs.
 
 ### Action required
 
-To ensure a smooth transition, review and update your application logic to remove any dependencies on the deprecated endpoints. This will help prevent any disruptions to your integration with Codat.
+Review and update your application logic to remove any dependencies on the deprecated endpoints. This will help prevent any disruptions to your integration with Codat.
 
 ### Expected impact if no action is taken
 
-If no action is taken by the deprecation date, your application will encounter difficulties retrieving rules alerts programmatically. The deprecated endpoints will return `Not found` (404) status codes, preventing your application from functioning normally.
+If no action is taken by the deprecation date, your application will fail when retrieving rules alerts programmatically. The deprecated endpoints will return `Not found` (404) status codes, preventing your application from functioning normally.
