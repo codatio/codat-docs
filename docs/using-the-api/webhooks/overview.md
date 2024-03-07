@@ -4,6 +4,9 @@ sidebar_label: "Overview"
 hide_table_of_contents: true
 description: "Introduction to Codat's robust and streamlined webhook messaging solution"
 ---
+
+![Webhooks at Codat](/img/updates/240306-webhooks-announcement.svg)
+
 _Webhooks_ are an automated way for an app to notify you when a specific event occurs. At their core, they are a `POST` request with a payload that is sent to a unique URL of an endpoint that you determine. 
 
 We refer to the HTTP endpoints that you configure to subscribe to Codat's events as _webhook consumers_. A `200` response from the consumer indicates that the webhook message was successfully received. 
