@@ -1,21 +1,28 @@
 ---
-title: "Manage webhook consumers to subscribe to events"
-sidebar_label: "Manage webhook consumers"
-description: "Create new webhook consumers and manage existing ones to receive webhooks using the Portal or the API"
+title: "Build webhook consumers to subscribe to events"
+sidebar_label: "Consume webhooks"
+description: "Configure new webhook consumers in Codat and manage existing configuration to receive webhook events"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-## Create a webhook consumer
+## Overview
 
-To start listening to messages we send you, configure your webhook consumer endpoints. Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
+A _webhook consumer_ is your implementation of a POST endpoint that you built to receive Codat's webhooks. In general, you need one consumer per [event type](/using-the-api/webhooks/event-types).
 
-Add the endpoint URL that you want to receive the messages, an optional description, and choose the events that this endpoint should listen to. If you don't specify the event types, your endpoint will receive all events by default. 
+This consumer must process the event within 15 seconds when it receives a POST request. We recommend passing the event to an internal message queue so that you can process it in time.
+
+## Configure webhook consumer
+
+Once you have built your webhook consumer, configure Codat to send events to this consumer. 
+Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
+
+Add the endpoint URL that you want to receive the messages, an optional description, and choose the events that this endpoint should listen to. You must specify a least one event type per endpoint. 
 
 Browse our event catalog [in the Portal](https://app.codat.io/monitor/events) or in our [documentation](/using-the-api/webhooks/event-types) to choose the event types that suit your use case. 
 
-:::tip Create a consumer via the API
+:::tip Configure a consumer via the API
 
 You can create a webhook consumer programmatically using our [Create webhook](/platform-api#/operations/create-webhook-consumer) endpoint.
 
