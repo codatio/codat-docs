@@ -9,7 +9,7 @@ We're excited to announce our new webhooks service, making it easier for you to 
 
 <!--truncate-->
 
-![Announcement of new webhooks service](/img/updates/240306-webhooks-announcement.svg)
+![Announcement of new webhooks service](/img/updates/240306-webhooks-announcement.png)
 
 Here's what you can expect when you upgrade to our new webhooks service:
 
