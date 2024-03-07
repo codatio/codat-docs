@@ -45,8 +45,6 @@ Unless the Xero required steps outlined below are completed:
 Xero’s communication requires changes to be made to scopes that are requested for new connections. We will handle this on your behalf **as long as we are notified** that you have completed the required steps with Xero as above. 
 :::
 
-**If you do not use these data types, then no action is required.**
-
 ## Expected impact if no action is taken
 
 If you do not complete the steps outlined by Xero, the `Bank Accounts` and `Bank Transactions` data types for Xero connections will be impacted:
