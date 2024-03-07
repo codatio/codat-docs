@@ -29,7 +29,7 @@ You must be compliant with Xero's guidance wherever you mention your Xero Partne
 
 **Action required: significant**
 
-You must meet the following requirements:
+Your application's UI must meet the following requirements:
 
 | Requirement | Recommendations |
 | :-- | :-- |
