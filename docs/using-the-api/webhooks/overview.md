@@ -5,7 +5,7 @@ hide_table_of_contents: true
 description: "Introduction to Codat's robust and streamlined webhook messaging solution"
 ---
 
-![Webhooks at Codat](/img/updates/240306-webhooks-announcement.svg)
+![Webhooks at Codat](/img/updates/240306-webhooks-announcement.png)
 
 _Webhooks_ are an automated way for an app to notify you when a specific event occurs. At their core, they are a `POST` request with a payload that is sent to a unique URL of an endpoint that you determine. 
 
