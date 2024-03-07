@@ -9,7 +9,7 @@ On **July 10, 2024**, we will deprecate the `/rules/alerts` endpoints following 
 
 <!--truncate-->
 
-The following endpoints will be deprecated on the specified date:
+The following endpoints will be deprecated:
 
 - `GET /rules/alerts`
 - `GET /rules/{ruleId}/alerts`
