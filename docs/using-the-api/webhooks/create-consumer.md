@@ -1,7 +1,7 @@
 ---
 title: "Build webhook consumers to subscribe to events"
 sidebar_label: "Consume webhooks"
-description: "Create new webhook consumers and manage existing ones to receive webhooks using the Portal or the API"
+description: "Configure new webhook consumers in Codat and manage existing configuration to receive webhook events"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -15,7 +15,7 @@ This consumer must process the event within 15 seconds when it receives a POST r
 
 ## Configure webhook consumer
 
-Once you have build your webhook consumer you will need to configure Codat to send the consumer events. 
+Once you have built your webhook consumer, configure Codat to send events to this consumer. 
 Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
 
 Add the endpoint URL that you want to receive the messages, an optional description, and choose the events that this endpoint should listen to. You must specify a least one event type per endpoint. 

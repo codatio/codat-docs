@@ -17,10 +17,10 @@ With our webhook service, you can leverage the following benefits:
 
 :::note Using our legacy webhooks? 
 
-If you have been using our webhooks prior to March 6, 2024, we recommend migrating over to the new service.
-Details on how do migrate can be found in our [migration guide](/using-the-api/webhooks/migration-guide).
+If you have been using our webhooks before March 6, 2024, we recommend migrating them to the new service.
+See how you can migrate in our [migration guide](/using-the-api/webhooks/migration-guide).
 
-You can find the old documentation here: 
+You can view the old webhook service documentation here: 
 
 - [View rule types](/using-the-api/webhooks/legacy/core-rules-types)
 - [Create or update rules](/using-the-api/webhooks/legacy/core-rules-create)
