@@ -55,13 +55,6 @@ The following limitations apply when using the connector with QBD running in eit
 
 - QBD performance may vary during the syncs. You cannot open an instance of QBD while a program is syncing, and its interface may behave unexpectedly.
 
-:::note Supported environments
-
-Our QuickBooks Desktop Connector is verified to work in single-tenant environments only, where a single Windows user is logged on to the computer used to access QuickBooks Desktop. Outside of the Rightworks solution, we cannot guarantee the behavior of the connector in multi-tenanted or hosted environments.
-
-[Installation on Rightworks-hosted instances](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks) is currently in beta.
-:::
-
 ## Supported operating systems
 
 The Codat QuickBooks Desktop Connector is supported for QuickBooks running on Windows 10 or Windows 11 with the latest service pack(s) installed.
