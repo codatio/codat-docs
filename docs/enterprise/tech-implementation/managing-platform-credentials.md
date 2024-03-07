@@ -1,36 +1,44 @@
 ---
-
-title: "Managing platform credentials"
-description: "Best practices for enterprise clients to register with accounting, banking or commerce platforms and storing the credentials."
-sidebar_label: "Managing platform credentials "
-
+title: "Get platform credentials"
+description: "Best practice recommendations for enterprise clients on how to register with accounting, banking, or commerce platforms and store the credentials"
+sidebar_label: "Get credentials"
 ---
-# Managing platform credentials
 
-Your organisation will usually need to register with each of your preferred platforms to enable production customer data to be shared to and from each integration, and in some cases, to access a developer account for development and testing.
+## Overview
 
-## Before setting up
-1. **Identify any existing agreement or relationship with the platforms your organisation would like to integrate with**
+Usually, your organization needs to register with each of your preferred platforms to enable production customer data to be shared to and from each integration. In some cases, registration is also required to access a developer account for development and testing.
 
- For example, this could be any Open Banking relationship or a existing direct integration with an accounting platform.
+## Prerequisites
 
-2. **Contact the existing relationship owner/system administrator** and understand:
-- the scope of existing agreement/relationship and use of data
-- how to access credentials like API keys to enable the integration in Codat
+1. **Identify existing agreements or relationships with the platforms your organization wants to integrate with.**
 
-3. **Request a vault or storage location to store the keys**
+   This could be any Open Banking relationship or an existing direct integration with an accounting platform.
 
-   This is likely to be a requirement set by your data governance teams and will need to be suitable for highly confidential classification.
+   :::tip Locating existing accounts
 
-   Keys can be securely stored in (and then retrieved from) the Codat portal before going live if required as an interim solution.
+   Account details for any existing direct integrations are likely to use a generic mailbox email address at your organisation.
+   :::
 
-**Existing accounts are likely to use a generic mailbox email address at your organisation**
+2. **Contact the existing relationship owner or system administrator.** 
 
-## How to set up
-1. Refer to the [registration or partnership requirements for each platform](https://docs.codat.io/integrations/accounting/overview#integration-registration-and-partnerships)
+   Understand the scope of the existing agreement or relationship and the use of the data received from the platform. Check how to access credentials (such as API keys) to enable the corresponding integration in Codat.
 
-2. Engage with your Implementation Specialist for platform specific guidance on establishing a commercial relationship
+3. **Request a vault or storage location to store credentials.**
 
-3. When creating new accounts with the platforms, it’s best to use a generic mailbox (e.g. system-admins@yourorganisation.com) where multiple users have controlled access - this is a requirement for some platforms, including Quickbooks - to reduce the risk of lost access
+   This requirement is likely to be set by your own data governance team, so the solution needs to be suitable for storing highly confidential data.
+   
+   If you need an interim solution, you can store credentials securely (and retrieve them) in the Codat Portal before going live.
 
-4. Once you have registered or created an account with each platform, you can retrieve the client ID/secret keys (or equivalent) from their developer portal and some platforms offer sandbox companies for testing 
+## Get the credentials
+
+1. Review the [registration or partnership requirements](https://docs.codat.io/integrations/accounting/overview#integration-registration-and-partnerships) for the platforms you plan to use.
+
+2. Engage with your Implementation Specialist for platform-specific guidance on establishing a commercial relationship.
+
+3. Register or create a new account with the platform.
+
+   We recommend using a generic mailbox for this (e.g. `system-admins@yourorganisation.com`). Providing multiple users with controlled access reduces the risk of losing access, and is a requirement for some platforms, such as QuickBooks.
+   
+4. Once registered, retrieve the client ID, secret keys, or an equivalent, from the platform's developer portal.
+
+   Some platforms offer sandbox companies that your organization can use for testing.
