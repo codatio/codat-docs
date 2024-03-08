@@ -1047,6 +1047,11 @@
         "tags": [
           "Bills"
         ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/continuationToken"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -1078,7 +1083,10 @@
                           "status": "Active",
                           "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
                         }
-                      ]
+                      ],
+                      "pagination": {
+                        "continuationToken": "eyJwYWdlIjoyLCJwYWdlU2l6ZSI6MTAwLCJwYWdlQ291bnQiOjExfQ=="
+                      }
                     }
                   }
                 }
@@ -1129,6 +1137,11 @@
         "tags": [
           "Bill payments"
         ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/continuationToken"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -1152,7 +1165,10 @@
                           "accountType": "Debit",
                           "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
                         }
-                      ]
+                      ],
+                      "pagination": {
+                        "continuationToken": "eyJwYWdlIjoyLCJwYWdlU2l6ZSI6MTAwLCJwYWdlQ291bnQiOjExfQ=="
+                      }
                     }
                   }
                 }
@@ -1204,6 +1220,9 @@
         ],
         "parameters": [
           {
+            "$ref": "#/components/parameters/continuationToken"
+          },
+          {
             "name": "query",
             "in": "query",
             "required": false,
@@ -1236,6 +1255,7 @@
                           "issueDate": "2019-05-13T00:00:00",
                           "dueDate": "2019-05-13T00:00:00",
                           "currency": "GBP",
+                          "currencyRate": "1,",
                           "lineItems": [
                             {
                               "description": "Dance shoes",
@@ -1266,6 +1286,7 @@
                           "issueDate": "2019-05-13T00:00:00",
                           "dueDate": "2019-05-13T00:00:00",
                           "currency": "GBP",
+                          "currencyRate": 1,
                           "lineItems": [
                             {
                               "description": "Dance shoes",
@@ -1286,7 +1307,10 @@
                           "amountDue": 0,
                           "sourceModifiedDate": "2022-05-26T10:34:10Z"
                         }
-                      ]
+                      ],
+                      "pagination": {
+                        "continuationToken": "eyJwYWdlIjoyLCJwYWdlU2l6ZSI6MTAwLCJwYWdlQ291bnQiOjExfQ=="
+                      }
                     }
                   }
                 }
@@ -1804,6 +1828,9 @@
         "operationId": "list-suppliers",
         "parameters": [
           {
+            "$ref": "#/components/parameters/continuationToken"
+          },
+          {
             "name": "query",
             "in": "query",
             "required": false,
@@ -1868,7 +1895,10 @@
                           "defaultCurrency": "GBP",
                           "sourceModifiedDate": "2021-08-31T08:45:02Z"
                         }
-                      ]
+                      ],
+                      "pagination": {
+                        "continuationToken": "eyJwYWdlIjoyLCJwYWdlU2l6ZSI6MTAwLCJwYWdlQ291bnQiOjExfQ=="
+                      }
                     }
                   }
                 }
@@ -2096,7 +2126,7 @@
                 }
               },
               {
-                "$ref": "#/components/schemas/Bill/allOf/1"
+                "$ref": "#/components/schemas/BankAccount/allOf/1"
               }
             ]
           }
@@ -2181,7 +2211,7 @@
                 "description": "Sort code for the bank account. This is relevant to UK bank accounts.\n\nXero integrations\nThe sort code is only displayed when the currency = GBP and the sort code and account number sum to 14 digits. For non-GBP accounts, this field is not populated."
               },
               "currency": {
-                "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency",
+                "$ref": "#/components/schemas/Bill/properties/currency",
                 "description": "Base currency of the bank account."
               },
               "status": {
@@ -2190,7 +2220,22 @@
             }
           },
           {
-            "$ref": "#/components/schemas/Bill/allOf/1"
+            "title": "Source Modified Date",
+            "x-internal": true,
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "sourceModifiedDate": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Company/properties/created"
+                  },
+                  {
+                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                  }
+                ]
+              }
+            }
           }
         ],
         "definitions": {
@@ -2238,125 +2283,118 @@
         "title": "Bill",
         "description": "﻿Bills are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.",
         "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the bill, unique for the company in the accounting platform."
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifier for the bill, unique for the company in the accounting platform."
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true,
+            "description": "User-friendly reference for the bill."
+          },
+          "supplierRef": {
+            "$ref": "#/components/schemas/Supplier/definitions/supplierRef"
+          },
+          "issueDate": {
+            "allOf": [
+              {
+                "description": "Date of the bill as recorded in the accounting platform."
               },
-              "reference": {
-                "type": "string",
-                "nullable": true,
-                "description": "User-friendly reference for the bill."
-              },
-              "supplierRef": {
-                "$ref": "#/components/schemas/Supplier/definitions/supplierRef"
-              },
-              "issueDate": {
-                "allOf": [
-                  {
-                    "description": "Date of the bill as recorded in the accounting platform."
-                  },
-                  {
-                    "$ref": "#/components/schemas/Company/properties/created"
-                  }
-                ]
-              },
-              "dueDate": {
-                "allOf": [
-                  {
-                    "description": "Date the supplier is due to be paid."
-                  },
-                  {
-                    "$ref": "#/components/schemas/Company/properties/created"
-                  }
-                ]
-              },
-              "currency": {
-                "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency"
-              },
-              "currencyRate": {
-                "$ref": "#/components/schemas/BillPayment/properties/currencyRate"
-              },
-              "lineItems": {
-                "type": "array",
-                "nullable": true,
-                "description": "Array of Bill line items.",
-                "items": {
-                  "$ref": "#/components/schemas/Bill/definitions/billLineItem"
-                }
-              },
-              "status": {
-                "$ref": "#/components/schemas/Bill/definitions/billStatus"
-              },
-              "totalAmount": {
-                "type": "number",
-                "format": "decimal",
-                "description": "Amount of the bill, including tax."
-              },
-              "amountDue": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "Amount outstanding on the bill."
+              {
+                "$ref": "#/components/schemas/Company/properties/created"
               }
+            ]
+          },
+          "dueDate": {
+            "allOf": [
+              {
+                "description": "Date the supplier is due to be paid."
+              },
+              {
+                "$ref": "#/components/schemas/Company/properties/created"
+              }
+            ]
+          },
+          "currency": {
+            "title": "Currency",
+            "x-internal": true,
+            "type": "string",
+            "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+            "format": "ISO4217",
+            "examples": [
+              "GBP",
+              "USD",
+              "EUR"
+            ]
+          },
+          "currencyRate": {
+            "title": "Currency rate",
+            "type": "number",
+            "format": "decimal",
+            "nullable": true,
+            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, include the required currency rate in the expense transaction.  |"
+          },
+          "lineItems": {
+            "type": "array",
+            "nullable": true,
+            "description": "Array of Bill line items.",
+            "items": {
+              "$ref": "#/components/schemas/Bill/definitions/billLineItem"
             }
           },
-          {
-            "title": "Source Modified Date",
-            "x-internal": true,
-            "type": "object",
+          "status": {
+            "$ref": "#/components/schemas/Bill/definitions/billStatus"
+          },
+          "totalAmount": {
+            "type": "number",
+            "format": "decimal",
+            "description": "Amount of the bill, including tax."
+          },
+          "amountDue": {
+            "type": "number",
+            "format": "decimal",
             "nullable": true,
-            "properties": {
-              "sourceModifiedDate": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/Company/properties/created"
-                  },
-                  {
-                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                  }
-                ]
-              }
-            }
+            "description": "Amount outstanding on the bill."
+          },
+          "sourceModifiedDate": {
+            "$ref": "#/components/schemas/BankAccount/allOf/1"
           }
-        ],
+        },
         "definitions": {
           "billPrototype": {
             "title": "Bill prototype",
             "type": "object",
             "properties": {
               "reference": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/reference"
+                "$ref": "#/components/schemas/Bill/properties/reference"
               },
               "supplierRef": {
                 "$ref": "#/components/schemas/Supplier/definitions/supplierRef"
               },
               "issueDate": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/issueDate"
+                "$ref": "#/components/schemas/Bill/properties/issueDate"
               },
               "dueDate": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/dueDate"
+                "$ref": "#/components/schemas/Bill/properties/dueDate"
               },
               "currency": {
-                "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency"
+                "$ref": "#/components/schemas/Bill/properties/currency"
               },
               "currencyRate": {
-                "$ref": "#/components/schemas/BillPayment/properties/currencyRate"
+                "$ref": "#/components/schemas/Bill/properties/currencyRate"
               },
               "lineItems": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/lineItems"
+                "$ref": "#/components/schemas/Bill/properties/lineItems"
               },
               "status": {
                 "$ref": "#/components/schemas/Bill/definitions/billStatus"
               },
               "totalAmount": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/totalAmount"
+                "$ref": "#/components/schemas/Bill/properties/totalAmount"
               },
               "amountDue": {
-                "$ref": "#/components/schemas/Bill/allOf/0/properties/amountDue"
+                "$ref": "#/components/schemas/Bill/properties/amountDue"
               }
             },
             "required": [
@@ -2450,74 +2488,14 @@
             "title": "Bills",
             "type": "object",
             "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the bill, unique for the company in the accounting platform."
-              },
-              "reference": {
-                "type": "string",
-                "nullable": true,
-                "description": "User-friendly reference for the bill."
-              },
-              "supplierRef": {
-                "$ref": "#/components/schemas/Supplier/definitions/supplierRef"
-              },
-              "issueDate": {
-                "allOf": [
-                  {
-                    "description": "Date of the bill as recorded in the accounting platform."
-                  },
-                  {
-                    "$ref": "#/components/schemas/Company/properties/created"
-                  }
-                ]
-              },
-              "dueDate": {
-                "allOf": [
-                  {
-                    "description": "Date the supplier is due to be paid."
-                  },
-                  {
-                    "$ref": "#/components/schemas/Company/properties/created"
-                  }
-                ]
-              },
-              "currency": {
-                "title": "Currency",
-                "x-internal": true,
-                "type": "string",
-                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
-                "format": "ISO4217",
-                "examples": [
-                  "GBP",
-                  "USD",
-                  "EUR"
-                ]
-              },
-              "lineItems": {
+              "results": {
                 "type": "array",
-                "nullable": true,
-                "description": "Array of Bill line items.",
                 "items": {
-                  "$ref": "#/components/schemas/Bill/definitions/billLineItem"
+                  "$ref": "#/components/schemas/Bill"
                 }
               },
-              "status": {
-                "$ref": "#/components/schemas/Bill/definitions/billStatus"
-              },
-              "totalAmount": {
-                "type": "number",
-                "format": "decimal",
-                "description": "Amount of the bill, including tax."
-              },
-              "amountDue": {
-                "type": "number",
-                "format": "decimal",
-                "nullable": true,
-                "description": "Amount outstanding on the bill."
-              },
-              "sourceModifiedDate": {
-                "$ref": "#/components/schemas/Bill/allOf/1"
+              "pagination": {
+                "$ref": "#/components/schemas/Pagination"
               }
             }
           }
@@ -2590,6 +2568,9 @@
             "items": {
               "$ref": "#/components/schemas/BillMappingOptions/definitions/taxRateMappingOption"
             }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Pagination"
           }
         },
         "definitions": {
@@ -2617,7 +2598,7 @@
                     "example": "Liability"
                   },
                   "currency": {
-                    "$ref": "#/components/schemas/Bill/definitions/bills/properties/currency"
+                    "$ref": "#/components/schemas/Bill/properties/currency"
                   },
                   "status": {
                     "$ref": "#/components/schemas/BillMappingOptions/definitions/accountStatus"
@@ -2625,7 +2606,7 @@
                 }
               },
               {
-                "$ref": "#/components/schemas/Bill/allOf/1"
+                "$ref": "#/components/schemas/BankAccount/allOf/1"
               }
             ]
           },
@@ -2672,9 +2653,6 @@
                     "description": "Status of the tax rate in the accounting platform.  \n- `Active` - An active tax rate in use by a company.  \n- `Archived` - A tax rate that has been archived or is inactive in the accounting platform.  "
                   }
                 }
-              },
-              {
-                "$ref": "#/components/schemas/Bill/allOf/1"
               }
             ]
           },
@@ -2724,11 +2702,7 @@
             "$ref": "#/components/schemas/Bill/definitions/billAccountRef"
           },
           "currencyRate": {
-            "title": "Currency rate",
-            "type": "number",
-            "format": "decimal",
-            "nullable": true,
-            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, include the required currency rate in the expense transaction.  |"
+            "$ref": "#/components/schemas/Bill/properties/currencyRate"
           }
         },
         "definitions": {
@@ -2749,7 +2723,7 @@
                 "$ref": "#/components/schemas/Bill/definitions/billAccountRef"
               },
               "currencyRate": {
-                "$ref": "#/components/schemas/BillPayment/properties/currencyRate"
+                "$ref": "#/components/schemas/Bill/properties/currencyRate"
               }
             },
             "required": [
@@ -3443,6 +3417,17 @@
           }
         }
       },
+      "Pagination": {
+        "title": "Pagination metadata",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "continuationToken": {
+            "type": "string",
+            "description": "A continuation token indicating there are more results to be fetched. Supply this value in the `continuationToken` query parameter in the next request to fetch the next set of results. Once no more results are available, the continuation token will not be present in the response."
+          }
+        }
+      },
       "PagingInfo": {
         "type": "object",
         "title": "Pagination information",
@@ -3543,6 +3528,9 @@
             "items": {
               "$ref": "#/components/schemas/PaymentMappingOptions/definitions/bankAccountMappingOption"
             }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/Pagination"
           }
         },
         "definitions": {
@@ -3592,7 +3580,7 @@
                 }
               },
               {
-                "$ref": "#/components/schemas/Bill/allOf/1"
+                "$ref": "#/components/schemas/BankAccount/allOf/1"
               }
             ]
           },
@@ -3941,112 +3929,107 @@
         "title": "Supplier",
         "description": "﻿## Overview\n\nSuppliers are people or organizations that provide something, such as a product or service. Use **Suppliers** endpoints to retrieve supplier data for a company. \n\nSuppliers' data links to accounts payable [bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill).\n ",
         "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the supplier, unique to the company in the accounting platform."
-              },
-              "supplierName": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the supplier as recorded in the accounting system, typically the company name."
-              },
-              "contactName": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of the main contact for the supplier."
-              },
-              "emailAddress": {
-                "type": "string",
-                "nullable": true,
-                "description": "Email address that the supplier may be contacted on."
-              },
-              "phone": {
-                "type": "string",
-                "nullable": true,
-                "description": "Phone number that the supplier may be contacted on.",
-                "examples": [
-                  "+44 25691 154789",
-                  "(877) 492-8687",
-                  "01224 658 999"
-                ]
-              },
-              "addresses": {
-                "type": "array",
-                "nullable": true,
-                "description": "An array of Addresses.",
-                "items": {
-                  "title": "Accounting: Address",
-                  "x-internal": true,
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses/items/definitions/accountingAddressType"
-                    },
-                    "line1": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Line 1 of the customer address."
-                    },
-                    "line2": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Line 2 of the customer address."
-                    },
-                    "city": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "City of the customer address."
-                    },
-                    "region": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Region of the customer address."
-                    },
-                    "country": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Country of the customer address."
-                    },
-                    "postalCode": {
-                      "type": "string",
-                      "nullable": true,
-                      "description": "Postal code or zip code."
-                    }
-                  },
-                  "required": [
-                    "type"
-                  ],
-                  "definitions": {
-                    "accountingAddressType": {
-                      "description": "The type of the address",
-                      "type": "string",
-                      "enum": [
-                        "Unknown",
-                        "Billing",
-                        "Delivery"
-                      ]
-                    }
-                  }
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifier for the supplier, unique to the company in the accounting platform."
+          },
+          "supplierName": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name of the supplier as recorded in the accounting system, typically the company name."
+          },
+          "contactName": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name of the main contact for the supplier."
+          },
+          "emailAddress": {
+            "type": "string",
+            "nullable": true,
+            "description": "Email address that the supplier may be contacted on."
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true,
+            "description": "Phone number that the supplier may be contacted on.",
+            "examples": [
+              "+44 25691 154789",
+              "(877) 492-8687",
+              "01224 658 999"
+            ]
+          },
+          "addresses": {
+            "type": "array",
+            "nullable": true,
+            "description": "An array of Addresses.",
+            "items": {
+              "title": "Accounting: Address",
+              "x-internal": true,
+              "type": "object",
+              "properties": {
+                "type": {
+                  "$ref": "#/components/schemas/Supplier/properties/addresses/items/definitions/accountingAddressType"
+                },
+                "line1": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "Line 1 of the customer address."
+                },
+                "line2": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "Line 2 of the customer address."
+                },
+                "city": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "City of the customer address."
+                },
+                "region": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "Region of the customer address."
+                },
+                "country": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "Country of the customer address."
+                },
+                "postalCode": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "Postal code or zip code."
                 }
               },
-              "status": {
-                "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
-              },
-              "defaultCurrency": {
-                "type": "string",
-                "nullable": true,
-                "description": "Default currency the supplier's transactional data is recorded in."
+              "required": [
+                "type"
+              ],
+              "definitions": {
+                "accountingAddressType": {
+                  "description": "The type of the address",
+                  "type": "string",
+                  "enum": [
+                    "Unknown",
+                    "Billing",
+                    "Delivery"
+                  ]
+                }
               }
             }
           },
-          {
-            "$ref": "#/components/schemas/Bill/allOf/1"
+          "status": {
+            "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
+          },
+          "defaultCurrency": {
+            "type": "string",
+            "nullable": true,
+            "description": "Default currency the supplier's transactional data is recorded in."
+          },
+          "sourceModifiedDate": {
+            "$ref": "#/components/schemas/BankAccount/allOf/1"
           }
-        ],
+        },
         "required": [
           "status"
         ],
@@ -4056,25 +4039,25 @@
             "type": "object",
             "properties": {
               "supplierName": {
-                "$ref": "#/components/schemas/Supplier/allOf/0/properties/supplierName"
+                "$ref": "#/components/schemas/Supplier/properties/supplierName"
               },
               "contactName": {
-                "$ref": "#/components/schemas/Supplier/allOf/0/properties/contactName"
+                "$ref": "#/components/schemas/Supplier/properties/contactName"
               },
               "emailAddress": {
-                "$ref": "#/components/schemas/Supplier/allOf/0/properties/emailAddress"
+                "$ref": "#/components/schemas/Supplier/properties/emailAddress"
               },
               "phone": {
-                "$ref": "#/components/schemas/Supplier/allOf/0/properties/phone"
+                "$ref": "#/components/schemas/Supplier/properties/phone"
               },
               "addresses": {
-                "$ref": "#/components/schemas/Supplier/allOf/0/properties/addresses"
+                "$ref": "#/components/schemas/Supplier/properties/addresses"
               },
               "status": {
                 "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
               },
               "defaultCurrency": {
-                "$ref": "#/components/schemas/Supplier/allOf/0/properties/defaultCurrency"
+                "$ref": "#/components/schemas/Supplier/properties/defaultCurrency"
               }
             }
           },
@@ -4109,19 +4092,18 @@
           },
           "suppliers": {
             "title": "Suppliers",
-            "allOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "results": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Supplier"
-                    }
-                  }
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Supplier"
                 }
+              },
+              "pagination": {
+                "$ref": "#/components/schemas/Pagination"
               }
-            ]
+            }
           }
         },
         "examples": [
@@ -4206,6 +4188,21 @@
         },
         "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results)."
       },
+      "billId": {
+        "name": "billId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "examples": [
+            "13d946f0-c5d5-42bc-b092-97ece17923ab",
+            "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
+            7110701885,
+            "EILBDVJVNUAGVKRQ"
+          ]
+        },
+        "description": "Unique identifier for a bill."
+      },
       "companyId": {
         "name": "companyId",
         "in": "path",
@@ -4230,49 +4227,15 @@
         },
         "description": "Unique identifier for a connection."
       },
-      "dataType": {
-        "name": "dataType",
-        "description": "The key of a Codat data type",
-        "in": "path",
-        "required": true,
-        "schema": {
-          "$ref": "#/components/schemas/DataType"
-        }
-      },
-      "datasetId": {
-        "name": "datasetId",
-        "in": "path",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "uuid",
-          "description": "Unique identifier for the dataset that completed its sync."
-        },
-        "description": "Unique identifier for the dataset that completed its sync."
-      },
-      "timeoutInMinutes": {
-        "name": "timeoutInMinutes",
+      "continuationToken": {
+        "name": "continuationToken",
         "in": "query",
-        "schema": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "description": "Time limit for the push operation to complete before it is timed out."
-      },
-      "billId": {
-        "name": "billId",
-        "in": "path",
-        "required": true,
+        "required": false,
         "schema": {
           "type": "string",
-          "examples": [
-            "13d946f0-c5d5-42bc-b092-97ece17923ab",
-            "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
-            7110701885,
-            "EILBDVJVNUAGVKRQ"
-          ]
+          "example": "continuationToken=eyJwYWdlIjoyLCJwYWdlU2l6ZSI6MTAwLCJwYWdlQ291bnQiOjExfQ=="
         },
-        "description": "Unique identifier for a bill."
+        "description": "Retrieve the next page of results using the continuation token from the previous response."
       }
     },
     "responses": {
