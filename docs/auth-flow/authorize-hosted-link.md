@@ -1,7 +1,6 @@
 ---
 title: "Authorize with Hosted Link"
-sidebar_label: Overview
-description: "Choose how to integrate Hosted Link into your authorization flow"
+description: "See how to integrate Hosted Link into your authorization flow"
 unlisted: true
 ---
 
@@ -11,29 +10,32 @@ unlisted: true
 
 :::tip Codat recommends Link SDK
 
-Instead of Hosted Link, Codat recommends using the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow in your application. You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feel of the auth flow.
+Instead of Hosted Link, use the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow in your application. You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feel of the auth flow.
 
 :::
 
-With Hosted Link, you can choose how you want your customers to start their authorization journey while benefitting from an out-of-the-box solution built, provided, and hosted by Codat.
+## Overview
 
-To connect your customers' financial software, you can:
+Choose Hosted Link to use an out-of-the-box authorization solution built, provided, and hosted by Codat. To connect your customers' financial software, you can:
 
-- integrate the Hosted Link auth flow into the user interface of your existing app, or
-- initiate the authorization journey by sharing your Hosted Link URL.
+- Integrate the Hosted Link auth flow into the user interface of your existing app, or
+- Initiate the authorization journey by sharing your Hosted Link URL.
 
 ![](/img/link/link-banner.png)
 
-## Integrate the Hosted Link flow into your app
+## Integrate the flow into your app
 
-1. First, you need to create a Codat company for your SMB. We recommend doing that simultaneously as your SMB user signs up within your app. That allows you to track their connection status from day one. To create a company, follow the steps in [Managing companies](/using-the-api/managing-companies).
+First, create a company to represent your SMB in Codat. We recommend doing that at the time your SMB user signs up within your app. This way, you can track their connection status from day one. 
 
-:::caution Use your merchant ID for the company name
+To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body. For details on managing and deleting existing companies, review [Manage companies with our API](/using-the-api/managing-companies).
 
-We recommend that you populate the name value with the ID that you use for the merchant in **your** internal system so that it’s easier to identify the Codat company that corresponds to your record of the merchant.
+:::tip Use your customer's ID for the company name
+
+For the company `name` parameter, we recommend you pass the ID that you use for the customer in **your** internal system. This makes it easier to identify the Codat company that corresponds to your record of the customer.
 :::
 
-2. From the response to the request, retain the following parameters:
+From the response to the request, retain the following parameters:
+
    - `companyId`, because you will need it for directing your customers to Link and managing their connections;
    - `redirect` URL value, because you will use this URL in your app to direct the customer to start their Link journey.
 
@@ -61,17 +63,17 @@ To enhance your Hosted Link experience, [set up a webhook](/auth-flow/customize/
 Ensure to direct the existing customers to the `redirect` Link URL that you can retrieve from the company's metadata. If you create a new company and establish a new connection for a customer previously connected, you may be billed for it based on your contract.
 :::
 
-### Managing existing users with active connections
+#### Manage existing users with active connections
 
 Direct the user to the `redirect` URL that can be retrieved from a company's metadata. This allows them to modify their connections via the Hosted Link UI.
 
-### Managing existing users with pending connections
+#### Manage existing users with pending connections
 
 When a user creates a data connection, but fails to authorize access to their financial platform, a data connection is created in a [pending status](/core-concepts/connections#data-connection-status) in the respective Codat company.
 
 In this scenario, allow your user to authorize this connection by sending them directly to the third-party authentication screen. Use the `linkUrl` value from the `dataConnections` array in the company's metadata. This will prompt the user to authorize the connection to their financial platform.
 
-## Initiate the Hosted Link journey
+## Initiate the journey via URL
 
 ### Use the Hosted Link URL
 
@@ -104,7 +106,14 @@ Using the Invite company URL will not allow your customer to view, update or add
 
 :::
 
+## Customize the flow
+
+Our Link settings allow you to configure the authorization process based on your data needs and white-label Link to suit your brand. You can customize these settings in the Codat Portal in Settings > Auth flow > Link.
+
+
+
 ## 💡 Tips and traps
 
 - Hosted Link is not compatible with iframes. This is against our security policies and will not work. If you want to embed Link inside your website, try our [Link SDK solution](https://docs.codat.io/auth-flow/authorize-embedded-link).
 - Some users may be concerned sharing their data at a `codat.io` domain. You should consider pre-warning them that they about to visit a third party website for the authorization process, or try our [Link SDK solution](https://docs.codat.io/auth-flow/authorize-embedded-link).
+

@@ -1,31 +1,26 @@
 ---
 title: "Build your own auth flow"
 sidebar_label: Overview
-description: "Explore how to create your own journey to connect your customers' financial platforms"
+description: "Create your own journey to connect your customers' financial platforms"
 unlisted: true
 ---
 
 :::tip Codat recommends Link SDK
 
-Instead of building your own solution, Codat recommends using the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow component in your application. You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feel of the auth flow.
+Instead of building your own solution, Codat recommends using the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow component in your application. Benefit from our extensive experience combined with authorization best practices, providing your users with a native feel of the auth flow and an **89%** conversion rate.
 
 :::
 
-Codat provides a series of endpoints that allow you to build the journey for your business customers to connect their financial platforms.
+If your business scenario and circumstances prevent you from using our Link SDK, you can use the endpoints that allow you to build the journey for your business customers to connect their financial platforms.
 
-## What might a bespoke auth flow look like?
+:::info Indicative demo
 
-Below is a indicative demo of a where Codat might fit in to a digital lending onboarding experience. Copay is a fictional digital lender looking to gather financial data from prospective customers in order to make a credit decision.
+Curious where Codat might fit in to a digital lending onboarding experience? Experience the flow with Copay - a fictional digital lender that gathers financial data to make a credit decision.
 
-<a href="https://codat-dev-link-demo.azurewebsites.net/home" target="_blank">
-  See an indicative demo
-</a> | <a href="https://github.com/codatio/demo-auth-flow" target="_blank">
-  See the code
-</a>
+[See the demo](https://codat-dev-link-demo.azurewebsites.net/home) | [See the code](https://github.com/codatio/demo-auth-flow)
+:::
 
-## Building your own auth flow
-
-### 1. Create a Codat company when a user signs up for your app
+## 1. Create a Codat company when a user signs up for your app
 
 1. In order to establish a connection to your customer's financial platform(s), you first need to create a Codat company for them. We recommend you create a company at the same time as your customer signs up within your app. That will allow you to track their connection status from day one. To create a company, follow the steps in [Create a Codat company](/using-the-api/managing-companies#create-a-codat-company).
 
@@ -37,7 +32,7 @@ We recommend that you populate the name value with the ID that you use for the m
 2. From the response to step 1, retain the company ID (hereafter referred to as `companyId`) (see an example below). It is crucial that you retain this value as you will need it for directing your customers to Link and managing their connections.
 3. _(Optional)_ [Set up a webhook](/auth-flow/customize/set-up-webhooks) to monitor the connection status of the newly created company.
 
-### 2. Display a list of integrations for your users to select, including the integration name and logo
+## 2. Display a list of integrations for your users to select, including the integration name and logo
 
 1. Retrieve a list of all integrations available to connect and display them in your UI:
 
@@ -80,7 +75,7 @@ To ensure this page is performative for your users, we recommend caching the bra
 We recommend using the assets provided by Codat as they meet the requirements of the supported integrations. For example, Intuit integrations (QuickBooks Online and QuickBooks Desktop) require the specific use of QuickBooks branded buttons, including specific hover states.
 :::
 
-### 3. Direct your user to enter their 3rd party credentials to authorize a connection with their selected platform
+## 3. Direct your user to enter their 3rd party credentials to authorize a connection with their selected platform
 
 1. Create a data connection for the integration selected by your customer:
 
@@ -117,7 +112,7 @@ If a redirect URL is not set, then pre-built UI will be presented to your user. 
 A company may link a single source of accounting data but multiple sources of banking or commerce data. Any combination of accounting, banking, and commerce connections is allowed. For more on data connections and connection statuses see [Data connections](/core-concepts/connections).
 :::
 
-### 4. Confirm successful authorization and data synchronization
+## 4. Confirm successful authorization and data synchronization
 
 1. Once the connection is complete (for guidance on how to monitor the connection, read [Set up webhooks](/auth-flow/customize/set-up-webhooks)), mark the connection as authorized and confirm to your user the successful authorization of the connection.
 2. Monitor the synchronization of data (also available in <a href="/platform-api#/operations/get-company-data-status">our API</a>):
@@ -128,7 +123,7 @@ GET https://api.codat.io/companies/{companyId}/dataStatus",
 
 Once the initial synchronization of data is complete, you can inform the user accordingly and continue the flow of your app.
 
-### 5. Allow your users to manage their ongoing connection(s)
+## 5. Allow your users to manage their ongoing connection(s)
 
 Have the following values at hand:
 
@@ -219,3 +214,44 @@ You can [download the logo](https://static.codat.io/public/branding/powered-by-c
   src="https://static.codat.io/public/branding/powered-by-codat.svg"
   alt="Powered by Codat"
 />
+
+## Best practices
+
+## Best Practices
+
+If an end user has linked before, use the relevant existing company rather than creating a new company (even if they have previously deauthorized).
+
+Where possible you should be using webhooks to be informed of when to fetch data, rather than polling our API for dataset status updates.
+This will allow you to fetch fresh data as soon as it is available as well as reduce the amount of calls being made to our API.
+
+We (currently) only support data access permissions, not data usage permissions.
+This means that the user can consent to us accessing their data as a whole, not which parts or what is done with it.
+If you want to manage how the data is used then they will need to manage the permissioning in their system.
+
+Consent is done via OAuth2 and it means until you revoke permission we will be able to access all of the end users data on an on-going basis.
+
+This data is also stored forever (until revoked) in our central data database. This means that it is always available to be accessed via our API and we don’t need to keep going to the accounting platform to get it (and thus not hitting rate limits).
+
+### What do I do when my customer user doesn't have access to the sign in credentials for their accounting/banking/commerce platform?
+
+Often your customer or user doesn't themselves have the sign in credentials to the platforms you need to access. For example, perhaps their accountant is the only stakeholder in their business that actually goes into their accounting platform.
+
+If you're using our Hosted Link solution, your customer can just forward that stakeholder the hosted Link URL. However, for our Link SDK or a custom built auth flow, your authorization flow is likely only accessible when logged in, which means sharing around password and logins - not ideal!
+
+Just because you're not using Link as your primary auth flow, it doesn't mean you can't benefit from it.
+
+Why not try:
+
+1. Making your auth flow an optional part of onboarding
+2. Presenting your customers with a CTA inviting them to auth, but also giving them an alternative like 'Can't sign in to your {accounting/banking/commerce} platform?'
+3. If a customer clicks this option, you could:
+   1. Give them the Hosted Link URL to share themselves: `<https://link.codat.io/companies/{companyId}`>
+   2. Use a `mailto:` link to make it easier. E.g.:
+
+```html
+<a href="mailto:https://link.codat.io/companies/{companyId}">Invite someone else</a>
+```
+
+You can even prefill the subject line and email body as you see fit.
+
+It's important that the request to authorize comes from your customer rather than you to ensure that the need is communicated and trusted.

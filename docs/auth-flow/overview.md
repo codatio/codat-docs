@@ -1,6 +1,6 @@
 ---
 title: "Authorization flow"
-description: "Understand Codat's authorization journey and its implementation "
+description: "Understand Codat's authorization journey and its implementation"
 ---
 
 Authorization is a key part of any solution built with Codat. Every company must authorize access to their data before you can use that data. A frictionless and reassuring auth flow is essential for receiving the authorization from your SMB customers.
@@ -13,7 +13,7 @@ To achieve this, use our [Link SDK component](/auth-flow/authorize-embedded-link
 
 Link is our pre-built and white-labelled authorization journey, designed using our extensive build experience and authorization best practices to maximize conversion. 
 
-Embed this best-in-class auth flow into your user journey with our [Link SDK component](/auth-flow/authorize-embedded-link). 
+Embed this best-in-class auth flow into your user journey with our [Link SDK component](/auth-flow/authorize-embedded-link) and enjoy an **89% auth flow completion rate**.
 
 With our [rich examples](/auth-flow/authorize-embedded-link#get-started) and an <a href="https://links.codat.io/client/873ff19e-6fe0-47b0-a4e1-e19f344c78f6?user=8ee6c557-949c-40a8-b31d-e1fa02ef7fbc" target="_blank">interactive demo</a>, we have made it easy for you to get started. You can have the flow up and running in your front-end code with just a few lines of code.
 

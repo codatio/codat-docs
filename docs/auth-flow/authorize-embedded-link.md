@@ -12,7 +12,7 @@ import TabItem from "@theme/TabItem";
 
 Our Link SDK is a pre-built JavaScript component that neatly sits in your front-end code and can be deployed in a matter of minutes. 
 
-We built it to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey.
+We built it to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey. As a result, clients using the SDK note that **89%** of their users successfully complete their journeys.
 
 :::note Dynamic imports
 
@@ -40,7 +40,7 @@ We've provided you with [rich examples on GitHub](https://github.com/codatio/sdk
 
 #### Your application
 
-You need a JavaScript application to render the component in (e.g. React, Angular). It should take care of creating [companies](../terms/company) programmatically and retrieving the `companyId` of any company you want to authorize.
+You need a JavaScript application to render the component in (e.g. React, Angular). It should take care of creating [companies](../terms/company) programmatically and retrieving the `companyId` of any company you want to authorize. Additionally, build out the required redirect configuration within your application.
 
 ## Get started
 
@@ -496,5 +496,4 @@ PLACEHOLDER TEXT FOR RELEVANT OPTIMIZATION ITEMS
 
 - [Manage Link settings in Portal](/auth-flow/customize/customize-link)
 - [Manage branding settings in Portal](/auth-flow/customize/branding)
-- [Manage redirects in Portal](/auth-flow/customize/set-up-redirects)
 - [Manage UI settings in code](/auth-flow/customize/sdk-advanced-options)

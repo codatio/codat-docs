@@ -53,7 +53,7 @@ The object is applied as the `CodatLink` component is mounted and doesn't suppor
 
 :::tip Try it out!
 
-Grab our [example file](https://github.com/codatio/sdk-link/tree/main/examples/non-modal), edit it as desired, and use it in our [Options demo](https://codat-intg-link-sdk-v2-react-18-ui.azurewebsites.net/) to see how the Link UI reflects the changes you make to the properties.  You will need a `companyId` to do this.
+Grab our [example file](/documents/example-link-options.json), edit it as desired, and use it in our [Options demo](https://codat-intg-link-sdk-v2-react-18-ui.azurewebsites.net/) to see how the Link UI reflects the changes you make to the properties.  You will need a `companyId` to do this.
 :::
 
 ### Non-modal styling
