@@ -49,8 +49,6 @@ For example, to configure advanced settings for our `invoices` data type, send t
 
 - Advanced sync settings can be applied to all data types, but we advise you do not set them for reference data, such as customers, suppliers, chart of accounts, tax rates, tracking categories, and items.
 
-- Be aware of records that will not be linked if a record's date is our of range. For example, with `syncFromUtc` set to 01-01-2020, an invoice dated 01-12-2019 will not be synchronized, but a payment against that invoice dated 01-01-2020 will. As a result, these records will not be linked. 
-
 - Both `syncFromWindow` and `syncFromUtc` use `sourceModifiedDate` to select records for syncing. You can [read more about modified dates](/using-the-api/modified-dates). 
 
 - When a sync setting is introduced after a successful data sync, the records fetched prior to the new sync setting will be either deleted or updated with a _Void_ or _Archived_ status.
