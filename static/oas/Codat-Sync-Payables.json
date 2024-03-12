@@ -1612,7 +1612,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Attachment/definitions/attachments"
+                  "$ref": "#/components/schemas/Attachment"
+                },
+                "examples": {
+                  "Info": {
+                    "value": {
+                      "id": "422f093f-e556-4bf3-91c0-93af70c3e850",
+                      "name": "receipt.png",
+                      "contentType": "image/png",
+                      "dateCreated": "2022-10-23T00:00:00.000Z",
+                      "fileSize": 100,
+                      "includeWhenSent": true,
+                      "sourceModifiedDate": "2022-05-26T10:34:10Z"
+                    }
+                  }
                 }
               }
             }
@@ -2068,8 +2081,8 @@
   "components": {
     "schemas": {
       "Attachment": {
-        "title": "Accounting: Attachment",
-        "description": "The Codat API supports pulling and pushing of file attachments for invoices, bills, direct costs, and direct incomes.\n\n> **Retrieving attachments**\n> \n> If a company is authorized, you can query the Codat API to read, download, and upload attachments without requiring a fresh sync of data.\n\nUnlike other data types, Codat doesn't support [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings) for attachments.\n\nNote that different integrations have different requirements to file size and extension of attachments.\n\n| Integration       | File size | File extension                                                                                                                                               |\n|-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Xero              | 4 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |\n| QuickBooks Online | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |\n| NetSuite          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |\n| Dynamics 365 Business Central          | 350 MB    | Dynamics do not explicitly outline which file types are supported but they do state <a className=\"external\" href=\"https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice\" target=\"_blank\">here</a> that \"You can attach any type of file, such as text, image, or video files\".                                                                   |\n\nView the coverage for each integration in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting\" target=\"_blank\">Data coverage explorer</a>.\n",
+        "title": "Attachment",
+        "description": "  The Codat API supports pulling and pushing of file attachments for invoices, bills, direct costs, and direct incomes.\n\n  > **Retrieving attachments**\n  > \n  > If a company is authorized, you can query the Codat API to read, download, and upload attachments without requiring a fresh sync of data.\n\n  Unlike other data types, Codat doesn't support [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings) for attachments.\n\n  Note that different integrations have different requirements for file size and extension of attachments.\n\n  | Integration       | File size | File extension                                                                                                                                               |\n  |-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|\n  | Xero              | 4 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |\n  | QuickBooks Online | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |\n  | NetSuite          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |\n  | Dynamics 365 Business Central          | 350 MB    | Dynamics do not explicitly outline which file types are supported but they do state <a className=\"external\" href=\"https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice\" target=\"_blank\">here</a> that \"You can attach any type of file, such as text, image, or video files\".                                                                   |",
         "type": "object",
         "allOf": [
           {
@@ -2105,49 +2118,24 @@
             }
           },
           {
-            "title": "Modified dates",
+            "title": "Source Modified Date",
             "x-internal": true,
-            "allOf": [
-              {
-                "title": "ModifiedDate",
-                "x-internal": true,
-                "type": "object",
-                "properties": {
-                  "modifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                "$ref": "#/components/schemas/BankAccount/allOf/1"
-              }
-            ]
-          }
-        ],
-        "examples": [],
-        "definitions": {
-          "attachments": {
-            "title": "Attachments",
             "type": "object",
+            "nullable": true,
             "properties": {
-              "attachments": {
-                "description": "An array of attachments related to the record.",
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Attachment"
-                },
-                "nullable": true
+              "sourceModifiedDate": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Company/properties/created"
+                  },
+                  {
+                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                  }
+                ]
               }
             }
           }
-        }
+        ]
       },
       "AttachmentUpload": {
         "title": "Attachment upload",
@@ -2220,22 +2208,7 @@
             }
           },
           {
-            "title": "Source Modified Date",
-            "x-internal": true,
-            "type": "object",
-            "nullable": true,
-            "properties": {
-              "sourceModifiedDate": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/Company/properties/created"
-                  },
-                  {
-                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                  }
-                ]
-              }
-            }
+            "$ref": "#/components/schemas/Attachment/allOf/1"
           }
         ],
         "definitions": {
@@ -2358,7 +2331,7 @@
             "description": "Amount outstanding on the bill."
           },
           "sourceModifiedDate": {
-            "$ref": "#/components/schemas/BankAccount/allOf/1"
+            "$ref": "#/components/schemas/Attachment/allOf/1"
           }
         },
         "definitions": {
@@ -2606,7 +2579,7 @@
                 }
               },
               {
-                "$ref": "#/components/schemas/BankAccount/allOf/1"
+                "$ref": "#/components/schemas/Attachment/allOf/1"
               }
             ]
           },
@@ -3580,7 +3553,7 @@
                 }
               },
               {
-                "$ref": "#/components/schemas/BankAccount/allOf/1"
+                "$ref": "#/components/schemas/Attachment/allOf/1"
               }
             ]
           },
@@ -4027,7 +4000,7 @@
             "description": "Default currency the supplier's transactional data is recorded in."
           },
           "sourceModifiedDate": {
-            "$ref": "#/components/schemas/BankAccount/allOf/1"
+            "$ref": "#/components/schemas/Attachment/allOf/1"
           }
         },
         "required": [
