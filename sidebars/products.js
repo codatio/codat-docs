@@ -38,4 +38,10 @@ module.exports = [
     className: "top-level-item top-level-item-single products product sfpayroll",
     id: "payroll/overview",
   },
+  {
+    type: "doc",
+    label: "Supplier Enablement",
+    className: "top-level-item top-level-item-single products product supplier-enablement",
+    id: "supplier-enablement/overview",
+  },
 ];
