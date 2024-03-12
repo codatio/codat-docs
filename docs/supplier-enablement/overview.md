@@ -28,6 +28,8 @@ Grow commercial card volume with
 comprehensive and up-to-date supplier
 and spend data
 
+Grow commercial card volume in B2B payments
+
 Codat’s Supplier Enablement product removes obstacles to
 commercial card volume growth through secure, ongoing, and
 consented access to client data in an actionable format.
@@ -44,16 +46,37 @@ This list is used by the bank to: a) put together a tailored rebate program, whi
 
  overall process of getting suppliers to accept virtual card payments on their invoices
 
+Issuing banks use Codat to access comprehensive and up-to-date data for supplier enablement. Business clients share vendor and spend data directly from their ERP system or accounting software.
+
+Enhance your card programs with seamless data sharing and actionable supplier analytics. 
+
+Increase your card participation 
+
 
 ## Who is it for?
 
+With **Supplier Enablement**, we help banks and other commercial card issuers who are looking to grow revenue per customer and reduce drop-off when moving banking customers to their virtual card product.  
 
 As a card program owner facilitator who 
 
 Codat is developing a new product for banks. It helps banks increase revenue from corporate cards by making their “Supplier Onboarding” process more efficient and effective. Supplier Onboarding is the process by which a bank helps a customer move more of their B2B spending to their corporate card, very often using virtual cards.
 
+Issuing banks use Codat to access comprehensive and up-to-date data for supplier enablement. Business clients share vendor and spend data directly from their ERP system or accounting software.
+
+banks and other commercial card issuers 
+
 
 ## Why use it?
+
+Move more volume to card
+Onboard more suppliers through targeted campaigns and migrate another 10% of overall AP spend with rich, timely AP data.
+
+Increase sales conversion
+Present accurate rebate offers in minutes and accelerate speed-to-spend by weeks by making data sharing seamless.
+
+Reduce spend churn
+Cut churn in half with monitoring for suppliers reverting to check or ACH, while also identifying and onboarding the 10-20% of annual spend that goes to new suppliers.
+
 
 :target: Grow customers: by improving sales conversion (better CX; more attractive offers) & freeing up sales team (less time processing applications).
 
@@ -95,6 +118,21 @@ Other components
 - Revenue growth
    - Accelerating time to spend
    - Reducing churn by monitoring for suppliers who revert to check
+
+Increased sales acquisition
+- Remove friction and drop-off from the sales process and quickly present potential commercial card clients with compelling rebate offers.
+
+Faster speed-to-spend
+
+- Reduce time spent collecting, cleaning, and processing data and help clients set up their card programs sooner.
+
+Increased volume migrated to card
+
+- Onboard more suppliers through targeted campaigns with more relevant messaging thanks to comprehensive and up-to-date supplier data. 
+
+Reduced spend churn and continual growth 
+
+- Monitor spend to pick up new suppliers as they appear in the vendor file and check that onboarded suppliers do not revert to check
 
 
 

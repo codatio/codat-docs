@@ -23,5 +23,4 @@ module.exports = [
   },
   "supplier-enablement/features/financials",
   "supplier-enablement/features/excel-addon",
-  "lending/features/financial-statements-overview",
 ];
