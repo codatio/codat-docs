@@ -3,7 +3,7 @@ title: Supplier Enablement overview
 sidebar_label: Supplier Enablement
 description: Manage comprehensive vendor and spend data to grow commercial card volume
 displayed_sidebar: supplierEnablement
-image: "/img/sync-for-expenses/sfe-banner.png"
+image: "/img/banners/social/payables.png"
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
@@ -11,10 +11,10 @@ tags: [overview, supplierenablement]
 banner_title: Supplier Enablement
 banner_class: supplier-enablement
 banner_icon: "/img/logos/products/logo_supplier_enablement_clear.svg"
-banner_image: "/img/banners/sfe-flow.png"
-banner_text: "Push categorized expenses and attachments to all major accounting platforms, handling the complexities of expense reconciliation"
+banner_image: "/img/banners/supplier-enablement.png"
+banner_text: "Manage comprehensive vendor and spend data to grow commercial card volume"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
-// video_text: What is Sync for Expenses?
+// video_text: What is Supplier Enablement?
 ---
 
 import {IntegrationsList} from '@components/global/Integrations'
@@ -24,17 +24,79 @@ import Products from "@components/global/Products";
 
 ## What is it?
 
-**Sync for Expenses** is a standardized API-based product that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
+Grow commercial card volume with
+comprehensive and up-to-date supplier
+and spend data
 
-With **58% of small businesses** saying they choose one spending solution over another based on **quality of their accounting integrations**, Sync for Expenses enables you to push categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
+Codat’s Supplier Enablement product removes obstacles to
+commercial card volume growth through secure, ongoing, and
+consented access to client data in an actionable format.
 
-It includes built-in logic so you can easily handle all of the complexities of expense reconciliation, such as refunds, accounting for multiple currencies, and allowing users to correct errors.
+Codat enhances card programs with seamless data sharing and actionable supplier analytics.
+
+Banks offer business customers a range of corporate cards (both physical & virtual). 
+
+Corporate cards are a key revenue generator for banks. They make money from an interchange fee that is applied to every dollar spent. Encouraging card participation is therefore very important.
+
+Today, relationship managers (RMs) at banks ask prospective card customers to submit a list of key suppliers (& associated payments) as part of the sales process. 
+
+This list is used by the bank to: a) put together a tailored rebate program, which encourages businesses to sign up & use the card; & b) target supplier enablement efforts (i.e. onboard suppliers to be able to accept their card), which increases the amount of spend a participating business is able to put on card.
+
+ overall process of getting suppliers to accept virtual card payments on their invoices
+
 
 ## Who is it for?
 
-With Sync for Expenses, corporate card providers, expense management providers, and neobanks can easily embed accounting automation features in their solution that would otherwise take months or even years to design, build, and maintain from scratch. 
+
+As a card program owner facilitator who 
+
+Codat is developing a new product for banks. It helps banks increase revenue from corporate cards by making their “Supplier Onboarding” process more efficient and effective. Supplier Onboarding is the process by which a bank helps a customer move more of their B2B spending to their corporate card, very often using virtual cards.
+
 
 ## Why use it?
+
+:target: Grow customers: by improving sales conversion (better CX; more attractive offers) & freeing up sales team (less time processing applications).
+
+:target: Increase spend on card: by increasing eligible suppliers (better visibility; on-going visibility) & reducing speed-to-spend (less time processing applications).
+
+:target: Reduce churn: by keeping program up-to-date (on-going visibility).
+
+- Increase sales conversion & speed-to-spend
+
+    - 10-20% increased conversion of engaged leads
+
+    - 30-90 days additional revenue per corporate
+
+- Increase sales leads by freeing up sales people
+
+    - 25-40% time saving on application process
+
+    - 1/3-2/3rds increase in leads per seller
+
+- Migrate more spend to card
+
+    - 3-7% more spend captured per campaign
+
+    - 10-20% reduction in suppliers sent to SE vendor (where relevant)
+
+- Continually grow spend on card & reduce churn
+
+    - 16% annual spend with new suppliers
+
+    - 7% spend prevented from churning off program
+
+Primary business case components
+- Grow revenue per customer (both new and existing) by moving more of their AP to virtual card
+- Convert more business banking customers to virtual card product by reducing drop-off from friction in data sharing process and improving the rebate offer and business case presented to customer
+Other components
+- Cost reduction
+   - Time to ingest and process data
+   - Sending fewer leads to outsourced SO teams (with higher probability of converting to accepting card)
+- Revenue growth
+   - Accelerating time to spend
+   - Reducing churn by monitoring for suppliers who revert to check
+
+
 
 <ul className="card-container col-2">
   <li className="card">
@@ -118,6 +180,36 @@ With Sync for Expenses, corporate card providers, expense management providers, 
 </ul>
 
 ## How does it work?
+
+Components
+
+Supplier Enablement API † (Relationship Portal feature)
+
+Spend Analysis feature)
+
+Spend Analysis Report (Spreadsheet)
+
+
+† Supplier Enablement API has been designed to be consumed directly (i.e. calling the API to refresh data as-needed). It is not recommended to implement via an intermediary store (e.g. dumping data into a data lake and calling from there). Benefiting from API updates & dynamic data refreshes requires consuming Supplier Enablement API directly. 
+
+
+Easy and Secure Authentication Journey
+Let clients share their suppliers and spend data directly and securely from their ERP or accounting system in a few minutes
+
+Consistent and Comprehensive Supplier and Spend Files
+Access a comprehensive view of all supplier and spend activity, including individual transactions, payment methods, terms, bill status and more
+
+Monitoring and Data Refresh
+Ensure ongoing service excellence for clients by keeping records up-to-date with persistent connections that help spot new eligible spend as well as reversion to check or ACH.
+
+
+## Get started
+
+https://banking-ui.codat.io/
+
+
+
+How does it work?
 
 With Sync for Expenses, you can build a solution that covers all the key steps of expense management.
 
