@@ -287,7 +287,6 @@ We validate the multi-currency transactions you push to Sync for Expenses to ens
 | Integration       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |-------------------|----------|----------|----------|----------|----------|
 | QuickBooks Online | ✔️        | ✔️        | ✔️        | ✔️        | ❌        |
-| Xero              | ✔️        | ✔️        | ✔️        | ✔️        | ✔️        |
 
 ---
 ## Read next
