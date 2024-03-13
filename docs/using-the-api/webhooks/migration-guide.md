@@ -6,7 +6,9 @@ description: "Check how you can transition your existing Codat webhooks setup to
 
 ## Can I migrate?
 
-Most clients can migrate to our new webhooks service without any impacts to their integration. However, your setup will need to change if any of these scenarios apply to you:
+Most clients can migrate to our new webhooks service without any impacts to their integration and no development work involved.
+
+However, your setup may need to change if any of these scenarios apply to you:
 
 - You subscribe to email notifications, such as [Company sync complete](/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized) emails.
 - Your application calls our webhook logs endpoints, such as `/rules/alerts`.
