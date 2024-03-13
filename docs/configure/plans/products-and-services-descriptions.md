@@ -246,22 +246,22 @@ Pull the following data from connected Commerce platforms: [Supported data types
 Pull the following data from connected Open Banking provider: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
 **Bank statements**  
-Provides data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information. [Detailed features](https://docs.codat.io/lending/features/bank-statements-overview)  
+Review data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information. See [full details of this feature](https://docs.codat.io/lending/features/bank-statements-overview). 
 
 **Sales**  
-Offers data sourced from a linked company's commerce connections, allowing you to access valuable insights through aggregated metrics and a comprehensive breakdown of sales transactions from prominent eCommerce, POS, and payment platforms. [Detailed features](https://docs.codat.io/lending/features/sales-overview)  
+Offers data sourced from a linked company's commerce connections. Access valuable insights through aggregated metrics and a comprehensive breakdown of sales transactions from prominent eCommerce, PoS, and payment platforms.  See the [full details of this feature](https://docs.codat.io/lending/features/sales-overview).  
 
 **Financial statements**  
-Comprehensive view of a borrower's financial data, including profit and loss, balance sheet, and operating cash flow statements. Includes features previous know as "Enhanced Financial Report" and "Enhanced Cashflow Report". [Detailed features](https://docs.codat.io/lending/features/financial-statements-overview)  
+Provides a comprehensive view of a borrower's financial data, including profit and loss, balance sheet, and operating cash flow statements. Includes features previously known as "Enhanced Financial Report" and "Enhanced Cashflow Report". See the [full details of this feature](https://docs.codat.io/lending/features/financial-statements-overview). 
 
 **Liabilities**  
-Machine learning models automatically identify loans from connected sources and provide lenders with a clear overview of a borrower's outstanding loans and their repayment history. Includes features previously known as "Enahnced Liabilities Report". [Detailed features](https://docs.codat.io/lending/features/liabilities-overview)  
+Our machine learning models automatically identify loans from connected sources and provide you with a clear overview of a borrower's outstanding loans and their repayment history. Includes features previously known as "Enhanced Liabilities Report". See the [full details of this feature](https://docs.codat.io/lending/features/liabilities-overview) . 
 
 **Accounts receivable**  
-Breakdown of a borrower's debtors ledger sourced from their accounting platform.  Includes features previous known as "Enhanced Invoices Report". [Detailed features](https://docs.codat.io/lending/features/accounts-receivable-overview)  
+Provides a breakdown of a borrower's debtors ledger sourced from their accounting platform.  Includes features previously known as "Enhanced Invoices Report". See the [full details of this feature](https://docs.codat.io/lending/features/accounts-receivable-overview).  
 
 **Accounts payable**  
-Breakdown of a borrower's creditors ledger sourced from their accounting platform. [Detailed features](https://docs.codat.io/lending/features/accounts-payable-overview)
+Provides a breakdown of a borrower's creditors ledger sourced from their accounting platform. See the [full details of this feature](https://docs.codat.io/lending/features/accounts-payable-overview).
 
 **Accounting package writeback**  
 Where mandated by the Accounting package, the ability to write back data pertaining to a loan or other credit facility that has been issued.
