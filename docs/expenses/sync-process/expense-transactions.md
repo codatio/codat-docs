@@ -136,7 +136,7 @@ Sync for Expenses maps and processes expense transactions based on the following
 | `adjustmentIn`   | An adjustment that decreases the   balance of the credit account or increases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
 | `adjustmentOut`  | An adjustment that increases the   balance of the credit account or decreases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
 
-## Update expenses
+### Update expenses
 
 :::info Compatible integrations
 
@@ -157,11 +157,11 @@ In some cases, your customer may want to update an expense transaction that was 
 PUT  https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactions
 ```
 
-## Create transfer
+## Create transfers
 
 Transfers are used to record the movement of money between two bank accounts. They are used to represent transactions such as top-ups of debit card accounts, pay-downs of a credit card account, or a balance transfer to another credit card. 
 
-To create a new transfer transaction in Codat, use the [Create transfer transaction](/sync-for-expenses-api#/operations/create-transfer-transaction) endpoint. Updating a transfer can be done via the same endpoint. 
+To create a new transfer transaction in Codat, use the [create transfer transaction](/sync-for-expenses-api#/operations/create-transfer-transaction) endpoint. Updating a transfer can be done via the same endpoint (`PUT` endpoint). 
 
 In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
 
