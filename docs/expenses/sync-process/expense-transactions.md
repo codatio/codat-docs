@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-An [expense](/sync-for-expenses-api#/operations/create-expense-transaction) is a transaction that represents the purchase made by your customer and the context behind that purchase. It usually includes the following details:
+An expense is a transaction that represents the purchase made by your customer and the context behind that purchase. It usually includes the following details:
 
 - Transaction type, e.g. whether it's a payment or a refund
 - General ledger account the transaction should be reconciled to
@@ -105,7 +105,7 @@ Some accounting platforms allow expense transactions to be created in a draft st
 
 In the request body, use the `postAsDraft` flag to define whether the expense should be posted in its draft or final state. When set to `true`, the expense is posted as a draft. 
 
-### Multicurrency transactions
+### Multicurrency expense transactions
 
 Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
  
@@ -156,6 +156,39 @@ In some cases, your customer may want to update an expense transaction that was 
 ```http title="Update an expense transaction"
 PUT  https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactions
 ```
+
+## Create transfer
+
+Transfers are used to record the movement of money between two bank accounts. To create a new transfer transaction in Codat, use the [Create transfer transaction](/sync-for-expenses-api#/operations/create-transfer-transaction) endpoint. 
+
+In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
+
+Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
+
+```json title="Transfer transaction request body"
+{
+  "Description": "Sample transfer description",
+  "Date": "2024-02-14T00:00:00Z",
+  "From": {
+    "AccountRef": {
+      "Id": "a6980b6f-29dc-4c28-9596-f6c75e29f3b6"
+    },
+    "Amount": 1000.00
+  },
+  "To": {
+    "AccountRef": {
+      "Id": "a352b2f9-d47c-46ee-9561-731c6acff930"
+    },
+    "Amount": 1000.00
+  }
+}
+```
+
+Note that the currencyRate of the transfer transaction is inferred from the 'from amount' and 'to amount'.
+
+### Multicurrency transfer transactions
+
+Sync for Expenses validates each transfer transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [transfers in foreign currency](/expenses/fx-management#transfers) and platform support for different expense type.
 
 ---
 ## Read next
