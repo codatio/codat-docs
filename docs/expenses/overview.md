@@ -148,15 +148,15 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 <IntegrationsList filter={integrationsFilterExpenses}/>
 <br/>
 <details>
-<summary>Transaction types supported per integration</summary>
+<summary> Supported expenses per integration</summary>
 
-| Transaction type                    | Payment | Refund | Reward | Chargeback | Transfer in | Transfer out | Adjustment in | Adjustment out |
+| Expenses                    | Payment | Refund | Reward | Chargeback | Adjustment in | Adjustment out | Transfer |
 |---------------------|---------|--------|--------|------------|-------------|--------------|---------------|----------------|
-| Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️              |
-| QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️              |
-| Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |                |
-| Oracle   NetSuite   | ✔️       | ✔️      |        |            |             |              |               |                |
-| QuickBooks Desktop (credit card) | ✔️       | ✔️      |        |            |             |              |               |                |
+| Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            |              |
+| QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | 
+| Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |
+| Oracle   NetSuite   | ✔️       | ✔️      |        |            |             |              |               |
+| QuickBooks Desktop (credit card) | ✔️       | ✔️      |        |            |             |              |               |
 </details>
 
 ## Build with client libraries
