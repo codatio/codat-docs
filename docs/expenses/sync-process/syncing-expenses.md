@@ -1,7 +1,7 @@
 ---
-title: "Sync expense transactions"
-sidebar_label: "Sync expenses"
-description: "Record expense transactions in your customer's accounting software and monitor the progress of dataset syncs"
+title: "Sync transactions"
+sidebar_label: "Sync transactions"
+description: "Record expense and transfer transactions in your customer's accounting software and monitor the progress of dataset syncs"
 ---
 
 import Tabs from "@theme/Tabs";
