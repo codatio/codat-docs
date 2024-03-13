@@ -1,6 +1,6 @@
 ---
 title: "Map customer transactions"
-description: Map accounts, suppliers, and customers to create expenses using the Sync for Expenses product
+description: Map accounts, suppliers, and customers to create transactions using the Sync for Expenses product
 sidebar_label: Map transactions
 tags: [syncforexpense, mappingOptions, Config]
 ---
@@ -30,6 +30,11 @@ POST https://api.codat.io/companies/{companyId}/sync/expenses/config
     }
 }
 ```
+:::info Setting configuration for expenses and transfers' 
+
+Note that you need to set a configuration if you would like to create transfer or an expense transaction.
+
+:::
 
 ### Bank account
 
