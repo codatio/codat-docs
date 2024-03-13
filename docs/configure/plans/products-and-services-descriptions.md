@@ -214,10 +214,12 @@ This product will appear as **Bank feeds** on your order form.
 - Pull accounting data
 - Pull commerce data
 - Pull banking data
-- Enhanced Financials Report
-- Enhanced Cash Flow Report
-- Enhanced Invoices Report
-- Enhanced Liabilities Report
+- Bank statements
+- Sales
+- Financial statements
+- Liabilities
+- Accounts receivable
+- Accounts payable
 - Accounting package writeback
 
 <hr/>
@@ -243,17 +245,23 @@ Pull the following data from connected Commerce platforms: [Supported data types
 **Pull banking data**  
 Pull the following data from connected Open Banking provider: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
-**Enhanced Financials Report**  
-Financial statements standardized to a single chart of accounts
+**Bank statements**  
+Review data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information. See [full details of this feature](https://docs.codat.io/lending/features/bank-statements-overview). 
 
-**Enhanced Cash Flow Report**  
-Banking transactions from connected Open Banking aggregator enriched with financial statement categories from a Company’s Profit and Loss/Balance Sheet.
+**Sales**  
+Offers data sourced from a linked company's commerce connections. Access valuable insights through aggregated metrics and a comprehensive breakdown of sales transactions from prominent eCommerce, PoS, and payment platforms.  See the [full details of this feature](https://docs.codat.io/lending/features/sales-overview).  
 
-**Enhanced Invoices Report**  
-Invoices with matched banking transactions from connected Open Banking provider
+**Financial statements**  
+Provides a comprehensive view of a borrower's financial data, including profit and loss, balance sheet, and operating cash flow statements. Includes features previously known as "Enhanced Financial Report" and "Enhanced Cashflow Report". See the [full details of this feature](https://docs.codat.io/lending/features/financial-statements-overview). 
 
-**Enhanced Liabilities Report**  
-Loans and loan history information derived from connected Accounting, Open Banking and Commerce connections.
+**Liabilities**  
+Our machine learning models automatically identify loans from connected sources and provide you with a clear overview of a borrower's outstanding loans and their repayment history. Includes features previously known as "Enhanced Liabilities Report". See the [full details of this feature](https://docs.codat.io/lending/features/liabilities-overview) . 
+
+**Accounts receivable**  
+Provides a breakdown of a borrower's debtors ledger sourced from their accounting platform.  Includes features previously known as "Enhanced Invoices Report". See the [full details of this feature](https://docs.codat.io/lending/features/accounts-receivable-overview).  
+
+**Accounts payable**  
+Provides a breakdown of a borrower's creditors ledger sourced from their accounting platform. See the [full details of this feature](https://docs.codat.io/lending/features/accounts-payable-overview).
 
 **Accounting package writeback**  
 Where mandated by the Accounting package, the ability to write back data pertaining to a loan or other credit facility that has been issued.
@@ -278,17 +286,17 @@ This product will appear as **Lending API** on your order form.
 <ul className="card-container">
   <li className="card">
     <h3>ERP integrations</h3>
-    <p>This is required for access to NetSuite, Sage Intacct or Microsoft Dynamics 365</p>
+    <p>Required for access to NetSuite, Sage Intacct or Microsoft Dynamics 365</p>
   </li>
 
    <li className="card">
     <h3>Desktop platforms</h3>
-    <p>This is required for access to Quickbooks Desktop and Sage 50 (UK & Ireland)</p>
+    <p>Required for access to Quickbooks Desktop and Sage 50 (UK & Ireland)</p>
   </li>
 
    <li className="card">
     <h3>Enterprise security</h3>
-    <p>Security features relevant for larger enterprises</p>
+    <p>Security features relevant for larger enterprises:</p>
     <ul>
     	<li>Enterprise SSO</li>
 		<li>Mutual TLS</li>
@@ -304,8 +312,8 @@ This product will appear as **Lending API** on your order form.
 
 <ul className="card-container">
   <li className="card">
-    <h3>Enhanced support</h3>
-    <p>Enhanced Support SLAs</p>
+    <h3>Support</h3>
+    <p>Basic, Standard, Advanced or Premium</p>
   </li>
 
    <li className="card">
