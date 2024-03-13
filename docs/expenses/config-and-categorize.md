@@ -1,7 +1,7 @@
 ---
-title: "Map customer expenses"
+title: "Map customer transactions"
 description: Map accounts, suppliers, and customers to create expenses using the Sync for Expenses product
-sidebar_label: Map expenses
+sidebar_label: Map transactions
 tags: [syncforexpense, mappingOptions, Config]
 ---
 
@@ -14,7 +14,7 @@ You also need to provide them with an opportunity (via your application's user i
 
 ## Create configuration
 
-Use our [Set company configuration](/sync-for-expenses-api#/operations/set-company-configuration) to set up how your customers' expenses will be pushed. You can check the configuration anytime to confirm or display the company's configuration using the [Get company configuration](/sync-for-expenses-api#/operations/get-company-configuration) endpoint.
+Use our [Set company configuration](/sync-for-expenses-api#/operations/set-company-configuration) to set up how your customers' transactions will be pushed. You can check the configuration anytime to confirm or display the company's configuration using the [Get company configuration](/sync-for-expenses-api#/operations/get-company-configuration) endpoint.
 
 ```http title="Company Config"
 POST https://api.codat.io/companies/{companyId}/sync/expenses/config
