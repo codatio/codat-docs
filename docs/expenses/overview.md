@@ -148,7 +148,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 <IntegrationsList filter={integrationsFilterExpenses}/>
 <br/>
 <details>
-<summary> Supported expenses per integration</summary>
+<summary> Supported expense types per integration</summary>
 
 | Expenses                    | Payment | Refund | Reward | Chargeback | Adjustment in | Adjustment out | Transfer |
 |---------------------|---------|--------|--------|------------|-------------|--------------|---------------|----------------|
