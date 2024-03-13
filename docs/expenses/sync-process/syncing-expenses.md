@@ -22,6 +22,12 @@ You can continue pushing new expenses to Codat while a sync is ongoing.
     }
 ```
 
+:::info Creating transfer vs expense transactions 
+
+Note that when creating a [transfer transaction](/sync-for-expenses-api#/operations/transfer-transactions) a sync is initiated automatically and there will be no datset id returned to trigger a sync.
+
+:::
+
 ## Check sync status
 
 Once you have initiated the sync, you may want to check whether the sync was completed successfully and view the details of any errors that may have occurred.
