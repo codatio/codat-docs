@@ -286,17 +286,17 @@ This product will appear as **Lending API** on your order form.
 <ul className="card-container">
   <li className="card">
     <h3>ERP integrations</h3>
-    <p>This is required for access to NetSuite, Sage Intacct or Microsoft Dynamics 365</p>
+    <p>Required for access to NetSuite, Sage Intacct or Microsoft Dynamics 365</p>
   </li>
 
    <li className="card">
     <h3>Desktop platforms</h3>
-    <p>This is required for access to Quickbooks Desktop and Sage 50 (UK & Ireland)</p>
+    <p>Required for access to Quickbooks Desktop and Sage 50 (UK & Ireland)</p>
   </li>
 
    <li className="card">
     <h3>Enterprise security</h3>
-    <p>Security features relevant for larger enterprises</p>
+    <p>Security features relevant for larger enterprises:</p>
     <ul>
     	<li>Enterprise SSO</li>
 		<li>Mutual TLS</li>
