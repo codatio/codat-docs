@@ -4,6 +4,7 @@ description: "Detailed instructions on how you can migrate from the features you
 sidebar_label: "Clients using the API"
 createdAt: "2022-10-06T08:32:16.232Z"
 updatedAt: "2022-11-10T14:01:08.149Z"
+draft: true
 ---
 
 ## What will happen on deprecation?
