@@ -3,7 +3,7 @@ title: Supplier Enablement overview
 sidebar_label: Supplier Enablement
 description: Manage comprehensive vendor and spend data to grow commercial card volume
 displayed_sidebar: supplierEnablement
-image: "/img/banners/social/payables.png"
+image: "/img/banners/social/supplier-enablement.png"
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
@@ -239,6 +239,24 @@ Access a comprehensive view of all supplier and spend activity, including indivi
 
 Monitoring and Data Refresh
 Ensure ongoing service excellence for clients by keeping records up-to-date with persistent connections that help spot new eligible spend as well as reversion to check or ACH.
+
+
+1. Collect supplier data? 
+
+2. Clean up data and offer rebate
+
+3. Perform supplier campaign
+
+4. Ongoing supplier enablement
+
+or
+
+- create a company
+- customize branding
+- request financial data
+- provide financial data via integration or manually via file
+- download one of two financial datas
+
 
 
 ## Get started
