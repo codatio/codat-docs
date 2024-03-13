@@ -159,7 +159,9 @@ PUT  https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactio
 
 ## Create transfer
 
-Transfers are used to record the movement of money between two bank accounts. To create a new transfer transaction in Codat, use the [Create transfer transaction](/sync-for-expenses-api#/operations/create-transfer-transaction) endpoint. 
+Transfers are used to record the movement of money between two bank accounts. They are used to represent transactions such as top-ups of debit card accounts, pay-downs of a credit card account, or a balance transfer to another credit card. 
+
+To create a new transfer transaction in Codat, use the [Create transfer transaction](/sync-for-expenses-api#/operations/create-transfer-transaction) endpoint. 
 
 In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
 
