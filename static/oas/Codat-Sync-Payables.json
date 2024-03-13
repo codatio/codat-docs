@@ -1067,7 +1067,7 @@
                         {
                           "id": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e",
                           "name": "Accounts payable",
-                          "accountType": "Liability",
+                          "type": "Liability",
                           "currency": "GBP",
                           "status": "Active",
                           "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
@@ -2564,7 +2564,7 @@
                     "description": "Name of the account.",
                     "example": "Accounts Payable"
                   },
-                  "accountType": {
+                  "type": {
                     "type": "string",
                     "nullable": true,
                     "description": "Type of account.",
@@ -3547,7 +3547,7 @@
                   "status": {
                     "$ref": "#/components/schemas/PaymentMappingOptions/definitions/bankAccountStatus"
                   },
-                  "type": {
+                  "accountType": {
                     "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountType"
                   }
                 }
