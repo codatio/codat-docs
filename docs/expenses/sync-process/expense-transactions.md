@@ -16,40 +16,15 @@ An expense is a transaction that represents the purchase made by your customer a
 - Associated tax rates
 - Applicable tracking categories
 
-With Sync for Expenses, you need to create the expense transactions first and push that dataset to Codat. We will describe options available to you on this page. 
+With Sync for Expenses, you need to create the expense or transfer transactions first and push that dataset to Codat. We will describe options available to you on this page. 
 
 Then, you need to [sync expenses](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
-
-This process is summarized on the diagram below.
-
-``` mermaid
-sequenceDiagram
-  User->>+You: Approve expenses with receipt
-  You-)+Codat: Post expense transaction
-  Codat-->>-You: datasetId
-  You-)+Codat: Initiate sync
-  Note over You,Codat: Specify datasetIds to sync
-  Codat --> Codat: Sync request added to queue
-  Codat-->>You: syncId
-  Codat-)Accounting: Sync expense transaction from queue
-  Codat->>-You: Sync Complete webhook event
-  You->>Codat: Check transactions
-  Codat-->>You: 
-  par Each successful reconciliation
-    You->>+Codat: Post attachment
-    Codat->>Accounting: Upload attachment
-    Codat-->>-You: Success
-  end
-  You->>-User: Expense marked as uploaded
-```
 
 ## Create expenses
 
 To create a new expense transaction in Codat, use the [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint. 
 
 In the request, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
-
-Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
 
 ```json title="Expense transaction request body"
 {
@@ -93,6 +68,32 @@ Next, you need to follow up with an expense sync to reflect this item of spend i
   ]
 }
 ```
+
+Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
+
+This process is summarized on the diagram below.
+
+``` mermaid
+sequenceDiagram
+  User->>+You: Approve expenses with receipt
+  You-)+Codat: Post expense transaction
+  Codat-->>-You: datasetId
+  You-)+Codat: Initiate sync
+  Note over You,Codat: Specify datasetIds to sync
+  Codat --> Codat: Sync request added to queue
+  Codat-->>You: syncId
+  Codat-)Accounting: Sync expense transaction from queue
+  Codat->>-You: Sync Complete webhook event
+  You->>Codat: Check transactions
+  Codat-->>You: 
+  par Each successful reconciliation
+    You->>+Codat: Post attachment
+    Codat->>Accounting: Upload attachment
+    Codat-->>-You: Success
+  end
+  You->>-User: Expense marked as uploaded
+```
+
 ### Draft transactions
 
 :::info Compatible integrations
@@ -165,8 +166,6 @@ To create a new transfer transaction in Codat, use the [create transfer transact
 
 In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
 
-Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
-
 ```json title="Transfer transaction request body"
 {
   "Description": "Sample transfer description",
@@ -184,6 +183,29 @@ Next, you need to follow up with an expense sync to reflect this item of spend i
     "Amount": 1000.00
   }
 }
+```
+
+Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
+
+This process is summarized on the diagram below.
+
+``` mermaid
+sequenceDiagram
+  User->>+You: Approve transfer with receipt
+  You-)+Codat: Post transfer transaction
+  Note over You,Codat: Initiate sync
+  Codat --> Codat: Sync request added to queue
+  Codat-->>You: syncId
+  Codat-)Accounting: Sync transfer transaction from queue
+  Codat->>-You: Sync Complete webhook event
+  You->>Codat: Check transactions
+  Codat-->>You: 
+  par Each successful reconciliation
+    You->>+Codat: Post attachment
+    Codat->>Accounting: Upload attachment
+    Codat-->>-You: Success
+  end
+  You->>-User: Transfer marked as uploaded
 ```
 
 Note that the currencyRate of the transfer transaction is inferred from the 'from.Amount' and 'to.Amount'.
