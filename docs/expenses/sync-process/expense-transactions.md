@@ -20,6 +20,29 @@ With Sync for Expenses, you need to create the expense or transfer transactions 
 
 Then, you need to [sync expenses](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
+This process is summarized on the diagram below.
+
+``` mermaid
+sequenceDiagram
+  User->>+You: Approve expenses with receipt
+  You-)+Codat: Post expense transaction
+  Codat-->>-You: datasetId
+  You-)+Codat: Initiate sync
+  Note over You,Codat: Specify datasetIds to sync
+  Codat --> Codat: Sync request added to queue
+  Codat-->>You: syncId
+  Codat-)Accounting: Sync expense transaction from queue
+  Codat->>-You: Sync Complete webhook event
+  You->>Codat: Check transactions
+  Codat-->>You: 
+  par Each successful reconciliation
+    You->>+Codat: Post attachment
+    Codat->>Accounting: Upload attachment
+    Codat-->>-You: Success
+  end
+  You->>-User: Expense marked as uploaded
+```
+
 ## Create expenses
 
 To create a new expense transaction in Codat, use the [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint. 
@@ -70,29 +93,6 @@ In the request, make sure that the transaction's `id` is unique as it serves as 
 ```
 
 Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
-
-This process is summarized on the diagram below.
-
-``` mermaid
-sequenceDiagram
-  User->>+You: Approve expenses with receipt
-  You-)+Codat: Post expense transaction
-  Codat-->>-You: datasetId
-  You-)+Codat: Initiate sync
-  Note over You,Codat: Specify datasetIds to sync
-  Codat --> Codat: Sync request added to queue
-  Codat-->>You: syncId
-  Codat-)Accounting: Sync expense transaction from queue
-  Codat->>-You: Sync Complete webhook event
-  You->>Codat: Check transactions
-  Codat-->>You: 
-  par Each successful reconciliation
-    You->>+Codat: Post attachment
-    Codat->>Accounting: Upload attachment
-    Codat-->>-You: Success
-  end
-  You->>-User: Expense marked as uploaded
-```
 
 ### Draft transactions
 
