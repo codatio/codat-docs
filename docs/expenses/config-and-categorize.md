@@ -121,14 +121,14 @@ In some scenarios, different accounting platforms assign customers and suppliers
       <td>NA</td>
     </tr>
     <tr>
-      <td>Transfer in</td>
+      <td>Transfer in - Transaction type to be depreactated as of June 2024</td>
       <td>Customer</td>
       <td>Supplier</td>
       <td>NA</td>
       <td>NA</td>
-    </tr>
+    </tr> 
     <tr>
-      <td>Transfer out</td>
+      <td>Transfer out - Transaction type to be depreactated as of June 2024</td>
       <td>Supplier</td>
       <td>Supplier</td>
       <td>NA</td>
