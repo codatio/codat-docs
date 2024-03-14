@@ -441,12 +441,14 @@ If you need more control over the UI based on application-specific logic or want
     showLandingPage: true,
     showSandboxIntegrations: true,
     theme: {...},
+    enableAdditionalConsent: true,
     sourceTypes: {
       accounting: {...},
       banking: {...},
       commerce: {...},
     },
     text: {...},
+
   }}
 />
 ```
@@ -464,6 +466,7 @@ The `options` prop is optional and accepts an object containing the following op
 | `showLandingPage`         | Determines whether an extra landing page is displayed to the user at the   start of Link.                                          |
 | `showSandboxIntegrations` | Controls whether integrations that only connect Sandbox data are   displayed for selection.                                        |
 | `theme`                   | Contains options that control the visual appearance of the Link flow.                                                              |
+| `enableAdditionalConsent` | Determines whether an additional consent journey for further use cases is displayed to the user.      |
 | `sourceTypes`             | Controls the data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for. |
 | `text`                    | Contains options that control what text is displayed to the user. Markdown is supported.                                        |
 
@@ -490,12 +493,20 @@ The `showSandboxIntegrations` property controls whether Sanbox integrations are 
 
 Use the `colors` property of the `theme` option to set the hex value for the `primary` color for buttons, links, and loading animations. 
 
+### Additional consent journey
+
+If you want your user to agree to additional uses of their data after they have connected a platform, set the `enableAdditionalConsent` option to `true`. This will display an extra consent journey to the customers on their subsequent visits to the Link flow. Next, use [custom text](/auth-flow/authorize-embedded-link#custom-text) to manage the content displayed to them during this journey.
+
+By default, this option is set to `false`.
+
 ### Source types
 
 The `sourceTypes` option controls the source types the user can connect via the Link flow. Use the `accounting`, `banking`, `commerce`, and `businessDocuments` properties to indicate the desired source type. If you want a source type to be displayed, you must also provide its following properties: 
 - `optional`: when set to `true`, the user can complete the flow without connecting an integration of the specified type or uploading relevant files.
 - `enableIntegrations`: when set to `true`, it enables the user to connect to an integration of the specified type.
 - `enableFileUpload`: when set to `true`, it allows the user to upload relevant documents. You must also enable the relevant file upload integrations in [Other integrations](https://app.codat.io/settings/integrations/other).
+
+Optionally, you can use the `allowedIntegrations` property to control the list of platforms displayed to the user during the authorization journey. Add the relevant [accounting](/integrations/accounting/overview#platform-keys), [banking](/integrations/banking/overview#platform-keys) or [commerce](/integrations/commerce/overview#platform-keys) platform keys to this array.
 
 ### Custom text
 
@@ -515,10 +526,17 @@ The property accepts Markdown, meaning you can add links, lists, tables, and mor
 | `businessDocuments.fileUpload.subtitle`|`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the business documents file upload page.   <br/> To use this, enable the business documents file upload by setting the `sourceTypes.businessDocuments.enableFileUpload` option to `true`   or by configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
 | `accounting.dataAccess.consent`        |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting an accounting   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
 | `accounting.dataAccess.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting an accounting platform.|
+| `accounting.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their accounting data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
+| `accounting.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their accounting data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
 | `banking.dataAccess.consent`           |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting a bank account,   underneath the list of data types. If you want to display a terms and   conditions link, add it here using Markdown.|
 | `banking.dataAccess.dataTypes`         |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting a bank account.|
+| `banking.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their banking data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
+| `banking.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their banking data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
 | `commerce.dataAccess.consent`          |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting a commerce   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
 | `commerce.dataAccess.dataTypes`        |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting a commerce platform.|
+| `commerce.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
+| `commerce.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
+
 <details>
   <summary><b>Learn more about array custom text properties</b></summary>
 
@@ -544,6 +562,10 @@ In the Link flow, this will then be rendered as follows:
 </details>
 
 # Changelog
+
+#### March 2024
+
+- **Additional options**: we enhanced the `options` prop with `enableAdditionalConsent` and `allowedIntegrations`, new properties that help you manage additional consent journeys and the selection list of platforms displayed to the user.
 
 #### November 2023
 - **Options property**: we introduced a new prop that gives you programmatic control over Link settings.
