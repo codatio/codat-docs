@@ -32,7 +32,7 @@ POST https://api.codat.io/companies/{companyId}/sync/expenses/config
 ```
 :::info Setting configuration for expenses and transfers' 
 
-Note that you need to set a configuration if you would like to create transfer or an expense transaction.
+Note that you need to set a configuration if you would like to create a transfer or an expense transaction.
 
 :::
 
