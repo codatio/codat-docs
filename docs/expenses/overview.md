@@ -125,13 +125,13 @@ With Sync for Expenses, you can build a solution that covers all the key steps o
 
 Start by creating a [company](../terms/company) to represent your SMB customer in Codat. Then, establish its [connection](/core-concepts/connections) to the customer's accounting platform. We will handle the authorization and linking to that platform - all we need is for your SMB to approve this access via our [auth flow](/auth-flow/overview).
 
-### [Map customer expenses](/expenses/config-and-categorize)
+### [Map customer transactions](/expenses/config-and-categorize)
 
 Create expense configuration for your customer's company so that Sync for Expenses can attribute their spend to the correct accounts, suppliers, and customers. 
 
 Expenses can also be categorized according to your SMB's bookkeeping. Provide your customer with the opportunity to choose the accounts, tracking categories, and tax rates that their expenses will be mapped to. 
 
-### [Create and update expenses](/expenses/sync-process/expense-transactions)
+### [Create and update transactions](/expenses/sync-process/expense-transactions)
 
 Once the customer has categorized their expenses using the mapping options, use Sync for Expenses to push their everyday purchases to the SMB's accounting platform. Sync for Expenses also enables SMB customers to push attachments for a complete audit trail.
 
@@ -151,7 +151,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 <summary> Supported expense types per integration</summary>
 
 | Expenses                    | Payment | Refund | Reward | Chargeback | Adjustment in | Adjustment out | Transfer |
-|---------------------|---------|--------|--------|------------|-------------|--------------|---------------|----------------|
+|---------------------|---------|--------|--------|------------|-------------|--------------|---------------|
 | Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            |              |
 | QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | 
 | Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |
