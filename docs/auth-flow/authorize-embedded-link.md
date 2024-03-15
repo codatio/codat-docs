@@ -555,7 +555,7 @@ To request additional consent, set the `enableAdditionalConsent` option to `true
 
 ![](/img/auth-flow/additional-consent-journey.png)
 
-By default, this option is set to `false`. Next, use [custom text](/auth-flow/authorize-embedded-link#custom-text) to manage the content displayed to them during this journey.
+By default, this option is set to `false`. Next, use [custom text](/auth-flow/authorize-embedded-link#custom-text) to manage the content displayed to the customer during this journey.
 
 # Changelog
 
