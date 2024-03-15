@@ -493,12 +493,6 @@ The `showSandboxIntegrations` property controls whether Sanbox integrations are 
 
 Use the `colors` property of the `theme` option to set the hex value for the `primary` color for buttons, links, and loading animations. 
 
-### Additional consent journey
-
-If you want your user to agree to additional uses of their data after they have connected a platform, set the `enableAdditionalConsent` option to `true`. This will display an extra consent journey to the customers on their subsequent visits to the Link flow. Next, use [custom text](/auth-flow/authorize-embedded-link#custom-text) to manage the content displayed to them during this journey.
-
-By default, this option is set to `false`.
-
 ### Source types
 
 The `sourceTypes` option controls the source types the user can connect via the Link flow. Use the `accounting`, `banking`, `commerce`, and `businessDocuments` properties to indicate the desired source type. If you want a source type to be displayed, you must also provide its following properties: 
@@ -524,18 +518,10 @@ The property accepts Markdown, meaning you can add links, lists, tables, and mor
 | `accounting.fileUpload.subtitle`       |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the accounting file upload page. <br/> To use   this, enable the accounting file upload by setting the `sourceTypes.accounting.enableFileUpload` option to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
 | `banking.fileUpload.subtitle`          |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the banking file upload page. <br/> To use   this, enable the banking file upload by setting the `sourceTypes.banking.enableFileUpload` option to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
 | `businessDocuments.fileUpload.subtitle`|`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the business documents file upload page.   <br/> To use this, enable the business documents file upload by setting the `sourceTypes.businessDocuments.enableFileUpload` option to `true`   or by configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
-| `accounting.dataAccess.consent`        |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting an accounting   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
-| `accounting.dataAccess.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting an accounting platform.|
-| `accounting.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their accounting data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
-| `accounting.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their accounting data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
-| `banking.dataAccess.consent`           |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting a bank account,   underneath the list of data types. If you want to display a terms and   conditions link, add it here using Markdown.|
-| `banking.dataAccess.dataTypes`         |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting a bank account.|
-| `banking.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their banking data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
-| `banking.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their banking data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
-| `commerce.dataAccess.consent`          |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting a commerce   platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
-| `commerce.dataAccess.dataTypes`        |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting a commerce platform.|
-| `commerce.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
-| `commerce.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
+| `accounting/banking/commerce.dataAccess.consent`        |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting an accounting, banking or commerce  platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
+| `accounting/banking/commerce.dataAccess.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting an accounting, banking or commerce platform.|
+| `accounting/banking/commerce.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their accounting, banking or commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
+| `accounting/banking/commerce.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their accounting, banking or commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
 
 <details>
   <summary><b>Learn more about array custom text properties</b></summary>
@@ -560,6 +546,16 @@ In the Link flow, this will then be rendered as follows:
 
 ![A snippet of Codat's Link flow that reflects the values set in the code example as bullet points](/img/auth-flow/link-sdk-datatypes-array.png)
 </details>
+
+### Additional consent journey
+
+You may need to request additional consent from your customer to use their previously shared financial data for a different purpose. For example, if the customer linked a platform to use your application's cash flow forecasting dashboard, you need additional consent from them if you want to use that data for a lending assessment. 
+
+To request additional consent, set the `enableAdditionalConsent` option to `true`. This will display an extra consent journey to the customers on their subsequent visits to the Link flow, as shown below.
+
+![](/img/auth-flow/additional-consent-journey.png)
+
+By default, this option is set to `false`. Next, use [custom text](/auth-flow/authorize-embedded-link#custom-text) to manage the content displayed to them during this journey.
 
 # Changelog
 
