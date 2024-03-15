@@ -2,6 +2,7 @@
 title: "In the Portal"
 description: "Displays the Data Integrity percentages and describes the records that were matched and not matched"
 image: "/img/banners/social/lending.png"
+draft: true
 ---
 
 ## Data integrity in the Codat Portal

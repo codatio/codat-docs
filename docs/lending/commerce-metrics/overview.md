@@ -3,6 +3,7 @@ title: "Commerce metrics"
 sidebar_label: Overview
 description: "Describes the metrics and formulas used to calculate them by the commerce metrics endpoints"
 image: "/img/banners/social/lending.png"
+draft: true
 ---
 
 Commerce metrics include a set of pre-calculated ratios and metrics focused on commerce and sales data that help lenders assess merchant health and evaluate the credit risk of a company. _Commerce metrics_ endpoints provide the data that lets you see what works and what doesn't, giving you the opportunity to advise your customers or prospects on what they can do to improve their performance.

@@ -2,6 +2,7 @@
 title: "Data Integrity"
 description: "Reference document for the data integrity endpoints"
 image: "/img/banners/social/lending.png"
+draft: true
 ---
 
 The Data Integrity API consists of the following endpoints:

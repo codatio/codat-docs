@@ -3,6 +3,7 @@ title: "Data Integrity"
 description: "Learn about the feature that matches mutable accounting data with immutable banking data to increase confidence in financial data"
 sidebar_label: "Overview"
 image: "/img/banners/social/lending.png"
+draft: true
 ---
 
 Accounting data is rich and contextual, but is user-entered, and therefore potentially open to manipulation and fraud. Banking data lacks context and meaning, but it comes directly from a trusted source or a third party and is immutable.

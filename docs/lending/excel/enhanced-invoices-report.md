@@ -3,6 +3,7 @@ title: "Enhanced Invoices Excel report"
 description: "Download the Enhanced Invoices report to Excel"
 sidebar_label: "Enhanced Invoices report"
 image: "/img/banners/social/lending.png"
+draft: true
 ---
 
 Our Enhanced Invoices Excel report gives you the same data you'd get from the [Enhanced Invoices](/lending/enhanced-invoices/overview) endpoint but in an Excel workbook.  You can use the report to test some companies and familiarize yourself with the data before building to the equivalent API endpoint.
