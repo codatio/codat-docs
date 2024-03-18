@@ -495,11 +495,11 @@ Use the `colors` property of the `theme` option to set the hex value for the `pr
 
 ### Source types
 
-The `sourceTypes` option controls the source types the user can connect via the Link flow. Use the `accounting`, `banking`, `commerce`, and `businessDocuments` properties to indicate the desired source type. If you want a source type to be displayed, you must also provide its following properties: 
-- `optional`: when set to `true`, the user can complete the flow without connecting an integration of the specified type or uploading relevant files.
-- `enableIntegrations`: when set to `true`, it enables the user to connect to an integration of the specified type.
-- `enableFileUpload`: when set to `true`, it allows the user to upload relevant documents. You must also enable the relevant file upload integrations in [Other integrations](https://app.codat.io/settings/integrations/other).
-- `allowedIntegrations`: by default, all configured integrations appear in Link. Use this optiona property to further filter the list of platforms displayed to the user during the authorization journey. Add an array of the relevant [accounting](/integrations/accounting/overview#platform-keys), [banking](/integrations/banking/overview#platform-keys) or [commerce](/integrations/commerce/overview#platform-keys) platform keys to this array.
+The `sourceTypes` option controls the source types the user can connect via the Link flow. Use the `accounting`, `banking`, `commerce`, and `businessDocuments` properties to indicate the desired source type. For each source type, you can also configure the following properties: 
+- `optional`: this is a mandatory property. When set to `true`, the user can complete the flow without connecting an integration of the specified type or uploading relevant files.
+- `enableIntegrations`: this is a mandatory property. When set to `true`, it enables the user to connect to an integration of the specified type.
+- `enableFileUpload`: this is a mandatory property. When set to `true`, it allows the user to upload relevant documents. You must also enable the relevant file upload integrations in [Other integrations](https://app.codat.io/settings/integrations/other).
+- `allowedIntegrations`: this is an optional property. By default, all configured integrations appear in Link. Add an array of the relevant [accounting](/integrations/accounting/overview#platform-keys), [banking](/integrations/banking/overview#platform-keys) or [commerce](/integrations/commerce/overview#platform-keys) platform keys to this property to filter the list of platforms displayed to the user during the authorization journey. 
 
 ### Custom text
 
