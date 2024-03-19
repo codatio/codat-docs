@@ -1,5 +1,5 @@
 ---
-title: "2024-03-14: Removing transfer In/Out transaction type from Sync for Expenses "
+title: "Upcoming 2024-03-14: Removing 'Transfer in/out' transaction types from Sync for Expenses"
 date: "2024-03-14"
 tags: ["Deprecation"]
 draft: true
