@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 draft: true
 authors: Amy-Roberts
 ---
-On June 19, 2024 we will be removing the Transfer In and Transfer Out transaction type from the Sync for Expenses expense-transaction endpoint. 
+On June 19, 2024 we will be removing the Transfer In and Transfer Out transaction type from the Sync for Expenses [expense transaction](https://docs.codat.io/sync-for-expenses-api#/operations/create-expense-transaction) endpoint. 
 
 After the change, you will need to use the [transfer transaction](link) endpoint to represent a transfer when syncing expenses. This endpoint allows you to represent multicurrency and single-currency transfers. You can read more about multicurrency transfers in our [Expenses in foreign currency](https://docs.codat.io/expenses/fx-management#transfers) documentation.
 
