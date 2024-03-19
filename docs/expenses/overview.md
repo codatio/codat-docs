@@ -150,13 +150,13 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 <details>
 <summary> Supported expense types per integration</summary>
 
-| Expenses                    | Payment | Refund | Reward | Chargeback | Adjustment in | Adjustment out | Transfer |
-|---------------------|---------|--------|--------|------------|-------------|--------------|---------------|
-| Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            |              |
-| QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | 
-| Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |
-| Oracle   NetSuite   | ✔️       | ✔️      |        |            |             |              |               |
-| QuickBooks Desktop (credit card) | ✔️       | ✔️      |        |            |             |              |               |
+| Expenses                    | Payment | Refund | Reward | Chargeback | Adjustment in | Adjustment out | Transfer | Reimburseable expense |
+|---------------------|---------|--------|--------|------------|-------------|--------------|---------------|---------------|
+| Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            |              |              |
+| QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️            | 
+| Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |              |
+| Oracle   NetSuite   | ✔️       | ✔️      |        |            |             |              |               |              |
+| QuickBooks Desktop (credit card) | ✔️       | ✔️      |        |            |             |              |               |              |
 </details>
 
 ## Build with client libraries
