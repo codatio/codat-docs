@@ -18,5 +18,5 @@ When creating a transfer,  [Create transfer transaction](link) endpoint initiate
 
 ## Expected impact if no action is taken
 
-If you try to use the `Transfer in` and `Transfer out` transaction types with the [trasnfer transaction](link) endpoint after June 19, 2024, the syncs will fail with a `400` status code and return the following error message:
+If you try to use the `Transfer in` and `Transfer out` transaction types with the [trasnfer transaction](link) endpoint after June 26, 2024, the syncs will fail with a `400` status code and return the following error message:
 `Transfer In/Out transaction type is no longer supported. Please use the 'Create transfer transactions' endpoint.`
