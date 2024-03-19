@@ -7,7 +7,7 @@ authors: Amy-Roberts
 ---
 On June 19, 2024 we will be removing the Transfer In and Transfer Out transaction type from the Sync for Expenses expense-transaction endpoint. 
 
-After the change, you will need to use the [transfer-transaction - needs the full name of the endpoint please](link) endpoint to represent a transfer when syncing expenses. This endpoint allows you to represent multicurrency and single-currency transfers. You can read more about multicurrency transfers in our [Expenses in foreign currency](https://docs.codat.io/expenses/fx-management#transfers) documentation.
+After the change, you will need to use the [transfer transaction](link) endpoint to represent a transfer when syncing expenses. This endpoint allows you to represent multicurrency and single-currency transfers. You can read more about multicurrency transfers in our [Expenses in foreign currency](https://docs.codat.io/expenses/fx-management#transfers) documentation.
 
 ## Action required
 
@@ -18,5 +18,5 @@ When creating a transfer,  [Create transfer transaction](link) endpoint initiate
 
 ## Expected impact if no action is taken
 
-If you try to use the `Transfer in` and `Transfer out` transaction types with the [Full name please expense-transaction](link) endpoint after June 19, 2024, the syncs will fail with a `400` status code and return the following error message:
+If you try to use the `Transfer in` and `Transfer out` transaction types with the [trasnfer transaction](link) endpoint after June 19, 2024, the syncs will fail with a `400` status code and return the following error message:
 `Transfer In/Out transaction type is no longer supported. Please use the 'Create transfer transactions' endpoint.`
