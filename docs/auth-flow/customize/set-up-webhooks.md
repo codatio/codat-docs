@@ -17,7 +17,7 @@ Therefore, the rule would have to specify the company ID, and the account manage
 
 There are two ways to set up a notification:
 
-- Use a [webhook](/using-the-api/webhooks/core-rules-create), or
+- Use a [webhook](/using-the-api/webhooks/overview), or
 - Use a [redirect parameter](/auth-flow/customize/set-up-redirects#redirect-with-reserved-query-parameters), such as the status code.
 
 ---
