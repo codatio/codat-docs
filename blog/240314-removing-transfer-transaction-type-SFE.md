@@ -20,23 +20,3 @@ When creating a transfer,  [Create transfer transaction](link) endpoint initiate
 
 If you try to use the `Transfer in` and `Transfer out` transaction types with the [Full name please expense-transaction](link) endpoint after June 19, 2024, the syncs will fail with a `400` status code and return the following error message:
 `Transfer In/Out transaction type is no longer supported. Please use the 'Create transfer transactions' endpoint.`
-
-```JSON
-
-{
-    "statusCode": 400,
-    "service": "PublicApi",
-    "error": "Tansfer In/Out transaction type is no longer supported. Please use the 'Create transfer transactions' endpoint.",
-    "correlationId": "string",
-    "validation": {
-        "errors": [],
-        "warnings": [],
-        "_errors": [],
-        "_warnings": [],
-        "_internals": []
-    },
-    "canBeRetried": "Unknown",
-    "detailedErrorCode": 0
-}
-
-
