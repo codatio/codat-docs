@@ -9,13 +9,13 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
+A reimburseable expense is a cost incurred by a employee which is then eligible to be refunded or compenstated by an employer or by another party. Reimburseable expenses are represented in the accounting system as a Bill, which goes against the employee who is the supplier.
+
 :::info Compatible integrations
 
-Check our [API reference](/sync-for-expenses-api#/operations/update-expense-transaction) for an up-to-date list of integrations that support this functionality.
+Check our [supported expense types](expenses/overview#supported-integrations) for an up-to-date list of integrations that support this functionality.
 
 :::
-
-A reimburseable expense is a cost incurred by a employee which is then eligible to be refunded or compenstated by an employer or by another party. Reimburseable expenses are represented in the accounting system as a Bill, which goes against the employee who is the supplier.
 
 With Sync for Expenses, you need to create the reimburseable expense transactions first. Creating the transaction will initiate the [sync](/expenses/sync-process/syncing-expenses) to then reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
@@ -103,9 +103,7 @@ If you need to remove an associated tax rate from a reimburseable expense, use o
 
 ### Updating reimburseable expenses
 
-
-
-In some cases, your customer may want to update an expense transaction that was previously synced to their accounting platform. Use our [Update expense transactions](/sync-for-expenses-api#/operations/update-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
+In some cases, your customer may want to update a reimburseable expense transaction that was previously synced to their accounting platform. Use our [Update reimburseable expense transactions](/sync-for-expenses-api#/operations/update-reimburseable-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
 
 - Net expense amount 
 - Tax amount of the spend
@@ -115,7 +113,7 @@ In some cases, your customer may want to update an expense transaction that was 
 - Description and notes
 
 ```http title="Update an expense transaction"
-PUT  https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactions
+PUT  https://api.codat.io/companies/{companyId}/sync/expenses/reimburseable-expense-transactions
 ```
 
 ---
