@@ -15,7 +15,7 @@ If you are currently using the `Transfer in` or `Transfer out` transaction type,
 
 You will also still be able to utilise the same attachment endpoint to push a document alongside your transfer transaction. 
 
-When a transfer is created via this new endpoint, the response will be a sync id, meaning a sync will be automatically initiated. You will not recieve a dataset id and therefore will not use it to initiate the syncing of transactions.  
+When creating a transfer,  [Create transfer transaction](link) endpoint initiates a sync automatically and will respond with a `syncId`. You do not need to initiate the transaction sync yourself, and you will not receive a `datasetId` in the response.
 
 ## Expected impact if no action is taken
 
