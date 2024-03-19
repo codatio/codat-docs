@@ -11,7 +11,7 @@ To represent a transfer for our expenses offering going forward you will need to
 
 ## Action required
 
-If you are currently using the Transfer In or Transfer Out transaction type, then you will need to map these transactions to then be created via the create transfer transaction endpoint instead. 
+If you are currently using the `Transfer in` or `Transfer out` transaction type, you will need to create these transactions via the [Create transfer transaction](link) endpoint instead. To create document attachments alongside your transfer transaction, you can continue using the [ENDPOINT NAME](link) endpoint.
 
 You will also still be able to utilise the same attachment endpoint to push a document alongside your transfer transaction. 
 
