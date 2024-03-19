@@ -11,7 +11,7 @@ After the change, you will need to use the [transfer-transaction - needs the ful
 
 ## Action required
 
-If you are currently using the `Transfer in` or `Transfer out` transaction type, you will need to create these transactions via the [Create transfer transaction](link) endpoint instead. To create document attachments alongside your transfer transaction, you can continue using the [ENDPOINT NAME](link) endpoint.
+If you are currently using the `Transfer in` or `Transfer out` transaction type, you will need to create these transactions via the [Create transfer transaction](https://docs.codat.io/sync-for-expenses-api#/operations/create-transfer-transaction) endpoint instead. To create document attachments alongside your transfer transaction, you can continue using the [Upload attachment](https://docs.codat.io/sync-for-expenses-api#/operations/upload-expense-attachment) endpoint.
 
 
 When creating a transfer,  [Create transfer transaction](link) endpoint initiates a sync automatically and will respond with a `syncId`. You do not need to initiate the transaction sync yourself, and you will not receive a `datasetId` in the response.
