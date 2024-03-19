@@ -1187,7 +1187,8 @@
           "RuleId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier for the rule."
+            "description": "Unique identifier for the rule.",
+            "deprecated": true
           },
           "RuleType": {
             "type": "string",
