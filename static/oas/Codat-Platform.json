@@ -1998,7 +1998,7 @@
                           "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
                           "url": "https://example.com/webhoook-consumers/sync-complete",
                           "eventTypes": [
-                            "Data sync completed"
+                            "DataSyncCompleted"
                           ],
                           "disabled": false
                         },
@@ -2006,7 +2006,7 @@
                           "id": "ca3cac86-7925-4759-abc2-96405780fdfa",
                           "url": "https://example.com/webhoook-consumers/dataset-changed",
                           "eventTypes": [
-                            "Dataset data changed"
+                            "DatasetDataChanged"
                           ],
                           "disabled": true
                         }
@@ -2059,7 +2059,7 @@
                   "value": {
                     "url": "https://example.com/webhoook-consumer",
                     "eventTypes": [
-                      "Data sync completed",
+                      "DataSyncCompleted",
                       "Dataset data changed"
                     ]
                   }
@@ -2068,7 +2068,7 @@
                   "value": {
                     "url": "https://example.com/webhoook-consumer",
                     "eventTypes": [
-                      "Data sync completed"
+                      "DataSyncCompleted"
                     ],
                     "disabled": true
                   }
@@ -2086,23 +2086,13 @@
                   "$ref": "#/components/schemas/WebhookConsumer"
                 },
                 "examples": {
-                  "Subscribe consumer to all event types": {
-                    "value": {
-                      "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-                      "url": "https://example.com/webhoook-consumer",
-                      "eventTypes": [
-                        "*"
-                      ],
-                      "disabled": false
-                    }
-                  },
                   "Subscribe consumer to one or more event types": {
                     "value": {
                       "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
                       "url": "https://example.com/webhoook-consumer",
                       "eventTypes": [
-                        "Data sync completed",
-                        "Dataset data changed"
+                        "DataSyncCompleted",
+                        "DatasetDataChanged"
                       ],
                       "disabled": false
                     }
@@ -2112,7 +2102,7 @@
                       "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
                       "url": "https://example.com/webhoook-consumer",
                       "eventTypes": [
-                        "Data sync completed"
+                        "DataSyncCompleted"
                       ],
                       "disabled": true
                     }
@@ -6316,6 +6306,13 @@
             "items": {
               "type": "string"
             }
+          },
+          "companyId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "description": "Unique identifier of the company to indicate company-specific events. The associated webhook consumer will receive events only for the specified ID."
           }
         },
         "definitions": {
@@ -6331,6 +6328,9 @@
               },
               "eventTypes": {
                 "$ref": "#/components/schemas/WebhookConsumer/properties/eventTypes"
+              },
+              "companyId": {
+                "$ref": "#/components/schemas/WebhookConsumer/properties/companyId"
               }
             }
           },
