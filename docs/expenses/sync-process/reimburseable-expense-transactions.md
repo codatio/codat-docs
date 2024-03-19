@@ -50,13 +50,13 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
 {
   "items": [
     {
-      "id": "{{$guid}}",
+      "id": "81539597-e681-40c9-a4dd-ec2fffcde572",
       "reference": "101",
       "contactRef": {
           "id": "341"
           },
-            "issueDate": "{{today}}",
-            "dueDate": "{{today}}",
+            "issueDate": "2022-04-29T00:00:00",
+            "dueDate": "2022-04-29T00:00:00",
             "currency": "GBP",
             "notes": "Reimbursable Expense Demo",
             "lines": [
@@ -89,9 +89,9 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
 
 ### Multicurrency transfer transactions
 
-Sync for Expenses validates each transfer transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [transfers in foreign currency](/expenses/fx-management#transfers) and platform support for different expense type.
+Sync for Expenses validates each reimburseable expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
 
-Note that for reimburseable expenses, the currency of the expense is the currency of the supplier (the currency that the employee will be reimbursed in). If the employee needed to be reimbursed in a different currency, then they would need to set up a new supplier for the employee for each different currency needed.
+For reimburseable expenses, the currency of the expense (`bill`) is the currency of the supplier (the currency that the employee will be reimbursed in). If the employee needed to be reimbursed in a different currency, then they would need to set up a new supplier for the employee for each different currency needed.
 
 ### Default tax rates
 
