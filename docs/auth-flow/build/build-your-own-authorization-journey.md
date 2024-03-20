@@ -19,7 +19,7 @@ If your business scenario and circumstances prevent you from using our Link SDK,
 
 First, create a [company](../../terms/company.md) to represent your SMB in Codat. We recommend doing that at the time your SMB user signs up within your app. This way, you can track their connection status from day one. 
 
-To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body. For details on managing and deleting existing companies, review [Manage companies with our API](/using-the-api/managing-companies).
+To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body. If your user has previously authorized with you, use the company you previously created for them. For details on managing and deleting existing companies, review [Manage companies with our API](/using-the-api/managing-companies).
 
 :::tip Use your customer's ID for the company name
 
@@ -102,93 +102,67 @@ Going forward, your customer must have control over the data they've given you t
 - The `companyId` of the Codat company that represents the user
 - The `connectionId` of the connection the user wants to modify 
 
-To get these values:
+Use the [Get company](/platform-api#/operations/get-company) endpoint if you need to get these values from company metadata. 
 
+#### Allow users to view existing connections
 
-GET /companies
+Call the [List connections](/platform-api#/operations/list-connections) endpoint to get all the existing connections for a company and display them to your customer. 
 
+#### Allow users to deauthorize 
 
-#### Allow users to view existing connections for their company
+User's consent is collected via OAuth2, which means we are able to access your customer's data on an ongoing basis. 
 
-```http
+Therefore, your customers should be able to deauthorize an existing connection, essentially revoking your access to their platform. You will still be able to access previously synced data, but unable to perform any further syncs. 
 
-GET /companies/{companyId}/connections",
-```
-
-This endpoint is also available in <a href="/platform-api#/operations/list-connections">Common API</a>.
-
-In the request above, the `companyId` is the `companyId` that was returned to you when you created a Codat company for the user. It can also be found in the company's metadata.
-
-#### Allow users to revoke access to their platform
-
-Allow your users to prevent further synchronizations with a connection, whilst still allowing you to access data that has already been pulled or pushed:
-
-```http
-POST /companies/{companyId}/connections
-
-Request body:
-
-"platformKey"
-```
-
-This endpoint is also available in <a href="platform-api#/operations/create-connection">Common API</a>.
+Use the [Unlink connection](/platform-api#/operations/unlink-connection) endpoint to deauthorize the connection without deleting it. 
 
 #### Allow users to delete a connection
 
-To delete a connection entirely, preventing both further synchronizations and the ability to make any data pulls or pushes:
+Your customer's data is also permanently stored in our central data database, unless the connection has been deleted. We do this so that the data is always accessible via our API and we don’t need to go to the platform to get it, avoiding rate limits as a result. 
 
-```http
-DELETE /companies/{companyId}/connections/{connectionId}",
-```
+However, your customer may want to delete a connection entirely, preventing you from synchronizing new data or viewing synced data. To do that, use the [Delete connection](/platform-api#/operations/delete-connection) endpoint. 
+
+The end user would need to authorize a new data connection if you wish to view new data for this company.
+
+:::tip Codat's connection management
+
+Codat is releasing a low-code embeddable UI component for connection management. Please [let us know](https://forms.gle/d1zuh2iHBLJCNCsj9) if you are interested in using it.
+
+For a detailed best practices article on connection management, see [Connection management](/auth-flow/optimize/connection-management).
+
+:::
 
 ## Best practices
 
+We summarized our extensive experience in building authorization flows and maximizing conversion in the following best practice suggestions.
 
-### Show that your authorization flow is powered by Codat
+1. **Show that your authorization flow is powered by Codat**
 
-To [boost your customers' trust](/auth-flow/optimize/privacy#show-that-your-authorization-flow-is-powered-by-codat), you can embed our "Powered by Codat" logo into your application.
+To boost your customers' trust, you can [download our "Powered by Codat" logo](https://static.codat.io/public/branding/powered-by-codat.svg) and embed it into your application.
 
-You can [download the logo](https://static.codat.io/public/branding/powered-by-codat.svg) or link it from our content delivery network:
+2. **Use webhooks to monitor updates**
 
-<img
-  src="https://static.codat.io/public/branding/powered-by-codat.svg"
-  alt="Powered by Codat"
-/>
+Where possible, use our [webhooks service](/using-the-api/webhooks/overview) to receive updates on company and data statuses. This will allow you to fetch fresh data as soon as it is available and reduce the amount of calls to our API.
 
+3. **Manage data usage permissions**
 
-If an end user has linked before, use the relevant existing company rather than creating a new company (even if they have previously deauthorized).
+We only support the management of data access permissions, not data usage permissions. This means your customer can consent to us accessing their data, and not to what is done with it. If you want to manage how the data is used, you need to do that in your system.
 
-Where possible you should be using webhooks to be informed of when to fetch data, rather than polling our API for dataset status updates.
-This will allow you to fetch fresh data as soon as it is available as well as reduce the amount of calls being made to our API.
+4. **Enable users without credentials**
 
-We (currently) only support data access permissions, not data usage permissions.
-This means that the user can consent to us accessing their data as a whole, not which parts or what is done with it.
-If you want to manage how the data is used then they will need to manage the permissioning in their system.
+In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting platform.
 
-Consent is done via OAuth2 and it means until you revoke permission we will be able to access all of the end users data on an on-going basis.
+To enable them to proceed and explore your product, make upfront authorization for different integration categories optional in **Settings > Auth flow > Link**. Later, remind them to authorize or give them an alternative, such as `Can't sign in to your platform?`.
 
-This data is also stored forever (until revoked) in our central data database. This means that it is always available to be accessed via our API and we don’t need to keep going to the accounting platform to get it (and thus not hitting rate limits).
+If the customer selects this option, you can:
 
-### What do I do when my customer user doesn't have access to the sign in credentials for their accounting/banking/commerce platform?
+- Provide them with a Link URL they can share
+- Use a `mailto:` link, optionally even prefilling the subject line and email body
 
-Often your customer or user doesn't themselves have the sign in credentials to the platforms you need to access. For example, perhaps their accountant is the only stakeholder in their business that actually goes into their accounting platform.
+It's important that the request to authorize comes from your customer to ensure that the message is trusted.
 
-If you're using our Hosted Link solution, your customer can just forward that stakeholder the hosted Link URL. However, for our Link SDK or a custom built auth flow, your authorization flow is likely only accessible when logged in, which means sharing around password and logins - not ideal!
+---
 
-Just because you're not using Link as your primary auth flow, it doesn't mean you can't benefit from it.
+## Read next
 
-Why not try:
-
-1. Making your auth flow an optional part of onboarding
-2. Presenting your customers with a CTA inviting them to auth, but also giving them an alternative like 'Can't sign in to your {accounting/banking/commerce} platform?'
-3. If a customer clicks this option, you could:
-   1. Give them the Hosted Link URL to share themselves: `<https://link.codat.io/companies/{companyId}`>
-   2. Use a `mailto:` link to make it easier. E.g.:
-
-```html
-<a href="mailto:https://link.codat.io/companies/{companyId}">Invite someone else</a>
-```
-
-You can even prefill the subject line and email body as you see fit.
-
-It's important that the request to authorize comes from your customer rather than you to ensure that the need is communicated and trusted.
+- Learn more about our [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)

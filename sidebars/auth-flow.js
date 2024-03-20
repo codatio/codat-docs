@@ -17,8 +17,8 @@ module.exports = [
     label: "Optimize",
     collapsed: true,
     items: [
-      "auth-flow/customize/use-openid-connect",
       "auth-flow/optimize/optimize-the-connection-journey",
+      "auth-flow/customize/use-openid-connect",
       "auth-flow/optimize/funnel",
       "auth-flow/optimize/value-exchange",
       "auth-flow/optimize/privacy",

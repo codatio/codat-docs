@@ -497,19 +497,19 @@ module.exports = {
     },
     {
       from: "/introduction/webhooks/core-rules-types",
-      to: "/using-the-api/webhooks/core-rules-types",
+      to: "/using-the-api/webhooks/legacy/core-rules-types",
     },
     {
       from: "/introduction/webhooks/core-rules-webhooks",
-      to: "/using-the-api/webhooks/core-rules-webhooks",
+      to: "/using-the-api/webhooks/legacy/core-rules-webhooks",
     },
     {
       from: "/introduction/webhooks/core-rules-webhooksecurity",
-      to: "/using-the-api/webhooks/core-rules-webhooksecurity",
+      to: "/using-the-api/webhooks/legacy/core-rules-webhooksecurity",
     },
     {
       from: "/introduction/webhooks/receive-webhooks-as-email",
-      to: "/using-the-api/webhooks/receive-webhooks-as-email",
+      to: "/using-the-api/webhooks/legacy/receive-webhooks-as-email",
     },
     {
       from: "/other/cochat",
