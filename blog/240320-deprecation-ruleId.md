@@ -36,5 +36,5 @@ You should use `RuleType` to identify what event a given webhook corresponds wit
 ### Expected impact if no action is taken
 
 If no action is taken, after **July 10, 2024**, your application will continue to receive events, but the `RuleId` will not be populated.
-Any application logic using the `RuleId` property will function following your unexpected `RuleId` logic.
+Any application logic using the `RuleId` property will function following your unhappy path for `RuleId` logic.
 Depending on your implementation, this will likely cause your application to stop processing Codat's webhooks. 
