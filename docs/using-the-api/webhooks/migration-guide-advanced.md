@@ -38,7 +38,11 @@ Our new webhooks service does not currently support sending email notifications 
 
 ### `RuleId` in existing logic
 
-If you are using `RuleId` properties returned by our existing webhooks in your application logic, please remain on our existing service until you have changed your application's logic to avoid using the `RuleId`.
+If you are using `RuleId` properties returned by our existing webhooks in your application logic, review and update your application logic to remove any dependencies on the `RuleId`. This will help prevent any disruptions to your integration with Codat.
+
+You should use `RuleType` to identify what event a given webhook corresponds with.
+
+Check out the [deprecation notice](/updates/240320-deprecation-ruleId) for full details of these changes.
 
 ## Additional considerations
 
