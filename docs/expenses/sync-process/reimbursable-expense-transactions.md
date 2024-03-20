@@ -1,7 +1,7 @@
 ---
-title: "Create and update reimburseable expenses"
-sidebar_label: "Create reimbursements"
-description: Record and update reimburseable expense transactions that represent your customers' spend
+title: "Create and update reimbursable expenses"
+sidebar_label: "Create reimbursable"
+description: Record and update reimbursable expense transactions that represent your customers' spend
 ---
 
 import Tabs from "@theme/Tabs";
@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-A reimburseable expense is a cost incurred by a employee which is then eligible to be refunded or compenstated by an employer or by another party. Reimburseable expenses are represented in the accounting system as a Bill, which goes against the employee who is the supplier.
+A reimbursable expense is a cost incurred by a employee which is then eligible to be refunded or compenstated by an employer or by another party. Reimbursable expenses are represented in the accounting system as a Bill, which goes against the employee who is the supplier.
 
 :::info Compatible integrations
 
@@ -17,18 +17,18 @@ Check our [supported expense types](expenses/overview#supported-integrations) fo
 
 :::
 
-With Sync for Expenses, you need to create the reimburseable expense transactions first. Creating the transaction will initiate the [sync](/expenses/sync-process/syncing-expenses) to then reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
+With Sync for Expenses, you need to create the reimbursable expense transactions first. Creating the transaction will initiate the [sync](/expenses/sync-process/syncing-expenses) to then reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
 This process is summarized on the diagram below.
 
 ``` mermaid
 sequenceDiagram
-  User->>+You: Approve reimburseable expense with receipt
-  You-)+Codat: Post reimburseable expense transaction
+  User->>+You: Approve reimbursable expense with receipt
+  You-)+Codat: Post reimbursable expense transaction
   Note over You,Codat: Initiate sync
   Codat --> Codat: Sync request added to queue
   Codat-->>You: syncId
-  Codat-)Accounting: Sync reimburseable expense transaction from queue
+  Codat-)Accounting: Sync reimbursable expense transaction from queue
   Codat->>-You: Sync Complete webhook event
   You->>Codat: Check transactions
   Codat-->>You: 
@@ -37,16 +37,16 @@ sequenceDiagram
     Codat->>Accounting: Upload attachment
     Codat-->>-You: Success
   end
-  You->>-User: reimburseable expense marked as uploaded
+  You->>-User: reimbursable expense marked as uploaded
 ```
 
-## Create reimburseable expenses
+## Create reimbursable expenses
 
-To create a new resimburseable expense transaction in Codat, use the [create reimburseable expense transaction](LINK) endpoint. 
+To create a new reimbursable expense transaction in Codat, use the [create reimbursable expense transaction](LINK) endpoint. 
 
 In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
 
-```json title="Reimburseable expense request body"
+```json title="Reimbursable expense request body"
 {
   "items": [
     {
@@ -89,21 +89,21 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
 
 ### Multicurrency transfer transactions
 
-Sync for Expenses validates each reimburseable expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
+Sync for Expenses validates each reimbursable expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
 
-For reimburseable expenses, the currency of the expense (`bill`) is the currency of the supplier (the currency that the employee will be reimbursed in). If the employee needed to be reimbursed in a different currency, then they would need to set up a new supplier for the employee for each different currency needed.
+For reimbursable expenses, the currency of the expense (`bill`) is the currency of the supplier (the currency that the employee will be reimbursable in). If the employee needed to be reimbursed in a different currency, then they would need to set up a new supplier for the employee for each different currency needed.
 
 ### Default tax rates
 
-If you need to remove an associated tax rate from a reimburseable expense, use one of the following default values that have no impact on the expense:
+If you need to remove an associated tax rate from a reimbursable expense, use one of the following default values that have no impact on the expense:
 
 | Platform          | Default tax rate                 |
 |-------------------|----------------------------------|
 | QuickBooks Online | `NON`                            |
 
-### Updating reimburseable expenses
+### Updating reimbursable expenses
 
-In some cases, your customer may want to update a reimburseable expense transaction that was previously synced to their accounting platform. Use our [Update reimburseable expense transactions](/sync-for-expenses-api#/operations/update-reimburseable-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
+In some cases, your customer may want to update a reimbursable expense transaction that was previously synced to their accounting platform. Use our [Update reimbursable expense transactions](/sync-for-expenses-api#/operations/update-reimbursable-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
 
 - Net expense amount 
 - Tax amount of the spend
