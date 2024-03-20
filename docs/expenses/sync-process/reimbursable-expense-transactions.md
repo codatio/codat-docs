@@ -1,6 +1,6 @@
 ---
 title: "Create and update reimbursable expenses"
-sidebar_label: "Create reimbursable expenses"
+sidebar_label: "Create reimbursements"
 description: Record and update reimbursable expense transactions that represent your customers' spend
 ---
 
