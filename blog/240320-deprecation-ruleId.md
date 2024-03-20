@@ -1,15 +1,15 @@
 ---
-title: "2024-07-10: Deprecation of ruleId in rules webhooks"
-date: "2024-03-19"
+title: "2024-07-10: Deprecation of RuleId in rules webhooks"
+date: "2024-03-20"
 tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **July 10, 2024**, we will deprecate the `ruleId` property in all our existing rule payloads following the release of our [new webhooks service](/updates/240306-new-webhook-service-released).
+On **July 10, 2024**, we will deprecate the `RuleId` property in all our existing webhook payloads following the release of our [new webhooks service](/updates/240306-new-webhook-service-released).
 
 <!--truncate-->
 
-The `ruleId` property will be deprecated in the following webhook rule schemas:
+The `RuleId` property will be deprecated in the following webhook rule schemas:
 
 - [Company data connection status changed](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#company-data-connection-status-changed)
 - [New company synchronized](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized)
@@ -25,7 +25,7 @@ The `ruleId` property will be deprecated in the following webhook rule schemas:
 - [Client rate limit reached](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reached)
 - [Client rate limit reset](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reset)
 
-Following the release of the new webhooks service, the `ruleId` is no longer relevant and should not be used.   
+Following the release of the new webhooks service, the `RuleId` is no longer relevant and should not be used.   
 
 ### Action required
 
@@ -36,5 +36,5 @@ You should use `RuleType` to identify what event a given webhook corresponds wit
 ### Expected impact if no action is taken
 
 If no action is taken, after **July 10, 2024**, your application will continue to receive events, but the `RuleId` will not be populated.
-Any application logic using the `ruleId` property will function following your unexpected `ruleId` logic.
+Any application logic using the `RuleId` property will function following your unexpected `RuleId` logic.
 Depending on your implementation, this will likely cause your application to stop processing Codat's webhooks. 
