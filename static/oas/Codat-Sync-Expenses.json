@@ -13732,7 +13732,6 @@
         },
         "required": [
           "netAmount",
-          "taxAmount",
           "accountRef"
         ]
       },
