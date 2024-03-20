@@ -565,7 +565,7 @@ module.exports = {
     },
     {
       from: "/auth-flow/customize/set-up-webhooks",
-      to: "/using-the-api/webhooks/core-rules-types",
+      to: "/using-the-api/webhooks/event-types",
     },
 
     //
