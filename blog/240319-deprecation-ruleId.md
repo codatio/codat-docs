@@ -29,10 +29,12 @@ Following the release of the new webhooks service, the `ruleId` is no longer rel
 
 ### Action required
 
-Review and update your application logic to remove any dependencies on the `ruleId`. This will help prevent any disruptions to your integration with Codat.
+Review and update your application logic to remove any dependencies on the `RuleId`. This will help prevent any disruptions to your integration with Codat.
+
+You should use `RuleType` to identify what event a given webhook corresponds with.
 
 ### Expected impact if no action is taken
 
-If no action is taken by the deprecation date, your application will continue to recieve events however the `ruleId` will not be populated.
+If no action is taken, after **July 10, 2024**, your application will continue to receive events, but the `RuleId` will not be populated.
 Any application logic using the `ruleId` property will function following your unexpected `ruleId` logic.
-Depending on your implementation this would likely cause your application to stop processing Codat's webhooks. 
+Depending on your implementation, this will likely cause your application to stop processing Codat's webhooks. 
