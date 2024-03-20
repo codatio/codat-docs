@@ -253,6 +253,8 @@ fmt.Println(connectionOtpResponse.Connection.LinkUrl)
 
 If your customer wants to revoke their approval and sever the connection to their accounting package, use the [Unlink connection](/bank-feeds-api#/operations/unlink-connection) endpoint.
 
+You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI. 
+
 <Tabs>
 
 <TabItem value="nodejs" label="TypeScript">

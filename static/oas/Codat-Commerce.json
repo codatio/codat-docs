@@ -14,7 +14,7 @@
       "email": "support@codat.io"
     },
     "summary": "Codat's standardized API for accessing commerce data ",
-    "description": "Codat's Commerce API allows you to access standardised data from over 11 commerce and POS systems.\n\nStandardize how you connect to your customers’ payment, PoS, and eCommerce systems. Retrieve orders, payouts, payments, and product data in the same way for all the leading commerce platforms.\n\n[Read more...](https://docs.codat.io/commerce-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "> ### New to Codat?\n>\n> Our Commerce API reference is relevant only to our existing clients.\n> Please reach out to your Codat contact so that we can find the right product for you.\n\nCodat's Commerce API allows you to access standardised data from over 11 commerce and POS systems.\n\nStandardize how you connect to your customers’ payment, PoS, and eCommerce systems. Retrieve orders, payouts, payments, and product data in the same way for all the leading commerce platforms.\n\n[Read more...](https://docs.codat.io/commerce-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -8199,6 +8199,9 @@
             "type": "string",
             "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
           },
+          "validation": {
+            "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidation"
+          },
           "canBeRetried": {
             "type": "string",
             "description": "`True` if the error occurred transiently and can be retried."
@@ -8206,6 +8209,51 @@
           "detailedErrorCode": {
             "type": "integer",
             "description": "Machine readable error code used to automate processes based on the code returned."
+          }
+        },
+        "definitions": {
+          "errorValidation": {
+            "title": "Validation error",
+            "type": "object",
+            "nullable": true,
+            "description": "A human-readable object describing validation decisions Codat has made. If an operation has failed because of validation errors, they will be detailed here.",
+            "properties": {
+              "errors": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
+                }
+              },
+              "warnings": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
+                }
+              }
+            }
+          },
+          "errorValidationItem": {
+            "title": "Validation error item",
+            "type": "object",
+            "properties": {
+              "itemId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Unique identifier for a validation item."
+              },
+              "message": {
+                "type": "string",
+                "nullable": true,
+                "description": "A message outlining validation item's issue."
+              },
+              "validatorName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of validator."
+              }
+            }
           }
         }
       },
@@ -8766,10 +8814,10 @@
             "examples": [
               {
                 "self": {
-                  "href": "/companies/{id}/data/{dataType}"
+                  "href": "/companies"
                 },
                 "current": {
-                  "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
+                  "href": "/companies?page=1&pageSize=10"
                 }
               }
             ]
@@ -8794,10 +8842,10 @@
         ],
         "examples": [
           {
+            "pageNumber": 1,
+            "pageSize": 10,
+            "totalResults": 1,
             "_links": {
-              "pageNumber": 1,
-              "pageSize": 10,
-              "totalResults": 1,
               "self": {
                 "href": "/companies/{id}/data/{dataType}"
               },
@@ -9069,7 +9117,6 @@
           }
         },
         "required": [
-          "number",
           "type"
         ],
         "definitions": {

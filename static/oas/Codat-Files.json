@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Files API",
-    "description": "A flexible API for pulling accounting data, normalized and aggregated from 20 accounting integrations.\n\nStandardize how you connect to your customers’ accounting software. View, create, update, and delete data in the same way for all the leading accounting platforms.\n\n[Read more...](https://docs.codat.io/accounting-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "> ### New to Codat?\n>\n> Our Accounting API reference is relevant only to our existing clients.\n> Please reach out to your Codat contact so that we can find the right product for you.\n\nA flexible API for pulling accounting data, normalized and aggregated from 20 accounting integrations.\n\nStandardize how you connect to your customers’ accounting software. View, create, update, and delete data in the same way for all the leading accounting platforms.\n\n[Read more...](https://docs.codat.io/accounting-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -259,6 +259,7 @@
       "FileUpload": {
         "title": "Attachment upload",
         "type": "object",
+        "x-internal": true,
         "required": [
           "file"
         ],
@@ -394,6 +395,9 @@
                   "type": "string",
                   "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
                 },
+                "validation": {
+                  "$ref": "#/components/responses/Forbidden/content/application~1json/schema/definitions/errorValidation"
+                },
                 "canBeRetried": {
                   "type": "string",
                   "description": "`True` if the error occurred transiently and can be retried."
@@ -401,6 +405,51 @@
                 "detailedErrorCode": {
                   "type": "integer",
                   "description": "Machine readable error code used to automate processes based on the code returned."
+                }
+              },
+              "definitions": {
+                "errorValidation": {
+                  "title": "Validation error",
+                  "type": "object",
+                  "nullable": true,
+                  "description": "A human-readable object describing validation decisions Codat has made. If an operation has failed because of validation errors, they will be detailed here.",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "nullable": true,
+                      "items": {
+                        "$ref": "#/components/responses/Forbidden/content/application~1json/schema/definitions/errorValidationItem"
+                      }
+                    },
+                    "warnings": {
+                      "type": "array",
+                      "nullable": true,
+                      "items": {
+                        "$ref": "#/components/responses/Forbidden/content/application~1json/schema/definitions/errorValidationItem"
+                      }
+                    }
+                  }
+                },
+                "errorValidationItem": {
+                  "title": "Validation error item",
+                  "type": "object",
+                  "properties": {
+                    "itemId": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Unique identifier for a validation item."
+                    },
+                    "message": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "A message outlining validation item's issue."
+                    },
+                    "validatorName": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Name of validator."
+                    }
+                  }
                 }
               }
             },

@@ -35,16 +35,14 @@ Within our Plaid integration, we support [Instant Auth](https://plaid.com/docs/a
 
 ## Data mappings between Plaid and Codat
 
-Plaid's pricing tiers give you access to specific _products_ from your configured banking data sources. Depending on what data types you wish to fetch from Codat's API, you will need to have certain Plaid products enabled and available for use within your Plaid account.
-
-The following table shows the Plaid Products required for each of Codat's banking data types:
+Plaid's pricing tiers give you access to specific _products_ from your configured banking data sources. You need to have **all** of the Plaid products from the following table enabled and available for use within your Plaid account:
 
 |Codat data type|Associated Plaid product|
 |----|----|
 |[Bank accounts](/banking-api#/schemas/Account)|Auth, Identity, Institution|
 |[Bank transactions](/banking-api#/schemas/Transactions)|Transactions|
 |[Bank account balances](/banking-api#/schemas/AccountBalance)|Asset Reports|
-|[Bank Transaction Categories](/banking-api#/schemas/TransactionCategory)|N/A. These categories are Codat-provided categories powered by Codat's categorization model. This does not use the categories provided by Plaid.|
+|[Bank Transaction Categories](/banking-api#/schemas/TransactionCategory)|N/A. These categories are provided by Codat's categorization model and do not use Plaid's categories.|
 
 ## Sync Settings for Plaid
 

@@ -48,11 +48,31 @@ module.exports = [
     label: "Webhooks",
     collapsed: true,
     items: [
-      "using-the-api/webhooks/core-rules-types",
-      "using-the-api/webhooks/core-rules-create",
-      "using-the-api/webhooks/core-rules-webhooks",
-      "using-the-api/webhooks/core-rules-webhooksecurity",
-      "using-the-api/webhooks/receive-webhooks-as-email",
+      "using-the-api/webhooks/overview",
+      "using-the-api/webhooks/event-types",
+      "using-the-api/webhooks/create-consumer",
+      "using-the-api/webhooks/troubleshooting",
+      {
+        type: "category",
+        label: "Migration guide",
+        collapsed: true,
+        items: [
+          "using-the-api/webhooks/migration-guide",
+          "using-the-api/webhooks/migration-guide-advanced",
+        ]
+      },
+      {
+        type: "category",
+        label: "Legacy webhooks",
+        collapsed: true,
+        items: [
+          "using-the-api/webhooks/legacy/core-rules-types",
+          "using-the-api/webhooks/legacy/core-rules-create",
+          "using-the-api/webhooks/legacy/core-rules-webhooks",
+          "using-the-api/webhooks/legacy/core-rules-webhooksecurity",
+          "using-the-api/webhooks/legacy/receive-webhooks-as-email",
+        ],
+      },
     ],
   },
   {

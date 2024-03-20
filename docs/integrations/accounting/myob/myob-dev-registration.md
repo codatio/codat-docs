@@ -60,4 +60,4 @@ This chart shows the endpoints and methods that Codat uses:
 
 ------------------------
 
-If you have any questions on the information shared above, please contact support@codat.io.
+If you have any questions on the information shared above, please use our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new) to raise a ticket.

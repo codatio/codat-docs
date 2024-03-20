@@ -65,7 +65,7 @@ When a customer connects, Codat will start extracting and caching relevant data 
 
 **How does Codat highlight a completed sync?**
 
-Codat generates a webhook once a data sync has been completed. A webhook can be set up to trigger for specific data types or once all data-types have synced.
+Codat generates a [webhook event](/using-the-api/webhooks/overview) once a data sync has been completed. A webhook consumer can be set up to trigger for specific data types or once all data types have synced.
 
 **How can users manage their ongoing connections and revoke access to platforms?**
 

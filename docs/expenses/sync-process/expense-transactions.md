@@ -119,6 +119,7 @@ If you need to remove an associated tax rate from an expense, use one of the fol
 | Xero              | `NONE`                           |
 | Oracle NetSuite   | `-7`                             |
 | Dynamics 365      | Set up and apply a `0%` tax rate | 
+| QuickBooks Desktop| Null                             | 
 
 ### Transaction types
 

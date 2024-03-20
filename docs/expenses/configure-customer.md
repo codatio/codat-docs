@@ -62,6 +62,7 @@ Next, use the [Create connection](/sync-for-expenses-api#/operations/create-conn
 | Accounting platform | platformKey |
 | ---  | ---  |
 | Oracle NetSuite | `akxx` |
+| QuickBooks Desktop | `pqsw`|
 | QuickBooks Online | `qhyg` |
 | Sage Intacct | `knfz` |
 | Xero | `gbol` |
@@ -109,6 +110,8 @@ Use our [Create partner expense connection](/sync-for-expenses-api#/operations/c
 ## Deauthorize a connection
 
 If your customer wants to revoke their approval and sever the connection to their accounting package, use the [Unlink connection](/sync-for-expenses-api#/operations/unlink-connection) endpoint.
+
+You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI.
 
 ```json
 PATCH /companies/{companyId}/connections/{connectionId}

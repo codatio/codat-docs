@@ -1,36 +1,56 @@
 ---
 title: "Connection management"
 sidebar_label: "Manage connections"
-description: "Learn how to enhance the customer journey when a persistent connection is required"
+description: "Increase trust and product adoption and achieve compliance by putting your customers in control of their data"
+hide_table_of_contents: true
 ---
 
-Connecting is just the beginning of the customer journey. If your use case requires a persistent connection, then it is necessary to allow your customers to manage their ongoing connections. Your customers should feel, and be in control.
+Your customer's journey with us starts when they authorize your access to their data using our auth flow. We then complete the connection to their accounting, banking, or commerce platform. 
 
-:::tip
-Why this matters
+Going forward, your customer must have control over the data they've given you the permission to access. This is key from a regulatory perspective and builds trust between you and your customer. 
 
-Your customers need visibility and control over the connections they own. Without the ability to view and update connections, your customers may feel a lack of control and lose trust. This may not directly affect the likelihood of your customers connecting but may affect trust between you and your customer.
+To achieve that, provide them with a user interface that lets them manage their ongoing data connections. It could look similar to this:
+
+![An image of three in-app screenshots of a mock connection management UI. The first picture displays a list of three existing connections to Xero, HSBC and Shopify. The second image shows the entry for the Xero connection with details of authorized data and dates the authorization was given. It also lists the option to disconnect the connection. The final image displays a prompt to confirm the decision to disconnect.](/img/auth-flow/auth-flow-connection-ui-examples.png)
+
+:::tip Codat's connection management component
+
+Codat is releasing a low-code embeddable UI component for connection management. Please [let us know](https://forms.gle/d1zuh2iHBLJCNCsj9) if you are interested in using it.
+
 :::
 
-## Allow users to view their live connections
+When working on the user interface, consider including the following functionality to enhance your customer's connection management experience. 
 
-In the connection management view, consider showing your customers some or all of the following:
+#### Display active connections
+
+Include a general connection management view in your application and show your customer some or all of these connection details: 
 
 - Name of the connected platform
 - First sync time and date
-- The most recent sync time and date
-- Sync history
-- Linked data where possible
-- Metadata that will help identify connections i.e. currency of a connected bank account
+- Most recent sync time and date
+- Data sync history
+- Linked data, where possible
+- Metadata that helps identify connections, e.g. currency of a connected bank account
 
-## Allow users to delete their connections
+You can add a detailed view for each connection to cover the details that you do not want displayed on the connection list overview.
 
-Ensure it is obvious how to do delete a connection and revoke access to connected data via your app’s UI.
+#### Unlink or delete connections
 
-## Include an option to refresh data
+Make it easy for your customer to revoke access to their data and delete a connection via your app's UI. When they trigger this request, use our endpoints to action this depending on the requirement:
 
-Allow your customers to sync new data when it is suitable for your use case.
+- [Unlink connection](/platform-api#/operations/unlink-connection) if your customer wants to deauthorize a connection, but still access previously synced data. 
+- [Delete connection](/platform-api#/operations/delete-connection) if your customer wants to revoke access and remove the connection completely. 
 
-## ⭐ Show when the data is actively syncing
+#### Trigger data refresh
 
-Add animation to indicate when data is syncing, e.g. a loading spinner.
+Optionally, allow your customer to manually initiate a data sync if this is suitable for your use case. Use the [Refresh all data](/platform-api#/operations/refresh-company-data) or [Refresh data type](/platform-api#/operations/refresh-data-type) endpoints to perform the refresh.
+
+#### Show active syncs
+
+Optionally, you can add an indicator to signal that the data is in process of syncing, e.g. a loading spinner animation.
+
+---
+
+## Read next
+
+- [Optimize your auth flow](/auth-flow/optimize/optimize-the-connection-journey)

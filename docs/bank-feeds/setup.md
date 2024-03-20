@@ -71,9 +71,9 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 ## Webhooks
 
-Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules** and click **Create new rule** to set up the following webhook and get the most out of Bank Feeds API:
+Codat supports a range of [webhook events](/using-the-api/webhooks/event-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to set up an endpoint to listen to the following event type and get the most out of Bank Feeds API:
 
-- [Push operation status has changed](/using-the-api/webhooks/core-rules-types#push-operation-status-has-changed)  
+- [PushOperationStatusChanged](/using-the-api/webhooks/event-types)  
 
   Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully pushed to the accounting software. In case of errors, resolve the issue and resend the payload.
 

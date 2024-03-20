@@ -62,7 +62,7 @@ If you try to queue a synchronization for a data type that is already in process
 ```
 :::
 
-Refreshing data can take different amounts of time depending on the integration and the amount of data being retrieved. You can use [webhooks](/using-the-api/webhooks/core-rules-types) to be updated when the operation completes.
+Refreshing data can take different amounts of time depending on the integration and the amount of data being retrieved. You can use [webhooks](/using-the-api/webhooks/overview) to be updated when the operation completes.
 
 ### Records deleted between syncs
 
@@ -82,7 +82,7 @@ Some data types like company, tax rates and charts of accounts will rarely chang
 
 However, you can set a more frequent sync schedule if it is required for your use case. 
 
-- **Monthly**: We recommend that you sync at least one data type monthly (e.g. Company info) to ensure connection token does not expire when not actively synchronising data (unless only a one-time sync is required).
+- **Monthly**: We recommend that you sync at least one data type monthly (e.g. Company info) to ensure connection token does not expire when not actively synchronizing data (unless only a one-time sync is required).
 - **Weekly (recommended)**: Keeps data reasonably fresh, particularly where data types change less frequently, while also reducing the number of required API calls.
 - **Daily**: Gives you close-to-live picture of most data types while staying within the conservative rate limits of most accounting platforms.
 - **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. Only available to [enterprise customers](/introduction/create-account).

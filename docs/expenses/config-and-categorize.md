@@ -83,6 +83,7 @@ In some scenarios, different accounting platforms assign customers and suppliers
       <td><b>QBO</b></td>
       <td><b>Netsuite</b></td>
       <td><b>Microsoft Dynamics</b></td>
+      <td><b>QuickBooks Desktop</b></td>
     </tr>
     <tr>
       <td rowspan="8"><i>Transaction types</i></td>
@@ -91,10 +92,12 @@ In some scenarios, different accounting platforms assign customers and suppliers
       <td>Supplier</td>
       <td>Supplier</td>
       <td rowspan="8">Supplier is not associated with expense transactions due to a Dynamics platform limitation.</td>
+      <td>Supplier</td>
     </tr>
     <tr>
       <td>Refund</td>
       <td>Customer</td>
+      <td>Supplier</td>
       <td>Supplier</td>
       <td>Supplier</td>
     </tr>
@@ -103,11 +106,13 @@ In some scenarios, different accounting platforms assign customers and suppliers
       <td>Customer</td>
       <td>Supplier</td>
       <td>NA</td>
+      <td>NA</td>
     </tr>
     <tr>
       <td>Chargeback</td>
       <td>Customer</td>
       <td>Supplier</td>
+      <td>NA</td>
       <td>NA</td>
     </tr>
     <tr>
@@ -115,11 +120,13 @@ In some scenarios, different accounting platforms assign customers and suppliers
       <td>Customer</td>
       <td>Supplier</td>
       <td>NA</td>
+      <td>NA</td>
     </tr>
     <tr>
       <td>Transfer out</td>
       <td>Supplier</td>
       <td>Supplier</td>
+      <td>NA</td>
       <td>NA</td>
     </tr>
     <tr>
@@ -127,11 +134,13 @@ In some scenarios, different accounting platforms assign customers and suppliers
       <td>If the expense account is a bank account, then supplier is used. If not, customer is used.</td>
       <td>Customer</td>
       <td>NA</td>
+      <td>NA</td>
     </tr>
     <tr>
       <td>Adjustment out</td>
       <td>Supplier</td>
       <td>Customer</td>
+      <td>NA</td>
       <td>NA</td>
     </tr>
   </tbody>

@@ -58,7 +58,6 @@ Review the parameters in the example response to creating a new company:
   "created": "2022-05-16T14:55:21.6076495Z"
 }
 ```
-
 From the response, retain the following:
 
    - `companyId`, because you will need it for directing your customers to Link and managing their connections;
