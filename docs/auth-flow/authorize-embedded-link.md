@@ -473,6 +473,10 @@ PLACEHOLDER TEXT FOR RELEVANT OPTIMIZATION ITEMS
 
 ## Changelog
 
+#### March 2024
+
+- **Additional options**: we enhanced the `options` prop with `enableAdditionalConsent` and `allowedIntegrations`, new properties that help you manage additional consent journeys and the selection list of platforms displayed to the user.
+
 #### November 2023
 - **Options property**: we introduced a new prop that gives you programmatic control over Link settings.
 - **Markdown support**: text fields now accept Markdown, giving you more control over styling and formatting. This is available via the `text` property of the Link SDK only.

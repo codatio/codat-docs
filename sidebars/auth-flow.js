@@ -5,9 +5,9 @@ module.exports = [
     label: "Customize",
     collapsed: true,
     items: [
-      "auth-flow/customize/sdk-customize-code",
       "auth-flow/customize/customize-link",
       "auth-flow/customize/branding",
+      "auth-flow/customize/sdk-customize-code",
     ],
   },
   "auth-flow/optimize/connection-management",
