@@ -108,19 +108,19 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 ### Webhooks
 
-Codat supports a range of [webhooks](/using-the-api/webhooks/core-rules-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Rules** and click **Create new rule** to set up the following webhooks and get the most out of Sync for Expenses:
+Codat supports a range of [event types](/using-the-api/webhooks/event-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to set up the following webhook consumers and get the most out of Sync for Expenses:
 
-- [New company synchronized](/using-the-api/webhooks/core-rules-types#new-company-synchronized)
+- [NewCompanySynchronized](/using-the-api/webhooks/event-types)
 
-  Use this webhook to track the completion of all enabled data type syncs for a newly connected company. When you receive a notification from this webhook, you can proceed to the next steps of the expense management process. 
+  Use this event to track the completion of all enabled data type syncs for a newly connected company. When you receive a notification from the webhook consumer, you can proceed to the next steps of the expense management process. 
 
-- [Expenses sync failed](/using-the-api/webhooks/core-rules-types#expenses-sync-failed)
+- [SyncFailed](/using-the-api/webhooks/event-types)
 
-  Use this webhook to track any failures that might occur during the sync process. When you receive a notification from this webhook, you need to review the error details and reprocess the failed transactions.
+  Use this event to track any failures that might occur during the sync process. When you receive a notification from the webhook consumer, you need to review the error details and reprocess the failed transactions.
 
-- [Expenses sync completed](/using-the-api/webhooks/core-rules-types#expenses-sync-completed)
+- [SyncCompleted](/using-the-api/webhooks/event-types)
 
-  Use this webhook to track that the expense transactions have been synced successfully. When you receive a notification from this webhook, you can proceed to the next steps of the expense management process - for example, checking the transactions or informing your SMB customer of the completion.
+  Use this event to track that the expense transactions have been synced successfully. When you receive a notification from the webhook consumer, you can proceed to the next steps of the expense management process - for example, checking the transactions or informing your SMB customer of the completion.
 
 ### Client libraries
 
@@ -128,7 +128,7 @@ Use our comprehensive [Sync for Expenses library](/get-started/libraries) to kic
 
 :::tip Recap
 
-You have enabled Sync for Expenses, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product.
+You have enabled Sync for Expenses, set up the relevant integrations, configured auth flow parameters, and noted the recommended event types. This completes the initial setup of the product.
 
 Next, you will create a company and its connections to build out the core infrastructure required to manage expenses with Codat.
 

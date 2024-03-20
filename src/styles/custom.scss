@@ -8,6 +8,7 @@
 /* You can override the default Infima variables here. */
 
 @use "./components/admonitions";
+@use "./components/blockquotes";
 @use "./components/back-to-top-button";
 @use "./components/blog";
 @use "./components/cards";
@@ -45,23 +46,30 @@
 
 :root {
   --color-black: #0d0d0d;
+
   --color-interface-core: #556680;
   --color-interface-dark: #556680;
   --color-interface-5: #f7fafd;
   --color-interface-10: #f0f4fa;
   --color-interface-20: #e4ecf6;
+  --color-interface-40: #BBCADD;
+  --color-interface-60: #93A5BD;
+  --color-interface-80: #7586A3;
 
   --color-primary: var(--color-interface-core);
 
   --color-warning-10: #fff7eb;
   --color-warning-20: #ffeed6;
   --color-warning-dark: #754300;
+
   --color-error-10: #fdebee;
   --color-error-20: #fcd6dd;
   --color-error-dark: #750024;
+
   --color-neutral-10: #ecf5fd;
   --color-neutral-20: #daebfc;
   --color-neutral-dark: #004194;
+
   --color-positive-10: #eaf6ed;
   --color-positive-20: #eaf6ed;
   --color-positive-dark: #004c00;

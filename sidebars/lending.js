@@ -28,42 +28,6 @@ module.exports = [
   "lending/features/accounts-payable-overview",
   "lending/features/company-info-overview",
   "lending/features/excel-download-overview",
-//  {
-//    type: "category",
-//    label: "Data integrity",
-//    collapsed: true,
-//    customProps: {
-//      hr: true,
-//      section: "Other features",
-//    },
-//    items: [
-//      "lending/data-integrity/overview",
-//      "lending/portal/data-integrity",//TODO: check this "assess/portal/data-integrity"
-//      "lending/data-integrity/faqs",
-//    ],
-//  },
-//  {
-//    type: "category",
-//    label: "Commerce metrics",
-//    collapsed: true,
-//    items: [
-//      "lending/commerce-metrics/overview",
-//      "lending/commerce-metrics/reporting-structure",
-//      "lending/commerce-metrics/troubleshooting",
-//    ],
-//  },
-//  {
-//    type: "category",
-//    label: "Excel download",
-//    collapsed: true,
-//    items: [
-//      "lending/excel/overview",
-//      "lending/excel/audit-report",
-//      "lending/excel/enhanced-financials-report",
-//      "lending/excel/enhanced-invoices-report",
-//      "lending/excel/enhanced-cash-flow-report",
-//    ],
-//  },
 {
   type: "category",
   label: "Loan writeback",
@@ -111,14 +75,15 @@ module.exports = [
   ],
 },
 {
-    type: "link",
-    href: '/lending/troubleshooting',
-    label: "Troubleshooting",
-    customProps: {
-      hr: true,
-      section: "Reference",
-    },
+  type: "link",
+  href: '/lending/functions/data-upload',
+  label: "Data upload",
+  customProps: {
+    hr: true,
+    section: "Reference",
   },
+},
+  "lending/troubleshooting",
   "lending/data-types",
   {
     type: "link",

@@ -38,6 +38,7 @@ If you experience compatibility issues with companies using older versions of th
 :::caution QuickBooks Desktop for Mac
 
 Codat does not currently support Intuit QuickBooks for Mac OS. Only the QuickBooks Desktop for Windows versions listed above are supported.
+
 :::
 
 ## Supported QBD modes
@@ -46,11 +47,13 @@ The QBD connector works with QBD running in single-user or multi-user mode. In Q
 
 ## Limitations
 
-The following limitations apply when using the connector with QBD running in either single-user or multi-user mode.
+The following limitations apply when using the connector with QBD running in either single-user or multi-user mode: 
 
-If QuickBooks Desktop is open on the SMB user's machine, the open QuickBooks company file must be the same as the company file that's configured for the connector.
+- If QuickBooks Desktop is open on the SMB user's machine, the open QuickBooks company file must be the same as the company file that's configured for the connector.
 
-Only one instance of QBD can be open on a user's machine at a time.
+- Only one instance of QBD can be open on a user's machine at a time.
+
+- QBD performance may vary during the syncs. You cannot open an instance of QBD while a program is syncing, and its interface may behave unexpectedly.
 
 ## Supported operating systems
 
@@ -60,11 +63,18 @@ Users have successfully run the connector on older versions of Windows; however,
 
 The connector will not run on Mac OS.
 
-:::note Supported environments
+## Supported environments
 
-Our QuickBooks Desktop Connector is designed to work in single-tenant environments only, where one Windows user logs on to the same computer they use to access QuickBooks Desktop.
+Our QuickBooks Desktop Connector is verified to work in single-tenant environments only, where a single Windows user is logged on to the computer used to access QuickBooks Desktop. 
 
-[Installation on Right Networks hosted instances](/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks) is currently in beta.
+Due to limitations of syncing with QBD, complications can occur when attempting to sync in multi-tenant environments. For example, if your company files are hosted on a different server to the one where you run and use QBD, you may see performance impact. To avoid this, you can install the web connector on this server, but you need to install QBD there as well. 
+
+You may also encounter issues in a hosted environment where multiple users log in and use QBD simultaneously, although this depends on the exact setup. This does not apply to Rightworks hosted instances.
+
+:::note Rightworks hosted instances
+
+Rightworks hosted instances already have the web connector installed and support our integration as a result.  Outside of the Rightworks solution, we cannot guarantee the behavior of the connector in multi-tenant or hosted environments.
+
 :::
 
 ## Hardware requirements

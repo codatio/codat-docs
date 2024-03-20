@@ -56,6 +56,7 @@ module.exports = [
                 "enterprise/tech-implementation/consent/uiexamples",
             ]
           },
+          "enterprise/tech-implementation/managing-platform-credentials",
           "enterprise/tech-implementation/syncing-data",
           "enterprise/tech-implementation/data-types"
         ],

@@ -474,7 +474,6 @@ PLACEHOLDER TEXT FOR RELEVANT OPTIMIZATION ITEMS
 ## Changelog
 
 #### March 2024
-
 - **Additional options**: we enhanced the `options` prop with `enableAdditionalConsent` and `allowedIntegrations`, new properties that help you manage additional consent journeys and the selection list of platforms displayed to the user.
 
 #### November 2023

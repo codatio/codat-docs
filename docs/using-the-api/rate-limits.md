@@ -38,7 +38,7 @@ These transactions are intended to be low volume. Therefore, a high number of re
 
 :::tip Client rate limit reset
 
-Client-based limits are calculated daily and reset at 00:00 UTC each day. You can use our dedicated [Client rate limit reset](/using-the-api/webhooks/core-rules-types#client-rate-limit-reset) webhook rule to be notified when the client-based limit resets.
+Client-based limits are calculated daily and reset at 00:00 UTC each day. You can use our dedicated [ClientRateLimitReset](/using-the-api/webhooks/event-types) webhook event type to be notified when the client-based limit resets.
 
 :::
 

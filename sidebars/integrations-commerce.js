@@ -128,11 +128,10 @@ const integrations = [
         label: "Setup",
         collapsed: true,
         items: [
-          "integrations/commerce/shopify/commerce-shopify-setup",
+          "integrations/commerce/shopify/commerce-shopify-public-apps",
           "integrations/commerce/shopify/commerce-shopify-custom-apps",
         ]
       },
-      "integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
       "integrations/commerce/shopify/test-shopify",
     ],
   },

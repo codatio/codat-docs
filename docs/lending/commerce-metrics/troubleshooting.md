@@ -3,6 +3,7 @@ title: "Troubleshooting commerce metrics"
 sidebar_label: Troubleshooting
 description: "Quickly resolve common issues related to the generation of commerce metrics"
 image: "/img/banners/social/lending.png"
+draft: true
 ---
 
 ## Required data types

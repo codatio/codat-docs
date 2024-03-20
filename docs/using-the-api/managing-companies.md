@@ -120,7 +120,7 @@ Once your user is redirected to the redirect URL page, they'll be able to author
 
 Occasionally the Data Connections of a Codat company will go into a _deauthorized_ state. This indicates that Codat’s link to the platform is no longer valid, and you will not be able to queue any further data syncs for that connection. You will still be able to query data previously retrieved from the platform.
 
-Data Connections can become _deauthorized_ by the user revoking access within their accounting software or due to platform limitations such as Xero's limited access period for non-partner companies.
+Data Connections can become _deauthorized_ by the user [revoking access](/core-concepts/connections#disconnect-a-data-connection-to-revoke-your-access-to-a-data-source) to their accounting software or due to platform limitations such as Xero's limited access period for non-partner companies.
 
 To enable you to refresh the company's data, you will need to ask the user to complete the auth flow in Link again.
 
