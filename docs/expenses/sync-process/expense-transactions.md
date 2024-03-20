@@ -106,6 +106,9 @@ Some accounting platforms allow expense transactions to be created in a draft st
 
 In the request body, use the `postAsDraft` flag to define whether the expense should be posted in its draft or final state. When set to `true`, the expense is posted as a draft. 
 
+### Billable expenses
+By marking an expenses as billable (`invoiceTo`), businesses can easily identify and allocate costs to specific customers or projects. This feature simplifies the process of invoicing clients for reimbursable expenses.
+
 ### Multicurrency expense transactions
 
 Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
