@@ -80,6 +80,9 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
                           "dataType":"trackingCategories"
                         }
                     ]
+                    "invoiceTo": {
+                      "id": "an-id-to-a-customers-record",
+                      "dataType": "customers"
                 }
             ]
         }
