@@ -27,6 +27,8 @@ module.exports = [
   "expenses/config-and-categorize",
   "expenses/sync-process/expense-transactions",
   "expenses/sync-process/transfer-transactions",
+  "expenses/sync-process/attachments",
+  "expenses/sync-process/reimbursable-expense-transactions",
   "expenses/sync-process/syncing-expenses",
   "expenses/sync-process/uploading-receipts",
   {
