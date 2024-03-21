@@ -1,6 +1,6 @@
 ---
 title: "Xero's Payments Partner certification checkpoints"
-description: "A guide to getting Xero certification with Codat for AP Payments use cases"
+description: "A guide to getting Xero's AP Payments certification with Codat"
 --- 
 
 To receive Xero Partner certification, you must comply with Xero's certification checkpoints. You can review these in detail in Xero's [own documentation](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/). 
@@ -13,13 +13,13 @@ This is Codat's companion guide on how to comply with these requirements. We str
 
 **Action required: none**
 
-This checkpoint is not relevant to Payments Partners which operate under a different commercial model to standard App Store Partners. 
+This checkpoint is not relevant to Payments Partners because they operate under a different commercial model to standard App Store Partners. 
 
 ### 2. Xero App Store
 
 **Action required: none**
 
-This checkpoint is not relevant to Payments Partners which operate under a different commercial model to standard App Store Partners. 
+This checkpoint is not relevant to Payments Partners because they operate under a different commercial model to standard App Store Partners. 
 
 ### 3. Connection
 
