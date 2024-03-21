@@ -32,7 +32,7 @@ Optionally, you can [set up a webhook](/using-the-api/webhooks/event-types) to m
 
 ## Display a list of integrations
 
-Next, you need to provide your customer with a list of platforms they can provide you access to, including the platform name and logo. 
+Next, you need to provide your customer with a list of platforms they can provide you access to, including the platform name and logo. For additional guidance on best practices of integration selection, see [Platfrom selection](/auth-flow/optimize/platform-selection). 
 
 #### Retrieve all available integrations
 

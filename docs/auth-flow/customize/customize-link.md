@@ -33,8 +33,17 @@ For the Business documents integration type, you need to enable it in **Settings
 
 :::tip Banking integrations in the auth flow
 
-You should only enable one of the banking integrations at a time. This ensures optimal use of Link, as each banking integration is [represented differently](/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow.
+You should only enable one of the banking integrations at a time. This ensures optimal use of Link, as each banking integration is [represented differently](/integrations/banking/overview#banking-integrations-in-the-authorization-flow) in the auth flow and may confuse the customer.
 :::
+
+:::tip Enable users without credentials
+
+In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting platform.
+
+To enable them to proceed and explore your product, make upfront authorization for different integration categories optional. Later, remind them to authorize or give them an option to share a Link URL or even a `mailto:` link.
+
+:::
+
 
 ### Retries  
 Allow your customers to restart the linking process for accounting platforms in case their first connection attempt fails. The "Try again" button will appear on the error page.

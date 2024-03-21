@@ -2,7 +2,7 @@ module.exports = [
   "auth-flow/authorize-embedded-link",
   {
     type: "category",
-    label: "Customize",
+    label: "Customize flow",
     collapsed: true,
     items: [
       "auth-flow/customize/customize-link",
@@ -14,7 +14,7 @@ module.exports = [
   "auth-flow/optimize/monitor-auth-flow",
   {
     type: "category",
-    label: "Optimize",
+    label: "Optimize flow",
     collapsed: true,
     items: [
       "auth-flow/optimize/optimize-the-connection-journey",
@@ -27,7 +27,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Try our auth flow",
+    label: "See the demo",
     href: "https://sdk-link.vercel.app/",
   },
   {

@@ -30,6 +30,12 @@ We also provide updates in our [SDK changelog](/auth-flow/authorize-embedded-lin
 
 We've provided you with [rich examples on GitHub](https://github.com/codatio/sdk-link/tree/main/examples) that illustrate how you can add the Link component to your project.
 
+:::info Indicative demo
+
+Curious where Codat's Link flow might fit in your customer's experience? See [our indicative demo](https://sdk-link.vercel.app/).
+
+:::
+
 ## Compatibility
 
 - The component works with all major JavaScript frameworks, including React, and with vanilla JavaScript. You can choose to implement it in TypeScript.
@@ -449,17 +455,16 @@ For an example of the component in action, [see our demo app](https://github.com
 
 </Tabs>
 
-## Customize interface
+## Customize Link
 
-You can configure Link's UI to match your company branding, reflect your company's values, and adjust Link's behavior using the [Codat Portal](https://app.codat.io/) or our SDK's advanced options. 
+You can configure Link's UI to match your company branding and reflect your company's values, and adjust Link's behavior using the [Codat Portal](https://app.codat.io/) or our SDK's advanced options. 
 
 #### Configure in Portal
 
-In the [Codat Portal](https://app.codat.io/settings), navigate to **Settings** to view the auth flow settings pages. Use these to add UI copy, set file upload options, choose to make steps optional, or disable steps. We provide detailed instructions for each category of settings:
+In the [Codat Portal](https://app.codat.io/settings), navigate to **Settings > Auth flow** to view the auth flow settings pages. Use these to add UI copy, set file upload options, choose to make steps optional, or disable steps. We provide detailed instructions for each category of settings:
 
 - [Link settings](/auth-flow/customize/customize-link)
 - [Branding settings](/auth-flow/customize/branding)
-- [Redirects](/auth-flow/customize/set-up-redirects)
 
 #### Configure in code
 
@@ -467,9 +472,7 @@ If you need more control over the UI based on application-specific logic, want t
 
 - [Manage UI settings in code](/auth-flow/customize/sdk-customize-code)
 
-## Optimize flow
-
-PLACEHOLDER TEXT FOR RELEVANT OPTIMIZATION ITEMS
+To control the redirects that happen upon flow completion, you need to build out the required redirect configuration within your application.
 
 ## Changelog
 

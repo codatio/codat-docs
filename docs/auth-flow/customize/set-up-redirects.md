@@ -2,50 +2,42 @@
 title: "Set up redirect URLs in the Portal"
 sidebar_label: Redirects
 description: "Complete your customer's authorization journey with a redirect location"
+displayed_sidebar: docs
 ---
 
 ## Overview
 
-Once your customers have successfully authorized the connection to their data via [Link](/auth-flow/overview), you can redirect them to another website. There are several ways you can redirect your customers:
+Once your customers have successfully authorized the connection to their data via [Hosted Link](/auth-flow/authorize-hosted-link), you can redirect them to another website. There are several ways you can redirect your customers:
 
 - [Redirect to a static URL](#redirect-to-a-static-url)
 - [Redirect with custom query parameters](#redirect-with-custom-query-parameters)
 - [Redirect with reserved query parameters](#redirect-with-reserved-query-parameters)
-
-:::note Redirect URLs in Link
-
-Your redirects will only apply to Hosted Link. For the Link SDK, build out the required redirect configuration within your application.
-:::
 
 :::note See an example
 
 Not sure how to handle the params in your website? [See an example here](https://github.com/mcclowes/hosted-link-redirect-page).
 :::
 
-## Setting redirect settings
+## Configure redirect settings
 
-You can find the redirect settings page in the Portal:
+You can find the [redirect settings page](https://app.codat.io/settings/redirects) in the Portal:
 
-1. In the navigation bar click **Settings**
-2. In the side nav, click [**Auth flow > Redirects**](https://app.codat.io/settings/redirects)
+1. In the navigation bar, click **Settings**.
+2. On the Settings page, choose **Auth flow > Redirects**.
 
 ## Redirect to a static URL
 
-A static URL is a single, unchanging web address that every customer would be directed to.
-
-Enter the website address that you want to redirect your customers to in the **Redirect URL > URL** field.
+A static URL is a single, unchanging web address that every customer would be directed to. To set it, enter the website address that you want to redirect your customers to in the **Redirect URL > URL** field.
 
 You can ignore the other settings on the page.
 
 ## Redirect with reserved query parameters
 
-You can conditionally redirect users based on what happened when authorizing.
+You can conditionally redirect users based on what happens during authorization. 
 
 Codat supports a number of reserved query parameters for redirects. If you add reserved parameters to the Redirect URL you send to your customer, Codat will replace the parameters with the relevant information.
 
-To set up a redirect with reserved query parameters:
-
-In the **Redirect URL > URL** field, enter a base URL along with the reserved parameters you want to use to build the redirect. 
+To set up a redirect with reserved query parameters, enter a base URL with the reserved parameters you want to use to build the redirect in the **Redirect URL > URL** field. 
 
 To add a parameter, wrap it in curly braces. For example: 
 
@@ -69,8 +61,8 @@ https://redirect.site/accounting/?flow=Codat&statuscode=403&errormessage=User%20
 | `platform` | e.g. `gbol`, `mqjo`, `zsth`, `ugxp` | 4 character key of the platform as used to reference integrations. |
 | `platformName` | e.g. `Xero`, `Sandbox`, `Square` | Name of the platform as displayed in the Codat Portal. | 
 | `sourceType` | Accounting, Banking, BankFeed, Commerce, Expense, Other | Name of the source used to retrieve data from. |
-| `statusCode` | `200`, `201`, `403`, `500`, `501` | Codat standardises the status codes returned by the integrations: <br/> **200** = Successful - user's request has been fulfilled. <br/> **201** = No content - successful, but no information about data connection will be available. _Possible scenario_: A user visits Link with a connection to their accounting source already established, so they do not take any action before exiting the flow. <br/> **403** = Not available. _Possible scenario_: A user chooses to quit the Link flow before the Linking process is completed. <br/> **501** = Platform not supported. _Possible scenario_: A user chooses an integration that is not supported by the client. At this point, the client offers them an alternative option outside of the Codat flows. <br/> **500** = Internal Server Error. Codat standardises any errors which do not fit into one of the above categories to a 500 code - Internal Server Error. |
-|`errorMessage` | | Codat standardises error messages for the status codes. Error messages returned in the redirect will always be mapped with the status codes listed above. <br/> **403** = "User cancelled." <br/>  **500** = "Unknown error occurred." <br/>  **501** = "Not supported." <br/>  **Note**: If you want to use the original error message from the integration, use `statusText`. |
+| `statusCode` | `200`, `201`, `403`, `500`, `501` | Codat standardizes the status codes returned by the integrations: <br/> **200** = Successful - user's request has been fulfilled. <br/> **201** = No content - successful, but no information about data connection will be available. <br/>_Possible scenario_: A user visits Link with a connection to their accounting source already established, so they do not take any action before exiting the flow. <br/> **403** = Not available. <br/>_Possible scenario_: A user chooses to quit the Link flow before the Linking process is completed. <br/> **501** = Platform not supported. <br/>_Possible scenario_: A user chooses an integration that is not supported by the client. At this point, the client offers them an alternative option outside of the Codat flows. <br/> **500** = Internal Server Error. Codat standardizes any errors which do not fit into one of the above categories to a 500 code - Internal Server Error. |
+|`errorMessage` | | Codat standardizes error messages for the status codes. Error messages returned in the redirect will always be mapped with the status codes listed above. <br/> **403** = "User cancelled." <br/>  **500** = "Unknown error occurred." <br/>  **501** = "Not supported." <br/>  **Note**: If you want to use the original error message from the integration, use `statusText`. |
 | `statusText` | _String_ | String as it's passed back from the integration. |
 | `data.company.companyName` | _String_ | The name of the connected party within the underlying platform. <br/>This maps to the company name property in the [company info dataset](/accounting-api#/schemas/CompanyDataset). | 
 
@@ -82,11 +74,11 @@ At present, the `data.company.companyName` is only supported for the following i
 
 :::info Case sensitivity
 
-The names of query parameters are case sensitive, e.g. `companyId` is not the same as `companyid`.
+The names of query parameters are case-sensitive, e.g. `companyId` is not the same as `companyid`.
 :::
 
 <details>
-  <summary><b>Example: Use redirect params to see errors in the link flow</b></summary>
+  <summary><b>Example: Use redirect params to see errors in the Link flow</b></summary>
 
    Redirect URL:
    ```
@@ -98,14 +90,14 @@ The names of query parameters are case sensitive, e.g. `companyId` is not the sa
       https://www.mybank.io/accounting?flow=Codat&statuscode=200&errormessage=
       ```
    
-   2. For a user who quits the linking process without providing access to their financial data either because a) their platform is not supported or b) they do not wish to provide access to their data, the redirect below would be where they can upload the relevant documents manually.
+   2. For a user who quits the linking process without providing access to their financial data because their platform is not supported or they do not wish to provide access to their data, the redirect below would be where they can upload the relevant documents manually.
       ```http
       https://www.mybank.io/accounting?flow=Codat&statuscode=403&errormessage=User%20cancelled
       ```
    
    3. For a user who encounters an unexpected error during the linking process, the redirect below would be where they can contact your support team for assistance.
       ```http
-      https://www.mybank.io/accounting?flow=Codat&statuscode=500&errormessage= Unknown%20error%20occured
+      https://www.mybank.io/accounting?flow=Codat&statuscode=500&errormessage= Unknown%20error%20occurred
       ```
 
 </details>
@@ -117,7 +109,8 @@ Codat supports custom query parameters for redirects. You can define your own va
 
 To set up a redirect with custom query parameters:
 
-1. In the **Redirect URL** box, enter a base URL along with the parameters you want to use to build the custom redirect. To add a parameter, wrap it in curly braces. For example: `https://mybank.io/{customParam}/show`.
+1. In the **Redirect URL** box, enter a base URL along with the parameters you want to use to build the custom redirect. To add a parameter, wrap it in curly braces. 
+   For example: `https://mybank.io/{customParam}/show`.
 2. Before you send out a **Link URL** to a customer, modify the URL by adding a question mark and the parameter name and value to the end of it.  
    For example: `https://link.codat.io/.../link?customParam=123456`.  
    If you want to add more than one parameter, separate them with an ampersand (`&`).
@@ -125,7 +118,7 @@ To set up a redirect with custom query parameters:
 
 :::caution Special character encoding
 
-Ensure any and all special characters used in the link URL are correctly encoded; otherwise custom parameters may not pull through correctly.
+Ensure any and all special characters used in the Link URL are correctly encoded, otherwise custom parameters may not pull through correctly.
 :::
 
 :::caution Unspecified custom parameters
@@ -141,7 +134,7 @@ It's not possible to specify default parameters. If you don't add a parameter to
    https://www.mybank.io/{journeyType}/success?ClientType={clientType}
    ```
    
-   ...the link URLs would give the following outcomes:
+   ...the Link URLs would give the following outcomes:
    
    | Link URL | Computed redirect |
    | :- | :- |
@@ -191,4 +184,4 @@ If you're not using the dynamic host feature, you don't need to use this setting
 
 ## Read next
 
-- [Set up webhooks](/auth-flow/customize/set-up-webhooks)
+- Learn more about our [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)
