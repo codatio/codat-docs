@@ -51,9 +51,9 @@ When the app is created, you can view the app's secure credentials.
    1. In the **Read all orders** box, click **Request access**.
    2. Enter the details requested in the dialog, then submit your request to Shopify.
 9. In the **GDPR mandatory webhooks** section, enter the following Codat webhook URLs:
-   - **Customer data request endpoint:** `https://commerceintegration.codat.io/webhooks/customer/request`
-   - **Customer data erasure endpoint:** `https://commerceintegration.codat.io/webhooks/customer/redact`
-   - **Shop data erasure endpoint:** `https://commerceintegration.codat.io/webhooks/shop/redact`
+   - **Customer data request endpoint:** `https://commerceintegration.codat.io/webhooks/{your-client-id}/customer/request`
+   - **Customer data erasure endpoint:** `https://commerceintegration.codat.io/webhooks/{your-client-id}/customer/redact`
+   - **Shop data erasure endpoint:** `https://commerceintegration.codat.io/webhooks/{your-client-id}/shop/redact`
 10. Click the **Save** button that appears at the top of the page.
 
 Your app's **API key** and **API secret key** are shown in the **App credentials** section of the App setup page. You'll need these when you [add your app's credentials to the integration](/integrations/commerce/shopify/commerce-shopify-public-apps#add-your-apps-credentials-to-the-shopify-integration).
