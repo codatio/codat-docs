@@ -46,7 +46,7 @@ The **Sign Up with Xero URL** is the URL that is shared with the end user for th
 2. Generate the URL.
 
    Use the values retrieved previously to generate a URL with the following structure: `https://link-api.codat.io/clients/{ClientID}/signUpWith/{PlatformKey}`  
-   This URL should also be used as a response to checkpoint _6. Purchase/sign up page URL_ in your App Store listing.
+   You will need to provide this URL to Xero in the App Review Form and enter it into your App Store listing after certification.
 
 When this link is initiated by the customer, it triggers the creation of a company and a connection in Codat, and redirects them to Xero login for authorization. Once authorized, they will be redirected to your **Sign up success redirect URL**.
 
