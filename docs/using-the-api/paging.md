@@ -14,7 +14,7 @@ Our endpoints which return multiple results are paged, e.g. [`GET /companies`](/
 A typical request will have the following properties:
 
 - `page` : This is the page number that you would like to have displayed. The default page is 1.
-- `pageSize` : You can define the number of the results you would like to have displayed on one page. The default page size is 100, while the maximum page size can be set to 5000. We recommend that integrators keep this default page size to ensure optimal response times. Read more on [Optimizing API Calls](/using-the-api/optimizing-api-calls). 
+- `pageSize` : You can define the number of results you would like returned per page. The default page size is 100, while the maximum page size can be set to 5000. We recommend using the default page size to ensure optimal response times. Read more on [Optimizing API Calls](/using-the-api/optimizing-api-calls). 
 
 ## Response
 
