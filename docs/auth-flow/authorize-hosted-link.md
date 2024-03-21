@@ -23,11 +23,10 @@ If you're not able to use our Link SDK, you can choose Hosted Link as your out-o
 
 To connect your customers' financial software with Hosted Link, you can:
 
-- Integrate the Hosted Link auth flow into the user interface of your existing app, or
-- Initiate the authorization journey by sharing your Hosted Link URL.
+- Direct your customer from your existing app to the Hosted Link auth flow programmatically, or
+- Manually share the Link URL with your customer. 
 
 ![](/img/link/link-banner.png)
-
 
 :::info Indicative demo
 
