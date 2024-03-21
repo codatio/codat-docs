@@ -1,8 +1,7 @@
 ---
 title: "Platform selection flow"
 description: "Enable your merchant to select a target accounting platform before they move on to the Sync configuration flow."
-createdAt: "2022-02-09T13:30:23.915Z"
-updatedAt: "2022-11-25T09:42:09.130Z"
+draft: true
 ---
 
 ## Build a platform selection flow
