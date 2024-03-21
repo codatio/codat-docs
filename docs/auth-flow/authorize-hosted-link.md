@@ -13,13 +13,15 @@ displayed_sidebar: docs
 
 Instead of Hosted Link, use the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow in your application. 
 
-You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feel of the auth flow and achieving an **89%** conversion rate.
+You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feeling of the auth flow that achieves an **89%** conversion rate on average.
 
 ::: 
 
 ## Overview
 
-If your business scenario and circumstances prevent you from using our Link SDK, you can choose Hosted Link as your out-of-the-box authorization solution built, provided, and hosted by Codat. To connect your customers' financial software, you can:
+If you're not able to use our Link SDK, you can choose Hosted Link as your out-of-the-box authorization solution built, provided, and hosted by Codat. 
+
+To connect your customers' financial software with Hosted Link, you can:
 
 - Integrate the Hosted Link auth flow into the user interface of your existing app, or
 - Initiate the authorization journey by sharing your Hosted Link URL.
