@@ -9,7 +9,7 @@ displayed_sidebar: docs
 
 Instead of building your own solution, use the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow in your application. 
 
-You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feel of the auth flow and achieving an **89%** conversion rate.
+You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feeling of the auth flow and achieving an **89%** conversion rate on average.
 
 :::
 

@@ -1,6 +1,6 @@
 ---
 title: "Authorization flow"
-description: "Understand Codat's authorization journey and its implementation"
+description: "Get access to your SMB customers' data with Link SDK"
 ---
 
 Authorization is a key part of any solution built with Codat. Every company must authorize access to their data before you can use that data. A frictionless and reassuring auth flow is essential for receiving the authorization from your SMB customers.
