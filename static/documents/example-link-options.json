@@ -2,6 +2,8 @@
   "text": {
     "companyName": "Platypus Payments",
     "accounting.dataAccess.consent": "By continuing you are permitting Platypus Payments to access account information. Please refer to the Terms and Conditions and Privacy Policy\r\n\r\n[https://example.com](https://example.com)",
+    "accounting.dataAccess.additionalConsent.title": "You have previously authorized access to your accounting platform",
+    "accounting.dataAccess.additionalConsent.subtitle": "To continue, confirm your consent to use of the required data below.",
     "accounting.dataAccess.dataTypes": [
       "Accounts receivable information",
       "Accounts payable information",
@@ -9,6 +11,8 @@
     ],
     "accounting.fileUpload.subtitle": "You can upload requested PDFs, Excel files, or CSVs below.",
     "banking.dataAccess.consent": "By continuing you are permitting Platypus Payments to access account information. Please refer to the Terms and Conditions and Privacy Policy\r\n\r\n[https://example.com](https://example.com)",
+    "banking.dataAccess.additionalConsent.title": "You have previously authorized access to your banking platform",
+    "banking.dataAccess.additionalConsent.subtitle": "To continue, confirm your consent to use of the required data below.",
     "banking.dataAccess.dataTypes": [
       "Account holder details",
       "Account details",
@@ -16,6 +20,8 @@
     ],
     "banking.fileUpload.subtitle": "You can upload requested PDFs, Excel files, or CSVs below.",
     "commerce.dataAccess.consent": "By continuing you are permitting Platypus Payments to access account information. Please refer to the Terms and Conditions and Privacy Policy\r\n\r\n[https://example.com](https://example.com)",
+    "commerce.dataAccess.additionalConsent.title": "You have previously authorized access to your commerce platform",
+    "commerce.dataAccess.additionalConsent.subtitle": "To continue, confirm your consent to use of the required data below.",
     "commerce.dataAccess.dataTypes": [
       "Company information",
       "Orders & payments",
@@ -47,7 +53,8 @@
     },
     "commerce": {
       "optional": true,
-      "enableIntegrations": true
+      "enableIntegrations": true,
+      "allowedIntegrations": ["fqly", "gvom", "fztf", "zsth", "exgd"]
     },
     "businessDocuments": {
       "optional": true,
@@ -56,5 +63,6 @@
   },
   "showSandboxIntegrations": true,
   "showLandingPage": true,
-  "nonModal": false
+  "nonModal": false,
+  "enableAdditionalConsent": false
 }
