@@ -248,6 +248,44 @@
         }
       }
     },
+    "bankFeeds.sourceAccount.connected": {
+      "post": {
+        "description": "Indicates a bank feed source account has changed to a status of connected.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SourceAccountWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "bankFeeds.sourceAccount.disconnected": {
+      "post": {
+        "description": "Indicates a bank feed source account has changed to a status of disconnected.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SourceAccountWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "ClientRateLimitReached": {
       "post": {
         "description": "Triggered when the number of requests to Codat's API from the client exceeds the current quota.",
@@ -391,13 +429,8 @@
                 "description": "The number of available requests per day."
               },
               "ExpiresUtc": {
-                "description": "The date time in UTC when your daily quota is reset.",
-                "title": "Date time",
-                "type": "string",
-                "examples": [
-                  "2022-10-23T00:00:00.000Z",
-                  "2022-10-23T00:00:00.000Z"
-                ]
+                "$ref": "#/components/schemas/SourceAccountWebhook/properties/generatedDate",
+                "description": "The date time in UTC when your daily quota is reset."
               }
             }
           }
@@ -1051,6 +1084,159 @@
             }
           }
         ]
+      },
+      "SourceAccountWebhook": {
+        "title": "Source account status changed webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event"
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "bankFeeds.sourceAccount.connected",
+              "bankFeeds.sourceAccount.disconnected"
+            ]
+          },
+          "generatedDate": {
+            "description": "The date time in UTC the event was generated in Codat.",
+            "title": "Date time",
+            "type": "string",
+            "examples": [
+              "2022-10-23T00:00:00.000Z",
+              "2022-10-23T00:00:00.000Z"
+            ]
+          },
+          "payload": {
+            "$ref": "#/components/schemas/SourceAccountWebhook/definitions/sourceAccountWebhookPayload"
+          }
+        },
+        "definitions": {
+          "sourceAccountWebhookPayload": {
+            "title": "Payload",
+            "type": "object",
+            "properties": {
+              "companyId": {
+                "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
+              },
+              "connectionId": {
+                "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+              },
+              "sourceAccount": {
+                "title": "Source Account",
+                "type": "object",
+                "description": "The target bank account in a supported accounting package for ingestion into a bank feed.",
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Unique ID for the bank account."
+                  },
+                  "accountName": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The bank account name."
+                  },
+                  "accountType": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The type of bank account e.g. Credit."
+                  },
+                  "accountNumber": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The account number."
+                  },
+                  "sortCode": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "The sort code."
+                  },
+                  "currency": {
+                    "title": "Currency",
+                    "x-internal": true,
+                    "type": "string",
+                    "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+                    "format": "ISO4217",
+                    "examples": [
+                      "GBP",
+                      "USD",
+                      "EUR"
+                    ]
+                  },
+                  "balance": {
+                    "type": "number",
+                    "format": "decimal",
+                    "nullable": true,
+                    "description": "The latest balance for the bank account."
+                  },
+                  "modifiedDate": {
+                    "$ref": "#/components/schemas/SourceAccountWebhook/properties/generatedDate",
+                    "nullable": true,
+                    "description": "The last date the bank account was modified."
+                  },
+                  "status": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Status of the source account.",
+                    "enum": [
+                      "pending",
+                      "connected",
+                      "connecting",
+                      "disconnected",
+                      "unknown"
+                    ]
+                  },
+                  "feedStartDate": {
+                    "$ref": "#/components/schemas/SourceAccountWebhook/properties/generatedDate",
+                    "nullable": true
+                  }
+                },
+                "required": [
+                  "id"
+                ],
+                "definitions": {
+                  "sourceAccounts": {
+                    "title": "Source accounts",
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SourceAccountWebhook/definitions/sourceAccountWebhookPayload/properties/sourceAccount"
+                    }
+                  }
+                },
+                "examples": [
+                  {
+                    "id": "acc-002",
+                    "accountName": "account-081",
+                    "sortCode": "123456",
+                    "accountType": "Credit",
+                    "accountNumber": "12345670",
+                    "currency": "GBP",
+                    "balance": 99.99,
+                    "modifiedDate": "2023-01-09T14:14:14.1057478Z",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "acc-003",
+                    "accountName": "account-095",
+                    "sortCode": "123456",
+                    "accountType": "Credit",
+                    "accountNumber": "12345671",
+                    "currency": "USD",
+                    "balance": 0,
+                    "modifiedDate": "2023-01-09T14:14:14.1057478Z",
+                    "status": "pending"
+                  }
+                ]
+              }
+            }
+          }
+        }
       },
       "SyncCompleteWebhook": {
         "title": "Sync complete webhook",
