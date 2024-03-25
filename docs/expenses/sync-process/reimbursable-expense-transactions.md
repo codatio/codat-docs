@@ -95,9 +95,9 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
 
 ### Billable reimbursable expenses
 
-By marking an expense as billable using the `invoiceTo` property, businesses can easily identify and allocate costs to specific customers or projects. This simplifies the process of invoicing clients for reimbursable expenses.
+Your customer may want to mark an expense as billable so that they can easily identify and allocate costs to specific customers or projects. This simplifies the process of invoicing clients for reimbursable expenses.
 
-If the `trackingRefs` property references a `customer` (dataType: "customers") then the expense is not represented as billable. It is only billable if the 'invoiceTo' type is set to `customer`. For both of these the customer is referenced in the line item. 
+To mark an expense as billable, set the 'invoiceTo' property to `customer`. The expense will then reference the customer in the line item.
 
 ### Multicurrency transactions
 
