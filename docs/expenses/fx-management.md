@@ -272,9 +272,9 @@ We validate the multi-currency transactions you push to Sync for Expenses to ens
 
 ## Transfers
 
-A transfer is a transaction type that represents the movement of money between two bank accounts. This can be a bank withdrawal, a top-up of a debit card account, or a pay-down of a credit card account. As a result, different variables participate in the possible currency combinations: the company's base currency, and the currencies of the sender and receiver bank accounts. 
+A transfer is the movement of money between two bank accounts. This can be a bank withdrawal, a top-up of a debit card account, or a pay-down of a credit card account. As a result, different variables participate in the possible currency combinations: the company's base currency, and the currencies of the sender and receiver bank accounts. 
 
-You can [read more](/expenses/sync-process/expense-transactions#transaction-types) about transaction types used in Sync for Expenses. 
+You can [read more](/expenses/sync-process/transfer-transactions) about creating a transfer in Sync for Expenses. 
 
 | Currency variables       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |--------------------------|------------|------------|------------|------------|------------|
@@ -287,7 +287,6 @@ We validate the multi-currency transactions you push to Sync for Expenses to ens
 | Integration       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |-------------------|----------|----------|----------|----------|----------|
 | QuickBooks Online | ✔️        | ✔️        | ✔️        | ✔️        | ❌        |
-| Xero              | ✔️        | ✔️        | ✔️        | ✔️        | ✔️        |
 
 ---
 ## Read next

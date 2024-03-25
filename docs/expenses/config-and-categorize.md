@@ -1,7 +1,7 @@
 ---
-title: "Map customer expenses"
-description: Map accounts, suppliers, and customers to create expenses using the Sync for Expenses product
-sidebar_label: Map expenses
+title: "Map customer transactions"
+description: Map accounts, suppliers, and customers to create transactions using the Sync for Expenses product
+sidebar_label: Map transactions
 tags: [syncforexpense, mappingOptions, Config]
 ---
 
@@ -14,7 +14,13 @@ You also need to provide them with an opportunity (via your application's user i
 
 ## Create configuration
 
-Use our [Set company configuration](/sync-for-expenses-api#/operations/set-company-configuration) to set up how your customers' expenses will be pushed. You can check the configuration anytime to confirm or display the company's configuration using the [Get company configuration](/sync-for-expenses-api#/operations/get-company-configuration) endpoint.
+Use our [Set company configuration](/sync-for-expenses-api#/operations/set-company-configuration) to set up how your customers' transactions will be pushed. You can check the configuration anytime to confirm or display the company's configuration using the [Get company configuration](/sync-for-expenses-api#/operations/get-company-configuration) endpoint.
+
+:::tip Configuration for expenses and transfers 
+
+Note that you have to set configuration if you want to create a transfer or an expense transaction.
+
+:::
 
 ```http title="Company Config"
 POST https://api.codat.io/companies/{companyId}/sync/expenses/config
@@ -30,7 +36,6 @@ POST https://api.codat.io/companies/{companyId}/sync/expenses/config
     }
 }
 ```
-
 ### Bank account
 
 A bank account (`bankAccount.id`) is required to show where purchases have been made from. This can either a credit or debit account. You can choose to create a new account or retrieve a list of existing accounts from your customer's accounting software. 
@@ -116,14 +121,14 @@ In some scenarios, different accounting platforms assign customers and suppliers
       <td>NA</td>
     </tr>
     <tr>
-      <td>Transfer in</td>
+      <td>Transfer in - to be deprecated in June 2024</td>
       <td>Customer</td>
       <td>Supplier</td>
       <td>NA</td>
       <td>NA</td>
-    </tr>
+    </tr> 
     <tr>
-      <td>Transfer out</td>
+      <td>Transfer out - to be deprecated in June 2024</td>
       <td>Supplier</td>
       <td>Supplier</td>
       <td>NA</td>
