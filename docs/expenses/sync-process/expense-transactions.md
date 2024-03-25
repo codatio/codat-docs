@@ -108,7 +108,9 @@ In the request body, use the `postAsDraft` flag to define whether the expense sh
 
 ### Billable expenses
 
-By marking an expense as billable using the `invoiceTo` property, businesses can easily identify and allocate costs to specific customers or projects. This simplifies the process of invoicing clients for reimbursable expenses.
+Your customer may want to mark an expense as billable so that they can easily identify and allocate costs to specific customers or projects. This simplifies the process of invoicing clients for reimbursable expenses.
+
+To mark an expense as billable, set the 'invoiceTo' property to `customer`. The expense will then reference the customer in the line item.
 
 ### Multicurrency expense transactions
 
