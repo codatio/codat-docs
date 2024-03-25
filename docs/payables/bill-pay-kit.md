@@ -74,23 +74,29 @@ You can also view attachments for a specific bill using the [List bill attachmen
 
 ## Pay a bill
 
+The bill pay kit gives you the option to either create a bill or retireve a list of unpaid bills from an SMBs accounting platform.
 
-Use the [Create bill payment](/sync-for-payables-v2-api#/operations/create-bill-payment) to
+### Creating a bill
 
-when I successfully pay a bill in the application, I want to represent the payment in my accounting platform, so my accounts payables is up to date
+When creating a bill, you will also need to set a tax rate and nominal account in which the bill will go against. You can call our [Get bill mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-bills) endpoint in order get these options from the accounting platform. 
+
+Bills should always correspond to a supplier that issuesd them. Ensure the relevant suppier exists before creating a new bill. You are able to retrieve a list of suppliers to then associate against the bill. This list of suppliers can be queried to only retrieve suppliers associated with unpaid bills (i.e. 'balance>0') or if a suppleir has been created within a specificc timeframe.  
+
+### Retrieving a bill
+
+When the [List bills](/sync-for-payables-v2-api#/operations/list-bills) endpoint is called, you will recieve a list of all outstandig bills (i.e. bills with a status of 'Open' & 'Partially paid')
 
 
 
-[Get payment mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-payments)
-
-
-
-- limitations? I think it was mentioned it only does single-bill payments?
+- limitations? 
 
 ## Record a payment 
 
+When an SMBs bill has been paid in the application, a [bill payment](/sync-for-payables-v2-api#/operations/create-bill-payment) is then created which represents an allocation of money within any of your customer's accounts payable (AP) accounts. 
 
+To create the bill payment, the SMB must set the bank account used to process the payment against. A list of the relevent accounts can be retrieved using the [Mapping Options - Payments](/sync-for-payables-v2-api#/operations/get-mapping-options-payments) endpoint.
 
+The kit allows for a single bill payment. In case of partial payments, use the same endpoint and adjust the amount values according to the amount of the partial payment.
 
 ## Master data
 
