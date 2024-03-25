@@ -107,7 +107,8 @@ Some accounting platforms allow expense transactions to be created in a draft st
 In the request body, use the `postAsDraft` flag to define whether the expense should be posted in its draft or final state. When set to `true`, the expense is posted as a draft. 
 
 ### Billable expenses
-By marking an expenses as billable (`invoiceTo`), businesses can easily identify and allocate costs to specific customers or projects. This feature simplifies the process of invoicing clients for reimbursable expenses.
+
+By marking an expense as billable using the `invoiceTo` property, businesses can easily identify and allocate costs to specific customers or projects. This simplifies the process of invoicing clients for reimbursable expenses.
 
 ### Multicurrency expense transactions
 
@@ -135,12 +136,12 @@ Sync for Expenses maps and processes expense transactions based on the following
 | `refund`         | Represents any refunds and returns on an original transaction.                                                                                                                                                                                            |
 | `reward`         | Represents reward redemptions, such as cashback.                                                                                                                                                                                                          |
 | `chargeback`     | Similarly to a refund, represents a return of a transaction or a payment   sum which may have been disputed.                                                                                                                                              |
-| `transferIn`     | **Transaction type to be depreactated as of June 2024.** <br/>  A transfer that decreases the   balance of the credit card account or increases the balance of a bank   account. <br/>  Represents a   top-up of debit card account, a pay-down of a credit card account, or a   balance transfer to another credit card.|
-| `transferOut`    | **Transaction type to be depreactated as of June 2024.**  <br/> A transfer that increases the   balance of the credit account or decreases the balance of a bank account.   <br/>  Represents cash   withdrawals or a balance transfer to another credit card.                                                            |
+| `transferIn`     | **Transaction type to be deprecated in June 2024.** <br/>  A transfer that decreases the   balance of the credit card account or increases the balance of a bank   account. <br/>  Represents a   top-up of debit card account, a pay-down of a credit card account, or a   balance transfer to another credit card.|
+| `transferOut`    | **Transaction type to be deprecated in June 2024.**  <br/> A transfer that increases the   balance of the credit account or decreases the balance of a bank account.   <br/>  Represents cash   withdrawals or a balance transfer to another credit card.                                                            |
 | `adjustmentIn`   | An adjustment that decreases the   balance of the credit account or increases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
 | `adjustmentOut`  | An adjustment that increases the   balance of the credit account or decreases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
 
-### Update expenses
+## Update expenses
 
 :::info Compatible integrations
 
