@@ -1,7 +1,7 @@
 ---
 title: "Create and update reimbursable expenses"
 sidebar_label: "Create reimbursements"
-description: Record and update reimbursable expense transactions that represent your customers' spend
+description: Record and update reimbursable expense transactions that represent your customers' repayable spend
 ---
 
 import Tabs from "@theme/Tabs";
@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-A reimbursable expense is a cost incurred by a employee which is then eligible to be refunded or compenstated by an employer or by another party. Reimbursable expenses are represented in the accounting system as a Bill, which goes against the employee who is the supplier.
+A reimbursable expense is a cost incurred by an employee which is eligible to be refunded or compensated by their employer or another party. In accounting systems, reimbursable expenses are represented as bills that are listed against the employee as the supplier.
 
 :::info Compatible integrations
 
@@ -17,7 +17,9 @@ Check our [supported expense types](expenses/overview#supported-integrations) fo
 
 :::
 
-With Sync for Expenses, you need to create the reimbursable expense transactions first. Creating the transaction will initiate the [sync](/expenses/sync-process/syncing-expenses) to then reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
+With Sync for Expenses, you need to create the reimbursable expense transactions first. 
+
+This will initiate the [sync](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
 This process is summarized on the diagram below.
 
@@ -37,12 +39,12 @@ sequenceDiagram
     Codat->>Accounting: Upload attachment
     Codat-->>-You: Success
   end
-  You->>-User: reimbursable expense marked as uploaded
+  You->>-User: Reimbursable expense marked as uploaded
 ```
 
 ## Create reimbursable expenses
 
-To create a new reimbursable expense transaction in Codat, use the [create reimbursable expense transaction](LINK) endpoint. 
+To create a new reimbursable expense transaction in Codat, use the [Create reimbursable expense transaction](/sync-for-expenses#/operations/create-reimbursable-expense-transaction) endpoint. 
 
 In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
 
@@ -84,21 +86,24 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
                   "id":"an-id-to-a-customers-record",
                   "dataType":"customers"
                }
-            ]
-         }
-      ]
-   }
+            }
+         ]
+      }
+   ]
+}
 ```
+
 ### Billable reimbursable expenses
-By marking an expenses as billable (`invoiceTo`), businesses can easily identify and allocate costs to specific customers or projects. This feature simplifies the process of invoicing clients for reimbursable expenses.
 
-If the `trackingRefs` references a `customer` (dataType: "customers") then the expense is not represented as billable. It is only billable if the 'invoiceTo' type is set to `customer`. For both of these the customer is referenced in the line item. 
+By marking an expense as billable using the `invoiceTo` property, businesses can easily identify and allocate costs to specific customers or projects. This simplifies the process of invoicing clients for reimbursable expenses.
 
-### Multicurrency transfer transactions
+If the `trackingRefs` property references a `customer` (dataType: "customers") then the expense is not represented as billable. It is only billable if the 'invoiceTo' type is set to `customer`. For both of these the customer is referenced in the line item. 
+
+### Multicurrency transactions
 
 Sync for Expenses validates each reimbursable expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
 
-For reimbursable expenses, the currency of the expense (`bill`) is the currency of the supplier (the currency that the employee will be reimbursable in). If the employee needed to be reimbursed in a different currency, then they would need to set up a new supplier for the employee for each different currency needed.
+For reimbursable expenses, the currency of the expense is the currency of the supplier (so the currency that the employee will be reimbursed in). If the employee needs to be reimbursed in a different currency, they need to be set up as a new supplier for each required currency.
 
 ### Default tax rates
 
@@ -108,7 +113,7 @@ If you need to remove an associated tax rate from a reimbursable expense, use on
 |-------------------|----------------------------------|
 | QuickBooks Online | `NON`                            |
 
-### Updating reimbursable expenses
+## Updating reimbursable expenses
 
 In some cases, your customer may want to update a reimbursable expense transaction that was previously synced to their accounting platform. Use our [Update reimbursable expense transactions](/sync-for-expenses-api#/operations/update-reimbursable-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
 
@@ -122,7 +127,6 @@ In some cases, your customer may want to update a reimbursable expense transacti
 ```http title="Update an expense transaction"
 PUT  https://api.codat.io/companies/{companyId}/sync/expenses/reimburseable-expense-transactions
 ```
-
 
 ---
 ## Read next
