@@ -13,7 +13,7 @@ Once you have pushed your customer's expense transaction data to Codat, you need
 
 :::info Transfer transactions 
 
-When creating a [transfer transaction](/sync-for-expenses#/operations/create-transfer-transaction), a sync is initiated automatically and does not to be triggered. The endpoint therefore does not return the `datasetId`.
+When creating a [transfer transaction](/sync-for-expenses#/operations/create-transfer-transaction) or a [reimbursable expense transaction](/sync-for-expenses#/operations/create-reimbursable-expense-transaction), a sync is initiated automatically and does not to be triggered. The endpoint therefore does not return the `datasetId`.
 
 :::
 
