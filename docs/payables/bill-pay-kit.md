@@ -7,9 +7,15 @@ description: "Simplify the employment of the bill pay process to your app with p
 
 ## Overview
 
-What's the purpose of this kit? what is the difference from the main Payables product? what does it simplify, why do we want to use it instead of the main one
+The Bill Pay Kit is a standarized and synchronous API-based solution designed to effortlessly integrate bill pay capabilities into your SMB accounting platforms.
 
-- Synchronous
+A key difference between the kit and the Sync for Payables offering is its synchronous functionality, a crucial distinction that ensures real-time synchronization between your platform and your SMBs' accounting systems. In today's fast-paced industry landscape, this feature enables our clients to meet the ever-evolving demands of users by delivering a seamless, near-real-time experience.
+
+For instance, with our kit, the creation of a bill in your platform seamlessly aligns with the bill in the SMBs' accounting platform, enhancing operational efficiency and customer satisfaction.
+
+The kit is designed to help neobanks and B2B payment providers in this space, provide an MVP integrated flow to their SMBs as quickly as possible. We have streamlined and built-in logic to our kits endpoints to reduce the complexities of designing, building an maintiain accounting integrations from scratch. It's ideal for facilitating essential bill payment processes within your SMB accounting platforms, focusing on simplicity and efficiency rather than complex procurement functionalities and use cases.
+
+QUESTION - Should we add a diagram here to show the flow it could cover?
 
 :::tip Client libraries
 
@@ -17,15 +23,14 @@ Use our comprehensive [libraries](/get-started/libraries) in multiple languages 
 
 :::
 
-# Supported integrations
+## Supported integrations
 
-<IntegrationsList filter={integrationsFilterBillPayKit}/>
-<br/>
+QUESTION - How should we show supported platforms?
+Just Xero now. QBO coming soon.
 
 ## Prerequisites
 
 When implementing your Sync for Payables solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection. You can do that when the customer starts interacting with your application.  
-
 
 1. Create a company 
 
@@ -83,6 +88,9 @@ when I successfully pay a bill in the application, I want to represent the payme
 - limitations? I think it was mentioned it only does single-bill payments?
 
 ## Record a payment 
+
+
+
 
 ## Master data
 
