@@ -135,6 +135,8 @@ Expenses can also be categorized according to your SMB's bookkeeping. Provide yo
 
 Once the customer has categorized their expenses using the mapping options, use Sync for Expenses to push their everyday purchases to the SMB's accounting platform. Sync for Expenses also enables SMB customers to push attachments for a complete audit trail.
 
+You can also create [transfers](/expenses/sync-process/transfer-transactions) and [reimbursements](/expenses/sync-process/reimbursable-expense-transactions).
+
 ### [Sync expense transactions](/expenses/sync-process/syncing-expenses)
 
 Once you create a categorized expense transaction, you can initiate a sync of a set of these transactions. The sync processes the expenses you created, maps them into the format required by the accounting platform, and records them in that platform. 
@@ -150,7 +152,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 <details>
 <summary> Supported expense types per integration</summary>
 
-| Expenses                    | Payment | Refund | Reward | Chargeback | Adjustment in | Adjustment out | Transfer | Reimburseable expense |
+| Expenses                    | Payment | Refund | Reward | Chargeback | Adjustment in | Adjustment out | Transfer | Reimbursable expense |
 |---------------------|---------|--------|--------|------------|-------------|--------------|---------------|---------------|
 | Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            |              |              |
 | QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️            | 
