@@ -115,7 +115,19 @@
     },
     {
       "name": "Expenses",
-      "description": "Create expense datasets and upload receipts."
+      "description": "Create expense transactions."
+    },
+    {
+      "name": "Transfers",
+      "description": "Create transfer transactions."
+    },
+    {
+      "name": "Reimbursements",
+      "description": "Create reimbursable expense transactions."
+    },
+    {
+      "name": "Attachments",
+      "description": "Upload attachmens to expenses, transfers and reimbursable expense transactions."
     },
     {
       "name": "Transaction status",
@@ -1238,7 +1250,7 @@
         },
         "responses": {
           "202": {
-            "description": "Returns the newly created SyncId",
+            "description": "Returns the newly created syncId",
             "content": {
               "application/json": {
                 "schema": {
@@ -1777,32 +1789,6 @@
                       }
                     ]
                   }
-                },
-                "Transfer": {
-                  "value": {
-                    "items": [
-                      {
-                        "id": "979a7ee8-aeb4-11ed-afa1-0242ac120002",
-                        "type": "TransferIn",
-                        "issueDate": "2021-05-21T00:00:00+00:00",
-                        "currency": "GBP",
-                        "bankAccountRef": {
-                          "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-                        },
-                        "merchantName": "Amazon UK",
-                        "lines": [
-                          {
-                            "netAmount": 180.93,
-                            "taxAmount": 0,
-                            "accountRef": {
-                              "id": "40e3e57c-2322-4898-966c-ca41adfd23fd"
-                            }
-                          }
-                        ],
-                        "notes": "Credit Card Payment"
-                      }
-                    ]
-                  }
                 }
               }
             }
@@ -1877,6 +1863,215 @@
         }
       }
     },
+    "/companies/{companyId}/sync/expenses/transfer-transactions/{transactionId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/transactionId"
+        }
+      ],
+      "put": {
+        "summary": "Create transfer transaction",
+        "operationId": "create-transfer-transaction",
+        "x-speakeasy-name-override": "create-transfer",
+        "description": "Use the *Create transfer* endpoint to create a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransaction) in the accounting platform for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n",
+        "tags": [
+          "Transfers"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "x-speakeasy-usage-example": true,
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTransferResponse"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "syncId": "cd937d46-8e41-43a9-9477-a79158ffd98a"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTransferRequest"
+              },
+              "examples": {
+                "Create transfer": {
+                  "value": {
+                    "description": "Sample transfer descripiton",
+                    "date": "2021-05-21T00:00:00+00:00",
+                    "from": {
+                      "accountRef": {
+                        "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+                      },
+                      "amount": 100
+                    },
+                    "to": {
+                      "accountRef": {
+                        "id": "777dfb37-5506-3dc0-6g86-8d34z4cc78ea"
+                      },
+                      "amount": 101
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/sync/expenses/reimbursable-expense-transactions/{transactionId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/transactionId"
+        }
+      ],
+      "post": {
+        "summary": "Create reimbursable expense transaction",
+        "operationId": "create-reimbursable-expense-transaction",
+        "x-speakeasy-name-override": "create-reimbursable-expense-transaction",
+        "description": "Use the *Create reimbursable expense* endpoint to create a [reimbursement request](https://docs.codat.io/sync-for-expenses-api#/schemas/Reimburseable-Expense-Transactions) in the accounting platform for a given company's connection. \r\n\r\nEmployee reimbursement requests are reflected in the accounting system in the form of Bills against an employee, who is a supplier.",
+        "tags": [
+          "Reimbursements"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "x-speakeasy-usage-example": true,
+                "schema": {
+                  "$ref": "#/components/schemas/CreateReimbursableExpenseResponse"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "syncId": "cd937d46-8e41-43a9-9477-a79158ffd98a"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateReimbursableExpenseRequest"
+              },
+              "examples": {
+                "Create reimbursable expense": {
+                  "value": [
+                    {
+                      "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
+                      "reference": 101,
+                      "contactRef": {
+                        "id": "f5244103-5223-4b0a-857f-50566ac86c11"
+                      },
+                      "issueDate": "2021-05-21T00:00:00+00:00",
+                      "dueDate": "2021-05-21T00:00:00+00:00",
+                      "currency": "GBP",
+                      "currencyRate": 1,
+                      "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
+                      "bankAccountRef": {
+                        "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+                      },
+                      "merchantName": "Amazon UK",
+                      "lines": [
+                        {
+                          "netAmount": 110.42,
+                          "taxAmount": 14.43,
+                          "taxRateRef": {
+                            "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
+                          },
+                          "accountRef": {
+                            "id": "9aa5b894-1be9-4f97-96cd-ffde90766b3e"
+                          },
+                          "description": "Coffee subscription",
+                          "trackingRefs": [
+                            {
+                              "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c",
+                              "dataType": "trackingCategories"
+                            }
+                          ],
+                          "invoiceTo": {
+                            "id": "80000002-1674552702",
+                            "dataType": "customers"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments": {
       "parameters": [
         {
@@ -1939,7 +2134,7 @@
           }
         },
         "tags": [
-          "Expenses"
+          "Attachments"
         ],
         "description": "The *Upload attachment* endpoint uploads an attachment in the accounting software against the given transactionId. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n**Integration-specific behaviour**\n\nEach accounting software supports different file formats and sizes.\n\n| Integration | File Size | File Extension                                                                                                      |  \n|-------------|-------------|--------------------------------------------------------------------------------------------------------------|\n| Xero | 4MB  | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF, ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX, ZIP |\n| QuickBooks Online | 100MB | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF, TXT, XLS, XLSX, XML  |\n| NetSuite | 100MB | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF, DOC, DOCX, ZIP |\n| Dynamics 365 Business Central | 350 MB | Dynamics do not explicitly outline which file types are supported but they do state <a className=\"external\" href=\"https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice\" target=\"_blank\">here</a> that \"You can attach any type of file, such as text, image, or video files\". |"
       }
@@ -12101,7 +12296,7 @@
                   "modifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/Company/properties/created"
+                        "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
                       },
                       {
                         "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -12119,7 +12314,7 @@
                   "sourceModifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/Company/properties/created"
+                        "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
                       },
                       {
                         "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -12441,7 +12636,7 @@
                 "description": "The number of available requests per day."
               },
               "ExpiresUtc": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
                 "description": "The date time in UTC when your daily quota is reset."
               }
             }
@@ -12583,16 +12778,10 @@
             "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
           },
           "created": {
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ],
-            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
           },
           "createdByUserName": {
             "type": "string",
@@ -12817,7 +13006,7 @@
             "nullable": true
           },
           "syncUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
             "description": "Datetime of the sync.",
             "nullable": true
           },
@@ -12880,10 +13069,10 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
           },
           "created": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
           },
           "dataConnectionErrors": {
             "type": "array",
@@ -12939,7 +13128,7 @@
                 "description": "A brief message about the error."
               },
               "erroredOnUtc": {
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
               }
             }
           },
@@ -13088,6 +13277,34 @@
           }
         }
       },
+      "CreateReimbursableExpenseRequest": {
+        "title": "Create reimbursable expense request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 50,
+            "items": {
+              "$ref": "#/components/schemas/ReimbursableExpenseTransactionRequest"
+            }
+          }
+        }
+      },
+      "CreateReimbursableExpenseResponse": {
+        "title": "Create reimbursable expense response",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
+            "format": "uuid",
+            "description": "Unique id of sync created"
+          }
+        }
+      },
       "CreateSupplierResponse": {
         "title": "Create supplier response",
         "x-internal": true,
@@ -13111,6 +13328,69 @@
             "$ref": "#/components/schemas/PushOperation"
           }
         ]
+      },
+      "CreateTransferRequest": {
+        "title": "Create transfer request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Any private, company notes about the transaction.",
+            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+          },
+          "date": {
+            "allOf": [
+              {
+                "description": "Date of the transfer transaction as recorded in the accounting platform."
+              },
+              {
+                "title": "Date time",
+                "type": "string",
+                "examples": [
+                  "2022-10-23T00:00:00.000Z",
+                  "2022-10-23T00:00:00.000Z"
+                ],
+                "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+              }
+            ]
+          },
+          "from": {
+            "$ref": "#/components/schemas/CreateTransferRequest/definitions/transferDetails"
+          },
+          "to": {
+            "$ref": "#/components/schemas/CreateTransferRequest/definitions/transferDetails"
+          }
+        },
+        "definitions": {
+          "transferDetails": {
+            "type": "object",
+            "properties": {
+              "accountRef": {
+                "$ref": "#/components/schemas/Account/definitions/accountRef",
+                "description": "Reference to the account to which the line item is linked."
+              },
+              "amount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Amount of the transfer."
+              }
+            }
+          }
+        }
+      },
+      "CreateTransferResponse": {
+        "title": "Create transfer response",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
+            "format": "uuid",
+            "description": "Unique id of sync created"
+          }
+        }
       },
       "Customer": {
         "title": "Accounting: Customer",
@@ -13334,7 +13614,7 @@
                 "$ref": "#/components/schemas/Customer/definitions/customerStatus"
               },
               "modifiedDate": {
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
               }
             },
             "required": [
@@ -13426,7 +13706,7 @@
             "example": "invoices"
           },
           "lastSuccessfulSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
           },
           "currentStatus": {
             "type": "string",
@@ -13572,7 +13852,7 @@
             ]
           },
           "issueDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
             "description": "Date of the transaction was recorded."
           },
           "currency": {
@@ -13983,10 +14263,10 @@
             "description": "A message about a transient or persistent error."
           },
           "requested": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
           },
           "completed": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
           },
           "progress": {
             "type": "integer",
@@ -14076,11 +14356,11 @@
             "$ref": "#/components/parameters/connectionId/schema"
           },
           "requestedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
             "description": "The datetime when the push was requested."
           },
           "completedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
             "description": "The datetime when the push was completed, null if Pending."
           },
           "timeoutInMinutes": {
@@ -14425,6 +14705,137 @@
             "description": "identifier of linked reference from mapping options."
           }
         }
+      },
+      "ReimbursableExpenseTransactionRequest": {
+        "title": "Reimbursable expense transaction request",
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/ReimbursableExpenseTransactionRequest/definitions/reimbursableExpenseTransaction"
+            }
+          }
+        },
+        "definitions": {
+          "reimbursableExpenseTransaction": {
+            "title": "Reimbursable expense transaction",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "4d7c6929-7770-412b-91bb-44d3bc71d111",
+                "format": "uuid",
+                "description": "Your unique identifier for the transaction."
+              },
+              "reference": {
+                "type": "string",
+                "nullable": true,
+                "description": "User-friendly reference for the reimbursable expense."
+              },
+              "contactRef": {
+                "description": "Supplier for the purchase to be associated to.",
+                "$ref": "#/components/schemas/ContactRef"
+              },
+              "issueDate": {
+                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+                "description": "Date of the transaction was recorded."
+              },
+              "dueDate": null,
+              "allOf": [
+                {
+                  "description": "Date the supplier is due to be paid."
+                },
+                {
+                  "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                }
+              ],
+              "currency": {
+                "type": "string",
+                "example": "GBP",
+                "description": "Currency the transaction was recorded in."
+              },
+              "currencyRate": {
+                "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
+              },
+              "notes": {
+                "type": "string",
+                "description": "Any private, company notes about the transaction.",
+                "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+              },
+              "bankAccountRef": {
+                "type": "object",
+                "title": "Bank account reference",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "example": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea",
+                    "description": "Identifier of the bank account."
+                  }
+                }
+              },
+              "lines": {
+                "type": "array",
+                "description": "Array of transaction lines.",
+                "minItems": 1,
+                "maxItems": 100,
+                "items": {
+                  "$ref": "#/components/schemas/ReimbursableExpenseTransactionLine"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "contactRef.id",
+              "issueDate",
+              "dueDate",
+              "currency"
+            ]
+          }
+        }
+      },
+      "ReimbursableExpenseTransactionLine": {
+        "x-internal": true,
+        "title": "Reimbursable expense transaction line",
+        "type": "object",
+        "properties": {
+          "netAmount": {
+            "type": "number",
+            "format": "decimal",
+            "example": 110.42,
+            "description": "Amount of the line, exclusive of tax."
+          },
+          "taxAmount": {
+            "type": "number",
+            "format": "decimal",
+            "example": 14.43,
+            "description": "Amount of tax for the line."
+          },
+          "taxRateRef": {
+            "$ref": "#/components/schemas/RecordRef"
+          },
+          "accountRef": {
+            "$ref": "#/components/schemas/RecordRef"
+          },
+          "trackingRefs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/TrackingRef"
+            }
+          },
+          "invoiceTo": {
+            "$ref": "#/components/schemas/InvoiceTo"
+          }
+        },
+        "required": [
+          "netAmount",
+          "accountRef"
+        ]
       },
       "SupplementalData": {
         "title": "Supplemental data",
@@ -14923,7 +15334,7 @@
             "nullable": true
           },
           "modifiedDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
             "description": "Datetime when the tracking category was last modified.",
             "nullable": true
           },
