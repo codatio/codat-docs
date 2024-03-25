@@ -25,9 +25,16 @@ module.exports = [
     },
   },
   "expenses/config-and-categorize",
-  "expenses/sync-process/expense-transactions",
-  "expenses/sync-process/transfer-transactions",
-  "expenses/sync-process/reimbursable-expense-transactions",
+  {
+    type: "category",
+    label: "Create transactions",
+    collapsed: true,
+    items: [
+      "expenses/sync-process/expense-transactions",
+      "expenses/sync-process/transfer-transactions",
+      "expenses/sync-process/reimbursable-expense-transactions",
+    ],
+  },
   "expenses/sync-process/syncing-expenses",
   "expenses/sync-process/uploading-receipts",
   {
