@@ -17,6 +17,11 @@ Use our comprehensive [libraries](/get-started/libraries) in multiple languages 
 
 :::
 
+# Supported integrations
+
+<IntegrationsList filter={integrationsFilterBillPayKit}/>
+<br/>
+
 ## Prerequisites
 
 When implementing your Sync for Payables solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection. You can do that when the customer starts interacting with your application.  
@@ -76,6 +81,8 @@ when I successfully pay a bill in the application, I want to represent the payme
 
 
 - limitations? I think it was mentioned it only does single-bill payments?
+
+## Record a payment 
 
 ## Master data
 
