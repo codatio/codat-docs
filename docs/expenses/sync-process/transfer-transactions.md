@@ -18,7 +18,7 @@ This process is summarized on the diagram below.
 ``` mermaid
 sequenceDiagram
   User->>+You: Approve transfer with receipt
-  You-)+Codat: Post transfer transaction
+  You-)+Codat: Put transfer transaction
   Note over You,Codat: Initiate sync
   Codat --> Codat: Sync request added to queue
   Codat-->>You: syncId
