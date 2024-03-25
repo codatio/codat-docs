@@ -97,7 +97,7 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
 
 Your customer may want to mark an expense as billable so that they can easily identify and allocate costs to specific customers or projects. This simplifies the process of invoicing clients for reimbursable expenses.
 
-To mark an expense as billable, set the 'invoiceTo' property to `customer`. The expense will then reference the customer in the line item.
+To mark an expense as billable, set the `invoiceTo` property to `customer`. The expense will then reference the customer in the line item.
 
 ### Multicurrency transactions
 
@@ -113,7 +113,7 @@ If you need to remove an associated tax rate from a reimbursable expense, use on
 |-------------------|----------------------------------|
 | QuickBooks Online | `NON`                            |
 
-## Updating reimbursable expenses
+## Update reimbursable expenses
 
 In some cases, your customer may want to update a reimbursable expense transaction that was previously synced to their accounting platform. Use our [Update reimbursable expense transactions](/sync-for-expenses-api#/operations/update-reimbursable-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
 
