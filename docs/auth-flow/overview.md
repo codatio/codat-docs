@@ -11,7 +11,7 @@ To achieve this, use our [Link SDK component](/auth-flow/authorize-embedded-link
 
 ## What is Link?
 
-Link is our pre-built and white-labelled authorization journey, designed using our extensive build experience and authorization best practices to maximize conversion. 
+Link is our pre-built white-label authorization journey, designed using our extensive build experience and authorization best practices to maximize conversion. 
 
 Embed this best-in-class auth flow into your user journey with our [Link SDK component](/auth-flow/authorize-embedded-link) and enjoy an average **auth flow completion rate of 89%**.
 
