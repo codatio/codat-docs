@@ -449,56 +449,16 @@ const comm = [
 
 module.exports = {
   redirects: [
-    // get started
+    // Deprecations - remove after July
     {
-      from: "/introduction/first-steps",
-      to: "/get-started/first-steps",
+      from: "/updates/240314-removing-transfer-transaction-type-SFE",
+      to: "/updates/240314-deprecation-transfer-transaction-type-SFE",
     },
     {
-      from: "/introduction/first-ten-minutes",
-      to: "/get-started/first-ten-minutes",
+      from: "/updates/240305-xero-bankstatement-report",
+      to: "/updates/240305-deprecation-xero-bankstatement-report",
     },
-    {
-      from: "/introduction/libraries",
-      to: "/get-started/libraries",
-    },
-    {
-      from: "/other/developer-resources",
-      to: "/get-started/developer-resources",
-    },
-    {
-      from: "/introduction/office-hours",
-      to: "/get-started/office-hours",
-    },
-    {
-      from: "/introduction/migration",
-      to: "/get-started/migration",
-    },
-    // config, other, etc.
-    {
-      from: "/introduction/change-policy",
-      to: "/using-the-api/change-policy",
-    },
-    {
-      from: "/reference/authentication",
-      to: "/using-the-api/overview",
-    },
-    {
-      from: "/introduction/create-account",
-      to: "/configure/create-account",
-    },
-    {
-      from: "/introduction/testing",
-      to: "/using-the-api/testing",
-    },
-    {
-      from: "/introduction/webhooks/core-rules-create",
-      to: "/using-the-api/webhooks/create-consumer",
-    },
-    {
-      from: "/introduction/webhooks/core-rules-types",
-      to: "/using-the-api/webhooks/event-types",
-    },
+    // New webhooks logic
     {
       from: "/introduction/webhooks/core-rules-webhooks",
       to: "/using-the-api/webhooks/legacy/core-rules-webhooks",
@@ -511,10 +471,7 @@ module.exports = {
       from: "/introduction/webhooks/receive-webhooks-as-email",
       to: "/using-the-api/webhooks/legacy/receive-webhooks-as-email",
     },
-    {
-      from: "/other/cochat",
-      to: "/cochat",
-    },
+    
     {
       from: "/other/file-upload",
       to: "/integrations/file-upload",
@@ -548,10 +505,6 @@ module.exports = {
       to: "/configure/user-management/adding-users",
     },
     {
-      from: "/other/user-management/sso",
-      to: "/configure/user-management/sso",
-    },
-    {
       from: "/other/user-management/user-roles",
       to: "/configure/user-management/user-roles",
     },
@@ -567,8 +520,7 @@ module.exports = {
       from: "/auth-flow/customize/set-up-webhooks",
       to: "/using-the-api/webhooks/event-types",
     },
-
-    //
+    // Shopify
     {
       from: "/integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
       to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
@@ -576,14 +528,6 @@ module.exports = {
     {
       from: "/integrations/commerce/shopify/commerce-shopify-setup",
       to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
-    },
-    {
-      from: "/guides/underwriting/introduction",
-      to: "/lending/overview",
-    },
-    {
-      from: "/usecases/summary/underwriting",
-      to: "/usecases/summary/lending",
     },
     {
       from: "/redirects/integrations/bankfeeds/qalf",
@@ -719,10 +663,6 @@ module.exports = {
       from: "/expenses/sync-process/updating-expenses",
       to: "/expenses/sync-process/expense-transactions",
     },
-//    {
-//      from: "/expenses/sync-process/uploading-receipts",
-//      to: "/expenses/sync-process/expense-transactions",
-//    },
     {
       from: "/expenses/sync-process/sync-process-explained",
       to: "/expenses/getting-started",
