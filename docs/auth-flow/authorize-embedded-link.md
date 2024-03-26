@@ -36,17 +36,13 @@ Curious where Codat's Link flow might fit in your customer's experience? See [ou
 
 :::
 
-## Compatibility
-
-- The component works with all major JavaScript frameworks, including React, and with vanilla JavaScript. You can choose to implement it in TypeScript.
-
-- We don't recommend using Link in an iframe because it will not work for security reasons (CORS).
-
 ## Prerequisites
 
 #### Your application
 
-You need a JavaScript application to render the component in (e.g. React, Angular). It should take care of creating [companies](../terms/company) programmatically and retrieving the `companyId` of any company you want to authorize. Additionally, build out the required redirect configuration within your application.
+You need a JavaScript application to render the component in. The component works with all major JavaScript frameworks, including React, and with vanilla JavaScript. You can choose to implement it in TypeScript. We don't recommend using Link in an iframe because it will not work for security reasons (CORS).
+
+The application should take care of creating [companies](../terms/company) programmatically and retrieving the `companyId` of any company you want to authorize. Additionally, build out the required redirect configuration within your application.
 
 ## Get started
 
@@ -55,6 +51,7 @@ You need a JavaScript application to render the component in (e.g. React, Angula
 Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-link-types) so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript, so our examples are prepared with that assumption.
 
 `npm install @codat/sdk-link-types`
+
 :::
 
 <Tabs>
