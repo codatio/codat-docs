@@ -18,17 +18,23 @@ Your company name, as you see it in the Portal, is also displayed in Link when y
 
 This logo appears in the navigation bar of Link, and on the on-premise connector screens when users link on-premise applications (e.g. Sage 50 and QuickBooks Desktop).
 
-Use PNG, JPEG, SVG, or GIF file formats and ensure the file size does not exceed 10MB. Recommended dimensions for the company logo are 600px x 100px.
+Logo requirements:
+- Use PNG, JPEG, SVG, or GIF file formats. 
+- Files should not exceed 10MB.
+- Recommended dimensions: 600px x 100px.
 
 ### Company icon
 
 This icon (uploaded as a favicon) appears as the Link browser tab icon and on the on-premise connectors' system tray icon when an on-premise application is running in the background on a customer's computer.
 
-Use ICO file format and ensure the file size does not exceed 500KB. Recommended dimensions for the company icon are 32px x 32px.
+Icon requirements:
+- Use ICO file format.
+- Files should not exceed 500KB. 
+- Recommended dimensions: 32px x 32px.
 
 ### Primary color
 
-You can set your brand's primary color to define the color of buttons and other elements within Link and Sync Flow. We recommend using a dark primary color, because light colors may cause accessibility issues.
+You can set your brand's primary color to define the color of buttons and other elements within the Link Flow. We recommend using a dark primary color, because light colors may cause accessibility issues.
 
 :::tip Sync flow
 
