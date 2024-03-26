@@ -10,7 +10,6 @@ Codat follows <a className="external" href="https://quickbooks.intuit.com/learn-
 
 The latest three versions of:
 
-- QuickBooks Desktop (UK)
 - QuickBooks Desktop (US)
 - QuickBooks Desktop (Canada)
 
