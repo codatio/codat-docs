@@ -7,6 +7,7 @@ authors: mcclowes
 ---
 _^^ remove the draft line from the section above, replace the author name with your github username_
 
+_Note:_ The file name should have the word `deprecation` in it.
 
 _Brief summary of the upcoming change._
 
