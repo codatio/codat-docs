@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **July 10, 2024**, we will deprecate the `RuleId` property in all our existing webhook payloads following the release of our [new webhooks service](/updates/240306-new-webhook-service-released).
+On **July 10, 2024**, all clients will be migrated onto our [new webhooks service](/updates/240306-new-webhook-service-released). As part of this migration, the `RuleId` webhook property will be deprecated in all our existing webhook payloads.
 
 <!--truncate-->
 
@@ -25,7 +25,7 @@ The `RuleId` property will be deprecated in the following webhook rule schemas:
 - [Client rate limit reached](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reached)
 - [Client rate limit reset](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reset)
 
-Following the release of the new webhooks service, the `RuleId` is no longer relevant and should not be used.   
+As part of the move to the new webhooks service, the `RuleId` is no longer relevant and should not be used.   
 
 ### Action required
 
@@ -37,4 +37,4 @@ You should use `RuleType` to identify what event a given webhook corresponds wit
 
 If no action is taken, after **July 10, 2024**, your application will continue to receive events, but the `RuleId` will not be populated.
 Any application logic using the `RuleId` property will function following your unhappy path for `RuleId` logic.
-Depending on your implementation, this will likely cause your application to stop processing Codat's webhooks. 
+Depending on your implementation, this may impact your processing Codat's webhooks. 
