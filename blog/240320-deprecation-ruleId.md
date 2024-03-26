@@ -1,5 +1,5 @@
 ---
-title: "Upcoming 2024-07-10: Deprecation of RuleId in rules webhooks"
+title: "2024-07-10: Deprecation of RuleId in rules webhooks"
 date: "2024-03-26"
 tags: ["Deprecation"]
 authors: dcoplowe
