@@ -47,31 +47,6 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 :::
 
 
-## Create a bill
-
-view only the relevant mapping options I need to create a bill required in the application and my accounting platform’
-
-Use the [Create bill](/sync-for-payables-v2-api#/operations/create-bill) endpoint to
-
-upload a bill attachment into the Revolut platform, which will then create an open bill within my associated accounting platform
-
-
-[Get bill mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-bills)
-
-[List bills](/sync-for-payables-v2-api#/operations/list-bills)
-
-when I first link my accounting platform to Revolut, I want to be able to pull in all unpaid bills, so that I can see what bills are outstanding and require action
-
-
-### Attachments
-
-I want to be able to add an attachment to a bill I have created, so I verifying the legitimacy and accuracy of the transaction in the accounting platform.
-
-Use the [Upload attachment](/sync-for-payables-v2-api#/operations/upload-bill-attachment) to
-
-You can also view attachments for a specific bill using the [List bill attachments](/sync-for-payables-v2-api#/operations/list-bill-attachments) endpoint and download them by calling [Download bill attachment](/sync-for-payables-v2-api#/operations/download-bill-attachment).
-
-
 ## Pay a bill
 
 The bill pay kit gives you the option to either create a bill or retireve a list of unpaid bills from an SMBs accounting platform.
@@ -80,15 +55,15 @@ The bill pay kit gives you the option to either create a bill or retireve a list
 
 When creating a bill, you will also need to set a tax rate and nominal account in which the bill will go against. You can call our [Get bill mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-bills) endpoint in order get these options from the accounting platform. 
 
-Bills should always correspond to a supplier that issuesd them. Ensure the relevant suppier exists before creating a new bill. You are able to retrieve a list of suppliers to then associate against the bill. This list of suppliers can be queried to only retrieve suppliers associated with unpaid bills (i.e. 'balance>0') or if a suppleir has been created within a specificc timeframe.  
+Bills should always correspond to a supplier that issuesd them. Ensure the relevant suppier exists before creating a new bill. You are able to retrieve a list of active [suppliers](https://docs.codat.io/sync-for-payables-v2-api#/operations/list-suppliers) to then associate against the bill. This list of suppliers can be queried to only retrieve suppliers associated with unpaid bills (i.e. 'balance>0') or if a suppleir has been created within a specificc timeframe.  
+
+The [upload bill attachment] endpoint(https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) ensures your accounts payable flow has a full audit trail for your SMB, whilst verifying the legitimacy and accuracy of the transaction in the accounting platform. This is assigned against a specififc bill ('billId'). 
 
 ### Retrieving a bill
 
-When the [List bills](/sync-for-payables-v2-api#/operations/list-bills) endpoint is called, you will recieve a list of all outstandig bills (i.e. bills with a status of 'Open' & 'Partially paid')
+When the [List bills](/sync-for-payables-v2-api#/operations/list-bills) endpoint is called, you will recieve a list of all outstandig bills (i.e. bills with a status of 'Open' & 'Partially paid'). 
 
-
-
-- limitations? 
+Alongside these bills, you can also view attachments for a specific bill using the [List bill attachments](/sync-for-payables-v2-api#/operations/list-bill-attachments) endpoint and download them by calling [Download bill attachment](/sync-for-payables-v2-api#/operations/download-bill-attachment).
 
 ## Record a payment 
 
@@ -97,14 +72,6 @@ When an SMBs bill has been paid in the application, a [bill payment](/sync-for-p
 To create the bill payment, the SMB must set the bank account used to process the payment against. A list of the relevent accounts can be retrieved using the [Mapping Options - Payments](/sync-for-payables-v2-api#/operations/get-mapping-options-payments) endpoint.
 
 The kit allows for a single bill payment. In case of partial payments, use the same endpoint and adjust the amount values according to the amount of the partial payment.
-
-## Master data
-
-[List suppliers](/sync-for-payables-v2-api#/operations/list-suppliers) returns a ist of active suppliers, but you can [query](/using-the-api/querying) it to view those with unpaid bills only, or those that were recently created.
-
-I want to be able search for a supplier which is associated with a draft or open bill, to make sure that the supplier details from the accounting platform are up to date
-
-[Create bank account](/sync-for-payables-v2-api#/operations/create-bank-account) 
 
 
 ---
