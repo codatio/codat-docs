@@ -1,6 +1,6 @@
 ---
 title: "Create and update transfers"
-sidebar_label: "Create transfers"
+sidebar_label: "Transfers"
 description: Record and update transfer transactions that represent the movement of your customer's money
 ---
 
