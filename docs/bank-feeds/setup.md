@@ -61,7 +61,7 @@ Some of these integrations require additional setup specific to bank feeds. We w
 
 ## Authorization flow
 
-As part of using Bank Feeds API, you will need your customers to authorize your access to their data. To do so, use [Embedded Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow. 
+As part of using Bank Feeds API, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow. 
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
