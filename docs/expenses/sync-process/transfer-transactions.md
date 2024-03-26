@@ -1,6 +1,6 @@
 ---
 title: "Create and update transfers"
-sidebar_label: "Create transfers"
+sidebar_label: "Transfers"
 description: Record and update transfer transactions that represent the movement of your customer's money
 ---
 
@@ -18,7 +18,7 @@ This process is summarized on the diagram below.
 ``` mermaid
 sequenceDiagram
   User->>+You: Approve transfer with receipt
-  You-)+Codat: Post transfer transaction
+  You-)+Codat: Put transfer transaction
   Note over You,Codat: Initiate sync
   Codat --> Codat: Sync request added to queue
   Codat-->>You: syncId

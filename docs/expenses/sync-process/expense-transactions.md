@@ -1,6 +1,6 @@
 ---
 title: "Create and update expenses"
-sidebar_label: "Create expenses"
+sidebar_label: "Expenses"
 description: Record and update expense transactions that represent your customers' spend
 ---
 
