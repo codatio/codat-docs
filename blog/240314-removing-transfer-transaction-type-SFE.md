@@ -19,4 +19,5 @@ When creating a transfer, the [Create transfer transaction](https://docs.codat.i
 ## Expected impact if no action is taken
 
 If you try to use the `Transfer in` and `Transfer out` transaction types with the [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint after **July 10, 2024**, the syncs will fail with a `400` status code and return the following error message:
+
 `Transfer In/Out transaction type is no longer supported. Please use the 'Create transfer transactions' endpoint.`
