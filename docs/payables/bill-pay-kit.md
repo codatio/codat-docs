@@ -57,7 +57,7 @@ When creating a bill, you will also need to set a tax rate and nominal account i
 
 Bills should always correspond to a supplier that issuesd them. Ensure the relevant suppier exists before creating a new bill. You are able to retrieve a list of active [suppliers](https://docs.codat.io/sync-for-payables-v2-api#/operations/list-suppliers) to then associate against the bill. This list of suppliers can be queried to only retrieve suppliers associated with unpaid bills (i.e. 'balance>0') or if a suppleir has been created within a specificc timeframe.  
 
-The [upload bill attachment] endpoint(https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) ensures your accounts payable flow has a full audit trail for your SMB, whilst verifying the legitimacy and accuracy of the transaction in the accounting platform. This is assigned against a specififc bill ('billId'). 
+The [upload bill attachment](https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) endpoint ensures your accounts payable flow has a full audit trail for your SMB, whilst verifying the legitimacy and accuracy of the transaction in the accounting platform. This is assigned against a specififc bill ('billId'). 
 
 ### Retrieving a bill
 
