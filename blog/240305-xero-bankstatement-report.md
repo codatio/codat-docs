@@ -1,5 +1,5 @@
 ---
-title: "Upcoming 2024-04-02: Xero BankStatement Report breaking change"
+title: "2024-04-02: Xero BankStatement Report breaking change"
 date: "2024-03-05"
 tags: ["Deprecation"]
 authors: mcclowes
