@@ -157,10 +157,6 @@ When pushing Journal entries, Codat first creates a default location in NetSuite
 For accounts with _Multi-Book Accounting_ enabled, Codat does not support pushing journal entries to a specific NetSuite journal.
 :::
 
-## Payments
-
-When pushing Payments to Oracle NetSuite, Codat does not support the ability to [refund a credit note](/accounting-api#/schemas/Payment).
-
 ## Purchase orders
 
 When pushing Purchase orders to Oracle NetSuite:
