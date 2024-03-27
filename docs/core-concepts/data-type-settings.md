@@ -46,6 +46,8 @@ For more information about how to synchronize datasets on demand, see [Synchroni
 
 ## Choose a synchronization frequency
 
+By default, **Sync frequency** is set to **None**. 
+
 You can change the synchronization frequency using the drop-down list next to the data type name:
 
 - None (disables the synchronization)
@@ -54,7 +56,9 @@ You can change the synchronization frequency using the drop-down list next to th
 - Daily
 - Hourly (premium feature)
 
-It is not possible to specify a date or a time for synchronization. Instead, the syncs are queued automatically based on the frequency and the age of the existing data set. By default, **Sync frequency** is set to **None**. 
+Syncs will automatically trigger based on the last sync date. For example, if the frequency is daily (24 hours), the next sync would automatically be queued 24 hours after the last sync. 
+
+It is not possible to set a specific date or time for syncs to occur. If you need this kind of functionality, you can build custom scheduling using cron and our [Refresh data type](https://docs.codat.io/platform-api#/operations/refresh-data-type) endpoint.
 
 :::note Offline connectors
 If a connector remains installed on the user’s machine and a sync frequency is configured, the offline connector will continue to periodically sync data when the connector is available.
