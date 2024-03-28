@@ -2,7 +2,7 @@
 title: Solution kit for the bill pay scenario
 sidebar_label: Bill pay kit
 displayed_sidebar: payables
-description: "Simplify the employment of the bill pay process to your app with our solution kit"
+description: "Simplify the deployment of the bill pay process to your app with our solution kit"
 ---
 
 import { IntegrationsList } from "@components/global/Integrations";
@@ -30,7 +30,6 @@ Crucially, the kit offers synchronous functionality, providing real-time updates
     C -->D(Create draft payment)
     D -->E(Schedule payment)
     E -->F(Single bill payment)
-    F --> G(Full payment)
 
 ```
 
@@ -106,4 +105,3 @@ The kit is built for the scenario where a single bill is paid in full. If you ne
 ## Read next
 
 - [Bill pay kit API reference](/sync-for-payables-v2-api#/)
-- [Sync for Payables](/payables/overview)
