@@ -2,79 +2,98 @@
 title: Solution kit for the bill pay scenario
 sidebar_label: Bill pay kit
 displayed_sidebar: payables
-description: "Simplify the employment of the bill pay process to your app with pur solution kit"
+description: "Simplify the employment of the bill pay process to your app with our solution kit"
 ---
+
+import { IntegrationsList } from "@components/global/Integrations";
+import { integrationsFilterBillPayKit } from "@components/global/Integrations/integrations";
 
 ## Overview
 
-The Bill Pay Kit is a standarized and synchronous API-based solution designed to effortlessly integrate bill pay capabilities into your SMB accounting platforms.
+The Bill pay kit is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.
 
-A key difference between the kit and the Sync for Payables offering is its synchronous functionality, a crucial distinction that ensures real-time synchronization between your platform and your SMBs' accounting systems. In today's fast-paced industry landscape, this feature enables our clients to meet the ever-evolving demands of users by delivering a seamless, near-real-time experience.
+We have streamlined and enhanced the logic in our kit's endpoints to focus on simplicity and efficiency, and not on complex procurement functionalities and use cases.
 
-For instance, with our kit, the creation of a bill in your platform seamlessly aligns with the bill in the SMBs' accounting platform, enhancing operational efficiency and customer satisfaction.
+Crucially, the kit offers synchronous functionality, providing real-time synchronization between your platform and your SMBs' accounting systems. In today's fast-paced industry landscape, this enables you to meet user demands with a seamless, near-real-time experience. Have a look at the streamlined process below: 
 
-The kit is designed to help neobanks and B2B payment providers in this space, provide an MVP integrated flow to their SMBs as quickly as possible. We have streamlined and built-in logic to our kits endpoints to reduce the complexities of designing, building an maintiain accounting integrations from scratch. It's ideal for facilitating essential bill payment processes within your SMB accounting platforms, focusing on simplicity and efficiency rather than complex procurement functionalities and use cases.
+```mermaid
 
-QUESTION - Should we add a diagram here to show the flow it could cover?
+  flowchart TD
+    A(Connect accounting platform) --> B(Sync data)
+    B --> H(Create new bill)
+    H --> D
+    B --> C(View outstanding bills)
+    C -->D(Create draft payment)
+    D -->E(Schedule payment)
+    E -->F(Single bill payment)
+    F --> G(Full payment)
 
-:::tip Client libraries
-
-Use our comprehensive [libraries](/get-started/libraries) in multiple languages to kick-start and simplify your build.
-
-:::
+```
 
 ## Supported integrations
 
-QUESTION - How should we show supported platforms?
-Just Xero now. QBO coming soon.
+<br />
+
+<IntegrationsList filter={integrationsFilterBillPayKit} />
+
+:::tip Java client library
+
+You can use our comprehensive [Java library](https://github.com/codatio/client-sdk-java/tree/main/sync-for-payables) to kick-start and simplify your implementatin of the bill pay kit.
+
+:::
 
 ## Prerequisites
 
-When implementing your Sync for Payables solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection. You can do that when the customer starts interacting with your application.  
+When using the Bill pay kit, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection. You can do that when the customer starts interacting with your application.  
 
 1. Create a company 
 
-Within Sync for Payables, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-v2-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting platform.
+A company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-v2-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting platform.
 
 2. Create a connection
 
-Next, use the [Create connection](/sync-for-payables-v2-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source, fetching or creating suppliers, bills, and payment methods. 
+Next, use the [Create connection](/sync-for-payables-v2-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source, fetching or creating bills and payments. 
 
-For a more in-depth dive into creating companies and connections, see how to [Configure customer in Codat](/payables/configure-customer), or read more about the concepts of a [company](/core-concepts/companies) and a [connection](/core-concepts/connections).
+For a deeper dive into creating companies and connections, see how to [Configure customer in Codat](/payables/configure-customer), or read more about the concepts of a [company](/core-concepts/companies) and a [connection](/core-concepts/connections).
 
 :::tip Authorize your API calls
-Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
+Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the [Portal](https://app.codat.io/) to pick up your authorization header.
 :::
-
 
 ## Pay a bill
 
-The bill pay kit gives you the option to either create a bill or retireve a list of unpaid bills from an SMBs accounting platform.
+With the Bill pay kit, your customer can create a new bill or view and choose a bill from a list of unpaid bills from their accounting platform. 
 
-### Creating a bill
+### Create a bill
 
-When creating a bill, you will also need to set a tax rate and nominal account in which the bill will go against. You can call our [Get bill mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-bills) endpoint in order get these options from the accounting platform. 
+Use the [Create bill](/sync-for-payables-v2-api#/operations/create-bill) endpoint to create a new bill in your SMB customer's accounting software. Ensure you have the following detail:
 
-Bills should always correspond to a supplier that issuesd them. Ensure the relevant suppier exists before creating a new bill. You are able to retrieve a list of active [suppliers](https://docs.codat.io/sync-for-payables-v2-api#/operations/list-suppliers) to then associate against the bill. This list of suppliers can be queried to only retrieve suppliers associated with unpaid bills (i.e. 'balance>0') or if a suppleir has been created within a specificc timeframe.  
+1. Tax rate and a nominal account
 
-The [upload bill attachment](https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) endpoint ensures your accounts payable flow has a full audit trail for your SMB, whilst verifying the legitimacy and accuracy of the transaction in the accounting platform. This is assigned against a specififc bill ('billId'). 
+    You  need to provide a tax rate and a nominal account that the bill will be recorded against. Call our [Get bill mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-bills) endpoint to get this detail from your customer's accounting platform. 
 
-### Retrieving a bill
+2. Supplier record
 
-When the [List bills](/sync-for-payables-v2-api#/operations/list-bills) endpoint is called, you will recieve a list of all outstandig bills (i.e. bills with a status of 'Open' & 'Partially paid'). 
+    Bills should always correspond to a supplier that issued them. Use the [List suppliers](https://docs.codat.io/sync-for-payables-v2-api#/operations/list-suppliers) endpoint to check that the relevant supplier exists and then associate it with the bill. You can use querying to retrieve only suppliers with unpaid bills or suppliers created within a specific timeframe. 
 
-Alongside these bills, you can also view attachments for a specific bill using the [List bill attachments](/sync-for-payables-v2-api#/operations/list-bill-attachments) endpoint and download them by calling [Download bill attachment](/sync-for-payables-v2-api#/operations/download-bill-attachment).
+Use the [Upload bill attachment](https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) endpoint to assign an attachment against a specific bill ('billId'). This ensures your accounts payable flow has a full audit trail for your SMB and confirms the legitimacy and accuracy of the transaction in the accounting platform. 
+
+### Retrieve a bill
+
+When the [List bills](/sync-for-payables-v2-api#/operations/list-bills) endpoint is called, you will receive a list of all outstanding bills. We define outstanding bills as those with the status of 'Open' & 'Partially paid'. 
+
+Alongside these bills, you can also view attachments for a specific bill using the [List bill attachments](/sync-for-payables-v2-api#/operations/list-bill-attachments) endpoint and download them by calling the [Download bill attachment](/sync-for-payables-v2-api#/operations/download-bill-attachment) endpoint.
 
 ## Record a payment 
 
-When an SMBs bill has been paid in the application, a [bill payment](/sync-for-payables-v2-api#/operations/create-bill-payment) is then created which represents an allocation of money within any of your customer's accounts payable (AP) accounts. 
+When an SMB pays their bill in your application, use the [Create bill payment](/sync-for-payables-v2-api#/operations/create-bill-payment) endpoint to represent an allocation of money within any of your customer's accounts payable accounts. 
 
-To create the bill payment, the SMB must set the bank account used to process the payment against. A list of the relevent accounts can be retrieved using the [Mapping Options - Payments](/sync-for-payables-v2-api#/operations/get-mapping-options-payments) endpoint.
+To create the payment, your SMB customer must set the bank account used to process the payment. You can retrieve and display a list of relevant accounts using the [Get payment mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-payments) endpoint.
 
-The kit allows for a single bill payment. In case of partial payments, use the same endpoint and adjust the amount values according to the amount of the partial payment.
-
+The kit is built for the scenario where a single bill is paid in full. If you need to record a partial payment, use the same [Create bill payment](/sync-for-payables-v2-api#/operations/create-bill-payment) endpoint and adjust the values to reflect the amount of the partial payment.
 
 ---
 ## Read next
 
 - [Bill pay kit API reference](/sync-for-payables-v2-api#/)
+- [Sync for Payables](/payables/overview)

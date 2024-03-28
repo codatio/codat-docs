@@ -50,6 +50,10 @@ export const integrationsFilterPayables = [
   "Xero",
 ];
 
+export const integrationsFilterBillPayKit = [
+  "Xero",
+];
+
 export const bankfeedsIntegrations = [
   {
     "name": "QuickBooks Online bank feeds",
