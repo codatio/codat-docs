@@ -1,14 +1,19 @@
 {
   "openapi": "3.1.0",
+  "servers": [
+    {
+      "description": "Production",
+      "url": "https://banking-api.codat.io"
+    }
+  ],
   "info": {
-    "title": "Sync for Expenses (v1)",
-    "version": "prealpha",
+    "title": "Supplier Enablement",
+    "description": "Supplier enablement.",
+    "version": "3.0.0",
     "contact": {
       "name": "Codat",
-      "url": "https://www.codat.io/",
-      "email": "expenses@codat.io"
+      "email": "support@codat.io"
     },
-    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Read more...](https://docs.codat.io/sync-for-expenses/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing what you expect? [See the main Sync for Expenses API](https://docs.codat.io/sync-for-expenses-api).",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -31,7 +36,58 @@
     ],
     "retryConnectionErrors": true
   },
-  "x-codat-docs-path": "sync-for-expenses-v1-api",
+  "x-speakeasy-name-override": [
+    {
+      "operationId": "^list-.*?",
+      "methodNameOverride": "list"
+    },
+    {
+      "operationId": "^list-.*?-attachments",
+      "methodNameOverride": "list-attachments"
+    },
+    {
+      "operationId": "^get-.*?",
+      "methodNameOverride": "get"
+    },
+    {
+      "operationId": "^get-create-.*?-model",
+      "methodNameOverride": "get-create-model"
+    },
+    {
+      "operationId": "^get-create-update.*?-model",
+      "methodNameOverride": "get-create-update-model"
+    },
+    {
+      "operationId": "^get-.*?-attachment",
+      "methodNameOverride": "get-attachment"
+    },
+    {
+      "operationId": "^update-.*?",
+      "methodNameOverride": "update"
+    },
+    {
+      "operationId": "^create-.*?",
+      "methodNameOverride": "create"
+    },
+    {
+      "operationId": "^delete-.*?",
+      "methodNameOverride": "delete"
+    },
+    {
+      "operationId": "^delete-.*?-attachment",
+      "methodNameOverride": "delete-attachment"
+    },
+    {
+      "operationId": "^download-.*?-attachment",
+      "methodNameOverride": "download-attachment"
+    },
+    {
+      "operationId": "^upload-.*?-attachment",
+      "methodNameOverride": "upload-attachment"
+    }
+  ],
+  "x-codat-docs-path": "lending-api",
+  "x-codat-keep-docs-paths-local": true,
   "x-codat-speakeasy-pagination": {
     "type": "offsetLimit",
     "inputs": [
@@ -47,713 +103,58 @@
   },
   "tags": [
     {
-      "name": "Connections",
-      "description": "Create and manage partner expense connection."
-    },
-    {
-      "name": "Configuration",
-      "description": "Companies sync configuration."
-    },
-    {
-      "name": "Mapping options",
-      "description": "Mapping options for a companies expenses."
-    },
-    {
-      "name": "Sync",
-      "description": "Triggering a new sync of expenses to accounting software."
-    },
-    {
-      "name": "Sync status",
-      "description": "Check the status of ongoing or previous expense syncs."
-    },
-    {
-      "name": "Expenses",
-      "description": "Create expense datasets and upload receipts."
-    },
-    {
-      "name": "Transaction status",
-      "description": "Retrieve the status of transactions within a sync."
-    },
-    {
-      "name": "Companies",
-      "description": "Create and manage your Codat companies."
-    }
-  ],
-  "servers": [
-    {
-      "url": "https://api.codat.io"
+      "name": "Spend analysis",
+      "description": "Create and view spend analysis report"
     }
   ],
   "paths": {
-    "/companies/{companyId}/sync/expenses/config": {
-      "get": {
-        "tags": [
-          "Configuration"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanyConfiguration"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "summary": "Get company configuration",
-        "description": "Gets a companies expense sync configuration",
-        "operationId": "get-company-configuration"
-      },
-      "post": {
-        "tags": [
-          "Configuration"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CompanyConfiguration"
-              },
-              "examples": {}
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanyConfiguration"
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "summary": "Set company configuration",
-        "description": "Sets a companies expense sync configuration",
-        "operationId": "save-company-configuration"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/connections/partnerExpense": {
-      "post": {
-        "tags": [
-          "Connections"
-        ],
-        "description": "Creates a partner expense data connection",
-        "summary": "Create partner expense connection",
-        "operationId": "create-partner-expense-connection",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Connection"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/sync/expenses/mappingOptions": {
-      "get": {
-        "tags": [
-          "Mapping options"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MappingOptions"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "description": "Gets the expense mapping options for a companies accounting software",
-        "summary": "Mapping options",
-        "operationId": "get-mapping-options"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs": {
-      "post": {
-        "tags": [
-          "Sync"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "summary": "Initiate sync",
-        "description": "Initiate sync of pending transactions.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostSync"
-              },
-              "examples": {}
-            }
-          }
-        },
-        "responses": {
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "422": {
-            "$ref": "#/components/responses/Unprocessable-Content"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "operationId": "initiate-sync"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/lastSuccessful/status": {
-      "get": {
-        "tags": [
-          "Sync status"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanySyncStatus"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "description": "Gets the status of the last successful sync",
-        "summary": "Last successful sync",
-        "operationId": "get-last-successful-sync"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/latest/status": {
-      "get": {
-        "tags": [
-          "Sync status"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanySyncStatus"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "description": "Gets the latest sync status",
-        "summary": "Latest sync status",
-        "operationId": "get-latest-sync"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/list/status": {
-      "get": {
-        "tags": [
-          "Sync status"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/CompanySyncStatus"
-                  }
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "summary": "List sync statuses",
-        "description": "Gets a list of sync statuses",
-        "operationId": "list-syncs"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/{syncId}/status": {
-      "get": {
-        "tags": [
-          "Sync status"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/syncId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanySyncStatus"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "summary": "Get sync status",
-        "description": "Get the sync status for a specified sync",
-        "operationId": "get-sync-by-id"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/syncId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions": {
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/syncId"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TransactionMetadataList"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/Malformed-Query"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "tags": [
-          "Transaction status"
-        ],
-        "summary": "Get sync transactions",
-        "description": "Get's the transactions and status for a sync",
-        "operationId": "list-sync-transactions"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/syncId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}": {
-      "get": {
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/syncId"
-          },
-          {
-            "$ref": "#/components/parameters/transactionId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TransactionMetadata"
-                  }
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "tags": [
-          "Transaction status"
-        ],
-        "summary": "Get sync transaction",
-        "description": "Gets the status of a transaction for a sync",
-        "operationId": "get-sync-transaction"
-      },
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/syncId"
-        },
-        {
-          "$ref": "#/components/parameters/transactionId"
-        }
-      ]
-    },
-    "/companies/{companyId}/sync/expenses/data/expense-transactions": {
+    "/companies/{companyId}/reports/spendAnalysis": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
         }
       ],
       "post": {
-        "summary": "Create expense-transactions",
-        "operationId": "create-expense-dataset",
-        "description": "Create an expense transaction",
+        "summary": "Create spend analysis report",
+        "operationId": "create-spend-analysis-report",
         "tags": [
-          "Expenses"
+          "Spend analysis"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "$ref": "#/components/schemas/DateTime"
+            },
+            "in": "query",
+            "name": "from",
+            "description": "The date the report was created from."
+          },
+          {
+            "schema": {
+              "$ref": "#/components/schemas/DateTime"
+            },
+            "in": "query",
+            "name": "to",
+            "description": "The date the report was generated to."
+          },
+          {
+            "schema": {
+              "type": "number",
+              "format": "decimal",
+              "default": 1
+            },
+            "in": "query",
+            "name": "excludeSuppliersWithAnnualisedSpendBelow",
+            "description": "Exclude suppliers with annualised spend below this amount in base currency."
+          }
         ],
         "responses": {
           "200": {
             "description": "OK",
             "content": {
               "application/json": {
-                "x-speakeasy-usage-example": true,
                 "schema": {
-                  "$ref": "#/components/schemas/CreateExpenseResponse"
-                },
-                "examples": {
-                  "Example 1": {
-                    "value": {
-                      "datasetId": "cd937d46-8e41-43a9-9477-a79158ffd98a"
-                    }
-                  }
+                  "$ref": "#/components/schemas/ReportMetadata"
                 }
               }
             }
@@ -782,142 +183,75 @@
           "503": {
             "$ref": "#/components/responses/Service-Unavailable"
           }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateExpenseRequest"
-              },
-              "examples": {
-                "Payment": {
-                  "value": {
-                    "items": [
-                      {
-                        "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-                        "type": "Payment",
-                        "issueDate": "2021-05-21T00:00:00+00:00",
-                        "currency": "GBP",
-                        "currencyRate": 1.18,
-                        "contactRef": {
-                          "id": "f5244103-5223-4b0a-857f-50566ac86c11",
-                          "type": "Supplier"
-                        },
-                        "merchantName": "Amazon UK",
-                        "lines": [
-                          {
-                            "netAmount": 110.42,
-                            "taxAmount": 14.43,
-                            "taxRateRef": {
-                              "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
-                            },
-                            "accountRef": {
-                              "id": "9aa5b894-1be9-4f97-96cd-ffde90766b3e"
-                            },
-                            "trackingRefs": [
-                              {
-                                "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c"
-                              }
-                            ]
-                          }
-                        ],
-                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-                      }
-                    ]
-                  }
-                },
-                "Refund": {
-                  "value": {
-                    "items": [
-                      {
-                        "id": "7008d3f2-aeb4-11ed-afa1-0242ac120002",
-                        "type": "Refund",
-                        "issueDate": "2023-02-17T00:00:00+00:00",
-                        "currency": "GBP",
-                        "merchantName": "Amazon UK",
-                        "lines": [
-                          {
-                            "netAmount": 110.42,
-                            "taxAmount": 14.43,
-                            "taxRateRef": {
-                              "id": "23_Bills"
-                            },
-                            "accountRef": {
-                              "id": "42"
-                            },
-                            "trackingRefs": [
-                              {
-                                "id": "DEPARTMENT_6"
-                              }
-                            ]
-                          }
-                        ],
-                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-                      }
-                    ]
-                  }
-                },
-                "Transfer": {
-                  "value": {
-                    "items": [
-                      {
-                        "id": "979a7ee8-aeb4-11ed-afa1-0242ac120002",
-                        "type": "TransferIn",
-                        "issueDate": "2021-05-21T00:00:00+00:00",
-                        "currency": "GBP",
-                        "lines": [
-                          {
-                            "netAmount": 180.93,
-                            "taxAmount": 0,
-                            "accountRef": {
-                              "id": "40e3e57c-2322-4898-966c-ca41adfd23fd"
-                            }
-                          }
-                        ],
-                        "notes": "Credit Card Payment"
-                      }
-                    ]
-                  }
+        }
+      },
+      "get": {
+        "summary": "Get created spend analysis report",
+        "operationId": "get-spend-analysis-report",
+        "tags": [
+          "Spend analysis"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpendAnalysisWithSummaries"
                 }
               }
             }
           },
-          "description": ""
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
         }
       }
     },
-    "/companies/{companyId}/sync/expenses/expense-transactions/{transactionId}": {
+    "/companies/{companyId}/reports/{reportType}/status": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
         },
         {
-          "$ref": "#/components/parameters/transactionId"
+          "$ref": "#/components/parameters/reportType"
         }
       ],
-      "put": {
-        "summary": "Update expense transactions",
+      "get": {
+        "summary": "Get report generation status",
+        "operationId": "get-report-creation-status",
         "tags": [
-          "Expenses"
+          "Spend analysis"
         ],
+        "x-speakeasy-name-override": "clear-method-name",
         "responses": {
-          "202": {
-            "description": "Accepted",
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "syncId": {
-                      "type": "string",
-                      "description": "Unique identifier for the updated sync."
-                    }
-                  },
-                  "examples": {
-                    "Example 1": {
-                      "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
-                    }
-                  }
+                  "$ref": "#/components/schemas/ReportMetadata"
                 }
               }
             }
@@ -937,9 +271,6 @@
           "404": {
             "$ref": "#/components/responses/Not-Found"
           },
-          "422": {
-            "$ref": "#/components/responses/Unprocessable-Content"
-          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           },
@@ -949,57 +280,30 @@
           "503": {
             "$ref": "#/components/responses/Service-Unavailable"
           }
-        },
-        "operationId": "update-expense-dataset",
-        "description": "Update an expense transaction",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateExpenseRequest"
-              }
-            }
-          }
         }
       }
     },
-    "/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments": {
+    "/companies/{companyId}/reports/{reportType}/excel": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
         },
         {
-          "$ref": "#/components/parameters/syncId"
-        },
-        {
-          "$ref": "#/components/parameters/transactionId"
+          "$ref": "#/components/parameters/reportType"
         }
       ],
-      "post": {
-        "summary": "Upload attachment",
-        "operationId": "upload-attachment",
+      "get": {
+        "summary": "Download created spend analysis report",
+        "operationId": "download-spend-analysis-report",
         "tags": [
-          "Expenses"
+          "Spend analysis"
         ],
-        "description": "Creates an attachment in the accounting software against the given transactionId",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "$ref": "#/components/schemas/AttachmentUpload"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK",
             "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Attachment"
-                },
-                "examples": {}
+              "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
+                "schema": {}
               }
             }
           },
@@ -1026,908 +330,6 @@
           },
           "503": {
             "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies": {
-      "get": {
-        "summary": "List companies",
-        "tags": [
-          "Companies"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Companies"
-                },
-                "examples": {
-                  "One company": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                          "name": "My Test Company",
-                          "description": "My Test Company make testing software",
-                          "platform": "",
-                          "redirect": "https://link.codat.io/company/3fa85f64-5717-4562-b3fc-2c963f66afa6",
-                          "lastSync": "2022-01-01T12:30:00.000Z",
-                          "dataConnections": [
-                            {
-                              "id": "51baa045-4836-4317-a42e-3542e991e581",
-                              "integrationId": "1c312d69-e638-46d4-ad31-72e6c3ba8390",
-                              "integrationKey": "vjms",
-                              "sourceId": "396c3158-5dd7-481b-a7c4-a795ca31792b",
-                              "platformName": "Pandle",
-                              "linkUrl": "https://link-api.codat.io/companies/3fa85f64-5717-4562-b3fc-2c963f66afa6/connections/51baa045-4836-4317-a42e-3542e991e581/start",
-                              "status": "Linked",
-                              "lastSync": "2022-01-01T12:30:00.000Z",
-                              "created": "2022-01-01T11:30:00Z",
-                              "sourceType": "Accounting"
-                            }
-                          ],
-                          "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith",
-                          "groups": [
-                            {
-                              "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                            }
-                          ]
-                        }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 100,
-                      "totalResults": 1,
-                      "_links": {
-                        "current": {
-                          "href": "/companies?page=1&pageSize=100"
-                        },
-                        "self": {
-                          "href": "/companies"
-                        }
-                      }
-                    }
-                  },
-                  "List of Companies": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "d1568dde-adf6-11ed-afa1-0242ac120002",
-                          "name": "Technicalium",
-                          "description": "Technology services, including web and app design and development",
-                          "platform": "",
-                          "redirect": "https://link.codat.io/company/d1568dde-adf6-11ed-afa1-0242ac120002",
-                          "lastSync": "2022-01-01T12:30:00.000Z",
-                          "dataConnections": [
-                            {
-                              "id": "51baa045-4836-4317-a42e-3542e991e581",
-                              "integrationId": "1c312d69-e638-46d4-ad31-72e6c3ba8390",
-                              "integrationKey": "vjms",
-                              "sourceId": "396c3158-5dd7-481b-a7c4-a795ca31792b",
-                              "platformName": "Pandle",
-                              "linkUrl": "https://link-api.codat.io/companies/d1568dde-adf6-11ed-afa1-0242ac120002/connections/51baa045-4836-4317-a42e-3542e991e581/start",
-                              "status": "Linked",
-                              "lastSync": "2022-01-01T12:30:00.000Z",
-                              "created": "2022-01-01T11:30:00Z",
-                              "sourceType": "Accounting"
-                            }
-                          ],
-                          "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Joe Bloggs"
-                        },
-                        {
-                          "id": "096db70b-78de-4ff0-aa98-299cb5fe17a0",
-                          "name": "Godata",
-                          "description": "A new digital agency with a passion for creating amazing digital experiences",
-                          "platform": "",
-                          "redirect": "https://link.codat.io/company/096db70b-78de-4ff0-aa98-299cb5fe17a0",
-                          "lastSync": "2022-01-01T12:30:00.000Z",
-                          "dataConnections": [
-                            {
-                              "id": "a70bc148-dc21-46b2-a257-d9c58ac15cbb",
-                              "integrationId": "1c312d69-e638-46d4-ad31-72e6c3ba8390",
-                              "integrationKey": "vjms",
-                              "sourceId": "396c3158-5dd7-481b-a7c4-a795ca31792b",
-                              "platformName": "Pandle",
-                              "linkUrl": "https://link-api.codat.io/companies/096db70b-78de-4ff0-aa98-299cb5fe17a0/connections/a70bc148-dc21-46b2-a257-d9c58ac15cbb/start",
-                              "status": "Linked",
-                              "lastSync": "2022-01-01T12:30:00.000Z",
-                              "created": "2022-01-01T11:30:00Z",
-                              "sourceType": "Accounting"
-                            }
-                          ],
-                          "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
-                        }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 100,
-                      "totalResults": 2,
-                      "_links": {
-                        "current": {
-                          "href": "/companies?page=1&pageSize=100"
-                        },
-                        "self": {
-                          "href": "/companies"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/Malformed-Query"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "operationId": "list-companies",
-        "description": "﻿The *List companies* endpoint returns a list of [companies] associated to your instances.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          },
-          {
-            "$ref": "#/components/parameters/query"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          }
-        ]
-      },
-      "post": {
-        "summary": "Create company",
-        "tags": [
-          "Companies"
-        ],
-        "operationId": "create-company",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "x-speakeasy-usage-example": true,
-                "schema": {
-                  "$ref": "#/components/schemas/Company"
-                },
-                "examples": {
-                  "With no description": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "Technicalium",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar"
-                    }
-                  },
-                  "With a description": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "Technicalium",
-                      "description": "Technology services, including web and app design and development",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar"
-                    }
-                  },
-                  "With a group": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "Technicalium",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar",
-                      "groups": [
-                        {
-                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "description": "﻿Use the *Create company* endpoint to create a new [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) that represents your customer in Codat. \n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n\nIf forbidden characters (see `name` pattern) are present in the request, a company will be created with the forbidden characters removed. For example, `Company (Codat[1])` with be created as `Company Codat1`.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CompanyRequestBody"
-              },
-              "examples": {
-                "With no description": {
-                  "value": {
-                    "name": "Technicalium"
-                  }
-                },
-                "With a description": {
-                  "value": {
-                    "name": "Technicalium",
-                    "description": "Technology services, including web and app design and development"
-                  }
-                },
-                "With a group": {
-                  "value": {
-                    "name": "Technicalium",
-                    "groups": [
-                      {
-                        "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                      }
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/companies/{companyId}": {
-      "put": {
-        "summary": "Update company",
-        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/sync-for-expenses-v1-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/sync-for-expenses-v1-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
-        "operationId": "update-company",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "tags": [
-          "Companies"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Company"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CompanyRequestBody"
-              },
-              "examples": {
-                "Update name": {
-                  "value": {
-                    "name": "New Name"
-                  }
-                },
-                "Update description": {
-                  "value": {
-                    "name": "Same name",
-                    "description": "Additional documents required"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a company",
-        "operationId": "delete-company",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "description": "﻿The *Delete company* endpoint permanently deletes a [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company), its [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) and any cached data. This operation is irreversible.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
-        "tags": [
-          "Companies"
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      },
-      "get": {
-        "summary": "Get company",
-        "operationId": "get-company",
-        "description": "﻿The *Get company* endpoint returns a single company for a given `companyId`.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "tags": [
-          "Companies"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Company"
-                },
-                "examples": {
-                  "Simple company": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18Z",
-                      "createdByUserName": "Dan Tzabar"
-                    }
-                  },
-                  "With groups": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18Z",
-                      "createdByUserName": "Dan Tzabar",
-                      "groups": [
-                        {
-                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/connections": {
-      "get": {
-        "summary": "List connections",
-        "description": "﻿List the connections for a company.",
-        "operationId": "list-connections",
-        "tags": [
-          "Connections"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          },
-          {
-            "$ref": "#/components/parameters/query"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Connections"
-                },
-                "examples": {
-                  "Connections": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                          "integrationKey": "dfxm",
-                          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                          "platformName": "Basiq",
-                          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                          "status": "Linked",
-                          "lastSync": "2022-10-27T10:22:43.6464237Z",
-                          "created": "2022-10-27T09:53:29Z",
-                          "sourceType": "Banking"
-                        }
-                      ],
-                      "pageNumber": 0,
-                      "pageSize": 0,
-                      "totalResults": 0,
-                      "_links": {
-                        "self": {
-                          "href": "string"
-                        },
-                        "current": {
-                          "href": "string"
-                        },
-                        "next": {
-                          "href": "string"
-                        },
-                        "previous": {
-                          "href": "string"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/Malformed-Query"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/sync-for-expenses-v1-api#/operations/list-integrations) endpoint to access valid platform keys. ",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "tags": [
-          "Connections"
-        ],
-        "operationId": "create-connection",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "platformKey": {
-                    "type": "string",
-                    "minLength": 4,
-                    "maxLength": 4,
-                    "pattern": "[a-z]{4}",
-                    "example": "gbol",
-                    "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/overview#platform-keys), [banking](https://docs.codat.io/integrations/banking/overview#platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/overview#platform-keys) platform keys."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Connection"
-                },
-                "examples": {
-                  "Connection": {
-                    "value": {
-                      "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                      "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                      "integrationKey": "dfxm",
-                      "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                      "platformName": "Basiq",
-                      "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                      "status": "Linked",
-                      "lastSync": "2022-10-27T10:22:43.6464237Z",
-                      "created": "2022-10-27T09:53:29Z",
-                      "sourceType": "Banking"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/connections/{connectionId}": {
-      "get": {
-        "summary": "Get connection",
-        "operationId": "get-connection",
-        "description": "﻿Returns a specific connection for a company when valid identifiers are provided. If the identifiers are for a deleted company and/or connection, a not found response is returned.",
-        "tags": [
-          "Connections"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/connectionId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Connection"
-                },
-                "examples": {
-                  "Connection": {
-                    "value": {
-                      "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                      "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                      "integrationKey": "dfxm",
-                      "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                      "platformName": "Basiq",
-                      "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                      "status": "Linked",
-                      "lastSync": "2022-10-27T10:22:43.6464237Z",
-                      "created": "2022-10-27T09:53:29Z",
-                      "sourceType": "Banking"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete connection",
-        "operationId": "delete-connection",
-        "description": "﻿Revoke and remove a connection from a company.\nThis operation is not reversible. The end user would need to reauthorize a new data connection if you wish to view new data for this company.",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/connectionId"
-          }
-        ],
-        "tags": [
-          "Connections"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      },
-      "patch": {
-        "summary": "Unlink connection",
-        "description": "﻿This allows you to deauthorize a connection, without deleting it from Codat. This means you can still view any data that has previously been pulled into Codat, and also lets you re-authorize in future if your customer wishes to resume sharing their data.",
-        "operationId": "unlink-connection",
-        "x-speakeasy-name-override": "unlink",
-        "tags": [
-          "Connections"
-        ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "$ref": "#/components/parameters/connectionId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Connection"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "title": "Update connection",
-                "x-internal": true,
-                "type": "object",
-                "properties": {
-                  "status": {
-                    "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus",
-                    "description": "The current authorization status of the data connection.",
-                    "nullable": true
-                  }
-                },
-                "additionalProperties": false
-              },
-              "examples": {
-                "Example": {
-                  "value": {
-                    "status": "Unlinked"
-                  }
-                }
-              }
-            }
-          },
-          "description": ""
-        }
-      }
-    }
-  },
-  "webhooks": {
-    "Sync Started": {
-      "post": {
-        "requestBody": {
-          "description": "Triggered anytime a sync starts.",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SyncStartedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Sync Failed": {
-      "post": {
-        "requestBody": {
-          "description": "Triggered anytime a sync fails.",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SyncFailedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Sync Complete": {
-      "post": {
-        "requestBody": {
-          "description": "Triggered anytime a sync completes.",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SyncCompleteWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
           }
         }
       }
@@ -1935,1632 +337,321 @@
   },
   "components": {
     "schemas": {
-      "AccountMappingInfo": {
-        "title": "Account mapping info",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "Example AccountInfo": {
-            "id": "313a4dbe-b3a4-42f0-a5f5-43e382e62db9",
-            "name": "Travel",
-            "currency": "GBP",
-            "accountType": "Expense",
-            "validTransactionTypes": [
-              "Payment",
-              "Refund"
-            ]
-          }
-        },
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique identifier of account.",
-            "example": "6",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the account as it appears in the companies accounting software.",
-            "example": "Purchases",
-            "nullable": true
-          },
-          "currency": {
-            "type": "string",
-            "description": "Currency of the account.",
-            "example": "GBP",
-            "nullable": true
-          },
-          "accountType": {
-            "type": "string",
-            "description": "Type of the account.",
-            "example": "Expense",
-            "enum": [
-              "Asset",
-              "Liability",
-              "Income",
-              "Expense",
-              "Equity"
-            ],
-            "nullable": true
-          },
-          "validTransactionTypes": {
-            "type": "array",
-            "description": "Supported transaction types for the account.",
-            "minItems": 0,
-            "maxItems": 8,
-            "nullable": true,
-            "items": {
-              "type": "string",
-              "enum": [
-                "Payment",
-                "Refund",
-                "Reward",
-                "Chargeback",
-                "TransferIn",
-                "TransferOut",
-                "AdjustmentIn",
-                "AdjustmentOut"
-              ],
-              "example": "Payment",
-              "minLength": 1,
-              "maxLength": 8
-            }
-          }
-        }
-      },
-      "Attachment": {
-        "title": "Attachment",
-        "type": "object",
-        "x-examples": {
-          "Attachment Example": {
-            "companyId": "bf1e0242-5b7a-418b-a307-9e09dbf9f39a",
-            "id": "1400000000122699154",
-            "transactionId": "f8f00edd-ddb0-4ca5-b36b-8f932e6b5160"
-          }
-        },
-        "properties": {
-          "companyId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique ID of company in Codat"
-          },
-          "id": {
-            "type": "string",
-            "description": "Unique identifier of attachment"
-          },
-          "transactionId": {
-            "type": "string",
-            "description": "Unique identifier of transaction"
-          }
-        }
-      },
-      "AttachmentUpload": {
-        "title": "Attachment upload",
-        "type": "object",
-        "x-internal": true,
-        "required": [
-          "file"
-        ],
-        "properties": {
-          "file": {
-            "$ref": "#/components/schemas/AttachmentUpload/definitions/codatFile"
-          }
-        },
-        "definitions": {
-          "codatFile": {
-            "type": "string",
-            "description": "The file to be uploaded as an attachment.",
-            "format": "binary"
-          }
-        }
-      },
-      "BankAccount": {
-        "title": "Bank account",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "The id of the account from which purchases are made",
-            "example": "32"
-          }
-        }
-      },
-      "Companies": {
-        "title": "Companies",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Company"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "Company": {
-        "title": "Company",
-        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
-        "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the company",
-            "example": "Codat Ltd."
-          },
-          "description": {
-            "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-          },
-          "platform": {
-            "type": "string",
-            "deprecated": true,
-            "example": "Xero",
-            "description": "`platformKeys` name used when creating the company."
-          },
-          "redirect": {
-            "type": "string",
-            "format": "uri",
-            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
-            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
-          },
-          "created": {
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ],
-            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-          },
-          "createdByUserName": {
-            "type": "string",
-            "description": "Name of user that created the company in Codat."
-          },
-          "dataConnections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Connection"
-            }
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "title": "Group reference",
-              "type": "object",
-              "properties": {
-                "id": {
-                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
-                }
-              }
-            },
-            "description": "An array of groups the company has been assigned to."
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "redirect"
-        ],
-        "definitions": {
-          "companyGroupAssignment": {
-            "title": "Group assignment",
-            "type": "object",
-            "properties": {
-              "groupId": {
-                "allOf": [
-                  {
-                    "type": "string",
-                    "format": "uuid",
-                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
-                    "description": "Unique identifier for the group."
-                  },
-                  {
-                    "description": "Unique identifier of the group you want to assign the company to."
-                  }
-                ]
-              }
-            }
-          }
-        },
+      "DateTime": {
+        "title": "Date time",
+        "type": "string",
         "examples": [
-          {
-            "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-            "name": "string",
-            "platform": "string",
-            "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
-            "lastSync": "2022-01-01T12:00:00.000Z",
-            "created": "2022-01-01T12:00:00.000Z",
-            "createdByUserName": "string",
-            "dataConnections": [
-              {
-                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                "integrationKey": "dfxm",
-                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                "platformName": "Basiq",
-                "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                "status": "Linked",
-                "lastSync": "2022-10-27T10:22:43.6464237Z",
-                "created": "2022-10-27T09:53:29Z",
-                "sourceType": "Banking"
-              }
-            ],
-            "groups": [
-              {
-                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-              }
-            ]
-          }
-        ]
-      },
-      "CompanyConfiguration": {
-        "required": [
-          "bankAccount",
-          "supplier",
-          "customer"
+          "2022-10-23T00:00:00.000Z",
+          "2022-10-23T00:00:00.000Z"
         ],
-        "title": "Company configuration",
-        "type": "object",
-        "x-examples": {
-          "Config Example": {
-            "bankAccount": {
-              "id": "89"
-            },
-            "supplier": {
-              "id": "124"
-            },
-            "customer": {
-              "id": "140"
-            }
-          }
-        },
-        "properties": {
-          "bankAccount": {
-            "$ref": "#/components/schemas/BankAccount"
-          },
-          "supplier": {
-            "$ref": "#/components/schemas/Supplier"
-          },
-          "customer": {
-            "$ref": "#/components/schemas/Customer"
-          }
-        }
+        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
-      "CompanyRequestBody": {
-        "title": "Create company request",
-        "x-internal": true,
+      "ReportMetadata": {
+        "title": "Report metadata",
         "type": "object",
+        "description": "Report metadata.",
         "properties": {
-          "name": {
+          "lastGenerated": {
+            "description": "The date the report was last generated.",
             "type": "string",
-            "description": "Name of company being connected.",
-            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
-            "minLength": 1,
-            "example": "Bank of Dave"
+            "example": "2024-01-02T03:04:05.678Z"
           },
-          "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
+          "reportStatus": {
+            "description": "Report status.",
+            "type": "string"
           },
-          "groups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Company/properties/groups/items"
-            },
-            "description": "Reference to the groups that the company is assigned to."
-          }
-        },
-        "required": [
-          "name"
-        ]
-      },
-      "CompanySyncStatus": {
-        "title": "Company sync status",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "Success Data Pushed": {
-            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
-            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
-            "syncStatusCode": 2000,
-            "syncStatus": "Complete",
-            "errorMessage": "",
-            "syncExceptionMessage": "",
-            "syncUtc": "2023-01-24T14:15:22Z",
-            "dataPushed": true
-          },
-          "Success No Data Pushed": {
-            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
-            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
-            "syncStatusCode": 2040,
-            "syncStatus": "Complete",
-            "errorMessage": "",
-            "syncExceptionMessage": "",
-            "syncUtc": "2023-01-24T14:15:22Z",
-            "dataPushed": false
-          }
-        },
-        "properties": {
-          "companyId": {
+          "queued": {
+            "description": "The date the report generation was queued.",
             "type": "string",
-            "description": "Unique identifier for your SMB in Codat.",
-            "example": "d4d73051-ed31-42b6-99f6-d288cd940992",
-            "nullable": true
-          },
-          "syncId": {
-            "type": "string",
-            "description": "Unique identifier of the sync.",
-            "example": "a6a22aff-a43a-411d-a910-2dae73217cce",
-            "nullable": true
-          },
-          "syncStatusCode": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Status code of the sync.",
-            "example": 2000
-          },
-          "syncStatus": {
-            "type": "string",
-            "description": "Text status of the sync.",
-            "example": "Completed",
-            "nullable": true
+            "example": "2024-01-02T03:04:05.678Z"
           },
           "errorMessage": {
-            "type": "string",
-            "description": "Error message of the sync.",
-            "nullable": true
+            "description": "Message detailing the error.",
+            "type": "string"
           },
-          "syncExceptionMessage": {
-            "type": "string",
-            "description": "Exception message of the sync.",
-            "nullable": true
+          "reportType": {
+            "$ref": "#/components/parameters/reportType/schema"
           },
-          "syncUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Datetime of the sync.",
-            "nullable": true
-          },
-          "dataPushed": {
-            "type": "boolean",
-            "description": "Boolean of whether the sync resulted in data being pushed."
+          "reportGeneratedHistory": {
+            "description": "Report generation history.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "example": "2024-01-02T03:04:05.678Z"
+            }
           }
         }
       },
-      "Connection": {
-        "title": "Connection",
-        "description": "﻿A connection represents a [company's](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+      "SpendAnalysisWithSummaries": {
+        "title": "Spend analysis with summaries",
         "type": "object",
+        "description": "Spend analysis report with summary data.",
         "properties": {
-          "id": {
-            "$ref": "#/components/parameters/connectionId/schema"
+          "analysisSummary": {
+            "title": "Supplier analysis summary",
+            "type": "object",
+            "description": "Supplier analysis summary."
           },
-          "integrationId": {
-            "type": "string",
-            "format": "uuid",
-            "example": "fd321cb6-7963-4506-b873-e99593a45e30",
-            "description": "A Codat ID representing the integration."
-          },
-          "integrationKey": {
-            "type": "string",
-            "description": "A unique four-character ID that identifies the platform of the company's data connection. This ensures continuity if the platform changes its name in the future."
-          },
-          "sourceId": {
-            "type": "string",
-            "format": "uuid",
-            "example": "35b92968-9851-4095-ad60-395c95cbcba4",
-            "description": "A source-specific ID used to distinguish between different sources originating from the same data connection. In general, a data connection is a single data source. However, for TrueLayer, `sourceId` is associated with a specific bank and has a many-to-one relationship with the `integrationId`."
-          },
-          "sourceType": {
-            "title": "Source Type",
-            "description": "The type of platform of the connection.",
-            "type": "string",
-            "enum": [
-              "Accounting",
-              "Banking",
-              "BankFeed",
-              "Commerce",
-              "Expense",
-              "Other",
-              "Unknown"
-            ],
-            "example": "Accounting"
-          },
-          "platformName": {
-            "type": "string",
-            "description": "Name of integration connected to company."
-          },
-          "linkUrl": {
-            "type": "string",
-            "format": "uri",
-            "description": "The link URL your customers can use to authorize access to their business application.",
-            "example": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/2e2eb431-c1fa-4dc9-93fa-d29781c12bcd/start"
-          },
-          "status": {
-            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
-          },
-          "created": {
-            "$ref": "#/components/schemas/Company/properties/created"
-          },
-          "dataConnectionErrors": {
+          "spendAnalysis": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
+              "title": "Spend analysis with summaries",
+              "type": "object",
+              "description": "Spend analysis report with summary data."
             }
           },
-          "connectionInfo": {
+          "supplierAnalysis": {
+            "type": "array",
+            "items": {
+              "title": "Supplier analysis report",
+              "type": "object",
+              "description": "Supplier analysis data."
+            }
+          },
+          "companyInfo": {
+            "title": "Company information",
             "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        },
-        "required": [
-          "id",
-          "integrationId",
-          "integrationKey",
-          "sourceId",
-          "platformName",
-          "linkUrl",
-          "status",
-          "created",
-          "sourceType"
-        ],
-        "definitions": {
-          "dataConnectionStatus": {
-            "title": "Data connection status",
-            "description": "The current authorization status of the data connection.",
-            "type": "string",
-            "enum": [
-              "PendingAuth",
-              "Linked",
-              "Unlinked",
-              "Deauthorized"
-            ]
-          },
-          "dataConnectionError": {
-            "title": "Data connection error",
-            "type": "object",
-            "properties": {
-              "statusCode": {
-                "type": "string",
-                "description": "The HTTP status code returned by the error."
-              },
-              "statusText": {
-                "type": "string",
-                "description": "A non-numeric status code/text."
-              },
-              "errorMessage": {
-                "type": "string",
-                "description": "A brief message about the error."
-              },
-              "erroredOnUtc": {
-                "$ref": "#/components/schemas/Company/properties/created"
-              }
-            }
-          },
-          "dataConnectionSourceType": {
-            "title": "Source Type",
-            "description": "The type of platform of the connection.",
-            "type": "string",
-            "enum": [
-              "Accounting",
-              "Banking",
-              "BankFeed",
-              "Commerce",
-              "Expense",
-              "Other",
-              "Unknown"
-            ],
-            "example": "Accounting"
+            "description": "Company information."
           }
         },
         "example": {
-          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-          "integrationKey": "dfxm",
-          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-          "platformName": "Basiq",
-          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-          "status": "Linked",
-          "lastSync": "2022-10-27T10:22:43.6464237Z",
-          "created": "2022-10-27T09:53:29Z",
-          "sourceType": "Banking"
-        }
-      },
-      "Connections": {
-        "title": "Connections",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Connection"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "ContactRef": {
-        "type": "object",
-        "title": "Supplier/customer reference",
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
-            "description": "Identifier of supplier or customer."
-          },
-          "contactType": {
-            "description": "The type of contact.",
-            "type": "string",
-            "example": "Supplier",
-            "enum": [
-              "Supplier"
-            ]
-          }
-        }
-      },
-      "CreateExpenseRequest": {
-        "title": "Create expense request",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "items": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 50,
-            "items": {
-              "$ref": "#/components/schemas/ExpenseTransaction"
-            }
-          }
-        }
-      },
-      "CreateExpenseResponse": {
-        "title": "Create expense response",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "datasetId": {
-            "type": "string",
-            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
-            "format": "uuid",
-            "description": "Unique id of dataset created"
-          }
-        }
-      },
-      "Customer": {
-        "title": "Customer",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "id of the customer for all income related activities to be associated to.",
-            "example": "142"
-          }
-        }
-      },
-      "DataConnection": {
-        "$ref": "#/components/schemas/Connection"
-      },
-      "ErrorMessage": {
-        "title": "Error message",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "statusCode": {
-            "type": "integer",
-            "description": "The HTTP status code returned by the error."
-          },
-          "service": {
-            "type": "string",
-            "description": "Codat's service the returned the error."
-          },
-          "error": {
-            "type": "string",
-            "description": "A brief description of the error."
-          },
-          "correlationId": {
-            "type": "string",
-            "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
-          },
-          "validation": {
-            "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidation"
-          },
-          "canBeRetried": {
-            "type": "string",
-            "description": "`True` if the error occurred transiently and can be retried."
-          },
-          "detailedErrorCode": {
-            "type": "integer",
-            "description": "Machine readable error code used to automate processes based on the code returned."
-          }
-        },
-        "definitions": {
-          "errorValidation": {
-            "title": "Validation error",
-            "type": "object",
-            "nullable": true,
-            "description": "A human-readable object describing validation decisions Codat has made. If an operation has failed because of validation errors, they will be detailed here.",
-            "properties": {
-              "errors": {
-                "type": "array",
-                "nullable": true,
-                "items": {
-                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
-                }
-              },
-              "warnings": {
-                "type": "array",
-                "nullable": true,
-                "items": {
-                  "$ref": "#/components/schemas/ErrorMessage/definitions/errorValidationItem"
-                }
-              }
-            }
-          },
-          "errorValidationItem": {
-            "title": "Validation error item",
-            "type": "object",
-            "properties": {
-              "itemId": {
-                "type": "string",
-                "nullable": true,
-                "description": "Unique identifier for a validation item."
-              },
-              "message": {
-                "type": "string",
-                "nullable": true,
-                "description": "A message outlining validation item's issue."
-              },
-              "validatorName": {
-                "type": "string",
-                "nullable": true,
-                "description": "Name of validator."
-              }
-            }
-          }
-        }
-      },
-      "ExpenseTransaction": {
-        "title": "Expense transaction",
-        "type": "object",
-        "x-examples": {
-          "Payment": {
-            "id": "a44135b0-6882-489a-83fe-a0c57a4afb19",
-            "type": "Payment",
-            "issueDate": "2021-05-21T00:00:00+00:00",
-            "currency": "GBP",
-            "currencyRate": 1.18,
-            "merchantName": "Amazon UK",
-            "lines": [
-              {
-                "netAmount": 110.42,
-                "taxAmount": 14.43,
-                "taxRateRef": {
-                  "id": "7e2ccb60-de1a-4c2b-9bd9-2f98a1c6be3f"
-                },
-                "accountRef": {
-                  "id": "a505cb47-0f7d-4e8b-90aa-9f9c2308b7bc"
-                },
-                "trackingRefs": [
-                  {
-                    "id": "31a7e93c-4bb2-474c-b26d-10b2b75f7a25"
-                  }
-                ]
-              }
-            ],
-            "notes": "amazon purchase"
-          }
-        },
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-            "format": "uuid",
-            "description": "Your unique identifier for the transaction."
-          },
-          "type": {
-            "type": "string",
-            "example": "Payment",
-            "description": "The type of transaction.",
-            "enum": [
-              "Payment",
-              "Refund",
-              "Reward",
-              "Chargeback",
-              "TransferIn",
-              "TransferOut",
-              "AdjustmentIn",
-              "AdjustmentOut"
-            ]
-          },
-          "issueDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Date of the transaction was recorded."
-          },
-          "currency": {
-            "type": "string",
-            "example": "GBP",
-            "description": "Currency the transaction was recorded in."
-          },
-          "currencyRate": {
-            "title": "Currency rate",
-            "type": "number",
-            "format": "decimal",
-            "nullable": true,
-            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, include the required currency rate in the expense transaction.  |"
-          },
-          "contactRef": {
-            "description": "Supplier or customer for the purchase to be associated to.",
-            "$ref": "#/components/schemas/ContactRef"
-          },
-          "merchantName": {
-            "type": "string",
-            "example": "Amazon UK",
-            "description": "Name of the merchant where the purchase took place"
-          },
-          "lines": {
-            "type": "array",
-            "description": "Array of transaction lines.",
-            "minItems": 1,
-            "maxItems": 100,
-            "items": {
-              "$ref": "#/components/schemas/ExpenseTransactionLine"
-            }
-          },
-          "notes": {
-            "type": "string",
-            "description": "Any private, company notes about the transaction.",
-            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-          }
-        },
-        "required": [
-          "id",
-          "type",
-          "issueDate",
-          "currency"
-        ]
-      },
-      "ExpenseTransactionLine": {
-        "x-internal": true,
-        "title": "Expense transaction line",
-        "type": "object",
-        "x-examples": {
-          "ExpenseTransactionLine": {
-            "netAmount": 110.42,
-            "taxAmount": 14.43,
-            "taxRateRef": {
-              "id": "08d37c46-8d5d-441b-8bad-76286c43047e"
-            },
-            "accountRef": {
-              "id": "16989b16-96d4-401a-9054-f5c620c655a6"
-            },
-            "trackingRefs": [
-              {
-                "id": "e9a1b63d-9ff0-40e7-8038-016354b987e6"
-              }
-            ]
-          }
-        },
-        "properties": {
-          "netAmount": {
-            "type": "number",
-            "format": "decimal",
-            "example": 110.42,
-            "description": "Amount of the line, exclusive of tax."
-          },
-          "taxAmount": {
-            "type": "number",
-            "format": "decimal",
-            "example": 14.43,
-            "description": "Amount of tax for the line."
-          },
-          "taxRateRef": {
-            "$ref": "#/components/schemas/RecordRef"
-          },
-          "accountRef": {
-            "$ref": "#/components/schemas/RecordRef"
-          },
-          "trackingRefs": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 10,
-            "items": {
-              "$ref": "#/components/schemas/RecordRef"
-            }
-          }
-        },
-        "required": [
-          "netAmount",
-          "taxAmount",
-          "accountRef"
-        ]
-      },
-      "IntegrationType": {
-        "title": "Integration type",
-        "x-internal": true,
-        "type": "string",
-        "description": "Type of transaction that has been processed e.g. Expense or Bank Feed.",
-        "enum": [
-          "expenses",
-          "bankfeeds"
-        ],
-        "default": "expenses",
-        "example": "expenses",
-        "nullable": true
-      },
-      "MappingOptions": {
-        "title": "Mapping options",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {},
-        "properties": {
-          "expenseProvider": {
-            "type": "string",
-            "description": "Name of the expense integration.",
-            "example": "Partner Expense",
-            "nullable": true
-          },
-          "accounts": {
-            "type": "array",
-            "description": "Array of available accounts for mapping.",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/AccountMappingInfo"
-            }
-          },
-          "trackingCategories": {
-            "type": "array",
-            "description": "Array of available tracking categories for mapping.",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/TrackingCategoryMappingInfo"
-            }
-          },
-          "taxRates": {
-            "type": "array",
-            "description": "Array of available tax rates for mapping.",
-            "nullable": true,
-            "items": {
-              "$ref": "#/components/schemas/TaxRateMappingInfo"
-            }
-          }
-        }
-      },
-      "PagingInfo": {
-        "type": "object",
-        "title": "Pagination information",
-        "x-internal": true,
-        "properties": {
-          "pageNumber": {
-            "type": "integer",
-            "description": "Current page number."
-          },
-          "pageSize": {
-            "type": "integer",
-            "description": "Number of items to return in results array.",
-            "maximum": 2000
-          },
-          "totalResults": {
-            "type": "integer",
-            "description": "Total number of items."
-          },
-          "_links": {
-            "$ref": "#/components/schemas/PagingInfo/definitions/links"
-          }
-        },
-        "definitions": {
-          "links": {
-            "title": "Hal Links",
-            "type": "object",
-            "required": [
-              "self",
-              "current"
-            ],
-            "properties": {
-              "self": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "current": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "next": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              },
-              "previous": {
-                "$ref": "#/components/schemas/PagingInfo/definitions/halRef"
-              }
-            },
-            "examples": [
-              {
-                "self": {
-                  "href": "/companies"
-                },
-                "current": {
-                  "href": "/companies?page=1&pageSize=10"
-                }
-              }
-            ]
-          },
-          "halRef": {
-            "title": "Hypertext reference",
-            "type": "object",
-            "properties": {
-              "href": {
-                "type": "string",
-                "format": "uri-reference",
-                "description": "Uri hypertext reference."
-              }
-            }
-          }
-        },
-        "required": [
-          "pageNumber",
-          "pageSize",
-          "totalResults",
-          "_links"
-        ],
-        "examples": [
-          {
-            "pageNumber": 1,
-            "pageSize": 10,
-            "totalResults": 1,
-            "_links": {
-              "self": {
-                "href": "/companies/{id}/data/{dataType}"
-              },
-              "current": {
-                "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-              }
-            }
-          }
-        ]
-      },
-      "PostSync": {
-        "title": "Post sync",
-        "type": "object",
-        "properties": {
-          "datasetIds": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "RecordRef": {
-        "x-internal": true,
-        "type": "object",
-        "title": "Record reference",
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
-            "description": "identifier of linked reference from mapping options."
-          }
-        }
-      },
-      "Supplier": {
-        "title": "Supplier",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "id of the supplier for all purchases to be associated to",
-            "example": "124"
-          }
-        }
-      },
-      "SyncCompleteWebhook": {
-        "title": "Sync complete webhook",
-        "x-internal": true,
-        "description": "Webhook request body used to notify that a sync has completed.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/SyncCompleteWebhook/definitions/SyncCompleteWebhookData"
-          }
-        },
-        "definitions": {
-          "SyncCompleteWebhookData": {
-            "type": "object",
-            "title": "Sync complete webhook data",
-            "properties": {
-              "syncId": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncId"
-              },
-              "syncType": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncType"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-            "ClientName": "Expense Sync",
-            "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
-            "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
-            "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
-            "RuleType": "Sync Completed",
-            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense completed successfully.",
-            "Data": {
-              "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-              "syncType": "Expense"
-            }
-          }
-        ]
-      },
-      "SyncFailedWebhook": {
-        "title": "Sync failed webhook",
-        "x-internal": true,
-        "description": "Webhook request body used to notify that a sync has failed.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "title": "Client ID",
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for your client in Codat."
-          },
-          "ClientName": {
-            "type": "string",
-            "description": "Name of your client in Codat."
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "RuleId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the rule.",
-            "deprecated": true
-          },
-          "RuleType": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "34d52a089f08a"
-            },
-            "description": "The type of rule."
-          },
-          "AlertId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the webhook event."
-          },
-          "Message": {
-            "type": "string",
-            "description": "A human-readable message about the webhook."
-          },
-          "Data": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData"
-          }
-        },
-        "definitions": {
-          "SyncFailedWebhookData": {
-            "type": "object",
-            "title": "Sync failed webhook data",
-            "properties": {
-              "syncId": {
-                "type": "string",
-                "format": "uuid",
-                "example": "a9367074-b5c3-42c4-9be4-be129f43577e",
-                "description": "Unique identifier for the failed sync."
-              },
-              "syncType": {
-                "type": "string",
-                "description": "The type of sync being performed."
-              },
-              "FailureStage": {
-                "type": "string",
-                "description": "The stage of the job the sync failed."
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-            "ClientName": "Expense Sync",
-            "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
-            "RuleId": "289c80dc-2aee-4b71-afff-9acd8d051080",
-            "RuleType": "Sync Failed",
-            "AlertId": "72c1103b-7f17-4a3a-8db5-67c2d360a516",
-            "Message": "Sync 3bead2a1-1b3d-4d90-8077-cddc5ca68b01 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has failed at step Pushing.",
-            "Data": {
-              "syncId": "3bead2a1-1b3d-4d90-8077-cddc5ca68b01",
-              "syncType": "Expense",
-              "FailureStage": "Pushing"
-            }
-          }
-        ]
-      },
-      "SyncInitiated": {
-        "title": "Sync initiated",
-        "type": "object",
-        "properties": {
-          "syncId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the initiated sync."
-          }
-        },
-        "additionalProperties": false
-      },
-      "SyncStartedWebhook": {
-        "title": "Sync started webhook",
-        "x-internal": true,
-        "description": "Webhook request body used to notify that a sync has started.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
-          },
-          "Data": {
-            "type": "object",
-            "properties": {
-              "syncId": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncId"
-              },
-              "syncType": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncType"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-            "ClientName": "Expense Sync",
-            "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
-            "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
-            "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
-            "RuleType": "Sync Started",
-            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has started.",
-            "Data": {
-              "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-              "syncType": "Expense"
-            }
-          }
-        ]
-      },
-      "TaxRateMappingInfo": {
-        "title": "Tax rate mapping info",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "UK Tax Rate": {
-            "id": "59_Bills",
-            "name": "UK Standard Rate (Bills) Bills",
-            "code": "UK Standard Rate (Bills)",
-            "effectiveTaxRate": 20,
-            "totalTaxRate": 20,
-            "validTransactionTypes": [
-              "Payment",
-              "Reward"
-            ]
-          }
-        },
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique identifier of tax rate.",
-            "example": "59_Bills",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the tax rate in the accounting platform.",
-            "example": "UK Standard Rate (Bills) Bills",
-            "nullable": true
-          },
-          "code": {
-            "type": "string",
-            "description": "Code for the tax rate from the accounting platform.",
-            "example": "UK Standard Rate (Bills)",
-            "nullable": true
-          },
-          "effectiveTaxRate": {
-            "type": "number",
-            "format": "decimal",
-            "description": "Effective tax rate.",
-            "example": 20
-          },
-          "totalTaxRate": {
-            "type": "number",
-            "format": "decimal",
-            "description": "Total (not compounded) sum of the components of a tax rate.",
-            "example": 20
-          },
-          "validTransactionTypes": {
-            "type": "array",
-            "description": "Supported transaction types for the account.",
-            "minItems": 0,
-            "maxItems": 8,
-            "nullable": true,
-            "items": {
-              "type": "string",
-              "enum": [
-                "Payment",
-                "Refund",
-                "Reward",
-                "Chargeback",
-                "TransferIn",
-                "TransferOut",
-                "AdjustmentIn",
-                "AdjustmentOut"
-              ],
-              "example": "Payment"
-            }
-          }
-        }
-      },
-      "TrackingCategoryMappingInfo": {
-        "title": "Tracking category mapping info",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "Tracking Category with parentId": {
-            "id": "DEPARTMENT_1",
-            "modifiedDate": "2023-02-09T11:42:41Z",
-            "name": "TestLocation",
-            "hasChildren": false,
-            "parentId": "DEPARTMENTS"
-          },
-          "Parent Tracking Category": {
-            "id": "DEPARTMENTS",
-            "modifiedDate": "2023-02-09T11:42:41Z",
-            "name": "Departments",
-            "hasChildren": true
-          }
-        },
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique identifier of the tracking category.",
-            "example": "DEPARTMENT_2",
-            "nullable": true
-          },
-          "modifiedDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
-            "description": "Datetime when the tracking category was last modified.",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "description": "Name of the tracking category as it appears in the accounting software.",
-            "example": "New York",
-            "nullable": true
-          },
-          "hasChildren": {
-            "type": "boolean",
-            "description": "Boolean of whether the tracking category has child categories."
-          },
-          "parentId": {
-            "type": "string",
-            "description": "ID of the parent tracking category",
-            "example": "DEPARTMENTS",
-            "nullable": true
-          }
-        }
-      },
-      "TransactionMetadata": {
-        "title": "Transaction metadata",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "Successful Transaction": {
-            "transactionId": "8fdba4ed-e327-4925-be1a-b7a2b04627f7",
-            "status": "Completed",
-            "integrationType": "expense"
-          },
-          "Unsuccessful Transaction": {
-            "transactionId": "3d694cd1-4cd9-4136-91db-32408195c6fc",
-            "status": "ValidationError",
-            "message": "The line item total -208.10((-195.01 + -1.09) + (-10.01 + -1.99)) must equal the transaction total -1.1",
-            "integrationType": "string"
-          }
-        },
-        "properties": {
-          "transactionId": {
-            "type": "string",
-            "description": "Your unique idenfier of the transaction.",
-            "example": "aa02271d-ed5f-47f5-be76-778d5905225a",
-            "nullable": true
-          },
-          "status": {
-            "$ref": "#/components/schemas/TransactionStatus"
-          },
-          "message": {
-            "type": "string",
-            "description": "Metadata such as validation errors or the resulting record created in the accounting software.",
-            "nullable": true
-          },
-          "integrationType": {
-            "$ref": "#/components/schemas/IntegrationType"
-          }
-        }
-      },
-      "TransactionMetadataList": {
-        "title": "Transaction metadata list",
-        "x-internal": true,
-        "additionalProperties": false,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/TransactionMetadata"
-                }
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PagingInfo"
-          }
-        ],
-        "x-examples": {
-          "Example 1": {
-            "results": [
-              {
-                "transactionId": "aa02271d-ed5f-47f5-be76-778d5905225a",
-                "status": "Completed",
-                "integrationType": "expenses"
-              },
-              {
-                "transactionId": "730177a2-8505-410a-9ebc-c2dd52e4bea9",
-                "status": "Completed",
-                "integrationType": "expenses"
-              }
-            ],
-            "pageNumber": 1,
-            "pageSize": 100,
-            "totalResults": 2,
-            "links": {
-              "self": {
-                "href": "string"
-              },
-              "current": {
-                "href": "string"
-              }
-            }
-          }
-        }
-      },
-      "TransactionStatus": {
-        "title": "Transaction status",
-        "x-internal": true,
-        "type": "string",
-        "description": "Status of the transaction.",
-        "enum": [
-          "Unknown",
-          "Pending",
-          "ValidationError",
-          "Completed",
-          "PushError"
-        ],
-        "example": "Completed",
-        "nullable": true
-      },
-      "UpdateExpenseRequest": {
-        "title": "Updating Expense Transaction Request",
-        "type": "object",
-        "examples": {
-          "Payment": {
+          "Spend analysis": {
             "value": {
-              "type": "Payment",
-              "issueDate": "2023-05-22T00:00:00+00:00",
-              "currency": "GBP",
-              "currencyRate": 1.18,
-              "notes": "New notes",
-              "contactRef": {
-                "id": "f5244103-5223-4b0a-857f-50566ac86c11",
-                "type": "Supplier"
+              "analysisSummary": {
+                "fromDate": "2023-03-28T00:00:00",
+                "toDate": "2024-03-27T00:00:00",
+                "monthsReviewed": 12,
+                "excludeSuppliersWithAnnualisedSpendBelow": 1,
+                "suppliersCount": 292,
+                "billsCount": 362,
+                "billsAmount": 15429745.08,
+                "paymentsCount": 330,
+                "paymentsAmount": 13021530.73
               },
-              "merchantName": "My Merchant"
+              "spendAnalysis": [
+                {
+                  "biggestCountPaymentMethod": "BankTransfer",
+                  "suppliersCount": 71,
+                  "percentageSuppliersByCount": 24.3,
+                  "percentageBillsByCount": 27.6,
+                  "percentageBillsByAmount": 30.7,
+                  "billsCount": 100,
+                  "billsOutstandingCount": 12,
+                  "billsAmount": 4732780.81,
+                  "billsOutstandingAmount": 518073.97,
+                  "billsOutstandingPercentageByAmount": 10.9,
+                  "paymentsCount": 99,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 4159307.07,
+                  "averagePaymentAmount": 42013.2,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 21.6,
+                  "averageBillSettlementPeriodWeighted": 18.2
+                },
+                {
+                  "biggestCountPaymentMethod": "Cash",
+                  "suppliersCount": 64,
+                  "percentageSuppliersByCount": 21.9,
+                  "percentageBillsByCount": 23.5,
+                  "percentageBillsByAmount": 15.9,
+                  "billsCount": 85,
+                  "billsOutstandingCount": 12,
+                  "billsAmount": 2459999.66,
+                  "billsOutstandingAmount": 172182.75,
+                  "billsOutstandingPercentageByAmount": 7,
+                  "paymentsCount": 82,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 2210011,
+                  "averagePaymentAmount": 26951.35,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 19,
+                  "averageBillSettlementPeriodWeighted": 12.4
+                },
+                {
+                  "biggestCountPaymentMethod": "Check",
+                  "suppliersCount": 37,
+                  "percentageSuppliersByCount": 12.7,
+                  "percentageBillsByCount": 11,
+                  "percentageBillsByAmount": 11.3,
+                  "billsCount": 40,
+                  "billsOutstandingCount": 2,
+                  "billsAmount": 1738186.05,
+                  "billsOutstandingAmount": 36844.69,
+                  "billsOutstandingPercentageByAmount": 2.1,
+                  "paymentsCount": 40,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 1680586.27,
+                  "averagePaymentAmount": 42014.66,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 20.1,
+                  "averageBillSettlementPeriodWeighted": 16.4
+                },
+                {
+                  "biggestCountPaymentMethod": "CreditCard",
+                  "suppliersCount": 30,
+                  "percentageSuppliersByCount": 10.3,
+                  "percentageBillsByCount": 10.2,
+                  "percentageBillsByAmount": 16.3,
+                  "billsCount": 37,
+                  "billsOutstandingCount": 7,
+                  "billsAmount": 2511303.16,
+                  "billsOutstandingAmount": 209083.64,
+                  "billsOutstandingPercentageByAmount": 8.3,
+                  "paymentsCount": 35,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 2261547.09,
+                  "averagePaymentAmount": 64615.63,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 26.4,
+                  "averageBillSettlementPeriodWeighted": 20.9
+                },
+                {
+                  "biggestCountPaymentMethod": "DebitCard",
+                  "suppliersCount": 31,
+                  "percentageSuppliersByCount": 10.6,
+                  "percentageBillsByCount": 10.2,
+                  "percentageBillsByAmount": 8.6,
+                  "billsCount": 37,
+                  "billsOutstandingCount": 5,
+                  "billsAmount": 1334306.53,
+                  "billsOutstandingAmount": 44551.05,
+                  "billsOutstandingPercentageByAmount": 3.3,
+                  "paymentsCount": 37,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 1289285.99,
+                  "averagePaymentAmount": 34845.57,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 18,
+                  "averageBillSettlementPeriodWeighted": 7.6
+                },
+                {
+                  "biggestCountPaymentMethod": "Unknown",
+                  "suppliersCount": 59,
+                  "percentageSuppliersByCount": 20.2,
+                  "percentageBillsByCount": 17.4,
+                  "percentageBillsByAmount": 17.2,
+                  "billsCount": 63,
+                  "billsOutstandingCount": 31,
+                  "billsAmount": 2653168.87,
+                  "billsOutstandingAmount": 1208053.11,
+                  "billsOutstandingPercentageByAmount": 45.5,
+                  "paymentsCount": 37,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 1420793.31,
+                  "averagePaymentAmount": 38399.82,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 23.4,
+                  "averageBillSettlementPeriodWeighted": 12.7
+                }
+              ],
+              "supplierAnalysis": [
+                {
+                  "supplierName": "The Acme Corporation",
+                  "contactName": "Wile E. Coyote",
+                  "emailAddress": "wile.e.coyote@acme.com",
+                  "taxNumber": "123456789",
+                  "addresses": [
+                    {
+                      "addressType": "Delivery",
+                      "line1": "Appartment 1",
+                      "line2": "Roadrunner Avenue",
+                      "city": "Las Vegas",
+                      "region": "Nevada",
+                      "country": "United States",
+                      "postalCode": 89106
+                    }
+                  ],
+                  "supplierId": "CLf7vnAx3C",
+                  "importedDate": "2023-08-11T08:02:48",
+                  "latestBilled": "2023-06-15T00:00:00",
+                  "billsCount": 2,
+                  "billsOutstandingCount": 0,
+                  "billsAmount": 578014.57,
+                  "billsOutstandingAmount": 0,
+                  "billsOutstandingPercentageByAmount": 0,
+                  "paymentsCount": 2,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 578014.57,
+                  "averagePaymentAmount": 289007.29,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "biggestCountPaymentMethod": "DebitCard",
+                  "biggestSpendPaymentMethod": "DebitCard",
+                  "averageBillPaymentTermsWeighted": 14.9,
+                  "averageBillSettlementPeriodWeighted": 7,
+                  "primaryAddress": {
+                    "addressType": "Delivery",
+                    "line1": "Appartment 1",
+                    "line2": "Roadrunner Avenue",
+                    "city": "Las Vegas",
+                    "region": "Nevada",
+                    "country": "United States",
+                    "postalCode": 89106
+                  }
+                }
+              ],
+              "companyInfo": {
+                "companyName": "Codat",
+                "addresses": [
+                  {
+                    "type": "Billing",
+                    "line1": "301 Ink Rooms",
+                    "line2": "28 Easton Street",
+                    "city": "London",
+                    "region": "England",
+                    "country": "United Kingdom",
+                    "postalCode": "WC1X 0BE"
+                  },
+                  {
+                    "type": "Delivery",
+                    "line1": "28 Easton Street",
+                    "line2": "",
+                    "city": "London",
+                    "region": "",
+                    "country": "UK",
+                    "postalCode": "WC1X 0BE"
+                  }
+                ],
+                "phoneNumbers": [
+                  {
+                    "number": "02012345678",
+                    "type": "Landline"
+                  },
+                  {
+                    "number": "07123456789",
+                    "type": "Mobile"
+                  },
+                  {
+                    "number": "02012345678",
+                    "type": "Fax"
+                  }
+                ],
+                "webLinks": [
+                  {
+                    "type": "Website",
+                    "url": "https://www.codat.io/"
+                  },
+                  {
+                    "type": "Social",
+                    "url": "https://www.linkedin.com/company/codat-limited/"
+                  }
+                ],
+                "registrationNumber": "5590111724",
+                "taxNumber": "74111622555799035846",
+                "baseCurrency": "GBP"
+              }
             }
           }
-        },
-        "properties": {
-          "type": "#/definitions/expenseType",
-          "issueDate": {
-            "type": "string",
-            "description": "Date the transaction was recorded.",
-            "example": "2022-06-28T00:00:00.000Z"
-          },
-          "currency": {
-            "type": "string",
-            "example": "GBP",
-            "description": "Currency the transaction was recorded in."
-          },
-          "currencyRate": {
-            "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
-          },
-          "contactRef": {
-            "description": "Supplier or Customer for the purchase to be associated to.",
-            "$ref": "#/components/schemas/ContactRef"
-          },
-          "merchantName": {
-            "type": "string",
-            "description": "Name of the merchant where the purchase took place",
-            "example": "Amazon UK"
-          },
-          "lines": {
-            "type": "array",
-            "description": "Array of transaction lines.",
-            "items": {
-              "$ref": "#/components/schemas/ExpenseTransactionLine"
-            }
-          },
-          "notes": {
-            "type": "string",
-            "description": "Any private, company notes about the transaction.",
-            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-          }
-        },
-        "definitions": {
-          "expenseType": {
-            "description": "The type of transaction.",
-            "type": "string",
-            "example": "Payment",
-            "enum": [
-              "Payment",
-              "Refund",
-              "Reward",
-              "Chargeback",
-              "TransferIn",
-              "TransferOut",
-              "AdjustmentIn",
-              "AdjustmentOut"
-            ]
-          }
-        },
-        "required": [
-          "type",
-          "issueDate"
-        ]
+        }
       }
     },
     "parameters": {
-      "syncId": {
-        "name": "syncId",
-        "in": "path",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "uuid",
-          "example": "6fb40d5e-b13e-11ed-afa1-0242ac120002"
-        },
-        "description": "Unique identifier for a sync."
-      },
-      "transactionId": {
-        "name": "transactionId",
-        "in": "path",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "uuid",
-          "example": "336694d8-2dca-4cb5-a28d-3ccb83e55eee"
-        },
-        "description": "The unique identifier for your SMB's transaction."
-      },
-      "page": {
-        "name": "page",
-        "in": "query",
-        "schema": {
-          "type": "integer",
-          "format": "int32",
-          "minimum": 1,
-          "example": 1,
-          "default": 1
-        },
-        "description": "Page number. [Read more](https://docs.codat.io/using-the-api/paging)."
-      },
-      "pageSize": {
-        "name": "pageSize",
-        "in": "query",
-        "schema": {
-          "type": "integer",
-          "format": "int32",
-          "default": 100,
-          "example": 100,
-          "minimum": 1,
-          "maximum": 5000
-        },
-        "description": "Number of records to return in a page. [Read more](https://docs.codat.io/using-the-api/paging)."
-      },
-      "query": {
-        "name": "query",
-        "in": "query",
-        "required": false,
-        "schema": {
-          "type": "string"
-        },
-        "example": "-modifiedDate",
-        "description": "Codat query string. [Read more](https://docs.codat.io/using-the-api/querying)."
-      },
-      "orderBy": {
-        "name": "orderBy",
-        "in": "query",
-        "required": false,
-        "schema": {
-          "type": "string",
-          "example": "-modifiedDate"
-        },
-        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results)."
-      },
       "companyId": {
         "name": "companyId",
         "in": "path",
@@ -3573,17 +664,19 @@
         },
         "description": "Unique identifier for a company."
       },
-      "connectionId": {
-        "name": "connectionId",
+      "reportType": {
+        "name": "reportType",
         "in": "path",
         "required": true,
         "schema": {
+          "title": "Report type",
+          "description": "Report type.",
           "type": "string",
-          "format": "uuid",
-          "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-          "description": "Unique identifier for a company's data connection."
+          "enum": [
+            "spendAnalysis"
+          ]
         },
-        "description": "Unique identifier for a connection."
+        "description": "The type of report generated."
       }
     },
     "responses": {
@@ -3592,7 +685,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
             },
             "examples": {
               "Malformed query": {
@@ -3614,7 +707,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
             },
             "examples": {
               "Malformed query": {
@@ -3646,7 +739,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
             },
             "examples": {
               "Unauthorized": {
@@ -3668,7 +761,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
             },
             "examples": {
               "Conflict": {
@@ -3690,7 +783,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
             },
             "examples": {
               "Conflict": {
@@ -3712,7 +805,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
             },
             "examples": {
               "Data connection not found": {
@@ -3754,7 +847,83 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "title": "Error message",
+              "type": "object",
+              "x-internal": true,
+              "properties": {
+                "statusCode": {
+                  "type": "integer",
+                  "description": "The HTTP status code returned by the error."
+                },
+                "service": {
+                  "type": "string",
+                  "description": "Codat's service the returned the error."
+                },
+                "error": {
+                  "type": "string",
+                  "description": "A brief description of the error."
+                },
+                "correlationId": {
+                  "type": "string",
+                  "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+                },
+                "validation": {
+                  "$ref": "#/components/responses/Conflict/content/application~1json/schema/definitions/errorValidation"
+                },
+                "canBeRetried": {
+                  "type": "string",
+                  "description": "`True` if the error occurred transiently and can be retried."
+                },
+                "detailedErrorCode": {
+                  "type": "integer",
+                  "description": "Machine readable error code used to automate processes based on the code returned."
+                }
+              },
+              "definitions": {
+                "errorValidation": {
+                  "title": "Validation error",
+                  "type": "object",
+                  "nullable": true,
+                  "description": "A human-readable object describing validation decisions Codat has made. If an operation has failed because of validation errors, they will be detailed here.",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "nullable": true,
+                      "items": {
+                        "$ref": "#/components/responses/Conflict/content/application~1json/schema/definitions/errorValidationItem"
+                      }
+                    },
+                    "warnings": {
+                      "type": "array",
+                      "nullable": true,
+                      "items": {
+                        "$ref": "#/components/responses/Conflict/content/application~1json/schema/definitions/errorValidationItem"
+                      }
+                    }
+                  }
+                },
+                "errorValidationItem": {
+                  "title": "Validation error item",
+                  "type": "object",
+                  "properties": {
+                    "itemId": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Unique identifier for a validation item."
+                    },
+                    "message": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "A message outlining validation item's issue."
+                    },
+                    "validatorName": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Name of validator."
+                    }
+                  }
+                }
+              }
             },
             "examples": {
               "Conflict": {
@@ -3771,34 +940,12 @@
           }
         }
       },
-      "Unprocessable-Content": {
-        "description": "The requests made can't be processed. This may be due to differences in platform support.",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
-            },
-            "examples": {
-              "Conflict": {
-                "value": {
-                  "statusCode": 422,
-                  "service": "ExpenseSyncApi",
-                  "error": "Expense transaction updates are not supported for platforms other than Xero.",
-                  "correlationId": "7c8e23841d211c87f49f30b248f70c93",
-                  "canBeRetried": "Unknown",
-                  "detailedErrorCode": 0
-                }
-              }
-            }
-          }
-        }
-      },
       "Too-Many-Requests": {
         "description": "Too many requests were made in a given amount of time. Wait a short period and then try again.",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
             },
             "examples": {
               "Conflict": {
@@ -3820,7 +967,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
             },
             "examples": {
               "Conflict": {
@@ -3842,7 +989,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ErrorMessage"
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
             },
             "examples": {
               "Conflict": {
@@ -3863,7 +1010,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/lending-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"
