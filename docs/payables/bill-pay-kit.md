@@ -10,11 +10,15 @@ import { integrationsFilterBillPayKit } from "@components/global/Integrations/in
 
 ## Overview
 
-The Bill pay kit is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.
+#### What is it?
+
+The **Bill pay kit** is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.
 
 We have streamlined and enhanced the logic in our kit's endpoints to focus on simplicity and efficiency, and not on complex procurement functionalities and use cases.
 
-Crucially, the kit offers synchronous functionality, providing real-time synchronization between your platform and your SMBs' accounting systems. In today's fast-paced industry landscape, this enables you to meet user demands with a seamless, near-real-time experience. Have a look at the streamlined process below: 
+#### Why use it?
+
+Crucially, the kit offers synchronous functionality, providing real-time updates between your platform and your SMBs' accounting systems. In today's fast-paced industry landscape, this enables you to meet user demands with a seamless, near-real-time experience. Have a look at the streamlined process below: 
 
 ```mermaid
 
@@ -38,7 +42,7 @@ Crucially, the kit offers synchronous functionality, providing real-time synchro
 
 :::tip Java client library
 
-You can use our comprehensive [Java library](https://github.com/codatio/client-sdk-java/tree/main/sync-for-payables) to kick-start and simplify your implementatin of the bill pay kit.
+You can use our comprehensive [Java library](https://github.com/codatio/client-sdk-java/tree/main/sync-for-payables) to kick-start and simplify your implementation of the bill pay kit.
 
 :::
 
