@@ -22,7 +22,7 @@ Crucially, the kit offers synchronous functionality, providing real-time updates
 
 ```mermaid
 
-  flowchart TD
+  flowchart LR
     A(Connect accounting platform) --> B(Sync data)
     B --> H(Create new bill)
     H --> D
@@ -42,7 +42,7 @@ Crucially, the kit offers synchronous functionality, providing real-time updates
 
 :::tip Java client library
 
-You can use our comprehensive [Java library](https://github.com/codatio/client-sdk-java/tree/main/sync-for-payables) to kick-start and simplify your implementation of the bill pay kit.
+Use our comprehensive [Java library](https://github.com/codatio/client-sdk-java/tree/main/sync-for-payables) to kick-start and simplify your implementation of the bill pay kit.
 
 :::
 
@@ -50,19 +50,19 @@ You can use our comprehensive [Java library](https://github.com/codatio/client-s
 
 When using the Bill pay kit, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection. You can do that when the customer starts interacting with your application.  
 
-1. Create a company 
+1. **Create a company**
 
 A company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-v2-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting platform.
 
-2. Create a connection
+2. **Create a connection**
 
 Next, use the [Create connection](/sync-for-payables-v2-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source, fetching or creating bills and payments. 
-
-For a deeper dive into creating companies and connections, see how to [Configure customer in Codat](/payables/configure-customer), or read more about the concepts of a [company](/core-concepts/companies) and a [connection](/core-concepts/connections).
 
 :::tip Authorize your API calls
 Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the [Portal](https://app.codat.io/) to pick up your authorization header.
 :::
+
+For a deeper dive into creating companies and connections, see how to [Configure customer in Codat](/payables/configure-customer), or read more about the concepts of a [company](/core-concepts/companies) and a [connection](/core-concepts/connections).
 
 ## Pay a bill
 
@@ -80,11 +80,11 @@ Use the [Create bill](/sync-for-payables-v2-api#/operations/create-bill) endpoin
 
     Bills should always correspond to a supplier that issued them. Use the [List suppliers](https://docs.codat.io/sync-for-payables-v2-api#/operations/list-suppliers) endpoint to check that the relevant supplier exists and then associate it with the bill. You can use querying to retrieve only suppliers with unpaid bills or suppliers created within a specific timeframe. 
 
-Use the [Upload bill attachment](https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) endpoint to assign an attachment against a specific bill ('billId'). This ensures your accounts payable flow has a full audit trail for your SMB and confirms the legitimacy and accuracy of the transaction in the accounting platform. 
+Use the [Upload bill attachment](https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) endpoint to assign an attachment against a specific `billId`. This ensures your accounts payable flow has a full audit trail for your SMB and confirms the legitimacy and accuracy of the transaction in the accounting platform. 
 
 ### Retrieve a bill
 
-When the [List bills](/sync-for-payables-v2-api#/operations/list-bills) endpoint is called, you will receive a list of all outstanding bills. We define outstanding bills as those with the status of 'Open' & 'Partially paid'. 
+When the [List bills](/sync-for-payables-v2-api#/operations/list-bills) endpoint is called, you will receive a list of all outstanding bills. We define outstanding bills as those with the status of `Open` and `Partially paid`. 
 
 Alongside these bills, you can also view attachments for a specific bill using the [List bill attachments](/sync-for-payables-v2-api#/operations/list-bill-attachments) endpoint and download them by calling the [Download bill attachment](/sync-for-payables-v2-api#/operations/download-bill-attachment) endpoint.
 
@@ -94,7 +94,11 @@ When an SMB pays their bill in your application, use the [Create bill payment](/
 
 To create the payment, your SMB customer must set the bank account used to process the payment. You can retrieve and display a list of relevant accounts using the [Get payment mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-payments) endpoint.
 
+:::tip Partial payments
+
 The kit is built for the scenario where a single bill is paid in full. If you need to record a partial payment, use the same [Create bill payment](/sync-for-payables-v2-api#/operations/create-bill-payment) endpoint and adjust the values to reflect the amount of the partial payment.
+
+:::
 
 ---
 ## Read next
