@@ -59,7 +59,9 @@ A company represents your SMB customer that pays and manages their bills using y
 Next, use the [Create connection](/sync-for-payables-v2-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source, fetching or creating bills and payments. 
 
 :::tip Authorize your API calls
+
 Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the [Portal](https://app.codat.io/) to pick up your authorization header.
+
 :::
 
 For a deeper dive into creating companies and connections, see how to [Configure customer in Codat](/payables/configure-customer), or read more about the concepts of a [company](/core-concepts/companies) and a [connection](/core-concepts/connections).
