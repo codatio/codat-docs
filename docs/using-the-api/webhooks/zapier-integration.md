@@ -7,7 +7,7 @@ description: "Create your own workflows triggered by our webhooks"
 
 [Zapier](https://zapier.com/) allows users to create automated workflows called Zaps.
 Zap workflows contain actions that get executed by triggers. [Learn more](https://zapier.com/apps/email/integrations/triggerapp?utm_source=codat-docs) about Zaps. 
-Actions allow users to automate a task such as sending an email or writing a message in slack.
+Actions allow users to automate a task such as sending an email or a message in slack.
 Our integration provides triggers from our [webhook events](/using-the-api/webhooks/event-types).
 
 Our Zapier integration is currently in pre-release (or maybe early sign up). We hope to have our application available as a public integration on Zapier soon.
