@@ -95,4 +95,4 @@ Before testing, and publishing your Zap.
 
 ## Troubleshooting
 
-If you are new to using our webhooks you will need to create some test messages for Zapier to verify your integration is working. Learn how to test a webhook consumer [here](webhooks-zapier-integration-email-by-zapier). We advise creating a single endpoint to `https://example.com` and sending different event types you want Zapier trigger from.
+If you are using our webhooks service for the first time you may not be able to test your trigger at creation. This is because Zapier tests the trigger by checking if messages exist in Codat for the chosen event type. If you want to test, finish building your workflow, and publish. Zapier will generate a new webhook consumer in Codat, including a description of the event type to which the trigger subscribes. Follow [these](/using-the-api/webhooks/create-consumer#test-a-webhook-consumer) to test the Zapier webhook consumer. Alternatively, you can wait for a Codat product or service to trigger a Zap.
