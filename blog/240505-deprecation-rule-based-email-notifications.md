@@ -5,15 +5,15 @@ tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **July 10, 2024**, we will deprecate the rule-based email notifications following the release of our [new webhooks service](/updates/240306-new-webhook-service-released).
+On **July 10, 2024**, we will deprecate rule-based email following the release of our [new webhooks service](/updates/240306-new-webhook-service-released).
 
 <!--truncate-->
 
-Email notifications are currently managed by our webhook rules service. After the deprecation date this service will no longer exist. Users can use our [Zapier integration](/using-the-api/webhooks/zapier-integration) to receive notifications via Zapier actions such as email and slack.
+Email notifications are currently managed by our webhook rules service. After the deprecation date this service will no longer exist. Users can use our [Zapier integration](/using-the-api/webhooks/zapier-integration) to trigger automated workflows that send an email or a message in slack.
 
 ### Action required
 
-To continue receiving email notifications use our [Zapier integration](/using-the-api/webhooks/zapier-integration) to set up Zaps to notify users about webhook events that have been triggered.
+To continue receiving email notifications use our [Zapier integration](/using-the-api/webhooks/zapier-integration) to create a workflow using the 'Email by Zapier' action.
 
 ### Expected impact if no action is taken
 
