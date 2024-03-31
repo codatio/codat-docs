@@ -27,8 +27,10 @@ Follow the steps below to create your own Zapier workflow:
 1. Go to [Zapier](https://zapier.com/app/zaps).
 2. Select **Create > Zaps** and give it an appropriate name.
 3. Select **Trigger** and search for 'Codat'.
-4. Choose the event you want to trigger the workflow and press continue.
+4. Choose the 'Receive Webhook Messages' trigger from the **Event** dropdown. 
 5. Select **Sign in** and connect to Codat using your Client ID and Zapier integration key.
+4. Choose the webhook event type you want to trigger the workflow and press **Continue**.
+5. Test the trigger and then press **Continue with selected record** on success. If you no messages exist in Codat matching the event type you may need to create some test events. See [Troubleshooting](#troubleshooting) for more details.
 
 #### Get your client ID
 
