@@ -1,5 +1,5 @@
 ---
-title: "Zapier integration (pre-release or maybe early sign up?)"
+title: "Zapier integration (beta)"
 # sidebar_label: "Event types"
 hide_table_of_contents: true
 description: "Create your own workflows triggered by our webhooks"
