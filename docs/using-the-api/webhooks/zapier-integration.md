@@ -2,99 +2,106 @@
 title: "Zapier integration (beta)"
 # sidebar_label: "Event types"
 hide_table_of_contents: true
-description: "Create your own workflows triggered by our webhooks"
+description: "Create your own notification workflows triggered by our webhooks"
 ---
 
-[Zapier](https://zapier.com/) allows users to create automated workflows called Zaps.
-Zap workflows contain actions that get executed by triggers. [Learn more](https://zapier.com/apps/email/integrations/triggerapp?utm_source=codat-docs) about Zaps. 
-Actions allow users to automate a task such as sending an email or a message in slack.
-Our integration provides triggers from our [webhook events](/using-the-api/webhooks/event-types).
+## Overview
 
-Our Zapier integration is currently in pre-release (or maybe early sign up). We hope to have our application available as a public integration on Zapier soon.
+Depending on your business scenario, you may want to be notified of a webhook event via a communication channel, for example email or Slack. To enable this for you, we created a [Zapier](https://zapier.com/) integration. 
 
-### Prerequisites
+With Zapier, you can create automated workflows called Zaps. They contain actions that get executed once the workflow is triggered. These actions allow you to automate tasks, such as sending an email or a Slack message. Our Zapier integration provides action triggers from our [webhook events](/using-the-api/webhooks/event-types).
 
-You need the following to build your own workflows:
+This integration is currently in beta and will be available as a public integration on Zapier soon.
 
-- A Zapier account or [create one for free](https://zapier.com/sign-up).
-- Access to our pre-release Zapier app. Invite yourself [here](https://zapier.com/developer/public-invite/202044/c35843349a2aa85193b9f9ec6a9556e7/?utm_source=codat-docs).
-- You have Admin or Developer access to your Codat instance.
+:::tip Learn more
+You can learn more about Zaps in Zapier's [own documentation](https://zapier.com/apps/email/integrations/triggerapp?utm_source=codat-docs).
+:::
 
-### Set up your trigger
+## Prerequisites
 
-Follow the steps below to create your own Zapier workflow:
+To build your own workflows, you need:
 
-1. Go to [Zapier](https://zapier.com/app/zaps).
-2. Select **Create > Zaps** and give it an appropriate name.
-3. Select **Trigger** and search for 'Codat'.
-4. Choose the 'Receive Webhook Messages' trigger from the **Event** dropdown. 
-5. Select **Sign in** and connect to Codat using your Client ID and Zapier integration key.
-4. Choose the webhook event type you want to trigger the workflow and press **Continue**.
-5. Test the trigger and then press **Continue with selected record** on success. If you no messages exist in Codat matching the event type you may need to create some test events. See [Troubleshooting](#troubleshooting) for more details.
+- A Zapier account that you can [create for free](https://zapier.com/sign-up).
+- Access to our pre-release Zapier app via our [invitation][here](https://zapier.com/developer/public-invite/202044/c35843349a2aa85193b9f9ec6a9556e7/?utm_source=codat-docs).
+- Admin or Developer access to your Codat instance.
 
-#### Get your client ID
+## Create your workflow
 
-Go to the [portal](https://app.codat.io/) and copy your client ID from the client selection dropdown.
+Go to [Zapier](https://zapier.com/app/zaps) and follow the steps below to create your own workflow. 
 
-![Image](/img/use-the-api/webhooks-zapier-integration-client-selector.png)
+### Set up trigger
 
-#### Get your Zapier integration key
+1. In [Zapier](https://zapier.com/app/zaps), select **Create > Zaps** to start a new Zap and give it an appropriate name.
 
-To access your integration key you need an API key to securely retreive your key. Enter the [portal](https://app.codat.io/developers/api-keys) and go to **Developers > API keys**. Select or create an API key and copy the Authorization header.
+2. Click **Trigger** to select an event that starts your Zap, search for _Codat_ and click the tile to select.
 
-![Image](/img/use-the-api/webhooks-zapier-integration-api-key.png)
+3. Choose the _Receive Webhook Messages_ trigger from the **Event** dropdown. 
 
-Next, visit our [API reference](https://docs.codat.io/platform-api#/operations/get-zapier-key) and in **Webhooks > Get zapier key**, paste the Authorization header into Authorization field and press **Send API Request**.
+4. Click **Continue**, then **Sign in** and connect to Codat using your Client ID and Zapier integration key.
 
-Finally, use the `key` return in the response body as your Zapier integration key.
+  To copy your **Client ID**, use the client selection dropdown in the [Codat Portal](https://app.codat.io/).
+  ![Image](/img/use-the-api/webhooks-zapier-integration-api-key.png)
 
-![Image](/img/use-the-api/webhooks-zapier-integration-get-key.png)
+  To get your **Zapier integration key**:
+  - Grab your authorization header from **Developers > API keys** in the [Codat Portal](https://app.codat.io/). You can use an existing API key or create a new one specifically for this integration.
+  - Using our [Get Zapier key](https://docs.codat.io/platform-api#/operations/get-zapier-key) endpoint, paste the authorization header into the `Authorization` field and press **Send API Request**.
+  - Use the `key` returned in the response body as your Zapier integration key.
 
-### Select an Action
+5. Choose the webhook event type you want to trigger the workflow and click **Continue**.
 
-Zapier offers hundreds of actions to add to your workflow.
-We suggest using either email or slack messaging services. 
+6. Test the trigger and click **Continue with selected record** once the test is successful.
+   If you see that no messages exist in Codat matching the event type, you may need to create some test events. We explain this in [Troubleshooting](#troubleshooting).
+
+### Set up action
+
+Click **Action** to select an event that Zap performs after the workflow starts. While Zapier offers hundreds of actions, we suggest using email or Slack messaging services to receive your webhook event notifications.
 
 #### Email notification
 
 @Max and @Polina: In the long term, we can make pre-built workflows for clients to use in Zapier. Also, video her might be nice?
 
-Select **Action** and search for 'Email by Zapier'
+1. In the action selection pop-up, search for _Email by Zapier_ and click the tile to select.
 
-![Image](/img/use-the-api/webhooks-zapier-integration-email-by-zapier.png)
+  ![Image](/img/use-the-api/webhooks-zapier-integration-email-by-zapier.png)
 
-Then, set Event to 'Send Outbound Email' and press **Continue**.
+2. Choose the _Send Outbound Email_ action from the **Event** dropdown and click **Continue**.
 
-![Image](/img/use-the-api/webhooks-zapier-integration-send-outbound-email.png)
+  ![Image](/img/use-the-api/webhooks-zapier-integration-send-outbound-email.png)
 
-Finally, create your email, test and publish your Zap.
+3. Enter the action details, including the email address for the notifications and the subject and body of the email. Click **Continue**.
+  ![Image](/img/use-the-api/webhooks-zapier-integration-construct-email.png)
 
-![Image](/img/use-the-api/webhooks-zapier-integration-construct-email.png)
+4. Finally, test and publish your Zap.
 
 #### Slack message
 
-Zapier's Slack integration provides numerous ways of communicating with Slack. In this guide we use 'Send Channel Message'.
+Zapier's Slack integration provides numerous ways of communicating with Slack. In this example, we chose to set up a Zap that sends a message to a specified channel. 
 
-Select **Action** and search for 'Slack'
+1. In the action selection pop-up, search for _Slack_ and click the tile to select.
 
-![Image](/img/use-the-api/webhooks-zapier-integration-slack.png)
+  ![Image](/img/use-the-api/webhooks-zapier-integration-slack.png)
 
-Choose an event from the available options and press **Continue**. If this is your first time using slack you will be asked to authenticate your account. Otherwise, you can either use the account signed in already or sign-in to a different one. Once complete press **Continue**.
+2. Choose the _Send channel message_ action from the **Event** dropdown and click **Continue**. Alternatively, choose an action that is relevant for your use case.
 
-![Image](/img/use-the-api/webhooks-zapier-integration-slack-select-event.png)
+  If this is your first time using Slack, you will be asked to authenticate your account. Once ready, click **Continue**. 
+  ![Image](/img/use-the-api/webhooks-zapier-integration-slack-select-event.png)
 
-Setup the action by searching for a channel you want to send a message. Select a channel.
+3. Search for the channel you want to receive the message and select it.
 
-![Image](/img/use-the-api/webhooks-zapier-integration-slack-select-channel.png)
+  ![Image](/img/use-the-api/webhooks-zapier-integration-slack-select-channel.png)
 
-Then, write your message
+4. Next, create the message text that the channel should receive. Click **Continue**.
 
-![Image](/img/use-the-api/webhooks-zapier-integration-slack-construct-message.png)
+  ![Image](/img/use-the-api/webhooks-zapier-integration-slack-construct-message.png)
 
-Before testing, and publishing your Zap. 
+5. Finally, test and publish your Zap.
 
-![Image](/img/use-the-api/webhooks-zapier-integration-slack-published-message.png)
+  ![Image](/img/use-the-api/webhooks-zapier-integration-slack-published-message.png)
 
 ## Troubleshooting
 
-If you are using our webhooks service for the first time you may not be able to test your trigger at creation. This is because Zapier tests the trigger by checking if messages exist in Codat for the chosen event type. If you want to test, finish building your workflow, and publish. Zapier will generate a new webhook consumer in Codat, including a description of the event type to which the trigger subscribes. Follow [these](/using-the-api/webhooks/create-consumer#test-a-webhook-consumer) to test the Zapier webhook consumer. Alternatively, you can wait for a Codat product or service to trigger your Zap.
+If you are using our webhooks service for the first time, you may not be able to test your trigger at creation. This is because Zapier tests the trigger by checking if messages exist in Codat for your chosen event type. 
+
+To perform the test, build and publish your workflow first. Zapier will generate a new webhook consumer in Codat, including a description of the event type to which the trigger subscribes. Follow [our testing instructions](/using-the-api/webhooks/create-consumer#test-a-webhook-consumer) to test the Zapier webhook consumer.
+
+Alternatively, you can wait for a Codat product or service to trigger your Zap.
