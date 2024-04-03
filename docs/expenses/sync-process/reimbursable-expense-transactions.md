@@ -9,11 +9,11 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-A reimbursable expense is a cost incurred by an employee which is eligible to be refunded or compensated by their employer or another party. In accounting systems, reimbursable expenses are represented as bills that are listed against the employee as the supplier.
+A reimbursable expense is a cost incurred by an employee which is eligible to be refunded or compensated by their employer or another party. In accounting systems, reimbursable expenses are represented as bills that are listed against the employee as the supplier (`recordRef`).
 
 :::info Compatible integrations
 
-Check our [supported expense types](expenses/overview#supported-integrations) for an up-to-date list of integrations that support this functionality.
+Check our [supported expense types](/expenses/overview#supported-integrations) for an up-to-date list of integrations that support this functionality.
 
 :::
 
@@ -54,7 +54,7 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
       {
          "id":"81539597-e681-40c9-a4dd-ec2fffcde572",
          "reference":"101",
-         "contactRef":{
+         "recordRef":{
             "id":"341"
          },
          "issueDate":"2022-04-29T00:00:00",
@@ -112,6 +112,7 @@ If you need to remove an associated tax rate from a reimbursable expense, use on
 | Platform          | Default tax rate                 |
 |-------------------|----------------------------------|
 | QuickBooks Online | `NON`                            |
+| QuickBooks Desktop| `Null`                            |
 
 ## Update reimbursable expenses
 
