@@ -90,6 +90,15 @@ module.exports = [
   },
   {
     type: "doc",
+    id: "payables/bill-pay-kit",
+    label: "Bill pay kit",
+    customProps: {
+      hr: true,
+      section: "Solution kits",
+    },
+  },
+  {
+    type: "doc",
     id: "payables/data-types",
     label: "Supported data types",
     customProps: {
