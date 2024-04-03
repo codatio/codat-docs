@@ -1946,6 +1946,93 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Suppliers"
+        ],
+        "summary": "Create supplier",
+        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n",
+        "operationId": "create-supplier",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "description": "A unique identifier to ensure idempotent behaviour for subsequent requests.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier/definitions/supplierPrototype"
+              },
+              "examples": {
+                "Suppliers": {
+                  "value": {
+                    "supplierName": "Greggs",
+                    "contactName": "Greg Greggs",
+                    "emailAddress": "greg@greggs.com",
+                    "phone": "+44 (0)1223 322410",
+                    "addresses": [
+                      {
+                        "type": "Billing",
+                        "line1": "Flat 1",
+                        "line2": "2 Dennis Avenue",
+                        "city": "London",
+                        "region": "Camden",
+                        "country": "GBR",
+                        "postalCode": "EC1N 7TE"
+                      }
+                    ],
+                    "status": "Active",
+                    "defaultCurrency": "GBP"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplier"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/payables/bankAccounts": {
