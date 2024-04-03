@@ -2175,11 +2175,11 @@
       }
     },
     "/webhooks/integrationKeys/zapier": {
-      "get": {
-        "summary": "Get Zapier key",
-        "operationId": "get-zapier-key",
+      "post": {
+        "summary": "Rotate Zapier key",
+        "operationId": "post-zapier-key",
         "x-speakeasy-ignore": true,
-        "description": "﻿The *Get Zapier key* endpoint returns the Zapier integration key needed to configure Zaps triggered by Codat's webhooks.\n\nThe key changes each time this endpoint is called. If you are already using our Zapier integration and called this endpoint again, you need to reauthenticate using the latest integration key returned in the response.\n\nOur Zapier integration makes it simple for you to set up and receive user notifications in your preferred ways, such as via email or Slack. See our [Zapier documentation](https://docs.codat.io/using-the-api/webhooks/zapier-integration) for detailed instructions on setting up this integration.\n\n",
+        "description": "﻿The *Rotate Zapier key* endpoint returns the Zapier integration key needed to configure Zaps triggered by Codat's webhooks. \n\nIf a key has already been created, calling this will revoke that existing key.\n\nThe key changes each time this endpoint is called. If you are already using our Zapier integration and called this endpoint again, you need to reauthenticate using the latest integration key returned in the response.\n\nOur Zapier integration makes it simple for you to set up and receive user notifications in your preferred ways, such as via email or Slack. See our [Zapier documentation](https://docs.codat.io/using-the-api/webhooks/zapier-integration) for detailed instructions on setting up this integration.\n\n",
         "tags": [
           "Webhooks"
         ],
