@@ -28,8 +28,9 @@ Crucially, the kit offers synchronous functionality, providing real-time updates
     H --> D
     B --> C(View outstanding bills)
     C -->D(Create draft payment)
-    D -->E(Schedule payment)
+    D -->E(Schedule draft payment)
     E -->F(Single bill payment)
+    F -->G(Reconcile bill payment in accounting platform)
 
 ```
 
