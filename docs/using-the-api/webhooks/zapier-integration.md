@@ -22,7 +22,7 @@ You can learn more about Zaps in Zapier's [own documentation](https://zapier.com
 To build your own workflows, you need:
 
 - A Zapier account that you can [create for free](https://zapier.com/sign-up).
-- Access to our pre-release Zapier app via our [invitation](https://zapier.com/developer/public-invite/202044/c35843349a2aa85193b9f9ec6a9556e7/?utm_source=codat-docs).
+- Access to our pre-release Zapier app provided via [our invitation](https://zapier.com/developer/public-invite/202044/c35843349a2aa85193b9f9ec6a9556e7/?utm_source=codat-docs).
 - Admin or Developer access to your Codat instance.
 
 ## Create your workflow
@@ -40,12 +40,12 @@ Go to [Zapier](https://zapier.com/app/zaps) and follow the steps below to create
 4. Click **Continue**, then **Sign in** and connect to Codat using your Client ID and Zapier integration key.
 
   To copy your **Client ID**, use the client selection dropdown in the [Codat Portal](https://app.codat.io/).
-  ![Image](/img/use-the-api/webhooks-zapier-integration-api-key.png)
+  ![Image](/img/use-the-api/webhooks-zapier-integration-client-selector.png)
 
   To get your **Zapier integration key**:
-      - Grab your authorization header from **Developers > API keys** in the [Codat Portal](https://app.codat.io/). You can use an existing API key or create a new one specifically for this integration.
-      - Using our [Get Zapier key](https://docs.codat.io/platform-api#/operations/get-zapier-key) endpoint, paste the authorization header into the `Authorization` field and press **Send API Request**.
-      - Use the `key` returned in the response body as your Zapier integration key.
+    - Grab your authorization header from **Developers > API keys** in the [Codat Portal](https://app.codat.io/). You can use an existing API key or create a new one specifically for this integration.
+    - Using our [Get Zapier key](https://docs.codat.io/platform-api#/operations/get-zapier-key) endpoint, paste the authorization header into the `Authorization` field and press **Send API Request**.
+    - Use the `key` returned in the response body as your Zapier integration key.
 
 5. Choose the webhook event type you want to trigger the workflow and click **Continue**.
 
