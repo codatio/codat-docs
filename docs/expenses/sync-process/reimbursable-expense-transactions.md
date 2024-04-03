@@ -13,7 +13,7 @@ A reimbursable expense is a cost incurred by an employee which is eligible to be
 
 :::info Compatible integrations
 
-Check our [supported expense types](https://docs.codat.io/expenses/overview#supported-integrations) for an up-to-date list of integrations that support this functionality.
+Check our [supported expense types](/expenses/overview#supported-integrations) for an up-to-date list of integrations that support this functionality.
 
 :::
 
