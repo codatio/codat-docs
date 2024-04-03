@@ -2174,6 +2174,54 @@
         }
       }
     },
+    "/webhooks/integrationKeys/zapier": {
+      "get": {
+        "summary": "Get Zapier key",
+        "operationId": "get-zapier-key",
+        "x-speakeasy-ignore": true,
+        "description": "﻿The *Get Zapier key* endpoint returns the Zapier integration key needed to configure Zaps triggered by Codat's webhooks.\n\nThe key changes each time this endpoint is called. If you are already using our Zapier integration and called this endpoint again, you need to reauthenticate using the latest integration key returned in the response.\n\nOur Zapier integration makes it simple for you to set up and receive user notifications in your preferred ways, such as via email or Slack. See our [Zapier documentation](https://docs.codat.io/using-the-api/webhooks/zapier-integration) for detailed instructions on setting up this integration.\n\n",
+        "tags": [
+          "Webhooks"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookZapierKey"
+                },
+                "examples": {
+                  "Integration key": {
+                    "value": {
+                      "key": "sk_integ_WM4dfoK1nKZnDE_kceze6hWDjbRwOZwG.us"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/integrations": {
       "get": {
         "summary": "List integrations",
@@ -6347,6 +6395,22 @@
             }
           }
         }
+      },
+      "WebhookZapierKey": {
+        "title": "Zapier integration key",
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Integration key used to authorize Zapier's HTTP requests with Codat.",
+            "example": "sk_integ_WM4dfoK1nKZnDE_kceze6hWDjbRwOZwG.us"
+          }
+        },
+        "examples": [
+          {
+            "key": "sk_integ_WM4dfoK1nKZnDE_kceze6hWDjbRwOZwG.us"
+          }
+        ]
       }
     },
     "responses": {
