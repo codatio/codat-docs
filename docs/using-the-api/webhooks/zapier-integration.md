@@ -9,22 +9,22 @@ description: "Create your own notification workflows triggered by our webhooks"
 
 The Codat [Zapier](https://zapier.com/) app exposes all of the [Codat webhooks](/using-the-api/webhooks/event-types) as *triggers*. This means you can start building workflows on top of Codat without writing a line of code.
 
-Some simple usecases might include:
-- Posting a message on Slack or via email whenever a new Company has shared data
-- Post a message when sync errors have occurred
-- Adding companies that you onboard to a spreadsheet automatically
+Some simple use cases might include:
+- Posting a message on Slack or via email whenever a new Company has shared data.
+- Posting a message when sync errors occur.
+- Adding companies that you onboard to a spreadsheet automatically.
 
 This integration is currently in beta and will be available as a public integration on Zapier soon.
 
 ## What is Zapier?
 
-Zapier provides no-code workflows that allow different web applications to be used in the same workflow. Their products focus on automating recurring tasks, and users can set up "rules" that set up the flow of data between different tools and services... now including Codat!
+Zapier provides no-code workflows that allow different web applications to be used in the same workflow. Their products focus on automating recurring tasks, and users can create rules that define the flow of data between different tools and services... now including Codat!
 
 There are two parts to a 'Zap' automation:
-- *Triggers* (if X happens in Source A...)
-- *Actions* (...do Y in B)
+- *Triggers* (If X happens in Source A...)
+- *Actions* (...do Y in Target B)
 
-With our Zapier app, you can use our webhook events as triggers, and drive actions in all of the tools you use - from Google Sheets to SalesForce.
+With our Zapier app, you can use our webhook events as triggers and drive actions in all of the tools you use - from Google Sheets to SalesForce.
 
 :::tip Learn more
 You can learn more about Zaps in Zapier's [own documentation](https://zapier.com/apps/email/integrations/triggerapp?utm_source=codat-docs).
@@ -57,7 +57,7 @@ Go to [Zapier](https://zapier.com/app/zaps) and follow the steps below to create
 
   To get your **Zapier integration key**:
     - Grab your authorization header from **Developers > API keys** in the [Codat Portal](https://app.codat.io/). You can use an existing API key or create a new one specifically for this integration.
-    - Using our [Get Zapier key](https://docs.codat.io/platform-api#/operations/get-zapier-key) endpoint, paste the authorization header into the `Authorization` field and press **Send API Request**.
+    - Using our [Rotate Zapier key](https://docs.codat.io/platform-api#/operations/get-zapier-key) endpoint, paste the authorization header into the `Authorization` field and press **Send API Request**.
     - Use the `key` returned in the response body as your Zapier integration key.
 
 5. Choose the webhook event type you want to trigger the workflow and click **Continue**.
