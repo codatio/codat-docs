@@ -2028,7 +2028,7 @@
                     {
                       "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
                       "reference": 101,
-                      "contactRef": {
+                      "recordRef": {
                         "id": "f5244103-5223-4b0a-857f-50566ac86c11"
                       },
                       "issueDate": "2021-05-21T00:00:00+00:00",
@@ -14735,7 +14735,7 @@
                 "nullable": true,
                 "description": "User-friendly reference for the reimbursable expense."
               },
-              "contactRef": {
+              "recordRef": {
                 "description": "Supplier for the purchase to be associated to.",
                 "$ref": "#/components/schemas/ContactRef"
               },
