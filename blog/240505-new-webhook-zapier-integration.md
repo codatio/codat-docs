@@ -6,7 +6,7 @@ hide_table_of_contents: true
 authors: dcoplowe
 ---
 
-We're excited to announce the pre-release of our new webhook Zapier integration, making it easier for you to build automated workflows trigger by our webhook events.
+We're excited to announce the pre-release of our new webhook Zapier integration, making it easier for you to build automated workflows triggered by our webhook events.
 
 <!--truncate-->
 
@@ -18,7 +18,7 @@ There are two parts to a 'Zap' automation:
 
 The Codat Zapier app exposes all of the [Codat webhooks](/using-the-api/webhooks/event-types) as *triggers*. This means you can start building workflows on top of Codat without writing a line of code.
 
-Some simple usecases might include:
+Some simple use cases might include:
 - Posting a message on Slack or via email whenever a new Company has shared data
 - Post a message when sync errors have occurred
 - Adding companies that you onboard to a spreadsheet automatically
@@ -31,4 +31,4 @@ To start building your own workflows today, you need:
 - **Access to our pre-release Zapier app** - click on [our invitation](https://zapier.com/developer/public-invite/202044/c35843349a2aa85193b9f9ec6a9556e7/?utm_source=codat-docs).
 - **Admin or Developer access** to your Codat instance.
 
-(Read more...](/using-the-api/webhooks/zapier-integration)
+[Read more...](/using-the-api/webhooks/zapier-integration)
