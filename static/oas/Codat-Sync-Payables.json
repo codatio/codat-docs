@@ -7,8 +7,8 @@
     }
   ],
   "info": {
-    "title": "Sync for Payables",
-    "description": "The API for Sync for Payables. \n\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, bills, and payments in sync, through a standardized API.\n\n[Explore product](https://docs.codat.io/payables/overview) | [See OpenAPI spec](https://github.com/codatio/oas)\n",
+    "title": "Bill Pay kit",
+    "description": "The API for the Bill Pay kit. \n\nThe Bill Pay kit is an API and a set of supporting tools designed to integrate a bill pay flow into your app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.\n\n[Explore product](https://docs.codat.io/payables/bill-pay-kit) | [See OpenAPI spec](https://github.com/codatio/oas)\n",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
