@@ -5,7 +5,7 @@ const URL = "/oas/Codat-Intuit-IDX.json"
 
 const IntuitIdxApi = () => {
   return (
-    <Api url={URL} title="Intuit IDX API reference"/>
+    <Api url={URL} title="IDX API reference"/>
   );
 }
 
