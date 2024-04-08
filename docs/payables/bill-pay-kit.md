@@ -22,7 +22,7 @@ Crucially, the kit offers synchronous functionality, providing real-time updates
 
 ```mermaid
 
-  flowchart LR
+  flowchart TD
     A(Connect accounting platform) --> B(Get accounting data)
     B --> H(Create new bill)
     H --> D
