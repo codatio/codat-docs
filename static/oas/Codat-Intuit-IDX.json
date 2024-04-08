@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Production",
-      "url": "quickbooksonlinebankfeeds.codat.io"
+      "url": "partners/intuit/idx"
     }
   ],
   "info": {
@@ -14,14 +14,8 @@
     "contact": {
       "name": "Codat",
       "email": "support@codat.io"
-    },
-    "termsOfService": "https://www.codat.io/legals/"
-  },
-  "security": [
-    {
-      "auth_header": []
     }
-  ],
+  },
   "x-speakeasy-retries": {
     "strategy": "backoff",
     "backoff": {
@@ -39,17 +33,17 @@
   },
   "tags": [
     {
-      "name": "IDX",
+      "name": "Idx",
       "description": "Endpoints to manage Intuit data and products with Codat."
     }
   ],
   "paths": {
-    "/idx/accounts": {
+    "/accounts": {
       "get": {
         "summary": "List accounts",
         "operationId": "list-accounts",
         "tags": [
-          "IDX"
+          "Idx"
         ],
         "description": "The _List Intuit accounts_ endpoint returns a list of accounts for a given company's connection.\n\nThese accounts are the representation of bank accounts within Codat's domain, from which transactions are synced into the accounting platform.",
         "responses": {
@@ -65,11 +59,11 @@
                     "value": {
                       "results": [
                         {
-                          "id": "57215-2",
+                          "id": "d887f072-9308-4d0c-8d3f-e6043988574a",
                           "accountDisplayInfo": {
-                            "displayName": "acc57215-2",
-                            "description": "Checking Account 57215-2",
-                            "nickname": "57215-2"
+                            "displayName": "accd887f072-9308-4d0c-8d3f-e6043988574a",
+                            "description": "Checking Account d887f072-9308-4d0c-8d3f-e6043988574a",
+                            "nickname": "e6043988574a"
                           },
                           "accountType": "deposit",
                           "accountNumber": "1234567890",
@@ -80,11 +74,11 @@
                               "balanceAsOf": "2024-03-01",
                               "availableBalance": {
                                 "currency": "USD",
-                                "amount": 500
+                                "amount": "500"
                               },
                               "currentBalance": {
                                 "currency": "USD",
-                                "amount": 500
+                                "amount": "500"
                               }
                             }
                           },
@@ -96,8 +90,8 @@
                           "accountOpenDate": "2020-01-01",
                           "bankRoutingInfo": [
                             {
-                              "id": "0000",
-                              "type": "bankcode"
+                              "id": "string",
+                              "type": "rtn"
                             }
                           ],
                           "accountHolderInfo": {
@@ -105,7 +99,7 @@
                             "governmentIdDetails": "business",
                             "relationshipType": "business"
                           },
-                          "accountStatus": "open",
+                          "status": "open",
                           "modifiedDate": "2024-03-26T14:14:14.1057478Z"
                         }
                       ],
@@ -127,6 +121,9 @@
           "403": {
             "$ref": "#/components/responses/Forbidden"
           },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
           },
@@ -139,7 +136,7 @@
         }
       }
     },
-    "/idx/accounts/{accountId}/transactions": {
+    "/accounts/{accountId}/transactions": {
       "get": {
         "summary": "List transactions",
         "operationId": "list-transactions",
@@ -149,7 +146,7 @@
           }
         ],
         "tags": [
-          "IDX"
+          "Idx"
         ],
         "description": "The _List Intuit bank transactions_ endpoint returns a list of bank transactions for a specified bank account.\n\nBank transactions are records of monetary amounts that have moved in and out of an SMB's bank account.",
         "responses": {
@@ -166,17 +163,17 @@
                       "results": [
                         {
                           "transactionId": "38953988-7db6-4a55-84df-d48a4a537bf1",
-                          "accountId": "57215-2",
+                          "accountId": "d887f072-9308-4d0c-8d3f-e6043988574a",
                           "accountType": "deposit",
                           "transactionDate": "2024-02-28",
                           "postedDate": "2024-02-28",
                           "fundsAvailableDate": "2024-02-28",
-                          "transactionDescription": "transactionId 38953988-7db6-4a55-84df-d48a4a537bf1 on accountId 57215-2",
+                          "transactionDescription": "transactionId 38953988-7db6-4a55-84df-d48a4a537bf1 on accountId d887f072-9308-4d0c-8d3f-e6043988574a",
                           "payeeName": "Mrs Lorem Ipsum",
                           "referenceNumber": "785090",
                           "amount": {
                             "currency": "USD",
-                            "amount": -100
+                            "amount": "-100"
                           },
                           "transactionValueType": "DEBIT",
                           "transactionMutability": false,
@@ -202,7 +199,7 @@
                           "referenceNumber": null,
                           "amount": {
                             "currency": "USD",
-                            "amount": -57.22
+                            "amount": "-57.22"
                           },
                           "transactionValueType": "DEBIT",
                           "transactionMutability": false,
@@ -234,6 +231,9 @@
           },
           "403": {
             "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
@@ -287,7 +287,7 @@
                 "$ref": "#/components/schemas/IntuitAccount/definitions/depositAccountInfo"
               },
               "cashCardAccountInfo": {
-                "$ref": "#/components/schemas/IntuitAccount/definitions/cashCardBalance"
+                "$ref": "#/components/schemas/IntuitAccount/definitions/cashCardAccountInfo"
               },
               "creditCardAccountInfo": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo"
@@ -310,20 +310,16 @@
                 ]
               },
               "accountOpenDate": {
-                "allOf": [
-                  {
-                    "description": "Date when the account was opened or created at the provider"
-                  },
-                  {
-                    "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo/properties/pastDueDate"
-                  }
-                ]
+                "type": "string",
+                "description": "Date when the account was opened or created at the provider",
+                "example": "2022-10-23"
               },
-              "bankRoutingInfo": [
-                {
+              "bankRoutingInfo": {
+                "type": "array",
+                "items": {
                   "$ref": "#/components/schemas/IntuitAccount/definitions/bankRoutingInfo"
                 }
-              ],
+              },
               "accountHolderInfo": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/accountHolderInfo"
               },
@@ -450,7 +446,8 @@
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
@@ -462,7 +459,8 @@
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
@@ -474,7 +472,7 @@
           },
           "bankRoutingInfo": {
             "title": "Bank routing info",
-            "type": "array",
+            "type": "object",
             "description": "Routing information for the bank. This does not include account number",
             "properties": {
               "id": {
@@ -505,6 +503,7 @@
           "cashCardAccountInfo": {
             "title": "Cash Card Account Info",
             "type": "object",
+            "nullable": true,
             "properties": {
               "accountSubType": {
                 "type": "string",
@@ -523,6 +522,7 @@
           "cashCardBalance": {
             "title": "Cash Card Balance",
             "type": "object",
+            "nullable": true,
             "properties": {
               "balanceAsOf": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/balanceAsOf"
@@ -538,6 +538,7 @@
           "creditCardAccountInfo": {
             "title": "Credit Card Account Info",
             "type": "object",
+            "nullable": true,
             "properties": {
               "accountSubType": {
                 "type": "string",
@@ -569,11 +570,13 @@
               },
               "purchasesApr": {
                 "type": "string",
-                "format": "decimal"
+                "format": "decimal",
+                "description": "Purchases APR"
               },
               "advancesApr": {
                 "type": "string",
-                "format": "decimal"
+                "format": "decimal",
+                "description": "Advances APR"
               },
               "statementPreviousGeneratedDate": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo/properties/pastDueDate"
@@ -583,6 +586,7 @@
           "creditCardBalance": {
             "title": "Credit card balance",
             "type": "object",
+            "nullable": true,
             "properties": {
               "balanceAsOf": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/balanceAsOf"
@@ -609,7 +613,8 @@
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
@@ -621,16 +626,19 @@
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
           "depositAccountInfo": {
             "title": "Deposit Account Info",
             "type": "object",
+            "nullable": true,
             "properties": {
               "accountSubType": {
                 "type": "string",
+                "description": "Represents normalized account type value. Based on the account type value, there will be at least one AccountInfo object present.",
                 "enum": [
                   "cashmanagement",
                   "checking",
@@ -654,6 +662,7 @@
           "depositBalance": {
             "title": "Deposit balance",
             "type": "object",
+            "nullable": true,
             "description": "Information about deposit account balances",
             "properties": {
               "balanceAsOf": {
@@ -675,16 +684,19 @@
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
           "lineOfCreditAccountInfo": {
             "title": "Line of Credit Account Info",
             "type": "object",
+            "nullable": true,
             "properties": {
               "accountSubType": {
                 "type": "string",
+                "description": "Represents normalized account type value. Based on the account type value, there will be at least one AccountInfo object present.",
                 "enum": [
                   "commerciallineofcredit",
                   "homelineofcredit"
@@ -704,7 +716,8 @@
               },
               "cashAdvanceInterestRate": {
                 "type": "string",
-                "format": "decimal"
+                "format": "decimal",
+                "description": "Interest Rate on Cash Advance"
               },
               "statementCurrentStartDate": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo/properties/pastDueDate"
@@ -717,6 +730,7 @@
           "lineOfCreditBalance": {
             "title": "Line of credit balance",
             "type": "object",
+            "nullable": true,
             "properties": {
               "balanceAsOf": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/balanceAsOf"
@@ -739,27 +753,30 @@
             }
           },
           "loanAccountInfo": {
-            "title": "string",
+            "title": "Loan account info",
             "type": "object",
+            "nullable": true,
             "properties": {
-              "accountSubType": null,
-              "type": "string",
-              "enum": [
-                "autoloan",
-                "commericalloan",
-                "commerciallineofcredit",
-                "constructionloan",
-                "consumerloan",
-                "homequityloan",
-                "homelineofcredit",
-                "installment",
-                "loan",
-                "militaryloan",
-                "mortgage",
-                "personalloan",
-                "studentloan",
-                "smbloan"
-              ],
+              "accountSubType": {
+                "type": "string",
+                "description": "Represents normalized account type value. Based on the account type value, there will be at least one AccountInfo object present.",
+                "enum": [
+                  "autoloan",
+                  "commericalloan",
+                  "commerciallineofcredit",
+                  "constructionloan",
+                  "consumerloan",
+                  "homequityloan",
+                  "homelineofcredit",
+                  "installment",
+                  "loan",
+                  "militaryloan",
+                  "mortgage",
+                  "personalloan",
+                  "studentloan",
+                  "smbloan"
+                ]
+              },
               "loanBalance": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/loanBalance"
               }
@@ -768,12 +785,14 @@
           "loanBalance": {
             "title": "Loan balance",
             "type": "object",
+            "nullable": true,
             "properties": {
               "currency": {
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
@@ -785,7 +804,8 @@
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
@@ -797,7 +817,8 @@
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
@@ -809,7 +830,8 @@
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
@@ -821,7 +843,8 @@
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           }
@@ -843,8 +866,8 @@
             }
           },
           {
-            "type": "object",
             "title": "Pagination information",
+            "type": "object",
             "x-internal": true,
             "properties": {
               "pageNumber": {
@@ -859,75 +882,18 @@
               "totalResults": {
                 "type": "integer",
                 "description": "Total number of items."
-              },
-              "_links": {
-                "$ref": "#/components/schemas/IntuitAccounts/allOf/1/definitions/links"
-              }
-            },
-            "definitions": {
-              "links": {
-                "title": "Hal Links",
-                "type": "object",
-                "required": [
-                  "self",
-                  "current"
-                ],
-                "properties": {
-                  "self": {
-                    "$ref": "#/components/schemas/IntuitAccounts/allOf/1/definitions/halRef"
-                  },
-                  "current": {
-                    "$ref": "#/components/schemas/IntuitAccounts/allOf/1/definitions/halRef"
-                  },
-                  "next": {
-                    "$ref": "#/components/schemas/IntuitAccounts/allOf/1/definitions/halRef"
-                  },
-                  "previous": {
-                    "$ref": "#/components/schemas/IntuitAccounts/allOf/1/definitions/halRef"
-                  }
-                },
-                "examples": [
-                  {
-                    "self": {
-                      "href": "/companies"
-                    },
-                    "current": {
-                      "href": "/companies?page=1&pageSize=10"
-                    }
-                  }
-                ]
-              },
-              "halRef": {
-                "title": "Hypertext reference",
-                "type": "object",
-                "properties": {
-                  "href": {
-                    "type": "string",
-                    "format": "uri-reference",
-                    "description": "Uri hypertext reference."
-                  }
-                }
               }
             },
             "required": [
               "pageNumber",
               "pageSize",
-              "totalResults",
-              "_links"
+              "totalResults"
             ],
             "examples": [
               {
                 "pageNumber": 1,
                 "pageSize": 10,
-                "totalResults": 1,
-                "_links": {
-                  "self": {
-                    "href": "/companies/{id}/data/{dataType}"
-                  },
-                  "current": {
-                    "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
-                  }
-                }
+                "totalResults": 1
               }
             ]
           }
@@ -982,7 +948,8 @@
               },
               "referenceNumber": {
                 "type": "string",
-                "description": "A tracking reference identifier."
+                "description": "A tracking reference identifier.",
+                "nullable": true
               },
               "amount": {
                 "$ref": "#/components/schemas/IntuitTransaction/definitions/amount"
@@ -1052,13 +1019,15 @@
                 ]
               },
               "amount": {
-                "type": "string"
+                "type": "string",
+                "description": "amount value"
               }
             }
           },
           "cashCardTransactionInfo": {
             "title": "Cash Card Transaction Info",
             "type": "object",
+            "nullable": true,
             "properties": {
               "cashCardTransactionType": {
                 "type": "string",
@@ -1073,14 +1042,15 @@
                   "payment",
                   "srvchg",
                   "withdrawal"
-                ]
-              },
-              "description": "Transaction type. Used to identify transaction type to provide account insights."
+                ],
+                "description": "Transaction type. Used to identify transaction type to provide account insights."
+              }
             }
           },
           "creditCardTransactionInfo": {
             "title": "Credit card transaction info",
             "type": "object",
+            "nullable": true,
             "properties": {
               "creditCardTransactionType": {
                 "type": "string",
@@ -1100,7 +1070,7 @@
                   "memo",
                   "payment",
                   "charge",
-                  "transfe",
+                  "transfer",
                   "withdrawal"
                 ],
                 "description": "Transaction type. Used to identify transaction type to provide account insights."
@@ -1110,6 +1080,7 @@
           "depositTransactionInfo": {
             "title": "Deposit transaction info.",
             "type": "object",
+            "nullable": true,
             "properties": {
               "depositTransactionType": {
                 "type": "string",
@@ -1154,6 +1125,7 @@
           "lineOfCreditTransactionInfo": {
             "title": "Line of Credit transaction info.",
             "type": "object",
+            "nullable": true,
             "properties": {
               "lineOfCreditTransactionType": {
                 "type": "string",
@@ -1184,6 +1156,7 @@
           "loanTransactionInfo": {
             "title": "Loan transaction info.",
             "type": "object",
+            "nullable": true,
             "properties": {
               "loanTransactionType": {
                 "type": "string",
