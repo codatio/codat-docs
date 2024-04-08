@@ -57,7 +57,7 @@ Go to [Zapier](https://zapier.com/app/zaps) and follow the steps below to create
 
   To get your **Zapier integration key**:
     - Grab your authorization header from **Developers > API keys** in the [Codat Portal](https://app.codat.io/). You can use an existing API key or create a new one specifically for this integration.
-    - Using our [Rotate Zapier key](https://docs.codat.io/platform-api#/operations/get-zapier-key) endpoint, paste the authorization header into the `Authorization` field and press **Send API Request**.
+    - Using our [Rotate Zapier key](https://docs.codat.io/platform-api#/operations/rotate-zapier-key) endpoint, paste the authorization header into the `Authorization` field and press **Send API Request**.
     - Use the `key` returned in the response body as your Zapier integration key.
 
 5. Choose the webhook event type you want to trigger the workflow and click **Continue**.
