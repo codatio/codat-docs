@@ -1875,7 +1875,6 @@
       "put": {
         "summary": "Create transfer transaction",
         "operationId": "create-transfer-transaction",
-        "x-speakeasy-name-override": "create-transfer",
         "description": "Use the *Create transfer* endpoint to create or update a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransaction) in the accounting platform for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n",
         "tags": [
           "Transfers"
@@ -1964,7 +1963,6 @@
       "post": {
         "summary": "Create reimbursable expense transaction",
         "operationId": "create-reimbursable-expense-transaction",
-        "x-speakeasy-name-override": "create-reimbursable-expense-transaction",
         "description": "Use the *Create reimbursable expense* endpoint to create a [reimbursement request](https://docs.codat.io/sync-for-expenses-api#/schemas/Reimburseable-Expense-Transactions) in the accounting platform for a given company's connection. \r\n\r\nEmployee reimbursement requests are reflected in the accounting system in the form of Bills against an employee, who is a supplier.",
         "tags": [
           "Reimbursements"
@@ -2081,7 +2079,6 @@
       "put": {
         "summary": "Update reimbursable expense transaction",
         "operationId": "update-reimbursable-expense-transaction",
-        "x-speakeasy-name-override": "update-reimbursable-expense-transaction",
         "description": "The *Update reimbursable expense* endpoint updates an existing [reimbursable expense transaction](https://docs.codat.io/sync-for-expenses-api#/operations/create-reimbursable-expense-transaction) in the accounting platform for a given company's connection. \r\n\r\nEmployee reimbursement requests are reflected in the accounting system in the form of Bills against an employee, who is a supplier.",
         "tags": [
           "Reimbursements"
@@ -2200,6 +2197,7 @@
       "post": {
         "summary": "Upload attachment",
         "operationId": "upload-expense-attachment",
+        "x-speakeasy-name-override": "upload",
         "responses": {
           "200": {
             "description": "OK",
