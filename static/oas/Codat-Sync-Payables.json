@@ -7,8 +7,8 @@
     }
   ],
   "info": {
-    "title": "Bill Pay kit",
-    "description": "The API for the Bill Pay kit. \n\nThe Bill Pay kit is an API and a set of supporting tools designed to integrate a bill pay flow into your app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.\n\n[Explore product](https://docs.codat.io/payables/bill-pay-kit) | [See OpenAPI spec](https://github.com/codatio/oas)\n",
+    "title": "Bill pay kit",
+    "description": "The API reference for the Bill Pay kit. \n\nThe bill pay kit is an API and a set of supporting tools designed to integrate a bill pay flow into your app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.\n\n[Explore product](https://docs.codat.io/payables/bill-pay-kit) | [See OpenAPI spec](https://github.com/codatio/oas)\n",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -1066,6 +1066,7 @@
                       "accounts": [
                         {
                           "id": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e",
+                          "nominalCode": "879-i",
                           "name": "Accounts payable",
                           "type": "Liability",
                           "currency": "GBP",
@@ -2167,6 +2168,60 @@
   },
   "components": {
     "schemas": {
+      "Address": {
+        "title": "Address",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/Address/definitions/addressType"
+          },
+          "line1": {
+            "type": "string",
+            "nullable": true,
+            "description": "Line 1 of the customer address."
+          },
+          "line2": {
+            "type": "string",
+            "nullable": true,
+            "description": "Line 2 of the customer address."
+          },
+          "city": {
+            "type": "string",
+            "nullable": true,
+            "description": "City of the customer address."
+          },
+          "region": {
+            "type": "string",
+            "nullable": true,
+            "description": "Region of the customer address."
+          },
+          "country": {
+            "type": "string",
+            "nullable": true,
+            "description": "Country of the customer address."
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "Postal code or zip code."
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "definitions": {
+          "addressType": {
+            "description": "The type of the address",
+            "type": "string",
+            "enum": [
+              "Unknown",
+              "Billing",
+              "Delivery"
+            ]
+          }
+        }
+      },
       "Attachment": {
         "title": "Attachment",
         "description": "  The Codat API supports pulling and pushing of file attachments for invoices, bills, direct costs, and direct incomes.\n\n  > **Retrieving attachments**\n  > \n  > If a company is authorized, you can query the Codat API to read, download, and upload attachments without requiring a fresh sync of data.\n\n  Unlike other data types, Codat doesn't support [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings) for attachments.\n\n  Note that different integrations have different requirements for file size and extension of attachments.\n\n  | Integration       | File size | File extension                                                                                                                                               |\n  |-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|\n  | Xero              | 4 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |\n  | QuickBooks Online | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |\n  | NetSuite          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |\n  | Dynamics 365 Business Central          | 350 MB    | Dynamics do not explicitly outline which file types are supported but they do state <a className=\"external\" href=\"https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice\" target=\"_blank\">here</a> that \"You can attach any type of file, such as text, image, or video files\".                                                                   |",
@@ -2644,6 +2699,12 @@
                     "type": "string",
                     "description": "Identifier for the account, unique for the company.",
                     "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
+                  },
+                  "nominalCode": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system.",
+                    "example": "610"
                   },
                   "name": {
                     "type": "string",
@@ -4025,62 +4086,16 @@
             "nullable": true,
             "description": "An array of Addresses.",
             "items": {
-              "title": "Accounting: Address",
-              "x-internal": true,
-              "type": "object",
-              "properties": {
-                "type": {
-                  "$ref": "#/components/schemas/Supplier/properties/addresses/items/definitions/accountingAddressType"
-                },
-                "line1": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Line 1 of the customer address."
-                },
-                "line2": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Line 2 of the customer address."
-                },
-                "city": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "City of the customer address."
-                },
-                "region": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Region of the customer address."
-                },
-                "country": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Country of the customer address."
-                },
-                "postalCode": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Postal code or zip code."
-                }
-              },
-              "required": [
-                "type"
-              ],
-              "definitions": {
-                "accountingAddressType": {
-                  "description": "The type of the address",
-                  "type": "string",
-                  "enum": [
-                    "Unknown",
-                    "Billing",
-                    "Delivery"
-                  ]
-                }
-              }
+              "$ref": "#/components/schemas/Address"
             }
           },
           "status": {
             "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
+          },
+          "balance": {
+            "type": "number",
+            "format": "decimal",
+            "description": "Amount outstanding against the supplier."
           },
           "defaultCurrency": {
             "type": "string",
@@ -4186,6 +4201,7 @@
               }
             ],
             "status": "Unknown",
+            "amount": 100,
             "defaultCurrency": "GBP",
             "sourceModifiedDate": "2022-10-23T00:00:00Z"
           }
