@@ -30,6 +30,16 @@ With our Zapier app, you can use our webhook events as triggers and drive action
 You can learn more about Zaps in Zapier's [own documentation](https://zapier.com/apps/email/integrations/triggerapp?utm_source=codat-docs).
 :::
 
+:::info Multi-user limitations
+
+Codat only supports one live Zapier integration key per Codat instance. This means that any time a user gets a new key the previous one will be invalidated. 
+To overcome this, we advise to either  
+
+- Have a single user manage your Zapier integration.
+- Add your key to a secure password storage provider and share the key amongst your team. 
+
+:::
+
 ## Prerequisites
 
 To build your own workflows, you need:
