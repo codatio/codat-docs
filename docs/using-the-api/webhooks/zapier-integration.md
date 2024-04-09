@@ -30,16 +30,6 @@ With our Zapier app, you can use our webhook events as triggers and drive action
 You can learn more about Zaps in Zapier's [own documentation](https://zapier.com/apps/email/integrations/triggerapp?utm_source=codat-docs).
 :::
 
-:::info Multi-user limitations
-
-Codat only supports one live Zapier integration key per Codat instance. This means that any time a user gets a new key the previous one will be invalidated. 
-To overcome this, we advise to either  
-
-- Have a single user manage your Zapier integration.
-- Add your key to a secure password storage provider and share the key amongst your team. 
-
-:::
-
 ## Prerequisites
 
 To build your own workflows, you need:
@@ -69,6 +59,12 @@ Go to [Zapier](https://zapier.com/app/zaps) and follow the steps below to create
     - Grab your authorization header from **Developers > API keys** in the [Codat Portal](https://app.codat.io/). You can use an existing API key or create a new one specifically for this integration.
     - Using our [Rotate Zapier key](https://docs.codat.io/platform-api#/operations/rotate-zapier-key) endpoint, paste the authorization header into the `Authorization` field and press **Send API Request**.
     - Use the `key` returned in the response body as your Zapier integration key.
+
+  :::info Multi-user limitations
+  For each Codat instance, you can only have one live Zapier integration key. Generating a new key invalidates the previous one. To overcome this, you can: 
+    - Have a single user manage your Zapier integration.
+    - Add your key to a secure password storage provider and share the key in your team. 
+  :::
 
 5. Choose the webhook event type you want to trigger the workflow and click **Continue**.
 
