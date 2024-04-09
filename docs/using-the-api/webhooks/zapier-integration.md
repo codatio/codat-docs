@@ -60,7 +60,7 @@ Go to [Zapier](https://zapier.com/app/zaps) and follow the steps below to create
     - Using our [Rotate Zapier key](https://docs.codat.io/platform-api#/operations/rotate-zapier-key) endpoint, paste the authorization header into the `Authorization` field and press **Send API Request**.
     - Use the `key` returned in the response body as your Zapier integration key.
 
-  :::info Multi-user limitations
+  :::caution Multi-user limitations
   For each Codat instance, you can only have one live Zapier integration key. Generating a new key invalidates the previous one. To overcome this, you can: 
     - Have a single user manage your Zapier integration.
     - Add your key to a secure password storage provider and share the key in your team. 
