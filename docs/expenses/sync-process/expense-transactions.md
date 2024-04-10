@@ -26,9 +26,7 @@ This process is summarized on the diagram below.
 sequenceDiagram
   User->>+You: Approve expenses with receipt
   You-)+Codat: Post expense transaction
-  Codat-->>-You: datasetId
   You-)+Codat: Initiate sync
-  Note over You,Codat: Specify datasetIds to sync
   Codat --> Codat: Sync request added to queue
   Codat-->>You: syncId
   Codat-)Accounting: Sync expense transaction from queue
@@ -96,13 +94,13 @@ Next, you need to follow up with an expense sync to reflect this item of spend i
 
 ### Draft transactions
 
-Some accounting platforms allow expense transactions to be created in a draft state. This means the user can review the expense in the software before finalizing and posting it prior to reconciliation. 
+Some accounting platforms allow expense transactions to be created in a draft state, rather than posting directly to the ledger. This means the user can review the expense in the accounting platform before finalizing and posting it prior to reconciliation. 
 
-In the request body, use the `postAsDraft` flag to define whether the expense should be posted in its draft or final state. When set to `true`, the expense is posted as a draft. 
+This can be done by setting the postAsDraft property on the transaction to true. For platforms without this feature, the postAsDraft property should be ignored or set to false.
 
 :::info Compatible integrations
 
-Check our [API reference](/sync-for-expenses-api#/operations/create-expense-transaction) for an up-to-date list of integrations that support this functionality.
+This functionality is currently only available for Microsoft Dynamics. 
 
 :::
 
