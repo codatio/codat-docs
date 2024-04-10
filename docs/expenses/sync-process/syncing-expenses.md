@@ -9,22 +9,14 @@ import TabItem from "@theme/TabItem";
 
 ## Sync transactions
 
-Once you have pushed your customer's expense transaction data to Codat, you need to initiate the sync process that records the expenses in the customer's accounting software. 
-
-:::info Transfer transactions 
-
-When creating a [transfer transaction](/sync-for-expenses#/operations/create-transfer-transaction) or a [reimbursable expense transaction](/sync-for-expenses#/operations/create-reimbursable-expense-transaction), a sync is initiated automatically and does not to be triggered. The endpoint therefore does not return the `datasetId`.
-
-:::
-
-Use the [Initiate sync](/sync-for-expenses-api#/operations/initiate-sync) endpoint to trigger a transaction sync. The process fetches the datasets from Codat's cache, validates and maps the data, and then pushes it to the target platform. 
+Once you have created your customer's expense transaction data, a sync will initiated automatically that then records the expenses in the customer's accounting software. 
 
 You can continue pushing new expenses to Codat while a sync is ongoing. 
 
-```http title="Sync datasets"
+```http title="Sync transactions"
  POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs
     {
-       "datasetIds": ["fd4cc60e-8666-4443-8fad-12c56d7420ee"]
+       "syncIds": ["fd4cc60e-8666-4443-8fad-12c56d7420ee"]
     }
 ```
 
