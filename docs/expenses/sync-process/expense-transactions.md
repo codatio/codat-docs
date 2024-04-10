@@ -114,7 +114,7 @@ To mark an expense as billable, set the `invoiceTo` property to `customer`. The 
 
 :::info Compatible integrations
 
-This functionality is currenlty only available for QBO & QBD. 
+This functionality is currently only available for QuickBooks Online and QuickBooks Desktop. 
 
 :::
 
