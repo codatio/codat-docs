@@ -14,11 +14,14 @@ Some simple use cases might include:
 - Posting a message when sync errors occur.
 - Adding companies that you onboard to a spreadsheet automatically.
 
-This integration is currently in beta and will be available as a public integration on Zapier soon.
+This integration will be in beta in 9 July 2024.
 
 ## What is Zapier?
 
-Zapier provides no-code workflows that allow different web applications to be used in the same workflow. Their products focus on automating recurring tasks, and users can create rules that define the flow of data between different tools and services... now including Codat!
+[Zapier](https://zapier.com/apps/Codat/integrations) lets you connect Codat to 2,000+ other web services. Automated connections called Zaps, set up in minutes with no coding, can automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
+
+Each Zap has one app as the **Trigger**, where your information comes from and which causes one or more **Actions** in other apps, where your data gets sent automatically.
+
 
 There are two parts to a 'Zap' automation:
 - *Triggers* (If X happens in Source A...)
@@ -35,12 +38,13 @@ You can learn more about Zaps in Zapier's [own documentation](https://zapier.com
 To build your own workflows, you need:
 
 - **A Zapier account** -  you can [create one for free](https://zapier.com/sign-up).
-- **Access to our pre-release Zapier app** - click [here for an invitation](https://zapier.com/developer/public-invite/202044/c35843349a2aa85193b9f9ec6a9556e7/?utm_source=codat-docs).
 - **Admin or Developer access** to your Codat instance.
 
 ## Create your workflow
 
 Go to [Zapier](https://zapier.com/app/zaps) and follow the steps below to create your own workflow. 
+
+<script src="https://zapier.com/zapbook/embed/widget.js?services=Codat&container=true&limit=5,"></script>
 
 ### Set up the trigger
 
