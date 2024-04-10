@@ -115,9 +115,9 @@
         }
       ],
       "post": {
-        "summary": "Create spend analysis report",
-        "description": "Create spend analysis report (no body required in POST).",
-        "operationId": "create-spend-analysis-report",
+        "summary": "Generate spend analysis report",
+        "description": "Generate new spend analysis report (no body required in POST).",
+        "operationId": "generate-spend-analysis-report",
         "tags": [
           "Spend analysis"
         ],
@@ -126,17 +126,17 @@
             "schema": {
               "$ref": "#/components/schemas/DateTime"
             },
-            "in": "query",
             "name": "from",
-            "description": "The date the report was created from."
+            "description": "The start date of the report.",
+            "in": "query"
           },
           {
             "schema": {
               "$ref": "#/components/schemas/DateTime"
             },
-            "in": "query",
             "name": "to",
-            "description": "The date the report was generated to."
+            "description": "The end date of the report.",
+            "in": "query"
           },
           {
             "schema": {
@@ -144,21 +144,14 @@
               "format": "decimal",
               "default": 1
             },
-            "in": "query",
             "name": "excludeSuppliersWithAnnualisedSpendBelow",
-            "description": "Exclude suppliers with annualised spend below this amount in base currency."
+            "description": "Exclude suppliers with annualised spend below this amount in the companny's base currency.",
+            "in": "query"
           }
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReportMetadata"
-                }
-              }
-            }
+            "$ref": "#/components/responses/OK-ReportMetadata"
           },
           "400": {
             "$ref": "#/components/responses/BadRequest"
@@ -187,22 +180,16 @@
         }
       },
       "get": {
-        "summary": "Get created spend analysis report",
-        "description": "Get spend analysis report that has already been successfully created.",
+        "summary": "Get spend analysis report",
+        "description": "Get spend analysis report that has already been successfully generated.",
         "operationId": "get-spend-analysis-report",
+        "x-speakeasy-name-override": "get-spend-analysis-report",
         "tags": [
           "Spend analysis"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SpendAnalysisWithSummaries"
-                }
-              }
-            }
+            "$ref": "#/components/responses/OK-SpendAnalysisWithSummaries"
           },
           "400": {
             "$ref": "#/components/responses/BadRequest"
@@ -231,33 +218,23 @@
         }
       }
     },
-    "/companies/{companyId}/reports/{reportType}/status": {
+    "/companies/{companyId}/reports/spendAnalysis/status": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/reportType"
         }
       ],
       "get": {
         "summary": "Get report generation status",
         "description": "Get report generation status to determine if it has been successfully created, or if the generation is still in progress or it has failed.",
         "operationId": "get-report-creation-status",
+        "x-speakeasy-name-override": "get-report-creation-status",
         "tags": [
           "Spend analysis"
         ],
-        "x-speakeasy-name-override": "clear-method-name",
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReportMetadata"
-                }
-              }
-            }
+            "$ref": "#/components/responses/OK-ReportMetadata"
           },
           "400": {
             "$ref": "#/components/responses/BadRequest"
@@ -286,30 +263,22 @@
         }
       }
     },
-    "/companies/{companyId}/reports/{reportType}/excel": {
+    "/companies/{companyId}/reports/spendAnalysis/excel": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
-        },
-        {
-          "$ref": "#/components/parameters/reportType"
         }
       ],
       "get": {
-        "summary": "Download created spend analysis report",
-        "description": "Download spend analysis report that has already been successfully created.  The report will be in Open XML format (.xlsx), which is used by Microsoft Excel.",
+        "summary": "Download spend analysis report",
+        "description": "Download spend analysis report that has already been successfully created.  The report will be in Open XML spreadhseet format (.xlsx), which can be opened with Microsoft Excel.",
         "operationId": "download-spend-analysis-report",
         "tags": [
           "Spend analysis"
         ],
         "responses": {
           "200": {
-            "description": "OK",
-            "content": {
-              "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
-                "schema": {}
-              }
-            }
+            "$ref": "#/components/responses/OK-OpenXmlSpreadsheet"
           },
           "400": {
             "$ref": "#/components/responses/BadRequest"
@@ -342,85 +311,15 @@
   "components": {
     "schemas": {
       "AnalysisSummary": {
-        "title": "Supplier analysis summary",
-        "description": "Supplier analysis summary.",
-        "type": "object",
-        "example": {
-          "Spend analysis": {
-            "value": {
-              "fromDate": "2023-03-28T00:00:00",
-              "toDate": "2024-03-27T00:00:00",
-              "monthsReviewed": 12,
-              "excludeSuppliersWithAnnualisedSpendBelow": 1,
-              "suppliersCount": 292,
-              "billsCount": 362,
-              "billsAmount": 15429745.08,
-              "paymentsCount": 330,
-              "paymentsAmount": 13021530.73
-            }
-          }
-        }
+        "$ref": "#/components/schemas/SpendAnalysisWithSummaries/properties/analysisSummary",
+        "x-internal": true
       },
       "CompanyInfo": {
-        "title": "Company information",
-        "description": "Company information.",
-        "type": "object",
-        "example": {
-          "Spend analysis": {
-            "value": {
-              "companyName": "Codat",
-              "addresses": [
-                {
-                  "type": "Billing",
-                  "line1": "301 Ink Rooms",
-                  "line2": "28 Easton Street",
-                  "city": "London",
-                  "region": "England",
-                  "country": "United Kingdom",
-                  "postalCode": "WC1X 0BE"
-                },
-                {
-                  "type": "Delivery",
-                  "line1": "28 Easton Street",
-                  "line2": "",
-                  "city": "London",
-                  "region": "",
-                  "country": "UK",
-                  "postalCode": "WC1X 0BE"
-                }
-              ],
-              "phoneNumbers": [
-                {
-                  "number": "02012345678",
-                  "type": "Landline"
-                },
-                {
-                  "number": "07123456789",
-                  "type": "Mobile"
-                },
-                {
-                  "number": "02012345678",
-                  "type": "Fax"
-                }
-              ],
-              "webLinks": [
-                {
-                  "type": "Website",
-                  "url": "https://www.codat.io/"
-                },
-                {
-                  "type": "Social",
-                  "url": "https://www.linkedin.com/company/codat-limited/"
-                }
-              ],
-              "registrationNumber": "5590111724",
-              "taxNumber": "74111622555799035846",
-              "baseCurrency": "GBP"
-            }
-          }
-        }
+        "$ref": "#/components/schemas/SpendAnalysisWithSummaries/properties/companyInfo",
+        "x-internal": true
       },
       "DateTime": {
+        "x-internal": true,
         "title": "Date time",
         "type": "string",
         "examples": [
@@ -437,7 +336,6 @@
           "lastGenerated": {
             "description": "The date the report was last generated.",
             "type": "string",
-            "format": "date-time",
             "nullable": true,
             "example": "2024-01-02T03:04:05.678Z"
           },
@@ -448,7 +346,6 @@
           "queued": {
             "description": "The date the report generation was queued.",
             "type": "string",
-            "format": "date-time",
             "example": "2024-01-02T03:04:05.678Z"
           },
           "errorMessage": {
@@ -457,7 +354,7 @@
             "nullable": true
           },
           "reportType": {
-            "$ref": "#/components/schemas/ReportType"
+            "$ref": "#/components/parameters/reportType/schema"
           },
           "reportGeneratedHistory": {
             "description": "Report generation history.",
@@ -465,48 +362,18 @@
             "items": {
               "description": "Report generation date.",
               "type": "string",
-              "format": "date-time",
               "example": "2024-01-02T03:04:05.678Z"
             }
           }
         }
       },
       "ReportType": {
-        "title": "Report type",
-        "description": "The type of supplier enablement report.",
-        "type": "string",
-        "enum": [
-          "spendAnalysis"
-        ]
+        "$ref": "#/components/parameters/reportType/schema",
+        "x-internal": true
       },
       "SpendAnalysis": {
-        "title": "Spend analysis with summaries",
-        "description": "Spend analysis report with summary data.",
-        "type": "object",
-        "example": {
-          "Spend analysis": {
-            "value": {
-              "biggestCountPaymentMethod": "BankTransfer",
-              "suppliersCount": 71,
-              "percentageSuppliersByCount": 24.3,
-              "percentageBillsByCount": 27.6,
-              "percentageBillsByAmount": 30.7,
-              "billsCount": 100,
-              "billsOutstandingCount": 12,
-              "billsAmount": 4732780.81,
-              "billsOutstandingAmount": 518073.97,
-              "billsOutstandingPercentageByAmount": 10.9,
-              "paymentsCount": 99,
-              "latePaymentsCount": 0,
-              "paymentsAmount": 4159307.07,
-              "averagePaymentAmount": 42013.2,
-              "latePaymentsAmount": 0,
-              "latePaymentsPercentageByAmount": 0,
-              "averageBillPaymentTermsWeighted": 21.6,
-              "averageBillSettlementPeriodWeighted": 18.2
-            }
-          }
-        }
+        "$ref": "#/components/schemas/SpendAnalysisWithSummaries/properties/spendAnalysis/items",
+        "x-internal": true
       },
       "SpendAnalysisWithSummaries": {
         "title": "Spend analysis with summaries",
@@ -514,24 +381,225 @@
         "type": "object",
         "properties": {
           "analysisSummary": {
-            "$ref": "#/components/schemas/AnalysisSummary"
+            "title": "Supplier analysis summary",
+            "description": "Supplier analysis summary.",
+            "type": "object",
+            "properties": {
+              "fromDate": {
+                "description": "The date the report was generated from.",
+                "type": "string",
+                "nullable": true,
+                "example": "2024-01-02T03:04:05.678Z"
+              },
+              "toDate": {
+                "description": "The date the report was generated to.",
+                "type": "string",
+                "nullable": true,
+                "example": "2024-01-02T03:04:05.678Z"
+              },
+              "monthsReviewed": {
+                "description": "The number of months within the report.",
+                "type": "integer",
+                "example": 12
+              },
+              "excludeSuppliersWithAnnualisedSpendBelow": {
+                "description": "Exclude supplier with an annual spend below this amount in the company's base currency.",
+                "type": "number",
+                "format": "decimal",
+                "example": 1000
+              },
+              "suppliersCount": {
+                "description": "Total number of suppliers within the report.",
+                "type": "integer",
+                "example": 100
+              },
+              "billsCount": {
+                "description": "Total number of bills within the report.",
+                "type": "integer",
+                "example": 100
+              },
+              "billsAmount": {
+                "description": "Total bills amount within the report in the company's base currency.",
+                "type": "number",
+                "format": "decimal",
+                "example": 1234.56
+              },
+              "paymentsCount": {
+                "description": "Total number of payments within the report.",
+                "type": "integer",
+                "example": 100
+              },
+              "paymentsAmount": {
+                "description": "Total payments amount within the report in the company's base currency.",
+                "type": "number",
+                "format": "decimal",
+                "example": 1234.56
+              }
+            },
+            "example": {
+              "Spend analysis": {
+                "value": {
+                  "fromDate": "2023-03-28T00:00:00",
+                  "toDate": "2024-03-27T00:00:00",
+                  "monthsReviewed": 12,
+                  "excludeSuppliersWithAnnualisedSpendBelow": 1,
+                  "suppliersCount": 292,
+                  "billsCount": 362,
+                  "billsAmount": 15429745.08,
+                  "paymentsCount": 330,
+                  "paymentsAmount": 13021530.73
+                }
+              }
+            }
           },
           "spendAnalysis": {
             "description": "Array of spend analysis data.",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SpendAnalysis"
+              "title": "Spend analysis",
+              "description": "Spend analysis report.",
+              "type": "object",
+              "example": {
+                "Spend analysis": {
+                  "value": {
+                    "biggestCountPaymentMethod": "BankTransfer",
+                    "suppliersCount": 71,
+                    "percentageSuppliersByCount": 24.3,
+                    "percentageBillsByCount": 27.6,
+                    "percentageBillsByAmount": 30.7,
+                    "billsCount": 100,
+                    "billsOutstandingCount": 12,
+                    "billsAmount": 4732780.81,
+                    "billsOutstandingAmount": 518073.97,
+                    "billsOutstandingPercentageByAmount": 10.9,
+                    "paymentsCount": 99,
+                    "latePaymentsCount": 0,
+                    "paymentsAmount": 4159307.07,
+                    "averagePaymentAmount": 42013.2,
+                    "latePaymentsAmount": 0,
+                    "latePaymentsPercentageByAmount": 0,
+                    "averageBillPaymentTermsWeighted": 21.6,
+                    "averageBillSettlementPeriodWeighted": 18.2
+                  }
+                }
+              }
             }
           },
           "supplierAnalysis": {
             "description": "Array of supplier analysis data.",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SupplierAnalysis"
+              "title": "Supplier analysis report",
+              "description": "Supplier analysis data.",
+              "type": "object",
+              "example": {
+                "Spend analysis": {
+                  "value": {
+                    "supplierName": "The Acme Corporation",
+                    "contactName": "Wile E. Coyote",
+                    "emailAddress": "wile.e.coyote@acme.com",
+                    "taxNumber": "123456789",
+                    "addresses": [
+                      {
+                        "addressType": "Delivery",
+                        "line1": "Appartment 1",
+                        "line2": "Roadrunner Avenue",
+                        "city": "Las Vegas",
+                        "region": "Nevada",
+                        "country": "United States",
+                        "postalCode": 89106
+                      }
+                    ],
+                    "supplierId": "CLf7vnAx3C",
+                    "importedDate": "2023-08-11T08:02:48",
+                    "latestBilled": "2023-06-15T00:00:00",
+                    "billsCount": 2,
+                    "billsOutstandingCount": 0,
+                    "billsAmount": 578014.57,
+                    "billsOutstandingAmount": 0,
+                    "billsOutstandingPercentageByAmount": 0,
+                    "paymentsCount": 2,
+                    "latePaymentsCount": 0,
+                    "paymentsAmount": 578014.57,
+                    "averagePaymentAmount": 289007.29,
+                    "latePaymentsAmount": 0,
+                    "latePaymentsPercentageByAmount": 0,
+                    "biggestCountPaymentMethod": "DebitCard",
+                    "biggestSpendPaymentMethod": "DebitCard",
+                    "averageBillPaymentTermsWeighted": 14.9,
+                    "averageBillSettlementPeriodWeighted": 7,
+                    "primaryAddress": {
+                      "addressType": "Delivery",
+                      "line1": "Appartment 1",
+                      "line2": "Roadrunner Avenue",
+                      "city": "Las Vegas",
+                      "region": "Nevada",
+                      "country": "United States",
+                      "postalCode": 89106
+                    }
+                  }
+                }
+              }
             }
           },
           "companyInfo": {
-            "$ref": "#/components/schemas/CompanyInfo"
+            "title": "Company information",
+            "description": "Company information.",
+            "type": "object",
+            "example": {
+              "Spend analysis": {
+                "value": {
+                  "companyName": "Codat",
+                  "addresses": [
+                    {
+                      "type": "Billing",
+                      "line1": "301 Ink Rooms",
+                      "line2": "28 Easton Street",
+                      "city": "London",
+                      "region": "England",
+                      "country": "United Kingdom",
+                      "postalCode": "WC1X 0BE"
+                    },
+                    {
+                      "type": "Delivery",
+                      "line1": "28 Easton Street",
+                      "line2": "",
+                      "city": "London",
+                      "region": "",
+                      "country": "UK",
+                      "postalCode": "WC1X 0BE"
+                    }
+                  ],
+                  "phoneNumbers": [
+                    {
+                      "number": "02012345678",
+                      "type": "Landline"
+                    },
+                    {
+                      "number": "07123456789",
+                      "type": "Mobile"
+                    },
+                    {
+                      "number": "02012345678",
+                      "type": "Fax"
+                    }
+                  ],
+                  "webLinks": [
+                    {
+                      "type": "Website",
+                      "url": "https://www.codat.io/"
+                    },
+                    {
+                      "type": "Social",
+                      "url": "https://www.linkedin.com/company/codat-limited/"
+                    }
+                  ],
+                  "registrationNumber": "5590111724",
+                  "taxNumber": "74111622555799035846",
+                  "baseCurrency": "GBP"
+                }
+              }
+            }
           }
         },
         "example": {
@@ -771,57 +839,8 @@
         }
       },
       "SupplierAnalysis": {
-        "title": "Supplier analysis report",
-        "description": "Supplier analysis data.",
-        "type": "object",
-        "example": {
-          "Spend analysis": {
-            "value": {
-              "supplierName": "The Acme Corporation",
-              "contactName": "Wile E. Coyote",
-              "emailAddress": "wile.e.coyote@acme.com",
-              "taxNumber": "123456789",
-              "addresses": [
-                {
-                  "addressType": "Delivery",
-                  "line1": "Appartment 1",
-                  "line2": "Roadrunner Avenue",
-                  "city": "Las Vegas",
-                  "region": "Nevada",
-                  "country": "United States",
-                  "postalCode": 89106
-                }
-              ],
-              "supplierId": "CLf7vnAx3C",
-              "importedDate": "2023-08-11T08:02:48",
-              "latestBilled": "2023-06-15T00:00:00",
-              "billsCount": 2,
-              "billsOutstandingCount": 0,
-              "billsAmount": 578014.57,
-              "billsOutstandingAmount": 0,
-              "billsOutstandingPercentageByAmount": 0,
-              "paymentsCount": 2,
-              "latePaymentsCount": 0,
-              "paymentsAmount": 578014.57,
-              "averagePaymentAmount": 289007.29,
-              "latePaymentsAmount": 0,
-              "latePaymentsPercentageByAmount": 0,
-              "biggestCountPaymentMethod": "DebitCard",
-              "biggestSpendPaymentMethod": "DebitCard",
-              "averageBillPaymentTermsWeighted": 14.9,
-              "averageBillSettlementPeriodWeighted": 7,
-              "primaryAddress": {
-                "addressType": "Delivery",
-                "line1": "Appartment 1",
-                "line2": "Roadrunner Avenue",
-                "city": "Las Vegas",
-                "region": "Nevada",
-                "country": "United States",
-                "postalCode": 89106
-              }
-            }
-          }
-        }
+        "$ref": "#/components/schemas/SpendAnalysisWithSummaries/properties/supplierAnalysis/items",
+        "x-internal": true
       }
     },
     "parameters": {
@@ -843,11 +862,44 @@
         "in": "path",
         "required": true,
         "schema": {
-          "$ref": "#/components/schemas/ReportType"
+          "title": "Report type",
+          "description": "The type of supplier enablement report.",
+          "type": "string",
+          "enum": [
+            "spendAnalysis"
+          ]
         }
       }
     },
     "responses": {
+      "OK-OpenXmlSpreadsheet": {
+        "description": "OK",
+        "content": {
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
+            "schema": {}
+          }
+        }
+      },
+      "OK-ReportMetadata": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReportMetadata"
+            }
+          }
+        }
+      },
+      "OK-SpendAnalysisWithSummaries": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SpendAnalysisWithSummaries"
+            }
+          }
+        }
+      },
       "BadRequest": {
         "description": "The request made is not valid.",
         "content": {
