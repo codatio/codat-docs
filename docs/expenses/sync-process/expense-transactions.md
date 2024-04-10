@@ -96,15 +96,15 @@ Next, you need to follow up with an expense sync to reflect this item of spend i
 
 ### Draft transactions
 
+Some accounting platforms allow expense transactions to be created in a draft state. This means the user can review the expense in the software before finalizing and posting it prior to reconciliation. 
+
+In the request body, use the `postAsDraft` flag to define whether the expense should be posted in its draft or final state. When set to `true`, the expense is posted as a draft. 
+
 :::info Compatible integrations
 
 Check our [API reference](/sync-for-expenses-api#/operations/create-expense-transaction) for an up-to-date list of integrations that support this functionality.
 
 :::
-
-Some accounting platforms allow expense transactions to be created in a draft state. This means the user can review the expense in the software before finalizing and posting it prior to reconciliation. 
-
-In the request body, use the `postAsDraft` flag to define whether the expense should be posted in its draft or final state. When set to `true`, the expense is posted as a draft. 
 
 ### Billable expenses
 
