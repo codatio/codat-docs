@@ -112,6 +112,12 @@ Your customer may want to mark an expense as billable so that they can easily id
 
 To mark an expense as billable, set the `invoiceTo` property to `customer`. The expense will then reference the customer in the line item.
 
+:::info Compatible integrations
+
+This functionality is currenlty only available for QBO & QBD. 
+
+:::
+
 ### Multicurrency expense transactions
 
 Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
