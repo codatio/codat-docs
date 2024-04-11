@@ -16,11 +16,11 @@ This integration will be in beta until 9 July 2024.
 
 ## What is Zapier?
 
-[Zapier](https://zapier.com/apps/Codat/integrations) lets you connect Codat to 2,000+ other web services. Automated connections called Zaps, set up in minutes with no coding, can automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
+[Zapier](https://zapier.com/apps/Codat/integrations) provides no-code workflows that let you connect Codat to more than 2,000 other web applcations. These automated connections are called Zaps. You can set them up in minutes with no coding to automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
 
-Each Zap has one app as the **Trigger**, where your information comes from and which causes one or more **Actions** in other apps, where your data gets sent automatically.
+Each Zap consists of two parts: a **trigger** that determines the starting condition of the workflow (If X happens in Source A...) and an **action** that happens in another app as a result (...do Y in Target B).
 
-With our Zapier app, you can use our webhook events as triggers and drive actions in all of the tools you use - from Google Sheets to SalesForce.
+With our [Zapier](https://zapier.com/apps/Codat/integrations) app, you can use our webhook events as triggers and drive actions in all of the tools you use - from Google Sheets to SalesForce.
 
 :::tip Learn more
 You can learn more about Zaps in Zapier's [own documentation](https://zapier.com/apps/email/integrations/triggerapp?utm_source=codat-docs).
@@ -30,7 +30,7 @@ You can learn more about Zaps in Zapier's [own documentation](https://zapier.com
 
 To build your own workflows, you need:
 
-- **A Zapier account** -  you can [create one for free](https://zapier.com/sign-up).
+- **A Zapier account** that you can [create one for free](https://zapier.com/sign-up).
 - **Admin or Developer access** to your Codat instance.
 
 ## Create your workflow
