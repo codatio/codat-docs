@@ -1,30 +1,26 @@
 ---
 title: "Zapier integration (beta)"
-# sidebar_label: "Event types"
-# hide_table_of_contents: true
 description: "Create your own notification workflows triggered by our webhooks"
 ---
 
 ## Overview
 
-The Codat [Zapier](https://zapier.com/) app exposes all of the [Codat webhooks](/using-the-api/webhooks/event-types) as *triggers*. This means you can start building workflows on top of Codat without writing a line of code.
+The Codat [Zapier](https://zapier.com/apps/Codat/integrations) app exposes all of the [Codat webhooks](/using-the-api/webhooks/event-types) as *triggers*. This means you can start building workflows on top of Codat without writing a line of code.
 
 Some simple use cases might include:
 - Posting a message on Slack or via email whenever a new Company has shared data.
 - Posting a message when sync errors occur.
 - Adding companies that you onboard to a spreadsheet automatically.
 
-This integration is currently in beta and will be available as a public integration on Zapier soon.
+This integration will be in beta until 9 July 2024.
 
 ## What is Zapier?
 
-Zapier provides no-code workflows that allow different web applications to be used in the same workflow. Their products focus on automating recurring tasks, and users can create rules that define the flow of data between different tools and services... now including Codat!
+[Zapier](https://zapier.com/apps/Codat/integrations) provides no-code workflows that let you connect Codat to more than 2,000 other web applcations. These automated connections are called Zaps. You can set them up in minutes with no coding to automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
 
-There are two parts to a 'Zap' automation:
-- *Triggers* (If X happens in Source A...)
-- *Actions* (...do Y in Target B)
+Each Zap consists of two parts: a **trigger** that determines the starting condition of the workflow (If X happens in Source A...) and an **action** that happens in another app as a result (...do Y in Target B).
 
-With our Zapier app, you can use our webhook events as triggers and drive actions in all of the tools you use - from Google Sheets to SalesForce.
+With our [Zapier](https://zapier.com/apps/Codat/integrations) app, you can use our webhook events as triggers and drive actions in all of the tools you use - from Google Sheets to SalesForce.
 
 :::tip Learn more
 You can learn more about Zaps in Zapier's [own documentation](https://zapier.com/apps/email/integrations/triggerapp?utm_source=codat-docs).
@@ -34,8 +30,7 @@ You can learn more about Zaps in Zapier's [own documentation](https://zapier.com
 
 To build your own workflows, you need:
 
-- **A Zapier account** -  you can [create one for free](https://zapier.com/sign-up).
-- **Access to our pre-release Zapier app** - click [here for an invitation](https://zapier.com/developer/public-invite/202044/c35843349a2aa85193b9f9ec6a9556e7/?utm_source=codat-docs).
+- **A Zapier account** that you can [create one for free](https://zapier.com/sign-up).
 - **Admin or Developer access** to your Codat instance.
 
 ## Create your workflow

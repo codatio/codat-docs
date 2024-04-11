@@ -28,7 +28,6 @@ Some simple use cases might include:
 To start building your own workflows today, you need:
 
 - **A Zapier account** -  you can [create one for free](https://zapier.com/sign-up).
-- **Access to our pre-release Zapier app** - click on [our invitation](https://zapier.com/developer/public-invite/202044/c35843349a2aa85193b9f9ec6a9556e7/?utm_source=codat-docs).
 - **Admin or Developer access** to your Codat instance.
 
 [Read more...](/using-the-api/webhooks/zapier-integration)
