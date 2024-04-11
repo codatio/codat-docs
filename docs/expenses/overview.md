@@ -139,7 +139,7 @@ You can also create [transfers](/expenses/sync-process/transfer-transactions) an
 
 ### [Sync expense transactions](/expenses/sync-process/syncing-expenses)
 
-Once you create a categorized expense transaction, you can initiate a sync of a set of these transactions. The sync processes the expenses you created, maps them into the format required by the accounting platform, and records them in that platform. 
+Once you create a categorized expense transaction, we automatically initiate a sync of these transactions. The sync processes the expenses you created, maps them into the format required by the accounting platform, and records them in that platform. 
 
 ### [Upload attachments](/expenses/sync-process/uploading-receipts)
 
