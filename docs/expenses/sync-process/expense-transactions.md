@@ -94,9 +94,9 @@ Next, you need to follow up with an expense sync to reflect this item of spend i
 
 ### Draft transactions
 
-Some accounting platforms allow expense transactions to be created in a draft state, rather than posting directly to the ledger. This means the user can review the expense in the accounting platform before finalizing and posting it prior to reconciliation. 
+Some accounting platforms allow expense transactions to be created in a draft state instead of posting directly to the ledger. This means the user can review the expense in the accounting platform before finalizing and posting it prior to reconciliation. 
 
-This can be done by setting the postAsDraft property on the transaction to true. For platforms without this feature, the postAsDraft property should be ignored or set to false.
+To create an expense as a draft, set the `postAsDraft` property on the transaction to `true`. For platforms without this feature, the `postAsDraft` property should be ignored or set to `false`.
 
 :::info Compatible integrations
 
