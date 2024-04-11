@@ -1851,7 +1851,7 @@
           }
         },
         "operationId": "update-expense-transaction",
-        "description": "The *Update expense* endpoint updates an existing [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting platform for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n\n**Integration-specific behaviour**\n\nAt the moment you can update expenses only for Xero ([Payment](https://docs.codat.io/expenses/sync-process/expense-transactions#transaction-types) transaction type only).",
+        "description": "The *Update expense* endpoint updates an existing [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting platform for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n\n**Integration-specific behaviour**\n\nAt the moment you can update expenses only for Xero and QuickBooks Online ([Payment](https://docs.codat.io/expenses/sync-process/expense-transactions#transaction-types) transaction type only).",
         "requestBody": {
           "content": {
             "application/json": {
