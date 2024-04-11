@@ -13,13 +13,6 @@ Once you have created your customer's expense transaction data, we automatically
 
 You can continue pushing new expenses to Codat while a sync is ongoing. 
 
-```http title="Sync transactions"
- POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs
-    {
-       "syncIds": ["fd4cc60e-8666-4443-8fad-12c56d7420ee"]
-    }
-```
-
 ## Check sync status
 
 Once you have initiated the sync, you may want to check whether the sync was completed successfully and view the details of any errors that may have occurred.
