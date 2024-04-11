@@ -8,19 +8,32 @@ tags: [syncforexpense, mappingOptions, Config]
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-Once your SMB user has authorized a connection to their accounting platform and you have created a data connection, you are ready to create expense configuration for their company. Ask your customer for the default bank account, customer, and supplier to be used with their expenses. 
+Once your SMB user has authorized a connection to their accounting platform and you have created a data connection, you have the option to create an expense configuration for their company. This will mean asking your customer for the bank account, customer, and supplier which will be used as a backup option if they choose not to set it on the individual expense transaction. 
 
 You also need to provide them with an opportunity (via your application's user interface) to choose the default accounts, tracking categories, and tax rates that their expenses will be mapped to. 
 
-## Create configuration
+## Using a backup configuration when pushing expenses
 
-Use our [Set company configuration](/sync-for-expenses-api#/operations/set-company-configuration) to set up how your customers' transactions will be pushed. You can check the configuration anytime to confirm or display the company's configuration using the [Get company configuration](/sync-for-expenses-api#/operations/get-company-configuration) endpoint.
+### Recommended approach 
 
-:::tip Configuration for expenses and transfers 
+Your customers should be able set a bank account, customer and supplier per [expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) level to allow for a more accurate representation of who or where the spend should be associated with in the accounting platform. This means that your customers do not need to set default values through a [set company configuration](/sync-for-expenses-api#/operations/set-company-configuration). 
 
-Note that you have to set configuration if you want to create a transfer or an expense transaction.
+``` http title="Bank Account override on the expense transaction"
+      "bankAccountRef":{
+          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+```
+``` http title="Supplier/Customer override on the expense transaction"
+     "contactRef":{
+          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+          "type": "Supplier"
+```
+Setting a config is an optional step and if one is not set, then you are required to always set these values at the expense transaction level. 
 
-:::
+### Alternative approach
+
+There may be situations where your users are happy to use set default values and if no values are set at the transaction level, the spend item will be associated with the bank account, supplier/customer configured for the company.
+
+To set these values use our [Set company configuration](/sync-for-expenses-api#/operations/set-company-configuration) endpoint to set up how your customers' transactions will be pushed. You can check the configuration anytime to confirm or display the company's configuration using the [Get company configuration](/sync-for-expenses-api#/operations/get-company-configuration) endpoint. 
 
 ```http title="Company Config"
 POST https://api.codat.io/companies/{companyId}/sync/expenses/config
@@ -36,6 +49,8 @@ POST https://api.codat.io/companies/{companyId}/sync/expenses/config
     }
 }
 ```
+If a configuration is set for a company, but the customer sets a bank account or supplier/customer on the expense transaction level, the configuration values will be overriden when pushing the expense into the accounting platform.
+
 ### Bank account
 
 A bank account (`bankAccount.id`) is required to show where purchases have been made from. This can either a credit or debit account. You can choose to create a new account or retrieve a list of existing accounts from your customer's accounting software. 
@@ -150,30 +165,6 @@ In some scenarios, different accounting platforms assign customers and suppliers
     </tr>
   </tbody>
 </table>
-
-### Override settings
-
-Your customer would have previous set the default suppliers and bank accounts that will be associated with expense transactions at the [configuration level](/expenses/config-and-categorize#create-configuration).
-
-You should also enable your customer to override the default settings at the [transaction level](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) when creating an item of spend. Setting these at the transaction level means you can sync a more accurate representation of who or where the spend should be associated with in the accounting platform. 
-
-If no override is set at the transaction level, the spend item will be associated with the supplier or bank account configured for the company.
-
-:::caution Overriding customer settings
-
-This functionality is not supported for customers.
-
-:::
-
-``` http title="Bank Account override on the expense transaction"
-      "bankAccountRef":{
-          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
-```
-``` http title="Supplier override on the expense transaction"
-     "contactRef":{
-          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
-          "type": "Supplier"
-```  
 
 ## Mapping options
 
