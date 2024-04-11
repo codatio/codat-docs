@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem";
 
 ## Sync transactions
 
-Once you have created your customer's expense transaction data, a sync will initiated automatically that then records the expenses in the customer's accounting software. 
+Once you have created your customer's expense transaction data, we automatically initiate a sync that records the expenses in the customer's accounting software. 
 
 You can continue pushing new expenses to Codat while a sync is ongoing. 
 
