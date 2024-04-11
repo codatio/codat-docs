@@ -1,31 +1,24 @@
 ---
 title: "Zapier integration (beta)"
-# sidebar_label: "Event types"
-# hide_table_of_contents: true
 description: "Create your own notification workflows triggered by our webhooks"
 ---
 
 ## Overview
 
-The Codat [Zapier](https://zapier.com/) app exposes all of the [Codat webhooks](/using-the-api/webhooks/event-types) as *triggers*. This means you can start building workflows on top of Codat without writing a line of code.
+The Codat [Zapier](https://zapier.com/apps/Codat/integrations) app exposes all of the [Codat webhooks](/using-the-api/webhooks/event-types) as *triggers*. This means you can start building workflows on top of Codat without writing a line of code.
 
 Some simple use cases might include:
 - Posting a message on Slack or via email whenever a new Company has shared data.
 - Posting a message when sync errors occur.
 - Adding companies that you onboard to a spreadsheet automatically.
 
-This integration will be in beta in 9 July 2024.
+This integration will be in beta until 9 July 2024.
 
 ## What is Zapier?
 
 [Zapier](https://zapier.com/apps/Codat/integrations) lets you connect Codat to 2,000+ other web services. Automated connections called Zaps, set up in minutes with no coding, can automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
 
 Each Zap has one app as the **Trigger**, where your information comes from and which causes one or more **Actions** in other apps, where your data gets sent automatically.
-
-
-There are two parts to a 'Zap' automation:
-- *Triggers* (If X happens in Source A...)
-- *Actions* (...do Y in Target B)
 
 With our Zapier app, you can use our webhook events as triggers and drive actions in all of the tools you use - from Google Sheets to SalesForce.
 
@@ -43,8 +36,6 @@ To build your own workflows, you need:
 ## Create your workflow
 
 Go to [Zapier](https://zapier.com/app/zaps) and follow the steps below to create your own workflow. 
-
-<script src="https://zapier.com/zapbook/embed/widget.js?services=Codat&container=true&limit=5,"></script>
 
 ### Set up the trigger
 
