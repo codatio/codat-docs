@@ -16,7 +16,7 @@ You also need to provide them with an opportunity (via your application's user i
 
 ### Recommended approach 
 
-Your customers should be able set a bank account, customer and supplier per [expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) level to allow for a more accurate representation of who or where the spend should be associated with in the accounting platform. This means that your customers do not need to set default values through a [set company configuration](/sync-for-expenses-api#/operations/set-company-configuration). 
+Your customers should be able set a bank account, customer and supplier per [expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) to allow for a more accurate representation of who or where the spend should be associated with in the accounting platform. This means that your customers do not need to set default values through a [set company configuration](/sync-for-expenses-api#/operations/set-company-configuration). 
 
 ``` http title="Bank Account override on the expense transaction"
       "bankAccountRef":{
