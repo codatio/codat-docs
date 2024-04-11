@@ -30,6 +30,8 @@ The names of our new event types differ from our legacy rule types. We added the
 | `SyncCompleted`                  | `Sync Completed`                    | Triggered anytime an expense sync completes. <br/> Used for [Sync for Expenses](/expenses/overview) only.                                                                                |
 | `SyncConnectionDeleted`          | `Sync Connection Deleted`           | Indicates a Sync for Commerce connection has been deleted. <br/> Used for [Sync for Commerce](/commerce/overview) only.                                                                  |
 | `SyncFailed`                     | `Sync Failed`                       | Indicates a failure occurred during an expense sync. <br/> Used for [Sync for Expenses](/expenses/overview) only.                                                                        |
+| `bankFeeds.sourceAccount.connected`| `N/A`                          | Indicates a bank feed source account has become connected.                                                                 |
+| `bankFeeds.sourceAccount.disconnected`| `N/A`                       | Indicates a bank feed source account has become disconnected.                                                                        |
 
 ---
 ## Read next
