@@ -22,3 +22,6 @@ You may very occasionally notice fetch errors upon your first attempt to sync ba
 When fetching transaction data from Plaid, we make an outbound call to their API to initiate a background job that collates the requested data. Once the job is complete, Plaid sends the results to Codat via a webhook. Sometimes the data preparation can take more than 15 minutes, which will trigger a timeout on our side. As a result, we will return an error for the operation. This happens when a particularly large volume of data is involved, for example, during the first sync.
 
 The subsequent requests to fetch this data will succeed because the initial job would have already progressed form the earlier request. This often happens shortly afterwards. Simply initiate another sync for the data type to resolve the issue. 
+
+## Why do I receive a "Action required with your account" error when connecting a bank account via Plaid?
+This error is likely due to the user authorising the connection not having the right permissions assigned to their user account within the bank platform. The steps to resolve this will vary from bank to bank but most will have instructions detailed in their documentation e.g. [Chase](https://www.chase.com/digital/customer-service/helpful-tips/business-banking/security/add-users-assign-rights).
