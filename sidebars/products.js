@@ -16,6 +16,12 @@ module.exports = [
   },
   {
     type: "doc",
+    label: "Supplier Enablement",
+    className: "top-level-item top-level-item-single products product supplier-enablement",
+    id: "supplier-enablement/overview",
+  },
+  {
+    type: "doc",
     label: "Sync for Commerce",
     className: "top-level-item top-level-item-single products product sfc",
     id: "commerce/overview",
@@ -37,11 +43,5 @@ module.exports = [
     label: "Sync for Payroll",
     className: "top-level-item top-level-item-single products product sfpayroll",
     id: "payroll/overview",
-  },
-  {
-    type: "doc",
-    label: "Supplier Enablement",
-    className: "top-level-item top-level-item-single products product supplier-enablement",
-    id: "supplier-enablement/overview",
   },
 ];

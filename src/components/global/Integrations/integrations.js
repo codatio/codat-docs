@@ -50,6 +50,22 @@ export const integrationsFilterPayables = [
   "Xero",
 ];
 
+export const integrationsFilterSupplierEnablement = [
+  "FreeAgent",
+  "FreshBooks",
+  "Dynamics 365 Business Central",
+  "Exact Online",
+  "MYOB Business",
+  "Oracle NetSuite",
+  "QuickBooks Desktop",
+  "QuickBooks Online",
+  "Sage 200cloud",
+  "Sage 50",
+  "Sage Business Cloud Accounting",
+  "Sage Intacct",
+  "Xero",
+]
+
 export const bankfeedsIntegrations = [
   {
     "name": "QuickBooks Online bank feeds",

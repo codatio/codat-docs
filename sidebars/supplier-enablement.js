@@ -14,13 +14,21 @@ module.exports = [
   "supplier-enablement/get-started",
   {
     type: "link",
-    label: "Relationship manager",
+    label: "Manage clients",
     customProps: {
       hr: true,
-      section: "Features",
+      section: "User guides",
     },
-    href: "/supplier-enablement/features/relationship-manager",
+    href: "/supplier-enablement/guides/manage-relationships",
   },
-  "supplier-enablement/features/financials",
-  "supplier-enablement/features/excel-addon",
+  "supplier-enablement/guides/analyze-financials",
+  "supplier-enablement/guides/refresh-data",
+  {
+    type: "link",
+    label: "Relationship Manager Portal",
+    customProps: {
+      hr: true,
+    },
+    href: "https://banking-ui.codat.io/",
+  },
 ];

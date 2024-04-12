@@ -17,8 +17,8 @@ banner_text: "Manage comprehensive vendor and spend data to grow commercial card
 // video_text: What is Supplier Enablement?
 ---
 
-import {IntegrationsList} from '@components/global/Integrations'
-import {integrationsFilterExpenses} from '@components/global/Integrations/integrations'
+import { IntegrationsList } from "@components/global/Integrations";
+import { integrationsFilterSupplierEnablement } from "@components/global/Integrations/integrations";
 import ClientLibraries from "@components/global/ClientLibraries";
 import Products from "@components/global/Products";
 
@@ -51,6 +51,9 @@ Issuing banks use Codat to access comprehensive and up-to-date data for supplier
 Enhance your card programs with seamless data sharing and actionable supplier analytics. 
 
 Increase your card participation 
+
+
+Codat is developing a new product for banks. It helps banks increase revenue from corporate cards by making their “Supplier Onboarding” process more efficient and effective. Supplier Onboarding is the process by which a bank helps a customer move more of their B2B spending to their corporate card, very often using virtual cards.
 
 
 ## Who is it for?
@@ -293,19 +296,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 
 ## Supported integrations
 
-<IntegrationsList filter={integrationsFilterExpenses}/>
-<br/>
-<details>
-<summary>Transaction types supported per integration</summary>
-
-| Transaction type                    | Payment | Refund | Reward | Chargeback | Transfer in | Transfer out | Adjustment in | Adjustment out |
-|---------------------|---------|--------|--------|------------|-------------|--------------|---------------|----------------|
-| Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️              |
-| QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️              |
-| Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |                |
-| Oracle   NetSuite   | ✔️       | ✔️      |        |            |             |              |               |                |
-| QuickBooks Desktop (credit card) | ✔️       | ✔️      |        |            |             |              |               |                |
-</details>
+<IntegrationsList filter={integrationsFilterSupplierEnablement} />
 
 ## Build with client libraries
 

@@ -1,254 +1,87 @@
 ---
 title: "Get started with Supplier Enablement"
 sidebar_label: Get started
-description: "Learn how to perform the initial setup for the Supplier Enablement product"
-image: "/img/banners/social/lending.png"
+description: "Learn how we perform the initial setup for the Supplier Enablement product"
+displayed_sidebar: supplierEnablement
 ---
 
 import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import { integrationsFilterSupplierEnablement } from "@components/global/Integrations/integrations";
 
-:::tip Your lending journey
+## Enable Supplier Enablement
 
-Our Lending API supports the data collection step of your lending journey, which starts in your own web application. Enable Lending API and configure it, then embed our [Link SDK](/auth-flow/authorize-embedded-link) in your app to handle the auth flow. Determine where the collected data will be stored and manage the subsequent steps of the lending process in your app. 
+If you want to use our Supplier Enablement product, reach out to your account manager so that we can enable it for you and get you started. In the process, we will set up your Codat instance for you. 
 
-:::
+Read on if you want to know more about the configuration we make on your behalf or change the settings yourself. 
 
-## Enable Lending API
-
-1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
-2. Click on **Settings > Organizational settings > Products**.
-3. In the list of products, find _Lending API_ and click **Enable**. Then, follow the on-screen prompt.
-
-## Configure Lending API
+## Configure Supplier Enablement
 
 ### Data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the product. Follow the respective guides for integration-specific instructions. 
+First, we need to set up and enable the integrations that will serve as a data source for the product. This will allow us to pull financial data from your customers' accounting platforms. 
 
-Data source coverage varies by feature, so be sure to review the coverage for the features you want to use. 
+To configure, navigate to **Settings > Integrations** in the <a href="https://app.codat.io" target="_blank">Codat Portal</a>. We provide guides with specific instructions for each integration. Click the tiles below to navigate to the relevant guide. 
 
-#### Accounting
-
-<IntegrationsList integrations={accountingIntegrations} />
-
-#### Banking
-
-<IntegrationsList integrations={bankingIntegrations} />
-
-#### Commerce
-
-<IntegrationsList integrations={commerceIntegrations} />
+<IntegrationsList filter={integrationsFilterSupplierEnablement} />
 
 ### Authorization flow
 
-As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization flow. 
+As another prerequisite to Codat pulling your customers' data, they will need to authorize your access to that data. 
 
-We recommend you fully embed the Link auth flow in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) SDK in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible. 
+To do so, Supplier Enablement uses [Link](/auth-flow/overview) - our conversion-optimized white-label authorization flow. It lets your clients share their supplier and spend data directly and securely from their ERP or accounting system in a few minutes.
 
-The solution lets you tailor the authorization journey to your business needs. You can:
+We tailor the authorization journey to your business needs:
 
 * [Customize Link settings](/auth-flow/customize/customize-link)
 * [Set up company branding](/auth-flow/customize/branding)
-* [Set up redirects](/auth-flow/customize/set-up-redirects)
+
+These branding settings will also apply to the [data request emails](/supplier-enablement/guides/manage-relationships) sent out by the [Relationship Manager Portal](https://banking-ui.codat.io/).
 
 ### Data types
 
-Set the minimum set of [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for the Lending API to `fetch on first link`. Each feature may also have additional data type requirements, so be sure to review these for the feature you want to use.
+Data types required for Supplier Enablement should be enabled by default when we activate the product for you. To check or change the settings, navigate to **Settings > Integrations > Data types** in the <a href="https://app.codat.io" target="_blank">Codat Portal</a>. 
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. As a minimum, you need the following data types enabled:
+Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Supplier Enablement and set them to `Fetch on first link`: 
 
-|  Data source          | Accounting                                                                                                                                                                                            | Banking                                                                                                                                                                             | Commerce                                                                                                     |
-|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| Data types | `company`<br/>`chartOfAccounts`<br/>`balanceSheet`<br/>`profitAndLoss`<br/>`bankAccounts`<br/>`bankTransactions` | `banking-accounts`<br/>`banking-transactions`<br/>`banking-transactionCategories`<br/>`banking-accountBalances` | `commerce-companyInfo`<br/>`commerce-customers`<br/>`commerce-orders` |
+| Data source | Data types                                                                                                                                                                     |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Accounting  | `bills`<br/> `billPayments`<br/> `company`<br/> `paymentMethods`<br/> `suppliers`|
 
-Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) on the same screen. We recommend setting it to a daily or a monthly sync.
+Your bank analyst or relationship manager can then sync these data types manually any time they want to see the most up-to-date information. We describe the refresh process in our [Keep data fresh](/supplier-enablement/) user guide.
 
 ### Webhooks
 
-Codat supports a range of [event types](/using-the-api/webhooks/event-types) you can listen to that help you manage your data pipelines. Many of these events send a message for each `dataType` separately.
+Codat supports a range of webhook [event types](/using-the-api/webhooks/event-types) you can listen to that help you manage your data pipelines. Many of these events send a message for each data type separately.
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Create consumer** and click **Add endpoint** to add a new [webhook consumer endpoint](/using-the-api/webhooks/overview) and get the most out of Lending API:
+For example, you may want to set up a webhook for the `NewCompanySynchronized` event. This will trigger when the data fully syncs for a newly created company, and you can inform the corresponding analyst that it's available to them. 
 
-- [DataSyncStatusChangedToError](/using-the-api/webhooks/event-types)  
+You may also benefit from listening to the `DataSyncCompleted` and `DataSyncStatusChangedToError` events depending on your internal needs and processes. 
 
-  If you receive a message from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
- 
-- [Dataset data changed](/using-the-api/webhooks/event-types)  
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Create consumer** and click **Add endpoint** to add a new [webhook consumer endpoint](/using-the-api/webhooks/overview). 
 
-  If you receive a message from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
+## Use Supplier Enablement
 
-- [Account categories updated](/using-the-api/webhooks/event-types)
+Before you can collect and analyze your SMB customer's data, you need to create a [company](../terms/company) that represents your customer in Codat. Your bank analyst or relationship manager can do so in the [Relationship Manager Portal](https://banking-ui.codat.io/).
 
-  If you receive a message from this webhook, it means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
-  
+They will use this Portal to do the following:
 
-## Use Lending API
+- View the companies and relationships they are responsible for.
+- Create and onboard new companies.
+- Request a company's financial data and download the resulting reports.
+- Synchronize the financial data to ensure its freshness.
 
-Before you can collect your SMB customer's data, you need to create a Codat [company](../terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
+![An image of the Relationship Manager Portal user interface with five companies listed as examples](/img/supplier-enablement/0054-se-rm-portal.png)
 
-* In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
-* By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
+When a company is created in the Relationship Manager Portal, it is created in the [Codat Portal](https://app.codat.io/) at the same time. If you already have some companies in the Codat Portal, they will also be available in the Relationship Manager to be assigned to an analyst.
 
-Remember to [authenticate](/using-the-api/authentication) if you are making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
-
-To establish a connection to a data source and sync business data, your customer must grant you access. They can do so using our [Link auth flow](/auth-flow/overview) solution, which we recommend you use in your app.
-
-Once the connection is established, Codat will retrieve data for the data types you have previously set up to fetch on first link. You can listen for the `NewCompanySynchronized` [event](/using-the-api/webhooks/event-types) to get notified once these initial syncs are complete, and at least one of them is successful.
-
-<ul className="card-container col-2">
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Underwriters</h3>
-    </div>
-    <p>
-      Make use of our <a href="/lending/features/excel-download-overview">Excel export reports</a> to audit source data and perform underwriting with confidence.
-    </p>
-  </li>
-  
-  <li className="card">
-    <div class="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
-      />
-      <h3>Developers</h3>
-    </div>
-    <p>
-      Interact with our <a href="/lending-api">Lending API reference</a> to understand required body parameters, responses, and errors. Use our <a href="/get-started/libraries">client SDKs</a> to simplify your implementation journey.
-    </p>
-  </li>
-
-  </ul>
-
-### Client libraries
-
-Use our comprehensive [Lending API library](/get-started/libraries) to kick-start and simplify your build.
-Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
-
-<Tabs>
-
-<TabItem value="nodejs" label="TypeScript">
-
-#### Install
-
-##### NPM
-```sh
-npm add @codat/lending
-```
-
-##### Yarn
-```sh
-yarn add @codat/lending
-```
-
-#### Initialize
-
-```javascript
-import { CodatBankFeeds } from "@codat/lending";
-
-const lendingClient = new CodatLending({
-        security: {
-            authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-        },
-    });
-```
-
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-#### Install
-
-```sh
-pip install codat-lending
-```
-
-#### Initialize
-
-```python
-import codatlending
-from codatlending.models import shared
-
-lending_client = codatlending.CodatLending(
-    security=shared.Security(
-        auth_header="Basic BASE_64_ENCODED(API_KEY)",
-    ),
-)
-```
-
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-#### Install
-
-```sh
-dotnet add package Codat.Lending
-```
-
-#### Initialize
-
-```csharp
-using Codat.Lending;
-using Codat.Lending.Models.Shared;
-
-var lendingClient = new CodatLending(
-    security: new Security() {
-        AuthHeader = "Basic BASE_64_ENCODED(API_KEY)",
-    }
-);
-```
-
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-#### Install
-
-```sh
-go get github.com/codatio/client-sdk-go/lending
-```
-
-#### Initialize
-
-```go
-import (
-	"context"
-	lending "github.com/codatio/client-sdk-go/lending/v4"
-	"github.com/codatio/client-sdk-go/lending/v4/pkg/models/operations"
-	"github.com/codatio/client-sdk-go/lending/v4/pkg/models/shared"
-	"log"
-)
-
-func main() {
-	lendingClient := lending.New(
-		lending.WithSecurity(shared.Security{
-			AuthHeader: "Basic BASE_64_ENCODED(API_KEY)",
-		}),
-	)
-}
-```
-
-</TabItem>
-
-</Tabs>
+To establish a connection to a data source and sync business data, your customer must grant you access. We request this access during the onboarding process. Once the connection is established, Codat will retrieve data for the relevant data types set up to fetch on first link.
 
 --- 
 
 ## Read next
 
-Explore the features that make up our Lending API:
+The following user guides are available to share with your organization's relationship managers and analysts:
 
-- [Bank statements](/lending/features/bank-statements-overview)
-- [Sales](/lending/features/sales-overview)
-- [Financial statements](/lending/features/financial-statements-overview)
-- [Liabilities](/lending/features/liabilities-overview)
-- [Accounts receivable](/lending/features/accounts-receivable-overview)
-- [Accounts payable](/lending/features/accounts-payable-overview)
+- [Manage relationships](/supplier-enablement/guides/manage-relationships)
+- [Check financials](/supplier-enablement/guides/analyze-financials)
+- [Keep data fresh](/supplier-enablement/guides/refresh-data)
