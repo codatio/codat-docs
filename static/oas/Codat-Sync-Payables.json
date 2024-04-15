@@ -2485,6 +2485,13 @@
             "$ref": "#/components/schemas/Attachment/allOf/1"
           }
         },
+        "required": [
+          "supplierRef",
+          "issueDate",
+          "dueDate",
+          "currency",
+          "status"
+        ],
         "definitions": {
           "billPrototype": {
             "title": "Bill prototype",
@@ -2522,10 +2529,10 @@
               }
             },
             "required": [
+              "supplierRef",
               "issueDate",
               "dueDate",
               "currency",
-              "supplierRef",
               "status"
             ]
           },
