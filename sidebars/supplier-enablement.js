@@ -25,7 +25,7 @@ module.exports = [
   "supplier-enablement/guides/refresh-data",
   {
     type: "link",
-    label: "Relationship Manager Portal",
+    label: "Relationship Manager",
     customProps: {
       hr: true,
     },
