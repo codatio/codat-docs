@@ -21,7 +21,7 @@ The **company info** feature provides lenders with essential information about b
 
 ## Supported outputs
 
-You can retrieve the data pulled by the feature by calling either the [Get company accounting profile](/lending-api#//operations/get-accounting-profile) or [Get company commerce profile](/lending-api#//operations/get-commerce-profile) endpoints.
+You can retrieve the data pulled by the feature by calling either the [Get company accounting profile](/lending-api#/operations/get-accounting-profile) or [Get company commerce profile](/lending-api#/operations/get-commerce-profile) endpoints.
 
 <Tabs>
 

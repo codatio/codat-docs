@@ -1,5 +1,6 @@
 ---
 title: "Connection management"
+sidebar_label: "Manage connections"
 description: "Increase trust and product adoption and achieve compliance by putting your customers in control of their data"
 hide_table_of_contents: true
 ---

@@ -10027,6 +10027,11 @@
                                 "id": "714",
                                 "name": "Cost of Goods Sold"
                               },
+                              "createdFromLineRef": {
+                                "id": "7462",
+                                "dataType": "bills",
+                                "lineNumber": "1"
+                              },
                               "trackingCategoryRefs": [
                                 {
                                   "id": "location-1"
@@ -10113,6 +10118,12 @@
                                 "currencyRate": 1,
                                 "totalAmount": 300
                               }
+                            }
+                          ],
+                          "createdFromRefs": [
+                            {
+                              "id": "7462",
+                              "dataType": "bills"
                             }
                           ],
                           "modifiedDate": "2022-09-20T08:16:22Z",
@@ -11666,6 +11677,11 @@
                             "id": "713",
                             "name": "Inventory Asset"
                           },
+                          "createdFromLineRef": {
+                            "id": "1432",
+                            "dataType": "bills",
+                            "lineNumber": "1"
+                          },
                           "trackingCategoryRefs": [
                             {
                               "id": "department-1"
@@ -11689,6 +11705,12 @@
                         }
                       ],
                       "paymentAllocations": [],
+                      "createdFromRefs": [
+                        {
+                          "id": "1432",
+                          "dataType": "bills"
+                        }
+                      ],
                       "modifiedDate": "2022-09-20T08:16:22Z",
                       "sourceModifiedDate": "2021-11-02T19:58:58",
                       "note": "Codat1"
@@ -44165,7 +44187,8 @@
                         "type": "string",
                         "description": "Allowed name of the 'dataType'.",
                         "enum": [
-                          "purchaseOrders"
+                          "purchaseOrders",
+                          "bills"
                         ]
                       },
                       "lineNumber": {
@@ -44304,6 +44327,33 @@
                   "$ref": "#/components/schemas/Bill/allOf/0/properties/paymentAllocations/items"
                 }
               },
+              "createdFromRefs": {
+                "nullable": true,
+                "type": "array",
+                "description": "An array of records the credit note was created from.",
+                "items": {
+                  "type": "object",
+                  "x-internal": true,
+                  "title": "Record reference",
+                  "description": "Links the current record to the underlying record or data type that created it. \n\nFor example, if a journal entry is generated based on an invoice, this property allows you to connect the journal entry to the underlying invoice in our data model. ",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "'id' of the underlying record or data type."
+                    },
+                    "dataType": {
+                      "type": "string",
+                      "description": "Allowed name of the 'dataType'.",
+                      "examples": [
+                        "journalEntry",
+                        "invoice",
+                        "accountTransaction",
+                        "transfer"
+                      ]
+                    }
+                  }
+                }
+              },
               "note": {
                 "type": "string",
                 "nullable": true,
@@ -44422,6 +44472,10 @@
                 "required": [
                   "id"
                 ]
+              },
+              "createdFromLineRef": {
+                "$ref": "#/components/schemas/Bill/definitions/billLineItem/properties/purchaseOrderLineRef/allOf/0",
+                "description": "Reference to the line of the item that the current line was created from."
               },
               "trackingCategoryRefs": {
                 "type": "array",
@@ -44551,6 +44605,13 @@
                     "id": "costcode_2",
                     "name": "ACM2-ACMESigns"
                   }
+                ],
+                "createdFromLineRef": [
+                  {
+                    "id": "8462",
+                    "dataType": "bill",
+                    "lineNumber": 1
+                  }
                 ]
               },
               {
@@ -44611,6 +44672,11 @@
             "supplierRef": {
               "id": "67C6A7A1-5E84-4AC4-B950-24A114E379D0",
               "supplierName": "Chin's Gas and Oil"
+            },
+            "createdFromLineRef": {
+              "id": "8462",
+              "dataType": "bills",
+              "line": 1
             }
           }
         ]
@@ -45260,7 +45326,8 @@
           "RuleId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier for the rule."
+            "description": "Unique identifier for the rule.",
+            "deprecated": true
           },
           "RuleType": {
             "type": "string",
@@ -47759,7 +47826,7 @@
         "schema": {
           "type": "string"
         },
-        "example": "-modifiedDate",
+        "example": "id=e3334455-1aed-4e71-ab43-6bccf12092ee",
         "description": "Codat query string. [Read more](https://docs.codat.io/using-the-api/querying)."
       },
       "orderBy": {

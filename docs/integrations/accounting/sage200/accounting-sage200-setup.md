@@ -32,7 +32,7 @@ Before you can access data from customers using Sage 200cloud for their accounti
 
 ## Request an account and obtain API credentials
 
-1. Request an account from Sage by filling out the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=fN0yPvZBLUmho8WOsCz0-AGuQhvCTtZBjXDsFiNmzk5UQ0wzVUtLUkRNSDMxTEpZVzBWRDYxQzZVUS4u&wdLOR=c7B36958C-ED98-49A8-B339-55C8DDC118ED" target="_blank">Sage Developer Services API - Request an Account</a> form. Provide the required details and choose _Sage 200 Standard API_ as the application you are developing for.
+1. Request an account from Sage by filling out the <a href="https://sage.az1.qualtrics.com/jfe/form/SV_2fRebFy4s4PWLmC" target="_blank">Sage Developer Services API - Request an Account</a> form. Provide the required details and choose _Sage 200 Standard API_ as the application you are developing for.
 2. Once your account has been created you will receive an email from Sage with a link to a my.sage.co.uk page, where you can sign in to get your account number under My account > My accounts.
 3. Request your API credentials by filling out the <a href="https://sage.az1.qualtrics.com/jfe/form/SV_bQ14AM1zXki0msm" target="_blank">Sage 200 API Credential Request Form</a>.  
    When your API credentials have been generated, Sage will email your Client ID and Secret to you.

@@ -11,13 +11,13 @@ If you are considering using Codat's new webhook management endpoints, check tha
 | I am using...                                                                    | Action and impact                                                                                                                                                                                                                                                                                                |
 |----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ...email notification functionality                                              | - Do not migrate to the new webhook service <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#email-notification-functionality)                                       |
-| ...event log endpoints (e.g. `/rules/alerts`)                                    | - Do not migrate until you have removed all calls to logs endpoints from your application logic <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#event-log-endpoints)                                                                                             |
-| ...`RuleId` in my application's existing logic                                   | - Do not migrate until you have removed all application logic using the `RuleId` property <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#ruleid-in-existing-logic)                                                                                        |
+| ...event log endpoints (e.g. `/rules/alerts`) <br/><br/> ![Static Badge](https://img.shields.io/badge/Development_work_required-yellow) | - Do not migrate until you have removed all calls to logs endpoints from your application logic <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#event-log-endpoints)                                                                                             |
+| ...`RuleId` in my application's existing logic  <br/><br/> ![Static Badge](https://img.shields.io/badge/Development_work_required-yellow)                                 | - Do not migrate until you have removed all application logic using the `RuleId` property <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#ruleid-in-existing-logic)                                                                                        |
 | ...only company-agnostic webhook functionality                                   | - Request to migrate to the new webhook service <br/>                                                                                                                                                                |
 | ...company-specific webhook functionality                                        | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#company-specific-webhooks)                                                                                 |
-| ...`X-Codat-ClientId` header to determine the source Codat instance of the event | - Request to migrate to the new webhook service <br/> - Configure a custom header, as described in [additional considerations](/using-the-api/webhooks/migration-guide-advanced#source-client-header)                 |
-| ...webhook auth header via the `/profile` endpoint                               | - Request to migrate to the new webhook service <br/> - Configure a custom header using the Portal, as described in [additional considerations](/using-the-api/webhooks/migration-guide-advanced#webhook-auth-header) |
-| ...webhook auth header via the Portal                                            | - Request to migrate to the new webhook service <br/> - Configure a custom header using the Portal, as described in [additional considerations](/using-the-api/webhooks/migration-guide-advanced#webhook-auth-header) |
+| ...`X-Codat-ClientId` header to determine the source Codat instance of the event | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#source-client-header)                 |
+| ...webhook auth header via the `/profile` endpoint                               | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#webhook-auth-header) |
+| ...webhook auth header via the Portal                                            | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#webhook-auth-header) |
 | ...`Retry-After` header to control the time between retries                      | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#retry-after-header)                                                   |
 
 ## Critical considerations
@@ -38,7 +38,11 @@ Our new webhooks service does not currently support sending email notifications 
 
 ### `RuleId` in existing logic
 
-If you are using `RuleId` properties returned by our existing webhooks in your application logic, please remain on our existing service until you have changed your application's logic to avoid using the `RuleId`.
+If you are using `RuleId` properties returned by our existing webhooks in your application logic, review and update your application logic to remove any dependencies on the `RuleId`. This will help prevent any disruptions to your integration with Codat.
+
+You should use `RuleType` to identify what event a given webhook corresponds with.
+
+Check out the [deprecation notice](/updates/240320-deprecation-ruleId) for full details of these changes.
 
 ## Additional considerations
 
@@ -50,19 +54,15 @@ If your consumer endpoint is behind a firewall or NAT, make sure to allow messag
 
 ### Source client header
 
-If you are using multiple Codat instances and need to differentiate between them, you can filter the messages by client. 
+If you are using multiple Codat instances and need to differentiate between them, you can filter the messages by client using a custom `X-Codat-ClientId` header. 
 
-Add a custom `X-Codat-ClientId` header with the required client ID to the webhook endpoint using our Portal. For more information on creating custom headers in webhook consumers, see [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).
-
-You can find and copy your client ID in the [Portal](https://app.codat.io) by clicking on your instance dropdown.
-
-![A fragment of the UI that displays the dropdown with client instances and current client details](/img/use-the-api/0049-clientid-portal.png)
+If you are already using this header in your existing setup, we will include it when migrating your rules to the new service. For more information on creating custom headers in webhook consumers, see [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).
 
 ### Webhook auth header
 
 If you are currently securing your webhook endpoints with an authorization header, you can add it as a custom `Authorization` header to the webhook consumer endpoint using our Portal. It is no longer possible to do this via our API.
 
-For more information on creating custom headers in webhook consumers, see [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).
+If you are already using this header in your existing setup, we will include it when migrating your rules to the new service. For more information on creating custom headers in webhook consumers, see [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).
 
 ### `Retry-After` header
 

@@ -3,6 +3,7 @@ title: "Data integrity FAQs"
 description: "Frequently asked questions on data integrity"
 sidebar_label: "FAQs"
 image: "/img/banners/social/lending.png"
+draft: true
 ---
 
 ### Overlapping dates

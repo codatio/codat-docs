@@ -1,0 +1,68 @@
+{
+  "text": {
+    "companyName": "Platypus Payments",
+    "accounting.dataAccess.consent": "By continuing you are permitting Platypus Payments to access account information. Please refer to the Terms and Conditions and Privacy Policy\r\n\r\n[https://example.com](https://example.com)",
+    "accounting.dataAccess.additionalConsent.title": "You have previously authorized access to your accounting platform",
+    "accounting.dataAccess.additionalConsent.subtitle": "To continue, confirm your consent to use of the required data below.",
+    "accounting.dataAccess.dataTypes": [
+      "Accounts receivable information",
+      "Accounts payable information",
+      "Financial summary information"
+    ],
+    "accounting.fileUpload.subtitle": "You can upload requested PDFs, Excel files, or CSVs below.",
+    "banking.dataAccess.consent": "By continuing you are permitting Platypus Payments to access account information. Please refer to the Terms and Conditions and Privacy Policy\r\n\r\n[https://example.com](https://example.com)",
+    "banking.dataAccess.additionalConsent.title": "You have previously authorized access to your banking platform",
+    "banking.dataAccess.additionalConsent.subtitle": "To continue, confirm your consent to use of the required data below.",
+    "banking.dataAccess.dataTypes": [
+      "Account holder details",
+      "Account details",
+      "Transactions"
+    ],
+    "banking.fileUpload.subtitle": "You can upload requested PDFs, Excel files, or CSVs below.",
+    "commerce.dataAccess.consent": "By continuing you are permitting Platypus Payments to access account information. Please refer to the Terms and Conditions and Privacy Policy\r\n\r\n[https://example.com](https://example.com)",
+    "commerce.dataAccess.additionalConsent.title": "You have previously authorized access to your commerce platform",
+    "commerce.dataAccess.additionalConsent.subtitle": "To continue, confirm your consent to use of the required data below.",
+    "commerce.dataAccess.dataTypes": [
+      "Company information",
+      "Orders & payments",
+      "Products",
+      "Disputes & transactions",
+      "Customers"
+    ],
+    "businessDocuments.fileUpload.subtitle": "You can upload requested PDFs, Excel files, or CSVs below.",
+    "landing.subtitle": "Welcome to the connection wizard. Please follow the steps and connect your accounting package",
+    "landing.title": "Link your accounts",
+    "main.subtitle": "You will be asked to sign in to your accounts in order to authorize the sharing of your financial information",
+    "main.title": "Share your financial information"
+  },
+  "theme": {
+    "colors": {
+      "primary": "#B1DB2E"
+    }
+  },
+  "sourceTypes": {
+    "accounting": {
+      "optional": true,
+      "enableIntegrations": true,
+      "enableFileUpload": true
+    },
+    "banking": {
+      "optional": true,
+      "enableIntegrations": true,
+      "enableFileUpload": false
+    },
+    "commerce": {
+      "optional": true,
+      "enableIntegrations": true,
+      "allowedIntegrations": ["fqly", "gvom", "fztf", "zsth", "exgd"]
+    },
+    "businessDocuments": {
+      "optional": true,
+      "enableFileUpload": false
+    }
+  },
+  "showSandboxIntegrations": true,
+  "showLandingPage": true,
+  "nonModal": false,
+  "enableAdditionalConsent": false
+}

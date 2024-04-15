@@ -1,8 +1,7 @@
 ---
 title: "Platform selection flow"
 description: "Enable your merchant to select a target accounting platform before they move on to the Sync configuration flow."
-createdAt: "2022-02-09T13:30:23.915Z"
-updatedAt: "2022-11-25T09:42:09.130Z"
+draft: true
 ---
 
 ## Build a platform selection flow
@@ -223,13 +222,13 @@ You're ready to move to the next page, where we'll cover what to do with this re
 
 ---
 
-## Use our Hosted Link and Embedded Link authorization flows
+## Use our Link and Hosted Link authorization flows
 
 Our no-code and low-code flows take care of platform selection and authorization for you.
 
 You can read more about those here:
 
-- [Authorize with Embedded Link](/auth-flow/authorize-embedded-link)
+- [Authorize with Link](/auth-flow/authorize-embedded-link)
 - [Authorize with Hosted Link](/auth-flow/authorize-hosted-link)
 
 ### 1. Authorize
@@ -251,7 +250,7 @@ You can retrieve the `platformKey` when you need it.
 
 Call `GET /companies/{companyId}/connections`. There should only be one connection returned if your settings are configured correctly. The `platformKey` is called `integrationKey` in the response.
 
-For Embedded Link, you can use the `onConnection` callback function to retain the connection and its `platformKey`.
+For Link, you can use the `onConnection` callback function to retain the connection and its `platformKey`.
 :::
 
 ```http

@@ -71,7 +71,7 @@ There are many reasons a message to your endpoint could fail. Have a look at our
 
 :::
 
-## Webhook signature verification
+## Verify webhook signature
 
 A webhook signature is your way to verify that the messages are sent by Codat and helps you avoid impersonation or replay attacks. We sign every webhook and its metadata with a unique security key for each endpoint and include timestamps for when the message attempt occurred.
 

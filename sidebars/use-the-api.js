@@ -51,6 +51,7 @@ module.exports = [
       "using-the-api/webhooks/overview",
       "using-the-api/webhooks/event-types",
       "using-the-api/webhooks/create-consumer",
+      "using-the-api/webhooks/zapier-integration",
       "using-the-api/webhooks/troubleshooting",
       {
         type: "category",

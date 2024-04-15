@@ -449,56 +449,16 @@ const comm = [
 
 module.exports = {
   redirects: [
-    // get started
+    // Deprecations - remove after July
     {
-      from: "/introduction/first-steps",
-      to: "/get-started/first-steps",
+      from: "/updates/240314-removing-transfer-transaction-type-SFE",
+      to: "/updates/240314-deprecation-transfer-transaction-type-SFE",
     },
     {
-      from: "/introduction/first-ten-minutes",
-      to: "/get-started/first-ten-minutes",
+      from: "/updates/240305-xero-bankstatement-report",
+      to: "/updates/240305-deprecation-xero-bankstatement-report",
     },
-    {
-      from: "/introduction/libraries",
-      to: "/get-started/libraries",
-    },
-    {
-      from: "/other/developer-resources",
-      to: "/get-started/developer-resources",
-    },
-    {
-      from: "/introduction/office-hours",
-      to: "/get-started/office-hours",
-    },
-    {
-      from: "/introduction/migration",
-      to: "/get-started/migration",
-    },
-    // config, other, etc.
-    {
-      from: "/introduction/change-policy",
-      to: "/using-the-api/change-policy",
-    },
-    {
-      from: "/reference/authentication",
-      to: "/using-the-api/overview",
-    },
-    {
-      from: "/introduction/create-account",
-      to: "/configure/create-account",
-    },
-    {
-      from: "/introduction/testing",
-      to: "/using-the-api/testing",
-    },
-    {
-      from: "/introduction/webhooks/core-rules-create",
-      to: "/using-the-api/webhooks/create-consumer",
-    },
-    {
-      from: "/introduction/webhooks/core-rules-types",
-      to: "/using-the-api/webhooks/event-types",
-    },
+    // New webhooks logic
     {
       from: "/introduction/webhooks/core-rules-webhooks",
       to: "/using-the-api/webhooks/legacy/core-rules-webhooks",
@@ -511,10 +471,7 @@ module.exports = {
       from: "/introduction/webhooks/receive-webhooks-as-email",
       to: "/using-the-api/webhooks/legacy/receive-webhooks-as-email",
     },
-    {
-      from: "/other/cochat",
-      to: "/cochat",
-    },
+    
     {
       from: "/other/file-upload",
       to: "/integrations/file-upload",
@@ -548,10 +505,6 @@ module.exports = {
       to: "/configure/user-management/adding-users",
     },
     {
-      from: "/other/user-management/sso",
-      to: "/configure/user-management/sso",
-    },
-    {
       from: "/other/user-management/user-roles",
       to: "/configure/user-management/user-roles",
     },
@@ -563,8 +516,11 @@ module.exports = {
       from: "/configure/portal/usage-and-billing",
       to: "/configure/create-account",
     },
-
-    //
+    {
+      from: "/auth-flow/customize/set-up-webhooks",
+      to: "/using-the-api/webhooks/event-types",
+    },
+    // Shopify
     {
       from: "/integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
       to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
@@ -572,14 +528,6 @@ module.exports = {
     {
       from: "/integrations/commerce/shopify/commerce-shopify-setup",
       to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
-    },
-    {
-      from: "/guides/underwriting/introduction",
-      to: "/lending/overview",
-    },
-    {
-      from: "/usecases/summary/underwriting",
-      to: "/usecases/summary/lending",
     },
     {
       from: "/redirects/integrations/bankfeeds/qalf",
@@ -715,10 +663,6 @@ module.exports = {
       from: "/expenses/sync-process/updating-expenses",
       to: "/expenses/sync-process/expense-transactions",
     },
-//    {
-//      from: "/expenses/sync-process/uploading-receipts",
-//      to: "/expenses/sync-process/expense-transactions",
-//    },
     {
       from: "/expenses/sync-process/sync-process-explained",
       to: "/expenses/getting-started",
@@ -743,107 +687,55 @@ module.exports = {
       from: "/lending/metrics/accounting/api-marketing-metrics",
     },
     {
-      to: "/lending/enhanced-financials/overview",
-      from: "/assess/categories",
-    },
-    {
-      to: "/lending/banking/banking-account-balances",
-      from: "/assess/banking/banking-account-balances",
-    },
-    {
-      to: "/lending/banking/banking-account-inflows-and-outflows",
-      from: "/assess/banking/banking-account-inflows-and-outflows",
-    },
-    {
-      to: "/lending/banking/overview",
-      from: "/assess/banking/overview",
-    },
-    {
-      to: "/lending/categories/api-categorization-of-accounts",
-      from: "/assess/categories/api-categorization-of-accounts",
-    },
-    {
-      to: "/lending/commerce-metrics/overview",
-      from: "/assess/commerce-metrics/overview",
-    },
-    {
-      to: "/lending/commerce-metrics/reporting-structure",
-      from: "/assess/commerce-metrics/reporting-structure",
-    },
-    {
-      to: "/lending/commerce-metrics/troubleshooting",
-      from: "/assess/commerce-metrics/troubleshooting",
-    },
-    {
-      to: "/lending/data-integrity/api-data-integrity",
-      from: "/assess/data-integrity/api-data-integrity",
-    },
-    {
-      to: "/lending/data-integrity/faqs",
-      from: "/assess/data-integrity/faqs",
-    },
-    {
-      to: "/lending/data-integrity/overview",
-      from: "/assess/data-integrity/overview",
-    },
-    {
       to: "/lending/data-types",
       from: "/assess/data-types",
     },
     {
-      to: "/lending/enhanced-cash-flow/overview",
-      from: "/assess/enhanced-cash-flow/overview",
-    },
-    {
-      to: "/lending/enhanced-cash-flow/transactions",
-      from: "/assess/enhanced-cash-flow/transactions",
-    },
-    {
-      to: "/lending/enhanced-financials/legacy/balance-sheet",
+      to: "/lending/overview",
       from: "/assess/enhanced-financials/legacy/balance-sheet",
     },
     {
-      to: "/lending/enhanced-financials/legacy/financials",
+      to: "/lending/overview",
       from: "/assess/enhanced-financials/legacy/financials",
     },
     {
-      to: "/lending/enhanced-financials/legacy/profit-and-loss",
+      to: "/lending/overview",
       from: "/assess/enhanced-financials/legacy/profit-and-loss",
     },
     {
-      to: "/lending/enhanced-financials/legacy/reporting-structure",
+      to: "/lending/overview",
       from: "/assess/enhanced-financials/legacy/reporting-structure",
     },
     {
-      to: "/lending/enhanced-financials/overview",
+      to: "/lending/overview",
       from: "/assess/enhanced-financials/overview",
     },
     {
-      to: "/lending/enhanced-invoices/overview",
+      to: "/lending/overview",
       from: "/assess/enhanced-invoices/overview",
     },
     {
-      to: "/lending/enhanced-liabilities/overview",
+      to: "/lending/overview",
       from: "/assess/enhanced-liabilities/overview",
     },
     {
-      to: "/lending/excel/audit-report",
+      to: "/lending/overview",
       from: "/assess/excel/audit-report",
     },
     {
-      to: "/lending/excel/enhanced-cash-flow-report",
+      to: "/lending/overview",
       from: "/assess/excel/enhanced-cash-flow-report",
     },
     {
-      to: "/lending/excel/enhanced-financials-report",
+      to: "/lending/overview",
       from: "/assess/excel/enhanced-financials-report",
     },
     {
-      to: "/lending/excel/enhanced-invoices-report",
+      to: "/lending/overview",
       from: "/assess/excel/enhanced-invoices-report",
     },
     {
-      to: "/lending/excel/overview",
+      to: "/lending/overview",
       from: "/assess/excel/overview",
     },
     {
@@ -867,35 +759,35 @@ module.exports = {
       from: "/assess/guides/invoice-finance/setting-up",
     },
     {
-      to: "/lending/overview",
+      to: "/lending/guides/loan-qualification/introduction",
       from: "/assess/guides/loan-qualification/introduction",
     },
     {
-      to: "/lending/overview",
+      to: "/lending/guides/loan-qualification/process-loan",
       from: "/assess/guides/loan-qualification/process-loan",
     },
     {
-      to: "/lending/overview",
+      to: "/lending/guides/loan-qualification/setting-up",
       from: "/assess/guides/loan-qualification/setting-up",
     },
     {
-      to: "/lending/overview",
+      to: "/lending/guides/loan-qualification/uw-decision",
       from: "/assess/guides/loan-qualification/uw-decision",
     },
     {
-      to: "/lending/guides/migration-guides/deprecation-account-categories",
+      to: "/lending/overview",
       from: "/assess/guides/migration-guides/deprecation-account-categories",
     },
     {
-      to: "/lending/guides/migration-guides/deprecation-account-categories-api",
+      to: "/lending/overview",
       from: "/assess/guides/migration-guides/deprecation-account-categories-api",
     },
     {
-      to: "/lending/guides/migration-guides/deprecation-account-categories-excel",
+      to: "/lending/overview",
       from: "/assess/guides/migration-guides/deprecation-account-categories-excel",
     },
     {
-      to: "/lending/guides/migration-guides/deprecation-account-categories-portal",
+      to: "/lending/overview",
       from: "/assess/guides/migration-guides/deprecation-account-categories-portal",
     },
     {
@@ -911,27 +803,27 @@ module.exports = {
       from: "/assess/metrics/accounting/overview",
     },
     {
-      to: "/lending/metrics/commerce/api-customer-retention",
+      to: "/lending/overview",
       from: "/assess/metrics/commerce/api-customer-retention",
     },
     {
-      to: "/lending/metrics/commerce/api-lifetime-value",
+      to: "/lending/overview",
       from: "/assess/metrics/commerce/api-lifetime-value",
     },
     {
-      to: "/lending/metrics/commerce/api-orders",
+      to: "/lending/overview",
       from: "/assess/metrics/commerce/api-orders",
     },
     {
-      to: "/lending/metrics/commerce/api-refunds",
+      to: "/lending/overview",
       from: "/assess/metrics/commerce/api-refunds",
     },
     {
-      to: "/lending/metrics/commerce/api-revenue",
+      to: "/lending/overview",
       from: "/assess/metrics/commerce/api-revenue",
     },
     {
-      to: "/lending/metrics/commerce/overview",
+      to: "/lending/overview",
       from: "/assess/metrics/commerce/overview",
     },
     {
@@ -939,19 +831,15 @@ module.exports = {
       from: "/assess/overview",
     },
     {
-      to: "/lending/portal/categorization-of-accounts",
+      to: "/lending/overview",
       from: "/assess/portal/categorization-of-accounts",
     },
     {
-      to: "/lending/portal/categorize-accounts",
+      to: "/lending/overview",
       from: "/assess/portal/categorize-accounts",
     },
     {
-      to: "/lending/portal/data-integrity",
-      from: "/assess/portal/data-integrity",
-    },
-    {
-      to: "/lending/portal/overview",
+      to: "/lending/overview",
       from: "/assess/portal/overview",
     },
     {

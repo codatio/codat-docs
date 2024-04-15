@@ -7,8 +7,8 @@
     }
   ],
   "info": {
-    "title": "Sync for Payables",
-    "description": "The API for Sync for Payables. \n\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, bills, and payments in sync, through a standardized API.\n\n[Explore product](https://docs.codat.io/payables/overview) | [See OpenAPI spec](https://github.com/codatio/oas)\n",
+    "title": "Bill pay kit",
+    "description": "The API reference for the Bill Pay kit. \n\nThe bill pay kit is an API and a set of supporting tools designed to integrate a bill pay flow into your app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.\n\n[Explore product](https://docs.codat.io/payables/bill-pay-kit) | [See OpenAPI spec](https://github.com/codatio/oas)\n",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -1041,7 +1041,7 @@
       ],
       "get": {
         "summary": "Get bill mapping options",
-        "description": "﻿Use the *Get mapping options - Bills* endpoint to return a list of available mapping options for a given company's connection ID.\n\nMapping options are a set of accounts and tax rates used to configure the SMB's payables integration.",
+        "description": "﻿Use the *Get mapping options - Bills* endpoint to return a list of available mapping options for a given company's connection ID.\n\nBy default, this endpoint returns a list of active accounts and tax rates. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that.\n\nMapping options are a set of accounts and tax rates used to configure the SMB's payables integration.",
         "operationId": "get-mapping-options-bills",
         "x-speakeasy-name-override": "get-bill-options",
         "tags": [
@@ -1050,6 +1050,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/continuationToken"
+          },
+          {
+            "$ref": "#/components/parameters/statusQuery"
           }
         ],
         "responses": {
@@ -1066,8 +1069,9 @@
                       "accounts": [
                         {
                           "id": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e",
+                          "nominalCode": "879-i",
                           "name": "Accounts payable",
-                          "accountType": "Liability",
+                          "type": "Liability",
                           "currency": "GBP",
                           "status": "Active",
                           "sourceModifiedDate": "2022-10-23T00:00:00.000Z"
@@ -1131,7 +1135,7 @@
       ],
       "get": {
         "summary": "Get payment mapping options",
-        "description": "Use the *Get mapping options - Payments* endpoint to return a list of available mapping options for a given company's connection ID.\r\n\r\nMapping options are a set of bank accounts used to configure the SMB's payables integration.",
+        "description": "Use the *Get mapping options - Payments* endpoint to return a list of available mapping options for a given company's connection ID.\r\n\r\nBy default, this endpoint returns a list of active bank accounts. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that.\r\n\r\nMapping options are a set of bank accounts used to configure the SMB's payables integration.",
         "operationId": "get-mapping-options-payments",
         "x-speakeasy-name-override": "get-payment-options",
         "tags": [
@@ -1140,6 +1144,9 @@
         "parameters": [
           {
             "$ref": "#/components/parameters/continuationToken"
+          },
+          {
+            "$ref": "#/components/parameters/statusQuery"
           }
         ],
         "responses": {
@@ -1612,7 +1619,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Attachment/definitions/attachments"
+                  "$ref": "#/components/schemas/Attachment"
+                },
+                "examples": {
+                  "Info": {
+                    "value": {
+                      "id": "422f093f-e556-4bf3-91c0-93af70c3e850",
+                      "name": "receipt.png",
+                      "contentType": "image/png",
+                      "dateCreated": "2022-10-23T00:00:00.000Z",
+                      "fileSize": 100,
+                      "includeWhenSent": true,
+                      "sourceModifiedDate": "2022-05-26T10:34:10Z"
+                    }
+                  }
                 }
               }
             }
@@ -1933,6 +1953,93 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "Suppliers"
+        ],
+        "summary": "Create supplier",
+        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n",
+        "operationId": "create-supplier",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "description": "A unique identifier to ensure idempotent behaviour for subsequent requests.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier/definitions/supplierPrototype"
+              },
+              "examples": {
+                "Suppliers": {
+                  "value": {
+                    "supplierName": "Greggs",
+                    "contactName": "Greg Greggs",
+                    "emailAddress": "greg@greggs.com",
+                    "phone": "+44 (0)1223 322410",
+                    "addresses": [
+                      {
+                        "type": "Billing",
+                        "line1": "Flat 1",
+                        "line2": "2 Dennis Avenue",
+                        "city": "London",
+                        "region": "Camden",
+                        "country": "GBR",
+                        "postalCode": "EC1N 7TE"
+                      }
+                    ],
+                    "status": "Active",
+                    "defaultCurrency": "GBP"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplier"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/payables/bankAccounts": {
@@ -2067,9 +2174,63 @@
   },
   "components": {
     "schemas": {
+      "Address": {
+        "title": "Address",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/Address/definitions/addressType"
+          },
+          "line1": {
+            "type": "string",
+            "nullable": true,
+            "description": "Line 1 of the customer address."
+          },
+          "line2": {
+            "type": "string",
+            "nullable": true,
+            "description": "Line 2 of the customer address."
+          },
+          "city": {
+            "type": "string",
+            "nullable": true,
+            "description": "City of the customer address."
+          },
+          "region": {
+            "type": "string",
+            "nullable": true,
+            "description": "Region of the customer address."
+          },
+          "country": {
+            "type": "string",
+            "nullable": true,
+            "description": "Country of the customer address."
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "Postal code or zip code."
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "definitions": {
+          "addressType": {
+            "description": "The type of the address",
+            "type": "string",
+            "enum": [
+              "Unknown",
+              "Billing",
+              "Delivery"
+            ]
+          }
+        }
+      },
       "Attachment": {
-        "title": "Accounting: Attachment",
-        "description": "The Codat API supports pulling and pushing of file attachments for invoices, bills, direct costs, and direct incomes.\n\n> **Retrieving attachments**\n> \n> If a company is authorized, you can query the Codat API to read, download, and upload attachments without requiring a fresh sync of data.\n\nUnlike other data types, Codat doesn't support [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings) for attachments.\n\nNote that different integrations have different requirements to file size and extension of attachments.\n\n| Integration       | File size | File extension                                                                                                                                               |\n|-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| Xero              | 4 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |\n| QuickBooks Online | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |\n| NetSuite          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |\n| Dynamics 365 Business Central          | 350 MB    | Dynamics do not explicitly outline which file types are supported but they do state <a className=\"external\" href=\"https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice\" target=\"_blank\">here</a> that \"You can attach any type of file, such as text, image, or video files\".                                                                   |\n\nView the coverage for each integration in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting\" target=\"_blank\">Data coverage explorer</a>.\n",
+        "title": "Attachment",
+        "description": "  The Codat API supports pulling and pushing of file attachments for invoices, bills, direct costs, and direct incomes.\n\n  > **Retrieving attachments**\n  > \n  > If a company is authorized, you can query the Codat API to read, download, and upload attachments without requiring a fresh sync of data.\n\n  Unlike other data types, Codat doesn't support [sync settings](https://docs.codat.io/knowledge-base/advanced-sync-settings) for attachments.\n\n  Note that different integrations have different requirements for file size and extension of attachments.\n\n  | Integration       | File size | File extension                                                                                                                                               |\n  |-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|\n  | Xero              | 4 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |\n  | QuickBooks Online | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |\n  | NetSuite          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |\n  | Dynamics 365 Business Central          | 350 MB    | Dynamics do not explicitly outline which file types are supported but they do state <a className=\"external\" href=\"https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice\" target=\"_blank\">here</a> that \"You can attach any type of file, such as text, image, or video files\".                                                                   |",
         "type": "object",
         "allOf": [
           {
@@ -2105,49 +2266,24 @@
             }
           },
           {
-            "title": "Modified dates",
+            "title": "Source Modified Date",
             "x-internal": true,
-            "allOf": [
-              {
-                "title": "ModifiedDate",
-                "x-internal": true,
-                "type": "object",
-                "properties": {
-                  "modifiedDate": {
-                    "allOf": [
-                      {
-                        "$ref": "#/components/schemas/Company/properties/created"
-                      },
-                      {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                "$ref": "#/components/schemas/BankAccount/allOf/1"
-              }
-            ]
-          }
-        ],
-        "examples": [],
-        "definitions": {
-          "attachments": {
-            "title": "Attachments",
             "type": "object",
+            "nullable": true,
             "properties": {
-              "attachments": {
-                "description": "An array of attachments related to the record.",
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Attachment"
-                },
-                "nullable": true
+              "sourceModifiedDate": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/Company/properties/created"
+                  },
+                  {
+                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                  }
+                ]
               }
             }
           }
-        }
+        ]
       },
       "AttachmentUpload": {
         "title": "Attachment upload",
@@ -2220,22 +2356,7 @@
             }
           },
           {
-            "title": "Source Modified Date",
-            "x-internal": true,
-            "type": "object",
-            "nullable": true,
-            "properties": {
-              "sourceModifiedDate": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/Company/properties/created"
-                  },
-                  {
-                    "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
-                  }
-                ]
-              }
-            }
+            "$ref": "#/components/schemas/Attachment/allOf/1"
           }
         ],
         "definitions": {
@@ -2358,7 +2479,7 @@
             "description": "Amount outstanding on the bill."
           },
           "sourceModifiedDate": {
-            "$ref": "#/components/schemas/BankAccount/allOf/1"
+            "$ref": "#/components/schemas/Attachment/allOf/1"
           }
         },
         "definitions": {
@@ -2585,13 +2706,19 @@
                     "description": "Identifier for the account, unique for the company.",
                     "example": "1b6266d1-1e44-46c5-8eb5-a8f98e03124e"
                   },
+                  "nominalCode": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system.",
+                    "example": "610"
+                  },
                   "name": {
                     "type": "string",
                     "nullable": true,
                     "description": "Name of the account.",
                     "example": "Accounts Payable"
                   },
-                  "accountType": {
+                  "type": {
                     "type": "string",
                     "nullable": true,
                     "description": "Type of account.",
@@ -2606,7 +2733,7 @@
                 }
               },
               {
-                "$ref": "#/components/schemas/BankAccount/allOf/1"
+                "$ref": "#/components/schemas/Attachment/allOf/1"
               }
             ]
           },
@@ -2822,7 +2949,8 @@
           "RuleId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier for the rule."
+            "description": "Unique identifier for the rule.",
+            "deprecated": true
           },
           "RuleType": {
             "type": "string",
@@ -3574,13 +3702,13 @@
                   "status": {
                     "$ref": "#/components/schemas/PaymentMappingOptions/definitions/bankAccountStatus"
                   },
-                  "type": {
+                  "accountType": {
                     "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountType"
                   }
                 }
               },
               {
-                "$ref": "#/components/schemas/BankAccount/allOf/1"
+                "$ref": "#/components/schemas/Attachment/allOf/1"
               }
             ]
           },
@@ -3964,62 +4092,16 @@
             "nullable": true,
             "description": "An array of Addresses.",
             "items": {
-              "title": "Accounting: Address",
-              "x-internal": true,
-              "type": "object",
-              "properties": {
-                "type": {
-                  "$ref": "#/components/schemas/Supplier/properties/addresses/items/definitions/accountingAddressType"
-                },
-                "line1": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Line 1 of the customer address."
-                },
-                "line2": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Line 2 of the customer address."
-                },
-                "city": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "City of the customer address."
-                },
-                "region": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Region of the customer address."
-                },
-                "country": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Country of the customer address."
-                },
-                "postalCode": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Postal code or zip code."
-                }
-              },
-              "required": [
-                "type"
-              ],
-              "definitions": {
-                "accountingAddressType": {
-                  "description": "The type of the address",
-                  "type": "string",
-                  "enum": [
-                    "Unknown",
-                    "Billing",
-                    "Delivery"
-                  ]
-                }
-              }
+              "$ref": "#/components/schemas/Address"
             }
           },
           "status": {
             "$ref": "#/components/schemas/Supplier/definitions/supplierStatus"
+          },
+          "balance": {
+            "type": "number",
+            "format": "decimal",
+            "description": "Amount outstanding against the supplier."
           },
           "defaultCurrency": {
             "type": "string",
@@ -4027,7 +4109,7 @@
             "description": "Default currency the supplier's transactional data is recorded in."
           },
           "sourceModifiedDate": {
-            "$ref": "#/components/schemas/BankAccount/allOf/1"
+            "$ref": "#/components/schemas/Attachment/allOf/1"
           }
         },
         "required": [
@@ -4125,6 +4207,7 @@
               }
             ],
             "status": "Unknown",
+            "amount": 100,
             "defaultCurrency": "GBP",
             "sourceModifiedDate": "2022-10-23T00:00:00Z"
           }
@@ -4175,7 +4258,7 @@
         "schema": {
           "type": "string"
         },
-        "example": "-modifiedDate",
+        "example": "id=e3334455-1aed-4e71-ab43-6bccf12092ee",
         "description": "Codat query string. [Read more](https://docs.codat.io/using-the-api/querying)."
       },
       "orderBy": {
@@ -4236,6 +4319,16 @@
           "example": "continuationToken=eyJwYWdlIjoyLCJwYWdlU2l6ZSI6MTAwLCJwYWdlQ291bnQiOjExfQ=="
         },
         "description": "Retrieve the next page of results using the continuation token from the previous response."
+      },
+      "statusQuery": {
+        "name": "statusQuery",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "example": "status=Archived",
+        "description": "Codat query string allows you to filter by `status` (`status=Active||status=Archived`). [Learn more](https://docs.codat.io/using-the-api/querying) about Codat's query string."
       }
     },
     "responses": {

@@ -64,7 +64,11 @@ export const integrationsFilterSupplierEnablement = [
   "Sage Business Cloud Accounting",
   "Sage Intacct",
   "Xero",
-]
+];
+
+export const integrationsFilterBillPayKit = [
+  "Xero",
+];
 
 export const bankfeedsIntegrations = [
   {

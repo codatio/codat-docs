@@ -3065,7 +3065,8 @@
           "RuleId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier for the rule."
+            "description": "Unique identifier for the rule.",
+            "deprecated": true
           },
           "RuleType": {
             "type": "string",
@@ -3547,7 +3548,7 @@
         "schema": {
           "type": "string"
         },
-        "example": "-modifiedDate",
+        "example": "id=e3334455-1aed-4e71-ab43-6bccf12092ee",
         "description": "Codat query string. [Read more](https://docs.codat.io/using-the-api/querying)."
       },
       "orderBy": {

@@ -27,6 +27,10 @@ Here's what you can expect when you upgrade to our new webhooks service:
 
 Check out our [migration guide](/using-the-api/webhooks/migration-guide) to see if you can upgrade and how to make the request. Alternatively, have a look at our [webhooks documentation](/using-the-api/webhooks/overview) to learn more about the service.
 
-#### Deprecation of `/rules/alerts` endpoints
+#### Deprecations
 
-As part of deploying our new webhooks service, we are deprecating the `/rules/alerts` endpoints. Learn more about this deprecation and required actions in the [dedicated deprecation notice](/updates/240306-deprecation-rules-alerts).
+As part of releasing our new webhooks service, we have announced the following deprecations:
+
+- [`/rules/alerts` endpoints](/updates/240306-deprecation-rules-alerts).
+- [RuleId in rules webhooks](/updates/240320-deprecation-ruleId).
+- [Rule-based email notifications](/updates/240505-deprecation-rule-based-email-notifications).

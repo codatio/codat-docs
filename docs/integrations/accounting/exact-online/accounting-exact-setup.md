@@ -137,6 +137,7 @@ If you experience issues with your app after enabling the recommended scopes, pl
 | accounting       | Read         |
 | receivables      | Read         |
 | payables         | Read         |
+| costcenters      | Read         |
 | **Organization** |              |
 | administration   | Read         |
 | documents        | Manage       |

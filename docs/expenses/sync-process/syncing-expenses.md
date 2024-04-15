@@ -1,7 +1,7 @@
 ---
-title: "Sync expense transactions"
-sidebar_label: "Sync expenses"
-description: "Record expense transactions in your customer's accounting software and monitor the progress of dataset syncs"
+title: "Sync transactions"
+sidebar_label: "Sync transactions"
+description: "Record transactions in your customer's accounting software and monitor the progress of dataset syncs"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -9,18 +9,9 @@ import TabItem from "@theme/TabItem";
 
 ## Sync transactions
 
-Once you have pushed your customer's expense transaction data to Codat, you need to initiate the sync process that records the expenses in the customer's accounting software. 
-
-Use the [Initiate sync](/sync-for-expenses-api#/operations/initiate-sync) endpoint to trigger a transaction sync. The process fetches the datasets from Codat's cache, validates and maps the data, and then pushes it to the target platform. 
+Once you have created your customer's expense transaction data, we automatically initiate a sync that records the expenses in the customer's accounting software. 
 
 You can continue pushing new expenses to Codat while a sync is ongoing. 
-
-```http title="Sync datasets"
- POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs
-    {
-       "datasetIds": ["fd4cc60e-8666-4443-8fad-12c56d7420ee"]
-    }
-```
 
 ## Check sync status
 

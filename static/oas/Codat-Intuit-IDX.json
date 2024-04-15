@@ -1,0 +1,1650 @@
+{
+  "openapi": "3.1.0",
+  "servers": [
+    {
+      "description": "Production",
+      "url": "partners/intuit/idx"
+    }
+  ],
+  "info": {
+    "title": "Codat IDX API",
+    "description": "﻿## Headers\nAPI calls by Intuit to Codat’s API must include the following 2 headers:\n1. An Authorization header: `Authorization: Basic BASE64({username}:{password})`\n\nThe username & password are generated from the company linking process, and then converted into BASE64. This then used for the Authorization header using the above set-up.\n\n2. A partner identification header, specific to each client: `X-Partner-Key: BASE64({Key})`\n\nThis is the client ID converted into BASE64, directly put into the X-Partner-Key header.",
+    "version": "3.0.0",
+    "summary": "Codat IDX API",
+    "contact": {
+      "name": "Codat",
+      "email": "support@codat.io"
+    }
+  },
+  "x-speakeasy-retries": {
+    "strategy": "backoff",
+    "backoff": {
+      "initialInterval": 500,
+      "maxInterval": 60000,
+      "maxElapsedTime": 3600000,
+      "exponent": 1.5
+    },
+    "statusCodes": [
+      408,
+      429,
+      "5XX"
+    ],
+    "retryConnectionErrors": true
+  },
+  "tags": [
+    {
+      "name": "Idx",
+      "description": "Endpoints to manage Intuit data and products with Codat."
+    }
+  ],
+  "paths": {
+    "/accounts": {
+      "get": {
+        "summary": "List accounts",
+        "operationId": "list-accounts",
+        "tags": [
+          "Idx"
+        ],
+        "description": "The _List Intuit accounts_ endpoint returns a list of accounts for a given company's connection.\n\nThese accounts are the representation of bank accounts within Codat's domain, from which transactions are synced into the accounting platform.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntuitAccounts"
+                },
+                "examples": {
+                  "Intuit accounts example": {
+                    "value": {
+                      "results": [
+                        {
+                          "id": "d887f072-9308-4d0c-8d3f-e6043988574a",
+                          "accountDisplayInfo": {
+                            "displayName": "accd887f072-9308-4d0c-8d3f-e6043988574a",
+                            "description": "Checking Account d887f072-9308-4d0c-8d3f-e6043988574a",
+                            "nickname": "e6043988574a"
+                          },
+                          "accountType": "deposit",
+                          "accountNumber": "1234567890",
+                          "primaryCurrency": "USD",
+                          "depositAccountInfo": {
+                            "accountSubType": "checking",
+                            "depositBalance": {
+                              "balanceAsOf": "2024-03-01",
+                              "availableBalance": {
+                                "currency": "USD",
+                                "amount": "500"
+                              },
+                              "currentBalance": {
+                                "currency": "USD",
+                                "amount": "500"
+                              }
+                            }
+                          },
+                          "cashCardAccountInfo": null,
+                          "creditCardAccountInfo": null,
+                          "lineOfCreditAccountInfo": null,
+                          "loanAccountInfo": null,
+                          "lineOfBusiness": "business",
+                          "accountOpenDate": "2020-01-01",
+                          "bankRoutingInfo": [
+                            {
+                              "id": "string",
+                              "type": "rtn"
+                            }
+                          ],
+                          "accountHolderInfo": {
+                            "holderType": "business",
+                            "governmentIdDetails": "business",
+                            "relationshipType": "business"
+                          },
+                          "status": "open",
+                          "modifiedDate": "2024-03-26T14:14:14.1057478Z"
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 100,
+                      "totalResults": 1
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/accounts/{accountId}/transactions": {
+      "get": {
+        "summary": "List transactions",
+        "operationId": "list-transactions",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/accountId"
+          }
+        ],
+        "tags": [
+          "Idx"
+        ],
+        "description": "The _List Intuit bank transactions_ endpoint returns a list of bank transactions for a specified bank account.\n\nBank transactions are records of monetary amounts that have moved in and out of an SMB's bank account.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntuitTransactions"
+                },
+                "examples": {
+                  "Intuit transactions example": {
+                    "value": {
+                      "results": [
+                        {
+                          "transactionId": "38953988-7db6-4a55-84df-d48a4a537bf1",
+                          "accountId": "d887f072-9308-4d0c-8d3f-e6043988574a",
+                          "accountType": "deposit",
+                          "transactionDate": "2024-02-28",
+                          "postedDate": "2024-02-28",
+                          "fundsAvailableDate": "2024-02-28",
+                          "transactionDescription": "transactionId 38953988-7db6-4a55-84df-d48a4a537bf1 on accountId d887f072-9308-4d0c-8d3f-e6043988574a",
+                          "payeeName": "Mrs Lorem Ipsum",
+                          "referenceNumber": "785090",
+                          "amount": {
+                            "currency": "USD",
+                            "amount": "-100"
+                          },
+                          "transactionValueType": "DEBIT",
+                          "transactionMutability": false,
+                          "status": "POSTED",
+                          "depositTransactionInfo": {
+                            "depositTransactionType": "debit"
+                          },
+                          "cashCardTransactionInfo": null,
+                          "creditCardTransactionInfo": null,
+                          "lineOfCreditTransactionInfo": null,
+                          "loanTransactionInfo": null,
+                          "modifiedDate": "2024-03-26T14:14:14.1057478Z"
+                        },
+                        {
+                          "transactionId": "321e593c-2278-4277-be51-d5abe0f4b7b3",
+                          "accountId": "56839-1",
+                          "accountType": "cashcard",
+                          "transactionDate": "2024-03-22",
+                          "postedDate": "2024-03-22",
+                          "fundsAvailableDate": "2024-03-22",
+                          "transactionDescription": "transactionId 321e593c-2278-4277-be51-d5abe0f4b7b3 on accountId 56839-1",
+                          "payeeName": "Mr Lorem Ipsum",
+                          "referenceNumber": null,
+                          "amount": {
+                            "currency": "USD",
+                            "amount": "-57.22"
+                          },
+                          "transactionValueType": "DEBIT",
+                          "transactionMutability": false,
+                          "status": "POSTED",
+                          "depositTransactionInfo": null,
+                          "cashCardTransactionInfo": {
+                            "cashCardTransactionType": "debit"
+                          },
+                          "creditCardTransactionInfo": null,
+                          "lineOfCreditTransactionInfo": null,
+                          "loanTransactionInfo": null,
+                          "modifiedDate": "2024-03-26T14:14:14.1057478Z"
+                        }
+                      ],
+                      "pageNumber": 1,
+                      "pageSize": 100,
+                      "totalResults": 2
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntuitAccount": {
+        "title": "Accounts",
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Identifier for the account, unique for the company in the accounting platform."
+              },
+              "accountDisplayInfo": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/accountDisplayInfo"
+              },
+              "accountType": {
+                "type": "string",
+                "description": "Value that represents a normalized account type. Based on the account type, there will be at least one `AccountInfo` object present in the account.",
+                "enum": [
+                  "deposit",
+                  "cashcard",
+                  "creditcard",
+                  "loan",
+                  "lineofcredit"
+                ]
+              },
+              "accountNumber": {
+                "type": "string",
+                "description": "Account number for the bank account."
+              },
+              "primaryCurrency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "depositAccountInfo": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/depositAccountInfo"
+              },
+              "cashCardAccountInfo": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/cashCardAccountInfo"
+              },
+              "creditCardAccountInfo": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo"
+              },
+              "lineOfCreditAccountInfo": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/lineOfCreditAccountInfo"
+              },
+              "loanAccountInfo": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/loanAccountInfo"
+              },
+              "lineOfBusiness": {
+                "type": "string",
+                "default": "business",
+                "description": "The line of business the account belongs to (e.g. consumer, business, corporate, joint consumer), as represented on the provider's side.",
+                "enum": [
+                  "consumer",
+                  "business",
+                  "corporate",
+                  "jointconsumer"
+                ]
+              },
+              "accountOpenDate": {
+                "type": "string",
+                "description": "Date when the account was opened or created at the provider",
+                "example": "2022-10-23"
+              },
+              "bankRoutingInfo": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IntuitAccount/definitions/bankRoutingInfo"
+                }
+              },
+              "accountHolderInfo": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/accountHolderInfo"
+              },
+              "status": {
+                "type": "string",
+                "description": "The state of the account.",
+                "enum": [
+                  "open",
+                  "closed",
+                  "delinquent",
+                  "negativecurrentbalance",
+                  "pendingopen",
+                  "pendingclose",
+                  "paid"
+                ]
+              },
+              "modifiedDate": {
+                "title": "Date time",
+                "type": "string",
+                "examples": [
+                  "2022-10-23T00:00:00.000Z",
+                  "2022-10-23T00:00:00.000Z"
+                ],
+                "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+              }
+            }
+          }
+        ],
+        "definitions": {
+          "accountDisplayInfo": {
+            "title": "Account Display Info",
+            "type": "object",
+            "properties": {
+              "displayName": {
+                "type": "string",
+                "description": "Display number for the account at the financial institution where this account exists. This number should be displayed by the interface provider and shouldn't contain the full account number or credit card number."
+              },
+              "description": {
+                "type": "string",
+                "description": "Description of the account."
+              },
+              "nickname": {
+                "type": "string",
+                "description": "Name given to the account by the user. Used in UIs to assist in account selection."
+              }
+            }
+          },
+          "accountHolderInfo": {
+            "title": "Account holder info",
+            "type": "object",
+            "properties": {
+              "holderType": {
+                "type": "string",
+                "default": "business",
+                "description": "The type of account holder",
+                "enum": [
+                  "authorized_user",
+                  "business",
+                  "for_benefit_of",
+                  "for_benefit_of_primary",
+                  "for_benefit_of_primary_joint_restricted",
+                  "for_benefit_of_secondary",
+                  "for_benefit_of_secondary_joint_restricted",
+                  "for_benefit_of_sole_owner_restricted",
+                  "power_of_attorney",
+                  "primary_joint_tenants",
+                  "primary",
+                  "primary_borrower",
+                  "primary_joint",
+                  "secondary",
+                  "secondary_joint_tenants",
+                  "secondary_borrower",
+                  "secondary_joint",
+                  "sole_owner",
+                  "trustee",
+                  "uniform_transfer_to_minor"
+                ]
+              },
+              "governmentIdDetails": {
+                "type": "string",
+                "default": "business",
+                "description": "Government ID details associated with the account holder (e.g. consumer, business, corporate, joint consumer) as required by the respective government.",
+                "enum": [
+                  "consumer",
+                  "business",
+                  "corporate",
+                  "jointconsumer"
+                ]
+              },
+              "relationshipType": {
+                "type": "string",
+                "default": "business",
+                "description": "Account holder relationship type",
+                "enum": [
+                  "authorized_user",
+                  "business",
+                  "for_benefit_of",
+                  "for_benefit_of_primary",
+                  "for_benefit_of_primary_joint_restricted",
+                  "for_benefit_of_secondary",
+                  "for_benefit_of_secondary_joint_restricted",
+                  "for_benefit_of_sole_owner_restricted",
+                  "power_of_attorney",
+                  "primary_joint_tenants",
+                  "primary",
+                  "primary_borrower",
+                  "primary_joint",
+                  "secondary",
+                  "secondary_joint_tenants",
+                  "secondary_borrower",
+                  "secondary_joint",
+                  "sole_owner",
+                  "trustee",
+                  "uniform_transfer_to_minor"
+                ]
+              }
+            }
+          },
+          "availableBalance": {
+            "title": "Available Balance",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "availableCredit": {
+            "title": "Available Credit",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "balanceAsOf": {
+            "title": "Balance As Of",
+            "type": "string",
+            "format": "YYYY-MM-DD",
+            "description": "Balance as of date (TimeStamp)"
+          },
+          "bankRoutingInfo": {
+            "title": "Bank routing info",
+            "type": "object",
+            "description": "Routing information for the bank. This does not include account number",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The numeric identifier of the routing number"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "rtn",
+                  "aba",
+                  "swift",
+                  "bsb",
+                  "iban",
+                  "nz2",
+                  "trno",
+                  "sortcode",
+                  "blz",
+                  "ifsc",
+                  "bankcode",
+                  "apca",
+                  "clabe"
+                ],
+                "description": "The type of routing number"
+              }
+            }
+          },
+          "cashCardAccountInfo": {
+            "title": "Cash Card Account Info",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "accountSubType": {
+                "type": "string",
+                "enum": [
+                  "giftcard",
+                  "prepaidcard",
+                  "payrollcard"
+                ],
+                "description": "Represents normalized account type value. Based on the account type value, there will be at least one AccountInfo object present."
+              },
+              "cashCardBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/cashCardBalance"
+              }
+            }
+          },
+          "cashCardBalance": {
+            "title": "Cash Card Balance",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "balanceAsOf": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/balanceAsOf"
+              },
+              "availableBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/availableBalance"
+              },
+              "currentBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/currentBalance"
+              }
+            }
+          },
+          "creditCardAccountInfo": {
+            "title": "Credit Card Account Info",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "accountSubType": {
+                "type": "string",
+                "enum": [
+                  "creditcard",
+                  "chargecard",
+                  "travelcard",
+                  "cobrandedcard"
+                ],
+                "description": "Represents normalized account type value. Based on the account type value, there will be at least one AccountInfo object present."
+              },
+              "creditCardBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardBalance"
+              },
+              "nextPaymentDate": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo/properties/pastDueDate"
+              },
+              "minimumPaymentDueAmount": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/minimumPaymentDueAmount"
+              },
+              "pastDueDate": {
+                "type": "string",
+                "example": "2022-10-23",
+                "description": "In Codat's data model, dates are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date fields are formatted as strings; for example:\n```\n2020-10-08\n```\n\n\n",
+                "title": "Date"
+              },
+              "pastDueAmount": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/pastDueAmount"
+              },
+              "purchasesApr": {
+                "type": "string",
+                "format": "decimal",
+                "description": "Purchases APR"
+              },
+              "advancesApr": {
+                "type": "string",
+                "format": "decimal",
+                "description": "Advances APR"
+              },
+              "statementPreviousGeneratedDate": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo/properties/pastDueDate"
+              }
+            }
+          },
+          "creditCardBalance": {
+            "title": "Credit card balance",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "balanceAsOf": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/balanceAsOf"
+              },
+              "availableBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/availableBalance"
+              },
+              "currenctBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/currentBalance"
+              },
+              "creditLimit": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/creditLimit"
+              },
+              "lastStatementBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/lastStatementBalance"
+              }
+            }
+          },
+          "creditLimit": {
+            "title": "Credit limit",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "currentBalance": {
+            "title": "Current Balance",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "depositAccountInfo": {
+            "title": "Deposit Account Info",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "accountSubType": {
+                "type": "string",
+                "description": "Represents normalized account type value. Based on the account type value, there will be at least one AccountInfo object present.",
+                "enum": [
+                  "cashmanagement",
+                  "checking",
+                  "escrow",
+                  "moneymarket",
+                  "recurringdeposit",
+                  "savings",
+                  "timedeposit",
+                  "savingsira",
+                  "trust",
+                  "custodial",
+                  "overdraft",
+                  "guardian"
+                ]
+              },
+              "depositBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/depositBalance"
+              }
+            }
+          },
+          "depositBalance": {
+            "title": "Deposit balance",
+            "type": "object",
+            "nullable": true,
+            "description": "Information about deposit account balances",
+            "properties": {
+              "balanceAsOf": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/balanceAsOf"
+              },
+              "availableBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/availableBalance"
+              },
+              "currentBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/currentBalance"
+              }
+            }
+          },
+          "lastStatementBalance": {
+            "title": "Last statement balance",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "lineOfCreditAccountInfo": {
+            "title": "Line of Credit Account Info",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "accountSubType": {
+                "type": "string",
+                "description": "Represents normalized account type value. Based on the account type value, there will be at least one AccountInfo object present.",
+                "enum": [
+                  "commerciallineofcredit",
+                  "homelineofcredit"
+                ]
+              },
+              "lineOfCreditBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/lineOfCreditBalance"
+              },
+              "nextPaymentDate": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo/properties/pastDueDate"
+              },
+              "nextPaymentAmount": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/nextPaymentAmount"
+              },
+              "pastDueAmount": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/pastDueAmount"
+              },
+              "cashAdvanceInterestRate": {
+                "type": "string",
+                "format": "decimal",
+                "description": "Interest Rate on Cash Advance"
+              },
+              "statementCurrentStartDate": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo/properties/pastDueDate"
+              },
+              "statementCurrentEndDate": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/creditCardAccountInfo/properties/pastDueDate"
+              }
+            }
+          },
+          "lineOfCreditBalance": {
+            "title": "Line of credit balance",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "balanceAsOf": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/balanceAsOf"
+              },
+              "lastStatementBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/lastStatementBalance"
+              },
+              "currentBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/currentBalance"
+              },
+              "principalBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/principalBalance"
+              },
+              "availableCredit": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/availableCredit"
+              },
+              "creditLimit": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/creditLimit"
+              }
+            }
+          },
+          "loanAccountInfo": {
+            "title": "Loan account info",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "accountSubType": {
+                "type": "string",
+                "description": "Represents normalized account type value. Based on the account type value, there will be at least one AccountInfo object present.",
+                "enum": [
+                  "autoloan",
+                  "commericalloan",
+                  "commerciallineofcredit",
+                  "constructionloan",
+                  "consumerloan",
+                  "homequityloan",
+                  "homelineofcredit",
+                  "installment",
+                  "loan",
+                  "militaryloan",
+                  "mortgage",
+                  "personalloan",
+                  "studentloan",
+                  "smbloan"
+                ]
+              },
+              "loanBalance": {
+                "$ref": "#/components/schemas/IntuitAccount/definitions/loanBalance"
+              }
+            }
+          },
+          "loanBalance": {
+            "title": "Loan balance",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "pastDueAmount": {
+            "title": "Past Due Amount",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "minimumPaymentDueAmount": {
+            "title": "Minimum Payment Due Amount",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "nextPaymentAmount": {
+            "title": "Next Payment Amount",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "principalBalance": {
+            "title": "Principal Balance",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount/properties/currency"
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          }
+        }
+      },
+      "IntuitAccounts": {
+        "title": "Accounts",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IntuitAccount"
+                }
+              }
+            }
+          },
+          {
+            "title": "Pagination information",
+            "type": "object",
+            "x-internal": true,
+            "properties": {
+              "pageNumber": {
+                "type": "integer",
+                "description": "Current page number."
+              },
+              "pageSize": {
+                "type": "integer",
+                "description": "Number of items to return in results array.",
+                "maximum": 2000
+              },
+              "totalResults": {
+                "type": "integer",
+                "description": "Total number of items."
+              }
+            },
+            "required": [
+              "pageNumber",
+              "pageSize",
+              "totalResults"
+            ],
+            "examples": [
+              {
+                "pageNumber": 1,
+                "pageSize": 10,
+                "totalResults": 1
+              }
+            ]
+          }
+        ]
+      },
+      "IntuitTransaction": {
+        "title": "Transactions",
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "transactionId": {
+                "type": "string",
+                "format": "uuid",
+                "description": "Identifier for the bank account transaction, unique for the company in the accounting platform."
+              },
+              "accountId": {
+                "type": "string",
+                "description": "Unique account identifier."
+              },
+              "accountType": {
+                "type": "string",
+                "description": "Represents normalized account type value. Based on the account type value, there will be at least one AccountInfo object present",
+                "enum": [
+                  "deposit",
+                  "cashcard",
+                  "creditcard",
+                  "loan",
+                  "lineofcredit"
+                ]
+              },
+              "transactionDate": {
+                "$ref": "#/components/schemas/IntuitAccount/allOf/0/properties/modifiedDate",
+                "description": "Transaction date and time"
+              },
+              "postedDate": {
+                "$ref": "#/components/schemas/IntuitAccount/allOf/0/properties/modifiedDate",
+                "description": "Date transaction was posted to account"
+              },
+              "fundsAvailableDate": {
+                "$ref": "#/components/schemas/IntuitAccount/allOf/0/properties/modifiedDate",
+                "description": "Date and time at which assets become available to the account owner"
+              },
+              "transactionDescription": {
+                "type": "string",
+                "description": "General human-readable representation of transaction."
+              },
+              "payeeName": {
+                "type": "string",
+                "description": "Name of the party that receives the payment."
+              },
+              "referenceNumber": {
+                "type": "string",
+                "description": "A tracking reference identifier.",
+                "nullable": true
+              },
+              "amount": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/amount"
+              },
+              "transactionValueType": {
+                "type": "string",
+                "enum": [
+                  "CREDIT",
+                  "DEBIT",
+                  "MEMO"
+                ],
+                "description": "Represents a type of a transaction values."
+              },
+              "transactionMutability": {
+                "type": "boolean",
+                "default": false,
+                "description": "Specifies the Mutability of the Transaction record. 'true' is not an accepted value."
+              },
+              "status": {
+                "type": "string",
+                "default": "POSTED",
+                "description": "Transaction Status. Indicates the state or condition of the transaction record.",
+                "enum": [
+                  "AUTHORIZATION",
+                  "MEMO",
+                  "PENDING",
+                  "POSTED",
+                  "REJECTED"
+                ]
+              },
+              "depositTransactionInfo": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/depositTransactionInfo"
+              },
+              "cashCardTransactionInfo": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/cashCardTransactionInfo"
+              },
+              "creditCardTransactionInfo": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/creditCardTransactionInfo"
+              },
+              "lineOfCreditTransactionInfo": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/lineOfCreditTransactionInfo"
+              },
+              "loanTransactionInfo": {
+                "$ref": "#/components/schemas/IntuitTransaction/definitions/loanTransactionInfo"
+              },
+              "modifiedDate": {
+                "$ref": "#/components/schemas/IntuitAccount/allOf/0/properties/modifiedDate"
+              }
+            }
+          }
+        ],
+        "definitions": {
+          "amount": {
+            "title": "amount",
+            "type": "object",
+            "properties": {
+              "currency": {
+                "title": "Currency",
+                "x-internal": true,
+                "type": "string",
+                "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+                "format": "ISO4217",
+                "examples": [
+                  "GBP",
+                  "USD",
+                  "EUR"
+                ]
+              },
+              "amount": {
+                "type": "string",
+                "description": "amount value"
+              }
+            }
+          },
+          "cashCardTransactionInfo": {
+            "title": "Cash Card Transaction Info",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "cashCardTransactionType": {
+                "type": "string",
+                "enum": [
+                  "adjustment",
+                  "atm",
+                  "cash",
+                  "debit",
+                  "credit",
+                  "fee",
+                  "memo",
+                  "payment",
+                  "srvchg",
+                  "withdrawal"
+                ],
+                "description": "Transaction type. Used to identify transaction type to provide account insights."
+              }
+            }
+          },
+          "creditCardTransactionInfo": {
+            "title": "Credit card transaction info",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "creditCardTransactionType": {
+                "type": "string",
+                "enum": [
+                  "achdebit",
+                  "achdeposit",
+                  "adjustment",
+                  "advance",
+                  "cashadvance",
+                  "check",
+                  "credit",
+                  "creditadjustment",
+                  "debit",
+                  "debitadjustment",
+                  "fee",
+                  "interestpaid",
+                  "memo",
+                  "payment",
+                  "charge",
+                  "transfer",
+                  "withdrawal"
+                ],
+                "description": "Transaction type. Used to identify transaction type to provide account insights."
+              }
+            }
+          },
+          "depositTransactionInfo": {
+            "title": "Deposit transaction info.",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "depositTransactionType": {
+                "type": "string",
+                "enum": [
+                  "achdebit",
+                  "achdeposit",
+                  "adjustment",
+                  "advance",
+                  "atm",
+                  "atmdeposit",
+                  "atmwithdrawal",
+                  "billpayment",
+                  "cash",
+                  "check",
+                  "credit",
+                  "creditadjustment",
+                  "debit",
+                  "debitadjustment",
+                  "deposit",
+                  "directdebit",
+                  "directdep",
+                  "directdeposit",
+                  "dividend",
+                  "dividendreinvest",
+                  "fee",
+                  "interest",
+                  "memo",
+                  "payment",
+                  "pointofsale",
+                  "pointofsalecredit",
+                  "pointofsaledebit",
+                  "reinvestofincome",
+                  "repeatpayment",
+                  "servicecharge",
+                  "transfer",
+                  "withdrawal"
+                ],
+                "description": "Transaction type. Used to identify transaction type to provide account insights."
+              }
+            }
+          },
+          "lineOfCreditTransactionInfo": {
+            "title": "Line of Credit transaction info.",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "lineOfCreditTransactionType": {
+                "type": "string",
+                "enum": [
+                  "achdebit",
+                  "adjustment",
+                  "advance",
+                  "cash",
+                  "cashadvance",
+                  "check",
+                  "credit",
+                  "creditadjustment",
+                  "debit",
+                  "debitadjustment",
+                  "fee",
+                  "int",
+                  "interest",
+                  "memo",
+                  "payment",
+                  "transfer",
+                  "withdrawal",
+                  "xfer"
+                ],
+                "description": "Transaction type. Used to identify transaction type to provide account insights."
+              }
+            }
+          },
+          "loanTransactionInfo": {
+            "title": "Loan transaction info.",
+            "type": "object",
+            "nullable": true,
+            "properties": {
+              "loanTransactionType": {
+                "type": "string",
+                "enum": [
+                  "achdebit",
+                  "adjustment",
+                  "advance",
+                  "check",
+                  "credit",
+                  "creditadjustment",
+                  "debit",
+                  "debitadjustment",
+                  "fee",
+                  "int",
+                  "interest",
+                  "memo",
+                  "payment",
+                  "transfer"
+                ],
+                "description": "Transaction type. Used to identify transaction type to provide account insights."
+              }
+            }
+          }
+        }
+      },
+      "IntuitTransactions": {
+        "title": "Transactions",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/IntuitTransaction"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/IntuitAccounts/allOf/1"
+          }
+        ]
+      }
+    },
+    "parameters": {
+      "companyId": {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
+          "description": "Unique identifier for your SMB in Codat."
+        },
+        "description": "Unique identifier for a company."
+      },
+      "connectionId": {
+        "name": "connectionId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+          "description": "Unique identifier for a company's data connection."
+        },
+        "description": "Unique identifier for a connection."
+      },
+      "accountId": {
+        "name": "accountId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "examples": [
+            "13d946f0-c5d5-42bc-b092-97ece17923ab",
+            "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
+            7110701885,
+            "EILBDVJVNUAGVKRQ"
+          ]
+        },
+        "description": "Unique identifier for an account."
+      },
+      "page": {
+        "name": "page",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "format": "int32",
+          "minimum": 1,
+          "example": 1,
+          "default": 1
+        },
+        "description": "Page number. [Read more](https://docs.codat.io/using-the-api/paging)."
+      },
+      "pageSize": {
+        "name": "pageSize",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "format": "int32",
+          "default": 100,
+          "example": 100,
+          "minimum": 1,
+          "maximum": 5000
+        },
+        "description": "Number of records to return in a page. [Read more](https://docs.codat.io/using-the-api/paging)."
+      },
+      "query": {
+        "name": "query",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "example": "id=e3334455-1aed-4e71-ab43-6bccf12092ee",
+        "description": "Codat query string. [Read more](https://docs.codat.io/using-the-api/querying)."
+      },
+      "orderBy": {
+        "name": "orderBy",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "-modifiedDate"
+        },
+        "description": "Field to order results by. [Read more](https://docs.codat.io/using-the-api/ordering-results)."
+      },
+      "datasetId": {
+        "name": "datasetId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "description": "Unique identifier for the dataset that completed its sync."
+        },
+        "description": "Unique identifier for the dataset that completed its sync."
+      },
+      "timeoutInMinutes": {
+        "name": "timeoutInMinutes",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "description": "Time limit for the push operation to complete before it is timed out."
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "description": "The request made is not valid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PublicApi",
+                  "error": "Error processing request - not valid.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Malformed-Query": {
+        "description": "Your `query` parameter was not correctly formed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "ClientsApi",
+                  "error": "Error parsing query - Malformed query.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Unresolved property": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PullApi",
+                  "error": "Error parsing query - Could not resolve property isCompleted on Dataset",
+                  "correlationId": "98457fb9956b7f9b4b2fd4f6e23bb5c8",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Your API request was not properly authorized.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Unauthorized": {
+                "value": {
+                  "statusCode": 401,
+                  "service": "PublicApi",
+                  "error": "Unauthorized",
+                  "correlationId": "7eb40d6b415d7bcd99ce658268284056",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Payment-Required": {
+        "description": "An account limit has been exceeded. The type of limit is described in the error property:\n\n- You have exceeded the 50-company limit that applies to a Free plan. Delete any companies you no longer need and retry the request.\n- The requested sync schedule is not allowed. You requested an hourly sync schedule but this functionality is not included in the Free plan.\n- Your Free account is older than 365 days and has expired. Contact support@codat.io.\n",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "You are using an outdated API key or a key not associated with that resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 403,
+                  "service": "PublicApi",
+                  "error": "You are using an outdated API key or a key not associated with that resource.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Not-Found": {
+        "description": "One or more of the resources you referenced could not be found.\nThis might be because your company or data connection id is wrong, or was already deleted.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Data connection not found": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "PublicApi",
+                  "error": "Data connection a22dd66b-564a-4832-9b37-7b3ce4aeb7de not found",
+                  "correlationId": "8fa2b5f4794970a4ee73758f612e8df0",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Company not found": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "ClientsApi",
+                  "error": "No company was found with ID 846ed55c-974b-4392-a1f1-87b6fdbf3c5e",
+                  "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "No data available": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "PublicApi",
+                  "error": "No data available for accounts for ID e5889b459f544926ac5b8e6756df2s",
+                  "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Conflict": {
+        "description": "The data type's dataset has not been requested or is still syncing.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "title": "Error message",
+              "type": "object",
+              "x-internal": true,
+              "properties": {
+                "statusCode": {
+                  "type": "integer",
+                  "description": "The HTTP status code returned by the error."
+                },
+                "service": {
+                  "type": "string",
+                  "description": "Codat's service the returned the error."
+                },
+                "error": {
+                  "type": "string",
+                  "description": "A brief description of the error."
+                },
+                "correlationId": {
+                  "type": "string",
+                  "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+                },
+                "validation": {
+                  "$ref": "#/components/responses/Conflict/content/application~1json/schema/definitions/errorValidation"
+                },
+                "canBeRetried": {
+                  "type": "string",
+                  "description": "`True` if the error occurred transiently and can be retried."
+                },
+                "detailedErrorCode": {
+                  "type": "integer",
+                  "description": "Machine readable error code used to automate processes based on the code returned."
+                }
+              },
+              "definitions": {
+                "errorValidation": {
+                  "title": "Validation error",
+                  "type": "object",
+                  "nullable": true,
+                  "description": "A human-readable object describing validation decisions Codat has made. If an operation has failed because of validation errors, they will be detailed here.",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "nullable": true,
+                      "items": {
+                        "$ref": "#/components/responses/Conflict/content/application~1json/schema/definitions/errorValidationItem"
+                      }
+                    },
+                    "warnings": {
+                      "type": "array",
+                      "nullable": true,
+                      "items": {
+                        "$ref": "#/components/responses/Conflict/content/application~1json/schema/definitions/errorValidationItem"
+                      }
+                    }
+                  }
+                },
+                "errorValidationItem": {
+                  "title": "Validation error item",
+                  "type": "object",
+                  "properties": {
+                    "itemId": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Unique identifier for a validation item."
+                    },
+                    "message": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "A message outlining validation item's issue."
+                    },
+                    "validatorName": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Name of validator."
+                    }
+                  }
+                }
+              }
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 409,
+                  "service": "PublicApi",
+                  "error": "The data set has not been requested.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Too-Many-Requests": {
+        "description": "Too many requests were made in a given amount of time. Wait a short period and then try again.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have made too many requests in a given amount of time; please retry later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Internal-Server-Error": {
+        "description": "There is a problem with our server. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "There is a problem with our server. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Service-Unavailable": {
+        "description": "The Codat API is temporarily offline for maintenance. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "The Codat API is temporarily offline for maintenance. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "auth_header": {
+        "name": "Authorization",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/accounting-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
+        "type": "apiKey",
+        "in": "header",
+        "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"
+      }
+    }
+  }
+}

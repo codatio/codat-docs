@@ -1998,7 +1998,7 @@
                           "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
                           "url": "https://example.com/webhoook-consumers/sync-complete",
                           "eventTypes": [
-                            "Data sync completed"
+                            "DataSyncCompleted"
                           ],
                           "disabled": false
                         },
@@ -2006,7 +2006,7 @@
                           "id": "ca3cac86-7925-4759-abc2-96405780fdfa",
                           "url": "https://example.com/webhoook-consumers/dataset-changed",
                           "eventTypes": [
-                            "Dataset data changed"
+                            "DatasetDataChanged"
                           ],
                           "disabled": true
                         }
@@ -2059,7 +2059,7 @@
                   "value": {
                     "url": "https://example.com/webhoook-consumer",
                     "eventTypes": [
-                      "Data sync completed",
+                      "DataSyncCompleted",
                       "Dataset data changed"
                     ]
                   }
@@ -2068,7 +2068,7 @@
                   "value": {
                     "url": "https://example.com/webhoook-consumer",
                     "eventTypes": [
-                      "Data sync completed"
+                      "DataSyncCompleted"
                     ],
                     "disabled": true
                   }
@@ -2086,23 +2086,13 @@
                   "$ref": "#/components/schemas/WebhookConsumer"
                 },
                 "examples": {
-                  "Subscribe consumer to all event types": {
-                    "value": {
-                      "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-                      "url": "https://example.com/webhoook-consumer",
-                      "eventTypes": [
-                        "*"
-                      ],
-                      "disabled": false
-                    }
-                  },
                   "Subscribe consumer to one or more event types": {
                     "value": {
                       "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
                       "url": "https://example.com/webhoook-consumer",
                       "eventTypes": [
-                        "Data sync completed",
-                        "Dataset data changed"
+                        "DataSyncCompleted",
+                        "DatasetDataChanged"
                       ],
                       "disabled": false
                     }
@@ -2112,7 +2102,7 @@
                       "id": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
                       "url": "https://example.com/webhoook-consumer",
                       "eventTypes": [
-                        "Data sync completed"
+                        "DataSyncCompleted"
                       ],
                       "disabled": true
                     }
@@ -2171,6 +2161,54 @@
           },
           "404": {
             "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/webhooks/integrationKeys/zapier": {
+      "post": {
+        "summary": "Rotate Zapier key",
+        "operationId": "rotate-zapier-key",
+        "x-speakeasy-ignore": true,
+        "description": "﻿The *Rotate Zapier key* endpoint returns the Zapier integration key needed to configure Zaps triggered by Codat's webhooks. \n\nIf a key has already been created, calling this will revoke that existing key.\n\nThe key changes each time this endpoint is called. If you are already using our Zapier integration and called this endpoint again, you need to reauthenticate using the latest integration key returned in the response.\n\nOur Zapier integration makes it simple for you to set up and receive user notifications in your preferred ways, such as via email or Slack. See our [Zapier documentation](https://docs.codat.io/using-the-api/webhooks/zapier-integration) for detailed instructions on setting up this integration.\n\n",
+        "tags": [
+          "Webhooks"
+        ],
+        "responses": {
+          "201": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookZapierKey"
+                },
+                "examples": {
+                  "Integration key": {
+                    "value": {
+                      "key": "sk_integ_WM4dfoK1nKZnDE_kceze6hWDjbRwOZwG.us"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
@@ -4768,7 +4806,8 @@
           "RuleId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier for the rule."
+            "description": "Unique identifier for the rule.",
+            "deprecated": true
           },
           "RuleType": {
             "type": "string",
@@ -6315,6 +6354,13 @@
             "items": {
               "type": "string"
             }
+          },
+          "companyId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
+            "description": "Unique identifier of the company to indicate company-specific events. The associated webhook consumer will receive events only for the specified ID."
           }
         },
         "definitions": {
@@ -6330,6 +6376,9 @@
               },
               "eventTypes": {
                 "$ref": "#/components/schemas/WebhookConsumer/properties/eventTypes"
+              },
+              "companyId": {
+                "$ref": "#/components/schemas/WebhookConsumer/properties/companyId"
               }
             }
           },
@@ -6346,6 +6395,22 @@
             }
           }
         }
+      },
+      "WebhookZapierKey": {
+        "title": "Zapier integration key",
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Integration key used to authorize Zapier's HTTP requests with Codat.",
+            "example": "sk_integ_WM4dfoK1nKZnDE_kceze6hWDjbRwOZwG.us"
+          }
+        },
+        "examples": [
+          {
+            "key": "sk_integ_WM4dfoK1nKZnDE_kceze6hWDjbRwOZwG.us"
+          }
+        ]
       }
     },
     "responses": {
@@ -6667,7 +6732,7 @@
         "schema": {
           "type": "string"
         },
-        "example": "-modifiedDate",
+        "example": "id=e3334455-1aed-4e71-ab43-6bccf12092ee",
         "description": "Codat query string. [Read more](https://docs.codat.io/using-the-api/querying)."
       },
       "orderBy": {

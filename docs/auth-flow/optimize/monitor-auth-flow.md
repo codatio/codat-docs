@@ -1,5 +1,6 @@
 ---
-title: "Monitor your auth flow"
+title: "Monitor your auth flow progress"
+sidebar_label: "Monitor auth flow"
 description: "Keep track of the customers' auth journey success rates across all integration categories"
 ---
 

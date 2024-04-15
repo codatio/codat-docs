@@ -44,9 +44,9 @@ Data source coverage varies by feature, so be sure to review the coverage for th
 
 ### Authorization flow
 
-As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use Link - our pre-built, conversion-optimized, and white-labelled authorization flow. 
+As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/overview) - our pre-built, conversion-optimized white-label authorization flow. 
 
-We recommend you fully embed the Link auth flow in your experience by using our [Embedded Link](/auth-flow/authorize-embedded-link) SDK in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible. 
+We recommend you fully embed this auth flow in your experience by using our [Link SDK](/auth-flow/authorize-embedded-link) in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible. 
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 

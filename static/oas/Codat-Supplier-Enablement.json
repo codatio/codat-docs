@@ -1,0 +1,1240 @@
+{
+  "openapi": "3.1.0",
+  "servers": [
+    {
+      "description": "Production",
+      "url": "https://banking-api.codat.io"
+    }
+  ],
+  "info": {
+    "title": "Supplier Enablement",
+    "description": "Alpha release of supplier enablement API.",
+    "version": "3.0.0",
+    "contact": {
+      "name": "Codat",
+      "email": "support@codat.io"
+    },
+    "termsOfService": "https://www.codat.io/legals/"
+  },
+  "security": [
+    {
+      "auth_header": []
+    }
+  ],
+  "x-speakeasy-retries": {
+    "strategy": "backoff",
+    "backoff": {
+      "initialInterval": 500,
+      "maxInterval": 60000,
+      "maxElapsedTime": 3600000,
+      "exponent": 1.5
+    },
+    "statusCodes": [
+      408,
+      429,
+      "5XX"
+    ],
+    "retryConnectionErrors": true
+  },
+  "x-speakeasy-name-override": [
+    {
+      "operationId": "^list-.*?",
+      "methodNameOverride": "list"
+    },
+    {
+      "operationId": "^list-.*?-attachments",
+      "methodNameOverride": "list-attachments"
+    },
+    {
+      "operationId": "^get-.*?",
+      "methodNameOverride": "get"
+    },
+    {
+      "operationId": "^get-create-.*?-model",
+      "methodNameOverride": "get-create-model"
+    },
+    {
+      "operationId": "^get-create-update.*?-model",
+      "methodNameOverride": "get-create-update-model"
+    },
+    {
+      "operationId": "^get-.*?-attachment",
+      "methodNameOverride": "get-attachment"
+    },
+    {
+      "operationId": "^update-.*?",
+      "methodNameOverride": "update"
+    },
+    {
+      "operationId": "^create-.*?",
+      "methodNameOverride": "create"
+    },
+    {
+      "operationId": "^delete-.*?",
+      "methodNameOverride": "delete"
+    },
+    {
+      "operationId": "^delete-.*?-attachment",
+      "methodNameOverride": "delete-attachment"
+    },
+    {
+      "operationId": "^download-.*?-attachment",
+      "methodNameOverride": "download-attachment"
+    },
+    {
+      "operationId": "^upload-.*?-attachment",
+      "methodNameOverride": "upload-attachment"
+    }
+  ],
+  "x-codat-docs-path": "lending-api",
+  "x-codat-keep-docs-paths-local": true,
+  "x-codat-speakeasy-pagination": {
+    "type": "offsetLimit",
+    "inputs": [
+      {
+        "name": "page",
+        "in": "parameters",
+        "type": "page"
+      }
+    ],
+    "outputs": {
+      "results": "$.results"
+    }
+  },
+  "tags": [
+    {
+      "name": "Spend analysis",
+      "description": "Create and view spend analysis report"
+    }
+  ],
+  "paths": {
+    "/companies/{companyId}/reports/spendAnalysis": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "post": {
+        "summary": "Generate spend analysis report",
+        "description": "Generate new spend analysis report (no body required in POST).",
+        "operationId": "generate-spend-analysis-report",
+        "tags": [
+          "Spend analysis"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "$ref": "#/components/schemas/DateTime"
+            },
+            "name": "from",
+            "description": "The start date of the report.",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "$ref": "#/components/schemas/DateTime"
+            },
+            "name": "to",
+            "description": "The end date of the report.",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "format": "decimal",
+              "default": 1
+            },
+            "name": "excludeSuppliersWithAnnualisedSpendBelow",
+            "description": "Exclude suppliers with annualised spend below this amount in the companny's base currency.",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK-ReportMetadata"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get spend analysis report",
+        "description": "Get spend analysis report that has already been successfully generated.",
+        "operationId": "get-spend-analysis-report",
+        "x-speakeasy-name-override": "get-spend-analysis-report",
+        "tags": [
+          "Spend analysis"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK-SpendAnalysisWithSummaries"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/reports/spendAnalysis/status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "Get report generation status",
+        "description": "Get report generation status to determine if it has been successfully created, or if the generation is still in progress or it has failed.",
+        "operationId": "get-report-creation-status",
+        "x-speakeasy-name-override": "get-report-creation-status",
+        "tags": [
+          "Spend analysis"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK-ReportMetadata"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/reports/spendAnalysis/excel": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "Download spend analysis report",
+        "description": "Download spend analysis report that has already been successfully created.  The report will be in Open XML spreadhseet format (.xlsx), which can be opened with Microsoft Excel.",
+        "operationId": "download-spend-analysis-report",
+        "tags": [
+          "Spend analysis"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/OK-OpenXmlSpreadsheet"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalysisSummary": {
+        "$ref": "#/components/schemas/SpendAnalysisWithSummaries/properties/analysisSummary",
+        "x-internal": true
+      },
+      "CompanyInfo": {
+        "$ref": "#/components/schemas/SpendAnalysisWithSummaries/properties/companyInfo",
+        "x-internal": true
+      },
+      "DateTime": {
+        "x-internal": true,
+        "title": "Date time",
+        "type": "string",
+        "examples": [
+          "2022-10-23T00:00:00.000Z",
+          "2022-10-23T00:00:00.000Z"
+        ],
+        "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+      },
+      "ReportMetadata": {
+        "title": "Report metadata",
+        "description": "Report metadata.",
+        "type": "object",
+        "properties": {
+          "lastGenerated": {
+            "description": "The date the report was last generated.",
+            "type": "string",
+            "nullable": true,
+            "example": "2024-01-02T03:04:05.678Z"
+          },
+          "reportStatus": {
+            "description": "Report status.",
+            "type": "string"
+          },
+          "queued": {
+            "description": "The date the report generation was queued.",
+            "type": "string",
+            "example": "2024-01-02T03:04:05.678Z"
+          },
+          "errorMessage": {
+            "description": "Message detailing the error.",
+            "type": "string",
+            "nullable": true
+          },
+          "reportType": {
+            "$ref": "#/components/parameters/reportType/schema"
+          },
+          "reportGeneratedHistory": {
+            "description": "Report generation history.",
+            "type": "array",
+            "items": {
+              "description": "Report generation date.",
+              "type": "string",
+              "example": "2024-01-02T03:04:05.678Z"
+            }
+          }
+        }
+      },
+      "ReportType": {
+        "$ref": "#/components/parameters/reportType/schema",
+        "x-internal": true
+      },
+      "SpendAnalysis": {
+        "$ref": "#/components/schemas/SpendAnalysisWithSummaries/properties/spendAnalysis/items",
+        "x-internal": true
+      },
+      "SpendAnalysisWithSummaries": {
+        "title": "Spend analysis with summaries",
+        "description": "Spend analysis report with summary data.",
+        "type": "object",
+        "properties": {
+          "analysisSummary": {
+            "title": "Supplier analysis summary",
+            "description": "Supplier analysis summary.",
+            "type": "object",
+            "properties": {
+              "fromDate": {
+                "description": "The date the report was generated from.",
+                "type": "string",
+                "nullable": true,
+                "example": "2024-01-02T03:04:05.678Z"
+              },
+              "toDate": {
+                "description": "The date the report was generated to.",
+                "type": "string",
+                "nullable": true,
+                "example": "2024-01-02T03:04:05.678Z"
+              },
+              "monthsReviewed": {
+                "description": "The number of months within the report.",
+                "type": "integer",
+                "example": 12
+              },
+              "excludeSuppliersWithAnnualisedSpendBelow": {
+                "description": "Exclude supplier with an annual spend below this amount in the company's base currency.",
+                "type": "number",
+                "format": "decimal",
+                "example": 1000
+              },
+              "suppliersCount": {
+                "description": "Total number of suppliers within the report.",
+                "type": "integer",
+                "example": 100
+              },
+              "billsCount": {
+                "description": "Total number of bills within the report.",
+                "type": "integer",
+                "example": 100
+              },
+              "billsAmount": {
+                "description": "Total bills amount within the report in the company's base currency.",
+                "type": "number",
+                "format": "decimal",
+                "example": 1234.56
+              },
+              "paymentsCount": {
+                "description": "Total number of payments within the report.",
+                "type": "integer",
+                "example": 100
+              },
+              "paymentsAmount": {
+                "description": "Total payments amount within the report in the company's base currency.",
+                "type": "number",
+                "format": "decimal",
+                "example": 1234.56
+              }
+            },
+            "example": {
+              "Spend analysis": {
+                "value": {
+                  "fromDate": "2023-03-28T00:00:00",
+                  "toDate": "2024-03-27T00:00:00",
+                  "monthsReviewed": 12,
+                  "excludeSuppliersWithAnnualisedSpendBelow": 1,
+                  "suppliersCount": 292,
+                  "billsCount": 362,
+                  "billsAmount": 15429745.08,
+                  "paymentsCount": 330,
+                  "paymentsAmount": 13021530.73
+                }
+              }
+            }
+          },
+          "spendAnalysis": {
+            "description": "Array of spend analysis data.",
+            "type": "array",
+            "items": {
+              "title": "Spend analysis",
+              "description": "Spend analysis report.",
+              "type": "object",
+              "example": {
+                "Spend analysis": {
+                  "value": {
+                    "biggestCountPaymentMethod": "BankTransfer",
+                    "suppliersCount": 71,
+                    "percentageSuppliersByCount": 24.3,
+                    "percentageBillsByCount": 27.6,
+                    "percentageBillsByAmount": 30.7,
+                    "billsCount": 100,
+                    "billsOutstandingCount": 12,
+                    "billsAmount": 4732780.81,
+                    "billsOutstandingAmount": 518073.97,
+                    "billsOutstandingPercentageByAmount": 10.9,
+                    "paymentsCount": 99,
+                    "latePaymentsCount": 0,
+                    "paymentsAmount": 4159307.07,
+                    "averagePaymentAmount": 42013.2,
+                    "latePaymentsAmount": 0,
+                    "latePaymentsPercentageByAmount": 0,
+                    "averageBillPaymentTermsWeighted": 21.6,
+                    "averageBillSettlementPeriodWeighted": 18.2
+                  }
+                }
+              }
+            }
+          },
+          "supplierAnalysis": {
+            "description": "Array of supplier analysis data.",
+            "type": "array",
+            "items": {
+              "title": "Supplier analysis report",
+              "description": "Supplier analysis data.",
+              "type": "object",
+              "example": {
+                "Spend analysis": {
+                  "value": {
+                    "supplierName": "The Acme Corporation",
+                    "contactName": "Wile E. Coyote",
+                    "emailAddress": "wile.e.coyote@acme.com",
+                    "taxNumber": "123456789",
+                    "addresses": [
+                      {
+                        "addressType": "Delivery",
+                        "line1": "Appartment 1",
+                        "line2": "Roadrunner Avenue",
+                        "city": "Las Vegas",
+                        "region": "Nevada",
+                        "country": "United States",
+                        "postalCode": 89106
+                      }
+                    ],
+                    "supplierId": "CLf7vnAx3C",
+                    "importedDate": "2023-08-11T08:02:48",
+                    "latestBilled": "2023-06-15T00:00:00",
+                    "billsCount": 2,
+                    "billsOutstandingCount": 0,
+                    "billsAmount": 578014.57,
+                    "billsOutstandingAmount": 0,
+                    "billsOutstandingPercentageByAmount": 0,
+                    "paymentsCount": 2,
+                    "latePaymentsCount": 0,
+                    "paymentsAmount": 578014.57,
+                    "averagePaymentAmount": 289007.29,
+                    "latePaymentsAmount": 0,
+                    "latePaymentsPercentageByAmount": 0,
+                    "biggestCountPaymentMethod": "DebitCard",
+                    "biggestSpendPaymentMethod": "DebitCard",
+                    "averageBillPaymentTermsWeighted": 14.9,
+                    "averageBillSettlementPeriodWeighted": 7,
+                    "primaryAddress": {
+                      "addressType": "Delivery",
+                      "line1": "Appartment 1",
+                      "line2": "Roadrunner Avenue",
+                      "city": "Las Vegas",
+                      "region": "Nevada",
+                      "country": "United States",
+                      "postalCode": 89106
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "companyInfo": {
+            "title": "Company information",
+            "description": "Company information.",
+            "type": "object",
+            "example": {
+              "Spend analysis": {
+                "value": {
+                  "companyName": "Codat",
+                  "addresses": [
+                    {
+                      "type": "Billing",
+                      "line1": "301 Ink Rooms",
+                      "line2": "28 Easton Street",
+                      "city": "London",
+                      "region": "England",
+                      "country": "United Kingdom",
+                      "postalCode": "WC1X 0BE"
+                    },
+                    {
+                      "type": "Delivery",
+                      "line1": "28 Easton Street",
+                      "line2": "",
+                      "city": "London",
+                      "region": "",
+                      "country": "UK",
+                      "postalCode": "WC1X 0BE"
+                    }
+                  ],
+                  "phoneNumbers": [
+                    {
+                      "number": "02012345678",
+                      "type": "Landline"
+                    },
+                    {
+                      "number": "07123456789",
+                      "type": "Mobile"
+                    },
+                    {
+                      "number": "02012345678",
+                      "type": "Fax"
+                    }
+                  ],
+                  "webLinks": [
+                    {
+                      "type": "Website",
+                      "url": "https://www.codat.io/"
+                    },
+                    {
+                      "type": "Social",
+                      "url": "https://www.linkedin.com/company/codat-limited/"
+                    }
+                  ],
+                  "registrationNumber": "5590111724",
+                  "taxNumber": "74111622555799035846",
+                  "baseCurrency": "GBP"
+                }
+              }
+            }
+          }
+        },
+        "example": {
+          "Spend analysis": {
+            "value": {
+              "analysisSummary": {
+                "fromDate": "2023-03-28T00:00:00",
+                "toDate": "2024-03-27T00:00:00",
+                "monthsReviewed": 12,
+                "excludeSuppliersWithAnnualisedSpendBelow": 1,
+                "suppliersCount": 292,
+                "billsCount": 362,
+                "billsAmount": 15429745.08,
+                "paymentsCount": 330,
+                "paymentsAmount": 13021530.73
+              },
+              "spendAnalysis": [
+                {
+                  "biggestCountPaymentMethod": "BankTransfer",
+                  "suppliersCount": 71,
+                  "percentageSuppliersByCount": 24.3,
+                  "percentageBillsByCount": 27.6,
+                  "percentageBillsByAmount": 30.7,
+                  "billsCount": 100,
+                  "billsOutstandingCount": 12,
+                  "billsAmount": 4732780.81,
+                  "billsOutstandingAmount": 518073.97,
+                  "billsOutstandingPercentageByAmount": 10.9,
+                  "paymentsCount": 99,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 4159307.07,
+                  "averagePaymentAmount": 42013.2,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 21.6,
+                  "averageBillSettlementPeriodWeighted": 18.2
+                },
+                {
+                  "biggestCountPaymentMethod": "Cash",
+                  "suppliersCount": 64,
+                  "percentageSuppliersByCount": 21.9,
+                  "percentageBillsByCount": 23.5,
+                  "percentageBillsByAmount": 15.9,
+                  "billsCount": 85,
+                  "billsOutstandingCount": 12,
+                  "billsAmount": 2459999.66,
+                  "billsOutstandingAmount": 172182.75,
+                  "billsOutstandingPercentageByAmount": 7,
+                  "paymentsCount": 82,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 2210011,
+                  "averagePaymentAmount": 26951.35,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 19,
+                  "averageBillSettlementPeriodWeighted": 12.4
+                },
+                {
+                  "biggestCountPaymentMethod": "Check",
+                  "suppliersCount": 37,
+                  "percentageSuppliersByCount": 12.7,
+                  "percentageBillsByCount": 11,
+                  "percentageBillsByAmount": 11.3,
+                  "billsCount": 40,
+                  "billsOutstandingCount": 2,
+                  "billsAmount": 1738186.05,
+                  "billsOutstandingAmount": 36844.69,
+                  "billsOutstandingPercentageByAmount": 2.1,
+                  "paymentsCount": 40,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 1680586.27,
+                  "averagePaymentAmount": 42014.66,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 20.1,
+                  "averageBillSettlementPeriodWeighted": 16.4
+                },
+                {
+                  "biggestCountPaymentMethod": "CreditCard",
+                  "suppliersCount": 30,
+                  "percentageSuppliersByCount": 10.3,
+                  "percentageBillsByCount": 10.2,
+                  "percentageBillsByAmount": 16.3,
+                  "billsCount": 37,
+                  "billsOutstandingCount": 7,
+                  "billsAmount": 2511303.16,
+                  "billsOutstandingAmount": 209083.64,
+                  "billsOutstandingPercentageByAmount": 8.3,
+                  "paymentsCount": 35,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 2261547.09,
+                  "averagePaymentAmount": 64615.63,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 26.4,
+                  "averageBillSettlementPeriodWeighted": 20.9
+                },
+                {
+                  "biggestCountPaymentMethod": "DebitCard",
+                  "suppliersCount": 31,
+                  "percentageSuppliersByCount": 10.6,
+                  "percentageBillsByCount": 10.2,
+                  "percentageBillsByAmount": 8.6,
+                  "billsCount": 37,
+                  "billsOutstandingCount": 5,
+                  "billsAmount": 1334306.53,
+                  "billsOutstandingAmount": 44551.05,
+                  "billsOutstandingPercentageByAmount": 3.3,
+                  "paymentsCount": 37,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 1289285.99,
+                  "averagePaymentAmount": 34845.57,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 18,
+                  "averageBillSettlementPeriodWeighted": 7.6
+                },
+                {
+                  "biggestCountPaymentMethod": "Unknown",
+                  "suppliersCount": 59,
+                  "percentageSuppliersByCount": 20.2,
+                  "percentageBillsByCount": 17.4,
+                  "percentageBillsByAmount": 17.2,
+                  "billsCount": 63,
+                  "billsOutstandingCount": 31,
+                  "billsAmount": 2653168.87,
+                  "billsOutstandingAmount": 1208053.11,
+                  "billsOutstandingPercentageByAmount": 45.5,
+                  "paymentsCount": 37,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 1420793.31,
+                  "averagePaymentAmount": 38399.82,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "averageBillPaymentTermsWeighted": 23.4,
+                  "averageBillSettlementPeriodWeighted": 12.7
+                }
+              ],
+              "supplierAnalysis": [
+                {
+                  "supplierName": "The Acme Corporation",
+                  "contactName": "Wile E. Coyote",
+                  "emailAddress": "wile.e.coyote@acme.com",
+                  "taxNumber": "123456789",
+                  "addresses": [
+                    {
+                      "addressType": "Delivery",
+                      "line1": "Appartment 1",
+                      "line2": "Roadrunner Avenue",
+                      "city": "Las Vegas",
+                      "region": "Nevada",
+                      "country": "United States",
+                      "postalCode": 89106
+                    }
+                  ],
+                  "supplierId": "CLf7vnAx3C",
+                  "importedDate": "2023-08-11T08:02:48",
+                  "latestBilled": "2023-06-15T00:00:00",
+                  "billsCount": 2,
+                  "billsOutstandingCount": 0,
+                  "billsAmount": 578014.57,
+                  "billsOutstandingAmount": 0,
+                  "billsOutstandingPercentageByAmount": 0,
+                  "paymentsCount": 2,
+                  "latePaymentsCount": 0,
+                  "paymentsAmount": 578014.57,
+                  "averagePaymentAmount": 289007.29,
+                  "latePaymentsAmount": 0,
+                  "latePaymentsPercentageByAmount": 0,
+                  "biggestCountPaymentMethod": "DebitCard",
+                  "biggestSpendPaymentMethod": "DebitCard",
+                  "averageBillPaymentTermsWeighted": 14.9,
+                  "averageBillSettlementPeriodWeighted": 7,
+                  "primaryAddress": {
+                    "addressType": "Delivery",
+                    "line1": "Appartment 1",
+                    "line2": "Roadrunner Avenue",
+                    "city": "Las Vegas",
+                    "region": "Nevada",
+                    "country": "United States",
+                    "postalCode": 89106
+                  }
+                }
+              ],
+              "companyInfo": {
+                "companyName": "Codat",
+                "addresses": [
+                  {
+                    "type": "Billing",
+                    "line1": "301 Ink Rooms",
+                    "line2": "28 Easton Street",
+                    "city": "London",
+                    "region": "England",
+                    "country": "United Kingdom",
+                    "postalCode": "WC1X 0BE"
+                  },
+                  {
+                    "type": "Delivery",
+                    "line1": "28 Easton Street",
+                    "line2": "",
+                    "city": "London",
+                    "region": "",
+                    "country": "UK",
+                    "postalCode": "WC1X 0BE"
+                  }
+                ],
+                "phoneNumbers": [
+                  {
+                    "number": "02012345678",
+                    "type": "Landline"
+                  },
+                  {
+                    "number": "07123456789",
+                    "type": "Mobile"
+                  },
+                  {
+                    "number": "02012345678",
+                    "type": "Fax"
+                  }
+                ],
+                "webLinks": [
+                  {
+                    "type": "Website",
+                    "url": "https://www.codat.io/"
+                  },
+                  {
+                    "type": "Social",
+                    "url": "https://www.linkedin.com/company/codat-limited/"
+                  }
+                ],
+                "registrationNumber": "5590111724",
+                "taxNumber": "74111622555799035846",
+                "baseCurrency": "GBP"
+              }
+            }
+          }
+        }
+      },
+      "SupplierAnalysis": {
+        "$ref": "#/components/schemas/SpendAnalysisWithSummaries/properties/supplierAnalysis/items",
+        "x-internal": true
+      }
+    },
+    "parameters": {
+      "companyId": {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
+          "description": "Unique identifier for your SMB in Codat."
+        },
+        "description": "Unique identifier for a company."
+      },
+      "reportType": {
+        "name": "reportType",
+        "description": "The type of report generated.",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "title": "Report type",
+          "description": "The type of supplier enablement report.",
+          "type": "string",
+          "enum": [
+            "spendAnalysis"
+          ]
+        }
+      }
+    },
+    "responses": {
+      "OK-OpenXmlSpreadsheet": {
+        "description": "OK",
+        "content": {
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
+            "schema": {}
+          }
+        }
+      },
+      "OK-ReportMetadata": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ReportMetadata"
+            }
+          }
+        }
+      },
+      "OK-SpendAnalysisWithSummaries": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/SpendAnalysisWithSummaries"
+            }
+          }
+        }
+      },
+      "BadRequest": {
+        "description": "The request made is not valid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PublicApi",
+                  "error": "Error processing request - not valid.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Malformed-Query": {
+        "description": "Your `query` parameter was not correctly formed",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Malformed query": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "ClientsApi",
+                  "error": "Error parsing query - Malformed query.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Unresolved property": {
+                "value": {
+                  "statusCode": 400,
+                  "service": "PullApi",
+                  "error": "Error parsing query - Could not resolve property isCompleted on Dataset",
+                  "correlationId": "98457fb9956b7f9b4b2fd4f6e23bb5c8",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Your API request was not properly authorized.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Unauthorized": {
+                "value": {
+                  "statusCode": 401,
+                  "service": "PublicApi",
+                  "error": "Unauthorized",
+                  "correlationId": "7eb40d6b415d7bcd99ce658268284056",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Payment-Required": {
+        "description": "An account limit has been exceeded. The type of limit is described in the error property:\n\n- You have exceeded the 50-company limit that applies to a Free plan. Delete any companies you no longer need and retry the request.\n- The requested sync schedule is not allowed. You requested an hourly sync schedule but this functionality is not included in the Free plan.\n- Your Free account is older than 365 days and has expired. Contact support@codat.io.\n",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have exceeded the 50-company limit that applies to a Free plan. We recommend that you delete any companies you no longer need and retry the request.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "You are using an outdated API key or a key not associated with that resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 403,
+                  "service": "PublicApi",
+                  "error": "You are using an outdated API key or a key not associated with that resource.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Not-Found": {
+        "description": "One or more of the resources you referenced could not be found.\nThis might be because your company or data connection id is wrong, or was already deleted.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Data connection not found": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "PublicApi",
+                  "error": "Data connection a22dd66b-564a-4832-9b37-7b3ce4aeb7de not found",
+                  "correlationId": "8fa2b5f4794970a4ee73758f612e8df0",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "Company not found": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "ClientsApi",
+                  "error": "No company was found with ID 846ed55c-974b-4392-a1f1-87b6fdbf3c5e",
+                  "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              },
+              "No data available": {
+                "value": {
+                  "statusCode": 404,
+                  "service": "PublicApi",
+                  "error": "No data available for accounts for ID e5889b459f544926ac5b8e6756df2s",
+                  "correlationId": "0a40c2f31fc8f992fb88b0853e4166f3",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Conflict": {
+        "description": "The data type's dataset has not been requested or is still syncing.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "title": "Error message",
+              "type": "object",
+              "x-internal": true,
+              "properties": {
+                "statusCode": {
+                  "type": "integer",
+                  "description": "The HTTP status code returned by the error."
+                },
+                "service": {
+                  "type": "string",
+                  "description": "Codat's service the returned the error."
+                },
+                "error": {
+                  "type": "string",
+                  "description": "A brief description of the error."
+                },
+                "correlationId": {
+                  "type": "string",
+                  "description": "Unique identifier used to propagate to all downstream services and determine the source of the error."
+                },
+                "validation": {
+                  "$ref": "#/components/responses/Conflict/content/application~1json/schema/definitions/errorValidation"
+                },
+                "canBeRetried": {
+                  "type": "string",
+                  "description": "`True` if the error occurred transiently and can be retried."
+                },
+                "detailedErrorCode": {
+                  "type": "integer",
+                  "description": "Machine readable error code used to automate processes based on the code returned."
+                }
+              },
+              "definitions": {
+                "errorValidation": {
+                  "title": "Validation error",
+                  "type": "object",
+                  "nullable": true,
+                  "description": "A human-readable object describing validation decisions Codat has made. If an operation has failed because of validation errors, they will be detailed here.",
+                  "properties": {
+                    "errors": {
+                      "type": "array",
+                      "nullable": true,
+                      "items": {
+                        "$ref": "#/components/responses/Conflict/content/application~1json/schema/definitions/errorValidationItem"
+                      }
+                    },
+                    "warnings": {
+                      "type": "array",
+                      "nullable": true,
+                      "items": {
+                        "$ref": "#/components/responses/Conflict/content/application~1json/schema/definitions/errorValidationItem"
+                      }
+                    }
+                  }
+                },
+                "errorValidationItem": {
+                  "title": "Validation error item",
+                  "type": "object",
+                  "properties": {
+                    "itemId": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Unique identifier for a validation item."
+                    },
+                    "message": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "A message outlining validation item's issue."
+                    },
+                    "validatorName": {
+                      "type": "string",
+                      "nullable": true,
+                      "description": "Name of validator."
+                    }
+                  }
+                }
+              }
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 409,
+                  "service": "PublicApi",
+                  "error": "The data set has not been requested.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Too-Many-Requests": {
+        "description": "Too many requests were made in a given amount of time. Wait a short period and then try again.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 429,
+                  "service": "PublicApi",
+                  "error": "You have made too many requests in a given amount of time; please retry later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Internal-Server-Error": {
+        "description": "There is a problem with our server. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "There is a problem with our server. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "Service-Unavailable": {
+        "description": "The Codat API is temporarily offline for maintenance. Please try again later.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/responses/Conflict/content/application~1json/schema"
+            },
+            "examples": {
+              "Conflict": {
+                "value": {
+                  "statusCode": 500,
+                  "service": "PublicApi",
+                  "error": "The Codat API is temporarily offline for maintenance. Please try again later.",
+                  "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                  "canBeRetried": "Unknown",
+                  "detailedErrorCode": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "auth_header": {
+        "name": "Authorization",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/lending-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
+        "type": "apiKey",
+        "in": "header",
+        "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"
+      }
+    }
+  }
+}

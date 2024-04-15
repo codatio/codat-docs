@@ -127,6 +127,10 @@
       "description": "Bank feed bank account mapping."
     },
     {
+      "name": "Company information",
+      "description": "Access information about company from accounting software."
+    },
+    {
       "name": "Transactions",
       "description": "Transactions represent debits and credits from a source account."
     }
@@ -3454,6 +3458,61 @@
         }
       }
     },
+    "/companies/{companyId}/connection/{connectionId}/bankFeeds/info": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "get": {
+        "summary": "Get company information",
+        "description": "Use the *Get company information* endpoint to return information about the company available from the underlying accounting platform.\n\n",
+        "operationId": "get-company-information",
+        "tags": [
+          "Company information"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyInformation"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions": {
       "post": {
         "tags": [
@@ -3826,6 +3885,44 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ClientRateLimitResetWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "bankFeeds.sourceAccount.connected": {
+      "post": {
+        "description": "Indicates a bank feed source account has changed to a status of connected.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SourceAccountWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "bankFeeds.sourceAccount.disconnected": {
+      "post": {
+        "description": "Indicates a bank feed source account has changed to a status of disconnected.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SourceAccountWebhook"
               }
             }
           }
@@ -4448,7 +4545,8 @@
           "RuleId": {
             "type": "string",
             "format": "uuid",
-            "description": "Unique identifier for the rule."
+            "description": "Unique identifier for the rule.",
+            "deprecated": true
           },
           "RuleType": {
             "type": "string",
@@ -4734,6 +4832,33 @@
             ]
           }
         ]
+      },
+      "CompanyInformation": {
+        "title": "Company information",
+        "description": "Information about the company from the underlying accounting platform.",
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": "string",
+            "nullable": false,
+            "description": "Name of the linked company."
+          },
+          "baseCurrency": {
+            "type": "string",
+            "nullable": false,
+            "description": "Currency set in the accounting platform of the linked company."
+          },
+          "planType": {
+            "type": "string",
+            "nullable": true,
+            "description": "Accounting platform subscription type such as Trial, Demo, Standard"
+          },
+          "multicurrencyEnabled": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Boolean showing if the organisation has multicurrency enabled"
+          }
+        }
       },
       "CompanyRequestBody": {
         "title": "Create company request",
@@ -5843,7 +5968,14 @@
           "status": {
             "type": "string",
             "nullable": true,
-            "description": "Status of the source account."
+            "description": "Status of the source account.",
+            "enum": [
+              "pending",
+              "connected",
+              "connecting",
+              "disconnected",
+              "unknown"
+            ]
           },
           "feedStartDate": {
             "$ref": "#/components/schemas/DateTime",
@@ -5886,6 +6018,50 @@
             "status": "pending"
           }
         ]
+      },
+      "SourceAccountWebhook": {
+        "title": "Source account status changed webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event"
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "bankFeeds.sourceAccount.connected",
+              "bankFeeds.sourceAccount.disconnected"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/SourceAccountWebhook/definitions/sourceAccountWebhookPayload"
+          }
+        },
+        "definitions": {
+          "sourceAccountWebhookPayload": {
+            "title": "Payload",
+            "type": "object",
+            "properties": {
+              "companyId": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "connectionId": {
+                "$ref": "#/components/parameters/connectionId/schema"
+              },
+              "sourceAccount": {
+                "$ref": "#/components/schemas/SourceAccount"
+              }
+            }
+          }
+        }
       }
     },
     "parameters": {
@@ -5960,7 +6136,7 @@
         "schema": {
           "type": "string"
         },
-        "example": "-modifiedDate",
+        "example": "id=e3334455-1aed-4e71-ab43-6bccf12092ee",
         "description": "Codat query string. [Read more](https://docs.codat.io/using-the-api/querying)."
       },
       "orderBy": {

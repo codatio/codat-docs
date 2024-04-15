@@ -80,7 +80,7 @@ Finally, we are ready to return a decision array to the applicant. It shows them
 
 ### Access additional resources
 
-🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Embedded Link](/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
+🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Link](/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 
 🛍️ Take your digital lending solution one step further by using Lending API's [Reconciled invoices](/lending/features/accounts-receivable-overview#reconciled-invoices) feature enrichment. 
 
