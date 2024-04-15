@@ -1866,6 +1866,9 @@
               },
               "Combined": {
                 "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z||balance>0"
+              },
+              "Non zero balances": {
+                "value": "balance!=0"
               }
             },
             "description": "Codat query string allows you to filter by `sourceModifiedDate` or if there is an outstanding balance (Unpaid bill) against a supplier. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
