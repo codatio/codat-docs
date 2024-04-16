@@ -69,7 +69,7 @@ In the pop-up window, scroll to the **Users** section and use the dropdown list 
 
 ## Delete a company
 
-If you no longer require a company to be available in the Relationship Manager Portal, you can delete it. This action will delete the company record and all the data you previously received from it. As a result, you will no longer be able to access this company's reports in the Portal. 
+If you no longer require a company to be available in the Relationship Manager Portal, you can delete it. This action will delete the company record and all the data you previously received from it. As a result, you will no longer be able to access this company's reports in the Portal. This operation is not reversible.
 
 To do that, find the relevant company in the list, click the triple-dot menu and select **Delete company**. 
 

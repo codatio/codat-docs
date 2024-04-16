@@ -24,7 +24,9 @@ import Products from "@components/global/Products";
 
 ## What is it?
 
-With our **Supplier Enablement** product, you can harness your clients' accounts payable data within minutes and gain insights on their spend and supplier activity. Use this detail to identify suppliers eligible for your card programs, offer tailored outreach campaigns to your clients, and grow your commercial card volume in B2B payments. 
+With our **Supplier Enablement** product, you can access your clients' accounts payable data within minutes and gain insights on their spend and supplier activity. 
+
+Use this detail to identify suppliers eligible for your clients' virtual card programs, run targeted supplier outreach campaigns on your clients' behalf, and grow your commercial card volume in B2B payments. 
 
 ## Who is it for?
 
@@ -95,7 +97,7 @@ Reach out to your Codat contact to enjoy **Supplier Enablement**'s rich product 
 
 1. **Relationship and onboarding management**
 
-  Your analysts and relationship managers have the clients they are responsible for and their data at their fingertips and can easily onboard new clients. 
+  Your Analysts and Relationship Managers have the clients they are responsible for and their data at their fingertips and can easily onboard new clients. 
 
 2. **Easy and secure authorization journey**
 
@@ -107,7 +109,7 @@ Reach out to your Codat contact to enjoy **Supplier Enablement**'s rich product 
   
 4. **Ongoing monitoring and data refresh**
 
-  Your analysts and relationship managers can easily keep records up to date with a single click, providing ongoing service excellence to your clients.
+  Your Analysts and Relationship Managers can easily keep records up to date with a single click, providing ongoing service excellence to your clients.
 
 ## Supported integrations
 

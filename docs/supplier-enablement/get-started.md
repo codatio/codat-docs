@@ -61,7 +61,7 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
 
 ## Use Supplier Enablement
 
-Before you can collect and analyze your SMB customer's data, you need to create a [company](../terms/company) that represents your customer in Codat. Your bank analyst or relationship manager can do so in the [Relationship Manager Portal](https://banking-ui.codat.io/).
+Before you can collect and analyze your SMB customer's data, you need to create a [company](../terms/company) that represents your customer in Codat. Your Bank Analyst or Relationship Manager can do so in the [Relationship Manager Portal](https://banking-ui.codat.io/).
 
 They will use this Portal to do the following:
 
@@ -74,13 +74,13 @@ They will use this Portal to do the following:
 
 When a company is created in the Relationship Manager Portal, it is created in the [Codat Portal](https://app.codat.io/) at the same time. If you already have some companies in the Codat Portal, they will also be available in the Relationship Manager to be assigned to an analyst.
 
-To establish a connection to a data source and sync business data, your customer must grant you access. We request this access during the onboarding process. Once the connection is established, Codat will retrieve data for the relevant data types set up to fetch on first link.
+To establish a connection to a data source and sync business data, your customer must grant you access. We request this access during the onboarding process. Once the connection is established, Codat will automatically retrieve data for the relevant data types set up to fetch on first link.
 
 --- 
 
 ## Read next
 
-The following user guides are available to share with your organization's relationship managers and analysts:
+The following user guides are available to share with your organization's Relationship Managers and Analysts:
 
 - [Manage relationships](/supplier-enablement/guides/manage-relationships)
 - [Check spend data](/supplier-enablement/guides/analyze-spend)
