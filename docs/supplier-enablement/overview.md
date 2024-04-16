@@ -24,9 +24,7 @@ import Products from "@components/global/Products";
 
 ## What is it?
 
-Our **Supplier Enablement** product fits neatly into your onboarding process and provides secure ongoing access to your clients' data. 
-
-With direct connections to their ERP systems and accounting software, **Supplier Enablement** gives you spend insights and actionable supplier analytics. Enhance your card programs with this information and grow your commercial card volume in B2B payments as a result.
+With our **Supplier Enablement** product, you can harness your clients' accounts payable data within minutes and gain insights on their spend and supplier activity. Use this detail to identify suppliers eligible for your card programs, offer tailored outreach campaigns to your clients, and grow your commercial card volume in B2B payments. 
 
 ## Who is it for?
 
@@ -93,19 +91,19 @@ With **Supplier Enablement**, we enable banks and other commercial card issuers 
 
 Reach out to your Codat contact to enjoy **Supplier Enablement**'s rich product features and dynamic data refreshes through our comprehensive UI:
 
-1. Relationship and onboarding management
+1. **Relationship and onboarding management**
 
   Your analysts and relationship managers have the clients they are responsible for and their data at their fingertips and can easily onboard new clients. 
 
-2. Easy and secure authorization journey
+2. **Easy and secure authorization journey**
 
-  Your clients share their financial and spend data with Codat directly from their ERP or accounting software within minutes so that your organization can gain immediate insights. 
+  Your clients share their accounts payable data with Codat directly from their ERP or accounting software within minutes so that your organization can gain immediate insights. 
 
-3. Comprehensive financial position and spend analyses
+3. **Comprehensive financial position and spend analyses**
 
   Access an insightful view of your clients' financial position and their spend activity, including individual transactions, payment methods, terms, bill status, and more. 
   
-4. Ongoing monitoring and data refresh
+4. **Ongoing monitoring and data refresh**
 
   Your analysts and relationship managers can easily keep records up to date with a single click, providing ongoing service excellence to your clients.
 

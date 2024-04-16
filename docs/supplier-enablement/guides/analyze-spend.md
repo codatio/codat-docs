@@ -1,34 +1,31 @@
 ---
-title: "Analyze your customers' financial and spend data"
-sidebar_label: Check financials
-description: "Learn how to request and analyze financial and supplier information from your customer"
+title: "Analyze your customers' spend data"
+sidebar_label: Check spend data
+description: "Learn how to request and analyze spend and supplier information from your customer"
 ---
 
 ## Overview
 
 Our [Relationship Manager Portal](https://banking-ui.codat.io/) is your one-stop shop to view the clients and relationships you are responsible for. Here, your organization's clients are represented as [companies](../../terms/company). 
 
-In this guide, we will cover the ways you can request financial and spend data from your clients and download the resulting reports. 
+In this guide, we will cover the ways you can request accounts payable data from your clients and download the resulting reports. 
 
 ## Request financial data
 
-You can request financial and spend data from your customer in two ways:
+You can request supplier and spend data from your customer in two ways:
 
-- [During the initial company creation](/supplier-enablement/guides/analyze-financials#request-financial-data-during-company-creation)
-- [After company creation at a later stage](/supplier-enablement/guides/analyze-financials#request-financial-data-after-company-creation)
+- [During the initial company creation](/supplier-enablement/guides/analyze-spend#request-financial-data-during-company-creation)
+- [After company creation at a later stage](/supplier-enablement/guides/analyze-spend#request-financial-data-after-company-creation)
 
 #### Request financial data during company creation
 
 When you follow the [company creation](/supplier-enablement/guides/manage-relationships#add-a-new-company) flow and click the **Add company** button after filling out the company details, you will see the information request window pop up. It is used to onboard your client and request access their financial data. 
 
-You can choose to request:
-
-- **Financials**, which include a profit and loss statement and a balance sheet statement enriched with our [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature.
-- **Spend analysis**, which includes accounts payable and supplier information to the level of individual transactions, payment methods, terms, etc.
+Select the **Spend analysis** tickbox to ask your client for accounts payable and supplier information to the level of individual transactions, payment methods, terms, etc. You can also choose to request **Financials**, which include a profit and loss statement and a balance sheet statement enriched with our [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature.
 
 ![An image of the Relationship Manager Portal user interface with the request financials window open](/img/supplier-enablement/0064-se-rm-portal-financials-request.png)
 
-Select the applicable data types and click **Request**. This will display an email preview that will be sent to the contact email address you listed for the company. Click **Request information** to confirm the sending of the email. 
+Next, click **Request**. This will display an email preview that will be sent to the contact email address you listed for the company. Click **Request information** to confirm the sending of the email. 
 
 You will see a confirmation message once the email is sent.
 
@@ -42,24 +39,21 @@ To do so, locate the client's company in the Relationship Manager and click the 
 
 ![An image of the Relationship Manager Portal user interface highlighting the option to request financial information](/img/supplier-enablement/0066-se-rm-portal-request-data.png)
 
-In the pop-up window, you can choose to request:
-
-- **Financials**, which include a profit and loss statement and a balance sheet statement enriched with our [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature.
-- **Spend analysis**, which includes accounts payable and supplier information to the level of individual transactions, payment methods, terms, etc.
+In the pop-up window, select the **Spend analysis** tickbox to ask your client for accounts payable and supplier information to the level of individual transactions, payment methods, terms, etc. You can also choose to request **Financials**, which include a profit and loss statement and a balance sheet statement enriched with our [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature.
 
 ![An image of the Relationship Manager Portal user interface with the request financials window open](/img/supplier-enablement/0064-se-rm-portal-financials-request.png)
 
-Select the applicable data types and click **Request**. This will display an email preview that will be sent to the contact email address you listed for the company. Click **Request information** to confirm the sending of the email. 
+Next, click **Request**. This will display an email preview that will be sent to the contact email address you listed for the company. Click **Request information** to confirm the sending of the email. 
 
 You will see a confirmation message once the email is sent.
 
 ![An image of the Relationship Manager Portal user interface with the email preview window open](/img/supplier-enablement/0065-se-rm-portal-email-preview.png)
 
-## Download financial data
+## Download spend data
 
 ### Check data status
 
-When your customer receives the information request email, they will click the link in the message and go through an authorization process to allow you to access their financial and spend details. 
+When your customer receives the information request email, they will click the link in the message and go through an authorization process to allow you to access their spend details. 
 
 Once they authorize the access, you will see their status change to _Available_. When that happens, you are ready to download the data they shared.
 
@@ -67,7 +61,7 @@ Once they authorize the access, you will see their status change to _Available_.
 
 ### Download reports
 
-To download the Excel reports that have been generated as a result of the customer sharing their data, locate your customer's company and click the button with the download icon. In the dropdown, choose the type of report you wish to download and click the corresponding line.
+To download the Excel report that have been generated as a result of the customer sharing their data, locate your customer's company and click the button with the download icon. In the dropdown, choose the type of report you wish to download and click the corresponding line.
 
 ![An image of the Relationship Manager Portal user interface with the download dropdown displayed and download button highlighted](/img/supplier-enablement/0068-se-rm-portal-download-reports.png)
 

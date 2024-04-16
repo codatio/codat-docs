@@ -33,7 +33,7 @@ Next, you will see the information request window appear. It is used to onboard 
 
 Alternatively, click **Cancel**. This will take you back to the Relationship Manager, where you can always request the financial data at a later stage.
 
-We talk you through the details of both of these options in our [Check financials](/supplier-enablement/guides/analyze-financials) guide. 
+We talk you through the details of both of these options in our [Check spend data](/supplier-enablement/guides/analyze-spend) guide. 
 
 ![An image of the Relationship Manager Portal user interface with the request financials window open](/img/supplier-enablement/0064-se-rm-portal-financials-request.png)
 
@@ -84,4 +84,4 @@ A warning message will appear, requesting you to confirm the deletion. Click **D
 ## Read next
 
 Next, see how to request financial data from your customers and review the resulting reports:
-- [Check financials](/supplier-enablement/guides/analyze-financials)
+- [Check spend data](/supplier-enablement/guides/analyze-spend)

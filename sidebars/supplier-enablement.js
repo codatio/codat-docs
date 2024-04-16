@@ -21,7 +21,7 @@ module.exports = [
     },
     href: "/supplier-enablement/guides/manage-relationships",
   },
-  "supplier-enablement/guides/analyze-financials",
+  "supplier-enablement/guides/analyze-spend",
   "supplier-enablement/guides/refresh-data",
   {
     type: "link",

@@ -30,7 +30,7 @@ As another prerequisite to Codat pulling your customers' data, they will need to
 
 To do so, Supplier Enablement uses [Link](/auth-flow/overview) - our conversion-optimized white-label authorization flow. It lets your clients share their supplier and spend data directly and securely from their ERP or accounting system in a few minutes.
 
-We tailor the authorization journey to your business needs:
+We tailor the authorization journey to your business needs with a variety of UI settings:
 
 * [Customize Link settings](/auth-flow/customize/customize-link)
 * [Set up company branding](/auth-flow/customize/branding)
@@ -67,8 +67,8 @@ They will use this Portal to do the following:
 
 - View the companies and relationships they are responsible for.
 - Create and onboard new companies.
-- Request a company's financial data and download the resulting reports.
-- Synchronize the financial data to ensure its freshness.
+- Request a company's accounts payable data and download the resulting reports.
+- Synchronize the accounts payable data to ensure its freshness.
 
 ![An image of the Relationship Manager Portal user interface with five companies listed as examples](/img/supplier-enablement/0054-se-rm-portal.png)
 
@@ -83,5 +83,5 @@ To establish a connection to a data source and sync business data, your customer
 The following user guides are available to share with your organization's relationship managers and analysts:
 
 - [Manage relationships](/supplier-enablement/guides/manage-relationships)
-- [Check financials](/supplier-enablement/guides/analyze-financials)
+- [Check spend data](/supplier-enablement/guides/analyze-spend)
 - [Keep data fresh](/supplier-enablement/guides/refresh-data)
