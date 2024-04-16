@@ -3109,7 +3109,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SourceAccount/definitions/sourceAccounts"
+                  "$ref": "#/components/schemas/SourceAccountv2/definitions/sourceAccounts"
                 },
                 "examples": {}
               }
@@ -3162,7 +3162,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SourceAccount"
+                "$ref": "#/components/schemas/SourceAccountv2"
               },
               "examples": {}
             }
@@ -3175,7 +3175,7 @@
               "application/json": {
                 "x-speakeasy-usage-example": true,
                 "schema": {
-                  "$ref": "#/components/schemas/SourceAccount"
+                  "$ref": "#/components/schemas/SourceAccountv2"
                 },
                 "examples": {}
               }
