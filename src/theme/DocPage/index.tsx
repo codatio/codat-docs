@@ -185,7 +185,7 @@ function DocPage(props: Props): JSX.Element {
       </Head>
 
       {
-        siteConfig.customFields?.FEATURE_DEV_FLAG === "true" && <div className={styles.devFlag}>This is a staging build of the docs</div>
+        siteConfig.customFields?.FEATURE_DEV_FLAG === "true" && <div className={styles.devFlag}>This is a staging build of the docs. Do not share the link externally.</div>
       }
 
       {
