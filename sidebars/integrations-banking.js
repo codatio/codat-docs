@@ -23,6 +23,7 @@ const integrations = [
       "integrations/banking/plaid/test-your-plaid-integration",
       "integrations/banking/plaid/switching-between-plaid-environments",
       "integrations/banking/plaid/reauthorise-url-links",
+      "integrations/banking/plaid/faqs-plaid"
     ],
   },
   {
