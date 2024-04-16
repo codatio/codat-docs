@@ -89,6 +89,8 @@ With **Supplier Enablement**, we enable banks and other commercial card issuers 
 
 ## How does it work?
 
+![A diagram flow of the supplier enablement solution](/img/supplier-enablement/se-overview-diagram.png)
+
 Reach out to your Codat contact to enjoy **Supplier Enablement**'s rich product features and dynamic data refreshes through our comprehensive UI:
 
 1. **Relationship and onboarding management**
