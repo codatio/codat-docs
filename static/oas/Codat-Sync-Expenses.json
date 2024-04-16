@@ -1225,71 +1225,6 @@
         }
       ]
     },
-    "/companies/{companyId}/sync/expenses/syncs": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
-      "post": {
-        "tags": [
-          "Sync"
-        ],
-        "summary": "Initiate sync",
-        "operationId": "initiate-sync",
-        "description": "Initiate sync of pending transactions.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/InitiateSync"
-              },
-              "examples": {}
-            }
-          }
-        },
-        "responses": {
-          "202": {
-            "description": "Returns the newly created syncId",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SyncInitiated"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/BadRequest"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "422": {
-            "$ref": "#/components/responses/Unprocessable-Content"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
     "/companies/{companyId}/sync/expenses/syncs/lastSuccessful/status": {
       "get": {
         "tags": [
@@ -1647,7 +1582,7 @@
         }
       ]
     },
-    "/companies/{companyId}/sync/expenses/data/expense-transactions": {
+    "/companies/{companyId}/sync/expenses/expense-transactions": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -1656,7 +1591,7 @@
       "post": {
         "summary": "Create expense transaction",
         "operationId": "create-expense-transaction",
-        "description": "The *Create expense* endpoint creates an [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting platform for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n\n**Integration-specific behaviour**\n\nSome accounting platforms support the option of pushing transactions to a draft state. This can be done by setting the postAsDraft property on the transaction to true. For platforms without this feature, the postAsDraft property should be ignored or set to false.\n\n| Integration | Draft State | Details                                                                                                      |  \n|-------------|-------------|--------------------------------------------------------------------------------------------------------------|\n| Dynamics 365 Business Central | Yes   | Setting postAsDraft to true will push the transactions to a drafted state rather than posting directly to the ledger. For transactions in a draft state, they can then be approved and posted within the accounting platform. |\n| Quickbooks Online | No | -  |\n| Xero | No | - |\n| NetSuite | No | - |",
+        "description": "The *Create expense* endpoint creates an [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting platform for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. ",
         "tags": [
           "Expenses"
         ],
@@ -1672,7 +1607,7 @@
                 "examples": {
                   "Example 1": {
                     "value": {
-                      "datasetId": "cd937d46-8e41-43a9-9477-a79158ffd98a"
+                      "syncId": "cd937d46-8e41-43a9-9477-a79158ffd98a"
                     }
                   }
                 }
@@ -1712,88 +1647,83 @@
               },
               "examples": {
                 "Payment": {
-                  "value": {
-                    "items": [
-                      {
-                        "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-                        "type": "Payment",
-                        "issueDate": "2021-05-21T00:00:00+00:00",
-                        "currency": "GBP",
-                        "currencyRate": 1.18,
-                        "contactRef": {
-                          "id": "f5244103-5223-4b0a-857f-50566ac86c11",
-                          "type": "Supplier"
-                        },
-                        "bankAccountRef": {
-                          "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-                        },
-                        "merchantName": "Amazon UK",
-                        "lines": [
-                          {
-                            "netAmount": 110.42,
-                            "taxAmount": 14.43,
-                            "taxRateRef": {
-                              "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
-                            },
-                            "accountRef": {
-                              "id": "9aa5b894-1be9-4f97-96cd-ffde90766b3e"
-                            },
-                            "trackingRefs": [
-                              {
-                                "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c",
-                                "dataType": "trackingCategories"
-                              }
-                            ],
-                            "invoiceTo": {
-                              "id": "80000002-1674552702",
-                              "dataType": "customers"
+                  "value": [
+                    {
+                      "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
+                      "type": "Payment",
+                      "issueDate": "2021-05-21T00:00:00+00:00",
+                      "currency": "GBP",
+                      "currencyRate": 1.18,
+                      "contactRef": {
+                        "id": "f5244103-5223-4b0a-857f-50566ac86c11",
+                        "type": "Supplier"
+                      },
+                      "bankAccountRef": {
+                        "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+                      },
+                      "merchantName": "Amazon UK",
+                      "lines": [
+                        {
+                          "netAmount": 110.42,
+                          "taxAmount": 14.43,
+                          "taxRateRef": {
+                            "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
+                          },
+                          "accountRef": {
+                            "id": "9aa5b894-1be9-4f97-96cd-ffde90766b3e"
+                          },
+                          "trackingRefs": [
+                            {
+                              "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c",
+                              "dataType": "trackingCategories"
                             }
+                          ],
+                          "invoiceTo": {
+                            "id": "80000002-1674552702",
+                            "dataType": "customers"
                           }
-                        ],
-                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
-                        "postAsDraft": false
-                      }
-                    ]
-                  }
+                        }
+                      ],
+                      "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
+                      "postAsDraft": false
+                    }
+                  ]
                 },
                 "Refund": {
-                  "value": {
-                    "items": [
-                      {
-                        "id": "7008d3f2-aeb4-11ed-afa1-0242ac120002",
-                        "type": "Refund",
-                        "issueDate": "2023-02-17T00:00:00+00:00",
-                        "currency": "GBP",
-                        "bankAccountRef": {
-                          "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-                        },
-                        "merchantName": "Amazon UK",
-                        "lines": [
-                          {
-                            "netAmount": 110.42,
-                            "taxAmount": 14.43,
-                            "taxRateRef": {
-                              "id": "23_Bills"
-                            },
-                            "accountRef": {
-                              "id": "42"
-                            },
-                            "trackingRefs": [
-                              {
-                                "id": "DEPARTMENT_6"
-                              }
-                            ]
-                          }
-                        ],
-                        "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-                      }
-                    ]
-                  }
+                  "value": [
+                    {
+                      "id": "7008d3f2-aeb4-11ed-afa1-0242ac120002",
+                      "type": "Refund",
+                      "issueDate": "2023-02-17T00:00:00+00:00",
+                      "currency": "GBP",
+                      "bankAccountRef": {
+                        "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+                      },
+                      "merchantName": "Amazon UK",
+                      "lines": [
+                        {
+                          "netAmount": 110.42,
+                          "taxAmount": 14.43,
+                          "taxRateRef": {
+                            "id": "23_Bills"
+                          },
+                          "accountRef": {
+                            "id": "42"
+                          },
+                          "trackingRefs": [
+                            {
+                              "id": "DEPARTMENT_6"
+                            }
+                          ]
+                        }
+                      ],
+                      "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+                    }
+                  ]
                 }
               }
             }
-          },
-          "description": ""
+          }
         }
       }
     },
@@ -2015,14 +1945,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateReimbursableExpenseRequest"
+                "$ref": "#/components/schemas/ReimbursableExpenseTransactionRequest"
               },
               "examples": {
                 "Create reimbursable expense": {
                   "value": [
                     {
                       "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-                      "reference": 101,
+                      "reference": "101",
                       "recordRef": {
                         "id": "f5244103-5223-4b0a-857f-50566ac86c11"
                       },
@@ -2130,14 +2060,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateReimbursableExpenseRequest"
+                "$ref": "#/components/schemas/ReimbursableExpenseTransactionRequest"
               },
               "examples": {
                 "Update reimbursable expense": {
                   "value": [
                     {
                       "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-                      "reference": 101,
+                      "reference": "101",
                       "recordRef": {
                         "id": "f5244103-5223-4b0a-857f-50566ac86c11"
                       },
@@ -2531,7 +2461,15 @@
           "$ref": "#/components/parameters/companyId"
         },
         {
-          "$ref": "#/components/parameters/datasetId"
+          "name": "datasetId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Unique identifier for the dataset that completed its sync."
+          },
+          "description": "Unique identifier for the dataset that completed its sync."
         }
       ],
       "get": {
@@ -13310,7 +13248,10 @@
               "Supplier"
             ]
           }
-        }
+        },
+        "required": [
+          "id"
+        ]
       },
       "CreateAccountResponse": {
         "title": "Create account response",
@@ -13363,16 +13304,11 @@
       "CreateExpenseRequest": {
         "title": "Create expense request",
         "x-internal": true,
-        "type": "object",
-        "properties": {
-          "items": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 50,
-            "items": {
-              "$ref": "#/components/schemas/ExpenseTransaction"
-            }
-          }
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 50,
+        "items": {
+          "$ref": "#/components/schemas/ExpenseTransaction"
         }
       },
       "CreateExpenseResponse": {
@@ -13380,26 +13316,11 @@
         "x-internal": true,
         "type": "object",
         "properties": {
-          "datasetId": {
+          "syncId": {
             "type": "string",
             "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
             "format": "uuid",
-            "description": "Unique id of dataset created"
-          }
-        }
-      },
-      "CreateReimbursableExpenseRequest": {
-        "title": "Create reimbursable expense request",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "items": {
-            "type": "array",
-            "minItems": 1,
-            "maxItems": 50,
-            "items": {
-              "$ref": "#/components/schemas/ReimbursableExpenseTransactionRequest"
-            }
+            "description": "Unique id of sync created"
           }
         }
       },
@@ -14126,22 +14047,6 @@
           "accountRef"
         ]
       },
-      "InitiateSync": {
-        "title": "Initiate sync",
-        "type": "object",
-        "properties": {
-          "datasetIds": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "IntegrationType": {
         "title": "Integration type",
         "x-internal": true,
@@ -14817,91 +14722,6 @@
           }
         }
       },
-      "ReimbursableExpenseTransactionRequest": {
-        "title": "Reimbursable expense transaction request",
-        "type": "array",
-        "minItems": 1,
-        "maxItems": 50,
-        "items": {
-          "$ref": "#/components/schemas/ReimbursableExpenseTransactionRequest/definitions/reimbursableExpenseTransaction"
-        },
-        "definitions": {
-          "reimbursableExpenseTransaction": {
-            "title": "Reimbursable expense transaction",
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "example": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-                "format": "uuid",
-                "description": "Your unique identifier for the transaction."
-              },
-              "reference": {
-                "type": "string",
-                "nullable": true,
-                "description": "User-friendly reference for the reimbursable expense."
-              },
-              "recordRef": {
-                "description": "Supplier for the purchase to be associated to.",
-                "$ref": "#/components/schemas/ContactRef"
-              },
-              "issueDate": {
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
-                "description": "Date of the transaction was recorded."
-              },
-              "dueDate": null,
-              "allOf": [
-                {
-                  "description": "Date the supplier is due to be paid."
-                },
-                {
-                  "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
-                }
-              ],
-              "currency": {
-                "type": "string",
-                "example": "GBP",
-                "description": "Currency the transaction was recorded in."
-              },
-              "currencyRate": {
-                "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
-              },
-              "notes": {
-                "type": "string",
-                "description": "Any private, company notes about the transaction.",
-                "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-              },
-              "bankAccountRef": {
-                "type": "object",
-                "title": "Bank account reference",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "example": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea",
-                    "description": "Identifier of the bank account."
-                  }
-                }
-              },
-              "lines": {
-                "type": "array",
-                "description": "Array of transaction lines.",
-                "minItems": 1,
-                "maxItems": 100,
-                "items": {
-                  "$ref": "#/components/schemas/ReimbursableExpenseTransactionLine"
-                }
-              }
-            },
-            "required": [
-              "id",
-              "contactRef.id",
-              "issueDate",
-              "dueDate",
-              "currency"
-            ]
-          }
-        }
-      },
       "ReimbursableExpenseTransactionLine": {
         "x-internal": true,
         "title": "Reimbursable expense transaction line",
@@ -14942,6 +14762,86 @@
           "netAmount",
           "accountRef"
         ]
+      },
+      "ReimbursableExpenseTransactionRequest": {
+        "title": "Reimbursable expense transaction request",
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 50,
+        "items": {
+          "$ref": "#/components/schemas/ReimbursableExpenseTransactionRequest/definitions/reimbursableExpenseTransaction"
+        },
+        "definitions": {
+          "reimbursableExpenseTransaction": {
+            "title": "Reimbursable expense transaction",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "4d7c6929-7770-412b-91bb-44d3bc71d111",
+                "format": "uuid",
+                "description": "Your unique identifier for the transaction."
+              },
+              "reference": {
+                "type": "string",
+                "nullable": true,
+                "description": "User-friendly reference for the reimbursable expense."
+              },
+              "recordRef": {
+                "description": "Supplier for the purchase to be associated to.",
+                "$ref": "#/components/schemas/ContactRef"
+              },
+              "issueDate": {
+                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+                "description": "Date of the transaction was recorded."
+              },
+              "dueDate": {
+                "description": "Date the supplier is due to be paid.",
+                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+              },
+              "currency": {
+                "type": "string",
+                "example": "GBP",
+                "description": "Currency the transaction was recorded in."
+              },
+              "currencyRate": {
+                "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
+              },
+              "notes": {
+                "type": "string",
+                "description": "Any private, company notes about the transaction.",
+                "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+              },
+              "bankAccountRef": {
+                "type": "object",
+                "title": "Bank account reference",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "example": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea",
+                    "description": "Identifier of the bank account."
+                  }
+                }
+              },
+              "lines": {
+                "type": "array",
+                "description": "Array of transaction lines.",
+                "minItems": 1,
+                "maxItems": 100,
+                "items": {
+                  "$ref": "#/components/schemas/ReimbursableExpenseTransactionLine"
+                }
+              }
+            },
+            "required": [
+              "id",
+              "recordRef",
+              "issueDate",
+              "dueDate",
+              "currency"
+            ]
+          }
+        }
       },
       "SupplementalData": {
         "title": "Supplemental data",
@@ -15846,17 +15746,6 @@
         "schema": {
           "$ref": "#/components/schemas/DataType"
         }
-      },
-      "datasetId": {
-        "name": "datasetId",
-        "in": "path",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "uuid",
-          "description": "Unique identifier for the dataset that completed its sync."
-        },
-        "description": "Unique identifier for the dataset that completed its sync."
       },
       "supplierId": {
         "name": "supplierId",
