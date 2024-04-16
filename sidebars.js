@@ -11,6 +11,7 @@ const commerce = require("./sidebars/sync-for-commerce");
 const expenses = require("./sidebars/sync-for-expenses");
 const payroll = require("./sidebars/payroll");
 const payables = require("./sidebars/payables");
+const supplierEnablement = require("./sidebars/supplier-enablement");
 
 const accountingAPI = require("./sidebars/accounting-api");
 const bankingAPI = require("./sidebars/banking-api");
@@ -183,6 +184,7 @@ module.exports = {
   integrationsCommerce: integrationsCommerce,
   integrationsBankFeeds: integrationsBankFeeds,
   enterprise: enterprise,
+  supplierEnablement: supplierEnablement,
   //accountingAPI: accountingAPI,
   //bankingAPI: bankingAPI,
   //commerceAPI: commerceAPI,

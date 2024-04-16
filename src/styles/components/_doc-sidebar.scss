@@ -481,6 +481,10 @@ html[data-theme="light"] {
     &.product.sfpayroll {
       --icon-url: url("/img/sidebar/icon_payroll.svg");
     }
+
+    &.product.supplier-enablement {
+      --icon-url: url("/img/sidebar/icon_supplier_enablement.svg");
+    }
   }
 }
 
@@ -558,6 +562,10 @@ html[data-theme="dark"] {
 
     &.product.sfpayroll {
       --icon-url: url("/img/sidebar-dark/icon_payroll_light.svg");
+    }
+
+    &.product.supplier-enablement {
+      --icon-url: url("/img/sidebar-dark/icon_supplier_enablement_light.svg");
     }
   }
 }
