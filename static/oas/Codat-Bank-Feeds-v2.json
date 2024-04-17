@@ -3548,7 +3548,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateBankTransactionsV2"
+                "$ref": "#/components/schemas/CreateBankTransactionsv2"
               }
             }
           }
@@ -3779,7 +3779,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SourceAccountWebhook"
+                "$ref": "#/components/schemas/SourceAccountWebhookv2"
               }
             }
           }
@@ -3798,7 +3798,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SourceAccountWebhook"
+                "$ref": "#/components/schemas/SourceAccountWebhookv2"
               }
             }
           }
@@ -5146,7 +5146,7 @@
           }
         ]
       },
-      "CreateBankTransactionsV2": {
+      "CreateBankTransactionsv2": {
         "title": "Bank transactions",
         "type": "object",
         "properties": {
@@ -5155,7 +5155,7 @@
             "description": "Unique ID for the bank account."
           },
           "transactions": {
-            "$ref": "#/components/schemas/CreateBankTransactionsV2/definitions/transactions"
+            "$ref": "#/components/schemas/CreateBankTransactionsv2/definitions/transactions"
           }
         },
         "definitions": {
@@ -6211,6 +6211,50 @@
               },
               "sourceAccount": {
                 "$ref": "#/components/schemas/SourceAccount"
+              }
+            }
+          }
+        }
+      },
+      "SourceAccountWebhookv2": {
+        "title": "Source account status changed webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event"
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "bankFeeds.sourceAccount.connected",
+              "bankFeeds.sourceAccount.disconnected"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/SourceAccountWebhookv2/definitions/sourceAccountWebhookPayload"
+          }
+        },
+        "definitions": {
+          "sourceAccountWebhookPayload": {
+            "title": "Payload",
+            "type": "object",
+            "properties": {
+              "companyId": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "connectionId": {
+                "$ref": "#/components/parameters/connectionId/schema"
+              },
+              "sourceAccount": {
+                "$ref": "#/components/schemas/SourceAccountv2"
               }
             }
           }
