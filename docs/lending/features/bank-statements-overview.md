@@ -215,7 +215,7 @@ Follow the respective guides to set up enable banking integrations that will ser
 
 :::tip Already have a banking integration?
 
-If you have an existing banking integration, you can use our [data upload](/lending/functions/file-upload.md) functionality to manually upload records that will be used as a source for bank statement categorization.
+If you have an existing banking integration, you can use our [data upload](/lending/functions/data-upload) functionality to manually upload records that will be used as a source for bank statement categorization.
 
 :::
 
