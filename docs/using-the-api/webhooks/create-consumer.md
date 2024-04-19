@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem"
 
 A _webhook consumer_ is your implementation of a POST endpoint that you built to receive Codat's webhooks. In general, you need one consumer per [event type](/using-the-api/webhooks/event-types).
 
-This consumer must process the event within 15 seconds when it receives a POST request. We recommend passing the event to an internal message queue so that you can process it in time.
+This consumer must return a `2XX` (status code `200-299`) response within 15 seconds of receiving the POST request. We recommend passing the event to an internal message queue so that you can process it in time.
 
 ## Configure webhook consumer
 
