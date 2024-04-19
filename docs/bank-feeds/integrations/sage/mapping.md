@@ -10,8 +10,6 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Loom from '@components/global/Loom'
 
-# Sage Bank Feeds mapping
-
 <Loom source="https://www.loom.com/embed/48972835b6e74d199448b794f41b9997" />
 
 <br/>
