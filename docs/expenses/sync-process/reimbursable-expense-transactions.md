@@ -54,7 +54,7 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
       {
          "id":"81539597-e681-40c9-a4dd-ec2fffcde572",
          "reference":"101",
-         "recordRef":{
+         "contactRef":{
             "id":"341"
          },
          "issueDate":"2022-04-29T00:00:00",
