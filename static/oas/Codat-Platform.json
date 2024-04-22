@@ -1316,17 +1316,304 @@
                 "examples": {
                   "Example": {
                     "value": {
-                      "invoices": {
-                        "dataType": "invoices",
+                      "accountTransactions": {
+                        "dataType": "accountTransactions",
                         "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
-                        "currentStatus": "success",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "balanceSheet": {
+                        "dataType": "balanceSheet",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "bankAccounts": {
+                        "dataType": "bankAccounts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "bankTransactions": {
+                        "dataType": "bankTransactions",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "billCreditNotes": {
+                        "dataType": "billCreditNotes",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "billPayments": {
+                        "dataType": "billPayments",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
                         "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
                         "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
                       },
                       "bills": {
                         "dataType": "bills",
                         "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
-                        "currentStatus": "failure",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "cashFlowStatement": {
+                        "dataType": "cashFlowStatement",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "chartOfAccounts": {
+                        "dataType": "chartOfAccounts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "company": {
+                        "dataType": "company",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "creditNotes": {
+                        "dataType": "creditNotes",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "customers": {
+                        "dataType": "customers",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "directCosts": {
+                        "dataType": "directCosts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "directIncomes": {
+                        "dataType": "directIncomes",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "invoices": {
+                        "dataType": "invoices",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "itemReceipts": {
+                        "dataType": "itemReceipts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "items": {
+                        "dataType": "items",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "journalEntries": {
+                        "dataType": "journalEntries",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "journals": {
+                        "dataType": "journals",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "paymentMethods": {
+                        "dataType": "paymentMethods",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "payments": {
+                        "dataType": "payments",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "profitAndLoss": {
+                        "dataType": "profitAndLoss",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "purchaseOrders": {
+                        "dataType": "purchaseOrders",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "salesOrders": {
+                        "dataType": "salesOrders",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "suppliers": {
+                        "dataType": "suppliers",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "taxRates": {
+                        "dataType": "taxRates",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "trackingCategories": {
+                        "dataType": "trackingCategories",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "transfers": {
+                        "dataType": "transfers",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "banking-accountBalances": {
+                        "dataType": "banking-accountBalances",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "banking-accounts": {
+                        "dataType": "banking-accounts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "banking-transactionCategories": {
+                        "dataType": "banking-transactionCategories",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "banking-transactions": {
+                        "dataType": "banking-transactions",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-companyInfo": {
+                        "dataType": "commerce-companyInfo",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-customers": {
+                        "dataType": "commerce-customers",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-disputes": {
+                        "dataType": "commerce-disputes",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-locations": {
+                        "dataType": "commerce-locations",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-orders": {
+                        "dataType": "commerce-orders",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-paymentMethods": {
+                        "dataType": "commerce-paymentMethods",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-payments": {
+                        "dataType": "commerce-payments",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-productCategories": {
+                        "dataType": "commerce-productCategories",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-products": {
+                        "dataType": "commerce-products",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-taxComponents": {
+                        "dataType": "commerce-taxComponents",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-transactions": {
+                        "dataType": "commerce-transactions",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
                         "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
                         "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
                       }
@@ -4928,8 +5215,7 @@
             "$ref": "#/components/schemas/DateTime"
           },
           "currentStatus": {
-            "type": "string",
-            "description": "The current status of the dataset in Codat's cache."
+            "$ref": "#/components/schemas/PullOperation/properties/status"
           },
           "latestSyncId": {
             "type": "string",
@@ -4958,8 +5244,179 @@
         "title": "Data statuses",
         "x-internal": true,
         "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/DataStatus"
+        "properties": {
+          "accountTransactions": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "balanceSheet": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "bankAccounts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "bankTransactions": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "billCreditNotes": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "billPayments": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "bills": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "cashFlowStatement": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "chartOfAccounts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "creditNotes": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "customers": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "directCosts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "directIncomes": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "invoices": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "itemReceipts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "items": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "journalEntries": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "journals": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "paymentMethods": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "payments": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "profitAndLoss": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "purchaseOrders": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "salesOrders": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "suppliers": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "taxRates": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "trackingCategories": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "transfers": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "banking-accountBalances": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "banking-accounts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "banking-transactionCategories": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "banking-transactions": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-companyInfo": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-customers": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-disputes": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-locations": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-orders": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-paymentMethods": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-payments": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-productCategories": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-products": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-taxComponents": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-transactions": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          }
         }
       },
       "DataSyncCompletedWebhook": {
@@ -5638,8 +6095,9 @@
             "description": "The data type you are requesting in a pull operation."
           },
           "status": {
+            "title": "Dataset status",
             "type": "string",
-            "description": "The current status of the pull operation.",
+            "description": "The current status of the dataset.",
             "enum": [
               "Initial",
               "Queued",
@@ -5658,14 +6116,11 @@
               "ValidationError",
               "AuthError",
               "Cancelled",
-              "Routing",
-              "RoutingError",
               "NotSupported",
               "RateLimitError",
               "PermissionsError",
               "PrerequisiteNotMet"
-            ],
-            "example": "Complete"
+            ]
           },
           "statusDescription": {
             "type": "string",
