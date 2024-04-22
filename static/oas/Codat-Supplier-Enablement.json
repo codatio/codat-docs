@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Supplier Enablement",
-    "description": "Alpha release of supplier enablement API.",
+    "description": "Alpha release of supplier enablement API.\n\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Spend analysis | Create and view spend analysis report. |\n<!-- End Codat Tags Table -->",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -104,7 +104,7 @@
   "tags": [
     {
       "name": "Spend analysis",
-      "description": "Create and view spend analysis report"
+      "description": "Create and view spend analysis report."
     }
   ],
   "paths": {

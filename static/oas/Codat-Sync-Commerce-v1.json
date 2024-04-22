@@ -17,7 +17,7 @@
       "url": "https://www.codat.io/",
       "email": "syncforcommerce@codat.io"
     },
-    "description": "The API for Sync for Commerce V1.\n\nSync for Commerce automatically replicates and reconciles sales data from a merchant’s source PoS, Payments, and eCommerce systems into their accounting software. This eliminates manual processing by merchants and transforms their ability to run and grow their business.\n  \n[Read More...](https://docs.codat.io/commerce/overview)\n\nNot seeing what you expect? [See the main Sync for Commerce API](https://docs.codat.io/sync-for-commerce-api).",
+    "description": "The API for Sync for Commerce V1.\n\nSync for Commerce automatically replicates and reconciles sales data from a merchant’s source PoS, Payments, and eCommerce systems into their accounting software. This eliminates manual processing by merchants and transforms their ability to run and grow their business.\n\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Company management | Create new and manage existing Sync for Commerce companies. |\n| Configuration | Expressively configure preferences for any given Sync for Commerce company. |\n| Sync flow preferences | Configure preferences for any given Sync for Commerce company using sync flow. |\n| Sync | Initiate a sync of Sync for Commerce company data into their respective accounting software. |\n| Integrations | View useful information about codat's integrations. |\n| Companies | Create and manage your Codat companies. |\n| Connections | Manage your companies' data connections. |\n| Refresh data | Asynchronously retrieve data from an integration to refresh data in Codat. |\n| Push data | View push options and get push statuses. |\n| Accounting accounts | Retrieve standardized Accounts from linked accounting platforms. |\n| Accounting credit notes | Retrieve standardized Credit notes from linked accounting platforms. |\n| Accounting customers | Retrieve standardized Customers from linked accounting platforms. |\n| Accounting direct incomes | Retrieve standardized Direct incomes from linked accounting platforms. |\n| Accounting company info | Retrieve standardized Accounting company info from linked accounting platforms. |\n| Accounting invoices | Retrieve standardized Invoices from linked accounting platforms. |\n| Accounting journal entries | Retrieve standardized Journal entries from linked accounting platforms. |\n| Accounting payments | Retrieve standardized Payments from linked accounting platforms. |\n| Accounting bank accounts | Retrieve standardized Bank accounts from linked accounting platforms. |\n| Commerce customers | Retrieve standardized Commerce customers from linked commerce platforms. |\n| Commerce company info | Retrieve standardized Commerce company info from linked commerce platforms. |\n| Commerce locations | Retrieve standardized Commerce locations from linked commerce platforms. |\n| Commerce orders | Retrieve standardized Commerce orders from linked commerce platforms. |\n| Commerce payments | Retrieve standardized Commerce payments from linked commerce platforms. |\n| Commerce products | Retrieve standardized Commerce products from linked commerce platforms. |\n| Commerce transactions | Retrieve standardized Commerce transactions from linked commerce platforms. |\n<!-- End Codat Tags Table -->\n\n[Read More...](https://docs.codat.io/commerce/overview)\n\nNot seeing what you expect? [See the main Sync for Commerce API](https://docs.codat.io/sync-for-commerce-api).",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -93,67 +93,67 @@
     },
     {
       "name": "Accounting accounts",
-      "description": "Accounts"
+      "description": "Retrieve standardized Accounts from linked accounting platforms."
     },
     {
       "name": "Accounting credit notes",
-      "description": "Credit notes"
+      "description": "Retrieve standardized Credit notes from linked accounting platforms."
     },
     {
       "name": "Accounting customers",
-      "description": "Customers"
+      "description": "Retrieve standardized Customers from linked accounting platforms."
     },
     {
       "name": "Accounting direct incomes",
-      "description": "Direct incomes"
+      "description": "Retrieve standardized Direct incomes from linked accounting platforms."
     },
     {
       "name": "Accounting company info",
-      "description": "Company info"
+      "description": "Retrieve standardized Accounting company info from linked accounting platforms."
     },
     {
       "name": "Accounting invoices",
-      "description": "Invoices"
+      "description": "Retrieve standardized Invoices from linked accounting platforms."
     },
     {
       "name": "Accounting journal entries",
-      "description": "Journal entries"
+      "description": "Retrieve standardized Journal entries from linked accounting platforms."
     },
     {
       "name": "Accounting payments",
-      "description": "Payments"
+      "description": "Retrieve standardized Payments from linked accounting platforms."
     },
     {
       "name": "Accounting bank accounts",
-      "description": "Bank accounts"
+      "description": "Retrieve standardized Bank accounts from linked accounting platforms."
     },
     {
       "name": "Commerce customers",
-      "description": "Retrieve standardized data from linked commerce platforms."
+      "description": "Retrieve standardized Commerce customers from linked commerce platforms."
     },
     {
       "name": "Commerce company info",
-      "description": "Retrieve standardized data from linked commerce platforms."
+      "description": "Retrieve standardized Commerce company info from linked commerce platforms."
     },
     {
       "name": "Commerce locations",
-      "description": "Retrieve standardized data from linked commerce platforms."
+      "description": "Retrieve standardized Commerce locations from linked commerce platforms."
     },
     {
       "name": "Commerce orders",
-      "description": "Retrieve standardized data from linked commerce platforms."
+      "description": "Retrieve standardized Commerce orders from linked commerce platforms."
     },
     {
       "name": "Commerce payments",
-      "description": "Retrieve standardized data from linked commerce platforms."
+      "description": "Retrieve standardized Commerce payments from linked commerce platforms."
     },
     {
       "name": "Commerce products",
-      "description": "Retrieve standardized data from linked commerce platforms."
+      "description": "Retrieve standardized Commerce products from linked commerce platforms."
     },
     {
       "name": "Commerce transactions",
-      "description": "Retrieve standardized data from linked commerce platforms."
+      "description": "Retrieve standardized Commerce transactions from linked commerce platforms."
     }
   ],
   "paths": {

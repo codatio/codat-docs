@@ -8,7 +8,7 @@
       "url": "https://www.codat.io/",
       "email": "expenses@codat.io"
     },
-    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Explore product](https://docs.codat.io/sync-for-expenses/overview) | [See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing the endpoints you're expecting? We've [reorganized our products](https://docs.codat.io/updates/230901-new-products), and you may be using a [different version of Sync for Expenses](https://docs.codat.io/sync-for-expenses-v1-api#/).\n\n---\n\n## Endpoints\n\n| Endpoints | Description |\n| :- | :- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Configuration | View and manage mapping configuration and defaults for expense transactions.  |\n| Sync | Monitor the status of data syncs. |\n| Expenses | Create and update transactions that represent your customers' spend. |\n| Transfers | Create and update transactions that represent the movement of your customers' money. |\n| Reimbursements | Create and update transactions that represent your customers' repayable spend. |\n| Attachments | Attach receipts to a transaction for a complete audit trail.   |\n| Transaction status | Monitor the status of individual transactions in data syncs. |\n| Manage data | Control and monitor the retrieval of data from an integration. |\n| Push operations | View historic push operations. |\n| Accounts | Create accounts and view account schemas.   |\n| Customers | Get, create, and update customers. |\n| Suppliers | Get, create, and update suppliers. |",
+    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Explore product](https://docs.codat.io/sync-for-expenses/overview) | [See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing the endpoints you're expecting? We've [reorganized our products](https://docs.codat.io/updates/230901-new-products), and you may be using a [different version of Sync for Expenses](https://docs.codat.io/sync-for-expenses-v1-api#/).\n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Configuration | View and manage mapping configuration and defaults for expense transactions. |\n| Sync | Monitor the status of data syncs. |\n| Expenses | Create and update transactions that represent your customers' spend. |\n| Transfers | Create and update transactions that represent the movement of your customers' money. |\n| Reimbursements | Create and update transactions that represent your customers' repayable spend. |\n| Attachments | Attach receipts to a transaction for a complete audit trail. |\n| Transaction status | Monitor the status of individual transactions in data syncs. |\n| Manage data | Control and monitor the retrieval of data from an integration. |\n| Push operations | View historic push operations. |\n| Accounts | Create accounts and view account schemas. |\n| Customers | Get, create, and update customers. |\n| Suppliers | Get, create, and update suppliers. |\n<!-- End Codat Tags Table -->",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -99,59 +99,59 @@
   "tags": [
     {
       "name": "Companies",
-      "description": "Create and manage your Codat companies."
+      "description": "Create and manage your SMB users' companies."
     },
     {
       "name": "Connections",
-      "description": "Create and manage partner expense connection."
+      "description": "Create new and manage existing data connections for a company."
     },
     {
       "name": "Configuration",
-      "description": "Manage mapping options and sync configuration."
+      "description": "View and manage mapping configuration and defaults for expense transactions."
     },
     {
       "name": "Sync",
-      "description": "Trigger and monitor expense syncs to accounting software."
+      "description": "Monitor the status of data syncs."
     },
     {
       "name": "Expenses",
-      "description": "Create expense transactions."
+      "description": "Create and update transactions that represent your customers' spend."
     },
     {
       "name": "Transfers",
-      "description": "Create transfer transactions."
+      "description": "Create and update transactions that represent the movement of your customers' money."
     },
     {
       "name": "Reimbursements",
-      "description": "Create reimbursable expense transactions."
+      "description": "Create and update transactions that represent your customers' repayable spend."
     },
     {
       "name": "Attachments",
-      "description": "Upload attachmens to expenses, transfers and reimbursable expense transactions."
+      "description": "Attach receipts to a transaction for a complete audit trail."
     },
     {
       "name": "Transaction status",
-      "description": "Retrieve the status of transactions within a sync."
+      "description": "Monitor the status of individual transactions in data syncs."
     },
     {
       "name": "Manage data",
-      "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
+      "description": "Control and monitor the retrieval of data from an integration."
     },
     {
       "name": "Push operations",
-      "description": "Access create, update and delete operations made to an SMB's data connection."
+      "description": "View historic push operations."
     },
     {
       "name": "Accounts",
-      "description": "Accounts"
+      "description": "Create accounts and view account schemas."
     },
     {
       "name": "Customers",
-      "description": "Customers"
+      "description": "Get, create, and update customers."
     },
     {
       "name": "Suppliers",
-      "description": "Suppliers"
+      "description": "Get, create, and update suppliers."
     }
   ],
   "servers": [

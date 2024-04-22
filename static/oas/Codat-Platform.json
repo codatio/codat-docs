@@ -13,7 +13,7 @@
     "title": "Platform API",
     "version": "3.0.0",
     "summary": "Platform API",
-    "description": "An API for the common components of all of Codat's products.\n\nThese end points cover creating and managing your companies, data connections, and integrations.\n\n[Read about the building blocks of Codat...](https://docs.codat.io/core-concepts/companies) | [See our OpenAPI spec](https://github.com/codatio/oas) \n\n---\n\n## Endpoints\n\n| Endpoints            | Description                                                                                                |\n|:---------------------|:-----------------------------------------------------------------------------------------------------------|\n| Companies            | Create and manage your SMB users' companies.                                                               |\n| Connections          | Create new and manage existing data connections for a company.                                             |\n| Groups  | Define and manage sets of companies based on a chosen characteristic.                                                             |\n| Webhooks                | Create and manage webhooks that listen to Codat's events.                                                                      |\n| Integrations | Get a list of integrations supported by Codat and their logos. |\n| Refresh data            | Initiate data refreshes, view pull status and history.                                                                      |\n| Settings            | Manage company profile configuration, sync settings, and API keys.                                            |\n| Push data            | Initiate and monitor Create, Update, and Delete operations.                                             |\n| Supplemental data            | Configure and pull additional data you can include in Codat's standard data types.                                        |\n| Custom data type            | Configure and pull additional data types that are not included in Codat's standardized data model.                        |",
+    "description": "An API for the common components of all of Codat's products.\n\nThese end points cover creating and managing your companies, data connections, and integrations.\n\n[Read about the building blocks of Codat...](https://docs.codat.io/core-concepts/companies) | [See our OpenAPI spec](https://github.com/codatio/oas) \n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Connection management | Configure connection management UI and retrieve access tokens for authentication. |\n| Groups | Define and manage sets of companies based on a chosen characteristic. |\n| Webhooks | Create and manage webhooks that listen to Codat's events. |\n| Integrations | Get a list of integrations supported by Codat and their logos. |\n| Refresh data | Initiate data refreshes, view pull status and history. |\n| Settings | Manage company profile configuration, sync settings, and API keys. |\n| Push data | Initiate and monitor Create, Update, and Delete operations. |\n| Supplemental data | Configure and pull additional data you can include in Codat's standard data types. |\n| Custom data type | Configure and pull additional data types that are not included in Codat's standardized data model. |\n<!-- End Codat Tags Table -->",
     "contact": {
       "name": "Codat",
       "email": "support@codat.io"
@@ -108,11 +108,11 @@
   "tags": [
     {
       "name": "Companies",
-      "description": "Create and manage your Codat companies."
+      "description": "Create and manage your SMB users' companies."
     },
     {
       "name": "Connections",
-      "description": "Manage your companies' data connections."
+      "description": "Create new and manage existing data connections for a company."
     },
     {
       "name": "Connection management",
@@ -120,35 +120,35 @@
     },
     {
       "name": "Groups",
-      "description": "Create groups and link them to your Codat companies."
+      "description": "Define and manage sets of companies based on a chosen characteristic."
     },
     {
       "name": "Webhooks",
-      "description": "Manage webhooks, rules, and events."
+      "description": "Create and manage webhooks that listen to Codat's events."
     },
     {
       "name": "Integrations",
-      "description": "View and manage your available integrations in Codat."
+      "description": "Get a list of integrations supported by Codat and their logos."
     },
     {
       "name": "Refresh data",
-      "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
+      "description": "Initiate data refreshes, view pull status and history."
     },
     {
       "name": "Settings",
-      "description": "Manage your Codat instance."
+      "description": "Manage company profile configuration, sync settings, and API keys."
     },
     {
       "name": "Push data",
-      "description": "View push options and get push statuses."
+      "description": "Initiate and monitor Create, Update, and Delete operations."
     },
     {
       "name": "Supplemental data",
-      "description": "View and configure supplemental data for supported data types."
+      "description": "Configure and pull additional data you can include in Codat's standard data types."
     },
     {
       "name": "Custom data type",
-      "description": "View and configure custom data types for supported integrations."
+      "description": "Configure and pull additional data types that are not included in Codat's standardized data model."
     }
   ],
   "paths": {

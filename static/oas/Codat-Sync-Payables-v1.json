@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Sync for Payables",
-    "description": "The API for Sync for Payables. \n\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, invoices, and payments in sync.\n\n[Explore product](https://docs.codat.io/payables/overview) | [See OpenAPI spec](https://github.com/codatio/oas)\n\n---\n\n## Endpoints\n\n| Endpoints            | Description                                                                                                |\n|:---------------------|:-----------------------------------------------------------------------------------------------------------|\n| Companies            | Create and manage your SMB users' companies.                                                               |\n| Connections          | Create new and manage existing data connections for a company.                                             |\n| Accounts             | Get, create, and update Accounts.                                                           |\n| Bills                | Get, create, and update Bills.                                                                          |\n| Bill credit notes    | Get, create, and update Bill credit notes.                                                              |\n| Bill payments        | Get, create, and update Bill payments.                                                                  |\n| Journals             | Get, create, and update Journals.                                                                       |\n| Journal entries      | Get, create, and update Journal entries.                                                                |\n| Payment methods      | Get, create, and update Payment methods.                                                                |\n| Suppliers            | Get, create, and update Suppliers.                                                                      |\n| Tax rates            | Get, create, and update Tax rates.                                                                      |\n| Tracking categories  | Get, create, and update Tracking categories.                                                            |\n| Company info         | View company profile from the source platform.                                                             |\n| Push operations      | View historic push operations.                                                         |\n| Manage data          | Control how data is retrieved from an integration.                                                         |",
+    "description": "The API for Sync for Payables. \n\nSync for Payables is an API and a set of supporting tools built to help integrate with your customers' accounting software, and keep their supplier information, invoices, and payments in sync.\n\n[Explore product](https://docs.codat.io/payables/overview) | [See OpenAPI spec](https://github.com/codatio/oas)\n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Accounts | Get, create, and update Accounts. |\n| Bank accounts | Get, create, and update Bank accounts. |\n| Bills | Get, create, and update Bills. |\n| Bill credit notes | Get, create, and update Bill credit notes. |\n| Bill payments | Get, create, and update Bill payments. |\n| Journals | Get, create, and update Journals. |\n| Journal entries | Get, create, and update Journal entries. |\n| Payment methods | Get, create, and update Payment methods. |\n| Suppliers | Get, create, and update Suppliers. |\n| Tax rates | Get, create, and update Tax rates. |\n| Tracking categories | Get, create, and update Tracking categories. |\n| Company info | View company profile from the source platform. |\n| Push operations | View historic push operations. |\n| Manage data | Control how data is retrieved from an integration. |\n<!-- End Codat Tags Table -->",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -104,67 +104,67 @@
   "tags": [
     {
       "name": "Companies",
-      "description": "Create and manage your Codat companies."
+      "description": "Create and manage your SMB users' companies."
     },
     {
       "name": "Connections",
-      "description": "Manage your companies' data connections."
+      "description": "Create new and manage existing data connections for a company."
     },
     {
       "name": "Accounts",
-      "description": "Accounts"
+      "description": "Get, create, and update Accounts."
     },
     {
       "name": "Bank accounts",
-      "description": "Bank accounts"
+      "description": "Get, create, and update Bank accounts."
     },
     {
       "name": "Bills",
-      "description": "Bills"
+      "description": "Get, create, and update Bills."
     },
     {
       "name": "Bill credit notes",
-      "description": "Bill credit notes"
+      "description": "Get, create, and update Bill credit notes."
     },
     {
       "name": "Bill payments",
-      "description": "Bill payments"
+      "description": "Get, create, and update Bill payments."
     },
     {
       "name": "Journals",
-      "description": "Journals"
+      "description": "Get, create, and update Journals."
     },
     {
       "name": "Journal entries",
-      "description": "Journal entries"
+      "description": "Get, create, and update Journal entries."
     },
     {
       "name": "Payment methods",
-      "description": "Payment methods"
+      "description": "Get, create, and update Payment methods."
     },
     {
       "name": "Suppliers",
-      "description": "Suppliers"
+      "description": "Get, create, and update Suppliers."
     },
     {
       "name": "Tax rates",
-      "description": "Tax rates"
+      "description": "Get, create, and update Tax rates."
     },
     {
       "name": "Tracking categories",
-      "description": "Tracking categories"
+      "description": "Get, create, and update Tracking categories."
     },
     {
       "name": "Company info",
-      "description": "View company information fetched from the source platform."
+      "description": "View company profile from the source platform."
     },
     {
       "name": "Push operations",
-      "description": "Access create, update and delete operations made to an SMB's data connection."
+      "description": "View historic push operations."
     },
     {
       "name": "Manage data",
-      "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
+      "description": "Control how data is retrieved from an integration."
     }
   ],
   "paths": {
