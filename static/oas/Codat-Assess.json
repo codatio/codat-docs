@@ -15,7 +15,7 @@
       "name": "Codat"
     },
     "summary": "Codat's financial insights API",
-    "description": "> ### New to Codat?\n>\n> Our Assess API reference is relevant only to our existing clients.\n> Please reach out to your Codat contact so that we can find the right product for you.\n\nCheck that you have enabled the [data types required by Assess](https://docs.codat.io/assess/get-started#prerequisites) for all of its features to work.  \n\n[Read more...](https://www.docs.codat.io/assess/)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "> ### New to Codat?\n>\n> Our Assess API reference is relevant only to our existing clients.\n> Please reach out to your Codat contact so that we can find the right product for you.\n\nCheck that you have enabled the [data types required by Assess](https://docs.codat.io/assess/get-started#prerequisites) for all of its features to work.  \n\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Reports | Enriched reports and analyses of financial data. |\n| Excel reports | Downloadable reports. |\n| Data integrity | Match mutable accounting data with immutable banking data to increase confidence in financial data. |\n<!-- End Codat Tags Table -->\n\n[Read more...](https://www.docs.codat.io/assess/)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -42,15 +42,15 @@
   "tags": [
     {
       "name": "Reports",
-      "description": "Enriched reports and analyses of financial data"
+      "description": "Enriched reports and analyses of financial data."
     },
     {
       "name": "Excel reports",
-      "description": "Downloadable reports"
+      "description": "Downloadable reports."
     },
     {
       "name": "Data integrity",
-      "description": "Match mutable accounting data with immutable banking data to increase confidence in financial data"
+      "description": "Match mutable accounting data with immutable banking data to increase confidence in financial data."
     }
   ],
   "paths": {

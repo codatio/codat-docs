@@ -17,7 +17,7 @@
       "url": "https://www.codat.io/",
       "email": "syncforcommerce@codat.io"
     },
-    "description": "The API for Sync for Commerce. \n\nSync for Commerce automatically replicates and reconciles sales data from a merchant’s source PoS, Payments, and eCommerce systems into their accounting software. This eliminates manual processing by merchants and transforms their ability to run and grow their business.\n  \n[Explore product](https://docs.codat.io/commerce/overview) | [See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing the endpoints you're expecting? We've [reorganized our products](https://docs.codat.io/updates/230901-new-products), and you may be using a [different version of Sync for Commerce](https://docs.codat.io/sync-for-commerce-v1-api#/).\n\n---\n\n## Endpoints\n\n| Endpoints | Description |\n| :- | :- |\n| Connections | Create new and manage existing data connections for a company. |\n| Sync | Initiate data syncs and monitor their status.   |\n| Sync flow settings | Control text and visibility settings for the Sync Flow. |\n| Integrations | Get a list of integrations supported by Sync for Commerce and their logos. |\n| Advanced controls | View and manage mapping configured for a company's commerce sync. |",
+    "description": "The API for Sync for Commerce. \n\nSync for Commerce automatically replicates and reconciles sales data from a merchant’s source PoS, Payments, and eCommerce systems into their accounting software. This eliminates manual processing by merchants and transforms their ability to run and grow their business.\n  \n[Explore product](https://docs.codat.io/commerce/overview) | [See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing the endpoints you're expecting? We've [reorganized our products](https://docs.codat.io/updates/230901-new-products), and you may be using a [different version of Sync for Commerce](https://docs.codat.io/sync-for-commerce-v1-api#/).\n\n---\n\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Connections | Create new and manage existing data connections for a company. |\n| Sync | Initiate data syncs and monitor their status. |\n| Sync flow settings | Control text and visibility settings for the Sync Flow. |\n| Integrations | Get a list of integrations supported by Sync for Commerce and their logos. |\n| Advanced controls | View and manage mapping configured for a company's commerce sync. |\n<!-- End Codat Tags Table -->",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -108,23 +108,23 @@
   "tags": [
     {
       "name": "Connections",
-      "description": "Create new and manage existing Sync for Commerce connections using the Sync flow UI."
+      "description": "Create new and manage existing data connections for a company."
     },
     {
       "name": "Sync",
-      "description": "Initiate and monitor the sync of company data into accounting software."
+      "description": "Initiate data syncs and monitor their status."
     },
     {
       "name": "Sync flow settings",
-      "description": "Configure preferences for any given Sync for Commerce company using sync flow."
+      "description": "Control text and visibility settings for the Sync Flow."
     },
     {
       "name": "Integrations",
-      "description": "View useful information about codat's integrations."
+      "description": "Get a list of integrations supported by Sync for Commerce and their logos."
     },
     {
       "name": "Advanced controls",
-      "description": "Advanced company management and sync preferences."
+      "description": "View and manage mapping configured for a company's commerce sync."
     }
   ],
   "paths": {
