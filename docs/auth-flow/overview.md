@@ -25,6 +25,12 @@ With our [rich examples](/auth-flow/authorize-embedded-link#get-started) and an 
 * **React and non-React** JavaScript compatible pre-built component for fast implementation
 * **Dynamic imports** mean your auth flow will never fall behind our API
 
+:::tip Connection Management SDK
+
+Enhance the auth flow functionality and give your customers the ability to manage the access permissions by using our [Connection Management SDK](/auth-flow/optimize/connection-management) in your front-end code. 
+
+:::
+
 ### Benefits
 
 <ul className="card-container col-1">
@@ -81,3 +87,4 @@ Browser and mobile compatibility of Link varies for different integrations:
 ---
 ## Read next
 - [Get started](/auth-flow/authorize-embedded-link) with the Link SDK to embed the auth journey in your app
+- Use the [Connection Management SDK](/auth-flow/optimize/connection-management) in your app

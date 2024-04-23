@@ -500,3 +500,4 @@ To control the redirects that happen upon flow completion, you need to build out
 - [Manage Link settings in Portal](/auth-flow/customize/customize-link)
 - [Manage branding settings in Portal](/auth-flow/customize/branding)
 - [Manage UI settings in code](/auth-flow/customize/sdk-advanced-options)
+- Use the [Connection Management SDK](/auth-flow/optimize/connection-management) in your app
