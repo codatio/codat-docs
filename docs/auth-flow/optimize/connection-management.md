@@ -77,7 +77,7 @@ To display the origins you previously registered for your instance, use the [Get
 
 2. **Use the component to mount the SDK** 
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal to adjust its positioning. Your component can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   import { useEffect, useRef, useState } from "react";
