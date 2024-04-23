@@ -1519,34 +1519,6 @@
   },
   "components": {
     "schemas": {
-      "AccountOption": {
-        "x-internal": true,
-        "title": "Account option",
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "description": "Name of the account."
-          },
-          "id": {
-            "type": "string",
-            "description": "Identifier for the account, unique for the company."
-          },
-          "nominalCode": {
-            "type": "string",
-            "nullable": true,
-            "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system."
-          },
-          "classification": {
-            "type": "string",
-            "nullable": true,
-            "description": "Classification of the type of G/L account.",
-            "example": "Bank Nominal"
-          }
-        },
-        "additionalProperties": false
-      },
       "Branding": {
         "title": "Branding",
         "type": "object",
@@ -1865,60 +1837,519 @@
           }
         }
       },
-      "ConfigAccount": {
-        "x-internal": true,
-        "title": "Account configuration",
-        "type": "object",
-        "description": "G/L account object for configuration.",
-        "properties": {
-          "labelText": {
-            "type": "string",
-            "nullable": true,
-            "description": "Label text for sales configuration section."
-          },
-          "descriptionText": {
-            "type": "string",
-            "nullable": true,
-            "description": "Descriprtive text for sales configuration section."
-          },
-          "selectedAccountId": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selected account id from the list of available accounts."
-          },
-          "required": {
-            "type": "boolean",
-            "description": "Required section to be configured for sync."
-          },
-          "accountOptions": {
-            "type": "array",
-            "description": "Object containing account options.",
-            "items": {
-              "$ref": "#/components/schemas/AccountOption"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "Configuration": {
         "title": "Configuration",
         "type": "object",
         "properties": {
-          "sales": {
-            "$ref": "#/components/schemas/Sales"
+          "companyId": {
+            "$ref": "#/components/parameters/companyId"
           },
-          "payments": {
-            "$ref": "#/components/schemas/Payments"
+          "accountingSoftwareCompanyName": {
+            "type": "string",
+            "description": "The company name defined in the accounting platform."
           },
-          "newPayments": {
-            "$ref": "#/components/schemas/NewPayments"
+          "enable": {
+            "type": "boolean",
+            "description": "True if Sync for Commerce is enabled for the company."
           },
-          "fees": {
-            "$ref": "#/components/schemas/Fees"
+          "configured": {
+            "type": "boolean",
+            "description": "True if Sync for Commerce has been configured for the company."
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/Configuration/definitions/syncSchedule"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/Configuration/definitions/commerceConfiguration"
           }
         },
-        "additionalProperties": false
+        "definitions": {
+          "syncSchedule": {
+            "title": "Sync schedule",
+            "type": "object",
+            "properties": {
+              "selectedFrequency": {
+                "$ref": "#/components/schemas/Configuration/definitions/syncFrequency"
+              },
+              "frequencyOptions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/syncFrequency"
+                }
+              },
+              "startDate": {
+                "$ref": "#/components/schemas/Company/properties/created",
+                "description": "The date time in UTC syncs should start from."
+              },
+              "syncHour": {
+                "type": "integer",
+                "minValue": 0,
+                "maxValue": 23,
+                "description": "The hour you want to trigger a sync."
+              },
+              "timeZone": {
+                "type": "string",
+                "description": "The timezone for the company.",
+                "example": "Europe/London"
+              }
+            }
+          },
+          "syncFrequency": {
+            "type": "string",
+            "enum": [
+              "Daily",
+              "Monthly"
+            ],
+            "description": "The frequency in which you want data to be synced."
+          },
+          "commerceConfiguration": {
+            "title": "Commerce configuration",
+            "type": "object",
+            "properties": {
+              "countryCode": {
+                "type": "string",
+                "description": "The country code outlining where the company is based."
+              },
+              "mapSettings": {
+                "$ref": "#/components/schemas/Configuration/definitions/configurationMapSettings"
+              },
+              "sales": {
+                "$ref": "#/components/schemas/Configuration/definitions/salesConfiguration"
+              },
+              "payments": {
+                "$ref": "#/components/schemas/Configuration/definitions/paymentsConfiguration"
+              },
+              "newPayments": {
+                "$ref": "#/components/schemas/Configuration/definitions/newPaymentsConfiguration"
+              },
+              "fees": {
+                "$ref": "#/components/schemas/Configuration/definitions/feesConfiguration"
+              }
+            }
+          },
+          "configurationMapSettings": {
+            "title": "Map settings",
+            "type": "object",
+            "properties": {
+              "outputFormat": {
+                "type": "string",
+                "enum": [
+                  "JournalEntry"
+                ],
+                "description": "The format commerce transactions are stored in the accounting platform."
+              }
+            }
+          },
+          "salesConfiguration": {
+            "title": "Sales configuration",
+            "type": "object",
+            "properties": {
+              "syncSales": {
+                "type": "boolean",
+                "description": "Boolean indicator for syncing sales."
+              },
+              "accounts": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/Configuration/definitions/accountConfiguration"
+                },
+                "nullable": true
+              },
+              "invoiceStatus": {
+                "$ref": "#/components/schemas/Configuration/definitions/invoiceStatus"
+              },
+              "salesCustomer": {
+                "$ref": "#/components/schemas/Configuration/definitions/salesCustomer"
+              },
+              "taxRates": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/Configuration/definitions/taxRateAmount"
+                },
+                "nullable": true
+              },
+              "newTaxRates": {
+                "$ref": "#/components/schemas/Configuration/definitions/newTaxRates"
+              },
+              "grouping": {
+                "$ref": "#/components/schemas/Configuration/definitions/grouping"
+              }
+            }
+          },
+          "paymentsConfiguration": {
+            "title": "Payments configuration",
+            "type": "object",
+            "properties": {
+              "syncPayments": {
+                "type": "boolean",
+                "description": "Boolean indicator for syncing sales."
+              },
+              "accounts": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/Configuration/definitions/accountConfiguration"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "newPaymentsConfiguration": {
+            "title": "New payments configuration",
+            "type": "object",
+            "properties": {
+              "syncPayments": {
+                "type": "boolean",
+                "description": "Boolean indicator for syncing payments."
+              },
+              "accounts": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/Configuration/definitions/accountConfiguration"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "feesConfiguration": {
+            "title": "Fees configuration",
+            "type": "object",
+            "properties": {
+              "feesSupplier": {
+                "$ref": "#/components/schemas/Configuration/definitions/feesSupplier"
+              },
+              "syncFees": {
+                "type": "boolean",
+                "description": "Boolean indicator to enable syncing fees."
+              },
+              "accounts": {
+                "type": "object",
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/Configuration/definitions/accountConfiguration"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "accountConfiguration": {
+            "title": "Account configuration",
+            "type": "object",
+            "description": "G/L account object for configuration.",
+            "properties": {
+              "labelText": {
+                "type": "string",
+                "nullable": true,
+                "description": "Label text for sales configuration section."
+              },
+              "descriptionText": {
+                "type": "string",
+                "nullable": true,
+                "description": "Descriptive text for sales configuration section."
+              },
+              "selectedAccountId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Selected account id from the list of available accounts."
+              },
+              "required": {
+                "type": "boolean",
+                "description": "Required section to be configured for sync."
+              },
+              "accountOptions": {
+                "type": "array",
+                "description": "Object containing account options.",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/accountConfigurationOption"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "accountConfigurationOption": {
+            "title": "Account configuration option",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the account, unique for the company."
+              },
+              "name": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the account."
+              },
+              "nominalCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Reference given to each nominal account for a business. It ensures money is allocated to the correct account. This code isn't a unique identifier in the Codat system."
+              },
+              "classification": {
+                "type": "string",
+                "nullable": true,
+                "description": "Classification of the type of G/L account.",
+                "example": "Bank Nominal"
+              }
+            },
+            "additionalProperties": false
+          },
+          "invoiceStatus": {
+            "title": "Invoice status",
+            "type": "object",
+            "properties": {
+              "selectedInvoiceStatus": {
+                "type": "string",
+                "nullable": true,
+                "description": "Selected option for invoice status for invoice to be synced.",
+                "example": "Submitted"
+              },
+              "invoiceStatusOptions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": true,
+                "description": "Options for invoice statuses."
+              }
+            },
+            "additionalProperties": false
+          },
+          "salesCustomer": {
+            "title": "Customer",
+            "x-internal": true,
+            "type": "object",
+            "properties": {
+              "selectedCustomerId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Selected customer id from the list of customer records on the accounting software."
+              },
+              "customerOptions": {
+                "type": "array",
+                "description": "List of customer options from the list of customer records on the accounting software.",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/configurationOption"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "configurationOption": {
+            "title": "Option",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name value of the option.",
+                "nullable": true
+              },
+              "id": {
+                "type": "string",
+                "description": "Unique identifier for the option."
+              }
+            },
+            "additionalProperties": false
+          },
+          "taxRateAmount": {
+            "title": "Tax rate amount",
+            "type": "object",
+            "properties": {
+              "selectedTaxRateId": {
+                "type": "string",
+                "description": "Selected tax rate id from the list of tax rates on the accounting software.",
+                "nullable": true
+              },
+              "taxRateOptions": {
+                "type": "array",
+                "description": "Array of tax rate options object.",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/configurationOption"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "newTaxRates": {
+            "title": "New tax rates",
+            "type": "object",
+            "properties": {
+              "accountingTaxRateOptions": {
+                "type": "array",
+                "description": "Array of accounting tax rate options.",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/configurationOption"
+                },
+                "nullable": true
+              },
+              "commerceTaxRateOptions": {
+                "type": "array",
+                "description": "Array of tax component options.",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/configurationOption"
+                },
+                "nullable": true
+              },
+              "taxRateMappings": {
+                "type": "array",
+                "description": "Array of tax component to rate mappings.",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/taxRateMapping"
+                },
+                "nullable": true
+              },
+              "selectedDefaultZeroTaxRateId": {
+                "type": "string",
+                "description": "Default tax rate selected for sync.",
+                "nullable": true
+              },
+              "defaultZeroTaxRateOptions": {
+                "type": "array",
+                "description": "Default zero tax rate selected for sync.",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/configurationOption"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "taxRateMapping": {
+            "title": "Tax rate mapping",
+            "type": "object",
+            "properties": {
+              "selectedCommerceTaxRateIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Selected tax component id from the list of tax components on the commerce software.",
+                "nullable": true
+              },
+              "selectedAccountingTaxRateId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Selected tax rate id from the list of tax rates on the accounting software."
+              }
+            },
+            "additionalProperties": false
+          },
+          "grouping": {
+            "title": "Grouping",
+            "type": "object",
+            "properties": {
+              "groupingPeriod": {
+                "$ref": "#/components/schemas/Configuration/definitions/groupingPeriod"
+              },
+              "groupingLevels": {
+                "$ref": "#/components/schemas/Configuration/definitions/groupingLevels"
+              }
+            },
+            "additionalProperties": false
+          },
+          "groupingLevels": {
+            "title": "Grouping levels",
+            "type": "object",
+            "properties": {
+              "invoiceLevel": {
+                "$ref": "#/components/schemas/Configuration/definitions/invoiceLevelSelection"
+              },
+              "invoiceLineLevel": {
+                "$ref": "#/components/schemas/Configuration/definitions/invoiceLineLevelSelection"
+              }
+            },
+            "additionalProperties": false
+          },
+          "groupingPeriod": {
+            "title": "Grouping period",
+            "type": "object",
+            "properties": {
+              "selectedGroupingPeriod": {
+                "type": "string",
+                "nullable": true,
+                "description": "Grouping period i.e. Daily sales."
+              },
+              "groupingPeriodOptions": {
+                "type": "array",
+                "description": "Array of grouping period options.",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "invoiceLevelSelection": {
+            "title": "Invoice level selection",
+            "type": "object",
+            "properties": {
+              "selectedGroupByOptions": {
+                "type": "array",
+                "description": "Selected array of grouping options.",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              "groupByOptions": {
+                "type": "array",
+                "description": "Options for grouping sales.",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "invoiceLineLevelSelection": {
+            "title": "Invoice line level selection",
+            "type": "object",
+            "properties": {
+              "selectedGroupByOptions": {
+                "type": "array",
+                "description": "Invoice line level selection.",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              "groupByOptions": {
+                "type": "array",
+                "description": "Options for grouping on invoice lines.",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          },
+          "feesSupplier": {
+            "title": "Supplier fees",
+            "type": "object",
+            "properties": {
+              "selectedSupplierId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Selected supplier id from the list of supplier records on the accounting software."
+              },
+              "supplierOptions": {
+                "type": "array",
+                "description": "List of supplier options from the list of supplier records on the accounting software.",
+                "items": {
+                  "$ref": "#/components/schemas/Configuration/definitions/configurationOption"
+                },
+                "nullable": true
+              }
+            },
+            "additionalProperties": false
+          }
+        }
       },
       "Connection": {
         "title": "Connection",
@@ -2097,27 +2528,6 @@
           "name"
         ]
       },
-      "Customer": {
-        "title": "Customer",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "selectedCustomerId": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selected customer id from the list of customer records on the accounting software."
-          },
-          "customerOptions": {
-            "type": "array",
-            "description": "List of customer options from the list of customer records on the accounting software.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ErrorMessage": {
         "title": "Error message",
         "type": "object",
@@ -2196,98 +2606,6 @@
             }
           }
         }
-      },
-      "Fees": {
-        "title": "Fees",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "feesSupplier": {
-            "$ref": "#/components/schemas/FeesSupplier"
-          },
-          "syncFees": {
-            "type": "boolean",
-            "description": "Boolean indicator to enable syncing fees."
-          },
-          "accounts": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ConfigAccount"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "FeesSupplier": {
-        "x-internal": true,
-        "title": "Supplier fees",
-        "type": "object",
-        "properties": {
-          "selectedSupplierId": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selected supplier id from the list of supplier records on the accounting software."
-          },
-          "supplierOptions": {
-            "type": "array",
-            "description": "List of supplier options from the list of supplier records on the accounting software.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Grouping": {
-        "title": "Grouping",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "groupingPeriod": {
-            "$ref": "#/components/schemas/GroupingPeriod"
-          },
-          "groupingLevels": {
-            "$ref": "#/components/schemas/GroupingLevels"
-          }
-        },
-        "additionalProperties": false
-      },
-      "GroupingLevels": {
-        "x-internal": true,
-        "title": "Grouping levels",
-        "type": "object",
-        "properties": {
-          "invoiceLevel": {
-            "$ref": "#/components/schemas/InvoiceLevelSelection"
-          },
-          "invoiceLineLevel": {
-            "$ref": "#/components/schemas/InvoiceLineLevelSelection"
-          }
-        },
-        "additionalProperties": false
-      },
-      "GroupingPeriod": {
-        "x-internal": true,
-        "title": "Grouping period",
-        "type": "object",
-        "properties": {
-          "selectedGroupingPeriod": {
-            "type": "string",
-            "nullable": true,
-            "description": "Grouping period i.e. Daily sales."
-          },
-          "groupingPeriodOptions": {
-            "type": "array",
-            "description": "Array of grouping period options.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
       },
       "Integration": {
         "title": "Integration",
@@ -2536,76 +2854,6 @@
           }
         ]
       },
-      "InvoiceLevelSelection": {
-        "x-internal": true,
-        "title": "Invoice level selection",
-        "type": "object",
-        "properties": {
-          "selectedGroupByOptions": {
-            "type": "array",
-            "description": "Selected array of grouping options.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "groupByOptions": {
-            "type": "array",
-            "description": "Options for grouping sales.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "InvoiceLineLevelSelection": {
-        "x-internal": true,
-        "title": "Invoice line level selection",
-        "type": "object",
-        "properties": {
-          "selectedGroupByOptions": {
-            "type": "array",
-            "description": "Invoice line level selection.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "groupByOptions": {
-            "type": "array",
-            "description": "Options for grouping on invoice lines.",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "InvoiceStatus": {
-        "x-internal": true,
-        "title": "Invoice status",
-        "type": "object",
-        "properties": {
-          "selectedInvoiceStatus": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selected option for invoice status for invoice to be synced.",
-            "example": "Submitted"
-          },
-          "invoiceStatusOptions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true,
-            "description": "Options for invoice statuses."
-          }
-        },
-        "additionalProperties": false
-      },
       "Localization": {
         "title": "Localization",
         "x-internal": true,
@@ -2628,87 +2876,6 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/Localization"
         }
-      },
-      "NewPayments": {
-        "x-internal": true,
-        "title": "New payments",
-        "type": "object",
-        "properties": {
-          "syncPayments": {
-            "type": "boolean",
-            "description": "Boolean indicator for syncing payments."
-          },
-          "accounts": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ConfigAccount"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "NewTaxRates": {
-        "x-internal": true,
-        "title": "New tax rates",
-        "type": "object",
-        "properties": {
-          "accountingTaxRateOptions": {
-            "type": "array",
-            "description": "Array of accounting tax rate options.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          },
-          "commerceTaxRateOptions": {
-            "type": "array",
-            "description": "Array of tax component options.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          },
-          "taxRateMappings": {
-            "type": "array",
-            "description": "Array of tax component to rate mapppings.",
-            "items": {
-              "$ref": "#/components/schemas/TaxRateMapping"
-            },
-            "nullable": true
-          },
-          "selectedDefaultZeroTaxRateId": {
-            "type": "string",
-            "description": "Default tax rate selected for sync.",
-            "nullable": true
-          },
-          "defaultZeroTaxRateOptions": {
-            "type": "array",
-            "description": "Default zero tax rate selected for sync.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Option": {
-        "title": "Option",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Name value of the option.",
-            "nullable": true
-          },
-          "id": {
-            "type": "string",
-            "description": "Unique identifier for the option."
-          }
-        },
-        "additionalProperties": false
       },
       "PagingInfo": {
         "type": "object",
@@ -2798,63 +2965,6 @@
             }
           }
         ]
-      },
-      "Payments": {
-        "title": "Payments",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "syncPayments": {
-            "type": "boolean",
-            "description": "Boolean indicator for syncing sales."
-          },
-          "accounts": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ConfigAccount"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Sales": {
-        "title": "Sales",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "syncSales": {
-            "type": "boolean",
-            "description": "Boolean indicator for syncing sales."
-          },
-          "accounts": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ConfigAccount"
-            },
-            "nullable": true
-          },
-          "invoiceStatus": {
-            "$ref": "#/components/schemas/InvoiceStatus"
-          },
-          "salesCustomer": {
-            "$ref": "#/components/schemas/Customer"
-          },
-          "taxRates": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/TaxRateAmount"
-            },
-            "nullable": true
-          },
-          "newTaxRates": {
-            "$ref": "#/components/schemas/NewTaxRates"
-          },
-          "grouping": {
-            "$ref": "#/components/schemas/Grouping"
-          }
-        },
-        "additionalProperties": false
       },
       "SyncConnectionDeletedWebhook": {
         "title": "Sync connection deleted webhook",
@@ -3148,48 +3258,6 @@
             "nullable": true
           }
         }
-      },
-      "TaxRateAmount": {
-        "x-internal": true,
-        "title": "Tax rate amount",
-        "type": "object",
-        "properties": {
-          "selectedTaxRateId": {
-            "type": "string",
-            "description": "Selected tax rate id from the list of tax rates on the accounting software.",
-            "nullable": true
-          },
-          "taxRateOptions": {
-            "type": "array",
-            "description": "Array of tax rate options object.",
-            "items": {
-              "$ref": "#/components/schemas/Option"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "TaxRateMapping": {
-        "x-internal": true,
-        "title": "Tax rate mapping",
-        "type": "object",
-        "properties": {
-          "selectedCommerceTaxRateIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Selected tax component id from the list of tax components on the commerce software.",
-            "nullable": true
-          },
-          "selectedAccountingTaxRateId": {
-            "type": "string",
-            "nullable": true,
-            "description": "Selected tax rate id from the list of tax rates on the accounting software."
-          }
-        },
-        "additionalProperties": false
       },
       "UpdateConnection": {
         "title": "Update connection",
