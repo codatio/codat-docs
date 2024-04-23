@@ -15,7 +15,7 @@ However, you can use the SDK's `options` property to override the settings set i
 As the `options` object overrides the Link settings set in the Portal, this may result in confusion about the source of truth for what users are seeing. Ensure you document and communicate your use of the `options` prop internally.
 :::
 
-```
+```js
 <CodatLink
   companyId={companyId}
   onConnection={onConnection}
