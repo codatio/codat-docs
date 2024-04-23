@@ -20,7 +20,7 @@ With its sleek UI and low-code deployment, it provides the following critical fu
 
 This is key from a regulatory perspective and builds trust between you and your customer. 
 
-![An image of three in-app screenshots of a mock connection management UI. The first picture displays a list of three existing connections to Xero, HSBC and Shopify. The second image shows the entry for the Xero connection with details of authorized data and dates the authorization was given. It also lists the option to disconnect the connection. The final image displays a prompt to confirm the decision to disconnect.](/img/auth-flow/auth-flow-connection-ui-examples.png)
+![An image of three in-app screenshots of the Connection Management UI. The first picture displays a list of three existing connections to Xero, Square, and Commerce Sandbox. The second image shows the entry for the Square connection with dates the authorization was given and recent data pull dates. It also lists the option to disconnect the connection. The final image displays a confirmation of the disconnection.](/img/auth-flow/auth-flow-connection-ui-examples.png)
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ You need a JavaScript application to render the component in. It works with all 
 
 :::tip Link SDK and Connection Management SDK
 
-[Link SDK](/auth-flow/authorize-embedded-link) isn't required for you to use the Connection Management component. Do check it out if you want to implement an auth flow that achieves an 89% conversion rate on average.
+The Connection Management SDK is an independent component and doesn't require our [Link SDK](/auth-flow/authorize-embedded-link) to work. You can use the Link SDK to enhance your customers' auth flow experience to achieve an 89% average conversion rate.
 
 :::
 
