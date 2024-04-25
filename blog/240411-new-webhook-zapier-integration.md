@@ -1,6 +1,6 @@
 ---
 title: "Introducing our new webhook Zapier integration"
-date: "2024-05-05"
+date: "2024-04-11"
 tags: ["Product", "Update"]
 hide_table_of_contents: true
 authors: dcoplowe
