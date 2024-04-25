@@ -9,27 +9,32 @@ import TabItem from "@theme/TabItem";
 
 ## Overview
 
-Give your customers the ability to manage the access permissions they have given you by using our **Connection Management SDK** in your front-end code. This is key from a regulatory perspective and builds trust between you and your customer. 
+Give your customers the ability to manage the access permissions they have given you by using our **Connection Management SDK** in your front-end code. This is key from a regulatory perspective, builds trust between you and your customer, and is required by some accounting platforms (e.g. Xero). 
 
-### Features
+![An image of three in-app screenshots of the Connection Management UI. The first picture displays a list of three existing connections to Xero, Square, and Commerce Sandbox. The second image shows the entry for the Square connection with dates the authorization was given and recent data pull dates. It also lists the option to disconnect the connection. The final image displays a confirmation of the disconnection.](/img/auth-flow/auth-flow-connection-ui-examples.png)
+
+### Functionality
 
 With its sleek UI and low-code deployment, the component provides the following critical functionality:
 
-- Displays active and inactive accounting, banking, and commerce connections.
-- Allows the user to unlink active connection retaining previously fetched data.
-- Enables the user to reauthorize a previously unlinked connection. 
+- Displays accounting, banking, and commerce connections in `Linked` and `Deauthorized` statuses.
+- Provides the details of first authorization date and most recent sync date.
+- Allows the user to disconnect an active connection, setting it to a `Deauthorized` state and retaining previously fetched data.
+- Enables the user to reauthorize a previously severed connection, setting it back to `Linked` status. 
 
-![An image of three in-app screenshots of the Connection Management UI. The first picture displays a list of three existing connections to Xero, Square, and Commerce Sandbox. The second image shows the entry for the Square connection with dates the authorization was given and recent data pull dates. It also lists the option to disconnect the connection. The final image displays a confirmation of the disconnection.](/img/auth-flow/auth-flow-connection-ui-examples.png)
+Connections in an `Unlinked` status are not displayed by the Connection Management component. This is because the `Unlinked` status indicates the delinking was initiated by your application and therefore should not be available to the user to reconnect. 
+
+You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
 
 ## Prerequisites
 
 ### Your application
 
-You need a JavaScript application to render the component. The component works with all major JavaScript frameworks, including React, and with vanilla JavaScript. You can choose to implement it in TypeScript. We don't recommend using it in an iframe because it will not work for security reasons (CORS).
+You need a JavaScript application to render the component. The component can be used in any part of your application and works with all major JavaScript frameworks, including React, and with vanilla JavaScript. You can choose to implement it in TypeScript. We don't recommend using it in an iframe because it will not work for security reasons (CORS).
 
 :::tip Link SDK and Connection Management SDK
 
-The Connection Management SDK is an independent component and doesn't require our [Link SDK](/auth-flow/authorize-embedded-link) to work. You can use the Link SDK to enhance your customers' auth flow experience to achieve an 89% average conversion rate.
+The Connection Management SDK is an independent component and doesn't require our [Link SDK](/auth-flow/authorize-embedded-link) to work. You can use the Link SDK in your app together with Connection Management to enhance your customers' auth flow experience to achieve an 89% average conversion rate.
 
 :::
 
@@ -37,14 +42,18 @@ The Connection Management SDK is an independent component and doesn't require ou
 
 Once your customer authorizes within your application, use the [Get access token](/platform-api#/operations/get-connection-management-access-token) endpoint to retrieve an access token for this customer's company. 
 
-Pass it to the Connection Management component so that we can get the company-specific information and display it in the UI. We summarized this process on the diagram: 
+:::tip Token validity
+The token is only valid for one hour and applies to a single company.
+:::
+
+Pass the token to the Connection Management component so that we can get the company-specific information and display it in the UI. We summarized this process on the diagram: 
 
 ```mermaid
 
 sequenceDiagram
     participant user as Customer
-    participant fe as Client frontend 
-    participant be as Client backend
+    participant fe as Your frontend 
+    participant be as Your backend
     participant codat as Codat API
     user ->> fe: Authorize in application
     fe ->> be: Get Codat access token
@@ -59,8 +68,7 @@ fe ->> fe: Embedded component returns additional context
 ```
 
 ### CORS settings
-
-To control the domain list that your application can make token requests from, register the allowed origins using the [Set CORS settings](/platform-api#/operations/set-connection-management-cors-settings) endpoint. This is a required setting for the Connection Management component to work. 
+[Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for the Connection Management component to work. To control the domain list that your application can make token requests from, register the allowed origins using the [Set CORS settings](/platform-api#/operations/set-connection-management-cors-settings) endpoint.
 
 To display the origins you previously registered for your instance, use the [Get CORS settings](/platform-api#/operations/get-connection-management-cors-settings) endpoint. 
 
