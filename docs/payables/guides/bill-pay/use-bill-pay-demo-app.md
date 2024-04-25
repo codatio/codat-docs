@@ -22,7 +22,7 @@ description: "Use the hosted demo app to connect to sandbox data, then view and 
 
    ![bill-pay_launch-bills-portal-screen](/img/use-cases/bill-pay/bill-pay_launch-bills-portal-screen.png)
 
-For more details about how the app creates a connection to QuickBooks Online via Hosted Link, see [Understand the authorization flow](/payables/guides/bill-pay/how-the-demo-app-works#understand-the-authorization-flow).
+For more details about how the app creates a connection to QuickBooks Online via Hosted Link, see [Understand the auth flow](/payables/guides/bill-pay/how-the-demo-app-works#understand-the-auth-flow).
 
 ### View bills
 
