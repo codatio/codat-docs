@@ -35,7 +35,7 @@ The Sage 50 connector is designed to work in single tenant environments only, wh
 
 ## Hardware requirements
 
-You will need to ensure that the host machine meets [Sage's reccomended specification](https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112205533&hypermediatext=null#) for running Sage 50 Desktop.
+You will need to ensure that the host machine meets [Sage's recommended specification](https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112205533&hypermediatext=null#) for running Sage 50 Desktop.
 
 If you have a large number of companies, or particularly large company files, you should pay special attention to the consumption of CPU, memory, disk and network resources on the host machine and ensure there is sufficient headroom.
 

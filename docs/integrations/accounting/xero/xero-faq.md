@@ -128,7 +128,7 @@ To see which rate limit is exceeded, please contact Codat Support.
 
 ### Why do all of my items from Xero have their status as _Unknown_?
 
-All [Items](accounting-api#/schemas/Item) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
+All [Items](/accounting-api#/schemas/Item) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
 
 ### Can I push discounts to Xero at the invoice level?
 

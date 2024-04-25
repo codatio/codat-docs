@@ -6,7 +6,7 @@ description: "Learn about our BigCommerce integration"
 
 <p><a className="external" href="https://www.bigcommerce.com/" target="_blank">BigCommerce</a> is a SaaS-based ecommerce platform for retailers of various sizes, both B2C and B2B.</p>
 
-With Codat's BigCommerce integration, you can securely connect to, retrieve, and view your SMB customers' commerce transactions from BigCommerce. Data is standardized to our data model and available through our [Commerce API](/commerce-api/commerce-data-types/).
+With Codat's BigCommerce integration, you can securely connect to, retrieve, and view your SMB customers' commerce transactions from BigCommerce. Data is standardized to our data model and available through our [Commerce API](/commerce-api/#/).
 
 ## Data type coverage
 
@@ -18,8 +18,8 @@ For more information about the supported data types, see [BigCommerce integratio
 
 Before sending Link URLs to your SMB customers, we recommend that you [test the integration](/integrations/commerce/bigcommerce/commerce-bigcommerce-test) using sample data from a sandbox store. You must be a Technology Partner to create a sandbox store and add sample data to it. For more information, refer to the following articles in the BigCommerce Dev Center:
 
-- <a className="external" href="https://developer.bigcommerce.com/docs/ZG9jOjIyMDYxOQ-becoming-a-partner" target="_blank">Becoming a Partner</a>
-- <a className="external" href="https://developer.bigcommerce.com/docs/ZG9jOjM4MzMyNTE-create-a-sandbox-store" target="_blank">Create a Sandbox Store</a>
+- <a className="external" href="https://developer.bigcommerce.com/docs/start/partner#applying-to-the-partner-program" target="_blank">Becoming a Partner</a>
+- <a className="external" href="https://developer.bigcommerce.com/docs/start/about/sandboxes" target="_blank">Create a Sandbox Store</a>
 
 Note that trial stores expire after 15 days and can't be populated with sample data.
 

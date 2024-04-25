@@ -75,7 +75,7 @@ If the connector attempts to access the company file when the QBD application is
 The connector cannot initiate communication with QBD when it is closed, and any previously granted permissions to access QBD while it is not running do not transfer to the new certificate.
 ![Image](/img/integrations/accounting/quickbooksdesktop/timed-out.png "Timed Out")
 
-The user needs to launch the QBD application, open the correct company file, and [approve the connector's access to it](/updates/230731-qbd-certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
+The user needs to launch the QBD application, open the correct company file, and [approve the connector's access to it](/updates/230731-deprecation-qbd-certificate-update#1-the-quickbooks-desktop-application-is-open-with-the-connected-company-file).
 
 The approval prompt may take a few moments to appear, but can be manually triggered by clicking the `Perform Sync` button in the Connector UI.
 

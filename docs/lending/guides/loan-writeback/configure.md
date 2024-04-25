@@ -417,7 +417,7 @@ GET https://api.codat.io/companies/{companyId}/data/accounts?query=type%3e0Expen
 
 Display the response to the customer and allow them to select the desired expense account. Store the account as `expenseAccount` and use it as the expense account in future operations. 
 
-If the customer wants to create a new nominal expense account for this purpose, use our [Get create account model](//lending-api#/operations/get-create-chartOfAccounts-model) to figure out what payload is required for account creation. 
+If the customer wants to create a new nominal expense account for this purpose, use our [Get create account model](/lending-api#/operations/get-create-chartOfAccounts-model) to figure out what payload is required for account creation. 
 
 Next, call the [Create account](/lending-api#/operations/create-account) endpoint to create the new account. 
 

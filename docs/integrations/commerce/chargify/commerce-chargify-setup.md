@@ -51,7 +51,7 @@ Your SMB customer performs the following steps:
 
    ![Your Maxio credentials](/img/old/66cdc91-your-chargify-credentials-final-masked.png "The Your Maxio credentials page")
 
-4. Opens a new browser tab, visits <a className="external" href="https://app.chargify.com/" target="_blank">app.chargify.com</a>, and signs in to their Maxio account.
+4. Opens a new browser tab, visits <a className="external" href="https://app.chargify.com/login.html" target="_blank">app.chargify.com</a>, and signs in to their Maxio account.
 
 5. In the side panel, clicks **Config** then **Integrations**.
 

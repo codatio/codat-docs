@@ -85,11 +85,11 @@ However, you can set a more frequent sync schedule if it is required for your us
 - **Monthly**: We recommend that you sync at least one data type monthly (e.g. Company info) to ensure connection token does not expire when not actively synchronizing data (unless only a one-time sync is required).
 - **Weekly (recommended)**: Keeps data reasonably fresh, particularly where data types change less frequently, while also reducing the number of required API calls.
 - **Daily**: Gives you close-to-live picture of most data types while staying within the conservative rate limits of most accounting platforms.
-- **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. Only available to [enterprise customers](/introduction/create-account).
+- **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. Only available to [enterprise customers](/configure/create-account#full-access).
 
 ## 💡 Tips and traps
 
-- Ensure to perform a monthly sync for at least one data type to keep your connection token operational if you are not performing active synchronisation. You can disregard this if you only require a one-time sync.
+- Ensure to perform a monthly sync for at least one data type to keep your connection token operational if you are not performing active synchronization. You can disregard this if you only require a one-time sync.
 
 - If you are building your own reports or accessing Codat-generated ones that rely on multiple data types, fetch all required data types before you generate the report. Otherwise, there may be inconsistencies in the data freshness. You can check for possible inconsistencies using the data types' `lastSuccessfulSync` properties. 
 

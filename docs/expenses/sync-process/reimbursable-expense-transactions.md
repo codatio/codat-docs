@@ -44,7 +44,7 @@ sequenceDiagram
 
 ## Create reimbursable expenses
 
-To create a new reimbursable expense transaction in Codat, use the [Create reimbursable expense transaction](/sync-for-expenses#/operations/create-reimbursable-expense-transaction) endpoint. 
+To create a new reimbursable expense transaction in Codat, use the [Create reimbursable expense transaction](/sync-for-expenses-api#/operations/create-reimbursable-expense-transaction) endpoint. 
 
 In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
 

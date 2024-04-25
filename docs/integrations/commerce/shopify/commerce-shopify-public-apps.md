@@ -35,7 +35,7 @@ When the app is created, you can view the app's secure credentials.
 1. Log in to the [Shopify Partners](https://developers.shopify.com/) site using your Shopify partner account credentials.
 
    :::note Shopify partner account
-   [Create a partner account](https://partners.shopify.com/signup/developer) if you don't already have one.
+   [Create a partner account](https://accounts.shopify.com/signup?rid=c272bffe-3e6f-4583-b6f2-f6bd71b340e5) if you don't already have one.
    :::
 
 2. In the side panel, click **Apps**.
