@@ -1,26 +1,41 @@
-name: Broken links
+name: Broken Links Check
 
 on:
-  #pull_request:
+  pull_request:
+    types: [opened, reopened, synchronize]
   schedule:
     - cron: '0 0 * * 0'  # Runs every Sunday at midnight
-  workflow_dispatch: # Allows manual triggering from the GitHub UI
+  workflow_dispatch:  # Allows manual triggering from the GitHub UI
 
 jobs:
   link-check:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+      
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18' # Specify the Node.js version
-
+          node-version: '18'
+      
       - name: Install linkinator
         run: npm install -g linkinator
-
+      
       - name: Run linkinator
         run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip .*github.*
+        id: linkinator  # Set an ID for referencing the output
+      
+      - name: Post results as PR comment
+        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const output = `Link check results:\n\`\`\`\n${{steps.linkinator.outputs.result}}\n\`\`\``;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            });
