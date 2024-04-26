@@ -39,4 +39,4 @@ Company data must be stored in the cloud, not on a local machine.
 :::
 
 - All tiers are supported: **Standard**, **Plus**, and **Premier**.
-- We are able to link AccountRight companies stored in the cloud as long as the company file runs on a version supported by MYOB. See MYOB's support policy [here](https://help.myob.com/wiki/display/GEN/AccountRight+releases#expand-20217November2021).
+- We are able to link AccountRight companies stored in the cloud as long as the company file runs on a version supported by MYOB.

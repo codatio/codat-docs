@@ -19,7 +19,7 @@ To learn more about installing the NetSuite bundle, see our overview of the NetS
 
 ### Create a company​
 
-Use our [Create company](/bank-feeds-api#/operations/create-company) endpoint to create a [company](../../terms/company) that represents your SMB user in Codat. The endpoint returns a JSON response containing the company ID `id` and the redirect URL `redirect`.
+Use our [Create company](/bank-feeds-api#/operations/create-company) endpoint to create a [company](../../../terms/company) that represents your SMB user in Codat. The endpoint returns a JSON response containing the company ID `id` and the redirect URL `redirect`.
 
 ```http title="Create a company"
   POST https://api.codat.io/companies

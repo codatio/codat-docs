@@ -3,7 +3,7 @@ title: "Use OpenID Connect"
 description: "Configure your authorization process to use OpenID Connect protocol"
 ---
 
-When a customer links their company data, OpenID Connect lets you retrieve [standard information](/auth-flow/customize/use-openid-connect-1#openid-connect-fields) from the user profile of their accounting package, such as the customer's name, email address, and phone number. You might use these details to:
+When a customer links their company data, OpenID Connect lets you retrieve [standard information](/auth-flow/customize/use-openid-connect#openid-connect-fields) from the user profile of their accounting package, such as the customer's name, email address, and phone number. You might use these details to:
 
 - Pre-fill an application form for the customer.
 - Identify accounts linked by the same person.
@@ -12,7 +12,7 @@ This article explains how to configure your authorization process to use OpenID 
 
 :::info Support for OpenID Connect
 
-- Codat's linking process can only return available profile details, which vary from platform to platform. Codat currently supports OpenID Connect for QuickBooks Online, Xero, and our testing sandbox. See [_OpenID Connect Supported fields_](/auth-flow/customize/use-openid-connect-1#openid-connect-fields) for the specific fields supported for each platform.
+- Codat's linking process can only return available profile details, which vary from platform to platform. Codat currently supports OpenID Connect for QuickBooks Online, Xero, and our testing sandbox. See [_OpenID Connect Supported fields_](/auth-flow/customize/use-openid-connect#openid-connect-fields) for the specific fields supported for each platform.
 - Codat doesn't use OpenID Connect to either verify the identity of customers, or to authorize data sharing or connections.
 
 :::

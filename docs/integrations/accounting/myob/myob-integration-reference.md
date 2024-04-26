@@ -58,7 +58,7 @@ To learn more, see the [504 Gateway Time out errors](https://apisupport.myob.com
 
 It must be stored online. Whilst MYOB AccountRight Live gives the option to store a company data file locally, this will make it inaccessible for Codat's integration.
 
-**See <a href="http://help.myob.com/wiki/display/ar/Put+your+company+file+online" target="_blank">here</a> for how companies can easily move their company file to the cloud if it is currently stored on their local machine.**
+**See <a href="https://www.myob.com/au/support/myob-business/product-account/working-online/put-your-company-file-online" target="_blank">MYOB's How to put your company online</a> for how companies can easily move their company file to the cloud if it is currently stored on their local machine.**
 
 ### How do I check whether company data is stored online?
 

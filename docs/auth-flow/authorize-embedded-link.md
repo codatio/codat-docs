@@ -21,7 +21,7 @@ Link SDK is imported at runtime, so you'll always get the latest version of our 
 
 :::tip Change management
 
-As with all Codat products, Link SDK is subject to [our change management policy](/introduction/change-policy). We will give appropriate notice for changes to our auth flow UI and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
+As with all Codat products, Link SDK is subject to [our change management policy](/using-the-api/change-policy). We will give appropriate notice for changes to our auth flow UI and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
 
 We also provide updates in our [SDK changelog](/auth-flow/authorize-embedded-link#changelog).
 :::
@@ -499,4 +499,4 @@ To control the redirects that happen upon flow completion, you need to build out
 
 - [Manage Link settings in Portal](/auth-flow/customize/customize-link)
 - [Manage branding settings in Portal](/auth-flow/customize/branding)
-- [Manage UI settings in code](/auth-flow/customize/sdk-advanced-options)
+- [Manage UI settings in code](/auth-flow/customize/sdk-customize-code)

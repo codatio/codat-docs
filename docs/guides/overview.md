@@ -51,7 +51,7 @@ Our current guides and tutorials:
   <li className="card mini">
     <div className="card-row">
       <div className="header">
-        <a href="payables/guides/bill-pay/introduction">
+        <a href="/payables/guides/bill-pay/introduction">
           <img
             src="/img/logos/usecases/payments.svg"
             className="icon usecase"

@@ -274,4 +274,4 @@ Try these suggestions to make the most of your experience with the demo app:
   Go one step further and develop other features that make the Accounts Payable process simpler for your customers. For example, you could provide the ability to pay a bill using a credit note or create a new bill from within your application.
 
 - **Further reading**  
-  Explore accounting automation topics in the [Codat Blog](https://www.codat.io/blog/category/accounting-automation/), find out more about [Sync for Payables](/payables/overview) or explore our other [use cases](/usecases/overview).
+  Explore accounting automation topics in the [Codat Blog](https://www.codat.io/blog/), find out more about [Sync for Payables](/payables/overview) or explore our other [use cases](/usecases/overview).

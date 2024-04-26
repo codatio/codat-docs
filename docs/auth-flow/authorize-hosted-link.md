@@ -109,7 +109,7 @@ We recommend using the _Invite company URL_ if both of these criteria apply to y
 - You want to onboard a large number of new companies without needing to specify company names or references, and
 - Your company and your customer do not need to manage, view, or update connections in the future.
 
-To obtain the _Invite company URL_, navigate to the **Companies** page in the [Codat Portal](https://app.codat.io/companies) and click the **Invite company button**. Before sharing the URL, check that you have [customized](/auth-flow/authorize-hosted-link/customize-the-link-flow) the Link flow as desired.
+To obtain the _Invite company URL_, navigate to the **Companies** page in the [Codat Portal](https://app.codat.io/companies) and click the **Invite company button**. Before sharing the URL, check that you have [customized](/auth-flow/customize/customize-link) the Link flow as desired.
 
 ## Customize the Link flow
 
