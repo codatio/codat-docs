@@ -2,20 +2,13 @@ import React from "react";
 import styles from './styles.module.scss';
 
 // Load JS
-const script = document.createElement("script");
-script.type = "module";
-script.src = "https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.esm.js";
-document.head.appendChild(script);
-
-// Load CSS
-const stylesheet = document.createElement("link");
-stylesheet.rel = "stylesheet";
-stylesheet.href = "https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.css";
-document.head.appendChild(stylesheet);
+import script from "https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.esm.js";
+//import "https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.css";
 
 const ZapierEmbed = () => {
   return (
     <div className={styles.zapierWrapper}>
+      <link rel="stylesheet" href="https://cdn.zapier.com/packages/partner-sdk/v0/zapier-elements/zapier-elements.css"/>
       <zapier-zap-templates
         client-id="bqKPWf4ag1p6YV7hAvRLDMBxzKUYJntEONiR3GIZ"
         theme="light"
