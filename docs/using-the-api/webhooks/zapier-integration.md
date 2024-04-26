@@ -3,6 +3,8 @@ title: "Zapier integration (beta)"
 description: "Create your own notification workflows triggered by our webhooks"
 ---
 
+import ZapierEmbed from '@components/global/ZapierEmbed'
+
 ## Overview
 
 The Codat [Zapier](https://zapier.com/apps/Codat/integrations) app exposes all of the [Codat webhooks](/using-the-api/webhooks/event-types) as *triggers*. This means you can start building workflows on top of Codat without writing a line of code.
@@ -70,6 +72,12 @@ Go to [Zapier](https://zapier.com/app/zaps) and follow the steps below to create
 ### Set up the action
 
 Click **Action** to select an event that Zap performs after the workflow starts. While Zapier offers hundreds of actions, we suggest starting with their email or Slack messaging services.
+
+#### Templates
+
+You can use an existing template to save time.
+
+<ZapierEmbed/>
 
 #### Email notification
 
