@@ -42,9 +42,100 @@ The Connection Management SDK is an independent component and doesn't require ou
 
 Once your customer authorizes within your application, use the [Get access token](/platform-api#/operations/get-connection-management-access-token) endpoint to retrieve an access token for this customer's company. 
 
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const accessTokenRes = await platformClient.connectionManagement.getAccessToken({
+    companyId: companyId,
+  });
+
+if(accessTokenRes.statusCode == 200){
+  const accessToken = accessTokenRes.connectionManagementAccessToken.accessToken
+  console.log(accessToken)
+}
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+access_token_req = operations.GetConnectionManagementAccessTokenRequest(
+    company_id=company_id,
+)
+
+access_token_res = platform_client.connection_management.get_access_token(access_token_req)
+
+if access_token_res.connection_management_access_token is not None:
+    print(access_token_res.connection_management_access_token.access_token)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accessTokenRes = await platformClient.ConnectionManagement.GetAccessTokenAsync(new() {
+    CompanyId = companyId,
+};);
+
+if(accessTokenRes.StatusCode != 200){
+  throw new Exception("Could not create company");
+}
+
+var accessToken = accessTokenRes.ConnectionManagementAccessToken.AccessToken;
+Console.WriteLine(accessToken);
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+
+
+ctx := context.Background()
+accessTokenReq, err := platformClient.ConnectionManagement.GetAccessToken(ctx,
+  operations.GetConnectionManagementAccessTokenRequest{
+    CompanyID: companyID,
+	}
+)
+
+if accessTokenReq.StatusCode == 200 {
+  accessToken := accessTokenReq.ConnectionManagementAccessToken.AccessToken
+  fmt.Println("%s", accessToken)
+}
+```
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+GetConnectionManagementAccessTokenRequest accessTokenReq = GetConnectionManagementAccessTokenRequest.builder()
+  .companyId(companyId)
+  .build();
+
+GetConnectionManagementAccessTokenResponse accessTokenRes = platformClient.connectionManagement().getAccessToken()
+  .request(accessTokenReq)
+  .call();
+
+if (accessTokenRes.connectionManagementAccessToken().isPresent()) {
+  accessToken = companyResponse.connectionManagementAccessToken().get().accessToken;
+  System.out.println(accessToken);
+}
+```
+</TabItem>
+
+</Tabs>
+
+
 :::tip Token validity
 The token is only valid for one hour and applies to a single company.
 :::
+
+
 
 Pass the token to the Connection Management component so that we can get the company-specific information and display it in the UI. We summarized this process on the diagram: 
 
