@@ -1054,7 +1054,7 @@
       "get": {
         "summary": "Get access token",
         "operationId": "get-connection-management-access-token",
-        "x-speakeay-name-override": "get-access-token",
+        "x-speakeasy-name-override": "get-access-token",
         "tags": [
           "Connection management"
         ],
@@ -1105,7 +1105,7 @@
       "get": {
         "summary": "Get CORS settings",
         "operationId": "get-connection-management-cors-settings",
-        "x-speakeasy-name-override": "connection-management.cors-settings.get",
+        "x-speakeasy-group": "connection-management.cors-settings",
         "tags": [
           "Connection management"
         ],
@@ -1140,7 +1140,8 @@
       "post": {
         "summary": "Set CORS settings",
         "operationId": "set-connection-management-cors-settings",
-        "x-speakeasy-name-override": "connection-management.cors-settings.set",
+        "x-speakeasy-name-override": "set",
+        "x-speakeasy-group": "connection-management.cors-settings",
         "tags": [
           "Connection management"
         ],
