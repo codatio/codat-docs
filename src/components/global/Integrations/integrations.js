@@ -68,6 +68,7 @@ export const integrationsFilterSupplierEnablement = [
 
 export const integrationsFilterBillPayKit = [
   "Xero",
+  "QuickBooks Online",
 ];
 
 export const bankfeedsIntegrations = [
