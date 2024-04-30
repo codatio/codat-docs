@@ -17,14 +17,12 @@ Give your customers the ability to manage the access permissions they have given
 
 With its sleek UI and low-code deployment, the component provides the following critical functionality:
 
-- Displays accounting, banking, and commerce connections in `Linked` and `Deauthorized` statuses.
+- Displays accounting, banking, and commerce connections in `Linked` and `Unlinked` statuses.
 - Provides the details of first authorization date and most recent sync date.
-- Allows the user to disconnect an active connection, setting it to a `Deauthorized` state and retaining previously fetched data.
+- Allows the user to disconnect an active connection, setting it to a `Unlinked` state and retaining previously fetched data.
 - Enables the user to reauthorize a previously severed connection, setting it back to `Linked` status. 
 
-Connections in an `Unlinked` status are not displayed by the Connection Management component. This is because the `Unlinked` status indicates the delinking was initiated by your application and therefore should not be available to the user to reconnect. 
-
-You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
+Connections in a `Deauthorized` status are not displayed by the Connection Management component. You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
 
 ## Prerequisites
 
@@ -41,6 +39,10 @@ The Connection Management SDK is an independent component and doesn't require ou
 ### Access token
 
 Once your customer authorizes within your application, use the [Get access token](/platform-api#/operations/get-connection-management-access-token) endpoint to retrieve an access token for this customer's company. 
+
+:::tip Token validity
+The token is only valid for one hour and applies to a single company.
+:::
 
 <Tabs>
 
@@ -94,8 +96,6 @@ Console.WriteLine(accessToken);
 <TabItem value="go" label="Go">
 
 ```go
-
-
 ctx := context.Background()
 accessTokenReq, err := platformClient.ConnectionManagement.GetAccessToken(ctx,
   operations.GetConnectionManagementAccessTokenRequest{
@@ -129,13 +129,6 @@ if (accessTokenRes.connectionManagementAccessToken().isPresent()) {
 </TabItem>
 
 </Tabs>
-
-
-:::tip Token validity
-The token is only valid for one hour and applies to a single company.
-:::
-
-
 
 Pass the token to the Connection Management component so that we can get the company-specific information and display it in the UI. We summarized this process on the diagram: 
 
