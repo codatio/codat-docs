@@ -152,11 +152,20 @@ fe ->> fe: Embedded component returns additional context
 ```
 
 ### CORS settings
+
 [Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for the Connection Management component to work. To control the domain list that your application can make token requests from, register the allowed origins using the [Set CORS settings](/platform-api#/operations/set-connection-management-cors-settings) endpoint.
 
 To display the origins you previously registered for your instance, use the [Get CORS settings](/platform-api#/operations/get-connection-management-cors-settings) endpoint. 
 
 ## Get started
+
+:::tip Install the npm package
+
+Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-connections) so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript.
+
+`$ npm i -S @codat/sdk-connections-types`
+
+:::
 
 <Tabs>
 <TabItem value="react" label="React">
@@ -172,57 +181,50 @@ To display the origins you previously registered for your instance, use the [Get
   We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
-  import { useEffect, useRef, useState } from "react";
+  // ConnectionManagement.tsx
 
-  const initialize = (
-    url: string,
-    target: HTMLElement,
-    props: unknown
-  ): Promise<void> => {
-    return import(url).then(
-      ({ CodatConnections }) =>
-        new CodatConnections({
-          target,
-          props,
-        })
-    );
-  };
+  import {
+    DisconnectCallbackArgs,
+    ErrorCallbackArgs,
+  } from "@codat/sdk-connections";
 
-  function App() {
-    const componentMount = useRef<HTMLDivElement>(null);
+  import { CodatConnections } from "./components/CodatConnections";
+  import { useState } from "react";
+
+  export const ConnectionManagement = ({
+    accessToken,
+  }: {
+    accessToken: string;
+  }) => {
     const [modalOpen, setModalOpen] = useState(false);
 
+    const onDisconnect = (connection: DisconnectCallbackArgs) =>
+      alert(`On disconnect callback - ${connection.connectionId}`);
+    const onReconnect = (connection: DisconnectCallbackArgs) =>
+      alert(`On reconnect callback - ${connection.connectionId}`);
     const onClose = () => setModalOpen(false);
-
-    useEffect(() => {
-      const sdkUrl = "https://connections-sdk.codat.io";
-      const target = componentMount.current;
-
-      if (target && target.children.length === 0) {
-        initialize(sdkUrl, target, {
-          accessToken:
-            "YOUR_ACCESS_TOKEN",
-          onReconnect: () => alert("On reconnect callback!!"),
-          onDisconnect: () => alert("On disconnect callback!!"),
-          onError: () => alert("On error callback!!"),
-          onClose,
-        });
-      }
-    }, [componentMount, modalOpen]);
+    const onError = (error: ErrorCallbackArgs) =>
+      alert(`On error callback - ${error.message}`);
 
     return (
-      <div
-        style={{
-          width: "460px",
-          height: "840px",
-          margin: "1rem 0",
-        }}
-        ref={componentMount}
-      ></div>
+      <div>
+        <p>Some content</p>
+        <button onClick={() => setModalOpen(true)}>Manage connections</button>
+        {modalOpen && (
+          <div className="modal-wrapper">
+            <CodatConnections
+              accessToken={accessToken}
+              onDisconnect={onDisconnect}
+              onReconnect={onReconnect}
+              onError={onError}
+              onClose={onClose}
+            />
+          </div>
+        )}
+        ;
+      </div>
     );
-  }
-
-  export default App;
+  };
   ```
    
 3. **If you're using content security policy (CSP) headers:**
@@ -238,22 +240,20 @@ To display the origins you previously registered for your instance, use the [Get
 
 :::note NextJS and urlImports
 
-NextJS is opinionated about the import strategy we're suggesting, and has an experimental feature called [urlImports](https://nextjs.org/docs/app/api-reference/next-config-js/urlImports). If you follow our NextJS example, you'll be warned you need to use the urlImports feature. 
+NextJS is opinionated about the import strategy we're suggesting, and has an experimental feature called [urlImports](https://nextjs.org/docs/app/api-reference/next-config-js/urlImports). Connections SDK and urlImports are not compatible, because NextJS assumes the resources are static and caches the SDK, causing various issues.
 
-Link SDK and urlImports are not compatible, because NextJS assumes the resources are static and caches the SDK, causing various issues.
-
-In the example below, you'll see that we use webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid NextJS's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behavior.
+In the snippet below, you'll see that we use webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid NextJS's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behavior.
 :::
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/components/CodatConnections.tsx" target="_blank">`CodatConnections.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px`. 
+  We recommend setting the component to `width: 460px; height: 840px`. 
   
   We use [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above).
 
 2. **Use the component to mount the SDK** 
 
-  We suggest wrapping the `CodatConnections` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/page.module.css). Your component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/page.tsx), passing the relevant company ID and callbacks.
+  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // page.tsx
@@ -261,52 +261,51 @@ In the example below, you'll see that we use webpack's [magic comments](https://
   "use client";
 
   import {
-    ConnectionCallbackArgs,
+    DisconnectCallbackArgs,
     ErrorCallbackArgs,
-  } from "@codat/sdk-link-types"
+    ReconnectCallbackArgs,
+  } from "@codat/sdk-connections";
+
   import { CodatConnections } from "./components/CodatConnections";
   import Image from "next/image";
   import styles from "./page.module.css";
   import { useState } from "react";
-  
+
   export default function Home() {
-    const [companyId, setCompanyId] = useState(""); //provide company ID
+    const [accessToken, setAccessToken] = useState(""); //provide accessToken
     const [modalOpen, setModalOpen] = useState(false);
 
-    const onConnection = (connection: ConnectionCallbackArgs) => 
-      alert(`On connection callback - ${connection.connectionId}`);
+    const onDisconnect = (connection: DisconnectCallbackArgs) =>
+      alert(`On disconnect callback - ${connection.connectionId}`);
+    const onReconnect = (connection: ReconnectCallbackArgs) =>
+      alert(`On reconnect callback - ${connection.connectionId}`);
     const onClose = () => setModalOpen(false);
-    const onFinish = () => alert("On finish callback");
-    const onError = (error: ErrorCallbackArgs) => 
+    const onError = (error: ErrorCallbackArgs) =>
       alert(`On error callback - ${error.message}`);
-  
+
     return (
       <main className={styles.main}>
-        // ... some other components
+        {/* // ... some other components */}
         {modalOpen && (
           <div className={styles.modalWrapper}>
             <CodatConnections
-              companyId={companyId}
-              onConnection={onConnection}
+              accessToken={accessToken}
+              onDisconnect={onDisconnect}
+              onReconnect={onReconnect}
               onError={onError}
               onClose={onClose}
-              onFinish={onFinish}
             />
           </div>
         )}
       </main>
     );
-  };
+  }
   ```
    
-3. **Conditional steps**
+3. **If you're using content security policy (CSP) headers:**
 
-    - **If you're using TypeScript**, extend your type declarations with our types by installing the types package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type related code in the snippets.
-
-    - **If you're using content security policy (CSP) headers**, edit these headers:
-
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
-       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+    * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+    * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
 
@@ -316,61 +315,60 @@ In the example below, you'll see that we use webpack's [magic comments](https://
 
 1. **Create a target `div` for the `CodatConnections` component** 
 
-  It should have an `id` of `codat-link-container`.
+  It should have an `id` of `codat-connections-container`.
   
   The `CodatConnections` component will be mounted within this div. We recommend setting `width: 460px; height: 840px` for this element and styling it as a modal by nesting it within a modal wrapper (e.g. `position: fixed; inset: 0`).
 
   The created `CodatConnections` component expands to fit 100% of the specified dimensions.
    
-2. **Import the Link SDK component** 
+2. **Import the Connections SDK component** 
 
   If you're using the component inside a `script` tag, the tag must have `type="module"` set. 
 
   ```bash
-   import { CodatConnections } from "https://link-sdk.codat.io";
+  import { CodatConnections } from "https://connections-sdk.codat.io";
   ```
 
 3. **Define callbacks** 
   
   ```js
   const closeCallback = () => {
-   linkSdkTarget.style.pointerEvents = "none";
-   linkSdkTarget.removeChild(linkSdkTarget.children[0]);
+    connectionsSdkTarget.style.pointerEvents = "none";
+    connectionsSdkTarget.removeChild(connectionsSdkTarget.children[0]);
   };
 
   const onClose = () => closeCallback();
-  const onConnection = (connection) =>
-   alert(`On connection callback  = ${connection.connectionId}`);
-  const onFinish = () => alert("On finish callback");
+  const onReconnect = (connection) =>
+    alert(`On reconnect callback  = ${connection.connectionId}`);
+  const onDisconnect = (connection) =>
+    alert(`On disconnect callback  = ${connection.connectionId}`);
   const onError = (error) => alert(`On error callback : ${error.message}`);
   ```
 
 5. **Initialize the Link SDK component in your app** 
 
-  Supply the `companyId` of the company you want to authorize:
+  Supply the `accessToken` for the company you want to manage connections for:
 
  ```js
-  const target = document.querySelector("#codat-link-container");
-  
+  const connectionsSdkTarget = document.querySelector(
+    "#codat-connections-container"
+  );
+
   const openModal = () => {
-   linkSdkTarget.style.pointerEvents = "initial";
-   new CodatConnections({
-     target: linkSdkTarget,
-     props: {
-       companyId,
-       onConnection,
-       onClose,
-       onFinish,
-       onError,
-     },
-   });
+    connectionsSdkTarget.style.pointerEvents = "initial";
+    new CodatConnections({
+      target: connectionsSdkTarget,
+      props: {
+        accessToken,
+        onReconnect,
+        onClose,
+        onDisconnect,
+        onError,
+      },
+    });
   };
  ```
-4. **Conditional steps**  
-
-  - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-
- - **If you're using content security policy (CSP) headers**, edit these headers:
+4. **If you're using content security policy (CSP) headers**:
     * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
     * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
@@ -382,63 +380,58 @@ In the example below, you'll see that we use webpack's [magic comments](https://
 
 :::note Angular and urlImports
 
-In the example below, we use webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid Angular's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behavior.
+In the snippet below, we use webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid Angular's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behavior.
 :::
 
 1. **Create a component that mounts the SDK** 
 
-  See the <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/angular/src/app/codat-link/" target="_blank">`codat-link folder`</a> for an example module.
-
-2. **Define company ID and callbacks** 
+2. **Define access token and callbacks** 
 
 ```js
-//app.component.ts
+  //app.component.ts
 
-  companyId = '';//provide company ID
-  linkOpen = false;
+  accessToken = ''; // provide access token
+  connectionsSdkOpen = false;
 
-  openLink() {
-    if (this.companyId) {
-      this.linkOpen = true;
+  openConnectionsSdk() {
+    if (this.accessToken) {
+      this.connectionsSdkOpen = true;
     }
   }
 
-  closeLink() {
-    this.linkOpen = false;
+  closeConnectionsSdk() {
+    this.connectionsSdkOpen = false;
   }
 
-  onConnection(connection: ConnectionCallbackArgs) {
-    alert(`On connection callback : ${connection.connectionId}`);
+  onDisconnect(connection) {
+    alert(`On disconnect callback : ${connection.connectionId}`);
   }
 
-  onError(error: ErrorCallbackArgs) {
+  onReconnect(connection) {
+    alert(`On reconnect callback : ${connection.connectionId}`);
+  }
+
+  onError(error) {
     alert(`On error callback : ${error.message}`);
   }
-
-  onFinish() {
-    alert('On finish callback');
-  }
-
 ```
 
 3. **Use the component to mount the SDK**
 
 ```html
-<!-- app.component.html -->
+  <!-- app.component.html -->
 
-<button (click)="openLink()">Start authing</button>
-  <app-codat-link
-    [companyId]="companyId"
-    (connection)="onConnection($event)"
-    (close)="closeLink()"
-    (error)="onError($event)"
-    (finish)="onFinish()"
-    *ngIf="linkOpen"
-  ></app-codat-link>
+  <button (click)="openConnectionsSdk()">Manage connections</button>
+    <app-codat-connections
+      [accessToken]="accessToken"
+      (connection)="onDisconnect($event)"
+      (connection)="onReconnect($event)"
+      (close)="closeConnectionsSdk()"
+      (error)="onError($event)"
+      *ngIf="connectionsSdkOpen"
+    ></app-codat-connections>
 ```
-4. **Conditional steps**
-   - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-   -  **If you're using content security policy (CSP) headers**, edit these headers:
+4. **If you're using content security policy (CSP) headers**:
       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
@@ -450,11 +443,11 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/components/CodatConnections.vue" target="_blank">`CodatConnections.vue`</a> file to an appropriate location in your app. We recommend setting `width: 460px; height: 840px` for this component.
+ We recommend setting `width: 460px; height: 840px` for this component.
 
 2. **Use this component to mount the SDK** 
 
-  We suggest wrapping the `CodatConnections` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/App.vue). The component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/App.vue), passing the relevant company ID and callbacks.
+  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // App.vue
@@ -462,34 +455,32 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
   <script setup lang="ts">
     import CodatConnections from './components/CodatConnections.vue'
     import { ref } from 'vue'
-    import type { ConnectionCallbackArgs, ErrorCallbackArgs } from 'https://link-sdk.codat.io'  
+    import type { DisconnectCallbackArgs, ReconnectCallbackArgs, ErrorCallbackArgs } from 'https://connections-sdk.codat.io'  
 
-    const companyId = ref('') //provide company ID
+    const accessToken = ref('') //provide access token
     const modalOpen = ref(false) 
 
-    const onConnection = (connection: ConnectionCallbackArgs) =>
-      alert(`On connection callback - ${connection.connectionId}`);
+    const onDisconnect = (connection: DisconnectCallbackArgs) =>
+      alert(`On disconnect callback - ${connection.connectionId}`);
+    const onReconnect = (connection: ReconnectCallbackArgs) =>
+      alert(`On reconnect callback - ${connection.connectionId}`);
     const onClose = () => (modalOpen = false);
-    const onFinish = () => alert("On finish callback");
     const onError = (error: ErrorCallbackArgs) =>
       alert(`On error callback - ${error.message}`);
-
   </script>
 
   <div class="app">
     <main>
         {#if modalOpen}
         <div class="modal-wrapper">
-          <CodatConnections {companyId} {onConnection} {onClose} {onError} {onFinish} />
+          <CodatConnections {accessToken} {onDisconnect} {onReconnect} {onClose} {onError} />
         </div>
       {/if}
     </main>
   </div>
   ```
    
-4. **Conditional steps**
-    - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-    - **If you're using content security policy (CSP) headers**, edit these headers:
+4. **If you're using content security policy (CSP) headers**:
        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
@@ -501,10 +492,11 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/lib/CodatConnections.svelte" target="_blank">`CodatConnections.svelte`</a> file to an appropriate location in your Svelte app. We recommend setting `width: 460px; height: 840px` for this component.
+  We recommend setting `width: 460px; height: 840px` for this component.
+
 2. **Use the component to mount the SDK**  
 
-  We suggest wrapping the `CodatConnections` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte). The component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte), passing the relevant company ID and callbacks.
+  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // App.svelte
@@ -512,27 +504,36 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
   <script lang="ts">
     import CodatConnections from "./lib/CodatConnections.svelte";
     import type {
-      ConnectionCallbackArgs,
+      DisconnectCallbackArgs,
+      ReconnectCallbackArgs,
       ErrorCallbackArgs,
-    } from "https://link-sdk.codat.io";
+    } from "https://connections-sdk.codat.io";
 
     let modalOpen = false;
-    let companyId = "" //provide company ID
+    let accessToken = ""; //provide access token
 
-    const onConnection = (connection: ConnectionCallbackArgs) =>
-      alert(`On connection callback - ${connection.connectionId}`);
+    const onDisconnect = (connection: DisconnectCallbackArgs) =>
+      alert(`On disconnect callback - ${connection.connectionId}`);
+    const onReconnect = (connection: ReconnectCallbackArgs) =>
+      alert(`On disconnect callback - ${connection.connectionId}`);
     const onClose = () => (modalOpen = false);
-    const onFinish = () => alert("On finish callback");
     const onError = (error: ErrorCallbackArgs) =>
       alert(`On error callback - ${error.message}`);
-
   </script>
+
+  // App.svelte
 
   <div class="app">
     <main>
-        {#if modalOpen}
+      {#if modalOpen}
         <div class="modal-wrapper">
-          <CodatConnections {companyId} {onConnection} {onClose} {onError} {onFinish} />
+          <CodatConnections
+            {accessToken}
+            {onDisconnect}
+            {onReconnect}
+            {onClose}
+            {onError}
+          />
         </div>
       {/if}
     </main>
@@ -540,9 +541,7 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
 
   ```
    
-4. **Conditional steps**
-    - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-    - **If you're using content security policy (CSP) headers**, edit these headers:
+4. **If you're using content security policy (CSP) headers**:
        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
