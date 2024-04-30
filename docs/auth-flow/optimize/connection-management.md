@@ -594,7 +594,7 @@ As with all Codat products, this SDK is subject to [our change management policy
 
 #### April 2024
 
-
+- Initial release of the SDK.
 
 ---
 
