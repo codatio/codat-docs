@@ -1058,7 +1058,7 @@
         "tags": [
           "Connection management"
         ],
-        "description": "﻿Use the *Get access token* endpoint to retrieve a new access token for use by the [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management).\n\nThe embedded [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
+        "description": "﻿Use the *Get access token* endpoint to retrieve a new access token for use by the [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management). The token is only valid for one hour and applies to a single company.\n\nThe embedded [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
         "responses": {
           "200": {
             "description": "Success",
