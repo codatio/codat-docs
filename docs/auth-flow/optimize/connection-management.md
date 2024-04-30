@@ -387,7 +387,7 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
 
 2. **Define access token and callbacks** 
 
-```js
+  ```js
   //app.component.ts
 
   accessToken = ''; // provide access token
@@ -414,11 +414,11 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
   onError(error) {
     alert(`On error callback : ${error.message}`);
   }
-```
+  ```
 
 3. **Use the component to mount the SDK**
 
-```html
+  ```html
   <!-- app.component.html -->
 
   <button (click)="openConnectionsSdk()">Manage connections</button>
@@ -430,7 +430,8 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
       (error)="onError($event)"
       *ngIf="connectionsSdkOpen"
     ></app-codat-connections>
-```
+  ```
+  
 4. **If you're using content security policy (CSP) headers**:
       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
