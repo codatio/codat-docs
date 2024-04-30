@@ -163,7 +163,7 @@ To display the origins you previously registered for your instance, use the [Get
 
 Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-connections) so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript.
 
-`$ npm i -S @codat/sdk-connections-types`
+`$ npm i -S @codat/sdk-connections`
 
 :::
 
@@ -178,7 +178,7 @@ Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-con
 
 2. **Use the component to mount the SDK** 
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. It can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // ConnectionManagement.tsx
@@ -431,7 +431,7 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
       *ngIf="connectionsSdkOpen"
     ></app-codat-connections>
   ```
-  
+
 4. **If you're using content security policy (CSP) headers**:
       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
@@ -583,7 +583,7 @@ Use the `text` property to control some of the text displayed within the Connect
 
 | Option                                  |Type and description                                                                                                                                                                                                                                                                                                              |
 |-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `accounting.connectionDetails.dataTypes`<br/>`banking.connectionDetails.dataTypes`<br/>`commerce.connectionDetails.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed before reconnecting an accounting, banking or commerce platform. <br/><br/> If this is not set, the UI will not display a list of data types when reconnecting.|
+| `accounting.connectionDetails.dataTypes`<br/>`banking.connectionDetails.dataTypes`<br/>`commerce.connectionDetails.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed before disconnecting or reconnecting an accounting, banking or commerce platform. <br/><br/> If this is not set, the UI will not display a list of data types when disconnecting or reconnecting.|
 
 ## Changelog
 
