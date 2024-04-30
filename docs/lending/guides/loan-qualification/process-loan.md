@@ -34,7 +34,7 @@ This diagram shows the steps of the loan qualification process as performed by t
 You can also review the detailed technical [diagram](https://github.com/codatio/demo-loan-qualification#implementing-the-solution) of the flow that the demo app follows.
 :::  
 
-### <input type="checkbox" unchecked /> Start a new loan application  
+### Start a new loan application  
 
 🙏🏽 This step is normally performed by the borrower.
 
@@ -56,7 +56,7 @@ Codat returns the company and application `id`s in the endpoint response togethe
   }
 ```
 
-### <input type="checkbox" unchecked /> Provide application details  
+### Provide application details  
 
 🙏🏽 This step is normally performed by the borrower.
 
@@ -73,7 +73,7 @@ Once you receive the application id, complete the application form using the `/a
   }
 ```
 
-### <input type="checkbox" unchecked /> Share financial data  
+### Share financial data  
 
 🙏🏽 This step is normally performed by the borrower.
 
@@ -86,7 +86,7 @@ Select the **Codat Sandbox** as the source of accounting data.
 
 ![](/img/use-cases/loan-qualification/sandbox-credentials-modal.png)
 
-### <input type="checkbox" unchecked /> Check categorized accounts 
+### Check categorized accounts 
 
 💰 This step is normally performed by the lender.
 
@@ -100,7 +100,7 @@ This takes you to the **Account categorization** page which displays the categor
 
 ![Example account re-categorization](/img/use-cases/loan-qualification/account-categorization-recategorization.png)
 
-### <input type="checkbox" unchecked /> Make the decision on the loan 
+### Make the decision on the loan 
 
 🙏🏽💰 The decisioning is normally performed by the lender, but the borrower is able to query an application's status at any point.
 

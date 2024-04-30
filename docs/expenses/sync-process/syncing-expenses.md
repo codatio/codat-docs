@@ -193,7 +193,7 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/tran
 
 ## Monitor sync health
 
-Use the Sync for Expenses product menu in the [Codat Portal](https://app.codat.io/) to navigate to [Sync Health](/products/sync-for-expenses) and monitor the status of your syncs, review detailed logs and error messages, and view and retry pushing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
+Use the Sync for Expenses product menu in the [Codat Portal](https://app.codat.io/) to navigate to [Sync Health](https://app.codat.io/products/sync-for-expenses) and monitor the status of your syncs, review detailed logs and error messages, and view and retry pushing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
 
 <img
   src="/img/sync-for-commerce/0006-sync-health-ui.png"

@@ -9,7 +9,7 @@ In Codat's API a [Bill](/accounting-api#/schemas/Bill) represents an invoice fro
 
 ### Managing suppliers
 
-In the accounting API a [supplier](accounting-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
+In the accounting API a [supplier](/accounting-api#/schemas/Supplier) represents a business or sole trader that provides goods or services to a company.
 
 Suppliers are relevant for the bill pay use case as each bill is associated to a supplier - suppliers also have important information such as addresses and contact details which could be used to notify a supplier once a payment is made.
 

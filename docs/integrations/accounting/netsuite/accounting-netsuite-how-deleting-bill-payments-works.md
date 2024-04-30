@@ -25,8 +25,6 @@ If you specify a `billPaymentId` that corresponds to a Deposit in NetSuite, only
 
 :::info Support for object deletion
 
-To check which data types and platforms support object deletion, call the [List integrations](/platform-api#/operations/list-integrations) endpoint. 
-
-We're increasing support for object deletion across various accounting platforms and data types. You can check our [Accounting API Public Product Roadmap](https://portal.productboard.com/codat/7-public-product-roadmap/tabs/46-accounting-api) for the latest status.
+To check which data types and platforms support object deletion, call the [List integrations](/platform-api#/operations/list-integrations) endpoint. We're increasing support for object deletion across various accounting platforms and data types. 
 
 :::

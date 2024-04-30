@@ -63,12 +63,6 @@ module.exports = {
       position: "left",
       items: [
         {
-          href: "https://github.com/orgs/codatio/discussions",
-          label: "Forum",
-          target: "_blank",
-          rel: null,
-        },
-        {
           href: "https://github.com/codatio",
           label: "GitHub",
           target: "_blank",
@@ -105,7 +99,7 @@ module.exports = {
           rel: null,
         },
         {
-          href: "https://github.com/codatio/codat-docs/issues/new",
+          href: "https://github.com/codatio/codat-docs/issues/new?assignees=&labels=&projects=&template=issue-with-codat-docs.md&title=",
           label: "Issue with the docs?",
           target: "_blank",
           rel: null,

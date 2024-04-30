@@ -13,7 +13,7 @@
     "title": "Platform API",
     "version": "3.0.0",
     "summary": "Platform API",
-    "description": "An API for the common components of all of Codat's products.\n\nThese end points cover creating and managing your companies, data connections, and integrations.\n\n[Read about the building blocks of Codat...](https://docs.codat.io/core-concepts/companies)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "An API for the common components of all of Codat's products.\n\nThese end points cover creating and managing your companies, data connections, and integrations.\n\n[Read about the building blocks of Codat...](https://docs.codat.io/core-concepts/companies) | [See our OpenAPI spec](https://github.com/codatio/oas) \n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Connection management | Configure connection management UI and retrieve access tokens for authentication. |\n| Groups | Define and manage sets of companies based on a chosen characteristic. |\n| Webhooks | Create and manage webhooks that listen to Codat's events. |\n| Integrations | Get a list of integrations supported by Codat and their logos. |\n| Refresh data | Initiate data refreshes, view pull status and history. |\n| Settings | Manage company profile configuration, sync settings, and API keys. |\n| Push data | Initiate and monitor Create, Update, and Delete operations. |\n| Supplemental data | Configure and pull additional data you can include in Codat's standard data types. |\n| Custom data type | Configure and pull additional data types that are not included in Codat's standardized data model. |\n<!-- End Codat Tags Table -->",
     "contact": {
       "name": "Codat",
       "email": "support@codat.io"
@@ -108,43 +108,47 @@
   "tags": [
     {
       "name": "Companies",
-      "description": "Create and manage your Codat companies."
+      "description": "Create and manage your SMB users' companies."
     },
     {
       "name": "Connections",
-      "description": "Manage your companies' data connections."
+      "description": "Create new and manage existing data connections for a company."
+    },
+    {
+      "name": "Connection management",
+      "description": "Configure connection management UI and retrieve access tokens for authentication."
     },
     {
       "name": "Groups",
-      "description": "Create groups and link them to your Codat companies."
+      "description": "Define and manage sets of companies based on a chosen characteristic."
     },
     {
       "name": "Webhooks",
-      "description": "Manage webhooks, rules, and events."
+      "description": "Create and manage webhooks that listen to Codat's events."
     },
     {
       "name": "Integrations",
-      "description": "View and manage your available integrations in Codat."
+      "description": "Get a list of integrations supported by Codat and their logos."
     },
     {
       "name": "Refresh data",
-      "description": "Asynchronously retrieve data from an integration to refresh data in Codat."
+      "description": "Initiate data refreshes, view pull status and history."
     },
     {
       "name": "Settings",
-      "description": "Manage your Codat instance."
+      "description": "Manage company profile configuration, sync settings, and API keys."
     },
     {
       "name": "Push data",
-      "description": "View push options and get push statuses."
+      "description": "Initiate and monitor Create, Update, and Delete operations."
     },
     {
       "name": "Supplemental data",
-      "description": "View and configure supplemental data for supported data types."
+      "description": "Configure and pull additional data you can include in Codat's standard data types."
     },
     {
       "name": "Custom data type",
-      "description": "View and configure custom data types for supported integrations."
+      "description": "Configure and pull additional data types that are not included in Codat's standardized data model."
     }
   ],
   "paths": {
@@ -1041,6 +1045,149 @@
         }
       }
     },
+    "/companies/{companyId}/connectionManagement/accessToken": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "get": {
+        "summary": "Get access token",
+        "operationId": "get-connection-management-access-token",
+        "x-speakeasy-name-override": "get-access-token",
+        "tags": [
+          "Connection management"
+        ],
+        "description": "﻿Use the *Get access token* endpoint to retrieve a new access token for use by the [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management). The token is only valid for one hour and applies to a single company.\n\nThe embedded [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectionManagementAccessToken"
+                },
+                "examples": {
+                  "Access token": {
+                    "value": {
+                      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/connectionManagement/corsSettings": {
+      "get": {
+        "summary": "Get CORS settings",
+        "operationId": "get-connection-management-cors-settings",
+        "x-speakeasy-group": "connection-management.cors-settings",
+        "tags": [
+          "Connection management"
+        ],
+        "description": "﻿The *Get CORS settings* endpoint returns the allowed origins (i.e. your domains) you want to allow cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)) with Codat. \n\nEnabling CORS with Codat is required by our embedded [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management) to access Codat's API endpoints.\n\nThe embedded [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConnectionManagementAllowedOrigins"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "post": {
+        "summary": "Set CORS settings",
+        "operationId": "set-connection-management-cors-settings",
+        "x-speakeasy-name-override": "set",
+        "x-speakeasy-group": "connection-management.cors-settings",
+        "tags": [
+          "Connection management"
+        ],
+        "description": "﻿The *Set CORS settings* endpoint allows you to register allowed origins (i.e. your domains) for use in cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).\n \nEnabling CORS with Codat is required by our embedded [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management) to access Codat's API endpoints. \n\nThe embedded [connection management UI](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionManagementAllowedOrigins"
+              },
+              "examples": {
+                "Allowed origins": {
+                  "$ref": "#/components/examples/connectionManagementAllowedOriginsResponse"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConnectionManagementAllowedOrigins"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/data/all": {
       "parameters": [
         {
@@ -1170,17 +1317,304 @@
                 "examples": {
                   "Example": {
                     "value": {
-                      "invoices": {
-                        "dataType": "invoices",
+                      "accountTransactions": {
+                        "dataType": "accountTransactions",
                         "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
-                        "currentStatus": "success",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "balanceSheet": {
+                        "dataType": "balanceSheet",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "bankAccounts": {
+                        "dataType": "bankAccounts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "bankTransactions": {
+                        "dataType": "bankTransactions",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "billCreditNotes": {
+                        "dataType": "billCreditNotes",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "billPayments": {
+                        "dataType": "billPayments",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
                         "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
                         "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
                       },
                       "bills": {
                         "dataType": "bills",
                         "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
-                        "currentStatus": "failure",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "cashFlowStatement": {
+                        "dataType": "cashFlowStatement",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "chartOfAccounts": {
+                        "dataType": "chartOfAccounts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "company": {
+                        "dataType": "company",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "creditNotes": {
+                        "dataType": "creditNotes",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "customers": {
+                        "dataType": "customers",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "directCosts": {
+                        "dataType": "directCosts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "directIncomes": {
+                        "dataType": "directIncomes",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "invoices": {
+                        "dataType": "invoices",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "itemReceipts": {
+                        "dataType": "itemReceipts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "items": {
+                        "dataType": "items",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "journalEntries": {
+                        "dataType": "journalEntries",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "journals": {
+                        "dataType": "journals",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "paymentMethods": {
+                        "dataType": "paymentMethods",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "payments": {
+                        "dataType": "payments",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "profitAndLoss": {
+                        "dataType": "profitAndLoss",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "purchaseOrders": {
+                        "dataType": "purchaseOrders",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "salesOrders": {
+                        "dataType": "salesOrders",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "suppliers": {
+                        "dataType": "suppliers",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "taxRates": {
+                        "dataType": "taxRates",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "trackingCategories": {
+                        "dataType": "trackingCategories",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "transfers": {
+                        "dataType": "transfers",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "banking-accountBalances": {
+                        "dataType": "banking-accountBalances",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "banking-accounts": {
+                        "dataType": "banking-accounts",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "banking-transactionCategories": {
+                        "dataType": "banking-transactionCategories",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "banking-transactions": {
+                        "dataType": "banking-transactions",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-companyInfo": {
+                        "dataType": "commerce-companyInfo",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-customers": {
+                        "dataType": "commerce-customers",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-disputes": {
+                        "dataType": "commerce-disputes",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-locations": {
+                        "dataType": "commerce-locations",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-orders": {
+                        "dataType": "commerce-orders",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-paymentMethods": {
+                        "dataType": "commerce-paymentMethods",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-payments": {
+                        "dataType": "commerce-payments",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-productCategories": {
+                        "dataType": "commerce-productCategories",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-products": {
+                        "dataType": "commerce-products",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-taxComponents": {
+                        "dataType": "commerce-taxComponents",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
+                        "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
+                        "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
+                      },
+                      "commerce-transactions": {
+                        "dataType": "commerce-transactions",
+                        "lastSuccessfulSync": "2022-01-01T00:00:00.000Z",
+                        "currentStatus": "Complete",
                         "latestSyncId": "d03b6979-eb3b-447a-a27a-13cf457a9f48",
                         "latestSuccessfulSyncId": "6883bba8-514d-423f-ba7f-c38285a80b7f"
                       }
@@ -4334,6 +4768,38 @@
           "sourceType": "Banking"
         }
       },
+      "ConnectionManagementAccessToken": {
+        "title": "Access token",
+        "type": "object",
+        "properties": {
+          "accessToken": {
+            "type": "string",
+            "nullable": false,
+            "description": "Access token that allows SMBs to manage connections that have access to their data.",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+          }
+        }
+      },
+      "ConnectionManagementAllowedOrigins": {
+        "title": "Allowed origins",
+        "type": "object",
+        "properties": {
+          "allowedOrigins": {
+            "type": "array",
+            "description": "An array of allowed origins (i.e. your domains) to permit cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).n resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).",
+            "items": {
+              "type": "string",
+              "format": "uri",
+              "description": "A domain you want to allow CORS with Codat."
+            }
+          }
+        },
+        "example": {
+          "allowedOrigins": [
+            "https://www.bank-of-dave.com"
+          ]
+        }
+      },
       "Connections": {
         "title": "Connections",
         "x-internal": true,
@@ -4750,8 +5216,7 @@
             "$ref": "#/components/schemas/DateTime"
           },
           "currentStatus": {
-            "type": "string",
-            "description": "The current status of the dataset in Codat's cache."
+            "$ref": "#/components/schemas/PullOperation/properties/status"
           },
           "latestSyncId": {
             "type": "string",
@@ -4780,8 +5245,179 @@
         "title": "Data statuses",
         "x-internal": true,
         "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/DataStatus"
+        "properties": {
+          "accountTransactions": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "balanceSheet": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "bankAccounts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "bankTransactions": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "billCreditNotes": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "billPayments": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "bills": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "cashFlowStatement": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "chartOfAccounts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "company": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "creditNotes": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "customers": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "directCosts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "directIncomes": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "invoices": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "itemReceipts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "items": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "journalEntries": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "journals": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "paymentMethods": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "payments": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "profitAndLoss": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "purchaseOrders": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "salesOrders": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "suppliers": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "taxRates": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "trackingCategories": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "transfers": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "banking-accountBalances": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "banking-accounts": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "banking-transactionCategories": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "banking-transactions": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-companyInfo": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-customers": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-disputes": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-locations": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-orders": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-paymentMethods": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-payments": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-productCategories": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-products": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-taxComponents": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          },
+          "commerce-transactions": {
+            "$ref": "#/components/schemas/DataStatus",
+            "nullable": true
+          }
         }
       },
       "DataSyncCompletedWebhook": {
@@ -5460,8 +6096,9 @@
             "description": "The data type you are requesting in a pull operation."
           },
           "status": {
+            "title": "Dataset status",
             "type": "string",
-            "description": "The current status of the pull operation.",
+            "description": "The current status of the dataset.",
             "enum": [
               "Initial",
               "Queued",
@@ -5480,14 +6117,11 @@
               "ValidationError",
               "AuthError",
               "Cancelled",
-              "Routing",
-              "RoutingError",
               "NotSupported",
               "RateLimitError",
               "PermissionsError",
               "PrerequisiteNotMet"
-            ],
-            "example": "Complete"
+            ]
           },
           "statusDescription": {
             "type": "string",
@@ -6436,6 +7070,21 @@
           }
         }
       },
+      "ConnectionManagementAllowedOrigins": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ConnectionManagementAllowedOrigins"
+            },
+            "examples": {
+              "Allowed origins": {
+                "$ref": "#/components/examples/connectionManagementAllowedOriginsResponse"
+              }
+            }
+          }
+        }
+      },
       "Malformed-Query": {
         "description": "Your `query` parameter was not correctly formed",
         "content": {
@@ -6798,6 +7447,15 @@
           "$ref": "#/components/schemas/WebhookConsumer/properties/id"
         },
         "description": "Unique identifier for the webhook consumer."
+      }
+    },
+    "examples": {
+      "connectionManagementAllowedOriginsResponse": {
+        "value": {
+          "allowedOrigins": [
+            "https://www.bank-of-dave.com"
+          ]
+        }
       }
     },
     "securitySchemes": {

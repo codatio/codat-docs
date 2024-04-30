@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Codat IDX API",
-    "description": "﻿## Headers\nAPI calls by Intuit to Codat’s API must include the following 2 headers:\n1. An Authorization header: `Authorization: Basic BASE64({username}:{password})`\n\nThe username & password are generated from the company linking process, and then converted into BASE64. This then used for the Authorization header using the above set-up.\n\n2. A partner identification header, specific to each client: `X-Partner-Key: BASE64({Key})`\n\nThis is the client ID converted into BASE64, directly put into the X-Partner-Key header.",
+    "description": "﻿## Headers\nAPI calls by Intuit to Codat’s API must include the following 2 headers:\n1. An Authorization header: `Authorization: Basic BASE64({username}:{password})`\n\nThe username & password are generated from the company linking process, and then converted into BASE64. This then used for the Authorization header using the above set-up.\n\n2. A partner identification header, specific to each client: `X-Partner-Key: BASE64({Key})`\n\nThis is the client ID converted into BASE64, directly put into the X-Partner-Key header.\n\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Idx | Endpoints to manage Intuit data and products with Codat. |\n<!-- End Codat Tags Table -->",
     "version": "3.0.0",
     "summary": "Codat IDX API",
     "contact": {

@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Files API",
-    "description": "> ### New to Codat?\n>\n> Our Accounting API reference is relevant only to our existing clients.\n> Please reach out to your Codat contact so that we can find the right product for you.\n\nA flexible API for pulling accounting data, normalized and aggregated from 20 accounting integrations.\n\nStandardize how you connect to your customers’ accounting software. View, create, update, and delete data in the same way for all the leading accounting platforms.\n\n[Read more...](https://docs.codat.io/accounting-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "> ### New to Codat?\n>\n> Our Files API reference is relevant only to our existing clients.\n> Please reach out to your Codat contact so that we can find the right product for you.\n\nAn API for uploading and downloading files from 'File Upload' Integrations.\n\nThe Accounting file upload, Banking file upload, and Business documents file upload integrations provide simple file upload functionality.\n\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Files | Endpoints to manage uploaded files. |\n<!-- End Codat Tags Table -->\n[Read more...](https://docs.codat.io/other/file-upload)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",

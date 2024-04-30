@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Bill pay kit",
-    "description": "The API reference for the Bill Pay kit. \n\nThe bill pay kit is an API and a set of supporting tools designed to integrate a bill pay flow into your app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.\n\n[Explore product](https://docs.codat.io/payables/bill-pay-kit) | [See OpenAPI spec](https://github.com/codatio/oas)\n",
+    "description": "The API reference for the Bill Pay kit. \n\nThe bill pay kit is an API and a set of supporting tools designed to integrate a bill pay flow into your app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.\n\n[Explore product](https://docs.codat.io/payables/bill-pay-kit) | [See OpenAPI spec](https://github.com/codatio/oas)\n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Company information | View company profile from the source platform. |\n| Bills | Get, create, and update Bills. |\n| Bill payments | Get, create, and update Bill payments. |\n| Suppliers | Get, create, and update Suppliers. |\n| Bank accounts | Create a bank account for a given company's connection. |\n<!-- End Codat Tags Table -->",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -104,11 +104,11 @@
   "tags": [
     {
       "name": "Companies",
-      "description": "Create and manage your Codat companies."
+      "description": "Create and manage your SMB users' companies."
     },
     {
       "name": "Connections",
-      "description": "Manage your companies' data connections."
+      "description": "Create new and manage existing data connections for a company."
     },
     {
       "name": "Company information",
@@ -116,19 +116,19 @@
     },
     {
       "name": "Bills",
-      "description": "Bills"
+      "description": "Get, create, and update Bills."
     },
     {
       "name": "Bill payments",
-      "description": "Bill payments"
+      "description": "Get, create, and update Bill payments."
     },
     {
       "name": "Suppliers",
-      "description": "Suppliers"
+      "description": "Get, create, and update Suppliers."
     },
     {
       "name": "Bank accounts",
-      "description": "Bank accounts"
+      "description": "Create a bank account for a given company's connection."
     }
   ],
   "paths": {
@@ -3472,8 +3472,7 @@
             "$ref": "#/components/schemas/Company/properties/created"
           },
           "currentStatus": {
-            "type": "string",
-            "description": "The current status of the dataset in Codat's cache."
+            "$ref": "#/components/schemas/PullOperation/properties/status"
           },
           "latestSyncId": {
             "type": "string",
@@ -3789,8 +3788,9 @@
             "description": "The data type you are requesting in a pull operation."
           },
           "status": {
+            "title": "Dataset status",
             "type": "string",
-            "description": "The current status of the pull operation.",
+            "description": "The current status of the dataset.",
             "enum": [
               "Initial",
               "Queued",
@@ -3809,14 +3809,11 @@
               "ValidationError",
               "AuthError",
               "Cancelled",
-              "Routing",
-              "RoutingError",
               "NotSupported",
               "RateLimitError",
               "PermissionsError",
               "PrerequisiteNotMet"
-            ],
-            "example": "Complete"
+            ]
           },
           "statusDescription": {
             "type": "string",
