@@ -12,7 +12,7 @@ Here is how they compare to each other:
 | :-                      | :--             | :--            |
 | Product access          | All products   | All products        |
 | Seats                   | Unlimited      | Unlimited        |
-| Usage                   | 50 companies<br/>5 connections/source | Unlimited        |
+| Usage                   | 10 companies<br/>5 connections/source | Unlimited        |
 | Hourly syncs            | ➖             | ✅              |
 | On-premise connectors   | ➖             | ☑️ Add-on             |
 | ERP integrations        | ➖             | ☑️ Add-on             |
@@ -40,7 +40,7 @@ You can use Codat for free for 30 days.
 Once signed up, you can:
 
 - Experience most of Codat's products and integrations.
-- Create up to 50 companies to test live integrations.
+- Create up to 10 companies to test live integrations.
 - Create unlimited connections to our realistic Sandbox data.
 - Create up to five connections at a time to each of our accounting, commerce, and banking integrations.
 - Schedule data syncs to refresh data daily, weekly, or monthly (but not hourly).
