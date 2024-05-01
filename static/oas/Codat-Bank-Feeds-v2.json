@@ -3458,7 +3458,7 @@
         }
       }
     },
-    "/companies/{companyId}/connection/{connectionId}/bankFeeds/info": {
+    "/companies/{companyId}/connections/{connectionId}/bankFeeds/info": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
