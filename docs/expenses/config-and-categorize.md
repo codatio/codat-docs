@@ -20,13 +20,16 @@ You also need to provide your customer with an opportunity (via your application
 Your customers should be able set a bank account, customer, and supplier for each [expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) to allow for a more accurate representation of who or where the spend should be associated with in the accounting platform. 
 
 ``` http title="Bank account override on the expense transaction"
-      "bankAccountRef":{
-          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+"bankAccountRef":{
+  "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+}
 ```
+
 ``` http title="Supplier / customer override on the expense transaction"
-     "contactRef":{
-          "id":"08ca1f02-0374-11ed-b939-0242ac120002",
-          "type": "Supplier"
+"contactRef":{
+  "id":"08ca1f02-0374-11ed-b939-0242ac120002",
+  "type": "Supplier"
+}
 ```
 
 If your customer doesn't provide these values on the transaction itself, Sync for Expenses will use default values you configure for the company as a fallback.
