@@ -975,7 +975,7 @@
         }
       }
     },
-    "/companies/{companyId}/connection/{connectionId}/payables/info": {
+    "/companies/{companyId}/connections/{connectionId}/payables/info": {
       "parameters": [
         {
           "$ref": "#/components/parameters/companyId"
@@ -999,7 +999,14 @@
                 "schema": {
                   "$ref": "#/components/schemas/CompanyInformation"
                 },
-                "examples": {}
+                "examples": {
+                  "Company information": {
+                    "value": {
+                      "companyName": "Bank of Dave",
+                      "baseCurrency": "GBP"
+                    }
+                  }
+                }
               }
             }
           },
@@ -3195,24 +3202,20 @@
       },
       "CompanyInformation": {
         "title": "Company information",
-        "description": "Gets the latest basic info for a company.",
         "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": null,
-            "companyName": {
-              "type": "string",
-              "nullable": true,
-              "description": "Name of the linked company."
-            },
-            "baseCurrency": {
-              "type": "string",
-              "nullable": true,
-              "description": "Currency set in the accounting platform of the linked company. Used by the currency rate."
-            }
+        "description": "Gets the latest basic info for a company.",
+        "properties": {
+          "companyName": {
+            "type": "string",
+            "nullable": true,
+            "description": "Name of the linked company."
+          },
+          "baseCurrency": {
+            "type": "string",
+            "nullable": true,
+            "description": "Currency set in the accounting platform of the linked company. Used by the currency rate."
           }
-        ]
+        }
       },
       "CompanyRequestBody": {
         "title": "Create company request",
