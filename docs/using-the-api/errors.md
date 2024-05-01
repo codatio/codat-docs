@@ -28,9 +28,9 @@ The following page describes the status codes and standard error responses used 
 
 When an API request causes an account limit to be exceeded, you'll receive a 402 response code. The response body indicates which account limit was exceeded.
 
-### 50-company limit
+### Company limit
 
-Error response from [POST /companies](/platform-api#/operations/create-company) when you have exceeded the 50-company limit that applies to the Free trial.
+Error response from [POST /companies](/platform-api#/operations/create-company) when you have exceeded the company limit that applies to the Free trial (10 companies) or test accounts (50 companies).
 
 For example:
 
@@ -52,9 +52,9 @@ For example:
 }
 }
 ```
-### 365 day free account limit
+### 30 day free account limit
 
-Error response when your account has expired and you make a request to any endpoint. This error is returned if your Free account is older than 365 days and has expired.
+Error response when your account has expired and you make a request to any endpoint. This error is returned if your Free account is older than 30 days and has expired.
 
 ```json
 {
