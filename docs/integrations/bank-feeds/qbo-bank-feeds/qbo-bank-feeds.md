@@ -8,7 +8,7 @@ description: "Learn about our QuickBooks Online Bank Feeds integration"
 
 If you're interested in using our QuickBooks Online Bank Feeds integration, please contact your Account Manager or Account Executive.
 
-Connecting to QuickBooks Online bank feeds through the integration is only supported for SMB users who are located in the US and Canada.
+Connecting to QuickBooks Online bank feeds through the integration is only supported for SMB users who are located in the **US** and **Canada**.
 
 :::
 
