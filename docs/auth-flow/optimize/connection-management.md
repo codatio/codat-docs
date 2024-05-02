@@ -1,7 +1,7 @@
 ---
-title: "Connection Management SDK"
-sidebar_label: "Manage connections"
-description: "Put your customers in control of their data connections with our pre-built connection management component"
+title: "Let clients manage their data with Connections SDK"
+sidebar_label: "Let clients control connections"
+description: "Put your customers in control of their data connections with our pre-built embeddable component"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -9,30 +9,30 @@ import TabItem from "@theme/TabItem";
 
 ## Overview
 
-Give your customers the ability to manage the access permissions they have given you by using our **Connection Management SDK** in your front-end code. This is key from a regulatory perspective, builds trust between you and your customer, and is required by some accounting platforms (e.g. Xero). 
+Give your customers the ability to manage the access permissions they have given you by using our **Connections SDK** in your front end. This is key from a regulatory perspective, builds trust between you and your customer, and is required by some accounting platforms (e.g. Xero). 
 
-![An image of three in-app screenshots of the Connection Management UI. The first picture displays a list of three existing connections to Xero, Square, and Commerce Sandbox. The second image shows the entry for the Square connection with dates the authorization was given and recent data pull dates. It also lists the option to disconnect the connection. The final image displays a confirmation of the disconnection.](/img/auth-flow/auth-flow-connection-ui-examples.png)
+![An image of three in-app screenshots of the Connections UI. The first picture displays a list of three existing connections to Xero, Square, and Commerce Sandbox. The second image shows the entry for the Square connection with dates the authorization was given and recent data pull dates. It also lists the option to disconnect the connection. The final image displays a confirmation of the disconnection.](/img/auth-flow/auth-flow-connection-ui-examples.png)
 
 ### Functionality
 
 With its sleek UI and low-code deployment, the component provides the following critical functionality:
 
-- Displays accounting, banking, and commerce connections in `Linked` and `Unlinked` statuses.
+- Displays accounting, banking, and commerce connections in `Linked`, `Unlinked`, and `Deauthorized` statuses.
 - Provides the details of first authorization date and most recent sync date.
 - Allows the user to disconnect an active connection, setting it to a `Unlinked` state and retaining previously fetched data.
-- Enables the user to reauthorize a previously severed connection, setting it back to `Linked` status. 
+- Enables the user to reauthorize a previously unlinked or deauthorized connection, setting it back to `Linked` status. 
 
-Connections in a `Deauthorized` status are not displayed by the Connection Management component. You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
+You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
 
 ## Prerequisites
 
 ### Your application
 
-You need a JavaScript application to render the component. The component can be used in any part of your application and works with all major JavaScript frameworks, including React, and with vanilla JavaScript. You can choose to implement it in TypeScript. We don't recommend using it in an iframe because it will not work for security reasons (CORS).
+You need a JavaScript application to render the component. The component can be used in any part of your application and works with all major JavaScript frameworks, such as React and Typescript. You can also implement it in vanilla JavaScript. We don't recommend using it in an iframe because it will not work for security reasons (CORS).
 
-:::tip Link SDK and Connection Management SDK
+:::tip Link SDK and Connections SDK
 
-The Connection Management SDK is an independent component and doesn't require our [Link SDK](/auth-flow/authorize-embedded-link) to work. You can use the Link SDK in your app together with Connection Management to enhance your customers' auth flow experience to achieve an 89% average conversion rate.
+The Connections SDK is an independent component and doesn't require our [Link SDK](/auth-flow/authorize-embedded-link) to work. You can use the Link SDK in your app to enhance your customers' auth flow experience and achieve an 89% average conversion rate.
 
 :::
 
@@ -130,7 +130,7 @@ if (accessTokenRes.connectionManagementAccessToken().isPresent()) {
 
 </Tabs>
 
-Pass the token to the Connection Management component so that we can get the company-specific information and display it in the UI. We summarized this process on the diagram: 
+Pass the token to the Connections component so that we can get the company-specific information and display it in the UI. We summarized this process on the diagram: 
 
 ```mermaid
 
@@ -145,7 +145,7 @@ sequenceDiagram
     codat -->> be: Access token
     be -->> fe: Access token
     fe ->> fe: Pass token to embedded component
-    fe -->> user: Connection Management UI
+    fe -->> user: Connections UI
     user ->> fe: Manage connections
 fe ->> fe: Embedded component returns additional context
 
@@ -153,7 +153,7 @@ fe ->> fe: Embedded component returns additional context
 
 ### CORS settings
 
-[Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for the Connection Management component to work. To control the domain list that your application can make token requests from, register the allowed origins using the [Set CORS settings](/platform-api#/operations/set-connection-management-cors-settings) endpoint.
+[Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for the Connections component to work. To control the domain list that your application can make token requests from, register the allowed origins using the [Set CORS settings](/platform-api#/operations/set-connection-management-cors-settings) endpoint.
 
 To display the origins you previously registered for your instance, use the [Get CORS settings](/platform-api#/operations/get-connection-management-cors-settings) endpoint. 
 
@@ -174,11 +174,11 @@ Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-con
 
 1. **Create a component that mounts the SDK** 
 
-  We recommend setting the component to `width: 460px; height: 840px`. The code snippet below uses these parameters. 
+  We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. The code snippet below uses these parameters. 
 
 2. **Use the component to mount the SDK** 
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. It can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. It can also manage when to display Connections, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // ConnectionManagement.tsx
@@ -247,13 +247,13 @@ In the snippet below, you'll see that we use webpack's [magic comments](https://
 
 1. **Create a component that mounts the SDK** 
 
-  We recommend setting the component to `width: 460px; height: 840px`. 
+  We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. 
   
   We use [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above).
 
 2. **Use the component to mount the SDK** 
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connections, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // page.tsx
@@ -317,7 +317,7 @@ In the snippet below, you'll see that we use webpack's [magic comments](https://
 
   It should have an `id` of `codat-connections-container`.
   
-  The `CodatConnections` component will be mounted within this div. We recommend setting `width: 460px; height: 840px` for this element and styling it as a modal by nesting it within a modal wrapper (e.g. `position: fixed; inset: 0`).
+  The `CodatConnections` component will be mounted within this div. We recommend setting `width: 460px; height: 840px` for this element and styling it as a modal by nesting it within a modal wrapper (e.g. `position: fixed; inset: 0`). The component is optimized to look best with these parameters.
 
   The created `CodatConnections` component expands to fit 100% of the specified dimensions.
    
@@ -444,11 +444,11 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
 
 1. **Create a component that mounts the SDK** 
 
- We recommend setting `width: 460px; height: 840px` for this component.
+ We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
 
 2. **Use this component to mount the SDK** 
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connections, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // App.vue
@@ -493,11 +493,11 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
 
 1. **Create a component that mounts the SDK** 
 
-  We recommend setting `width: 460px; height: 840px` for this component.
+  We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
 
 2. **Use the component to mount the SDK**  
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connection Management, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connections, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // App.svelte
@@ -579,7 +579,7 @@ The object is applied as the SDK component is mounted and doesn't support reload
 
 ### Custom text
 
-Use the `text` property to control some of the text displayed within the Connection Management UI. You can override the following text options:
+Use the `text` property to control some of the text displayed within the Connections UI. You can override the following text options:
 
 | Option                                  |Type and description                                                                                                                                                                                                                                                                                                              |
 |-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -87,4 +87,4 @@ Browser and mobile compatibility of Link varies for different integrations:
 ---
 ## Read next
 - [Get started](/auth-flow/authorize-embedded-link) with the Link SDK to embed the auth journey in your app
-- Use the [Connection Management SDK](/auth-flow/optimize/connection-management) in your app
+- Use the [Connections SDK](/auth-flow/optimize/connection-management) in your app
