@@ -63,7 +63,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px`.
+  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters.
 
 2. **Use the component to mount the SDK** 
 
@@ -141,7 +141,7 @@ In the example below, you'll see that we use webpack's [magic comments](https://
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px`. 
+  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. 
   
   We use [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above).
 
@@ -214,7 +214,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
   It should have an `id` of `codat-link-container`.
   
-  The `CodatLink` component will be mounted within this div. We recommend setting `width: 460px; height: 840px` for this element and styling it as a modal by nesting it within a modal wrapper (e.g. `position: fixed; inset: 0`).
+  The `CodatLink` component will be mounted within this div. We recommend setting `width: 460px; height: 840px` for this element and styling it as a modal by nesting it within a modal wrapper (e.g. `position: fixed; inset: 0`). The component is optimized to look best with these parameters.
 
   The created `CodatLink` component expands to fit 100% of the specified dimensions.
    
@@ -350,7 +350,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/components/CodatLink.vue" target="_blank">`CodatLink.vue`</a> file to an appropriate location in your app. We recommend setting `width: 460px; height: 840px` for this component.
+  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/components/CodatLink.vue" target="_blank">`CodatLink.vue`</a> file to an appropriate location in your app. We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
 
 2. **Use this component to mount the SDK** 
 
@@ -403,7 +403,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/lib/CodatLink.svelte" target="_blank">`CodatLink.svelte`</a> file to an appropriate location in your Svelte app. We recommend setting `width: 460px; height: 840px` for this component.
+  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/lib/CodatLink.svelte" target="_blank">`CodatLink.svelte`</a> file to an appropriate location in your Svelte app. We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
 2. **Use the component to mount the SDK**  
 
   We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte). The component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte), passing the relevant company ID and callbacks.
@@ -500,3 +500,4 @@ To control the redirects that happen upon flow completion, you need to build out
 - [Manage Link settings in Portal](/auth-flow/customize/customize-link)
 - [Manage branding settings in Portal](/auth-flow/customize/branding)
 - [Manage UI settings in code](/auth-flow/customize/sdk-customize-code)
+- Use the [Connections SDK](/auth-flow/optimize/connection-management) in your app
