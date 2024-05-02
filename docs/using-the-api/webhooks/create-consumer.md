@@ -13,17 +13,15 @@ A _webhook consumer_ is your implementation of a POST endpoint that you built to
 
 This consumer must return a `2XX` (status code `200-299`) response within 15 seconds of receiving the POST request. We recommend passing the event to an internal message queue so that you can process it in time.
 
-:::caution Building architectures with many consumers
-
-If you are planning to create an application with more than 50 consumers please reach out to your Codat contact.
-This will ensure your solution is optimized for your use case. 
-:::
-
-
 ## Configure webhook consumer
 
-Once you have built your webhook consumer, configure Codat to send events to this consumer. 
-Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
+Once you have built your webhook consumer, configure Codat to send events to this consumer. Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
+
+:::caution Building architectures with many consumers
+
+If you are planning to create an application with more than 50 consumers, reach out to your Codat contact so that we can optimize the solution for your use case.
+
+:::
 
 Add the endpoint URL that you want to receive the messages, an optional description, and choose the events that this endpoint should listen to. You must specify a least one event type per endpoint. 
 
