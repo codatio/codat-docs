@@ -5,7 +5,7 @@ const URL = "/oas/Codat-Commerce.json"
 
 const CommerceApi = () => {
   return (
-    <Api url={URL} title="Commerce API reference"/>
+    <Api url={URL} title="Commerce API reference" socialBanner="/img/banners/social/commerce.png"/>
   );
 }
 

@@ -5,7 +5,7 @@ const URL = "/oas/Codat-Bank-Feeds.json"
 
 const BankFeedApi = () => {
   return (
-    <Api url={URL} title="Bank Feeds API reference"/>
+    <Api url={URL} title="Bank Feeds API reference" socialBanner="/img/banners/social/bankfeeds.png"/>
   );
 }
 
