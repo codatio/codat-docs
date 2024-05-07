@@ -2,6 +2,7 @@
 title: "Customize Link interface and behavior using SDK properties"
 sidebar_label: "Manage Link in code"
 description: "Exercise advanced programmatic control over user interface settings of the Link auth flow"
+banner_image: "/img/banners/link.png"
 ---
 
 ## Overview

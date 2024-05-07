@@ -5,7 +5,7 @@ const URL = "/oas/Codat-Sync-Payables-v1.json"
 
 const PayablesApi = () => {
   return (
-    <Api url={URL} title="Payables API reference" socialBanner="/img/banners/social/payables.png"/>
+    <Api url={URL} title="Payables API reference" socialBanner="https://docs.codat.io/img/banners/social/payables.png"/>
   );
 }
 

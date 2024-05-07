@@ -2,7 +2,7 @@
 title: "Get started with Link SDK"
 sidebar_label: Get started
 description: "Embed our auth flow in your application UI using our low-code component"
-image: "/img/auth-flow/embedded-link-selection.png"
+banner_image: "/img/banners/link.png"
 ---
 
 import Tabs from "@theme/Tabs";

@@ -2,6 +2,7 @@
 title: "Customize Link settings in the Portal"
 sidebar_label: Link settings in Portal
 description: "Settings available to you to tailor Link to your authorization journey's needs"
+banner_image: "/img/banners/link.png"
 ---
 
 ## Overview

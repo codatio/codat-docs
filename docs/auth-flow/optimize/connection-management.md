@@ -2,6 +2,7 @@
 title: "Let clients manage their data with Connections SDK"
 sidebar_label: "Let clients control connections"
 description: "Put your customers in control of their data connections with our pre-built embeddable component"
+banner_image: "/img/banners/connections.png"
 ---
 
 import Tabs from "@theme/Tabs";

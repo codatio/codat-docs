@@ -2,6 +2,7 @@
 title: "Set up your company branding in the Portal"
 sidebar_label: Branding in Portal
 description: "Ways to modify Link's interface to match your company's branding"
+banner_image: "/img/banners/link.png"
 ---
 
 ## Overview

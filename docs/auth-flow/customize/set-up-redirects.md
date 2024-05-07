@@ -3,6 +3,7 @@ title: "Set up redirect URLs in the Portal"
 sidebar_label: Redirects
 description: "Complete your customer's authorization journey with a redirect location"
 displayed_sidebar: docs
+banner_image: "/img/banners/link.png"
 ---
 
 ## Overview
