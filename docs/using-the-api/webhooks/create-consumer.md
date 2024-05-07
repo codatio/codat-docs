@@ -35,7 +35,7 @@ You can create a webhook consumer programmatically using our [Create webhook](/p
 
 :::caution IP allowlist
 
-If your consumer endpoint is behind a firewall or NAT, make sure to allow messages from `4.159.114.108`.
+If your consumer endpoint is behind a firewall or NAT, you'll need to allow-list IP addresses `4.159.114.108` and `20.117.190.191`.
 :::
 
 ### Custom headers
