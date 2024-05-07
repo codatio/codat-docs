@@ -11,7 +11,7 @@ tags: [overview, syncforexpense]
 banner_title: Sync for Expenses
 banner_class: expenses
 banner_icon: "/img/logos/products/logo_expenses_clear.svg"
-banner_image: "/img/banners/sfe-flow.png"
+banner_image: "/img/banners/bank-feeds.png"
 banner_text: "Push categorized expenses and attachments to all major accounting platforms, handling the complexities of expense reconciliation"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Sync for Expenses?
