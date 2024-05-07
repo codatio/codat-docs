@@ -1,6 +1,6 @@
 ---
 title: "Let clients manage their data with Connections SDK"
-sidebar_label: "Let clients control connections"
+sidebar_label: "Connection management"
 description: "Put your customers in control of their data connections with our pre-built embeddable component"
 banner_image: "/img/banners/connections.png"
 ---
