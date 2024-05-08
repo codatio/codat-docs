@@ -48,7 +48,7 @@ jobs:
                 comment_id: comment.id,
               });
             }
-      
+
       - name: Filter and Post Results
         uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
@@ -58,7 +58,7 @@ jobs:
             const fs = require('fs');
             const results = JSON.parse(fs.readFileSync('link-results.json', 'utf8'));
             const filtered = results.links
-              .filter(link => link.status !== 403 && link.status !== 500)
+              .filter(link => link.status !== 403 && link.status !== 500 && link.status !== 0)
             
             const printList = filtered
               .map(link => `[${link.status}] ${link.url}`);
