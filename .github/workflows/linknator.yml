@@ -36,9 +36,14 @@ jobs:
             const results = JSON.parse(fs.readFileSync('link-results.json', 'utf8'));
             const filtered = results.links.filter(link => link.status !== 403 && link.status !== 500);
             const output = `Link check results (filtered):\n\`\`\`\n${JSON.stringify(filtered, null, 2)}\n\`\`\``;
+            
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: output
+              body: output.map(link => `[${link.status}] ${link.url}`)
             });
+
+            if (brokenLinks.length > 0) {
+              core.setFailed("There are broken links in the documentation.");
+            }
