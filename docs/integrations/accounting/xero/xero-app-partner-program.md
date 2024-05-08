@@ -8,7 +8,7 @@ Once you have set up your Xero integration, you should consider becoming a [Xero
 #### Xero App Partners can:
 
 - Exceed the 25 company connection cap that Xero puts on uncertified apps
-- Reach millions of Xero subscribers and advisors on the [Xero App Store](http://www.xero.com/marketplace)
+- Reach millions of Xero subscribers and advisors on the [Xero App Store](https://apps.xero.com/uk)
 
 It can take several months to become a Xero App Partner, so we advise you to begin the process well before you need to connect more than 25 Xero users via your integration. 
 

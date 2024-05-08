@@ -40,7 +40,7 @@ The following sheets only:
 
 ## Action required
 
-Explore alternative options you can use in our [Migration Guide`](/lending/guides/migration-guides/deprecation-account-categories)
+Explore alternative options you can use in our [Migration Guide`](/lending/overview)
 
 ## Expected impact if no action is taken
 

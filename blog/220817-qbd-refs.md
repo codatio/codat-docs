@@ -19,5 +19,3 @@ Expected impact if no action is taken
 Any code that attempts to push Bills or Bill credit note to Codat with both an accountRef and an itemRef after January 10, 2023 will result in an error.
 
 You can get ahead of this change by enabling it now in the Portal. Learn how to do that here, or read our change policy here.
-
-[Read more...](https://docs.codat.io/v2.0.0/changelog/42998-qbd-push-validation-accountref-itemref)

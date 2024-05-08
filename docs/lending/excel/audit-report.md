@@ -32,7 +32,7 @@ Data types can be enabled in the <a className="external" href="/core-concepts/da
 
 ## Generating the report
 
-The Audit report can be generated via API or through [Codat's Portal](/lending/portal/overview#reports). The [Excel reports](/lending/excel/overview) page describes how to generate and download the report via API.
+The Audit report can be generated via API or through [Codat's Portal](https://app.codat.io). The [Excel reports](/lending/excel/overview) page describes how to generate and download the report via API.
 
 ## Understanding the report
 

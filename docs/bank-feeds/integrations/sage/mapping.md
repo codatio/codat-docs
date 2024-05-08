@@ -14,11 +14,11 @@ import Loom from '@components/global/Loom'
 
 <br/>
 
-Our [Sage Bank Feeds](/integrations/bank-feeds/Sage-bank-feeds/) integration requires an authorization UI to authenticate an SMB user prior to creating source accounts within Codat.
+Our [Sage Bank Feeds](/integrations/bank-feeds/sage-bank-feeds/) integration requires an authorization UI to authenticate an SMB user prior to creating source accounts within Codat.
 
 ## Process
 
-The process for mapping a source account with Sage Bank Feeds begins within Sage. From there, users are directed to a [hosted login page](/bank-feeds/mapping/Sage-mapping#hosted-login-page) where they should enter their credentials, and you should verify their identity. 
+The process for mapping a source account with Sage Bank Feeds begins within Sage. From there, users are directed to a [hosted login page](/bank-feeds/integrations/sage/mapping#hosted-login-page) where they should enter their credentials, and you should verify their identity. 
 
 Upon successful authentication, you should then create the [company, dataConnection, and source accounts](/bank-feeds/setup) within Codat. Once Sage verifies these details, the bank feed for your company will become active.
 
