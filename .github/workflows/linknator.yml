@@ -36,6 +36,7 @@ jobs:
             const results = JSON.parse(fs.readFileSync('link-results.json', 'utf8'));
             const filtered = results.links
               .filter(link => link.status !== 403 && link.status !== 500)
+            const printList = filtered
               .map(link => `[${link.status}] ${link.url}`);
             const output = `Link check results (filtered):\n\`\`\`\n${JSON.stringify(filtered, null, 2)}\n\`\`\``;
             
@@ -46,6 +47,6 @@ jobs:
               body: output,
             });
 
-            if (brokenLinks.length > 0) {
+            if (filtered.length > 0) {
               core.setFailed("There are broken links in the documentation.");
             }
