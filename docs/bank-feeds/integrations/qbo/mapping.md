@@ -25,7 +25,7 @@ On the Set up QuickBooks page, they click Get credentials to generate their uniq
 
 ![Image](/img/bank-feeds/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png "The Set up QuickBooks page that allows your SMB user to get their credentials.")
 
-Once credentials have been generated, the user can simply follow the instructions displayed in the UI. These are summarized in [Map accounts in QuickBooks](/bank-feeds/mapping/qbo-mapping#map-accounts-in-quickbooks)
+Once credentials have been generated, the user can simply follow the instructions displayed in the UI. These are summarized in [Map accounts in QuickBooks](/bank-feeds/integrations/qbo/mapping#map-accounts-in-quickbooks)
 
 The Revoke credentials button appears immediately after their credentials are generated.
 

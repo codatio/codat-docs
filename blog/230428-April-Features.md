@@ -21,7 +21,7 @@ Traditionally, lenders look up a bank statement to verify that payments for an i
 
 The Enhanced Invoices Report uses open banking and accounting data to automatically match a paid invoice to the bank transaction record that was used to pay it. This helps to verify a customer’s payment against the company's historical invoice.
 
-See [Enhanced Invoices](https://docs.codat.io/lending/enhanced-invoices/overview) for more information.
+See [Enhanced Invoices](https://docs.codat.io/lending/features/accounts-receivable-overview#reconciled-invoices) for more information.
 
 
 ### List and create trackingCategories on QuickBooks Online Direct Costs.
@@ -54,7 +54,7 @@ Codat has added support for the deletion of journal entries, bills, and invoices
 
 This improvement enables you to offer this integration to your customers, simplifying use cases such as reversing erroneous transactions and maintaining accurate financial records.
 
-See [Delete data from QuickBooks Online](https://docs.codat.io/integrations/accounting/quickbooksonline/accounting-quickbooksonline-delete-journal-entries) for more information on how to use this feature.
+See [Delete data from QuickBooks Online](https://docs.codat.io/accounting-api#/operations/delete-journal-entry) for more information on how to use this feature.
 
 ### Addition of the QuickBooks Desktop Tracking Object
 

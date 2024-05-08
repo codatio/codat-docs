@@ -6,7 +6,7 @@ image: "/img/banners/social/lending.png"
 ---
 
 The Excel reports endpoints are used to produce and download Excel reports. For more information on available reports, see the [report types](#available-report-types) section.
-These reports can be generated via the [Portal](/lending/portal/overview#reports) or the API.
+These reports can be generated via the Portal or the API.
 
 The process to download an Excel report via the API is:
 
