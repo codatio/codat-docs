@@ -36,10 +36,10 @@ jobs:
             const results = JSON.parse(fs.readFileSync('link-results.json', 'utf8'));
             const filtered = results.links
               .filter(link => link.status !== 403 && link.status !== 500)
+            
             const printList = filtered
               .map(link => `[${link.status}] ${link.url}`);
-            const output = `Link check results (filtered):\n\`\`\`\n${JSON.stringify(filtered, null, 2)}\n\`\`\``;
-            
+            const output = `Link check results (filtered):\n\`\`\`\n${JSON.stringify(printList, null, 2)}\n\`\`\``;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
