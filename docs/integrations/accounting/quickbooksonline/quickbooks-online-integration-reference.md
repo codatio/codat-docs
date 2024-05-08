@@ -52,6 +52,7 @@ Our IPs are dynamic. The set of IPs included below is correct as of Q1 2022.
 :::
 
 **Country**: United Kingdom of Great Britain and Northern Ireland
+
 | IP address type  | Start        | End            |
 |------------------|--------------|----------------|
 | IP address range | 20.77.152.0  | 20.77.153.255  |
