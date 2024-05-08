@@ -23,19 +23,53 @@ jobs:
         run: npm install -g linkinator
       
       - name: Run linkinator
-        run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip .*github.*
-        id: linkinator  # Set an ID for referencing the output
+        run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip .*github.* --format json > link-results.json
+        continue-on-error: true  # Ensure the workflow continues even if linkinator finds broken links
       
-      - name: Post results as PR comment
+      - name: Delete Previous Comments
         uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const output = `Link check results:\n\`\`\`\n${{steps.linkinator.outputs.result}}\n\`\`\``;
+            const issue_number = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const comments = await github.rest.issues.listComments({
+              issue_number,
+              owner,
+              repo,
+            });
+            const actionComments = comments.data.filter(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Link check results'));
+            for (const comment of actionComments) {
+              await github.rest.issues.deleteComment({
+                owner,
+                repo,
+                comment_id: comment.id,
+              });
+            }
+
+      - name: Filter and Post Results
+        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const fs = require('fs');
+            const results = JSON.parse(fs.readFileSync('link-results.json', 'utf8'));
+            const filtered = results.links
+              .filter(link => link.status !== 403 && link.status !== 500 && link.status !== 0)
+            
+            const printList = filtered
+              .map(link => `[${link.status}] ${link.url}`);
+            const output = `Link check results (filtered):\n\`\`\`\n${JSON.stringify(printList, null, 2)}\n\`\`\``;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: output
+              body: output,
             });
+
+            if (filtered.length > 0) {
+              core.setFailed("There are broken links in the documentation.");
+            }
