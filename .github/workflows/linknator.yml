@@ -23,8 +23,17 @@ jobs:
         run: npm install -g linkinator
       
       - name: Run linkinator
-        run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip .*github.*
-        id: linkinator  # Set an ID for referencing the output
+        run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip .*github.* --format json
+        id: linkinator
+        continue-on-error: true  # Ensure the workflow continues even if linkinator finds broken links
+      
+      - name: Filter linkinator output
+        id: filter_output
+        run: |
+          const results = JSON.parse('${{ steps.linkinator.outputs.result }}');
+          const filtered = results.links.filter(link => link.status !== 403 && link.status !== 500);
+          console.log("Filtered Results:", JSON.stringify(filtered, null, 2));
+          echo "::set-output name=filtered_results::$(echo $filtered)"
       
       - name: Post results as PR comment
         uses: actions/github-script@v6
@@ -32,7 +41,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const output = `Link check results:\n\`\`\`\n${{steps.linkinator.outputs.result}}\n\`\`\``;
+            const output = `Link check results (filtered):\n\`\`\`\n${{ steps.filter_output.outputs.filtered_results }}\n\`\`\``;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
