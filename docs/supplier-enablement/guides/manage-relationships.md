@@ -7,7 +7,7 @@ description: "Learn how to onboard and manage companies that represent your cust
 
 ## Overview
 
-Our [Relationship Manager Portal](https://banking-ui.codat.io/) is your one-stop shop to view the clients and relationships you are responsible for. Here, your organization's clients are represented as [companies](../../terms/company). 
+Our [Relationship Manager Portal](https://relationships.codat.io/) is your one-stop shop to view the clients and relationships you are responsible for. Here, your organization's clients are represented as [companies](../../terms/company). 
 
 In this guide, we will cover the creation of a new company, assignment of an existing company to an analyst, and editing and deletion of company records.
 

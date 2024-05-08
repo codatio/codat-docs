@@ -6,7 +6,7 @@ description: "Learn how to refresh your customers' spend data on demand"
 
 ## Overview
 
-Our [Relationship Manager Portal](https://banking-ui.codat.io/) is your one-stop shop to view the clients and relationships you are responsible for. Here, your organization's clients are represented as [companies](../../terms/company). 
+Our [Relationship Manager Portal](https://relationships.codat.io/) is your one-stop shop to view the clients and relationships you are responsible for. Here, your organization's clients are represented as [companies](../../terms/company). 
 
 In this guide, we will explain the different states a company's data can be in and cover the ways you can update your customers' data on demand.
 

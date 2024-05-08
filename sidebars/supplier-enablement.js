@@ -29,6 +29,6 @@ module.exports = [
     customProps: {
       hr: true,
     },
-    href: "https://banking-ui.codat.io/",
+    href: "https://relationships.codat.io/",
   },
 ];

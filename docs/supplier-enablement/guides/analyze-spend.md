@@ -6,7 +6,7 @@ description: "Learn how to request and analyze spend and supplier information fr
 
 ## Overview
 
-Our [Relationship Manager Portal](https://banking-ui.codat.io/) is your one-stop shop to view the clients and relationships you are responsible for. Here, your organization's clients are represented as [companies](../../terms/company). 
+Our [Relationship Manager Portal](https://relationships.codat.io/) is your one-stop shop to view the clients and relationships you are responsible for. Here, your organization's clients are represented as [companies](../../terms/company). 
 
 In this guide, we will cover the ways you can request accounts payable data from your clients and download the resulting reports. 
 
