@@ -26,6 +26,13 @@ import useZendesk from './useZendesk';
 
 import CookieConsent from "react-cookie-consent";
 
+import Hotjar from '@hotjar/browser';
+
+const siteId = 4976193;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
+
 export default function DocItem(props: Props): JSX.Element {
   const {content: DocContent} = props;
 
