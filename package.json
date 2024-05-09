@@ -40,6 +40,7 @@
     "@docusaurus/theme-mermaid": "^2.4.1",
     "@docusaurus/theme-search-algolia": "^2.4.1",
     "@grnet/docusaurus-terminology": "^1.0.0",
+    "@hotjar/browser": "^1.0.9",
     "@mdx-js/react": "^1.6.22",
     "@stackblitz/sdk": "^1.9.0",
     "@stoplight/elements": "^7.7.10",
