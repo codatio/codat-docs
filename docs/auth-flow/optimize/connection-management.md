@@ -25,6 +25,10 @@ With its sleek UI and low-code deployment, the component provides the following 
 
 You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
 
+## Resources
+
+We've provided you with [rich examples on GitHub](https://github.com/codatio/sdk-connections/tree/main/examples) that illustrate how you can add the Connections component to your project.
+
 ## Prerequisites
 
 ### Your application
@@ -173,13 +177,15 @@ Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-con
 
 #### Get started with React
 
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-connections/tree/main/examples/languages/react).
+
 1. **Create a component that mounts the SDK** 
 
-  We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. The code snippet below uses these parameters. 
+  You can copy and paste the example <a href="https://github.com/codatio/sdk-connections/blob/main/examples/languages/react/src/components/CodatConnections.tsx" target="_blank">`CodatConnections.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. The code snippet below uses these parameters. 
 
 2. **Use the component to mount the SDK** 
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. It can also manage when to display Connections, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+   We suggest wrapping the `CodatConnections` component in a modal so that you can [adjust its positioning](https://github.com/codatio/sdk-connections/blob/main/examples/languages/react/src/app/page.module.css). It can also manage when to [display the connections](https://github.com/codatio/sdk-connections/blob/main/examples/languages/react/src/app/page.tsx), passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // ConnectionManagement.tsx
@@ -232,6 +238,8 @@ Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-con
     
        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Don't use a hash because this can change at any time without warning.
+
+4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
  
 </TabItem>
 
@@ -239,22 +247,26 @@ Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-con
 
 #### Get started with NextJS
 
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-connections/tree/main/examples/languages/next/).
+
 :::note NextJS and urlImports
 
-NextJS is opinionated about the import strategy we're suggesting, and has an experimental feature called [urlImports](https://nextjs.org/docs/app/api-reference/next-config-js/urlImports). Connections SDK and urlImports are not compatible, because NextJS assumes the resources are static and caches the SDK, causing various issues.
+NextJS is opinionated about the import strategy we're suggesting, and has an experimental feature called [urlImports](https://nextjs.org/docs/app/api-reference/next-config-js/urlImports). If you follow our NextJS example, you'll be warned you need to use the urlImports feature.
+
+Connections SDK and urlImports are not compatible, because NextJS assumes the resources are static and caches the SDK, causing various issues.
 
 In the snippet below, you'll see that we use webpack's [magic comments](https://webpack.js.org/api/module-methods/#magic-comments) feature to avoid NextJS's caching and use normal [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) behavior.
 :::
 
 1. **Create a component that mounts the SDK** 
 
-  We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. 
+  You can copy and paste the example <a href="https://github.com/codatio/sdk-connections/blob/main/examples/languages/next/src/components/CodatConnections.tsx" target="_blank">`CodatConnections.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. 
   
   We use [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above).
 
 2. **Use the component to mount the SDK** 
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connections, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+  We suggest wrapping the `CodatConnections` component in a modal so that you can [adjust its positioning](https://github.com/codatio/sdk-connections/blob/main/examples/languages/next/src/app/page.module.css). It can also manage when to [display the connections](https://github.com/codatio/sdk-connections/blob/main/examples/languages/next/src/app/page.tsx), passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // page.tsx
@@ -307,12 +319,16 @@ In the snippet below, you'll see that we use webpack's [magic comments](https://
 
     * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
     * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+
+4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
  
 </TabItem>
 
 <TabItem value="javascript" label="JavaScript">
 
 #### Get started with JavaScript
+
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-connections/tree/main/examples/languages/javascript/).
 
 1. **Create a target `div` for the `CodatConnections` component** 
 
@@ -373,11 +389,15 @@ In the snippet below, you'll see that we use webpack's [magic comments](https://
     * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
     * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+
 </TabItem>
 
 <TabItem value="angular" label="Angular">
 
 #### Get started with Angular
+
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-connections/tree/main/examples/languages/angular/).
 
 :::note Angular and urlImports
 
@@ -385,6 +405,8 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
 :::
 
 1. **Create a component that mounts the SDK** 
+
+  See the <a href="https://github.com/codatio/sdk-connections/tree/main/examples/languages/angular/src/app/codat-connections" target="_blank">`codat-connections`</a> folder for an example module.
 
 2. **Define access token and callbacks** 
 
@@ -436,6 +458,8 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
 4. **If you're using content security policy (CSP) headers**:
       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
  
 </TabItem>
 
@@ -443,13 +467,15 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
 
 #### Get started with Vue
 
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-connections/tree/main/examples/languages/vue/).
+
 1. **Create a component that mounts the SDK** 
 
- We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
+  You can copy and paste the example <a href="https://github.com/codatio/sdk-connections/blob/main/examples/languages/vue/src/components/CodatConnections.vue" target="_blank">`CodatConnections.vue`</a> file to an appropriate location in your app. We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
 
 2. **Use this component to mount the SDK** 
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connections, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+  We suggest wrapping the `CodatConnections` component in a modal so that you can [adjust its positioning](https://github.com/codatio/sdk-connections/blob/main/examples/languages/vue/src/App.vue). It can also manage when to [display the connections](https://github.com/codatio/sdk-connections/blob/main/examples/languages/vue/src/App.vue), passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // App.vue
@@ -485,6 +511,8 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
 4. **If you're using content security policy (CSP) headers**:
        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
  
 </TabItem>
 
@@ -492,13 +520,15 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
 
 #### Get started with Svelte
 
+For an example of the component in action, [see our demo app](https://github.com/codatio/sdk-connections/tree/main/examples/languages/svelte/).
+
 1. **Create a component that mounts the SDK** 
 
-  We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
+  You can copy and paste the example <a href="https://github.com/codatio/sdk-connections/blob/main/examples/languages/svelte/src/lib/CodatConnections.svelte" target="_blank">`CodatConnections.svelte`</a> file to an appropriate location in your app. We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
 
 2. **Use the component to mount the SDK**  
 
-  We suggest wrapping the SDK (named `CodatConnections` in our snippet) in a modal so that you can adjust its positioning. Itt can also manage when to display Connections, passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
+  We suggest wrapping the `CodatConnections` component in a modal so that you can [adjust its positioning](https://github.com/codatio/sdk-connections/blob/main/examples/languages/svelte/src/App.svelte). It can also manage when to [display the connections](https://github.com/codatio/sdk-connections/blob/main/examples/languages/svelte/src/App.svelte), passing the relevant [access token](/auth-flow/optimize/connection-management#access-token) and callbacks.
 
   ```js
   // App.svelte
@@ -546,6 +576,8 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
 4. **If you're using content security policy (CSP) headers**:
        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
  
 </TabItem>
 
