@@ -27,7 +27,7 @@ You can read more about [Connection statuses](https://docs.codat.io/core-concept
 
 ## Resources
 
-We've provided you with [rich examples on GitHub](https://github.com/codatio/sdk-connections/tree/main/examples) that illustrate how you can add the Connections component to your project.
+We've provided [rich examples on GitHub](https://github.com/codatio/sdk-connections/tree/main/examples) that illustrate how you can add the Connections component to your project.
 
 ## Prerequisites
 
