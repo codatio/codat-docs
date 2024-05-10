@@ -8,35 +8,52 @@ With Codat, you can access data from 30+ accounting, ERP, eCommerce, PoS, paymen
 
 [See all our integrations →](/integrations/all-integrations)
 
-## Just playing around?
+:::note Just playing around?
 
 Use our Codat sandbox integrations to see Codat APIs in action without the upfront hassle of setting up any integrations.
 
 Get up and running with Xero quickly to test a real integration by following our [first ten minutes](/get-started/first-ten-minutes) video tutorial.
+:::
 
-## Setting up other integrations
+## Setting up integrations
 
-You can enable the integrations you need [via the Portal](https://app.codat.io/settings). Each integration configuration page shows the needed credentials and includes links to integration-specific documentation and the integration's own developer portal.
+You can enable the integrations you need [via the Portal](https://app.codat.io/settings). Each integration configuration page shows how to set up that integration, including links to external documentation and the integration's developer portal.
 
 See our detailed integration-specific [documentation](/integrations/all-integrations) for more information about the integrations you need.
 
-### Accounting Data
+### Accounting data
 
-Using the Codat Portal, you have the option to choose which accounting packages should be shown on the link site.
+To manage which accounting package integrations are enabled, use the Codat Portal:
 
-These are configured on the Portal by going to the Integrations menu and selecting Accounting. Here you will see a list of possible accounting integrations, the ability to toggle the integration on, and as you hover over each integration the option to Manage.
+- Click [**Settings > Integrations > Accounting**](https://app.codat.io/settings/integrations/accounting)
+- Select the integration you want to manage
+- Configure and enable the integration
 
-These configurations are possible via the Codat API, but the Portal is recommended for ease. Further detailed guides on configuring these are available in the [Accounting integrations overview](/integrations/accounting/overview).
+Guides on configuring each integration are available in the [Accounting integrations overview](/integrations/accounting/overview).
 
-### Banking Data
+### Banking data
 
-Using the Codat Portal, you have the option to choose which integration should be used for each banking source. To configure your banking integrations and sources, see [Banking integrations overview](/integrations/banking/overview) to enable your integrations and select the relevant Banking Sources.
+To manage which bank account integrations are enabled, use the Codat Portal:
 
-### Commerce Data
+- Click [**Settings > Integrations > Banking**](https://app.codat.io/settings/integrations/banking)
+- Select the integration you want to manage
+- Configure and enable the integration
 
-Within the Codat Portal, you also have the ability to select which commerce platforms are available on the link site. 
+We recommend only using one banking integration at a time.
 
-These are configured on the Portal by going to the Integrations menu and selecting Commerce. Here you will see a list of the available commerce integrations. Further detailed guides on configuring these are available in the [Commerce integrations overview](/integrations/commerce/overview).
+Guides on configuring each integration are available in the [Banking integrations overview](/integrations/banking/overview).
+
+### Commerce data
+
+To manage which accounting packages are enabled, use the Codat Portal:
+
+- Click [**Settings > Integrations > Commerce**](https://app.codat.io/settings/integrations/commerce)
+- Select the integration you want to manage
+- Configure and enable the integration
+
+Guides on configuring each integration are
+
+Further detailed guides on configuring these are available in the [Commerce integrations overview](/integrations/commerce/overview).
 
 ---
 
