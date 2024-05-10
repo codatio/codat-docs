@@ -35,12 +35,12 @@ When **Fetch on first link** is _on_ for a data type:
 
 - The data type is automatically queued for synchronization when a company is first linked, provided that the data type is available in the company's accounting platform.
 - The data type is queued for synchronization when clicking the **Refresh data** button for a company in the Codat Portal.
-- The data type is queued for synchronization when you make a request to `[POST /companies/{companyId}/data/queue/{dataType}](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_)` with _all_ as the datatype.
+- The data type is queued for synchronization when you make a request to [`POST /companies/{companyId}/data/queue/{dataType}`](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_) with _all_ as the datatype.
 
 When **Fetch on first link** is turned _off_ for a data type:
 
 - The data type is not automatically queued for synchronization when a company is first linked.
-- You can still queue a pull for this individual data type using the endpoint `[POST /companies/{companyId}/data/queue/{dataType}](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_)`. This might be useful for testing, or if you only need infrequent access to a dataset.
+- You can still queue a pull for this individual data type using the endpoint [`POST /companies/{companyId}/data/queue/{dataType}`](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_). This might be useful for testing, or if you only need infrequent access to a dataset.
 
 For more information about how to synchronize datasets on demand, see [Synchronizing your data](/core-concepts/status).
 
