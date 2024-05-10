@@ -15,6 +15,38 @@ This consumer must return a `2XX` (status code `200-299`) response within 15 sec
 
 ## Configure webhook consumer
 
+<div
+  style={{
+    position: "relative",
+    paddingBottom: "calc(55.43859649122807% + 41px)",
+    height: 0,
+    width: "100%",
+    margin: "1em 0",
+    borderRadius: "8px",
+    overflow: "hidden",
+  }}
+>
+  <iframe
+    src="https://demo.arcade.software/wezqcAlTgJzlPt7P8LiX?embed&show_copy_link=true"
+    title="Events | Monitor | Codat Portal"
+    frameBorder={0}
+    loading="lazy"
+    webkitallowfullscreen=""
+    mozallowfullscreen=""
+    allowFullScreen=""
+    allow="clipboard-write"
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      colorScheme: "light"
+    }}
+  ></iframe>
+</div>
+
+
 Once you have built your webhook consumer, configure Codat to send events to this consumer. Navigate to **Settings > Webhooks > Events > Configure consumer** and click **Add endpoint** to create a new consumer. 
 
 :::caution Building architectures with many consumers
