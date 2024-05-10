@@ -3,7 +3,7 @@
   "servers": [
     {
       "description": "Production",
-      "url": "https://api.codat.io/intuit/idx"
+      "url": "https://api.codat.io/partners/intuit/idx"
     }
   ],
   "info": {
