@@ -19,7 +19,7 @@ There are two ways you can share credentials with a Company - either via a hoste
 ## Use the Codat credentials page
 The Codat provided user interface is designed to enable you to launch QuickBooks bankfeeds quickly with minimal overhead and allow the company to retrieve credentials for their bank feeds in a secure manner.
 
-To utilize the mapping UI, direct your company's users to the `linkUrl` provided in the [create-data-connection](/bank-feeds/setup#creating-a-data-connection) response. The linkUrl has a one time password(OTP) that will expire after 60 minutes, if the password expires, you can retrieve the `linkUrl` using the [`get-connection`](bank-feeds-api#/operations/get-connection) endpoint.
+To utilize the mapping UI, direct your company's users to the `linkUrl` provided in the [create-data-connection](/bank-feeds/setup#creating-a-data-connection) response. The linkUrl has a one-time password (OTP) that will expire after 60 minutes. If the password expires, you can retrieve the `linkUrl` again (with a new OTP) using the [`get-connection`](/bank-feeds-api#/operations/get-connection) endpoint.
 
 On the Set up QuickBooks page, they click Get credentials to generate their unique one-time username and password for connecting an account to QBO (see step six in the next procedure). 
 

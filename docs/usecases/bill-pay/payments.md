@@ -338,7 +338,7 @@ Note that if locations is set to mandatory in the companies NetSuite Account, th
 
 :::note
 
-Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options api](accounting-api#/operations/get-create-update-bills-model)
+Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options API](/accounting-api#/operations/get-create-update-bills-model)
 
 :::
 
