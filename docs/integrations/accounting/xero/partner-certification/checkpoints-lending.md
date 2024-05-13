@@ -32,7 +32,9 @@ This checkpoint is not relevant to Lending Partnerships.
 
 **Action required: moderate**
 
-While Codat handles the initial connection to Xero via the Codat Link UI, Xero also requires that you enable your user to manage this connection on an ongoing basis. The easiest way to do this is by implementing Codat's [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) into your front end. This follows best practice and complies with all of Xero's connection requirements.
+Xero requires that users can manage the connection between Codat and Xero on an ongoing basis. 
+
+The easiest way to do this is by implementing Codat's [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) into your front end. This follows best practice and complies with all of Xero's connection requirements.
 
 ### 4. Branding and naming
 
