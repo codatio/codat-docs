@@ -25,7 +25,7 @@ With its sleek UI and low-code deployment, the component provides the following 
 
 You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
 
-## Resources
+## Example implementation
 
 We've provided [rich examples on GitHub](https://github.com/codatio/sdk-connections/tree/main/examples) that illustrate how you can add the Connections component to your project.
 
@@ -389,7 +389,7 @@ For an example of the component in action, [see our demo app](https://github.com
     * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
     * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
-5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
 
 </TabItem>
 
@@ -459,7 +459,7 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
-5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
  
 </TabItem>
 
@@ -512,7 +512,7 @@ For an example of the component in action, [see our demo app](https://github.com
        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
-5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
  
 </TabItem>
 
@@ -577,7 +577,7 @@ For an example of the component in action, [see our demo app](https://github.com
        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
-5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
  
 </TabItem>
 
