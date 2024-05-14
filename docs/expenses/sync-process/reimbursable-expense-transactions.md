@@ -49,48 +49,46 @@ To create a new reimbursable expense transaction in Codat, use the [Create reimb
 In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
 
 ```json title="Reimbursable expense request body"
-{
-   "items":[
-      {
-         "id":"81539597-e681-40c9-a4dd-ec2fffcde572",
-         "reference":"101",
-         "contactRef":{
-            "id":"341"
-         },
-         "issueDate":"2022-04-29T00:00:00",
-         "dueDate":"2022-04-29T00:00:00",
-         "currency":"GBP",
-         "notes":"Reimbursable Expense Demo",
-         "lines":[
-            {
-               "netAmount":50,
-               "taxAmount":10,
-               "taxRateRef":{
-                  "id":"3_Bills"
+[
+   {
+      "id":"81539597-e681-40c9-a4dd-ec2fffcde572",
+      "reference":"101",
+      "contactRef":{
+         "id":"341"
+      },
+      "issueDate":"2022-04-29T00:00:00",
+      "dueDate":"2022-04-29T00:00:00",
+      "currency":"GBP",
+      "notes":"Reimbursable Expense Demo",
+      "lines":[
+         {
+            "netAmount":50,
+            "taxAmount":10,
+            "taxRateRef":{
+               "id":"3_Bills"
+            },
+            "accountRef":{
+               "id":"19"
+            },
+            "description":"Subscriptions",
+            "trackingRefs":[
+               {
+                  "id":"CLASS_5100000000000040021",
+                  "dataType":"trackingCategories"
                },
-               "accountRef":{
-                  "id":"19"
-               },
-               "description":"Subscriptions",
-               "trackingRefs":[
-                  {
-                     "id":"CLASS_5100000000000040021",
-                     "dataType":"trackingCategories"
-                  },
-                  {
-                     "id":"DEPARTMENT_5",
-                     "dataType":"trackingCategories"
-                  }
-               ]
-                "invoiceTo":{
-                  "id":"an-id-to-a-customers-record",
-                  "dataType":"customers"
+               {
+                  "id":"DEPARTMENT_5",
+                  "dataType":"trackingCategories"
                }
+            ]
+               "invoiceTo":{
+               "id":"an-id-to-a-customers-record",
+               "dataType":"customers"
             }
-         ]
-      }
-   ]
-}
+         }
+      ]
+   }
+]
 ```
 
 ### Billable reimbursable expenses
