@@ -44221,6 +44221,9 @@
                 "format": "decimal",
                 "nullable": true,
                 "description": "Pre-arranged overdraft limit of the account.\n\nThe value is always positive. For example, an overdraftLimit of `1000` means that the balance of the account can go down to `-1000`."
+              },
+              "status": {
+                "$ref": "#/components/schemas/BankAccount/definitions/bankAccountStatus"
               }
             }
           },
@@ -44279,6 +44282,18 @@
                 "$ref": "#/components/schemas/PagingInfo"
               }
             ]
+          },
+          "bankAccountStatus": {
+            "title": "Account status",
+            "enum": [
+              "Unknown",
+              "Active",
+              "Archived",
+              "Pending"
+            ],
+            "type": "string",
+            "description": "Status of the bank account.",
+            "example": "Active"
           }
         }
       },
