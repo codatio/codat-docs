@@ -48,46 +48,48 @@ To create a new expense transaction in Codat, use the [Create expense transactio
 In the request, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
 
 ```json title="Expense transaction request body"
-{
-  "items": [
-    {
-      "id": "08ca1f02-0374-11ed-b939-0242ac120002",
-      "type": "Payment",
-      "issueDate": "2023-12-13T00:00:00+00:00",
-      "currency": "GBP",
-      "currencyRate": 1.26,
-      "contactRef":{
-          "id":"an-id-to-a-suppliers-record",
-          "type": "Supplier"
-      },
-      "postAsDraft": false,
-      "merchantName": "Amazon UK",
-      "lines": [
-        {
-          "netAmount": 110.42,
-          "taxAmount": 14.43,
-          "taxRateRef": {
-            "id": "an-id-to-a-taxRates-record"
-          },
-          "accountRef": {
-            "id": "id-of-the-expense-nominal-account"
-          },
-          "trackingRefs": [
-            {
-              "id": "an-id-to-a-trackingCategories-record",
-              "dataType": "trackingCategories"
-            }
-          ],
-          "invoiceTo": {
-              "id": "an-id-to-a-customers-record",
-              "dataType": "customers"
+[
+  {
+    "id": "08ca1f02-0374-11ed-b939-0242ac120002",
+    "type": "Payment",
+    "issueDate": "2023-12-13T00:00:00+00:00",
+    "currency": "GBP",
+    "currencyRate": 1.26,
+    "contactRef":{
+        "id":"an-id-to-a-suppliers-record",
+        "type": "Supplier"
+    },
+    "bankAccountRef": {
+      "id": "an-id-to-a-bank-or-credit-card-account"
+    },
+    "postAsDraft": false,
+    "merchantName": "Amazon UK",
+    "lines": [
+      {
+        "netAmount": 110.42,
+        "taxAmount": 14.43,
+        "taxRateRef": {
+          "id": "an-id-to-a-taxRates-record"
+        },
+        "accountRef": {
+          "id": "id-of-the-expense-nominal-account"
+        },
+        "trackingRefs": [
+          {
+            "id": "an-id-to-a-trackingCategories-record",
+            "dataType": "trackingCategories"
           }
+        ],
+        "invoiceTo": {
+            "id": "an-id-to-a-customers-record",
+            "dataType": "customers"
         }
-      ],
-      "notes": "Amazon UK | Online Purchase | Order 123XX45"
-    }
-  ]
-}
+      }
+    ],
+    "notes": "Amazon UK | Online Purchase | Order 123XX45"
+  }
+]
+
 ```
 
 Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
