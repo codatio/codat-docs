@@ -8,6 +8,12 @@ description: "Customize data types with additional properties not included in Co
 
 Codat's supported data types include standardized properties. Some data sources (e.g. Xero) may contain properties not common across other sources, and so are not covered by our out-of-the-box data model. You can use supplemental data to extend our data types to fetch or create such properties alongside our standard ones. 
 
+:::note Supported HTTP methods
+
+Supplemental data supports reading data via `GET` or creating data through `POST` request methods. Codat does not support updating data using supplemental data.
+
+:::
+
 Consider our Xero integration. Xero's [Contact](https://developer.xero.com/documentation/api/accounting/contacts) schema maps to Codat's `supplier` data type. Some of its properties (like `TaxNumber`) *are* mapped, whereas others (like `BankAccountDetails`) are not. If you configure supplemental data for this Xero property, `suppliers` data from Xero could additionally include `BankAccountDetails`.
 
 ![A diagram demonstrating supplemental properties within the standard response of the suppliers data type](/img/use-the-api/supplemental-data.png)
@@ -111,6 +117,4 @@ Review the table below for platform schemas we use in our data types, which are 
 
 - If you configure properties that already exist in Codat's standard data model as supplemental properties, they will overwrite the standard data when creating records.
 
-
-- Deleted objects, indicated by `metadata.isDeleted flag` set to `true`, will not be enriched by supplemental data.  You can read more about [how we handle deleted data](https://docs.codat.io/updates/230411-deletion-of-data#additional-information).
-- Supplemental data is not supported for updating records. If you send changes to a pre-existing record's supplemental data object, these will be ignored by Codat. The PUT operation will appear to succeed, but there will be no change in the upstream system.
+- Deleted objects, indicated by `metadata.isDeleted` flag set to `true`, will not be enriched by supplemental data. You can read more about [how we handle deleted data](https://docs.codat.io/updates/230411-deletion-of-data#additional-information).
