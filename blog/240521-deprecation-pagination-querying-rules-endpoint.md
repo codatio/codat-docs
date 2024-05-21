@@ -1,6 +1,6 @@
 ---
 title: "2024-10-10: Deprecation of pagination and querying the *List /rules endpoint*"
-date: "2024-05-21"
+date: "2024-05-22"
 tags: ["Deprecation"]
 authors: dcoplowe
 ---
