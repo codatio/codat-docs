@@ -33,7 +33,7 @@ You can view the old webhook service documentation here:
 :::
 
 :::caution After migration, the endpoint to [list webhook consumers](https://docs.codat.io/platform-api#/operations/list-webhook-consumers) does not currently support
-   pagination or query parameters. We are looking to rectify this as soon as we possibly can. We are proactively reaching out to all clients who leverage these features but 
+   pagination or query parameters. We are looking to support this in the near future. We are proactively reaching out to all clients who leverage these features, to delay migration but 
    if you have any concerns please feel free to reach out to support@codat.io
 :::
 ---
