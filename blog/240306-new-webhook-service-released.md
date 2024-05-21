@@ -1,5 +1,5 @@
 ---
-title: "Introducing our new webhooks service"
+title: "[Updated 2024-05-21] Introducing our new webhooks service"
 date: "2024-03-06"
 tags: ["Product", "Update"]
 hide_table_of_contents: true
@@ -34,3 +34,4 @@ As part of releasing our new webhooks service, we have announced the following d
 - [`/rules/alerts` endpoints](/updates/240306-deprecation-rules-alerts).
 - [RuleId in rules webhooks](/updates/240320-deprecation-ruleId).
 - [Rule-based email notifications](/updates/240405-deprecation-rule-based-email-notifications).
+- ![Static Badge](https://img.shields.io/badge/Update-orange) [Pagination and querying the *List /rules endpoint*](/updates/240521-deprecation-pagination-querying-rules-endpoint)
