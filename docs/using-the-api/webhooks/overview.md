@@ -32,6 +32,10 @@ You can view the old webhook service documentation here:
 - [Receive webhook events as emails](/using-the-api/webhooks/legacy/receive-webhooks-as-email)
 :::
 
+:::caution After migration, the endpoint to [list webhook consumers](https://docs.codat.io/platform-api#/operations/list-webhook-consumers) does not currently support
+   pagination or query parameters. We are looking to rectify this as soon as we possibly can. We are proactively reaching out to all clients who leverage these features but 
+   if you have any concerns please feel free to reach out to support@codat.io
+:::
 ---
 
 ## Read next
