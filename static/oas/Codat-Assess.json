@@ -273,7 +273,8 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -287,10 +288,12 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "CostOfSales"
+                            "levelName": "CostOfSales",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -304,13 +307,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "CostOfSales"
+                            "levelName": "CostOfSales",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Inventory"
+                            "levelName": "Inventory",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -324,13 +330,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "CostOfSales"
+                            "levelName": "CostOfSales",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Inventory"
+                            "levelName": "Inventory",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -344,13 +353,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "NonOperating"
+                            "levelName": "NonOperating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Donations"
+                            "levelName": "Donations",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -364,13 +376,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "NonOperating"
+                            "levelName": "NonOperating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Interest"
+                            "levelName": "Interest",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -384,16 +399,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "NonOperating"
+                            "levelName": "NonOperating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Taxes"
+                            "levelName": "Taxes",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "CorporationTaxes"
+                            "levelName": "CorporationTaxes",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -407,13 +426,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "BankCharges"
+                            "levelName": "BankCharges",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -427,16 +449,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Leases"
+                            "levelName": "Leases",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "BuildingRentLease"
+                            "levelName": "BuildingRentLease",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -450,16 +476,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Leases"
+                            "levelName": "Leases",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "EquipmentRentLease"
+                            "levelName": "EquipmentRentLease",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -473,13 +503,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Marketing"
+                            "levelName": "Marketing",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -493,13 +526,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Marketing"
+                            "levelName": "Marketing",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -513,13 +549,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Marketing"
+                            "levelName": "Marketing",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -533,16 +572,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "NonCash"
+                            "levelName": "NonCash",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Amortization"
+                            "levelName": "Amortization",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -556,16 +599,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "NonCash"
+                            "levelName": "NonCash",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Depreciation"
+                            "levelName": "Depreciation",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -579,16 +626,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Personnel"
+                            "levelName": "Personnel",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "EmployeeBenefits"
+                            "levelName": "EmployeeBenefits",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -602,13 +653,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "SalesGeneralAdministrative"
+                            "levelName": "SalesGeneralAdministrative",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -622,13 +676,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "SalesGeneralAdministrative"
+                            "levelName": "SalesGeneralAdministrative",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -642,13 +699,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "SalesGeneralAdministrative"
+                            "levelName": "SalesGeneralAdministrative",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -662,13 +722,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "SalesGeneralAdministrative"
+                            "levelName": "SalesGeneralAdministrative",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -682,13 +745,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "SalesGeneralAdministrative"
+                            "levelName": "SalesGeneralAdministrative",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -702,13 +768,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "SalesGeneralAdministrative"
+                            "levelName": "SalesGeneralAdministrative",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -722,13 +791,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Expense"
+                            "levelName": "Expense",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Operating"
+                            "levelName": "Operating",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Travel"
+                            "levelName": "Travel",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -742,13 +814,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Income"
+                            "levelName": "Income",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Revenue"
+                            "levelName": "Revenue",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Online"
+                            "levelName": "Online",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -762,13 +837,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Income"
+                            "levelName": "Income",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Revenue"
+                            "levelName": "Revenue",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Wholesale"
+                            "levelName": "Wholesale",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -851,16 +929,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Asset"
+                            "levelName": "Asset",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "AccruedDeferredAssets"
+                            "levelName": "AccruedDeferredAssets",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "PrepaidExpenses"
+                            "levelName": "PrepaidExpenses",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -874,13 +956,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Asset"
+                            "levelName": "Asset",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Bank"
+                            "levelName": "Bank",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -894,13 +979,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Asset"
+                            "levelName": "Asset",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Inventory"
+                            "levelName": "Inventory",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -914,16 +1002,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Asset"
+                            "levelName": "Asset",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Receivables"
+                            "levelName": "Receivables",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "AccountsReceivables"
+                            "levelName": "AccountsReceivables",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -937,13 +1029,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Asset"
+                            "levelName": "Asset",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "NonCurrent"
+                            "levelName": "NonCurrent",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "AccumulatedDepreciationDepletionAmortization"
+                            "levelName": "AccumulatedDepreciationDepletionAmortization",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -957,13 +1052,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Asset"
+                            "levelName": "Asset",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "NonCurrent"
+                            "levelName": "NonCurrent",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "AccumulatedDepreciationDepletionAmortization"
+                            "levelName": "AccumulatedDepreciationDepletionAmortization",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -977,13 +1075,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Equity"
+                            "levelName": "Equity",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "RetainedEarnings"
+                            "levelName": "RetainedEarnings",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "CapitalIncomeReserve"
+                            "levelName": "CapitalIncomeReserve",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -997,13 +1098,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Equity"
+                            "levelName": "Equity",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "ShareCapital"
+                            "levelName": "ShareCapital",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "CommonStock"
+                            "levelName": "CommonStock",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1017,13 +1121,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "AccountsPayable"
+                            "levelName": "AccountsPayable",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1037,13 +1144,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "AccruedLiabilities"
+                            "levelName": "AccruedLiabilities",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1057,13 +1167,16 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Bank"
+                            "levelName": "Bank",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1077,16 +1190,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Debt"
+                            "levelName": "Debt",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "CreditCards"
+                            "levelName": "CreditCards",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1100,16 +1217,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Debt"
+                            "levelName": "Debt",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "LoansPayable"
+                            "levelName": "LoansPayable",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1123,16 +1244,20 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Debt"
+                            "levelName": "Debt",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "LoansPayable"
+                            "levelName": "LoansPayable",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1146,16 +1271,20 @@
                         "status": "Confirmed",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Personnel"
+                            "levelName": "Personnel",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "PensionPayable"
+                            "levelName": "PensionPayable",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1169,16 +1298,20 @@
                         "status": "Confirmed",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Current"
+                            "levelName": "Current",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "Personnel"
+                            "levelName": "Personnel",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "PensionPayable"
+                            "levelName": "PensionPayable",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1192,10 +1325,12 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "NonCurrent"
+                            "levelName": "NonCurrent",
+                            "confidence": 99.99
                           }
                         ]
                       }
@@ -1209,10 +1344,12 @@
                         "status": "Suggested",
                         "levels": [
                           {
-                            "levelName": "Liability"
+                            "levelName": "Liability",
+                            "confidence": 99.99
                           },
                           {
-                            "levelName": "NonCurrent"
+                            "levelName": "NonCurrent",
+                            "confidence": 99.99
                           }
                         ]
                       }
