@@ -3548,7 +3548,154 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateBankTransactionsv2"
+                "title": "Create bank transactions",
+                "type": "object",
+                "properties": {
+                  "accountId": {
+                    "$ref": "#/components/schemas/CreateBankTransactionsv2/properties/accountId"
+                  },
+                  "transactions": {
+                    "$ref": "#/components/schemas/BankTransactions"
+                  }
+                }
+              },
+              "examples": {
+                "Xero": {
+                  "value": {
+                    "accountId": "49cd5a42-b311-4750-9361-52e2ed1d4653",
+                    "transactions": [
+                      {
+                        "id": "716422529",
+                        "date": "2023-08-22T10:21:00Z",
+                        "description": "Repayment of Credit Card",
+                        "counterparty": "Bank of Example",
+                        "reference": "Ref-12345",
+                        "reconciled": true,
+                        "amount": 100,
+                        "balance": 100,
+                        "transactionType": "Credit"
+                      },
+                      {
+                        "id": "716422530",
+                        "date": "2023-08-22T10:22:00Z",
+                        "description": "Amazon Purchase",
+                        "counterparty": "Amazon",
+                        "reference": "Ref-12346",
+                        "reconciled": false,
+                        "amount": -100,
+                        "balance": 0,
+                        "transactionType": "Debit"
+                      },
+                      {
+                        "id": "716422531",
+                        "date": "2023-08-22T10:23:00Z",
+                        "description": "Office Supplies",
+                        "counterparty": "Office Mart",
+                        "reference": "Ref-12347",
+                        "reconciled": false,
+                        "amount": -60,
+                        "balance": -60,
+                        "transactionType": "Debit"
+                      }
+                    ]
+                  }
+                },
+                "QuickBooks Online Bank Feeds": {
+                  "value": {
+                    "accountId": "49cd5a42-b311-4750-9361-52e2ed1d4653",
+                    "transactions": [
+                      {
+                        "id": "716422529",
+                        "date": "2023-08-22T10:21:00Z",
+                        "description": "Repayment of Credit Card",
+                        "amount": 100,
+                        "balance": 100,
+                        "transactionType": "Credit"
+                      },
+                      {
+                        "id": "716422530",
+                        "date": "2023-08-22T10:22:00Z",
+                        "description": "Amazon Purchase",
+                        "amount": -100,
+                        "balance": 0,
+                        "transactionType": "Debit"
+                      },
+                      {
+                        "id": "716422531",
+                        "date": "2023-08-22T10:23:00Z",
+                        "description": "Office Supplies",
+                        "amount": -60,
+                        "balance": -60,
+                        "transactionType": "Debit"
+                      }
+                    ]
+                  }
+                },
+                "FreeAgent": {
+                  "value": {
+                    "accountId": "49cd5a42-b311-4750-9361-52e2ed1d4653",
+                    "transactions": [
+                      {
+                        "id": "716422529",
+                        "date": "2023-08-22T10:21:00Z",
+                        "description": "Repayment of Credit Card",
+                        "amount": 100,
+                        "transactionType": "Credit"
+                      },
+                      {
+                        "id": "716422530",
+                        "date": "2023-08-22T10:22:00Z",
+                        "description": "Amazon Purchase",
+                        "amount": -100,
+                        "transactionType": "Debit"
+                      },
+                      {
+                        "id": "716422531",
+                        "date": "2023-08-22T10:23:00Z",
+                        "description": "Office Supplies",
+                        "amount": -60,
+                        "transactionType": "Debit"
+                      }
+                    ]
+                  }
+                },
+                "Sage": {
+                  "value": {
+                    "accountId": "49cd5a42-b311-4750-9361-52e2ed1d4653",
+                    "transactions": [
+                      {
+                        "id": "716422529",
+                        "date": "2023-08-22T10:21:00Z",
+                        "description": "Repayment of Credit Card",
+                        "counterparty": "Bank of Example",
+                        "reference": "Ref-12345",
+                        "amount": 100,
+                        "balance": 100,
+                        "transactionType": "Credit"
+                      },
+                      {
+                        "id": "716422530",
+                        "date": "2023-08-22T10:22:00Z",
+                        "description": "Amazon Purchase",
+                        "counterparty": "Amazon",
+                        "reference": "Ref-12346",
+                        "amount": -100,
+                        "balance": 0,
+                        "transactionType": "Debit"
+                      },
+                      {
+                        "id": "716422531",
+                        "date": "2023-08-22T10:23:00Z",
+                        "description": "Office Supplies",
+                        "counterparty": "Office Mart",
+                        "reference": "Ref-12347",
+                        "amount": -60,
+                        "balance": -60,
+                        "transactionType": "Debit"
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -3559,21 +3706,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Create bank transaction response",
-                  "x-internal": true,
-                  "allOf": [
-                    {
-                      "type": "object",
-                      "properties": {
-                        "data": {
-                          "$ref": "#/components/schemas/CreateBankTransactions"
-                        }
-                      }
-                    },
-                    {
-                      "$ref": "#/components/schemas/PushOperation"
-                    }
-                  ]
+                  "$ref": "#/components/schemas/CreateBankTransactionsResponsev2"
                 }
               }
             }
@@ -3977,7 +4110,7 @@
                           "description": "International bank account number of the account. Often used when making or receiving international payments."
                         },
                         "currency": {
-                          "$ref": "#/components/schemas/SourceAccount/properties/currency",
+                          "$ref": "#/components/schemas/SourceAccountv2/properties/currency",
                           "description": "Base currency of the bank account."
                         },
                         "balance": {
@@ -4180,7 +4313,7 @@
             "description": "Balance for the source account."
           },
           "sourceCurrency": {
-            "$ref": "#/components/schemas/SourceAccount/properties/currency"
+            "$ref": "#/components/schemas/SourceAccountv2/properties/currency"
           },
           "targetAccountId": {
             "type": "string",
@@ -5124,7 +5257,24 @@
           }
         ]
       },
-      "CreateBankTransactions": {
+      "CreateBankTransactionsResponsev2": {
+        "title": "Create bank transaction response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "$ref": "#/components/schemas/CreateBankTransactionsv2"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
+      },
+      "CreateBankTransactionsv2": {
         "title": "Create bank transactions",
         "type": "object",
         "properties": {
@@ -5140,122 +5290,84 @@
             ]
           },
           "transactions": {
-            "$ref": "#/components/schemas/BankTransactions"
-          }
-        }
-      },
-      "CreateBankTransactionsResponse": {
-        "title": "Create bank transaction response",
-        "x-internal": true,
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "data": {
-                "$ref": "#/components/schemas/CreateBankTransactions"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PushOperation"
-          }
-        ]
-      },
-      "CreateBankTransactionsv2": {
-        "title": "Bank transactions",
-        "type": "object",
-        "properties": {
-          "accountId": {
-            "type": "string",
-            "description": "Unique ID for the bank account."
-          },
-          "transactions": {
-            "$ref": "#/components/schemas/CreateBankTransactionsv2/definitions/transactions"
-          }
-        },
-        "definitions": {
-          "transactions": {
-            "title": "Transactions",
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Identifier for the bank account transaction, unique for the company in the accounting platform.",
-                "example": "716422529"
-              },
-              "date": {
-                "$ref": "#/components/schemas/DateTime",
-                "type": "string",
-                "nullable": true,
-                "description": "Description of the bank transaction.",
-                "example": "Debit for Payment Id sdp-1-57379a43-c4b8-49f5-bd7c-699189ee7a60"
-              },
-              "counterparty": {
-                "type": "string",
-                "nullable": true,
-                "description": "The giving or receiving party such as a person or organization."
-              },
-              "reference": {
-                "type": "string",
-                "nullable": true,
-                "description": "An optional reference to the bank transaction."
-              },
-              "reconciled": {
-                "type": "boolean",
-                "description": "`True` if the bank transaction has been [reconciled](https://www.xero.com/uk/guides/what-is-bank-reconciliation/) in the accounting platform."
-              },
-              "amount": {
-                "type": "number",
-                "format": "decimal",
-                "description": "The amount transacted in the bank transaction."
-              },
-              "balance": {
-                "type": "number",
-                "format": "decimal",
-                "description": "The remaining balance in the account with ID `accountId`."
-              },
-              "transactionType": {
-                "description": "Type of transaction for the bank statement line.",
-                "type": "string",
-                "enum": [
-                  "Unknown",
-                  "Credit",
-                  "Debit",
-                  "Int",
-                  "Div",
-                  "Fee",
-                  "SerChg",
-                  "Dep",
-                  "Atm",
-                  "Pos",
-                  "Xfer",
-                  "Check",
-                  "Payment",
-                  "Cash",
-                  "DirectDep",
-                  "DirectDebit",
-                  "RepeatPmt",
-                  "Other"
-                ]
+            "title": "Bank transactions",
+            "type": "array",
+            "maxItems": 1000,
+            "items": {
+              "title": "Bank transaction",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Identifier for the bank account transaction, unique for the company in the accounting platform.",
+                  "example": "716422529"
+                },
+                "date": {
+                  "$ref": "#/components/schemas/DateTime"
+                },
+                "description": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "Description of the bank transaction.",
+                  "example": "Debit for Payment Id sdp-1-57379a43-c4b8-49f5-bd7c-699189ee7a60"
+                },
+                "counterparty": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "The giving or receiving party such as a person or organization.",
+                  "example": "ACME INC"
+                },
+                "reference": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "An optional reference to the bank transaction.",
+                  "example": "reference for transaction"
+                },
+                "reconciled": {
+                  "type": "boolean",
+                  "description": "`True` if the bank transaction has been [reconciled](https://www.xero.com/uk/guides/what-is-bank-reconciliation/) in the accounting platform.",
+                  "example": false
+                },
+                "amount": {
+                  "type": "number",
+                  "format": "decimal",
+                  "description": "The amount transacted in the bank transaction.",
+                  "example": 999.99
+                },
+                "balance": {
+                  "type": "number",
+                  "format": "decimal",
+                  "description": "The remaining balance in the account with ID `accountId`.",
+                  "example": -999.99
+                },
+                "transactionType": {
+                  "title": "Bank transaction type",
+                  "description": "Type of transaction for the bank statement line.",
+                  "type": "string",
+                  "enum": [
+                    "Unknown",
+                    "Credit",
+                    "Debit",
+                    "Int",
+                    "Div",
+                    "Fee",
+                    "SerChg",
+                    "Dep",
+                    "Atm",
+                    "Pos",
+                    "Xfer",
+                    "Check",
+                    "Payment",
+                    "Cash",
+                    "DirectDep",
+                    "DirectDebit",
+                    "RepeatPmt",
+                    "Other"
+                  ]
+                }
               }
             }
           }
-        },
-        "examples": {
-          "accountId": "string",
-          "transactions": [
-            {
-              "id": "6d790394-1fe2-45ff-8979-05a4649e5c5b",
-              "date": "2023-02-12T00:00:00.000Z",
-              "description": "transaction description 2",
-              "counterparty": "ACME INC",
-              "reference": "reference for transaction",
-              "reconciled": false,
-              "amount": -100,
-              "balance": 900,
-              "transactionType": "Credit"
-            }
-          ]
         }
       },
       "DataType": {
@@ -5898,113 +6010,6 @@
           }
         }
       },
-      "SourceAccount": {
-        "title": "Source Account",
-        "type": "object",
-        "description": "The target bank account in a supported accounting package for ingestion into a bank feed.",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique ID for the bank account."
-          },
-          "accountName": {
-            "type": "string",
-            "nullable": true,
-            "description": "The bank account name."
-          },
-          "accountType": {
-            "type": "string",
-            "nullable": true,
-            "description": "The type of bank account e.g. Credit."
-          },
-          "accountNumber": {
-            "type": "string",
-            "nullable": true,
-            "description": "The account number."
-          },
-          "sortCode": {
-            "type": "string",
-            "nullable": true,
-            "description": "The sort code."
-          },
-          "currency": {
-            "title": "Currency",
-            "x-internal": true,
-            "type": "string",
-            "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
-            "format": "ISO4217",
-            "examples": [
-              "GBP",
-              "USD",
-              "EUR"
-            ]
-          },
-          "balance": {
-            "type": "number",
-            "format": "decimal",
-            "nullable": true,
-            "description": "The latest balance for the bank account."
-          },
-          "modifiedDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "nullable": true,
-            "description": "The last date the bank account was modified."
-          },
-          "status": {
-            "type": "string",
-            "nullable": true,
-            "description": "Status of the source account.",
-            "enum": [
-              "pending",
-              "connected",
-              "connecting",
-              "disconnected",
-              "unknown"
-            ]
-          },
-          "feedStartDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "nullable": true
-          }
-        },
-        "required": [
-          "id"
-        ],
-        "definitions": {
-          "sourceAccounts": {
-            "title": "Source accounts",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SourceAccount"
-            }
-          }
-        },
-        "examples": [
-          {
-            "id": "acc-002",
-            "accountName": "account-081",
-            "sortCode": "123456",
-            "accountType": "Credit",
-            "accountNumber": "12345670",
-            "currency": "GBP",
-            "balance": 99.99,
-            "modifiedDate": "2023-01-09T14:14:14.1057478Z",
-            "status": "pending"
-          },
-          {
-            "id": "acc-003",
-            "accountName": "account-095",
-            "sortCode": "123456",
-            "accountType": "Credit",
-            "accountNumber": "12345671",
-            "currency": "USD",
-            "balance": 0,
-            "modifiedDate": "2023-01-09T14:14:14.1057478Z",
-            "status": "pending"
-          }
-        ]
-      },
       "SourceAccountv2": {
         "title": "Source Account",
         "type": "object",
@@ -6039,7 +6044,16 @@
             "$ref": "#/components/schemas/SourceAccountv2/definitions/routingInfo"
           },
           "currency": {
-            "$ref": "#/components/schemas/SourceAccount/properties/currency"
+            "title": "Currency",
+            "x-internal": true,
+            "type": "string",
+            "description": "The currency data type in Codat is the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) currency code, e.g. _GBP_.\n\n## Unknown currencies\n\nIn line with the ISO 4217 specification, the code _XXX_ is used when the data source does not return a currency for a transaction. \n\nThere are only a very small number of edge cases where this currency code is returned by the Codat system.",
+            "format": "ISO4217",
+            "examples": [
+              "GBP",
+              "USD",
+              "EUR"
+            ]
           },
           "balance": {
             "type": "number",
@@ -6184,50 +6198,6 @@
             "feedStartDate": "2023-05-19T00:00:00.000Z"
           }
         ]
-      },
-      "SourceAccountWebhook": {
-        "title": "Source account status changed webhook",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "description": "Unique identifier of the event"
-          },
-          "eventType": {
-            "type": "string",
-            "description": "The type of event.",
-            "examples": [
-              "bankFeeds.sourceAccount.connected",
-              "bankFeeds.sourceAccount.disconnected"
-            ]
-          },
-          "generatedDate": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "The date time in UTC the event was generated in Codat."
-          },
-          "payload": {
-            "$ref": "#/components/schemas/SourceAccountWebhook/definitions/sourceAccountWebhookPayload"
-          }
-        },
-        "definitions": {
-          "sourceAccountWebhookPayload": {
-            "title": "Payload",
-            "type": "object",
-            "properties": {
-              "companyId": {
-                "$ref": "#/components/parameters/companyId/schema"
-              },
-              "connectionId": {
-                "$ref": "#/components/parameters/connectionId/schema"
-              },
-              "sourceAccount": {
-                "$ref": "#/components/schemas/SourceAccount"
-              }
-            }
-          }
-        }
       },
       "SourceAccountWebhookv2": {
         "title": "Source account status changed webhook",
