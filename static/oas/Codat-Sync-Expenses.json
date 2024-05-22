@@ -12995,19 +12995,19 @@
             "type": "string",
             "description": "Unique identifier of account.",
             "example": "6",
-            "nullable": true
+            "nullable": false
           },
           "name": {
             "type": "string",
             "description": "Name of the account as it appears in the companies accounting software.",
             "example": "Purchases",
-            "nullable": true
+            "nullable": false
           },
           "currency": {
             "type": "string",
             "description": "Currency of the account.",
             "example": "GBP",
-            "nullable": true
+            "nullable": false
           },
           "accountType": {
             "type": "string",
@@ -13020,14 +13020,14 @@
               "Expense",
               "Equity"
             ],
-            "nullable": true
+            "nullable": false
           },
           "validTransactionTypes": {
             "type": "array",
             "description": "Supported transaction types for the account.",
             "minItems": 0,
             "maxItems": 8,
-            "nullable": true,
+            "nullable": false,
             "items": {
               "type": "string",
               "enum": [
@@ -15732,13 +15732,13 @@
             "type": "string",
             "description": "Unique identifier of tax rate.",
             "example": "59_Bills",
-            "nullable": true
+            "nullable": false
           },
           "name": {
             "type": "string",
             "description": "Name of the tax rate in the accounting platform.",
             "example": "UK Standard Rate (Bills) Bills",
-            "nullable": true
+            "nullable": false
           },
           "code": {
             "type": "string",
@@ -15805,7 +15805,7 @@
             "type": "string",
             "description": "Unique identifier of the tracking category.",
             "example": "DEPARTMENT_2",
-            "nullable": true
+            "nullable": false
           },
           "modifiedDate": {
             "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
@@ -15816,7 +15816,7 @@
             "type": "string",
             "description": "Name of the tracking category as it appears in the accounting software.",
             "example": "New York",
-            "nullable": true
+            "nullable": false
           },
           "hasChildren": {
             "type": "boolean",
