@@ -1,5 +1,5 @@
 ---
-title: "2024-07-10: Deprecation of rule-based email notifications"
+title: "2024-10-10: Deprecation of rule-based email notifications"
 date: "2024-04-05"
 tags: ["Deprecation"]
 authors: dcoplowe

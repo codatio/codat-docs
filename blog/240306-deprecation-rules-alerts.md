@@ -1,11 +1,11 @@
 ---
-title: "2024-07-10: Deprecation of /rules/alerts endpoints"
+title: "2024-10-10: Deprecation of /rules/alerts endpoints"
 date: "2024-03-06"
 tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **July 10, 2024**, we will deprecate the `/rules/alerts` endpoints following the release of our [new webhooks service](/updates/240306-new-webhook-service-released).
+On **October 10, 2024**, we will deprecate the `/rules/alerts` endpoints following the release of our [new webhooks service](/updates/240306-new-webhook-service-released).
 
 <!--truncate-->
 
