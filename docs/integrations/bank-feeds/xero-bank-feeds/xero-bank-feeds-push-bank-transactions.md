@@ -77,7 +77,7 @@ The `date` of a historic transaction must be later than the `feedStartDate` on t
 
 To push bank transactions for a `connected` source bank account, make the following requests to the Codat API. All push requests are asynchronous. Bank feeds transactions are sent to Xero immediately, not on a schedule.
 
-1. Post the bank transactions using the [POST /push/bankAccounts/{accountId}/bankTransactions](/accounting-api#/operations/create-bank-transactions) endpoint:
+1. Post the bank transactions using the [POST /push/bankAccounts/{accountId}/bankTransactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint:
 
    ```http title="Create bank transactions"
    POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts/<ACCOUNT_ID>/bankTransactions
