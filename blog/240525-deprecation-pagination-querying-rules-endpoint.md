@@ -1,5 +1,5 @@
 ---
-title: "2024-10-10: Deprecation of pagination and querying the *List /rules endpoint*"
+title: "2024-10-10: Deprecation of pagination and querying the List /rules endpoint"
 date: "2024-05-22"
 tags: ["Deprecation"]
 authors: dcoplowe
@@ -15,4 +15,4 @@ Contact your Codat representative to request continued use of the legacy webhook
 
 ### Expected impact if no action is taken
 
-Your Codat instance will be migrated over to use the new webhooks service which will remove the ability to programmatically paging and/or query rules using the *List /rules endpoint*. The API will only return the first 50 rules when calling the endpoint.
+On **October 10, 2024** your Codat instance will be migrated over to use the new webhooks service which will remove the ability to programmatically paging and/or query rules using the *List /rules endpoint*. The API will only return the first 50 rules when calling the endpoint.

@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **July 10, 2024**, we will deprecate the rule-based email notification functionality following the release of our [new webhooks service](/updates/240306-new-webhook-service-released).
+On **October 10, 2024**, we will deprecate the rule-based email notification functionality following the release of our [new webhooks service](/updates/240306-new-webhook-service-released).
 
 <!--truncate-->
 
@@ -17,4 +17,4 @@ To continue receiving email notifications, use our [Zapier integration](/using-t
 
 ### Expected impact if no action is taken
 
-If no action is taken by **July 10, 2024**, you will stop receiving email notifications created using our [Receive webhooks events via email](/using-the-api/webhooks/legacy/receive-webhooks-as-email) feature.
+If no action is taken by **October 10, 2024**, you will stop receiving email notifications created using our [Receive webhooks events via email](/using-the-api/webhooks/legacy/receive-webhooks-as-email) feature.
