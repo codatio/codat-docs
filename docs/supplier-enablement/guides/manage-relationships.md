@@ -1,6 +1,6 @@
 ---
 title: "Manage relationships with your customers"
-sidebar_label: Manage clients
+sidebar_label: Manage your customers
 displayed_sidebar: supplierEnablement
 description: "Learn how to onboard and manage companies that represent your customers"
 ---
