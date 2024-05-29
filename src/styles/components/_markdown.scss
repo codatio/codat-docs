@@ -12,10 +12,6 @@ html[data-theme="dark"] {
   --markdown-bold-c: #fff;
 }
 
-// .container {
-//   position: relative;
-// }
-
 .markdown {
   --ifm-heading-vertical-rhythm-bottom: 0.6;
   --ifm-heading-vertical-rhythm-top: 2;
@@ -34,10 +30,10 @@ html[data-theme="dark"] {
     color: var(--markdown-bold-c);
   }
 
-  //differentiate between inline code and code blocks
   code {
     font-size: 95%;
   }
+  
   pre code {
     font-size: 0.813rem;
   }
