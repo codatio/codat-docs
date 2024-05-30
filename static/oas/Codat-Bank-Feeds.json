@@ -3414,7 +3414,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BankFeedAccountMapping/allOf/0"
+                "$ref": "#/components/schemas/BankFeedAccountMapping"
               }
             }
           }
@@ -4212,38 +4212,26 @@
       },
       "BankFeedAccountMapping": {
         "title": "Bank feed account mapping",
-        "allOf": [
-          {
-            "title": "Bank feed account mapping",
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "sourceAccountId": {
-                "type": "string",
-                "description": "Unique ID for the source account"
-              },
-              "targetAccountId": {
-                "type": "string",
-                "nullable": true,
-                "description": "Unique ID for the target account"
-              },
-              "feedStartDate": {
-                "$ref": "#/components/schemas/DateTime",
-                "nullable": true,
-                "description": "Date to start importing transactions from"
-              }
-            },
-            "description": "A bank feed connection between a source account and a target account.",
-            "examples": [
-              {
-                "sourceAccountId": "acc-002",
-                "targetAccountId": "account-081",
-                "feedStartDate": "2023-01-09T14:14:14.1057478Z"
-              }
-            ]
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sourceAccountId": {
+            "type": "string",
+            "description": "Unique ID for the source account"
           },
+          "targetAccountId": {
+            "type": "string",
+            "nullable": true,
+            "description": "Unique ID for the target account"
+          }
+        },
+        "required": [
+          "sourceAccountId"
+        ],
+        "examples": [
           {
-            "x-internal": true
+            "sourceAccountId": "acc-002",
+            "targetAccountId": "account-081"
           }
         ]
       },
@@ -4405,80 +4393,82 @@
         "items": {
           "title": "Bank transaction",
           "type": "object",
-          "allOf": [
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "description": "Identifier for the bank account transaction, unique for the company in the accounting platform.",
-                  "example": "716422529"
-                },
-                "date": {
-                  "$ref": "#/components/schemas/DateTime"
-                },
-                "description": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "Description of the bank transaction.",
-                  "example": "Debit for Payment Id sdp-1-57379a43-c4b8-49f5-bd7c-699189ee7a60"
-                },
-                "counterparty": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "The giving or receiving party such as a person or organization.",
-                  "example": "ACME INC"
-                },
-                "reference": {
-                  "type": "string",
-                  "nullable": true,
-                  "description": "An optional reference to the bank transaction.",
-                  "example": "reference for transaction"
-                },
-                "reconciled": {
-                  "type": "boolean",
-                  "description": "`True` if the bank transaction has been [reconciled](https://www.xero.com/uk/guides/what-is-bank-reconciliation/) in the accounting platform.",
-                  "example": false
-                },
-                "amount": {
-                  "type": "number",
-                  "format": "decimal",
-                  "description": "The amount transacted in the bank transaction.",
-                  "example": 999.99
-                },
-                "balance": {
-                  "type": "number",
-                  "format": "decimal",
-                  "description": "The remaining balance in the account with ID `accountId`.",
-                  "example": -999.99
-                },
-                "transactionType": {
-                  "title": "Bank transaction type",
-                  "description": "Type of transaction for the bank statement line.",
-                  "type": "string",
-                  "enum": [
-                    "Unknown",
-                    "Credit",
-                    "Debit",
-                    "Int",
-                    "Div",
-                    "Fee",
-                    "SerChg",
-                    "Dep",
-                    "Atm",
-                    "Pos",
-                    "Xfer",
-                    "Check",
-                    "Payment",
-                    "Cash",
-                    "DirectDep",
-                    "DirectDebit",
-                    "RepeatPmt",
-                    "Other"
-                  ]
-                }
-              }
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "Identifier for the bank account transaction, unique for the company in the accounting platform.",
+              "example": "716422529"
+            },
+            "date": {
+              "$ref": "#/components/schemas/DateTime"
+            },
+            "description": {
+              "type": "string",
+              "nullable": true,
+              "description": "Description of the bank transaction.",
+              "example": "Debit for Payment Id sdp-1-57379a43-c4b8-49f5-bd7c-699189ee7a60"
+            },
+            "counterparty": {
+              "type": "string",
+              "nullable": true,
+              "description": "The giving or receiving party such as a person or organization.",
+              "example": "ACME INC"
+            },
+            "reference": {
+              "type": "string",
+              "nullable": true,
+              "description": "An optional reference to the bank transaction.",
+              "example": "reference for transaction"
+            },
+            "reconciled": {
+              "type": "boolean",
+              "nullable": true,
+              "description": "`True` if the bank transaction has been [reconciled](https://www.xero.com/uk/guides/what-is-bank-reconciliation/) in the accounting platform.",
+              "example": false
+            },
+            "amount": {
+              "type": "number",
+              "format": "decimal",
+              "description": "The amount transacted in the bank transaction.",
+              "example": 999.99
+            },
+            "balance": {
+              "type": "number",
+              "format": "decimal",
+              "description": "The remaining balance in the account with ID `accountId`.",
+              "example": -999.99
+            },
+            "transactionType": {
+              "title": "Bank transaction type",
+              "nullable": true,
+              "description": "Type of transaction for the bank statement line.",
+              "type": "string",
+              "enum": [
+                "Unknown",
+                "Credit",
+                "Debit",
+                "Int",
+                "Div",
+                "Fee",
+                "SerChg",
+                "Dep",
+                "Atm",
+                "Pos",
+                "Xfer",
+                "Check",
+                "Payment",
+                "Cash",
+                "DirectDep",
+                "DirectDebit",
+                "RepeatPmt",
+                "Other"
+              ]
             }
+          },
+          "required": [
+            "id",
+            "date",
+            "amount"
           ]
         }
       },
@@ -5281,7 +5271,11 @@
           "transactions": {
             "$ref": "#/components/schemas/BankTransactions"
           }
-        }
+        },
+        "required": [
+          "accountId",
+          "transactions"
+        ]
       },
       "CreateBankTransactionsResponse": {
         "title": "Create bank transaction response",
