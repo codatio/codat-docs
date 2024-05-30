@@ -9,6 +9,7 @@ import { IntegrationsList } from "@components/global/Integrations";
 import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
+import ReadNext from "@components/global/ReadNext";
 
 :::tip Your lending journey
 
@@ -240,15 +241,15 @@ func main() {
 
 </Tabs>
 
---- 
-
-## Read next
-
-Explore the features that make up our Lending API:
-
-- [Bank statements](/lending/features/bank-statements-overview)
-- [Sales](/lending/features/sales-overview)
-- [Financial statements](/lending/features/financial-statements-overview)
-- [Liabilities](/lending/features/liabilities-overview)
-- [Accounts receivable](/lending/features/accounts-receivable-overview)
-- [Accounts payable](/lending/features/accounts-payable-overview)
+<ReadNext
+  links={[
+    ["Bank statements", "/lending/features/bank-statements-overview", ],
+    ["Sales", "/lending/features/sales-overview", ],
+    ["Financial statements", "/lending/features/financial-statements-overview", ],
+    ["Liabilities", "/lending/features/liabilities-overview", ],
+    ["Accounts receivable", "/lending/features/accounts-receivable-overview", ],
+    ["Accounts payable", "/lending/features/accounts-payable-overview", ],
+  ]}
+>
+  <p>Explore the features that make up our Lending API:</p>
+</ReadNext>

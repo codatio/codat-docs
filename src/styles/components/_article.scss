@@ -1,0 +1,16 @@
+:root {
+  --doc-item-container-width: 999px;
+  --doc-text-container-width: 749px;
+}
+
+article {
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+
+	> .markdown {
+		max-width: var(--doc-text-container-width);
+
+	}
+}

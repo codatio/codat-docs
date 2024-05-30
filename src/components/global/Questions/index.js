@@ -31,8 +31,6 @@ export const Question = (props) => {
   const { question, answer } = props;
   const { query } = useContext(QuestionContext);
 
-  console.log(question, query)
-
   if(
     question.toLowerCase().includes(query) ||
     answer.toLowerCase().includes(query)

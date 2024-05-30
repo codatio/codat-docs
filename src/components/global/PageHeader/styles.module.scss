@@ -6,6 +6,7 @@
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
+  box-shadow: inset 0 0 2em #00000055;
 
   &.banking {
     background: rgb(27,166,112);

@@ -22,8 +22,9 @@ The primary use case for this feature is **revenue analysis**. Evaluate historic
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=250863128&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
+  className="googleSheets"
   style={{ top: 0, left: 0, width: "100%", height: "550px" }}
-></iframe>
+/>
 
 ## Feature enrichments
 
