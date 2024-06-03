@@ -1680,7 +1680,7 @@
                           ],
                           "invoiceTo": {
                             "id": "80000002-1674552702",
-                            "dataType": "customers"
+                            "type": "customer"
                           }
                         }
                       ],
@@ -1984,7 +1984,7 @@
                           ],
                           "invoiceTo": {
                             "id": "80000002-1674552702",
-                            "dataType": "customers"
+                            "type": "customer"
                           }
                         }
                       ]
@@ -2099,7 +2099,7 @@
                           ],
                           "invoiceTo": {
                             "id": "80000002-1674552702",
-                            "dataType": "customers"
+                            "type": "customer"
                           }
                         }
                       ]
@@ -14462,7 +14462,7 @@
                 ],
                 "invoiceTo": {
                   "id": "80000002-1674552702",
-                  "dataType": "customers"
+                  "type": "customer"
                 }
               }
             ],
@@ -14492,7 +14492,7 @@
             ],
             "invoiceTo": {
               "id": "80000002-1674552702",
-              "dataType": "customers"
+              "type": "customer"
             }
           }
         },
@@ -14557,12 +14557,12 @@
             "example": "80000002-1674552702",
             "description": "identifier of customer."
           },
-          "dataType": {
+          "type": {
             "type": "string",
-            "example": "customers",
+            "example": "customer",
             "description": "The type of contact.",
             "enum": [
-              "customers"
+              "customer"
             ]
           }
         }
