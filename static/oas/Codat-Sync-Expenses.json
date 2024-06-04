@@ -1680,7 +1680,7 @@
                           ],
                           "invoiceTo": {
                             "id": "80000002-1674552702",
-                            "dataType": "customers"
+                            "type": "customer"
                           }
                         }
                       ],
@@ -1984,7 +1984,7 @@
                           ],
                           "invoiceTo": {
                             "id": "80000002-1674552702",
-                            "dataType": "customers"
+                            "type": "customer"
                           }
                         }
                       ]
@@ -2099,7 +2099,7 @@
                           ],
                           "invoiceTo": {
                             "id": "80000002-1674552702",
-                            "dataType": "customers"
+                            "type": "customer"
                           }
                         }
                       ]
@@ -13624,17 +13624,32 @@
             "properties": {
               "statusCode": {
                 "type": "string",
-                "description": "The HTTP status code returned by the error."
+                "description": "The HTTP status code returned by the source platform when the error occurred."
               },
               "statusText": {
                 "type": "string",
-                "description": "A non-numeric status code/text."
+                "description": "A non-numeric status code/text returned by the source platform when the error occurred."
               },
               "errorMessage": {
                 "type": "string",
-                "description": "A brief message about the error."
+                "description": "A message about a error returned by Codat."
               },
               "erroredOnUtc": {
+                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+              },
+              "status": {
+                "title": "Error status",
+                "description": "The current status of a transient error. Null statuses indicate that the error is not transient.",
+                "type": "string",
+                "nullable": true,
+                "enum": [
+                  "Active",
+                  "Resolved"
+                ]
+              },
+              "resolvedOnUtc": {
+                "description": "The datetime in Utc that the error was resolved.",
+                "nullable": true,
                 "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
               }
             }
@@ -14447,7 +14462,7 @@
                 ],
                 "invoiceTo": {
                   "id": "80000002-1674552702",
-                  "dataType": "customers"
+                  "type": "customer"
                 }
               }
             ],
@@ -14477,7 +14492,7 @@
             ],
             "invoiceTo": {
               "id": "80000002-1674552702",
-              "dataType": "customers"
+              "type": "customer"
             }
           }
         },
@@ -14542,12 +14557,12 @@
             "example": "80000002-1674552702",
             "description": "identifier of customer."
           },
-          "dataType": {
+          "type": {
             "type": "string",
-            "example": "customers",
+            "example": "customer",
             "description": "The type of contact.",
             "enum": [
-              "customers"
+              "customer"
             ]
           }
         }
@@ -14745,7 +14760,7 @@
           "errorMessage": {
             "type": "string",
             "nullable": true,
-            "description": "A message about a transient or persistent error."
+            "description": "A message about a transient or persistent error returned by Codat or the source platform."
           },
           "requested": {
             "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
