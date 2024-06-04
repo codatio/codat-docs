@@ -34,4 +34,4 @@ As part of releasing our new webhooks service, we have announced the following d
 - [`/rules/alerts` endpoints](/updates/240306-deprecation-rules-alerts).
 - [RuleId in rules webhooks](/updates/240320-deprecation-ruleId).
 - [Rule-based email notifications](/updates/240405-deprecation-rule-based-email-notifications).
-- Addition from 2024-05-22 update: [Pagination and querying the *List /rules endpoint*](/updates/240521-deprecation-pagination-querying-rules-endpoint).
+- Addition from the 2024-05-22 update: [Pagination and querying the *List /rules endpoint*](/updates/240521-deprecation-pagination-querying-rules-endpoint).
