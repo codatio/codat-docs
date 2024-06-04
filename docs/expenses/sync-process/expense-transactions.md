@@ -147,11 +147,11 @@ Sync for Expenses maps and processes expense transactions based on the following
 
 #### Adjustments 
 
-In some cases you may wish to represents write-offs and transaction adjustments, such as foreign exchange adjustments. These will appear in your accounting platform as a journal entry. 
+Your customer may want to reflect write-offs and transaction adjustments, such as foreign exchange adjustments, in their accounting platform. Adjustments for FX alterations in expenses are essential to account for fluctuations in exchange rates. This ensures that expenses incurred in foreign currencies are accurately reflected in the company's reporting currency. 
 
-Adjustments for FX alterations in expenses are essential to account for fluctuations in exchange rates, ensuring that expenses incurred in foreign currencies are accurately reflected in the company's reporting currency. This process helps maintain the accuracy and reliability of financial statements, which is crucial for effective financial management and reporting.
+This process helps maintain the accuracy and reliability of financial statements, which is crucial for effective financial management and reporting. 
 
-You can use the [Create adjustment transactions](/sync-for-expenses-api#/operations/create-adjustment-transaction) endpoint to achieve this. 
+You can use the [Create adjustment transactions](/sync-for-expenses-api#/operations/create-adjustment-transaction) endpoint to help your customer achieve this. The adjustments will then appear in their accounting platform as a journal entry.
 
 :::info Compatible integrations
 
