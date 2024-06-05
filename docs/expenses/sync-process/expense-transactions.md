@@ -143,13 +143,23 @@ Sync for Expenses maps and processes expense transactions based on the following
 | `payment`        | Represents any   spend that takes place on the account and interest on credit purchases.                                                                                                                                                                  |
 | `refund`         | Represents any refunds and returns on an original transaction.                                                                                                                                                                                            |
 | `reward`         | Represents reward redemptions, such as cashback.                                                                                                                                                                                                          |
-| `chargeback`     | Similarly to a refund, represents a return of a transaction or a payment   sum which may have been disputed.                                                                                                                                              |
-| `transferIn`     | **Transaction type to be deprecated in June 2024.** <br/>  A transfer that decreases the   balance of the credit card account or increases the balance of a bank   account. <br/>  Represents a   top-up of debit card account, a pay-down of a credit card account, or a   balance transfer to another credit card.|
-| `transferOut`    | **Transaction type to be deprecated in June 2024.**  <br/> A transfer that increases the   balance of the credit account or decreases the balance of a bank account.   <br/>  Represents cash   withdrawals or a balance transfer to another credit card.                                                            |
-| `adjustmentIn`   | An adjustment that decreases the   balance of the credit account or increases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
-| `adjustmentOut`  | An adjustment that increases the   balance of the credit account or decreases the balance of a bank account.   <br/> Represents write-offs and transaction adjustments, such as   foreign exchange adjustments.                                           |
+| `chargeback`     | Similarly to a refund, represents a return of a transaction or a payment   sum which may have been disputed.                                                                              
 
-## Update expenses
+#### Adjustments 
+
+Your customer may want to reflect write-offs and transaction adjustments, such as foreign exchange adjustments, in their accounting platform. Adjustments for FX alterations in expenses are essential to account for fluctuations in exchange rates. This ensures that expenses incurred in foreign currencies are accurately reflected in the company's reporting currency. 
+
+This process helps maintain the accuracy and reliability of financial statements, which is crucial for effective financial management and reporting. 
+
+You can use the [Create adjustment transactions](/sync-for-expenses-api#/operations/create-adjustment-transaction) endpoint to help your customer achieve this. The adjustments will then appear in their accounting platform as a journal entry.
+
+:::info Compatible integrations
+
+This functionality is currently only available for QuickBooks Desktop. 
+
+:::
+
+### Update expenses
 
 :::info Compatible integrations
 
