@@ -80,7 +80,7 @@ Use the [Create bill](/sync-for-payables-v2-api#/operations/create-bill) endpoin
 
 2. Supplier record
 
-    Bills should always correspond to a supplier that issued them. Use the [List suppliers](https://docs.codat.io/sync-for-payables-v2-api#/operations/list-suppliers) endpoint to check that the relevant supplier exists and then associate it with the bill. You can use querying to retrieve only suppliers with unpaid bills or suppliers created within a specific timeframe. If the supplier doesn't exist, you can create it using the [Create supplier](https://docs.codat.io/sync-for-payables-v2-api#/operations/create-suppliers) endpoint.
+    Bills should always correspond to a supplier that issued them. Use the [List suppliers](https://docs.codat.io/sync-for-payables-v2-api#/operations/list-suppliers) endpoint to check that the relevant supplier exists and then associate it with the bill. You can use querying to retrieve only active suppliers or suppliers created within a specific timeframe. If the supplier doesn't exist, you can create it using the [Create supplier](https://docs.codat.io/sync-for-payables-v2-api#/operations/create-suppliers) endpoint.
 
 Use the [Upload bill attachment](https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) endpoint to assign an attachment against a specific `billId`. This ensures your accounts payable flow has a full audit trail for your SMB and confirms the legitimacy and accuracy of the transaction in the accounting platform. 
 
