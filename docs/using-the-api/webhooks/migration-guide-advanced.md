@@ -52,7 +52,7 @@ Depending on your setup, you may need to configure your webhook consumers in Cod
 
 ### IP allowlist
 
-If your consumer endpoint is behind a firewall or NAT, make sure to allow messages from `4.159.114.108`.
+If your consumer endpoint is behind a firewall or NAT, make sure to allow messages from `4.159.114.108` and `20.117.190.191`.
 
 ### Source client header
 
