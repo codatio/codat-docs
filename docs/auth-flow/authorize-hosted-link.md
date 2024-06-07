@@ -64,12 +64,6 @@ From the response, retain the following:
    - `companyId`, because you will need it for directing your customers to Link and managing their connections;
    - `redirect` URL value, because you will use this URL in your app to direct the customer to start their Link journey.  
 
-:::tip One-time passwords for Link
-
-Hosted Link supports one-time password (OTP) functionality. Reach out to your Codat contact to learn more.
-
-:::
-
 Once your customer finishes the Link flow, they will be redirected back to the URL you have set in the [Link settings](/auth-flow/customize/set-up-redirects). You can also present your customer with a confirmation screen that shows the platforms they have linked. 
 
 #### Monitor the connection status
