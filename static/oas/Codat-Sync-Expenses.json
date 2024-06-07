@@ -122,6 +122,10 @@
       "description": "Create and update transactions that represent the movement of your customers' money."
     },
     {
+      "name": "Adjustments",
+      "description": "Create transactions that represent your adjustments to your customers' spend."
+    },
+    {
       "name": "Reimbursements",
       "description": "Create and update transactions that represent your customers' repayable spend."
     },
@@ -1876,6 +1880,104 @@
                       },
                       "amount": 101
                     }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/sync/expenses/adjustment-transactions": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        }
+      ],
+      "post": {
+        "summary": "Create adjustment transaction",
+        "operationId": "create-adjustment-transaction",
+        "description": "Use the *Create adjustment expense* endpoint to create an [adjustment](https://docs.codat.io/sync-for-expenses-api#/schemas/Adjustment-Transactions) in the accounting platform for a given company's connection. \n\nAdjustments represent write-offs and transaction alteration, such as foreign exchange adjustments, in the form of a journal entry. \n\nThe _Create adjustment_ endpoint is currently only available for QuickBooks Desktop. ",
+        "tags": [
+          "Adjustments"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "x-speakeasy-usage-example": true,
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAdjustmentResponse"
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "syncId": "cd937d46-8e41-43a9-9477-a79158ffd98a"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAdjustmentRequest"
+              },
+              "examples": {
+                "Create transfer": {
+                  "value": {
+                    "id": "3357b3df-5f2e-465d-b9ba-226519dbb8f1",
+                    "date": "2021-05-21T00:00:00+00:00",
+                    "currency": "USD",
+                    "currencyRate": 1,
+                    "reference": "test reference",
+                    "lines": [
+                      {
+                        "amount": -50,
+                        "accountRef": {
+                          "id": "bf21e04d-0e62-462b-bf3b-90ddaab0c96a"
+                        },
+                        "description": "test line 1",
+                        "trackingRefs": [
+                          {
+                            "id": "c6fcdb23-8a0f-4804-aedc-a611c505cb9b",
+                            "dataType": "trackingCategories"
+                          }
+                        ],
+                        "invoiceTo": {
+                          "id": "9cc3527f-0b8b-4ccb-8251-c5a76ef0ec09",
+                          "type": "customer"
+                        }
+                      }
+                    ]
                   }
                 }
               }
@@ -13047,6 +13149,43 @@
           }
         }
       },
+      "AdjustmentTransactionLine": {
+        "x-internal": true,
+        "title": "Adjustment transaction line",
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "decimal",
+            "example": 110.42,
+            "description": "Amount of the line, exclusive of tax."
+          },
+          "accountRef": {
+            "$ref": "#/components/schemas/RecordRef"
+          },
+          "description": {
+            "type": "string",
+            "description": "Any private, company notes about the transaction.",
+            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+          },
+          "trackingRefs": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/TrackingRef"
+            }
+          },
+          "invoiceTo": {
+            "$ref": "#/components/schemas/InvoiceTo"
+          }
+        },
+        "required": [
+          "amount",
+          "accountRef"
+        ]
+      },
       "Attachment": {
         "title": "Attachment",
         "type": "object",
@@ -13763,6 +13902,63 @@
             "$ref": "#/components/schemas/PushOperation"
           }
         ]
+      },
+      "CreateAdjustmentRequest": {
+        "title": "Create Adjustment Request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Your unique identifier for the transaction."
+          },
+          "date": {
+            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "description": "Date of the transaction was recorded."
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency the transaction was recorded in."
+          },
+          "currencyRate": {
+            "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true,
+            "description": "User-friendly reference for the adjustment transaction."
+          },
+          "lines": {
+            "type": "array",
+            "description": "Array of transaction lines.",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/AdjustmentTransactionLine"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "date",
+          "currency",
+          "currencyRate",
+          "lines"
+        ]
+      },
+      "CreateAdjustmentResponse": {
+        "title": "Create Adjustment response",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
+            "format": "uuid",
+            "description": "Unique id of sync created"
+          }
+        }
       },
       "CreateCustomerResponse": {
         "title": "Create customer response",
