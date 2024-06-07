@@ -69,6 +69,12 @@ To do that, create a data connection using the [Create connection](/platform-api
 
 Direct your user to the `linkUrl`. The page will prompt them to enter their credentials for the third-party platform, authorizing the connection and activating it in Codat.
 
+:::tip One-time passwords for Link
+
+Hosted Link supports one-time password (OTP) functionality. Reach out to your Codat contact to learn more.
+
+:::
+
 :::info Platform-specific pages
 
 For some integrations, the authorization flow may include additional instructions or steps. For example:
