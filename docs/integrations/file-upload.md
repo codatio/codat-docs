@@ -1,7 +1,6 @@
 ---
 title: "File upload"
-createdAt: "2022-03-29T13:51:04.681Z"
-updatedAt: "2022-12-19T06:05:54.909Z"
+description: "Enable your customers to share their businss data using the file upload functionality"
 ---
 
 The **Accounting file upload**, **Banking file upload**, and **Business documents file upload** integrations provide simple file upload functionality.
@@ -25,7 +24,7 @@ Uploaded files must meet the following requirements:
 
 ## Enable file uploads via Link
 
-To let your SMB customers upload their business documents, you first need to enable the file upload integrations in the Codat Portal at **Settings > > Integrations > Other integrations**.
+To let your SMB customers upload their business documents, you first need to enable the file upload integrations in the Codat Portal at **Settings > Integrations > Other integrations**.
 
 Once enabled, an option to upload files will appear on the relevant platform selection screen. The **Business documents file upload** integration appears as a separate section in your [Link flow](/auth-flow/overview).
 
