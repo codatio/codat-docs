@@ -1851,7 +1851,7 @@
           "Suppliers"
         ],
         "summary": "List suppliers",
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBy default, this endpoint returns a list of active suppliers. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that. \n\nFor example, to retrieve only suppliers associated with unpaid bills (i.e. `balance>0`) or suppliers created within the specified number of days (e.g. `sourceModifiedDate>2023-12-15T00:00:00.000Z`), query the endpoint as follows: `/payables/suppliers?query=sourceModifiedDate>2023-12-15T00:00:00.000Z||balance>0`.",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBy default, this endpoint returns a list of active and archived suppliers. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that. \n\nFor example, to retrieve only active suppliers (i.e. `status=Active`) or suppliers created within the specified number of days (e.g. `sourceModifiedDate>2023-12-15T00:00:00.000Z`), query the endpoint as follows: `/payables/suppliers?query=sourceModifiedDate>2023-12-15T00:00:00.000Z||status=Active`.",
         "operationId": "list-suppliers",
         "parameters": [
           {
@@ -1868,17 +1868,14 @@
               "Modified after a given date": {
                 "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z"
               },
-              "Balances above 400 USD": {
-                "value": "balance>400"
+              "Status of a supplier": {
+                "value": "status=Active"
               },
               "Combined": {
-                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z||balance>0"
-              },
-              "Non zero balances": {
-                "value": "balance!=0"
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z||status=Active"
               }
             },
-            "description": "Codat query string allows you to filter by `sourceModifiedDate` or if there is an outstanding balance (Unpaid bill) against a supplier. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
+            "description": "Codat query string allows you to filter by `sourceModifiedDate` or if a supplier is `Active` or `Archived` in the accounting platform. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
           }
         ],
         "responses": {
