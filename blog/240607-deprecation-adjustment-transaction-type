@@ -2,7 +2,6 @@
 title: "2024-10-10: Deprecation of `Adjustment in/out` transaction types for Sync for Expenses"
 date: "2024-06-07"
 tags: ["Deprecation"]
-draft: true
 authors: Amy-Roberts
 ---
 On **October 10, 2024**, we will remove the `Adjustment in` and `Adjustment out` transaction types from the Sync for Expenses [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint. 
