@@ -2478,7 +2478,7 @@
         "summary": "Create webhook consumer",
         "operationId": "create-webhook-consumer",
         "x-speakeasy-name-override": "create-consumer",
-        "description": "﻿Use the *Create webhook consumer* endpoint to create a new webhook consumer that will listen to messages we send you.\n\n[Webhook consumer](https://docs.codat.io/platform-api#/schemas/WebhookConsumer) is an HTTP endpoint that you configure to subscribe to specific events. See our documentation for more details on [Codat's webhook service](https://docs.codat.io/using-the-api/webhooks/overview).",
+        "description": "﻿Use the *Create webhook consumer* endpoint to create a new webhook consumer that will listen to messages we send you.\n\n[Webhook consumer](https://docs.codat.io/platform-api#/schemas/WebhookConsumer) is an HTTP endpoint that you configure to subscribe to specific events. See our documentation for more details on [Codat's webhook service](https://docs.codat.io/using-the-api/webhooks/overview).\n\n### Tips and traps\n- The number of webhook consumers you can create is limited to 50. If you have reached the maximum number of consumers, use the [*Delete webhook consumer*](https://docs.codat.io/platform-api#/operations/delete-webhook-consumer) endpoint to delete an unused consumer first.",
         "tags": [
           "Webhooks"
         ],
@@ -2544,6 +2544,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad-Request"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -7037,6 +7040,7 @@
             "properties": {
               "results": {
                 "type": "array",
+                "maxItems": 50,
                 "items": {
                   "$ref": "#/components/schemas/WebhookConsumer"
                 }
