@@ -18,16 +18,18 @@ banner_text: "Get support blabla if your provider uses codat"
 
 ## What is Codat?
 
-Codat is a technology company that specializes in helping companies 
+Codat is a technology company that specializes in helping companies gain access
 
 We help your financial services provider view your data quickly and securely so that they can offer their services to you as quickly as possible.
+
+bla
 
 <ul className="card-container">
  
   <li className="card animation-pulse">
     <div className="header">
       <img
-        src="/img/wp-icons/say-yes.png"
+        src="/img/wp-icons/check-circle.png"
         className="mini-icon"
       />
       <h3>We do:</h3>
@@ -42,7 +44,7 @@ We help your financial services provider view your data quickly and securely so 
   <li className="card animation-pulse">
     <div className="header">
       <img
-        src="/img/wp-icons/StopCircle.png"
+        src="/img/wp-icons/x-circle.png"
         className="mini-icon"
       />
       <h3>We don't:</h3>
