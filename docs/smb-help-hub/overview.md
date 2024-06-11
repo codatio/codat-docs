@@ -18,48 +18,43 @@ banner_text: "Get support blabla if your provider uses codat"
 
 ## What is Codat?
 
+Codat is a technology company that specializes in helping companies 
+
+We help your financial services provider view your data quickly and securely so that they can offer their services to you as quickly as possible.
+
 <ul className="card-container">
  
   <li className="card animation-pulse">
     <div className="header">
       <img
-        src="/img/wp-icons/accounting-2.png"
+        src="/img/wp-icons/say-yes.png"
         className="mini-icon"
       />
-      <h3>Callout 1</h3>
+      <h3>We do:</h3>
     </div>
     <p>
-      We help your financial services provider view your data quickly and securely so that they can offer their services to you as quickly as possible.
+      <ul>
+        <li>access your data</li>
+        <li>enable your financial provider see it</li>
+      </ul>
     </p>
   </li>
-  <li className="card dark hypercard">
+  <li className="card animation-pulse">
     <div className="header">
       <img
-        src="/img/wp-icons/Stack.png"
+        src="/img/wp-icons/StopCircle.png"
         className="mini-icon"
       />
-      <h3>Callout 2</h3>
+      <h3>We don't:</h3>
     </div>
     <p>
-      View our API endpoints in our {" "}
-      <a href="https://github.com/codatio/oas">Open API Specification</a>.
+      <ul>
+        <li>share your data outside of your financial provider</li>
+        <li>add, modify, or delete any of it</li>
+      </ul>
     </p>
   </li>
 </ul>
-
-## What we do with your data
-
-blabla
-We help your financial services provider view your data quickly and securely so that they can offer their services to you as quickly as possible.
-
-what we will do:
-- access your data
-- enable your financial provider see it
-
-## What we don't do with your data
-
-- share it outside of your financial provider
-- add, modify, or delete any of it
 
 ## How can Help Hub support me?
 
