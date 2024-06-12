@@ -263,13 +263,3 @@ You can also use our endpoints to monitor the status of your create, update, or 
 It is possible for an operation to be in a `Pending` status indefinitely, for example, if a user's on-premise software is offline. Codat provides a timeout functionality for such scenarios. 
 
 To control the timeframe in which you want your CUD operation to complete, use the `timeoutInMinutes` parameter. If the deadline expires, the status of the operation will change to `TimedOut`.
-
-## 💡 Tips and traps
-
-- When a CUD operation successfully completes, this changes the specific record in Codat's system, but does not change any *associated* records. For example, if you create a payment against an invoice, the payment becomes available in Codat once the operation completes, but the invoice may still show a non-zero `amountDue`. To view the fully updated associated records, you need to [requeue all the relevant datasets](/using-the-api/queueing-data-syncs).
-
-- Data successfully created in the target platform is visible almost immediately when retrieving that data type from Codat. If you produce point-in-time reports or use the `modifiedDate` to pull only recent changes from the API, this may impact the consistency of your data. 
-
-  For example, you may have checked your accounts receivable position based on the balance sheet and invoice data types pulled yesterday. If you created an invoice today, this will cause a discrepancy as there may have been changes to invoices not seen between the `lastSyncUtc` and the maximum `modifiedDate` of the invoices.
-
-- There is no coordination between the fetch and CUD operations to guarantee the correct order. This means, if you trigger a CUD operation while a pull is in progress for the same data type, fetched data may overwrite created or updated data in our API. We recommend you do not create or update a data type while it has a pull in progress. 
