@@ -4,13 +4,12 @@
 }
 
 article {
-	padding: 2em;
+	padding: var(--padding-page-border);
 	display: flex;
 	flex-direction: column;
     align-items: center;
 
 	> .markdown {
-		max-width: var(--doc-text-container-width);
-
+		max-width: min(100%, var(--doc-text-container-width));
 	}
 }

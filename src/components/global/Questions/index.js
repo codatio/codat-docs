@@ -14,8 +14,6 @@ const Questions = (props) => {
     setQuery(value);
   };
 
-  console.log(children)
-
   return (
     <>
       <input className={styles.search} value={query} onChange={handleOnChange} type="text" placeholder="What's your question?" />

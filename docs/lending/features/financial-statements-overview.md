@@ -28,8 +28,9 @@ Common uses of our financial statements feature include:
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1364518639&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "450px" }}
-></iframe>
+  className="googleSheets"
+  style={{ height: "450px" }}
+/>
 
 ## Feature enrichments
 
@@ -45,8 +46,9 @@ Each account category consists of up to five levels, with the most relevant leve
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=340133827&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "450px" }}
-></iframe>
+  className="googleSheets"
+  style={{ height: "450px" }}
+/>
   
 </details>
 

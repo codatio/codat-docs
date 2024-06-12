@@ -34,8 +34,9 @@ Are you looking to fetch, create, or update additional _properties_ in data type
 <iframe 
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZhBnE0b69-_VZ107d-i-I4pjgGFgMBGL0rVq7yxdUJZoKSsvcHY4wX-p9YZyA0zX-gU6-2e1eBkhI/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "250px" }}
-></iframe>
+  className="googleSheets"
+  style={{ height: "250px" }}
+/>
 
 ## Configure custom data
 

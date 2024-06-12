@@ -119,6 +119,12 @@
   --ifm-navbar-link-hover-color: initial;
   --ifm-navbar-padding-vertical: 0;
   --ifm-navbar-item-padding-vertical: 0;
+
+  --padding-page-border: 2em;
+
+  @media (max-width: 800px) {
+    --padding-page-border: 1em;  
+  }
 }
 
 html[data-theme="light"] {

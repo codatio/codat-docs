@@ -41,8 +41,9 @@ Our banking feature consists of the following components, supported across a num
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1760315404&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "200px" }}
-></iframe>
+  className="googleSheets"
+  style={{ height: "200px" }}
+/>
 
 ## Feature enrichments
 
@@ -58,8 +59,9 @@ Bank transactions lack useful context for underwriting. We have solved this prob
   <iframe
     src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=340133827&amp;single=true&amp;widget=true&amp;headers=false"
     frameborder="0"
-    style={{ top: 0, left: 0, width: "100%", height: "660px" }}
-  ></iframe>
+    className="googleSheets"
+    style={{ height: "660px" }}
+  />
 </details>
 
 #### Payment provider
@@ -72,8 +74,9 @@ Businesses often sell across multiple channels, for example, brick and mortar, o
  <iframe
    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=88475193&amp;single=true&amp;widget=true&amp;headers=false"
    frameborder="0"
-   style={{ top: 0, left: 0, width: "100%", height: "660px" }}
- ></iframe>
+   className="googleSheets"
+   style={{ height: "660px" }}
+ />
 </details>
 
 ## Supported outputs

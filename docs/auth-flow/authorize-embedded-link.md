@@ -7,6 +7,7 @@ banner_image: "/img/banners/link.png"
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import ReadNext from "@components/global/ReadNext";
 
 ![](/img/auth-flow/embedded-link-selection.png)
 
@@ -494,10 +495,11 @@ To control the redirects that happen upon flow completion, you need to build out
 - **Performance improvements**: Link loads quicker and can be loaded only when required.
 - **Connection status**: the connection status (success or error) is now shown during the Link flow. The SMB user can skip errors without interrupting the rest of the Link flow.
 
----
-## Read next
-
-- [Manage Link settings in Portal](/auth-flow/customize/customize-link)
-- [Manage branding settings in Portal](/auth-flow/customize/branding)
-- [Manage UI settings in code](/auth-flow/customize/sdk-customize-code)
-- Use the [Connections SDK](/auth-flow/optimize/connection-management) in your app
+<ReadNext
+  links={[
+    [ "Manage Link settings in Portal", "/auth-flow/customize/customize-link" ],
+    [ "Manage branding settings in Portal", "/auth-flow/customize/branding" ],
+    [ "Manage UI settings in code", "/auth-flow/customize/sdk-customize-code" ],
+    [ "Use the Connections SDK in your app", "/auth-flow/optimize/connection-management" ], 
+  ]}
+/>

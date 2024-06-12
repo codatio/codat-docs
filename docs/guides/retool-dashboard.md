@@ -4,7 +4,7 @@ description: "Ingest and visualize Codat data in a custom Retool dashboard in 10
 ---
 
 <div className="video-container">
-  <iframe width="100%" height="" src="https://www.youtube.com/embed/UpfsAB2FNvg?si=mvOQ7Dk_eGyuL6Eo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="100%" height="" src="https://www.youtube.com/embed/UpfsAB2FNvg?si=mvOQ7Dk_eGyuL6Eo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
 </div>
 
 #### Resources

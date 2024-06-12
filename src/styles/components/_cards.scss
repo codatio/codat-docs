@@ -1,8 +1,13 @@
 /* Cards */
 
+@media (max-width: 1080px) {
+  ::root {
+    --padding-margin: 0em;  
+  }
+}
+
 ul.card-container {
   list-style: none;
-  margin: 1rem -2em;
   padding: 0;
   padding-left: 0 !important;
   padding-top: 1rem;
@@ -12,6 +17,7 @@ ul.card-container {
   gap: 1rem;
   grid-auto-rows: minmax(150px, auto);
   max-width: initial;
+  margin: 1rem var(--padding-margin);
 
   &.col-1 {
     grid-template-columns: 1fr;

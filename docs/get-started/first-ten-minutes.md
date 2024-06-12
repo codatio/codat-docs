@@ -11,7 +11,7 @@ import LocalStorageChecklist from "@components/global/LocalStorageChecklist";
 In this video we'll sign up to Codat, set up the Xero integration, and pull data from Xero.
 
 <div className="video-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/GbZwyUthL18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/GbZwyUthL18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
 </div>
 
 
@@ -32,7 +32,7 @@ In this video we'll pick up from the last video, create some data in Xero, and t
 
 
 <div className="video-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/6HoyLiI-O3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/6HoyLiI-O3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
 </div>
 
 
