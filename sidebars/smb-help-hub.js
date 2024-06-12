@@ -12,6 +12,14 @@ module.exports = [
         className: "header",
     },
     {
+      type: "doc",
+      label: "What is Codat?",
+      id: "smb-help-hub/codat/faq",
+      customProps: {
+        hr: true,
+      },
+    },
+    {
       type: "category",
       label: "NetSuite",
       collapsed: true,

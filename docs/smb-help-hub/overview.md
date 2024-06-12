@@ -14,50 +14,44 @@ banner_image: "/img/banners/accounting-json.png"
 banner_text: "Get support blabla if your provider uses codat"
 ---
 
+import {IntegrationsList} from '@components/global/Integrations'
+import {integrationsFilterCommerceAcc, integrationsFilterCommerceComm} from '@components/global/Integrations/integrations'
+import Clients from '@components/global/Clients'
 
-
-## What is Codat?
-
-Codat is a technology company that specializes in helping companies gain access
-
-We help your financial services provider view your data quickly and securely so that they can offer their services to you as quickly as possible.
-
-bla
-
-<ul className="card-container">
- 
-  <li className="card animation-pulse">
-    <div className="header">
-      <img
-        src="/img/wp-icons/check-circle.png"
-        className="mini-icon"
-      />
-      <h3>We do:</h3>
-    </div>
-    <p>
-      <ul>
-        <li>access your data</li>
-        <li>enable your financial provider see it</li>
-      </ul>
-    </p>
-  </li>
-  <li className="card animation-pulse">
-    <div className="header">
-      <img
-        src="/img/wp-icons/x-circle.png"
-        className="mini-icon"
-      />
-      <h3>We don't:</h3>
-    </div>
-    <p>
-      <ul>
-        <li>share your data outside of your financial provider</li>
-        <li>add, modify, or delete any of it</li>
-      </ul>
-    </p>
-  </li>
-</ul>
+Codat is
+Codat does
 
 ## How can Help Hub support me?
 
 blabla
+
+
+Our clients 
+
+Our clients include many of the world’s largest financial institutions and software companies. Over 100,000 of their small business customers have connected their data to these providers through Codat-powered integrations.
+
+<Clients
+  clients={[
+    {
+        name: "Zettle",
+        path: "/img/clients/zettle.png",
+    },
+    {
+        name: "Phorest",
+        path: "/img/clients/phorest.svg",
+    },
+    {
+        name: "Lightspeed",
+        path: "/img/clients/lightspeed.png",
+    },
+    {
+        name: "Clover",
+        path: "/img/clients/clover.svg",
+    },
+  ]}
+/>
+
+
+
+
+
