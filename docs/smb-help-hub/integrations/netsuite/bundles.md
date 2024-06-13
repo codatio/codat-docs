@@ -1,63 +1,64 @@
 ---
-title: Understand bundles
-description: Understand bundles
+title: Understand NetSuite bundles
+description: Review the concept of bundles and how they are used to enhance NetSuite's functionality
 sidebar_label: Understand bundles
 hide_table_of_contents: false
 ---
 
-How you ended up here from the netsuite flow
-what this page will help with
+import Arcade from '@components/global/Arcade'
 
+## Why am I here?
+
+Your financial service provider has requested that you share the data from your NetSuite account with them. For this, they asked you to complete a set of steps. One of these steps requires you to install **a bundle**. 
+
+Read on to learn more about bundles, what they do, and how to install them.
 
 ## What is a bundle?
 
-- collection of javascrpt files that a user can install 
-a group of files from someone in the netsuite universe (not necessari;y netsuite themselves) made available to be installed by someone
-it then performs whatever it was built to do
+A **bundle** is a collection of code and settings packaged together so that they can be easily applied to a NetSuite account. Once applied, they extend the functionality of NetSuite. The way the bundle extends it is specific to each bundle.
 
-NetSuite Bundles are packages of customizations, scripts, and configurations that can be installed into NetSuite accounts.
+NetSuite also calls bundles a SuiteBundle or a SuiteApp interchangeably.
 
-Simply put a bundle is a grouping of code, records, and settings that allow you to extend the functionality of NetSuite.
+## What bundles will I install and why?
 
-A bundle is a collection of components that are packaged together within NetSuite.can also be called a suiteapp. 
+#### AppLink
 
-any risk associated with a bundle?
+You will be asked to install a bundle called **AppLink**. It is a bundle that we built, and it lets us create a flow of data between your NetSuite account and your financial provider. 
 
-- yiou re allowing us not to just fetch data, but also changee xisting data - so there needs to be assurance and confidence. it s been installed over 1000 times by different people (SMBs)
+When you install our bundle, you are allowing us to _read_ existing data and _create_ new data in your NetSuite account. This bundle enables us to:
 
-- your provider trusts us
-- we do lots of testing of our bundle on test data. it s currently running against 10s and 100s of live netsuite production accounts. it is used by X number of our clients (financial service providers) - 71 clients atm actively in the last year. 
+- Read fields that we can't access using NetSuite's interface.
+- Interact with attachments in NetSuite.
+- Search through your records quicker.
+- Update existing records in your account and create new records. 
 
-A bundle in NetSuite refers to a collection of customizations, configurations, and functionalities packaged together for easy deployment. It allows businesses to streamline processes, enhance productivity, and meet specific requirements. A bundle can include features like custom fields, workflows, scripts, and saved searches.
+Over 70 of our clients rely on this bundle to get financial data from their customers, and more than 1,000 businesses have already installed it on their accounts.
 
-a bundle sometimes is called a suite bundle, or a suite app - but it s the same thing. 
+#### Bank Statement Parsers
 
-ours is an unmanaged bundle. not approved by netsuite, we just chose to deploy it into the world of netsuite as smth we made in our instance. 
+You may also be asked to install a bundle called **Bank Statement Parsers**. This bundle was created by NetSuite themselves, and it helps us read your bank statements easily so that we can create this data in your account. 
+
+As a result, you will see reconciled bank statement data in NetSuite without having to type it in. 
 
 ## How do I install a bundle?
 
+When completing the steps your provider shared with you, you will reach the bundle installation screen. Once there, do the following: 
 
+1. Click the **View bundle** button. This will take you to the detailed bundle view in NetSuite. 
+2. Click **Install** in the _Bundle Details_ screen. This will open the _Preview Bundle Install_ screen.
+3. Click **Install Bundle** in the _Preview Bundle Install_ screen. You will be redirected to the _Installed Bundles_ screen, where you will see AppLink in a pending status.
+4. Agree to the terms of service when prompted.
 
-## What bundles does Codat use?
+You may need to do this again if another bundle needs to be installed. If so, you will see another screen appear for the other bundle.
 
-we use our bundle for pushing and pulling, but mostly pushing. that s what our bundle does. we need the bindle (you can just query using Netsuite QL) because it allows us to do more advanced things, 
+#### Interactive tutorial
 
-what does our bundle do - 
-- to pull and push specific fields that arent accessible via normal UI (eg sales tax items, tax groups)
-- interact with attachments in netsuite
-- helps search through records quicker using specific fields and indices to get the data quicker
-- 
+Follow our tutorial below to see each action in detail. Click the blue pulsing dot to begin. 
 
-we support - 
+- To view the tutorial full-screen, press the double arrow icon in the top right corner.  
+- To replay the tutorial, click the circle arrow next to the _Bundle Details - NetSuite_ header.
 
-update - bills and purchase orders
-create - bank accounts, credit notes, payments, acocunts, 
-it s not easily identifiable which records were created by codat - check this
-
-
-
-netsuite-created bundle - Bank Statement Parser - they have made and released that allows the reading of bank statements in a way that we can easily extract it and read/write data (to confirm). we push the bank feed data into the accounting platform. 
-
-as an smb i get my bank statemnt data reconciled in my acctg platform without typing it in
-
-
+<Arcade
+  url="https://app.arcade.software/t5mKUZHGP0r7MyuonvcV?embed&show_copy_link=false"
+  title="Install a NetSuite bundle"
+/>
