@@ -20,6 +20,8 @@ const Questions = (props) => {
 
       <QuestionContext.Provider value={{ query, setQuery }}>
         {children}
+
+        <div className={styles.questionsZeroState}>Try a different search term</div>
       </QuestionContext.Provider>
     </>
   );

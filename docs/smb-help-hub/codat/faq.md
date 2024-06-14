@@ -2,8 +2,6 @@
 title: Frequently asked questions about Codat
 description: Understand Codat and its technology, the role we play in your provider's processes, and how we handle your data
 sidebar_label: What is Codat?
-hide_table_of_contents: false
-unlisted: true
 ---
 
 ## What is Codat?

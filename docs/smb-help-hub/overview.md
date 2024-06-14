@@ -10,7 +10,7 @@ tags:
   - Codat
   - Home
 banner_title: Business Help Hub
-banner_image: "/img/banners/accounting-json.png"
+banner_image: "/img/banners/mobile.png"
 banner_text: "Get support and gain confidence when sharing access to your accounting, banking, or commerce data with your financial service provider"
 ---
 
