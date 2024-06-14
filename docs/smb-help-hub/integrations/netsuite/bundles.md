@@ -23,24 +23,44 @@ NetSuite also calls bundles a SuiteBundle or a SuiteApp interchangeably.
 
 #### AppLink
 
-You will be asked to install a bundle called **AppLink**. It is a bundle that we built, and it lets us create a flow of data between your NetSuite account and your financial provider. 
+You will need to install a bundle called **AppLink**. This is Codat's bundle, and it lets us create a flow of data between your NetSuite account and your financial provider. 
 
-When you install our bundle, you are allowing us to _read_ existing data and _create_ new data in your NetSuite account. This bundle enables us to:
+When you install our bundle, you are allowing Codat to _read_ existing data and _create_ new data in your NetSuite account on behalf of your financial provider. 
+
+This bundle enables us to:
 
 - Read fields that we can't access using NetSuite's interface.
 - Interact with attachments in NetSuite.
 - Search through your records quicker.
 - Update existing records in your account and create new records. 
 
-Over 70 of our clients rely on this bundle to get financial data from their customers, and more than 1,000 businesses have already installed it on their accounts.
+Codat's clients trust this bundle to get financial data from their customers, and more than 1,000 businesses have already installed it on their accounts.
 
 #### Bank Statement Parsers
 
-You may also be asked to install a bundle called **Bank Statement Parsers**. This bundle was created by NetSuite themselves, and it helps us read your bank statements easily so that we can create this data in your account. 
+You may also be asked to install a bundle called **Bank Statement Parsers**. NetSuite's developers built this bundle, and it helps us read and modify your bank statements so that we can create this data in your account. 
 
 As a result, you will see reconciled bank statement data in NetSuite without having to type it in. 
 
 ## How do I install a bundle?
+
+#### Interactive tutorial
+
+Follow our tutorial below to see each action in detail. Click the blue pulsing dot to begin. 
+
+<Arcade
+  url="https://app.arcade.software/t5mKUZHGP0r7MyuonvcV?embed&show_copy_link=false"
+  title="Install a NetSuite bundle"
+/>
+
+:::info Tutorial controls
+
+- To view the tutorial full-screen, press the double arrow icon in the top right corner.  
+- To replay the tutorial, click the circle arrow next to the _Enable Features - NetSuite_ header.
+
+:::
+
+#### Step-by-step instructions
 
 When completing the steps your provider shared with you, you will reach the bundle installation screen. Once there, do the following: 
 
@@ -50,15 +70,3 @@ When completing the steps your provider shared with you, you will reach the bund
 4. Agree to the terms of service when prompted.
 
 You may need to do this again if another bundle needs to be installed. If so, you will see another screen appear for the other bundle.
-
-#### Interactive tutorial
-
-Follow our tutorial below to see each action in detail. Click the blue pulsing dot to begin. 
-
-- To view the tutorial full-screen, press the double arrow icon in the top right corner.  
-- To replay the tutorial, click the circle arrow next to the _Bundle Details - NetSuite_ header.
-
-<Arcade
-  url="https://app.arcade.software/t5mKUZHGP0r7MyuonvcV?embed&show_copy_link=false"
-  title="Install a NetSuite bundle"
-/>
