@@ -136,7 +136,7 @@ Yes. You can enter negative line item amounts in the `lineItems.unitAmount` fiel
 
 ### Why do I get an error when pushing tracking categories to Xero?
 
-Our accounting data model allows the pulling and pushing of Xero _tracking options_ rather than parent _tracking categories_. You can have up to two active tracking categories and up to 100 tracking options for each tracking category. For more information about these objects, see [Set up tracking categories](https://central.xero.com/s/article/Set-up-tracking-categories-UK) in the Xero documentation.
+Our accounting data model allows the pulling and pushing of Xero _tracking options_ rather than parent _tracking categories_. You can have up to two active tracking categories and up to 100 tracking options for each tracking category. For more information about these objects, see [Set up tracking categories](https://central.xero.com/s/article/Set-up-tracking-categories) in the Xero documentation.
 
 You can only push a tracking category to Xero if it has a non-null value for `parentId`.
 

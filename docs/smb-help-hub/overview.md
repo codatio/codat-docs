@@ -16,11 +16,13 @@ banner_text: "Get support and gain confidence when sharing access to your accoun
 
 import Clients from '@components/global/Clients'
 
-**Codat** is a technology company building products that let other software programs talk to each other. We specialize in helping your financial services provider view or change your data quickly and securely so that they can maximize the services they offer you.
+**Codat** helps other software programs talk to each other. 
 
-We created the **Business Help Hub** to help you confidently share your data with your financial service provider, no matter which software you use, and learn more about what we do. 
+Your financial services provider uses Codat to view or modify your business data quickly and securely to drive the services they offer you. Whether it's your accounting platform, your point of sale (POS), or your bank account, Codat plugs in to the tools your business uses.
 
-Our clients include many of the world’s largest financial institutions and software companies. Over 100,000 of their small business customers have connected their data to these providers with Codat's support.
+Our **Business Help Hub** is here to help you confidently share your data with your financial service provider, no matter which software you use, and learn more about what we do. 
+
+Codat is trusted by the world’s largest financial institutions and software companies. Over 100,000 of their small business customers have connected their data secured by Codat.
 
 <Clients
   clients={[
