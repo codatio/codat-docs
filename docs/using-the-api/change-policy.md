@@ -41,7 +41,7 @@ Only users with [developer](https://codat-docs.vercel.app/configure/user-managem
 
 You can also [subscribe to our deprecation calendar](https://calendar.google.com/calendar/embed?src=c_83b00ebce11207e3c2b7b51fab82909ccff1e5a15f8d466f5919733aca458efb%40group.calendar.google.com).
 
-<iframe src="https://calendar.google.com/calendar/embed?src=c_83b00ebce11207e3c2b7b51fab82909ccff1e5a15f8d466f5919733aca458efb%40group.calendar.google.com" style={{border: 0}} width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?src=c_83b00ebce11207e3c2b7b51fab82909ccff1e5a15f8d466f5919733aca458efb%40group.calendar.google.com" style={{border: 0}} width="800" height="600" frameborder="0" scrolling="no"/>
 
 ## Changes by third-parties
 

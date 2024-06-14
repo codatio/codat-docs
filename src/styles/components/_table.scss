@@ -14,10 +14,11 @@ html[data-theme="dark"] {
 
 :root {
   --ifm-table-stripe-background: var(--ifm-table-background);
-}
+  --padding-margin: -2em;  
 
-.table-wrapper {
-  overflow-x: auto;
+  @media (max-width: 1080px) {
+    --padding-margin: 0;  
+  }
 }
 
 table,
@@ -85,14 +86,19 @@ thead th:empty {
   > .table-wrapper {
     width: 100%;
     margin: 2.5em 0;
+    max-width: initial;
+
     > table {
       width: 100%;
     }
   }
 
-
-
   .table-wrapper {
+    overflow-x: auto;
+    margin-left: var(--padding-margin);
+    margin-right: var(--padding-margin);
+    width: auto !important;
+
     table {
       border: 1px solid var(--ifm-table-border-color);
       border-radius: 8px;

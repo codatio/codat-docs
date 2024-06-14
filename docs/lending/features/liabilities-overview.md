@@ -30,8 +30,9 @@ Common uses of our liabilities feature include:
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=554962936&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "660px" }}
-></iframe>
+  className="googleSheets"
+  style={{ height: "660px" }}
+/>
 
 ## Supported outputs
 

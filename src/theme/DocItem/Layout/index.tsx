@@ -47,21 +47,29 @@ function useDocTOC() {
 
 export default function DocItemLayout({children}: Props): JSX.Element {
   const docTOC = useDocTOC();
+  
   return (
     <div className="row">
       <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />
+
         <div className={styles.docItemContainer}>
           <article>
             <DocBreadcrumbs />
+
             <DocVersionBadge />
+
             {docTOC.mobile}
+
             <DocItemContent>{children}dsadsad</DocItemContent>
+
             <DocItemFooter />
           </article>
+
           <DocItemPaginator />
         </div>
       </div>
+
       {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
     </div>
   );

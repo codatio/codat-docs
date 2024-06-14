@@ -1,21 +1,25 @@
-#read-next {
-	+ ul {
-		padding: 0;
-		list-style-type: none;
+.callout.read-next {
+	margin-top: 4em;
+}
 
-		li {
-			border: 2px solid #efefef;
-			padding: 0.5em 1em;
-			border-radius: 4px;
+#read-next + ul,
+.read-next > ul {
+	padding: 0;
+	list-style-type: none;
 
-			&::marker {
-				display: none;
-			}
+	li {
+		border: 2px solid #efefef;
+		background: white;
+		padding: 0.5em 1em;
+		border-radius: 4px;
 
-			&:before {
-				content: "🔗";
-				padding-right: 1em;
-			}
+		&::marker {
+			display: none;
+		}
+
+		&:before {
+			content: "🔗";
+			padding-right: 1em;
 		}
 	}
 }

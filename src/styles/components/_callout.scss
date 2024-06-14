@@ -1,0 +1,10 @@
+.callout {   
+	--callout-bg-spacing: 20px;
+	--callout-bg-color: #ccc;
+	
+	background-image: radial-gradient(circle at 1px 1px, #ccc 1px, transparent 0);
+	background-size: var(--callout-bg-spacing) var(--callout-bg-spacing); 
+	border: 1px solid #efefef;
+	border-radius: 8px;
+	padding: 2em;
+}

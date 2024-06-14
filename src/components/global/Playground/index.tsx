@@ -618,7 +618,7 @@ export default function Playground({
                             height={frameSize}
                             ref={(ref) => handleFrameRef(ref, "ios")}
                             src={sourceiOS}
-                          ></iframe>
+                          />
                         </device-preview>
                       </div>,
                       <div className={!isMD ? "frame-hidden" : "frame-visible"}>
@@ -627,7 +627,7 @@ export default function Playground({
                             height={frameSize}
                             ref={(ref) => handleFrameRef(ref, "md")}
                             src={sourceMD}
-                          ></iframe>
+                          />
                         </device-preview>
                       </div>,
                     ]
@@ -637,13 +637,13 @@ export default function Playground({
                         className={!isIOS ? "frame-hidden" : ""}
                         ref={(ref) => handleFrameRef(ref, "ios")}
                         src={sourceiOS}
-                      ></iframe>,
+                      />,
                       <iframe
                         height={frameSize}
                         className={!isMD ? "frame-hidden" : ""}
                         ref={(ref) => handleFrameRef(ref, "md")}
                         src={sourceMD}
-                      ></iframe>,
+                      />,
                     ]}
               </div>,
             ]

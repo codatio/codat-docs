@@ -14,8 +14,6 @@ const Questions = (props) => {
     setQuery(value);
   };
 
-  console.log(children)
-
   return (
     <>
       <input className={styles.search} value={query} onChange={handleOnChange} type="text" placeholder="What's your question?" />
@@ -30,8 +28,6 @@ const Questions = (props) => {
 export const Question = (props) => {
   const { question, answer } = props;
   const { query } = useContext(QuestionContext);
-
-  console.log(question, query)
 
   if(
     question.toLowerCase().includes(query) ||

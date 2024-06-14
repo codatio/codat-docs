@@ -16,8 +16,9 @@ The **company info** feature provides lenders with essential information about b
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=303232670&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
-  style={{ top: 0, left: 0, width: "100%", height: "400px" }}
-></iframe>
+  className="googleSheets"
+  style={{ height: "400px" }}
+/>
 
 ## Supported outputs
 

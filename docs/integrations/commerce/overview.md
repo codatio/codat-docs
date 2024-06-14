@@ -53,4 +53,4 @@ Each integration has a unique 4-character key that identifies it in our APIs. Fo
   src="https://knowledge.codat.io/embeds/integrations/platform-keys?integrationType=Commerce"
   frameborder="0"
   style={{ top: 0, left: 0, background: "white", borderRadius: "4px", overflow: "hidden", width: "100%", height: "1155px" }}
-></iframe>
+/>
