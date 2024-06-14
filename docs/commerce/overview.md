@@ -36,7 +36,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
     },
     {
         name: "Phorest",
-        path: "/img/clients/phorest.svg",
+        path: "/img/clients/phorest.png",
     },
     {
         name: "Lightspeed",
@@ -44,7 +44,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
     },
     {
         name: "Clover",
-        path: "/img/clients/clover.svg",
+        path: "/img/clients/clover.png",
     },
   ]}
 />

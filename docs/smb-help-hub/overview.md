@@ -31,19 +31,60 @@ Codat is trusted by the world’s largest financial institutions and software co
         path: "/img/clients/zettle.png",
     },
     {
+        name: "Capchase",
+        path: "/img/clients/capchase.png",
+    },
+    {
+        name: "Virgin Money",
+        path: "/img/clients/virgin-money.png",
+    },
+    {
+        name: "Capital on Tap",
+        path: "/img/clients/capital-on-tap.png",
+    },
+    {
+        name: "Pipe",
+        path: "/img/clients/pipe.png",
+    },
+    {
+        name: "Jeeves",
+        path: "/img/clients/jeeves.png",
+    },
+    {
+        name: "SumUp",
+        path: "/img/clients/sumup.png",
+    },
+    {
         name: "Phorest",
-        path: "/img/clients/phorest.svg",
+        path: "/img/clients/phorest.png",
     },
     {
         name: "Lightspeed",
         path: "/img/clients/lightspeed.png",
     },
     {
+        name: "Wayflyer",
+        path: "/img/clients/wayflyer.png",
+    },
+    {
+        name: "Rho",
+        path: "/img/clients/rho.png",
+    },
+    {
+        name: "Expensify",
+        path: "/img/clients/expensify.png",
+    },
+    {
+        name: "Brex",
+        path: "/img/clients/brex.png",
+    },
+    {
         name: "Clover",
-        path: "/img/clients/clover.svg",
+        path: "/img/clients/clover.png",
     },
   ]}
 />
+
 
 
 
