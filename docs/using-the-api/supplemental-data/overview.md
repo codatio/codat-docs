@@ -37,6 +37,7 @@ We are rapidly expanding coverage across integrations and data types according t
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToBP6lQMT_MrB8L5e_61w2LrmpoJPAVhxCVqCuoSpWgb6ga2hUXZHlLSdCr9jY_He1b-uYaDAnH6DV/pubhtml?widget=true&amp;headers=false"
   frameborder="0"
+  className="googleSheets"
   style={{ height: "400px" }}
 />
 
@@ -96,6 +97,7 @@ Review the table below for platform schemas we use in our data types, which are 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIOf4fqpv6L2Phe3iz5nLMPDdBVaAuI3La5dTMTn58TZq_6395WtUsUq7s7jAbeq2vwuseiCzu5DZG/pubhtml?widget=true&amp;headers=false"
   frameborder="0"
+  className="googleSheets"
   style={{ height: "400px" }}
 />
 
