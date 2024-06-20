@@ -159,7 +159,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 | Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |              |
 | Oracle   NetSuite   | ✔️       | ✔️      |         |            |             |              |               |              |
 | QuickBooks Desktop  | ✔️       | ✔️  (credit card only)          |            |            |             |              |✔️              | ✔️            |
-| Free Agent          | ✔️       |          |        |            |             |              | ✔️                |✔️            |   
+| FreeAgent          | ✔️       |          |        |            |             |              | ✔️                |✔️            |   
 </details>
 
 ## Build with client libraries
