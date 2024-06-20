@@ -23,6 +23,7 @@ export const integrationsFilterExpenses = [
   "Oracle NetSuite",
   "Dynamics 365 Business Central",
   "QuickBooks Desktop",
+  "FreeAgent"
 ]
 
 export const integrationsFilterCommerceAcc = [
