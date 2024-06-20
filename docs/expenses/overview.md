@@ -157,8 +157,9 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 | Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            |              |              |
 | QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️            | 
 | Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |              |
-| Oracle   NetSuite   | ✔️       | ✔️      |        |            |             |              |               |              |
-| QuickBooks Desktop  | ✔️       | ✔️  (credit card only)    |        |            |             |              |✔️              | ✔️            |
+| Oracle   NetSuite   | ✔️       | ✔️      |         |            |             |              |               |              |
+| QuickBooks Desktop  | ✔️       | ✔️  (credit card only)          |            |            |             |              |✔️              | ✔️            |
+| Free Agent          | ✔️       |          |        |            |             |              | ✔️                |✔️            |   
 </details>
 
 ## Build with client libraries
