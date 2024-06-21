@@ -6,7 +6,7 @@ sidebar_label: What is Codat?
 
 ## What is Codat?
 
-A business usually runs on many software products. These may be accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, and eCommerce platforms like Shopify and Amazon Seller Central.
+A business runs on many software products. These may be accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, and eCommerce platforms like Shopify and Amazon Seller Central.
 
 Each of these products contains data related to the activities of the business. A financial provider may need access to this data so that they can offer their services to the business. However, it is often difficult to get data out of these products.
 
@@ -14,7 +14,9 @@ That's where Codat comes in. We provide simple solutions that let software produ
 
 ## What happens to my data?
 
-Your financial provider can only use Codat to access your data with your authorization. Once you allow us this access, we process the data on behalf of your provider according to our agreement with them, strict internal policies, and the law. We enable your provider to view, modify, or create business data depending on the agreement and the service they are delivering to you. 
+Your financial provider can only use Codat to access your data with your authorization. 
+
+Once you allow us this access, we process the data on behalf of your provider according to our agreement with them, strict internal policies, and the law. We enable your provider to view, modify, or create business data depending on the agreement and the service they are delivering to you. 
 
 #### What we do
 
