@@ -91,6 +91,8 @@ Your financial provider can only use Codat to access your data with your authori
     </p>
   </li>
 
+</ul>
+
 ## Why is my provider using Codat?
 
 To deliver their services to you, your provider needs access to your business data. We simplify the process of getting, synchronizing, and interpreting that data for them, reducing their administrative load and time spent on getting that data. 
