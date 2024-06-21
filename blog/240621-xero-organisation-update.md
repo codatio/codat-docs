@@ -13,7 +13,7 @@ On **July 01, 2024**, Xero will introduce [new pricing plans](https://www.xero.c
 
 Codat doesn't surface `Organisation Classes` data in its standardized `Company profile` data model. As a result, this change only impacts Codat customers who: 
 
-- Use [Bank Feeds API](/bank-feeds-api#/) **and** the `planType` property of the [Company information](/bank-feeds-api#/schemas/CompanyInformation) data type.
+- Use [Bank Feeds API](/bank-feeds-api#/) **and** the `planType` property of the [Company info](/bank-feeds-api#/schemas/CompanyInformation) data type.
 - Use [supplemental data](/using-the-api/supplemental-data/overview) to enhance Codat’s `Company profile` data model with Xero’s `Organisation Class` data.
 
 :::
