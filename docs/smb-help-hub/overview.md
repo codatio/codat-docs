@@ -18,7 +18,7 @@ import Clients from '@components/global/Clients'
 
 **Codat** helps other software programs talk to each other. 
 
-Your financial services provider uses Codat to view or modify your business data quickly and securely to drive the services they offer you. Whether it's your accounting platform, your point of sale (POS), or your bank account, Codat plugs in to the tools your business uses.
+Your financial services provider uses Codat to view or modify your business data quickly and securely to deliver the services they offer you. Whether it's your accounting platform, your point of sale (POS), or your bank account, Codat plugs in to the tools your business uses.
 
 Our **Business Help Hub** is here to help you confidently share your data with your financial service provider, no matter which software you use, and learn more about what we do. 
 

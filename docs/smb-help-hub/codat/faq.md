@@ -6,29 +6,19 @@ sidebar_label: What is Codat?
 
 ## What is Codat?
 
+A business usually runs on many software products. These may be accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, and eCommerce platforms like Shopify and Amazon Seller Central.
 
-Codat is a technology company that specializes in helping companies gain access
+Each of these products contains data related to the activities of the business. A financial provider may need access to this data so that they can offer their services to the business. However, it is often difficult to get data out of these products.
 
-We help your financial services provider view your data quickly and securely so that they can offer their services to you as quickly as possible.
-
-bla
-
-provides software products that lets two other software programs talk to each other.
-
-Our API is for connecting software products that small businesses use. These include accounting platforms like QuickBooks Online and Xero; ERPs like Oracle NetSuite and Sage Intacct; Point-of-Sale systems like Zettle, Square, and Clover POS; eCommerce platforms like Shopify and Amazon Seller Central; and payments providers like Stripe and PayPal.
-
-
-
-
-Our clients include many of the world’s largest financial institutions and software companies. Over 100,000 of their small business customers have connected their data to these providers through Codat-powered integrations. financial institutions, payments providers, business lenders, software companies and more.
-
-Companies who provide software and services to small businesses can use Codat to give these customers easy ways to connect their data. They use Codat because building these connections from scratch is time-consuming and complicated.
+That's where Codat comes in. We provide simple solutions that let software products talk to each other. As a result, a financial provider that uses Codat can view or modify their clients' business data quickly and securely and focus on delivering their core services.
 
 ## What happens to my data?
 
+Your financial provider can only use Codat to access your data with your authorization. Once you allow us this access, we process the data on behalf of your provider according to our agreement with them, strict internal policies, and the law. We enable your provider to view, modify, or create business data depending on the agreement and the service they are delivering to you. 
 
+#### What we do
 
-<ul className="card-container">
+<ul className="card-container col-3">
  
   <li className="card animation-pulse">
     <div className="header">
@@ -36,71 +26,80 @@ Companies who provide software and services to small businesses can use Codat to
         src="/img/wp-icons/check-circle.png"
         className="mini-icon"
       />
-      <h3>What we do</h3>
+      <h3>Access your data</h3>
     </div>
     <p>
-      <ul>
-        <li>access your data</li>
-        <li>enable your financial provider see it</li>
-      </ul>
+    Your data belongs to you. You allow Codat to access this data, and we enable your financial provider to see or modify it. 
     </p>
   </li>
+
+  <li className="card animation-pulse">
+    <div className="header">
+      <img
+        src="/img/wp-icons/check-circle.png"
+        className="mini-icon"
+      />
+      <h3>Keep your data secure</h3>
+    </div>
+    <p>
+    We protect the security of your data. We never share your password and encrypt your data in transit and at rest.
+    </p>
+  </li>
+
+  <li className="card animation-pulse">
+    <div className="header">
+      <img
+        src="/img/wp-icons/check-circle.png"
+        className="mini-icon"
+      />
+      <h3>Keep you in control</h3>
+    </div>
+    <p>
+    You choose when and how to share your data, and we never share it with anyone else. You can withdraw your consent anytime.
+    </p>
+  </li>
+
+</ul>
+
+#### What we don't do
+
+<ul className="card-container col-2">
+ 
   <li className="card animation-pulse">
     <div className="header">
       <img
         src="/img/wp-icons/x-circle.png"
         className="mini-icon"
       />
-      <h3>What we don't do</h3>
+      <h3>We never alter your data</h3>
     </div>
     <p>
-      <ul>
-        <li>share your data outside of your financial provider</li>
-        <li>add, modify, or delete any of it</li>
-      </ul>
+    Codat doesn't add, modify, or delete any of your data. Your provider may do this using Codat depending on the service they provide you.
     </p>
   </li>
-</ul>
 
-You own your data
-Your data belongs to you. You can share data with your providers via Codat, and we never share it with anyone else.
-
-We never sell data.
-
-
-You decide what it is used for
-You can choose when and with whom to share your data. Your data are processed according to our agreement with your provider, strict internal policies, and the law.
-
-
-Your security is protected
-You never share your password. Your data are encrypted in transit and at rest.
+  <li className="card animation-pulse">
+    <div className="header">
+      <img
+        src="/img/wp-icons/x-circle.png"
+        className="mini-icon"
+      />
+      <h3>We never share your data</h3>
+    </div>
+    <p>
+    Your provider gets to access your data only with your permission. We never sell data and don't share it with other Codat clients.
+    </p>
+  </li>
 
 ## Why is my provider using Codat?
 
-Codat clients include financial institutions, payments providers, business lenders, software companies and more. They range from some of the world’s largest banks to the newest and most innovative start-ups.
+To deliver their services to you, your provider needs access to your business data. We simplify the process of getting, synchronizing, and interpreting that data for them, reducing their administrative load and time spent on getting that data. 
 
-Our clients can only use Codat to access the data of their customers and only when their customers authorize this sharing. We never share data across different Codat clients.
+Codat is trusted by the world’s largest financial institutions, payments providers, business lenders, software companies, and more. If you'd like to know more about your provider's business processes and services that rely on Codat, please reach out to them directly. 
 
-Small businesses need their financial service and software providers to enable integrations to their other systems, but integrations can be difficult to build and maintain.
+## Want to know more?
 
-Building and maintaining integrations is simpler with Codat. This is because we map all the underlying connections to a common standard. Rather than having to plug lots of differently-shaped plugs into lots of differently-shaped sockets, Codat provides a standard way for small business data to be shared and moved between different systems.
-
-
-If you would like to find out more about how your financial services and software providers are using Codat, please contact them directly.
-
-
-
-
-
-
-
-
-
-## Want to learn more?
-
-- https://www.codat.io/about-2/
-
-- https://www.codat.io/powered-by-codat/
+- Visit our [Powered by Codat](https://www.codat.io/powered-by-codat/) page to discover additional answers to questions we often receive.
 
 - Our [Trust portal](https://trust.codat.io/) provides the nitty-gritty details of our compliance with various standards and policies.
 

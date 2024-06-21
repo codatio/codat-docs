@@ -1,8 +1,9 @@
 ---
-title: Understand NetSuite bundles
+title: NetSuite overview
 description: Review the concept of bundles and how they are used to enhance NetSuite's functionality
-sidebar_label: Understand bundles
+sidebar_label: Overview
 hide_table_of_contents: false
+draft: true
 ---
 
 import Arcade from '@components/global/Arcade'
