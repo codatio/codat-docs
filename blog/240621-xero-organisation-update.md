@@ -5,11 +5,11 @@ tags: ["Xero", "Update"]
 authors: Amy-Roberts
 ---
 
-On **July 01, 2024**, Xero will introduce [new pricing plans](https://www.xero.com/uk/campaign/new-plans/) for their customers. As a result, the possible values for Xero's `Organisation Classes` will change to reflect this.
+On **July 01, 2024**, Xero will introduce [new pricing plans](https://www.xero.com/uk/campaign/new-plans/) for their customers. The possible values for Xero's `Organisation Classes` will change accordingly.
 
 <!--truncate-->
 
-:::caution Client impact
+:::note Client impact
 
 Codat doesn't surface `Organisation Classes` data in its standardized `Company profile` data model. As a result, this change only impacts Codat customers who: 
 
@@ -17,7 +17,7 @@ Codat doesn't surface `Organisation Classes` data in its standardized `Company p
 - Use [supplemental data](/using-the-api/supplemental-data/overview) to enhance Codat’s `Company profile` data model with Xero’s `Organisation Class` data.
 
 :::
-
+## What's changing?
 From **July 01, 2024**, 3 new pricing plans will become available. To reflect this, Xero’s `GET Organisations` endpoint will start returning the following additional `Organisation Classes` [values](https://developer.xero.com/documentation/api/accounting/types#organisation):
 
 - `IGNITE`
@@ -35,11 +35,11 @@ Once the migration is complete, Xero will deprecate all other Organisation Class
 - `DEMO`
 - `TRIAL`
 
-## Action required
+## What do I need to do?
 
 #### Bank Feeds API customers
 
-If your code uses the `planType` property of the Bank Feeds API’s [Get company information](/bank-feeds-api#/operations/get-company-information) endpoint, update your code to handle the full set of current and new values expected from **July 01, 2024**.
+If you use the `planType` property of Bank Feeds API’s [Get company information](/bank-feeds-api#/operations/get-company-information) endpoint, update your code to handle the full set of current and new values expected from **July 01, 2024**.
 
 #### Supplemental data users
 
@@ -49,7 +49,7 @@ If you have configured [supplemental data](/using-the-api/supplemental-data/over
 
 Xero discourages its customers from using `Organisation Classes` to determine the Xero functionality available to an organization. They recommend calling the `GET Organisation Actions` endpoint instead. 
 
-Codat suggests taking this opportunity to deprecate your use of `Organisation Classes` and implement the `GET Organisation Actions` endpoint in line with Xero's [Accounting API - Organisation](https://developer.xero.com/documentation/api/accounting/organisation#get-organisation-actions) guidance. 
+We suggest taking this opportunity to deprecate your use of `Organisation Classes` and implement the `GET Organisation Actions` endpoint in line with Xero's [Accounting API - Organisation](https://developer.xero.com/documentation/api/accounting/organisation#get-organisation-actions) guidance. 
 
 :::
 
