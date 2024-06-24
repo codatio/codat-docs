@@ -20,7 +20,7 @@ Once you allow us this access, we process the data on behalf of your provider ac
 
 #### What we do
 
-<ul className="card-container col-3">
+<ul className="card-container col-2">
  
   <li className="card animation-pulse">
     <div className="header">
@@ -28,45 +28,13 @@ Once you allow us this access, we process the data on behalf of your provider ac
         src="/img/wp-icons/check-circle.png"
         className="mini-icon"
       />
-      <h3>Access your data</h3>
-    </div>
-    <p>
-    Your data belongs to you. You allow Codat to access this data, and we enable your financial provider to see or modify it. 
-    </p>
-  </li>
-
-  <li className="card animation-pulse">
-    <div className="header">
-      <img
-        src="/img/wp-icons/check-circle.png"
-        className="mini-icon"
-      />
-      <h3>Keep your data secure</h3>
+      <h3>We keep your data secure</h3>
     </div>
     <p>
     We protect the security of your data. We never share your password and encrypt your data in transit and at rest.
     </p>
   </li>
 
-  <li className="card animation-pulse">
-    <div className="header">
-      <img
-        src="/img/wp-icons/check-circle.png"
-        className="mini-icon"
-      />
-      <h3>Keep you in control</h3>
-    </div>
-    <p>
-    You choose when and how to share your data, and we never share it with anyone else. You can withdraw your consent anytime.
-    </p>
-  </li>
-
-</ul>
-
-#### What we don't do
-
-<ul className="card-container col-2">
- 
   <li className="card animation-pulse">
     <div className="header">
       <img
@@ -77,6 +45,19 @@ Once you allow us this access, we process the data on behalf of your provider ac
     </div>
     <p>
     Codat doesn't add to, modify, or delete your data unless your financial service provider instructs us to. Where they do, this will be in accordance with the service they're providing you and terms you agreed to.
+    </p>
+  </li>
+
+  <li className="card animation-pulse">
+    <div className="header">
+      <img
+        src="/img/wp-icons/check-circle.png"
+        className="mini-icon"
+      />
+      <h3>We keep you in control</h3>
+    </div>
+    <p>
+    Your data belongs to you. You choose when and how to share your data, and we never share it with anyone else. You can withdraw your consent anytime.
     </p>
   </li>
 
