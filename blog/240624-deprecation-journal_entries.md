@@ -12,7 +12,7 @@ This change will be effective from **October 10, 2024** for the Netsuite integra
 
 ## Action required
 
-If you are currently getting journal entries from NetSuite, obtain customer and supplier information from the contactRef property for transactions affecting Accounts Receivable or Accounts Payable. This information is no longer referenced in tracking.
+If you are currently getting journal entries from NetSuite, obtain customer and supplier information from the `contactRef` property for transactions affecting Accounts Receivable or Accounts Payable. This information is no longer referenced in `tracking`.
 
 ## Expected impact if no action is taken
 
