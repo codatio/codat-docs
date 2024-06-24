@@ -6,11 +6,11 @@ sidebar_label: What is Codat?
 
 ## What is Codat?
 
-A business runs on many software products. These may be accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, and eCommerce platforms like Shopify and Amazon Seller Central.
+Businesses depend on a suite of software. Whether it's accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, or eCommerce platforms like Shopify and Amazon Seller Central - these are the tools that make a business tick.
 
-Each of these products contains data related to the activities of the business. A financial provider may need access to this data so that they can offer their services to the business. However, it is often difficult to get data out of these products.
+These software are the source of truth for the activities of the business. Financial service providers need access to this data so that they can offer their services to the business. For example, a lender can use accounting data to understand the risk profile of a business. However, it is often difficult to get data out of these products. 
 
-That's where Codat comes in. We provide simple solutions that let software products talk to each other. As a result, a financial provider that uses Codat can view or modify their clients' business data quickly and securely and focus on delivering their core services.
+That's where Codat comes in. We let the software and services businesses use talk to one another. Financial providers using Codat can view or modify their clients' business data quickly and securely and focus on delivering their core services.
 
 ## What happens to my data?
 
@@ -76,7 +76,7 @@ Once you allow us this access, we process the data on behalf of your provider ac
       <h3>We never alter your data</h3>
     </div>
     <p>
-    Codat doesn't add, modify, or delete any of your data. Your provider may do this using Codat depending on the service they provide you.
+    Codat doesn't add to, modify, or delete your data unless your financial service provider instructs us to. Where they do, this will be in accordance with the service they're providing you and terms you agreed to.
     </p>
   </li>
 
@@ -95,11 +95,11 @@ Once you allow us this access, we process the data on behalf of your provider ac
 
 </ul>
 
-## Why is my provider using Codat?
+## Why is my financial service provider using Codat?
 
 To deliver their services to you, your provider needs access to your business data. We simplify the process of getting, synchronizing, and interpreting that data for them, reducing their administrative load and time spent on getting that data. 
 
-Codat is trusted by the world’s largest financial institutions, payments providers, business lenders, software companies, and more. If you'd like to know more about your provider's business processes and services that rely on Codat, please reach out to them directly. 
+Codat is trusted by the world’s largest financial institutions, payments providers, business lenders, software companies, and more. If you'd like to know more about your provider's business processes and services that rely on Codat, you can reach out to them directly or refer to their terms of service. 
 
 ## Want to know more?
 
