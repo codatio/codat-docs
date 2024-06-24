@@ -1243,8 +1243,24 @@
             "schema": {
               "type": "string"
             },
-            "example": "status=Open",
-            "description": "Codat query string allows you to filter by `status` and `sourceModifiedDate`. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
+            "examples": {
+              "Status (open)": {
+                "value": "status=Open"
+              },
+              "Status (partially paid)": {
+                "value": "status=PartiallyPaid"
+              },
+              "Source modified date": {
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z"
+              },
+              "Status (open) & source modified date": {
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Open"
+              },
+              "Status (partially paid) & source modified date": {
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=PartiallyPaid"
+              }
+            },
+            "description": "Codat query string allows you to filter by `status` and `sourceModifiedDate`. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying). Platfrom specfic statuses: Xero supports  Open | PartiallyPaid | Paid | Void | Draft. Qbo supports Open | PartiallyPaid | Paid. FreeAgent supports Open | PartiallyPaid | Paid."
           }
         ],
         "responses": {
@@ -1851,7 +1867,7 @@
           "Suppliers"
         ],
         "summary": "List suppliers",
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBy default, this endpoint returns a list of active and archived suppliers. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that. \n\nFor example, to retrieve only active suppliers (i.e. `status=Active`) or suppliers created within the specified number of days (e.g. `sourceModifiedDate>2023-12-15T00:00:00.000Z`), query the endpoint as follows: `/payables/suppliers?query=sourceModifiedDate>2023-12-15T00:00:00.000Z||status=Active`.",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBy default, this endpoint returns a list of active and archived suppliers. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that. \n\nFor example, to retrieve only active suppliers (i.e. `status=Active`) or suppliers created within the specified number of days (e.g. `sourceModifiedDate>2023-12-15T00:00:00.000Z`), query the endpoint as follows: `/payables/suppliers?query=sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Active`.For example, to retrieve active suppliers modified after a particular date use `query=sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Active`.",
         "operationId": "list-suppliers",
         "parameters": [
           {
@@ -1865,14 +1881,20 @@
               "type": "string"
             },
             "examples": {
-              "Modified after a given date": {
+              "Source modified date": {
                 "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z"
               },
-              "Status of a supplier": {
+              "Status (active)": {
                 "value": "status=Active"
               },
-              "Combined": {
-                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z||status=Active"
+              "Status (archived)": {
+                "value": "status=Archived"
+              },
+              "Status (active) & source modified date": {
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Active"
+              },
+              "Status (archived) & source modified date": {
+                "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Archived"
               }
             },
             "description": "Codat query string allows you to filter by `sourceModifiedDate` or if a supplier is `Active` or `Archived` in the accounting platform. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
