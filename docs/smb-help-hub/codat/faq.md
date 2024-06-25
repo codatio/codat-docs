@@ -8,7 +8,9 @@ sidebar_label: What is Codat?
 
 Businesses depend on a suite of software. Whether it's accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, or eCommerce platforms like Shopify and Amazon Seller Central - these are the tools that make a business tick.
 
-These software are the source of truth for the activities of the business. Financial service providers need access to this data so that they can offer their services to the business. For example, a lender can use accounting data to understand the risk profile of a business. However, it is often difficult to get data out of these products. 
+These software are the source of truth for the activities of the business. Financial service providers need access to this data so that they can offer their services to the business. 
+
+For example, a lender can use accounting data to understand the risk profile of a business. However, it is often difficult to get data out of these programs. 
 
 That's where Codat comes in. We let the software and services businesses use talk to one another. Financial providers using Codat can view or modify their clients' business data quickly and securely and focus on delivering their core services.
 
@@ -16,9 +18,9 @@ That's where Codat comes in. We let the software and services businesses use tal
 
 Your financial provider can only use Codat to access your data with your authorization. 
 
-Once you allow us this access, we process the data on behalf of your provider according to our agreement with them, strict internal policies, and the law. We enable your provider to view, modify, or create business data depending on the agreement and the service they are delivering to you. 
+Once you allow us this access, we process the data on behalf of your provider according to our agreement with them, strict internal policies, and the law. 
 
-#### What we do
+We enable your provider to view, modify, or create business data depending on the agreement and the service they are delivering to you. 
 
 <ul className="card-container col-2">
  
@@ -44,7 +46,10 @@ Once you allow us this access, we process the data on behalf of your provider ac
       <h3>We never alter your data</h3>
     </div>
     <p>
-    Codat doesn't add to, modify, or delete your data unless your financial service provider instructs us to. Where they do, this will be in accordance with the service they're providing you and terms you agreed to.
+    Codat doesn't add to, modify, or delete your data unless your financial service provider instructs us to.
+    </p>
+    <p>
+    Where they do, this will be in accordance with the service they're providing you and terms you agreed to.
     </p>
   </li>
 

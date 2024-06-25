@@ -2,6 +2,7 @@
 title: Troubleshooting
 description: Something wrong?
 hide_table_of_contents: false
+draft: true
 ---
 
 import Questions, { Question } from '@components/global/Questions';
