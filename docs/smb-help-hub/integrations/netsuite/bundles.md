@@ -23,9 +23,9 @@ NetSuite also calls bundles a SuiteBundle or a SuiteApp interchangeably.
 
 #### AppLink
 
-You will need to install a bundle called **AppLink**. This is Codat's bundle, and it lets us create an **integration** that establishes a flow of data between your NetSuite account and your financial provider. 
+You will need to install a bundle called **AppLink**. This is Codat's bundle, and it lets us create an **integration** called _AppLinkProd_ that establishes a flow of data between your NetSuite account and your financial provider. 
 
-When you install the bundle, you are allowing Codat to _read_ existing data and _create_ new data in your NetSuite account on behalf of your financial provider via the integration. This enables us to:
+When you install the bundle, you are allowing Codat's _AppLinkProd_ integration to read existing data and create new data in your NetSuite account on behalf of your financial provider via the integration. This enables us to:
 
 - Read fields that we can't access using NetSuite's interface.
 - Interact with attachments in NetSuite.
