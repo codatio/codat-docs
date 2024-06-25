@@ -23,11 +23,9 @@ NetSuite also calls bundles a SuiteBundle or a SuiteApp interchangeably.
 
 #### AppLink
 
-You will need to install a bundle called **AppLink**. This is Codat's bundle, and it lets us create a flow of data between your NetSuite account and your financial provider. 
+You will need to install a bundle called **AppLink**. This is Codat's bundle, and it lets us create an **integration** that establishes a flow of data between your NetSuite account and your financial provider. 
 
-When you install our bundle, you are allowing Codat to _read_ existing data and _create_ new data in your NetSuite account on behalf of your financial provider. 
-
-This bundle enables us to:
+When you install the bundle, you are allowing Codat to _read_ existing data and _create_ new data in your NetSuite account on behalf of your financial provider via the integration. This enables us to:
 
 - Read fields that we can't access using NetSuite's interface.
 - Interact with attachments in NetSuite.
@@ -38,9 +36,9 @@ Codat's clients trust this bundle to get financial data from their customers, an
 
 #### Bank Statement Parsers
 
-You may also be asked to install a bundle called **Bank Statement Parsers**. NetSuite's developers built this bundle, and it helps us read and modify your bank statements so that we can create this data in your account. 
+You may also need to install a bundle called **Bank Statement Parsers**. NetSuite's developers built this bundle and the associated integration, and it helps us read and modify your bank statements so that we can create this data in your account. 
 
-As a result, you will see reconciled bank statement data in NetSuite without having to type it in. 
+As a result, you will see reconciled bank statement data in NetSuite without having to type it in. We will only ask you to install this bundle if it is required by the service your financial provider offers you. 
 
 ## How do I install a bundle?
 
