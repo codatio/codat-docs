@@ -52,16 +52,13 @@ When completing the steps your provider shared with you, you will reach the **Co
   :::info Enable features
 
   **SuiteScript**
-  
     - CLIENT SUITESCRIPT  
     - SERVER SUITESCRIPT  
 
   **SuiteTalk (Web Services)**
-  
     - REST WEB SERVICES  
 
   **Manage Authentication**
-  
     - TOKEN-BASED AUTHENTICATION  
   :::
 
