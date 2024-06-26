@@ -7,9 +7,7 @@ hide_table_of_contents: false
 
 import Arcade from '@components/global/Arcade'
 
-## Why am I here?
-
-Your financial service provider has asked you to share the data form your NetSuite account with them. For this, they asked you to complete a set of steps, one of which requires you to **configure SuiteCloud** by enabling some SuiteCloud features. 
+Your financial service provider has asked you to share the data from your NetSuite account with them. For this, they asked you to complete a set of steps, one of which requires you to **configure SuiteCloud** by enabling some SuiteCloud features. 
 
 ## What is SuiteCloud?
 
@@ -52,29 +50,16 @@ When completing the steps your provider shared with you, you will reach the **Co
   Some of these settings may already be enabled for your account. In that case, you don't need to tick them again. 
 
   :::info Enable features
-  
-  <br/>
 
-  #### SuiteScript
-  
+  **SuiteScript**
     - CLIENT SUITESCRIPT  
-      This setting lets us implement a custom script that runs on your NetSuite browser.
     - SERVER SUITESCRIPT  
-      This setting lets us implement a custom script that runs on the NetSuite server.
-  
-  <br/>
 
-  #### SuiteTalk (Web Services)
-  
+  **SuiteTalk (Web Services)**
     - REST WEB SERVICES  
-      This setting provides us with an additional interface for interacting with NetSuite.
-  
-  <br/>
 
-  #### Manage Authentication
-  
+  **Manage Authentication**
     - TOKEN-BASED AUTHENTICATION  
-      This setting enables us to interact with NetSuite using a stronger security mechanism.
   :::
 
 4. Click **Save** to apply the settings you selected and move to the next step. 

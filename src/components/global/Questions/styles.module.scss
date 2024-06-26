@@ -8,11 +8,13 @@
   width: 100%;
   margin: 0;
   margin-bottom: 1em;
+  min-width: 100%;
 }
 
 .header {
   cursor: pointer;
   line-height: 1.6em;
+  display: flex;
 }
 
 .question {
@@ -25,4 +27,12 @@
 .answer {
   margin-top: 1em;
   line-height: 1.2em;
+}
+
+.questionsZeroState {
+  display:none;
+
+  input + & {
+    display: flex;
+  }
 }
