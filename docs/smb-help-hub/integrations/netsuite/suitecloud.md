@@ -7,9 +7,7 @@ hide_table_of_contents: false
 
 import Arcade from '@components/global/Arcade'
 
-## Why am I here?
-
-Your financial service provider has asked you to share the data form your NetSuite account with them. For this, they asked you to complete a set of steps, one of which requires you to **configure SuiteCloud** by enabling some SuiteCloud features. 
+Your financial service provider has asked you to share the data from your NetSuite account with them. For this, they asked you to complete a set of steps, one of which requires you to **configure SuiteCloud** by enabling some SuiteCloud features. 
 
 ## What is SuiteCloud?
 

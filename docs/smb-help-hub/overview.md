@@ -16,19 +16,21 @@ banner_text: "Get support and gain confidence when sharing access to your accoun
 
 import Clients from '@components/global/Clients'
 
-**Codat** helps other software programs talk to each other. 
+The world’s largest financial services providers and software companies trust **Codat** to enable you to securely share your business data with them. Your provider then uses this data to deliver their services to you.
 
-Your financial services provider uses Codat to view or modify your business data quickly and securely to deliver the services they offer you. Whether it's your accounting platform, your point of sale (POS), or your bank account, Codat plugs in to the tools your business uses.
+Over 250,000 of their small business customers have connected their data secured by Codat.
 
-Our **Business Help Hub** is here to help you confidently share your data with your financial service provider, no matter which software you use, and learn more about what we do. 
-
-Codat is trusted by the world’s largest financial institutions and software companies. Over 100,000 of their small business customers have connected their data secured by Codat.
+Our **Business Help Hub** is here to assist you to successfully share your data with your financial service provider, no matter which software you use, answer common questions, and learn more about what we do.
 
 <Clients
   clients={[
     {
         name: "Zettle",
         path: "/img/clients/zettle.png",
+    },
+    {
+        name: "J.P. Morgan",
+        path: "/img/clients/jp-morgan.png",
     },
     {
         name: "Capchase",
@@ -43,10 +45,6 @@ Codat is trusted by the world’s largest financial institutions and software co
         path: "/img/clients/capital-on-tap.png",
     },
     {
-        name: "Pipe",
-        path: "/img/clients/pipe.png",
-    },
-    {
         name: "Jeeves",
         path: "/img/clients/jeeves.png",
     },
@@ -55,16 +53,8 @@ Codat is trusted by the world’s largest financial institutions and software co
         path: "/img/clients/sumup.png",
     },
     {
-        name: "Phorest",
-        path: "/img/clients/phorest.png",
-    },
-    {
         name: "Lightspeed",
         path: "/img/clients/lightspeed.png",
-    },
-    {
-        name: "Wayflyer",
-        path: "/img/clients/wayflyer.png",
     },
     {
         name: "Rho",

@@ -7,8 +7,6 @@ hide_table_of_contents: false
 
 import Arcade from '@components/global/Arcade'
 
-## Why am I here?
-
 Your financial service provider has requested that you share the data from your NetSuite account with them. For this, they asked you to complete a set of steps. One of these steps requires you to install **a bundle**. 
 
 Read on to learn more about bundles, what they do, and how to install them.
