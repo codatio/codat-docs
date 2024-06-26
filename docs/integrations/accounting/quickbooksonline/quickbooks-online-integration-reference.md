@@ -48,7 +48,7 @@ _Item bundles_ in QuickBooks Online are supported for Direct Incomes, Invoices, 
 To access your production credentials in QuickBooks Online, you need to confirm where your app is hosted. Since Codat interacts directly with QBO, you need to include our IPs and hosting locations as well as your own (if applicable).
 
 :::note Dynamic IPs
-Our IPs are dynamic. The set of IPs included below is correct as of Q1 2022.
+Our IPs are dynamic. The set of IPs included below is correct as of 2024.
 :::
 
 **Country**: United Kingdom of Great Britain and Northern Ireland
@@ -59,5 +59,9 @@ Our IPs are dynamic. The set of IPs included below is correct as of Q1 2022.
 | Single IP        | 51.104.28.73 |                |
 | IP address range | 51.132.44.0  | 51.132.47.255  |
 | IP address range | 51.132.155.0 | 51.132.159.255 |
+
+## Attachments
+
+For attachment uploads, QuickBooks Online requires that the multipart/form-data request must have a Content-Type header, within each boundary seperated part of the request body. The header should be a MIME type which reflects what the file type attempting to be uploaded actually is. Generic binary data, "application/octet-stream", is not an acceptable value to be used in this context.
 
 
