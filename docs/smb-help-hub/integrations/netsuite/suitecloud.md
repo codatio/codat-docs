@@ -50,21 +50,15 @@ When completing the steps your provider shared with you, you will reach the **Co
   Some of these settings may already be enabled for your account. In that case, you don't need to tick them again. 
 
   :::info Enable features
-  
-  <br/>
 
   #### SuiteScript
   
     - CLIENT SUITESCRIPT  
     - SERVER SUITESCRIPT  
-  
-  <br/>
 
   #### SuiteTalk (Web Services)
   
     - REST WEB SERVICES  
-  
-  <br/>
 
   #### Manage Authentication
   
