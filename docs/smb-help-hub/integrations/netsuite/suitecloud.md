@@ -56,23 +56,19 @@ When completing the steps your provider shared with you, you will reach the **Co
   #### SuiteScript
   
     - CLIENT SUITESCRIPT  
-      This setting lets us implement a custom script that runs on your NetSuite browser.
     - SERVER SUITESCRIPT  
-      This setting lets us implement a custom script that runs on the NetSuite server.
   
   <br/>
 
   #### SuiteTalk (Web Services)
   
     - REST WEB SERVICES  
-      This setting provides us with an additional interface for interacting with NetSuite.
   
   <br/>
 
   #### Manage Authentication
   
     - TOKEN-BASED AUTHENTICATION  
-      This setting enables us to interact with NetSuite using a stronger security mechanism.
   :::
 
 4. Click **Save** to apply the settings you selected and move to the next step. 
