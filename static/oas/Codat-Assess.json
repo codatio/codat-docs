@@ -1495,6 +1495,10 @@
                             "levels": [
                               "Expense",
                               "Operating"
+                            ],
+                            "confidences": [
+                              56,
+                              52.53
                             ]
                           },
                           "platformName": "Shopify",
@@ -1517,6 +1521,9 @@
                             "confidence": 88,
                             "levels": [
                               "Expense"
+                            ],
+                            "confidences": [
+                              88
                             ]
                           },
                           "platformName": "Amazon",
@@ -1540,6 +1547,10 @@
                             "levels": [
                               "Income",
                               "Revenue"
+                            ],
+                            "confidences": [
+                              65,
+                              61.08
                             ]
                           },
                           "platformName": "Shopify",
@@ -1563,6 +1574,10 @@
                             "levels": [
                               "Expense",
                               "CostOfSales"
+                            ],
+                            "confidences": [
+                              40.98,
+                              99.9
                             ]
                           },
                           "platformName": "Amazon",
@@ -1586,6 +1601,10 @@
                             "levels": [
                               "Income",
                               "Revenue"
+                            ],
+                            "confidences": [
+                              55.84,
+                              75.5
                             ]
                           },
                           "platformName": "Zettle",
@@ -1608,6 +1627,9 @@
                             "confidence": 57.85,
                             "levels": [
                               "Expense"
+                            ],
+                            "confidences": [
+                              57.85
                             ]
                           },
                           "platformName": "Amazon",
@@ -1631,6 +1653,10 @@
                             "levels": [
                               "Expense",
                               "Operating"
+                            ],
+                            "confidences": [
+                              70.58,
+                              100
                             ]
                           },
                           "platformName": "Amazon",
@@ -1653,6 +1679,9 @@
                             "confidence": 48.26,
                             "levels": [
                               "Income"
+                            ],
+                            "confidences": [
+                              48.26
                             ]
                           },
                           "platformName": "DoorDash",
@@ -1676,6 +1705,10 @@
                             "levels": [
                               "Income",
                               "Revenue"
+                            ],
+                            "confidences": [
+                              65.21,
+                              100
                             ]
                           },
                           "platformName": "Uber",
@@ -1699,6 +1732,10 @@
                             "levels": [
                               "Income",
                               "Revenue"
+                            ],
+                            "confidences": [
+                              92.33,
+                              92.33
                             ]
                           },
                           "platformName": "DoorDash",
