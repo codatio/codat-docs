@@ -51,16 +51,16 @@ When completing the steps your provider shared with you, you will reach the **Co
 
   :::info Enable features
 
-  #### SuiteScript
+  **SuiteScript**
   
     - CLIENT SUITESCRIPT  
     - SERVER SUITESCRIPT  
 
-  #### SuiteTalk (Web Services)
+  **SuiteTalk (Web Services)**
   
     - REST WEB SERVICES  
 
-  #### Manage Authentication
+  **Manage Authentication**
   
     - TOKEN-BASED AUTHENTICATION  
   :::
