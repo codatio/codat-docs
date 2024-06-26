@@ -4216,9 +4216,17 @@
             "type": "object",
             "properties": {
               "confidence": {
-                "description": "Returns the confidence of the suggested category for the transaction. The value is between 0 and 100.",
+                "description": "Returns the aggregate confidence of the suggested category for the transaction. The value is between 0 and 100.",
                 "type": "number",
                 "format": "decimal"
+              },
+              "confidences": {
+                "description": "An ordered array of category level confidences where each element is the confidence of the corresponding item in the `levels` array.",
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "decimal"
+                }
               },
               "levels": {
                 "description": "The suggested category is an ordered array of category levels where each element (or level) is a subcategory of the previous element (or level).",
@@ -4240,6 +4248,13 @@
                         "Bank",
                         "BankTransfers",
                         "ShareholderTransfers"
+                      ],
+                      "confidences": [
+                        92.7,
+                        95,
+                        96,
+                        97.5,
+                        100
                       ]
                     }
                   }
