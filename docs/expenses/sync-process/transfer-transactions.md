@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem"
 
 Transfers are used to record the movement of money between two bank accounts. They represent transactions such as top-ups of debit card accounts, pay-downs of a credit card account, or a balance transfer to another credit card. 
 
-With Sync for Expenses, you need to create the transfer transactions first. Creating the transaction will initiate the [sync](/expenses/sync-process/syncing-expenses) to then reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction. Attachments will only be associated on the `From` account.
+With Sync for Expenses, you need to create the transfer transactions first. Creating the transaction will initiate the [sync](/expenses/sync-process/syncing-expenses) to then reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction. Attachments will only be associated with the `from` account.
 
 This process is summarized on the diagram below.
 
@@ -62,16 +62,18 @@ In the request URL, make sure that the transaction's `id` is unique as it serves
 We infer the `currencyRate` of the transfer transaction from the 'from.Amount' and 'to.Amount' values.
 :::
 
+### Update transfers
+
+In some cases, your customer may want to update an transfer transaction that was previously synced to their accounting platform. Use the same [Create transfer transaction](/sync-for-expenses-api#/operations/create-transfer-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software:
+
+- From amount
+- To amount
+- Date
+
 ### Multicurrency transfer transactions
 
 Sync for Expenses validates each transfer transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [transfers in foreign currency](/expenses/fx-management#transfers) and platform support for different expense types.
 
-### Updating transfer transaction 
-In some cases, your customer may want to update an transfer transaction that was previously synced to their accounting platform. Use our PUT transfer transactions endpoint to edit the following parameters and reflect the change in the SMB's accounting software:
-
-- From Amount
-- To Amount
-- Date
 ---
 ## Read next
 
