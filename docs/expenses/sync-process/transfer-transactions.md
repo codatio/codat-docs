@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem"
 
 Transfers are used to record the movement of money between two bank accounts. They represent transactions such as top-ups of debit card accounts, pay-downs of a credit card account, or a balance transfer to another credit card. 
 
-With Sync for Expenses, you need to create the transfer transactions first. Creating the transaction will initiate the [sync](/expenses/sync-process/syncing-expenses) to then reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
+With Sync for Expenses, you need to create the transfer transactions first. Creating the transaction will initiate the [sync](/expenses/sync-process/syncing-expenses) to then reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction. Attachments will only be associated on the `From` account.
 
 This process is summarized on the diagram below.
 
