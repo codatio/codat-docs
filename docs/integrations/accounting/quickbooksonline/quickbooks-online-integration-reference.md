@@ -62,7 +62,9 @@ Our IPs are dynamic. The set of IPs included below is correct as of Q3 2024.
 
 ## Attachments
 
-When creating attachments, QuickBooks Online requires that the multipart/form-data request used to upload the files includes a `Content-Type` header. The header must be contained within each boundary-separated part of the request body. The header should be a MIME type that reflects the file type being uploaded. QBO will not accept `application/octet-stream` as the header value.
+When creating attachments, QuickBooks Online requires that the multipart/form-data request used to upload the files includes a `Content-Type` header. 
+
+The header must be contained within each boundary-separated part of the request body and should be a MIME type that reflects the file type being uploaded. QBO will not accept `application/octet-stream` as the header value.
 
 ```http title="Example multipart/form-data with a Content-Type header"
 --boundaryxxxxxxxxxxxxxxxxxxxxxxxxxxxx
