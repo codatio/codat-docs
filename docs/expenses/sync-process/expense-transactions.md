@@ -159,7 +159,7 @@ This functionality is currently only available for QuickBooks Desktop.
 
 :::
 
-### Update expenses
+## Update expenses
 
 :::info Compatible integrations
 
