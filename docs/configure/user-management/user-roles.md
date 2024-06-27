@@ -36,7 +36,7 @@ _Administrator_ users have full access to all the features available in the Coda
 |-------------------------------------------	|------------	|---------	|-----------	|---------------	|
 | Add companies                             	| ✔          	| ✔       	| ✔         	| ✔             	|
 | View connection status                    	| ✔          	| ✔       	| ✔         	| ✔             	|
-| View company data                         	| ✔           	| ✔       	| ✔         	| ✔             	|
+| View company and integration data            	| ✔           	| ✔       	| ✔         	| ✔             	|
 | View and resolve webhooks and events         	|            	| ✔       	| ✔         	| ✔             	|
 | Delete companies                          	|            	|         	| ✔         	| ✔             	|
 | Add and update rules                      	|            	|         	| ✔         	| ✔             	|
