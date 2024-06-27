@@ -66,6 +66,12 @@ We infer the `currencyRate` of the transfer transaction from the 'from.Amount' a
 
 Sync for Expenses validates each transfer transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [transfers in foreign currency](/expenses/fx-management#transfers) and platform support for different expense types.
 
+### Updating transfer transaction 
+In some cases, your customer may want to update an transfer transaction that was previously synced to their accounting platform. Use our PUT transfer transactions endpoint to edit the following parameters and reflect the change in the SMB's accounting software:
+
+- From Amount
+- To Amount
+- Date
 ---
 ## Read next
 
