@@ -70,6 +70,7 @@ export const integrationsFilterSupplierEnablement = [
 export const integrationsFilterBillPayKit = [
   "Xero",
   "QuickBooks Online",
+  "FreeAgent"
 ];
 
 export const bankfeedsIntegrations = [
