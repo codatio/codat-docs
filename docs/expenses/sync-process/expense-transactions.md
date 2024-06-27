@@ -172,7 +172,7 @@ In some cases, your customer may want to update an expense transaction that was 
 - Net expense amount 
 - Tax amount of the spend
 - Tax rate reference associated with the spend
-- Expense bank account reference
+- Expense bank account reference (unable to update bank account for Free Agent integrations)
 - Tracking category objects
 - Description and notes
 
