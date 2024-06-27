@@ -48,7 +48,7 @@ _Item bundles_ in QuickBooks Online are supported for Direct Incomes, Invoices, 
 To access your production credentials in QuickBooks Online, you need to confirm where your app is hosted. Since Codat interacts directly with QBO, you need to include our IPs and hosting locations as well as your own (if applicable).
 
 :::note Dynamic IPs
-Our IPs are dynamic. The set of IPs included below is correct as of 2024.
+Our IPs are dynamic. The set of IPs included below is correct as of Q3 2024.
 :::
 
 **Country**: United Kingdom of Great Britain and Northern Ireland
@@ -62,6 +62,16 @@ Our IPs are dynamic. The set of IPs included below is correct as of 2024.
 
 ## Attachments
 
-For attachment uploads, QuickBooks Online requires that the multipart/form-data request must have a Content-Type header, within each boundary seperated part of the request body. The header should be a MIME type which reflects what the file type attempting to be uploaded actually is. Generic binary data, "application/octet-stream", is not an acceptable value to be used in this context.
+When creating attachments, QuickBooks Online requires that the multipart/form-data request used to upload the files includes a `Content-Type` header. The header must be contained within each boundary-separated part of the request body. The header should be a MIME type that reflects the file type being uploaded. QBO will not accept `application/octet-stream` as the header value.
 
+```http title="Example request with a Content-Type header"
+POST https://api.codat.io/companies/:companyId/connections/:connectionId/push/bills/:billId/attachments HTTP/1.1
 
+Content-Type: multipart/form-data; boundary=--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Authorization: Basic token
+--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Content-Disposition: form-data; name="test"; filename="test1.pdf"
+Content-Type: application/pdf
+< ./test1.pdf
+--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx--
+```
