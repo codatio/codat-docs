@@ -212,7 +212,7 @@
     },
     "SyncCompleted": {
       "post": {
-        "description": "Triggered anytime an expense sync completes without failures. Used for Sync for Expenses only.",
+        "description": "Triggered anytime an expense sync completes. Used for Sync for Expenses only.",
         "requestBody": {
           "content": {
             "application/json": {
