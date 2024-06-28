@@ -133,7 +133,7 @@ If you need to remove an associated tax rate from an expense, use one of the fol
 | Oracle NetSuite   | `-7`                             |
 | Dynamics 365      | Set up and apply a `0%` tax rate | 
 | QuickBooks Desktop| Null                             |
-| Free Agent        | taxRateRef is not supported for freeagent |
+| FreeAgent        | `taxRateRef` is not supported     |
 
 ### Transaction types
 
