@@ -33,10 +33,10 @@ module.exports = [
     label: "QuickBooks Desktop",
     collapsed: true,
     items: [
-      "smb-help-hub/integrations/netsuite/overview",
-      "smb-help-hub/integrations/netsuite/suitecloud",
-      "smb-help-hub/integrations/netsuite/bundles",
-      "smb-help-hub/integrations/netsuite/troubleshooting",
+      "smb-help-hub/integrations/qb-desktop/overview",
+      "smb-help-hub/integrations/qb-desktop/install-connector",
+      "smb-help-hub/integrations/qb-desktop/configure-connector",
+      "smb-help-hub/integrations/qb-desktop/troubleshooting",
     ],
   },
 ]
