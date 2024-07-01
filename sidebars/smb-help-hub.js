@@ -28,4 +28,15 @@ module.exports = [
       "smb-help-hub/integrations/netsuite/troubleshooting",
     ],
   },
+  {
+    type: "category",
+    label: "QuickBooks Desktop",
+    collapsed: true,
+    items: [
+      "smb-help-hub/integrations/netsuite/overview",
+      "smb-help-hub/integrations/netsuite/suitecloud",
+      "smb-help-hub/integrations/netsuite/bundles",
+      "smb-help-hub/integrations/netsuite/troubleshooting",
+    ],
+  },
 ]
