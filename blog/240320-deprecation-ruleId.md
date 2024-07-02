@@ -1,11 +1,11 @@
 ---
-title: "2024-07-10: Deprecation of RuleId in rules webhooks"
+title: "2024-10-10: Deprecation of RuleId in rules webhooks"
 date: "2024-03-26"
 tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **July 10, 2024**, all clients will be migrated onto our [new webhooks service](/updates/240306-new-webhook-service-released). As part of this migration, the `RuleId` webhook property will be deprecated in all our existing webhook payloads.
+On **October 10, 2024**, all clients will be migrated onto our [new webhooks service](/updates/240306-new-webhook-service-released). As part of this migration, the `RuleId` webhook property will be deprecated in all our existing webhook payloads.
 
 <!--truncate-->
 
@@ -35,6 +35,6 @@ You should use `RuleType` to identify what event a given webhook corresponds wit
 
 ### Expected impact if no action is taken
 
-If no action is taken, after **July 10, 2024**, your application will continue to receive events, but the `RuleId` will not be populated.
+If no action is taken, after **October 10, 2024**, your application will continue to receive events, but the `RuleId` will not be populated.
 Any application logic using the `RuleId` property will function following your unhappy path for `RuleId` logic.
 Depending on your implementation, this may impact your processing Codat's webhooks. 

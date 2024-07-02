@@ -13,6 +13,7 @@ However, your setup may need to change if any of these scenarios apply to you:
 - You subscribe to email notifications, such as [Company sync complete](/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized) emails.
 - Your application calls our webhook logs endpoints, such as `/rules/alerts`.
 - Your application's logic uses the `RuleId` parameter.
+- Your application queries or paginates the `/rules` endpoint.
 
 Read our [advanced migration guide](/using-the-api/webhooks/migration-guide-advanced) to see what additional action you will need to take. 
 
