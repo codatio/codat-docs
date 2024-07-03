@@ -120,3 +120,5 @@ Review the table below for platform schemas we use in our data types, which are 
 - If you configure properties that already exist in Codat's standard data model as supplemental properties, they will overwrite the standard data when creating records.
 
 - Deleted objects, indicated by `metadata.isDeleted` flag set to `true`, will not be enriched by supplemental data. You can read more about [how we handle deleted data](https://docs.codat.io/updates/230411-deletion-of-data#additional-information).
+
+- The configuration can be reset at any time with a put request and empty `supplementalDataConfig` object.
