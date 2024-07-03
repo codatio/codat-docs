@@ -43,11 +43,13 @@ We are rapidly expanding coverage across integrations and data types according t
 
 ## Configure supplemental data
 
-You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [Configure supplemental data](/platform-api#/operations/configure-supplemental-data) endpoint.
+You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [Configure supplemental data](/platform-api#/operations/configure-supplemental-data) endpoint. 
 
 ```http
-/integrations/{platformKey}/datatypes/{datatype}/supplementalDataConfig
+PUT /integrations/{platformKey}/datatypes/{datatype}/supplementalDataConfig
 ```
+
+You can use the same endpoint with an empty `supplementalDataConfig` object to reset the supplemental data configuration at any time.
 
 Within the request body, `PlatformEndpoint` and `PlatformPropertyName` parameter values must match the integration's requirements exactly, including casing. Ensure you are familiar with the source data structure as Codat does not validate the supplemental data values against the integration provider.
 
