@@ -17,6 +17,6 @@ To learn more about the role we play in your provider's business processes, read
 
 For key steps of our NetSuite flow and associated troubleshooting, we provide dedicated support guides:
 
-- [Configure NetSuite Cloud](/smb-help-hub/integrations/netsuite/suitecloud])
+- [Configure NetSuite Cloud](/smb-help-hub/integrations/netsuite/suitecloud)
 - [Understand bundles](/smb-help-hub/integrations/netsuite/bundles)
 - [Resolve issues](/smb-help-hub/integrations/netsuite/troubleshooting)
