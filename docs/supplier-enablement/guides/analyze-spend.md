@@ -31,7 +31,7 @@ You will see a confirmation message once the email is sent.
 
 ![An image of the Relationship Manager Portal user interface with the email preview window open](/img/supplier-enablement/0065-se-rm-portal-email-preview.png)
 
-#### Request financial data after company creation
+#### Request data after company creation
 
 You can also choose to request the company's financial data at a later stage if you have not done that during company creation. 
 
@@ -49,7 +49,7 @@ You will see a confirmation message once the email is sent.
 
 ![An image of the Relationship Manager Portal user interface with the email preview window open](/img/supplier-enablement/0065-se-rm-portal-email-preview.png)
 
-## Download spend data
+## Download data
 
 ### Check data status
 
