@@ -3145,7 +3145,7 @@
           "Source accounts"
         ],
         "summary": "Update source account",
-        "description": "﻿The _Update source account_ endpoint updates a single source account for a single data connection connected to a single company.\n",
+        "description": "﻿The _Update source account_ endpoint updates a single source account for a single data connection connected to a single company.\n\n### Tips and pitfalls\n\n* This endpoint only updates the `accountName` field.\n* Updates made here apply exclusively to source accounts and will not affect target accounts in the accounting platform.",
         "operationId": "update-source-account",
         "parameters": [
           {
