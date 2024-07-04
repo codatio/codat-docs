@@ -15,7 +15,7 @@ On **April 10, 2025** we announced three deprecations following the release of o
 - [Deprecation of `/rules/alerts` endpoints](/updates/240306-deprecation-rules-alerts)
 - [Deprecation of RuleId in rules webhooks](/updates/240320-deprecation-ruleId)
 - [Deprecation of rule-based email notifications](/updates/240405-deprecation-rule-based-email-notifications)
-- 
+
 To ensure a smooth transition, we are extending the deprecation period to **January 10, 2025**. 
 
 :::tip Codat's webhook service
