@@ -44,7 +44,7 @@ If no action is taken by **January 10, 2025**, your application will fail when r
 
 --- 
 
-### Deprecation of RuleId in rules webhooks
+### Deprecation of `RuleId` in rules webhooks
 
 The `RuleId` property will be deprecated in the following webhook rule schemas:
 
