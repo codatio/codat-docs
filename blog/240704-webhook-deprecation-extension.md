@@ -12,11 +12,11 @@ We have extended the deprecation window for our previously announced webhook cha
 
 On **April 10, 2025** we announced three deprecations following the release of our new webhooks service:
 
-- [Deprecation of `/rules/alerts` endpoints](/updates/240306-deprecation-rules-alerts).
-- [Deprecation of RuleId in rules webhooks](/updates/240320-deprecation-ruleId).
-- [Deprecation of rule-based email notifications](/updates/240405-deprecation-rule-based-email-notifications).
-
-To ensure a smooth transition, we have extended the deprecation period to **January 10, 2025**. 
+- [Deprecation of `/rules/alerts` endpoints](/updates/240306-deprecation-rules-alerts)
+- [Deprecation of RuleId in rules webhooks](/updates/240320-deprecation-ruleId)
+- [Deprecation of rule-based email notifications](/updates/240405-deprecation-rule-based-email-notifications)
+- 
+To ensure a smooth transition, we are extending the deprecation period to **January 10, 2025**. 
 
 :::tip Codat's webhook service
 Not using the new service yet? See how you can migrate in our [migration guide](/using-the-api/webhooks/migration-guide).
@@ -64,13 +64,15 @@ The `RuleId` property will be deprecated in the following webhook rule schemas:
 
 #### Action required 
 
-Review and update your application logic to remove any dependencies on the RuleId. This will help prevent any disruptions to your integration with Codat.
+Review and update your application logic to remove any dependencies on the `RuleId`. This will help prevent any disruptions to your integration with Codat.
 
-You should use RuleType to identify what event a given webhook corresponds with.
+You should use `RuleType` to identify what event a given webhook corresponds with.
 
 #### Expected impact
 
-If no action is taken by **January 10, 2025**, your application will continue to receive events, but the `RuleId` will not be populated. Any application logic using the `RuleId` property will function following your unhappy path for `RuleId` logic. Depending on your implementation, this may impact your processing Codat's webhooks.
+If no action is taken by **January 10, 2025**, your application will continue to receive events, but the `RuleId` will not be populated. 
+
+Any application logic using the `RuleId` property will function following your unhappy path for `RuleId` logic. Depending on your implementation, this may impact your processing Codat's webhooks.
 
 --- 
 
