@@ -23,9 +23,11 @@ We are excited to announce we've introduced deprecation flags to our webhook eve
 
 ### Who is it relevant for?
 
-These changes are relevant for all developers using our new webhook service.
+These changes are relevant for all clients using our new webhook service.
 
+:::tip Codat's webhook service
 Not using the new service yet? See how you can migrate in our [migration guide](/using-the-api/webhooks/migration-guide).
+:::
 
 ### How to get started?
 
