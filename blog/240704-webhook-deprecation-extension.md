@@ -10,7 +10,7 @@ We have extended the deprecation window for our previously announced webhook cha
 
 <!--truncate-->
 
-On **April 10, 2025** we announced three deprecations following the release of our new webhooks service:
+On **April 10, 2024** we announced three deprecations following the release of our new webhooks service:
 
 - [Deprecation of `/rules/alerts` endpoints](/updates/240306-deprecation-rules-alerts)
 - [Deprecation of RuleId in rules webhooks](/updates/240320-deprecation-ruleId)
