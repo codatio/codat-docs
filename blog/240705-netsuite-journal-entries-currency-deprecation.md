@@ -11,7 +11,7 @@ We are updating our approach to handling transaction currencies in Netsuite jour
 
 - Review and update any custom integrations or workflows that rely on the old currency mapping behavior.
 
--  Test the updated mapping to ensure accurate financial data representation in the base currency.
+- Test the updated mapping to ensure accurate financial data representation in the base currency.
 
 ## Expected impact if no action is taken
 
