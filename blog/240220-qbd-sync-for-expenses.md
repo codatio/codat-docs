@@ -27,4 +27,4 @@ QuickBooks Desktop is available for all clients using Sync for Expenses. This in
 
 ## How to get started? 
 
-You can learn more about our QuickBooks Desktop on-premise connector in our [documentation](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop). If you are not a [Sync for Expenses](/expenses/overview) client, or would like to discuss premium add-ons, contact your Codat Account Manager. 
+You can learn more about our QuickBooks Desktop integration in our [documentation](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop). If you are not a [Sync for Expenses](/expenses/overview) client, or would like to discuss premium add-ons, contact your Codat Account Manager. 
