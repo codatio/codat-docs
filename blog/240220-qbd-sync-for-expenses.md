@@ -1,6 +1,6 @@
 ---
 title: "Introducing QuickBooks Desktop for Sync for Expenses"
-date: "2020-01-01"
+date: "2024-02-20"
 tags: ["Product", "Update", "Sync for Expenses", "QuickBooks Desktop"]
 authors: rohoward
 ---
@@ -20,7 +20,6 @@ In this release, you can access:
 - **Out-the-box connection UI to get customers syncing in a few steps.** Codat enables integrations via the Intuit Web Connector, which starts up automatically after a system reboot and then updates silently in the background. There's no action needed from your users to keep data flowing.
 
 - **Proven infrastructure for your QuickBooks Desktop integration.** Codat has over 5 years of experience supporting some of the world's leading fintech companies in launching integrations to QuickBooks Desktop and QuickBooks Online. 
-
 
 ## Who is this relevant for? 
 

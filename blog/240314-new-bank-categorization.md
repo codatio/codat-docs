@@ -25,4 +25,4 @@ Lenders and underwriters looking to underwrite with accurate, real-time cash flo
 
 ## How to get started? 
 
-For [Lending API](/lending/overview) companies where accounting and banking data is connected, the update is automatically available. To learn more about bank statement enrichments or connecting banking data via the Lending API, contact your Account Manager. 
+For [Lending API](/lending/overview) companies where accounting and banking data is connected, the update is automatically available. To learn more about bank statement enrichments or connecting banking data via the Lending API, contact your Codat Account Manager. 

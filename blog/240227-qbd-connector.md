@@ -2,10 +2,10 @@
 title: "Introducing the new QuickBooks Desktop connector"
 date: "2024-02-27"
 tags: ["Product", "Update", "QuickBooks Desktop"]
-authors: pzaichkina
+authors: rohoward
 ---
 
-We’ve released a new QuickBooks Desktop connector that provides an improved user journey and best-in-class linking experience. 
+We’ve released a new QuickBooks Desktop connector, providing an improved user journey and best-in-class linking experience. 
 
 <!--truncate-->
 
