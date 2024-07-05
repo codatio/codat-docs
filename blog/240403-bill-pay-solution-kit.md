@@ -11,13 +11,15 @@ Handle your customers' essential accounts payable workflows across major account
 
 ## What’s new? 
 
-The [Bill pay kit](/payables/bill-pay-kit) is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms. With the Bill pay solution kit, you can: 
+The [Bill pay kit](/payables/bill-pay-kit) is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms. 
+
+With the Bill pay solution kit, you can: 
 
 - Support simple accounts payable workflows your small business customers are handling on a regular basis. 
 - Get visibility over all unpaid bills that are available in the accounting software, in addition to any created in your platform. 
 - Provide a real-time experience for SMBs so they can pay and reconcile their invoices across platforms without delay. 
 
-The Bill pay solution kit supports Xero, QuickBooks Online and FreeAgent initially. 
+The Bill pay solution kit initially supports our Xero, QuickBooks Online and FreeAgent integrations. 
 
 ## Who is this relevant for? 
 
