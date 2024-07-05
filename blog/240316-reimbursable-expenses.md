@@ -1,11 +1,11 @@
 ---
-title: "Introducing expense reimbursements transaction type"
+title: "Introducing reimbursable expenses"
 date: "2024-03-16"
 tags: ["Product", "Update", "Sync for Expenses"]
 authors: rohoward
 ---
 
-You can now sync reimbursable expenses with your small business customers’ accounting software. 
+You can now sync reimbursable expenses with your small business customers’ accounting software using our new transaction type for Sync for Expenses. 
 
 <!--truncate-->
 
