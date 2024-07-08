@@ -142,6 +142,10 @@
       "description": "Control and monitor the retrieval of data from an integration."
     },
     {
+      "name": "Mapping options",
+      "description": "Get accounts, trackingCategories and taxRates that can be used in your create and update requests."
+    },
+    {
       "name": "Push operations",
       "description": "View historic push operations."
     },
@@ -1105,7 +1109,7 @@
           }
         },
         "summary": "Get company configuration",
-        "description": "Gets a companies expense sync configuration",
+        "description": "Gets a company's expense sync configuration",
         "operationId": "get-company-configuration"
       },
       "post": {
@@ -1164,7 +1168,7 @@
           }
         },
         "summary": "Set company configuration",
-        "description": "Sets a companies expense sync configuration",
+        "description": "Sets a company's expense sync configuration",
         "operationId": "set-company-configuration",
         "x-speakeasy-name-override": "set"
       },
@@ -1177,7 +1181,7 @@
     "/companies/{companyId}/sync/expenses/mappingOptions": {
       "get": {
         "tags": [
-          "Configuration"
+          "Mapping options"
         ],
         "parameters": [
           {
@@ -1218,7 +1222,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "Gets the expense mapping options for a companies accounting software",
+        "description": "Gets the mapping options (accounts, trackingCategories and taxRates) for a company's accounting software",
         "summary": "Mapping options",
         "operationId": "get-mapping-options",
         "x-speakeasy-name-override": "get-mapping-options"
@@ -13078,6 +13082,7 @@
       },
       "AccountMappingInfo": {
         "title": "Account mapping info",
+        "x-internal": true,
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
@@ -13086,6 +13091,7 @@
             "name": "Travel",
             "currency": "GBP",
             "accountType": "Expense",
+            "isBankAccount": false,
             "validTransactionTypes": [
               "Payment",
               "Refund"
@@ -13101,7 +13107,7 @@
           },
           "name": {
             "type": "string",
-            "description": "Name of the account as it appears in the companies accounting software.",
+            "description": "Name of the account as it appears in the company's accounting software.",
             "example": "Purchases",
             "nullable": false
           },
@@ -13123,6 +13129,10 @@
               "Equity"
             ],
             "nullable": false
+          },
+          "isBankAccount": {
+            "type": "boolean",
+            "description": "Confirms whether the account is a bank account or not."
           },
           "validTransactionTypes": {
             "type": "array",
@@ -15865,13 +15875,14 @@
       },
       "TaxRateMappingInfo": {
         "title": "Tax rate mapping info",
+        "x-internal": true,
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
           "UK Tax Rate": {
-            "id": "59_Bills",
-            "name": "UK Standard Rate (Bills) Bills",
-            "code": "UK Standard Rate (Bills)",
+            "id": "23_Bills",
+            "name": "20% Bill tax Bills",
+            "code": "20% Bill tax",
             "effectiveTaxRate": 20,
             "totalTaxRate": 20,
             "validTransactionTypes": [
@@ -15884,19 +15895,19 @@
           "id": {
             "type": "string",
             "description": "Unique identifier of tax rate.",
-            "example": "59_Bills",
+            "example": "23_Bills",
             "nullable": false
           },
           "name": {
             "type": "string",
             "description": "Name of the tax rate in the accounting platform.",
-            "example": "UK Standard Rate (Bills) Bills",
+            "example": "20% Bill tax Bills",
             "nullable": false
           },
           "code": {
             "type": "string",
             "description": "Code for the tax rate from the accounting platform.",
-            "example": "UK Standard Rate (Bills)",
+            "example": "20% Bill tax",
             "nullable": true
           },
           "effectiveTaxRate": {
@@ -15936,19 +15947,18 @@
       },
       "TrackingCategoryMappingInfo": {
         "title": "Tracking category mapping info",
+        "x-internal": true,
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
           "Tracking Category with parentId": {
             "id": "DEPARTMENT_1",
-            "modifiedDate": "2023-02-09T11:42:41Z",
             "name": "TestLocation",
             "hasChildren": false,
             "parentId": "DEPARTMENTS"
           },
           "Parent Tracking Category": {
             "id": "DEPARTMENTS",
-            "modifiedDate": "2023-02-09T11:42:41Z",
             "name": "Departments",
             "hasChildren": true
           }
@@ -15959,11 +15969,6 @@
             "description": "Unique identifier of the tracking category.",
             "example": "DEPARTMENT_2",
             "nullable": false
-          },
-          "modifiedDate": {
-            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
-            "description": "Datetime when the tracking category was last modified.",
-            "nullable": true
           },
           "name": {
             "type": "string",
