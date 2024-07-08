@@ -1809,7 +1809,7 @@
       "put": {
         "summary": "Create transfer transaction",
         "operationId": "create-transfer-transaction",
-        "description": "Use the *Create transfer* endpoint to create or update a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransaction) in the accounting platform for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n",
+        "description": "Use the *Create transfer* endpoint to create or update a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransactionRequest) in the accounting platform for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n",
         "tags": [
           "Transfers"
         ],
@@ -1820,7 +1820,7 @@
               "application/json": {
                 "x-speakeasy-usage-example": true,
                 "schema": {
-                  "$ref": "#/components/schemas/CreateTransferResponse"
+                  "$ref": "#/components/schemas/TransferTransactionResponse"
                 },
                 "examples": {
                   "Example 1": {
@@ -1861,12 +1861,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateTransferRequest"
+                "$ref": "#/components/schemas/TransferTransactionRequest"
               },
               "examples": {
                 "Create transfer": {
                   "value": {
-                    "description": "Sample transfer descripiton",
+                    "description": "Sample transfer description",
                     "date": "2021-05-21T00:00:00+00:00",
                     "from": {
                       "accountRef": {
@@ -1878,7 +1878,7 @@
                       "accountRef": {
                         "id": "777dfb37-5506-3dc0-6g86-8d34z4cc78ea"
                       },
-                      "amount": 101
+                      "amount": 100
                     }
                   }
                 }
@@ -2184,8 +2184,8 @@
                       "merchantName": "Amazon UK",
                       "lines": [
                         {
-                          "netAmount": 110.42,
-                          "taxAmount": 14.43,
+                          "netAmount": 100,
+                          "taxAmount": 20,
                           "taxRateRef": {
                             "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
                           },
@@ -12905,7 +12905,7 @@
                   "modifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                        "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
                       },
                       {
                         "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -12923,7 +12923,7 @@
                   "sourceModifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                        "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
                       },
                       {
                         "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -13282,7 +13282,7 @@
                 "description": "The number of available requests per day."
               },
               "ExpiresUtc": {
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
                 "description": "The date time in UTC when your daily quota is reset."
               }
             }
@@ -13424,10 +13424,10 @@
             "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "created": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "createdByUserName": {
             "type": "string",
@@ -13652,7 +13652,7 @@
             "nullable": true
           },
           "syncUtc": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "Datetime of the sync.",
             "nullable": true
           },
@@ -13715,10 +13715,10 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "created": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "dataConnectionErrors": {
             "type": "array",
@@ -13774,7 +13774,7 @@
                 "description": "A message about a error returned by Codat."
               },
               "erroredOnUtc": {
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
               },
               "status": {
                 "title": "Error status",
@@ -13789,7 +13789,7 @@
               "resolvedOnUtc": {
                 "description": "The datetime in Utc that the error was resolved.",
                 "nullable": true,
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
               }
             }
           },
@@ -13914,7 +13914,7 @@
             "description": "Your unique identifier for the transaction."
           },
           "date": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "Date of the transaction was recorded."
           },
           "currency": {
@@ -14043,69 +14043,6 @@
             "$ref": "#/components/schemas/PushOperation"
           }
         ]
-      },
-      "CreateTransferRequest": {
-        "title": "Create transfer request",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": "string",
-            "description": "Any private, company notes about the transaction.",
-            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-          },
-          "date": {
-            "allOf": [
-              {
-                "description": "Date of the transfer transaction as recorded in the accounting platform."
-              },
-              {
-                "title": "Date time",
-                "type": "string",
-                "examples": [
-                  "2022-10-23T00:00:00.000Z",
-                  "2022-10-23T00:00:00.000Z"
-                ],
-                "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-              }
-            ]
-          },
-          "from": {
-            "$ref": "#/components/schemas/CreateTransferRequest/definitions/transferDetails"
-          },
-          "to": {
-            "$ref": "#/components/schemas/CreateTransferRequest/definitions/transferDetails"
-          }
-        },
-        "definitions": {
-          "transferDetails": {
-            "type": "object",
-            "properties": {
-              "accountRef": {
-                "$ref": "#/components/schemas/Account/definitions/accountRef",
-                "description": "Reference to the account to which the line item is linked."
-              },
-              "amount": {
-                "type": "number",
-                "format": "decimal",
-                "description": "Amount of the transfer."
-              }
-            }
-          }
-        }
-      },
-      "CreateTransferResponse": {
-        "title": "Create transfer response",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "syncId": {
-            "type": "string",
-            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
-            "format": "uuid",
-            "description": "Unique id of sync created"
-          }
-        }
       },
       "Customer": {
         "title": "Accounting: Customer",
@@ -14329,7 +14266,7 @@
                 "$ref": "#/components/schemas/Customer/definitions/customerStatus"
               },
               "modifiedDate": {
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
               }
             },
             "required": [
@@ -14421,7 +14358,7 @@
             "example": "invoices"
           },
           "lastSuccessfulSync": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "currentStatus": {
             "$ref": "#/components/schemas/PullOperation/properties/status"
@@ -14566,7 +14503,7 @@
             ]
           },
           "issueDate": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "Date of the transaction was recorded."
           },
           "currency": {
@@ -14959,10 +14896,10 @@
             "description": "A message about a transient or persistent error returned by Codat or the source platform."
           },
           "requested": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "completed": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "progress": {
             "type": "integer",
@@ -15052,11 +14989,11 @@
             "$ref": "#/components/parameters/connectionId/schema"
           },
           "requestedOnUtc": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "The datetime when the push was requested."
           },
           "completedOnUtc": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "The datetime when the push was completed, null if Pending."
           },
           "timeoutInMinutes": {
@@ -15407,16 +15344,21 @@
         "title": "Reimbursable expense transaction line",
         "type": "object",
         "properties": {
+          "description": {
+            "type": "string",
+            "description": "line description.",
+            "example": "2-night hotel stay"
+          },
           "netAmount": {
             "type": "number",
             "format": "decimal",
-            "example": 110.42,
+            "example": 100,
             "description": "Amount of the line, exclusive of tax."
           },
           "taxAmount": {
             "type": "number",
             "format": "decimal",
-            "example": 14.43,
+            "example": 20,
             "description": "Amount of tax for the line."
           },
           "taxRateRef": {
@@ -15471,12 +15413,12 @@
                 "$ref": "#/components/schemas/ContactRefReimbursableExpense"
               },
               "issueDate": {
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
                 "description": "Date of the transaction was recorded."
               },
               "dueDate": {
                 "description": "Date the supplier is due to be paid.",
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
               },
               "currency": {
                 "type": "string",
@@ -16019,7 +15961,7 @@
             "nullable": false
           },
           "modifiedDate": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "Datetime when the tracking category was last modified.",
             "nullable": true
           },
@@ -16168,6 +16110,107 @@
         ],
         "example": "Completed",
         "nullable": true
+      },
+      "TransferTransactionRequest": {
+        "title": "Transfer",
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Any private, company notes about the transaction.",
+            "example": "Transfer from bank account Y to bank account Z"
+          },
+          "date": {
+            "allOf": [
+              {
+                "description": "Date of the transfer transaction as recorded in the accounting platform."
+              },
+              {
+                "title": "Date time",
+                "type": "string",
+                "examples": [
+                  "2022-10-23T00:00:00.000Z",
+                  "2022-10-23T00:00:00.000Z"
+                ],
+                "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+              }
+            ]
+          },
+          "from": {
+            "type": "object",
+            "properties": {
+              "accountRef": {
+                "type": "object",
+                "title": "Account reference",
+                "description": "Reference of the account you are transferring money from.",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "'id' from the Accounts data type."
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              },
+              "amount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Amount that has been transferred from the account in the native currency of the account."
+              }
+            },
+            "required": [
+              "accountRef",
+              "amount"
+            ]
+          },
+          "to": {
+            "type": "object",
+            "properties": {
+              "accountRef": {
+                "type": "object",
+                "title": "Account reference",
+                "description": "Reference of the account you are transferring money to.",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "'id' from the Accounts data type."
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              },
+              "amount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Amount that has been transferred to the account in the native currency of the account."
+              }
+            },
+            "required": [
+              "accountRef",
+              "amount"
+            ]
+          }
+        },
+        "required": [
+          "date",
+          "from",
+          "to"
+        ]
+      },
+      "TransferTransactionResponse": {
+        "title": "Create transfer response",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
+            "format": "uuid",
+            "description": "Unique id of sync created"
+          }
+        }
       },
       "UpdateCustomerResponse": {
         "title": "Update customer response",
