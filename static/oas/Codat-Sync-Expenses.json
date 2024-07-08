@@ -1901,7 +1901,7 @@
       "post": {
         "summary": "Create adjustment transaction",
         "operationId": "create-adjustment-transaction",
-        "description": "Use the *Create adjustment expense* endpoint to create an [adjustment](https://docs.codat.io/sync-for-expenses-api#/schemas/Adjustment-Transactions) in the accounting platform for a given company's connection. \n\nAdjustments represent write-offs and transaction alteration, such as foreign exchange adjustments, in the form of a journal entry. \n\nThe _Create adjustment_ endpoint is currently only available for QuickBooks Desktop. ",
+        "description": "Use the *Create adjustment expense* endpoint to create an [adjustment](https://docs.codat.io/sync-for-expenses-api#/schemas/AdjustmentTransactionRequest) in the accounting platform for a given company's connection. \n\nAdjustments represent write-offs and transaction alterations, such as foreign exchange adjustments, in the form of a journal entry. \n\nThe _Create adjustment_ endpoint is currently only available for QuickBooks Desktop. ",
         "tags": [
           "Adjustments"
         ],
@@ -1912,7 +1912,7 @@
               "application/json": {
                 "x-speakeasy-usage-example": true,
                 "schema": {
-                  "$ref": "#/components/schemas/CreateAdjustmentResponse"
+                  "$ref": "#/components/schemas/AdjustmentTransactionResponse"
                 },
                 "examples": {
                   "Example 1": {
@@ -1956,33 +1956,48 @@
                 "$ref": "#/components/schemas/CreateAdjustmentRequest"
               },
               "examples": {
-                "Create transfer": {
-                  "value": {
-                    "id": "3357b3df-5f2e-465d-b9ba-226519dbb8f1",
-                    "date": "2021-05-21T00:00:00+00:00",
-                    "currency": "USD",
-                    "currencyRate": 1,
-                    "reference": "test reference",
-                    "lines": [
-                      {
-                        "amount": -50,
-                        "accountRef": {
-                          "id": "bf21e04d-0e62-462b-bf3b-90ddaab0c96a"
-                        },
-                        "description": "test line 1",
-                        "trackingRefs": [
-                          {
-                            "id": "c6fcdb23-8a0f-4804-aedc-a611c505cb9b",
-                            "dataType": "trackingCategories"
+                "Create adjustment": {
+                  "value": [
+                    {
+                      "id": "3357b3df-5f2e-465d-b9ba-226519dbb8f1",
+                      "date": "2024-05-21T00:00:00+00:00",
+                      "currency": "USD",
+                      "currencyRate": 1,
+                      "reference": "test reference",
+                      "lines": [
+                        {
+                          "amount": 50,
+                          "accountRef": {
+                            "id": "80000018-1671793811"
+                          },
+                          "description": "debit line",
+                          "trackingRefs": [
+                            {
+                              "id": "80000003-1674553958",
+                              "dataType": "trackingCategories"
+                            }
+                          ],
+                          "invoiceTo": {
+                            "id": "80000002-1674552702",
+                            "type": "customer"
                           }
-                        ],
-                        "invoiceTo": {
-                          "id": "9cc3527f-0b8b-4ccb-8251-c5a76ef0ec09",
-                          "type": "customer"
+                        },
+                        {
+                          "amount": -50,
+                          "accountRef": {
+                            "id": "80000028-1671794219"
+                          },
+                          "description": "credit line",
+                          "trackingRefs": [
+                            {
+                              "id": "80000003-1674553958",
+                              "dataType": "trackingCategories"
+                            }
+                          ]
                         }
-                      }
-                    ]
-                  }
+                      ]
+                    }
+                  ]
                 }
               }
             }
@@ -13167,8 +13182,8 @@
           "amount": {
             "type": "number",
             "format": "decimal",
-            "example": 110.42,
-            "description": "Amount of the line, exclusive of tax."
+            "example": 50,
+            "description": "Amount of the line. A positive line represents a debit; a negative line represents a credit."
           },
           "accountRef": {
             "$ref": "#/components/schemas/RecordRef"
@@ -13195,6 +13210,61 @@
           "amount",
           "accountRef"
         ]
+      },
+      "AdjustmentTransactionRequest": {
+        "title": "Adjustment transaction",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Your unique identifier for the transaction."
+          },
+          "date": {
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
+            "description": "Date of the transaction."
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency the transaction was recorded in."
+          },
+          "currencyRate": {
+            "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true,
+            "description": "User-friendly reference for the adjustment transaction."
+          },
+          "lines": {
+            "type": "array",
+            "description": "Array of transaction lines.",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/AdjustmentTransactionLine"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "date",
+          "currency",
+          "lines"
+        ]
+      },
+      "AdjustmentTransactionResponse": {
+        "title": "Adjustment response",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
+            "format": "uuid",
+            "description": "Unique id of sync created"
+          }
+        }
       },
       "Attachment": {
         "title": "Attachment",
@@ -13914,60 +13984,13 @@
         ]
       },
       "CreateAdjustmentRequest": {
-        "title": "Create Adjustment Request",
+        "title": "Create adjustment request",
         "x-internal": true,
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Your unique identifier for the transaction."
-          },
-          "date": {
-            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
-            "description": "Date of the transaction was recorded."
-          },
-          "currency": {
-            "type": "string",
-            "description": "Currency the transaction was recorded in."
-          },
-          "currencyRate": {
-            "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
-          },
-          "reference": {
-            "type": "string",
-            "nullable": true,
-            "description": "User-friendly reference for the adjustment transaction."
-          },
-          "lines": {
-            "type": "array",
-            "description": "Array of transaction lines.",
-            "minItems": 1,
-            "maxItems": 100,
-            "items": {
-              "$ref": "#/components/schemas/AdjustmentTransactionLine"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "date",
-          "currency",
-          "currencyRate",
-          "lines"
-        ]
-      },
-      "CreateAdjustmentResponse": {
-        "title": "Create Adjustment response",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "syncId": {
-            "type": "string",
-            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
-            "format": "uuid",
-            "description": "Unique id of sync created"
-          }
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 50,
+        "items": {
+          "$ref": "#/components/schemas/AdjustmentTransactionRequest"
         }
       },
       "CreateCustomerResponse": {
