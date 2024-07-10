@@ -368,9 +368,9 @@
             "properties": {
               "modifiedDate": {
                 "description": "The date on which the company's account categories were last modified in Codat.",
+                "title": "Date",
                 "type": "string",
-                "example": "2022-10-23",
-                "title": "Date"
+                "example": "2022-10-23"
               }
             }
           }
