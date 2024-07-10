@@ -10,6 +10,12 @@ Our [Relationship Manager Portal](https://relationships.codat.io/) is your one-s
 
 In this guide, we will cover the ways you can request accounts payable data from your clients and download the resulting reports. 
 
+:::tip Your customer's journey
+
+Once you request the information, your customer will need to go through a set of steps to allow you to see their business data in the Relationship Manager. You can learn more about this in the [Customer journey](/supplier-enablement/guides/customer-journey) guide.
+
+:::
+
 ## Request financial data
 
 You can request supplier and spend data from your customer in two ways:
@@ -21,11 +27,13 @@ You can request supplier and spend data from your customer in two ways:
 
 When you follow the [company creation](/supplier-enablement/guides/manage-relationships#add-a-new-company) flow and click the **Add company** button after filling out the company details, you will see the information request window pop up. It is used to onboard your client and request access their financial data. 
 
-Select the **Spend analysis** tickbox to ask your client for accounts payable and supplier information to the level of individual transactions, payment methods, terms, etc. You can also choose to request **Financials**, which include a profit and loss statement and a balance sheet statement enriched with our [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature.
+Select the **Spend analysis** tickbox to ask your client for accounts payable and supplier information to the level of individual transactions, payment methods, terms, etc. 
+
+You can also choose to request **Financials**, which include a profit and loss statement and a balance sheet statement enriched with our [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature.
 
 ![An image of the Relationship Manager Portal user interface with the request financials window open](/img/supplier-enablement/0064-se-rm-portal-financials-request.png)
 
-Next, click **Request**. This will display an email preview that will be sent to the contact email address you listed for the company. Click **Request information** to confirm the sending of the email. 
+Next, click **Request**. This will display an email preview that will be sent to the contact email address you listed for the company. The content of the email will differ depending on the information type you selected. Click **Request information** to confirm the sending of the email. 
 
 You will see a confirmation message once the email is sent.
 

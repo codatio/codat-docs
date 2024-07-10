@@ -29,13 +29,32 @@ When ready, click the **Add company** button. This creates a record in the Relat
 
 ![An image of the Relationship Manager Portal user interface with the company creation window open](/img/supplier-enablement/0062-se-rm-portal-create.png)
 
-Next, you will see the information request window appear. It is used to onboard your client and request access their financial data. If you are ready to request the data, select the applicable data types and click **Request**. This will send an email request to the contact email address you listed for the company. 
+Next, you will see the information request window appear. It is used to onboard your client and request access their financial data. If you are ready to request the data, select the applicable data types and click **Request**. 
+
+This will send an email request to the contact email address you listed for the company. The content of the email will differ depending on the information type you selected.
+
 
 Alternatively, click **Cancel**. This will take you back to the Relationship Manager, where you can always request the financial data at a later stage.
 
 We talk you through the details of both of these options in our [Check spend data](/supplier-enablement/guides/analyze-spend) guide. 
 
+:::tip Your customer's journey
+
+Once you request the information, your customer will need to go through a set of steps to allow you to see their business data in the Relationship Manager. You can learn more about this in the [Customer journey](/supplier-enablement/guides/customer-journey) guide.
+
+:::
+
 ![An image of the Relationship Manager Portal user interface with the request financials window open](/img/supplier-enablement/0064-se-rm-portal-financials-request.png)
+
+### Multi-entity companies
+
+If you want to request _spend analysis data_ from a customer who has multiple subsidiary companies, you don't need to create and request data for each subsidiary individually. 
+
+When responding to your request, the customer should follow the [multi-entity connection journey](/supplier-enablement/guides/customer-journey#multi-entity-connection-journey). They will be asked to create the relevant subsidiaries and connect an accounting platform for each one during that journey. 
+
+As a result, you will see the main legal entity and its subsidiaries in the Relationship Manager.
+
+![Relationship Manager Portal user interface with three company rows. One row represents an overarching legal entity and two rows represent its subsidiaries.](/img/supplier-enablement/0100-se-rm-multi-entity-view.png)
 
 ## Edit a company
 

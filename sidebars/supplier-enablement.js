@@ -23,6 +23,7 @@ module.exports = [
   },
   "supplier-enablement/guides/analyze-spend",
   "supplier-enablement/guides/refresh-data",
+  "supplier-enablement/guides/customer-journey",
   {
     type: "link",
     label: "Relationship Manager",
