@@ -611,7 +611,7 @@
               "availableBalance": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/availableBalance"
               },
-              "currenctBalance": {
+              "currentBalance": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/currentBalance"
               },
               "creditLimit": {

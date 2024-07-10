@@ -6042,17 +6042,21 @@
           },
           "accountName": {
             "type": "string",
-            "nullable": true,
             "description": "The bank account name."
           },
           "accountType": {
             "type": "string",
-            "nullable": true,
-            "description": "The type of bank account e.g. Credit."
+            "description": "The type of bank account e.g. checking, savings, loan, creditCard, prepaidCard.",
+            "enum": [
+              "checking",
+              "savings",
+              "loan",
+              "creditCard",
+              "prepaidCard"
+            ]
           },
           "accountNumber": {
             "type": "string",
-            "nullable": true,
             "description": "The account number."
           },
           "sortCode": {
@@ -6078,7 +6082,6 @@
           "balance": {
             "type": "number",
             "format": "decimal",
-            "nullable": true,
             "description": "The latest balance for the bank account."
           },
           "accountInfo": {
@@ -6097,8 +6100,11 @@
             ]
           },
           "feedStartDate": {
-            "$ref": "#/components/schemas/SourceAccountv2/definitions/accountInfo/properties/accountOpenDate",
-            "nullable": true
+            "nullable": true,
+            "title": "Date",
+            "type": "string",
+            "example": "2022-10-23",
+            "description": "In Codat's data model, dates are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date fields are formatted as strings; for example:\n```\n2020-10-08\n```"
           }
         },
         "required": [
@@ -6113,20 +6119,22 @@
           "accountInfo": {
             "title": "Account Info",
             "type": "object",
+            "nullable": true,
             "properties": {
               "description": {
                 "type": "string",
+                "nullable": true,
                 "description": "Description of the account."
               },
               "nickname": {
                 "type": "string",
+                "nullable": true,
                 "description": "Name given to the account by the user. Used in UIs to assist in account selection."
               },
               "accountOpenDate": {
-                "type": "string",
-                "example": "2022-10-23",
-                "description": "In Codat's data model, dates are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date fields are formatted as strings; for example:\n```\n2020-10-08\n```\n\n\n",
-                "title": "Date"
+                "$ref": "#/components/schemas/SourceAccountv2/properties/feedStartDate",
+                "nullable": true,
+                "description": "Date when the account was opened or created at the provider"
               },
               "availableBalance": {
                 "type": "number",
@@ -6154,6 +6162,8 @@
               },
               "type": {
                 "type": "string",
+                "nullable": true,
+                "default": "bankcode",
                 "enum": [
                   "rtn",
                   "aba",
@@ -6171,19 +6181,22 @@
                 ],
                 "description": "The type of routing number."
               }
-            }
+            },
+            "required": [
+              "bankCode"
+            ]
           }
         },
         "examples": [
           {
-            "id": "acc-002",
+            "id": "acc-001",
             "accountName": "account-081",
-            "accountType": "Credit",
+            "accountType": "checking",
             "accountNumber": "12345670",
             "sortCode": "123456",
             "routingInfo": {
               "bankCode": "021001088",
-              "type": "rtn"
+              "type": "bankcode"
             },
             "currency": "GBP",
             "balance": 99.99,
@@ -6194,28 +6207,28 @@
               "availableBalance": 10
             },
             "status": "pending",
-            "feedStartDate": "2023-05-19T00:00:00.000Z"
+            "feedStartDate": "2024-05-01T00:00:00.000Z"
           },
           {
-            "id": "acc-004",
+            "id": "acc-002",
             "accountName": "account-083",
-            "accountType": "Credit",
-            "accountNumber": "12345670",
-            "sortCode": "123456",
+            "accountType": "savings",
+            "accountNumber": "23456789",
+            "sortCode": "010203",
             "routingInfo": {
               "bankCode": "021001088",
-              "type": "rtn"
+              "type": "bankcode"
             },
             "currency": "GBP",
-            "balance": 99.99,
+            "balance": 400,
             "accountInfo": {
               "description": "account description 2",
               "nickname": "account 1290",
               "accountOpenDate": "2023-05-23T00:00:00.000Z",
-              "availableBalance": 10
+              "availableBalance": 400
             },
             "status": "pending",
-            "feedStartDate": "2023-05-19T00:00:00.000Z"
+            "feedStartDate": "2024-05-01T00:00:00.000Z"
           }
         ]
       },
