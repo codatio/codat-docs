@@ -1,5 +1,5 @@
 ---
-title: "Querying"
+title: "Query data"
 description: "Basics and examples of querying in Codat's APIs"
 createdAt: "2019-02-20T09:52:29.305Z"
 updatedAt: "2022-11-09T16:56:43.148Z"
