@@ -22,7 +22,7 @@ When you initiate a request for your customer's business data, you can ask them 
 
 We provide detailed guidance on requesting this data in our [Analyze your customers' spend data](/supplier-enablement/guides/analyze-spend) guide.
 
-Once you submit the information request, your customer will receive an email that will prompt them to start a journey to authorize your access to their data. 
+Once you submit the information request, your customer will receive an email that will prompt them to start a journey to authorize your access to their data. The content of this email will differ based on the type of data you selected.
 
 For any type of information you requested, they will need to follow a [software connection journey](/supplier-enablement/guides/customer-journey#software-connection-journey). If you requested spend analysis data, the customer will also go through [multi-entity journey](/supplier-enablement/guides/customer-journey#multi-entity-connection-journey) steps.
 
@@ -32,7 +32,28 @@ For any type of information you requested, they will need to follow a [software 
 | Spend analysis only           | ✔️                           | ✔️                    |
 | Financials and spend analysis| ✔️                           | ❌                    |
 
+### Journey overview
+
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/se-customer-journey-diagram.png)
+
+
+```mermaid
+  flowchart TD
+      A[Financials only]--> D(Selects accounting software)
+      D--> E(Authorizes connection)
+      E--> F[Data available in Relationship Manager]
+      B[Financials and spend analysis]--> D
+      C[Spend analysis only]-->|Single legal entity|D
+      C--> |Multiple legal entities|G(Creates legal entity)
+      G--> D
+      E-->|Another legal entity|G
+```
+
 Next, let's review the details of these journeys.
+
+## Multi-entity connection journey
+
+
 
 ## Software connection journey
 
@@ -63,7 +84,6 @@ in the flow, the customer will choose their software that they are going to let 
 
 
 
-## Multi-entity connection journey
 
 
 
