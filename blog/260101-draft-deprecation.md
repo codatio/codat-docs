@@ -5,7 +5,9 @@ tags: ["Deprecation"]
 draft: true
 authors: mcclowes
 ---
-_^^ remove the draft line from the section above, replace the author name with your github username_
+_^^ remove the draft line from the section above, replace the author name with your github username. check you are listed in authors.yaml as an author_
+
+_if the deprecation applies to a specific integration, add the integration name to tags_
 
 _Note:_ The file name should have the word `deprecation` in it.
 
