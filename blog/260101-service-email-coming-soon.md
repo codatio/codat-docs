@@ -1,27 +1,32 @@
 ---
-title: "Customer emails early access"
+title: "Customer emails: early access"
 date: "2024-07-16"
 tags: ["Product", "Update"]
 authors: ajacksoncodat
 ---
 
-We are launching service emails to inform your customers that they have:
-
- - successfully authorized their data connection. We will inform your customer that you can access their data and give them a way for them to control the status of their connection.
- - the data connection has been unlinked. We will inform your customer that can no longer access their data and give them a way to reconnect the connection.
+We are launching service emails to inform your customers about the state of their data connection on your behalf. You can opt in early to benefit from this functionality.
 
 <!--truncate-->
 
-If you opt in (via the google form below), an email will look like this:
+Service emails increase customer engagement and offer them a way to reconnect their account, ensuring your connection to their data is resilient.
 
-#### Link success
+If you choose to enable this feature, we will contact your customers on your behalf in these scenarios:
+
+ - Your customer successfully authorized their data connection.
+   We will inform your customer that you can access their data and give them a way for them to control the status of their connection.
+  
+ - Your customer's data connection has been unlinked.
+   We will inform your customer that you can no longer access their data and give them a way to reauthorize the connection.
+
+Example emails your customers will receive are presented below:
+
+#### Connection successfully linked
 ![Connected Service Email](/img/updates/20240716-email-connect.png)
 
 #### Connection unlinked 
 ![Disconnected Service Email](/img/updates/20240716-email-disconnect.png)
 
-- Service emails increase customer engagement and offer them a way to reconnect their account, ensuring connection longevity/resiliency.
-
 ## Get early access
 
-Apply via this [Google form](https://forms.gle/1RhYZJ4UBZi9Rqoo9).
+Want early access to the customer service email functionality? Let us know using our [Google form](https://forms.gle/1RhYZJ4UBZi9Rqoo9).
