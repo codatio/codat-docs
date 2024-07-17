@@ -5,27 +5,21 @@ tags: ["Product", "Update"]
 draft: true
 authors: mcclowes
 ---
-_^^ remove the draft line from the section above, replace the author name with your github username_
+_^^ remove the draft line from the section above, replace the author name with your github username. check you are listed in authors.yaml as an author_
+_if the update applies to a specific integration, add the integration name to tags_
 
-
-_Brief summary of the upcoming change._
+_Brief summary of the update._
 
 <!--truncate-->
 
-_Any further details of the upcoming change._
+## What's new?
 
-## Action required​
+_Expanded description of the update and any further details, including the benefits our clients will get with the update._
 
-_Describe the set of actions that the user needs to take to be prepared for the deprecation._
+## Who is this relevant for?
 
-## Expected impact if no action is taken​
+_Provide details of customers who will benefit from these updates. E.g. all Codat customers; customers using a specific product, customers automating a specific use case..._
 
-_Describe what happens if the required actions are not completed by the deprecation date._ 
+## How to get started?
 
-_If it is possible to enable the deprecation early by using the toggle in the Portal, keep this note in the post. If not, delete it._
-
-:::note Get ahead
-
-You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers), or read our [change policy](https://docs.codat.io/using-the-api/change-policy).
-
-:::
+_Let the customer know what they need to do to benefit from the changes the update describes._ 
