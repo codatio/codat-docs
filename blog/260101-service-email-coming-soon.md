@@ -15,11 +15,11 @@ Service emails increase customer engagement and offer them a way to reconnect th
 
 If you choose to enable this feature, we will contact your customers on your behalf in these scenarios:
 
- - Your customer successfully authorized their data connection.
+ - **Your customer successfully authorized their data connection.**
 
    We will inform your customer that you can access their data and give them a way for them to control the status of their connection.
   
- - Your customer's data connection has been unlinked.
+ - **Your customer's data connection has been unlinked.**
 
    We will inform your customer that you can no longer access their data and give them a way to reauthorize the connection.
 
