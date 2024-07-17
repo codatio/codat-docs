@@ -11,12 +11,16 @@ We are launching service emails to inform your customers about the state of thei
 
 Service emails increase customer engagement and offer them a way to reconnect their account, ensuring your connection to their data is resilient.
 
+## What's new?
+
 If you choose to enable this feature, we will contact your customers on your behalf in these scenarios:
 
  - Your customer successfully authorized their data connection.
+
    We will inform your customer that you can access their data and give them a way for them to control the status of their connection.
   
  - Your customer's data connection has been unlinked.
+
    We will inform your customer that you can no longer access their data and give them a way to reauthorize the connection.
 
 Example emails your customers will receive are presented below:
@@ -27,6 +31,12 @@ Example emails your customers will receive are presented below:
 #### Connection unlinked 
 ![Disconnected Service Email](/img/updates/20240716-email-disconnect.png)
 
-## Get early access
+## Who is this relevant for?
 
+All Codat clients are able to opt in and start using the customer service email functionality early.
+
+## How to get started?
+
+:::tip Get early access
 Want early access to the customer service email functionality? Let us know using our [Google form](https://forms.gle/1RhYZJ4UBZi9Rqoo9).
+:::
