@@ -33,10 +33,10 @@ Example emails your customers will receive are presented below:
 
 ## Who is this relevant for?
 
-All Codat clients are able to opt in and start using the customer service email functionality early.
+All Codat clients can opt in and start using the customer service email functionality early.
 
 ## How to get started?
 
 :::tip Get early access
-Want early access to the customer service email functionality? Let us know using our [Google form](https://forms.gle/1RhYZJ4UBZi9Rqoo9).
+Want early access to service emails? Let us know using our [Google form](https://forms.gle/1RhYZJ4UBZi9Rqoo9).
 :::
