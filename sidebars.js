@@ -129,7 +129,6 @@ module.exports = {
        //     "configure/portal/usage-and-billing",
        //   ],
        // },
-       // "configure/create-account",
         "configure/portal/account-management",
       ],
     },
