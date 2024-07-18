@@ -1,11 +1,13 @@
 ---
-title: "Customer emails: early access"
+title: "Service emails - early access"
 date: "2024-07-16"
 tags: ["Product", "Update"]
 authors: ajacksoncodat
 ---
 
-We are launching service emails to inform your customers about the state of their data connection on your behalf. You can opt in early to benefit from this functionality.
+We'll soon be launching our new service email feature. Automatically inform your customers when they need to reconnect their integration, their banking connection is due to expire, and more. 
+
+**You can opt in early to benefit from this functionality.**
 
 <!--truncate-->
 
@@ -13,9 +15,9 @@ Service emails increase customer engagement and offer them a way to reconnect th
 
 ## What's new?
 
-If you choose to enable this feature, we will contact your customers on your behalf in these scenarios:
+By enabling this early-access feature, Codat will notify your customers by email whenever:
 
- - **Your customer successfully authorized their data connection.**
+ - **Your customer successfully shares data with you.**
 
    We will inform your customer that you can access their data and give them a way for them to control the status of their connection.
   
