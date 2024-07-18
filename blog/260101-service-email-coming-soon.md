@@ -17,7 +17,7 @@ If you choose to enable this feature, we will contact your customers on your beh
 
  - **Your customer successfully authorized their data connection.**
 
-   We will inform your customer that you can access their data and give them a way for them to control the status of their connection.
+   We will reassure your customer that they have successfully connected their data with you and give them a way to manage the status of their connection.
   
  - **Your customer's data connection has been unlinked.**
 
