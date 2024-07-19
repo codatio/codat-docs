@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: ajacksoncodat
 ---
 
-We'll soon be launching our new service email feature. Automatically inform your customers when they need to reconnect their integration, their banking connection is due to expire, and more. 
+We'll be launching our new service email feature soon. Use it to automatically inform your customers when they need to reconnect their integration, their banking connection is due to expire, and more. 
 
 **You can opt in early to benefit from this functionality.**
 
@@ -15,7 +15,7 @@ Service emails increase customer engagement and offer them a way to reconnect th
 
 ## What's new?
 
-By enabling this early-access feature, Codat will notify your customers by email whenever:
+When you enable this early-access feature, Codat will notify your customers by email whenever:
 
  - **Your customer successfully shares data with you.**
 
