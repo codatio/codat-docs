@@ -85,7 +85,7 @@ However, you can set a more frequent sync schedule if it is required for your us
 - **Monthly**: We recommend that you sync at least one data type monthly (e.g. Company info) to ensure connection token does not expire when not actively synchronizing data (unless only a one-time sync is required).
 - **Weekly (recommended)**: Keeps data reasonably fresh, particularly where data types change less frequently, while also reducing the number of required API calls.
 - **Daily**: Gives you close-to-live picture of most data types while staying within the conservative rate limits of most accounting platforms.
-- **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. Only available to [enterprise customers](/configure/create-account#full-access).
+- **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. 
 
 ## 💡 Tips and traps
 

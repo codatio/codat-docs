@@ -23,7 +23,7 @@ In this release, you can access:
 
 ## Who is this relevant for? 
 
-QuickBooks Desktop is available for all clients using Sync for Expenses. This integration is only available as a premium add-on on our [enterprise plans.](/configure/create-account) 
+QuickBooks Desktop is available for all clients using Sync for Expenses. This integration is only available as a premium add-on on our [enterprise plans.](https://www.codat.io/#get-in-touch) 
 
 ## How to get started? 
 

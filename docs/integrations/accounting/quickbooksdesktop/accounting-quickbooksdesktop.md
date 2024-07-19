@@ -24,12 +24,6 @@ Our QuickBooks Desktop connector enables SMBs who use QuickBooks Desktop to shar
 
 The connector utilizes the Intuit Web Connector, a Windows application that runs on the SMB user's local machine.
 
-<div className="card">
-  <h3>✨ Premium</h3>
-
-  <p>This integration is only available as a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
-</div>
-
 ## Data type coverage
 
 View the coverage of our QuickBooks Desktop connector in the [Data coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pqsw).

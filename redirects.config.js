@@ -497,24 +497,12 @@ module.exports = {
       to: "/configure/portal/pull-and-push-history",
     },
     {
-      from: "/other/portal/usage-and-billing",
-      to: "/configure/create-account",
-    },
-    {
       from: "/other/user-management/adding-users",
       to: "/configure/user-management/adding-users",
     },
     {
       from: "/other/user-management/user-roles",
       to: "/configure/user-management/user-roles",
-    },
-    {
-      from: "/configure/plans/free",
-      to: "/configure/create-account",
-    },
-    {
-      from: "/configure/portal/usage-and-billing",
-      to: "/configure/create-account",
     },
     {
       from: "/auth-flow/customize/set-up-webhooks",
