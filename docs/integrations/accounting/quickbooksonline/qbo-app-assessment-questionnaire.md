@@ -149,6 +149,8 @@ This question should be answered by the app's developer.
 
 ### Accounting API
 
+This section will appear in the questionnaire once you select _Accounting API_ in the previous set of questions.
+
 1. **Which customer-facing version of QuickBooks Online is your app designed for?** (Select all that apply)
 
 |Version   | Response|
