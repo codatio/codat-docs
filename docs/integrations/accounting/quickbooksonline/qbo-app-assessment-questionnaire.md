@@ -7,7 +7,7 @@ description: "Guidance on completing Intuit's app assessment process"
 
 All apps that intend to access QuickBooks Online production data must fill in a questionnaire as part of Intuit's app assessment process. Many of its questions require you to provide information about your organization and your app's use case. 
 
-However, some questions relate to Codat's integration with QuckBooks Online. We have provided guideline responses for such questions below. They are highlighted in **bold**.
+However, some questions relate to Codat's integration with QuickBooks Online. We have provided guideline responses for such questions below. They are highlighted in **bold**.
 
 ## Questionnaire
 
@@ -204,7 +204,7 @@ i. **Why do you use the CDC operation?**
 |---|------------------------------------------|
 | a | Using webhooks doesn't give me the information I need  |
 | b | Querying specific entities doesn't give me the information I need |
-| **c** | **Other** |
+| **c** | **Other (Tell us why you use the CDC operation)** |
 
 After selecting option **C**, provide this additional information:
 
@@ -218,7 +218,7 @@ ii. **How often do you poll the CDC service?**
 | b | Daily |
 | c | Hourly |
 | d | More than once an hour |
-| **e** | **Other**  |
+| **e** | **Other - specify a timeframe**  |
 
 After selecting option **E**, provide this additional information:
 
