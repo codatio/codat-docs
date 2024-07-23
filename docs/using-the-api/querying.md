@@ -32,7 +32,7 @@ The below query functionality will only work when searching for company data (e.
 | `>=`       	| Greater than or equal to 	| `%3e%3d`    | ✔      	| ❌      | ✔    	|
 | `<=`       	| Less than or equal to    	|  `%3c%3d`   | ✔      	| ❌      | ✔    	|
 | `&&`        | AND                       | `%26%26`    |  -      | -       | -     |
-| `||`       | OR                       |  `%7C%7C`   | -       | -       | -     |
+| `\|\|`       | OR                       |  `%7C%7C`   | -       | -       | -     |
 | `{`, `}`    | Logical separator          | `%7B`, `%7D`| -       | -       | -     |
 
 - Separate multiple query clauses with ampersands (`&&`) for _AND_ queries or pipes (`||`) for _OR_ queries.
