@@ -14,7 +14,7 @@ Once company is onboarded, you can start retrieving their financial data.
 
 If there are datasets which are not as up-to-date as you require, you can queue a data sync as described [here](/using-the-api/queueing-data-syncs).
 
-Once you've queued the sync, you can poll the [GET /companies/{companyId}/dataStatus](/platform-api#/operations/get-company-data-status) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
+Once you've queued the sync, you can poll the [`GET /companies/{companyId}/dataStatus`](/platform-api#/operations/get-company-data-status) endpoint (as described above) to [monitor progress of the sync](/core-concepts/status).
 
 :::note Configuring the sync schedule
 
@@ -25,7 +25,7 @@ You can configure a sync schedule in the Codat portal to keep each data type at 
 
 Codat exposes endpoints that enable you to easily query each of the supported data types.
 
-For example, when querying invoices, you can use the [GET /companies/{companyId}/data/invoices](/accounting-api#/operations/list-invoices) endpoint, with query string parameters as below:
+For example, when querying invoices, you can use the [`GET /companies/{companyId}/data/invoices`](/accounting-api#/operations/list-invoices) endpoint, with query string parameters as below:
 
 - `pageSize` – the size of page you wish to retrieve
 - `page` – which page number you wish to retrieve

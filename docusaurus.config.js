@@ -104,7 +104,7 @@ const config = {
       redirects
     ],
 
-    "@docusaurus/plugin-sitemap",
+    //"@docusaurus/plugin-sitemap",
 
     // Add custom webpack config to make @stoplight/elements work
     () => ({
