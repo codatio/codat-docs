@@ -13728,7 +13728,13 @@
           "syncStatus": {
             "type": "string",
             "description": "Text status of the sync.",
-            "example": "Completed",
+            "examples": [
+              "Complete",
+              "PushError",
+              "Started",
+              "NotStarted",
+              "Pushing"
+            ],
             "nullable": true
           },
           "errorMessage": {
