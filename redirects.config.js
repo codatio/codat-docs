@@ -120,9 +120,6 @@ var prodRework = [{
   from: "/integrations/bankfeeds/overview",
   to: "/integrations/bank-feeds/overview"
 }, {
-  from: "/sfc/build-with-sync-for-commerce/sync-for-commerce-prerequisites",
-  to: "/commerce/overview"
-}, {
   from: "/sfc/coming-soon",
   to: "/commerce/overview"
 }, {

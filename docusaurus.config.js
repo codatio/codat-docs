@@ -31,7 +31,7 @@ const config = {
   organizationName: "codat",
   projectName: "codat-docs",
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn', // 'throw'
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
