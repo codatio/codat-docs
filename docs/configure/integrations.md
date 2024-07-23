@@ -51,8 +51,6 @@ To manage which accounting packages are enabled, use the Codat Portal:
 - Select the integration you want to manage
 - Configure and enable the integration
 
-Guides on configuring each integration are
-
 Further detailed guides on configuring these are available in the [Commerce integrations overview](/integrations/commerce/overview).
 
 ---
