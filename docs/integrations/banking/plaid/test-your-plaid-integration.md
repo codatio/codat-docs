@@ -34,12 +34,7 @@ To connect your test company to Plaid's sandbox, you can either generate a Link 
 
 1. Open the <a href="/platform-api#/operations/list-connections" target="_blank">`POST /companies/{companyId}/connections`</a> endpoint.
 2. Replace `{companyId}` with the ID of the test company you've just set up.
-3. Also, in the body of the request, enter the platform key:
-
-```json
-"plaid"
-```
-
+3. In the body of the request, enter the platform key `plaid`
 4. Send your request.  
    Codat generates a unique link to Plaid's sandbox. For example:
 
