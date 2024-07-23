@@ -2,9 +2,9 @@ import React from "react";
 import Layout from "@theme/Layout";
 import Navbar from "@theme/Navbar";
 import Logo from "@theme/Logo";
-import DocsCard from "../../components/global/DocsCard";
+import DocsCard from "../../components/DocsCard";
 
-import styles from "../../components/global/Api/styles.module.scss";
+import styles from "../../components/Api/styles.module.scss";
 
 const RaiseSupportTicket = () => {
   return (

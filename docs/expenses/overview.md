@@ -17,10 +17,10 @@ banner_text: "Push categorized expenses and attachments to all major accounting 
 // video_text: What is Sync for Expenses?
 ---
 
-import {IntegrationsList} from '@components/global/Integrations'
-import {integrationsFilterExpenses} from '@components/global/Integrations/integrations'
-import ClientLibraries from "@components/global/ClientLibraries";
-import Products from "@components/global/Products";
+import {IntegrationsList} from '@components/Integrations'
+import {integrationsFilterExpenses} from '@components/Integrations/integrations'
+import ClientLibraries from "@components/ClientLibraries";
+import Products from "@components/Products";
 
 ## What is it?
 

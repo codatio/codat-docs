@@ -5,9 +5,9 @@ description: "Underwrite with real-time data from SMB's payments and shopping pl
 image: "/img/banners/social/lending.png"
 ---
 
-import Products from "@components/global/Products";
-import { IntegrationsList } from "@components/global/Integrations";
-import { commerceIntegrations } from "@components/global/Integrations/integrations";
+import Products from "@components/Products";
+import { IntegrationsList } from "@components/Integrations";
+import { commerceIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 

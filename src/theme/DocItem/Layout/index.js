@@ -13,7 +13,7 @@ import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import Unlisted from '@theme/Unlisted';
 import styles from './styles.module.css';
 
-import PageHeader from '@components/global/PageHeader'
+import PageHeader from '@components/PageHeader'
 import Vote from './Vote';
 import TOCCollapsible from '@theme/TOCCollapsible';
 

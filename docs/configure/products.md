@@ -4,7 +4,7 @@ sidebar_label: "Products"
 description: "Enable the products you need for your usecase"
 ---
 
-import Products from "@components/global/Products";
+import Products from "@components/Products";
 
 ## Enabling products
 

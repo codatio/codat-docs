@@ -12,7 +12,7 @@ import clsx from "clsx";
 import styles from "./styles.module.scss";
 import "./styles/stoplight.scss";
 
-const LazyStoplight = React.lazy(() => import("../../page/api/Stoplight"));
+const LazyStoplight = React.lazy(() => import("../Stoplight"));
 const Fallback = (
   <div className={styles.stoplightFallback} />
 );

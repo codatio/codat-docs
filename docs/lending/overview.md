@@ -16,10 +16,10 @@ video_url: "https://www.youtube.com/embed/UgtbRe-j0Jo?si=KMRaVzgKCnW7E7tr"
 video_text: What is Lending API?
 ---
 
-import Products from "@components/global/Products";
-import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
-import ClientLibraries from "@components/global/ClientLibraries";
+import Products from "@components/Products";
+import { IntegrationsList } from "@components/Integrations";
+import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/Integrations/integrations";
+import ClientLibraries from "@components/ClientLibraries";
 
 ## What is it?
 

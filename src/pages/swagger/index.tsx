@@ -1,5 +1,5 @@
 import React from "react";
-import Api from '../../components/global/Api'
+import Api from '../../components/Api'
 
 //const URL = "https://raw.githubusercontent.com/mcclowes/oas-test/main/example.json"
 const URL = "https://raw.githubusercontent.com/mcclowes/oas-test/main/wip.json"

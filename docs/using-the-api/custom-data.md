@@ -4,8 +4,8 @@ sidebar_label: "Custom data"
 description: "Leverage existing integrations to fetch data types not included in Codat's out-of-the box data model"
 ---
 
-import {IntegrationsList} from '@components/global/Integrations'
-import {integrationsFilterCustomData} from '@components/global/Integrations/integrations'
+import {IntegrationsList} from '@components/Integrations'
+import {integrationsFilterCustomData} from '@components/Integrations/integrations'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

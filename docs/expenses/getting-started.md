@@ -6,8 +6,8 @@ tags: [syncforexpense, gettingstarted, prerequisites, platformsupport]
 displayed_sidebar: expenses
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
-import { integrationsFilterExpenses } from "@components/global/Integrations/integrations";
+import { IntegrationsList } from "@components/Integrations";
+import { integrationsFilterExpenses } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 

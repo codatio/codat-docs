@@ -5,7 +5,7 @@ description: Get help if you experience errors or issues when connecting to NetS
 hide_table_of_contents: false
 ---
 
-import Questions, { Question } from '@components/global/Questions';
+import Questions, { Question } from '@components/Questions';
 
 <Questions>
   <Question

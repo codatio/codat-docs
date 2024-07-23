@@ -5,7 +5,7 @@ sidebar_label: Commerce
 displayed_sidebar: integrationsCommerce
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
+import { IntegrationsList } from "@components/Integrations";
 
 Our suite of commerce integrations allow you to retrieve up-to-date ecommerce, payment, and point-of-sale data from your SMB customers' commerce platforms.
 

@@ -4,7 +4,7 @@ date: "2023-09-04"
 tags: ["Update", "Products"]
 authors: mcclowes
 ---
-import Products from "@components/global/Products";
+import Products from "@components/Products";
 
 We've changed the way we organize our APIs to make Codat easier than ever to use.
 

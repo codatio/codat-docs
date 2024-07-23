@@ -14,7 +14,7 @@ banner_image: "/img/banners/mobile.png"
 banner_text: "Get support and gain confidence when sharing access to your accounting, banking, or commerce data with your financial service provider"
 ---
 
-import Clients from '@components/global/Clients'
+import Clients from '@components/Clients'
 
 The world’s largest financial services providers and software companies trust **Codat** to enable you to securely share your business data with them. Your provider then uses this data to deliver their services to you.
 

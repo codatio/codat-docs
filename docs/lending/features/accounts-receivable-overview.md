@@ -5,9 +5,9 @@ description: "Assessing debtor risk in real time with accounts receivable insigh
 image: "/img/banners/social/lending.png"
 ---
 
-import Products from "@components/global/Products";
-import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations, bankingIntegrations } from "@components/global/Integrations/integrations";
+import Products from "@components/Products";
+import { IntegrationsList } from "@components/Integrations";
+import { accountingIntegrations, bankingIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 

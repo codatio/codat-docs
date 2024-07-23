@@ -5,9 +5,9 @@ description: "Get a detailed, real-time view of your customers' supplier invoice
 image: "/img/banners/social/lending.png"
 ---
 
-import Products from "@components/global/Products";
-import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations } from "@components/global/Integrations/integrations";
+import Products from "@components/Products";
+import { IntegrationsList } from "@components/Integrations";
+import { accountingIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 

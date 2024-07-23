@@ -1,5 +1,5 @@
 import React from "react";
-import Api from '../../components/global/Api'
+import Api from '../../components/Api'
 
 const URL = "/oas/Codat-Sync-Commerce.json"
 
