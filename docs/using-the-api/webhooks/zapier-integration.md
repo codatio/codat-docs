@@ -14,8 +14,6 @@ Some simple use cases might include:
 - Posting a message when sync errors occur.
 - Adding companies that you onboard to a spreadsheet automatically.
 
-This integration will be in beta until 9 July 2024.
-
 ## What is Zapier?
 
 [Zapier](https://zapier.com/apps/Codat/integrations) provides no-code workflows that let you connect Codat to more than 2,000 other web applcations. These automated connections are called Zaps. You can set them up in minutes with no coding to automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
