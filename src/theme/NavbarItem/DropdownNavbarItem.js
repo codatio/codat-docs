@@ -101,8 +101,8 @@ function DropdownNavbarItemDesktop({
                 }
               }}
               activeClassName="dropdown__link--active"
-              {...childItemProps}
               key={i}
+              {...childItemProps}
             />
           </>
         })}
@@ -151,11 +151,11 @@ function DropdownNavbarItemMobile({
         {items.map((childItemProps, i) => (
           <NavbarItem
             mobile
+            key={i}
             isDropdownItem
             onClick={onClick}
             activeClassName="menu__link--active"
             {...childItemProps}
-            key={i}
           />
         ))}
       </Collapsible>

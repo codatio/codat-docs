@@ -42,10 +42,10 @@ Before setting up the integration, make sure that:
    
    The endpoint returns a JSON response containing the company ID (`id`) and the redirect URL (`redirect`).
 
-2. Using the [POST /companies/<COMPANY_ID>/connections](/platform-api#/operations/create-connection) endpoint, create a data connection to Xero for the company you added. Specify the company ID in the URL path and the Xero platform key in the body:
+2. Using the [POST /companies/{companyId}/connections](/platform-api#/operations/create-connection) endpoint, create a data connection to Xero for the company you added. Specify the company ID in the URL path and the Xero platform key in the body:
 
    ```http title="Create connection"
-   POST https://api.codat.io/companies/<COMPANY_ID>/connections
+   POST https://api.codat.io/companies/{companyId}/connections
    ```
    
    ```json title="Request body - Xero"
@@ -73,10 +73,10 @@ Before setting up the integration, make sure that:
 3. Using the [POST /bankFeedAccounts](/bank-feeds-api#/operations/create-bank-feed) endpoint, add one or more source bank accounts:
    
    ```http title="Create bank feed bank accounts"
-   POST /companies/<COMPANY_ID>/connections/<CONNECTION_ID>/connectionInfo/bankFeedAccounts
+   POST /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
    ```
    
-   For the `<CONNECTION_ID>`, use the connection `id` you received in the response from `POST /connection` request.
+   For the `{connectionId}`, use the connection `id` you received in the response from `POST /connection` request.
    
    In the request body, specify a source bank account to make available to the SMB user. For example, to add a credit card account send the following request:
 

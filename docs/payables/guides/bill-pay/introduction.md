@@ -33,7 +33,9 @@ After using the hosted version, you can clone the repository and [run the demo a
 
 ### About the demo app
 
-<p><a href="https://github.com/codatio/demo-bill-pay" target="_blank">Click here</a> to check out the code for the demo app. Explore the code as you go along so that you understand the approach we've taken in the demo app.</p>
+<p>
+  <a href="https://github.com/codatio/demo-bill-pay" target="_blank">Click here</a> to check out the code for the demo app. Explore the code as you go along so that you understand the approach we've taken in the demo app.
+</p>
 
 The app illustrates three common tasks in a typical bill payment workflow:
 

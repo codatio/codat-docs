@@ -31,7 +31,7 @@ export default function BlogLayout(props: Props): JSX.Element {
   return (
     <Layout {...layoutProps}>
       {
-        siteConfig.customFields?.FEATURE_DEV_FLAG === "true" && <div className={styles.devFlag}>This is a staging build of the docs. Do not share the link externally.</div>
+        siteConfig.customFields?.FEATURE_DEV_FLAG === "true" && <div className={styles.devFlag}>This is a staging build of the docs</div>
       }
 
       {
@@ -39,13 +39,13 @@ export default function BlogLayout(props: Props): JSX.Element {
       }
 
       <div className="blog">
-        <div className={clsx("row", styles.row)}>
+        <div className={styles.blogWrapper}>
           <BlogSidebar sidebar={sidebar} />
 
-          <div className="col">
+          <div className={styles.blogContainer}>
             <Navbar />
 
-            <div className="row margin-vert--lg">
+            <div className={styles.blogPage}>
               { isUpdatesPage 
                 && <h1 className={styles.updatesHeader}>Updates</h1> 
               }

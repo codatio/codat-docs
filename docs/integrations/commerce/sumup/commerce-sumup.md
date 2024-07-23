@@ -4,10 +4,13 @@ sidebar_label: Overview
 description: "Learn about our SumUp integration"
 ---
 
-<p><a className="external" href="https://sumup.com/" target="_blank">
-  SumUp
-</a> is a point of sale provider that offers in-person payment solutions through
-its app and card readers, as well as ecommerce functionality.</p>
+<p>
+  <a className="external" href="https://sumup.com/" target="_blank">
+    SumUp
+  </a> 
+  is a point of sale provider that offers in-person payment solutions through
+its app and card readers, as well as ecommerce functionality.
+</p>
 
 Use Codat's Commerce API with SumUp to securely connect to, retrieve, and view your customers’ commerce transactions.
 

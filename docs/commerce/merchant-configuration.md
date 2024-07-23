@@ -143,7 +143,7 @@ Example request body:
 
    | Default value                  | `data-textkey` value           |
    |--------------------------------|------------------------------|
-   | Set up Sync to {platform name} | `configure-setupSidebar-title` |
+   | Set up Sync to `{platform name}` | `configure-setupSidebar-title` |
 
    </TabItem>
 
@@ -151,8 +151,8 @@ Example request body:
 
    | Default value                         | `data-textkey` value                                    |
    |---------------------------------------|-------------------------------------------------------|
-   | Connect to {commerce platform name}   | `configure-setupSidebar-checkboxes-connectToCommerce`   |
-   | Connect to {accounting platform name} | `configure-setupSidebar-checkboxes-connectToAccounting` |
+   | Connect to `{commerce platform name}`   | `configure-setupSidebar-checkboxes-connectToCommerce`   |
+   | Connect to `{accounting platform name}` | `configure-setupSidebar-checkboxes-connectToAccounting` |
    | Set up sales                          | `configure-setupSidebar-checkboxes-sales`               |
    | Set up fees                           | `configure-setupSidebar-checkboxes-fees`                |
    | Set up payments                       | `configure-setupSidebar-checkboxes-payments`            |
@@ -197,9 +197,9 @@ Example request body:
    | Default value                                                                            | `data-textkey` value                           |
    |------------------------------------------------------------------------------------------|----------------------------------------------|
    | Accounts                                                                                 | `configure-content-sales-accounts-title`       |
-   | Configure accounts mapping from {commerce platform name} to {accounting platform name}.  | `configure-content-sales-accounts-description` |
+   | Configure accounts mapping from `{commerce platform name}` to `{accounting platform name}`.  | `configure-content-sales-accounts-description` |
    | Tax rates                                                                                | `configure-content-sales-taxRates-title`       |
-   | Configure tax rates mapping from {commerce platform name} to {accounting platform name}. | `configure-content-sales-taxRates-description` |
+   | Configure tax rates mapping from `{commerce platform name}` to `{accounting platform name}`. | `configure-content-sales-taxRates-description` |
    | Other                                                                                    | `configure-content-sales-other-title`          |
    | Other title description: no value by default.                                            | `configure-content-sales-other-description`    |
 
@@ -208,7 +208,7 @@ Example request body:
    | Default value                                                                           | `data-textkey` value                          |
    |-----------------------------------------------------------------------------------------|---------------------------------------------|
    | Accounts                                                                                | `configure-content-fees-accounts-title`       |
-   | Configure accounts mapping from {commerce platform name} to {accounting platform name}. | `configure-content-fees-accounts-description` |
+   | Configure accounts mapping from `{commerce platform name}` to `{accounting platform name}`. | `configure-content-fees-accounts-description` |
 
    </TabItem>
 
@@ -219,9 +219,9 @@ Example request body:
    | Default value                                                                            | `data-textkey` value                           |
    |------------------------------------------------------------------------------------------|----------------------------------------------|
    | Accounts                                                                                 | `configure-content-sales-accounts-title`       |
-   | Configure accounts mapping from {commerce platform name} to {accounting platform name}.  | `configure-content-sales-accounts-description` |
+   | Configure accounts mapping from `{commerce platform name}` to `{accounting platform name}`.  | `configure-content-sales-accounts-description` |
    | Tax rates                                                                                | `configure-content-sales-taxRates-title`       |
-   | Configure tax rates mapping from {commerce platform name} to {accounting platform name}. | `configure-content-sales-taxRates-description` |
+   | Configure tax rates mapping from `{commerce platform name}` to `{accounting platform name}`. | `configure-content-sales-taxRates-description` |
    | Other                                                                                    | `configure-content-sales-other-title`          |
    | Other title description: no value by default.                                            | `configure-content-sales-other-description`    |
 
@@ -230,7 +230,7 @@ Example request body:
    | Default value                                                                           | `data-textkey` value                          |
    |-----------------------------------------------------------------------------------------|---------------------------------------------|
    | Accounts                                                                                | `configure-content-fees-accounts-title`       |
-   | Configure accounts mapping from {commerce platform name} to {accounting platform name}. | `configure-content-fees-accounts-description` |
+   | Configure accounts mapping from `{commerce platform name}` to `{accounting platform name}`. | `configure-content-fees-accounts-description` |
 
    <b>Payments (stage 5)</b>
 

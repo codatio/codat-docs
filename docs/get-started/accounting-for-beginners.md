@@ -20,7 +20,9 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
     <p>
       FreeAgent's Chief Accountant, Emily Coltman FCA, gives you the plain English definitions for everyday accounting terms so you can confidently discuss your business finances.
     </p>
-    <p><a href="https://www.freeagent.com/small-businesses/recordings/accounting-terms-in-plain-english/" target="_blank" rel="noreferrer">Watch video →</a></p>
+    <p>
+      <a href="https://www.freeagent.com/small-businesses/recordings/accounting-terms-in-plain-english/" target="_blank" rel="noreferrer">Watch video →</a>
+    </p>
   </li>
   <li className="card animation-pulse">
     <div className="header">
@@ -34,7 +36,9 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
     <p>
       In this first part of a two-part series, Modern Treasury walk through basic accounting principles for anyone building products that move and track money.
     </p>
-    <p><a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-i" target="_blank" rel="noreferrer">Read article →</a></p>
+    <p>
+      <a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-i" target="_blank" rel="noreferrer">Read article →</a>
+    </p>
   </li>
   <li className="card animation-pulse">
     <div className="header">
@@ -48,7 +52,9 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
     <p>
       In this second part of a two-part series, Modern Treasury build a ledger for a Venmo clone by applying the accounting principles covered in Part I.
     </p>
-    <p><a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-ii" target="_blank" rel="noreferrer">Read article →</a></p>
+    <p>
+      <a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-ii" target="_blank" rel="noreferrer">Read article →</a>
+    </p>
   </li>
   <li className="card animation-pulse">
     <div className="header">
@@ -62,6 +68,8 @@ You can also refer to our new (work in progress) [glossary](/glossary) for a qui
     <p>
       Martin Kleppman explains basic principles of accounting using graphs, providing the background needed to understand the financial statements for a small company.
     </p>
-    <p><a href="https://martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html" target="_blank" rel="noreferrer">Read article →</a></p>
+    <p>
+      <a href="https://martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html" target="_blank" rel="noreferrer">Read article →</a>
+    </p>
   </li>
 </ul>

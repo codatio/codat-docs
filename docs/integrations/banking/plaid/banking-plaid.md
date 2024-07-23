@@ -3,12 +3,13 @@ title: "Plaid"
 description: "Learn about our Plaid integration"
 sidebar_label: Overview
 ---
+
 <p>
-<a class="external" href="https://plaid.com/" target="_blank">
-  Plaid
-</a> is a third-party provider of banking services with connections to bank accounts
-at over 11,000 financial institutions across the US, Canada, UK, and Europe. Plaid's
-services are regulated in the UK by the Financial Conduct Authority (FCA). </p>
+  <a class="external" href="https://plaid.com/" target="_blank">
+    Plaid
+  </a> 
+  is a third-party provider of banking services with connections to bank accounts at over 11,000 financial institutions across the US, Canada, UK, and Europe. Plaid's services are regulated in the UK by the Financial Conduct Authority (FCA). 
+</p>
 
 Our banking integration with Plaid lets you securely connect to and retrieve your SMB customers' banking data in a standardized format.
 

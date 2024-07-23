@@ -1,8 +1,7 @@
 ---
-title: "Product update #2"
+title: "Changelog - February 2023"
 date: "2023-02-03"
 tags: ["Product", "Update"]
-draft: false
 authors: mcclowes
 ---
 
@@ -34,8 +33,8 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 
 Don't forget about our upcoming deprecations:
 
-- [https://docs.codat.io/updates/230411-api-keys]
-- [https://docs.codat.io/updates/230411-deletion-of-data]
-- [https://docs.codat.io/updates/230411-legacy-bank-account-endpoints]
+- [https://docs.codat.io/updates/230411-api-keys](https://docs.codat.io/updates/230411-api-keys)
+- [https://docs.codat.io/updates/230411-deletion-of-data](https://docs.codat.io/updates/230411-deletion-of-data)
+- [https://docs.codat.io/updates/230411-legacy-bank-account-endpoints](https://docs.codat.io/updates/230411-legacy-bank-account-endpoints)
 
-Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: <https://docs.codat.io/using-the-api/change-policy>
+Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: [https://docs.codat.io/using-the-api/change-policy](https://docs.codat.io/using-the-api/change-policy)

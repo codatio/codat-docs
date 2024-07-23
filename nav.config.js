@@ -63,6 +63,12 @@ module.exports = {
       position: "left",
       items: [
         {
+          href: "https://github.com/orgs/codatio/discussions",
+          label: "Forum",
+          target: "_blank",
+          rel: null,
+        },
+        {
           href: "https://github.com/codatio",
           label: "GitHub",
           target: "_blank",
@@ -88,9 +94,16 @@ module.exports = {
       position: "left",
       items: [
         {
-          to: "support/get-help",
-          label: "Get help",
-          activeBasePage: "support",
+          href: "https://github.com/orgs/codatio/discussions/new?category=q-a",
+          label: "Ask the community",
+          target: "_blank",
+          rel: null,
+        },
+        {
+          href: "https://cochat.codat.io/",
+          label: "Ask Cochat AI",
+          target: "_blank",
+          rel: null,
         },
         {
           href: "https://status.codat.io/",
@@ -99,7 +112,7 @@ module.exports = {
           rel: null,
         },
         {
-          href: "https://github.com/codatio/codat-docs/issues/new?assignees=&labels=&projects=&template=issue-with-codat-docs.md&title=",
+          href: "https://github.com/codatio/codat-docs/issues/new",
           label: "Issue with the docs?",
           target: "_blank",
           rel: null,

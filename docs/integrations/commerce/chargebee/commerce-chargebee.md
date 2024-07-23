@@ -9,7 +9,10 @@ description: "Learn about our Chargebee integration"
 Our Chargebee integration is available to clients via proxy only. Please contact your account manager to gain access.
 :::
 
-<p><a className="external" href="https://www.chargebee.com/" target="_blank">Chargebee</a> is a subscription billing management platform that enables merchants to streamline their recurring billing and subscription payment processes.</p>
+<p>
+  <a className="external" href="https://www.chargebee.com/" target="_blank">Chargebee</a> 
+  is a subscription billing management platform that enables merchants to streamline their recurring billing and subscription payment processes.
+</p>
 
 Use Codat's Commerce API with Chargebee to securely connect to, retrieve, and view your customers' recurring sales and subscription transactions.
 

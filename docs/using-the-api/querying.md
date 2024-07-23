@@ -24,16 +24,16 @@ The below query functionality will only work when searching for company data (e.
 
 | Operator 	| Name                     	| Encoded     | Number 	| String 	| Date 	|
 |----------	|--------------------------	| :-          |--------	|--------	|------	|
-| =        	| Equals                   	| `%3d`       | ✔      	| ✔      	| ✔    	|
-| !=       	| Not equals               	|  `%21%3d`   | ✔      	| ✔      	| ✔    	|
-| ~        	| Contains                 	| `%7E`       | ❌      | ✔      	| ❌    |
-| >        	| Greater than             	| `%3e`       | ✔      	| ❌      | ✔    	|
-| <        	| Less than                	| `%3c`       | ✔      	| ❌      | ✔    	|
-| >=       	| Greater than or equal to 	| `%3e%3d`    | ✔      	| ❌      | ✔    	|
-| <=       	| Less than or equal to    	|  `%3c%3d`   | ✔      	| ❌      | ✔    	|
-| &&        | AND                       | `%26%26`    |  -      | -       | -     |
-| \|\|       | OR                       |  `%7C%7C`   | -       | -       | -     |
-| {, }     | Logical separator          | `%7B`, `%7D`| -       | -       | -     |
+| `=`        	| Equals                   	| `%3d`       | ✔      	| ✔      	| ✔    	|
+| `!=`       	| Not equals               	|  `%21%3d`   | ✔      	| ✔      	| ✔    	|
+| `~`        	| Contains                 	| `%7E`       | ❌      | ✔      	| ❌    |
+| `>`        	| Greater than             	| `%3e`       | ✔      	| ❌      | ✔    	|
+| `<`        	| Less than                	| `%3c`       | ✔      	| ❌      | ✔    	|
+| `>=`       	| Greater than or equal to 	| `%3e%3d`    | ✔      	| ❌      | ✔    	|
+| `<=`       	| Less than or equal to    	|  `%3c%3d`   | ✔      	| ❌      | ✔    	|
+| `&&`        | AND                       | `%26%26`    |  -      | -       | -     |
+| `||`       | OR                       |  `%7C%7C`   | -       | -       | -     |
+| `{`, `}`    | Logical separator          | `%7B`, `%7D`| -       | -       | -     |
 
 - Separate multiple query clauses with ampersands (`&&`) for _AND_ queries or pipes (`||`) for _OR_ queries.
 - Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/using-the-api/querying#invoices-for-a-specific-customer) example below). This is only applicable to objects within our data endpoints. We do not support querying inside arrays.

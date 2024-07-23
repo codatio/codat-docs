@@ -4,10 +4,12 @@ sidebar_label: Overview
 description: "Learn about our Stripe integration"
 ---
 
-<p><a className="external" href="https://stripe.com/" target="_blank">
-  Stripe
-</a> is an international online payment processing platform that handles credit card
-payments and charges on behalf of small businesses.</p>
+<p>
+  <a className="external" href="https://stripe.com/" target="_blank">
+    Stripe
+  </a> 
+  is an international online payment processing platform that handles credit card payments and charges on behalf of small businesses.
+</p>
 
 Use Codat's Commerce API with Stripe to securely connect to, retrieve, and view your customers' commerce transactions.
 

@@ -4,7 +4,7 @@ sidebar_label: Auth
 description: "Learn how your SMB users can connect their bank accounts to Xero"
 ---
 
-After setting up a company, data connection, and one or more source bank accounts, redirect your SMB user to the `linkUrl` (returned from `POST /companies/<COMPANY_ID>/connections`).
+After setting up a company, data connection, and one or more source bank accounts, redirect your SMB user to the `linkUrl` (returned from `POST /companies/{companyId}/connections`).
 
 ## Account mapping UI
 

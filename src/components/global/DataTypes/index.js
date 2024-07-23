@@ -9,7 +9,10 @@ const DataType = ({dataType}) => {
   return (
     <div className={styles.dataType}>
       <div className={styles.title}>
-        <p><a href={dataType.schema}>{dataType.name}</a> · </p>
+        <p>
+          <a href={dataType.schema}>{dataType.name}</a>
+           · 
+        </p>
         <p>{dataType.key}</p>
       </div>
 

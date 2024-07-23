@@ -15,9 +15,15 @@ banner_image: "/img/banners/accounting-json.png"
 banner_text: "Codat solves challenges for developers building the next generation of financial products for small businesses."
 ---
 
-<head>
+import Welcome from "@components/global/Welcome";
+import Usecases from "@components/global/Usecases";
+import Products from "@components/global/Products";
+import Clients from '@components/global/Clients'
+import {Helmet} from "react-helmet";
+
+<Helmet>
   <title>
-    Codat_docs | Build powerful applications with financial data
+    {"Codat_docs | Build powerful applications with financial data"}
   </title>
   <meta
     name="description"
@@ -27,12 +33,7 @@ banner_text: "Codat solves challenges for developers building the next generatio
   <link rel="alternate" href="/" hreflang="x-default" />
   <link rel="alternate" href="/" hreflang="en" />
   <meta property="og:url" content="https://docs.codat.io" />
-</head>
-
-import Welcome from "@components/global/Welcome";
-import Usecases from "@components/global/Usecases";
-import Products from "@components/global/Products";
-import Clients from '@components/global/Clients'
+</Helmet>
 
 <Welcome />
 

@@ -106,9 +106,8 @@ html[data-theme="dark"] {
     margin-block-start: 1rem;
   }
 
-  //intro paragraphs
+  // intro paragraphs
   > header + p {
-    color: var(--markdown-text-intro-c);
     font-size: 1.25rem;
 
     > strong,
@@ -117,8 +116,6 @@ html[data-theme="dark"] {
     }
 
     + p {
-      color: var(--markdown-text-intro-c);
-
       > strong,
       > b {
         color: var(--markdown-bold-c);

@@ -31,6 +31,15 @@ import ApiStatus from '@components/global/ApiStatus';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 
+import useZendesk from './useZendesk';
+
+import Hotjar from '@hotjar/browser';
+
+const siteId = 4976193;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
+
 type DocPageContentProps = {
   readonly currentDocRoute: DocumentRoute;
   readonly versionMetadata: PropVersionMetadata;

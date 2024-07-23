@@ -35,6 +35,10 @@
           text-decoration: none;
         }
       }
+
+      .markdown {
+        height: 100%;
+      }
     }
   }
 
@@ -50,8 +54,22 @@
   }
 
   footer {
-    .text--right a {
-      text-decoration: none;
+    width: 100%;
+    flex-wrap: nowrap;
+
+    .col {
+      //flex: auto;
+
+    }
+
+    .text--right {
+      max-width: initial;
+      text-wrap: nowrap;
+      padding-right: 0;
+
+      a {
+        text-decoration: none;
+      }
     }
   }
 
