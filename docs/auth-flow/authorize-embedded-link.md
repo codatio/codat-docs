@@ -7,7 +7,7 @@ banner_image: "/img/banners/link.png"
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import ReadNext from "@components/global/ReadNext";
+import ReadNext from "@components/ReadNext";
 
 ![](/img/auth-flow/embedded-link-selection.png)
 

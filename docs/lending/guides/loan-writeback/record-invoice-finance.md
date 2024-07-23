@@ -6,7 +6,7 @@ sidebar_label: "Record: invoice finance"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
+import WritebackMapping from "@components/Prototypes/WritebackMapping";
 
 Once the borrower's customer has paid for the goods or services they purchased, the financed invoice is ready to be reconciled in the accounting platform.  
 

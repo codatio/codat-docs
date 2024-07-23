@@ -7,8 +7,8 @@ displayed_sidebar: bankfeeds
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
-import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@components/global/Integrations/integrations'
+import {IntegrationsList} from '@components/Integrations'
+import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@components/Integrations/integrations'
 
 ## Journey overview
 

@@ -5,7 +5,7 @@ description: "Frequently asked questions about Sync for Expenses"
 displayed_sidebar: expenses
 ---
 
-import Questions, { Question } from '@components/global/Questions';
+import Questions, { Question } from '@components/Questions';
 
 <Questions>
 	<Question

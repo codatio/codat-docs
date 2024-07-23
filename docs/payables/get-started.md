@@ -5,8 +5,8 @@ description: "View the core steps required to perform the initial setup for Sync
 image: "/img/banners/social/payables.png"
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
-import { integrationsFilterPayables } from "@components/global/Integrations/integrations";
+import { IntegrationsList } from "@components/Integrations";
+import { integrationsFilterPayables } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 

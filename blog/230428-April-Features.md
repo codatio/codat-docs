@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: jyorston
 ---
 
-import Loom from '@components/global/Loom'
+import Loom from '@components/Loom'
 
 This month, our product and engineering teams have been working on expanding coverage across our existing integrations as well as introducing some exciting new features.
 

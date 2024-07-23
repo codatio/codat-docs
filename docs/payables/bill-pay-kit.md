@@ -5,8 +5,8 @@ displayed_sidebar: payables
 description: "Simplify the deployment of the bill pay process to your app with our solution kit"
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
-import { integrationsFilterBillPayKit } from "@components/global/Integrations/integrations";
+import { IntegrationsList } from "@components/Integrations";
+import { integrationsFilterBillPayKit } from "@components/Integrations/integrations";
 
 ## Overview
 

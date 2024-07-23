@@ -7,9 +7,9 @@ displayed_sidebar: bankfeeds
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsInternalMappingIntegrations} from '@components/global/Integrations/integrations'
-import Loom from '@components/global/Loom'
+import {IntegrationsList} from '@components/Integrations'
+import {bankfeedsInternalMappingIntegrations} from '@components/Integrations/integrations'
+import Loom from '@components/Loom'
 
 Quickly provide an outstanding mapping experience for your customers with minimal development effort by using our pre-built mapping user interface. It is designed to meet all third-party requirements and can be customized to match your logo and primary color scheme. 
 

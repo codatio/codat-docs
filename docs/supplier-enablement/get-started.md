@@ -6,8 +6,8 @@ hide_description: true
 hide_table_of_contents: true
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
-import { integrationsFilterSupplierEnablement } from "@components/global/Integrations/integrations";
+import { IntegrationsList } from "@components/Integrations";
+import { integrationsFilterSupplierEnablement } from "@components/Integrations/integrations";
 
 Ready to use Supplier Enablement? Reach out to your account manager so that we can enable it for you and get you started. In the process, we will set up your Codat instance to match your business processes, company specifics, and requirements. It's that easy.
 

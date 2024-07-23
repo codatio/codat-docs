@@ -5,7 +5,7 @@ sidebar_label: Banking
 displayed_sidebar: integrationsBanking
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
+import { IntegrationsList } from "@components/Integrations";
 
 Our integrations with <a class="external" href="https://plaid.com/" target="_blank">Plaid</a>, <a  class="external" href="https://truelayer.com/" target="_blank">TrueLayer</a>, and <a class="external" href="https://basiq.io/" target="_blank">Basiq</a> enable you to retrieve up-to-date account and transaction data from your SMB customers' banks. 
 

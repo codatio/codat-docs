@@ -7,8 +7,8 @@ displayed_sidebar: bankfeeds
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsInternalMappingIntegrations} from '@components/global/Integrations/integrations'
+import {IntegrationsList} from '@components/Integrations'
+import {bankfeedsInternalMappingIntegrations} from '@components/Integrations/integrations'
 
 You can enable your users to map their accounts directly within your own application by using the account mapping endpoints of our API. These are the same endpoints that our [pre-built interface](/bank-feeds/mapping/codat-ui) uses. When building, make sure to check all partner requirements to maintain compliance of your app.
 

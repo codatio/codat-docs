@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: dcoplowe
 ---
 
-import ClientLibraries from '@components/global/ClientLibraries';
+import ClientLibraries from '@components/ClientLibraries';
 
 We are excited to announce the release of Java client libraries for our product suite.
 

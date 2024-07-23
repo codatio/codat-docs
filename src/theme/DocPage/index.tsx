@@ -26,7 +26,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import renderRoutes from '@docusaurus/renderRoutes';
 import type {PropVersionMetadata} from '@docusaurus/plugin-content-docs-types';
 
-import ApiStatus from '@components/global/ApiStatus';
+import ApiStatus from '@components/ApiStatus';
 
 import clsx from 'clsx';
 import styles from './styles.module.scss';

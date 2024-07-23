@@ -8,7 +8,7 @@ hide_description: true
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Loom from '@components/global/Loom'
+import Loom from '@components/Loom'
 
 <Loom source="https://www.loom.com/embed/48972835b6e74d199448b794f41b9997" />
 

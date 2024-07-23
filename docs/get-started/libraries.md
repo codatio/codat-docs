@@ -3,7 +3,7 @@ title: "Libraries"
 description: "Easily build with Codat's APIs with our libraries and SDKs"
 ---
 
-import ClientLibraries from '@components/global/ClientLibraries';
+import ClientLibraries from '@components/ClientLibraries';
 
 All client library SDKs for Codat are listed below. If you've built your own SDK that you'd be willing to share with the Codat community, please let us know and we'll link to it here!
 

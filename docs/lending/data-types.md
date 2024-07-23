@@ -4,7 +4,7 @@ description: "Lending API lets you explore the financial data underpinning the e
 image: "/img/banners/social/lending.png"
 ---
 
-import DataTypes from '@components/global/DataTypes'
+import DataTypes from '@components/DataTypes'
 
 ## Supported data types
 

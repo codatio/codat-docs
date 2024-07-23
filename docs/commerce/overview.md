@@ -16,9 +16,9 @@ banner_text: "Embedded accounting integrations for Point of Sale, Payment, and e
 // video_text: What is Sync for Commerce?
 ---
 
-import {IntegrationsList} from '@components/global/Integrations'
-import {integrationsFilterCommerceAcc, integrationsFilterCommerceComm} from '@components/global/Integrations/integrations'
-import Clients from '@components/global/Clients'
+import {IntegrationsList} from '@components/Integrations'
+import {integrationsFilterCommerceAcc, integrationsFilterCommerceComm} from '@components/Integrations/integrations'
+import Clients from '@components/Clients'
 
 Accounting for sales is a major pain point for merchants. It usually involves them manually replicating data from Point of Sale (POS), Payment, and eCommerce platforms in their accounting software. This is often done via multiple manual bulk data downloads and data manipulation in spreadsheets and in the software.
 

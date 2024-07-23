@@ -6,7 +6,7 @@ sidebar_label: "Configure solution"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import WritebackMapping from "@components/global/Prototypes/WritebackMapping";
+import WritebackMapping from "@components/Prototypes/WritebackMapping";
 
 Once your SMB customer's loan has been approved, provide them with a user interface that lets them optionally enable the loan writeback and configure loan writeback accounts so that the accounting entries are reflected correctly in their accounting platform. They will create or select existing, and subsequently map, the following elements:
 

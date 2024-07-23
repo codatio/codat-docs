@@ -6,7 +6,7 @@ displayed_sidebar: payables
 image: "/img/banners/social/payables.png"
 ---
 
-import DataTypes from '@components/global/DataTypes'
+import DataTypes from '@components/DataTypes'
 
 <DataTypes product="payables" urlPrefix="/sync-for-payables-api#"/>
 

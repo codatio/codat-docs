@@ -3,7 +3,7 @@ title: "Zapier integration (beta)"
 description: "Create your own notification workflows triggered by our webhooks"
 ---
 
-import ZapierEmbed from '@components/global/ZapierEmbed'
+import ZapierEmbed from '@components/ZapierEmbed'
 
 ## Overview
 

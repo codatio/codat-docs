@@ -4,8 +4,8 @@ description: "Bank Feeds API integrations"
 displayed_sidebar: integrationsBankFeeds
 ---
 
-import Integrations from '@components/global/Integrations'
-import Products from "@components/global/Products";
+import Integrations from '@components/Integrations'
+import Products from "@components/Products";
 
 A bank feed is a connection between a source bank account—in your application—and a target bank account in a supported accounting package.
 

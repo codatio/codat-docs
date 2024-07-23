@@ -7,7 +7,7 @@ description: "Configure new webhook consumers in Codat and manage existing confi
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-import Arcade from '@components/global/Arcade'
+import Arcade from '@components/Arcade'
 
 ## Overview
 

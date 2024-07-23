@@ -6,7 +6,7 @@ image: "/img/old/2b27c1b-info_banner.png"
 displayed_sidebar: integrationsAccounting
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
+import { IntegrationsList } from "@components/Integrations";
 
 ![](/img/old/2b27c1b-info_banner.png "info_banner.png")
 

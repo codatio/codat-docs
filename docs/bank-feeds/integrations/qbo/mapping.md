@@ -8,7 +8,7 @@ hide_description: true
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Loom from '@components/global/Loom'
+import Loom from '@components/Loom'
 
 # QuickBooks Online mapping
 

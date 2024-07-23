@@ -5,11 +5,11 @@ description: "Learn how to perform the initial setup for the Lending API product
 image: "/img/banners/social/lending.png"
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
+import { IntegrationsList } from "@components/Integrations";
+import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
-import ReadNext from "@components/global/ReadNext";
+import ReadNext from "@components/ReadNext";
 
 :::tip Your lending journey
 
