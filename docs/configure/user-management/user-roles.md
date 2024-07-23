@@ -37,13 +37,13 @@ _Administrator_ users have full access to all the features available in the Coda
 | Add companies                             	| ✔          	| ✔       	| ✔         	| ✔             	|
 | View connection status                    	| ✔          	| ✔       	| ✔         	| ✔             	|
 | View company and integration data            	| ✔           	| ✔       	| ✔         	| ✔             	|
+| Upload company data                        	| ✔           	| ✔        	| ✔         	| ✔             	|
 | View and resolve webhooks and events         	|            	| ✔       	| ✔         	| ✔             	|
 | Delete companies                          	|            	|         	| ✔         	| ✔             	|
 | Add and update rules                      	|            	|         	| ✔         	| ✔             	|
 | Configure Link                            	|            	|         	| ✔         	| ✔             	|
 | Manage integrations                       	|            	|         	| ✔         	| ✔             	|
 | Update settings                           	|            	|         	| ✔         	| ✔             	|
-| Add new data from within the Codat Portal 	|            	|         	| ✔         	| ✔             	|
 | Manage upcoming deprecations              	|            	|         	| ✔         	| ✔             	|
 | Add and update users                      	|            	|         	|           	| ✔             	|
 
