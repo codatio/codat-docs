@@ -1,8 +1,4 @@
 .clients {
-  @media (max-width: 1080px) {
-    --padding-margin: 0em;  
-  }
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +7,10 @@
   padding: 2.5em 1em;
   max-width: initial;
   margin: 2em var(--padding-margin);
+
+  @media (max-width: 1080px) {
+    --padding-margin: 0em;  
+  }
 }
 
 .header {

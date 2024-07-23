@@ -35,7 +35,7 @@ If you already have a Zoho Books account, have your account details to hand. If 
 
 To register your Zoho Books application.
 
-1. Go to <https://api-console.zoho.com/> and sign in to Zoho Books. If you are using your account for the first time, select **GET STARTED**.  
+1. Go to [https://api-console.zoho.com/](https://api-console.zoho.com/) and sign in to Zoho Books. If you are using your account for the first time, select **GET STARTED**.  
    The **Developer Console** is displayed. If the **Applications** screen is displayed instead, from the top-left corner, select **ADD CLIENT**.
 2. Select **Server-based Applications**.  
    The **Create New Client** page is displayed.

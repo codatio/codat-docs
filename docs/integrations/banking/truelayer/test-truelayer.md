@@ -44,7 +44,7 @@ Retrieve the platform `key` of the `Demo Bank` data source, or an alternative ba
 
 Use these details to create a company; this returns the Link URL you need for testing. 
 
-5. Open the <a href="/platform-api#/operations/create-company" target="blank">POST companies</a> endpoint. 
+5. Open the <a href="/platform-api#/operations/create-company" target="blank">`POST /companies`</a> endpoint. 
 6. Enter a name for your test company and add the platform `key` for your chosen banking source:
 
 ```
@@ -115,7 +115,7 @@ To retrieve the same data from the Codat API, you'll need the JSON from step 6 o
 
 To retrieve account details using the Codat API:
 
-1.  Open the <a href="/banking-api#/operations/list-banking-transactions" target="blank">GET /companies/{companyId}/connections/{connectionId}/data/banking-accounts</a> endpoint.
+1.  Open the <a href="/banking-api#/operations/list-banking-transactions" target="blank">`GET /companies/{companyId}/connections/{connectionId}/data/banking-accounts`</a> endpoint.
     - Replace `{companyId}` with the `id` of your test company.
     - Replace `{connectionId}` with the `id` from `dataConnections`.
 2.  Send your request to return a list of account details:
@@ -153,7 +153,7 @@ To retrieve account details using the Codat API:
   }
 ```
 
-3. Optional: Use the <a href="https://api.codat.io/swagger/index.html#/BankingTransactions/get_companies__companyId__connections__connectionId__data_banking_transactions" target="blank">GET
-   /companies/{companyId}/connections/{connectionId}/data/banking-transactions</a> endpoint in the same way to retrieve the transactions for each account.
+3. Optional: Use the <a href="https://api.codat.io/swagger/index.html#/BankingTransactions/get_companies__companyId__connections__connectionId__data_banking_transactions" target="blank">`GET
+   /companies/{companyId}/connections/{connectionId}/data/banking-transactions`</a> endpoint in the same way to retrieve the transactions for each account.
 
 You're now ready to set up and connect your SMB customers. Follow the methods described in [Set up a test company and generate a Link URL](/integrations/banking/truelayer/test-truelayer#section-set-up-a-test-company-and-generate-a-link-url).

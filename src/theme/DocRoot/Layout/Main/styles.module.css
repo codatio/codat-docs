@@ -1,0 +1,32 @@
+.docMainWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.docMainContainer {
+  display: flex;
+  width: 100%;
+}
+
+.docItemWrapper {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 997px) {
+  .docMainContainer {
+    flex-grow: 1;
+    max-width: calc(100% - var(--doc-sidebar-width));
+  }
+
+  .docMainContainerEnhanced {
+    max-width: calc(100% - var(--doc-sidebar-hidden-width));
+  }
+
+  .docItemWrapperEnhanced {
+    max-width: calc(
+      var(--ifm-container-width) + var(--doc-sidebar-width)
+    ) !important;
+  }
+}

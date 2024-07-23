@@ -108,14 +108,14 @@ We recommend grouping your updates to ensure that related values are updated con
 
 | Default value                  | `data-textkey` value         |
 | :----------------------------- | :--------------------------- |
-| Set up Sync to {platform name} | configure-setupSidebar-title |
+| Set up Sync to `{platform name}` | configure-setupSidebar-title |
 
 ##### Checkbox captions
 
 | Default value                         | `data-textkey` value                                  |
 | :------------------------------------ | :---------------------------------------------------- |
-| Connect to {Commerce platform name}   | configure-setupSidebar-checkboxes-connectToCommerce   |
-| Connect to {Accounting platform name} | configure-setupSidebar-checkboxes-connectToAccounting |
+| Connect to `{commerce platform name}`   | configure-setupSidebar-checkboxes-connectToCommerce   |
+| Connect to `{accounting platform name}` | configure-setupSidebar-checkboxes-connectToAccounting |
 | Set up sales                          | configure-setupSidebar-checkboxes-sales               |
 | Set up fees                           | configure-setupSidebar-checkboxes-fees                |
 | Set up payments                       | configure-setupSidebar-checkboxes-payments            |
@@ -146,9 +146,9 @@ We recommend grouping your updates to ensure that related values are updated con
 | Default value | data-textkey value |
 |---|---|
 | Accounts | configure-content-sales-accounts-title |
-| Configure accounts mapping from {commerce platform name} to {accounting platform name}. | configure-content-sales-accounts-description |
+| Configure accounts mapping from `{commerce platform name}` to `{accounting platform name}`. | configure-content-sales-accounts-description |
 | Tax rates | configure-content-sales-taxRates-title |
-| Configure tax rates mapping from {commerce platform name} to {accounting platform name}. | configure-content-sales-taxRates-description |
+| Configure tax rates mapping from `{commerce platform name}` to `{accounting platform name}`. | configure-content-sales-taxRates-description |
 | Other | configure-content-sales-other-title |
 | Other title description: no value by default. | configure-content-sales-other-description |
 
@@ -180,7 +180,7 @@ We recommend grouping your updates to ensure that related values are updated con
 | Default value                                                                           | data-textkey value                          |
 |-----------------------------------------------------------------------------------------|---------------------------------------------|
 | Accounts                                                                                | configure-content-fees-accounts-title       |
-| Configure accounts mapping from {commerce platform name} to {accounting platform name}. | configure-content-fees-accounts-description |
+| Configure accounts mapping from `{commerce platform name}` to `{accounting platform name}`. | configure-content-fees-accounts-description |
 
 ##### Fees feature categories
 

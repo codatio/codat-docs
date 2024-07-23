@@ -151,7 +151,7 @@ GET /connections/{connectionId}/connectionInfo/bankFeedAccounts
 
 ## Update an existing bank account for a company
 
-You can use the [PATCH /connectionInfo/bankFeedAccounts/{bankAccountId}](/bank-feeds-api#/operations/update-bank-feed) endpoint to update an existing bank account for a company and data connection.
+You can use the [`PATCH /connectionInfo/bankFeedAccounts/{bankAccountId}`](/bank-feeds-api#/operations/update-bank-feed) endpoint to update an existing bank account for a company and data connection.
 
 Provide the bank account details you want to update as request parameters.
 

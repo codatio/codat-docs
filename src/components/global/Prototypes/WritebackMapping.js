@@ -43,7 +43,6 @@ const getAccountsResponse = [
 ]
 
 const ComponentInput = ({component, onClick}) => {
-  console.log(component)
   if (!component) return <div/>
 
   if (component?.mappedAccount) {

@@ -40,7 +40,8 @@ description: "Take your first steps through the information and support availabl
       <h3>Libraries</h3>
     </div>
     <p>
-      Use our <a href="/get-started/libraries">
+      Use our 
+      <a href="/get-started/libraries">
         client library SDKs
       </a>{" "}
       to get building quickly.
@@ -59,7 +60,8 @@ description: "Take your first steps through the information and support availabl
       Get instant assistance with {" "}
       <a href="https://cochat.codat.io" target="_blank">
         Cochat
-      </a>, our beta AI tool trained on the Codat docs. Try {" "}
+      </a>
+      , our beta AI tool trained on the Codat docs. Try {" "}
       <a href="https://cochat.codat.io" target="_blank">asking it a question</a>
       {" or "}
       <a href="/cochat">read more</a>.

@@ -109,6 +109,7 @@ Example request body:
     }
   ]
 }
+```
 
 The response body will include a linkUrl - included below.
 
@@ -129,6 +130,7 @@ Example request body:
 }
 ]
 }
+```
 
 The response body will include a linkUrl.
 

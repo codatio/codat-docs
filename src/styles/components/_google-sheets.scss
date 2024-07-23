@@ -1,10 +1,6 @@
 iframe.googleSheets {
 	--padding-margin: -2em;  
 
-	@media (max-width: 1080px) {
-		--padding-margin: 0;  
-	}
-
 	border-radius: 8px;
 	overflow: hidden;
 	border: 1px solid #efefef;
@@ -14,8 +10,11 @@ iframe.googleSheets {
 	width: 100%;
     width: -moz-available;          
     width: -webkit-fill-available; 
-    width: fill-available;
-
+    width: stretch;
     top: 0;
     left: 0;
+
+	@media (max-width: 1080px) {
+		--padding-margin: 0;  
+	}
 }

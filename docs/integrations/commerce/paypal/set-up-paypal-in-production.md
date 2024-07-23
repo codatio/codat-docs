@@ -20,7 +20,7 @@ You'll need to:
 
 ## Register as a Third Party Provider and request your live credentials
 
-1. Go to the <https://www.paypal.com/partnerexp/tppLanding/> and register as a Third Party Provider (TPP) for PayPal’s X2SA API
+1. Go to the [https://www.paypal.com/partnerexp/tppLanding/](https://www.paypal.com/partnerexp/tppLanding/) and register as a Third Party Provider (TPP) for PayPal’s X2SA API
 2. Enter `https://paypal.codat.io/oauth/callback` in the "Your return URL" field.
 3. After submitting the form, your credentials (`Client ID` and `Client Secret`) are available to download. Note:  
    a) PayPay need to enable the credentials after they are created. **This may take a number of days; until this is completed by PayPal, you will not be able to access the PayPal X2SA API through Codat**.  

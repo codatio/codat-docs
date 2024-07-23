@@ -56,7 +56,7 @@ Here is an example request:
 #### Request
 
 ```http
-GET https://api.codat.io/companies/<COMPANY_ID>/data/bills?page=1&pageSize=100&orderBy=-issueDate
+GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100&orderBy=-issueDate
 ```
 
 #### Example response
@@ -130,7 +130,7 @@ Here is an example request:
 #### Request
 
 ```http
-GET https://codat.io/companies/<COMPANY_ID>/data/accounts
+GET https://codat.io/companies/{companyId}/data/accounts
 ```
 
 #### Example response
@@ -230,7 +230,7 @@ Here is an example request:
 #### Request
 
 ```http
-POST https://api.codat.io/companies/<COMPANY_ID>/connections/<CONNECTION_ID>/push/billPayments
+POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
 ```
 #### Example request body
 
