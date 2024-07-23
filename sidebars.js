@@ -47,7 +47,7 @@ module.exports = {
         "get-started/libraries",
         "get-started/developer-resources",
         //"get-started/office-hours",
-        "glossary",
+        //"glossary",
         "get-started/migration",
         "get-started/accounting-for-beginners",
       ],
