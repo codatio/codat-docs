@@ -18,8 +18,8 @@ const Clients = (props) => {
     
     <div className={styles.clientsList}>
       {
-        clients.map(client => {
-          return <Client {...client}/>
+        clients.map((client, i) => {
+          return <Client key={i} {...client}/>
         })
       }
     </div>

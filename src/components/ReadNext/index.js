@@ -9,8 +9,8 @@ const ReadNext = (props) => {
 		{children}
 
 		<ul>
-			{links.map(link => {
-				return <li><a href={link[1]}>{link[0]}</a></li>
+			{links.map((link, i) => {
+				return <li key={i}><a href={link[1]}>{link[0]}</a></li>
 			})}
 		</ul>
 	</div>

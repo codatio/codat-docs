@@ -90,7 +90,6 @@ module.exports = {
         {
           to: "support/get-help",
           label: "Get help",
-          activeBasePage: "support",
         },
         {
           href: "https://status.codat.io/",
