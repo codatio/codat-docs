@@ -40,10 +40,10 @@ Our connector provides a seamless and full featured integration to QuickBooks De
 
 <ul className="card-container col-2">
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Runs in the background</h3>
     </div>
@@ -53,10 +53,10 @@ Our connector provides a seamless and full featured integration to QuickBooks De
     </p>
   </li>
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Auto restarts and updates</h3>
     </div>
@@ -66,10 +66,10 @@ Our connector provides a seamless and full featured integration to QuickBooks De
     </p>
   </li>
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Auto and manual syncs</h3>
     </div>
@@ -79,10 +79,10 @@ Our connector provides a seamless and full featured integration to QuickBooks De
     </p>
   </li>
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Intuitive user interface</h3>
     </div>
