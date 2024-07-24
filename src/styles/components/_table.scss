@@ -87,6 +87,8 @@ thead th:empty {
     width: 100%;
     margin: 2.5em 0;
     max-width: initial;
+    margin-left: var(--padding-margin);
+    margin-right: var(--padding-margin);
 
     > table {
       width: 100%;
@@ -95,8 +97,7 @@ thead th:empty {
 
   .table-wrapper {
     overflow-x: auto;
-    margin-left: var(--padding-margin);
-    margin-right: var(--padding-margin);
+
     width: auto !important;
 
     table {
