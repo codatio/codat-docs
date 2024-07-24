@@ -11,11 +11,15 @@ import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocItemContent from '@theme/DocItem/Content';
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import Unlisted from '@theme/Unlisted';
+import TOCCollapsible from '@theme/TOCCollapsible';
+
 import styles from './styles.module.css';
 
 import PageHeader from '@components/PageHeader'
 import Vote from './Vote';
-import TOCCollapsible from '@theme/TOCCollapsible';
+
+
+import CookieConsent from "react-cookie-consent";
 
 /**
  * Decide if the toc should be rendered, on mobile or desktop viewports
@@ -69,6 +73,16 @@ export default function DocItemLayout(props) {
 
   return (
     <>
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        cookieName="cookieConsent3"
+        style={{ background: "#556680" }}
+        buttonStyle={{ backgroundColor: "white", fontSize: "12px", borderRadius: "4px" }}
+      >
+        This website uses cookies to enhance your experience.
+      </CookieConsent>
+
       {
         bannerTitle
         &&
