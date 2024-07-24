@@ -145,14 +145,6 @@ const config = {
         anonymizeIP: true,
       },
     ],
-
-    [
-      '@docusaurus/plugin-google-analytics',
-      {
-        trackingID: process.env.GA_ID,
-        anonymizeIP: true,
-      },
-    ],
   ],
 
   themes: [
@@ -164,7 +156,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: '/img/meta/codat-bg.png',
 
       metadata: [
         { name: "keywords", content: "codat, docs, updates" },

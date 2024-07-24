@@ -78,7 +78,7 @@ function DropdownNavbarItemDesktop({
 
       <ul className="dropdown__menu">
         {items.map(({hr, ...childItemProps}, i) => {
-          return <>
+          return <React.Fragment key={i}>
             {
               hr === true && <hr/>
             }
@@ -101,10 +101,9 @@ function DropdownNavbarItemDesktop({
                 }
               }}
               activeClassName="dropdown__link--active"
-              key={i}
               {...childItemProps}
             />
-          </>
+          </React.Fragment>
         })}
       </ul>
     </div>

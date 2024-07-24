@@ -40,11 +40,7 @@ description: "Take your first steps through the information and support availabl
       <h3>Libraries</h3>
     </div>
     <p>
-      Use our 
-      <a href="/get-started/libraries">
-        client library SDKs
-      </a>{" "}
-      to get building quickly.
+      Use our{" "}<a href="/get-started/libraries">client library SDKs</a>{" "}to get building quickly.
     </p>
   </li>
   <li className="card dark hypercard">
@@ -55,17 +51,10 @@ description: "Take your first steps through the information and support availabl
       />
       <h3>Ask Cochat</h3>
     </div>
-    <p>
-      Having trouble?{" "}
-      Get instant assistance with {" "}
-      <a href="https://cochat.codat.io" target="_blank">
-        Cochat
-      </a>
-      , our beta AI tool trained on the Codat docs. Try {" "}
-      <a href="https://cochat.codat.io" target="_blank">asking it a question</a>
-      {" or "}
-      <a href="/cochat">read more</a>.
-    </p>
+      <p>
+        Get instant assistance with{" "}<a href="https://cochat.codat.io" target="_blank">Cochat,</a>{" "}
+        our beta AI tool trained on the Codat docs. Try{" "}<a href="https://cochat.codat.io" target="_blank">asking it a question</a>{" or "}<a href="/cochat">read more</a>.
+      </p>
   </li>
 </ul>
 
@@ -80,12 +69,12 @@ description: "Take your first steps through the information and support availabl
       />
       <h3>First steps guide</h3>
     </div>
-    <p>
+      <p>
       A practical introduction to Codat's Portal and API.
-    </p>
-    <p>
+      </p>
+      <p>
       <a href="/get-started/first-steps">See the guide →</a>.
-    </p>
+      </p>
   </li>
   <li className="card">
     <div className="header">
@@ -95,12 +84,12 @@ description: "Take your first steps through the information and support availabl
       />
       <h3>Video guide: Your first 10 minutes</h3>
     </div>
-    <p>
+      <p>
       From signing up to syncing data in 10 minutes.
-    </p>
-    <p>
+      </p>
+      <p>
       <a href="/get-started/first-ten-minutes">See the guide →</a>.
-    </p>
+      </p>
   </li>
 </ul>
 
