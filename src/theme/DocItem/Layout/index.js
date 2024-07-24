@@ -23,6 +23,8 @@ import Vote from './Vote';
 
 import CookieConsent from "react-cookie-consent";
 
+import useZendesk from './useZendesk';
+
 /**
  * Decide if the toc should be rendered, on mobile or desktop viewports
  */
@@ -45,6 +47,7 @@ function useDocTOC() {
     desktop,
   };
 }
+
 export default function DocItemLayout(props) {
   const {children} = props;
 
@@ -76,6 +79,8 @@ export default function DocItemLayout(props) {
 
   const canRenderTOC =
     !hideTableOfContents && toc?.length > 0;
+
+  useZendesk();
 
   return (
     <>

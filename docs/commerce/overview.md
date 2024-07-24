@@ -54,9 +54,9 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 
 <ul className="card-container col-2">
 <li className="card">
-    <div class="header">
+    <div className="header">
         <img src="/img/wp-icons/copy-feature-bullet.svg"
-            class="mini-icon"/>
+            className="mini-icon"/>
         <h3>Commerce and accounting expertise</h3>
     </div>
     <p>
@@ -65,9 +65,9 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 </li>
 
 <li className="card">
-    <div class="header">
+    <div className="header">
         <img src="/img/wp-icons/copy-feature-bullet.svg"
-            class="mini-icon"/>
+            className="mini-icon"/>
         <h3>Fast, simple integration</h3>
     </div>
     <p>
@@ -76,9 +76,9 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 </li>
 
 <li className="card">
-    <div class="header">
+    <div className="header">
         <img src="/img/wp-icons/copy-feature-bullet.svg"
-            class="mini-icon"/>
+            className="mini-icon"/>
         <h3>Configurability</h3>
     </div>
     <p>
@@ -87,9 +87,9 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 </li>
 
 <li className="card">
-    <div class="header">
+    <div className="header">
         <img src="/img/wp-icons/copy-feature-bullet.svg"
-            class="mini-icon"/>
+            className="mini-icon"/>
         <h3>Ongoing sales data synchronization</h3>
     </div>
     <p>
@@ -98,9 +98,9 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 </li>
 
 <li className="card">
-    <div class="header">
+    <div className="header">
         <img src="/img/wp-icons/copy-feature-bullet.svg"
-            class="mini-icon"/>
+            className="mini-icon"/>
         <h3>Real-world resilience</h3>
     </div>
     <p>
@@ -109,9 +109,9 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 </li>
 
 <li className="card">
-    <div class="header">
+    <div className="header">
         <img src="/img/wp-icons/copy-feature-bullet.svg"
-            class="mini-icon"/>
+            className="mini-icon"/>
         <h3>Observability</h3>
     </div>
     <p>

@@ -36,10 +36,10 @@ Enhance the auth flow functionality and give your customers the ability to manag
 
 <ul className="card-container col-1">
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Transparency</h3>
     </div>
@@ -49,10 +49,10 @@ Enhance the auth flow functionality and give your customers the ability to manag
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Consent</h3>
     </div>
@@ -62,10 +62,10 @@ Enhance the auth flow functionality and give your customers the ability to manag
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Control</h3>
     </div>

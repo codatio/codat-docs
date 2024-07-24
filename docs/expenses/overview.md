@@ -38,10 +38,10 @@ With Sync for Expenses, corporate card providers, expense management providers, 
 
 <ul className="card-container col-2">
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Increase share of wallet</h3>
     </div>
@@ -51,10 +51,10 @@ With Sync for Expenses, corporate card providers, expense management providers, 
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Go to market quickly</h3>
     </div>
@@ -64,10 +64,10 @@ With Sync for Expenses, corporate card providers, expense management providers, 
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Free up development resources</h3>
     </div>
@@ -77,10 +77,10 @@ With Sync for Expenses, corporate card providers, expense management providers, 
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Get standardized data</h3>
     </div>
@@ -90,10 +90,10 @@ With Sync for Expenses, corporate card providers, expense management providers, 
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Capture receipts</h3>
     </div>
@@ -103,10 +103,10 @@ With Sync for Expenses, corporate card providers, expense management providers, 
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Two-way sync</h3>
     </div>

@@ -46,10 +46,10 @@ Our Lending API empowers you with a host of features to help you streamline your
 
 <ul className="card-container col-3">
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Bank statements</h3>
     </div>
@@ -59,10 +59,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
   
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Sales</h3>
     </div>
@@ -72,10 +72,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Financial statements</h3>
     </div>
@@ -85,10 +85,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Liabilities</h3>
     </div>
@@ -98,10 +98,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Accounts receivable</h3>
     </div>
@@ -111,10 +111,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Accounts payable</h3>
     </div>
