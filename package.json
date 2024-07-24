@@ -20,7 +20,7 @@
     "@docusaurus/theme-mermaid": "^3.4.0",
     "@hotjar/browser": "^1.0.9",
     "@mdx-js/react": "^3.0.1",
-    "@stoplight/elements": "^7.16.5",
+    "@stoplight/elements": "^8.3.4",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
     "docusaurus-plugin-module-alias": "^0.0.2",
