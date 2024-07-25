@@ -20,14 +20,12 @@ export const AuthFlow = (props) => {
 
   return (
     <div>
-      <p>Click the button below to start authing.</p>
-
-      <button onClick={() => setModalOpen(true)}>
+      <button className={styles.button} onClick={() => setModalOpen(true)}>
         Connect
       </button>
     
       {modalOpen && (
-        <div className={styles.modal}>
+        <div className={styles.modal} onClick={onClose}>
           <CodatLink
             {...props}
             onConnection={onConnection}

@@ -34,7 +34,8 @@ html[data-theme="dark"] {
 //overrides
 #__docusaurus {
   [class*="navbarSearch"] {
-    width: 240px;
+    flex-grow: 1;
+    max-width: 240px;
 
     @media (max-width: 996px) {
       width: auto;
@@ -57,8 +58,10 @@ html[data-theme="dark"] {
   .DocSearch-Button {
     width: 100%;
     box-shadow: var(--docsearch-searchbox-shadow);
-    border: 1px solid #eee;
+    border: 2px solid #eee;
     border-radius: 4px;
+    height: 32px;
+    font-family: var(--font-family);
 
     .DocSearch-Button-Keys {
       min-width: 0;
@@ -92,6 +95,7 @@ html[data-theme="dark"] {
       font-weight: 500;
       font-size: 0.875rem;
       line-height: 17px;
+      padding-top: 2px;
 
       color: var(--c-indigo-60);
 

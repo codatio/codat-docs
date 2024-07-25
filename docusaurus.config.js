@@ -31,8 +31,10 @@ const config = {
   organizationName: "codat",
   projectName: "codat-docs",
 
-  onBrokenLinks: 'warn', // 'throw'
-  onBrokenMarkdownLinks: 'warn',
+  //onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
+  //onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -146,6 +148,8 @@ const config = {
         anonymizeIP: true,
       },
     ],
+
+    'vercel-analytics'
   ],
 
   themes: [

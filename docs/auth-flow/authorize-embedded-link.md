@@ -24,7 +24,11 @@ function LinkPlayground(props) {
     }
   }
 
-  return <AuthFlow {...settings}/>;
+  return <div>
+    <p>Click the button below to start authing.</p>
+
+    <AuthFlow {...settings}/>
+  </div>
 }
 ```
 

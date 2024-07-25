@@ -28,7 +28,11 @@ function LinkPlayground(props) {
     }
   }
 
-  return <AuthFlow {...settings}/>;
+  return <div>
+    <p>Click the button below to start authing.</p>
+
+    <AuthFlow {...settings}/>
+  </div>
 }
 ```
 
@@ -36,6 +40,8 @@ function LinkPlayground(props) {
 
 As the `options` object overrides the Link settings set in the Portal, this may result in confusion about the source of truth for what users are seeing. Ensure you document and communicate your use of the `options` prop internally.
 :::
+
+## Properties
 
 ```js
 <CodatLink
@@ -60,8 +66,6 @@ As the `options` object overrides the Link settings set in the Portal, this may 
 />
 ```
 
-## Properties
-
 The `options` prop is optional and accepts an object containing the following optional properties:
 
 | Property                  | Description                                                                                                                        |
@@ -74,7 +78,7 @@ The `options` prop is optional and accepts an object containing the following op
 | `text`                    | Contains options that control what text is displayed to the user. Markdown is supported.                                        |
 | `enableAdditionalConsent` | Determines whether an additional consent journey for further use cases is displayed to the user.      |
 
-The object is applied as the `CodatLink` component is mounted and doesn't support reloading. Make sure to modify the options before mounting the component.
+The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
 
 :::tip Try it out!
 
