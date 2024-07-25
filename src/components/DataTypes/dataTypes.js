@@ -368,6 +368,7 @@ export const payroll = [
     product: "payroll",
     description: "Details of a category used for tracking transactions.",
   },
+]
 
 export const dataTypes = [
   ...accounting,
