@@ -58,7 +58,7 @@ export const accounting = [
   {
     key: "company",
     name: "Company info",
-    schema: "/schemas/CompanyDataset",
+    schema: "/schemas/CompanyInfo",
     category: "accounting",
     description: "Standard details about a linked company such as their address, phone number, and company registration.",
   },
@@ -331,6 +331,15 @@ export const bankfeeds = [
     description: "The target bank account in a supported accounting package for ingestion into a bank feed.",
   },
 ]
+
+export const payroll = [
+  {
+    key: "chartOfAccounts",
+    name: "Accounts",
+    schema: "/schemas/Account",
+    products: "sync-payroll",
+    description: "Accounts are the categories a business uses to record accounting transactions.",
+  },
 
 export const dataTypes = [
   ...accounting,
