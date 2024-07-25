@@ -50,11 +50,12 @@ When the app is created, you can view the app's secure credentials.
 8. Optional: if you plan to use Codat's `commerce-customers` data type, do the following on the **App setup** page:
    1. In the **Protected customer data access** box, click **Request access**.
    2. Enter the details requested in the dialog, then submit your request to Shopify.
+   
    This is required becvause this data type requests customer data including name, address, phone, or email fields.
-10. Optional: if you need to access over 60 days' of orders, do the following on the **App setup** page:
+9. Optional: if you need to access over 60 days' of orders, do the following on the **App setup** page:
    1. In the **Read all orders scope** box, click **Request access**.
    2. Enter the details requested in the dialog, then submit your request to Shopify.
-11. In the **GDPR mandatory webhooks** section, enter the following Codat webhook URLs:
+10. In the **GDPR mandatory webhooks** section, enter the following Codat webhook URLs:
    - **Customer data request endpoint:** `https://commerceintegration.codat.io/webhooks/{your-client-id}/customer/request`
    - **Customer data erasure endpoint:** `https://commerceintegration.codat.io/webhooks/{your-client-id}/customer/redact`
    - **Shop data erasure endpoint:** `https://commerceintegration.codat.io/webhooks/{your-client-id}/shop/redact`
