@@ -98,7 +98,7 @@ a[class^="sidebarLogo"] {
   }
 
   button.menu__caret {
-    display: none;
+    display: flex;
     --ifm-menu-link-sublist-icon: url("/img/sidebar/x-circle.svg");
 
     &:hover {
@@ -111,6 +111,10 @@ a[class^="sidebarLogo"] {
     }
   }
 
+  .menu__list-item--collapsed > .menu__list-item-collapsible > button.menu__caret {
+    display: none;
+  }
+
   .menu-item-section-header {
     opacity: 0.5;
     margin-top: 1.5em;
@@ -121,13 +125,6 @@ a[class^="sidebarLogo"] {
 
   .menu__link--sublist-caret:after {
     filter: none;
-  }
-
-  //.menu__list-item-collapsible--active {
-  .menu__list-item-collapsible {
-    a[aria-expanded="true"] + button.menu__caret {
-      display: flex;
-    }
   }
 
   .menu__list {
