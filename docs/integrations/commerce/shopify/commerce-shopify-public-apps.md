@@ -47,14 +47,18 @@ When the app is created, you can view the app's secure credentials.
    - **Allowed redirection URL(s):** enter `https://commerceintegration.codat.io/oauth/callback`
 6. Click **Create app**. Your app is created and the app page is displayed.
 7. In the side panel, click **App setup** to view the app's configuration settings.
-8. Optional: if you need to access over 60 days' of orders, do the following on the **App setup** page:
-   1. In the **Read all orders** box, click **Request access**.
+8. Optional: if you plan to use Codat's `commerce-customers` data type, do the following on the **App setup** page:
+   1. In the **Protected customer data access** box, click **Request access**.
    2. Enter the details requested in the dialog, then submit your request to Shopify.
-9. In the **GDPR mandatory webhooks** section, enter the following Codat webhook URLs:
+   This is required becvause this data type requests customer data including name, address, phone, or email fields.
+10. Optional: if you need to access over 60 days' of orders, do the following on the **App setup** page:
+   1. In the **Read all orders scope** box, click **Request access**.
+   2. Enter the details requested in the dialog, then submit your request to Shopify.
+11. In the **GDPR mandatory webhooks** section, enter the following Codat webhook URLs:
    - **Customer data request endpoint:** `https://commerceintegration.codat.io/webhooks/{your-client-id}/customer/request`
    - **Customer data erasure endpoint:** `https://commerceintegration.codat.io/webhooks/{your-client-id}/customer/redact`
    - **Shop data erasure endpoint:** `https://commerceintegration.codat.io/webhooks/{your-client-id}/shop/redact`
-10. Click the **Save** button that appears at the top of the page.
+11. Click the **Save** button that appears at the top of the page.
 
 Your app's **API key** and **API secret key** are shown in the **App credentials** section of the App setup page. You'll need these when you [add your app's credentials to the integration](/integrations/commerce/shopify/commerce-shopify-public-apps#add-your-apps-credentials-to-the-shopify-integration).
 
