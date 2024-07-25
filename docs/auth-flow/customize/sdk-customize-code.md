@@ -11,6 +11,27 @@ Most of the configuration for the auth flow is currently managed in <a href="htt
 
 However, you can use the SDK's `options` property to override the settings set in the Portal and control them programmatically instead. This is useful if you want more control over the UI based on application-specific logic or want to vary it conditionally.
 
+```jsx live
+function LinkPlayground(props) {
+  const settings = {
+    companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
+    options: {
+      nonModal: false,
+      showLandingPage: true,
+      showSandboxIntegrations: true,
+      //theme: {...},
+      //sourceTypes: {
+      //  accounting: {...},
+      //},
+      //text: {...},
+      enableAdditionalConsent: true,
+    }
+  }
+
+  return <AuthFlow {...settings}/>;
+}
+```
+
 :::caution Advanced functionality
 
 As the `options` object overrides the Link settings set in the Portal, this may result in confusion about the source of truth for what users are seeing. Ensure you document and communicate your use of the `options` prop internally.
@@ -24,7 +45,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
   onClose={onClose}
   onFinish={onFinish}
   options={{
-    nonModal: true ...
+    nonModal: true,
     showLandingPage: true,
     showSandboxIntegrations: true,
     theme: {...},
@@ -38,6 +59,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
   }}
 />
 ```
+
 ## Properties
 
 The `options` prop is optional and accepts an object containing the following optional properties:

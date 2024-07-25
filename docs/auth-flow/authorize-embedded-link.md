@@ -15,6 +15,19 @@ Our Link SDK is a pre-built JavaScript component that neatly sits in your front-
 
 We built it to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey. As a result, clients using the SDK note that **89%** of their users successfully complete their journeys.
 
+```jsx live
+function LinkPlayground(props) {
+  const settings = {
+    companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
+    options: {
+      showLandingPage: true,
+    }
+  }
+
+  return <AuthFlow {...settings}/>;
+}
+```
+
 :::note Dynamic imports
 
 Link SDK is imported at runtime, so you'll always get the latest version of our auth flow UI with no risk of staleness. To achieve this, we use ES6's [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) feature (aka dynamic imports).
