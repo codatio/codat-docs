@@ -12,6 +12,10 @@
     }
   }
 
+  [class^="blogPage"] > div.col:last-child {
+    display: none;
+  }
+
   main {
     article {
       align-items: flex-start;
