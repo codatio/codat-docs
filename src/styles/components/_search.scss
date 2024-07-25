@@ -33,6 +33,15 @@ html[data-theme="dark"] {
 
 //overrides
 #__docusaurus {
+  [class*="navbarSearch"] {
+    width: 240px;
+
+    @media (max-width: 996px) {
+      width: auto;
+      position: relative;
+    }
+  }
+
   [class^="searchBox_"] {
     flex-grow: 1;
     max-width: 14rem;

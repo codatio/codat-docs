@@ -14,7 +14,7 @@
     padding-inline-start: var(--sidebar-spacing-horizontal);
     padding-inline-end: var(--sidebar-spacing-horizontal);
 
-    @media (max-width: 800px) {
+    @media (max-width: 799px) {
       display: none;
     }
   }

@@ -1,5 +1,5 @@
 ---
-title: "April feature updates"
+title: "Changelog - April 2023"
 date: "2023-04-28"
 tags: ["Product", "Update"]
 authors: jyorston
@@ -24,7 +24,7 @@ The Enhanced Invoices Report uses open banking and accounting data to automatica
 See [Enhanced Invoices](https://docs.codat.io/lending/features/accounts-receivable-overview#reconciled-invoices) for more information.
 
 
-### List and create trackingCategories on QuickBooks Online Direct Costs.
+## List and create trackingCategories on QuickBooks Online Direct Costs.
 
 <Loom source="https://www.loom.com/embed/32009bdb95124cd48df095ba8613599f" />
 
@@ -35,7 +35,7 @@ By using these fields on Codat's Direct cost model, you can provide companies wi
 Review the documentation for [creating a direct cost](https://docs.codat.io/accounting-api#/operations/create-direct-cost) and [retrieving a direct cost](https://docs.codat.io/accounting-api#/operations/list-direct-costs)
 
 
-### Create journals in Microsoft Dynamics 365 Business Central
+## Create journals in Microsoft Dynamics 365 Business Central
 
 <Loom source="https://www.loom.com/embed/5436c8551e90401d99f03f058626ea07" />
 
@@ -46,7 +46,7 @@ This enhancement empowers you to provide this integration to your customers, str
 See the [API Reference](https://docs.codat.io/accounting-api#/operations/create-journal-entry) for more information on how to use the POST journal entry endpoint.
 
 
-### Increased Coverage of QuickBooks Online Deletion Support
+## Increased Coverage of QuickBooks Online Deletion Support
 
 <Loom source="https://www.loom.com/embed/b75c1ed71f63481bb11d0d7d54ed94a4" />
 
@@ -56,7 +56,7 @@ This improvement enables you to offer this integration to your customers, simpli
 
 See [Delete data from QuickBooks Online](https://docs.codat.io/accounting-api#/operations/delete-journal-entry) for more information on how to use this feature.
 
-### Addition of the QuickBooks Desktop Tracking Object
+## Addition of the QuickBooks Desktop Tracking Object
 
 <Loom source="https://www.loom.com/embed/e517c51c9ccc497ca7380431aead7e7f" />
 
@@ -64,7 +64,7 @@ Codat has added support for the tracking object on Direct costs for QuickBooks D
 
 By marking expenses on a check as billable, businesses can easily identify and allocate costs to specific customers or projects. This feature simplifies the process of invoicing clients for reimbursable expenses.
 
-### Support for negative direct costs on bank accounts for QuickBooks Online
+## Support for negative direct costs on bank accounts for QuickBooks Online
 
 <Loom source="https://www.loom.com/embed/41607424e2884de1a0b44504f9468e18" />
 
@@ -74,5 +74,25 @@ We've extended our support for creating refunds for expenses in QuickBooks Onlin
 This enhancement lets you facilitate use cases such as refunding an erroneous transaction or representing a returned order, and managing accidental duplicate payments.
 
 See [Direct cost](https://docs.codat.io/accounting-api#/operations/create-direct-cost) for more information on how to use this feature.
+
+## Integration coverage improvements
+
+### QuickBooks Online
+
+We've added new `DELETE` functionality for our QBO integration:
+
+- Delete Journal Entries
+- Delete Bills
+- Delete Invoices
+
+## Deprecations
+
+The next round of deprecations will be in July:
+
+- [https://docs.codat.io/updates/230710-deprecation-bankaccount-banktransaction](https://docs.codat.io/updates/230710-deprecation-bankaccount-banktransaction)
+- [https://docs.codat.io/updates/230710-deprecation-companies-metrics](https://docs.codat.io/updates/230710-deprecation-companies-metrics)
+- [https://docs.codat.io/updates/230710-deprecation-qbd-direct-incomes](https://docs.codat.io/updates/230710-deprecation-qbd-direct-incomes)
+
+Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: [https://docs.codat.io/using-the-api/change-policy](https://docs.codat.io/using-the-api/change-policy)
 
 
