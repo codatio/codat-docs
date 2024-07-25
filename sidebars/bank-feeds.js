@@ -102,7 +102,7 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/data-types",
+    href: "/bank-feeds/data-types",
     label: "Data types",
   },
   {
