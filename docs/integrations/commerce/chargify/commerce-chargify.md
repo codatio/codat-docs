@@ -2,6 +2,7 @@
 title: "Maxio"
 sidebar_label: Overview
 description: "Learn about our Maxio integration"
+unlisted: true
 ---
 
 :::caution Data type coverage

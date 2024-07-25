@@ -2,6 +2,7 @@
 title: "Set up the PrestaShop integration"
 description: "Explore our API integration with PrestaShop"
 sidebar_label: Setup
+unlisted: true
 ---
 
 Before you can access your customers' commerce data from PrestaShop, you need to set up a live integration.

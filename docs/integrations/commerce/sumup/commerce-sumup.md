@@ -2,6 +2,7 @@
 title: "SumUp"
 sidebar_label: Overview
 description: "Learn about our SumUp integration"
+unlisted: true
 ---
 
 <p>

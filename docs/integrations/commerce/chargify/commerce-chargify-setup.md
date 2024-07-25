@@ -2,6 +2,7 @@
 title: "Set up the Maxio integration"
 description: "Explore our API integration with Maxio"
 sidebar_label: Setup
+unlisted: true
 ---
 
 Set up the [Maxio](/integrations/commerce/chargify/commerce-chargify) integration to retrieve recurring billing and subscriptions data from your SMB customers.

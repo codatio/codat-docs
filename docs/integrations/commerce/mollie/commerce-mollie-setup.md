@@ -2,6 +2,7 @@
 title: "Set up the Mollie integration"
 description: "How to set up Mollie and Mollie Test integrations."
 sidebar_label: Setup
+unlisted: true
 ---
 
 Set up the Mollie integration to access commerce data from customers who use Mollie to accept payments.
