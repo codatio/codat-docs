@@ -83,6 +83,7 @@ const config = {
 
   plugins: [
     "docusaurus-plugin-sass",
+    '@docusaurus/theme-live-codeblock',
 
     [
       "docusaurus-plugin-module-alias",
@@ -270,6 +271,14 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
         additionalLanguages: ['bash', 'diff', 'json'],
+      },
+
+      liveCodeBlock: {
+        /**
+         * The position of the live playground, above or under the editor
+         * Possible values: "top" | "bottom"
+         */
+        playgroundPosition: 'bottom',
       },
     }),
 
