@@ -5,10 +5,10 @@ displayed_sidebar: payroll
 image: "/img/banners/social/payroll.png"
 ---
 
-import payrollDataTypes from '@components/DataTypes'
+import DataTypes from '@components/DataTypes'
 
 ## Supported data types
 
-<DataTypes urlPrefix="/sync-for-payroll-api#"/>
+<DataTypes category="payroll" urlPrefix="/sync-for-payroll-api#"/ search={false}>
 
 <br/>
