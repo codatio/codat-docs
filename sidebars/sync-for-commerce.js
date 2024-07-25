@@ -133,7 +133,7 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/data-types",
+    href: "/commerce/data-types",
     label: "Data types",
   },
   {

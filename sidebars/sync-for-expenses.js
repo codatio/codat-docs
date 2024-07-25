@@ -82,7 +82,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Supported data types",
+    label: "Data types",
     href: "/expenses/data-types",
   },
   {
