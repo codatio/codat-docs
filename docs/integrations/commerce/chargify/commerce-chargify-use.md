@@ -2,6 +2,7 @@
 title: "Use the Maxio integration"
 description: "When an SMB user has linked their Maxio account, access their subscriptions and billing data by making proxy requests to the Maxio API"
 sidebar_label: Use the integration
+unlisted: true
 ---
 
 The Maxio integration doesn't yet expose standardized data types or provide any data visualization or metrics (for example, in Lending).

@@ -24,31 +24,18 @@ You can also explore the data types supported by each integration in the interac
 
 <IntegrationsList sourceType="accounting"/>
 
-## Platform keys
-
-Each integration has a unique 4-character key that identifies it in our APIs. For reference, a list of all accounting integration platform keys can be found below:
-
-<iframe
-  src="https://knowledge.codat.io/embeds/integrations/platform-keys?integrationType=Accounting"
-  frameborder="0"
-  style={{ top: 0, left: 0, background: "white", borderRadius: "4px", overflow: "hidden", width: "100%", height: "1105px" }}
-/>
-
-## Integration registration and partnerships
+## Setting up accounting integrations
 
 Some integrations have more complex requirements in terms of registration and partnership agreements. Review each platform's own documentation for further details. 
 
 | Platform                                | Registration complexity   | Marketplace partner program | Connection restrictions | Additional information                                                                                                                                                                                                                                                                       |
 |-----------------------------------------|---------------------------|-----------------------------|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Clear Books](https://www.clearbooks.co.uk/)                              | Registration not required | ❌                           | ❌                       |                                                                                                                                                                                                                                                                                              |
 | [Microsoft Dynamics 365 Business Central](https://www.microsoft.com/en-gb/dynamics-365/products/business-central) | Medium                    | ❌                           | ❌                       | You must have a Microsoft Azure account to register.                                                                                                                                                                                                                                         |
 | [Exact Online](https://www.exact.com/)                            | Medium                    | ✅                           | ❌                       | You must request permission to connect companies in production.                                                                                                                                                                                                                              |
 | [FreeAgent](https://www.freeagent.com/)                               | Easy                      | ✅                           | ❌                       |                                                                                                                                                                                                                                                                                              |
 | [FreshBooks](https://www.freshbooks.com/en-gb/)                              | Medium                    | ✅                           | ❌                       | Scopes are now required for all apps.                                                                                                                                                                                                                                                        |
-| [Kashflow](https://www.kashflow.com/)                               | Registration not required | ❌                           | ❌                       |                                                                                                                                                                                                                                                                                              |
 | [MYOB Business](https://www.myob.com/au)                           | Medium                    | ✅                           | ❌                       | New partners are approved manually within 72 hours after registration.                                                                                                                                                                                                                       |
 | [Oracle NetSuite](https://www.netsuite.com/portal/home.shtml)                         | Registration not required | Yes*                        | ❌                       | * Rarely open to new joiners                                                                                                                                                                                                                                                                 |
-| [Pandle](https://www.pandle.com/)                                  | Easy                      | ❌                           | ❌                       | Online app registrations are not supported and must be sent to support@pandle.com                                                                                                                                                                                                            |
 | [QuickBooks Online](https://quickbooks.intuit.com/uk/online/)                       | Easy                      | ✅                           | ❌                       | You must complete a security questionnaire to access production data.                                                                                                                                                                                                                        |
 | [QuickBooks Desktop](https://quickbooks.intuit.com/desktop/) <br/> `On-premise`   | Registration not required | ✅                           | ❌                       |                                                                                                                                                                                                                                                                                              |
 | [Sage Business Cloud Accounting](https://www.sage.com/en-gb/sage-business-cloud/accounting/)          | Easy                      | ✅                           | ❌                       |                                                                                                                                                                                                                                                                                              |
@@ -68,3 +55,28 @@ Most popular accounting platforms per reigion are as follows:
 - __AUS:__ Xero, MYOB, QuickBooks Online, NetSuite
 
 We can sometimes facilitate introductions to accounting platform providers, particularly in the case of Xero, Sage, and MYOB. Please ask your Solutions Engineer, Implementation Specialist or Account Manager for more details.
+
+## Platform keys
+
+Each integration has a unique 4-character key that identifies it in our APIs. For reference, a list of all accounting integration platform keys can be found below:
+
+| Platform name | Platform key |
+|-|-|
+| Dynamics 365 Business Central | trji |
+| Exact (Netherlands) | qudb |
+| Exact (UK) | pbbf |
+| FreeAgent | fbrh |
+| FreshBooks | vxvy |
+| MYOB Business | pdvj |
+| Oracle NetSuite | akxx |
+| QuickBooks Desktop | pqsw |
+| QuickBooks Online | qhyg |
+| QuickBooks Online Sandbox | ndsk |
+| Sage 200cloud | jcrp |
+| Sage 50 (UK) | hbql |
+| Sage Business Cloud Accounting | tgff |
+| Sage Intacct | knfz |
+| Sandbox | mqjo |
+| Wave | pbtz |
+| Xero | gbol |
+| Zoho Books | rwuv |

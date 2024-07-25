@@ -1,6 +1,7 @@
 ---
 title: "IRIS KashFlow"
 description: "Learn about our IRIS KashFlow integration."
+unlisted: true
 ---
 
 You can pull accounting data from <a className="external" href="https://www.kashflow.com/" target="_blank">IRIS KashFlow</a> using our IRIS KashFlow integration.

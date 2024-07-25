@@ -2,6 +2,7 @@
 title: "Chargebee"
 sidebar_label: Overview
 description: "Learn about our Chargebee integration"
+unlisted: true
 ---
 
 :::caution Data type coverage

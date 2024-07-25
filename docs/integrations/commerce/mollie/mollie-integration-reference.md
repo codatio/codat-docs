@@ -3,6 +3,7 @@ title: "Mollie integration reference"
 description: "Things to know when pulling data from Mollie"
 createdAt: "2022-05-27T14:07:23.367Z"
 updatedAt: "2022-10-20T08:48:19.088Z"
+unlisted: true
 ---
 
 :::info Data type coverage

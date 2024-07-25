@@ -1,13 +1,9 @@
 const integrations = [
   {
-    type: "doc",
-    id: "integrations/accounting/clearbooks/accounting-clearbooks",
     customProps: {
       hr: true,
       section: "Integrations",
     },
-  },
-  {
     type: "category",
     label: "Dynamics 365 Business Central",
     collapsed: true,
@@ -51,7 +47,6 @@ const integrations = [
     ],
   },
   "integrations/accounting/freshbooks/accounting-freshbooks",
-  "integrations/accounting/kashflow/accounting-kashflow",
   {
     type: "category",
     label: "MYOB",
@@ -84,7 +79,6 @@ const integrations = [
       "integrations/accounting/netsuite/oracle-netsuite-integration-reference",
     ],
   },
-  "integrations/accounting/pandle/accounting-pandle",
   {
     type: "category",
     label: "QuickBooks Online",

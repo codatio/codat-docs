@@ -2,6 +2,7 @@
 title: "Test your PayPal Integration"
 description: "Test your PayPal integration by pulling sandbox data to a test company"
 sidebar_label: Testing
+unlisted: true
 ---
 
 When you've set up your PayPal integration, you're ready to test the authorization process for your integration. You'll need to:

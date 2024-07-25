@@ -4,6 +4,7 @@ sidebar_label: Overview
 description: "Learn about our Mollie integration"
 createdAt: "2022-02-15T14:08:00.045Z"
 updatedAt: "2022-10-20T13:35:50.304Z"
+unlisted: true
 ---
 
 [Mollie](https://www.mollie.com/uk) is a payment aggregator that enables merchants to integrate a variety of different

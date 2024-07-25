@@ -1,6 +1,7 @@
 ---
 title: "Pandle"
 description: "Learn about our Pandle integration."
+unlisted: true
 ---
 
 

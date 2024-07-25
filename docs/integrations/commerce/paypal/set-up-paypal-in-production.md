@@ -2,6 +2,7 @@
 title: "Set up the PayPal Integration"
 description: "Explore our API integration with PayPal"
 sidebar_label: Setup
+unlisted: true
 ---
 
 Before you can access your customers' commerce data from PayPal, you need to set up your integration.

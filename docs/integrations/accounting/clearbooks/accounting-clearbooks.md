@@ -1,6 +1,7 @@
 ---
 title: "Clear Books"
 description: "Learn about our Clear Books integration."
+unlisted: true
 ---
 
 You can pull accounting data from <a className="external" href="https://www.clearbooks.co.uk/" target="_blank">Clear Books</a> using our Clear Books integration.

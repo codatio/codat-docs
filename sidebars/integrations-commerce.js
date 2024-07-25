@@ -27,16 +27,6 @@ const integrations = [
   },
   {
     type: "category",
-    label: "Chargebee",
-    collapsed: true,
-    items: [
-      "integrations/commerce/chargebee/commerce-chargebee",
-      "integrations/commerce/chargebee/commerce-chargebee-setup",
-      "integrations/commerce/chargebee/commerce-chargebee-use",
-    ],
-  },
-  {
-    type: "category",
     label: "Clover",
     collapsed: true,
     items: [
@@ -60,57 +50,6 @@ const integrations = [
         label: 'Overview'
       },
       "integrations/commerce/lightspeed-k/commerce-lightspeed-k-setup",
-    ],
-  },
-  {
-    type: "category",
-    label: "Maxio",
-    collapsed: true,
-    items: [
-      "integrations/commerce/chargify/commerce-chargify",
-      "integrations/commerce/chargify/commerce-chargify-setup",
-      "integrations/commerce/chargify/commerce-chargify-use",
-    ],
-  },
-  {
-    type: "category",
-    label: "Mollie",
-    collapsed: true,
-    items: [
-      "integrations/commerce/mollie/commerce-mollie",
-      "integrations/commerce/mollie/commerce-mollie-setup",
-      "integrations/commerce/mollie/commerce-mollie-test",
-      "integrations/commerce/mollie/mollie-integration-reference",
-    ],
-  },
-  {
-    type: "category",
-    label: "PayPal",
-    collapsed: true,
-    items: [
-      "integrations/commerce/paypal/commerce-paypal",
-      "integrations/commerce/paypal/set-up-paypal-in-production",
-      "integrations/commerce/paypal/test-paypal",
-    ],
-  },
-  {
-    type: "category",
-    label: "PrestaShop",
-    collapsed: true,
-    items: [
-      "integrations/commerce/prestashop/commerce-prestashop",
-      "integrations/commerce/prestashop/set-up-prestashop-in-production",
-      "integrations/commerce/prestashop/test-prestashop",
-    ],
-  },
-  {
-    type: "category",
-    label: "Recurly",
-    collapsed: true,
-    items: [
-      "integrations/commerce/recurly/commerce-recurly",
-      "integrations/commerce/recurly/commerce-recurly-setup",
-      "integrations/commerce/recurly/commerce-recurly-use",
     ],
   },
   {
@@ -153,16 +92,6 @@ const integrations = [
       "integrations/commerce/stripe/commerce-stripe",
       "integrations/commerce/stripe/commerce-stripe-setup",
       "integrations/commerce/stripe/test-stripe",
-    ],
-  },
-  {
-    type: "category",
-    label: "SumUp",
-    collapsed: true,
-    items: [
-      "integrations/commerce/sumup/commerce-sumup",
-      "integrations/commerce/sumup/set-up-sumup-in-production-1",
-      "integrations/commerce/sumup/test-sumup-1",
     ],
   },
   {
