@@ -14,7 +14,7 @@ Simply requiring the data to be connected for a certain feature of your product 
 
 :::success Why this matters
 
-You may see **up to 50% ** of visitors deciding to connect, with conversion increasing month-on-month with a well-executed value exchange.
+You may see **up to 50%** of visitors deciding to connect, with conversion increasing month-on-month with a well-executed value exchange.
 
 :::
 
