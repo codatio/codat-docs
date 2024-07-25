@@ -1,27 +1,48 @@
 import React, { useState, Suspense } from "react";
 
-import { dataTypes } from "./dataTypes";
-import { productDataTypes } from "./productDataTypes";
+import DataType from "./DataType";
+
+import Lending from "../../../static/oas/Codat-Lending.json"
+import SyncPayroll from "../../../static/oas/Codat-Sync-Payroll.json"
 
 import styles from "./styles.module.scss";
 
-const DataType = ({dataType}) => {
-  return (
-    <div className={styles.dataType}>
-      <div className={styles.title}>
-        <p>
-          <a href={dataType.schema}>{dataType.name}</a>
-           · 
-        </p>
-        <p>{dataType.key}</p>
-      </div>
+const objToArr = obj => Object.keys(obj).map((key) => { 
+  return { ...obj[key], key };
+});
 
-      <p>{dataType.description}</p>
-    </div>
-  )
+const products = {
+  'lending': {
+    name: 'Lending API',
+    spec: Lending,
+    path: "/lending-api",
+  },
+  'payroll': {
+    name: 'Sync for Payroll',
+    spec: SyncPayroll,
+    path: "/sync-for-payroll-api",
+  },
 }
 
-const DataTypesList = ({dataTypes}) => {
+const generatePath = (dataType, productName) => {
+  return `${products[productName].path}#/schemas/${dataType.key}`
+}
+
+const getProductDataTypes = (productName) => {
+  const spec = products[productName]?.spec
+  
+  const validDataTypes = objToArr(spec.components.schemas)
+    .filter(dataType=>!dataType['x-internal'])
+    .map(dataType => {
+      return { ...dataType, path: generatePath(dataType, productName)}
+    })
+
+  return validDataTypes
+}
+
+const DataTypesList = (props) => {
+  const {dataTypes} = props
+
   if (dataTypes.length && dataTypes.length >= 1) {
     return (
       <div className={styles.dataTypesList}>
@@ -39,63 +60,7 @@ const DataTypesList = ({dataTypes}) => {
   )
 }
 
-const DataTypesLists = ({dataTypes}) => {
-  const accountingDataTypes = dataTypes.filter(dataType => dataType.category === "accounting")
-  const commerceDataTypes = dataTypes.filter(dataType => dataType.category === "commerce")
-  const bankingDataTypes = dataTypes.filter(dataType => dataType.category === "banking")
-  const bankFeedsDataTypes = dataTypes.filter(dataType => dataType.category === "bank-feeds")
-  const payrollDataTypes = dataTypes.filter(dataType => dataType.category === "payroll")
-
-  return (
-    <div className={styles.columns}>
-      <div className={styles.column}>
-        { accountingDataTypes.length > 0 && 
-          <>
-            <h2 className={styles.header}>Accounting</h2>
-            <DataTypesList dataTypes={accountingDataTypes}/> 
-          </>
-        }
-      </div>
-
-      <div className={styles.column}>
-        { commerceDataTypes.length > 0 && 
-          <>
-            <h2 className={styles.header}>Commerce</h2>
-            <DataTypesList dataTypes={commerceDataTypes}/> 
-          </>
-        }
-      </div>
-
-      <div className={styles.column}>
-        { bankingDataTypes.length > 0 && 
-          <>
-            <h2 className={styles.header}>Banking</h2>
-            <DataTypesList dataTypes={bankingDataTypes}/> 
-          </>
-        }
-      </div>
-
-      <div className={styles.column}>
-        { bankFeedsDataTypes.length > 0 && 
-          <>
-            <h2 className={styles.header}>Bank Feeds</h2>
-            <DataTypesList dataTypes={bankFeedsDataTypes}/> 
-          </>
-        }
-      </div>
-
-      <div className={styles.column}>
-      { payrollDataTypes.length > 0 && 
-        <>
-          <DataTypesList dataTypes={payrollDataTypes}/> 
-        </>
-      }
-      </div>
-    </div>
-  )
-}
-
-const DataTypes = ({ urlPrefix, product, search=true }) => {
+const DataTypes = ({ productName, search=true }) => {
   const [searchValue, setSearchValue] = useState('');
 
   const handleOnChange = event => {
@@ -103,30 +68,26 @@ const DataTypes = ({ urlPrefix, product, search=true }) => {
     setSearchValue(value);
   };
 
-  const normalizedDataTypes = dataTypes
-    .filter(dataType => productDataTypes[product].findIndex(dataTypeKey => dataType.key === dataTypeKey) !== -1)
-    .map(dataType => {
-      return {
-        ...dataType,
-        schema: urlPrefix + dataType.schema,
-      }
-    })
+  const normalizedDataTypes = getProductDataTypes(productName)
+  normalizedDataTypes.sort((a,b) => a.title < b.title ? -1 : 1)
 
   const filteredDataTypes = searchValue === ""
     ? normalizedDataTypes
-    : normalizedDataTypes.filter(dataTypes => {
-        return dataTypes.name.toLowerCase().includes(searchValue.toLowerCase()) || 
-          dataTypes.key.toLowerCase().includes(searchValue.toLowerCase()) || 
-          dataTypes.description.toLowerCase().includes(searchValue.toLowerCase())
+    : normalizedDataTypes.filter(dataType => {
+        return dataType.title.toLowerCase().includes(searchValue.toLowerCase()) || 
+          dataType.key.toLowerCase().includes(searchValue.toLowerCase()) || 
+          dataType.description.toLowerCase().includes(searchValue.toLowerCase())
       })
 
   return (
     <div>
+      <h2 className={styles.header}>{products[productName].name} data types</h2>
+
       {
         search && <input className={styles.search} value={searchValue} onChange={handleOnChange} type="text" placeholder="Enter a data type name..." />
       }
 
-      <DataTypesLists dataTypes={filteredDataTypes}/>
+      <DataTypesList dataTypes={filteredDataTypes}/> 
     </div>
   );
 };
