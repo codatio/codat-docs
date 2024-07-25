@@ -1,5 +1,5 @@
 ---
-title: "QuckBooks Online app assessment questionnaire"
+title: "QuickBooks Online app assessment questionnaire"
 description: "Guidance on completing Intuit's app assessment process"
 --- 
 
