@@ -1,6 +1,6 @@
 {
-  "name": "codat-docs-2",
-  "version": "3.0.1",
+  "name": "codat-docs",
+  "version": "3.1.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
