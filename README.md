@@ -12,7 +12,22 @@ The official [Codat](https://codat.io) documentation.
 
 ## Running locally
 
-### Create a .env file
+### Prerequisites
+
+#### Git LFS
+
+This website uses [Git Large File Storage] (LFS) to efficiently store images. You need to install Git LFS.
+
+```
+brew install git-lfs
+git lfs install
+```
+
+All `.jpg`, `.jpeg`, and `.png` files are tracked.
+
+[Read more](https://git-lfs.com/)
+
+#### Create a .env file
 
 The docusaurus config expects certain environment variables to be defined. We've included `.env.example` - copy this and rename it to `.env`. You can enter any random string for the IDs.
 
@@ -21,10 +36,15 @@ copy .env.example .env # on Windows
 cp .env.example .env # on Mac
 ```
 
-### Run the project
+### Install npm dependencies
 
 ```sh
 npm install
+```
+
+### Run the project
+
+```sh
 npm run start
 ```
 
