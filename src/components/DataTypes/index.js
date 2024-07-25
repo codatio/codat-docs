@@ -44,6 +44,7 @@ const DataTypesLists = ({dataTypes}) => {
   const commerceDataTypes = dataTypes.filter(dataType => dataType.category === "commerce")
   const bankingDataTypes = dataTypes.filter(dataType => dataType.category === "banking")
   const bankFeedsDataTypes = dataTypes.filter(dataType => dataType.category === "bank-feeds")
+  const payrollDataTypes = dataTypes.filter(dataType => dataType.product === "payroll")
 
   return (
     <div className={styles.columns}>
@@ -81,6 +82,14 @@ const DataTypesLists = ({dataTypes}) => {
             <DataTypesList dataTypes={bankFeedsDataTypes}/> 
           </>
         }
+      </div>
+
+      <div className={styles.column}>
+      { payrollDataTypes.length > 0 && 
+        <>
+          <DataTypesList dataTypes={payrollDataTypes}/> 
+        </>
+      }
       </div>
     </div>
   )

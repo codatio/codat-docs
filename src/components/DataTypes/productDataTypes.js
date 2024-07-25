@@ -12,13 +12,6 @@ const expenses = [
   'transfers',
 ]
 
-const payroll = [
-  'chartOfAccounts',
-  'journals',
-  'journalEntries',
-  'trackingCategories',
-]
-
 const commerce = [
 
 ]
@@ -88,7 +81,6 @@ const bankFeeds = [
 
 export const productDataTypes = {
   expenses,
-  payroll,
   commerce,
   payables,
   lending,

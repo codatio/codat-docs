@@ -337,8 +337,36 @@ export const payroll = [
     key: "chartOfAccounts",
     name: "Accounts",
     schema: "/schemas/Account",
-    products: "sync-payroll",
+    product: "payroll",
     description: "Accounts are the categories a business uses to record accounting transactions.",
+  },
+  {
+    key: "company",
+    name: "Company profile",
+    schema: "/schemas/CompanyInfo",
+    product: "payroll",
+    description: "Standard details about a linked company such as their address, phone number, and company registration.",
+  },
+  {
+    key: "journals",
+    name: "Journals",
+    schema: "/schemas/Journal",
+    product: "payroll",
+    description: "Journals are used to record all the financial transactions of a company.",
+  },
+  {
+    key: "journalEntries",
+    name: "Journal entries",
+    schema: "/schemas/JournalEntry",
+    product: "payroll",
+    description: "The entries made in a company's general ledger, or accounts, when transactions are approved.",
+  },
+  {
+    key: "trackingCategories",
+    name: "Tracking categories",
+    schema: "/schemas/TrackingCategory",
+    product: "payroll",
+    description: "Details of a category used for tracking transactions.",
   },
 
 export const dataTypes = [
@@ -346,4 +374,5 @@ export const dataTypes = [
   ...banking,
   ...commerce,
   ...bankfeeds,
+  ...payroll
 ]
