@@ -51,7 +51,7 @@ When the app is created, you can view the app's secure credentials.
    1. In the **Protected customer data access** box, click **Request access**.
    2. Enter the details requested in the dialog, then submit your request to Shopify.
    
-   This is required becvause this data type requests customer data including name, address, phone, or email fields.
+   This is required because this data type requests customer data including name, address, phone, or email fields.
 9. Optional: if you need to access over 60 days' of orders, do the following on the **App setup** page:
    1. In the **Read all orders scope** box, click **Request access**.
    2. Enter the details requested in the dialog, then submit your request to Shopify.
