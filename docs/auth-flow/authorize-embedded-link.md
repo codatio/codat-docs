@@ -35,13 +35,7 @@ function LinkPlayground(props) {
 :::note Dynamic imports
 
 Link SDK is imported at runtime, so you'll always get the latest version of our auth flow UI with no risk of staleness. To achieve this, we use ES6's [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) feature (aka dynamic imports).
-:::
 
-:::tip Change management
-
-As with all Codat products, Link SDK is subject to [our change management policy](/using-the-api/change-policy). We will give appropriate notice for changes to our auth flow UI and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
-
-We also provide updates in our [SDK changelog](/auth-flow/authorize-embedded-link#changelog).
 :::
 
 ## Resources
