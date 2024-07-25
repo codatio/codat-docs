@@ -32,30 +32,43 @@ For any type of information you requested, they will need to follow a [software 
 | Spend analysis only           | ✔️                           | ✔️                    |
 | Financials and spend analysis| ✔️                           | ❌                    |
 
-### Journey overview
+## Connection journey overview
 
-![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/se-customer-journey-diagram.png)
+You can see the sequence in which multi-entity steps and software connection steps relate to each other on the diagram below.
 
-
-```mermaid
-  flowchart TD
-      A[Financials only]--> D(Selects accounting software)
-      D--> E(Authorizes connection)
-      E--> F[Data available in Relationship Manager]
-      B[Financials and spend analysis]--> D
-      C[Spend analysis only]-->|Single legal entity|D
-      C--> |Multiple legal entities|G(Creates legal entity)
-      G--> D
-      E-->|Another legal entity|G
-```
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0101-se-customer-journey-diagram.png)
 
 Next, let's review the details of these journeys.
 
-## Multi-entity connection journey
+### Multi-entity journey
 
+When you request spend analysis data from your customer, they will receive an email with a link that initiates their connection journey. 
 
+1. blable
 
-## Software connection journey
+2. blable
+
+3. On the file upload screen, the customer can download the supplier information template and upload it 
+
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0104-customer-journey-123.png)
+
+1. blable
+
+2. blable
+
+3. On the file upload screen, the customer can download the supplier information template and upload it 
+
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0104-customer-journey-123.png)
+
+1. blable
+
+2. blable
+
+3. On the file upload screen, the customer can download the supplier information template and upload it 
+
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0104-customer-journey-123.png)
+
+### Software connection journey
 
 
 
