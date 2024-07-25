@@ -9,6 +9,6 @@ import DataTypes from '@components/DataTypes'
 
 ## Supported data types
 
-<DataTypes category="payroll" urlPrefix="/sync-for-payroll-api#"/ search={false}>
+<DataTypes category="payroll" urlPrefix="/sync-for-payroll-api#" search={false}/>
 
 <br/>
