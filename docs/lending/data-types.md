@@ -1,13 +1,12 @@
 ---
 title: "Supported data types"
 description: "Lending API lets you explore the financial data underpinning the enhanced reports."
+sidebar_label: "Data types"
 image: "/img/banners/social/lending.png"
 ---
 
 import DataTypes from '@components/DataTypes'
 
-## Supported data types
-
-<DataTypes product="lending" urlPrefix="/lending-api#"/>
+<DataTypes productName="lending"/>
 
 <br/>

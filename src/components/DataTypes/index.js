@@ -4,6 +4,10 @@ import DataType from "./DataType";
 
 import Lending from "../../../static/oas/Codat-Lending.json"
 import SyncPayroll from "../../../static/oas/Codat-Sync-Payroll.json"
+import BankFeeds from "../../../static/oas/Codat-Bank-Feeds.json"
+import SyncCommerce from "../../../static/oas/Codat-Sync-Commerce.json"
+import SyncExpenses from "../../../static/oas/Codat-Sync-Expenses.json"
+import SyncPayables from "../../../static/oas/Codat-Sync-Payables.json"
 
 import styles from "./styles.module.scss";
 
@@ -21,6 +25,26 @@ const products = {
     name: 'Sync for Payroll',
     spec: SyncPayroll,
     path: "/sync-for-payroll-api",
+  },
+  'bankFeeds': {
+    name: 'Bank Feeds API',
+    spec: BankFeeds,
+    path: "/bank-feeds-api",
+  },
+  'commerce': {
+    name: 'Sync for Commerce',
+    spec: SyncCommerce,
+    path: "/sync-for-commerce-api",
+  },
+  'expenses': {
+    name: 'Sync for Expenses',
+    spec: SyncExpenses,
+    path: "/sync-for-expenses-api",
+  },
+  'payables': {
+    name: 'Sync for Payables',
+    spec: SyncPayables,
+    path: "/sync-for-payables-api",
   },
 }
 
