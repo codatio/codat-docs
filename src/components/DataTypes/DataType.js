@@ -8,10 +8,7 @@ const DataType = (props) => {
   return (
     <div className={styles.dataType}>
       <div className={styles.title}>
-        <p>
-          <a href={dataType.path}>{dataType.title}</a>
-           · 
-        </p>
+        <p><a href={dataType.path}>{dataType.title}</a>{" · "}</p>
         <p>{dataType.key}</p>
       </div>
     </div>
