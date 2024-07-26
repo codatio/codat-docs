@@ -133,6 +133,11 @@ module.exports = [
   },
   {
     type: "link",
+    href: "/commerce/data-types",
+    label: "Data types",
+  },
+  {
+    type: "link",
     href: "/sync-for-commerce-api",
     label: "API reference",
   },
