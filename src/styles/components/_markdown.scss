@@ -24,6 +24,8 @@ html[data-theme="dark"] {
   --ifm-h5-font-size: 1rem;
   --ifm-h6-font-size: 0.875rem;
 
+  min-width: 100%;
+
   strong,
   b {
     font-weight: 600;
