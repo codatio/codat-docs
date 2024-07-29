@@ -6158,6 +6158,7 @@
             "properties": {
               "bankCode": {
                 "type": "string",
+                "nullable": true,
                 "description": "The numeric identifier of the routing number"
               },
               "type": {
@@ -6181,10 +6182,7 @@
                 ],
                 "description": "The type of routing number."
               }
-            },
-            "required": [
-              "bankCode"
-            ]
+            }
           }
         },
         "examples": [
