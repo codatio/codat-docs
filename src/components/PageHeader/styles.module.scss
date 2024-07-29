@@ -56,12 +56,16 @@
   p {
     line-height: 1.7em;
   }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .title {
   display: flex;
   flex-direction: row;
-  padding: 2em 0 1em;
+  padding: 0 0 1em;
   align-items: center;
 
   h1 {
@@ -111,6 +115,6 @@
 
 @media (max-width: 799px) {
   .header {
-    padding: 1em;
+    padding: 2em 1em;
   }
 }

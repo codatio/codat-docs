@@ -38,7 +38,10 @@
     a {
       text-decoration: none;
       padding-left: 0.5em;
-      //padding-top: 12px;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

@@ -60,23 +60,24 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 Codat supports a range of [event types](/using-the-api/webhooks/event-types) you can listen to that help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to add [webhook consumer endpoints](/using-the-api/webhooks/create-consumer) and get the most out of Sync for Payables:
 
-- [NewCompanySynchronized](/using-the-api/webhooks/event-types)
+- [`NewCompanySynchronized`](/using-the-api/webhooks/event-types)
 
   Listen to this event to track the completion of all enabled data type syncs for a newly connected company. When you receive a message from this webhook, you can proceed to the next steps of the bill pay process. 
 
-- [DataSyncCompleted](/using-the-api/webhooks/event-types)
+- [`DataSyncCompleted`](/using-the-api/webhooks/event-types)
 
-  This event indicates that a data sync is successfully completed for a specific data type. You can use your webhook consumer to track retrieval of suppliers, bills or bank accounts as part of the accounts payable process.
+  This means that a data sync is successfully completed for a specific data type. You can use your webhook consumer to track retrieval of suppliers, bills or bank accounts as part of the accounts payable process.
 
-- [DatasetDataChanged](/using-the-api/webhooks/event-types)
+- [`DatasetDataChanged`](/using-the-api/webhooks/event-types)
 
-  If you receive a message from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
+  This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
-- [PushOperationStatusChanged](/using-the-api/webhooks/event-types)  
+- [`PushOperationStatusChanged`](/using-the-api/webhooks/event-types)  
 
   Listen to this event to track the completion of the operation to pay bills in the SMB's accounting platform. When you receive a message from this webhook, check the `status` value in the body. A `Success` status means the bill payment or the bill credit note has been successfully pushed to the accounting software.
 
 ### Client libraries
+
 Use our comprehensive [Sync for Payables library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
 <Tabs>

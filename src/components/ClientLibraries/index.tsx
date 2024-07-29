@@ -100,25 +100,26 @@ const ClientLibraries = ({productName}) => {
                             <div className="card-row">
                                 <div className="header">
                                     <a href={repoBaseUrl + language.name + productUrl} target="_blank">
-                                    <img
-                                        src={language.icon}
-                                        className="icon usecase"
-                                    />
+                                        <img
+                                            src={language.icon}
+                                            className="icon usecase"
+                                        />
                                     </a>
                                 </div>
                                 
                                 <div className="content">
                                     <h4>{language.namePretty}</h4>
-                                    <p>
-                                    <a href={repoBaseUrl + language.name + productUrl} target="_blank">Start using →</a>
-                                    </p>
 
                                     {productName !== undefined ?
-                                    <a href={language.packageLocation + getPackageName(productName, language.name)} target="_blank" >
-                                        <img loading="lazy" src={getShieldUrl(productName, language)} alt={language.alt}/>
-                                    </a>
-                                    : null
+                                        <a href={language.packageLocation + getPackageName(productName, language.name)} target="_blank" >
+                                            <img loading="lazy" src={getShieldUrl(productName, language)} alt={language.alt}/>
+                                        </a>
+                                        : null
                                     }
+                                    
+                                    <p>
+                                        <a href={repoBaseUrl + language.name + productUrl} target="_blank">Start using →</a>
+                                    </p>
                                 </div>
                             </div>
                         </li>

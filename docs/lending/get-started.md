@@ -73,17 +73,17 @@ Codat supports a range of [event types](/using-the-api/webhooks/event-types) you
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Create consumer** and click **Add endpoint** to add a new [webhook consumer endpoint](/using-the-api/webhooks/overview) and get the most out of Lending API:
 
-- [DataSyncStatusChangedToError](/using-the-api/webhooks/event-types)  
+- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  This means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
-- [Dataset data changed](/using-the-api/webhooks/event-types)  
+- [`Dataset data changed`](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
+  This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
-- [Account categories updated](/using-the-api/webhooks/event-types)
+- [`Account categories updated`](/using-the-api/webhooks/event-types)
 
-  If you receive a message from this webhook, it means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
+  This means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
   
 
 ## Use Lending API
