@@ -26,14 +26,6 @@ const usecases = [
     linkTextMini: "Discover commerce data integration →",
   },
   {
-    icon: "/img/logos/usecases/payroll.svg",
-    title: "Managing payroll",
-    description: "Sync your customers' payroll data into their accounting platforms to support reconciliation.",
-    link: "/usecases/summary/managing-payroll",
-    linkText: "Discover payroll management →",
-    linkTextMini: "Discover payroll management →",
-  },
-  {
     icon: "/img/logos/usecases/accounts-payable.svg",
     title: "Automating payables",
     description: "Pull unpaid bills from customers' accounting software and mark them as paid to automate the accounts payable process.",

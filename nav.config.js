@@ -42,10 +42,6 @@ module.exports = {
           label: "Sync for Payables",
         },
         {
-          href: "/sync-for-payroll-api",
-          label: "Sync for Payroll",
-        },
-        {
           href: "/platform-api",
           label: "Platform API",
           hr: true,

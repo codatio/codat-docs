@@ -9,7 +9,6 @@ const lending = require("./sidebars/lending");
 const bankfeeds = require("./sidebars/bank-feeds");
 const commerce = require("./sidebars/sync-for-commerce");
 const expenses = require("./sidebars/sync-for-expenses");
-const payroll = require("./sidebars/payroll");
 const payables = require("./sidebars/payables");
 const supplierEnablement = require("./sidebars/supplier-enablement");
 
@@ -177,7 +176,6 @@ module.exports = {
   commerce: commerce,
   lending: lending,
   expenses: expenses,
-  payroll: payroll,
   payables: payables,
   integrationsAccounting: integrationsAccounting,
   integrationsBanking: integrationsBanking,
