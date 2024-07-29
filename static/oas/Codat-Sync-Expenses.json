@@ -13132,6 +13132,7 @@
         "x-examples": {
           "Example AccountInfo": {
             "id": "313a4dbe-b3a4-42f0-a5f5-43e382e62db9",
+            "nominalCode": "720",
             "name": "Travel",
             "currency": "GBP",
             "accountType": "Expense",
@@ -13146,8 +13147,14 @@
           "id": {
             "type": "string",
             "description": "Unique identifier of account.",
-            "example": "6",
+            "example": "127f3b99-8dc2-4b7e-854c-91ef9bd2757b",
             "nullable": false
+          },
+          "nominalCode": {
+            "type": "string",
+            "description": "Code used to identify each nominal account in the accounting platform.",
+            "example": "300",
+            "nullable": true
           },
           "name": {
             "type": "string",
