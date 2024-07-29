@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::note Prerequisites
 
-You need an account and its API key to start with Codat. [Get in touch](https://www.codat.io/#get-in-touch) with us to discuss creating one. 
+You need an account and API key to follow this guide. [Get in touch](https://www.codat.io/#get-in-touch) to discuss creating an account today. 
 
 :::
 

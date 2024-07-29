@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./styles.module.scss";
 
 const feedbackOptions = [
-  '❤️',
+  '👏',
   '👍',
   '🤔',
   '👎',
@@ -12,7 +12,7 @@ const feedbackOptions = [
 
 const isPositive = (vote) => {
   const positiveVotes = [
-    '❤️',
+    '👏',
     '👍',
   ]
 

@@ -30,8 +30,9 @@ article .markdown > ol > li::before {
   padding: 1px 8px;
   left: -3em;
   margin-top: 2px;
-  line-height: 20px;
   top: 3px;
+  line-height: 20px;
+  width: 22px;
 }
 
 article .markdown > ol ul,

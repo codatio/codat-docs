@@ -34,7 +34,7 @@ function useDocTOC() {
   const windowSize = useWindowSize();
   const hidden = frontMatter.hide_table_of_contents;
   const canRender = !hidden && toc.length > 0;
-  
+
   const mobile = canRender ? <DocItemTOCMobile editUrl={metadata.editUrl}/> : undefined;
   const desktop =
     canRender && (windowSize === 'desktop' || windowSize === 'ssr') ? (
@@ -146,7 +146,7 @@ export default function DocItemLayout(props) {
             <DocItemPaginator />
           </div>
         </div>
-        {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
+        {docTOC.desktop && <div className={styles.tocWrapper}>{docTOC.desktop}</div>}
       </div>
     </>
   );
