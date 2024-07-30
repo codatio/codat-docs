@@ -38,10 +38,4 @@ module.exports = [
     className: "top-level-item top-level-item-single products product sfpayables",
     id: "payables/overview",
   },
-  {
-    type: "doc",
-    label: "Sync for Payroll",
-    className: "top-level-item top-level-item-single products product sfpayroll",
-    id: "payroll/overview",
-  },
 ];

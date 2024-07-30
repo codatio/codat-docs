@@ -84,14 +84,6 @@ const allProducts = [
     link: "/payables/overview",
     linkText: "Begin syncing merchants' data →",
   },
-  {
-    logo: "/img/logos/products/logo_payroll_clear.svg",
-    slug: "payroll",
-    name: "Sync for Payroll",
-    description: "Manage payroll reconciliation with your customers' accounting platform.",
-    link: "/payroll/overview",
-    linkText: "Reconcile payroll data →",
-  },
 ]
 
 const Products = ({mini, products, verbose}) => {
