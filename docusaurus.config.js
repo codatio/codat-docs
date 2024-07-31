@@ -84,6 +84,8 @@ const config = {
   ],
 
   plugins: [
+    process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
+
     "docusaurus-plugin-sass",
     '@docusaurus/theme-live-codeblock',
 
@@ -150,7 +152,7 @@ const config = {
     ],
 
     'vercel-analytics'
-  ],
+  ].filter(Boolean),
 
   themes: [
     "@docusaurus/theme-mermaid",
