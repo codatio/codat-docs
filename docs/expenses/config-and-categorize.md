@@ -61,9 +61,9 @@ POST https://api.codat.io/companies/{companyId}/sync/expenses/config
 ```
 If a configuration is set for a company, but the customer sets a bank account, supplier, and customer value on the expense transaction level, Sync for Expenses will use the values from the trasaction when creating the expense in the accounting platform.
 
-:::caution Microsoft Dyanmics Suppliers
+:::caution Suppliers in Microsoft Dynamics
 
-Due to a limitation in the accounting platform, Microsoft Dynamics requires using a default supplier when creating expenses. We are currently unable to support assigning a supplier at the transaction level.
+Due to a limitation in the accounting platform, Microsoft Dynamics requires a default supplier when creating expenses. We currently don't support assigning a supplier at the transaction level.
 :::
 
 ### Bank account
