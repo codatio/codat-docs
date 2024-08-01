@@ -22,7 +22,7 @@ To customize your data type settings:
 
 You can learn more about each data type setting by reading the sections below.
 
-![Data type settings view in the Codat Portal](/img/old/64728a5-datat_type_settings.PNG)
+![Data type settings view in the Codat Portal](/img/old/64728a5-datat_type_settings1.png)
 
 ## Use "Fetch on first link"
 
