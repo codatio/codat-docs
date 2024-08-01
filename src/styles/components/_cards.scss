@@ -31,7 +31,15 @@ ul.card-container {
     grid-template-columns: repeat(3, 1fr);
     
     p {
-      font-size: 0.9em;
+      font-size: 0.95em;
+    }
+  }
+
+  &.col-2 {
+    grid-template-columns: repeat(2, 1fr);
+    
+    p {
+      font-size: 0.98em;
     }
   }
 
