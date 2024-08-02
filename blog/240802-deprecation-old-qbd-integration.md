@@ -4,7 +4,7 @@ date: "2024-08-02"
 tags: ["Deprecation"]
 authors: ajacksoncodat
 ---
-We have recently released our new [QuickBooks Desktop integration. As a result](https://docs.codat.io/updates/240227-qbd-connector), we will be deprecating the existing legacy integration on **January 10, 2025**.
+We have recently released our [new QuickBooks Desktop integration](https://docs.codat.io/updates/240227-qbd-connector). As a result, we will be deprecating the existing legacy integration on **January 10, 2025**.
 
 <truncate>
 
