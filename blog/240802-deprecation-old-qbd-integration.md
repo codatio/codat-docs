@@ -4,9 +4,10 @@ date: "2024-08-02"
 tags: ["Deprecation"]
 authors: ajacksoncodat
 ---
+
 We have recently released our [new QuickBooks Desktop integration](https://docs.codat.io/updates/240227-qbd-connector). As a result, we will be deprecating the existing legacy integration on **January 10, 2025**.
 
-<truncate>
+<!--truncate-->
 
 The new connector simplifies your customer’s linking journey and provides more resilient data acquisition. You can read more about these changes in our [QuickBooks Desktop (on-premise) documentation](https://docs.codat.io/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop).
 
