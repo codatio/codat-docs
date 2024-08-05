@@ -1,5 +1,5 @@
 ---
-title: "2024-10-10: Deprecation of legacy QuickBooks Desktop Integration"
+title: "2025-01-10: Deprecation of legacy QuickBooks Desktop Integration"
 date: "2024-08-02"
 tags: ["Deprecation"]
 authors: ajacksoncodat
