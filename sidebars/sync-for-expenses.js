@@ -39,12 +39,27 @@ module.exports = [
   "expenses/sync-process/uploading-receipts",
   {
     type: "ref",
-    label: "Oracle NetSuite",
+    label: "Dynamics 365 Business Central",
     customProps: {
       hr: true,
       section: "Expense integrations",
     },
-    id: "integrations/accounting/netsuite/accounting-netsuite",
+    id: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
+  },
+  {
+    type: "doc",
+    label: "FreeAgent",
+    id: "integrations/accounting/quickbooksonline/accounting-freeagent"
+  },
+  {
+    type: "doc",
+    label: "Oracle NetSuite",
+    id: "integrations/accounting/netsuite/accounting-netsuite"
+  },
+  {
+    type: "doc",
+    label: "QuickBooks Desktop",
+    id: "integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop"
   },
   {
     type: "doc",
@@ -55,16 +70,6 @@ module.exports = [
     type: "doc",
     label: "Xero",
     id: "integrations/accounting/xero/accounting-xero"
-  },
-  {
-    type: "doc",
-    label: "Dynamics 365 Business Central",
-    id: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral"
-  },
-  {
-    type: "doc",
-    label: "QuickBooks Desktop",
-    id: "integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop"
   },
   {
     type: "doc",
