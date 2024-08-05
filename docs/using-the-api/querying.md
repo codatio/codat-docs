@@ -69,7 +69,7 @@ Our `GET /{dataType}` endpoints typically return an array of items of that given
 <TabItem value="http" label="HTTP">
 
 ```http
-GET /companies/?query=platform!
+GET /companies/?query=platform!=""
 ```
 </TabItem>
 </Tabs>
