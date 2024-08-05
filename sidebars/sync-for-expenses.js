@@ -49,7 +49,7 @@ module.exports = [
   {
     type: "doc",
     label: "FreeAgent",
-    id: "integrations/accounting/quickbooksonline/accounting-freeagent"
+    id: "integrations/accounting/freeagent/accounting-freeagent"
   },
   {
     type: "doc",
