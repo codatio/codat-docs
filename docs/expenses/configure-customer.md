@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-When implementing your Sync for Expenses solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection.You can do that when the customer starts interacting with your application.  
+When implementing your Sync for Expenses solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection. You can do that when the customer starts interacting with your application.  
 
 Next, you will connect the company to a data source via one of our integrations. With Sync for Expenses, each company will have two data connections: one to the SMB's accounting platform, and another one - to the partner expense integration, i.e. your application.
 
@@ -61,10 +61,11 @@ Next, use the [Create connection](/sync-for-expenses-api#/operations/create-conn
 
 | Accounting platform | platformKey |
 | ---  | ---  |
+| Dynamics 365 Business Central | `trji` |
+| FreeAgent | `fbrh` |
 | Oracle NetSuite | `akxx` |
 | QuickBooks Desktop | `pqsw`|
 | QuickBooks Online | `qhyg` |
-| Sage Intacct | `knfz` |
 | Xero | `gbol` |
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 
