@@ -63,6 +63,17 @@ Our `GET /{dataType}` endpoints typically return an array of items of that given
 
 ## Example queries
 
+### Companies with connected platforms
+
+<Tabs>
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies/?query=platform!
+```
+</TabItem>
+</Tabs>
+
 ### Invoices with amounts outstanding
 
 Query: `amountDue > 0`
