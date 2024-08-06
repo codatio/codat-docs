@@ -9,7 +9,7 @@ We have recently released our [new QuickBooks Desktop integration](https://docs.
 
 <!--truncate-->
 
-![New QuickBooksDesktop Link UI first page](/static/img/updates/240802-deprecation-old-qbd-integration-1.png)
+![New QuickBooksDesktop Link UI first page](/img/updates/240802-deprecation-old-qbd-integration-1.png)
 
 The new connector simplifies your customer’s linking journey and provides more resilient data acquisition. You can read more about these changes in our [QuickBooks Desktop (on-premise) documentation](https://docs.codat.io/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop).
 
