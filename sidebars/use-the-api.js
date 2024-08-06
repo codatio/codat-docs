@@ -62,18 +62,6 @@ module.exports = [
           "using-the-api/webhooks/migration-guide-advanced",
         ]
       },
-      {
-        type: "category",
-        label: "Legacy webhooks",
-        collapsed: true,
-        items: [
-          "using-the-api/webhooks/legacy/core-rules-types",
-          "using-the-api/webhooks/legacy/core-rules-create",
-          "using-the-api/webhooks/legacy/core-rules-webhooks",
-          "using-the-api/webhooks/legacy/core-rules-webhooksecurity",
-          "using-the-api/webhooks/legacy/receive-webhooks-as-email",
-        ],
-      },
     ],
   },
   {
