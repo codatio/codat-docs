@@ -45974,6 +45974,21 @@
                 ]
               }
             }
+          },
+          "companyReference": {
+            "title": "Company reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "name": {
+                "$ref": "#/components/schemas/Company/properties/name"
+              },
+              "description": {
+                "$ref": "#/components/schemas/Company/properties/description"
+              }
+            }
           }
         },
         "examples": [

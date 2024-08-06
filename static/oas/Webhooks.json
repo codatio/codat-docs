@@ -286,6 +286,25 @@
         }
       }
     },
+    "read.complete": {
+      "post": {
+        "description": "Indicates that the fetch of data types for a product has completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompleteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was recieved successfully."
+          }
+        }
+      }
+    },
     "ClientRateLimitReached": {
       "post": {
         "description": "Triggered when the number of requests to Codat's API from the client exceeds the current quota.",
@@ -429,7 +448,7 @@
                 "description": "The number of available requests per day."
               },
               "ExpiresUtc": {
-                "$ref": "#/components/schemas/SourceAccountWebhook/properties/generatedDate",
+                "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
                 "description": "The date time in UTC when your daily quota is reset."
               }
             }
@@ -1085,6 +1104,126 @@
           }
         ]
       },
+      "ReadCompleteWebhook": {
+        "title": "Read complete webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event."
+          },
+          "generatedDate": {
+            "description": "The date time in UTC the event was generated in Codat.",
+            "title": "Date time",
+            "type": "string",
+            "examples": [
+              "2022-10-23T00:00:00.000Z",
+              "2022-10-23T00:00:00.000Z"
+            ]
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ReadCompleteWebhook/definitions/readCompleteWebhookPayload"
+          }
+        },
+        "definitions": {
+          "readCompleteWebhookPayload": {
+            "title": "Company fetch complete webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "title": "Company reference",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the company",
+                    "example": "Codat Ltd."
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Requested early access to the new financing scheme.",
+                    "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+                  }
+                }
+              },
+              "product": {
+                "type": "string",
+                "example": "lending",
+                "description": "Name of the product that requested the data types to be fetched."
+              },
+              "modifiedFromDate": {
+                "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
+                "description": "The date time in UTC when the data types were last fetched and input into Codat's cache."
+              },
+              "dataTypes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "connectionId": {
+                      "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+                    },
+                    "dataType": {
+                      "$ref": "#/components/schemas/PushOperationStatusChangedWebhook/definitions/PushOperationStatusChangedWebhookData/properties/dataType"
+                    },
+                    "recordsModified": {
+                      "type": "boolean",
+                      "example": false,
+                      "description": "`True` if records have been created, updated or deleted in Codat's cache."
+                    },
+                    "status": {
+                      "title": "Dataset status",
+                      "type": "string",
+                      "description": "The current status of the dataset.",
+                      "enum": [
+                        "Initial",
+                        "Queued",
+                        "Fetching",
+                        "MapQueued",
+                        "Mapping",
+                        "Complete",
+                        "FetchError",
+                        "MapError",
+                        "InternalError",
+                        "ProcessingQueued",
+                        "Processing",
+                        "ProcessingError",
+                        "ValidationQueued",
+                        "Validating",
+                        "ValidationError",
+                        "AuthError",
+                        "Cancelled",
+                        "NotSupported",
+                        "RateLimitError",
+                        "PermissionsError",
+                        "PrerequisiteNotMet"
+                      ]
+                    },
+                    "statusDescription": {
+                      "type": "string",
+                      "description": "A description of the current status of the dataset."
+                    },
+                    "errorMessage": {
+                      "type": "string",
+                      "example": "Authorization failed.",
+                      "description": "A message describing the error the dataset had if it has failed."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "SourceAccountWebhook": {
         "title": "Source account status changed webhook",
         "type": "object",
@@ -1104,13 +1243,8 @@
             ]
           },
           "generatedDate": {
-            "description": "The date time in UTC the event was generated in Codat.",
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ]
+            "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
+            "description": "The date time in UTC the event was generated in Codat."
           },
           "payload": {
             "$ref": "#/components/schemas/SourceAccountWebhook/definitions/sourceAccountWebhookPayload"
@@ -1176,7 +1310,7 @@
                     "description": "The latest balance for the bank account."
                   },
                   "modifiedDate": {
-                    "$ref": "#/components/schemas/SourceAccountWebhook/properties/generatedDate",
+                    "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
                     "nullable": true,
                     "description": "The last date the bank account was modified."
                   },
@@ -1193,7 +1327,7 @@
                     ]
                   },
                   "feedStartDate": {
-                    "$ref": "#/components/schemas/SourceAccountWebhook/properties/generatedDate",
+                    "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
                     "nullable": true
                   }
                 },
