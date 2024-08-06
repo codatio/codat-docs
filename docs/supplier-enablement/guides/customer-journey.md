@@ -58,7 +58,11 @@ When you request spend analysis data from your customer, they will receive an em
 
 3. On the file upload screen, the customer can download the supplier information template and upload it 
 
-![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0104-customer-journey-123.png)
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0105-customer-journey-456.png)
+
+success bla bla
+
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0106-information-request.png)
 
 1. blable
 
@@ -66,7 +70,7 @@ When you request spend analysis data from your customer, they will receive an em
 
 3. On the file upload screen, the customer can download the supplier information template and upload it 
 
-![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0104-customer-journey-123.png)
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0107-rm-multientity.png)
 
 ### Software connection journey
 
@@ -95,6 +99,23 @@ they will press a button. This will initiate Codat's Link flow. the look, feel, 
 
 in the flow, the customer will choose their software that they are going to let us access. They will then be redirected to that software to provide their credentials and authorize our access. 
 
+1. blable
+
+2. blable
+
+3. On the file upload screen, the customer can download the supplier information template and upload it 
+
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0108-platform-123.png)
+
+1. blable
+
+2. blable
+
+3. On the file upload screen, the customer can download the supplier information template and upload it 
+
+![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0109-platform-45.png)
+
+link to status changes and downloading resulting reports
 
 
 
