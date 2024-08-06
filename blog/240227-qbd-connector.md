@@ -9,6 +9,8 @@ We’ve released a new QuickBooks Desktop connector, providing an improved user 
 
 <!--truncate-->
 
+![New QuickBooksDesktop Link UI first page](/img/updates/240802-deprecation-old-qbd-integration-1.png)
+
 ## What's new?
 
 With this release, we have: 
