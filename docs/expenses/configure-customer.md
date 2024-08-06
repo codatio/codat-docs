@@ -67,6 +67,7 @@ Next, use the [Create connection](/sync-for-expenses-api#/operations/create-conn
 | QuickBooks Desktop | `pqsw`|
 | QuickBooks Online | `qhyg` |
 | Xero | `gbol` |
+
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 
 <Tabs>
