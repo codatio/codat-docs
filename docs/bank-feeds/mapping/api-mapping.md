@@ -173,7 +173,7 @@ POST /companies/{companyId}/connections/{connectionId}/bankFeedAccounts/mapping
 
 ### Check mapping status
 
-Sometimes the mapping isn't immediately saved to the underlying accounting platform and its status in the request remains `pending`. 
+Sometimes the mapping isn't immediately saved to the underlying accounting software and its status in the request remains `pending`. 
 
 Poll the [List bank feed account mappings](/bank-feeds-api#/operations/get-bank-account-mapping) endpoint until the status changes to `connected`. You can then proceed to create bank transactions in the target account.
 
@@ -261,4 +261,4 @@ for status != "connected" {
 ---
 ## Read next
 
-* [Create bank transactions in the accounting platform](/bank-feeds/pushing-transactions)
+* [Create bank transactions in the accounting software](/bank-feeds/pushing-transactions)

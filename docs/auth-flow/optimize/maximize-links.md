@@ -60,7 +60,7 @@ Portal
 The portal implementation of the link flow involves you manually sending the link URL to the business. Tips to maximise links:
 
 Identify target groups and send the general Codat Intro Link to all customers or prospects in that group
-Make it clear that the business can revoke consent at any point in their accounting platform
+Make it clear that the business can revoke consent at any point in their accounting software
 Consider embedding the auth flow in your application journey
 Messaging considerations
 
@@ -87,14 +87,14 @@ Sharing financial data manually will not be the norm in years to come – let th
 At the first point of engagement, data is manually extracted in the format that it is required which means they don’t have to download from different systems and format, they can spend time focused on their business and making that successful.
 Better rates - if you save money from the initial onboarding/ongoing servicing/reduction in bad debts, can you pass some of that benefit on to the customer?
 The link process enables small businesses to be serviced at competitive rates; using manual processes this segment is not profitable to service
-Consider using Codat’s push functionality to input lending transactions into the accounting platform on their behalf, reducing the manual work for your customer even further
+Consider using Codat’s push functionality to input lending transactions into the accounting software on their behalf, reducing the manual work for your customer even further
 Suggested language
 
 Two examples of messaging to build into your flow or share with your clients:
 
 Example 1
 
-We are looking to improve security around data sharing by leveraging the strict consent mechanisms used by accounting platform providers. You will be asked to login and connect your accounting platform, to securely share the requested financial information required for your application and on-going monitoring of your credit facility.
+We are looking to improve security around data sharing by leveraging the strict consent mechanisms used by accounting software providers. You will be asked to login and connect your accounting software, to securely share the requested financial information required for your application and on-going monitoring of your credit facility.
 
 This means you will be explicitly giving consent to share your financial data with us only, and this connection can be removed at any time, should you choose. And don't worry – your data is encrypted and protected in line with modern safety standards.
 

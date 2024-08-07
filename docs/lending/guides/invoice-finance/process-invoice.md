@@ -27,7 +27,7 @@ This diagram shows the steps of the invoice financing process as performed by th
     backend ->> codat: Create company
     codat ->> backend: New company
     backend ->> frontend: New application
-    frontend ->> codat: Link accounting platform
+    frontend ->> codat: Link accounting software
     par
         break when status is Complete/ProcessingError
         loop
@@ -75,7 +75,7 @@ Codat returns the company and application `id`s in the endpoint response togethe
 ```
 ### <input type="checkbox" unchecked /> Share financial data  
 
-Next, you need to provide Codat with access to an accounting platform so we can fetch the data required to assess the risk of the loan application. Open the `linkUrl` returned in the response from `POST /applications/start` in your browser. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
+Next, you need to provide Codat with access to an accounting software so we can fetch the data required to assess the risk of the loan application. Open the `linkUrl` returned in the response from `POST /applications/start` in your browser. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
 
 Select the **Codat Sandbox** as the source of accounting data.
 * Choose the **Invoice Financing US Company** company type.
@@ -105,7 +105,7 @@ Try these suggestions to make the most of your experience with the demo app:
   Start another loan application, and choose a different Sandbox company type to get a different set of financial data to be used in the decision-making. 
 
 - **Use a company's real data**  
-  Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
+  Take the demo one step further and use real credentials to access existing financial data in an accounting software. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
 - **Inspect the invoice financing logic**  
   We provide [detailed information](/lending/guides/invoice-finance/inv-fin-decision) about the risk assessment logic we included in our demo app, and how exactly the financial data is fetched and analyzed. 

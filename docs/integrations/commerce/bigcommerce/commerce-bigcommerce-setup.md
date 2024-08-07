@@ -4,9 +4,9 @@ description: "Explore our API integration with BigCommerce"
 sidebar_label: Setup
 ---
 
-Set up the [BigCommerce](/integrations/commerce/bigcommerce/commerce-bigcommerce) integration to retrieve commerce data from your SMB customers who sell their products on the BigCommerce platform.
+Set up the [BigCommerce](/integrations/commerce/bigcommerce/commerce-bigcommerce) integration to retrieve commerce data from your SMB customers who sell their products on the BigCommerce software.
 
-With this integration, your SMB customers (merchants who sell on the BigCommerce platform) must retrieve secure credentials from their BigCommerce store and then enter them in Link as part of the authorization flow.
+With this integration, your SMB customers (merchants who sell on the BigCommerce software) must retrieve secure credentials from their BigCommerce store and then enter them in Link as part of the authorization flow.
 
 :::caution Test the integration first
 

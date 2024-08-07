@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-Once the mapping is complete, your SMB customer will make a payment from your application, which you should then record and reconcile back to the SMB's accounting platform. A **bill payment** represents an allocation of money within any of your customer's accounts payable (AP) accounts.
+Once the mapping is complete, your SMB customer will make a payment from your application, which you should then record and reconcile back to the SMB's accounting software. A **bill payment** represents an allocation of money within any of your customer's accounts payable (AP) accounts.
 
 You can see how this flow completes on our detailed process diagram below. 
 
@@ -23,7 +23,7 @@ You can see how this flow completes on our detailed process diagram below.
       participant smb as SMB customer
       participant app as Your application 
       participant codat as Codat
-      participant acctg as Accounting platform
+      participant acctg as Accounting software
       
       smb ->> app: Pays a bill
       app ->> codat: Creates bill payment
@@ -510,7 +510,7 @@ Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for
 
 ### Batch bill payment
 
-In some accounting platforms (for example, Xero) your SMB customer can make a batch payment. It allows them to pay multiple bills from multiple suppliers in a single payment.
+In some accounting software (for example, Xero) your SMB customer can make a batch payment. It allows them to pay multiple bills from multiple suppliers in a single payment.
 
 To do this with Sync for Payables, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and leave the `supplierRef` parameter blank.
 
@@ -1208,7 +1208,7 @@ billCreditNoteCreateResponse, err := payablesClient.BillCreditNotes.Create(ctx,
 
 Now that you have the credit note, offset its balance against outstanding bills. [Create a bill payment](/payables/payments#single-bill-payment) and include the credit note in the `links` array.
 
-In some accounting platforms, you can combine a credit note and a partial payment to pay off the full balance of a bill.
+In some accounting software, you can combine a credit note and a partial payment to pay off the full balance of a bill.
 
 <Tabs>
 

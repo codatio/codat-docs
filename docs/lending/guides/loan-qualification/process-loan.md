@@ -77,7 +77,7 @@ Once you receive the application id, complete the application form using the `/a
 
 🙏🏽 This step is normally performed by the borrower.
 
-Next, you need to provide Codat access to an accounting platform so that we can fetch the data required to underwrite the application. Open the `linkUrl` returned by the new application response in your browser window. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
+Next, you need to provide Codat access to an accounting software so that we can fetch the data required to underwrite the application. Open the `linkUrl` returned by the new application response in your browser window. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
 
 Select the **Codat Sandbox** as the source of accounting data.
 * You can choose any company type that best fits your use case.
@@ -121,7 +121,7 @@ Try these suggestions to make the most of your experience with the demo app:
   Start another loan application, and choose a different Sandbox company type to get a different set of financial data to be used in the decision-making. 
 
 - **Use a company's real data**  
-  Take the demo one step further and use real credentials to access existing financial data in an accounting platform. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
+  Take the demo one step further and use real credentials to access existing financial data in an accounting software. Set up the [integration](/integrations/accounting/overview) you plan to use, and connect to it while following the auth flow. Then, review how the app makes a decision based on your company's real data. 
 
 - **Inspect the loan qualification logic**  
   We provide [detailed information](/lending/guides/loan-qualification/uw-decision) about the loan qualification logic we included in our demo app, and how exactly the financial data is fetched. 

@@ -15,7 +15,7 @@ Quickly provide an outstanding mapping experience for your customers with minima
 
 ## Map an account
 
-Direct your customer to the `linkUrl` returned in the [Create a connection](/bank-feeds/create-account#create-a-connection) response. After they've authorized your access to their accounting software, they'll be taken to Codat's mapping UI (as seen on the screenshot below) where they will map their source account to an existing or a new target account within their accounting platform. 
+Direct your customer to the `linkUrl` returned in the [Create a connection](/bank-feeds/create-account#create-a-connection) response. After they've authorized your access to their accounting software, they'll be taken to Codat's mapping UI (as seen on the screenshot below) where they will map their source account to an existing or a new target account within their accounting software. 
 
 ![Codat-bank-feeds_account-mapping-ui](/img/bank-feeds/mappingUi.png "Codat-provided account mapping UI")
 
@@ -148,4 +148,4 @@ To disconnect a source bank account, the SMB user should hover over the **connec
 
 ## Read next
 
-* [Create bank transactions in the accounting platform](/bank-feeds/pushing-transactions)
+* [Create bank transactions in the accounting software](/bank-feeds/pushing-transactions)

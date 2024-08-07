@@ -150,4 +150,4 @@ The extension might take 10–20 minutes to install and the installation page mi
 
 Be aware that fetch errors might occur during the installation.
 
-If the latest version of the extension is uninstalled or unpublished, Codat is unable to retrieve all the required data from the accounting platform.
+If the latest version of the extension is uninstalled or unpublished, Codat is unable to retrieve all the required data from the accounting software.

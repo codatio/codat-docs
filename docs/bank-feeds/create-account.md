@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-When implementing your bank feed solution, you need to create your customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection and creating a source account to represent the company's actual bank account.
+When implementing your bank feed solution, you need to create your customer as a [company](../terms/company) in Codat before registering their accounting software as a connection and creating a source account to represent the company's actual bank account.
 
 You can see how these elements fit together and where they sit in the overall bank feeds process on the diagram below.
 
@@ -25,7 +25,7 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 Within Bank Feeds API, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software. 
 
 Use the [Create company](/bank-feeds-api#/operations/create-company) endpoint to represent your customer in Codat.
-Make sure to store the company ID as you will use it to establish a connection to an accounting platform. 
+Make sure to store the company ID as you will use it to establish a connection to an accounting software. 
 
 <Tabs>
 
@@ -102,9 +102,9 @@ if companyResponse.StatusCode == 200 {
 
 Next, use the [Create connection](/bank-feeds-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source. 
 
-In the request body, specify a `platformKey` of the accounting platform you're looking to connect.
+In the request body, specify a `platformKey` of the accounting software you're looking to connect.
 
-| Accounting platform | platformKey |
+| Accounting software | platformKey |
 | ---  | ---  |
 | Quickbooks Online Bankfeeds | `hcws` |
 | Oracle NetSuite | `akxx` |
@@ -251,7 +251,7 @@ fmt.Println(connectionOtpResponse.Connection.LinkUrl)
 
 ### Deauthorize a connection
 
-If your customer wants to revoke their approval and sever the connection to their accounting package, use the [Unlink connection](/bank-feeds-api#/operations/unlink-connection) endpoint.
+If your customer wants to revoke their approval and sever the connection to their accounting software, use the [Unlink connection](/bank-feeds-api#/operations/unlink-connection) endpoint.
 
 You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI. 
 
@@ -580,5 +580,5 @@ Next, provide your customer with a **mapping** process interface so they can ass
 
 ## Read next
 
-* Enable your customer to map accounts to their accounting platform via a [mapping UI](/bank-feeds/mapping/overview).
+* Enable your customer to map accounts to their accounting software via a [mapping UI](/bank-feeds/mapping/overview).
 

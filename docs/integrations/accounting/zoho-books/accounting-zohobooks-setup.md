@@ -4,7 +4,7 @@ description: "Explore our API integration with Zoho Books."
 sidebar_label: Setup
 ---
 
-Zoho Books is a global accounting package with customers in the UK, US, Australia, India, and South Africa.
+Zoho Books is a global accounting software with customers in the UK, US, Australia, India, and South Africa.
 
 Before you can access data from customers using Zoho Books for their accounting, you need to set up a Zoho Books integration in the Codat Portal. You'll need to:
 

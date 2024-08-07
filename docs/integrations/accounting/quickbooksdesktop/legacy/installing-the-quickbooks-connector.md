@@ -56,7 +56,7 @@ Additionally, the file is signed with an Extended Validation Code Signing Digita
 
 :::
 
-If you're using the Codat Link flow, the user can download the connector after they've selected QuickBooks Desktop as their accounting package.
+If you're using the Codat Link flow, the user can download the connector after they've selected QuickBooks Desktop as their accounting software.
 
 If you've built your own Link flow, the **linkUrl** field on the company's QuickBooks data connection will initiate the installer download.
 

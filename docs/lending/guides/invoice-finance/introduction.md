@@ -17,7 +17,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### Summary
 
-🎯 With our demo app, you will go through the invoice financing process flow, from establishing a connection with a borrower's accounting platform to issuing a decision on selected invoices. You will see how Codat makes it easier for the borrower to raise capital against the amounts due from customers, and for the lender to make an invoice financing decision. 
+🎯 With our demo app, you will go through the invoice financing process flow, from establishing a connection with a borrower's accounting software to issuing a decision on selected invoices. You will see how Codat makes it easier for the borrower to raise capital against the amounts due from customers, and for the lender to make an invoice financing decision. 
 
 ⏳ Estimated time to complete: 15-25 minutes
 
@@ -25,7 +25,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### ✔️ Delve into the demo app to...
 
-- Establish a connection with our test accounting platform
+- Establish a connection with our test accounting software
 - Pull invoice data required for the financing assessment
 - Check the invoices' eligibility based on a set of criteria we defined in the app
 - Issue a decision on eligible invoices
@@ -49,11 +49,11 @@ The demo app relies on Codat's [Lending API](/lending/overview) product, which s
 
 - Invoice collection
 
-    We remove the manual effort of uploading and extracting invoice data with our accounting platform integrations, saving your team’s time and effort and providing the borrower with a better digital experience.
+    We remove the manual effort of uploading and extracting invoice data with our accounting software integrations, saving your team’s time and effort and providing the borrower with a better digital experience.
 
 - Risk assessment
 
-    Our accounting platform integrations give you real-time insight into the financial health of a business and its customers, allowing you to make better invoice financing decisions.
+    Our accounting software integrations give you real-time insight into the financial health of a business and its customers, allowing you to make better invoice financing decisions.
 
 ---
 

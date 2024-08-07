@@ -6,14 +6,14 @@ description: "Reconcile payments to the SMB's accounting software"
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-When the user has completed their mapping and makes a payment from your application, this can then be reconciled back to the users accounting platform. 
+When the user has completed their mapping and makes a payment from your application, this can then be reconciled back to the users accounting software. 
 A bill payment in Codat usually represents an allocation of money within any customer accounts payable account. This includes, but is not strictly limited to:
 
 - A payment made against a bill — for example, a credit card payment, cheque payment, or cash payment.
 - An allocation of a supplier's credit note to a bill or perhaps a refund.
 - A bill payment made directly to an accounts payable account. This could be an overpayment or a prepayment, or a refund of a payment made directly to an accounts payable account.
 
-Depending on the bill payments which are allowed by the underlying accounting package, some of these types may be combined.
+Depending on the bill payments which are allowed by the underlying accounting software, some of these types may be combined.
 
 ## Paying a bill with a billPayment
 
@@ -730,7 +730,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 Once the credit note has been created, you can offset the balance of the credit note against any outstanding invoices by creating a billPayment.
 
-For some accounting platforms, you can also use a combination of a `billCreditNote` and partial payment to pay off the full balance of a `bill`.
+For some accounting software, you can also use a combination of a `billCreditNote` and partial payment to pay off the full balance of a `bill`.
 
 ##### Allocating a Credit note against a bill
 <Tabs>

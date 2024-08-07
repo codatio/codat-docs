@@ -1,15 +1,15 @@
 ---
-title: "2024-01-10: Changes to how deleted data in accounting platforms is handled"
+title: "2024-01-10: Changes to how deleted data in accounting software is handled"
 date: "2023-10-04"
 tags: ["Deprecation", "Accounting integrations", "Delete" ]
 authors: dcoplowe
 ---
 
-On **January 10, 2024**, we will change how we handle data deleted by users in accounting platforms.
+On **January 10, 2024**, we will change how we handle data deleted by users in accounting software.
 
 <!--truncate-->
 
-When data is deleted by a user in the SMB's accounting platform between two successive data pulls, Codat sets the `metaData.isDeleted` property to `true`. This ensures there is consistency in records returned between successive data pulls and clearly identifies records deleted by a user.
+When data is deleted by a user in the SMB's accounting software between two successive data pulls, Codat sets the `metaData.isDeleted` property to `true`. This ensures there is consistency in records returned between successive data pulls and clearly identifies records deleted by a user.
 
 **Today, for some data types, Codat also updates the `status` property of the deleted record. **
 

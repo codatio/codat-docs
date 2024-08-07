@@ -648,7 +648,7 @@ func main() {
 
 Query: `metadata.isDeleted!=true`
 
-Codat identifies records that have been deleted in the source accounting platform between successive data syncs using the `isDeleted` flag. You may need to exclude these records from the results.
+Codat identifies records that have been deleted in the source accounting software between successive data syncs using the `isDeleted` flag. You may need to exclude these records from the results.
 
 <Tabs>
 

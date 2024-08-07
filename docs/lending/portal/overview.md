@@ -39,7 +39,7 @@ The Profit and Loss page is the landing page when accessing Lending. The page co
 
 ![A screenshot of the P&L selection panel](/img/old/e8a9d6f-PLSelectionPanel3.png)
 
-**Currency**: The currency displayed in the profit and loss statement. This is predefined for the P&L and reflects the currency in the accounting platform.
+**Currency**: The currency displayed in the profit and loss statement. This is predefined for the P&L and reflects the currency in the accounting software.
 
 **Period start**: Periods are defined in months. Financial statements are backward looking, so this is the period you want to start looking back from. The system will prefill the latest full month available in the company's data. If you select a month that’s out of range, the system will notify you of the latest available month for the company.
 
@@ -113,7 +113,7 @@ The **Data match** percentage displayed in the top right is a comparison of how 
 
 ![A screenshot of the balance sheet selection panel](/img/old/05c0127-BSSelectionPanel2.png)
 
-**Currency**: The currency displayed in the balance sheet statement. This is predefined for the balance sheet and reflects the currency in the accounting platform.
+**Currency**: The currency displayed in the balance sheet statement. This is predefined for the balance sheet and reflects the currency in the accounting software.
 
 **Period start**: Periods are defined in months. Financial statements are backwards looking, so this is the period you want to start looking back from. The system will prefill the latest full month available in the company's data. If you select a month that’s out of range, the system will notify you of the latest available month for the company.
 
@@ -141,7 +141,7 @@ The statement displays balance sheet data based on the **Period start**, **Perio
 
 #### Statement format
 
-Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting package. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](/lending/portal/categorization-of-accounts#how-to-categorize-accounts).
+Each statement has four levels. The fourth level is the original line item (general ledger account) in the company’s accounting software. The first three levels represent a smart categorization layer that we have applied. If you want to change the group that a line item is categorized to, you can do this by following the [instructions for categorizing accounts](/lending/portal/categorization-of-accounts#how-to-categorize-accounts).
 
 ##### Categorizing debit accounts
 
@@ -263,7 +263,7 @@ The Marketing page displays graphs for the **Marketing to revenue** and **Market
 
 The dismissible banner displayed at the top of the _Marketing_ page invites you to our <a className="external" href="https://portal.productboard.com/codat/7-product-roadmap/c/459-marketing-metrics" target="_blank">product roadmap</a> to let us know which platforms and insights you would be interested in.
 
-**Currency**: This reflects the currency in the accounting platform.
+**Currency**: This reflects the currency in the accounting software.
 
 **Period start**: Periods are defined in months. Statements are backwards looking, so this is the period you want to start looking back from. The system will prefill the latest full month available in the company's data. If you select a month that’s out of range, the system will notify you of the latest available month for the company.
 

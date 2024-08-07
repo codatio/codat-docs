@@ -13,7 +13,7 @@ Sync for Commerce is in beta. If you are interested in building with Sync for Co
 Before Codat can accept the data from your merchant, the merchant must:
 
 - Authorize access to their data
-- Define how the data should be be mapped to their accounting platform
+- Define how the data should be be mapped to their accounting software
 - Set a synchronization schedule
 
 Our Sync configuration flow handles this for you.
@@ -22,7 +22,7 @@ You can [customize your flow](/sfc/build-with-sync-for-commerce/customizing-the-
 
 ### 1. Retrieve the Sync configuration flow URL
 
-After the merchant selects their accounting platform, they should be immediately redirected to a secure URL leading them to the Sync configuration flow. To retrieve the secure URL, make the following request:
+After the merchant selects their accounting software, they should be immediately redirected to a secure URL leading them to the Sync configuration flow. To retrieve the secure URL, make the following request:
 
 ```http
 GET config/sync/commerce/lqai/{platformKey}/start?merchantIdentifier={companyId}
@@ -64,7 +64,7 @@ The resulting Sync Flow URL will include the redirect URL as shown in this examp
 
 ### 2. Authorization
 
-The merchant will be redirected to an authorization page for the accounting platform they selected. They need to enter their credentials.
+The merchant will be redirected to an authorization page for the accounting software they selected. They need to enter their credentials.
 
 Once successful, they will have created a valid Connection, and will be redirected to the configuration step.
 
@@ -77,8 +77,8 @@ If you used our Link or Hosted Link solutions for platform selection, this step 
 
 Once authorized, the merchant is presented with Codat’s white-labeled configuration flow and is prompted to configure the data synchronization:
 
-- Choose which accounts within their accounting platform to push the data into
-- Link tax rates from their accounting platform to those used for their ecommerce or POS data
+- Choose which accounts within their accounting software to push the data into
+- Link tax rates from their accounting software to those used for their ecommerce or POS data
 - Schedule the start date, start time, and frequency of the [regular data synchronization](/sfc/sync-for-commerce-knowledge-base/synchronization-schedule)
 - Set up the default invoice status
 - Set up the data grouping period
@@ -95,11 +95,11 @@ To allow the merchants to review and modify their connection, present them with 
 - Enable and disable data synchronization
 - Schedule the start date, start time, and frequency of the [regular data synchronization](/sfc/sync-for-commerce-knowledge-base/synchronization-schedule)
 - See the date and time of the last sync and the next one
-- Review and change which accounts within their accounting platform to push the data into (see [Mapping specifications](/sfc/mapping-specifications/overview) for more information)
+- Review and change which accounts within their accounting software to push the data into (see [Mapping specifications](/sfc/mapping-specifications/overview) for more information)
 - Review and change the tax rates mapping
 - Set up the default invoice status
 - Set up the data grouping period
-- De-authorize the connection to their accounting platform
+- De-authorize the connection to their accounting software
 
 :::caution Sync connection deleted
 

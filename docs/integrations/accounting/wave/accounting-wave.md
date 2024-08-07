@@ -11,7 +11,7 @@ View the coverage of our Wave integration in the <a className="external" href="h
 
 ## Set up the integration
 
-Wave is a global accounting platform that simplifies accounting processes for small business owners.
+Wave is a global accounting software that simplifies accounting processes for small business owners.
 
 Before you can access data from customers using Wave for their accounting, you need to set up a Wave integration in the Codat portal. You'll need to:
 

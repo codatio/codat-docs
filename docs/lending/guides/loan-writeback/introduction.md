@@ -14,23 +14,23 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-This guide takes you through the steps needed to implement and run the loan writeback procedure in your lending business using Codat. You will learn how to configure Codat and use it to create transactions that represent the deposit and repayment of the loan in your customers' accounting platforms. 
+This guide takes you through the steps needed to implement and run the loan writeback procedure in your lending business using Codat. You will learn how to configure Codat and use it to create transactions that represent the deposit and repayment of the loan in your customers' accounting software. 
 
 This solution covers the loan writeback procedure for both general lending, such as term loans, and selective invoice finance.
 
 ### What is loan writeback?
 
-Loan writeback (also known as lending writeback) is the process of continuously updating an accounting platform with information about a loan. It helps maintain an accurate position of the loan during the entire lending cycle by recording the loan liability, any interest, fees, or repayments, and facilitating the reconciliation of bank accounts.
+Loan writeback (also known as lending writeback) is the process of continuously updating an accounting software with information about a loan. It helps maintain an accurate position of the loan during the entire lending cycle by recording the loan liability, any interest, fees, or repayments, and facilitating the reconciliation of bank accounts.
 
 :::tip Bank feeds for loan writeback
 
-Loan writeback requires the lender to support the [bank feeds](/bank-feeds/overview) functionality so that the lender can record their own bank transactions associated with issuing the loan in their borrower's accounting platform. 
+Loan writeback requires the lender to support the [bank feeds](/bank-feeds/overview) functionality so that the lender can record their own bank transactions associated with issuing the loan in their borrower's accounting software. 
 
 :::
 
 ### Why use it?
 
-A bookkeeper can account for a loan in numerous ways in an accounting platform. For example, some bookkeepers may erroneously register a loan as a direct income or even a sales invoice. 
+A bookkeeper can account for a loan in numerous ways in an accounting software. For example, some bookkeepers may erroneously register a loan as a direct income or even a sales invoice. 
 
 This results in loans being improperly recorded as revenue and repayments as operating costs. At the end of the reporting period, this can make it hard for the bookkeeper to close their books. 
 
@@ -38,19 +38,19 @@ By implementing loan writeback functionality in your application, you can make s
 
 :::info Mandatory loan writeback
 
-Certain accounting platforms **require** lenders to continuously update their books with money lent to SMBs. For example, **Xero** obligates lenders going through the [App Partner certification](/integrations/accounting/xero/xero-app-partner-program) process to handle the writeback process. 
+Certain accounting software **require** lenders to continuously update their books with money lent to SMBs. For example, **Xero** obligates lenders going through the [App Partner certification](/integrations/accounting/xero/xero-app-partner-program) process to handle the writeback process. 
 
 :::
 
 ### What's the process?
 
-The process of loan writeback involves recording loan withdrawals, repayments, and interest in the SMB's accounting platform. It can be split into three stages, as shown on the diagram below: 
+The process of loan writeback involves recording loan withdrawals, repayments, and interest in the SMB's accounting software. It can be split into three stages, as shown on the diagram below: 
 
 1. **Configure** loan writeback for your SMB customer.  
 
-2. **Deposit** the loan and reflect it in the SMB's accounting platform.
+2. **Deposit** the loan and reflect it in the SMB's accounting software.
 
-3. **Record** payments owed to you, the lender, in your SMB's accounting platform. 
+3. **Record** payments owed to you, the lender, in your SMB's accounting software. 
 
 The first two steps are identical for the general lending and invoice finance scenarios. The process of recording repayments differs based on the lending option.
 
@@ -92,7 +92,7 @@ The lender agrees to provide an SMB a loan of £10,000 and charges a fee of £20
 
 The lender deposits £10,000 into the SMB's nominated bank account. Next month, the borrower repays the first half of the loan and repays the loan in full the month after.
 
-In the example, you can also see that each bank feed transaction matches a bank account transaction in the accounting platform. This helps the borrower to reconcile both bank accounts.
+In the example, you can also see that each bank feed transaction matches a bank account transaction in the accounting software. This helps the borrower to reconcile both bank accounts.
 
 ![A GIF showing the money flow of a general loan writeback](/img/lending/loan-writeback-general-lending-example.gif)
 
@@ -113,7 +113,7 @@ As a result, the lender's account transactions balance to zero, and the advance 
 
 ## Prerequisites
 
-* Check that you have [created a Codat company](/configure/portal/companies#add-a-new-company) that represents your SMB customer and linked it to an accounting platform. If you are already using Codat for lending, it's likely you have previously created some companies. 
+* Check that you have [created a Codat company](/configure/portal/companies#add-a-new-company) that represents your SMB customer and linked it to an accounting software. If you are already using Codat for lending, it's likely you have previously created some companies. 
 
   You should also create and connect a test company to use while building your solution.
 

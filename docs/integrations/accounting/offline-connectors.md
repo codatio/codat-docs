@@ -10,7 +10,7 @@ You can choose whether the Sage 50 (UK & Ireland) and QuickBooks Desktop on-prem
 Two options for connector setup are available.
 
 - **Install on the customer's machine (default):** After the connector is installed, the customer's data is periodically updated in the Codat portal. The connector remains installed on the user's computer.
-- **Do not install / one-time sync:** After data is uploaded from the customer's accounting platform, the connector removes itself from the user's computer. A one-time sync is performed when the user runs the connector.
+- **Do not install / one-time sync:** After data is uploaded from the customer's accounting software, the connector removes itself from the user's computer. A one-time sync is performed when the user runs the connector.
 
 If you opt to install the connector, you'll be able to refresh your customers' data in future, with no action required by them.
 

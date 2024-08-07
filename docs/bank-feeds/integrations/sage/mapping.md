@@ -1,6 +1,6 @@
 ---
 title: "Sage Bank feeds mapping"
-description: "Push bank transaction data into your customers' accounting platforms with an automated feed."
+description: "Push bank transaction data into your customers' accounting software with an automated feed."
 sidebar_label: Map accounts
 displayed_sidebar: bankfeeds
 hide_description: true

@@ -4,7 +4,7 @@ description: "Tips and advice on managing inconsistent accounts across your user
 sidebar_label: "Mapping interface"
 ---
 
-Accounting platforms that your customers use normally offer them a default set of accounts (also known as chart of accounts), pre-defined to match accounting best practices. Your customers then have the ability to rename and renumber these accounts, or create new ones, to match their business needs. 
+Accounting software that your customers use normally offer them a default set of accounts (also known as chart of accounts), pre-defined to match accounting best practices. Your customers then have the ability to rename and renumber these accounts, or create new ones, to match their business needs. 
 
 This results in discrepancies of the accounts list across your customer base. To manage that and use accounts specific to your customers, provide your customers with an **account mapping user interface**. 
 
@@ -48,7 +48,7 @@ Build your account mapping process to use the Codat API as follows:
 
 :::tip Missing accounts
 
-If a new account is required for correct mapping, you can offer your customer to create one. You will need a user interface that supports additional steps, such as populating fields required for account creation by the specific accounting platform. 
+If a new account is required for correct mapping, you can offer your customer to create one. You will need a user interface that supports additional steps, such as populating fields required for account creation by the specific accounting software. 
 
 Read our guidance on [creating, updating, and deleting data](/using-the-api/push) with Codat.
 :::

@@ -5,13 +5,13 @@ tags: ["Product", "Update", "Sync for Payables"]
 authors: rohoward
 ---
 
-Handle your customers' essential accounts payable workflows across major accounting platforms with our synchronous bill pay solution.
+Handle your customers' essential accounts payable workflows across major accounting software with our synchronous bill pay solution.
 
 <!--truncate-->
 
 ## What’s new? 
 
-The [Bill pay kit](/payables/bill-pay-kit) is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms. 
+The [Bill pay kit](/payables/bill-pay-kit) is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting software. 
 
 With the Bill pay solution kit, you can: 
 

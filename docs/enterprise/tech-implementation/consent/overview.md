@@ -57,7 +57,7 @@ Codat uses OAuth 2.0 to facilitate the consent and authentication process betwee
 
 **How does the user login?**
 
-Each accounting package has a slightly different login & consent experience. In general, cloud-based packages require a username and password login once they user has been redirected.
+Each accounting software has a slightly different login & consent experience. In general, cloud-based packages require a username and password login once they user has been redirected.
 
 **What happens when a customer connects?**
 

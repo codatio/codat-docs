@@ -11,7 +11,7 @@ import { accountingIntegrations, bankingIntegrations } from "@components/Integra
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Our **accounts receivable** feature offers a thorough breakdown of a borrower's debtors ledger sourced from their accounting platform. You can examine the ledger in its entirety or delve into specific customer histories, enabling full automation of the receivables financing process.
+Our **accounts receivable** feature offers a thorough breakdown of a borrower's debtors ledger sourced from their accounting software. You can examine the ledger in its entirety or delve into specific customer histories, enabling full automation of the receivables financing process.
 
 ## Use cases
 

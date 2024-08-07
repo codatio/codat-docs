@@ -1,6 +1,6 @@
 ---
 title: "Sync for Commerce overview"
-description: "Embedded accounting integrations for PoS and eCommerce platforms"
+description: "Embedded accounting integrations for PoS and eCommerce software"
 image: "/img/banners/social/commerce.png"
 sidebar_label: Sync for Commerce
 displayed_sidebar: commerce
@@ -11,7 +11,7 @@ banner_title: Sync for Commerce
 banner_class: commerce
 banner_icon: "/img/logos/products/logo_sfc_clear.svg"
 banner_image: "/img/banners/sfc-charts.png"
-banner_text: "Embedded accounting integrations for Point of Sale, Payment, and eCommerce platforms"
+banner_text: "Embedded accounting integrations for Point of Sale, Payment, and eCommerce software"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Sync for Commerce?
 ---
@@ -20,7 +20,7 @@ import {IntegrationsList} from '@components/Integrations'
 import {integrationsFilterCommerceAcc, integrationsFilterCommerceComm} from '@components/Integrations/integrations'
 import Clients from '@components/Clients'
 
-Accounting for sales is a major pain point for merchants. It usually involves them manually replicating data from Point of Sale (POS), Payment, and eCommerce platforms in their accounting software. This is often done via multiple manual bulk data downloads and data manipulation in spreadsheets and in the software.
+Accounting for sales is a major pain point for merchants. It usually involves them manually replicating data from Point of Sale (POS), Payment, and eCommerce software in their accounting software. This is often done via multiple manual bulk data downloads and data manipulation in spreadsheets and in the software.
 
 The labor-intensive nature of this work means it is typically done infrequently, leaving many merchants unable to leverage their accounting software to understand their business’s performance.
 
@@ -126,7 +126,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 
 <IntegrationsList filter={integrationsFilterCommerceAcc}/>
 
-### Commerce platforms
+### Commerce software
 
 <IntegrationsList filter={integrationsFilterCommerceComm}/>
 

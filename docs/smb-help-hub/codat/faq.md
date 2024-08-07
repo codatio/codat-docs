@@ -6,7 +6,7 @@ sidebar_label: What is Codat?
 
 ## What is Codat?
 
-Businesses depend on a suite of software. Whether it's accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, or eCommerce platforms like Shopify and Amazon Seller Central - these are the tools that make a business tick.
+Businesses depend on a suite of software. Whether it's accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, or eCommerce software like Shopify and Amazon Seller Central - these are the tools that make a business tick.
 
 This software serves as the definitive source for a business's activities. Financial service providers need access to this data so that they can offer their services to the business. 
 

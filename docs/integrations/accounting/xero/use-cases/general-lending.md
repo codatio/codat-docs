@@ -76,7 +76,7 @@ Data Model: Bank account
 GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts (link)
 0.2 Expense account
 
-In order to push fees an expense account is required. The user should be able to select an existing account from their accounting platform OR create a new one.
+In order to push fees an expense account is required. The user should be able to select an existing account from their accounting software OR create a new one.
 
 Map existing expense account
 

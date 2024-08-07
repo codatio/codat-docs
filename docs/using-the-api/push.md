@@ -8,7 +8,7 @@ import TabItem from "@theme/TabItem";
 
 :::note Data coverage
 
-View the full details of Codat's support for creating and updating data for each accounting platform in our <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
+View the full details of Codat's support for creating and updating data for each accounting software in our <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
 
 :::
 

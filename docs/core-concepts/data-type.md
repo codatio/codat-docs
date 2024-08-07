@@ -18,10 +18,10 @@ The data types you use will depend on the Codat product you use. For reference, 
         src="/img/wp-icons/Calculator.png"
         className="mini-icon"
       />
-      <h3>Accounting platforms</h3>
+      <h3>Accounting software</h3>
     </div>
     <p>
-      For example, invoices and bills from an accounting platform.
+      For example, invoices and bills from an accounting software.
     </p>
   </li>
   <li className="card">
@@ -42,7 +42,7 @@ The data types you use will depend on the Codat product you use. For reference, 
         src="/img/wp-icons/Storefront.png"
         className="mini-icon"
       />
-      <h3>Commerce platforms</h3>
+      <h3>Commerce software</h3>
     </div>
     <p>
       For example, customers and payments from a POS system.

@@ -66,7 +66,7 @@ Refreshing data can take different amounts of time depending on the integration 
 
 ### Records deleted between syncs
 
-For our accounting source data types, Codat stores records deleted by a company in the underlying accounting platform between successive data syncs to ensure better consistency in the data. If such records are not relevant for your use case, you can exclude them by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag. 
+For our accounting source data types, Codat stores records deleted by a company in the underlying accounting software between successive data syncs to ensure better consistency in the data. If such records are not relevant for your use case, you can exclude them by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag. 
 
 Records that were created and deleted by a company before the first sync took place will never be pulled and stored by Codat. 
 
@@ -84,7 +84,7 @@ However, you can set a more frequent sync schedule if it is required for your us
 
 - **Monthly**: We recommend that you sync at least one data type monthly (e.g. Company info) to ensure connection token does not expire when not actively synchronizing data (unless only a one-time sync is required).
 - **Weekly (recommended)**: Keeps data reasonably fresh, particularly where data types change less frequently, while also reducing the number of required API calls.
-- **Daily**: Gives you close-to-live picture of most data types while staying within the conservative rate limits of most accounting platforms.
+- **Daily**: Gives you close-to-live picture of most data types while staying within the conservative rate limits of most accounting software.
 - **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. 
 
 ## 💡 Tips and traps

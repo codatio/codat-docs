@@ -44,7 +44,7 @@ The response tells you whether match results are available, and, if they are:
 
 In the UK, Open Banking allows you to pull a maximum of 24 months of data but could be less with just 18 or 12 months available.
 
-This means that companies can have data for different date ranges from different sources, which could distort results. For example, if the accounting package has data synced from 2018 and the banking source only has data synced from 2019, the match percentage will be distorted by all the ‘unmatched’ transactions from 2018.
+This means that companies can have data for different date ranges from different sources, which could distort results. For example, if the accounting software has data synced from 2018 and the banking source only has data synced from 2019, the match percentage will be distorted by all the ‘unmatched’ transactions from 2018.
 
 It is recommended that you use match results only for the date range when data from both sources overlap; this is provided for you in the _Overlapping dates_ part of the status response.
 :::

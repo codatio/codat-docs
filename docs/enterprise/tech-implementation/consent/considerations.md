@@ -29,13 +29,13 @@ This question should be added into a wider set of FAQs that are surfaced within 
 
 A customer is likely to be unsure about the underlying technology that allows data to be extracted and surfaced into each relevant application via APIs. 
 
-It is important to provide some comfort to each customer connecting banking and/or accounting packages that their data will be shared very securely via 0Auth2.0.
+It is important to provide some comfort to each customer connecting banking and/or accounting softwares that their data will be shared very securely via 0Auth2.0.
 
 This question should be added into a wider set of FAQs that are surfaced within the Strategic Consent Journey.
 
-#### “What if my accounting package isn’t listed?”
+#### “What if my accounting software isn’t listed?”
 
-A customer might use an accounting package that isn’t covered by Codat’s set of integrations. If this is the case, it is important to provide guidance for the customer. 
+A customer might use an accounting software that isn’t covered by Codat’s set of integrations. If this is the case, it is important to provide guidance for the customer. 
 
 The alternative process will differ for each product, but might involve uploading or sharing data manually.
 
@@ -51,7 +51,7 @@ This question should be added into a wider set of FAQs that are surfaced within 
 
 #### “How do I revoke access”?
 
-A customer will want to know how to revoke access, is be possible via the Strategic Consent Journey UI - as well as the underlying accounting package.
+A customer will want to know how to revoke access, is be possible via the Strategic Consent Journey UI - as well as the underlying accounting software.
 
 This question should be added into a wider set of FAQs that are surfaced within the Strategic Consent Journey.
 

@@ -14,7 +14,7 @@ Typically each company will want to set:
 - Any additional mapping for things like departments and locations
 
 SMB
-Has accounting platform
+Has accounting software
 
 Client
 Has payroll components list
@@ -25,7 +25,7 @@ Has departments, locations,
 
 The payment account is a bank account from which payroll payments can be dispersed from to employees bank accounts. 
 
-A list of the available options in the company's accounting platform can be retrieved from the [bankAccounts](/sync-for-payroll-api#/operations/list-accounts) endpoint:
+A list of the available options in the company's accounting software can be retrieved from the [bankAccounts](/sync-for-payroll-api#/operations/list-accounts) endpoint:
 
 ```http request title="List bank accounts"
 GET https://api.codat.io/companies/{companyId}/data/accounts?query=isBankAccount%3dtrue
@@ -70,7 +70,7 @@ Query parameters can also be used to narrow the list of accounts you want to ret
 
 ### Map accounts
 
-You'll need to build an interface that lists all the payroll components of your system, and allows the user to set which account in their accounting platform it corresponds to.
+You'll need to build an interface that lists all the payroll components of your system, and allows the user to set which account in their accounting software it corresponds to.
 
 For example:
 

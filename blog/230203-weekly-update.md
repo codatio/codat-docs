@@ -15,7 +15,7 @@ A new product for easy syncing with bookkeeping software and ERPs, and other qua
 
 Launch new accounting integrations faster and save on ongoing maintenance by standardizing how you sync with bookkeeping software and ERPs.
 
-Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting platforms through a standardized API.
+Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting software through a standardized API.
 
 [Read the docs...](https://docs.codat.io/expenses/overview)
 

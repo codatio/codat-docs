@@ -1,7 +1,7 @@
 ---
 title: Sync for Payroll overview
 sidebar_label: Sync for Payroll
-description: Manage payroll reconciliation with your customers' accounting platform
+description: Manage payroll reconciliation with your customers' accounting software
 displayed_sidebar: payroll
 image: "/img/banners/social/payroll.png"
 hide_title: true
@@ -20,11 +20,11 @@ import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
 import { integrationsFilterPayroll } from "@components/Integrations/integrations";
 
-Use Codat to integrate your customers' payroll data from their HR and payroll platforms into their accounting platforms and to support its reconciliation.
+Use Codat to integrate your customers' payroll data from their HR and payroll platforms into their accounting software and to support its reconciliation.
 
 ### How Codat helps
 
-[Sync for Payroll](/sync-for-payroll-api) supports HR, payroll, and vertical SaaS companies integrate their product with their customers' accounting platforms. 
+[Sync for Payroll](/sync-for-payroll-api) supports HR, payroll, and vertical SaaS companies integrate their product with their customers' accounting software. 
 
 Integrating with Codat helps your SMB customers remove complexity and repetition from payroll processing, eliminate manual entry and mapping of payroll data, and save time on tasks that usually need to be completed multiple times a month. 
 
@@ -38,7 +38,7 @@ Integrating with Codat helps your SMB customers remove complexity and repetition
 flowchart LR
   subgraph X["Configuration (one time)"]
     subgraph Auth flow
-        A["Visit Link"] --> B["Give access to accounting platform"]
+        A["Visit Link"] --> B["Give access to accounting software"]
     end
     subgraph Map accounts
         C["Get accounts"] --> D["Map payroll components to accounts"]
@@ -51,13 +51,13 @@ flowchart LR
   end
 ```
 
-### [Connect to your SMB's accounting platform](/auth-flow/overview)
+### [Connect to your SMB's accounting software](/auth-flow/overview)
 
-Codat handles authorization and linking to your SMB's accounting platform and takes into account intricate details such as rate limits.
+Codat handles authorization and linking to your SMB's accounting software and takes into account intricate details such as rate limits.
 
 ### [Categorize and map payroll components](mapping)
 
-Each business may need to reconcile payroll costs, pensions, and taxes to different nominal accounts, based on their business type and the accounting platform they use. Codat provides an endpoint to pull chart of accounts and tracking categories data in order to avoid manual categorization efforts and give flexibility to SMBs for reconciling data. As a payroll platform, you will need to build a flexible interface for your customer to perform the mapping.  
+Each business may need to reconcile payroll costs, pensions, and taxes to different nominal accounts, based on their business type and the accounting software they use. Codat provides an endpoint to pull chart of accounts and tracking categories data in order to avoid manual categorization efforts and give flexibility to SMBs for reconciling data. As a payroll platform, you will need to build a flexible interface for your customer to perform the mapping.  
 
 ### [Sync payruns with your customers accounting software](sync-payroll)
 

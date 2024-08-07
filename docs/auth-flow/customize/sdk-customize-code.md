@@ -124,7 +124,7 @@ You should only have one of the banking integrations enabled at a time. This ens
 
 :::tip Enable users without credentials
 
-In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting platform.
+In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting software.
 
 To enable them to proceed and explore your product, make upfront authorization for different integration categories optional. Later, remind them to authorize or give them an option to share a Link URL or even a `mailto:` link.
 
@@ -147,7 +147,7 @@ The property accepts Markdown, meaning you can add links, lists, tables, and mor
 | `banking.fileUpload.subtitle`          |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the banking file upload page. <br/> To use   this, enable the banking file upload by setting the [source type option](/auth-flow/customize/sdk-customize-code#source-types) to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
 | `businessDocuments.fileUpload.subtitle`|`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the business documents file upload page.   <br/> To use this, enable the business documents file upload by setting the [source type option](/auth-flow/customize/sdk-customize-code#source-types) to `true`   or by configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
 | `accounting.dataAccess.consent`<br/>`banking.dataAccess.consent`<br/>`commerce.dataAccess.consent`        |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting an accounting, banking or commerce  platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
-| `accounting.dataAccess.dataTypes`<br/>`banking.dataAccess.dataTypes`<br/>`commerce.dataAccess.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting an accounting, banking or commerce platform.|
+| `accounting.dataAccess.dataTypes`<br/>`banking.dataAccess.dataTypes`<br/>`commerce.dataAccess.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting an accounting, banking or commerce software.|
 | `accounting.dataAccess.additionalConsent.title`<br/>`banking.dataAccess.additionalConsent.title`<br/>`commerce.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their accounting, banking or commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/customize/sdk-customize-code#source-types) to support the additional consent flow. |
 | `accounting.dataAccess.additionalConsent.subtitle`<br/>`banking.dataAccess.additionalConsent.subtitle`<br/>`commerce.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their accounting, banking or commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/customize/sdk-customize-code#source-types) to support the additional consent flow. |
 

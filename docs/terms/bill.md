@@ -10,7 +10,7 @@ In Codat, a bill contains details of:
 - Who the bill was received from — the supplier.
 - What the bill is for — the line items.
 
-Some accounting platforms give a separate name to purchases where the payment is made immediately, such as something bought with a credit card or online payment. One example of this would be QuickBooks Online's expenses.
+Some accounting software give a separate name to purchases where the payment is made immediately, such as something bought with a credit card or online payment. One example of this would be QuickBooks Online's expenses.
 
 You can find these types of transactions in our Direct costs data model.
 

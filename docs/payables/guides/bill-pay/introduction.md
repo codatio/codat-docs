@@ -39,7 +39,7 @@ After using the hosted version, you can clone the repository and [run the demo a
 
 The app illustrates three common tasks in a typical bill payment workflow:
 
-1. Connect to your customer's accounting platform.
+1. Connect to your customer's accounting software.
 
 2. Visualize bills.
 

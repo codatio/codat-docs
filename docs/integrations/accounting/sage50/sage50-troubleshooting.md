@@ -69,7 +69,7 @@ Once the offline connector is installed, you should be able to select the requir
 
 1. Log into your **Sage 50** application and select the company you would like to sync data for. Navigate to **Help > About**, then find and copy the data directory information for this company.
 
-![A screenshot of the interface of Sage 50 accounting platform, with the About section open for Bob's Burgers example company. Among program details, license information and contact details, data directory information is pointed out using a red box and arrow.](/img/integrations/accounting/sage-50/sage50-connector-app-about-section.png)
+![A screenshot of the interface of Sage 50 accounting software, with the About section open for Bob's Burgers example company. Among program details, license information and contact details, data directory information is pointed out using a red box and arrow.](/img/integrations/accounting/sage-50/sage50-connector-app-about-section.png)
 
 2. Return to the connector and paste the copied data directory information in the data directory field. Enter the username and password associated with that company and click the "Link company and perform sync" button. 
 

@@ -5,7 +5,7 @@ description: "Things to know when synchronizing data with Dynamics 365 Business 
 sidebar_label: Reference
 ---
 
-The way in which Dynamics 365 Business Central handles certain data types affects the data that is pulled from the accounting platform into Codat. This article highlights things to look out for when you view datasets.
+The way in which Dynamics 365 Business Central handles certain data types affects the data that is pulled from the accounting software into Codat. This article highlights things to look out for when you view datasets.
 
 ## Null values in invoices, bills, credit notes, and bill credit notes
 

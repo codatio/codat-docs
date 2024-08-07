@@ -11,7 +11,7 @@ import { accountingIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Our **accounts payable** feature offers a thorough breakdown of a borrower's creditors ledger sourced from their accounting platform. You can examine the ledger in its entirety or delve into specific supplier histories, enabling full automation of the payables financing process.
+Our **accounts payable** feature offers a thorough breakdown of a borrower's creditors ledger sourced from their accounting software. You can examine the ledger in its entirety or delve into specific supplier histories, enabling full automation of the payables financing process.
 
 ## Use cases
 

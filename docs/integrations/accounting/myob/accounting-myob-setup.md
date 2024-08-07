@@ -8,7 +8,7 @@ sidebar_label: Setup
 
 MYOB have migrated their Essentials API to a new version. The new version will be using the AccountRight API. You can read more about the update on <a href="https://developer.myob.com/api/accountright/v2//" target="_blank">MYOB website</a>.
 
-The new Essentials will use the same API as their AccountRight Live platform. Therefore, you only need to carry out the setup described below once to gain access to both accounting packages.
+The new Essentials will use the same API as their AccountRight Live platform. Therefore, you only need to carry out the setup described below once to gain access to both accounting softwares.
 
 Some users may still be on the old, non-migrated version of MYOB Essentials that uses a legacy API, which is not supported by Codat. If your customer is unable to connect their non-migrated MYOB Essentials account, please advise them to reach out to MYOB support for guidance on migrating to the new version.
 :::

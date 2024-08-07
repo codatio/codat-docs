@@ -103,7 +103,7 @@ The name of the company doesn't have to be unique. It's just there to help you i
 
 ### Authorize access to company data
 
-Once you've created the company, they'll need to give you permission to pull their data from a given source, like their accounting platform. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
+Once you've created the company, they'll need to give you permission to pull their data from a given source, like their accounting software. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
 
 Send the user to the `redirect` URL returned in the previous step. They will be sent to [Link](/auth-flow/authorize-hosted-link) where they can select their accounting software and complete the linking process.
 
