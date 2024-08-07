@@ -50,7 +50,7 @@ Implementation period, covering Implementation Specialists and associated resour
 #### Feature definitions
 
 **Commerce to Accounting synchronisation**  
-Synchronisation of data from commerce data source(s) into accounting package(s).
+Synchronisation of data from commerce data source(s) into accounting software(s).
 
 **Client connector**  
 Codat built and owned connector, which pulls Company data from and/or pushes Company data to the Client’s system, to enable Commerce to Accounting synchronization to function.
@@ -87,7 +87,7 @@ This product will appear as **Sync for Commerce (v2)** on your order form.
 #### Feature definitions
 
 **Expense to accounting synchronisation**  
-Synchronisation of expense data provided by a Codat Client into accounting package(s).
+Synchronisation of expense data provided by a Codat Client into accounting software(s).
 
 **Config API**  
 API endpoints allowing Codat Clients to configure Expense Sync (typically via client-built Company user interface).
@@ -118,10 +118,10 @@ This product will appear as **Sync for Expenses (v2)** on your order form.
 #### Feature definitions
 
 **Pull accounting data**  
-Pull data from connected Accounting packages.
+Pull data from connected Accounting software.
 
 **Push accounting data**  
-Pull data from connected Accounting packages.
+Pull data from connected Accounting software.
  
 [See the documentation for a list of supported data types](/payroll/data-types)
 
@@ -153,16 +153,16 @@ This product will appear as **Sync for Payroll** on your order form.
 #### Feature definitions
 
 **Pull accounting data**  
-Get data from connected Accounting packages.
+Get data from connected Accounting software.
 
 **Push accounting data**  
-Create data in connected Accounting packages.
+Create data in connected Accounting software.
 
 **Update accounting data**  
-Update data in connected Accounting packages.
+Update data in connected Accounting software.
 
 **Delete accounting data**  
-Delete data in connected Accounting packages.
+Delete data in connected Accounting software.
 
 [See the documentation for a list of supported data types](/payables/data-types)
 
@@ -193,10 +193,10 @@ This product will appear as **Sync for Payables** on your order form.
 #### Feature definitions
 
 **Push bank transactions**  
-Push Bank Transactions into connected accounting package as a bank statement
+Push Bank Transactions into connected accounting software as a bank statement
 
 **Config UI**  
-White labelled user interface enabling a Company to configure Bank Feeds (select accounting package accounts to which bank feeds should be pushed)
+White labelled user interface enabling a Company to configure Bank Feeds (select accounting software accounts to which bank feeds should be pushed)
 
 **Config API**  
 API endpoints allowing clients to configure bank feeds (typically via client-built Company user interface)
@@ -220,7 +220,7 @@ This product will appear as **Bank feeds** on your order form.
 - Liabilities
 - Accounts receivable
 - Accounts payable
-- Accounting package writeback
+- Accounting software writeback
 
 <hr/>
 
@@ -237,10 +237,10 @@ Open banking provider access is subject to separate access requirements.
 #### Feature definitions
 
 **Pull accounting data**  
-Pull the following data from connected Accounting packages: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
+Pull the following data from connected Accounting software: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
 **Pull commerce data**  
-Pull the following data from connected Commerce platforms: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
+Pull the following data from connected Commerce software: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
 **Pull banking data**  
 Pull the following data from connected Open Banking provider: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
@@ -258,13 +258,13 @@ Provides a comprehensive view of a borrower's financial data, including profit a
 Our machine learning models automatically identify loans from connected sources and provide you with a clear overview of a borrower's outstanding loans and their repayment history. Includes features previously known as "Enhanced Liabilities Report". See the [full details of this feature](https://docs.codat.io/lending/features/liabilities-overview) . 
 
 **Accounts receivable**  
-Provides a breakdown of a borrower's debtors ledger sourced from their accounting platform.  Includes features previously known as "Enhanced Invoices Report". See the [full details of this feature](https://docs.codat.io/lending/features/accounts-receivable-overview).  
+Provides a breakdown of a borrower's debtors ledger sourced from their accounting software.  Includes features previously known as "Enhanced Invoices Report". See the [full details of this feature](https://docs.codat.io/lending/features/accounts-receivable-overview).  
 
 **Accounts payable**  
-Provides a breakdown of a borrower's creditors ledger sourced from their accounting platform. See the [full details of this feature](https://docs.codat.io/lending/features/accounts-payable-overview).
+Provides a breakdown of a borrower's creditors ledger sourced from their accounting software. See the [full details of this feature](https://docs.codat.io/lending/features/accounts-payable-overview).
 
-**Accounting package writeback**  
-Where mandated by the Accounting package, the ability to write back data pertaining to a loan or other credit facility that has been issued.
+**Accounting software writeback**  
+Where mandated by the Accounting software, the ability to write back data pertaining to a loan or other credit facility that has been issued.
 
 <hr/>
 

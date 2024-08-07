@@ -12,7 +12,7 @@ const usecases = [
   {
     icon: "/img/logos/usecases/sync-expenses.svg",
     title: "Managing expenses",
-    description: "Integrate data from corporate cards and expense management platforms into accounting platforms your customers use.",
+    description: "Integrate data from corporate cards and expense management platforms into accounting software your customers use.",
     link: "/usecases/summary/managing-expenses",
     linkText: "Discover expense management →",
     linkTextMini: "Discover expense management →",
@@ -20,7 +20,7 @@ const usecases = [
   {
     icon: "/img/logos/usecases/sync-commerce.svg",
     title: "Integrating commerce data",
-    description: "Sync sales and payment data from PoS, eCommerce, and payments platforms with your customers' accounting platforms.",
+    description: "Sync sales and payment data from PoS, eCommerce, and payments platforms with your customers' accounting software.",
     link: "/usecases/summary/integrating-commerce-data",
     linkText: "Discover commerce data integration →",
     linkTextMini: "Discover commerce data integration →",
@@ -36,7 +36,7 @@ const usecases = [
   {
     icon: "/img/logos/usecases/pull-push.svg",
     title: "Reconciling bank transactions",
-    description: "Push your customers' bank transaction data into accounting platform's bank transaction ledgers for reconcilliation.",
+    description: "Push your customers' bank transaction data into accounting software's bank transaction ledgers for reconcilliation.",
     link: "/usecases/summary/reconciling-bank-transactions",
     linkText: "Discover bank transaction reconciliation →",
     linkTextMini: "Discover bank transaction reconciliation →",

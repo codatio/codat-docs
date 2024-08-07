@@ -23,7 +23,7 @@ To pay a bill in Sync for Payables, you can use your customer's existing supplie
       participant smb as SMB customer
       participant app as Your application 
       participant codat as Codat
-      participant acctg as Accounting platform
+      participant acctg as Accounting software
       
       alt Retrieve suppliers
         app ->> codat: Requests details of existing suppliers

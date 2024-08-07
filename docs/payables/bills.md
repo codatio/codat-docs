@@ -31,7 +31,7 @@ We have highlighted this alternative sequence of steps in our detailed process d
       participant smb as SMB customer
       participant app as Your application 
       participant codat as Codat
-      participant acctg as Accounting platform
+      participant acctg as Accounting software
          
       alt Retrieve bills
         codat ->> acctg: Fetches existing bills

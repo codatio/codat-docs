@@ -7,7 +7,7 @@ displayed_sidebar: integrationsBankFeeds
 import Integrations from '@components/Integrations'
 import Products from "@components/Products";
 
-A bank feed is a connection between a source bank account—in your application—and a target bank account in a supported accounting package.
+A bank feed is a connection between a source bank account—in your application—and a target bank account in a supported accounting software.
 
 Read more about our [Bank Feeds API](/bank-feeds/overview) product.
 

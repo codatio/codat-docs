@@ -28,7 +28,7 @@ A customer has already connected their Xero account to a dashboard product and n
 
 As the customer has previously granted access to all their Xero data, technically you already have access to pull additional data types that you haven’t pulled before (for example, Financial Statements).
 
-The customer will be presented with a UI screen that confirms they are happy to share additional datasets. This UI contains a simple “Confirm I’m happy to share additional data” message and does not require the customer to re-auth or re-login to any accounting package.
+The customer will be presented with a UI screen that confirms they are happy to share additional datasets. This UI contains a simple “Confirm I’m happy to share additional data” message and does not require the customer to re-auth or re-login to any accounting software.
 
 This consent should be stored and always adhered to with the ability to be revoked at any time.
 #### An existing customer wants to remove consent for a specific use case

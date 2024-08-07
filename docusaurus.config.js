@@ -22,7 +22,7 @@ require('dotenv').config()
 const config = {
   title: "Codat_docs",
   tagline:
-    "We make accessing consented business data from your customers' banking, accounting, and commerce platforms easy. Build once to our API to aggregate data, underwrite credit risk, and automate accounting for your SMB customers.",
+    "We make accessing consented business data from your customers' banking, accounting, and commerce software easy. Build once to our API to aggregate data, underwrite credit risk, and automate accounting for your SMB customers.",
 
   url: "https://docs.codat.io",
   baseUrl: `${BASE_URL}/`,

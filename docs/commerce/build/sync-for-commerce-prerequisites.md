@@ -18,7 +18,7 @@ Sync for Commerce must be enabled for your account. You can enable products in t
 
 ### Enable a supported platform
 
-You need to set up one or more of the supported accounting platforms:
+You need to set up one or more of the supported accounting software:
 
 - [Xero](/integrations/accounting/xero/accounting-xero)
 - [QuickBooks Online](/integrations/accounting/quickbooksonline/accounting-quickbooksonline)

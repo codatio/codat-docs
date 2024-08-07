@@ -1,6 +1,6 @@
 ---
 title: "Get platform credentials"
-description: "Best practice recommendations for enterprise clients on how to register with accounting, banking, or commerce platforms and store the credentials"
+description: "Best practice recommendations for enterprise clients on how to register with accounting, banking, or commerce software and store the credentials"
 sidebar_label: "Get credentials"
 ---
 
@@ -12,7 +12,7 @@ Usually, your organization needs to register with each of your preferred platfor
 
 1. **Identify existing agreements or relationships with the platforms your organization wants to integrate with.**
 
-   This could be any Open Banking relationship or an existing direct integration with an accounting platform.
+   This could be any Open Banking relationship or an existing direct integration with an accounting software.
 
    :::tip Locating existing accounts
 

@@ -25,7 +25,7 @@ Codat recommends using **journal entries** to benefit from these advantages:
 
 :::note Journal entry coverage
 
-[View](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) the accounting platforms where we provide coverage for Journal entries.
+[View](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) the accounting software where we provide coverage for Journal entries.
 :::
 
 ## Choosing a sync type
@@ -41,7 +41,7 @@ Your merchant can choose the sync type they prefer while performing their compan
 
 :::note Mapping journal entries
 
-You can map sales journal entries to any account types, including liability, unless it is explicitly prohibited by the target accounting platform.
+You can map sales journal entries to any account types, including liability, unless it is explicitly prohibited by the target accounting software.
 :::
 
 ### Sales
@@ -96,7 +96,7 @@ The example journal entry covers payment processing fees and payment fees refund
 
 ## Tax categorization in daily journals
 
-The tax categorization feature is available to every merchant using daily journals, as long as their commerce platform supports tax components. It is aimed at merchants operating in places where products incur multiple taxes remitted to different authorities.
+The tax categorization feature is available to every merchant using daily journals, as long as their commerce software supports tax components. It is aimed at merchants operating in places where products incur multiple taxes remitted to different authorities.
 
 With this feature, the merchant can map multiple tax rates from their commerce solution to relevant tax accounts in their accounting system. It adds an extra screen to the Sync Flow, where the mapping takes place. This creates separate journal lines for the daily journal entry.
 

@@ -8,7 +8,7 @@
   ],
   "info": {
     "title": "Bill pay kit",
-    "description": "The API reference for the Bill Pay kit. \n\nThe bill pay kit is an API and a set of supporting tools designed to integrate a bill pay flow into your app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.\n\n[Explore product](https://docs.codat.io/payables/bill-pay-kit) | [See OpenAPI spec](https://github.com/codatio/oas)\n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Company information | View company profile from the source platform. |\n| Bills | Get, create, and update Bills. |\n| Bill payments | Get, create, and update Bill payments. |\n| Suppliers | Get, create, and update Suppliers. |\n| Bank accounts | Create a bank account for a given company's connection. |\n<!-- End Codat Tags Table -->",
+    "description": "The API reference for the Bill Pay kit. \n\nThe bill pay kit is an API and a set of supporting tools designed to integrate a bill pay flow into your app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting software.\n\n[Explore product](https://docs.codat.io/payables/bill-pay-kit) | [See OpenAPI spec](https://github.com/codatio/oas)\n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Company information | View company profile from the source platform. |\n| Bills | Get, create, and update Bills. |\n| Bill payments | Get, create, and update Bill payments. |\n| Suppliers | Get, create, and update Suppliers. |\n| Bank accounts | Create a bank account for a given company's connection. |\n<!-- End Codat Tags Table -->",
     "version": "3.0.0",
     "contact": {
       "name": "Codat",
@@ -986,7 +986,7 @@
       ],
       "get": {
         "summary": "Get company information",
-        "description": "Use the *Get company information* endpoint to return information about the company available from the underlying accounting platform.\n\n",
+        "description": "Use the *Get company information* endpoint to return information about the company available from the underlying accounting software.\n\n",
         "operationId": "get-company-information",
         "tags": [
           "Company information"
@@ -1897,7 +1897,7 @@
                 "value": "sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Archived"
               }
             },
-            "description": "Codat query string allows you to filter by `sourceModifiedDate` or if a supplier is `Active` or `Archived` in the accounting platform. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
+            "description": "Codat query string allows you to filter by `sourceModifiedDate` or if a supplier is `Active` or `Archived` in the accounting software. Learn more about Codat's query string [here](https://docs.codat.io/using-the-api/querying)."
           }
         ],
         "responses": {
@@ -2293,7 +2293,7 @@
             "properties": {
               "id": {
                 "type": "string",
-                "description": "Identifier for the attachment, unique for the company in the accounting platform."
+                "description": "Identifier for the attachment, unique for the company in the accounting software."
               },
               "name": {
                 "type": "string",
@@ -2316,7 +2316,7 @@
               },
               "includeWhenSent": {
                 "type": "boolean",
-                "description": "If `true`, then the attachment is included with the associated invoice, bill or direct costs when it is printed, emailed, or sent to a customer, if the underlying accounting platform allows this."
+                "description": "If `true`, then the attachment is included with the associated invoice, bill or direct costs when it is printed, emailed, or sent to a customer, if the underlying accounting software allows this."
               }
             }
           },
@@ -2368,7 +2368,7 @@
             "properties": {
               "id": {
                 "type": "string",
-                "description": "Identifier for the bank account, unique for the company in the accounting platform."
+                "description": "Identifier for the bank account, unique for the company in the accounting software."
               },
               "nominalCode": {
                 "type": "string",
@@ -2378,7 +2378,7 @@
               "name": {
                 "type": "string",
                 "nullable": true,
-                "description": "Name of the bank account in the accounting platform."
+                "description": "Name of the bank account in the accounting software."
               },
               "accountType": {
                 "title": "Bank Account Type",
@@ -2462,7 +2462,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Identifier for the bill, unique for the company in the accounting platform."
+            "description": "Identifier for the bill, unique for the company in the accounting software."
           },
           "reference": {
             "type": "string",
@@ -2475,7 +2475,7 @@
           "issueDate": {
             "allOf": [
               {
-                "description": "Date of the bill as recorded in the accounting platform."
+                "description": "Date of the bill as recorded in the accounting software."
               },
               {
                 "$ref": "#/components/schemas/Company/properties/created"
@@ -2509,7 +2509,7 @@
             "type": "number",
             "format": "decimal",
             "nullable": true,
-            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, specify a currencyRate in the request body.  |"
+            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting software, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting software which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, specify a currencyRate in the request body.  |"
           },
           "lineItems": {
             "type": "array",
@@ -2663,7 +2663,7 @@
             "properties": {
               "id": {
                 "type": "string",
-                "description": "Unique identifier for the tax rate in the accounting platform."
+                "description": "Unique identifier for the tax rate in the accounting software."
               }
             }
           },
@@ -2807,18 +2807,18 @@
                 "properties": {
                   "id": {
                     "type": "string",
-                    "description": "Identifier for the tax rate, unique for the company in the accounting platform.",
+                    "description": "Identifier for the tax rate, unique for the company in the accounting software.",
                     "example": "d2939064-dd3a-4c0f-9865-a238c2193515"
                   },
                   "name": {
                     "type": "string",
                     "nullable": true,
-                    "description": "Codat-augmented name of the tax rate in the accounting platform."
+                    "description": "Codat-augmented name of the tax rate in the accounting software."
                   },
                   "code": {
                     "type": "string",
                     "nullable": true,
-                    "description": "Code for the tax rate from the accounting platform."
+                    "description": "Code for the tax rate from the accounting software."
                   },
                   "effectiveTaxRate": {
                     "type": "number",
@@ -2839,7 +2839,7 @@
                       "Active",
                       "Archived"
                     ],
-                    "description": "Status of the tax rate in the accounting platform.  \n- `Active` - An active tax rate in use by a company.  \n- `Archived` - A tax rate that has been archived or is inactive in the accounting platform.  "
+                    "description": "Status of the tax rate in the accounting software.  \n- `Active` - An active tax rate in use by a company.  \n- `Archived` - A tax rate that has been archived or is inactive in the accounting software.  "
                   }
                 }
               }
@@ -2863,7 +2863,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Identifier for the bill payment, unique for the company in the accounting platform."
+            "description": "Identifier for the bill payment, unique for the company in the accounting software."
           },
           "amount": {
             "type": "number",
@@ -3244,7 +3244,7 @@
           "baseCurrency": {
             "type": "string",
             "nullable": true,
-            "description": "Currency set in the accounting platform of the linked company. Used by the currency rate."
+            "description": "Currency set in the accounting software of the linked company. Used by the currency rate."
           }
         }
       },
@@ -3754,13 +3754,13 @@
                 "properties": {
                   "id": {
                     "type": "string",
-                    "description": "Identifier for the account, unique for the company in the accounting platform.",
+                    "description": "Identifier for the account, unique for the company in the accounting software.",
                     "example": "3d5a8e00-d108-4045-8823-7f342676cffa"
                   },
                   "name": {
                     "type": "string",
                     "nullable": true,
-                    "description": "Name of the bank account in the accounting platform.",
+                    "description": "Name of the bank account in the accounting software.",
                     "example": "Bank of Dave current account"
                   },
                   "accountNumber": {
@@ -4141,7 +4141,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "description": "Identifier for the supplier, unique to the company in the accounting platform."
+            "description": "Identifier for the supplier, unique to the company in the accounting software."
           },
           "supplierName": {
             "type": "string",

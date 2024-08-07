@@ -5,8 +5,8 @@ description: "Sample screens for a product-agnostic consent journey"
 
 This is an example flow for a consent journey which powers a business insights dashboard.
 
-* A user is prompted to select their accounting package.
-* They view the data they are sharing both in your platform and the accounting package.
+* A user is prompted to select their accounting software.
+* They view the data they are sharing both in your platform and the accounting software.
 * Throughout the journey they are reminded of why they are sharing data and the product's value.
 * The journey includes links enabling the user to get help should an issue arise.
 * Once linked they are able to manage their connection and disconnect if they wish.

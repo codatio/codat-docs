@@ -42,7 +42,7 @@ The 3-part value exchange should be brief but informative and include:
 :::
 
 3. Tell your customer what they should do next
-   Make sure the main call to action (CTA) is clear, for example: "_Connect your [insert data source type i.e. 'accounting platform']_".
+   Make sure the main call to action (CTA) is clear, for example: "_Connect your [insert data source type i.e. 'accounting software']_".
 
 ## Embed CTAs that drive users to connect at advantageous points in your app
 

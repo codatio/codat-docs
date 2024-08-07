@@ -8,13 +8,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import WritebackMapping from "@components/Prototypes/WritebackMapping";
 
-Once your SMB customer's loan has been approved, provide them with a user interface that lets them optionally enable the loan writeback and configure loan writeback accounts so that the accounting entries are reflected correctly in their accounting platform. They will create or select existing, and subsequently map, the following elements:
+Once your SMB customer's loan has been approved, provide them with a user interface that lets them optionally enable the loan writeback and configure loan writeback accounts so that the accounting entries are reflected correctly in their accounting software. They will create or select existing, and subsequently map, the following elements:
 
 * **SMB bank account**, the borrower's business account where the loan is deposited.
 * **Expense account**, an account to record incurred fees and interest.
 * **Supplier record**, a record to identify you, the lender, in future transactions.
 
-Your solution also needs a **lender bank account**, a virtual account that contains the lender's transactions. You would have created this source account when implementing [bank feeds](/bank-feeds/overview). Now, map it to a target account in your SMB customer's accounting platform. You can define it as `lendersBankAccount` in your solution.
+Your solution also needs a **lender bank account**, a virtual account that contains the lender's transactions. You would have created this source account when implementing [bank feeds](/bank-feeds/overview). Now, map it to a target account in your SMB customer's accounting software. You can define it as `lendersBankAccount` in your solution.
 
 :::info Let your customers take control
 
@@ -68,7 +68,7 @@ sequenceDiagram
 
 Loan writeback process operates with two bank accounts: 
 - A borrower's business bank account where the money lent is deposited.
-- A lender's bank account, which is a virtual bank account in the accounting platform that acts as a container for lender transactions. 
+- A lender's bank account, which is a virtual bank account in the accounting software that acts as a container for lender transactions. 
 
 First, your customer needs to choose one of their existing business bank accounts. This account will be used to depost the loan. Call our [List bank accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
 
@@ -196,10 +196,10 @@ GET https://api.codat.io/companies/{companyId}/data/suppliers
 
 Display the response to the customer and allow them to find and select your lender record in their supplier list. Store the supplier `id` as `supplier` and use it in future transactions.
 
-If this is the first time you have lent to this SMB customer, you may need to create yourself as a new supplier in their accounting platform. 
+If this is the first time you have lent to this SMB customer, you may need to create yourself as a new supplier in their accounting software. 
 
 1. Use our [Get create/update supplier model](/lending-api#/operations/get-create-update-suppliers-model) to get the expected data for the supplier creation request payload. The data required can vary depending on the platform.
-2. Use that payload to call the [Create supplier](/lending-api#/operations/create-supplier) endpoint to create the new supplier record in the accounting platform.
+2. Use that payload to call the [Create supplier](/lending-api#/operations/create-supplier) endpoint to create the new supplier record in the accounting software.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -545,4 +545,4 @@ In response, you will receive account creation details which you can display to 
 
 ## Read next
 
-* Learn how to [deposit](/lending/guides/loan-writeback/deposit) the lent funds into your SMB's accounting platform.
+* Learn how to [deposit](/lending/guides/loan-writeback/deposit) the lent funds into your SMB's accounting software.

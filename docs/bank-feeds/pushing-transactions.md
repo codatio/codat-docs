@@ -1,6 +1,6 @@
 ---
 title: "Import bank transactions"
-description: "Learn how to import bank transaction data from your application to your customer's accounting platform"
+description: "Learn how to import bank transaction data from your application to your customer's accounting software"
 sidebar_label: Import transactions
 displayed_sidebar: bankfeeds
 ---
@@ -8,11 +8,11 @@ displayed_sidebar: bankfeeds
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-Once a company has mapped their source account to a target account, you can begin creating bank transactions in their accounting platform using the established [bank feed](../terms/bank-feed).
+Once a company has mapped their source account to a target account, you can begin creating bank transactions in their accounting software using the established [bank feed](../terms/bank-feed).
 
 ## Generate transactions
 
-Before you can record your customer's bank transactions in their accounting platform, you need to generate a `transactions` object for each transaction that has been made from their account. 
+Before you can record your customer's bank transactions in their accounting software, you need to generate a `transactions` object for each transaction that has been made from their account. 
 
 Collect transaction data within your own application and map it to Codat's [Bank transactions](/bank-feeds-api#/schemas/BankTransactions) schema. Add this to [Create bank transactions](/bank-feeds-api#/schemas/CreateBankTransactions), including the `sourceAccount` id that the transactions should be associated with at the top level.  
 

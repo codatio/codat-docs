@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-description: "Explore the accounting platforms you can connect to through our API."
+description: "Explore the accounting software you can connect to through our API."
 sidebar_label: Accounting
 image: "/img/old/2b27c1b-info_banner.png"
 displayed_sidebar: integrationsAccounting
@@ -46,15 +46,15 @@ Some integrations have more complex requirements in terms of registration and pa
 | [Xero](https://www.xero.com/)                                    | Easy                      | ✅                           | ✅                       | You must certify your integration and partner with Xero to connect more than 25 companies. This involves extra technical requirements and, in some cases, additional charges. Use cases such as financial brokering, insurance, FX hending, and lending (in some regions) are not permitted. |
 | [ZohoBooks](https://www.zoho.com/uk/books/)                               | Easy                      | ✅                           | ❌                       |                                                                                                                                                                                                                                                                                              |
 
-## Accounting platforms per region
+## Accounting software per region
 
-Most popular accounting platforms per reigion are as follows: 
+Most popular accounting software per reigion are as follows: 
 
 - __US:__ QuickBooks Online, QuickBooks Desktop, Sage Intacct, NetSuite, FreshBooks, Xero
 - __UK:__ Xero, QuickBooks Online, Sage 50, Sage Accounting, FreeAgent, NetSuite
 - __AUS:__ Xero, MYOB, QuickBooks Online, NetSuite
 
-We can sometimes facilitate introductions to accounting platform providers, particularly in the case of Xero, Sage, and MYOB. Please ask your Solutions Engineer, Implementation Specialist or Account Manager for more details.
+We can sometimes facilitate introductions to accounting software providers, particularly in the case of Xero, Sage, and MYOB. Please ask your Solutions Engineer, Implementation Specialist or Account Manager for more details.
 
 ## Platform keys
 

@@ -27,7 +27,7 @@ From the SMB perspective, they will see the on-premise connector app as being ow
 - The connector installer requires administrator privileges (admin rights) to initially run
 - The SMB user will need to complete some simple steps to complete the install (see the install guide for detail):
   - Paste in their unique license number (company ID) - this is provided to the user during the link journey
-  - Complete a couple of straightforward steps to point the connector at the correct accounting package data file
+  - Complete a couple of straightforward steps to point the connector at the correct accounting software data file
 - Thereafter the connector doesn’t need any further user interaction or administrator privileges
 - The connector runs as a background process
 - The connector starts up automatically after reboots

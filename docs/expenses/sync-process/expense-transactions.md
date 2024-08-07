@@ -18,7 +18,7 @@ An expense is a transaction that represents the purchase made by your customer a
 
 With Sync for Expenses, you need to create the expense or transfer transactions first and push that dataset to Codat. We will describe options available to you on this page. 
 
-Then, you need to [sync expenses](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting platform. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
+Then, you need to [sync expenses](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting software. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
 This process is summarized on the diagram below.
 
@@ -92,11 +92,11 @@ In the request, make sure that the transaction's `id` is unique as it serves as 
 
 ```
 
-Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting platform. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
+Next, you need to follow up with an expense sync to reflect this item of spend in the customer's accounting software. We cover this in detail in [Sync expenses](/expenses/sync-process/syncing-expenses).
 
 ### Draft transactions
 
-Some accounting platforms allow expense transactions to be created in a draft state instead of posting directly to the ledger. This means the user can review the expense in the accounting platform before finalizing and posting it prior to reconciliation. 
+Some accounting software allow expense transactions to be created in a draft state instead of posting directly to the ledger. This means the user can review the expense in the accounting software before finalizing and posting it prior to reconciliation. 
 
 To create an expense as a draft, set the `postAsDraft` property on the transaction to `true`. For platforms without this feature, the `postAsDraft` property should be ignored or set to `false`.
 
@@ -120,7 +120,7 @@ This functionality is currently only available for QuickBooks Online and QuickBo
 
 ### Multicurrency expense transactions
 
-Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
+Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
  
 ### Default tax rates
 
@@ -148,11 +148,11 @@ Sync for Expenses maps and processes expense transactions based on the following
 
 #### Adjustments 
 
-Your customer may want to reflect write-offs and transaction adjustments, such as foreign exchange adjustments, in their accounting platform. Adjustments for FX alterations in expenses are essential to account for fluctuations in exchange rates. This ensures that expenses incurred in foreign currencies are accurately reflected in the company's reporting currency. 
+Your customer may want to reflect write-offs and transaction adjustments, such as foreign exchange adjustments, in their accounting software. Adjustments for FX alterations in expenses are essential to account for fluctuations in exchange rates. This ensures that expenses incurred in foreign currencies are accurately reflected in the company's reporting currency. 
 
 This process helps maintain the accuracy and reliability of financial statements, which is crucial for effective financial management and reporting. 
 
-You can use the [Create adjustment transactions](/sync-for-expenses-api#/operations/create-adjustment-transaction) endpoint to help your customer achieve this. The adjustments will then appear in their accounting platform as a journal entry.
+You can use the [Create adjustment transactions](/sync-for-expenses-api#/operations/create-adjustment-transaction) endpoint to help your customer achieve this. The adjustments will then appear in their accounting software as a journal entry.
 
 :::info Compatible integrations
 
@@ -168,7 +168,7 @@ Check our [API reference](/sync-for-expenses-api#/operations/update-expense-tran
 
 :::
 
-In some cases, your customer may want to update an expense transaction that was previously synced to their accounting platform. Use our [Update expense transactions](/sync-for-expenses-api#/operations/update-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
+In some cases, your customer may want to update an expense transaction that was previously synced to their accounting software. Use our [Update expense transactions](/sync-for-expenses-api#/operations/update-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
 
 - Net expense amount 
 - Tax amount of the spend
@@ -183,4 +183,4 @@ PUT  https://api.codat.io/companies/{companyId}/sync/expenses/expense-transactio
 ---
 ## Read next
 
-- [Sync the expenses](/expenses/sync-process/syncing-expenses) to reflect the spend in the accounting platform and monitor the progress of the synchronization.
+- [Sync the expenses](/expenses/sync-process/syncing-expenses) to reflect the spend in the accounting software and monitor the progress of the synchronization.

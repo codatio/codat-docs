@@ -63,4 +63,4 @@ Your customers can check their own sync history and sync status in the **Sync Fl
 
 - Syncs are shown as failed if any of the included items fail to push. Therefore, if a sync contains a mix of failed and successfully pushed records, it will still be marked as failed. 
 - If a sync log record shows a "Please reconcile manually" note for an order, this is likely because an updated order does not have a matching original order in the platform. Therefore, Sync is unable to reconcile it, and this needs to be performed manually.
-- Sync history does not currently display the date range for data pulled from the commerce platform that is used in the sync.
+- Sync history does not currently display the date range for data pulled from the commerce software that is used in the sync.

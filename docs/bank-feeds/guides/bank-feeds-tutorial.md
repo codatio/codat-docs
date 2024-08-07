@@ -37,7 +37,7 @@ This saves your customers time and gives them the context they need to properly 
 
 ## Solution overview
 
-We have done the heavy lifting for you by building bank feeds integrations with a standardized data model to the accounting platforms your customers already use. This gives you access to real-time data that you can fetch, create, or update to support your customers. In this tutorial, we focus on our QuickBooks Online Bank Feeds integration. 
+We have done the heavy lifting for you by building bank feeds integrations with a standardized data model to the accounting software your customers already use. This gives you access to real-time data that you can fetch, create, or update to support your customers. In this tutorial, we focus on our QuickBooks Online Bank Feeds integration. 
 
 :::tip Prerequisites
 

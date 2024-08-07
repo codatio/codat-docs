@@ -1,7 +1,7 @@
 ---
 title: Sync for Expenses overview
 sidebar_label: Sync for Expenses
-description: Push categorized expenses and attachments to all major accounting platforms, handling the complexities of expense reconciliation
+description: Push categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation
 displayed_sidebar: expenses
 image: "/img/sync-for-expenses/sfe-banner.png"
 hide_title: true
@@ -12,7 +12,7 @@ banner_title: Sync for Expenses
 banner_class: expenses
 banner_icon: "/img/logos/products/logo_expenses_clear.svg"
 banner_image: "/img/banners/bank-feeds.png"
-banner_text: "Push categorized expenses and attachments to all major accounting platforms, handling the complexities of expense reconciliation"
+banner_text: "Push categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Sync for Expenses?
 ---
@@ -59,7 +59,7 @@ With Sync for Expenses, corporate card providers, expense management providers, 
       <h3>Go to market quickly</h3>
     </div>
     <p>
-      Ship robust expense management integrations with leading accounting platforms six times faster via our single, streamlined API.
+      Ship robust expense management integrations with leading accounting software six times faster via our single, streamlined API.
     </p>
   </li>
 
@@ -123,7 +123,7 @@ With Sync for Expenses, you can build a solution that covers all the key steps o
 
 ### [Configure customer](/expenses/configure-customer)
 
-Start by creating a [company](../terms/company) to represent your SMB customer in Codat. Then, establish its [connection](/core-concepts/connections) to the customer's accounting platform. We will handle the authorization and linking to that platform - all we need is for your SMB to approve this access via our [auth flow](/auth-flow/overview).
+Start by creating a [company](../terms/company) to represent your SMB customer in Codat. Then, establish its [connection](/core-concepts/connections) to the customer's accounting software. We will handle the authorization and linking to that platform - all we need is for your SMB to approve this access via our [auth flow](/auth-flow/overview).
 
 ### [Map customer transactions](/expenses/config-and-categorize)
 
@@ -133,17 +133,17 @@ Expenses can also be categorized according to your SMB's bookkeeping. Provide yo
 
 ### [Create and update transactions](/expenses/sync-process/expense-transactions)
 
-Once the customer has categorized their expenses using the mapping options, use Sync for Expenses to push their everyday purchases to the SMB's accounting platform. Sync for Expenses also enables SMB customers to push attachments for a complete audit trail.
+Once the customer has categorized their expenses using the mapping options, use Sync for Expenses to push their everyday purchases to the SMB's accounting software. Sync for Expenses also enables SMB customers to push attachments for a complete audit trail.
 
 You can also create [transfers](/expenses/sync-process/transfer-transactions) and [reimbursements](/expenses/sync-process/reimbursable-expense-transactions).
 
 ### [Sync expense transactions](/expenses/sync-process/syncing-expenses)
 
-Once you create a categorized expense transaction, we automatically initiate a sync of these transactions. The sync processes the expenses you created, maps them into the format required by the accounting platform, and records them in that platform. 
+Once you create a categorized expense transaction, we automatically initiate a sync of these transactions. The sync processes the expenses you created, maps them into the format required by the accounting software, and records them in that platform. 
 
 ### [Upload attachments](/expenses/sync-process/uploading-receipts)
 
-When creating an expense transaction, allow your SMB customer to save a copy of the associated receipt in their accounting platform. 
+When creating an expense transaction, allow your SMB customer to save a copy of the associated receipt in their accounting software. 
 
 ## Supported integrations
 

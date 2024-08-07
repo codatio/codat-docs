@@ -38,7 +38,7 @@ You can [read more](/using-the-api/webhooks/overview) about webhooks at Codat an
 | 4000 | Configuration error                           |
 | 4040 | Company deleted/de-authorized                 |
 | 4220 | Company deleted/de-authorized                 |
-| 4260 | Accounting platform billing expiry            |
+| 4260 | Accounting software billing expiry            |
 | 5000 | Generic server error                          |
 | 5080 | Duplication protection                        |
 | 5120 | Data processing error                         |
@@ -222,7 +222,7 @@ Here, you can view each item's status, search the items by their core ID or data
 
 #### Retry push items
 
-On the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to push the data of all failed push items into the accounting platform. The button is only enabled if there are failed items to retry.
+On the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to push the data of all failed push items into the accounting software. The button is only enabled if there are failed items to retry.
 
 #### 💡 Tips and traps
 

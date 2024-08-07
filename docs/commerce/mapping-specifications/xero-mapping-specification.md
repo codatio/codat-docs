@@ -1,13 +1,13 @@
 ---
 title: "Xero mapping specification"
 sidebar_label: Xero
-description: "Guidelines for data mapping configuration from a commerce platform to Xero."
+description: "Guidelines for data mapping configuration from a commerce software to Xero."
 image: "/img/banners/social/commerce.png"
 ---
 
 ## Overview
 
-This document provides guidelines for data mapping configuration from a commerce platform to Xero.
+This document provides guidelines for data mapping configuration from a commerce software to Xero.
 
 In Codat's Sync flow, the data types are grouped under the three features:
 
@@ -21,9 +21,9 @@ The **Sales** feature represents all sales made in the course of a company’s n
 
 To set up **Sales** using the Codat Sync for Commerce UI flow, a merchant needs to complete the following steps:
 
-1. Select the accounts for **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)**, **[Refunds](/sfc/mapping-specifications/xero-mapping-specification#refunds)**, **[Gratuity](/sfc/mapping-specifications/xero-mapping-specification#gratuity)**, and **[Prepaid](/sfc/mapping-specifications/xero-mapping-specification#prepaid)** features from the respective dropdown lists. The lists display all the applicable accounts available on the merchant’s Xero accounting platform.
+1. Select the accounts for **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)**, **[Refunds](/sfc/mapping-specifications/xero-mapping-specification#refunds)**, **[Gratuity](/sfc/mapping-specifications/xero-mapping-specification#gratuity)**, and **[Prepaid](/sfc/mapping-specifications/xero-mapping-specification#prepaid)** features from the respective dropdown lists. The lists display all the applicable accounts available on the merchant’s Xero accounting software.
 2. Select the tax rates that they wish to apply to the data they are sending.
-3. Select the preferred status for invoices representing the **Sales** data within their accounting platform.
+3. Select the preferred status for invoices representing the **Sales** data within their accounting software.
 
 The grouping period is set to **daily** by default.
 
@@ -43,7 +43,7 @@ If no sales have been made at a given tax rate on that day, the corresponding li
 
 :::caution Rounding
 
-Discounts are applied to the total of the purchase once all the items have been summed up rather than at an item level. As we are splitting out items into VAT percentages across all sales for the day, discounts need to be applied at the item level which may lead to slight rounding discrepancies compared to applying the discount at the summed level. As per the advice of most accounting packages, we add an invoice line of ± 0.01 to bring the total in line with the correct total.
+Discounts are applied to the total of the purchase once all the items have been summed up rather than at an item level. As we are splitting out items into VAT percentages across all sales for the day, discounts need to be applied at the item level which may lead to slight rounding discrepancies compared to applying the discount at the summed level. As per the advice of most accounting software, we add an invoice line of ± 0.01 to bring the total in line with the correct total.
 :::
 
 When the merchant receives payment for the reported sales, the invoice is marked as paid and is balanced by the merchant’s holding account (also known as a clearing or a liquid account) for the respective payment type.
@@ -88,17 +88,17 @@ Note that when a customer uses the prepaid item (for example, purchases an item 
 
 ## Fees
 
-The Fees feature encompasses the transactions that involve the commerce service provider, including **[Payment fees](/sfc/mapping-specifications/xero-mapping-specification#payment-fees)** that a commerce platform charges the merchant for processing their card transactions and **[Payment fee refunds](/sfc/mapping-specifications/xero-mapping-specification#payment-fee-refunds)**.
+The Fees feature encompasses the transactions that involve the commerce service provider, including **[Payment fees](/sfc/mapping-specifications/xero-mapping-specification#payment-fees)** that a commerce software charges the merchant for processing their card transactions and **[Payment fee refunds](/sfc/mapping-specifications/xero-mapping-specification#payment-fee-refunds)**.
 
 ### Fees account mapping
 
 #### Payment fees
 
-**Payment fees** are the commissions that a commerce platform charges the merchant for processing their card transactions.
+**Payment fees** are the commissions that a commerce software charges the merchant for processing their card transactions.
 
 **Payment fees** should be booked into a nominal account that the merchant uses to record their expenses, typically of the Xero **Expense** type.
 
-Codat pushes a single purchase invoice (bill) to Xero each day. This bill represents all fees taken by the commerce platform over the course of that day. The bill contains a single line.
+Codat pushes a single purchase invoice (bill) to Xero each day. This bill represents all fees taken by the commerce software over the course of that day. The bill contains a single line.
 
 The bill is recorded against the commerce services supplier, and the expense account for the line item is set to the selected commerce fees account.
 
@@ -111,7 +111,7 @@ To represent the payment of fees, a single payment is pushed for the full paymen
 
 #### Payment fee refund
 
-When a merchant refunds a payment accepted using a commerce platform, the commission for processing the payment is simultaneously refunded to their commercial account. In the Codat Sync flow UI, such refunds are referred to as **Payment fee refunds**.
+When a merchant refunds a payment accepted using a commerce software, the commission for processing the payment is simultaneously refunded to their commercial account. In the Codat Sync flow UI, such refunds are referred to as **Payment fee refunds**.
 
 Payment fee refunds are typically booked to the same accounts configured for **Payment fees**. Using the same account simplifies the processing of fee refunds, but the merchant should be able to select a different account if they want.
 
@@ -122,7 +122,7 @@ A single bill credit note is pushed each day representing all fee refunds proces
 If the selected target account is a bank account, bills are represented as a bank transaction (receive money) and will not be represented as a credit note.
 :::
 
-A cash refund payment for the whole value of the credit note is simultaneously pushed, so the bill credit note is fully paid (as no further cash is owed to the merchant by the commerce platform).
+A cash refund payment for the whole value of the credit note is simultaneously pushed, so the bill credit note is fully paid (as no further cash is owed to the merchant by the commerce software).
 
 ## Payments
 

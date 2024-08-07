@@ -159,7 +159,7 @@ Now Codat will not ask your user to authenticate with your system as part of the
 
 This configuration assumes that your customers will initiate the setup process for their sales data synchronization within your system. In some cases, it is also possible for the user to initiate this journey from their accounting or commerce system's app marketplace.
 
-We are able to support this for selected accounting packages and commerce platforms. Please consult your Solutions Engineer for more information on this functionality.
+We are able to support this for selected accounting software and commerce software. Please consult your Solutions Engineer for more information on this functionality.
 
 ---
 

@@ -3,7 +3,7 @@ title: "Shopify"
 description: "Learn about our Shopify integration"
 ---
 
-[Shopify](https://www.shopify.com/) is an ecommerce platform that helps SMBs to sell their products online.
+[Shopify](https://www.shopify.com/) is an ecommerce software that helps SMBs to sell their products online.
 
 With Codat's Shopify integration, you can securely retrieve your SMB customers' commerce transactions, standardized to our commerce data model.
 

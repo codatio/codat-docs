@@ -112,7 +112,7 @@ Here's how your SMB users interact with the QBD connector.
 - The user needs administrator privileges (admin rights) to run the connector installer. Alternatively, a different administrator can approve the installation and run the connector.
 - The SMB user completes some simple steps to complete the installation (as described in [Install the QuickBooks Desktop connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector)). In summary, they'll need to:
   - Enter their unique license number (their Codat Company ID), which is provided during the link flow.
-  - Complete some steps to point the connector at the correct accounting package data file on their local machine.
+  - Complete some steps to point the connector at the correct accounting software data file on their local machine.
 
 When installed, the QBD connector doesn’t require any further interaction by the SMB user, and administrator privileges are no longer required.
 

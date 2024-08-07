@@ -23,7 +23,7 @@ To install the Sage 50 connector, the user who is connecting their company dataâ
 
 First, the user downloads the Sage 50 on-premise connector from a Codat Link URL.
 
-If you're using the Codat Link flow, the user can download the connector after they've selected Sage 50 as their accounting package in Link. To start the download, they click **Download Connector**:
+If you're using the Codat Link flow, the user can download the connector after they've selected Sage 50 as their accounting software in Link. To start the download, they click **Download Connector**:
 
 ![](/img/old/c15ec77-Download_connector.png "Download connector.png")
 

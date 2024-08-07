@@ -8,7 +8,7 @@ image: "/img/banners/social/commerce.png"
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Sync for Commerce can be implemented within a commerce platform (Point of Sales, Payments, or eCommerce) where sales data originates and within an accounting package to which sales data is synchronized.
+Sync for Commerce can be implemented within a commerce software (Point of Sales, Payments, or eCommerce) where sales data originates and within an accounting software to which sales data is synchronized.
 
 Follow the guidance below to perform the initial setup for Sync for Commerce and enable your customers to select the systems they want to connect and start the Sync configuration process.
 
@@ -23,7 +23,7 @@ To finish the setup, Codat will deploy a simple connector to your API that allow
 
 ## Overview
 
-You will need to implement a simple UI within your software that presents your users with a list of source platforms they can synchronize their data with. These can be commerce platforms or accounting packages. 
+You will need to implement a simple UI within your software that presents your users with a list of source platforms they can synchronize their data with. These can be commerce software or accounting software. 
 
 This interface should be available only to authenticated users - those who are logged into your system. Once the user has selected a system to connect, you need to redirect them to Codat’s Sync configuration user interface. This initial flow is presented on the diagram below.
 
@@ -45,15 +45,15 @@ This interface should be available only to authenticated users - those who are l
 
 ## Available integrations
 
-You can view the accounting and commerce platforms Sync for Commerce supports in the tables below. For your convenience, we also included the `platformKey`. It is a unique identifier for each integration Codat supports, and you will use it in subsequent setup steps.
+You can view the accounting and commerce software Sync for Commerce supports in the tables below. For your convenience, we also included the `platformKey`. It is a unique identifier for each integration Codat supports, and you will use it in subsequent setup steps.
 
 <Tabs>
 
-  <TabItem value="acctg" label="Accounting packages">  
+  <TabItem value="acctg" label="Accounting software">  
 
-  Sync for Commerce currently supports the following accounting packages:
+  Sync for Commerce currently supports the following accounting software:
 
-  | Accounting packages               | Platform key |
+  | Accounting software               | Platform key |
   |-----------------------------------|--------------|
   | Exact (NL)                        |  qudb        |
   | Exact (UK)                        |  pbbf        |
@@ -65,11 +65,11 @@ You can view the accounting and commerce platforms Sync for Commerce supports in
 
   </TabItem>
 
-  <TabItem value="cmmrc" label="Commerce platforms">  
+  <TabItem value="cmmrc" label="Commerce software">  
 
-  Sync for Commerce currently supports the following commerce platforms:
+  Sync for Commerce currently supports the following commerce software:
 
-  | Commerce platforms | Platform key |
+  | Commerce software | Platform key |
   |--------------------|--------------|
   | Clover             | fqly         |
   | Lightspeed K       | ldgh         |
@@ -151,16 +151,16 @@ GET /config/sync/commerce/{commerceKey}/{accoutingKey}/start?merchantIdentifier=
 You will need to populate parameter values as follows:
 
 <Tabs>
-<TabItem value="acctg" label="Accounting packages">  
+<TabItem value="acctg" label="Accounting software">  
 
-- `commerceKey`: the `platformKey` of the commerce platform selected by the user in your UI
+- `commerceKey`: the `platformKey` of the commerce software selected by the user in your UI
 - `accountingKey`: refers to the Codat connector. Your Solutions Engineer will provide this to you
   
 </TabItem>
 
-<TabItem value="cmmrc" label="Commerce platforms">  
+<TabItem value="cmmrc" label="Commerce software">  
 
-- `commerceKey`: the `platformKey` of the commerce platform selected by the user in your UI
+- `commerceKey`: the `platformKey` of the commerce software selected by the user in your UI
 - `accountingKey`: refers to the Codat connector. Your Solutions Engineer will provide this to you
 - `yourMerchantIdenfifier`: your unique identifier for your customer
 

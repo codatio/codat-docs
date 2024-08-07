@@ -11,7 +11,7 @@ banner_title: Lending API
 banner_class: lending
 banner_icon: "/img/logos/products/logo_assess_clear.svg"
 banner_image: "/img/banners/assess.png"
-banner_text: "Our Lending API helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from accounting, banking, and commerce platforms they are already using. It also includes features to help providers verify the accuracy of data and process it more efficiently."
+banner_text: "Our Lending API helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from accounting, banking, and commerce software they are already using. It also includes features to help providers verify the accuracy of data and process it more efficiently."
 video_url: "https://www.youtube.com/embed/UgtbRe-j0Jo?si=KMRaVzgKCnW7E7tr"
 video_text: What is Lending API?
 ---
@@ -27,7 +27,7 @@ Our Lending API is built on top of the latest accounting, commerce, and banking 
 
 ## Who is it for?
 
-Our Lending API is best for digital lenders, neobanks, corporate card providers, and commerce platforms who want to make an assessment of a small business's financial health and performance.
+Our Lending API is best for digital lenders, neobanks, corporate card providers, and commerce software who want to make an assessment of a small business's financial health and performance.
 
 ## Why use it?
 

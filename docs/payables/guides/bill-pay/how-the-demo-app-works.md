@@ -16,8 +16,8 @@ The company creation feature and authorization flow were built using the [Platfo
 Its main features are:
 
 - Creating a company to represent the user using the [Create company](/sync-for-payables-api#/operations/create-company) endpoint. This returns a unique company ID and Link URL.
-- Redirecting the user to their chosen accounting platform via the Link URL. This opens the OAuth login window for the accounting platform, where the user can authenticate and authorize access to their accounting data. 
-- Creating a data connection to the accounting platform using the [Create connection](/sync-for-payables-api#/operations/create-connection) endpoint.
+- Redirecting the user to their chosen accounting software via the Link URL. This opens the OAuth login window for the accounting software, where the user can authenticate and authorize access to their accounting data. 
+- Creating a data connection to the accounting software using the [Create connection](/sync-for-payables-api#/operations/create-connection) endpoint.
 - When the company is successfully connected, redirecting the user to the demo app's redirect URL, as defined in the [Link settings](/auth-flow/customize/customize-link).
 
 ## View bills

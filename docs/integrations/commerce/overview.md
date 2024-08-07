@@ -1,17 +1,17 @@
 ---
 title: "Overview"
-description: "Explore the range of commerce platforms you can connect to through our API."
+description: "Explore the range of commerce software you can connect to through our API."
 sidebar_label: Commerce
 displayed_sidebar: integrationsCommerce
 ---
 
 import { IntegrationsList } from "@components/Integrations";
 
-Our suite of commerce integrations allow you to retrieve up-to-date ecommerce, payment, and point-of-sale data from your SMB customers' commerce platforms.
+Our suite of commerce integrations allow you to retrieve up-to-date ecommerce, payment, and point-of-sale data from your SMB customers' commerce software.
 
-## Supported commerce platforms
+## Supported commerce software
 
-You can connect to the following commerce platforms using our integrations:
+You can connect to the following commerce software using our integrations:
 
 <IntegrationsList sourceType="commerce"/>
 
@@ -23,9 +23,9 @@ For testing and evaluation, you can use our Commerce Sandbox integration to expl
 
 ## Setting up commerce integrations
 
-Most commerce platforms require you to register with them before you can access data from their platforms through Codat. In most cases, registration is free and only takes a few minutes.
+Most commerce software require you to register with them before you can access data from their platforms through Codat. In most cases, registration is free and only takes a few minutes.
 
-Our documentation details the specific setup steps and requirements for each supported commerce platform.
+Our documentation details the specific setup steps and requirements for each supported commerce software.
 
 | Platform                                                                                             | Registration required | Registration complexity | Marketplace partner program | Connection restrictions | Additional information                                                                                                                                                                                                                                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------------------|-----------------------|-------------------------|-----------------------------|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

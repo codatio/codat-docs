@@ -38,7 +38,7 @@ We'd love to hear your opinions, so please let us know how you're finding them i
 
 Launch new accounting integrations faster and save on ongoing maintenance by standardizing how you sync with bookkeeping software and ERPs.
 
-Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting platforms through a standardized API.
+Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting software through a standardized API.
 
 [Read the docs...](https://codat2.stoplight.io/docs/sync-for-expenses-v2/fjx7t6em0l1ux-overview)
 

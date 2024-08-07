@@ -1,6 +1,6 @@
 ---
 title: "Record invoice finance repayments"
-description: "Record the repayment of money owed to the lender for an invoice financing loan in the SMB's accounting platform"
+description: "Record the repayment of money owed to the lender for an invoice financing loan in the SMB's accounting software"
 sidebar_label: "Record: invoice finance"
 ---
 
@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import WritebackMapping from "@components/Prototypes/WritebackMapping";
 
-Once the borrower's customer has paid for the goods or services they purchased, the financed invoice is ready to be reconciled in the accounting platform.  
+Once the borrower's customer has paid for the goods or services they purchased, the financed invoice is ready to be reconciled in the accounting software.  
 
 To reflect that programmatically, perform these steps:
 
@@ -810,7 +810,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-At the end of this 3-stage process, your borrower will have the loan writeback reflected correctly in their accounting platform. This saves them time on reconciliation and makes sure they (and you!) have clarity on the state of the loan.
+At the end of this 3-stage process, your borrower will have the loan writeback reflected correctly in their accounting software. This saves them time on reconciliation and makes sure they (and you!) have clarity on the state of the loan.
 
 :::tip Recap
 In this guide, you have learned:

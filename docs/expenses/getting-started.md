@@ -21,7 +21,7 @@ sequenceDiagram
     participant smb as SMB customer
     participant app as Your application 
     participant codat as Codat
-    participant acctg as Accounting platform
+    participant acctg as Accounting software
     
     smb ->> app: Logs into application
     smb ->> app: Initiates connection to accounting software
@@ -82,9 +82,9 @@ You can also choose to enable additional data types that may enhance your Sync f
 
 | Data type name | `dataType` | Solution enhancement |
 | :- | :- | :- | 
-| Direct costs        | `directCosts`        | Sync for Expenses uses direct cost to represent the expense transaction within the accounting platform.        |
+| Direct costs        | `directCosts`        | Sync for Expenses uses direct cost to represent the expense transaction within the accounting software.        |
 | Direct incomes      | `directIncomes`      | Direct incomes are used to represent any income-generating transaction type, such as cashback rewards.    |
-| Journal entries     | `journalEntries`     | Journal entries are used when an accounting platform does not support a representation of direct costs. They are also used to represent transfers, such as topping up or paying down an expense card.   |
+| Journal entries     | `journalEntries`     | Journal entries are used when an accounting software does not support a representation of direct costs. They are also used to represent transfers, such as topping up or paying down an expense card.   |
 | Transfers           | `transfers`          | A record of an expense transaction between two bank accounts, such as topping up or paying down the expense card.        |
 </details>
 

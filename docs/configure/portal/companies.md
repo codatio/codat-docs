@@ -50,7 +50,7 @@ If you require a more specific schedule, you [queue data sync using Codat's API]
 For more information on configuring your sync settings, please see [Data type settings](/core-concepts/data-type-settings).
 
 :::info Token expiry and connection de-authorization
-For some accounting platforms, if you don’t synchronize the data of a company for a significant time period (between 60 and 100 days) authorization is revoked. In this case, [provide your customer with a new link URL](/auth-flow/authorize-hosted-link#use-the-hosted-link-url) so that they can renew your access to their data.
+For some accounting software, if you don’t synchronize the data of a company for a significant time period (between 60 and 100 days) authorization is revoked. In this case, [provide your customer with a new link URL](/auth-flow/authorize-hosted-link#use-the-hosted-link-url) so that they can renew your access to their data.
 :::
 
 ## Manage existing companies

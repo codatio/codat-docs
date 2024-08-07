@@ -4,7 +4,7 @@ description: "Learn how to set up the Shopify integration using the public apps 
 sidebar_label: Public apps
 ---
 
-Set up the Shopify integration to retrieve commerce data from customers who sell their products on Shopify's ecommerce platform.
+Set up the Shopify integration to retrieve commerce data from customers who sell their products on Shopify's ecommerce software.
 
 This article explains how to set up the Shopify integration using the _public apps_ approach.
 

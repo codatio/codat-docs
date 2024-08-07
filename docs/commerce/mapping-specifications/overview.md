@@ -1,13 +1,13 @@
 ---
 title: "Mapping specifications"
 sidebar_label: Overview
-description: "Guides for data mapping configuration from a commerce platform to the supported accounting platforms (Xero, QuickBooks online)"
+description: "Guides for data mapping configuration from a commerce software to the supported accounting software (Xero, QuickBooks online)"
 image: "/img/banners/social/commerce.png"
 ---
 
-This section provides guidelines for data mapping configuration from a commerce platform to the supported accounting platforms (Xero, QuickBooks online).
+This section provides guidelines for data mapping configuration from a commerce software to the supported accounting software (Xero, QuickBooks online).
 
-Here you can find out which account types should be selected for every feature and how the data displays in the accounting platform after a successful synchronization via Sync for Commerce.
+Here you can find out which account types should be selected for every feature and how the data displays in the accounting software after a successful synchronization via Sync for Commerce.
 
 For demonstration purposes, it references the structure and the UI of the Codat no-code Sync flow solution.
 

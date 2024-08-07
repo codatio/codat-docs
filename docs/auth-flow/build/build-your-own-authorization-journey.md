@@ -156,7 +156,7 @@ We only support the management of data access permissions, not data usage permis
 
 4. **Enable users without credentials**
 
-In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting platform.
+In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting software.
 
 To enable them to proceed and explore your product, make upfront authorization for different integration categories optional in **Settings > Auth flow > Link**. Later, remind them to authorize or give them an alternative, such as `Can't sign in to your platform?`.
 

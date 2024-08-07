@@ -91,7 +91,7 @@ const ComponentMapper = ({children, initialComponent, arr}) => {
 const PrototypeWritebackMapping = () => {
 // Select bank account: Select the business bank account the funds will be deposited.
 // Select/create expense account: Select or create the expense account you want any fees or interest tracked against.
-// A comment that a new bank account will be created in your accounting platform. This account acts as the lenders virtual account and is used for double-entry accounting purposes.
+// A comment that a new bank account will be created in your accounting software. This account acts as the lenders virtual account and is used for double-entry accounting purposes.
 
   return (
     <div className="prototype">
@@ -127,7 +127,7 @@ const PrototypeWritebackMapping = () => {
       <div className={`input-group ${styles.card}`}>
         <h5 className={styles.category}>Lender account</h5>
         
-        <p><b>We'll also create a new bank account in your accounting platform</b></p>
+        <p><b>We'll also create a new bank account in your accounting software</b></p>
 
         <p>This account acts as the lender's virtual account and is used for double-entry accounting purposes.</p>
       </div>
