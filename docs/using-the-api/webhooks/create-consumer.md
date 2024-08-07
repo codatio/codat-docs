@@ -237,9 +237,9 @@ const secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw";
 
 // These were all sent from the server
 const headers = {
-  "svix-id": "msg_p5jXN8AQM9LWM0D4loKWxJek",
-  "svix-timestamp": "1614265330",
-  "svix-signature": "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=",
+  "webhook-id": "msg_p5jXN8AQM9LWM0D4loKWxJek",
+  "webhook-timestamp": "1614265330",
+  "webhook-signature": "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=",
 };
 const payload = '{"test": 2432232314}';
 
@@ -258,9 +258,9 @@ secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw"
 
 # These were all sent from the server
 headers = {
-  "svix-id": "msg_p5jXN8AQM9LWM0D4loKWxJek",
-  "svix-timestamp": "1614265330",
-  "svix-signature": "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=",
+  "webhook-id": "msg_p5jXN8AQM9LWM0D4loKWxJek",
+  "webhook-timestamp": "1614265330",
+  "webhook-signature": "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=",
 }
 payload = '{"test": 2432232314}'
 
@@ -278,9 +278,9 @@ using System.Net;
 
 // These were all sent from the server
 var headers = new WebHeaderCollection();
-headers.Set("svix-id", "msg_p5jXN8AQM9LWM0D4loKWxJek");
-headers.Set("svix-timestamp", "1614265330");
-headers.Set("svix-signature", "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=");
+headers.Set("webhook-id", "msg_p5jXN8AQM9LWM0D4loKWxJek");
+headers.Set("webhook-timestamp", "1614265330");
+headers.Set("webhook-signature", "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=");
 var payload = "{\"test\": 2432232314}";
 
 var wh = new Webhook("whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw/Je4ZJEGP1QFb");
@@ -301,9 +301,9 @@ secret := "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw"
 
 // These were all sent from the server
 headers := http.Header{}
-headers.Set("svix-id", "msg_p5jXN8AQM9LWM0D4loKWxJek")
-headers.Set("svix-timestamp", "1614265330")
-headers.Set("svix-signature", "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=")
+headers.Set("webhook-id", "msg_p5jXN8AQM9LWM0D4loKWxJek")
+headers.Set("webhook-timestamp", "1614265330")
+headers.Set("webhook-signature", "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=")
 
 payload := []byte(`{"test": 2432232314}`)
 
@@ -322,9 +322,9 @@ String secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw";
 
 // These were all sent from the server
 HashMap<String, List<String>> headerMap = new HashMap<String, List<String>>();
-headerMap.put("svix-id", Arrays.asList("msg_p5jXN8AQM9LWM0D4loKWxJek"));
-headerMap.put("svix-timestamp", Arrays.asList("1614265330"));
-headerMap.put("svix-signature", Arrays.asList("v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE="));
+headerMap.put("webhook-id", Arrays.asList("msg_p5jXN8AQM9LWM0D4loKWxJek"));
+headerMap.put("webhook-timestamp", Arrays.asList("1614265330"));
+headerMap.put("webhook-signature", Arrays.asList("v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE="));
 HttpHeaders headers = HttpHeaders.of(headerMap, BiPredicate<String, String>)
 
 String payload = "{\"test\": 2432232314}";
@@ -344,10 +344,10 @@ use svix::webhooks::Webhook;
 let secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw".to_string();
 
 let mut headers = http::header::HeaderMap::new();
-headers.insert("svix-id", "msg_p5jXN8AQM9LWM0D4loKWxJek");
-headers.insert("svix-timestamp", "1614265330");
+headers.insert("webhook-id", "msg_p5jXN8AQM9LWM0D4loKWxJek");
+headers.insert("webhook-timestamp", "1614265330");
 headers.insert(
-    "svix-signature",
+    "webhook-signature",
     "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=",
 );
 
@@ -368,9 +368,9 @@ val secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw";
 
 // These were all sent from the server
 val headersMap = mapOf(
-    "svix-id" to listOf("msg_p5jXN8AQM9LWM0D4loKWxJek"),
-    "svix-timestamp" to listOf("1614265330"),
-    "svix-signature" to listOf("v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=")
+    "webhook-id" to listOf("msg_p5jXN8AQM9LWM0D4loKWxJek"),
+    "webhook-timestamp" to listOf("1614265330"),
+    "webhook-signature" to listOf("v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=")
 )
 val headers = HttpHeaders.of(headersMap) { _, _ -> true }
 
@@ -390,9 +390,9 @@ require 'svix'
 
 # These were all sent from the server
 headers = {
-  "svix-id" => "msg_p5jXN8AQM9LWM0D4loKWxJek",
-  "svix-timestamp" => "1614265330",
-  "svix-signature" => "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE="
+  "webhook-id" => "msg_p5jXN8AQM9LWM0D4loKWxJek",
+  "webhook-timestamp" => "1614265330",
+  "webhook-signature" => "v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE="
 }
 payload = '{"test": 2432232314}'
 
@@ -413,9 +413,9 @@ require_once('/path/to/svix/php/init.php');
 // These were all sent from the server
 $payload = '{"test": 2432232314}';
 $header = array(
-        'svix-id'  => 'msg_p5jXN8AQM9LWM0D4loKWxJek',
-        'svix-timestamp' => '1614265330',
-        'svix-signature' => 'v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=',
+        'webhook-id'  => 'msg_p5jXN8AQM9LWM0D4loKWxJek',
+        'webhook-timestamp' => '1614265330',
+        'webhook-signature' => 'v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE=',
     );
 
 // Throws on error, returns the verified content on success
