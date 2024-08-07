@@ -118,10 +118,10 @@ This product will appear as **Sync for Expenses (v2)** on your order form.
 #### Feature definitions
 
 **Pull accounting data**  
-Pull data from connected Accounting softwares.
+Pull data from connected Accounting software.
 
 **Push accounting data**  
-Pull data from connected Accounting softwares.
+Pull data from connected Accounting software.
  
 [See the documentation for a list of supported data types](/payroll/data-types)
 
@@ -153,16 +153,16 @@ This product will appear as **Sync for Payroll** on your order form.
 #### Feature definitions
 
 **Pull accounting data**  
-Get data from connected Accounting softwares.
+Get data from connected Accounting software.
 
 **Push accounting data**  
-Create data in connected Accounting softwares.
+Create data in connected Accounting software.
 
 **Update accounting data**  
-Update data in connected Accounting softwares.
+Update data in connected Accounting software.
 
 **Delete accounting data**  
-Delete data in connected Accounting softwares.
+Delete data in connected Accounting software.
 
 [See the documentation for a list of supported data types](/payables/data-types)
 
@@ -237,7 +237,7 @@ Open banking provider access is subject to separate access requirements.
 #### Feature definitions
 
 **Pull accounting data**  
-Pull the following data from connected Accounting softwares: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
+Pull the following data from connected Accounting software: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
 **Pull commerce data**  
 Pull the following data from connected Commerce software: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)

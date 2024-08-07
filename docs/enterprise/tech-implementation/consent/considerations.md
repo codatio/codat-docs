@@ -29,7 +29,7 @@ This question should be added into a wider set of FAQs that are surfaced within 
 
 A customer is likely to be unsure about the underlying technology that allows data to be extracted and surfaced into each relevant application via APIs. 
 
-It is important to provide some comfort to each customer connecting banking and/or accounting softwares that their data will be shared very securely via 0Auth2.0.
+It is important to provide some comfort to each customer connecting banking and/or accounting software that their data will be shared very securely via 0Auth2.0.
 
 This question should be added into a wider set of FAQs that are surfaced within the Strategic Consent Journey.
 

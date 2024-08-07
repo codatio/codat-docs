@@ -23,7 +23,7 @@ To finish the setup, Codat will deploy a simple connector to your API that allow
 
 ## Overview
 
-You will need to implement a simple UI within your software that presents your users with a list of source platforms they can synchronize their data with. These can be commerce software or accounting softwares. 
+You will need to implement a simple UI within your software that presents your users with a list of source platforms they can synchronize their data with. These can be commerce software or accounting software. 
 
 This interface should be available only to authenticated users - those who are logged into your system. Once the user has selected a system to connect, you need to redirect them to Codat’s Sync configuration user interface. This initial flow is presented on the diagram below.
 
@@ -49,11 +49,11 @@ You can view the accounting and commerce software Sync for Commerce supports in 
 
 <Tabs>
 
-  <TabItem value="acctg" label="Accounting softwares">  
+  <TabItem value="acctg" label="Accounting software">  
 
-  Sync for Commerce currently supports the following accounting softwares:
+  Sync for Commerce currently supports the following accounting software:
 
-  | Accounting softwares               | Platform key |
+  | Accounting software               | Platform key |
   |-----------------------------------|--------------|
   | Exact (NL)                        |  qudb        |
   | Exact (UK)                        |  pbbf        |
@@ -151,7 +151,7 @@ GET /config/sync/commerce/{commerceKey}/{accoutingKey}/start?merchantIdentifier=
 You will need to populate parameter values as follows:
 
 <Tabs>
-<TabItem value="acctg" label="Accounting softwares">  
+<TabItem value="acctg" label="Accounting software">  
 
 - `commerceKey`: the `platformKey` of the commerce software selected by the user in your UI
 - `accountingKey`: refers to the Codat connector. Your Solutions Engineer will provide this to you

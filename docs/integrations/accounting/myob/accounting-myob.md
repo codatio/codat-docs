@@ -27,7 +27,7 @@ See [Set up the MYOB integration](/integrations/accounting/myob/accounting-myob-
 
 MYOB have migrated their Essentials API to a new version. The new version will be using the AccountRight API. You can read more about the update in the [MYOB developer centre](https://developer.myob.com/api/myob-business-api/api-overview/getting-started/).
 
-The new Essentials will use the same API as their AccountRight Live platform. Therefore, you only need to carry out the setup described below once to gain access to both accounting softwares.
+The new Essentials will use the same API as their AccountRight Live platform. Therefore, you only need to carry out the setup described below once to gain access to both accounting software.
 
 Some users may still be on the old, non-migrated version of MYOB Essentials that uses a legacy API. If your customer is unable to connect using the new unified integration, please use our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new) to raise a ticket.
 :::

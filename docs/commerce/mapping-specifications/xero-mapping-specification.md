@@ -43,7 +43,7 @@ If no sales have been made at a given tax rate on that day, the corresponding li
 
 :::caution Rounding
 
-Discounts are applied to the total of the purchase once all the items have been summed up rather than at an item level. As we are splitting out items into VAT percentages across all sales for the day, discounts need to be applied at the item level which may lead to slight rounding discrepancies compared to applying the discount at the summed level. As per the advice of most accounting softwares, we add an invoice line of ± 0.01 to bring the total in line with the correct total.
+Discounts are applied to the total of the purchase once all the items have been summed up rather than at an item level. As we are splitting out items into VAT percentages across all sales for the day, discounts need to be applied at the item level which may lead to slight rounding discrepancies compared to applying the discount at the summed level. As per the advice of most accounting software, we add an invoice line of ± 0.01 to bring the total in line with the correct total.
 :::
 
 When the merchant receives payment for the reported sales, the invoice is marked as paid and is balanced by the merchant’s holding account (also known as a clearing or a liquid account) for the respective payment type.
