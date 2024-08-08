@@ -14,7 +14,7 @@
       "email": "support@codat.io"
     },
     "summary": "Codat's standardized API for accessing commerce data ",
-    "description": "> ### New to Codat?\n>\n> Our Commerce API reference is relevant only to our existing clients.\n> Please reach out to your Codat contact so that we can find the right product for you.\n\nCodat's Commerce API allows you to access standardised data from over 11 commerce and POS systems.\n\nStandardize how you connect to your customers’ payment, PoS, and eCommerce systems. Retrieve orders, payouts, payments, and product data in the same way for all the leading commerce software.\n\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Customers | Retrieve standardized data from linked commerce software. |\n| Disputes | Retrieve standardized data from linked commerce software. |\n| Company info | Retrieve standardized data from linked commerce software. |\n| Locations | Retrieve standardized data from linked commerce software. |\n| Orders | Retrieve standardized data from linked commerce software. |\n| Payments | Retrieve standardized data from linked commerce software. |\n| Products | Retrieve standardized data from linked commerce software. |\n| Tax components | Retrieve standardized data from linked commerce software. |\n| Transactions | Retrieve standardized data from linked commerce software. |\n<!-- End Codat Tags Table -->\n\n[Read more...](https://docs.codat.io/commerce-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
+    "description": "> ### New to Codat?\n>\n> Our Commerce API reference is relevant only to our existing clients.\n> Please reach out to your Codat contact so that we can find the right product for you.\n\nCodat's Commerce API allows you to access standardised data from over 11 commerce and POS systems.\n\nStandardize how you connect to your customers’ payment, PoS, and eCommerce systems. Retrieve orders, payouts, payments, and product data in the same way for all the leading commerce platforms.\n\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Customers | Retrieve standardized data from linked commerce platforms. |\n| Disputes | Retrieve standardized data from linked commerce platforms. |\n| Company info | Retrieve standardized data from linked commerce platforms. |\n| Locations | Retrieve standardized data from linked commerce platforms. |\n| Orders | Retrieve standardized data from linked commerce platforms. |\n| Payments | Retrieve standardized data from linked commerce platforms. |\n| Products | Retrieve standardized data from linked commerce platforms. |\n| Tax components | Retrieve standardized data from linked commerce platforms. |\n| Transactions | Retrieve standardized data from linked commerce platforms. |\n<!-- End Codat Tags Table -->\n\n[Read more...](https://docs.codat.io/commerce-api/overview)\n\n[See our OpenAPI spec](https://github.com/codatio/oas) ",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -64,39 +64,39 @@
   "tags": [
     {
       "name": "Customers",
-      "description": "Retrieve standardized data from linked commerce software."
+      "description": "Retrieve standardized data from linked commerce platforms."
     },
     {
       "name": "Disputes",
-      "description": "Retrieve standardized data from linked commerce software."
+      "description": "Retrieve standardized data from linked commerce platforms."
     },
     {
       "name": "Company info",
-      "description": "Retrieve standardized data from linked commerce software."
+      "description": "Retrieve standardized data from linked commerce platforms."
     },
     {
       "name": "Locations",
-      "description": "Retrieve standardized data from linked commerce software."
+      "description": "Retrieve standardized data from linked commerce platforms."
     },
     {
       "name": "Orders",
-      "description": "Retrieve standardized data from linked commerce software."
+      "description": "Retrieve standardized data from linked commerce platforms."
     },
     {
       "name": "Payments",
-      "description": "Retrieve standardized data from linked commerce software."
+      "description": "Retrieve standardized data from linked commerce platforms."
     },
     {
       "name": "Products",
-      "description": "Retrieve standardized data from linked commerce software."
+      "description": "Retrieve standardized data from linked commerce platforms."
     },
     {
       "name": "Tax components",
-      "description": "Retrieve standardized data from linked commerce software."
+      "description": "Retrieve standardized data from linked commerce platforms."
     },
     {
       "name": "Transactions",
-      "description": "Retrieve standardized data from linked commerce software."
+      "description": "Retrieve standardized data from linked commerce platforms."
     }
   ],
   "paths": {
@@ -1291,7 +1291,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "Retrieve information about the company, as seen in the commerce software.\n\nThis may include information like addresses, tax registration details and social media or website information."
+        "description": "Retrieve information about the company, as seen in the commerce platform.\n\nThis may include information like addresses, tax registration details and social media or website information."
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-locations": {
@@ -7568,7 +7568,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *List tax components* endpoint returns a list of [tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) for a given company's connection.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce software, including tax rate's name and value.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
+        "description": "The *List tax components* endpoint returns a list of [tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) for a given company's connection.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n    "
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-taxComponents/{taxId}": {
@@ -7663,7 +7663,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get tax* endpoint returns a single tax for a given taxId.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce software, including tax rate's name and value.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-taxComponents) for integrations that support getting a specific tax.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        "description": "The *Get tax* endpoint returns a single tax for a given taxId.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce platform, including tax rate's name and value.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-taxComponents) for integrations that support getting a specific tax.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     }
   },
@@ -7731,7 +7731,7 @@
               },
               "commercePlatformRef": {
                 "type": "string",
-                "description": "Identifier or reference for the company in the commerce software"
+                "description": "Identifier or reference for the company in the commerce platform"
               },
               "companyLegalName": {
                 "type": "string",
@@ -9038,7 +9038,7 @@
       "PaymentMethodRef": {
         "type": "object",
         "title": "Payment method reference",
-        "description": "The payment method the record is linked to in the accounting or commerce software.",
+        "description": "The payment method the record is linked to in the accounting or commerce platform.",
         "properties": {
           "id": {
             "description": "The unique identifier of the location being referenced.",
@@ -9535,7 +9535,7 @@
         "title": "Supplemental data",
         "type": "object",
         "x-internal": true,
-        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting software. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
         "properties": {
           "content": {
             "type": "object",
@@ -9549,7 +9549,7 @@
       },
       "TaxComponent": {
         "title": "Commerce: Tax component",
-        "description": "The Tax Components endpoints return tax rates data from the commerce software, including tax rate names and values. This is to support the mapping of tax rates from the commerce software to those in the accounting software.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
+        "description": "The Tax Components endpoints return tax rates data from the commerce platform, including tax rate names and values. This is to support the mapping of tax rates from the commerce platform to those in the accounting platform.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
         "type": "object",
         "allOf": [
           {
@@ -9560,7 +9560,7 @@
             "properties": {
               "name": {
                 "type": "string",
-                "description": "Name of the Tax Rate Component in the source commerce software.",
+                "description": "Name of the Tax Rate Component in the source commerce platform.",
                 "example": "Sales Tax"
               },
               "rate": {
@@ -9598,7 +9598,7 @@
                 "$ref": "#/components/schemas/TaxComponent/definitions/taxComponentRef"
               },
               "rate": {
-                "description": "Tax amount on order line sale as available from source commerce software.",
+                "description": "Tax amount on order line sale as available from source commerce platform.",
                 "type": "number",
                 "format": "decimal",
                 "nullable": true
@@ -9698,7 +9698,7 @@
                 "$ref": "#/components/schemas/Transaction/definitions/transactionType"
               },
               "subType": {
-                "description": "Non-standardised transaction type data from the commerce software",
+                "description": "Non-standardised transaction type data from the commerce platform",
                 "type": "string",
                 "examples": [
                   "CardPayment",
