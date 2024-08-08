@@ -26,7 +26,7 @@ import Questions, { Question } from '@components/Questions';
     <li>Visit the <a href="https://system.netsuite.com/app/setup/accesstokens.nl?whence=">Access Tokens</a> page in NetSuite.</li>
     <li>Locate a token you wish to delete and click <b>Edit</b>.</li>
     <li>On the <i>Access Token</i> page, click <b>Revoke</b>, then <b>OK</b> in the confirmation pop-up.
-        <p><img src="/img/smb-help-hub/0001-netsuite-revoke-access-token.png" alt="Screenshot of the NetSuite interface access token screen with the Revoke and OK buttons outlined for attention"></p>
+        <p><img src="/img/smb-help-hub/netsuite/0001-netsuite-revoke-access-token.png" alt="Screenshot of the NetSuite interface access token screen with the Revoke and OK buttons outlined for attention"></p>
         <p>You will be redirected back to NetSuite's <i>Access Tokens</i> page and see a success message.</p>
     </li>
     <li>Click <b>Try again</b> in Codat's NetSuite connection flow so that we can retry obtaining access.</li>
@@ -48,7 +48,7 @@ import Questions, { Question } from '@components/Questions';
     <li>Visit the <a href="https://2633203.app.netsuite.com/app/common/integration/integrapplist.nl?whence=">Integrations</a> page in NetSuite.</li>
     <li>Locate the <i>AppLinkProd</i> integration on the list and click on its name.</li>
     <li>On the detailed <i>Integration</i> page, click the <b>STATE</b> dropdown and select <b>Enabled</b>. Click <b>Save</b> to apply the change.</li>
-      <p><img src="/img/smb-help-hub/0002-netsuite-enable-integration.png" alt="Screenshot of the NetSuite interface integration screen with the State dropdown and Save button outlined for attention"></p>
+      <p><img src="/img/smb-help-hub/netsuite/0002-netsuite-enable-integration.png" alt="Screenshot of the NetSuite interface integration screen with the State dropdown and Save button outlined for attention"></p>
     <li>Click <b>Try again</b> in Codat's NetSuite connection flow so that we can retry establishing the connection.</li>
   </ol>
     `}

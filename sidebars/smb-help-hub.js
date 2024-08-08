@@ -34,7 +34,16 @@ module.exports = [
     collapsed: true,
     items: [
       "smb-help-hub/integrations/sage-intacct/overview",
-      "smb-help-hub/integrations/sage-intacct/troubleshooting",
+      {
+        type: "category",
+        label: "Resolve issues",
+        collapsed: true,
+        items: [
+          "smb-help-hub/integrations/sage-intacct/web-services-subscription",
+          "smb-help-hub/integrations/sage-intacct/web-services-user",
+          "smb-help-hub/integrations/sage-intacct/error-messages",
+        ]
+      },
     ],
   },
   //{
