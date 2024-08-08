@@ -5135,7 +5135,7 @@
                 "format": "decimal",
                 "description": "The loan outstanding balance.  This may not equal totalDrawdowns - totalRepayments due to interest which has been accrued."
               },
-              "lenderName": {
+              "lender": {
                 "type": "string",
                 "description": "The name of lender providing the loan."
               }
