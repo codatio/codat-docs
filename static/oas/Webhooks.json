@@ -286,14 +286,14 @@
         }
       }
     },
-    "read.complete": {
+    "read.completed": {
       "post": {
         "description": "Indicates that the fetch of data types for a product has completed.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReadCompleteWebhook"
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
               }
             }
           }
@@ -448,7 +448,7 @@
                 "description": "The number of available requests per day."
               },
               "ExpiresUtc": {
-                "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
+                "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
                 "description": "The date time in UTC when your daily quota is reset."
               }
             }
@@ -1104,8 +1104,8 @@
           }
         ]
       },
-      "ReadCompleteWebhook": {
-        "title": "Read complete webhook",
+      "ReadCompletedWebhook": {
+        "title": "Read completed webhook",
         "type": "object",
         "properties": {
           "id": {
@@ -1128,12 +1128,12 @@
             ]
           },
           "payload": {
-            "$ref": "#/components/schemas/ReadCompleteWebhook/definitions/readCompleteWebhookPayload"
+            "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/readCompletedWebhookPayload"
           }
         },
         "definitions": {
-          "readCompleteWebhookPayload": {
-            "title": "Company fetch complete webhook payload",
+          "readCompletedWebhookPayload": {
+            "title": "Company fetch completed webhook payload",
             "type": "object",
             "properties": {
               "referenceCompany": {
@@ -1161,7 +1161,7 @@
                 "description": "Name of the product that requested the data types to be fetched."
               },
               "modifiedFromDate": {
-                "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
+                "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
                 "description": "The date time in UTC when the data types were last fetched and input into Codat's cache."
               },
               "dataTypes": {
@@ -1243,7 +1243,7 @@
             ]
           },
           "generatedDate": {
-            "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
+            "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
             "description": "The date time in UTC the event was generated in Codat."
           },
           "payload": {
@@ -1310,7 +1310,7 @@
                     "description": "The latest balance for the bank account."
                   },
                   "modifiedDate": {
-                    "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
+                    "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
                     "nullable": true,
                     "description": "The last date the bank account was modified."
                   },
@@ -1327,7 +1327,7 @@
                     ]
                   },
                   "feedStartDate": {
-                    "$ref": "#/components/schemas/ReadCompleteWebhook/properties/generatedDate",
+                    "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
                     "nullable": true
                   }
                 },
