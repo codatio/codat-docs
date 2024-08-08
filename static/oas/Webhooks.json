@@ -1568,61 +1568,6 @@
             }
           }
         ]
-      },
-      "SyncStartedWebhook": {
-        "title": "Sync started webhook",
-        "x-internal": true,
-        "description": "Webhook request body used to notify that a sync has started.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
-          },
-          "Data": {
-            "type": "object",
-            "properties": {
-              "syncId": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncId"
-              },
-              "syncType": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncType"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-            "ClientName": "Expense Sync",
-            "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
-            "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
-            "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
-            "RuleType": "Sync Started",
-            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has started.",
-            "Data": {
-              "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-              "syncType": "Expense"
-            }
-          }
-        ]
       }
     },
     "securitySchemes": {
