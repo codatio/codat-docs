@@ -45,7 +45,7 @@
         "tags": [
           "Idx"
         ],
-        "description": "The _List Intuit accounts_ endpoint returns a list of accounts for a given company's connection.\n\nThese accounts are the representation of bank accounts within Codat's domain, from which transactions are synced into the accounting software.",
+        "description": "The _List Intuit accounts_ endpoint returns a list of accounts for a given company's connection.\n\nThese accounts are the representation of bank accounts within Codat's domain, from which transactions are synced into the accounting platform.",
         "responses": {
           "200": {
             "description": "Success",
@@ -280,7 +280,7 @@
               "id": {
                 "type": "string",
                 "format": "uuid",
-                "description": "Identifier for the account, unique for the company in the accounting software."
+                "description": "Identifier for the account, unique for the company in the accounting platform."
               },
               "accountDisplayInfo": {
                 "$ref": "#/components/schemas/IntuitAccount/definitions/accountDisplayInfo"
@@ -926,7 +926,7 @@
               "transactionId": {
                 "type": "string",
                 "format": "uuid",
-                "description": "Identifier for the bank account transaction, unique for the company in the accounting software."
+                "description": "Identifier for the bank account transaction, unique for the company in the accounting platform."
               },
               "accountId": {
                 "type": "string",
