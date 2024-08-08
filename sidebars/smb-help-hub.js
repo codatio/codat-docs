@@ -39,9 +39,9 @@ module.exports = [
         label: "Resolve issues",
         collapsed: true,
         items: [
-          "smb-help-hub/integrations/sage-intacct/web-services-subscription",
-          "smb-help-hub/integrations/sage-intacct/web-services-user",
-          "smb-help-hub/integrations/sage-intacct/error-messages",
+          "smb-help-hub/integrations/sage-intacct/troubleshooting/web-services-subscription",
+          "smb-help-hub/integrations/sage-intacct/troubleshooting/web-services-user",
+          "smb-help-hub/integrations/sage-intacct/troubleshooting/error-messages",
         ]
       },
     ],
