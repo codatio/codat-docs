@@ -5182,7 +5182,7 @@
                 "totalInvestments": 100000,
                 "totalRepayments": 83481.72,
                 "balance": 42513.18,
-                "lenderName": "Barclays Bank"
+                "lender": "Barclays Bank"
               }
             ]
           }
@@ -5304,7 +5304,7 @@
                   "AccuredInterest"
                 ]
               },
-              "lenderName": {
+              "lender": {
                 "type": "string",
                 "description": "The name of lender providing the loan."
               }
@@ -5336,7 +5336,7 @@
                 "date": "2020-08-02",
                 "amount": -455,
                 "transactionType": "Repayment",
-                "lenderName": "Barclays Bank"
+                "lender": "Barclays Bank"
               }
             ]
           }
