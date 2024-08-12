@@ -14,7 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@codat/sdk-link-types": "^1.2.1",
+    "@codat/sdk-link-types": "^1.2.2",
     "@docusaurus/core": "^3.4.0",
     "@docusaurus/plugin-client-redirects": "^3.4.0",
     "@docusaurus/plugin-vercel-analytics": "^3.4.0",
