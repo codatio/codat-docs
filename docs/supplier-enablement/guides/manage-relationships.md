@@ -1,14 +1,12 @@
 ---
-title: "Requesting data from your customers"
+title: "Request business data from your customers"
 displayed_sidebar: supplierEnablement
 description: "Learn how to onboard and manage companies that represent your customers"
 ---
 
 Our [Relationship Portal](https://relationships.codat.io/) is your one-stop shop to view the clients and relationships you are responsible for. Here, your organization's clients are represented as [companies](../../terms/company). 
 
-In this guide, we will cover the creation of a new company, assignment of an existing company to an analyst, and editing and deletion of company records.
-
-In this guide, we will cover the ways you can request accounts payable data from your clients and download the resulting reports. 
+In this guide, we will cover the ways you can request financial data from your clients and create new companies and manage existing ones.
 
 ## Request customer information
 
@@ -24,7 +22,7 @@ This will open the company creation window with the following sections:
 - **Contact details**: use it to add the name and email of the company's point of contact.
 - **Users**: use it to assign different analysts to be responsible for the company from a dropdown list.
 
-Company name and contact name and emails are mandatory fields, but you do not have to assign an analyst to the record - for example, if the client has not yet been allocated to a manager. 
+Company name and contact name and emails are mandatory fields, but you don't have to assign an analyst to the record - for example, if the client has not yet been allocated to a manager. 
 
 When ready, click the **Add company** button. This creates a record in the Relationship Portal.
 
@@ -47,7 +45,7 @@ Select the **Spend analysis** tickbox to ask your client for accounts payable an
 
 Next, click **Request**. This will display an email preview that will be sent to the contact email address you listed for the company. Click **Request information** to confirm the sending of the email. 
 
-You will see a confirmation message once the email is sent.
+You will see a confirmation message once the email is sent. Alternatively, you can click **Cancel**. This will take you back to the Relationship Portal, where you can always request the financial data at a later stage.
 
 ![An image of the Relationship Portal user interface with the email preview window open](/img/supplier-enablement/0065-se-rm-portal-email-preview.png)
 
@@ -69,27 +67,19 @@ You will see a confirmation message once the email is sent.
 
 ![An image of the Relationship Portal user interface with the email preview window open](/img/supplier-enablement/0065-se-rm-portal-email-preview.png)
 
-Next, you will see the information request window appear. It is used to onboard your client and request access their financial data. If you are ready to request the data, select the applicable data types and click **Request**. This will send an email request to the contact email address you listed for the company. 
+### Support your customer
 
-Alternatively, click **Cancel**. This will take you back to the Relationship Portal, where you can always request the financial data at a later stage.
+You may want to have a call with the customer to make sure they successfully connecting their accounting platform. See our checklist for recommended best practices.
 
-We talk you through the details of both of these options in our [Check spend data](/supplier-enablement/guides/analyze-spend) guide. 
+:::note Call checklist
 
-![An image of the Relationship Portal user interface with the request financials window open](/img/supplier-enablement/0064-se-rm-portal-financials-request.png)
+To prepare your customer for the call, let them know that:
 
-### Supporting your customer
+- They will receive an information request email from `noreply@codat.io` that includes the link they'll need to follow.
+- They will need to have Administrator access or equivalent within their accounting platform.
+- They will need to share their screen with you during the call.
 
-You may want to set up a call with the customer to support them in connecting their accounting platform. Thi
-
-::: note Call checklist
-
-To prepare your customer for the call, give them some guidance in advance:
-
-- They'll receive an email including the link to follow (from noreply@codat.io).
-- The customer will need Administrator access within their accounting platform.
-- The customer will need to share their screen with you.
-- Proactively share [answers to common quesitons](/supplier-enablement/resources/customer-faqs) with them.
-
+Proactively share [answers to common questions](/supplier-enablement/resources/customer-faqs) with them.
 :::
 
 ## Manage existing companies
@@ -98,7 +88,7 @@ To prepare your customer for the call, give them some guidance in advance:
 
 If you have previously created companies with Codat, they are available in the Relationship Portal for you to assign to the right analyst. 
 
-By default, the Manager displays companies that are assigned to you. To find unassigned companies or those assigned to other analysts, remove the user selection filter. Click **Users**, scroll through the dropdown list, and untick your name. 
+By default, the Portal displays companies that are assigned to you. To find unassigned companies or those assigned to other analysts, remove the user selection filter. Click **Users**, scroll through the dropdown list, and untick your name. 
 
 ![An image of the Relationship Portal interface with the Users option highlighted](/img/supplier-enablement/0061-se-rm-portal-user-list.png)
 
@@ -140,5 +130,5 @@ You'll need to confirm you want to delete the company. The Relationship Portal w
 
 ## Read next
 
-Next, see how to request financial data from your customers and review the resulting reports:
-- [Check spend data](/supplier-enablement/guides/analyze-spend)
+Next, see how to review the reports resulting from the customer information request:
+- [Review spend data](/supplier-enablement/guides/analyze-spend)
