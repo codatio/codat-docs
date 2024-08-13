@@ -1,14 +1,18 @@
 ---
 title: "Analyze your customers' spend data"
 sidebar_label: Review spend data
-description: "Learn how to request and analyze spend and supplier information from your customer"
+description: "Learn how to analyze spend and supplier information from your customer"
 ---
 
 Our [Relationship Portal](https://relationships.codat.io/) is your one-stop shop to view the clients and relationships you are responsible for. Here, your organization's clients are represented as [companies](../../terms/company). 
 
-## Request data
+In this guide, we will cover the ways you can ownload the resulting reports generated from your customer's business data. 
 
-Before you review spend data, you'll need to [request access to your customer's data](/supplier-enablement/guides/manage-relationships).
+## Prerequisites
+
+Before you can review spend data, you need to request access to it. We cover this in detail in our [Request information](/supplier-enablement/guides/analyze-spend) guide.
+
+need to [request access to your customer's data](/supplier-enablement/guides/manage-relationships).
 
 ## Download data
 
