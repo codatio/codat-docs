@@ -1603,7 +1603,7 @@
       "post": {
         "summary": "Create expense transaction",
         "operationId": "create-expense-transaction",
-        "description": "The *Create expense* endpoint creates an [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting software for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. ",
+        "description": "The *Create expense* endpoint creates an [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting software for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n### Supported Integrations\n\n| Integration                   | Supported |\n|-------------------------------|-----------|\n| Dynamics 365 Business Central | Yes       |\n| FreeAgent                     | Yes       |\n| QuickBooks Desktop            | Yes       |\n| QuickBooks Online             | Yes       |\n| Oracle NetSuite               | Yes       |\n| Xero                          | Yes       |",
         "tags": [
           "Expenses"
         ],
@@ -1707,6 +1707,10 @@
                       "type": "Refund",
                       "issueDate": "2024-02-17T00:00:00+00:00",
                       "currency": "GBP",
+                      "contactRef": {
+                        "id": "430",
+                        "type": "Supplier"
+                      },
                       "bankAccountRef": {
                         "id": "97"
                       },
@@ -1792,7 +1796,7 @@
           }
         },
         "operationId": "update-expense-transaction",
-        "description": "The *Update expense* endpoint updates an existing [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) in the accounting software for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) represent transactions made with a company debit or credit card. \n\n\n**Integration-specific behaviour**\n\nAt the moment you can update expenses only for Xero, QuickBooks Online and FreeAgent ([Payment](https://docs.codat.io/expenses/sync-process/expense-transactions#transaction-types) transaction type only).",
+        "description": "The *Update expense* endpoint updates an existing [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) in the accounting software for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) represent transactions made with a company debit or credit card. \n\n### Supported Integrations\nThe following integrations are supported for the [Payment](https://docs.codat.io/expenses/sync-process/expense-transactions#transaction-types) transaction `type` only: \n| Integration           | Supported |\n|-----------------------|-----------|\n| FreeAgent             | Yes       |\n| QuickBooks Online     | Yes       |\n| Oracle NetSuite       | Yes       |\n| Xero                  | Yes       |",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1857,7 +1861,7 @@
       "put": {
         "summary": "Create transfer transaction",
         "operationId": "create-transfer-transaction",
-        "description": "Use the *Create transfer* endpoint to create or update a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransactionRequest) in the accounting software for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n",
+        "description": "Use the *Create transfer* endpoint to create or update a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransactionRequest) in the accounting software for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Xero                  | Yes       |",
         "tags": [
           "Transfers"
         ],
@@ -1945,7 +1949,7 @@
       "post": {
         "summary": "Create adjustment transaction",
         "operationId": "create-adjustment-transaction",
-        "description": "Use the *Create adjustment expense* endpoint to create an [adjustment](https://docs.codat.io/sync-for-expenses-api#/schemas/AdjustmentTransactionRequest) in the accounting software for a given company's connection. \n\nAdjustments represent write-offs and transaction alterations, such as foreign exchange adjustments, in the form of a journal entry. \n\nThe _Create adjustment_ endpoint is currently only available for QuickBooks Desktop. ",
+        "description": "Use the *Create adjustment expense* endpoint to create an [adjustment](https://docs.codat.io/sync-for-expenses-api#/schemas/AdjustmentTransactionRequest) in the accounting software for a given company's connection. \n\nAdjustments represent write-offs and transaction alterations, such as foreign exchange adjustments, in the form of a journal entry. \n\n### Supported Integrations\n\n| Integration           | Supported |\n|-----------------------|-----------|\n| QuickBooks Desktop    | Yes       |",
         "tags": [
           "Adjustments"
         ],
@@ -2058,7 +2062,7 @@
       "post": {
         "summary": "Create reimbursable expense transaction",
         "operationId": "create-reimbursable-expense-transaction",
-        "description": "Use the *Create reimbursable expense* endpoint to create a [reimbursement request](https://docs.codat.io/sync-for-expenses-api#/schemas/ReimbursableExpenseTransactionRequest) in the accounting software for a given company's connection. \r\n\r\nEmployee reimbursement requests are reflected in the accounting system in the form of Bills against an employee, who is a supplier.",
+        "description": "Use the *Create reimbursable expense* endpoint to submit an employee expense claim in the accounting platform for a given company's connection.\r\n\r\n[Reimbursable expense requests](https://docs.codat.io/sync-for-expenses-api#/schemas/ReimbursableExpenseTransactionRequest) are reflected in the accounting software in the form of **Bills** against an employee (who exists as a supplier in the accounting platform).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |",
         "tags": [
           "Reimbursements"
         ],
@@ -2170,7 +2174,7 @@
       "put": {
         "summary": "Update reimbursable expense transaction",
         "operationId": "update-reimbursable-expense-transaction",
-        "description": "The *Update reimbursable expense* endpoint updates an existing [reimbursable expense transaction](https://docs.codat.io/sync-for-expenses-api#/operations/UpdateReimbursableExpenseTransactionRequest) in the accounting software for a given company's connection. \r\n\r\nEmployee reimbursement requests are reflected in the accounting system in the form of Bills against an employee, who is a supplier.",
+        "description": "The *Update reimbursable expense* endpoint updates an existing employee expense claim in the accounting platform for a given company's connection. \r\n\r\nUpdating an existing [reimbursable expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateReimbursableExpenseTransactionRequest) will update the existing **bill** against an employee (who exists as a supplier in the accounting software).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |",
         "tags": [
           "Reimbursements"
         ],
@@ -16146,6 +16150,10 @@
             "issueDate": "2024-05-21T00:00:00+00:00",
             "currency": "GBP",
             "currencyRate": 1,
+            "contactRef": {
+              "id": "430",
+              "type": "Supplier"
+            },
             "bankAccountRef": {
               "id": "97"
             },
