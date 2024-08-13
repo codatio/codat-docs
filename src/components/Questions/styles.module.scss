@@ -15,6 +15,10 @@
   cursor: pointer;
   line-height: 1.6em;
   display: flex;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .question {

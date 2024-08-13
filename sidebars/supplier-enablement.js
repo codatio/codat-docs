@@ -14,10 +14,10 @@ module.exports = [
   "supplier-enablement/get-started",
   {
     type: "link",
-    label: "Manage clients",
+    label: "Request information",
     customProps: {
       hr: true,
-      section: "User guides",
+      section: "Manage opportunities",
     },
     href: "/supplier-enablement/guides/manage-relationships",
   },
@@ -25,7 +25,16 @@ module.exports = [
   "supplier-enablement/guides/refresh-data",
   {
     type: "link",
-    label: "Relationship Manager",
+    label: "Customer FAQs",
+    customProps: {
+      hr: true,
+      section: "Resources",
+    },
+    href: "/supplier-enablement/resources/customer-faqs",
+  },
+  {
+    type: "link",
+    label: "Relationship Portal",
     customProps: {
       hr: true,
     },
