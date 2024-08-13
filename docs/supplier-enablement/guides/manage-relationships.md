@@ -71,11 +71,11 @@ You will see a confirmation message once the email is sent.
 
 You may want to have a call with the customer to make sure they successfully connecting their accounting platform. See our checklist for recommended best practices.
 
-:::note Call checklist
+:::tip Call checklist
 
 To prepare your customer for the call, let them know that:
 
-- They will receive an information request email from `noreply@codat.io` that includes the link they'll need to follow.
+- They will receive an information request email from `noreply@codat.io` with a link they'll need to follow.
 - They will need to have Administrator access or equivalent within their accounting platform.
 - They will need to share their screen with you during the call.
 
