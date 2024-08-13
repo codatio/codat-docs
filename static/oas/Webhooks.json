@@ -1262,7 +1262,7 @@
                 "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
               },
               "sourceAccount": {
-                "title": "Source Account",
+                "title": "Source account (v1)",
                 "type": "object",
                 "description": "The target bank account in a supported accounting software for ingestion into a bank feed.",
                 "additionalProperties": false,
