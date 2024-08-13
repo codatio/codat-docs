@@ -77,6 +77,21 @@ We talk you through the details of both of these options in our [Check spend dat
 
 ![An image of the Relationship Portal user interface with the request financials window open](/img/supplier-enablement/0064-se-rm-portal-financials-request.png)
 
+### Supporting your customer
+
+You may want to set up a call with the customer to support them in connecting their accounting platform. Thi
+
+::: note Call checklist
+
+To prepare your customer for the call, give them some guidance in advance:
+
+- They'll receive an email including the link to follow (from noreply@codat.io).
+- The customer will need Administrator access within their accounting platform.
+- The customer will need to share their screen with you.
+- Proactively share [answers to common quesitons](/supplier-enablement/resources/customer-faqs) with them.
+
+:::
+
 ## Manage existing companies
 
 ### Assign an existing company
