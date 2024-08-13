@@ -44,7 +44,7 @@ Your data is encrypted in transit using at least TLS 1.2 protocol, and at rest u
 	<Question
 		question="Can I disconnect?"
 		answer={`
-Yes. If you would like us to remove the data connection for any reason, notify us and we can instruct Codat to do so. Alternatively, you can disconnect the integration from within your accounting software
+Yes. If you would like us to remove the data connection for any reason, notify us and we can instruct Codat to do so. Alternatively, you can disconnect the integration from within your accounting software.
 		`}
 	/>
 </Questions>
