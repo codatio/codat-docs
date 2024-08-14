@@ -69,6 +69,10 @@ Jump to event type
 
 ## AccountCategoriesUpdated
 
+Triggered when a company's accounts are categorized.
+The replacement webhooks, `financialStatements.{categorized,recategorized}`, offer more granular insight into who categorized the financial statements. 
+This allows you to review Codat AI's suggested categories when the `financialStatements.cateogized` is triggered or be notifyed when an analyst corrects an account category using the `financialStatements.recategorized` event type.
+
 | RuleType | Maps to eventType |
 |---|---|
 | `Account Categories Updated` | `financialStatements.{categorized,recategorized}` |
