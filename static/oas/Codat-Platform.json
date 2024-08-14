@@ -5909,14 +5909,16 @@
           "NewCompanySynchronizedWebhookData": {
             "type": "object",
             "title": "New company synchronized webhook data",
-            "companyName": {
-              "nullable": true,
-              "type": "string",
-              "description": "Name of company whose connection has changed."
-            },
-            "sourceType": {
-              "$ref": "#/components/schemas/Integration/definitions/sourceType",
-              "nullable": true
+            "properties": {
+              "companyName": {
+                "nullable": true,
+                "type": "string",
+                "description": "Name of company whose connection has changed."
+              },
+              "sourceType": {
+                "$ref": "#/components/schemas/Integration/definitions/sourceType",
+                "nullable": true
+              }
             }
           }
         },

@@ -865,26 +865,28 @@
           "NewCompanySynchronizedWebhookData": {
             "type": "object",
             "title": "New company synchronized webhook data",
-            "companyName": {
-              "nullable": true,
-              "type": "string",
-              "description": "Name of company whose connection has changed."
-            },
-            "sourceType": {
-              "nullable": true,
-              "title": "Source Type",
-              "description": "The type of platform of the connection.",
-              "type": "string",
-              "enum": [
-                "Accounting",
-                "Banking",
-                "BankFeed",
-                "Commerce",
-                "Expense",
-                "Other",
-                "Unknown"
-              ],
-              "example": "Accounting"
+            "properties": {
+              "companyName": {
+                "nullable": true,
+                "type": "string",
+                "description": "Name of company whose connection has changed."
+              },
+              "sourceType": {
+                "nullable": true,
+                "title": "Source Type",
+                "description": "The type of platform of the connection.",
+                "type": "string",
+                "enum": [
+                  "Accounting",
+                  "Banking",
+                  "BankFeed",
+                  "Commerce",
+                  "Expense",
+                  "Other",
+                  "Unknown"
+                ],
+                "example": "Accounting"
+              }
             }
           }
         },
