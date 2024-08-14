@@ -123,13 +123,13 @@ Put this in an expand:
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+| Old schema property                                                   | Maps to new schema property |
 |--|--|
-| AlertId | id |
-| RuleType | eventType |
-| RuleId | - |
-| ClientId | - |
-| ClientName | - |
+| AlertId                                                               | id |
+| RuleType                                                              | eventType |
+| RuleId ![Static Badge](https://img.shields.io/badge/Deprecated-red)   | - |
+| ClientId                                                              | No. If clients require the Codat client ID we recommend setting this as a header. For example `codat-client-id:clientId` |
+| ClientName                                                            | - |
 | CompanyId | payload.referenceCompany.id |
 | DataConnectionId | - |
 | Message | - |
