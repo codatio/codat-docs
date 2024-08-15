@@ -116,33 +116,37 @@ Your customer will receive an email when you request **financials** or **financi
     
 3. **Select accounting software.**
 
-    Once the customer locates the software they use and want to connect, they should select it and click **Next**.
+    Once the customer locates the software they use and want to connect, they should select it and click **Next**. In this guide, we use Xero.
 
-4. **Review data access information.**
+4. **Review data consent information.**
 
     The customer will see a consent screen where they can review what kind of business data your organization will be accessing.
 
+![A combination of three screenshots. The first one shows the connection initiation screen corresponding to step 2. The second one shows the software selection screen corresponding to step 3 with Xero selected. The final one shows the consent screen for accessing Xero data, corresponding to step 4.](/img/supplier-enablement/0108-platform-123.png)
 
-in the flow, the customer will choose their software that they are going to let us access. They will then be redirected to that software to provide their credentials and authorize our access. 
+5. **Enter accounting software credentials to authorize access.**
 
-![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0108-platform-123.png)
+    The customer will be redirected to their accounting software to log in and authorize your access to their data. This step will look different depending on the software your customer uses.
 
-1. blable
+6. **Provide explicit agreement, if required.**
 
-2. blable
+    The flow may include another step to confirm provision of access to the data, if required by the accounting software.
 
-3. On the file upload screen, the customer can download the supplier information template and upload it 
+7. **Complete the connection journey.**
 
-![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0109-platform-45.png)
+    Your customer will be informed that the connection is complete and they can close the window.
 
-link to status changes and downloading resulting reports
+![A combination of two screenshots. The first one shows the explicit consent screen as required by Xero, corresponding to step 6. The second one shows the completion of the journey, corresponding to step 7.](/img/supplier-enablement/0109-platform-45.png)
 
+#### Journey completion
 
+Once the customer finishes the flow, they will see a summary view of their information request. Here, they can check the status of their request.
 
+![Information request view that displays the status of the request sent to the customer.](/img/supplier-enablement/0106-information-request.png)
 
+In the Relationship Portal, you will see the newly added entities and their information provision status. 
 
-
-
+![Relationship Portal screenshot that shows the different entities and their data provision status.](/img/supplier-enablement/0111-platform-journey-complete.png)
 
 <ReadNext
   links={[
