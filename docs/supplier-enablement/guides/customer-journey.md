@@ -108,7 +108,7 @@ Your customer will receive an email when you request **financials** or **financi
 
     Alternatively, you can share this link with the customer directly. Choose **Copy link** instead of **Request by email** when requesting business information. You can learn more in our [Request information](/supplier-enablement/guides/manage-relationships) article.
 
-    ![A section of an example email with the connection button included.](/img/supplier-enablement/0110-software-journey-email)
+    ![A section of an example email with the connection button included.](/img/supplier-enablement/0110-software-journey-email.png)
 
 2. **Choose to connect and link accounting software.** 
 
