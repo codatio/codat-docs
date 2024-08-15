@@ -108,14 +108,14 @@ We recommend grouping your updates to ensure that related values are updated con
 
 | Default value                  | `data-textkey` value         |
 | :----------------------------- | :--------------------------- |
-| Set up Sync to {platform name} | configure-setupSidebar-title |
+| Set up Sync to `{platform name}` | configure-setupSidebar-title |
 
 ##### Checkbox captions
 
 | Default value                         | `data-textkey` value                                  |
 | :------------------------------------ | :---------------------------------------------------- |
-| Connect to {Commerce platform name}   | configure-setupSidebar-checkboxes-connectToCommerce   |
-| Connect to {Accounting platform name} | configure-setupSidebar-checkboxes-connectToAccounting |
+| Connect to `{commerce software name}`   | configure-setupSidebar-checkboxes-connectToCommerce   |
+| Connect to `{accounting software name}` | configure-setupSidebar-checkboxes-connectToAccounting |
 | Set up sales                          | configure-setupSidebar-checkboxes-sales               |
 | Set up fees                           | configure-setupSidebar-checkboxes-fees                |
 | Set up payments                       | configure-setupSidebar-checkboxes-payments            |
@@ -146,9 +146,9 @@ We recommend grouping your updates to ensure that related values are updated con
 | Default value | data-textkey value |
 |---|---|
 | Accounts | configure-content-sales-accounts-title |
-| Configure accounts mapping from {commerce platform name} to {accounting platform name}. | configure-content-sales-accounts-description |
+| Configure accounts mapping from `{commerce software name}` to `{accounting software name}`. | configure-content-sales-accounts-description |
 | Tax rates | configure-content-sales-taxRates-title |
-| Configure tax rates mapping from {commerce platform name} to {accounting platform name}. | configure-content-sales-taxRates-description |
+| Configure tax rates mapping from `{commerce software name}` to `{accounting software name}`. | configure-content-sales-taxRates-description |
 | Other | configure-content-sales-other-title |
 | Other title description: no value by default. | configure-content-sales-other-description |
 
@@ -180,7 +180,7 @@ We recommend grouping your updates to ensure that related values are updated con
 | Default value                                                                           | data-textkey value                          |
 |-----------------------------------------------------------------------------------------|---------------------------------------------|
 | Accounts                                                                                | configure-content-fees-accounts-title       |
-| Configure accounts mapping from {commerce platform name} to {accounting platform name}. | configure-content-fees-accounts-description |
+| Configure accounts mapping from `{commerce software name}` to `{accounting software name}`. | configure-content-fees-accounts-description |
 
 ##### Fees feature categories
 
@@ -221,7 +221,7 @@ We recommend grouping your updates to ensure that related values are updated con
 
 ### How to change the visibility of feature categories (accounts)
 
-To update the visibility of feature categories for a commerce platform, perform the following request:
+To update the visibility of feature categories for a commerce software, perform the following request:
 
 ```json
 POST sync/commerce/config/ui/accounts/platform/{commerceKey}
@@ -244,7 +244,7 @@ POST sync/commerce/config/ui/accounts/platform/{commerceKey}
 }
 ```
 
-In the request above, the `commerceKey` is the Codat platform key of the selected commerce platform. You can find a list of keys for the supported platforms on the [Platform selection flow](/sfc/build-with-sync-for-commerce/sync-platform-selection) page.  
+In the request above, the `commerceKey` is the Codat platform key of the selected commerce software. You can find a list of keys for the supported platforms on the [Platform selection flow](/sfc/build-with-sync-for-commerce/sync-platform-selection) page.  
 To find the `account-key`, consult the tables below. Note that fields marked with an '\*' cannot be removed.
 
 #### Sales feature categories

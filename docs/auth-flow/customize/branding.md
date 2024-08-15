@@ -13,7 +13,7 @@ The branding settings page autosaves when changes are made. You can adjust the f
 
 ### Company name
 
-Your company name, as you see it in the Portal, is also displayed in Link when your customers connect their accounting platforms to Codat.
+Your company name, as you see it in the Portal, is also displayed in Link when your customers connect their accounting software to Codat.
 
 ### Company logo
 

@@ -2,6 +2,7 @@
 title: "Test your Mollie integration"
 description: "Test our Mollie integration by pulling sandbox data from a test company"
 sidebar_label: Testing
+unlisted: true
 ---
 
 You can use the Mollie Test integration to pull test data from Mollie into Codat.

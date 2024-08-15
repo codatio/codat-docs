@@ -1,6 +1,6 @@
 ---
 title: "Record general loan repayments"
-description: "Record the repayment of money owed to the lender for a general loan in the SMB's accounting platform"
+description: "Record the repayment of money owed to the lender for a general loan in the SMB's accounting software"
 sidebar_label: "Record: general loans"
 ---
 
@@ -550,7 +550,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-At the end of this 3-stage process, your borrower will have the loan writeback reflected correctly in their accounting platform. This saves them time on reconciliation and makes sure they (and you!) have clarity on the state of the loan.
+At the end of this 3-stage process, your borrower will have the loan writeback reflected correctly in their accounting software. This saves them time on reconciliation and makes sure they (and you!) have clarity on the state of the loan.
 
 :::tip Recap
 In this guide, you have learned:

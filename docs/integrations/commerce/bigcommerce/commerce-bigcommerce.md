@@ -4,7 +4,10 @@ sidebar_label: Overview
 description: "Learn about our BigCommerce integration"
 ---
 
-<p><a className="external" href="https://www.bigcommerce.com/" target="_blank">BigCommerce</a> is a SaaS-based ecommerce platform for retailers of various sizes, both B2C and B2B.</p>
+<p>
+  <a className="external" href="https://www.bigcommerce.com/" target="_blank">BigCommerce</a> 
+	is a SaaS-based ecommerce software for retailers of various sizes, both B2C and B2B.
+</p>
 
 With Codat's BigCommerce integration, you can securely connect to, retrieve, and view your SMB customers' commerce transactions from BigCommerce. Data is standardized to our data model and available through our [Commerce API](/commerce-api/#/).
 
@@ -33,5 +36,5 @@ After you've tested the integration, see [Set up the BigCommerce integration](/i
 
 :::caution Platform rate limits
 
-Be aware of the <a className="external" href="https://support.bigcommerce.com/s/article/Platform-Limits?language=en_US" target="_blank">Platform Limits</a> in place for the BigCommerce platform.
+Be aware of the <a className="external" href="https://support.bigcommerce.com/s/article/Platform-Limits?language=en_US" target="_blank">Platform Limits</a> in place for the BigCommerce software.
 :::

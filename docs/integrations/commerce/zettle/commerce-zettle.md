@@ -3,10 +3,12 @@ title: "Zettle"
 description: "Learn about our Zettle integration"
 ---
 
-<p><a className="external" href="https://www.zettle.com/" target="_blank">
-  Zettle
-</a> is a point-of-sale (POS) provider that makes it easy for merchants to take payments
-and track their sales, all in one place.</p>
+<p>
+  <a className="external" href="https://www.zettle.com/" target="_blank">
+    Zettle
+  </a> 
+  is a point-of-sale (POS) provider that makes it easy for merchants to take payments and track their sales, all in one place.
+</p>
 
 Use Codat's Commerce API with Zettle to securely connect to, retrieve, and view your customers' commerce transactions.
 

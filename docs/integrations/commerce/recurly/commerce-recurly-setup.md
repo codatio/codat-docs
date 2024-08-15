@@ -2,6 +2,7 @@
 title: "Set up the Recurly integration"
 description: "Explore our API integration with Recurly"
 sidebar_label: Setup
+unlisted: true
 ---
 
 Set up the [Recurly](/integrations/commerce/recurly/commerce-recurly) integration to retrieve recurring billing and subscriptions data from your SMB customers.

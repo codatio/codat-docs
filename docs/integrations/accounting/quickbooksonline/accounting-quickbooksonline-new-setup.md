@@ -23,7 +23,7 @@ Before you can access data from customers who use QuickBooks Online for their ac
 You'll need to:
 
 1. Create an app in the [Intuit Developer Portal](https://developer.intuit.com/).
-2. Before production use, you need to enter some details about your app and complete the _App Assessment Questionnaire_ provided by Intuit. For help, see <a className="external" href="https://codat.zendesk.com/hc/en-gb/articles/4450200789661" target="_blank">QBO app assessment questionnaire</a> in the Codat Support portal.
+2. Before production use, you need to enter some details about your app and complete the _App Assessment Questionnaire_ provided by Intuit. For help, see our [guide to the QBO assessment questionnaire](/integrations/accounting/quickbooksonline/qbo-app-assessment-questionnaire).
 3. Intuit reviews your questionnaire to ensure your app meets their platform requirements.
 4. If your app is approved, you can access its production keys for use with the production integration.
 5. Add your app's secure keys to the Codat Portal.
@@ -119,7 +119,7 @@ You'll need to provide the following information:
 - **Launch URL:** Initial URL for your app's authorization flow. If using no-code Link, provide the generic Link URL, which you can access in the Codat Portal.
 - **Disconnect URL:** Link to the process for deauthorizing your app's access to QuickBooks Online. You can provide the URL of the [Disconnect a data source from a company](/platform-api#/operations/unlink-connection) endpoint. If you don't have a disconnect URL, provide a link to your website or app instead.
 
-For app hosting details, see <a className="external" href="https://codat.zendesk.com/hc/en-gb/articles/4463989520669-QBO-app-hosting" target="_blank">QBO app hosting</a> in the Codat Support Portal.
+For app hosting details, see <a className="external" href="https://docs.codat.io/integrations/accounting/quickbooksonline/quickbooks-online-integration-reference#qbo-app-hosting" target="_blank">QBO app hosting</a>.
 :::
 
 3. Click **Go to the app assessment questionnaire** to open the questionnaire. See [Complete the App Assessment Questionnaire](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup#completing-the-app-assessment-questionnaire) below for guidance on answering the questionnaire.
@@ -151,7 +151,7 @@ Before you can access your app's production keys, you must complete an _App Asse
 
 As a Codat client, you will be linked to a shortened version of the App Assessment Questionnaire. This happens automatically provided you have set the sandbox environment redirect URI to `https://quickbooksonlinesandbox.codat.io/oauth2/callback` according to [our instructions](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup#create-a-quickbooks-online-app-configured-for-sandbox). 
 
-Existing users should have received an email from Intuit with a link to the questionnaire. For recommended answers to the questions pertaining to Codat, see <a className="external" href="https://codat.zendesk.com/hc/en-gb/articles/4450200789661" target="_blank">QBO App Assessment Questionnaire</a> in the Codat Support Portal.
+Existing users should have received an email from Intuit with a link to the questionnaire. For recommended answers to the questions pertaining to Codat, see <a className="external" href="https://docs.codat.io/integrations/accounting/quickbooksonline/qbo-app-assessment-questionnaire" target="_blank">QBO App Assessment Questionnaire</a>.
 
 To access the questionnaire from the Intuit Developer Portal:
 

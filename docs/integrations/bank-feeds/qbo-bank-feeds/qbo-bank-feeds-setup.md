@@ -149,11 +149,11 @@ You can use the [GET /connectionInfo/bankFeedAccounts](/bank-feeds-api#/operatio
 GET /connections/{connectionId}/connectionInfo/bankFeedAccounts
 ```
 
-## Update an existing bank account for a company
+## Update an existing source bank account for a company
 
-You can use the [PATCH /connectionInfo/bankFeedAccounts/{bankAccountId}](/bank-feeds-api#/operations/update-bank-feed) endpoint to update an existing bank account for a company and data connection.
+You can use the [`PATCH /connectionInfo/bankFeedAccounts/{bankAccountId}`](/bank-feeds-api#/operations/update-source-account) endpoint to update an existing source bank account for a company and data connection. It's only possible to update the `accountName` field with this endpoint.
 
-Provide the bank account details you want to update as request parameters.
+Provide the details of the source bank account you want to update as request parameters.
 
 ```http
 PATCH /companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/{bankAccountId}
@@ -183,7 +183,7 @@ You can add new source bank accounts to an existing company and data connection.
 
    Request body:
 
-   ```json
+```json
    [
      {
        "id": "acc-003",
@@ -195,7 +195,7 @@ You can add new source bank accounts to an existing company and data connection.
        "balance": 219.23,
      }
   ]
-   ```
+```
 
 2. The original `linkURL` for the company and data connection contained an `otp` with a one hour expiration window. If this has passed, you'll need to generate a new `linkUrl`. To do this, call the [List connections](/platform-api#/operations/list-connections) endpoint to obtain a new `linkUrl` for the specified company and data connection.
 

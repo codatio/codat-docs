@@ -43,7 +43,7 @@ We've chosen QuickBooks Online for this demo guide because it provides easy acce
 
 ###  Configure redirect URLs
 
-Next, set the redirect URL defined in the demo app as the Codat Redirect URL. This URL redirects you to the **Connection Successful** screen after you've connected the app to an accounting package in the [Hosted Link](/auth-flow/authorize-hosted-link) flow.
+Next, set the redirect URL defined in the demo app as the Codat Redirect URL. This URL redirects you to the **Connection Successful** screen after you've connected the app to an accounting software in the [Hosted Link](/auth-flow/authorize-hosted-link) flow.
 
 1. Sign in to the [Codat Portal](https://app.codat.io).
 2. On the navigation bar, go to **Settings > Redirects** to view the [Redirects](https://app.codat.io/settings/redirects) page.

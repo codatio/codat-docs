@@ -1,6 +1,6 @@
 ---
 title: "Deposit lent funds"
-description: "Deposit the loan and reflect it in the SMB's accounting platform"
+description: "Deposit the loan and reflect it in the SMB's accounting software"
 sidebar_label: "Deposit loan"
 ---
 

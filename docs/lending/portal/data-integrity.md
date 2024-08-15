@@ -15,7 +15,7 @@ To view the Data Integrity feature in the Portal, a company needs to:
 
 ![An image of the Data Integrity page showing the records found percentage and a table of records found](/img/old/3e145f8-DataIntegrity5.png)
 
-The red exclamation mark indicates that a matching accounting account could not be found for the banking account. Click the indicator to reveal more information, as shown in the following image. This is not an error &mdash; it's an indication that a bank account exists but was not matched against the accounting platform.
+The red exclamation mark indicates that a matching accounting account could not be found for the banking account. Click the indicator to reveal more information, as shown in the following image. This is not an error &mdash; it's an indication that a bank account exists but was not matched against the accounting software.
 
 ![An image of the popup for connected accounts](/img/old/a52c29c-DataIntegrity6.png)
 

@@ -5,14 +5,14 @@ displayed_sidebar: payables
 description: "Simplify the deployment of the bill pay process to your app with our solution kit"
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
-import { integrationsFilterBillPayKit } from "@components/global/Integrations/integrations";
+import { IntegrationsList } from "@components/Integrations";
+import { integrationsFilterBillPayKit } from "@components/Integrations/integrations";
 
 ## Overview
 
 #### What is it?
 
-The **Bill pay kit** is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting platforms.
+The **Bill pay kit** is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting software.
 
 We have streamlined and enhanced the logic in our kit's endpoints to focus on simplicity and efficiency, and not on complex procurement functionalities and use cases.
 
@@ -23,14 +23,14 @@ Crucially, the kit offers synchronous functionality, providing real-time updates
 ```mermaid
 
   flowchart TD
-    A(Connect accounting platform) --> B(Get accounting data)
+    A(Connect accounting software) --> B(Get accounting data)
     B --> H(Create new bill)
     H --> D
     B --> C(View outstanding bills)
     C -->D(Create draft payment)
     D -->E(Schedule draft payment)
     E -->F(Single bill payment)
-    F -->G(Reconcile bill payment in accounting platform)
+    F -->G(Reconcile bill payment in accounting software)
 
 ```
 
@@ -48,11 +48,11 @@ Use our comprehensive [Java library](https://github.com/codatio/client-sdk-java/
 
 ## Prerequisites
 
-When using the Bill pay kit, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection. You can do that when the customer starts interacting with your application.  
+When using the Bill pay kit, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting software as a connection. You can do that when the customer starts interacting with your application.  
 
 1. **Create a company**
 
-A company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-v2-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting platform.
+A company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-v2-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting software.
 
 2. **Create a connection**
 
@@ -68,7 +68,7 @@ For a deeper dive into creating companies and connections, see how to [Configure
 
 ## Pay a bill
 
-With the Bill pay kit, your customer can create a new bill or view and choose a bill from a list of unpaid bills from their accounting platform. 
+With the Bill pay kit, your customer can create a new bill or view and choose a bill from a list of unpaid bills from their accounting software. 
 
 ### Create a bill
 
@@ -76,13 +76,13 @@ Use the [Create bill](/sync-for-payables-v2-api#/operations/create-bill) endpoin
 
 1. Tax rate and a nominal account
 
-    You  need to provide a tax rate and a nominal account that the bill will be recorded against. Call our [Get bill mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-bills) endpoint to get this detail from your customer's accounting platform. 
+    You  need to provide a tax rate and a nominal account that the bill will be recorded against. Call our [Get bill mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-bills) endpoint to get this detail from your customer's accounting software. 
 
 2. Supplier record
 
     Bills should always correspond to a supplier that issued them. Use the [List suppliers](https://docs.codat.io/sync-for-payables-v2-api#/operations/list-suppliers) endpoint to check that the relevant supplier exists and then associate it with the bill. You can use querying to retrieve only active suppliers or suppliers created within a specific timeframe. If the supplier doesn't exist, you can create it using the [Create supplier](https://docs.codat.io/sync-for-payables-v2-api#/operations/create-suppliers) endpoint.
 
-Use the [Upload bill attachment](https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) endpoint to assign an attachment against a specific `billId`. This ensures your accounts payable flow has a full audit trail for your SMB and confirms the legitimacy and accuracy of the transaction in the accounting platform. 
+Use the [Upload bill attachment](https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) endpoint to assign an attachment against a specific `billId`. This ensures your accounts payable flow has a full audit trail for your SMB and confirms the legitimacy and accuracy of the transaction in the accounting software. 
 
 ### Retrieve a bill
 

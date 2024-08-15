@@ -1,7 +1,7 @@
 ---
 title: "QuickBooks Online mapping specification"
 sidebar_label: QuickBooks Online
-description: "Guidelines for data mapping configuration from a commerce platform to QuickBooks Online (QBO)"
+description: "Guidelines for data mapping configuration from a commerce software to QuickBooks Online (QBO)"
 image: "/img/banners/social/commerce.png"
 ---
 
@@ -12,7 +12,7 @@ Sync for Commerce supports automatic sales tax (AST) on invoices for US merchant
 
 ## Overview
 
-This document provides guidelines for data mapping configuration from a commerce platform to QuickBooks Online (QBO).
+This document provides guidelines for data mapping configuration from a commerce software to QuickBooks Online (QBO).
 
 In Codat's Sync Flow UI, the data types are grouped under the three features:
 
@@ -42,7 +42,7 @@ If no sales have been made for a given tax rate on that day, the corresponding l
 
 :::caution Rounding
 
-Discounts are applied to the total of the purchase once all the items have been summed up rather than at an item level. As we are splitting out items into VAT percentages across all sales for the day, discounts need to be applied at the item level which may lead to slight rounding discrepancies compared to applying the discount at the summed level. As per the advice of most accounting packages, we add an invoice line of ± 0.01 to bring the total in line with the correct total.
+Discounts are applied to the total of the purchase once all the items have been summed up rather than at an item level. As we are splitting out items into VAT percentages across all sales for the day, discounts need to be applied at the item level which may lead to slight rounding discrepancies compared to applying the discount at the summed level. As per the advice of most accounting software, we add an invoice line of ± 0.01 to bring the total in line with the correct total.
 :::
 
 When the merchant receives payment for the reported sales, the invoice is marked as paid and balanced against an invoice payment (see [Payments](/sfc/mapping-specifications/qbo-mapping-specification#payments)).
@@ -90,7 +90,7 @@ Note that when a customer uses the prepaid item (for example, purchases an item 
 
 ## Fees
 
-The Fees feature encompasses the transactions that involve the commerce service provider, including **[Payment fees](/sfc/mapping-specifications/qbo-mapping-specification#payment-fees)** that a commerce platform charges the merchant for processing their card transactions and **[Payment fee refunds](/sfc/mapping-specifications/qbo-mapping-specification#payment-fee-refunds)**.
+The Fees feature encompasses the transactions that involve the commerce service provider, including **[Payment fees](/sfc/mapping-specifications/qbo-mapping-specification#payment-fees)** that a commerce software charges the merchant for processing their card transactions and **[Payment fee refunds](/sfc/mapping-specifications/qbo-mapping-specification#payment-fee-refunds)**.
 
 ### Fees account mapping
 
@@ -100,11 +100,11 @@ Fees are booked on a nominal account of type **Expense**.
 
 If there's no account of such type, users need to create an account in QuickBooks for this purpose.
 
-Codat pushes a single bill to QBO daily. This bill represents all fees taken by the commerce platform over the course of that day. The bill can have more than one line if there are different types of transactions that occur throughout the day.
+Codat pushes a single bill to QBO daily. This bill represents all fees taken by the commerce software over the course of that day. The bill can have more than one line if there are different types of transactions that occur throughout the day.
 
 #### Payment fee refund
 
-When a merchant refunds a payment accepted using a commerce platform, the commission taken when the payment was taken is simultaneously refunded to their commercial account. In the Codat Sync flow UI, such refunds are referred to as **Payment fee refunds**.
+When a merchant refunds a payment accepted using a commerce software, the commission taken when the payment was taken is simultaneously refunded to their commercial account. In the Codat Sync flow UI, such refunds are referred to as **Payment fee refunds**.
 
 Payment fee refunds should be booked to the same accounts configured for **Payment fees**:
 

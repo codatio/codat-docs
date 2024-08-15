@@ -2,6 +2,7 @@
 title: "Test PrestaShop"
 description: "Test our PrestaShop integration by pulling sample data to a test company"
 sidebar_label: Testing
+unlisted: true
 ---
 
 When you've [set up PrestaShop](/integrations/commerce/prestashop/set-up-prestashop-in-production), you're ready to test the authorization process for your integration. You'll need to:

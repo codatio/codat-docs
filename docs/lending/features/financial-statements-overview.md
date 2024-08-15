@@ -5,9 +5,9 @@ description: "Automate financial statement and ratio calculation with a fully st
 image: "/img/banners/social/lending.png"
 ---
 
-import Products from "@components/global/Products";
-import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations } from "@components/global/Integrations/integrations";
+import Products from "@components/Products";
+import { IntegrationsList } from "@components/Integrations";
+import { accountingIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -273,17 +273,17 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) with the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
 
-- [DataSyncStatusChangedToError](/using-the-api/webhooks/event-types)  
+- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
-- [DatasetDataChanged](/using-the-api/webhooks/event-types)  
+- [`DatasetDataChanged`](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
+  This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
-- [AccountCategoriesUpdated](/using-the-api/webhooks/event-types)
+- [`AccountCategoriesUpdated`](/using-the-api/webhooks/event-types)
 
-  If you receive a message from this webhook, it means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
+  This means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
   
   This update may be done automatically by Codat updating `suggested` categories, or manually by a user updating `confirmed` categories.
 ---

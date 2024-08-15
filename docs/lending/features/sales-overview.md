@@ -5,9 +5,9 @@ description: "Underwrite with real-time data from SMB's payments and shopping pl
 image: "/img/banners/social/lending.png"
 ---
 
-import Products from "@components/global/Products";
-import { IntegrationsList } from "@components/global/Integrations";
-import { commerceIntegrations } from "@components/global/Integrations/integrations";
+import Products from "@components/Products";
+import { IntegrationsList } from "@components/Integrations";
+import { commerceIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
@@ -271,13 +271,13 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) with the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
 
-- [DataSyncStatusChangedToError](/using-the-api/webhooks/event-types)  
+- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means an issue has occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  This means an issue has occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
-- [DatasetDataChanged](/using-the-api/webhooks/event-types)  
+- [`DatasetDataChanged`](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means data has been updated for the specified data type. This can include new, updated, or deleted data. You should then refresh the data in your platform.
+  This means data has been updated for the specified data type. This can include new, updated, or deleted data. You should then refresh the data in your platform.
 
 ---
 

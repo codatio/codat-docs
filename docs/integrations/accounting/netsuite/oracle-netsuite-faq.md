@@ -46,7 +46,7 @@ For more information, see <a className="external" href="https://docs.oracle.com/
 
 Codat maintains a 1 to 1 relationship between an entity/subsidiary and a Codat company. The linking process will result in the data of each individual entity/subsidiary being synchronized to a separate and distinct Codat company.
 
-In order for a client to get the full picture of a company that owns multiple legal entities, its customers will need to go through a separate linking process for each legal entity that exists in the accounting package.
+In order for a client to get the full picture of a company that owns multiple legal entities, its customers will need to go through a separate linking process for each legal entity that exists in the accounting software.
 
 :::caution Elimination subsidiaries
 

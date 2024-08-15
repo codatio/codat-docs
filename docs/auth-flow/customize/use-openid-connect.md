@@ -3,7 +3,7 @@ title: "Use OpenID Connect"
 description: "Configure your authorization process to use OpenID Connect protocol"
 ---
 
-When a customer links their company data, OpenID Connect lets you retrieve [standard information](/auth-flow/customize/use-openid-connect#openid-connect-fields) from the user profile of their accounting package, such as the customer's name, email address, and phone number. You might use these details to:
+When a customer links their company data, OpenID Connect lets you retrieve [standard information](/auth-flow/customize/use-openid-connect#openid-connect-fields) from the user profile of their accounting software, such as the customer's name, email address, and phone number. You might use these details to:
 
 - Pre-fill an application form for the customer.
 - Identify accounts linked by the same person.
@@ -30,7 +30,7 @@ Update your redirect URL and Hosted Link URLs.
    https://link-uat.codat.io/{companyId}/link?openId=true
    ```
 
-   When the customer connects their accounting package any available profile values are substituted in the redirect URL. For example:
+   When the customer connects their accounting software any available profile values are substituted in the redirect URL. For example:
    ```http
    https://redirect.com/site /{companyId}?firstName=John&email=john.smith@theworld.com&phone+441234555666
    ```
@@ -39,7 +39,7 @@ Codat supports a subset of the available [OpenID Connect fields](https://openid.
 
 ## OpenID Connect fields
 
-The following table lists OpenID Connect fields and the accounting platforms for which they are supported.
+The following table lists OpenID Connect fields and the accounting software for which they are supported.
 
 | Field and type                               | Description                                                                     | Platform availability            |
 |----------------------------------------------|---------------------------------------------------------------------------------|----------------------------------|

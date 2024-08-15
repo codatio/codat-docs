@@ -5,7 +5,7 @@ description: "Frequently asked questions about Sync for Expenses"
 displayed_sidebar: expenses
 ---
 
-import Questions, { Question } from '@components/global/Questions';
+import Questions, { Question } from '@components/Questions';
 
 <Questions>
 	<Question
@@ -33,7 +33,7 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 
 <li><b>Standardization of expense data</b></li>
 
-<p>Sync for Expenses standardizes transaction data using an opinionated model that is based on feedback from our customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting platforms. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.</p>
+<p>Sync for Expenses standardizes transaction data using an opinionated model that is based on feedback from our customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting software. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.</p>
 
 <li><b>Multiple transaction support</b></li>
 
@@ -62,20 +62,20 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 	<Question
 		question="How do I reconnect a company?"
 		answer={`
-If a user disconnects, you can use a <a href="https://docs.codat.io/using-the-api/webhooks/event-types">webhook</a> and redirect your user to the <code>linkUrl</code> of the accounting connection to re-authenticate. If a company changes accounting platforms, it is better to remove the accounting connection completely and create a new one. 
+If a user disconnects, you can use a <a href="https://docs.codat.io/using-the-api/webhooks/event-types">webhook</a> and redirect your user to the <code>linkUrl</code> of the accounting connection to re-authenticate. If a company changes accounting software, it is better to remove the accounting connection completely and create a new one. 
 		`}
 	/>
 	<Question
-		question="Where can I find logo files for the accounting platforms supported by Sync for Expenses?"
+		question="Where can I find logo files for the accounting software supported by Sync for Expenses?"
 		answer={`
-If you want to use the accounting platform logos in your user interface, you can get these via our <a href="https://docs.codat.io/platform-api#/operations/get-integrations-branding">Get branding</a> endpoint. 
+If you want to use the accounting software logos in your user interface, you can get these via our <a href="https://docs.codat.io/platform-api#/operations/get-integrations-branding">Get branding</a> endpoint. 
 		`}
 	/>	
 	<Question
 		question="Can I use the Sandbox account to test a sync when implementing Sync for Expenses?"
 		answer={`
 <p>Sync for Expenses does not support Sandbox as a destination platform to sync transactions because it has been designed specifically for pulling, not pushing, data. We recommend signing up for a free QuickBooks or Xero developer account to test syncs, which will give you sandbox access as well.</p>
-<p>For more information on how to set up your accounting platform integration, take a look at the <a href="https://docs.codat.io/integrations/accounting/overview">integration-specific documentation</a>.</p>
+<p>For more information on how to set up your accounting software integration, take a look at the <a href="https://docs.codat.io/integrations/accounting/overview">integration-specific documentation</a>.</p>
 		`}
 	/>
 	<Question
@@ -94,13 +94,13 @@ You can create a webhook consumer in the Codat portal to inform you when the cha
 	<Question
 		question="Am I able to update an attachment when I have already synced the expense transaction?"
 		answer={`
-Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment directly from the accounting platform. Next, you need to upload the correct document either directly to the accounting platform or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments. 
+Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment directly from the accounting software. Next, you need to upload the correct document either directly to the accounting software or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments. 
 		`}
 	/>  
 	<Question
 		question="How do you handle transactions in foreign currency?"
 		answer={`
-Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting platform as a valid expense. You can read more about <a href="https://docs.codat.io/expenses/fx-management">expenses in foreign currency</a> and platform support for different transaction types. 
+Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about <a href="https://docs.codat.io/expenses/fx-management">expenses in foreign currency</a> and platform support for different transaction types. 
 		`}
 	/> 
 	<Question

@@ -11,15 +11,15 @@ banner_title: Lending API
 banner_class: lending
 banner_icon: "/img/logos/products/logo_assess_clear.svg"
 banner_image: "/img/banners/assess.png"
-banner_text: "Our Lending API helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from accounting, banking, and commerce platforms they are already using. It also includes features to help providers verify the accuracy of data and process it more efficiently."
+banner_text: "Our Lending API helps you make smarter credit decisions on small businesses by enabling you to pull your customers' latest data from accounting, banking, and commerce software they are already using. It also includes features to help providers verify the accuracy of data and process it more efficiently."
 video_url: "https://www.youtube.com/embed/UgtbRe-j0Jo?si=KMRaVzgKCnW7E7tr"
 video_text: What is Lending API?
 ---
 
-import Products from "@components/global/Products";
-import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
-import ClientLibraries from "@components/global/ClientLibraries";
+import Products from "@components/Products";
+import { IntegrationsList } from "@components/Integrations";
+import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/Integrations/integrations";
+import ClientLibraries from "@components/ClientLibraries";
 
 ## What is it?
 
@@ -27,7 +27,7 @@ Our Lending API is built on top of the latest accounting, commerce, and banking 
 
 ## Who is it for?
 
-Our Lending API is best for digital lenders, neobanks, corporate card providers, and commerce platforms who want to make an assessment of a small business's financial health and performance.
+Our Lending API is best for digital lenders, neobanks, corporate card providers, and commerce software who want to make an assessment of a small business's financial health and performance.
 
 ## Why use it?
 
@@ -46,10 +46,10 @@ Our Lending API empowers you with a host of features to help you streamline your
 
 <ul className="card-container col-3">
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Bank statements</h3>
     </div>
@@ -59,10 +59,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
   
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Sales</h3>
     </div>
@@ -72,10 +72,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Financial statements</h3>
     </div>
@@ -85,10 +85,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Liabilities</h3>
     </div>
@@ -98,10 +98,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Accounts receivable</h3>
     </div>
@@ -111,10 +111,10 @@ Our Lending API empowers you with a host of features to help you streamline your
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Accounts payable</h3>
     </div>

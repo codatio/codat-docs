@@ -1,9 +1,13 @@
 /* Cards */
 
-@media (max-width: 1080px) {
+@media (max-width: 1199px) {
   ::root {
     --padding-margin: 0em;  
   }
+}
+
+.markdown > ul.card-container {
+  margin: 1rem 0;
 }
 
 ul.card-container {
@@ -27,7 +31,15 @@ ul.card-container {
     grid-template-columns: repeat(3, 1fr);
     
     p {
-      font-size: 0.9em;
+      font-size: 0.95em;
+    }
+  }
+
+  &.col-2 {
+    grid-template-columns: repeat(2, 1fr);
+    
+    p {
+      font-size: 0.98em;
     }
   }
 

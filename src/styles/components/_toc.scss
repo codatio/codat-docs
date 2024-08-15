@@ -13,48 +13,38 @@ html[data-theme="dark"] {
 
 //overrides
 #__docusaurus {
+  --ifm-toc-border-color: transparent;
+
   [class^="tableOfContents_"] {
     position: static;
     top: initial;
     overflow: hidden;
-
     max-height: initial;
-
     padding-block-end: 1.25rem;
-
     border-block-end: 1px solid var(--toc-separator-c);
-
     line-height: 1.4;
   }
-
-  --ifm-toc-border-color: transparent;
 
   .toc-wrapper {
     overflow: auto;
     position: sticky;
     top: calc(var(--ifm-navbar-height) + 16px);
     max-height: calc(100vh - var(--ifm-navbar-height) - 16px);
-
-    margin-block-start: 5rem;
-
-    padding-inline-end: 2rem;
-    padding-inline-start: 2rem;
-    padding-block-end: 2rem;
+    margin-block-start: 4rem;
 
     h2 {
       font-size: 0.625rem;
       line-height: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--c-indigo-60);
+      color: var(--color-interface-core);
     }
 
     .table-of-contents {
       padding: 0;
       margin-inline-start: calc(-1 * var(--ifm-toc-padding-horizontal));
       margin-inline-end: calc(-1 * var(--ifm-toc-padding-horizontal));
-
-      width: 16rem;
+      max-width: 16rem;
 
       > li:first-of-type {
         margin-block-start: 0;
@@ -66,7 +56,7 @@ html[data-theme="dark"] {
     }
 
     .theme-edit-this-page {
-      --edit-this-page-c: var(--ifm-heading-color);
+      --edit-this-page-c: var(--color-interface-core);
 
       font-weight: 600;
       font-size: 0.875rem;

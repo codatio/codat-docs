@@ -23,7 +23,7 @@ In some cases, when a missing account is identified in the configuration, Codat 
 
 If it is not possible to synchronize data for a given day, the user will see an error in the Sync configuration UI. Errors are rare, but can happen due to:
 
-- An unexpected issue when retrieving data from a commerce platform or creating and updating data in the accounting package
+- An unexpected issue when retrieving data from a commerce software or creating and updating data in the accounting software
 
 - An issue with a merchant’s Sync configuration (for example, missing accounts for types of sales that occurred that day)
 
@@ -33,7 +33,7 @@ When an error occurs, the next daily data sync will include records of the lates
 
 We disable a merchant’s data synchronization if it ends with errors for 31 consecutive days.
 
-This ensures that we do not sync data that the merchant has already manually uploaded and reconciled when the issue is eventually resolved. Otherwise, this would result in data duplication within the merchant’s accounting package.
+This ensures that we do not sync data that the merchant has already manually uploaded and reconciled when the issue is eventually resolved. Otherwise, this would result in data duplication within the merchant’s accounting software.
 
 The merchant can re-enable their data synchronization within the Sync configuration UI and even change the sync start date to the date when they wish the data sync to resume.
 :::  

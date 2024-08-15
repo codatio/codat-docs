@@ -8,7 +8,7 @@
       "url": "https://www.codat.io/",
       "email": "expenses@codat.io"
     },
-    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting platforms through a standardized API.\n\n[Explore product](https://docs.codat.io/sync-for-expenses/overview) | [See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing the endpoints you're expecting? We've [reorganized our products](https://docs.codat.io/updates/230901-new-products), and you may be using a [different version of Sync for Expenses](https://docs.codat.io/sync-for-expenses-v1-api#/).\n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Configuration | View and manage mapping configuration and defaults for expense transactions. |\n| Sync | Monitor the status of data syncs. |\n| Expenses | Create and update transactions that represent your customers' spend. |\n| Transfers | Create and update transactions that represent the movement of your customers' money. |\n| Reimbursements | Create and update transactions that represent your customers' repayable spend. |\n| Attachments | Attach receipts to a transaction for a complete audit trail. |\n| Transaction status | Monitor the status of individual transactions in data syncs. |\n| Manage data | Control and monitor the retrieval of data from an integration. |\n| Push operations | View historic push operations. |\n| Accounts | Create accounts and view account schemas. |\n| Customers | Get, create, and update customers. |\n| Suppliers | Get, create, and update suppliers. |\n<!-- End Codat Tags Table -->",
+    "description": "The API for Sync for Expenses.\n\nSync for Expenses is an API and a set of supporting tools. It has been built to\nenable corporate card and expense management platforms to provide high-quality\nintegrations with multiple accounting software through a standardized API.\n\n[Explore product](https://docs.codat.io/sync-for-expenses/overview) | [See our OpenAPI spec](https://github.com/codatio/oas)\n\nNot seeing the endpoints you're expecting? We've [reorganized our products](https://docs.codat.io/updates/230901-new-products), and you may be using a [different version of Sync for Expenses](https://docs.codat.io/sync-for-expenses-v1-api#/).\n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Configuration | View and manage mapping configuration and defaults for expense transactions. |\n| Sync | Monitor the status of data syncs. |\n| Expenses | Create and update transactions that represent your customers' spend. |\n| Transfers | Create and update transactions that represent the movement of your customers' money. |\n| Reimbursements | Create and update transactions that represent your customers' repayable spend. |\n| Attachments | Attach receipts to a transaction for a complete audit trail. |\n| Transaction status | Monitor the status of individual transactions in data syncs. |\n| Manage data | Control and monitor the retrieval of data from an integration. |\n| Push operations | View historic push operations. |\n| Accounts | Create accounts and view account schemas. |\n| Customers | Get, create, and update customers. |\n| Suppliers | Get, create, and update suppliers. |\n<!-- End Codat Tags Table -->",
     "termsOfService": "https://www.codat.io/legals/"
   },
   "security": [
@@ -142,12 +142,20 @@
       "description": "Control and monitor the retrieval of data from an integration."
     },
     {
+      "name": "Mapping options",
+      "description": "Get accounts, trackingCategories and taxRates that can be used in your create and update requests."
+    },
+    {
       "name": "Push operations",
       "description": "View historic push operations."
     },
     {
       "name": "Accounts",
-      "description": "Create accounts and view account schemas."
+      "description": "Create accounts and view create account options."
+    },
+    {
+      "name": "Bank accounts",
+      "description": "Create bank accounts and view create bank account options."
     },
     {
       "name": "Customers",
@@ -1105,7 +1113,7 @@
           }
         },
         "summary": "Get company configuration",
-        "description": "Gets a companies expense sync configuration",
+        "description": "Gets a company's expense sync configuration",
         "operationId": "get-company-configuration"
       },
       "post": {
@@ -1164,7 +1172,7 @@
           }
         },
         "summary": "Set company configuration",
-        "description": "Sets a companies expense sync configuration",
+        "description": "Sets a company's expense sync configuration",
         "operationId": "set-company-configuration",
         "x-speakeasy-name-override": "set"
       },
@@ -1177,7 +1185,7 @@
     "/companies/{companyId}/sync/expenses/mappingOptions": {
       "get": {
         "tags": [
-          "Configuration"
+          "Mapping options"
         ],
         "parameters": [
           {
@@ -1218,7 +1226,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "Gets the expense mapping options for a companies accounting software",
+        "description": "Gets the mapping options (accounts, trackingCategories and taxRates) for a company's accounting software",
         "summary": "Mapping options",
         "operationId": "get-mapping-options",
         "x-speakeasy-name-override": "get-mapping-options"
@@ -1595,7 +1603,7 @@
       "post": {
         "summary": "Create expense transaction",
         "operationId": "create-expense-transaction",
-        "description": "The *Create expense* endpoint creates an [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting platform for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. ",
+        "description": "The *Create expense* endpoint creates an [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting software for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n### Supported Integrations\n\n| Integration                   | Supported |\n|-------------------------------|-----------|\n| Dynamics 365 Business Central | Yes       |\n| FreeAgent                     | Yes       |\n| QuickBooks Desktop            | Yes       |\n| QuickBooks Online             | Yes       |\n| Oracle NetSuite               | Yes       |\n| Xero                          | Yes       |",
         "tags": [
           "Expenses"
         ],
@@ -1655,41 +1663,40 @@
                     {
                       "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
                       "type": "Payment",
-                      "issueDate": "2021-05-21T00:00:00+00:00",
+                      "issueDate": "2024-05-21T00:00:00+00:00",
                       "currency": "GBP",
-                      "currencyRate": 1.18,
+                      "currencyRate": 1,
                       "contactRef": {
-                        "id": "f5244103-5223-4b0a-857f-50566ac86c11",
+                        "id": "430",
                         "type": "Supplier"
                       },
                       "bankAccountRef": {
-                        "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+                        "id": "97"
                       },
                       "merchantName": "Amazon UK",
+                      "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
                       "lines": [
                         {
-                          "netAmount": 110.42,
-                          "taxAmount": 14.43,
+                          "netAmount": 100,
+                          "taxAmount": 20,
                           "taxRateRef": {
-                            "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
+                            "id": "23_Bills"
                           },
                           "accountRef": {
-                            "id": "9aa5b894-1be9-4f97-96cd-ffde90766b3e"
+                            "id": "35"
                           },
                           "trackingRefs": [
                             {
-                              "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c",
+                              "id": "DEPARTMENT_5",
                               "dataType": "trackingCategories"
                             }
                           ],
                           "invoiceTo": {
-                            "id": "80000002-1674552702",
+                            "id": "504",
                             "type": "customer"
                           }
                         }
-                      ],
-                      "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
-                      "postAsDraft": false
+                      ]
                     }
                   ]
                 },
@@ -1698,16 +1705,21 @@
                     {
                       "id": "7008d3f2-aeb4-11ed-afa1-0242ac120002",
                       "type": "Refund",
-                      "issueDate": "2023-02-17T00:00:00+00:00",
+                      "issueDate": "2024-02-17T00:00:00+00:00",
                       "currency": "GBP",
+                      "contactRef": {
+                        "id": "430",
+                        "type": "Supplier"
+                      },
                       "bankAccountRef": {
-                        "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+                        "id": "97"
                       },
                       "merchantName": "Amazon UK",
+                      "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
                       "lines": [
                         {
-                          "netAmount": 110.42,
-                          "taxAmount": 14.43,
+                          "netAmount": 100,
+                          "taxAmount": 20,
                           "taxRateRef": {
                             "id": "23_Bills"
                           },
@@ -1720,8 +1732,7 @@
                             }
                           ]
                         }
-                      ],
-                      "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+                      ]
                     }
                   ]
                 }
@@ -1785,12 +1796,53 @@
           }
         },
         "operationId": "update-expense-transaction",
-        "description": "The *Update expense* endpoint updates an existing [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) in the accounting platform for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/ExpenseTransaction) represent transactions made with a company debit or credit card. \n\n\n**Integration-specific behaviour**\n\nAt the moment you can update expenses only for Xero and QuickBooks Online ([Payment](https://docs.codat.io/expenses/sync-process/expense-transactions#transaction-types) transaction type only).",
+        "description": "The *Update expense* endpoint updates an existing [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) in the accounting software for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) represent transactions made with a company debit or credit card. \n\n### Supported Integrations\nThe following integrations are supported for the [Payment](https://docs.codat.io/expenses/sync-process/expense-transactions#transaction-types) transaction `type` only: \n| Integration           | Supported |\n|-----------------------|-----------|\n| FreeAgent             | Yes       |\n| QuickBooks Online     | Yes       |\n| Oracle NetSuite       | Yes       |\n| Xero                  | Yes       |",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UpdateExpenseRequest"
+              },
+              "examples": {
+                "Payment": {
+                  "value": {
+                    "type": "Payment",
+                    "issueDate": "2024-05-21T00:00:00+00:00",
+                    "currency": "GBP",
+                    "currencyRate": 1,
+                    "contactRef": {
+                      "id": "430",
+                      "type": "Supplier"
+                    },
+                    "bankAccountRef": {
+                      "id": "97"
+                    },
+                    "merchantName": "Amazon UK",
+                    "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
+                    "lines": [
+                      {
+                        "netAmount": 100,
+                        "taxAmount": 20,
+                        "taxRateRef": {
+                          "id": "23_Bills"
+                        },
+                        "accountRef": {
+                          "id": "35"
+                        },
+                        "trackingRefs": [
+                          {
+                            "id": "DEPARTMENT_5",
+                            "dataType": "trackingCategories"
+                          }
+                        ],
+                        "invoiceTo": {
+                          "id": "504",
+                          "type": "customer"
+                        }
+                      }
+                    ]
+                  }
+                }
               }
             }
           }
@@ -1809,7 +1861,7 @@
       "put": {
         "summary": "Create transfer transaction",
         "operationId": "create-transfer-transaction",
-        "description": "Use the *Create transfer* endpoint to create or update a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransaction) in the accounting platform for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n",
+        "description": "Use the *Create transfer* endpoint to create or update a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransactionRequest) in the accounting software for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Xero                  | Yes       |",
         "tags": [
           "Transfers"
         ],
@@ -1820,7 +1872,7 @@
               "application/json": {
                 "x-speakeasy-usage-example": true,
                 "schema": {
-                  "$ref": "#/components/schemas/CreateTransferResponse"
+                  "$ref": "#/components/schemas/TransferTransactionResponse"
                 },
                 "examples": {
                   "Example 1": {
@@ -1861,12 +1913,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateTransferRequest"
+                "$ref": "#/components/schemas/TransferTransactionRequest"
               },
               "examples": {
                 "Create transfer": {
                   "value": {
-                    "description": "Sample transfer descripiton",
+                    "description": "Sample transfer description",
                     "date": "2021-05-21T00:00:00+00:00",
                     "from": {
                       "accountRef": {
@@ -1878,7 +1930,7 @@
                       "accountRef": {
                         "id": "777dfb37-5506-3dc0-6g86-8d34z4cc78ea"
                       },
-                      "amount": 101
+                      "amount": 100
                     }
                   }
                 }
@@ -1897,7 +1949,7 @@
       "post": {
         "summary": "Create adjustment transaction",
         "operationId": "create-adjustment-transaction",
-        "description": "Use the *Create adjustment expense* endpoint to create an [adjustment](https://docs.codat.io/sync-for-expenses-api#/schemas/Adjustment-Transactions) in the accounting platform for a given company's connection. \n\nAdjustments represent write-offs and transaction alteration, such as foreign exchange adjustments, in the form of a journal entry. \n\nThe _Create adjustment_ endpoint is currently only available for QuickBooks Desktop. ",
+        "description": "Use the *Create adjustment expense* endpoint to create an [adjustment](https://docs.codat.io/sync-for-expenses-api#/schemas/AdjustmentTransactionRequest) in the accounting software for a given company's connection. \n\nAdjustments represent write-offs and transaction alterations, such as foreign exchange adjustments, in the form of a journal entry. \n\n### Supported Integrations\n\n| Integration           | Supported |\n|-----------------------|-----------|\n| QuickBooks Desktop    | Yes       |",
         "tags": [
           "Adjustments"
         ],
@@ -1908,7 +1960,7 @@
               "application/json": {
                 "x-speakeasy-usage-example": true,
                 "schema": {
-                  "$ref": "#/components/schemas/CreateAdjustmentResponse"
+                  "$ref": "#/components/schemas/AdjustmentTransactionResponse"
                 },
                 "examples": {
                   "Example 1": {
@@ -1952,33 +2004,48 @@
                 "$ref": "#/components/schemas/CreateAdjustmentRequest"
               },
               "examples": {
-                "Create transfer": {
-                  "value": {
-                    "id": "3357b3df-5f2e-465d-b9ba-226519dbb8f1",
-                    "date": "2021-05-21T00:00:00+00:00",
-                    "currency": "USD",
-                    "currencyRate": 1,
-                    "reference": "test reference",
-                    "lines": [
-                      {
-                        "amount": -50,
-                        "accountRef": {
-                          "id": "bf21e04d-0e62-462b-bf3b-90ddaab0c96a"
-                        },
-                        "description": "test line 1",
-                        "trackingRefs": [
-                          {
-                            "id": "c6fcdb23-8a0f-4804-aedc-a611c505cb9b",
-                            "dataType": "trackingCategories"
+                "Create adjustment": {
+                  "value": [
+                    {
+                      "id": "3357b3df-5f2e-465d-b9ba-226519dbb8f1",
+                      "date": "2024-05-21T00:00:00+00:00",
+                      "currency": "USD",
+                      "currencyRate": 1,
+                      "reference": "test reference",
+                      "lines": [
+                        {
+                          "amount": 50,
+                          "accountRef": {
+                            "id": "80000018-1671793811"
+                          },
+                          "description": "debit line",
+                          "trackingRefs": [
+                            {
+                              "id": "80000003-1674553958",
+                              "dataType": "trackingCategories"
+                            }
+                          ],
+                          "invoiceTo": {
+                            "id": "80000002-1674552702",
+                            "type": "customer"
                           }
-                        ],
-                        "invoiceTo": {
-                          "id": "9cc3527f-0b8b-4ccb-8251-c5a76ef0ec09",
-                          "type": "customer"
+                        },
+                        {
+                          "amount": -50,
+                          "accountRef": {
+                            "id": "80000028-1671794219"
+                          },
+                          "description": "credit line",
+                          "trackingRefs": [
+                            {
+                              "id": "80000003-1674553958",
+                              "dataType": "trackingCategories"
+                            }
+                          ]
                         }
-                      }
-                    ]
-                  }
+                      ]
+                    }
+                  ]
                 }
               }
             }
@@ -1995,7 +2062,7 @@
       "post": {
         "summary": "Create reimbursable expense transaction",
         "operationId": "create-reimbursable-expense-transaction",
-        "description": "Use the *Create reimbursable expense* endpoint to create a [reimbursement request](https://docs.codat.io/sync-for-expenses-api#/schemas/Reimburseable-Expense-Transactions) in the accounting platform for a given company's connection. \r\n\r\nEmployee reimbursement requests are reflected in the accounting system in the form of Bills against an employee, who is a supplier.",
+        "description": "Use the *Create reimbursable expense* endpoint to submit an employee expense claim in the accounting platform for a given company's connection.\r\n\r\n[Reimbursable expense requests](https://docs.codat.io/sync-for-expenses-api#/schemas/ReimbursableExpenseTransactionRequest) are reflected in the accounting software in the form of **Bills** against an employee (who exists as a supplier in the accounting platform).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |",
         "tags": [
           "Reimbursements"
         ],
@@ -2054,38 +2121,34 @@
                   "value": [
                     {
                       "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-                      "reference": "101",
+                      "reference": "expenses w/c 01/07",
                       "contactRef": {
-                        "id": "f5244103-5223-4b0a-857f-50566ac86c11"
+                        "id": "752"
                       },
-                      "issueDate": "2021-05-21T00:00:00+00:00",
-                      "dueDate": "2021-05-21T00:00:00+00:00",
+                      "issueDate": "2024-05-21",
+                      "dueDate": "2024-05-21",
                       "currency": "GBP",
                       "currencyRate": 1,
                       "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
-                      "bankAccountRef": {
-                        "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-                      },
-                      "merchantName": "Amazon UK",
                       "lines": [
                         {
-                          "netAmount": 110.42,
-                          "taxAmount": 14.43,
+                          "description": "Hotel",
+                          "netAmount": 100,
+                          "taxAmount": 20,
                           "taxRateRef": {
-                            "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
+                            "id": "23_Bills"
                           },
                           "accountRef": {
-                            "id": "9aa5b894-1be9-4f97-96cd-ffde90766b3e"
+                            "id": "35"
                           },
-                          "description": "Coffee subscription",
                           "trackingRefs": [
                             {
-                              "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c",
+                              "id": "DEPARTMENT_5",
                               "dataType": "trackingCategories"
                             }
                           ],
                           "invoiceTo": {
-                            "id": "80000002-1674552702",
+                            "id": "504",
                             "type": "customer"
                           }
                         }
@@ -2111,7 +2174,7 @@
       "put": {
         "summary": "Update reimbursable expense transaction",
         "operationId": "update-reimbursable-expense-transaction",
-        "description": "The *Update reimbursable expense* endpoint updates an existing [reimbursable expense transaction](https://docs.codat.io/sync-for-expenses-api#/operations/create-reimbursable-expense-transaction) in the accounting platform for a given company's connection. \r\n\r\nEmployee reimbursement requests are reflected in the accounting system in the form of Bills against an employee, who is a supplier.",
+        "description": "The *Update reimbursable expense* endpoint updates an existing employee expense claim in the accounting platform for a given company's connection. \r\n\r\nUpdating an existing [reimbursable expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateReimbursableExpenseTransactionRequest) will update the existing **bill** against an employee (who exists as a supplier in the accounting software).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |",
         "tags": [
           "Reimbursements"
         ],
@@ -2162,51 +2225,44 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReimbursableExpenseTransactionRequest"
+                "$ref": "#/components/schemas/UpdateReimbursableExpenseTransactionRequest"
               },
               "examples": {
                 "Update reimbursable expense": {
-                  "value": [
-                    {
-                      "id": "4d7c6929-7770-412b-91bb-44d3bc71d111",
-                      "reference": "101",
-                      "contactRef": {
-                        "id": "f5244103-5223-4b0a-857f-50566ac86c11"
-                      },
-                      "issueDate": "2021-05-21T00:00:00+00:00",
-                      "dueDate": "2021-05-21T00:00:00+00:00",
-                      "currency": "GBP",
-                      "currencyRate": 1,
-                      "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
-                      "bankAccountRef": {
-                        "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-                      },
-                      "merchantName": "Amazon UK",
-                      "lines": [
-                        {
-                          "netAmount": 110.42,
-                          "taxAmount": 14.43,
-                          "taxRateRef": {
-                            "id": "77a32ee2-60c7-4ab9-917a-bd82e2e43a26"
-                          },
-                          "accountRef": {
-                            "id": "9aa5b894-1be9-4f97-96cd-ffde90766b3e"
-                          },
-                          "description": "Coffee subscription",
-                          "trackingRefs": [
-                            {
-                              "id": "dde5b35f-5d33-40bd-a34f-ee529f4c785c",
-                              "dataType": "trackingCategories"
-                            }
-                          ],
-                          "invoiceTo": {
-                            "id": "80000002-1674552702",
-                            "type": "customer"
+                  "value": {
+                    "reference": "expenses w/c 01/07",
+                    "contactRef": {
+                      "id": "752"
+                    },
+                    "issueDate": "2024-05-21",
+                    "dueDate": "2024-05-21",
+                    "currency": "GBP",
+                    "currencyRate": 1,
+                    "notes": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590",
+                    "lines": [
+                      {
+                        "description": "Hotel",
+                        "netAmount": 100,
+                        "taxAmount": 20,
+                        "taxRateRef": {
+                          "id": "23_Bills"
+                        },
+                        "accountRef": {
+                          "id": "35"
+                        },
+                        "trackingRefs": [
+                          {
+                            "id": "DEPARTMENT_5",
+                            "dataType": "trackingCategories"
                           }
+                        ],
+                        "invoiceTo": {
+                          "id": "504",
+                          "type": "customer"
                         }
-                      ]
-                    }
-                  ]
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -8270,6 +8326,1346 @@
         "description": "The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/sync-for-expenses-api#/schemas/Account) for a given company and integration.\n\n[Accounts](https://docs.codat.io/sync-for-expenses-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n"
       }
     },
+    "/companies/{companyId}/connections/{connectionId}/push/bankAccounts": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Bank accounts"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/timeoutInMinutes"
+          },
+          {
+            "$ref": "#/components/parameters/allowSyncOnPushComplete"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankAccount"
+              },
+              "examples": {
+                "QuickBooks Online": {
+                  "value": {
+                    "accountName": "GBP Bank Account",
+                    "accountType": "Debit",
+                    "accountNumber": "12345678",
+                    "currency": "GBP",
+                    "status": "Active"
+                  }
+                },
+                "Xero": {
+                  "value": {
+                    "accountName": "Xero GBP Bank Account",
+                    "accountType": "Debit",
+                    "sortCode": "445566",
+                    "accountNumber": "12345678",
+                    "currency": "GBP",
+                    "status": "Active"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateBankAccountResponse"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "summary": "Create bank account",
+        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/sync-for-expenses-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/sync-for-expenses-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-update-bankAccounts-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating an account.",
+        "operationId": "create-bank-account"
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/options/bankAccounts": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "get": {
+        "summary": "Get create bank account model",
+        "tags": [
+          "Bank accounts"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushOption"
+                },
+                "examples": {
+                  "Dynamics 365 Business Central": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "AccountName",
+                                "details": "Needs to be of the format '{No.}-{Name}'"
+                              }
+                            ]
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": false
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "NominalCode",
+                                "details": "Bank Account Posting Group with Nominal Account must exist"
+                              }
+                            ]
+                          }
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "SortCode",
+                                "details": "Must have a length between 0 and 20 characters"
+                              }
+                            ]
+                          }
+                        },
+                        "iBan": {
+                          "type": "String",
+                          "displayName": "IBAN",
+                          "description": "The international bank account number of the account. Often used when making or receiving international payments",
+                          "required": false
+                        },
+                        "overdraftLimit": {
+                          "type": "Number",
+                          "displayName": "Overdraft Limit",
+                          "description": "The pre-arranged overdraft limit of the account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "OverdraftLimit",
+                                "details": "Default value is 0"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "Exact (Netherlands)": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": true,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "AccountNumber",
+                                "details": "Should not exceed the maximum length of 14 characters if the specified currency is GBP."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "SortCode",
+                                "details": "Must be 6 characters long if the specified currency is GBP."
+                              },
+                              {
+                                "field": "SortCode",
+                                "details": "Must be provided if the specified currency is GBP."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": false
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": false
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "Exact (UK)": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": true,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "AccountNumber",
+                                "details": "Should not exceed the maximum length of 14 characters if the specified currency is GBP."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "SortCode",
+                                "details": "Must be 6 characters long if the specified currency is GBP."
+                              },
+                              {
+                                "field": "SortCode",
+                                "details": "Must be provided if the specified currency is GBP."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": false
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": false
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "FreeAgent": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "SortCode",
+                                "details": "Must have a length between 0 and 8 characters"
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": false
+                        },
+                        "iBan": {
+                          "type": "String",
+                          "displayName": "IBAN",
+                          "description": "The international bank account number of the account. Often used when making or receiving international payments",
+                          "required": false
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "options": [
+                            {
+                              "value": "AED",
+                              "type": "String",
+                              "displayName": "AED",
+                              "required": false
+                            },
+                            {
+                              "value": "AMD",
+                              "type": "String",
+                              "displayName": "AMD",
+                              "required": false
+                            },
+                            {
+                              "value": "AOA",
+                              "type": "String",
+                              "displayName": "AOA",
+                              "required": false
+                            },
+                            {
+                              "value": "ARS",
+                              "type": "String",
+                              "displayName": "ARS",
+                              "required": false
+                            },
+                            {
+                              "value": "AUD",
+                              "type": "String",
+                              "displayName": "AUD",
+                              "required": false
+                            },
+                            {
+                              "value": "AWG",
+                              "type": "String",
+                              "displayName": "AWG",
+                              "required": false
+                            },
+                            {
+                              "value": "AZN",
+                              "type": "String",
+                              "displayName": "AZN",
+                              "required": false
+                            },
+                            {
+                              "value": "BBD",
+                              "type": "String",
+                              "displayName": "BBD",
+                              "required": false
+                            },
+                            {
+                              "value": "BDT",
+                              "type": "String",
+                              "displayName": "BDT",
+                              "required": false
+                            },
+                            {
+                              "value": "BGN",
+                              "type": "String",
+                              "displayName": "BGN",
+                              "required": false
+                            },
+                            {
+                              "value": "BRL",
+                              "type": "String",
+                              "displayName": "BRL",
+                              "required": false
+                            },
+                            {
+                              "value": "BWP",
+                              "type": "String",
+                              "displayName": "BWP",
+                              "required": false
+                            },
+                            {
+                              "value": "CAD",
+                              "type": "String",
+                              "displayName": "CAD",
+                              "required": false
+                            },
+                            {
+                              "value": "CHF",
+                              "type": "String",
+                              "displayName": "CHF",
+                              "required": false
+                            },
+                            {
+                              "value": "CLP",
+                              "type": "String",
+                              "displayName": "CLP",
+                              "required": false
+                            },
+                            {
+                              "value": "CNY",
+                              "type": "String",
+                              "displayName": "CNY",
+                              "required": false
+                            },
+                            {
+                              "value": "COP",
+                              "type": "String",
+                              "displayName": "COP",
+                              "required": false
+                            },
+                            {
+                              "value": "CRC",
+                              "type": "String",
+                              "displayName": "CRC",
+                              "required": false
+                            },
+                            {
+                              "value": "CUC",
+                              "type": "String",
+                              "displayName": "CUC",
+                              "required": false
+                            },
+                            {
+                              "value": "CUP",
+                              "type": "String",
+                              "displayName": "CUP",
+                              "required": false
+                            },
+                            {
+                              "value": "CZK",
+                              "type": "String",
+                              "displayName": "CZK",
+                              "required": false
+                            },
+                            {
+                              "value": "DKK",
+                              "type": "String",
+                              "displayName": "DKK",
+                              "required": false
+                            },
+                            {
+                              "value": "DOP",
+                              "type": "String",
+                              "displayName": "DOP",
+                              "required": false
+                            },
+                            {
+                              "value": "EGP",
+                              "type": "String",
+                              "displayName": "EGP",
+                              "required": false
+                            },
+                            {
+                              "value": "EUR",
+                              "type": "String",
+                              "displayName": "EUR",
+                              "required": false
+                            },
+                            {
+                              "value": "FJD",
+                              "type": "String",
+                              "displayName": "FJD",
+                              "required": false
+                            },
+                            {
+                              "value": "GBP",
+                              "type": "String",
+                              "displayName": "GBP",
+                              "required": false
+                            },
+                            {
+                              "value": "GEL",
+                              "type": "String",
+                              "displayName": "GEL",
+                              "required": false
+                            },
+                            {
+                              "value": "GHS",
+                              "type": "String",
+                              "displayName": "GHS",
+                              "required": false
+                            },
+                            {
+                              "value": "GTQ",
+                              "type": "String",
+                              "displayName": "GTQ",
+                              "required": false
+                            },
+                            {
+                              "value": "GYD",
+                              "type": "String",
+                              "displayName": "GYD",
+                              "required": false
+                            },
+                            {
+                              "value": "HKD",
+                              "type": "String",
+                              "displayName": "HKD",
+                              "required": false
+                            },
+                            {
+                              "value": "HNL",
+                              "type": "String",
+                              "displayName": "HNL",
+                              "required": false
+                            },
+                            {
+                              "value": "HRK",
+                              "type": "String",
+                              "displayName": "HRK",
+                              "required": false
+                            },
+                            {
+                              "value": "HUF",
+                              "type": "String",
+                              "displayName": "HUF",
+                              "required": false
+                            },
+                            {
+                              "value": "IDR",
+                              "type": "String",
+                              "displayName": "IDR",
+                              "required": false
+                            },
+                            {
+                              "value": "ILS",
+                              "type": "String",
+                              "displayName": "ILS",
+                              "required": false
+                            },
+                            {
+                              "value": "INR",
+                              "type": "String",
+                              "displayName": "INR",
+                              "required": false
+                            },
+                            {
+                              "value": "ISK",
+                              "type": "String",
+                              "displayName": "ISK",
+                              "required": false
+                            },
+                            {
+                              "value": "JMD",
+                              "type": "String",
+                              "displayName": "JMD",
+                              "required": false
+                            },
+                            {
+                              "value": "JPY",
+                              "type": "String",
+                              "displayName": "JPY",
+                              "required": false
+                            },
+                            {
+                              "value": "KES",
+                              "type": "String",
+                              "displayName": "KES",
+                              "required": false
+                            },
+                            {
+                              "value": "KRW",
+                              "type": "String",
+                              "displayName": "KRW",
+                              "required": false
+                            },
+                            {
+                              "value": "KWD",
+                              "type": "String",
+                              "displayName": "KWD",
+                              "required": false
+                            },
+                            {
+                              "value": "KYD",
+                              "type": "String",
+                              "displayName": "KYD",
+                              "required": false
+                            },
+                            {
+                              "value": "KZT",
+                              "type": "String",
+                              "displayName": "KZT",
+                              "required": false
+                            },
+                            {
+                              "value": "LAK",
+                              "type": "String",
+                              "displayName": "LAK",
+                              "required": false
+                            },
+                            {
+                              "value": "LBP",
+                              "type": "String",
+                              "displayName": "LBP",
+                              "required": false
+                            },
+                            {
+                              "value": "LKR",
+                              "type": "String",
+                              "displayName": "LKR",
+                              "required": false
+                            },
+                            {
+                              "value": "LTL",
+                              "type": "String",
+                              "displayName": "LTL",
+                              "required": false
+                            },
+                            {
+                              "value": "LVL",
+                              "type": "String",
+                              "displayName": "LVL",
+                              "required": false
+                            },
+                            {
+                              "value": "MAD",
+                              "type": "String",
+                              "displayName": "MAD",
+                              "required": false
+                            },
+                            {
+                              "value": "MDL",
+                              "type": "String",
+                              "displayName": "MDL",
+                              "required": false
+                            },
+                            {
+                              "value": "MGA",
+                              "type": "String",
+                              "displayName": "MGA",
+                              "required": false
+                            },
+                            {
+                              "value": "MUR",
+                              "type": "String",
+                              "displayName": "MUR",
+                              "required": false
+                            },
+                            {
+                              "value": "MVR",
+                              "type": "String",
+                              "displayName": "MVR",
+                              "required": false
+                            },
+                            {
+                              "value": "MWK",
+                              "type": "String",
+                              "displayName": "MWK",
+                              "required": false
+                            },
+                            {
+                              "value": "MXN",
+                              "type": "String",
+                              "displayName": "MXN",
+                              "required": false
+                            },
+                            {
+                              "value": "MYR",
+                              "type": "String",
+                              "displayName": "MYR",
+                              "required": false
+                            },
+                            {
+                              "value": "MZN",
+                              "type": "String",
+                              "displayName": "MZN",
+                              "required": false
+                            },
+                            {
+                              "value": "NAD",
+                              "type": "String",
+                              "displayName": "NAD",
+                              "required": false
+                            },
+                            {
+                              "value": "NGN",
+                              "type": "String",
+                              "displayName": "NGN",
+                              "required": false
+                            },
+                            {
+                              "value": "NOK",
+                              "type": "String",
+                              "displayName": "NOK",
+                              "required": false
+                            },
+                            {
+                              "value": "NPR",
+                              "type": "String",
+                              "displayName": "NPR",
+                              "required": false
+                            },
+                            {
+                              "value": "NZD",
+                              "type": "String",
+                              "displayName": "NZD",
+                              "required": false
+                            },
+                            {
+                              "value": "OMR",
+                              "type": "String",
+                              "displayName": "OMR",
+                              "required": false
+                            },
+                            {
+                              "value": "PEN",
+                              "type": "String",
+                              "displayName": "PEN",
+                              "required": false
+                            },
+                            {
+                              "value": "PHP",
+                              "type": "String",
+                              "displayName": "PHP",
+                              "required": false
+                            },
+                            {
+                              "value": "PKR",
+                              "type": "String",
+                              "displayName": "PKR",
+                              "required": false
+                            },
+                            {
+                              "value": "PLN",
+                              "type": "String",
+                              "displayName": "PLN",
+                              "required": false
+                            },
+                            {
+                              "value": "QAR",
+                              "type": "String",
+                              "displayName": "QAR",
+                              "required": false
+                            },
+                            {
+                              "value": "RON",
+                              "type": "String",
+                              "displayName": "RON",
+                              "required": false
+                            },
+                            {
+                              "value": "RSD",
+                              "type": "String",
+                              "displayName": "RSD",
+                              "required": false
+                            },
+                            {
+                              "value": "RUB",
+                              "type": "String",
+                              "displayName": "RUB",
+                              "required": false
+                            },
+                            {
+                              "value": "RWF",
+                              "type": "String",
+                              "displayName": "RWF",
+                              "required": false
+                            },
+                            {
+                              "value": "SAR",
+                              "type": "String",
+                              "displayName": "SAR",
+                              "required": false
+                            },
+                            {
+                              "value": "SCR",
+                              "type": "String",
+                              "displayName": "SCR",
+                              "required": false
+                            },
+                            {
+                              "value": "SEK",
+                              "type": "String",
+                              "displayName": "SEK",
+                              "required": false
+                            },
+                            {
+                              "value": "SGD",
+                              "type": "String",
+                              "displayName": "SGD",
+                              "required": false
+                            },
+                            {
+                              "value": "THB",
+                              "type": "String",
+                              "displayName": "THB",
+                              "required": false
+                            },
+                            {
+                              "value": "TND",
+                              "type": "String",
+                              "displayName": "TND",
+                              "required": false
+                            },
+                            {
+                              "value": "TRY",
+                              "type": "String",
+                              "displayName": "TRY",
+                              "required": false
+                            },
+                            {
+                              "value": "TTD",
+                              "type": "String",
+                              "displayName": "TTD",
+                              "required": false
+                            },
+                            {
+                              "value": "TWD",
+                              "type": "String",
+                              "displayName": "TWD",
+                              "required": false
+                            },
+                            {
+                              "value": "TZS",
+                              "type": "String",
+                              "displayName": "TZS",
+                              "required": false
+                            },
+                            {
+                              "value": "UAH",
+                              "type": "String",
+                              "displayName": "UAH",
+                              "required": false
+                            },
+                            {
+                              "value": "UGX",
+                              "type": "String",
+                              "displayName": "UGX",
+                              "required": false
+                            },
+                            {
+                              "value": "USD",
+                              "type": "String",
+                              "displayName": "USD",
+                              "required": false
+                            },
+                            {
+                              "value": "UYU",
+                              "type": "String",
+                              "displayName": "UYU",
+                              "required": false
+                            },
+                            {
+                              "value": "VEF",
+                              "type": "String",
+                              "displayName": "VEF",
+                              "required": false
+                            },
+                            {
+                              "value": "VND",
+                              "type": "String",
+                              "displayName": "VND",
+                              "required": false
+                            },
+                            {
+                              "value": "VUV",
+                              "type": "String",
+                              "displayName": "VUV",
+                              "required": false
+                            },
+                            {
+                              "value": "XAF",
+                              "type": "String",
+                              "displayName": "XAF",
+                              "required": false
+                            },
+                            {
+                              "value": "XCD",
+                              "type": "String",
+                              "displayName": "XCD",
+                              "required": false
+                            },
+                            {
+                              "value": "XOF",
+                              "type": "String",
+                              "displayName": "XOF",
+                              "required": false
+                            },
+                            {
+                              "value": "ZAR",
+                              "type": "String",
+                              "displayName": "ZAR",
+                              "required": false
+                            },
+                            {
+                              "value": "ZMK",
+                              "type": "String",
+                              "displayName": "ZMK",
+                              "required": false
+                            }
+                          ],
+                          "required": true
+                        },
+                        "balance": {
+                          "type": "Number",
+                          "displayName": "Balance",
+                          "description": "The balance of the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "Balance",
+                                "details": "The opening balance, in the account currency"
+                              }
+                            ]
+                          }
+                        },
+                        "institution": {
+                          "type": "String",
+                          "displayName": "Institution",
+                          "description": "The institution of the bank account",
+                          "required": false
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "KashFlow": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Account Name",
+                          "description": "Name of the bank account as it appears in Kashflow.",
+                          "required": true
+                        },
+                        "balance": {
+                          "type": "Number",
+                          "displayName": "Balance",
+                          "description": "The opening balance, in the account currency.",
+                          "required": false
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account.",
+                          "required": true
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "QuickBooks Desktop": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": true,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "NominalCode",
+                                "details": "Max length of 7 characters."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "AccountName",
+                                "details": "Max length of 31 characters."
+                              }
+                            ],
+                            "information": []
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [
+                              {
+                                "field": "Currency",
+                                "details": "The currency must match the base currency of the QuickBooks Desktop company unless the FullyQualifiedCategory is 'Asset.AccountsReceivable','Liability.AccountsPayable' or 'Liability.CreditCard'"
+                              },
+                              {
+                                "field": "Currency",
+                                "details": "Must be a three letter ISO code that matches an existing active currency in the QuickBooks Desktop company"
+                              },
+                              {
+                                "field": "Currency",
+                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                              }
+                            ],
+                            "information": [
+                              {
+                                "field": "Currency",
+                                "details": "If not set, will default to the base currency of the QuickBooks Desktop company"
+                              }
+                            ]
+                          }
+                        },
+                        "balance": {
+                          "type": "Number",
+                          "displayName": "Balance",
+                          "description": "The balance of the bank account",
+                          "required": false
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "QuickBooks Online Sandbox": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Account Name",
+                          "description": "Name of account as it appears in the chart of accounts or general ledger.",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "User-defined account number to help the user in identifying the account within the chart-of-accounts and in deciding what should be posted to the account.",
+                          "required": true
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "Currency of the bank account.",
+                          "required": true
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "Sage Business Cloud Accounting": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "AccountName",
+                                "details": "Must be provided."
+                              },
+                              {
+                                "field": "AccountName",
+                                "details": "Should not be longer than 50 characters."
+                              }
+                            ]
+                          }
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": true,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "Currency",
+                                "details": "Must be provided."
+                              },
+                              {
+                                "field": "Currency",
+                                "details": "Must match the company's base currency."
+                              }
+                            ]
+                          }
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "SortCode",
+                                "details": "Should be a 6 digit number."
+                              }
+                            ]
+                          }
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "AccountNumber",
+                                "details": "Should not be longer than 25 characters."
+                              }
+                            ]
+                          }
+                        },
+                        "iBan": {
+                          "type": "String",
+                          "displayName": "IBAN",
+                          "description": "The international bank account number of the account. Often used when making or receiving international payments",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "IBan",
+                                "details": "Should be in the international bank account number format."
+                              }
+                            ]
+                          }
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": false,
+                          "validation": {
+                            "warnings": [],
+                            "information": [
+                              {
+                                "field": "NominalCode",
+                                "details": "Should be a number between 1 and 99999999."
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "required": true
+                    }
+                  },
+                  "Sandbox": {
+                    "value": {
+                      "type": "Object",
+                      "displayName": "Bank Account",
+                      "description": "An account that bank transactions may be recorded against",
+                      "properties": {
+                        "accountName": {
+                          "type": "String",
+                          "displayName": "Name",
+                          "description": "The name of the bank account in the originating system",
+                          "required": true
+                        },
+                        "accountType": {
+                          "type": "String",
+                          "displayName": "Account Type",
+                          "description": "The type of account",
+                          "required": true
+                        },
+                        "nominalCode": {
+                          "type": "String",
+                          "displayName": "Nominal Code",
+                          "description": "The external reference given to each nominal account for a business",
+                          "required": true
+                        },
+                        "sortCode": {
+                          "type": "String",
+                          "displayName": "Sort Code",
+                          "description": "The sort code for the bank account",
+                          "required": true
+                        },
+                        "accountNumber": {
+                          "type": "String",
+                          "displayName": "Account Number",
+                          "description": "The account number for the bank account",
+                          "required": true
+                        },
+                        "iBan": {
+                          "type": "String",
+                          "displayName": "IBAN",
+                          "description": "The international bank account number of the account. Often used when making or receiving international payments",
+                          "required": true
+                        },
+                        "currency": {
+                          "type": "String",
+                          "displayName": "Currency",
+                          "description": "The currency of the bank account",
+                          "required": true
+                        },
+                        "balance": {
+                          "type": "Number",
+                          "displayName": "Balance",
+                          "description": "The balance of the bank account",
+                          "required": true
+                        },
+                        "availableBalance": {
+                          "type": "Number",
+                          "displayName": "Available Balance",
+                          "description": "The available balance of the bank account",
+                          "required": true
+                        },
+                        "overdraftLimit": {
+                          "type": "Number",
+                          "displayName": "Overdraft Limit",
+                          "description": "The pre-arranged overdraft limit of the account",
+                          "required": true
+                        },
+                        "institution": {
+                          "type": "String",
+                          "displayName": "Institution",
+                          "description": "The institution of the bank account",
+                          "required": true
+                        },
+                        "metadata": {
+                          "type": "Object",
+                          "displayName": "Metadata",
+                          "description": "Miscellaneous data about the item",
+                          "properties": {
+                            "isDeleted": {
+                              "type": "Boolean",
+                              "displayName": "IsDeleted",
+                              "description": "A boolean to indicate whether the object has been deleted",
+                              "required": true
+                            }
+                          },
+                          "required": true
+                        }
+                      },
+                      "required": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "operationId": "get-create-bankAccounts-model",
+        "description": "The *Get create/update bank account model* endpoint returns the expected data for the request payload when creating and updating a [bank account](https://docs.codat.io/sync-for-expenses-api#/schemas/BankAccount) for a given company and integration.\r\n\r\n[Bank accounts](https://docs.codat.io/sync-for-expenses-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating and updating a bank account.\r\n"
+      }
+    },
     "/companies/{companyId}/data/customers": {
       "parameters": [
         {
@@ -12763,25 +14159,6 @@
     }
   },
   "webhooks": {
-    "Sync Started": {
-      "post": {
-        "requestBody": {
-          "description": "Triggered anytime a sync starts.",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SyncStartedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
     "Sync Failed": {
       "post": {
         "requestBody": {
@@ -12905,7 +14282,7 @@
                   "modifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                        "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
                       },
                       {
                         "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -12923,7 +14300,7 @@
                   "sourceModifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                        "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
                       },
                       {
                         "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -13078,14 +14455,17 @@
       },
       "AccountMappingInfo": {
         "title": "Account mapping info",
+        "x-internal": true,
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
           "Example AccountInfo": {
             "id": "313a4dbe-b3a4-42f0-a5f5-43e382e62db9",
+            "nominalCode": "720",
             "name": "Travel",
             "currency": "GBP",
             "accountType": "Expense",
+            "isBankAccount": false,
             "validTransactionTypes": [
               "Payment",
               "Refund"
@@ -13096,12 +14476,18 @@
           "id": {
             "type": "string",
             "description": "Unique identifier of account.",
-            "example": "6",
+            "example": "127f3b99-8dc2-4b7e-854c-91ef9bd2757b",
             "nullable": false
+          },
+          "nominalCode": {
+            "type": "string",
+            "description": "Code used to identify each nominal account in the accounting software.",
+            "example": "300",
+            "nullable": true
           },
           "name": {
             "type": "string",
-            "description": "Name of the account as it appears in the companies accounting software.",
+            "description": "Name of the account as it appears in the company's accounting software.",
             "example": "Purchases",
             "nullable": false
           },
@@ -13124,28 +14510,13 @@
             ],
             "nullable": false
           },
+          "isBankAccount": {
+            "type": "boolean",
+            "description": "Confirms whether the account is a bank account or not."
+          },
           "validTransactionTypes": {
-            "type": "array",
-            "description": "Supported transaction types for the account.",
-            "minItems": 0,
-            "maxItems": 8,
-            "nullable": false,
-            "items": {
-              "type": "string",
-              "enum": [
-                "Payment",
-                "Refund",
-                "Reward",
-                "Chargeback",
-                "TransferIn",
-                "TransferOut",
-                "AdjustmentIn",
-                "AdjustmentOut"
-              ],
-              "example": "Payment",
-              "minLength": 1,
-              "maxLength": 8
-            }
+            "$ref": "#/components/schemas/validTransactionTypes",
+            "description": "Supported transaction types for the account."
           }
         }
       },
@@ -13157,8 +14528,8 @@
           "amount": {
             "type": "number",
             "format": "decimal",
-            "example": 110.42,
-            "description": "Amount of the line, exclusive of tax."
+            "example": 50,
+            "description": "Amount of the line. A positive line represents a debit; a negative line represents a credit."
           },
           "accountRef": {
             "$ref": "#/components/schemas/RecordRef"
@@ -13185,6 +14556,61 @@
           "amount",
           "accountRef"
         ]
+      },
+      "AdjustmentTransactionRequest": {
+        "title": "Adjustment transaction",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Your unique identifier for the transaction."
+          },
+          "date": {
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
+            "description": "Date of the transaction."
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency the transaction was recorded in."
+          },
+          "currencyRate": {
+            "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true,
+            "description": "User-friendly reference for the adjustment transaction."
+          },
+          "lines": {
+            "type": "array",
+            "description": "Array of transaction lines.",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/AdjustmentTransactionLine"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "date",
+          "currency",
+          "lines"
+        ]
+      },
+      "AdjustmentTransactionResponse": {
+        "title": "Adjustment response",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
+            "format": "uuid",
+            "description": "Unique id of sync created"
+          }
+        }
       },
       "Attachment": {
         "title": "Attachment",
@@ -13233,14 +14659,175 @@
         }
       },
       "BankAccount": {
-        "title": "Bank account",
-        "x-internal": true,
+        "title": "Accounting: Bank account",
+        "description": "> **Accessing Bank Accounts through Banking API**\n> \n> This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators. \n> \n> To view bank account data through the Banking API, please refer to the new datatype [here](https://docs.codat.io/sync-for-expenses-api#/schemas/Account)\n\n> View the coverage for bank accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA list of bank accounts associated with a company and a specific data connection.\n\nBank accounts data includes:\n* The name and ID of the account in the accounting software.\n* The currency and balance of the account.\n* The sort code and account number.",
         "type": "object",
-        "properties": {
-          "id": {
+        "allOf": [
+          {
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identifier for the account, unique for the company in the accounting software."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/BankAccount/definitions/bankAccountPrototype"
+          },
+          {
+            "properties": {
+              "metadata": {
+                "$ref": "#/components/schemas/Account/allOf/2/properties/metadata"
+              },
+              "supplementalData": {
+                "$ref": "#/components/schemas/SupplementalData"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/Account/allOf/3"
+          }
+        ],
+        "definitions": {
+          "bankAccountPrototype": {
+            "title": "Bank account prototype",
+            "type": "object",
+            "properties": {
+              "accountName": {
+                "type": "string",
+                "nullable": true,
+                "description": "Name of the bank account in the accounting software."
+              },
+              "accountType": {
+                "title": "Bank Account Type",
+                "x-internal": true,
+                "enum": [
+                  "Unknown",
+                  "Credit",
+                  "Debit"
+                ],
+                "type": "string",
+                "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
+              },
+              "nominalCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Code used to identify each nominal account for a business."
+              },
+              "sortCode": {
+                "type": "string",
+                "nullable": true,
+                "description": "Sort code for the bank account.\n\nXero integrations\nThe sort code is only displayed when the currency = GBP and the sort code and account number sum to 14 digits. For non-GBP accounts, this field is not populated."
+              },
+              "accountNumber": {
+                "type": "string",
+                "nullable": true,
+                "description": "Account number for the bank account.\n\nXero integrations\nOnly a UK account number shows for bank accounts with GBP currency and a combined total of sort code and account number that equals 14 digits, For non-GBP accounts, the full bank account number is populated.\n\nFreeAgent integrations\nFor Credit accounts, only the last four digits are required. For other types, the field is optional."
+              },
+              "iBan": {
+                "type": "string",
+                "nullable": true,
+                "description": "International bank account number of the account. Often used when making or receiving international payments."
+              },
+              "currency": {
+                "$ref": "#/components/schemas/Account/definitions/accountPrototype/properties/currency",
+                "description": "Base currency of the bank account."
+              },
+              "balance": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Balance of the bank account."
+              },
+              "institution": {
+                "type": "string",
+                "nullable": true,
+                "description": "The institution of the bank account."
+              },
+              "availableBalance": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Total available balance of the bank account as reported by the underlying data source. This may take into account overdrafts or pending transactions for example."
+              },
+              "overdraftLimit": {
+                "type": "number",
+                "format": "decimal",
+                "nullable": true,
+                "description": "Pre-arranged overdraft limit of the account.\n\nThe value is always positive. For example, an overdraftLimit of `1000` means that the balance of the account can go down to `-1000`."
+              },
+              "status": {
+                "$ref": "#/components/schemas/BankAccount/definitions/bankAccountStatus"
+              }
+            }
+          },
+          "bankAccountCreateResponse": {
+            "title": "Create bank account response",
+            "allOf": [
+              {
+                "properties": {
+                  "data": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/BankAccount"
+                      },
+                      {
+                        "deprecated": true
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PushOperation"
+              }
+            ]
+          },
+          "bankAccountRef": {
+            "title": "Bank account reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Bank account 'id' for the account transaction."
+              },
+              "name": {
+                "type": "string",
+                "description": "bank account 'name' for the account transaction."
+              }
+            },
+            "description": "Links to the Account transactions data type."
+          },
+          "bankAccounts": {
+            "title": "Accounting: Bank accounts",
+            "allOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "results": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/BankAccount"
+                    }
+                  }
+                }
+              },
+              {
+                "$ref": "#/components/schemas/PagingInfo"
+              }
+            ]
+          },
+          "bankAccountStatus": {
+            "title": "Account status",
+            "enum": [
+              "Unknown",
+              "Active",
+              "Archived",
+              "Pending"
+            ],
             "type": "string",
-            "description": "The id of the account from which purchases are made",
-            "example": "32"
+            "description": "Status of the bank account.",
+            "example": "Active"
           }
         }
       },
@@ -13282,7 +14869,7 @@
                 "description": "The number of available requests per day."
               },
               "ExpiresUtc": {
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
                 "description": "The date time in UTC when your daily quota is reset."
               }
             }
@@ -13424,10 +15011,10 @@
             "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "created": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "createdByUserName": {
             "type": "string",
@@ -13475,6 +15062,21 @@
                     "description": "Unique identifier of the group you want to assign the company to."
                   }
                 ]
+              }
+            }
+          },
+          "companyReference": {
+            "title": "Company reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "name": {
+                "$ref": "#/components/schemas/Company/properties/name"
+              },
+              "description": {
+                "$ref": "#/components/schemas/Company/properties/description"
               }
             }
           }
@@ -13533,7 +15135,7 @@
         },
         "properties": {
           "bankAccount": {
-            "$ref": "#/components/schemas/BankAccount"
+            "$ref": "#/components/schemas/CompanyConfiguration/definitions/BankAccountDetails"
           },
           "supplier": {
             "$ref": "#/components/schemas/CompanyConfiguration/definitions/SupplierDetails"
@@ -13543,6 +15145,17 @@
           }
         },
         "definitions": {
+          "BankAccountDetails": {
+            "title": "Bank account details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The id of the account from which purchases are made",
+                "example": "32"
+              }
+            }
+          },
           "SupplierDetails": {
             "title": "Supplier details",
             "type": "object",
@@ -13638,7 +15251,13 @@
           "syncStatus": {
             "type": "string",
             "description": "Text status of the sync.",
-            "example": "Completed",
+            "examples": [
+              "Complete",
+              "PushError",
+              "Started",
+              "NotStarted",
+              "Pushing"
+            ],
             "nullable": true
           },
           "errorMessage": {
@@ -13652,7 +15271,7 @@
             "nullable": true
           },
           "syncUtc": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "Datetime of the sync.",
             "nullable": true
           },
@@ -13715,10 +15334,10 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "created": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "dataConnectionErrors": {
             "type": "array",
@@ -13774,7 +15393,7 @@
                 "description": "A message about a error returned by Codat."
               },
               "erroredOnUtc": {
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
               },
               "status": {
                 "title": "Error status",
@@ -13789,7 +15408,7 @@
               "resolvedOnUtc": {
                 "description": "The datetime in Utc that the error was resolved.",
                 "nullable": true,
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
               }
             }
           },
@@ -13842,43 +15461,6 @@
           }
         ]
       },
-      "ContactRef": {
-        "type": "object",
-        "title": "Supplier/customer reference",
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
-            "description": "Identifier of supplier or customer."
-          },
-          "type": {
-            "type": "string",
-            "description": "The type of contact.",
-            "example": "Supplier",
-            "default": "Supplier",
-            "enum": [
-              "Supplier"
-            ]
-          }
-        },
-        "required": [
-          "id"
-        ]
-      },
-      "ContactRefReimbursableExpense": {
-        "type": "object",
-        "title": "Supplier reference",
-        "properties": {
-          "id": {
-            "type": "string",
-            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
-            "description": "Identifier of supplier."
-          }
-        },
-        "required": [
-          "id"
-        ]
-      },
       "CreateAccountResponse": {
         "title": "Create account response",
         "x-internal": true,
@@ -13904,61 +15486,38 @@
         ]
       },
       "CreateAdjustmentRequest": {
-        "title": "Create Adjustment Request",
+        "title": "Create adjustment request",
         "x-internal": true,
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Your unique identifier for the transaction."
-          },
-          "date": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
-            "description": "Date of the transaction was recorded."
-          },
-          "currency": {
-            "type": "string",
-            "description": "Currency the transaction was recorded in."
-          },
-          "currencyRate": {
-            "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
-          },
-          "reference": {
-            "type": "string",
-            "nullable": true,
-            "description": "User-friendly reference for the adjustment transaction."
-          },
-          "lines": {
-            "type": "array",
-            "description": "Array of transaction lines.",
-            "minItems": 1,
-            "maxItems": 100,
-            "items": {
-              "$ref": "#/components/schemas/AdjustmentTransactionLine"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "date",
-          "currency",
-          "currencyRate",
-          "lines"
-        ]
-      },
-      "CreateAdjustmentResponse": {
-        "title": "Create Adjustment response",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "syncId": {
-            "type": "string",
-            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
-            "format": "uuid",
-            "description": "Unique id of sync created"
-          }
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 50,
+        "items": {
+          "$ref": "#/components/schemas/AdjustmentTransactionRequest"
         }
+      },
+      "CreateBankAccountResponse": {
+        "title": "Create bank account response",
+        "x-internal": true,
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/BankAccount"
+                  },
+                  {
+                    "deprecated": true
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/PushOperation"
+          }
+        ]
       },
       "CreateCustomerResponse": {
         "title": "Create customer response",
@@ -14044,69 +15603,6 @@
           }
         ]
       },
-      "CreateTransferRequest": {
-        "title": "Create transfer request",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": "string",
-            "description": "Any private, company notes about the transaction.",
-            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-          },
-          "date": {
-            "allOf": [
-              {
-                "description": "Date of the transfer transaction as recorded in the accounting platform."
-              },
-              {
-                "title": "Date time",
-                "type": "string",
-                "examples": [
-                  "2022-10-23T00:00:00.000Z",
-                  "2022-10-23T00:00:00.000Z"
-                ],
-                "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-              }
-            ]
-          },
-          "from": {
-            "$ref": "#/components/schemas/CreateTransferRequest/definitions/transferDetails"
-          },
-          "to": {
-            "$ref": "#/components/schemas/CreateTransferRequest/definitions/transferDetails"
-          }
-        },
-        "definitions": {
-          "transferDetails": {
-            "type": "object",
-            "properties": {
-              "accountRef": {
-                "$ref": "#/components/schemas/Account/definitions/accountRef",
-                "description": "Reference to the account to which the line item is linked."
-              },
-              "amount": {
-                "type": "number",
-                "format": "decimal",
-                "description": "Amount of the transfer."
-              }
-            }
-          }
-        }
-      },
-      "CreateTransferResponse": {
-        "title": "Create transfer response",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "syncId": {
-            "type": "string",
-            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
-            "format": "uuid",
-            "description": "Unique id of sync created"
-          }
-        }
-      },
       "Customer": {
         "title": "Accounting: Customer",
         "description": "> View the coverage for customers in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=customers\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA customer is a person or organisation that buys goods or services. From the Customers endpoints, you can retrieve a [list of all the customers of a company](https://api.codat.io/swagger/index.html#/Customers/get_companies__companyId__data_customers).\n\nCustomers' data links to accounts receivable [invoices](https://docs.codat.io/sync-for-expenses-api#/schemas/Invoice).\n",
@@ -14117,7 +15613,7 @@
             "properties": {
               "id": {
                 "type": "string",
-                "description": "Identifier for the customer, unique to the company in the accounting platform."
+                "description": "Identifier for the customer, unique to the company in the accounting software."
               },
               "customerName": {
                 "type": "string",
@@ -14329,7 +15825,7 @@
                 "$ref": "#/components/schemas/Customer/definitions/customerStatus"
               },
               "modifiedDate": {
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
               }
             },
             "required": [
@@ -14421,7 +15917,7 @@
             "example": "invoices"
           },
           "lastSuccessfulSync": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "currentStatus": {
             "$ref": "#/components/schemas/PullOperation/properties/status"
@@ -14540,6 +16036,30 @@
           }
         }
       },
+      "ExpenseContactRef": {
+        "type": "object",
+        "title": "Supplier/customer reference",
+        "x-internal": true,
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
+            "description": "Identifier of supplier or customer."
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of contact.",
+            "example": "Supplier",
+            "default": "Supplier",
+            "enum": [
+              "Supplier"
+            ]
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
       "ExpenseTransaction": {
         "title": "Expense transaction",
         "type": "object",
@@ -14558,15 +16078,11 @@
               "Payment",
               "Refund",
               "Reward",
-              "Chargeback",
-              "TransferIn",
-              "TransferOut",
-              "AdjustmentIn",
-              "AdjustmentOut"
+              "Chargeback"
             ]
           },
           "issueDate": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "Date of the transaction was recorded."
           },
           "currency": {
@@ -14579,11 +16095,11 @@
             "type": "number",
             "format": "decimal",
             "nullable": true,
-            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting platform, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting platforms which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, specify a currencyRate in the request body.  |"
+            "description": "Rate to convert the total amount of the payment into the base currency for the company at the time of the payment.\n\nCurrency rates in Codat are implemented as the multiple of foreign currency units to each base currency unit.  \n\nIt is not possible to perform the currency conversion with two or more non-base currencies participating in the transaction. For example, if a company's base currency is USD, and it has a bill issued in EUR, then the bill payment must happen in USD or EUR.\n\nWhere the currency rate is provided by the underlying accounting software, it will be available from Codat with the same precision (up to a maximum of 9 decimal places). \n\nFor accounting software which do not provide an explicit currency rate, it is calculated as `baseCurrency / foreignCurrency` and will be returned to 9 decimal places.\n\n## Examples with base currency of GBP\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (GBP) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **USD**          | $20            | 0.781         | £15.62                     |\n| **EUR**          | €20            | 0.885         | £17.70                     |\n| **RUB**          | ₽20            | 0.011         | £0.22                      |\n\n## Examples with base currency of USD\n\n| Foreign Currency | Foreign Amount | Currency Rate | Base Currency Amount (USD) |\n| :--------------- | :------------- | :------------ | :------------------------- |\n| **GBP**          | £20            | 1.277         | $25.54                     |\n| **EUR**          | €20            | 1.134         | $22.68                     |\n| **RUB**          | ₽20            | 0.015         | $0.30                      |\n\n\n### Integration-specific details\n\n| Integration       | Scenario                                        | System behavior                                                                                                                                                      |\n|-------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| QuickBooks Online | Transaction currency differs from base currency | If currency rate value is left `null`, a rate of 1 will be used by QBO by default. To override this, specify a currencyRate in the request body.  |"
           },
           "contactRef": {
             "description": "Supplier or customer for the purchase to be associated to.",
-            "$ref": "#/components/schemas/ContactRef"
+            "$ref": "#/components/schemas/ExpenseContactRef"
           },
           "bankAccountRef": {
             "type": "object",
@@ -14618,7 +16134,7 @@
           "postAsDraft": {
             "type": "boolean",
             "nullable": true,
-            "description": "For supported accouting platforms, setting this optional property to true will post the transaction to a drafted state."
+            "description": "This optional property, when set to true, posts the transaction to a drafted state. Note that postAsDraft is only supported in Microsoft Dynamics 365 Business Central."
           }
         },
         "required": [
@@ -14631,39 +16147,42 @@
           {
             "id": "a44135b0-6882-489a-83fe-a0c57a4afb19",
             "type": "Payment",
-            "issueDate": "2021-05-21T00:00:00+00:00",
+            "issueDate": "2024-05-21T00:00:00+00:00",
             "currency": "GBP",
-            "currencyRate": 1.18,
+            "currencyRate": 1,
+            "contactRef": {
+              "id": "430",
+              "type": "Supplier"
+            },
             "bankAccountRef": {
-              "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
+              "id": "97"
             },
             "merchantName": "Amazon UK",
+            "notes": "amazon purchase",
             "lines": [
               {
-                "netAmount": 110.42,
-                "taxAmount": 14.43,
+                "netAmount": 100,
+                "taxAmount": 20,
                 "taxRateRef": {
-                  "id": "7e2ccb60-de1a-4c2b-9bd9-2f98a1c6be3f"
+                  "id": "23_Bills"
                 },
                 "accountRef": {
-                  "id": "a505cb47-0f7d-4e8b-90aa-9f9c2308b7bc"
+                  "id": "35"
                 },
                 "trackingRefs": [
                   {
-                    "id": "31a7e93c-4bb2-474c-b26d-10b2b75f7a25"
+                    "id": "DEPARTMENT_3"
                   },
                   {
                     "dataType": "trackingCategories"
                   }
                 ],
                 "invoiceTo": {
-                  "id": "80000002-1674552702",
+                  "id": "504",
                   "type": "customer"
                 }
               }
-            ],
-            "notes": "amazon purchase",
-            "postAsDraft": false
+            ]
           }
         ]
       },
@@ -14673,8 +16192,8 @@
         "type": "object",
         "x-examples": {
           "ExpenseTransactionLine": {
-            "netAmount": 110.42,
-            "taxAmount": 14.43,
+            "netAmount": 100,
+            "taxAmount": 20,
             "taxRateRef": {
               "id": "08d37c46-8d5d-441b-8bad-76286c43047e"
             },
@@ -14696,13 +16215,13 @@
           "netAmount": {
             "type": "number",
             "format": "decimal",
-            "example": 110.42,
+            "example": 100,
             "description": "Amount of the line, exclusive of tax."
           },
           "taxAmount": {
             "type": "number",
             "format": "decimal",
-            "example": 14.43,
+            "example": 20,
             "description": "Amount of tax for the line."
           },
           "taxRateRef": {
@@ -14744,9 +16263,10 @@
       },
       "InvoiceTo": {
         "title": "Billable customer reference",
+        "x-internal": true,
         "type": "object",
         "nullable": true,
-        "description": "Unique identifier of the customer the expense is billable to. The invoiceTo object is currently only supported for QBO.",
+        "description": "Unique identifier of the customer the expense is billable to. The invoiceTo object is currently only supported for QBO and QBD.",
         "properties": {
           "id": {
             "type": "string",
@@ -14959,10 +16479,10 @@
             "description": "A message about a transient or persistent error returned by Codat or the source platform."
           },
           "requested": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "completed": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
           },
           "progress": {
             "type": "integer",
@@ -15052,11 +16572,11 @@
             "$ref": "#/components/parameters/connectionId/schema"
           },
           "requestedOnUtc": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "The datetime when the push was requested."
           },
           "completedOnUtc": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
             "description": "The datetime when the push was completed, null if Pending."
           },
           "timeoutInMinutes": {
@@ -15407,16 +16927,21 @@
         "title": "Reimbursable expense transaction line",
         "type": "object",
         "properties": {
+          "description": {
+            "type": "string",
+            "example": "2-night hotel stay",
+            "description": "line description"
+          },
           "netAmount": {
             "type": "number",
             "format": "decimal",
-            "example": 110.42,
+            "example": 100,
             "description": "Amount of the line, exclusive of tax."
           },
           "taxAmount": {
             "type": "number",
             "format": "decimal",
-            "example": 14.43,
+            "example": 20,
             "description": "Amount of tax for the line."
           },
           "taxRateRef": {
@@ -15468,15 +16993,15 @@
                 "description": "User-friendly reference for the reimbursable expense."
               },
               "contactRef": {
-                "$ref": "#/components/schemas/ContactRefReimbursableExpense"
+                "$ref": "#/components/schemas/ReimbursementContactRef"
               },
               "issueDate": {
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
                 "description": "Date of the transaction was recorded."
               },
               "dueDate": {
                 "description": "Date the supplier is due to be paid.",
-                "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1"
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
               },
               "currency": {
                 "type": "string",
@@ -15490,17 +17015,6 @@
                 "type": "string",
                 "description": "Any private, company notes about the transaction.",
                 "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
-              },
-              "bankAccountRef": {
-                "type": "object",
-                "title": "Bank account reference",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "example": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea",
-                    "description": "Identifier of the bank account."
-                  }
-                }
               },
               "lines": {
                 "type": "array",
@@ -15522,11 +17036,26 @@
           }
         }
       },
+      "ReimbursementContactRef": {
+        "type": "object",
+        "title": "Contact reference",
+        "x-internal": true,
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "40e3e57c-2322-4898-966c-ca41adfd23fd",
+            "description": "Identifier of contact."
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
       "SupplementalData": {
         "title": "Supplemental data",
         "type": "object",
         "x-internal": true,
-        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting platform. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
+        "description": "Supplemental data is additional data you can include in our standard data types. \n\nIt is referenced as a configured dynamic key value pair that is unique to the accounting software. [Learn more](https://docs.codat.io/using-the-api/supplemental-data/overview) about supplemental data.",
         "properties": {
           "content": {
             "type": "object",
@@ -15548,7 +17077,7 @@
             "properties": {
               "id": {
                 "type": "string",
-                "description": "Identifier for the supplier, unique to the company in the accounting platform."
+                "description": "Identifier for the supplier, unique to the company in the accounting software."
               },
               "supplierName": {
                 "type": "string",
@@ -15866,70 +17395,16 @@
         },
         "additionalProperties": false
       },
-      "SyncStartedWebhook": {
-        "title": "Sync started webhook",
-        "x-internal": true,
-        "description": "Webhook request body used to notify that a sync has started.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
-          },
-          "Data": {
-            "type": "object",
-            "properties": {
-              "syncId": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncId"
-              },
-              "syncType": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/definitions/SyncFailedWebhookData/properties/syncType"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e",
-            "ClientName": "Expense Sync",
-            "CompanyId": "1f9559e7-8368-48c9-bdf4-f158e16b8b85",
-            "AlertId": "33a4f8e9-09ae-4334-9b00-7bbe83024672",
-            "RuleId": "5c27631d-3b63-4b50-8228-ee502fd113eb",
-            "RuleType": "Sync Started",
-            "Message": "Sync 321363b4-efa9-4fbc-b71c-0b58d62f3248 for company 1f9559e7-8368-48c9-bdf4-f158e16b8b85 of type Expense has started.",
-            "Data": {
-              "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248",
-              "syncType": "Expense"
-            }
-          }
-        ]
-      },
       "TaxRateMappingInfo": {
         "title": "Tax rate mapping info",
+        "x-internal": true,
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
           "UK Tax Rate": {
-            "id": "59_Bills",
-            "name": "UK Standard Rate (Bills) Bills",
-            "code": "UK Standard Rate (Bills)",
+            "id": "23_Bills",
+            "name": "20% Bill tax Bills",
+            "code": "20% Bill tax",
             "effectiveTaxRate": 20,
             "totalTaxRate": 20,
             "validTransactionTypes": [
@@ -15942,19 +17417,19 @@
           "id": {
             "type": "string",
             "description": "Unique identifier of tax rate.",
-            "example": "59_Bills",
+            "example": "23_Bills",
             "nullable": false
           },
           "name": {
             "type": "string",
-            "description": "Name of the tax rate in the accounting platform.",
-            "example": "UK Standard Rate (Bills) Bills",
+            "description": "Name of the tax rate in the accounting software.",
+            "example": "20% Bill tax Bills",
             "nullable": false
           },
           "code": {
             "type": "string",
-            "description": "Code for the tax rate from the accounting platform.",
-            "example": "UK Standard Rate (Bills)",
+            "description": "Code for the tax rate from the accounting software.",
+            "example": "20% Bill tax",
             "nullable": true
           },
           "effectiveTaxRate": {
@@ -15970,43 +17445,25 @@
             "example": 20
           },
           "validTransactionTypes": {
-            "type": "array",
-            "description": "Supported transaction types for the account.",
-            "minItems": 0,
-            "maxItems": 8,
-            "nullable": true,
-            "items": {
-              "type": "string",
-              "enum": [
-                "Payment",
-                "Refund",
-                "Reward",
-                "Chargeback",
-                "TransferIn",
-                "TransferOut",
-                "AdjustmentIn",
-                "AdjustmentOut"
-              ],
-              "example": "Payment"
-            }
+            "$ref": "#/components/schemas/validTransactionTypes",
+            "description": "Supported transaction types for the tax rate."
           }
         }
       },
       "TrackingCategoryMappingInfo": {
         "title": "Tracking category mapping info",
+        "x-internal": true,
         "type": "object",
         "additionalProperties": false,
         "x-examples": {
           "Tracking Category with parentId": {
             "id": "DEPARTMENT_1",
-            "modifiedDate": "2023-02-09T11:42:41Z",
             "name": "TestLocation",
             "hasChildren": false,
             "parentId": "DEPARTMENTS"
           },
           "Parent Tracking Category": {
             "id": "DEPARTMENTS",
-            "modifiedDate": "2023-02-09T11:42:41Z",
             "name": "Departments",
             "hasChildren": true
           }
@@ -16017,11 +17474,6 @@
             "description": "Unique identifier of the tracking category.",
             "example": "DEPARTMENT_2",
             "nullable": false
-          },
-          "modifiedDate": {
-            "$ref": "#/components/schemas/CreateTransferRequest/properties/date/allOf/1",
-            "description": "Datetime when the tracking category was last modified.",
-            "nullable": true
           },
           "name": {
             "type": "string",
@@ -16044,6 +17496,7 @@
       "TrackingRef": {
         "type": "object",
         "title": "Tracking reference",
+        "x-internal": true,
         "properties": {
           "id": {
             "type": "string",
@@ -16101,6 +17554,7 @@
       },
       "TransactionResponse": {
         "title": "Transaction response",
+        "x-internal": true,
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Transaction"
@@ -16169,6 +17623,107 @@
         "example": "Completed",
         "nullable": true
       },
+      "TransferTransactionRequest": {
+        "title": "Transfer",
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Any private, company notes about the transaction.",
+            "example": "Transfer from bank account Y to bank account Z"
+          },
+          "date": {
+            "allOf": [
+              {
+                "description": "Date of the transfer transaction as recorded in the accounting software."
+              },
+              {
+                "title": "Date time",
+                "type": "string",
+                "examples": [
+                  "2022-10-23T00:00:00.000Z",
+                  "2022-10-23T00:00:00.000Z"
+                ],
+                "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+              }
+            ]
+          },
+          "from": {
+            "type": "object",
+            "properties": {
+              "accountRef": {
+                "type": "object",
+                "title": "Account reference",
+                "description": "Reference of the account you are transferring money from.",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "'id' from the Accounts data type."
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              },
+              "amount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Amount that has been transferred from the account in the native currency of the account."
+              }
+            },
+            "required": [
+              "accountRef",
+              "amount"
+            ]
+          },
+          "to": {
+            "type": "object",
+            "properties": {
+              "accountRef": {
+                "type": "object",
+                "title": "Account reference",
+                "description": "Reference of the account you are transferring money to.",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "'id' from the Accounts data type."
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              },
+              "amount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "Amount that has been transferred to the account in the native currency of the account."
+              }
+            },
+            "required": [
+              "accountRef",
+              "amount"
+            ]
+          }
+        },
+        "required": [
+          "date",
+          "from",
+          "to"
+        ]
+      },
+      "TransferTransactionResponse": {
+        "title": "Create transfer response",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "example": "cd937d46-8e41-43a9-9477-a79158ffd98a",
+            "format": "uuid",
+            "description": "Unique id of sync created"
+          }
+        }
+      },
       "UpdateCustomerResponse": {
         "title": "Update customer response",
         "x-internal": true,
@@ -16196,27 +17751,18 @@
       "UpdateExpenseRequest": {
         "title": "Updating expense transaction request",
         "type": "object",
-        "examples": {
-          "Payment": {
-            "value": {
-              "type": "Payment",
-              "issueDate": "2023-05-22T00:00:00+00:00",
-              "currency": "GBP",
-              "currencyRate": 1.18,
-              "notes": "New notes",
-              "contactRef": {
-                "id": "f5244103-5223-4b0a-857f-50566ac86c11",
-                "type": "Supplier"
-              },
-              "bankAccountRef": {
-                "id": "787dfb37-5707-4dc0-8a86-8d74e4cc78ea"
-              },
-              "merchantName": "My Merchant"
-            }
-          }
-        },
         "properties": {
-          "type": "#/definitions/expenseType",
+          "type": {
+            "type": "string",
+            "example": "Payment",
+            "description": "The type of transaction.",
+            "enum": [
+              "Payment",
+              "Refund",
+              "Reward",
+              "Chargeback"
+            ]
+          },
           "issueDate": {
             "type": "string",
             "description": "Date the transaction was recorded.",
@@ -16232,7 +17778,7 @@
           },
           "contactRef": {
             "description": "Supplier or Customer for the purchase to be associated to.",
-            "$ref": "#/components/schemas/ContactRef"
+            "$ref": "#/components/schemas/ExpenseContactRef"
           },
           "bankAccountRef": {
             "type": "object",
@@ -16263,30 +17809,15 @@
             "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
           }
         },
-        "definitions": {
-          "expenseType": {
-            "description": "The type of transaction.",
-            "type": "string",
-            "example": "Payment",
-            "enum": [
-              "Payment",
-              "Refund",
-              "Reward",
-              "Chargeback",
-              "TransferIn",
-              "TransferOut",
-              "AdjustmentIn",
-              "AdjustmentOut"
-            ]
-          }
-        },
         "required": [
           "type",
-          "issueDate"
+          "issueDate",
+          "currency"
         ]
       },
       "UpdateExpenseResponse": {
         "title": "Update expense response",
+        "x-internal": true,
         "type": "object",
         "properties": {
           "syncId": {
@@ -16299,6 +17830,56 @@
             "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
           }
         }
+      },
+      "UpdateReimbursableExpenseTransactionRequest": {
+        "title": "Updating reimbursable expense transaction request",
+        "type": "object",
+        "properties": {
+          "reference": {
+            "type": "string",
+            "nullable": true,
+            "description": "User-friendly reference for the reimbursable expense."
+          },
+          "contactRef": {
+            "$ref": "#/components/schemas/ReimbursementContactRef"
+          },
+          "issueDate": {
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
+            "description": "Date of the transaction was recorded."
+          },
+          "dueDate": {
+            "description": "Date the supplier is due to be paid.",
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
+          },
+          "currency": {
+            "type": "string",
+            "example": "GBP",
+            "description": "Currency the transaction was recorded in."
+          },
+          "currencyRate": {
+            "$ref": "#/components/schemas/ExpenseTransaction/properties/currencyRate"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Any private, company notes about the transaction.",
+            "example": "APPLE.COM/BILL - 09001077498 - Card Ending: 4590"
+          },
+          "lines": {
+            "type": "array",
+            "description": "Array of transaction lines.",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/ReimbursableExpenseTransactionLine"
+            }
+          }
+        },
+        "required": [
+          "contactRef",
+          "issueDate",
+          "dueDate",
+          "currency"
+        ]
       },
       "UpdateSupplierResponse": {
         "title": "Update supplier response",
@@ -16323,6 +17904,23 @@
             "$ref": "#/components/schemas/PushOperation"
           }
         ]
+      },
+      "validTransactionTypes": {
+        "title": "Valid transaction types",
+        "x-internal": true,
+        "type": "array",
+        "description": "Supported transaction types for the account.",
+        "nullable": false,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Payment",
+            "Refund",
+            "Reward",
+            "Chargeback"
+          ],
+          "example": "Payment"
+        }
       }
     },
     "parameters": {
@@ -16478,7 +18076,7 @@
           "type": "boolean",
           "default": false
         },
-        "description": "When updating data in the destination platform Codat checks the `sourceModifiedDate` against the `lastupdated` date from the accounting platform, if they're different Codat will return an error suggesting you should initiate another pull of the data. If this is set to `true` then the update will override this check."
+        "description": "When updating data in the destination platform Codat checks the `sourceModifiedDate` against the `lastupdated` date from the accounting software, if they're different Codat will return an error suggesting you should initiate another pull of the data. If this is set to `true` then the update will override this check."
       }
     },
     "responses": {

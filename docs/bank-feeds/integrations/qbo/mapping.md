@@ -1,6 +1,6 @@
 ---
 title: "Map accounts in QuickBooks Online"
-description: "Push bank transaction data into your customers' accounting platforms with an automated feed"
+description: "Push bank transaction data into your customers' accounting software with an automated feed"
 sidebar_label: Map accounts
 displayed_sidebar: bankfeeds
 hide_description: true
@@ -8,7 +8,7 @@ hide_description: true
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Loom from '@components/global/Loom'
+import Loom from '@components/Loom'
 
 # QuickBooks Online mapping
 

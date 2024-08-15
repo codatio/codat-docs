@@ -39,7 +39,7 @@ You should only enable one of the banking integrations at a time. This ensures o
 
 :::tip Enable users without credentials
 
-In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting platform.
+In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting software.
 
 To enable them to proceed and explore your product, make upfront authorization for different integration categories optional. Later, remind them to authorize or give them an option to share a Link URL or even a `mailto:` link.
 
@@ -47,7 +47,7 @@ To enable them to proceed and explore your product, make upfront authorization f
 
 
 ### Retries  
-Allow your customers to restart the linking process for accounting platforms in case their first connection attempt fails. The "Try again" button will appear on the error page.
+Allow your customers to restart the linking process for accounting software in case their first connection attempt fails. The "Try again" button will appear on the error page.
 
 The possibility to restart the linking process for commerce and banking platforms is available by default.
 
@@ -57,7 +57,7 @@ The possibility to restart the linking process for commerce and banking platform
 Let your users know that some integrations are not optimized or will not connect via mobile when accessing the connection journey on mobile.
 
 #### Powered by Codat
-Toggle whether the _Powered by Codat_ logo is shown on your authorization flow. This toggle is always on when using our [Free trial](/configure/create-account).
+Toggle whether the _Powered by Codat_ logo is shown on your authorization flow.
 
 #### Landing page  
 If enabled, an extra page will appear at the start of Link. The page's content is customizable, which is an excellent opportunity to explain the value of linking. You can customize the header and the body of the message.

@@ -8,7 +8,7 @@ tags: [syncforexpense, mappingOptions, Config]
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-Once your SMB user has authorized a connection to their accounting platform and you have created a data connection, they are ready to start creating their expense transactions. Each transaction needs to be associated with a bank account, customer, and supplier. To add these values to the transaction, you can: 
+Once your SMB user has authorized a connection to their accounting software and you have created a data connection, they are ready to start creating their expense transactions. Each transaction needs to be associated with a bank account, customer, and supplier. To add these values to the transaction, you can: 
 
 - Enable your customer to indicate the required bank account, customer, and supplier values on each expense transaction.
 - Use default fallback bank account, customer, and supplier values pre-configured for the customer's company.
@@ -17,7 +17,7 @@ You also need to provide your customer with an opportunity (via your application
 
 ## Enable customer to set values
 
-Your customers should be able set a bank account, customer, and supplier for each [expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) to allow for a more accurate representation of who or where the spend should be associated with in the accounting platform. 
+Your customers should be able set a bank account, customer, and supplier for each [expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction#request-body) to allow for a more accurate representation of who or where the spend should be associated with in the accounting software. 
 
 ``` http title="Bank account override on the expense transaction"
 "bankAccountRef":{
@@ -36,7 +36,7 @@ If your customer doesn't provide these values on the transaction itself, Sync fo
 
 :::caution Default and mandatory values
 
-If you choose not to set default configuration and no values are entered on the transaction, the expense will fail to create in the accounting platform. To avoid this, make the bank account, customer, and supplier fields mandatory in your app's UI for your user to provide.
+If you choose not to set default configuration and no values are entered on the transaction, the expense will fail to create in the accounting software. To avoid this, make the bank account, customer, and supplier fields mandatory in your app's UI for your user to provide.
 :::
 
 ## Configure default values
@@ -59,7 +59,12 @@ POST https://api.codat.io/companies/{companyId}/sync/expenses/config
     }
 }
 ```
-If a configuration is set for a company, but the customer sets a bank account, supplier, and customer value on the expense transaction level, Sync for Expenses will use the values from the trasaction when creating the expense in the accounting platform.
+If a configuration is set for a company, but the customer sets a bank account, supplier, and customer value on the expense transaction level, Sync for Expenses will use the values from the trasaction when creating the expense in the accounting software.
+
+:::caution Suppliers in Microsoft Dynamics
+
+Due to a limitation in the accounting software, Microsoft Dynamics requires a default supplier when creating expenses. We currently don't support assigning a supplier at the transaction level.
+:::
 
 ### Bank account
 
@@ -98,7 +103,7 @@ Choose the customer (`customer.id`) that any income-related activities, such as 
 
 ### Supplier and customer handling
 
-In some scenarios, different accounting platforms assign customers and suppliers to a transaction based on the expense's [transaction types](/expenses/sync-process/expense-transactions#transaction-types): 
+In some scenarios, different accounting software assign customers and suppliers to a transaction based on the expense's [transaction types](/expenses/sync-process/expense-transactions#transaction-types): 
 
 <table>
   <thead></thead>
@@ -241,9 +246,9 @@ When pushing an expense reconciliation, you can include a tracking category to f
 
 [Tax rates](/sync-for-expenses-api#/schemas/TaxRateMappingInfo) enable your SMB customers to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax. Assigning a tax rate to a transaction is mandatory, unless the transaction is a `transferIn` or `transferOut`. 
 
-Accounting systems typically store a set of taxes and associated rates within the accounting package. This means users don't have to look up or remember the rate for each type of tax. For example, applying the tax "UK sales VAT" to the line items of an invoice in an accounting platform will add the correct tax rate of 20%. 
+Accounting systems typically store a set of taxes and associated rates within the accounting software. This means users don't have to look up or remember the rate for each type of tax. For example, applying the tax "UK sales VAT" to the line items of an invoice in an accounting software will add the correct tax rate of 20%. 
 
-In some cases, your customers might not need to track tax on expenses. We recommend assigning a default tax code for 0% from the accounting package for those transactions.
+In some cases, your customers might not need to track tax on expenses. We recommend assigning a default tax code for 0% from the accounting software for those transactions.
 
 ### Refresh mapping options
 

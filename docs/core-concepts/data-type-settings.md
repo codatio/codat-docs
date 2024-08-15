@@ -22,10 +22,7 @@ To customize your data type settings:
 
 You can learn more about each data type setting by reading the sections below.
 
-<img
-  src="/img/old/64728a5-datat_type_settings.PNG"
-  alt="Data type settings view in the Codat Portal"
-/>
+![Data type settings view in the Codat Portal](/img/old/64728a5-datat_type_settings.png)
 
 ## Use "Fetch on first link"
 
@@ -33,7 +30,7 @@ By default, **Fetch on first link** is _on_ for most data types.
 
 When **Fetch on first link** is _on_ for a data type:
 
-- The data type is automatically queued for synchronization when a company is first linked, provided that the data type is available in the company's accounting platform.
+- The data type is automatically queued for synchronization when a company is first linked, provided that the data type is available in the company's accounting software.
 - The data type is queued for synchronization when clicking the **Refresh data** button for a company in the Codat Portal.
 - The data type is queued for synchronization when you make a request to [`POST /companies/{companyId}/data/queue/{dataType}`](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_) with _all_ as the datatype.
 

@@ -7,6 +7,8 @@
 
 /* You can override the default Infima variables here. */
 
+@use "./components/breakpoints";
+
 @use "./components/admonitions";
 @use "./components/article";
 @use "./components/blockquotes";
@@ -33,6 +35,7 @@
 @use "./components/navbar";
 @use "./components/navbar-sidebar";
 @use "./components/pagination";
+@use "./components/playground";
 @use "./components/prototype";
 @use "./components/read-next";
 @use "./components/search";
@@ -51,6 +54,9 @@
 /* 600 weight */
 
 :root {
+
+  // ------------- Colors
+
   --color-black: #0d0d0d;
 
   --color-interface-core: #556680;
@@ -110,19 +116,24 @@
 
   --ifm-menu-link-sublist-icon: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04Ljk5OTg4IDVMNC45OTk4OCAxTDAuOTk5ODc4IDUiIHN0cm9rZT0iIzAzMDYwQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
 
-  //#region ----------- Z Indices ------------
+  // -------------- Dimensions
+
+  --padding-page-border: 3em;
+
+  // ----------- Z Indices ------------
+
   --z-sidebar: 2000;
   --z-backdrop: 1100;
-  //#endregion
 
-  // -------
+  // ------- Navbar
+
   --ifm-navbar-link-hover-color: initial;
   --ifm-navbar-padding-vertical: 0;
   --ifm-navbar-item-padding-vertical: 0;
 
-  --padding-page-border: 2em;
+  @media (max-width: 799px) {
+    // -------------- Dimensions
 
-  @media (max-width: 800px) {
     --padding-page-border: 1em;  
   }
 }
@@ -206,7 +217,9 @@ p {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   font-weight: 500;
   text-wrap: balance;
 }
@@ -226,6 +239,8 @@ article {
 }
 
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
   font-family: var(--ifm-font-family-base);
 }
@@ -313,5 +328,5 @@ hr {
 
 .theme-back-to-top-button {
   bottom: 13px !important;
-  right: 10.5em !important;
+  right: 12.5em !important;
 }

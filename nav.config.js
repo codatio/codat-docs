@@ -42,10 +42,6 @@ module.exports = {
           label: "Sync for Payables",
         },
         {
-          href: "/sync-for-payroll-api",
-          label: "Sync for Payroll",
-        },
-        {
           href: "/platform-api",
           label: "Platform API",
           hr: true,
@@ -90,7 +86,6 @@ module.exports = {
         {
           to: "support/get-help",
           label: "Get help",
-          activeBasePage: "support",
         },
         {
           href: "https://status.codat.io/",
@@ -109,15 +104,9 @@ module.exports = {
     },
     {
       href: "https://app.codat.io/",
-      label: "Portal",
+      label: "Sign in",
       className: "navbarButton secondary",
-      position: "right"
-    },
-    {
-      href: "https://signup.codat.io/",
-      label: "Sign up",
-      className: "navbarButton primary",
-      position: "right"
+      position: "right",
     },
   ],
 }

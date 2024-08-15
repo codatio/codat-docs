@@ -1,6 +1,6 @@
 ---
 title: "Merchant configuration"
-description: "Enable merchants to connect their systems and specify how they want their sales data to be synchronized into their accounting package"
+description: "Enable merchants to connect their systems and specify how they want their sales data to be synchronized into their accounting software"
 displayed_sidebar: commerce
 image: "/img/banners/social/commerce.png"
 ---
@@ -8,13 +8,13 @@ image: "/img/banners/social/commerce.png"
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Our Sync configuration UI allows merchants to authenticate to gain access to their commerce platform and accounting package and records the merchants' sales data synchronization preferences. It can be customized to integrate seamlessly into your software.
+Our Sync configuration UI allows merchants to authenticate to gain access to their commerce software and accounting software and records the merchants' sales data synchronization preferences. It can be customized to integrate seamlessly into your software.
 
 ## Merchant configuration
 
 Once a merchant authorized access to their systems, they can use the Sync configuration UI to perform the following configuration:
 
-- Decide whether to handle sales as invoices or journal entries within their accounting package.
+- Decide whether to handle sales as invoices or journal entries within their accounting software.
 - Schedule the start date and time from which sales data should be synchronized.
 - Configure how their sales should be accounted for, including:
     - Aggregation of sales by product category,
@@ -28,11 +28,11 @@ Once a merchant authorized access to their systems, they can use the Sync config
 
 The configuration of accounting for sales, payments, and fees happens in the form of mapping. 
 
-First, Codat retrieves relevant data from the connected commerce platform and accounting package. 
+First, Codat retrieves relevant data from the connected commerce software and accounting software. 
 
 The UI then requests the user to map different types of sales, payments, and fees to the relevant accounts in their accounting system. For example, they may map sales of food to the "Food income" account and map payment fees to the "Payment costs" account. 
 
-The Sync configuration UI also allows your customer to create a new account in their accounting package where necessary.
+The Sync configuration UI also allows your customer to create a new account in their accounting software where necessary.
 
 :::tip Implementing your own UI
 You can implement your own UI to capture a merchant's desired sync configuration using our API. Consult your Solutions Engineer for support in doing this. 
@@ -68,8 +68,8 @@ The Sync configuration UI is organised in 6 stages, each with customizable text 
 
 | Stage                                     | Action required from user                              |
 |-------------------------------------------|--------------------------------------------------------|
-| 1. Connection to commerce system          | Authenticate with commerce platform                    |
-| 2. Connection to accounting system        | Authenticate with accounting package                   |
+| 1. Connection to commerce system          | Authenticate with commerce software                    |
+| 2. Connection to accounting system        | Authenticate with accounting software                   |
 | 3. Sales synchronization configuration    | Configure how sales should be accounted for            |
 | 4. Fees synchronization configuration     | Configure how fees should be accounted for             |
 | 5. Payments synchronization configuration | Configure how payments should be accounted for         |
@@ -143,7 +143,7 @@ Example request body:
 
    | Default value                  | `data-textkey` value           |
    |--------------------------------|------------------------------|
-   | Set up Sync to {platform name} | `configure-setupSidebar-title` |
+   | Set up Sync to `{platform name}` | `configure-setupSidebar-title` |
 
    </TabItem>
 
@@ -151,8 +151,8 @@ Example request body:
 
    | Default value                         | `data-textkey` value                                    |
    |---------------------------------------|-------------------------------------------------------|
-   | Connect to {commerce platform name}   | `configure-setupSidebar-checkboxes-connectToCommerce`   |
-   | Connect to {accounting platform name} | `configure-setupSidebar-checkboxes-connectToAccounting` |
+   | Connect to `{commerce software name}`   | `configure-setupSidebar-checkboxes-connectToCommerce`   |
+   | Connect to `{accounting software name}` | `configure-setupSidebar-checkboxes-connectToAccounting` |
    | Set up sales                          | `configure-setupSidebar-checkboxes-sales`               |
    | Set up fees                           | `configure-setupSidebar-checkboxes-fees`                |
    | Set up payments                       | `configure-setupSidebar-checkboxes-payments`            |
@@ -197,9 +197,9 @@ Example request body:
    | Default value                                                                            | `data-textkey` value                           |
    |------------------------------------------------------------------------------------------|----------------------------------------------|
    | Accounts                                                                                 | `configure-content-sales-accounts-title`       |
-   | Configure accounts mapping from {commerce platform name} to {accounting platform name}.  | `configure-content-sales-accounts-description` |
+   | Configure accounts mapping from `{commerce software name}` to `{accounting software name}`.  | `configure-content-sales-accounts-description` |
    | Tax rates                                                                                | `configure-content-sales-taxRates-title`       |
-   | Configure tax rates mapping from {commerce platform name} to {accounting platform name}. | `configure-content-sales-taxRates-description` |
+   | Configure tax rates mapping from `{commerce software name}` to `{accounting software name}`. | `configure-content-sales-taxRates-description` |
    | Other                                                                                    | `configure-content-sales-other-title`          |
    | Other title description: no value by default.                                            | `configure-content-sales-other-description`    |
 
@@ -208,7 +208,7 @@ Example request body:
    | Default value                                                                           | `data-textkey` value                          |
    |-----------------------------------------------------------------------------------------|---------------------------------------------|
    | Accounts                                                                                | `configure-content-fees-accounts-title`       |
-   | Configure accounts mapping from {commerce platform name} to {accounting platform name}. | `configure-content-fees-accounts-description` |
+   | Configure accounts mapping from `{commerce software name}` to `{accounting software name}`. | `configure-content-fees-accounts-description` |
 
    </TabItem>
 
@@ -219,9 +219,9 @@ Example request body:
    | Default value                                                                            | `data-textkey` value                           |
    |------------------------------------------------------------------------------------------|----------------------------------------------|
    | Accounts                                                                                 | `configure-content-sales-accounts-title`       |
-   | Configure accounts mapping from {commerce platform name} to {accounting platform name}.  | `configure-content-sales-accounts-description` |
+   | Configure accounts mapping from `{commerce software name}` to `{accounting software name}`.  | `configure-content-sales-accounts-description` |
    | Tax rates                                                                                | `configure-content-sales-taxRates-title`       |
-   | Configure tax rates mapping from {commerce platform name} to {accounting platform name}. | `configure-content-sales-taxRates-description` |
+   | Configure tax rates mapping from `{commerce software name}` to `{accounting software name}`. | `configure-content-sales-taxRates-description` |
    | Other                                                                                    | `configure-content-sales-other-title`          |
    | Other title description: no value by default.                                            | `configure-content-sales-other-description`    |
 
@@ -230,7 +230,7 @@ Example request body:
    | Default value                                                                           | `data-textkey` value                          |
    |-----------------------------------------------------------------------------------------|---------------------------------------------|
    | Accounts                                                                                | `configure-content-fees-accounts-title`       |
-   | Configure accounts mapping from {commerce platform name} to {accounting platform name}. | `configure-content-fees-accounts-description` |
+   | Configure accounts mapping from `{commerce software name}` to `{accounting software name}`. | `configure-content-fees-accounts-description` |
 
    <b>Payments (stage 5)</b>
 

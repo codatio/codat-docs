@@ -7,12 +7,6 @@ Our QuickBooks Desktop on-premise connector enables SMBs who use QuickBooks Desk
 
 The connector is a Windows application that runs on the SMB user's local machine.
 
-<div className="card">
-  <h3>✨ Premium</h3>
-
-  <p>This integration is only available as a premium add-on on our <a href="/configure/create-account">enterprise plans</a>.</p>
-</div>
-
 ## Data type coverage
 
 View the coverage of our QuickBooks Desktop on-premise connector in the [Data coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pqsw).
@@ -29,10 +23,10 @@ Our connector provides a seamless and full featured integration to QuickBooks De
 
 <ul className="card-container col-2">
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Runs in the background</h3>
     </div>
@@ -42,10 +36,10 @@ Our connector provides a seamless and full featured integration to QuickBooks De
     </p>
   </li>
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Auto restarts and updates</h3>
     </div>
@@ -55,10 +49,10 @@ Our connector provides a seamless and full featured integration to QuickBooks De
     </p>
   </li>
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Auto and manual syncs</h3>
     </div>
@@ -68,10 +62,10 @@ Our connector provides a seamless and full featured integration to QuickBooks De
     </p>
   </li>
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Intuitive user interface</h3>
     </div>
@@ -118,7 +112,7 @@ Here's how your SMB users interact with the QBD connector.
 - The user needs administrator privileges (admin rights) to run the connector installer. Alternatively, a different administrator can approve the installation and run the connector.
 - The SMB user completes some simple steps to complete the installation (as described in [Install the QuickBooks Desktop connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector)). In summary, they'll need to:
   - Enter their unique license number (their Codat Company ID), which is provided during the link flow.
-  - Complete some steps to point the connector at the correct accounting package data file on their local machine.
+  - Complete some steps to point the connector at the correct accounting software data file on their local machine.
 
 When installed, the QBD connector doesn’t require any further interaction by the SMB user, and administrator privileges are no longer required.
 

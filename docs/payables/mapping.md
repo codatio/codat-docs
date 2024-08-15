@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem"
 
 Your SMB customers may have multiple bank accounts they can use to pay for a bill. In your application, you should enable them to select the account the payment should originate from.
 
-Retrieve the list of existing bank accounts from the SMB's accounting platform and display the available mapping options to them in a UI, or allow them to create a new account when needed.
+Retrieve the list of existing bank accounts from the SMB's accounting software and display the available mapping options to them in a UI, or allow them to create a new account when needed.
 
 We have highlighted this alternative sequence of steps in our detailed process diagram below. 
 
@@ -23,7 +23,7 @@ We have highlighted this alternative sequence of steps in our detailed process d
       participant smb as SMB customer
       participant app as Your application 
       participant codat as Codat
-      participant acctg as Accounting platform
+      participant acctg as Accounting software
       
       alt Retrieve bank accounts
         codat ->> acctg: Fetches existing bank accounts
@@ -52,7 +52,7 @@ If you facilitate payments in a foreign currency, you should convert the payment
 Use the [Get create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoint to view the list of the company's currently enabled currencies. It can return:
 
 - *Single value*: the account's base currency in platforms that only support the base currency
-- *Multiple values*: several currencies enabled by the SMB user in their accounting platform
+- *Multiple values*: several currencies enabled by the SMB user in their accounting software
 - *No values*: empty array for platforms where any and all currencies can be selected
 
 :::

@@ -32,7 +32,8 @@ Cochat is an advanced natural language processing (NLP) tool developed to enhanc
     Get instant assistance with {" "}
     <a href="https://cochat.codat.io" target="_blank">
       Cochat
-    </a> our beta AI tool trained on the Codat docs. Try {" "}
+    </a> 
+    our beta AI tool trained on the Codat docs. Try {" "}
     <a href="https://cochat.codat.io" target="_blank">asking it a question</a>!
   </p>
 </li>

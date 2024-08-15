@@ -7,7 +7,9 @@
       max-width: initial;
 
       > .row {
-        flex-wrap: nowrap;
+        max-width: 100%;
+        //flex-wrap: nowrap;
+        margin: 0;
       }
     }
   }

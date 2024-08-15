@@ -23,7 +23,7 @@ See our detailed integration-specific [documentation](/integrations/all-integrat
 
 ### Accounting data
 
-To manage which accounting package integrations are enabled, use the Codat Portal:
+To manage which accounting software integrations are enabled, use the Codat Portal:
 
 - Click [**Settings > Integrations > Accounting**](https://app.codat.io/settings/integrations/accounting)
 - Select the integration you want to manage
@@ -45,13 +45,11 @@ Guides on configuring each integration are available in the [Banking integration
 
 ### Commerce data
 
-To manage which accounting packages are enabled, use the Codat Portal:
+To manage which accounting software are enabled, use the Codat Portal:
 
 - Click [**Settings > Integrations > Commerce**](https://app.codat.io/settings/integrations/commerce)
 - Select the integration you want to manage
 - Configure and enable the integration
-
-Guides on configuring each integration are
 
 Further detailed guides on configuring these are available in the [Commerce integrations overview](/integrations/commerce/overview).
 

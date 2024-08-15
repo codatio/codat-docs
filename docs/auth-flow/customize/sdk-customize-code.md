@@ -11,10 +11,37 @@ Most of the configuration for the auth flow is currently managed in <a href="htt
 
 However, you can use the SDK's `options` property to override the settings set in the Portal and control them programmatically instead. This is useful if you want more control over the UI based on application-specific logic or want to vary it conditionally.
 
+```jsx live
+function LinkPlayground(props) {
+  const settings = {
+    companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
+    options: {
+      nonModal: false,
+      showLandingPage: true,
+      showSandboxIntegrations: true,
+      //theme: {...},
+      //sourceTypes: {
+      //  accounting: {...},
+      //},
+      //text: {...},
+      enableAdditionalConsent: true,
+    }
+  }
+
+  return <div>
+    <p>Click the button below to start authing.</p>
+
+    <AuthFlow {...settings}/>
+  </div>
+}
+```
+
 :::caution Advanced functionality
 
 As the `options` object overrides the Link settings set in the Portal, this may result in confusion about the source of truth for what users are seeing. Ensure you document and communicate your use of the `options` prop internally.
 :::
+
+## Properties
 
 ```js
 <CodatLink
@@ -24,7 +51,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
   onClose={onClose}
   onFinish={onFinish}
   options={{
-    nonModal: true ...
+    nonModal: true,
     showLandingPage: true,
     showSandboxIntegrations: true,
     theme: {...},
@@ -38,7 +65,6 @@ As the `options` object overrides the Link settings set in the Portal, this may 
   }}
 />
 ```
-## Properties
 
 The `options` prop is optional and accepts an object containing the following optional properties:
 
@@ -52,7 +78,7 @@ The `options` prop is optional and accepts an object containing the following op
 | `text`                    | Contains options that control what text is displayed to the user. Markdown is supported.                                        |
 | `enableAdditionalConsent` | Determines whether an additional consent journey for further use cases is displayed to the user.      |
 
-The object is applied as the `CodatLink` component is mounted and doesn't support reloading. Make sure to modify the options before mounting the component.
+The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
 
 :::tip Try it out!
 
@@ -98,7 +124,7 @@ You should only have one of the banking integrations enabled at a time. This ens
 
 :::tip Enable users without credentials
 
-In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting platform.
+In your customer's organization, the person signing up through Codat may not have their credentials to hand. For example, it may be their accountant who actually logs into their accounting software.
 
 To enable them to proceed and explore your product, make upfront authorization for different integration categories optional. Later, remind them to authorize or give them an option to share a Link URL or even a `mailto:` link.
 
@@ -117,13 +143,13 @@ The property accepts Markdown, meaning you can add links, lists, tables, and mor
 | `landing.subtitle`                     |`string` _(accepts Markdown)_ <br/><br/>Landing page subtitle displayed on the first page the user sees.   <br/> Enable the landing page by setting  `showLandingPage` to   `true` or configuring it in [Link settings](https://app.codat.io/settings/link-settings/onboarding).|
 | `main.title`                           |`string` _(accepts Markdown)_ <br/><br/>Title displayed on the page where the user selects what source types to   connect.|
 | `main.subtitle`                        |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the page where the user selects what source types   to connect.|
-| `accounting.fileUpload.subtitle`       |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the accounting file upload page. <br/> To use   this, enable the accounting file upload by setting the [source type option](/auth-flow/authorize-embedded-link#source-types) to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
-| `banking.fileUpload.subtitle`          |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the banking file upload page. <br/> To use   this, enable the banking file upload by setting the [source type option](/auth-flow/authorize-embedded-link#source-types) to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
-| `businessDocuments.fileUpload.subtitle`|`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the business documents file upload page.   <br/> To use this, enable the business documents file upload by setting the [source type option](/auth-flow/authorize-embedded-link#source-types) to `true`   or by configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
+| `accounting.fileUpload.subtitle`       |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the accounting file upload page. <br/> To use   this, enable the accounting file upload by setting the [source type option](/auth-flow/customize/sdk-customize-code#source-types) to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
+| `banking.fileUpload.subtitle`          |`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the banking file upload page. <br/> To use   this, enable the banking file upload by setting the [source type option](/auth-flow/customize/sdk-customize-code#source-types) to `true` or by   configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
+| `businessDocuments.fileUpload.subtitle`|`string` _(accepts Markdown)_ <br/><br/>Subtitle displayed on the business documents file upload page.   <br/> To use this, enable the business documents file upload by setting the [source type option](/auth-flow/customize/sdk-customize-code#source-types) to `true`   or by configuring it in [Other integrations](https://app.codat.io/settings/integrations/other).|
 | `accounting.dataAccess.consent`<br/>`banking.dataAccess.consent`<br/>`commerce.dataAccess.consent`        |`string` _(accepts Markdown)_ <br/><br/>Text displayed on the final flow page before connecting an accounting, banking or commerce  platform, underneath the list of data types. If you want to display a terms   and conditions link, add it here using Markdown.|
-| `accounting.dataAccess.dataTypes`<br/>`banking.dataAccess.dataTypes`<br/>`commerce.dataAccess.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting an accounting, banking or commerce platform.|
-| `accounting.dataAccess.additionalConsent.title`<br/>`banking.dataAccess.additionalConsent.title`<br/>`commerce.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their accounting, banking or commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
-| `accounting.dataAccess.additionalConsent.subtitle`<br/>`banking.dataAccess.additionalConsent.subtitle`<br/>`commerce.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their accounting, banking or commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/authorize-embedded-link#source-types) to support the additional consent flow. |
+| `accounting.dataAccess.dataTypes`<br/>`banking.dataAccess.dataTypes`<br/>`commerce.dataAccess.dataTypes`      |`array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed on the final flow page before   connecting an accounting, banking or commerce software.|
+| `accounting.dataAccess.additionalConsent.title`<br/>`banking.dataAccess.additionalConsent.title`<br/>`commerce.dataAccess.additionalConsent.title` | `string` _(accepts Markdown)_ <br/><br/> Title displayed on the page where the customer consents to the use of their accounting, banking or commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/customize/sdk-customize-code#source-types) to support the additional consent flow. |
+| `accounting.dataAccess.additionalConsent.subtitle`<br/>`banking.dataAccess.additionalConsent.subtitle`<br/>`commerce.dataAccess.additionalConsent.subtitle` | `string` _(accepts Markdown)_ <br/><br/> Subtitle displayed on the page where the customer consents to the use of their accounting, banking or commerce data for an additional use case. <br/><br/> Ensure you set up the [source types](/auth-flow/customize/sdk-customize-code#source-types) to support the additional consent flow. |
 
 <details>
   <summary><b>Learn more about array custom text properties</b></summary>
@@ -157,7 +183,7 @@ To request additional consent, set the `enableAdditionalConsent` option to `true
 
 ![](/img/auth-flow/additional-consent-journey.png)
 
-By default, this option is set to `false`. Next, use [custom text](/auth-flow/authorize-embedded-link#custom-text) to manage the content displayed to them during this journey.
+By default, this option is set to `false`. Next, use [custom text](/auth-flow/customize/sdk-customize-code#custom-text) to manage the content displayed to them during this journey.
 
 ---
 ## Read next

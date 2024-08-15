@@ -96,6 +96,8 @@ Codat's webhook messages are served from static IP addresses. Apply an allowlist
 
 ```
 4.159.114.108
+
+20.117.190.191
 ```
 
 ## Logs and activity

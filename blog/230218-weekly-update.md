@@ -1,8 +1,7 @@
 ---
-title: "Product update #3"
-date: "2023-02-18"
+title: "Changelog - March 2023"
+date: "2023-03-01"
 tags: ["Product", "Update"]
-draft: false
 authors: mcclowes
 ---
 
@@ -14,9 +13,7 @@ See what's new in Codat this week
 
 ### New docs
 
-We've just released our new docs:
-
-<https://docs.codat.io/>
+We've just released our new docs!
 
 They are in beta, so you may find some snags in our content.
 
@@ -41,7 +38,7 @@ We'd love to hear your opinions, so please let us know how you're finding them i
 
 Launch new accounting integrations faster and save on ongoing maintenance by standardizing how you sync with bookkeeping software and ERPs.
 
-Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting platforms through a standardized API.
+Sync for Expenses is an API and a set of supporting tools. It has been built to enable corporate card and expense management platforms to provide high-quality integrations with multiple accounting software through a standardized API.
 
 [Read the docs...](https://codat2.stoplight.io/docs/sync-for-expenses-v2/fjx7t6em0l1ux-overview)
 
@@ -49,10 +46,10 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 
 Don't forget about our upcoming deprecations:
 
-- <https://docs.codat.io/updates/230411-api-keys>
-- <https://docs.codat.io/updates/230411-deletion-of-data>
-- <https://docs.codat.io/updates/230411-legacy-bank-account-endpoints>
+- [https://docs.codat.io/updates/230411-api-keys](https://docs.codat.io/updates/230411-api-keys)
+- [https://docs.codat.io/updates/230411-deletion-of-data](https://docs.codat.io/updates/230411-deletion-of-data)
+- [https://docs.codat.io/updates/230411-legacy-bank-account-endpoints](https://docs.codat.io/updates/230411-legacy-bank-account-endpoints)
 
-Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: <https://docs.codat.io/using-the-api/change-policy>
+Stay on top of deprecations by checking out and subscribing to our deprecation calendar here: [https://docs.codat.io/using-the-api/change-policy](https://docs.codat.io/using-the-api/change-policy)
 
 These deprecations were previously scheduled for the 10th April, but have been pushed back a day as they fell on a UK bank holiday.

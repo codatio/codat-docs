@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::note Prerequisites
 
-You need an account and its API key to start with Codat. You can <a href="https://signup.codat.io/" target="_blank">sign up</a> for an account for free, or <a href="/configure/create-account" target="_blank">learn more</a> about creating one.
+You need an account and API key to follow this guide. [Get in touch](https://www.codat.io/#get-in-touch) to discuss creating an account today. 
 
 :::
 
@@ -17,7 +17,7 @@ You need an account and its API key to start with Codat. You can <a href="https:
 
 With Codat, you can more easily build integrated financial products for SMBs.
 
-Set up your customers by adding them as [companies](../terms/company) in Codat. Then, establish authorized connections to the customers' accounting, banking, or commerce platforms using one of our integrations.
+Set up your customers by adding them as [companies](../terms/company) in Codat. Then, establish authorized connections to the customers' accounting, banking, or commerce software using one of our integrations.
 
 Finally, review and analyze the data relevant to your use case, which Codat pulls from your SMB customers' data sources.
 
@@ -594,7 +594,7 @@ You have now:
 
 #### Want to pull and view data from a different platform?
 
-Codat enables you to connect to over 30 different accounting, banking, and commerce platforms. You can choose to pull data from a platform most relevant to you.
+Codat enables you to connect to over 30 different accounting, banking, and commerce software. You can choose to pull data from a platform most relevant to you.
 
 Navigate to **Settings > Integrations** in the Portal. Choose the integration type, find the platform you need, and set it up. Once you've enabled the platform, create a data connection to it, as you have done with the Sandbox earlier. You will need valid credentials for the platform you are trying to link.
 

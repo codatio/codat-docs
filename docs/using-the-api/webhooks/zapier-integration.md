@@ -3,7 +3,7 @@ title: "Zapier integration (beta)"
 description: "Create your own notification workflows triggered by our webhooks"
 ---
 
-import ZapierEmbed from '@components/global/ZapierEmbed'
+import ZapierEmbed from '@components/ZapierEmbed'
 
 ## Overview
 
@@ -13,8 +13,6 @@ Some simple use cases might include:
 - Posting a message on Slack or via email whenever a new Company has shared data.
 - Posting a message when sync errors occur.
 - Adding companies that you onboard to a spreadsheet automatically.
-
-This integration will be in beta until 9 July 2024.
 
 ## What is Zapier?
 

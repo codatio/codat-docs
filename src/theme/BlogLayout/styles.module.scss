@@ -1,6 +1,15 @@
-.row {
+.blogWrapper {
   margin-left: 0 !important;
   margin-right: 0 !important;
+  display: flex;
+}
+
+.blogContainer {
+  padding: 0;
+}
+
+.blogPage {
+  padding: 2em 1em;
 }
 
 .updatesHeader {

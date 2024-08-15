@@ -7,8 +7,8 @@ displayed_sidebar: bankfeeds
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsInternalMappingIntegrations} from '@components/global/Integrations/integrations'
+import {IntegrationsList} from '@components/Integrations'
+import {bankfeedsInternalMappingIntegrations} from '@components/Integrations/integrations'
 
 You can enable your users to map their accounts directly within your own application by using the account mapping endpoints of our API. These are the same endpoints that our [pre-built interface](/bank-feeds/mapping/codat-ui) uses. When building, make sure to check all partner requirements to maintain compliance of your app.
 
@@ -173,7 +173,7 @@ POST /companies/{companyId}/connections/{connectionId}/bankFeedAccounts/mapping
 
 ### Check mapping status
 
-Sometimes the mapping isn't immediately saved to the underlying accounting platform and its status in the request remains `pending`. 
+Sometimes the mapping isn't immediately saved to the underlying accounting software and its status in the request remains `pending`. 
 
 Poll the [List bank feed account mappings](/bank-feeds-api#/operations/get-bank-account-mapping) endpoint until the status changes to `connected`. You can then proceed to create bank transactions in the target account.
 
@@ -261,4 +261,4 @@ for status != "connected" {
 ---
 ## Read next
 
-* [Create bank transactions in the accounting platform](/bank-feeds/pushing-transactions)
+* [Create bank transactions in the accounting software](/bank-feeds/pushing-transactions)

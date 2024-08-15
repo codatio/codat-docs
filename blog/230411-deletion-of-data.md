@@ -6,11 +6,11 @@ draft: false
 authors: d-laing
 ---
 
-On April 11, 2023, Codat will change the way accounting data deleted by company users within their accounting package is handled.
+On April 11, 2023, Codat will change the way accounting data deleted by company users within their accounting software is handled.
 
 <!--truncate-->
 
-To ensure better consistency between successive data syncs, records deleted by a company between two data syncs will now continue to be stored by Codat. A flag will be set to indicate that the data has been deleted in the underlying Accounting package.
+To ensure better consistency between successive data syncs, records deleted by a company between two data syncs will now continue to be stored by Codat. A flag will be set to indicate that the data has been deleted in the underlying Accounting software.
 
 :::note Update - 2023/02/16
 

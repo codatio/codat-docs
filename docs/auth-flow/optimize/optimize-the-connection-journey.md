@@ -33,14 +33,8 @@ We also equip you with a tool for [monitoring your auth flow's performance](/aut
 
 For further resources on good design practices and some inspiration, Codat recommends:
 
-- <a href="https://www.checklist.design/" target="blank">
-    Checklist Design
-  </a>
-  : a collection of the best design practices
-- <a href="https://mobbin.com/browse/ios/apps" target="blank">
-    Mobbin
-  </a>
-  : the world’s largest mobile app design reference library
+- <a href="https://www.checklist.design/" target="blank">Checklist Design</a>: a collection of the best design practices
+- <a href="https://mobbin.com/browse/ios/apps" target="blank">Mobbin</a>: the world’s largest mobile app design reference library
 
 :::info Think about your use case
 

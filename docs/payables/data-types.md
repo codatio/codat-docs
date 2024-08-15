@@ -1,13 +1,13 @@
 ---
-title: "Data types supported by Sync for Payables"
-sidebar_label: "Supported data types"
+title: "Supported data types"
+sidebar_label: "Data types"
 hide_description: true
 displayed_sidebar: payables
 image: "/img/banners/social/payables.png"
 ---
 
-import DataTypes from '@components/global/DataTypes'
+import DataTypes from '@components/DataTypes'
 
-<DataTypes product="payables" urlPrefix="/sync-for-payables-api#"/>
+<DataTypes productName="payables"/>
 
 <br/>

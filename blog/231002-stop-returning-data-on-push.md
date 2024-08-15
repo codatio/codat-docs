@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 authors: dharries
 ---
 
-import Diff from "@components/global/Diff"
+import Diff from "@components/Diff"
 
 On **January 10, 2024**, we will deprecate the `data` field that is currently returned in the response and `/push` endpoints when creating or updating entities. 
 

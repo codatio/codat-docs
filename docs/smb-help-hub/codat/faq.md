@@ -6,9 +6,9 @@ sidebar_label: What is Codat?
 
 ## What is Codat?
 
-Businesses depend on a suite of software. Whether it's accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, or eCommerce platforms like Shopify and Amazon Seller Central - these are the tools that make a business tick.
+Businesses depend on a suite of software. Whether it's accounting programs like QuickBooks Online and Xero, Point-of-Sale systems like Zettle and Square, or eCommerce software like Shopify and Amazon Seller Central - these are the tools that make a business tick.
 
-These software are the source of truth for the activities of the business. Financial service providers need access to this data so that they can offer their services to the business. 
+This software serves as the definitive source for a business's activities. Financial service providers need access to this data so that they can offer their services to the business. 
 
 For example, a lender can use accounting data to understand the risk profile of a business. However, it is often difficult to get data out of these programs. 
 
@@ -23,7 +23,6 @@ Once you allow us this access, we process the data on behalf of your provider ac
 We enable your provider to view, modify, or create business data depending on the agreement and the service they are delivering to you. 
 
 <ul className="card-container col-2">
- 
   <li className="card animation-pulse">
     <div className="header">
       <img
@@ -33,7 +32,7 @@ We enable your provider to view, modify, or create business data depending on th
       <h3>We keep your data secure</h3>
     </div>
     <p>
-    We protect the security of your data. We never share your password and encrypt your data in transit and at rest.
+      We protect the security of your data. We never share your password and encrypt your data in transit and at rest.
     </p>
   </li>
 
@@ -46,10 +45,10 @@ We enable your provider to view, modify, or create business data depending on th
       <h3>We never alter your data</h3>
     </div>
     <p>
-    Codat doesn't add to, modify, or delete your data unless your financial service provider instructs us to.
+      Codat doesn't add to, modify, or delete your data unless your financial service provider instructs us to.
     </p>
     <p>
-    Where they do, this will be in accordance with the service they're providing you and terms you agreed to.
+      Where they do, this will be in accordance with the service they're providing you and terms you agreed to.
     </p>
   </li>
 
@@ -62,7 +61,7 @@ We enable your provider to view, modify, or create business data depending on th
       <h3>We keep you in control</h3>
     </div>
     <p>
-    Your data belongs to you. You choose when and how to share your data, and we never share it with anyone else. You can withdraw your consent anytime.
+      Your data belongs to you. You choose when and how to share your data, and we never share it with anyone else. You can withdraw your consent anytime.
     </p>
   </li>
 
@@ -75,10 +74,9 @@ We enable your provider to view, modify, or create business data depending on th
       <h3>We never share your data</h3>
     </div>
     <p>
-    Your provider gets to access your data only with your permission. We never sell data and don't share it with other Codat clients.
+      Your provider gets to access your data only with your permission. We never sell data and don't share it with other Codat clients.
     </p>
   </li>
-
 </ul>
 
 ## Why is my financial service provider using Codat?

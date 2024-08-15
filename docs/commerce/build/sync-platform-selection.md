@@ -1,12 +1,12 @@
 ---
 title: "Platform selection flow"
-description: "Enable your merchant to select a target accounting platform before they move on to the Sync configuration flow."
+description: "Enable your merchant to select a target accounting software before they move on to the Sync configuration flow."
 draft: true
 ---
 
 ## Build a platform selection flow
 
-Within your application, present your merchant with a list of accounting platforms they can connect to.
+Within your application, present your merchant with a list of accounting software they can connect to.
 
 On select, your merchant should be [redirected to the Sync configuration flow URL](/sfc/build-with-sync-for-commerce/implementing-codats-no-code-merchant-configuration) where they will be prompted to authorize access to their accounting data.
 
@@ -139,7 +139,7 @@ For reference:
 
 ### 3. Get branding for the integrations
 
-Populate your UI with branded logos of the selected accounting platform.
+Populate your UI with branded logos of the selected accounting software.
 
 To an integration's branding, call:
 
@@ -206,7 +206,7 @@ When the user selects the integration you're ready to progress them to the Sync 
 
 :::caution Incorrect platform selection
 
-If your merchant accidentally selects the wrong accounting package, you can resolve this by [deleting that Connection](/core-concepts/connections#how-do-i-delete-a-data-connection) for the incorrectly selected accounting software and returning them to the accounting platform selection stage.
+If your merchant accidentally selects the wrong accounting software, you can resolve this by [deleting that Connection](/core-concepts/connections#how-do-i-delete-a-data-connection) for the incorrectly selected accounting software and returning them to the accounting software selection stage.
 :::
 
 When you're ready to proceed, you can get the URL of the sync configuration flow using the variables you've retained.

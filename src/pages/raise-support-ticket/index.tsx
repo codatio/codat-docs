@@ -6,7 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
-import styles from "../../components/global/Api/styles.module.scss";
+import styles from "../../components/Api/styles.module.scss";
 import localstyles from "./styles.module.scss";
 
 const RaiseSupportTicket = () => {

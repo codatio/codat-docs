@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-When implementing your Sync for Payables solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting platform as a connection. You can do that when the customer starts interacting with your application.  
+When implementing your Sync for Payables solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting software as a connection. You can do that when the customer starts interacting with your application.  
 
 We have highlighted this sequence of steps in our detailed process diagram below. 
 
@@ -23,7 +23,7 @@ We have highlighted this sequence of steps in our detailed process diagram below
       participant smb as SMB customer
       participant app as Your application 
       participant codat as Codat
-      participant acctg as Accounting platform
+      participant acctg as Accounting software
       
       smb ->> app: Logs into application
       smb ->> app: Initiates connection to accounting software
@@ -44,7 +44,7 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 ## Create a company
 
-Within Sync for Payables, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting platform. 
+Within Sync for Payables, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting software. 
 
 <Tabs>
 
@@ -121,9 +121,9 @@ if companyResponse.StatusCode == 200 {
 
 Next, use the [Create connection](/sync-for-payables-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source, fetching or creating suppliers, bills, and payment methods. 
 
-In the request body, specify a `platformKey` of the accounting platform you're looking to connect.
+In the request body, specify a `platformKey` of the accounting software you're looking to connect.
 
-| Accounting platform | platformKey |
+| Accounting software | platformKey |
 | ---  | ---  |
 | MYOB Business | `pdvj` |
 | Oracle NetSuite | `akxx` |
@@ -202,7 +202,7 @@ fmt.Println(connectionResponse.Connection.LinkUrl)
 
 ## Deauthorize a connection
 
-If your customer wants to revoke their approval and sever the connection to their accounting package, use the [Unlink connection](/sync-for-payables-api#/operations/unlink-connection) endpoint.
+If your customer wants to revoke their approval and sever the connection to their accounting software, use the [Unlink connection](/sync-for-payables-api#/operations/unlink-connection) endpoint.
 
 You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI.
 

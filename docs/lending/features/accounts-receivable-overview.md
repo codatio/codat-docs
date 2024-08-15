@@ -5,13 +5,13 @@ description: "Assessing debtor risk in real time with accounts receivable insigh
 image: "/img/banners/social/lending.png"
 ---
 
-import Products from "@components/global/Products";
-import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations, bankingIntegrations } from "@components/global/Integrations/integrations";
+import Products from "@components/Products";
+import { IntegrationsList } from "@components/Integrations";
+import { accountingIntegrations, bankingIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Our **accounts receivable** feature offers a thorough breakdown of a borrower's debtors ledger sourced from their accounting platform. You can examine the ledger in its entirety or delve into specific customer histories, enabling full automation of the receivables financing process.
+Our **accounts receivable** feature offers a thorough breakdown of a borrower's debtors ledger sourced from their accounting software. You can examine the ledger in its entirety or delve into specific customer histories, enabling full automation of the receivables financing process.
 
 ## Use cases
 
@@ -213,11 +213,11 @@ We recommend you [configure webhook consumers](/using-the-api/webhooks/create-co
 
 - [Dataset status has changed to an error state](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means an issue has occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  This means an issue has occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
 - [Dataset data changed](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means data has been updated for the specified data type. This can include new, updated, or deleted data. You should then refresh the data in your platform.
+  This means data has been updated for the specified data type. This can include new, updated, or deleted data. You should then refresh the data in your platform.
 
 ---
 

@@ -3,6 +3,7 @@ title: "Set up the SumUp Integration"
 slug: "set-up-sumup-in-production-1"
 description: "Explore our API integration with SumUp"
 sidebar_label: Setup
+unlisted: true
 ---
 
 Before you can pull commerce data from companies using SumUp, you will need to set up the integration in Codat's Portal. You'll need to:

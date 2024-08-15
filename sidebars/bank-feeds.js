@@ -102,6 +102,11 @@ module.exports = [
   },
   {
     type: "link",
+    href: "/bank-feeds/data-types",
+    label: "Data types",
+  },
+  {
+    type: "link",
     href: "/bank-feeds-api",
     label: "API reference",
   },

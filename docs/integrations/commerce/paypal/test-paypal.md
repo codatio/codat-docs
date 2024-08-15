@@ -2,6 +2,7 @@
 title: "Test your PayPal Integration"
 description: "Test your PayPal integration by pulling sandbox data to a test company"
 sidebar_label: Testing
+unlisted: true
 ---
 
 When you've set up your PayPal integration, you're ready to test the authorization process for your integration. You'll need to:
@@ -25,7 +26,7 @@ To create sandbox PayPal accounts for use in testing, you will need to:
 1. Sign up to PayPal at https://paypal.com if you do not already have a PayPal account.  
    
    Note: The account type you select and details entered are not especially relevant; this account is needed only to access PayPal’s Developer Dashboard (see next step), and will not be relevant to your integration with PayPal
-2. Navigate to [PayPal’s Developer Dashboard](https://developer.paypal.com/developer/applications) and Sign in using your PayPal account (created in previous step)
+2. Navigate to [PayPal’s Developer Dashboard](https://developer.paypal.com/home) and Sign in using your PayPal account (created in previous step)
 3. Once signed in, you will be able to create ‘dummy’ PayPal accounts within PayPal’s SandBox. In the page navigation menu, click Sandbox Accounts under the Testing Tools heading
 4. You will see that PayPal provision two sandbox accounts by default (one ‘Business’, one ‘Personal’); you can also create your own by clicking Create Account.  
 

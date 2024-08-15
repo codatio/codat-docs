@@ -36,10 +36,10 @@ Enhance the auth flow functionality and give your customers the ability to manag
 
 <ul className="card-container col-1">
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Transparency</h3>
     </div>
@@ -49,10 +49,10 @@ Enhance the auth flow functionality and give your customers the ability to manag
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Consent</h3>
     </div>
@@ -62,10 +62,10 @@ Enhance the auth flow functionality and give your customers the ability to manag
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Control</h3>
     </div>
@@ -75,9 +75,11 @@ Enhance the auth flow functionality and give your customers the ability to manag
   </li>
 </ul>
 
-## Supported products and integrations
+## Supported products
 
 Link is compatible with our entire [product range](/using-the-api/overview#apis) except [Sync for Commerce](/commerce/overview). To set up your Sync for Commerce authorization flow, follow the instructions in our [dedicated documentation](/commerce/overview).
+
+## Supported integrations
 
 Browser and mobile compatibility of Link varies for different integrations:
 
@@ -85,7 +87,17 @@ Browser and mobile compatibility of Link varies for different integrations:
   - Others require **downloading a desktop package**, e.g. [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite), [Microsoft Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral).
   - Other integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform, e.g. [Sage 200cloud](/integrations/accounting/sage200/accounting-sage200), [Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct).
 
+:::tip Change management
+
+As with all Codat products, Link SDK is subject to [our change management policy](/using-the-api/change-policy). We will give appropriate notice for changes to our auth flow UI and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
+
+We also provide updates in our [SDK changelog](/auth-flow/authorize-embedded-link#changelog).
+
+:::
+
 ---
+
 ## Read next
+
 - [Get started](/auth-flow/authorize-embedded-link) with the Link SDK to embed the auth journey in your app
 - Use the [Connections SDK](/auth-flow/optimize/connection-management) in your app

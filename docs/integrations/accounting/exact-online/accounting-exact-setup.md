@@ -37,20 +37,22 @@ Before you can access data from customers using Exact for their accounting, you 
        href="https://start.exactonline.co.uk/docs/HRMSubTrialNew.aspx?bcaction=0&type=10&language=EN&UseSimpleWizard=1&PackageSetCode=APPCENTER"
        target="_blank"
      >
-       Exact Online App Center subscription
+       Exact Online UK App Center
      </a>
      for the Exact UK integration, or
-   - <a href="https://www.exact.com/nl/developers" target="_blank">
-       https://www.exact.com/nl/developers
-     </a> for the Exact NL integration, and select the 'Exact Online partners' link
-     towards the bottom of the page
+   - <a href="https://start.exactonline.nl/docs/HRMSubTrialNew.aspx?bcaction=0&type=10&language=EN&UseSimpleWizard=1&PackageSetCode=APPCENTER" target="_blank">
+       Exact Online NL App Center
+     </a> 
+     for the Exact NL integration
 2. Sign in to the Exact developer site at:
    - <a href="https://apps.exactonline.com/gb/" target="_blank">
        https://apps.exactonline.com/gb/
-     </a> for the Exact UK integration
+     </a> 
+     for the Exact UK integration
    - <a href="https://apps.exactonline.com/nl/" target="_blank">
        https://apps.exactonline.com/nl/
-     </a> for the Exact NL integration
+     </a> 
+     for the Exact NL integration
 3. Select **Manage my apps** from the top navigation bar.
 4. Depending on the purpose of your app, select either **Register a product app** or **Register a testing app** under the corresponding section.
 5. Add the details in the **Register a testing app** dialog.

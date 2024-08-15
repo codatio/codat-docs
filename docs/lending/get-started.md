@@ -5,11 +5,11 @@ description: "Learn how to perform the initial setup for the Lending API product
 image: "/img/banners/social/lending.png"
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
-import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/global/Integrations/integrations";
+import { IntegrationsList } from "@components/Integrations";
+import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
-import ReadNext from "@components/global/ReadNext";
+import ReadNext from "@components/ReadNext";
 
 :::tip Your lending journey
 
@@ -73,22 +73,22 @@ Codat supports a range of [event types](/using-the-api/webhooks/event-types) you
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Create consumer** and click **Add endpoint** to add a new [webhook consumer endpoint](/using-the-api/webhooks/overview) and get the most out of Lending API:
 
-- [DataSyncStatusChangedToError](/using-the-api/webhooks/event-types)  
+- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  This means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
-- [Dataset data changed](/using-the-api/webhooks/event-types)  
+- [`Dataset data changed`](/using-the-api/webhooks/event-types)  
 
-  If you receive a message from this webhook, it means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
+  This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
-- [Account categories updated](/using-the-api/webhooks/event-types)
+- [`Account categories updated`](/using-the-api/webhooks/event-types)
 
-  If you receive a message from this webhook, it means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
+  This means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
   
 
 ## Use Lending API
 
-Before you can collect your SMB customer's data, you need to create a Codat [company](../terms/company) and connect it to a data source (for example, an accounting platform). You can do that in two ways:
+Before you can collect your SMB customer's data, you need to create a Codat [company](../terms/company) and connect it to a data source (for example, an accounting software). You can do that in two ways:
 
 * In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
 * By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
@@ -101,10 +101,10 @@ Once the connection is established, Codat will retrieve data for the data types 
 
 <ul className="card-container col-2">
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Underwriters</h3>
     </div>
@@ -114,10 +114,10 @@ Once the connection is established, Codat will retrieve data for the data types 
   </li>
   
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Developers</h3>
     </div>

@@ -24,6 +24,8 @@ html[data-theme="dark"] {
   --ifm-h5-font-size: 1rem;
   --ifm-h6-font-size: 0.875rem;
 
+  min-width: 100%;
+
   strong,
   b {
     font-weight: 600;
@@ -91,7 +93,7 @@ html[data-theme="dark"] {
     }
   }
 
-  h1 {
+  > h1 {
     margin-block-start: 5rem;
   }
   
@@ -106,9 +108,8 @@ html[data-theme="dark"] {
     margin-block-start: 1rem;
   }
 
-  //intro paragraphs
+  // intro paragraphs
   > header + p {
-    color: var(--markdown-text-intro-c);
     font-size: 1.25rem;
 
     > strong,
@@ -117,8 +118,6 @@ html[data-theme="dark"] {
     }
 
     + p {
-      color: var(--markdown-text-intro-c);
-
       > strong,
       > b {
         color: var(--markdown-bold-c);

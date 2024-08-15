@@ -52,14 +52,6 @@ html[data-theme="dark"] {
     &__items {
       min-width: auto;
 
-      &:not(.navbar__items--right) {
-        .navbar__link.navbar__item {
-          @media (max-width: 996px) {
-            display: none;
-          }
-        }
-      }
-
       .cta {
         display: flex;
         align-items: center;
@@ -75,7 +67,7 @@ html[data-theme="dark"] {
 
         margin-inline-start: 0.5rem;
 
-        @media (max-width: 1400px) {
+        @media (var(--breakpoint-xl)) {
           display: none;
         }
 
@@ -86,6 +78,18 @@ html[data-theme="dark"] {
 
         svg {
           margin-inline-start: 0.125rem;
+        }
+      }
+
+      @media (max-width: 996px) {
+        [class^="toggle_"] {
+          display: none !important;
+        }
+
+        &:not(.navbar__items--right) {
+          .navbar__link.navbar__item {
+            display: none;
+          }
         }
       }
     }

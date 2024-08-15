@@ -42,7 +42,7 @@ This query retrieves records with modified dates that are greater than or equal 
 
 ## Source modified date
 
-**`sourceModifiedDate` shows when a record was last modified in the customer’s accounting, banking, or commerce platform.**
+**`sourceModifiedDate` shows when a record was last modified in the customer’s accounting, banking, or commerce software.**
 
 The record may have been updated by the business, or a business process, such as when payments are made against an invoice.
 

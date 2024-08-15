@@ -7,14 +7,14 @@ displayed_sidebar: bankfeeds
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
-import {IntegrationsList} from '@components/global/Integrations'
-import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@components/global/Integrations/integrations'
+import {IntegrationsList} from '@components/Integrations'
+import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@components/Integrations/integrations'
 
 ## Journey overview
 
-The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting platform. It assumes you are using Codat's mapping interface to let the user select the accounts used for pushing bank statements.
+The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting software. It assumes you are using Codat's mapping interface to let the user select the accounts used for pushing bank statements.
 
-If you are using one of the [other mapping UI options](/bank-feeds/mapping/overview), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting platform`.
+If you are using one of the [other mapping UI options](/bank-feeds/mapping/overview), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting software`.
 
 ```mermaid
 
@@ -22,7 +22,7 @@ sequenceDiagram
     participant smb as SMB customer
     participant app as Your application 
     participant codat as Codat
-    participant acctg as Accounting platform
+    participant acctg as Accounting software
     
     smb ->> app: Logs into application
     smb ->> app: Initiates connection to accounting software

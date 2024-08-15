@@ -16,7 +16,7 @@ html[data-theme="dark"] {
   --ifm-table-stripe-background: var(--ifm-table-background);
   --padding-margin: -2em;  
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1199px) {
     --padding-margin: 0;  
   }
 }
@@ -87,6 +87,8 @@ thead th:empty {
     width: 100%;
     margin: 2.5em 0;
     max-width: initial;
+    margin-left: var(--padding-margin);
+    margin-right: var(--padding-margin);
 
     > table {
       width: 100%;
@@ -95,8 +97,7 @@ thead th:empty {
 
   .table-wrapper {
     overflow-x: auto;
-    margin-left: var(--padding-margin);
-    margin-right: var(--padding-margin);
+
     width: auto !important;
 
     table {

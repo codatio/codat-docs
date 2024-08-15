@@ -1,10 +1,11 @@
 ---
 title: "Pandle"
 description: "Learn about our Pandle integration."
+unlisted: true
 ---
 
 
-Pandle is a cloud accounting platform designed to make the recording of transactions as simple and efficient as possible for accountants, bookkeepers and small business owners. Pandle is a UK-based platform with over 40,000 users.
+Pandle is a cloud accounting software designed to make the recording of transactions as simple and efficient as possible for accountants, bookkeepers and small business owners. Pandle is a UK-based platform with over 40,000 users.
 
 You can pull accounting data from <a className="external" href="http://www.pandle.com">Pandle</a> using our Pandle integration.
 

@@ -21,6 +21,8 @@
   }
 
   [class*="docMainContainer_"] {
+    max-width: unset !important;
+
     .doc-demo-wrapper {
       @media (max-width: 1364px) {
         display: none;

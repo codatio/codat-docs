@@ -13,3 +13,9 @@ article {
 		max-width: min(100%, var(--doc-text-container-width));
 	}
 }
+
+@media (max-width: 799px) {
+	article {
+		padding: var(--padding-page-border) 0;
+	}
+}

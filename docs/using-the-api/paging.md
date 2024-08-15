@@ -1,5 +1,5 @@
 ---
-title: "Pagination"
+title: "Paginate data"
 description: "Basics and examples of pagination in Codat's APIs"
 createdAt: "2019-02-20T10:05:50.550Z"
 updatedAt: "2022-11-07T20:00:07.343Z"

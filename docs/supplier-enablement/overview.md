@@ -17,10 +17,10 @@ banner_text: "Manage comprehensive and actionable vendor and spend data from you
 // video_text: What is Supplier Enablement?
 ---
 
-import { IntegrationsList } from "@components/global/Integrations";
-import { integrationsFilterSupplierEnablement } from "@components/global/Integrations/integrations";
-import ClientLibraries from "@components/global/ClientLibraries";
-import Products from "@components/global/Products";
+import { IntegrationsList } from "@components/Integrations";
+import { integrationsFilterSupplierEnablement } from "@components/Integrations/integrations";
+import ClientLibraries from "@components/ClientLibraries";
+import Products from "@components/Products";
 
 ## What is it?
 
@@ -36,10 +36,10 @@ With **Supplier Enablement**, we enable banks and other commercial card issuers 
 
 <ul className="card-container col-2">
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Move more volume to card</h3>
     </div>
@@ -49,10 +49,10 @@ With **Supplier Enablement**, we enable banks and other commercial card issuers 
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Reduce spend churn</h3>
     </div>
@@ -62,10 +62,10 @@ With **Supplier Enablement**, we enable banks and other commercial card issuers 
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Improve sales conversion</h3>
     </div>
@@ -75,10 +75,10 @@ With **Supplier Enablement**, we enable banks and other commercial card issuers 
   </li>
 
   <li className="card">
-    <div class="header">
+    <div className="header">
       <img
         src="/img/wp-icons/copy-feature-bullet.svg"
-        class="mini-icon"
+        className="mini-icon"
       />
       <h3>Increase speed-to-spend</h3>
     </div>
