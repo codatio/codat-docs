@@ -44,17 +44,19 @@ Next, let's review the details of these journeys.
 
 Your customer will receive an email when you request **spend analysis data** from them. To connect, they need to: 
 
-1. Click the link provided in the email. The link will take the customer to the initial supplier information provision screen.
+1. **Click the link provided in the email.** 
+
+    The link will take the customer to the initial supplier information provision screen.
 
     Alternatively, you can share this link with the customer directly. Choose **Copy link** instead of **Request by email** when requesting business information. You can learn more in our [Request information](/supplier-enablement/guides/manage-relationships) article.
 
-2. Choose the way they want to provide business data. 
+2. **Choose the way they want to provide business data.** 
 
     The customer can upload the data manually or connect their accounting software.
 
-3. If **Upload file manually** is selected, upload the data manually.
+3. **Upload the data manually, if required.**
 
-    Customer should download the supplier information template, fill it with their business data, and upload it on the _Manual upload_ screen.
+    If they selected the **Upload file manually** option, the customer should download the supplier information template, fill it with their business data, and upload it on the _Manual upload_ screen.
 
 ![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0104-customer-journey-123.png)
 
@@ -66,15 +68,15 @@ Don't see the **Copy link** button, manual file upload option, or the multi-enti
 
 If the customer selects the **Connect platform** option to connect their accounting software, they will go through the multi-entity steps:
 
-1. Choose the number of legal entities in the organization.
+1. **Choose the number of legal entities in the organization.**
 
     If a single entity is selected, the customer will move on to the [software connection steps](/supplier-enablement/guides/customer-journey#software-connection-journey).
 
-2. Provide the name of the legal entity.
+2. **Provide the name of the legal entity.**
 
     Once an entity is added, the customer will move on to the [software connection steps](/supplier-enablement/guides/customer-journey#software-connection-journey) for the specified entity. Once connected, they will return to the entity flow to complete the next step.
 
-3. Add another legal entity, if required.
+3. **Add another legal entity, if required.**
 
     If the customer adds another entity, they will repeat the previous step for this entity. Alternatively, they can choose to finish the flow.
 
@@ -84,7 +86,7 @@ Once the customer finishes the flow, they will see a summary view of their infor
 
 ![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0106-information-request.png)
 
-In the Relationship Portal, you will see all the newly added entities and their information provision status. 
+In the Relationship Portal, you will see the newly added entities and their information provision status. 
 
 ![A diagram of customer journey steps when following a single or multi-entity flow depending on the type of data requested](/img/supplier-enablement/0107-rm-multientity.png)
 
