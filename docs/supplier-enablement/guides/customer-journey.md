@@ -4,7 +4,7 @@ sidebar_label: Customer journey
 description: "Review the steps your customer goes through when sharing their financial and spend information"
 ---
 
-import ReadNext from "@components/global/ReadNext";
+import ReadNext from "@components/ReadNext";
 
 ## Overview
 
