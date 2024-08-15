@@ -18,6 +18,6 @@ Yes, the connector requires administrator privileges (admin rights) in order to 
 
 You might need to request permission to install the connector from your IT department, in accordance with your company's internal processes.
 
-## Are there any limits on pulling historical data from QBD?
+## Are there any limits on reading historical data from QBD?
 
-Yes. The QBD connector can pull data that is dated from 1 January, 1980 onwards only. Data older than this can't be pulled using the integration.
+Yes. The QBD connector can read data that is dated from 1 January, 1980 onwards only. Data older than this can't be read using the integration.

@@ -9,7 +9,7 @@ On **January 10, 2024**, we will change how we handle data deleted by users in a
 
 <!--truncate-->
 
-When data is deleted by a user in the SMB's accounting software between two successive data pulls, Codat sets the `metaData.isDeleted` property to `true`. This ensures there is consistency in records returned between successive data pulls and clearly identifies records deleted by a user.
+When data is deleted by a user in the SMB's accounting software between two successive data reads, Codat sets the `metaData.isDeleted` property to `true`. This ensures there is consistency in records returned between successive data reads and clearly identifies records deleted by a user.
 
 **Today, for some data types, Codat also updates the `status` property of the deleted record. **
 

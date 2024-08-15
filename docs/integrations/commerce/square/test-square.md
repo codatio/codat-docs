@@ -1,10 +1,10 @@
 ---
 title: "Test your Square integration"
-description: "Test our Square integration by pulling sample data to a test company"
+description: "Test our Square integration by reading sample data to a test company"
 sidebar_label: Testing
 ---
 
-You can use the Square Sandbox integration to pull test data from Square into Codat.
+You can use the Square Sandbox integration to read test data from Square into Codat.
 
 You'll need to:
 
@@ -57,7 +57,7 @@ Test the authorization process that your customers will see when they connect th
 
 ## Retrieve test commerce data
 
-Make sure that test commerce data from Square is pulled successfully into Codat.
+Make sure that test commerce data from Square is read successfully into Codat.
 
 In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>:
 
@@ -65,11 +65,11 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>:
 
 2. Click the name of your test company to view the company's data.
 
-3. Optionally, click **Pull history** to check the progress of the initial sync (if configured in your sync settings). You can also click **Refresh data**.
+3. Optionally, click **Read history** to check the progress of the initial sync (if configured in your sync settings). You can also click **Refresh data**.
 
 4. Click **Data > Commerce** tab.
 
-5. Use the tabs to view test data that was pulled from Square. For example, click **Products** or **Orders**.
+5. Use the tabs to view test data that was read from Square. For example, click **Products** or **Orders**.
 
 :::info
 Test data is only available for supported data types for which test data exists in Square.

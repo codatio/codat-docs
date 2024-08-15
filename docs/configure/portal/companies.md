@@ -38,7 +38,7 @@ You can trigger data refresh to request data outside of the pre-configured sync 
 
 1. Navigate to **Companies** and select the company you want to sync.
 2. Click the **Refresh data** icon.
-3. To see the synchronization progress and outcomes, click **Pull history**. The history is updated in real time.
+3. To see the synchronization progress and outcomes, click **Read history**. The history is updated in real time.
 4. Once the refresh has been completed, you can view the latest data.
 
 The configured sync frequency re-commences from the time of the last successful sync.
@@ -63,7 +63,7 @@ In the companies view, you can see the following information for every company:
 - Company ID
 - Name of the Portal user that created the company
 - Date and time of the company creation
-- Date and time of the last pull of data
+- Date and time of the last read of data
 - Data connections and their [statuses](/configure/portal/companies#data-connection-statuses)
 
 #### Data connection statuses
@@ -81,4 +81,4 @@ Click on a company to access information pertaining to it:
 
 - A brief **Summary** that includes the company's revenue, operating profit, and equity, as well as an activity log.
 - The **Manage connections** menu that lets you copy the LInk URL and unlink or delete an existing connection.
-- Company's **Data** and **Data history**, including the [history of dataset pulls and their statuses](/core-concepts/status), and uploaded files.
+- Company's **Data** and **Data history**, including the [history of dataset reads and their statuses](/core-concepts/status), and uploaded files.

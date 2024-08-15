@@ -6,7 +6,7 @@ sidebar_label: FAQs
 
 ## Does our NetSuite integration support Multi-Book Accounting
 
-_Multi-Book Accounting_ is a NetSuite feature that allows users to post transactions to specific journals. Apart from Journal entries, our accounting data model is unable to represent this journal information for the data types supported by the NetSuite integration. All other transactional data is pulled to Codat if Multi-Book Accounting is enabled.
+_Multi-Book Accounting_ is a NetSuite feature that allows users to post transactions to specific journals. Apart from Journal entries, our accounting data model is unable to represent this journal information for the data types supported by the NetSuite integration. All other transactional data is read to Codat if Multi-Book Accounting is enabled.
 
 ## Does our NetSuite integration support OneWorld?
 
@@ -32,13 +32,13 @@ Company 3: Codat France
 Company 4: Codat Germany
 Company 5: Codat | London
 
-## How are custom forms handled when pushing data to NetSuite?
+## How are custom forms handled when writing data to NetSuite?
 
 NetSuite allows users to set custom forms for pages, including custom entry and custom transaction forms. This is an alternative to using the default standard forms.
 
-If the target page has a custom form set, data is pushed using the standard form for the page. Any custom fields which have been added to the custom form are not pushed.
+If the target page has a custom form set, data is written using the standard form for the page. Any custom fields which have been added to the custom form are not written.
 
-If the push operation fails, check that the standard form for the page is active and is enabled for the required user role. If this is the case, next check that the standard form itself has not been modified. A common cause of push failure is custom fields on the standard form set as mandatory. 
+If the write operation fails, check that the standard form for the page is active and is enabled for the required user role. If this is the case, next check that the standard form itself has not been modified. A common cause of write failure is custom fields on the standard form set as mandatory. 
 
 For more information, see <a className="external" href="https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N2852749.html" target="_blank">Custom Forms</a> in the NetSuite documentation.
 

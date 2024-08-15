@@ -12,7 +12,7 @@ If you already have a banking data provider, you can still benefit from our bank
 You can do this in two ways:
 
 1. Upload banking data files and download the resulting categorized bank statement [in our Portal](/lending/functions/data-upload#upload-in-portal).
-2. Push the banking data records and get the resulting categorized bank statement [via our API](/lending/functions/data-upload#upload-via-api).
+2. Write the banking data records and get the resulting categorized bank statement [via our API](/lending/functions/data-upload#upload-via-api).
 
 :::caution Prerequisites
 
@@ -31,7 +31,7 @@ Download CSV templates with example data from this page and check the allowed va
 | Accounts     | [CSV template](https://static.codat.io/public/templates/lending/accounts-template.csv)     | `id`, `name`, `type`, `currentBalance`, `currency`, `accountIdentifierType`, `institutionId`, `institutionName`<br/><br/> An account identifier: `iban`, `bic`, or `number` | See the [Banking: Bank account](/lending-api#/schemas/BankingAccount) schema|
 | Transactions | [CSV template](https://static.codat.io/public/templates/lending/transactions-template.csv) | `id`, `accountId`, `currency`, `description`, `amount`, `postedDate`, `code`                                                                                            | See the [Banking: Transaction](/lending-api#/schemas/BankingTransaction) schema |
 
-You can check the progress of the upload by navigating to **Data history > Pull history** of the company. Once the upload is complete, download the [Enhanced cash flow](/lending/features/excel-download-overview#feature-components) report to view the resulting categorized bank statement in **Lending > Reports**. 
+You can check the progress of the upload by navigating to **Data history > Read history** of the company. Once the upload is complete, download the [Enhanced cash flow](/lending/features/excel-download-overview#feature-components) report to view the resulting categorized bank statement in **Lending > Reports**. 
 
 To add, amend or remove records, upload a CSV file that contains the updated dataset you want recorded in Codat, and it will replace the existing dataset. For example, if you perform a monthly statement upload, each new CSV file must contain the data for all previously uploaded months as well as the new month. 
 
@@ -79,7 +79,7 @@ If you need to add, amend or remove the banking transaction records, upload the 
 
 Use the [End upload session](/lending-api#/operations/end-bank-statement-upload-session) to indicate that you want to finalize the bank statement upload process. Include `Cancel` in the request body to cancel the processing of the dataset or `Process` to trigger the ingestion and enrichment of the data.
 
-You can check the progress by calling the [Get pull operation](/lending-api#/operations/get-pull-operation) endpoint. Once complete, pull the resulting categorized bank statement using the [Get categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) endpoint.
+You can check the progress by calling the [Get read operation](/lending-api#/operations/get-pull-operation) endpoint. Once complete, read the resulting categorized bank statement using the [Get categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) endpoint.
 
 :::tip Recap
 

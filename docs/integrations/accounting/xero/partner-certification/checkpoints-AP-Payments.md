@@ -80,6 +80,6 @@ Relevant apps must create an account mapping interface for their users. In prepa
 
 If your app handles tax, you need to ensure the correct tax rate is used on invoices, quotes, etc. 
 
-Codat can pull tax rates as individual tax rates and on transactions, like invoices or payments. We also handle tax rate calculation when creating or updating transactions with tax rates where multiple tax components are applied to the effective tax rates (e.g. compound tax rates).
+Codat can read tax rates as individual tax rates and on transactions, like invoices or payments. We also handle tax rate calculation when creating or updating transactions with tax rates where multiple tax components are applied to the effective tax rates (e.g. compound tax rates).
 
 We do not currently support the creation of new tax rates, so you can only use existing rates in a SMB's Xero account. You may need to allow for mapping of tax rates in your [account mapping page](/integrations/accounting/xero/partner-certification/checkpoints-app-store#12-account-mapping).

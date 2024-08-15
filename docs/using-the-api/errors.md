@@ -86,11 +86,11 @@ The content of an error response includes a more detailed error message and a `c
 }
 ```
 
-## Status codes in asynchronous push responses
+## Status codes in asynchronous write responses
 
-Status codes for push operations created in the Codat API might be different from the status codes returned in the responses from the service providers.
+Status codes for write operations created in the Codat API might be different from the status codes returned in the responses from the service providers.
 
-When a push operation is created in the API, some service providers may use a `202 Accepted` code, which implies that the request has been accepted for processing, but the processing has not completed. However, the push API may return a `200 Success code` for the push operation successfully created in the Codat API.
+When a write operation is created in the API, some service providers may use a `202 Accepted` code, which implies that the request has been accepted for processing, but the processing has not completed. However, the write API may return a `200 Success code` for the write operation successfully created in the Codat API.
 
 :::tip Recap
 You've learned about error codes you might encounter while using the API.

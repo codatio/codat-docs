@@ -27,7 +27,7 @@ In addition to `modifiedDate`, Codat also stores `sourceModifiedDate`, which ind
 
 If you also store the last queried date per company and per data type, you are able to call our API the minimum number of times to return only new or changed data.
 
-When a user links for the first time, there may be a need to pull all data, for all time. Make sure this is truly required, and if so, perform this pull only once. Afterwards, only query and access data since the last pull. 
+When a user links for the first time, there may be a need to read all data, for all time. Make sure this is truly required, and if so, perform this read only once. Afterwards, only query and access data since the last read operation. 
 
 #### Pagination
 
@@ -46,7 +46,7 @@ This returns any accounts for the given `companyId` that were added or updated i
 
 ## Optimising by use case
 
-As part of your implementation, check which [data types are relevant to your use case](/usecases/overview), and focus on pulling only those data types. You can also use query parameters to further filter down the number of results by use case when calling to our API. 
+As part of your implementation, check which [data types are relevant to your use case](/usecases/overview), and focus on reading only those data types. You can also use query parameters to further filter down the number of results by use case when calling to our API. 
 
 These approaches allow you to minimise the number of API calls and the volume of data returned. As a result, this speeds up your system, returns the data faster, and improves your user experience. 
 

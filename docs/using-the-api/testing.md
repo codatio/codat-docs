@@ -38,7 +38,7 @@ When planning a testing strategy and scope for your implementation, consider inc
 
 2. Live SMB testing
 
-   Involve one of your real SMB customers to perform authentication via your front-end digital application flow. Then, verify that the data syncs between the relevant platform and Codat and triggers a webhook into your system to start the data pull.
+   Involve one of your real SMB customers to perform authentication via your front-end digital application flow. Then, verify that the data syncs between the relevant platform and Codat and triggers a webhook into your system to start the data read.
 
 ## Back-end integration testing
 

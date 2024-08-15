@@ -43,9 +43,9 @@ You can either [get in touch here](https://www.codat.io/plans/#get-in-touch) or 
 From the 10th October, 2023, start-up & free plan clients will no longer be able to use these integrations.
 
 - **New connections** - Your customers won't be able to authorize access to these platforms. Additionally, they will no longer appear in Link.
-- **New data synchronisations** - Existing connections to these platforms won't work, and new data won't be able to be pulled from or pushed to these source.
+- **New data synchronisations** - Existing connections to these platforms won't work, and new data won't be able to be read from or written to these sources.
 - **Configuration** - You'll no longer be able to enable or amend the integration. You'll see the below message:
 
 ![Premium flag on integrations in the Portal](/img/updates/erp-deprecation.png)
 
-**Any existing pulled data will not be impacted.** You'll still have access to any company data you've already pulled, you just won't be able to refresh that data.
+**Any existing read data will not be impacted.** You'll still have access to any company data you've already read, you just won't be able to refresh that data.

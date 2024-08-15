@@ -13,7 +13,7 @@ We've improved our data type coverage for a number of integrations.
 
 #### QuickBooks Online
 
-- Customer tracking on Expense lines (Direct Cost - Pull and Push)
+- Customer tracking on Expense lines (Direct Cost - Read and Write)
 - Create `Payment` on Account refunds
 
 #### MYOB 
@@ -28,7 +28,7 @@ We've improved our data type coverage for a number of integrations.
 
 #### FreeAgent
 
-- We've added support for pushing Direct Cost attachments
+- We've added support for writing Direct Cost attachments
 
 ## Deprecations
 

@@ -1,12 +1,12 @@
 ---
-title: Company data push history now available via the Portal
+title: Company data write history now available via the Portal
 date: "2022-10-23"
 tags: ["Portal"]
 draft: false
 authors: mcclowes
 ---
 
-You can now view a table of data pushed for each company.
+You can now view a table of data written for each company.
 
 <!--truncate-->
 

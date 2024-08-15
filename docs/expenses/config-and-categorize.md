@@ -229,7 +229,7 @@ The response can then be cached and displayed to the customer when they are fina
 
 ### Accounts
 
-The `accounts` array includes the [general ledger accounts](/sync-for-expenses-api#/schemas/Account) which have been pulled from the SMB customer's accounting software. 
+The `accounts` array includes the [general ledger accounts](/sync-for-expenses-api#/schemas/Account) which have been read from the SMB customer's accounting software. 
 
 * The `name` is what they labelled the account in the software, so you can display this to your end user.
 * `validTransactionTypes` tells you which transaction types are accepted by the account. This prevents validation issues, such as a customer accidentally trying to reconcile an expense to an income account.
@@ -240,7 +240,7 @@ You can also create additional accounts with our [Create account](/sync-for-expe
 
 [Tracking categories](/sync-for-expenses-api#/schemas/TrackingCategoryMappingInfo) are used to monitor specific cost centers and control budgets that sit outside of the standard chart of accounts. Your customers may use tracking categories to group and track the income and costs of specific departments (e.g. Sales and marketing), projects, locations, or customers.
 
-When pushing an expense reconciliation, you can include a tracking category to further categorize this expense.
+When writing an expense reconciliation, you can include a tracking category to further categorize this expense.
 
 ### Tax rates
 

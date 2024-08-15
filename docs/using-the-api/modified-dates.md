@@ -37,7 +37,7 @@ This query retrieves records with modified dates that are greater than or equal 
   - balance sheets
   - company information
   - profit & loss reports
-- If the `sourceModifiedDate` changes, the `modifiedDate` will also change, even if none of the values we pull were modified. This can happen as there may be additional data types in the source platform that are not mapped to the Codat data model.
+- If the `sourceModifiedDate` changes, the `modifiedDate` will also change, even if none of the values we read were modified. This can happen as there may be additional data types in the source platform that are not mapped to the Codat data model.
 - If the Codat data model changes (e.g. we add a new property to a data type), the `modifiedDate` will change, even if the values of the data didn't change.
 
 ## Source modified date
@@ -63,7 +63,7 @@ This query retrieves invoices with issue dates that are greater than twelve mont
 ### 💡 Tips and traps
 
 - The `sourceModifiedDate` may not be populated and returned as `null` when:
-  - Pulling attachments.
+  - Reading attachments.
   - The integration platform does not provide modification date information for a given data type.
   - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred.
   - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records.

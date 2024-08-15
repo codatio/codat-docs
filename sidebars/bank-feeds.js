@@ -40,7 +40,7 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Push transactions",
+    label: "Write transactions",
     id: "bank-feeds/pushing-transactions",
   },
   {

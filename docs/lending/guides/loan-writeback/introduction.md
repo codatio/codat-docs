@@ -125,13 +125,13 @@ As a result, the lender's account transactions balance to zero, and the advance 
     participant codat as Codat
     
     backend ->> codat: Create record (data type)
-    codat -->> backend: Push operation key
+    codat -->> backend: Write operation key
 
-    codat -->> backend: Push operation status webhook
+    codat -->> backend: Write operation status webhook
 
     alt Status is successful
-        backend ->> codat: Get push operation
-        codat -->> backend: push operation
+        backend ->> codat: Get write operation
+        codat -->> backend: write operation
     end
 ```
 

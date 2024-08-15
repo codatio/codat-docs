@@ -10,13 +10,13 @@ updatedAt: "2023-01-16T18:05:01.158Z"
 
 ### Items
 
-When pushing Items to Xero, the `type` of the items must be either `Inventory` or `Unknown`. When pushing `Inventory` items, Codat looks up a pre-existing Inventory Account from Xero. This account is used for inventory tracking in Xero when an item is bought or sold.
+When writing Items to Xero, the `type` of the items must be either `Inventory` or `Unknown`. When writing `Inventory` items, Codat looks up a pre-existing Inventory Account from Xero. This account is used for inventory tracking in Xero when an item is bought or sold.
 
 The validity of the `taxRateRef.id` property on the Item depends on the value of the associated `accountRef.id` on the bill item or invoice item. Some tax rates can only be associated with certain types of accounts; for example, Asset, Liability, Income, Expense, or Equity.
 
 ### Accounts
 
-When pulling account balances from Xero, the balance and the currency always use the company's base currency in Codat. This applies even if the source nominal accounts are in a foreign currency. This is how the information is retrieved from the Xero API.
+When reading account balances from Xero, the balance and the currency always use the company's base currency in Codat. This applies even if the source nominal accounts are in a foreign currency. This is how the information is retrieved from the Xero API.
 
 ## Your application's user interface
 
@@ -44,26 +44,26 @@ Follow our guide [here](/integrations/accounting/xero/xero-app-partner-program).
 
 For instructions on setting up a bank feed to an account in Xero, see the [Xero Bank Feeds](/integrations/bank-feeds/xero-bank-feeds/) documentation.
 
-### How do I push negative Direct incomes and Direct costs to Xero?
+### How do I write negative Direct incomes and Direct costs to Xero?
 
 The Xero API doesn't allow the creation of Direct costs (_spend money transactions_) or Direct incomes (_receive money transactions_) with negative values.
 
-To support pushing negative values to Xero for these data types, our integration uses some custom logic.
+To support writing negative values to Xero for these data types, our integration uses some custom logic.
 
-| When you push...                    | Codat creates...                               |
+| When you write...                    | Codat creates...                               |
 |-------------------------------------|------------------------------------------------|
 | A negative Direct income to Xero    | A positive _spend money transaction_ in Xero   |
 | A negative Direct cost to Xero      | A positive _receive money transaction_ in Xero |
 
 :::caution Objects are reversed
 
-When pushing negative Direct incomes and Direct costs to Xero, be aware that both the type (Direct income or Direct cost) and the sign of the created business objects are reversed.
+When writing negative Direct incomes and Direct costs to Xero, be aware that both the type (Direct income or Direct cost) and the sign of the created business objects are reversed.
 
 :::
 
-You push negative Direct incomes and Direct costs to Xero as an array of `lineItems` in an Account transaction, the same as for other accounting integrations. Arrays can contain a mix of both positive and negative lines.
+You write negative Direct incomes and Direct costs to Xero as an array of `lineItems` in an Account transaction, the same as for other accounting integrations. Arrays can contain a mix of both positive and negative lines.
 
-```json title="Example: request body for pushing a negative Direct cost to Xero"
+```json title="Example: request body for writing a negative Direct cost to Xero"
 {
     ...
     "contactRef": {
@@ -104,11 +104,11 @@ You push negative Direct incomes and Direct costs to Xero as an array of `lineIt
 
 ```
 
-If the push is successful, the `changes` array in the push operation response will show the reversed data types that were created.
+If the write is successful, the `changes` array in the write operation response will show the reversed data types that were created.
 
-### Pulling negative Direct incomes and Direct costs from Xero
+### Reading negative Direct incomes and Direct costs from Xero
 
-It's possible to create negative _spend money transactions_ and _receive money transactions_ in the Xero UI. Objects created in this way are always pulled to Codat as negative Direct incomes and negative Direct costs, respectively (that is, they are not reversed).
+It's possible to create negative _spend money transactions_ and _receive money transactions_ in the Xero UI. Objects created in this way are always read to Codat as negative Direct incomes and negative Direct costs, respectively (that is, they are not reversed).
 
 ### How are Xero contacts represented in the Codat API?
 
@@ -120,7 +120,7 @@ To cater for this behaviour in the Codat standard, contacts appear as both Custo
 
 Requests to the Xero API are subject to the API rate limits described in the <a href="https://developer.xero.com/documentation/guides/oauth2/limits">OAuth 2.0 API limits</a> page in the Xero Developer documentation.
 
-If a rate limit is exceeded, your integration is blocked from making any more requests to the API until the conditions of the rate limit are met. A `Pending` status is shown in the push endpoint response when a rate limit is enforced.
+If a rate limit is exceeded, your integration is blocked from making any more requests to the API until the conditions of the rate limit are met. A `Pending` status is shown in the write endpoint response when a rate limit is enforced.
 
 If the **Daily Limit** is exceeded, you can't sync any data with Xero for up 24 hours depending on when the limit was exceeded.
 
@@ -130,44 +130,44 @@ To see which rate limit is exceeded, please contact Codat Support.
 
 All [Items](/accounting-api#/schemas/Item) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
 
-### Can I push discounts to Xero at the invoice level?
+### Can I write discounts to Xero at the invoice level?
 
-Yes. You can enter negative line item amounts in the `lineItems.unitAmount` field when pushing invoices to Xero. This is an alternative to using the `discountAmount` and `discountPercentage` fields.
+Yes. You can enter negative line item amounts in the `lineItems.unitAmount` field when writing invoices to Xero. This is an alternative to using the `discountAmount` and `discountPercentage` fields.
 
-### Why do I get an error when pushing tracking categories to Xero?
+### Why do I get an error when writing tracking categories to Xero?
 
-Our accounting data model allows the pulling and pushing of Xero _tracking options_ rather than parent _tracking categories_. You can have up to two active tracking categories and up to 100 tracking options for each tracking category. For more information about these objects, see [Set up tracking categories](https://central.xero.com/s/article/Set-up-tracking-categories) in the Xero documentation.
+Our accounting data model allows the reading and writing of Xero _tracking options_ rather than parent _tracking categories_. You can have up to two active tracking categories and up to 100 tracking options for each tracking category. For more information about these objects, see [Set up tracking categories](https://central.xero.com/s/article/Set-up-tracking-categories) in the Xero documentation.
 
-You can only push a tracking category to Xero if it has a non-null value for `parentId`.
+You can only write a tracking category to Xero if it has a non-null value for `parentId`.
 
-You are unable to push tracking categories that, when they were pulled, have the property `"hasChildren": true`. A validation error is returned.
+You are unable to write tracking categories that, when they were read, have the property `"hasChildren": true`. A validation error is returned.
 
 ### Why do I see only 5 years' of bank transactions for my Xero connections?
 
-For performance reasons, the default date range for pulling bank transactions from Xero is the past five years.
+For performance reasons, the default date range for reading bank transactions from Xero is the past five years.
 
 If you need to increase or decrease this date range, edit the value of the `syncFromUTC` property for the `bankTransactions` data type in your additional sync settings (via a request to `POST /companies/{companyId}/syncSettings`).
 
 You can set `syncFromUTC` for all companies or individual companies. For more information, see [Advanced sync settings](/knowledge-base/advanced-sync-settings) or raise a ticket with our support team through our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new).
 
-### Why do I see a different reference value when I pull bank transactions to Xero that I'd previously pushed?
+### Why do I see a different reference value when I read bank transactions to Xero that I'd previously written?
 
-There is a limitation in the data sets returned from Xero when pulling Bank transactions to Codat. The **Particulars**, **Reference**, and **Code** values, which are visible in columns in the Xero UI, are returned together in the `description` field, concatenated and separated with spaces.
+There is a limitation in the data sets returned from Xero when reading Bank transactions to Codat. The **Particulars**, **Reference**, and **Code** values, which are visible in columns in the Xero UI, are returned together in the `description` field, concatenated and separated with spaces.
 
-The **Payee** in Xero is pulled to Codat as the `counterparty` of the Bank transaction.
+The **Payee** in Xero is read to Codat as the `counterparty` of the Bank transaction.
 
 For example, the **Statement line** below will result in a bank statement line with a `counterparty` of `Payee 3` and a `description` with the value: `Description 3 Reference 3 3`.
 
 <img src="/img/old/d1325a1-xero-bank-statement-46713.png" />
 
-### Can I push batch payments to Xero?
+### Can I write batch payments to Xero?
 
-Yes. To push a batch payment to Xero, you push a [Bill payment](/accounting-api#/operations/post-bill-payment) with multiple line items. Pushing a batch payment to Xero will create the following business objects:
+Yes. To write a batch payment to Xero, you write a [Bill payment](/accounting-api#/operations/post-bill-payment) with multiple line items. Writing a batch payment to Xero will create the following business objects:
 
 - A separate bill payment for each line.
 - An account transaction that links the bill payments together.
 
-In the returned push operation:
+In the returned write operation:
 
 - The `changes` property lists the objects that were created in Xero to represent the batch payment.
 - The `data` property is not populated because there isn't one single object that can be used to represent the batch payment in Xero.

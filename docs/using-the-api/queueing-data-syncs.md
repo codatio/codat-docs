@@ -15,7 +15,7 @@ Use the `GET /companies/{companyId}/dataStatus` endpoint to check the [last time
 
 In this request, `companyId` is [the unique ID that you have received in a response to creating this company](/using-the-api/managing-companies#create-a-codat-company).
 
-When you’re pulling data for the first time, use this endpoint to check if the sync was successful.
+When you’re reading data for the first time, use this endpoint to check if the sync was successful.
 
 `GET /companies/{companyId}/dataStatus`
 
@@ -68,7 +68,7 @@ Refreshing data can take different amounts of time depending on the integration 
 
 For our accounting source data types, Codat stores records deleted by a company in the underlying accounting software between successive data syncs to ensure better consistency in the data. If such records are not relevant for your use case, you can exclude them by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag. 
 
-Records that were created and deleted by a company before the first sync took place will never be pulled and stored by Codat. 
+Records that were created and deleted by a company before the first sync took place will never be read and stored by Codat. 
 
 ## Scheduled refresh
 

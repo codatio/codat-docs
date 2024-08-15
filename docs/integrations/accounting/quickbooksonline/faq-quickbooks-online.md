@@ -8,7 +8,7 @@ sidebar_label: FAQs
 
 Excerpt from QuickBooks - \*US QuickBooks Online companies created after November 10, 2017 manage sales tax calculations via an automated sales tax (AST) engine. Sales tax is determined based on the source and destination address. The source address is the company’s legal address as available in the company settings. The destination address is the shipping address provided on the sales transaction. If a shipping address is not provided, the company address is considered as the destination address. The ability to customize the source address based on location of a given transaction is not supported.
 
-## How does the Quickbooks Automated Sales Tax engine (AST) affect pushing data to QBO?
+## How does the Quickbooks Automated Sales Tax engine (AST) affect writing data to QBO?
 
 At the line level of an invoice, bill, or credit note the taxable status of each line is noted as either `TAX` or `NON`. TaxCode objects in this context are referred to as pseudo tax codes.
 
@@ -40,7 +40,7 @@ Note that QuickBooks Online (FR) will no longer be available after December 31<s
 
 Yes. Codat supports the same functionality for QuickBooks Online France (FR) as for QuickBooks Online UK and US.
 
-France-locale companies require that _journal codes_ (represented in QBO as `JournalCode` objects) are assigned to journal entries. Therefore, when pushing Journal Entries to a QBO (FR) company, Codat assigns each Journal Entry with a journal code, choosing any journal code that has a `Type` of `Others` or `Autres`. If a journal code of `Type` `Others` or `Autres` does not exist, a validation error is returned.
+France-locale companies require that _journal codes_ (represented in QBO as `JournalCode` objects) are assigned to journal entries. Therefore, when writing Journal Entries to a QBO (FR) company, Codat assigns each Journal Entry with a journal code, choosing any journal code that has a `Type` of `Others` or `Autres`. If a journal code of `Type` `Others` or `Autres` does not exist, a validation error is returned.
 
 The Journal Entries object in Codat's accounting data model does not have a field for journal code.
 

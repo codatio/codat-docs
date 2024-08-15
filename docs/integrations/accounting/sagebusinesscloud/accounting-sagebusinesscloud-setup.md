@@ -17,7 +17,7 @@ Codat currently supports the following versions of Sage Business Cloud Accountin
 - Version 3.1
 - Version 3.0
 
-Our integration with Sage Accounting API allows you to pull data from users with accounts based in the UK, Ireland, Germany, Spain, Portugal, France, USA, Canada, and the UAE.
+Our integration with Sage Accounting API allows you to read data from users with accounts based in the UK, Ireland, Germany, Spain, Portugal, France, USA, Canada, and the UAE.
 
 Codat does not currently support Sage Business Cloud versions that cover Australia, New Zealand, South Africa, and the Asian market edition (Hong Kong, Singapore, and Malaysia).
 :::

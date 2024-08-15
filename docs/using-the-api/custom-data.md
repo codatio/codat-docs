@@ -91,7 +91,7 @@ PUT /integrations/qhyg/datatypes/custom/qbo-cashflow-report
 
 :::caution Check your configuration values!
 
-Codat does not validate any of the values you enter in the configuration request. If you misspell values or don't specify the full API routes, you will receive a fetch error when trying to pull the custom data type later. 
+Codat does not validate any of the values you enter in the configuration request. If you misspell values or don't specify the full API routes, you will receive a fetch error when trying to read the custom data type later. 
 
 Refer to the platform's own API documentation to make sure you are using the correct endpoint, route, and field names.
 
@@ -131,10 +131,10 @@ To view synced custom data, use the [List custom data type records](/platform-ap
 GET /companies/{companyId}/connections/{connectionId}/data/custom/{customDataIdentifier}?page=1
 ```
 
-To view the pull history for your custom data types, use the following endpoints. In the response, `dataType` property will reflect the custom data type as `custom/{customDataIdentifier}`:
+To view the read history for your custom data types, use the following endpoints. In the response, `dataType` property will reflect the custom data type as `custom/{customDataIdentifier}`:
 
-- [List pull operations](/platform-api#/operations/list-pull-operations) to view the company's pull history for all of its data types
-- [Get pull operation](/platform-api#/operations/get-pull-operation) to view information about a single specific dataset.
+- [List pull operations](/platform-api#/operations/list-pull-operations) to view the company's read history for all of its data types
+- [Get pull operation](/platform-api#/operations/get-pull-operation) to view information about a single specific dataset
 
 ## 💡 Tips and traps
 

@@ -51,14 +51,14 @@ View test data from the Xero demo company in the Codat Portal.
 
 2. View the test data from Xero under the **Accounting** tab.
 
-If you don't see any test data, you can check whether the sync completed successfully. From the **Companies** page, click **Pull history**. Also, check that the supported data types are set to **Fetch on first link** in **Settings > Data types**.
+If you don't see any test data, you can check whether the sync completed successfully. From the **Companies** page, click **Read history**. Also, check that the supported data types are set to **Fetch on first link** in **Settings > Data types**.
 
 ## What's next?
 
 Next, you might want to:
 
-- Edit your sync settings to change which data types to pull from Xero.
-- Try out the Push API to create or edit data within Xero.
+- Edit your sync settings to change which data types to read from Xero.
+- Try out the Write API to create or edit data within Xero.
 
 :::info Testing banking data in Xero
 It's not possible to create banking transactions within Xero demo companies. To test this functionality, you'll need to sign up to a free trial or create a paid Xero organization.

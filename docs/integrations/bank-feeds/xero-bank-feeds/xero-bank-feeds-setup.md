@@ -4,7 +4,7 @@ sidebar_label: Set up
 description: "Set up our integration with Xero Bank Feeds"
 ---
 
-Before you can push bank feeds to Xero, you need to set up the [Xero accounting integration](/integrations/accounting/xero/accounting-xero) in the Codat Portal.
+Before you can write bank feeds to Xero, you need to set up the [Xero accounting integration](/integrations/accounting/xero/accounting-xero) in the Codat Portal.
 
 This article explains how to:
 

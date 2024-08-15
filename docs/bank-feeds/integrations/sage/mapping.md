@@ -1,6 +1,6 @@
 ---
 title: "Sage Bank feeds mapping"
-description: "Push bank transaction data into your customers' accounting software with an automated feed."
+description: "Write bank transaction data into your customers' accounting software with an automated feed."
 sidebar_label: Map accounts
 displayed_sidebar: bankfeeds
 hide_description: true
@@ -141,10 +141,10 @@ For example:
 
 ![Sage account selection screen](/img/old/f73be1e-redirect_screen.PNG "Sage dialog listing the available source bank accounts")
 
-The dataConnection status will then change to linked, and which point you will be able to [push bankTransactions](/bank-feeds/pushing-transactions).
+The dataConnection status will then change to linked, and which point you will be able to [write bankTransactions](/bank-feeds/pushing-transactions).
 
 
 ---
 ## Read next
 
-* [Pushing transactions](/bank-feeds/pushing-transactions)
+* [Writing transactions](/bank-feeds/pushing-transactions)

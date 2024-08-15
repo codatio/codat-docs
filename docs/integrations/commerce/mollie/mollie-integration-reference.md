@@ -1,6 +1,6 @@
 ---
 title: "Mollie integration reference"
-description: "Things to know when pulling data from Mollie"
+description: "Things to know when reading data from Mollie"
 createdAt: "2022-05-27T14:07:23.367Z"
 updatedAt: "2022-10-20T08:48:19.088Z"
 unlisted: true
@@ -22,7 +22,7 @@ In Mollie, a chargeback is a payment reversal issued to a customer who raised a 
 
 ## Orders
 
-When pulling orders from Mollie, line items of type `shipping_fee` and `surcharge` are shown as service charges in Codat (indicated in the `Orders.serviceCharges` field).
+When reading orders from Mollie, line items of type `shipping_fee` and `surcharge` are shown as service charges in Codat (indicated in the `Orders.serviceCharges` field).
 
 ## Transactions
 
@@ -39,7 +39,7 @@ Codat's data model supports a wide range of fields within each data type.
 
 Sometimes a provider's API does not grant access to a field that exists in a Codat data type. Conversely, our data model sometimes does not support all the relevant fields on an object in a provider's API.
 
-The following table highlights selected fields that are not available in data pulled from Mollie.
+The following table highlights selected fields that are not available in data read from Mollie.
 
 ### Unavailable Codat fields
 

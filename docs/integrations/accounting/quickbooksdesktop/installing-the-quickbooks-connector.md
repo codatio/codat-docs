@@ -97,7 +97,7 @@ Once the password is saved, access to QuickBooks will be granted and the connect
 
 If you have chosen to have your connectors perform a one-time synchronization, your company connection status will change to _deauthorized_ after the initial sync.
 
-If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat Portal or API. The connector will also start automatically when the system reboots.
+If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or write operations you have queued using the Codat Portal or API. The connector will also start automatically when the system reboots.
 
 ## Installation path
 

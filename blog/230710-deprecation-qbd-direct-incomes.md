@@ -11,4 +11,4 @@ On July 10, 2023, Codat will change the mappings for the Direct incomes data typ
 
 After this change, the `id` property in Direct incomes will be mapped as `"Deposit ID - Transaction line ID"`.
 
-This changes will ensure that the `id` parameter is unique when Direct incomes are pulled to QuickBooks Desktop via the connector.
+This changes will ensure that the `id` parameter is unique when Direct incomes are read to QuickBooks Desktop via the connector.

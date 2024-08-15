@@ -42,7 +42,7 @@ An AWS account is also required, although Amazon does not currently charge for t
 :::caution Personally Identifiable Information (PII)
 Amazon is highly sensitive about PII data from their merchant’s customers.
 
-Due to the stringent restrictions, Codat does not pull any PII data from Amazon to populate our Customers datatype.
+Due to the stringent restrictions, Codat does not read any PII data from Amazon to populate our Customers datatype.
 :::
 
 :::info Reviewing your application status

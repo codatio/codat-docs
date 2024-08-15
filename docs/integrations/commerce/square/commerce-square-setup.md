@@ -6,7 +6,7 @@ sidebar_label: Setup
 
 Set up the Square integration to access commerce data from customers who use Square to accept payments.
 
-The following page explains how to set up both the Sandbox and the production integrations. [Test your Square integration](/integrations/commerce/square/test-square) explains how to use the Square Sandbox integration to pull sample data into Codat.
+The following page explains how to set up both the Sandbox and the production integrations. [Test your Square integration](/integrations/commerce/square/test-square) explains how to use the Square Sandbox integration to read sample data into Codat.
 
 ## Supported environments
 
@@ -89,4 +89,4 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check the commerce sync settings
 
-Syncing of all commerce data types must be enabled before you can pull commerce transactions from Square to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.
+Syncing of all commerce data types must be enabled before you can read commerce transactions from Square to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.
