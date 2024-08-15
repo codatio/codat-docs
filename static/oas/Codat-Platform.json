@@ -5900,24 +5900,6 @@
           },
           "Message": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/NewCompanySynchronizedWebhook/definitions/NewCompanySynchronizedWebhookData"
-          }
-        },
-        "definitions": {
-          "NewCompanySynchronizedWebhookData": {
-            "type": "object",
-            "title": "New company synchronized webhook data",
-            "companyName": {
-              "nullable": true,
-              "type": "string",
-              "description": "Name of company whose connection has changed."
-            },
-            "sourceType": {
-              "$ref": "#/components/schemas/Integration/definitions/sourceType",
-              "nullable": true
-            }
           }
         },
         "examples": [
@@ -5929,11 +5911,7 @@
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
             "RuleType": "New company synchronised",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
-            "Data": {
-              "companyName": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-              "sourceType": "Accounting"
-            }
+            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time"
           }
         ]
       },

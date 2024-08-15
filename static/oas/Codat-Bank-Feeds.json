@@ -6410,7 +6410,7 @@
             "type": "string",
             "format": "uuid",
             "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "description": "Unique identifier of the event"
+            "description": "Unique identifier of the event."
           },
           "eventType": {
             "type": "string",
