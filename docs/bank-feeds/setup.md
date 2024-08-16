@@ -12,7 +12,7 @@ import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@comp
 
 ## Journey overview
 
-The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting software. It assumes you are using Codat's mapping interface to let the user select the accounts used for pushing bank statements.
+The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting software. It assumes you are using Codat's mapping interface to let the user select the accounts used for writing bank statements.
 
 If you are using one of the [other mapping UI options](/bank-feeds/mapping/overview), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting software`.
 
@@ -38,7 +38,7 @@ sequenceDiagram
     
     loop Load bank statements
         smb ->> app: Spends money from bank account
-        app ->> codat: Pushes bank transaction details
+        app ->> codat: Writes bank transaction details
         codat ->> acctg: Creates bank transactions
         acctg ->> smb: Displays loaded bank statement ready for reconciliation
     end
@@ -75,7 +75,7 @@ Codat supports a range of [webhook events](/using-the-api/webhooks/event-types) 
 
 - [PushOperationStatusChanged](/using-the-api/webhooks/event-types)  
 
-  Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully pushed to the accounting software. In case of errors, resolve the issue and resend the payload.
+  Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully written to the accounting software. In case of errors, resolve the issue and resend the payload.
 
 
 ## Client libraries

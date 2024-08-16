@@ -16,7 +16,7 @@ The product variants listed here are earlier implementations of a current produc
 
 #### Functionality
 
-- Pull & Push ongoing Sync API
+- Read & Write ongoing Sync API
 
 #### Data sources
 
@@ -67,7 +67,7 @@ Xero, Quickbooks Online, NetSuite, Microsoft Dynamics 365
 
 #### Functionality
 
-- Pull  
+- Read  
 - One time or ongoing Sync  
 - API  
 - Lending write-back
@@ -92,7 +92,7 @@ Xero, Quickbooks Online, NetSuite, Microsoft Dynamics 365
 
 #### Functionality
 
-- Pull
+- Read
 - Ongoing Sync
 - API
 
@@ -110,7 +110,7 @@ Xero, Quickbooks Online, NetSuite, Microsoft Dynamics 365
 
 #### Functionality
 
-- Pull
+- Read
 - Ongoing Sync
 - API
 
@@ -128,7 +128,7 @@ Xero, Quickbooks Online, NetSuite, Microsoft Dynamics 365
 
 #### Functionality
 
-- Pull
+- Read
 - Ongoing Sync
 - API
 

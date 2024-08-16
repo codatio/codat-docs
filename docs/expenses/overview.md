@@ -1,7 +1,7 @@
 ---
 title: Sync for Expenses overview
 sidebar_label: Sync for Expenses
-description: Push categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation
+description: Write categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation
 displayed_sidebar: expenses
 image: "/img/sync-for-expenses/sfe-banner.png"
 hide_title: true
@@ -12,7 +12,7 @@ banner_title: Sync for Expenses
 banner_class: expenses
 banner_icon: "/img/logos/products/logo_expenses_clear.svg"
 banner_image: "/img/banners/bank-feeds.png"
-banner_text: "Push categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation"
+banner_text: "Write categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Sync for Expenses?
 ---
@@ -26,7 +26,7 @@ import Products from "@components/Products";
 
 **Sync for Expenses** is a standardized API-based product that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
 
-With **58% of small businesses** saying they choose one spending solution over another based on **quality of their accounting integrations**, Sync for Expenses enables you to push categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
+With **58% of small businesses** saying they choose one spending solution over another based on **quality of their accounting integrations**, Sync for Expenses enables you to write categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
 
 It includes built-in logic so you can easily handle all of the complexities of expense reconciliation, such as refunds, accounting for multiple currencies, and allowing users to correct errors.
 
@@ -133,7 +133,7 @@ Expenses can also be categorized according to your SMB's bookkeeping. Provide yo
 
 ### [Create and update transactions](/expenses/sync-process/expense-transactions)
 
-Once the customer has categorized their expenses using the mapping options, use Sync for Expenses to push their everyday purchases to the SMB's accounting software. Sync for Expenses also enables SMB customers to push attachments for a complete audit trail.
+Once the customer has categorized their expenses using the mapping options, use Sync for Expenses to write their everyday purchases to the SMB's accounting software. Sync for Expenses also enables SMB customers to write attachments for a complete audit trail.
 
 You can also create [transfers](/expenses/sync-process/transfer-transactions) and [reimbursements](/expenses/sync-process/reimbursable-expense-transactions).
 

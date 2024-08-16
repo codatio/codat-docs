@@ -12,7 +12,7 @@ import TabItem from "@theme/TabItem";
 
 Give your customers the ability to manage the access permissions they have given you by using our **Connections SDK** in your front end. This is key from a regulatory perspective, builds trust between you and your customer, and is required by some accounting software (e.g. Xero). 
 
-![An image of three in-app screenshots of the Connections UI. The first picture displays a list of three existing connections to Xero, Square, and Commerce Sandbox. The second image shows the entry for the Square connection with dates the authorization was given and recent data pull dates. It also lists the option to disconnect the connection. The final image displays a confirmation of the disconnection.](/img/auth-flow/auth-flow-connection-ui-examples.png)
+![An image of three in-app screenshots of the Connections UI. The first picture displays a list of three existing connections to Xero, Square, and Commerce Sandbox. The second image shows the entry for the Square connection with dates the authorization was given and recent data read dates. It also lists the option to disconnect the connection. The final image displays a confirmation of the disconnection.](/img/auth-flow/auth-flow-connection-ui-examples.png)
 
 ### Functionality
 

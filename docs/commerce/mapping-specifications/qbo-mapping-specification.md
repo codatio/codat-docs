@@ -32,7 +32,7 @@ Sales are booked on a nominal account of the QBO type **Income**. This is the ac
 
 The merchant can select an existing account from QBO. If an account is not available, it needs to be created in QBO for this purpose.
 
-Codat pushes a single sales invoice to QBO daily. This invoice represents all sales made over the course of that day.
+Codat writes a single sales invoice to QBO daily. This invoice represents all sales made over the course of that day.
 
 The invoice is issued to the commerce services provider.
 
@@ -53,9 +53,9 @@ Refunds represent a catch-all for all refunds, cash or non-cash.
 
 Similar to **[Sales](/sfc/mapping-specifications/qbo-mapping-specification#sales)**, **Refunds** are usually booked on a nominal account that the merchant uses to book their revenue, of the QBO type **Income**.
 
-Typically, merchants would push **[Sales](/sfc/mapping-specifications/qbo-mapping-specification#sales)** and **Refunds** into the same account. However, they can use a different account if they wish to report them separately.
+Typically, merchants would write **[Sales](/sfc/mapping-specifications/qbo-mapping-specification#sales)** and **Refunds** into the same account. However, they can use a different account if they wish to report them separately.
 
-Codat pushes a credit note to QBO daily. The credit note represents all refunds made over the course of that day.
+Codat writes a credit note to QBO daily. The credit note represents all refunds made over the course of that day.
 
 The credit note contains one line item for each tax rate the merchant trades in, with this line item representing the total of all refunds at that tax rate. If no refunds have been made for a given tax rate on that day, the corresponding line item will be omitted.
 
@@ -66,7 +66,7 @@ When purchase refunds are recorded in QBO, the negative revenue is booked to the
 The following information is related to the **Payments** feature. To learn more about the configuration of **Payments**, navigate to the [Payments](/sfc/mapping-specifications/qbo-mapping-specification#payments) section.
 :::
 
-To represent the money going back to the customer, a journal entry is pushed crediting the cash account and debiting the debtor’s account.
+To represent the money going back to the customer, a journal entry is written crediting the cash account and debiting the debtor’s account.
 
 This is then linked to the credit note through a zero-value ‘receive payment’, which effectively changes the credit note status to paid and creates a payment link on the journal entry.
 
@@ -76,7 +76,7 @@ This is then linked to the credit note through a zero-value ‘receive payment�
 
 Depending on the merchant’s preference, **Gratuity** can be booked in an **Income** or a **Liability** account.
 
-Gratuity is pushed to QBO as part of the daily [Sales](/sfc/mapping-specifications/qbo-mapping-specification#sales) invoice as a separate line item.
+Gratuity is written to QBO as part of the daily [Sales](/sfc/mapping-specifications/qbo-mapping-specification#sales) invoice as a separate line item.
 
 #### Prepaid
 
@@ -100,7 +100,7 @@ Fees are booked on a nominal account of type **Expense**.
 
 If there's no account of such type, users need to create an account in QuickBooks for this purpose.
 
-Codat pushes a single bill to QBO daily. This bill represents all fees taken by the commerce software over the course of that day. The bill can have more than one line if there are different types of transactions that occur throughout the day.
+Codat writes a single bill to QBO daily. This bill represents all fees taken by the commerce software over the course of that day. The bill can have more than one line if there are different types of transactions that occur throughout the day.
 
 #### Payment fee refund
 
@@ -108,7 +108,7 @@ When a merchant refunds a payment accepted using a commerce software, the commis
 
 Payment fee refunds should be booked to the same accounts configured for **Payment fees**:
 
-A single bank deposit is pushed each day representing all fee refunds processed that day.
+A single bank deposit is written each day representing all fee refunds processed that day.
 
 ## Payments
 
@@ -143,6 +143,6 @@ Codat has provided functionality to allow users to select different accounts for
 If the user starts using other payments types after initial setup, the synchronization will stop until the accounts have been re-mapped via returning to the configuration page.
 :::
 
-Codat pushes a single payment to QBO per day, per type of payment used that day.
+Codat writes a single payment to QBO per day, per type of payment used that day.
 
-If a merchant processed ten card payments and twenty cash payments in one day, two payments are pushed. These payments are recorded against the daily sales invoice (see [Sales](/sfc/mapping-specifications/qbo-mapping-specification#sales)).
+If a merchant processed ten card payments and twenty cash payments in one day, two payments are written. These payments are recorded against the daily sales invoice (see [Sales](/sfc/mapping-specifications/qbo-mapping-specification#sales)).

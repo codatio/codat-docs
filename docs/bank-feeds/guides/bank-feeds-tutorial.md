@@ -484,13 +484,13 @@ if credentialsRes.BankAccountCredentials != nil {
 
 When completing the authorization in QBO Banking, your user chooses the bank accounts they want to connect. At the same time, they also choose a `feed_start_date` value that is then used to limit the load of historic transactions to seven days.
 
-Once this is complete, you can sync transactions between the bank and Codat. QBO will then poll Codat periodically to pull these transactions to their bank feed.
+Once this is complete, you can sync transactions between the bank and Codat. QBO will then poll Codat periodically to read these transactions to their bank feed.
 
 ### Sync bank feeds bank transactions
 
 :::tip Bank transactions guidelines
 
-- You can push historic (back-dated) transactions that are up to seven days old based on the `feed_start_date`, as chosen by the SMB user in the QBO UI.
+- You can write historic (back-dated) transactions that are up to seven days old based on the `feed_start_date`, as chosen by the SMB user in the QBO UI.
 - Syncing future-dated transactions to QBO is not supported.
 - You can only sync bank transactions from one connected account at a time.
 - Bank transactions must be synced in chronological order (from earliest to latest) based on the `cleared_on_date`.
@@ -652,7 +652,7 @@ res, err := bankFeedsClient.Transactions.Create(ctx, operations.CreateBankTransa
 
 </Tabs>
 
-Repeat the request for the remainder of the SMB user's source bank accounts. Keep the bank transactions in Codat up to date, as QBO polls Codat periodically to pull these transactions to their bank feeds. 
+Repeat the request for the remainder of the SMB user's source bank accounts. Keep the bank transactions in Codat up to date, as QBO polls Codat periodically to read these transactions to their bank feeds. 
 
 :::tip Recap
 

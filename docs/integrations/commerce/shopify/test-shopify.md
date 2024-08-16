@@ -1,10 +1,10 @@
 ---
 title: "Test your Shopify integration"
-description: "Test your Shopify integration by pulling sample data to a test company"
+description: "Test your Shopify integration by reading sample data to a test company"
 sidebar_label: Testing
 ---
 
-Test your Shopify integration by pulling commerce data from a Development Store to a test company in Codat. This lets you test the Link flow that your SMB customers will see when they share their commerce data from Shopify.
+Test your Shopify integration by reading commerce data from a Development Store to a test company in Codat. This lets you test the Link flow that your SMB customers will see when they share their commerce data from Shopify.
 
 ## Prerequisites
 
@@ -69,7 +69,7 @@ When the Link flow is complete, your Development Store opens and your custom app
 
 ## Retrieve commerce data
 
-In the Codat Portal, pull sample commerce data from Shopify to your test company:
+In the Codat Portal, read sample commerce data from Shopify to your test company:
 
 1. Click **Companies** then select the test company you created in the preceding task.
 1. Click **Data > Commerce** in the side navigation menu.

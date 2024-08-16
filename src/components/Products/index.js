@@ -40,7 +40,7 @@ const allProducts = [
     logo: "/img/logos/products/logo_bankfeeds_clear.svg",
     slug: "bank-feeds",
     name: "Bank Feeds API",
-    description: "Push bank transaction data into your customers' accounting software with an automated feed.",
+    description: "Write bank transaction data into your customers' accounting software with an automated feed.",
     link: "/bank-feeds/overview",
     linkText: "Build your first bank feed →",
   },

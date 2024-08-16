@@ -8,7 +8,7 @@ tags:
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
-A data connection represents a [company's](/core-concepts/companies) connection to a data source and allows you to synchronize data (pull and/or push) with that source.
+A data connection represents a [company's](/core-concepts/companies) connection to a data source and allows you to synchronize data (read and/or write) with that source.
 
 A company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:
 
@@ -18,7 +18,7 @@ A company can have multiple data connections depending on the type of data sourc
 
 Any combination of accounting, banking, and commerce data connections is allowed.
 
-Before you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](/auth-flow/overview).
+Before you can use a data connection to read or write data, the company must grant you access to their business data by [linking the connection](/auth-flow/overview).
 
 ## Connection status
 
@@ -26,10 +26,10 @@ Connections can have one of the statuses described in the following table.
 
 | Status         | Definition                                                                                                                                                                                                                                                                                                                                                                                                   |
 | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Linked`        | The connection is linked to a data source; you can use it to pull and push a company's consented data to and from the underlying provider's platform.                                                                                                                                                                                                                                                        |
+| `Linked`        | The connection is linked to a data source; you can use it to read and write a company's consented data to and from the underlying provider's platform.                                                                                                                                                                                                                                                        |
 | `PendingAuth`    | The company hasn't authorized access to their financial platform (the data source). The SMB customer selected the platform in Link but did not complete the authorization flow.                                                                                                                                                                                                                              |
-| `Deauthorized`   | The connection was linked but is no longer able to access data from the underlying provider's platform.<br/>You can access any data that was already pulled or pushed using this data connection. However, you can't perform any new pulls or pushes until the connection is re-linked.<br/>A data connection usually becomes Deauthorized if the company revoked your access or an expiry time was reached. |
-| `Unlinked`       | The data connection was previously linked but you asked for your access to be revoked (see [Disconnect a data connection to revoke your access to a data source](/core-concepts/connections#disconnect-a-data-connection-to-revoke-your-access-to-a-data-source)).<br/>Similar to Deauthorized, you can still access any data that was already pulled or pushed using the data connection, but can't perform any new pulls or pushes unless the connection is re-linked.                                       |
+| `Deauthorized`   | The connection was linked but is no longer able to access data from the underlying provider's platform.<br/>You can access any data that was already read or written using this data connection. However, you can't perform any new read or write operations until the connection is re-linked.<br/>A data connection usually becomes Deauthorized if the company revoked your access or an expiry time was reached. |
+| `Unlinked`       | The data connection was previously linked but you asked for your access to be revoked (see [Disconnect a data connection to revoke your access to a data source](/core-concepts/connections#disconnect-a-data-connection-to-revoke-your-access-to-a-data-source)).<br/>Similar to Deauthorized, you can still access any data that was already read or written using the data connection, but can't perform any new read or write operations unless the connection is re-linked.                                       |
 | No connections | The company has been created but does not have any connections to financial platforms established in any of the above statuses. |
 
 ## Linked data connection example
@@ -67,7 +67,7 @@ Alternatively, you can use our <a href="/platform-api#/operations/unlink-connect
 - The `connectionId` of the data connection to disconnect as a path parameter.
 - A `status` of `Unlinked` in the request body.
 
-When a connection is set to `Unlinked`, you can continue to access any data that was already pulled or pushed to the data source, but you can't perform any new pulls or pushes (unless the connection is re-linked).
+When a connection is set to `Unlinked`, you can continue to access any data that was already read or written to the data source, but you can't perform any new read or write operations (unless the connection is re-linked).
 
 :::note Unlinking data connections
 
@@ -352,7 +352,7 @@ Alternatively, you can send a request to the <a href="/platform-api#/operations/
 
 When you delete a data connection:
 
-- You can't make any data pulls or pushes against the underlying data provider.
+- You can't make any data read or write operations against the underlying data provider.
 - The data connection isn't returned by `GET /connections` or `GET / companies`.
 
 ## Provide credentials or tokens for a data connection

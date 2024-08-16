@@ -45,9 +45,9 @@ Codat Link will test whether a connection has been successful by making a test c
 
 "Unable to verify Store URL and Webservice Key. Please ensure you have entered the correct details and that the store's Webservice is enabled."
 
-:::info Pulling data
+:::info Reading data
 
-Resources available to the PrestaShop software instance from which data is being pulled may vary wildly between small merchants (potentially running the software on their laptop) and large enterprises (likely hosted on much more scalable infrastructure). At the time of pulling data, it is not possible for Codat to know what resources are available; As a result, Codat restricts the amount of data it fetches at any one time to minimize impact on instances with the least resources. The trade-off is longer pull times for all PrestaShop instances, even where resources might be available to pull data at a higher velocity.
+Resources available to the PrestaShop software instance from which data is being read may vary wildly between small merchants (potentially running the software on their laptop) and large enterprises (likely hosted on much more scalable infrastructure). At the time of reading data, it is not possible for Codat to know what resources are available; As a result, Codat restricts the amount of data it fetches at any one time to minimize impact on instances with the least resources. The trade-off is longer read times for all PrestaShop instances, even where resources might be available to read data at a higher velocity.
 
 :::
 

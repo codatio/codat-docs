@@ -22,8 +22,8 @@ When syncing Bill payments with Zoho Books:
 
 Tracking categories are supported for the following data types:
 
-- Invoices (pull and push)
-- Credit Notes (pull)
-- Bills (pull and push)
+- Invoices (read and write)
+- Credit Notes (read)
+- Bills (read and write)
 
-Tracking categories are mapped from _Reporting Tags_ in Zoho Books. [Reporting Tags](https://www.zoho.com/uk/books/help/settings/reporting-tags.html) are created using a _Tag Name_ and one or more child _Tag Options_. The Tag Name and Tag Options are pulled to Codat as separate tracking categories. Tracking category IDs are assigned based on the values of the `tag_id` (for Tag Name) and `tag_option_id` (for Tag Options) fields.
+Tracking categories are mapped from _Reporting Tags_ in Zoho Books. [Reporting Tags](https://www.zoho.com/uk/books/help/settings/reporting-tags.html) are created using a _Tag Name_ and one or more child _Tag Options_. The Tag Name and Tag Options are read to Codat as separate tracking categories. Tracking category IDs are assigned based on the values of the `tag_id` (for Tag Name) and `tag_option_id` (for Tag Options) fields.

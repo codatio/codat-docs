@@ -1,6 +1,6 @@
 ---
 title: "Test your BigCommerce integration"
-description: "Test our BigCommerce integration by pulling sandbox data to a test company"
+description: "Test our BigCommerce integration by reading sandbox data to a test company"
 sidebar_label: Testing
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Map accounts in QuickBooks Online"
-description: "Push bank transaction data into your customers' accounting software with an automated feed"
+description: "Write bank transaction data into your customers' accounting software with an automated feed"
 sidebar_label: Map accounts
 displayed_sidebar: bankfeeds
 hide_description: true
@@ -177,4 +177,4 @@ QuickBooks online only supports retrieval of transactions **up to 90 days old**,
 ---
 ## Read next
 
-[Pushing transactions](/bank-feeds/pushing-transactions).
+[Writing transactions](/bank-feeds/pushing-transactions).

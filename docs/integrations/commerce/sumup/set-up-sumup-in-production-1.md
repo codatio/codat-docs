@@ -6,7 +6,7 @@ sidebar_label: Setup
 unlisted: true
 ---
 
-Before you can pull commerce data from companies using SumUp, you will need to set up the integration in Codat's Portal. You'll need to:
+Before you can read commerce data from companies using SumUp, you will need to set up the integration in Codat's Portal. You'll need to:
 
 - Log in to the <a className="external" href="https://app.codat.io" target="_blank">Codat portal</a>.
 - Create a SumUp live app in the <a className="external" href="https://me.sumup.com/en-gb/login/" target="_blank">SumUp portal</a> and retrieve your secure credentials (API key and secret).

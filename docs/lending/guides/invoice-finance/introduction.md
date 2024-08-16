@@ -26,7 +26,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 ### ✔️ Delve into the demo app to...
 
 - Establish a connection with our test accounting software
-- Pull invoice data required for the financing assessment
+- Read invoice data required for the financing assessment
 - Check the invoices' eligibility based on a set of criteria we defined in the app
 - Issue a decision on eligible invoices
 

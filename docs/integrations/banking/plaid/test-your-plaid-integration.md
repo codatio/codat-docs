@@ -1,6 +1,6 @@
 ---
 title: "Test your Plaid integration"
-description: "Test our Plaid integration by pulling data from Plaid's sandbox to a test company"
+description: "Test our Plaid integration by reading data from Plaid's sandbox to a test company"
 sidebar_label: Testing
 ---
 

@@ -13,7 +13,7 @@ import TabItem from "@theme/TabItem"
 
 ## Journey overview
 
-The diagram below represents the end-to-end sync process for pushing expenses from your application to your SMB customer's accounting software. Once you decide to build with Sync for Expenses, you need to configure Codat accordingly. Let's go through these requirements in detail.
+The diagram below represents the end-to-end sync process for writing expenses from your application to your SMB customer's accounting software. Once you decide to build with Sync for Expenses, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
 ```mermaid
 

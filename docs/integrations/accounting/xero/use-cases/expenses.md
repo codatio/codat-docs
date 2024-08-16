@@ -57,7 +57,7 @@ Requires Bank feeds to be enabled on Xero credentials (approved via App partner 
 
 0.2 Expense account
 
-In order to push expenses and fees an expense account is required. The user should be able to select an existing account from their accounting software OR create a new one.
+In order to write expenses and fees an expense account is required. The user should be able to select an existing account from their accounting software OR create a new one.
 
 Note: for detailed expense management a user can map accounts per expense category e.g. travel, entertainment
 
@@ -77,7 +77,7 @@ Data model: accounts
 
 GET/companies/{companyId}/data/accounts (link)
 0.3 Suppliers
-Push a supplier
+Write a supplier
 
 Create a supplier to represent the expense provider.
 

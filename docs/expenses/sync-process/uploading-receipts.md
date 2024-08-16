@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem"
 
 When creating an expense or transfers transaction, your SMB customer may want to save a copy of the associated receipt in their accounting software. 
 
-Use the [Upload attachment](/sync-for-expenses-api#/operations/upload-expense-attachment) endpoint to attach one or multiple files to the transaction, relating them via its `transactionId`. The endpoint accepts attachments as multipart form data and pushes them synchronously.
+Use the [Upload attachment](/sync-for-expenses-api#/operations/upload-expense-attachment) endpoint to attach one or multiple files to the transaction, relating them via its `transactionId`. The endpoint accepts attachments as multipart form data and writes them synchronously.
 
 ```http
 POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments

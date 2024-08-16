@@ -1,19 +1,19 @@
 ---
-title: "Push bank transactions to Xero"
-sidebar_label: Push bank transactions
-description: "Learn how to push your SMB users' bank transactions via our Xero Bank Feeds integration"
+title: "Write bank transactions to Xero"
+sidebar_label: Write bank transactions
+description: "Learn how to write your SMB users' bank transactions via our Xero Bank Feeds integration"
 ---
 
-When an SMB user has set up a bank feed connection, you can push bank transactions for source bank accounts to Xero. The source account must have  `connected` status, where the SMB user has completed the step of mapping and connecting the account.
+When an SMB user has set up a bank feed connection, you can write bank transactions for source bank accounts to Xero. The source account must have  `connected` status, where the SMB user has completed the step of mapping and connecting the account.
 
 :::caution Auto-download not supported
-Transactions are not automatically downloaded to Xero when the user successfully connects a bank account. They must be pushed as described later in this article.
+Transactions are not automatically downloaded to Xero when the user successfully connects a bank account. They must be written as described later in this article.
 :::
 
 This article explains how to:
 
 - View the details of source bank accounts, including their connection statuses.
-- Push bank transactions to a target bank account in Xero.
+- Write bank transactions to a target bank account in Xero.
 
 ## Prerequisites
 
@@ -57,25 +57,25 @@ The response lists all source bank accounts and their statuses&mdash;either `pen
 ]
 ```
 
-## Requirements for pushing bank transactions to Xero
+## Requirements for writing bank transactions to Xero
 
-When pushing bank transactions to Xero:
+When writing bank transactions to Xero:
 
-- You can only push bank transactions to one target account at a time.
-- Transactions must be pushed in chronological order.
+- You can only write bank transactions to one target account at a time.
+- Transactions must be written in chronological order.
 - Transactions can't be older than the most recent transaction available on the destination bank account.
-- Transactions must have a `date` set to the current day or earlier, but be aware of the limitation described in "Pushing historic transactions", below.
-- A maximum of 1000 transactions can be pushed at a time.
+- Transactions must have a `date` set to the current day or earlier, but be aware of the limitation described in "Writing historic transactions", below.
+- A maximum of 1000 transactions can be written at a time.
 
-:::note Pushing historic transactions
-You can push bank transactions to Xero which are dated up to one year prior to the current date. Pushes containing bank transactions dated older than one year will fail.
+:::note Writing historic transactions
+You can write bank transactions to Xero which are dated up to one year prior to the current date. Write operations that contain bank transactions dated older than one year will fail.
 
 The `date` of a historic transaction must be later than the `feedStartDate` on the source bank account, which is determined by the **Feed start date** selected by the SMB user in the account mapping UI.
 :::
 
-## Push bank transactions to Xero
+## Write bank transactions to Xero
 
-To push bank transactions for a `connected` source bank account, make the following requests to the Codat API. All push requests are asynchronous. Bank feeds transactions are sent to Xero immediately, not on a schedule.
+To write bank transactions for a `connected` source bank account, make the following requests to the Codat API. All write requests are asynchronous. Bank feeds transactions are sent to Xero immediately, not on a schedule.
 
 1. Post the bank transactions using the [`POST /push/bankAccounts/{accountId}/bankTransactions`](/bank-feeds-api#/operations/create-bank-transactions) endpoint:
 
@@ -115,10 +115,10 @@ To push bank transactions for a `connected` source bank account, make the follow
    Credit transactions are positive and debit transactions are negative, so it's important that the sign of the transaction `amount` is consistent with the `transactionType`. A warning is returned from Codat if, for example, a $100 transaction is sent to Xero as a `Debit`. Be aware that Xero does not reverse a credit card transaction that was sent as a negative amount, and vice versa for a debit card transaction. 
    :::
    
-2. If the data is valid, the endpoint returns a push operation with a `status` of `Pending` (202). The status changes to `Success` if the push operation completes successfully.
+2. If the data is valid, the endpoint returns a write operation with a `status` of `Pending` (202). The status changes to `Success` if the write operation completes successfully.
 
    :::info Pending status
-   The push operation status might remain in `Pending` for some time while Xero processes the bank transactions.
+   The write operation status might remain in `Pending` for some time while Xero processes the bank transactions.
    :::
 
 3. Repeat the `POST /push/bankAccounts/{accountId}/bankTransactions` request for the remainder of the user's source bank accounts.

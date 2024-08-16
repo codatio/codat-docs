@@ -4,7 +4,7 @@ description: "Differences between Plaid Development and Production environments.
 sidebar_label: Dev and Prod envs
 ---
 
-When you've set up Plaid connecting to their Sandbox environment, and confirmed that you can connect and pull data from Plaid's sandbox, you might want to connect to Plaid Development or Production to complete your testing.
+When you've set up Plaid connecting to their Sandbox environment, and confirmed that you can connect and read data from Plaid's sandbox, you might want to connect to Plaid Development or Production to complete your testing.
 
 ## About Plaid Development
 

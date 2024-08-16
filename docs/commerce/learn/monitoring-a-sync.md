@@ -4,7 +4,7 @@ description: "Learn how to monitor a sync's progress, review detailed logs, and 
 image: "/img/banners/social/commerce.png"
 ---
 
-Use the Sync Health page in the Codat Portal to monitor the status of your syncs, review detailed logs and error messages, and view and retry pushing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
+Use the Sync Health page in the Codat Portal to monitor the status of your syncs, review detailed logs and error messages, and view and retry writing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
 
 ## Check sync history
 
@@ -34,7 +34,7 @@ You can also navigate to the **Config** tab to view and download the customer's 
   alt="Detailed view of a sync log entry with Summary, Config, and Push Items tabs"
 />
 
-:::caution View and retry push items
+:::caution View and retry write items
 
 At this time, it is possible to view and retry failed push items for **Sync for Expenses only**.
 
@@ -48,7 +48,7 @@ Here, you can view each item's status, search the items by their core ID or data
 
 ## Retry push items
 
-On the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to push the data of all failed push items. The button is only enabled if there are failed items to retry.
+On the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to write the data of all failed push items. The button is only enabled if there are failed items to retry.
 
 <img
   src="/img/sync-for-commerce/0009-sync-push-items-ui.png"
@@ -61,6 +61,6 @@ Your customers can check their own sync history and sync status in the **Sync Fl
 
 ## 💡 Tips and traps
 
-- Syncs are shown as failed if any of the included items fail to push. Therefore, if a sync contains a mix of failed and successfully pushed records, it will still be marked as failed. 
+- Syncs are shown as failed if any of the included items fail to write. Therefore, if a sync contains a mix of failed and successfully written records, it will still be marked as failed. 
 - If a sync log record shows a "Please reconcile manually" note for an order, this is likely because an updated order does not have a matching original order in the platform. Therefore, Sync is unable to reconcile it, and this needs to be performed manually.
-- Sync history does not currently display the date range for data pulled from the commerce software that is used in the sync.
+- Sync history does not currently display the date range for data read from the commerce software that is used in the sync.

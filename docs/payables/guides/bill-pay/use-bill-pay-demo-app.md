@@ -26,7 +26,7 @@ For more details about how the app creates a connection to QuickBooks Online via
 
 ### View bills
 
-Once you've connected your accounting software, you'll see a table of open and paid bills from the company you just connected. These are pulled from your sandbox QuickBooks Online company and ordered by issue date. 
+Once you've connected your accounting software, you'll see a table of open and paid bills from the company you just connected. These are read from your sandbox QuickBooks Online company and ordered by issue date. 
 
 ![bill-pay_app-view](/img/use-cases/bill-pay/bill-pay_app-view.png "Bill pay demo app UI")
 
@@ -41,7 +41,7 @@ Once you've connected your accounting software, you'll see a table of open and p
 
 ### Pay a bill
 
-Next, you can make a payment against a bill. When you do so, the app automatically pushes a bill payment to the accounting software&mdash;in this case, QuickBooks Online. The payment is then reconciled against the source bill, which is marked as *paid*.
+Next, you can make a payment against a bill. When you do so, the app automatically writes a bill payment to the accounting software&mdash;in this case, QuickBooks Online. The payment is then reconciled against the source bill, which is marked as *paid*.
 
 1. In the **Bill Payment** view, choose an account from the **Account name** dropdown. This is the account in QuickBooks Online to which you want to assign the bill payment.
    
@@ -65,9 +65,9 @@ You've now seen the app in action by viewing and paying bills.
 
 Optionally, you can check that your payment was reconciled correctly in QuickBooks Online. Bill payments are initially in a `pending` status, but this should change to `paid` after around a minute. 
 
-:::info Asynchronous push
+:::info Asynchronous write operation
 
-In Codat, create and update operations are asynchronous, which means that pushing data to an accounting software returns a push operation in `Pending` status. You can [read more](/using-the-api/push) about CUD operations in Codat. Our webhooks allow your solution to be notified of a [push operation change](/using-the-api/push#monitor-the-status-of-your-operation).
+In Codat, create and update operations are asynchronous, which means that writing data to an accounting software returns a write operation in `Pending` status. You can [read more](/using-the-api/push) about CUD operations in Codat. Our webhooks allow your solution to be notified of a [write operation change](/using-the-api/push#monitor-the-status-of-your-operation).
 
 :::
 

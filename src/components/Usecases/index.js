@@ -28,7 +28,7 @@ const usecases = [
   {
     icon: "/img/logos/usecases/accounts-payable.svg",
     title: "Automating payables",
-    description: "Pull unpaid bills from customers' accounting software and mark them as paid to automate the accounts payable process.",
+    description: "Read unpaid bills from customers' accounting software and mark them as paid to automate the accounts payable process.",
     link: "/usecases/summary/automating-payables",
     linkText: "Discover payables automation →",
     linkTextMini: "Discover payables automation →",
@@ -36,7 +36,7 @@ const usecases = [
   {
     icon: "/img/logos/usecases/pull-push.svg",
     title: "Reconciling bank transactions",
-    description: "Push your customers' bank transaction data into accounting software's bank transaction ledgers for reconcilliation.",
+    description: "Write your customers' bank transaction data into accounting software's bank transaction ledgers for reconcilliation.",
     link: "/usecases/summary/reconciling-bank-transactions",
     linkText: "Discover bank transaction reconciliation →",
     linkTextMini: "Discover bank transaction reconciliation →",

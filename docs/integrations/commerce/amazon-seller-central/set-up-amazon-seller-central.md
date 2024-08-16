@@ -4,7 +4,7 @@ description: "Explore our API integration with Amazon Seller Central"
 sidebar_label: Setup
 ---
 
-Before you can pull commerce data from merchants using Amazon Seller Central, you need to set up the integration in Codat's environments.
+Before you can read commerce data from merchants using Amazon Seller Central, you need to set up the integration in Codat's environments.
 
 Before you begin, you will need to have completed all of the prerequisite setup instructions [here](/integrations/commerce/amazon-seller-central/amazon-registration-steps) to have setup your Amazon AWS and Seller Central credentials.
 

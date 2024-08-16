@@ -5,7 +5,7 @@ description: "Learn about our Sage 200cloud integration."
 sidebar_label: Overview
 ---
 
-You can pull accounting and banking data from <a className="external" href="https://www.sage.com/en-gb/products/sage-200/" target="_blank">Sage 200cloud</a> using our Sage 200cloud integration.
+You can read accounting and banking data from <a className="external" href="https://www.sage.com/en-gb/products/sage-200/" target="_blank">Sage 200cloud</a> using our Sage 200cloud integration.
 
 ## Data type coverage
 

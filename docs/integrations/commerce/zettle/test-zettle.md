@@ -1,6 +1,6 @@
 ---
 title: "Test your Zettle integration"
-description: "Test our Zettle integration by pulling data from a test store to a test company"
+description: "Test our Zettle integration by reading data from a test store to a test company"
 createdAt: "2021-01-20T16:12:07.162Z"
 updatedAt: "2022-12-16T16:51:21.207Z"
 ---
@@ -45,9 +45,9 @@ When you've [set up Zettle](/integrations/commerce/zettle/commerce-zettle-setup)
 
 ## Retrieve commerce data
 
-To make sure that commerce data has been pulled successfully into the Codat Portal:
+To make sure that commerce data has been read successfully into the Codat Portal:
 
 1. Go to the Codat Portal where you've enabled your integration.
 2. In the navigation bar, select **Companies**, and then select the test company that you created.
 3. Select **Data > Commerce** to see data for all Commerce data types.
-4. If no data is displayed, click **Refresh data**. You can also view **Pull history** to check the status of previous data syncs.
+4. If no data is displayed, click **Refresh data**. You can also view **Read history** to check the status of previous data syncs.

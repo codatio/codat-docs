@@ -14,7 +14,7 @@ Your users or customers are [companies](/core-concepts/companies). To access the
 To onboard a new user or customer:
 1. Create a company
 2. Authorize access to sources of data
-3. Pull the data
+3. Read the data
 
 You can either onboard users:
 
@@ -103,7 +103,7 @@ The name of the company doesn't have to be unique. It's just there to help you i
 
 ### Authorize access to company data
 
-Once you've created the company, they'll need to give you permission to pull their data from a given source, like their accounting software. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
+Once you've created the company, they'll need to give you permission to read their data from a given source, like their accounting software. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
 
 Send the user to the `redirect` URL returned in the previous step. They will be sent to [Link](/auth-flow/authorize-hosted-link) where they can select their accounting software and complete the linking process.
 
@@ -114,7 +114,7 @@ Once the user has completed the Link flow, the Codat platform will redirect them
 For more information on setting your redirect URL, refer to [this document](/auth-flow/customize/set-up-redirects).
 :::
 
-Once your user is redirected to the redirect URL page, they'll be able to authorize access to their data. Once this is successful, the linking process is complete and their data can be pulled.
+Once your user is redirected to the redirect URL page, they'll be able to authorize access to their data. Once this is successful, the linking process is complete and their data can be read.
 
 ## Re-authorize access
 
@@ -126,7 +126,7 @@ To enable you to refresh the company's data, you will need to ask the user to co
 
 :::caution Re-linking and usage costs
 
-Creating a new company may cause additional data to be pulled from the platform and is likely to incur additional usage costs.
+Creating a new company may cause additional data to be read from the platform and is likely to incur additional usage costs.
 :::
 
 ### Redirect the user to complete the auth flow
@@ -442,7 +442,7 @@ companyRemoveRes, err := s.Groups.RemoveCompany(ctx, operations.RemoveCompanyFro
 :::tip Recap
 You've learned:
 - How to create a company and authorize access to their data
-- The basics of pulling data
+- The basics of reading data
 - Manage companies
 - Manage groups
 :::

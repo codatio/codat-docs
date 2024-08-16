@@ -9,7 +9,7 @@ See the full docs on our [customer authorization here](https://docs.codat.io/aut
 :::
 
 
-Authorization is a key part of any Codat solution - every Company must authorize access to their data before you can pull that data. A frictionless and reassuring auth flow is essential for accessing your SMB customers' data.
+Authorization is a key part of any Codat solution - every Company must authorize access to their data before you can read that data. A frictionless and reassuring auth flow is essential for accessing your SMB customers' data.
 
 This solution's primary purpose is to streamline customer consent processes specifically related to sharing various data types, including accounting, banking, and commerce data. You will aim to create a modular framework that can be applied across different banking functions and user experiences, such as onboarding and loan applications.
 

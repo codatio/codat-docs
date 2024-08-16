@@ -19,7 +19,7 @@ With Codat, you can more easily build integrated financial products for SMBs.
 
 Set up your customers by adding them as [companies](../terms/company) in Codat. Then, establish authorized connections to the customers' accounting, banking, or commerce software using one of our integrations.
 
-Finally, review and analyze the data relevant to your use case, which Codat pulls from your SMB customers' data sources.
+Finally, review and analyze the data relevant to your use case, which Codat reads from your SMB customers' data sources.
 
 This guide is aimed at developers and non-developers alike. In three easy steps, you will create a company, link it to Codat's sandbox, and review its financial data to get acquainted with Codat's solution.
 
@@ -284,7 +284,7 @@ This opens Codat's authorization flow built using our Link <a href="/auth-flow/o
 
 Follow the flow and select **Codat Sandbox** as your source of accounting, commerce, and banking data. You don't need to enter any credentials. Skip the step of uploading business documents.
 
-When all Sandbox connections are complete, you'll see a confirmation message. You can now close the tab. Meanwhile, Codat pulls the Sandbox data via the established connection.
+When all Sandbox connections are complete, you'll see a confirmation message. You can now close the tab. Meanwhile, Codat reads the Sandbox data via the established connection.
 
 <img
   src="/img/old/e802c95-2022-11-21_20-15-14.png"
@@ -386,7 +386,7 @@ Remember to replace `{companyId}` with your company `id` obtained previously.
 
 In the JSON response, you can see that the the `status` of data connections changed to **linked**.
 
-On first connection, Codat pulls data from the data source immediately. You can also use the <a href="/platform-api#/operations/get-companies-companyId-dataStatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
+On first connection, Codat reads data from the data source immediately. You can also use the <a href="/platform-api#/operations/get-companies-companyId-dataStatus" target="_blank"><i>Get company data status</i></a> endpoint to confirm the sync was successful.
 
 </details>
 
@@ -401,9 +401,9 @@ Navigate back to the **Companies** page in the <a href="https://app.codat.io/com
   alt="Example created company is visible in the companies list with its connections to sandbox"
 />
 
-Now, click the company name and use the side menu to navigate to **Products**. You can review the data pulled by Codat's accounting, banking, and commerce APIs. Switch between the data types using the dropdown on the right, and view and export data as needed for your use case.
+Now, click the company name and use the side menu to navigate to **Products**. You can review the data read by Codat's accounting, banking, and commerce APIs. Switch between the data types using the dropdown on the right, and view and export data as needed for your use case.
 
-Here, we review the SMB customer's invoice data pulled from the accounting Sandbox. This data helps with business forecasts and cash flow management based on sales changes over time, average payment timelines, and amounts related to the invoices.
+Here, we review the SMB customer's invoice data read from the accounting Sandbox. This data helps with business forecasts and cash flow management based on sales changes over time, average payment timelines, and amounts related to the invoices.
 
 <img
   src="/img/old/32f7dff-2022-11-22_16-22-17.png"
@@ -422,7 +422,7 @@ Developers can also use the Portal to review how Codat polled for a specific dat
 
 Codat provides various endpoints for you to query each of the supported data types easily.
 
-For example, to query invoices, use the <a href="/lending-api#/operations/list-invoices" target="_blank"><i>All invoices</i></a> endpoint. You can perform filtering on the response data using querying. In this guide, we are using `page` and `pageSize` parameters to pull ten invoices for the company we created earlier.
+For example, to query invoices, use the <a href="/lending-api#/operations/list-invoices" target="_blank"><i>All invoices</i></a> endpoint. You can perform filtering on the response data using querying. In this guide, we are using `page` and `pageSize` parameters to read ten invoices for the company we created earlier.
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
@@ -585,16 +585,16 @@ You can also use the Portal to review how Codat polled for a specific data type 
 You have now:
 
 - created a Codat company that represents your small business customer,
-- authorized sandbox connections to pull various financial data, and
+- authorized sandbox connections to read various financial data, and
 - reviewed the data and its visual representation, relating it to your use case.
 
 :::
 
 ## Next steps
 
-#### Want to pull and view data from a different platform?
+#### Want to read and view data from a different platform?
 
-Codat enables you to connect to over 30 different accounting, banking, and commerce software. You can choose to pull data from a platform most relevant to you.
+Codat enables you to connect to over 30 different accounting, banking, and commerce software. You can choose to read data from a platform most relevant to you.
 
 Navigate to **Settings > Integrations** in the Portal. Choose the integration type, find the platform you need, and set it up. Once you've enabled the platform, create a data connection to it, as you have done with the Sandbox earlier. You will need valid credentials for the platform you are trying to link.
 
@@ -602,9 +602,9 @@ You can review our detailed instructions for setting up integrations like [Xero]
 
 #### Curious about what other data Codat can provide you with?
 
-Codat pulls a variety of data types from the source platforms, making it easy to suit the needs of your use case.
+Codat reads a variety of data types from the source platforms, making it easy to suit the needs of your use case.
 
-With our [accounting integrations](/accounting-api#/), you can pull financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/banking-api#/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/commerce-api#/) can show you details of orders, customers, payments, products, and others.
+With our [accounting integrations](/accounting-api#/), you can read financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/banking-api#/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/commerce-api#/) can show you details of orders, customers, payments, products, and others.
 
 #### Keen to customize the look and feel of the auth flow?
 

@@ -17,7 +17,7 @@ The customer should be able to configure their account mapping and have the abil
 
 0. Prerequisite
 
-The user will need to configure their mapping prior to any successful push. We recommend a configuration page that they can access at any time. Example: 
+The user will need to configure their mapping prior to any successful write operation. We recommend a configuration page that they can access at any time. Example: 
 
 ![](/img/integrations/accounting/xero/xero-invoice-finance-1.PNG)
 
@@ -63,7 +63,7 @@ Data Mode: Bank account
 GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts (link)
 0.2 Expense account
 
-In order to push fees an expense account is required. The user should be able to select an existing account from their accounting software OR create a new one.
+In order to write fees an expense account is required. The user should be able to select an existing account from their accounting software OR create a new one.
 
 Map existing expense account
 
@@ -91,7 +91,7 @@ Data model: accounts
 POST /companies/{companyId}/connections/{connectionId}/push/accounts (link)
 0.3 Supplier
 
-In order to push a spend money transaction a supplier contact is required. You will need to select an existing supplier account if this is already in the customer's Xero account or you will need to create yourself as a supplier.
+In order to write a spend money transaction a supplier contact is required. You will need to select an existing supplier account if this is already in the customer's Xero account or you will need to create yourself as a supplier.
 
 Search for an existing supplier account
 Get a list of suppliers
@@ -179,7 +179,7 @@ the Lender bank account, and
 the main bank account.
 
 4.1 Mark invoice as paid
-Push a payment
+Write a payment
 
 accountRef: Lender account
 
@@ -201,7 +201,7 @@ Data model: Payments
 
 POST /companies/{companyId}/connections/{connectionId}/push/payments (link)
 4.2 Bank transactions
-Push a bank statement line
+Write a bank statement line
 
 To: Lender account
 

@@ -1,11 +1,11 @@
 ---
 title: "Test your Mollie integration"
-description: "Test our Mollie integration by pulling sandbox data from a test company"
+description: "Test our Mollie integration by reading sandbox data from a test company"
 sidebar_label: Testing
 unlisted: true
 ---
 
-You can use the Mollie Test integration to pull test data from Mollie into Codat.
+You can use the Mollie Test integration to read test data from Mollie into Codat.
 
 ### Prerequisites
 
@@ -54,7 +54,7 @@ Test the authentication process that your customers will use when they connect t
 
 ## Retrieve commerce data
 
-Make sure that test commerce data from Mollie is pulled successfully into Codat. You can check what test data you have created by enabling the Test Mode toggle in the Mollie Dashboard.
+Make sure that test commerce data from Mollie is read successfully into Codat. You can check what test data you have created by enabling the Test Mode toggle in the Mollie Dashboard.
 
 <img src="/img/old/762109c-36001_Mollie_-_test_toggle.PNG" />
 
@@ -63,11 +63,11 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>:
 1. In the navigation bar, click **Companies**.
 2. Click the name of a company to view the company’s data.
 4. Click **Data > Commerce**.
-5. Use the data ype dropdown to view test data that was pulled from Mollie. For example, click **Customers** or **Transactions**.
+5. Use the data ype dropdown to view test data that was read from Mollie. For example, click **Customers** or **Transactions**.
 
 :::caution Data not appearing?
 
-Click **Data history > Pull history** to check the progress of the initial sync (if configured in your sync settings). If no data has been pulled, click **Refresh data**.
+Click **Data history > Read history** to check the progress of the initial sync (if configured in your sync settings). If no data has been read, click **Refresh data**.
 
 Data is only available where:
 - The data type [is supported](https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=dxfw)

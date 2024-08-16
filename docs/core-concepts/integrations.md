@@ -23,7 +23,7 @@ You can connect a company to a single accounting source and a single bank feeds 
       <h3>Accounting</h3>
     </div>
     <p>
-      Pull up-to-date accounting data from your customers' accounting software as well as push data to their software using Codat's standard accounting data model.
+      Read up-to-date accounting data from your customers' accounting software as well as write data to their software using Codat's standard accounting data model.
     </p>
     <p>
       <a href="/integrations/accounting/overview">See our accounting integrations→</a>
@@ -38,7 +38,7 @@ You can connect a company to a single accounting source and a single bank feeds 
       <h3>Banking</h3>
     </div>
     <p>
-      Pull up-to-date account and transaction data from your customers' banks using Codat's standard banking data model.
+      Read up-to-date account and transaction data from your customers' banks using Codat's standard banking data model.
     </p>
     <p>
       <a href="/integrations/banking/overview">See our banking integrations →</a>
@@ -53,7 +53,7 @@ You can connect a company to a single accounting source and a single bank feeds 
       <h3>Commerce</h3>
     </div>
     <p>
-      Pull up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard commerce data model.
+      Read up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard commerce data model.
     </p>
     <p>
       <a href="/integrations/commerce/overview">See our commerce integrations →</a>
