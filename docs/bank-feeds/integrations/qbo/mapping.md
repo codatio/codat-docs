@@ -3,14 +3,11 @@ title: "Map accounts in QuickBooks Online"
 description: "Write bank transaction data into your customers' accounting software with an automated feed"
 sidebar_label: Map accounts
 displayed_sidebar: bankfeeds
-hide_description: true
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Loom from '@components/Loom'
-
-# QuickBooks Online mapping
 
 For Bank Feeds in QuickBooks Online, the account mapping is conducted within the QuickBooks platform itself. Codat produces a secure username and password against a data connection which can be entered into QuickBooks, facilitating the account and transaction verification process.
 
