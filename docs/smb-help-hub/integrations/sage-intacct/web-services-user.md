@@ -1,18 +1,56 @@
 ---
-title: Issues with a Web Services user
-sidebar_label: Web Services user
-description: Get help if you have questions or experience issues when connecting to Sage Intacct
+title: Create a Web Services user
+sidebar_label: Create Web Services user
+description: Get help if you have questions or experience issues when creating a Web Services user in Sage Intacct
 hide_table_of_contents: false
 ---
 
-## Web Services user
+import ReadNext from "@components/ReadNext";
+
+### What is a Web Services user?
+
+A Web Services user is a type of user that can only access information in Sage Intacct programmatically, meaning it can't log in, view, and work with Sage Intacct in the same way you can. 
+
+A Sender ID must be paired with a Web Services user to enable Codat's connection to your Sage Intacct instance to work. You have previously created the Sender ID when [adding a Web Services authorization](/smb-help-hub/integrations/sage-intacct/web-services-subscription#how-do-i-add-a-web-services-authorization).
+
+For more information on Web Services users in Sage, see Sage's [Web Services users](https://www.intacct.com/ia/docs/en_US/help_action/Administration/Users/web-services-only-users.htm).
 
 ### How do I create a Web Services user?
 
-a web services user is ... 
 
-Web Services users exchange information programmatically with Sage Intacct via Web Services API calls—they are not allowed to log in to the UI.
-A Web Services user does not provide access to Web Services itself. Rather, a Web Services user is paired with a Web Services sender ID, which is an additional credential that lets you send requests to a Web Services endpoint. You can obtain a sender ID by contacting your Sage Intacct account representative.
+
+1. Navigate to Company > Admin > Web Services users in the menu dropdown, then click Add.
+
+
+
+2. Copy and paste the values below in the User information tab. 
+
+Switch between Codat's connection flow and Sage Intacct to copy and paste the values from the flow into the pop-up _Web Services sender information_ window. 
+
+    You must use the values provided in the flow, otherwise the connection will fail. 
+
+3. Enter a valid Account email address . Ensure you are able to access this email’s inbox.
+
+
+
+4. Select Business as the User type and Full for Admin privileges. 
+
+
+
+5. Click Add in the Contact name dropdown. 
+
+
+
+6. Use the Username in the Suggested contact name and Print as fields in the pop-up window. Click Save.
+
+
+
+7. Return to this page and click Next.
+
+
+
+
+
 
 in the concatc field, explain how to create a new contact. say you dont need an email address
 
@@ -35,7 +73,9 @@ Assign permissions to users
 A full administrator has complete administration privileges, including the ability to create other full administrators, access to all features in Platform Services, which let admins edit pages in Intacct.
 Additionally, in role-based companies, full administrators can use the Try role feature. Limited administrators have all administration privileges, except for the aforementioned items.
 
-https://www.intacct.com/ia/docs/en_US/help_action/Administration/Users/web-services-only-users.htm
+
+
+
 
 ### How do I create a role for the Web Services user?
 
@@ -55,7 +95,7 @@ you may encounter the following scenarios:
 
 ### How do I assign permissions to this role?
 
-#### Assigning permissions
+#### Assign full permissions
 
 Permissions enable users to perform a particular function or task within a specific area of the product. For example, you might grant permission within the General Ledger to view financial reports but not to create, edit, or delete them.
 By assigning permissions to a role, you automatically grant the permissions to all users who have that role.
@@ -72,7 +112,7 @@ you might run into an issuewhere you dont see the tab. this means blabla, go to 
 https://www.intacct.com/ia/docs/en_US/help_action/Administration/Permissions/user-permissions-to-intacct.htm?tocpath=Administration%7CPermissions%7C_____4
 
 
-#### Managing granular permissions
+#### Manage specific permissions
 
 How to manage specific permissions
 Andy to give details of granular permissions
@@ -99,3 +139,15 @@ the list of permissions you need:
 (full list from figma)
 
 if you want this granular, see this section 
+
+
+
+
+
+
+<ReadNext
+  links={[
+    ["Get help with creating a Web Services user", "/smb-help-hub/integrations/sage-intacct/web-services-user", ],
+  ]}
+>
+</ReadNext>
