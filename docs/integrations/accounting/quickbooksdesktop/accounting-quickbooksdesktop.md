@@ -125,7 +125,11 @@ When installed, the QBD connector doesn’t require any further interaction by t
 
 The connector has a UI that is accessible from the system tray and the Start menu. Your SMB users do not usually need to interact with this, but there is functionality available for advanced users, such as adding connections to multiple companies and adjusting auto-run timings.
 
-There can be times a user may want to pause a data sync to allow them to use QuickBooks Desktop, we therefore recommend implementing our Connections SDK to enable pause functionality. See [Pausing QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/pausing-qbd-connector.md).
+:::info QuickBooks Desktop limitation
+A design limitation of QBD is that it's user interface cannot be used when a connector syncs data with QBD.
+:::
+
+There can be times a user may want to pause a data sync to allow them to use QuickBooks Desktop, we therefore recommend implementing our Connections SDK to enable pause functionality. See [Pausing QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/pausing-qbd-connector).
 
 ## System requirements
 

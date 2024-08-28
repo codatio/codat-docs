@@ -21,7 +21,8 @@ With its sleek UI and low-code deployment, the component provides the following 
 - Displays accounting, banking, and commerce connections in `Linked`, `Unlinked`, and `Deauthorized` statuses.
 - Provides the details of first authorization date and most recent sync date.
 - Allows the user to disconnect an active connection, setting it to a `Unlinked` state and retaining previously fetched data.
-- Enables the user to reauthorize a previously unlinked or deauthorized connection, setting it back to `Linked` status. 
+- Enables the user to reauthorize a previously unlinked or deauthorized connection, setting it back to `Linked` status.
+- Provides additional control over specific integrations. See [Pausing QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/pausing-qbd-connector).
 
 You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
 
