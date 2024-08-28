@@ -186,7 +186,6 @@ const onPremIntegrations = [
       "integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector",
       "integrations/accounting/quickbooksdesktop/quickbooks-desktop-faq",
       "integrations/accounting/quickbooksdesktop/quickbooks-desktop-troubleshooting",
-      "integrations/accounting/quickbooksdesktop/pausing-qbd-connector",
     ],
   },
   {

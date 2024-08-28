@@ -52,7 +52,9 @@ The following limitations apply when using the connector with QBD running in eit
 
 - Only one instance of QBD can be open on a user's machine at a time.
 
-- QBD performance may vary during the syncs. You cannot open an instance of QBD while a program is syncing, and its interface may behave unexpectedly. To give your customers the best experience we recommend implementing our Connections SDK which allows user to pause syncs when the need arises. See [Pausing QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/pausing-qbd-connector.md).
+- It's not possible to interact with QBD while the software is syncing data through the connector. This is due to QBD's own limitations and applies all connectors and syncs. 
+
+    Use our [Connections SDK](/auth-flow/optimize/connection-management) to enable your user to pause the sync when needed (see [Pause the connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#pause-the-connector)).
 
 ## Supported operating systems
 
