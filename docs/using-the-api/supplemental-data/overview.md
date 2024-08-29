@@ -51,7 +51,7 @@ We are rapidly expanding coverage across integrations and data types according t
   style={{ height: "300px" }}
 />
 
-<iframe width="402" height="346" frameborder="0" scrolling="no" src="https://codat.sharepoint.com/sites/Product/_layouts/15/Doc.aspx?sourcedoc={afa4835a-ea30-44cb-80bf-5c0577ead864}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+<iframe width="500" height="200" frameborder="0" scrolling="no" src="https://codat.sharepoint.com/:x:/s/Product/EVqDpK8w6stEgL9cBXfq2GQB-H9oLp0XrpOz3kRz_Qvjyw?e=QiKMOq&action=embedview&wdHideHeaders=True"></iframe>
 
 #### Commerce integrations
 
