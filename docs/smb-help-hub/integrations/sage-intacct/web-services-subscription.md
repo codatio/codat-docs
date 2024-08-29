@@ -31,7 +31,7 @@ For more information on the Web Services subscription in Sage, see Sage's [Subsc
 
 3. In the pop-up window, click **Subscribe** in the pop-up window. You will not be charged any additional fees for this subscription, so you can proceed with confidence.
 
-    ![Screenshot of Sage Intacct interface displaying the Subscriptions list with the Web Services subscription option outlined.](/img/smb-help-hub/sage-intacct/0006-sageintacct-ws-subscription-confirm.png)
+    ![Screenshot of Sage Intacct interface displaying the Web Services subscription confirmation pop-up window.](/img/smb-help-hub/sage-intacct/0006-sageintacct-ws-subscription-confirm.png)
 
 ### How do I add a Web Services authorization?
 
@@ -49,17 +49,17 @@ Codat's Sender ID must be authorized to make such requests so that we can establ
 
 3. Scroll to the _Web Services Authorizations_ section and click **Add**.
 
-    ![Screenshot of Sage Intacct interface displaying the Company information view opened on the Security tab. The Edit button is highlighted.](/img/smb-help-hub/sage-intacct/0009-sageintacct-ws-authorization-addauth.png)
+    ![Screenshot of Sage Intacct interface displaying the Company information view and the Web Services authorizations section. The Add button is highlighted.](/img/smb-help-hub/sage-intacct/0009-sageintacct-ws-authorization-addauth.png)
 
 4. Switch between Codat's connection flow and Sage Intacct to copy and paste the values from the flow into the pop-up _Web Services sender information_ window. 
 
     You must use the values provided in the flow, otherwise the connection will fail. 
 
-    ![Screenshot of Sage Intacct interface displaying the Company information view opened on the Security tab. The Edit button is highlighted.](/img/smb-help-hub/sage-intacct/0010-sageintacct-ws-authorization-copyuser.png)
+    ![Screenshot of Sage Intacct interface displaying the Web Services sender information window. Next to it, an image of the connection flow is added with Sender ID and Description fields visible. There are arrows showing the process of copying and pasting Sender ID and Description values from the flow to the Sage Intacct window.](/img/smb-help-hub/sage-intacct/0010-sageintacct-ws-authorization-copyuser.png)
 
 5. Leave the status of the sender as **Active** and click **Save**. You will see the Sender ID you added in the _Web Services Authorizations_ section.
 
-    ![Screenshot of Sage Intacct interface displaying the Company information view opened on the Security tab. The Edit button is highlighted.](/img/smb-help-hub/sage-intacct/0011-sageintacct-ws-authorization-saveuser.png)
+    ![Screenshot of Sage Intacct interface displaying the Web Services sender information window with the fields filled in with Sender ID and Description. The Save button is highlighted.](/img/smb-help-hub/sage-intacct/0011-sageintacct-ws-authorization-saveuser.png)
 
 For more information on the Web Services authorizations in Sage, see Sage's [Web Services authorizations](https://www.intacct.com/ia/docs/en_US/help_action/Company/Company_setup/Company_Information/Security/company-web-services-authorizations.htm).
 
