@@ -38,20 +38,7 @@ We are rapidly expanding coverage across integrations and data types according t
  
 <iframe width="700" height="492" frameborder="0" scrolling="no" className="googleSheets" src="https://codat.sharepoint.com/sites/Product/_layouts/15/Doc.aspx?sourcedoc={afa4835a-ea30-44cb-80bf-5c0577ead864}&action=embedview&wdAllowInteractivity=False&Item='Accounting'!A1%3AG18&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
 
-<iframe width="700" height="492" frameborder="0" scrolling="no" className="googleSheets" src="https://codat.sharepoint.com/:x:/s/Product/EVqDpK8w6stEgL9cBXfq2GQB-H9oLp0XrpOz3kRz_Qvjyw&action=embedview&wdAllowInteractivity=False&Item='Accounting'!A1%3AG18&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
-
-<iframe width="700" height="492" frameborder="0" scrolling="no" className="googleSheets" src="https://codat.sharepoint.com/sites/Product/_layouts/15/Doc.aspx?sourcedoc={EVqDpK8w6stEgL9cBXfq2GQB-H9oLp0XrpOz3kRz_Qvjyw}&action=embedview&wdAllowInteractivity=False&Item='Accounting'!A1%3AG18&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
-
-<iframe width="700" height="492" frameborder="0" scrolling="no" className="googleSheets" src="https://codat.sharepoint.com/:x:/s/Product/EVqDpK8w6stEgL9cBXfq2GQB-H9oLp0XrpOz3kRz_Qvjyw?e=ZCN26L"></iframe>
-
-<iframe
-  src="https://codat.sharepoint.com/:x:/s/Product/EVqDpK8w6stEgL9cBXfq2GQB-H9oLp0XrpOz3kRz_Qvjyw"
-  frameborder="0"
-  className="googleSheets"
-  style={{ height: "300px" }}
-/>
-
-<iframe width="500" height="200" frameborder="0" scrolling="no" src="https://codat.sharepoint.com/:x:/s/Product/EVqDpK8w6stEgL9cBXfq2GQB-H9oLp0XrpOz3kRz_Qvjyw?e=QiKMOq&action=embedview&wdHideHeaders=True"></iframe>
+<iframe width="700" height="400" frameborder="0" scrolling="no" className="googleSheets" src="https://codat.sharepoint.com/:x:/s/Product/EVqDpK8w6stEgL9cBXfq2GQB-H9oLp0XrpOz3kRz_Qvjyw?e=QiKMOq&action=embedview&Item='Accounting'!A1%3AG18&wdHideHeaders=True"></iframe>
 
 #### Commerce integrations
 
