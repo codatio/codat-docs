@@ -125,9 +125,9 @@ When installed, the QBD connector doesn’t require any further interaction by t
 
 The connector has a UI that is accessible from the system tray and the Start menu. Your SMB users do not usually need to interact with this, but there is functionality available for advanced users, such as adding connections to multiple companies and adjusting auto-run timings.
 
-:::info QuickBooks Desktop limitations
+:::info QuickBooks Desktop limitation
 
-Your SMB user isn't able to interact with QBD while the software is syncing data through the connector. This is due to QBD's own limitations and applies all connectors and syncs.
+Your SMB user isn't able to interact with QBD while the software is syncing data through the connector. This is due to QBD's own limitations and applies to all connectors and syncs.
 
 :::
 
