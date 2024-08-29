@@ -111,6 +111,16 @@ For example:
 
 <img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-file-location.png" />
 
+## Pause the connector
+
+Due to QBD's own limitations, it's not possible to use the software while it's syncing data through the connector. This applies to all connectors and syncs. 
+
+- If QBD is closed and the sync is ongoing, the user won't be able to open the software until the sync has finished.
+- If QBD has a company file open and the sync is ongoing, QBD's interface may behave unexpectedly, reducing usability during these sync periods.
+
+To support a seamless user experience, enable your user to pause the sync when they need to access QBD. You can easily do this with our [Connections SDK](/auth-flow/optimize/connection-management). This embeddable component enables your users to pause ongoing or future syncs for a set period as well as manage their data connections. The pause functionality is only required for QBD connections.
+
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd_pause_options.png" />
 
 ## Uninstall the connector
 
