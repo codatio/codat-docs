@@ -33,13 +33,14 @@ Are you looking to fetch additional _data types_ using endpoints that are not in
 ## Supported integrations
 
 We are rapidly expanding coverage across integrations and data types according to client demand. We currently cover the following integrations and data types:
+
+#### Accounting integrations
  
-<iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToBP6lQMT_MrB8L5e_61w2LrmpoJPAVhxCVqCuoSpWgb6ga2hUXZHlLSdCr9jY_He1b-uYaDAnH6DV/pubhtml?widget=true&amp;headers=false"
-  frameborder="0"
-  className="googleSheets"
-  style={{ height: "400px" }}
-/>
+<iframe width="700" height="492" frameborder="0" scrolling="no" className="googleSheets" src="https://codat.sharepoint.com/sites/Product/_layouts/15/Doc.aspx?sourcedoc={afa4835a-ea30-44cb-80bf-5c0577ead864}&action=embedview&wdAllowInteractivity=False&Item='Accounting'!A1%3AG18&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+
+#### Commerce integrations
+
+<iframe width="357" height="282" frameborder="0" scrolling="no" className="googleSheets" src="https://codat.sharepoint.com/sites/Product/_layouts/15/Doc.aspx?sourcedoc={afa4835a-ea30-44cb-80bf-5c0577ead864}&action=embedview&wdAllowInteractivity=False&Item='Commerce'!A1%3AB12&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
 
 ## Configure supplemental data
 
