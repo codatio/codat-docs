@@ -40,6 +40,8 @@ We are rapidly expanding coverage across integrations and data types according t
 
 <iframe width="700" height="400" frameborder="0" scrolling="no" className="googleSheets" src="https://codat.sharepoint.com/:x:/s/Product/EVqDpK8w6stEgL9cBXfq2GQB-H9oLp0XrpOz3kRz_Qvjyw?e=QiKMOq&action=embedview&Item='Accounting'!A1%3AG18&wdHideHeaders=True"></iframe>
 
+<iframe width="700" height="400" frameborder="0" scrolling="no" className="googleSheets" src="https://codat.sharepoint.com/:x:/s/Product/EVqDpK8w6stEgL9cBXfq2GQB-H9oLp0XrpOz3kRz_Qvjyw?e=7Rmd3n&action=embedview"></iframe>
+
 #### Commerce integrations
 
 
