@@ -14545,7 +14545,7 @@
             "maxItems": 10,
             "nullable": true,
             "items": {
-              "$ref": "#/components/schemas/TrackingRef"
+              "$ref": "#/components/schemas/TrackingRefAdjustmentTransaction"
             }
           },
           "invoiceTo": {
@@ -17511,6 +17511,29 @@
             "enum": [
               "trackingCategories",
               "customers"
+            ]
+          }
+        }
+      },
+      "TrackingRefAdjustmentTransaction": {
+        "type": "object",
+        "title": "Tracking reference",
+        "x-internal": true,
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "e9a1b63d-9ff0-40e7-8038-016354b987e6",
+            "description": "Unique identifier of the linked reference from mapping options or the unique identifier of the linked customer or supplier."
+          },
+          "dataType": {
+            "type": "string",
+            "example": "trackingCategories",
+            "default": "trackingCategories",
+            "description": "The type of the linked reference",
+            "enum": [
+              "trackingCategories",
+              "customers",
+              "suppliers"
             ]
           }
         }
