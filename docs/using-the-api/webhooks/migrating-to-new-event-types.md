@@ -690,6 +690,8 @@ Triggered when the status of a write operation changes, this event has been repl
 | `Data.status` | `payload.status` | 
 | `Data.pushOperationKey` | `payload.id` | 
 
+</details>
+
 #### PushOperationTimedOut
 
 Triggered when a write operation times out. This webhook has been replaced by the `{dataType}.write.unsuccessful` event type.
