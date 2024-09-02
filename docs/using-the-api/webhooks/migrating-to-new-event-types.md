@@ -1,79 +1,80 @@
 ---
-title: "Migrating to our new event types"
-sidebar_label: "Migrating to our new event types"
-description: "Learn how to migrate your existing webhooks to our new event types"
+title: "Migrate to our new event types"
+sidebar_label: "Switch to new event types"
+description: "Learn how you can migrate your existing webhooks to use our new event types"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Following the release of our [new webhook event types](link-to-announcement) here's our simple guide to help you migrate your existing webhooks. 
+We have recently released our [new webhook event types](link-to-announcement). To ensure a smooth transition to these types, we recommend using an "expand/contract" strategy. It allows your system to handle both the old rule types and the new event types during the migration, minimizing potential disruptions.
 
-We will cover
+Follow this guide to:
 
-- How your existing event types relate to our new event types.
-- How the schemas map between new and old.
-- How to reproduce behavours on the clients side for event types that will not be replaced. 
+- View recommended steps to migrate your existing webhooks to the new event types.
+- Understand how the existing rule types and their schemas map to the new event types.
+- See how you can manage notifications for rule types that will not be replaced.
 
-## How to migrate to a new event type
-To ensure a smooth transition to the new event type, we recommend using an "expand/contract" strategy. This approach allows your system to handle both the old and new event types during the migration, minimizing potential disruptions. Below are the detailed steps:
+## Migrate to new event types
 
-### 1. Update your application logic
+To switch to new event types using the recommended "expand/contract" strategy, follow these steps:
 
-Modify your application logic to handle both the existing and the new event types concurrently. This ensures that your system can process either type during the migration period.
+1. **Update your application logic**
 
-#### Create a new webhook consumer
+   Modify your application logic to handle the existing and the new event types at the same time:
+   - Create a new POST endpoint specifically designed to consume the new webhook event type.
+   - Introduce a feature toggle to control the activation of this endpoint. Enabling the toggle should keep the endpoint inactive and prevent it from processing any events.
+   - Apply the same feature toggle to your existing webhook consumer. Enabling the toggle should stop the endpoint from processing the old rule types.
 
-- Implement a new POST endpoint specifically designed to consume the new event type.
-- Introduce a feature toggle (a switch that controls the activation of a feature) to manage this new endpoint. Initially, keep the feature toggle disabled to prevent the new endpoint from processing any events.
+2. **Configure the new webhook consumer in the Portal**
 
-#### Update the existing webhook consumer
+   In the [Codat Portal](https://app.codat.io), configure a new webhook consumer that points to the newly created endpoint. See [Build webhook consumers to subscribe to events](/using-the-api/webhooks/create-consumer) for a step-by-step walkthrough. 
 
-Apply the same feature toggle to your existing webhook consumer. When this toggle is enabled, it should stop processing events from the old event type.
+3. **Validate the new webhook consumer**
 
-### 2. Configure the new webhook consumer in the portal
+  Test the new webhook consumer to ensure it is correctly receiving and processing the new event type. You can send test events and check the logs in the [Codat Portal](https://app.codat.io). Navigate to **Monitor > Events** and select the relevant endpoint to do this.
 
-- In the portal, configure the new webhook consumer to point to the newly created endpoint.
-- [Read more about configuring webhook consumers](/using-the-api/webhooks/create-consumer).
+4. **Enable the new webhook consumer**
 
-### 3. Validate the new webhook consumer
+  When you’ve confirmed that the new webhook consumer is functioning correctly, enable the endpoint's feature toggle. This will direct your application to process events via the new webhook consumer without losing events.
 
-Test the new webhook consumer to ensure it is correctly receiving and processing the new event type. You can perform this validation by sending test events and checking the logs in the portal (**Monitor > Events** and view the endpoint).
+5. **Disable the old webhook consumer**
 
-### 4. Enable the feature toggle for the new event type
+  Once you are happy with the new webhook consumer, you can disable your old endpoint, delete the old consumer from the Portal, and remove the application logic consuming the old rule types. 
 
-Once you’ve confirmed that the new webhook consumer is functioning correctly, enable the feature toggle. This will direct your application to process events via the new webhook consumer without losing events.
+## Understand new event types
 
-### 5. Disable the old webhook consumer
+Below is the summary of old rule types and new event types that replace them. Click on the required event type to check the fields and schema of the replacement event type and how it maps to legacy rule types.
 
-Once you are happy with the new webhook consumer delete old endpoint in the portal and remove the application logic consuming the old event type. 
+| Existing rule type                                            | Replacement event type                                                                                                              |
+|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| [AccountCategoriesUpdated](#accountcategoriesupdated)         | `financialStatements.categorized`<br/>`financialStatements.recategorized`                                                           |
+| [ClientRateLimitReached](#clientratelimitreached)             | `client.rateLimit.reached`                                                                                                          |
+| [ClientRateLimitReset](#clientratelimitreset)                 | `client.rateLimit.reset`                                                                                                            |
+| [DataConnectionStatusChanged](#dataconnectionstatuschanged)   | `connection.created`<br/>`connection.connected`<br/>`connection.disconnected`<br/>`connection.reconnected`<br/>`connection.deleted` |
+| [DataSyncCompleted](#datasynccompleted)                       | `read.completed`                                                                                                                    |
+| [DataSyncStatusChangedToError](#datasyncstatuschangedtoerror) | `read.completed`                                                                                                                    |
+| [DatasetDataChanged](#datasetdatachanged)                     | `read.completed`                                                                                                                    |
+| [NewCompanySynchronized](#newcompanysynchronized)             | `{dataType}.write.successful`<br/>`{dataType}.write.unsuccessful`                                                                   |
+| [PushOperationStatusChanged](#pushoperationstatuschanged)     | `{dataType}.write.successful`<br/>`{dataType}.write.unsuccessful`                                                                   |
+| [PushOperationTimedOut](#pushoperationtimedout)               | `{dataType}.write.unsuccessful`                                                                                                     |
+| [SyncCompleted](#synccompleted)                               | `expenses.sync.successful`                                                                                                          |
+| [SyncFailed](#syncfailed)                                     | `expenses.sync.unsuccessful`                                                                                                        |
+| [SyncConnectionDeleted](#syncconnectiondeleted)               | `connection.deleted`                                                                                                                |
 
-Jump to event type
+#### AccountCategoriesUpdated
 
-- [AccountCategoriesUpdated](#accountcategoriesupdated)
-- [ClientRateLimitReached](#clientratelimitreached)
-- [ClientRateLimitReset](#clientratelimitreset)
-- [DataConnectionStatusChanged](#dataconnectionstatuschanged)
-- [DataSyncCompleted](#datasynccompleted)
-- [DataSyncStatusChangedToError](#datasyncstatuschangedtoerror)
-- [DatasetDataChanged](#datasetdatachanged)
-- [NewCompanySynchronized](#newcompanysynchronized)
-- [PushOperationStatusChanged](#pushoperationstatuschanged)
-- [PushOperationTimedOut](#pushoperationtimedout)
-- [SyncCompleted](#synccompleted)
-- [SyncFailed](#syncfailed)
-- [SyncConnectionDeleted](#syncconnectiondeleted)
+Triggered when a company's accounts are categorized, this event has been replaced by two more precise webhooks: `financialStatements.categorized` and `financialStatements.recategorized`. These webhooks provide detailed insights into who performed the account categorization. 
 
-## AccountCategoriesUpdated
+The `financialStatements.categorized` event indicates the categories suggested by Codat's AI are ready for your review. The `financialStatements.recategorized` event notifies you when an analyst updates a category. Subscribing to both webhooks replicates the behavior of the previous `AccountCategoriesUpdated` webhook.
 
-Triggered when a company's accounts are categorized, this event has been replaced by two more specific webhooks: `financialStatements.categorized` and `financialStatements.recategorized`. These new webhooks provide detailed insights into who performed the categorization. With `financialStatements.categorized`, you can review Codat AI's suggested categories, while the `financialStatements.recategorized` event notifies you when an analyst updates a category. Subscribing to both webhooks replicates the behavior of the previous `AccountCategoriesUpdated` webhook.
-
-
-| RuleType | Maps to eventType |
+| Rule type | Maps to event type |
 |---|---|
-| `Account Categories Updated` | [`financialStatements.{categorized,recategorized}`](/lending-api#/webhooks/financialStatements.categorized/post) |
+| `Account Categories Updated` | [`financialStatements.{categorized}`](/lending-api#/webhooks/financialStatements.categorized/post) <br/> [`financialStatements.{recategorized}`](/lending-api#/webhooks/financialStatements.recategorized/post) |
 
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
+
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -123,24 +124,25 @@ Put this in an expand:
 | `AlertId`                                              | `id` |
 | `RuleType`                                             | `eventType` |
 | `RuleId`                                               | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId`                                             | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName`                                           | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers)  |
+| `ClientId`                                             | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `ClientName`                                           | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
 | `CompanyId`                                            | `payload.referenceCompany.id` |
-| `DataConnectionId`                                     | No. The data connection ID is not required to access financial statements.  |
-| `Message`                                              | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `DataConnectionId`                                     | Not replaced. The data connection ID is not required to access financial statements.  |
+| `Message`                                              | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
 | `Data.modifiedDate`                                    | `payload.categorizationDate`    |
 
-## ClientRateLimitReached
+</details>
+
+#### ClientRateLimitReached
 
 Triggered when the client's requests to Codat's API exceed the current quota, this event now follows our updated schema standards.
-The only change between the event types is the schema's alignment with these new standards.
 
-| RuleType | Maps to eventType |
+| Rule type | Maps to event type |
 |---|---|
 | `Rate Limit Reached` | [`client.rateLimit.reached`](/platform-api#/webhooks/client.rateLimit.reached/post) |
 
-
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -183,23 +185,24 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant.|
 | `Data.DailyQuota` | `payload.dailyQuota` |
 | `Data.ExpiresUtc` | `payload.expiryDate` |
 
-## ClientRateLimitReset
+</details>
 
-Triggered when the client's rate limit quota is reset, allowing more requests to Codat's API.
-The only change between the event types is that the schema now adheres to our updated standards.
+#### ClientRateLimitReset
 
-| RuleType | Maps to eventType |
+Triggered when the client's rate limit quota is reset, allowing more requests to Codat's API. This event now follows our updated schema standards.
+
+| Rule type | Maps to event type |
 |---|---|
 | `Rate Limit Reset` | [`client.rateLimit.reset`](/platform-api#/webhooks/client.rateLimit.reset/post) |
 
-
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -244,27 +247,31 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).|
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
 | `Data.DailyQuota` | `payload.dailyQuota` |
 | `Data.ExpiresUtc` | `payload.expiryDate` |
-| `Data.ResetReason` | No. This property is not applicable for use in a webhook. |
+| `Data.ResetReason` | Not replaced. This property is not relevant for use in a webhook. |
 | `Data.QuotaRemaining` | `payload.quotaRemaining` |
 
-## DataConnectionStatusChanged
+</details>
 
-Triggered whenever a data connection's status changes, this event has been replaced by new webhooks that offer more detailed context on the state transition. The new webhooks now include the [full connection schema](/platform-api#/schemas/Connection), ensuring consistency across our APIs and webhooks.
+#### DataConnectionStatusChanged
 
-| RuleType | oldStatus | newStatus | Maps to eventType |
+Triggered whenever a data connection's status changes, this event has been replaced by more precise webhooks that offer more detailed context on the state transition. The new webhooks now include the [full connection schema](/platform-api#/schemas/Connection), ensuring consistency across our APIs and webhooks.
+
+| Rule type | Old status | New status | Maps to event type |
 |---|--|--|--|
 | `DataConnectionStatusChanged` | -                             | `PendingAuth`                 | [`connection.created`](/platform-api#/webhooks/connection.created/post)           |
 | `DataConnectionStatusChanged` | `PendingAuth`                 | `Linked`                      | [`connection.connected`](/platform-api#/webhooks/connection.connected/post)       |
-| `DataConnectionStatusChanged` | `Linked`                      | `Unlinked` or  `Deauthorized` | [`connection.disconnected`](/platform-api#/webhooks/connection.disconnected/post) |
-| `DataConnectionStatusChanged` | `Unlinked` or  `Deauthorized` | `Linked`                      | [`connection.reconnected`](/platform-api#/webhooks/connection.reconnected/post)   |
+| `DataConnectionStatusChanged` | `Linked`                      | `Unlinked`<br/>`Deauthorized` | [`connection.disconnected`](/platform-api#/webhooks/connection.disconnected/post) |
+| `DataConnectionStatusChanged` | `Unlinked`<br/>`Deauthorized` | `Linked`                      | [`connection.reconnected`](/platform-api#/webhooks/connection.reconnected/post)   |
 | `DataConnectionStatusChanged` | -                             | -                             | [`connection.deleted`](/platform-api#/webhooks/connection.deleted/post)           |
 
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
+  
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -328,34 +335,34 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).|
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
 | `CompanyId` | `payload.referenceCompany.id` |
 | `DataConnectionId` | `payload.connection.id` |
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
 | `Data.dataConnectionId` | `payload.connection.id` |
 | `Data.newStatus` | `payload.connection.status` |
-| `Data.oldStatus` | No. The new event types specify the status transition, so the previous status is not needed. |
+| `Data.oldStatus` | Not replaced. The new event types specify the status transition, so the previous status is not needed. |
 | `Data.platformKey` | `payload.connection.integrationKey` |
 
+</details>
 
-## DataSyncCompleted
+#### DataSyncCompleted
 
-Triggered upon the completion of a data synchronization, this event generates a notification for each `dataType` as the sync finishes.
-The new webhook, which replaces this event, is also triggered when a data synchronization is complete, regardless of the outcome.
-However, the updated payload now includes detailed information about the read operation's outcome, including the status of the synchronization (e.g., successful completion) and whether any records were modified.
+Triggered when a data synchronization completes, this event generates a notification for each `dataType` as it finishes syncing regardless of the outcome. The `read.completed` replacement event uses the same trigger, but now provides detailed information about the read operation's outcome, including the status of the sync and whether any records were modified.
 
-[Read more about how to read data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
+See [Retrieve company data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
 
-> Tip
-> When adopting the new schema, ensure that you handle all elements in the dataTypes array to maintain future compatibility.
+:::tip Adopting the new schema
+When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
+:::
 
-| RuleType | Maps to eventType |
+| Rule type | Maps to event type |
 |---|---|
 | `Data sync completed` | [`read.completed`](/platform-api#/webhooks/read.completed/post) |
 
-
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -414,29 +421,32 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).|
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).|
 | `CompanyId` | `payload.referenceCompany.id` |
 | `DataConnectionId` | `payload.dataTypes[].connectionId` |
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
 | `Data.dataType` | `payload.dataTypes[].dataType` | 
-| `Data.datasetId` | No. If you encounter an issue with support, please provide the company ID to assist with troubleshooting. |
+| `Data.datasetId` | Not replaced. If you encounter an issue, provide the company ID to support to assist with troubleshooting. |
 
-## DataSyncStatusChangedToError
+</details>
 
-Triggered when the synchronization of a dataset fails, the replacement webhook now includes information on whether the data was successfully read into Codat's cache.
-This provides insight into both the completion of the read operation and its outcome.
+#### DataSyncStatusChangedToError
 
-[Read more about how to read data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
+Triggered when the synchronization of a dataset fails, the replacement `read.completed` webhook now includes information on whether the data was successfully read into Codat's cache. This provides insight into both the completion of the read operation and its outcome.
 
-> Tip
-> When adopting the new schema, ensure that you handle all elements in the dataTypes array to maintain future compatibility.
+See [Retrieve company data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
 
-| RuleType | Maps to eventType |
+:::tip Adopting the new schema
+When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
+:::
+
+| Rule type | Maps to event type |
 |---|---|
 | `Data Sync Status Changed To Error` | [`read.completed`](/platform-api#/webhooks/read.completed/post) |
 
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -496,32 +506,37 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
 | `CompanyId` | `payload.referenceCompany.id` |
 | `DataConnectionId` | `payload.dataTypes[].connectionId` |
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
 | `Data.dataType`  | `payload.dataTypes[].dataType` | 
 | `Data.datasetStatus`  | `payload.dataTypes[].status` |
-| `Data.datasetId` | No. If you encounter an issue with support, please provide the company ID to assist with troubleshooting. |
+| `Data.datasetId` | Not replaced. If you encounter an issue, provide the company ID to support to assist with troubleshooting. |
 
-## DatasetDataChanged
+</details>
 
-Triggered when a dataset synchronization completes and results in updates within Codat's data cache, such as the creation of new records or changes to existing ones.
-The replacement webhook now provides information on when the data in Codat's cache was last modified and whether any records within a data type have been updated since the previous read operation.
-To replicate the behavior of the DatasetDataChanged webhook, you can check if the recordsModified Boolean for the data type is true.
+#### DatasetDataChanged
 
-[Read more about how to read data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
+Triggered when a dataset synchronization completes and results in updates within Codat's data cache, such as the creation of new records or changes to existing ones. 
 
-> Tip
-> When adopting the new schema, ensure that you handle all elements in the dataTypes array to maintain future compatibility.
+The replacement `read.completed` webhook now provides information on when the data in Codat's cache was last modified and whether any records within a data type have been updated since the previous read operation.
 
-| RuleType | Maps to eventType |
+To replicate the behavior of the legacy `DatasetDataChanged` webhook, check if the `recordsModified` Boolean value for the data type is `true`.
+
+See [Retrieve company data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
+
+:::tip Adopting the new schema
+When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
+:::
+
+| Rule type | Maps to event type |
 |---|---|
 | `Dataset data changed` | [`read.completed`](/platform-api#/webhooks/read.completed/post) |
 
-
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -580,30 +595,32 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
 | `CompanyId` | `payload.referenceCompany.id` |
 | `DataConnectionId` | `payload.dataTypes[].connectionId` |
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
 | `Data.dataType`  | `payload.dataTypes[].dataType` |
-| `Data.datasetId` | No. If you encounter an issue with support, please provide the company ID to assist with troubleshooting. |
+| `Data.datasetId` | Not replaced. If you encounter an issue, provide the company ID to support to assist with troubleshooting. |
 
-## NewCompanySynchronized
+</details>
 
-This event type will no longer be supported. 
+#### NewCompanySynchronized
 
-## PushOperationStatusChanged
+This event type is no longer supported. You can use the [`read.completed`](/platform-api#/webhooks/read.completed/post) event type for the relevant data type instead.
 
-Triggered when the status of a push operation changes.
-For better clarity on the outcome of the push operation, use the replacement webhooks: `{dataType}.write.successful` and `{dataType}.write.unsuccessful`.
-These event types provide detailed information, including whether the push operation was successful, along with the record ID and attachment ID when creating, updating, or deleting records.
+#### PushOperationStatusChanged
 
-| RuleType | Data.status | Maps to eventType |
+Triggered when the status of a write operation changes, this event has been replaced by two more precise webhooks: `{dataType}.write.successful` and `{dataType}.write.unsuccessful`. These event types provide detailed information, including whether the push operation was successful, the record ID, and the attachment ID when creating, updating, or deleting records.
+
+| Rule type | Data status | Maps to event type |
 |---|---|---|
 | `Push Operation Status Changed()` | `Successful`  | [`{dataType}.write.successful`](/platform-api#/webhooks/bills.write.successful/post) |
 | `Push Operation Status Changed()` | `TimedOut` or `Failed`  | [`{dataType}.write.unsuccessful`](/platform-api#/webhooks/bills.write.unsuccessful/post) |
 
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
+  
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -664,24 +681,26 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).|
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
 | `CompanyId` | `payload.referenceCompany.id` | 
 | `DataConnectionId` | `payload.connectionId` | 
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant.|
 | `Data.dataType` | `eventType` | 
 | `Data.status` | `payload.status` | 
 | `Data.pushOperationKey` | `payload.id` | 
 
-## PushOperationTimedOut
+#### PushOperationTimedOut
 
-Triggered when a push operation times out. This webhook has been replaced by the `{dataType}.write.unsuccessful` event type.
+Triggered when a write operation times out. This webhook has been replaced by the `{dataType}.write.unsuccessful` event type.
 
-| RuleType | Data.status | Maps to eventType |
+| Rule type | Data status | Maps to event type |
 |---|---|---|
 | `Push Operation Timed Out` | `TimedOut` | [`{dataType}.write.unsuccessful`](/platform-api#/webhooks/bills.write.unsuccessful/post) |
 
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
+  
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -740,25 +759,27 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).|
 | `CompanyId` | `payload.referenceCompany.id` | 
 | `DataConnectionId` | `payload.connectionId` | 
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
 | `Data.dataType` | `eventType` | 
 | `Data.pushOperationKey` | `payload.id` |
 | `Data.pushOperationGuid` | `payload.id` |
 
+</details>
+
 ## SyncCompleted
 
-Triggered when an expense sync is completed. The replacement event type is triggered only when the sync completes successfully.
+The original rule type is triggered when a [Sync for Expenses](/expenses/overview) expense sync is completed. The replacement event type is triggered only when the sync completes successfully.
 
-| RuleType | Maps to eventType |
+| Rule type | Maps to event type |
 |---|---|
 | `Sync Completed` | `expenses.sync.successful` |
 
-
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -808,24 +829,25 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).|
 | `CompanyId` | `payload.referenceCompany.id` | 
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
 | `Data.syncId` | `payload.syncId` | 
 | `Data.syncType` | `eventType` | 
 
-## SyncFailed
+</details>
 
-Triggered anytime an expenses sync fails, this event now follows our updated schema standards.
-The only change between the event types is the schema's alignment with these new standards.
+#### SyncFailed
 
-| RuleType | Maps to eventType |
+Triggered anytime a [Sync for Expenses](/expenses/overview) expenses sync fails, this event now follows our updated schema standards.
+
+| Rule type | Maps to event type |
 |---|---|
 | `Sync Failed` | `expenses.sync.unsuccessful` |
 
-
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -876,24 +898,26 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).|
 | `CompanyId` | `payload.referenceCompany.id` | 
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
 | `Data.syncId` | `payload.syncId` | 
 | `Data.syncType` | `eventType` | 
-| `Data.FailureStage` | This is no longer supported. |
+| `Data.FailureStage` | Not replaced. This property is no longer supported. |
 
-## SyncConnectionDeleted
+</details>
 
-Indicates that a Sync for Commerce connection has been deleted.
-This event is specific to Sync for Commerce and has now been replaced by the platform-wide `connection.deleted` event type.
+#### SyncConnectionDeleted
 
-| RuleType | Maps to eventType |
+This legacy event is specific to [Sync for Commerce](/commerce/overview) and indicates that a data connection has been deleted. This has now been replaced by the platform-wide `connection.deleted` event type.
+
+| Rule type | Maps to event type |
 |---|---|
 | `Sync Connection Deleted` | `connection.deleted` |
 
-Put this in an expand:
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
 <Tabs>
 <TabItem value="old" label="Old schema">
 
@@ -950,7 +974,9 @@ Put this in an expand:
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
 | `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId` | No. If clients need the Codat client ID, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
-| `ClientName` | No. If clients need the Codat client name, we recommend including it as a custom header in the API request. [Read more](/using-the-api/webhooks/create-consumer#custom-headers) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).|
 | `CompanyId` | `payload.referenceCompany.id` | 
-| `Message` | No. This property was originally used to define the email contents when our email and webhooks services were combined into a single service. |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant.|
+
+</details>
