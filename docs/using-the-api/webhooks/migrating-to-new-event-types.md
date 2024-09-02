@@ -9,11 +9,12 @@ import TabItem from '@theme/TabItem';
 
 We have recently released our [new webhook event types](link-to-announcement). To ensure a smooth transition to these types, we recommend using an "expand/contract" strategy. It allows your system to handle both the old rule types and the new event types during the migration, minimizing potential disruptions.
 
-Follow this guide to:
+:::info In this guide:
 
 - View recommended steps to migrate your existing webhooks to the new event types.
 - Understand how the existing rule types and their schemas map to the new event types.
 - See how you can manage notifications for rule types that will not be replaced.
+:::
 
 ## Migrate to new event types
 
@@ -28,19 +29,19 @@ To switch to new event types using the recommended "expand/contract" strategy, f
 
 2. **Configure the new webhook consumer in the Portal**
 
-   In the [Codat Portal](https://app.codat.io), configure a new webhook consumer that points to the newly created endpoint. See [Build webhook consumers to subscribe to events](/using-the-api/webhooks/create-consumer) for a step-by-step walkthrough. 
+   In the [Codat Portal](https://app.codat.io), configure a new webhook consumer that points to your newly created endpoint. See [Build webhook consumers to subscribe to events](/using-the-api/webhooks/create-consumer) for a step-by-step walkthrough. 
 
 3. **Validate the new webhook consumer**
 
-  Test the new webhook consumer to ensure it is correctly receiving and processing the new event type. You can send test events and check the logs in the [Codat Portal](https://app.codat.io). Navigate to **Monitor > Events** and select the relevant endpoint to do this.
+   Test the new webhook consumer to ensure it is correctly receiving and processing the new event type. You can send test events and check the logs in the [Codat Portal](https://app.codat.io). Navigate to **Monitor > Events** and select the relevant endpoint to do this.
 
 4. **Enable the new webhook consumer**
 
-  When you’ve confirmed that the new webhook consumer is functioning correctly, enable the endpoint's feature toggle. This will direct your application to process events via the new webhook consumer without losing events.
+   When you’ve confirmed that the new webhook consumer is functioning correctly, enable the endpoint's feature toggle. This will direct your application to process events via the new webhook consumer without losing events.
 
 5. **Disable the old webhook consumer**
 
-  Once you are happy with the new webhook consumer, you can disable your old endpoint, delete the old consumer from the Portal, and remove the application logic consuming the old rule types. 
+   Once you are happy with the new webhook consumer, use the feature toggle to disable your old endpoint, delete the old consumer from the Portal, and remove the application logic consuming the old rule types. 
 
 ## Understand new event types
 
@@ -66,7 +67,9 @@ Below is the summary of old rule types and new event types that replace them. Cl
 
 Triggered when a company's accounts are categorized, this event has been replaced by two more precise webhooks: `financialStatements.categorized` and `financialStatements.recategorized`. These webhooks provide detailed insights into who performed the account categorization. 
 
-The `financialStatements.categorized` event indicates the categories suggested by Codat's AI are ready for your review. The `financialStatements.recategorized` event notifies you when an analyst updates a category. Subscribing to both webhooks replicates the behavior of the previous `AccountCategoriesUpdated` webhook.
+The `financialStatements.categorized` event indicates the categories suggested by Codat's AI are ready for your review. 
+
+The `financialStatements.recategorized` event notifies you when an analyst updates a category. Subscribing to both webhooks replicates the behavior of the previous `AccountCategoriesUpdated` webhook.
 
 | Rule type | Maps to event type |
 |---|---|
@@ -119,7 +122,9 @@ The `financialStatements.categorized` event indicates the categories suggested b
 
 </Tabs>
 
-| Old schema property                                  | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId`                                              | `id` |
 | `RuleType`                                             | `eventType` |
@@ -180,7 +185,9 @@ Triggered when the client's requests to Codat's API exceed the current quota, th
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -242,7 +249,9 @@ Triggered when the client's rate limit quota is reset, allowing more requests to
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -330,7 +339,9 @@ Triggered whenever a data connection's status changes, this event has been repla
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -349,7 +360,9 @@ Triggered whenever a data connection's status changes, this event has been repla
 
 #### DataSyncCompleted
 
-Triggered when a data synchronization completes, this event generates a notification for each `dataType` as it finishes syncing regardless of the outcome. The `read.completed` replacement event uses the same trigger, but now provides detailed information about the read operation's outcome, including the status of the sync and whether any records were modified.
+Triggered when a data synchronization completes, the legacy event generates a notification for each `dataType` as it finishes syncing regardless of the outcome. 
+
+The `read.completed` replacement event uses the same trigger, but now provides detailed information about the read operation's outcome, including the status of the sync and whether any records were modified.
 
 See [Retrieve company data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
 
@@ -416,7 +429,9 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -441,7 +456,9 @@ See [Retrieve company data](/using-the-api/get-data). TODO: We need to update th
 When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
 :::
 
-| Rule type | Maps to event type |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |---|---|
 | `Data Sync Status Changed To Error` | [`read.completed`](/platform-api#/webhooks/read.completed/post) |
 
@@ -501,7 +518,9 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -590,7 +609,9 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -611,7 +632,9 @@ This event type is no longer supported. You can use the [`read.completed`](/plat
 
 #### PushOperationStatusChanged
 
-Triggered when the status of a write operation changes, this event has been replaced by two more precise webhooks: `{dataType}.write.successful` and `{dataType}.write.unsuccessful`. These event types provide detailed information, including whether the push operation was successful, the record ID, and the attachment ID when creating, updating, or deleting records.
+Triggered when the status of a write operation changes, this event has been replaced by two more precise webhooks: `{dataType}.write.successful` and `{dataType}.write.unsuccessful`. 
+
+These event types provide detailed information, including whether the push operation was successful, the record ID, and the attachment ID when creating, updating, or deleting records.
 
 | Rule type | Data status | Maps to event type |
 |---|---|---|
@@ -676,7 +699,9 @@ Triggered when the status of a write operation changes, this event has been repl
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -756,7 +781,9 @@ Triggered when a write operation times out. This webhook has been replaced by th
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -772,7 +799,7 @@ Triggered when a write operation times out. This webhook has been replaced by th
 
 </details>
 
-## SyncCompleted
+#### SyncCompleted
 
 The original rule type is triggered when a [Sync for Expenses](/expenses/overview) expense sync is completed. The replacement event type is triggered only when the sync completes successfully.
 
@@ -826,7 +853,9 @@ The original rule type is triggered when a [Sync for Expenses](/expenses/overvie
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -895,7 +924,9 @@ Triggered anytime a [Sync for Expenses](/expenses/overview) expenses sync fails,
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
@@ -971,7 +1002,9 @@ This legacy event is specific to [Sync for Commerce](/commerce/overview) and ind
 
 </Tabs>
 
-| Old schema property | Maps to new schema property |
+#### Property mapping
+
+| Old schema property                                  | New schema property |
 |--|--|
 | `AlertId` | `id` |
 | `RuleType` | `eventType` |
