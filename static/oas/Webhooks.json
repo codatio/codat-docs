@@ -136,7 +136,8 @@
     },
     "PushOperationStatusChanged": {
       "post": {
-        "description": "Indicates that a create, update, or delete operation's status has changed.",
+        "deprecated": true,
+        "description": "Indicates that a create, update, or delete operation's status has changed.\n\nThis event type has been deprecated. Use either the `{dataType}.write.successful` or `{dataType}.write.unsuccessful` instead.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -155,7 +156,8 @@
     },
     "PushOperationTimedOut": {
       "post": {
-        "description": "Indicates that a create, update, or delete operation has timed out.",
+        "deprecated": true,
+        "description": "Indicates that a create, update, or delete operation has timed out.\n\nThis event type has been deprecated.\nTo replicate it, use the `{dataType}.write.unsuccessful` webhook and check if `payload.status` is set to `TimedOut`.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -300,7 +302,691 @@
         },
         "responses": {
           "200": {
-            "description": "Return a 200 status to indicate that the webhook was recieved successfully."
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "bills.write.successful": {
+      "post": {
+        "description": "Indicates that a bill has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bills.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create, update, delete a bill, or upload an attachment to a bill in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bankTransactions.write.successful": {
+      "post": {
+        "description": "Indicates that bank transactions have been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bankTransactions.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create bank transactions in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "items.write.successful": {
+      "post": {
+        "description": "Indicates that an item has been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "items.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create an item in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "suppliers.write.successful": {
+      "post": {
+        "description": "Indicates that a supplier has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "suppliers.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a supplier in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "directCosts.write.successful": {
+      "post": {
+        "description": "Indicates that a direct cost has been successfully created or deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "directCosts.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or delete a direct cost, or upload an attachment to a direct cost in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "invoices.write.successful": {
+      "post": {
+        "description": "Indicates that an invoice has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "invoices.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create, update, delete an invoice, or upload an attachment to an invoice in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bankAccounts.write.successful": {
+      "post": {
+        "description": "Indicates that a bank account has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bankAccounts.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a bank account in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "purchaseOrders.write.successful": {
+      "post": {
+        "description": "Indicates that a purchase order has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "purchaseOrders.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a purchase order in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "billPayments.write.successful": {
+      "post": {
+        "description": "Indicates that a bill payment has been successfully created or deleted in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "billPayments.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or delete a bill payment in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "directIncomes.write.successful": {
+      "post": {
+        "description": "Indicates that a direct income has been successfully created or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "directIncomes.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or upload an attachment to a direct income in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "journalEntries.write.successful": {
+      "post": {
+        "description": "Indicates that a journal entry has been successfully created or deleted in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "journalEntries.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or delete a journal entry in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "chartOfAccounts.write.successful": {
+      "post": {
+        "description": "Indicates that an account has been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "chartOfAccounts.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create an account in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "billCreditNotes.write.successful": {
+      "post": {
+        "description": "Indicates that a bill credit note has been successfully created, updated, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "billCreditNotes.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create, update a bill credit note, or upload an attachment to a bill credit note in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "creditNotes.write.successful": {
+      "post": {
+        "description": "Indicates that a credit note has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "creditNotes.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a credit note in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "customers.write.successful": {
+      "post": {
+        "description": "Indicates that a customer has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "customers.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a customer in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "journals.write.successful": {
+      "post": {
+        "description": "Indicates that a journal has been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "journals.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create a journal in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "transfers.write.successful": {
+      "post": {
+        "description": "Indicates that a transfer has been successfully created or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "transfers.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create a transfer, or upload an attachment to a transfer in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "payments.write.successful": {
+      "post": {
+        "description": "Indicates that a payment has been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "payments.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create a payment in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
           }
         }
       }
@@ -448,7 +1134,7 @@
                 "description": "The number of available requests per day."
               },
               "ExpiresUtc": {
-                "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/properties/generatedDate",
                 "description": "The date time in UTC when your daily quota is reset."
               }
             }
@@ -827,6 +1513,228 @@
           }
         ]
       },
+      "DataTypeWriteWebhook": {
+        "title": "Write data type webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "bills.write.successful",
+              "bills.write.unsuccessful"
+            ]
+          },
+          "generatedDate": {
+            "description": "The date time in UTC the event was generated in Codat.",
+            "title": "Date time",
+            "type": "string",
+            "examples": [
+              "2022-10-23T00:00:00.000Z",
+              "2022-10-23T00:00:00.000Z"
+            ]
+          },
+          "payload": {
+            "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/dataTypeWriteWebhookPayload"
+          }
+        },
+        "definitions": {
+          "dataTypeWriteWebhookPayload": {
+            "title": "Payload",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier of the write request. This is also known as the push operation ID."
+              },
+              "type": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/writeType"
+              },
+              "referenceCompany": {
+                "title": "Company reference",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the company",
+                    "example": "Codat Ltd."
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Requested early access to the new financing scheme.",
+                    "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+                  }
+                }
+              },
+              "connectionId": {
+                "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+              },
+              "requestedOnDate": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/properties/generatedDate",
+                "description": "The date time in UTC the write request was submitted."
+              },
+              "completedOnDate": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/properties/generatedDate",
+                "description": "The date time in UTC the write request completed."
+              },
+              "status": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/writeStatus"
+              },
+              "record": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/dataTypeWriteWebhookRecord",
+                "nullable": true
+              },
+              "attachmentId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Unique identifier for the uploaded attachment, null if no attachment uploaded."
+              }
+            }
+          },
+          "dataTypeWriteWebhookRecord": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The unique identifier of the data type created, updated, deleted, or had an attachment uploaded in the accounting platform."
+              }
+            }
+          },
+          "writeType": {
+            "title": "Write type",
+            "description": "Type of write request.",
+            "type": "string",
+            "enum": [
+              "Create",
+              "Update",
+              "Delete",
+              "UploadAttachment"
+            ]
+          },
+          "writeStatus": {
+            "title": "Write request status",
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Failed",
+              "Success",
+              "TimedOut"
+            ],
+            "description": "The current status of the write request, which is the same as the push operation status."
+          }
+        },
+        "examples": [
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Create",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Success",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              }
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "UploadAttachment",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Success",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              },
+              "attachmentId": "att_1AZtxr2eZvKYlo2CJDX8whov"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Update",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Failed"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Delete",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "TimedOut"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "UploadAttachment",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "TimedOut",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              }
+            }
+          }
+        ]
+      },
       "NewCompanySynchronizedWebhook": {
         "title": "New company synchronized webhook",
         "x-internal": true,
@@ -856,36 +1764,6 @@
           },
           "Message": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/NewCompanySynchronizedWebhook/definitions/NewCompanySynchronizedWebhookData"
-          }
-        },
-        "definitions": {
-          "NewCompanySynchronizedWebhookData": {
-            "type": "object",
-            "title": "New company synchronized webhook data",
-            "companyName": {
-              "nullable": true,
-              "type": "string",
-              "description": "Name of company whose connection has changed."
-            },
-            "sourceType": {
-              "nullable": true,
-              "title": "Source Type",
-              "description": "The type of platform of the connection.",
-              "type": "string",
-              "enum": [
-                "Accounting",
-                "Banking",
-                "BankFeed",
-                "Commerce",
-                "Expense",
-                "Other",
-                "Unknown"
-              ],
-              "example": "Accounting"
-            }
           }
         },
         "examples": [
@@ -897,11 +1775,7 @@
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
             "RuleType": "New company synchronised",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
-            "Data": {
-              "companyName": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-              "sourceType": "Accounting"
-            }
+            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time"
           }
         ]
       },
@@ -1119,13 +1993,8 @@
             "description": "The type of event."
           },
           "generatedDate": {
-            "description": "The date time in UTC the event was generated in Codat.",
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ]
+            "$ref": "#/components/schemas/DataTypeWriteWebhook/properties/generatedDate",
+            "description": "The date time in UTC the event was generated in Codat."
           },
           "payload": {
             "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/readCompletedWebhookPayload"
@@ -1137,23 +2006,7 @@
             "type": "object",
             "properties": {
               "referenceCompany": {
-                "title": "Company reference",
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
-                  },
-                  "name": {
-                    "type": "string",
-                    "description": "The name of the company",
-                    "example": "Codat Ltd."
-                  },
-                  "description": {
-                    "type": "string",
-                    "example": "Requested early access to the new financing scheme.",
-                    "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-                  }
-                }
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/dataTypeWriteWebhookPayload/properties/referenceCompany"
               },
               "product": {
                 "type": "string",
@@ -1161,7 +2014,7 @@
                 "description": "Name of the product that requested the data types to be fetched."
               },
               "modifiedFromDate": {
-                "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/properties/generatedDate",
                 "description": "The date time in UTC when the data types were last fetched and input into Codat's cache."
               },
               "dataTypes": {
@@ -1232,7 +2085,7 @@
             "type": "string",
             "format": "uuid",
             "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "description": "Unique identifier of the event"
+            "description": "Unique identifier of the event."
           },
           "eventType": {
             "type": "string",
@@ -1243,7 +2096,7 @@
             ]
           },
           "generatedDate": {
-            "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
+            "$ref": "#/components/schemas/DataTypeWriteWebhook/properties/generatedDate",
             "description": "The date time in UTC the event was generated in Codat."
           },
           "payload": {
@@ -1310,7 +2163,7 @@
                     "description": "The latest balance for the bank account."
                   },
                   "modifiedDate": {
-                    "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
+                    "$ref": "#/components/schemas/DataTypeWriteWebhook/properties/generatedDate",
                     "nullable": true,
                     "description": "The last date the bank account was modified."
                   },
@@ -1327,7 +2180,7 @@
                     ]
                   },
                   "feedStartDate": {
-                    "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
+                    "$ref": "#/components/schemas/DataTypeWriteWebhook/properties/generatedDate",
                     "nullable": true
                   }
                 },

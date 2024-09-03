@@ -15,7 +15,7 @@ Sync for Expenses now allows you to solve not only the complexities of accountin
 
 In this release, you can access: 
 
-- **A standard model for pushing expenses to QuickBooks Desktop.** Sync for Expenses’ standardized model consolidates the full end-to-end expense journey, considering the endpoints and logic required to accurately sync an expense in QuickBooks Desktop, including transaction type, multiple currencies and tax. 
+- **A standard model for writing expenses to QuickBooks Desktop.** Sync for Expenses’ standardized model consolidates the full end-to-end expense journey, considering the endpoints and logic required to accurately sync an expense in QuickBooks Desktop, including transaction type, multiple currencies and tax. 
 
 - **Out-the-box connection UI to get customers syncing in a few steps.** Codat enables integrations via the Intuit Web Connector, which starts up automatically after a system reboot and then updates silently in the background. There's no action needed from your users to keep data flowing.
 

@@ -7,14 +7,14 @@ unlisted: true
 
 Set up the Mollie integration to access commerce data from customers who use Mollie to accept payments.
 
-See [Test your Mollie integration](/integrations/commerce/mollie/commerce-mollie-test) for how to use the Test integration to pull sample data into Codat.
+See [Test your Mollie integration](/integrations/commerce/mollie/commerce-mollie-test) for how to use the Test integration to read sample data into Codat.
 
 ## Supported environments
 
 We provide two Mollie integrations:
 
-- **Mollie Test** - pull test commerce data from your Mollie account.
-- **Mollie** - pull live commerce data from your Mollie account.
+- **Mollie Test** - read test commerce data from your Mollie account.
+- **Mollie** - read live commerce data from your Mollie account.
 
 Start with the Test integration, so you can retrieve and check sample data. You can also make sure you're happy with the authorization flow journey before onboarding your customers.
 
@@ -44,8 +44,8 @@ In the <a className="external" href="https://app.codat.io" target="_blank">Codat
 1. In the navigation bar, select **Settings > Integrations > Commerce**.
 2. Select the correct integration depending on whether you're testing the integration or building for production.
 
-   - If you want to test the integration and pull sample data, click **Set up** next to the **Mollie Test** integration.
-   - If you want to build for production and pull live data, click **Set up** next to the **Mollie** integration.
+   - If you want to test the integration and read sample data, click **Set up** next to the **Mollie Test** integration.
+   - If you want to build for production and read live data, click **Set up** next to the **Mollie** integration.
 
    The **Integration settings** page is displayed.
 
@@ -58,7 +58,7 @@ The integration should now be configured and enabled.
 
 ### Set up your commerce data type settings
 
-All commerce data types must be enabled before you can pull commerce transactions from Mollie into Codat.
+All commerce data types must be enabled before you can read commerce transactions from Mollie into Codat.
 
 Follow the steps in [Update commerce sync settings in the Codat Portal](/integrations/commerce/commerce-sync-settings#update-commerce-sync-settings-in-the-codat-portal). You only need to do this once.
 

@@ -1,10 +1,10 @@
 ---
 title: "Use your Sage Bank Feeds integration"
 sidebar_label: "Use"
-description: "Learn how to push your SMB users' bank transactions to Codat via our Sage Bank Feeds integration"
+description: "Learn how to write your SMB users' bank transactions to Codat via our Sage Bank Feeds integration"
 ---
 
-When you've set up the Sage Bank Feeds integration and your SMB customer has connected a source bank account to a Sage product, you can start to push bank transactions to a target bank account.
+When you've set up the Sage Bank Feeds integration and your SMB customer has connected a source bank account to a Sage product, you can start to write bank transactions to a target bank account.
 
 ## View bank account details
 
@@ -46,26 +46,26 @@ The response contains a list of bank accounts with a status of either `pending` 
 ]
 ```
 
-## Push bank transactions from a source bank account
+## Write bank transactions from a source bank account
 
-You can push [Bank transactions](/accounting-api#/schemas/BankTransactions) from `connected` source bank accounts to target accounts in supported Sage products. The integration routes these transactions through the Sage Banking Service Provider API.
+You can write [Bank transactions](/accounting-api#/schemas/BankTransactions) from `connected` source bank accounts to target accounts in supported Sage products. The integration routes these transactions through the Sage Banking Service Provider API.
 
 In the user's Sage package, new bank transactions for the target account will appear on the **Incoming Bank Transactions** UI.
 
-:::note Bank feeds must be pushed to Codat
+:::note Bank feeds must be written to Codat
 
 Transactions are not automatically downloaded to Sage when the user successfully connects a bank account.
 :::
 
-Make the following requests to the Codat API. All push requests are asynchronous.
+Make the following requests to the Codat API. All write requests are asynchronous.
 
-1. Push bank transactions to a target bank account using the <a href="/accounting-api#/operations/create-bank-transactions">Create bank transactions</a> endpoint. Note that:
+1. Write bank transactions to a target bank account using the <a href="/accounting-api#/operations/create-bank-transactions">Create bank transactions</a> endpoint. Note that:
 
-   - You can only push bank transactions to one target account at a time.
-   - Bank transactions must be pushed in chronological order.
+   - You can only write bank transactions to one target account at a time.
+   - Bank transactions must be written in chronological order.
    - Bank transactions can't be older than the most recent transaction available on the destination bank account.
    - Bank transactions must have a `date` set to the current day or earlier.
-   - Up to 1000 bank transactions can be pushed at a time.
+   - Up to 1000 bank transactions can be written at a time.
 
    ```http
    POST https://api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/push/bankAccounts/ACCOUNT_ID/bankTransactions
@@ -102,7 +102,7 @@ Make the following requests to the Codat API. All push requests are asynchronous
 
    The balance of the last bank transaction in the array is used to update the balance of the specified bank account.
 
-2. If the data is valid, the endpoint returns a push operation with a `status` of `Pending` (202). The status changes to `Success` if the push operation completes successfully.
+2. If the data is valid, the endpoint returns a write operation with a `status` of `Pending` (202). The status changes to `Success` if the write operation completes successfully.
 
 :::note
 

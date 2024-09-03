@@ -20,7 +20,7 @@ No change is expected to other (not deleted) data.
 
 ### Additional information
 
-Deleted Payments on Account pulled as Payments or Bill Payments before this change will no longer be returned when querying Payments and Bill Payments from Codat.
+Deleted Payments on Account read as Payments or Bill Payments before this change will no longer be returned when querying Payments and Bill Payments from Codat.
 
 :::note Get ahead
 

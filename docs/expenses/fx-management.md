@@ -51,7 +51,7 @@ When recording transactions in foreign currency, Xero does not take transaction 
 
 :::
 
-We validate the multi-currency transactions you push to Sync for Expenses to ensure the currency combination will be accepted by the target accounting software as a valid expense.
+We validate the multi-currency transactions you write to Sync for Expenses to ensure the currency combination will be accepted by the target accounting software as a valid expense.
 
 <table>
 <thead>
@@ -166,7 +166,7 @@ When recording transactions in foreign currency, Xero does not take transaction 
 
 :::
 
-We validate the multi-currency transactions you push to Sync for Expenses to ensure the currency combination will be accepted by the target accounting software as a valid expense.
+We validate the multi-currency transactions you write to Sync for Expenses to ensure the currency combination will be accepted by the target accounting software as a valid expense.
 
 <table>
 <thead>
@@ -282,7 +282,7 @@ You can [read more](/expenses/sync-process/transfer-transactions) about creating
 | Bank account (from)            | GBP        | USD        | USD        | GBP        | USD        |
 | Bank account (to)              | GBP        | USD        | GBP        | USD        | EUR        |
 
-We validate the multi-currency transactions you push to Sync for Expenses to ensure the currency combination will be accepted by the target accounting software as a valid expense. 
+We validate the multi-currency transactions you write to Sync for Expenses to ensure the currency combination will be accepted by the target accounting software as a valid expense. 
 
 | Integration       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |-------------------|----------|----------|----------|----------|----------|

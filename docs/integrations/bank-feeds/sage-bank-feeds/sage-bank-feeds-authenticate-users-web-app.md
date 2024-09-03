@@ -104,4 +104,4 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
 5. Sage redirects the SMB user to the Sage product from which they began the authentication flow.
 
-You can now use the <a href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint to retrieve the source bank accounts and push bank transactions. For details, see [Use your Sage Bank Feeds integration](/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-use).
+You can now use the <a href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint to retrieve the source bank accounts and write bank transactions. For details, see [Use your Sage Bank Feeds integration](/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-use).

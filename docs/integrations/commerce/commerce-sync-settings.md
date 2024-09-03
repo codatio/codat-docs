@@ -1,6 +1,6 @@
 ---
 title: "Commerce sync settings"
-description: "Set commerce data types to automatically pull data when a company is first authorized"
+description: "Set commerce data types to automatically read data when a company is first authorized"
 createdAt: "2020-10-09T14:48:00.425Z"
 updatedAt: "2022-10-20T10:12:53.168Z"
 ---

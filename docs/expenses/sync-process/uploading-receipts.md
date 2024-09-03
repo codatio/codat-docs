@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem"
 
 When creating an expense or transfers transaction, your SMB customer may want to save a copy of the associated receipt in their accounting software. 
 
-Use the [Upload attachment](/sync-for-expenses-api#/operations/upload-expense-attachment) endpoint to attach one or multiple files to the transaction, relating them via its `transactionId`. The endpoint accepts attachments as multipart form data and pushes them synchronously.
+Use the [Upload attachment](/sync-for-expenses-api#/operations/upload-expense-attachment) endpoint to attach one or multiple files to the transaction, relating them via its `transactionId`. The endpoint accepts attachments as multipart form data and writes them synchronously.
 
 ```http
 POST https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/transactions/{transactionId}/attachments
@@ -37,7 +37,7 @@ Content-Disposition: form-data; name="yourFileData"; filename="TEST_SEND_FILE.tx
 
 | Integration       | File size | File extension                                                                                                                                               |
 |-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Xero**              | 4 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |
+| **Xero**              | 3 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |
 | **QuickBooks Online** | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |
 | **NetSuite**          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |
 | **Dynamics 365 Business Central** | 350 MB | [No explicit requirements outlined](https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice) for text, image, and video files. |

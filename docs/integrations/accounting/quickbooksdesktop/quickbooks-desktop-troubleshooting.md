@@ -69,4 +69,8 @@ Once connector is installed and configured, you can only sync data with QuickBoo
 
 ## QuickBooks Desktop is not opening
 
-If the web connector is syncing, the user will not be able to open QuickBooks Desktop until the sync has finished. If the company file is already open in QuickBooks Desktop and the web connector runs a sync, the QuickBooks Desktop interface may behave unexpectedly, reducing usability during these sync periods.
+If the web connector is syncing, the user will not be able to open QuickBooks Desktop until the sync has finished. If the company file is already open in QuickBooks Desktop and the web connector runs a sync, the QuickBooks Desktop interface may behave unexpectedly, reducing usability during these sync periods. 
+
+This is due to QBD's own limitations and will occur when using any connector.
+
+Enable your user to pause the sync when they need to access QBD with our [Connections SDK](/auth-flow/optimize/connection-management) (see [Pause the connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#pause-the-connector)).

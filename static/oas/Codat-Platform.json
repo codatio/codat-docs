@@ -4039,6 +4039,44 @@
         }
       }
     },
+    "{dataType}.write.successful": {
+      "post": {
+        "description": "Indicates that a `dataType` has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.\n\nFor example, to subscribe to events where a bill is written into the accounting software, use the `bills.write.successful` webhook.\n\n### Supported data types and write types\n\n| `dataType`       | Create  | Update  | Delete  | UploadAttachment |\n|------------------|---------|---------|---------|------------------|\n| bankAccounts     | &#9989; | &#9989; | -       | -                |  \n| bankTransactions | &#9989; | -       | -       | -                |\n| billCreditNotes  | &#9989; | &#9989; | -       | &#9989;          |  \n| billPayments     | &#9989; | -       | &#9989; | -                | \n| bills            | &#9989; | &#9989; | &#9989; | &#9989;          | \n| chartOfAccounts  | &#9989; | -       | -       | -                | \n| creditNotes      | &#9989; | &#9989; | -       | -                | \n| customers        | &#9989; | &#9989; | -       | -                | \n| directCosts      | &#9989; | -       | &#9989; | &#9989;          | \n| directIncomes    | &#9989; | -       | -       | &#9989;          | \n| invoices         | &#9989; | &#9989; | &#9989; | &#9989;          | \n| items            | &#9989; | -       | -       | -                | \n| journalEntries   | &#9989; | -       | &#9989; | -                | \n| journals         | &#9989; | -       | -       | -                | \n| payments         | &#9989; | -       | -       | -                | \n| purchaseOrders   | &#9989; | &#9989; | -       | -                | \n| suppliers        | &#9989; | &#9989; | -       | -                | \n| transfers        | &#9989; | -       | -       | &#9989;          | \n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "{dataType}.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that a `dataType` has not been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.\n\nFor example, to subscribe to events where a bill is written into the accounting software, use the `bills.write.unsuccessful` webhook.\n\n### Supported data types and write types\n\n| `dataType`       | Create  | Update  | Delete  | UploadAttachment |\n|------------------|---------|---------|---------|------------------|\n| bankAccounts     | &#9989; | &#9989; | -       | -                |  \n| bankTransactions | &#9989; | -       | -       | -                |\n| billCreditNotes  | &#9989; | &#9989; | -       | &#9989;          |  \n| billPayments     | &#9989; | -       | &#9989; | -                | \n| bills            | &#9989; | &#9989; | &#9989; | &#9989;          | \n| chartOfAccounts  | &#9989; | -       | -       | -                | \n| creditNotes      | &#9989; | &#9989; | -       | -                | \n| customers        | &#9989; | &#9989; | -       | -                | \n| directCosts      | &#9989; | -       | &#9989; | &#9989;          | \n| directIncomes    | &#9989; | -       | -       | &#9989;          | \n| invoices         | &#9989; | &#9989; | &#9989; | &#9989;          | \n| items            | &#9989; | -       | -       | -                | \n| journalEntries   | &#9989; | -       | &#9989; | -                | \n| journals         | &#9989; | -       | -       | -                | \n| payments         | &#9989; | -       | -       | -                | \n| purchaseOrders   | &#9989; | &#9989; | -       | -                | \n| suppliers        | &#9989; | &#9989; | -       | -                | \n| transfers        | &#9989; | -       | -       | &#9989;          | \n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
     "Data sync completed": {
       "post": {
         "requestBody": {
@@ -4117,8 +4155,9 @@
     },
     "Push operation status has changed": {
       "post": {
+        "deprecated": true,
+        "description": "Indicates that a create, update, or delete operation's status has changed.\n\nThis event type has been deprecated. Use either the `{dataType}.write.successful` or `{dataType}.write.unsuccessful` instead.",
         "requestBody": {
-          "description": "Triggered when a push operation's status changes.",
           "content": {
             "application/json": {
               "schema": {
@@ -4136,8 +4175,9 @@
     },
     "Push operation has timed out": {
       "post": {
+        "deprecated": true,
+        "description": "Indicates that a create, update, or delete operation has timed out.\n\nThis event type has been deprecated.\nTo replicate it, use the `{dataType}.write.unsuccessful` webhook and check if `payload.status` is set to `TimedOut`.",
         "requestBody": {
-          "description": "Triggered when a push operation times out.",
           "content": {
             "application/json": {
               "schema": {
@@ -5534,6 +5574,207 @@
         "x-internal": true,
         "$ref": "#/components/schemas/DataStatus/properties/dataType"
       },
+      "DataTypeWriteWebhook": {
+        "title": "Write data type webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "bills.write.successful",
+              "bills.write.unsuccessful"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/dataTypeWriteWebhookPayload"
+          }
+        },
+        "definitions": {
+          "dataTypeWriteWebhookPayload": {
+            "title": "Payload",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier of the write request. This is also known as the push operation ID."
+              },
+              "type": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/writeType"
+              },
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "connectionId": {
+                "$ref": "#/components/parameters/connectionId/schema"
+              },
+              "requestedOnDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC the write request was submitted."
+              },
+              "completedOnDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC the write request completed."
+              },
+              "status": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/writeStatus"
+              },
+              "record": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/dataTypeWriteWebhookRecord",
+                "nullable": true
+              },
+              "attachmentId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Unique identifier for the uploaded attachment, null if no attachment uploaded."
+              }
+            }
+          },
+          "dataTypeWriteWebhookRecord": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The unique identifier of the data type created, updated, deleted, or had an attachment uploaded in the accounting platform."
+              }
+            }
+          },
+          "writeType": {
+            "title": "Write type",
+            "description": "Type of write request.",
+            "type": "string",
+            "enum": [
+              "Create",
+              "Update",
+              "Delete",
+              "UploadAttachment"
+            ]
+          },
+          "writeStatus": {
+            "title": "Write request status",
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Failed",
+              "Success",
+              "TimedOut"
+            ],
+            "description": "The current status of the write request, which is the same as the push operation status."
+          }
+        },
+        "examples": [
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Create",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Success",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              }
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "UploadAttachment",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Success",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              },
+              "attachmentId": "att_1AZtxr2eZvKYlo2CJDX8whov"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Update",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Failed"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Delete",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "TimedOut"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "UploadAttachment",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "TimedOut",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              }
+            }
+          }
+        ]
+      },
       "DateTime": {
         "title": "Date time",
         "type": "string",
@@ -5900,24 +6141,6 @@
           },
           "Message": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/NewCompanySynchronizedWebhook/definitions/NewCompanySynchronizedWebhookData"
-          }
-        },
-        "definitions": {
-          "NewCompanySynchronizedWebhookData": {
-            "type": "object",
-            "title": "New company synchronized webhook data",
-            "companyName": {
-              "nullable": true,
-              "type": "string",
-              "description": "Name of company whose connection has changed."
-            },
-            "sourceType": {
-              "$ref": "#/components/schemas/Integration/definitions/sourceType",
-              "nullable": true
-            }
           }
         },
         "examples": [
@@ -5929,11 +6152,7 @@
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
             "RuleType": "New company synchronised",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
-            "Data": {
-              "companyName": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-              "sourceType": "Accounting"
-            }
+            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time"
           }
         ]
       },

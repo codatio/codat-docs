@@ -3,7 +3,7 @@ title: "Wave"
 description: "Learn about our Wave integration."
 ---
 
-You can pull accounting data from <a className="external" href="https://www.waveapps.com/" target="_blank">Wave</a> using our Wave integration.
+You can read accounting data from <a className="external" href="https://www.waveapps.com/" target="_blank">Wave</a> using our Wave integration.
 
 ## Data type coverage
 

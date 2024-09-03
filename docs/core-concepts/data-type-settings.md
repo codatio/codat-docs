@@ -10,7 +10,7 @@ A 'data type' is a specific type of data, like an [invoice](/accounting-api#/sch
 
 On the <a className="external" href="https://app.codat.io/settings/data-types" target="_blank">Data type settings</a> page in the Codat Portal, you can view current settings for each data type split by integration type, override the default sync settings, and specify the fetch frequency for refreshing datasets. You can also view `dataType` keys for each data type.
 
-You can also choose whether data is automatically pulled when a company is linked for the first time, using the **Fetch on first link** setting.
+You can also choose whether data is automatically read when a company is linked for the first time, using the **Fetch on first link** setting.
 
 ## Override the default sync settings
 
@@ -37,7 +37,7 @@ When **Fetch on first link** is _on_ for a data type:
 When **Fetch on first link** is turned _off_ for a data type:
 
 - The data type is not automatically queued for synchronization when a company is first linked.
-- You can still queue a pull for this individual data type using the endpoint [`POST /companies/{companyId}/data/queue/{dataType}`](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_). This might be useful for testing, or if you only need infrequent access to a dataset.
+- You can still queue a read for this individual data type using the endpoint [`POST /companies/{companyId}/data/queue/{dataType}`](https://api.codat.io/swagger/index.html#/Data/post_companies__companyId__data_queue__dataType_). This might be useful for testing, or if you only need infrequent access to a dataset.
 
 For more information about how to synchronize datasets on demand, see [Synchronizing your data](/core-concepts/status).
 
@@ -68,7 +68,7 @@ To manually trigger your data to be synchronized:
 1. In the navigation bar of the Codat Portal, select **Companies**.
 2. Select the required company, then click **Refresh data**.
 
-You can also view **Pull history** and **Push history** to check the status of previous pull and push data syncs.
+You can also view **Read history** and **Write history** to check the status of previous read and write data syncs.
 
 :::note Default sync history
 For most data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. These default settings can be overriden via our API using [advanced sync settings](/knowledge-base/advanced-sync-settings).

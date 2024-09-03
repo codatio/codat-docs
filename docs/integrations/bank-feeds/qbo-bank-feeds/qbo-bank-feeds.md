@@ -14,7 +14,7 @@ Connecting to QuickBooks Online bank feeds through the integration is only suppo
 
 ## Overview
 
-With our integration, your SMB customers can connect source bank accounts in your application to target accounts QuickBooks Online (QBO) using one-time credentials. You can then push [Bank transactions](/accounting-api#/schemas/BankTransactions) from source accounts to target accounts via Codat.
+With our integration, your SMB customers can connect source bank accounts in your application to target accounts QuickBooks Online (QBO) using one-time credentials. You can then write [Bank transactions](/accounting-api#/schemas/BankTransactions) from source accounts to target accounts via Codat.
 
 SMB users connect their bank accounts using the QBO Bank Feeds Link UI, which is built and hosted by Codat. Then they can view transactions from source accounts as bank feeds in QBO, allowing them to easily reconcile transactions against accounting entries.
 
@@ -26,23 +26,23 @@ In this guide, we'll walk you through the following functionality:
 
 1. [Set up the QuickBooks Online Bank Feeds integration](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup) to work with your application.
 2. The SMB user [connects a bank account to QBO](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-smb-user) using a one-time username and password they generated in the QBO Bank Feeds Link UI.
-3. When connected, you can [push bank transactions to QBO](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) so they're available as bank feeds.
+3. When connected, you can [write bank transactions to QBO](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) so they're available as bank feeds.
 
-## Pushing historic transactions
+## Writing historic transactions
 
-You can push historic transactions up to seven days old based on the _feed start date_ chosen by the SMB user in the QBO UI. All bank transactions must be _cleared_ and have a `clearedOnDate` set to the current or the prior day.
+You can write historic transactions up to seven days old based on the _feed start date_ chosen by the SMB user in the QBO UI. All bank transactions must be _cleared_ and have a `clearedOnDate` set to the current or the prior day.
 
-Pushing future (future-dated) bank transactions to QBO is not supported.
+Writing future (future-dated) bank transactions to QBO is not supported.
 
 ## Considerations
 
 ### How often are bank transactions sent to QuickBooks?
 
-Pushed bank transactions are automatically sent from Codat to QBO on a daily schedule. The SMB user can click **Update** in the **Transactions** area in QBO to override the daily schedule and view their latest transactions immediately.
+When you write bank transactions, we automatically send from Codat to QBO on a daily schedule. The SMB user can click **Update** in the **Transactions** area in QBO to override the daily schedule and view their latest transactions immediately.
 
 ### Disconnecting bank feeds
 
-To disable bank feeds from your application, an SMB user can disconnect one or more of their target accounts in QBO from receiving bank feeds. When a target account is disconnected, it won't receive any further transactions, so any subsequent pushes you make to the source account will fail.
+To disable bank feeds from your application, an SMB user can disconnect one or more of their target accounts in QBO from receiving bank feeds. When a target account is disconnected, it won't receive any further transactions, so any subsequent write operations you make to the source account will fail.
 
 If a bank feed is disabled by an SMB user, it takes 10 days for the status of the source bank account in Codat to change to `disconnected`.
 

@@ -9,13 +9,13 @@ description: "Learn how to set up the QuickBooks integration, configure Codat, a
 - Set up Codat's QuickBooks Online integration
 - Configure Link to use the demo app's redirect URL
 - Install the demo app and run it on your local machine
-- Review the push history in the Codat Portal
+- Review the write history in the Codat Portal
 
 ### Prerequisites
 
 Before running the demo app locally:
 
-- In the Codat Portal, enable **Fetch on first link** for Bills, Bill payments, and Companies on the <a href="https://app.codat.io/settings/data-types" target="_blank">Data type settings page</a>. These data types will be automatically pulled when a company is linked for the first time.
+- In the Codat Portal, enable **Fetch on first link** for Bills, Bill payments, and Companies on the <a href="https://app.codat.io/settings/data-types" target="_blank">Data type settings page</a>. These data types will be automatically read when a company is linked for the first time.
 - Make sure that `npm` version `16.9.0` minimum is installed on your machine.
 - Set up the QuickBooks Online Sandbox integration in the Codat Portal.
 
@@ -24,7 +24,7 @@ Before running the demo app locally:
 Start by setting up the QuickBooks Online Sandbox integration. For a detailed guide, see [Set up the QuickBooks Online integration](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup).
 
 :::info Why QuickBooks Online?
-We've chosen QuickBooks Online for this demo guide because it provides easy access to sandbox data through a free trial account. You can use the demo app with a different integration that supports pushing Bill payments, such as Codat sandbox, if you prefer.
+We've chosen QuickBooks Online for this demo guide because it provides easy access to sandbox data through a free trial account. You can use the demo app with a different integration that supports writing Bill payments, such as Codat sandbox, if you prefer.
 :::
 
 1. Sign up or sign in to the [Intuit Developer Portal](https://developer.intuit.com/).
@@ -90,14 +90,14 @@ Next, set the redirect URL defined in the demo app as the Codat Redirect URL. Th
 
 Like the hosted app, you can now create a company, connect to your sandbox QuickBooks Online company, and view and pay bills.
 
-### Review push history
+### Review write history
 
-After paying a bill, you can check your pushed Bill payments are reflected in the Codat Portal.
+After paying a bill, you can check that the Bill payments you wrote are reflected in the Codat Portal.
 
 1. On the navigation bar, select **Companies**.
 2. Select the company you connected via the demo app.
-3. Select **Data history > Push history**.
-4. Review the push history. Look for the recent  `billPayments` push operation and check that it completed successfully.
+3. Select **Data history > Write history**.
+4. Review the write history. Look for the recent `billPayments` write operation and check that it completed successfully.
 
 ### Recap
 

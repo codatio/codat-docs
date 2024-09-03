@@ -9,7 +9,7 @@ Set up the [Maxio](/integrations/commerce/chargify/commerce-chargify) integratio
 
 Before you can use the integration, your SMB customers (merchants who use Maxio) need to retrieve their secure API credentials from their Maxio account and enter them in [Link](/auth-flow/overview). Maxio does not require any global credentials for accessing the API.
 
-To start pulling data from Chargebee:
+To start reading data from Chargebee:
 - [ ] Enable the Chargebee integration
 - [ ] Create companies in Codat and then share the Link URLs with your SMB customers
 - [ ] Ask you customer to connect their Chargebee account to Codat

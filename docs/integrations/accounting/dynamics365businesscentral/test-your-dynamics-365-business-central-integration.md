@@ -1,7 +1,7 @@
 ---
 title: "Test your Dynamics 365 Business Central integration"
 slug: "test-your-dynamics-365-business-central-integration"
-description: "Test your integration by pulling data from a test company."
+description: "Test your integration by reading data from a test company."
 sidebar_label: Testing
 ---
 

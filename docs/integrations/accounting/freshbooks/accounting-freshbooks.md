@@ -57,7 +57,7 @@ Create and configure an application in the FreshBooks Developer Portal.
 The following table lists the recommended scopes to set for your FreshBooks application. If the scopes you require change in future, all connected companies will need to reauthenticate with your app.
 
 :::caution _Read_ and _write_ scopes
-The table outlines the minimum scopes needed to allow _read_ (pull) access to the FreshBooks objects that are supported by Codat. If you want to create, update or delete data in FreshBooks, you need to select the corresponding _write_ scopes for the relevant objects.
+The table outlines the minimum scopes needed to allow _read_ access to the FreshBooks objects that are supported by Codat. If you want to create, update or delete data in FreshBooks, you need to select the corresponding _write_ scopes for the relevant objects.
 ::: 
 
 ||||

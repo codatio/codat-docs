@@ -92,11 +92,11 @@ For example:
 
 On the **Set your credentials** step, the user enters their Sage 50 username and password in the boxes provided. The username and password entered must be for a Sage 50 user account with permission to read all the data you plan to synchronize.
 
-:::caution Create a separate login for pushing data
+:::caution Create a separate login for writing data
 
-If your product requires pushing data to Sage 50, the user should create a separate user login in Sage 50 to be used solely by the Sage 50 Connector. This is required to prevent concurrent access issues.
+If your product requires writing data to Sage 50, the user should create a separate user login in Sage 50 to be used solely by the Sage 50 Connector. This is required to prevent concurrent access issues.
 
-For more information, see the separate article about [pushing data to Sage 50](/integrations/accounting/sage50/pushing-data-to-sage-50).
+For more information, see the separate article about [writing data to Sage 50](/integrations/accounting/sage50/pushing-data-to-sage-50).
 :::
 
 Once the Sage 50 information has been entered, the user should click **Next** to proceed to the final step.

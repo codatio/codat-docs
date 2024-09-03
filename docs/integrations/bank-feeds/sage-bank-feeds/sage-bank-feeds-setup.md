@@ -4,7 +4,7 @@ description: "Set up our integration with Sage Bank Feeds and get your SMB users
 sidebar_label: Set up
 ---
 
-Before you can push customer bank transactions to target bank accounts in Sage, you need to set up the integration for testing or production use.
+Before you can write customer bank transactions to target bank accounts in Sage, you need to set up the integration for testing or production use.
 
 This page explains how to:
 
@@ -160,7 +160,7 @@ Alternatively, you can [authenticate users through your own web app](/integratio
 
 7. The SMB user is redirected to the Sage product from which they started the connection flow.
 
-You can now use the [GET /bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) endpoint to retrieve the source bank accounts. The `status` property of a source bank account must have changed to `connected` before you can begin to push bank transactions from the account.
+You can now use the [GET /bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) endpoint to retrieve the source bank accounts. The `status` property of a source bank account must have changed to `connected` before you can begin to write bank transactions from the account.
 
 The SMB user flow is now complete.
 
@@ -200,4 +200,4 @@ The endpoint returns a `200` code and the updated bank account details. For exam
 
 ## Next steps
 
-Next you can [push bank transactions from a source bank account](/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-use).
+Next you can [write bank transactions from a source bank account](/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-use).

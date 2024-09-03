@@ -27,7 +27,7 @@ In this guide we'll show how to build a solution for QuickBooks Online
 
 This specification covers QuickBooks Online, as discussed up to this point.
 
-Any integrations to further platforms beyond QBO will require some work to enable the authentication user journey. The bank transaction data push will be largely re-usable.
+Any integrations to further platforms beyond QBO will require some work to enable the authentication user journey. The bank transaction data write operation will be largely re-usable.
 
 An integration to Xero will require a further specification.
 
@@ -181,7 +181,7 @@ Example request body:
 
 ### Best practices
 
-Codat recommends pushing transactions in batches of 1000 or less for performance reasons.
+Codat recommends writing transactions in batches of 1000 or less for performance reasons.
 
-QuickBooks Online will be pulling once a day from the backlog of transactions, or when the client manually presses the “update” button within the QBO User Interface.
+QuickBooks Online will be reading once a day from the backlog of transactions, or when the client manually presses the “update” button within the QBO User Interface.
 ```

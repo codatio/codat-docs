@@ -97,7 +97,7 @@ Once the password is saved, access to QuickBooks will be granted and the connect
 
 If you have chosen to have your connectors perform a one-time synchronization, your company connection status will change to _deauthorized_ after the initial sync.
 
-If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat Portal or API. The connector will also start automatically when the system reboots.
+If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or write operations you have queued using the Codat Portal or API. The connector will also start automatically when the system reboots.
 
 ## Installation path
 
@@ -111,6 +111,16 @@ For example:
 
 <img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-file-location.png" />
 
+## Pause the connector
+
+Due to QBD's own limitations, it's not possible to use the software while it's syncing data through the connector. This applies to all connectors and syncs. 
+
+- If QBD is closed and the sync is ongoing, the user won't be able to open the software until the sync has finished.
+- If QBD has a company file open and the sync is ongoing, QBD's interface may behave unexpectedly, reducing usability during these sync periods.
+
+To support a seamless user experience, enable your user to pause the sync when they need to access QBD. You can easily do this with our [Connections SDK](/auth-flow/optimize/connection-management). This embeddable component enables your users to pause ongoing or future syncs for a set period as well as manage their data connections. The pause functionality is only required for QBD connections.
+
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd_pause_options.png" />
 
 ## Uninstall the connector
 

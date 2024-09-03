@@ -1,21 +1,21 @@
 ---
-title: "Zoho Books limits and reduced data pulls"
-description: "Information about Zoho Books API rate limits and when Codat pulls reduced datasets."
+title: "Zoho Books limits and reduced data reads"
+description: "Information about Zoho Books API rate limits and when Codat reads reduced datasets."
 sidebar_label: Limitations
 ---
 
-To minimize the performance impact of the [rate limits](zoho-book-limits#zoho-books-rate-limits) described below, by default Codat pulls a reduced dataset from Zoho Books for some data types.
+To minimize the performance impact of the [rate limits](zoho-book-limits#zoho-books-rate-limits) described below, by default Codat reads a reduced dataset from Zoho Books for some data types.
 
-The following table summarizes the fields which are excluded when pulling reduced datasets from Zoho Books.
+The following table summarizes the fields which are excluded when reading reduced datasets from Zoho Books.
 
-| Data type pulled  | Fields excluded                 |
+| Data type read  | Fields excluded                 |
 |-------------------|---------------------------------|
-| Bills             | <p>`purchaseOrderRefs`, `lineItems`, `subTotal`, `taxAmount`, `note`</p> <p>If pulling complete datasets, the following fields on bill line items are always populated as 0.00 in Codat:</p><p>`discountAmount`, `subTotal`, `taxAmount`</p>|
+| Bills             | <p>`purchaseOrderRefs`, `lineItems`, `subTotal`, `taxAmount`, `note`</p> <p>If reading complete datasets, the following fields on bill line items are always populated as 0.00 in Codat:</p><p>`discountAmount`, `subTotal`, `taxAmount`</p>|
 | Credit Notes      | Line items                      |
 | Customers         | Address and contact information |
 | Invoices          | Line items                      |
 
-To remove these restrictions and pull complete datasets for the supported Zoho Books data types, please raise a ticket through our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new). **After removing the restrictions, fetching large volumes of data from the above data types can take multiple days to complete.**
+To remove these restrictions and read complete datasets for the supported Zoho Books data types, please raise a ticket through our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new). **After removing the restrictions, fetching large volumes of data from the above data types can take multiple days to complete.**
 
 :::info totalTaxAmount for invoices
 
@@ -30,7 +30,7 @@ The Zoho Books API has the following connection limits and rate limits:
 - Per-minute rate limit
 - Refresh token limit
 
-Our Zoho Books integration works within these limits to minimize the performance impact of pulling and pushing large volumes of data. To do so, the integration maximises the number of records retrieved per API call for most data types. However, for certain data types, the integration can only fetch a single record for each API call to Zoho Books, impacting performance. This also applies to additional data types where the restrictions on pulling reduced datasets described above are removed.
+Our Zoho Books integration works within these limits to minimize the performance impact of reading and writing large volumes of data. To do so, the integration maximises the number of records retrieved per API call for most data types. However, for certain data types, the integration can only fetch a single record for each API call to Zoho Books, impacting performance. This also applies to additional data types where the restrictions on reading reduced datasets described above are removed.
 
 ### API daily rate limit
 
@@ -47,7 +47,7 @@ The daily rate is shared between all API requests made to an organization from a
 
 Zoho Books can make about 60 API calls per minute—the _per-minute rate limit_.
 
-This rate limit can affect the performance of the integration when pulling and pushing data from Zoho Books.
+This rate limit can affect the performance of the integration when reading data from and writing to Zoho Books.
 
 ### Refresh token limit
 
