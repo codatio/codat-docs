@@ -20,7 +20,7 @@ The primary use case for this feature is **revenue analysis**. Evaluate historic
 ## Feature components
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=250863128&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=250863128&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "550px" }}

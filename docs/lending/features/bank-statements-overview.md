@@ -39,7 +39,7 @@ Our banking feature consists of the following components, supported across a num
 4. **[Categorized bank statements:](/lending-api#/operations/get-categorized-bank-statement)** all connected bank accounts and transactions with enrichments in a single endpoint.
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1760315404&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=1760315404&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "200px" }}
@@ -57,7 +57,7 @@ Bank transactions lack useful context for underwriting. We have solved this prob
   <summary>View supported transaction categories</summary>
 
   <iframe
-    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=340133827&amp;single=true&amp;widget=true&amp;headers=false"
+    src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=340133827&amp;single=true&amp;widget=true&amp;headers=false"
     frameborder="0"
     className="googleSheets"
     style={{ height: "660px" }}
@@ -72,7 +72,7 @@ Businesses often sell across multiple channels, for example, brick and mortar, o
   <summary>View supported payment providers</summary>
 
  <iframe
-   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=88475193&amp;single=true&amp;widget=true&amp;headers=false"
+   src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=88475193&amp;single=true&amp;widget=true&amp;headers=false"
    frameborder="0"
    className="googleSheets"
    style={{ height: "660px" }}
