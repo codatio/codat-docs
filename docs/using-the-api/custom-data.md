@@ -32,10 +32,10 @@ Are you looking to fetch, create, or update additional _properties_ in data type
 ## Supported integrations
 
 <iframe 
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSZhBnE0b69-_VZ107d-i-I4pjgGFgMBGL0rVq7yxdUJZoKSsvcHY4wX-p9YZyA0zX-gU6-2e1eBkhI/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1DmS8whMQ3iJtggfAkKvNgK__FdoYfnmtZvob_D5SsfY/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
-  style={{ height: "250px" }}
+  style={{ height: "300px" }}
 />
 
 ## Configure custom data
