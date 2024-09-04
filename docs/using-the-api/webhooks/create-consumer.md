@@ -45,7 +45,7 @@ You can create a webhook consumer programmatically using our [Create webhook](/p
 If your consumer endpoint is behind a firewall or NAT, you'll need to allow-list IP addresses `4.159.114.108` and `20.117.190.191`.
 :::
 
-### Routing webhooks
+### Route webhooks
 
 Codat supports routing webhooks for specific companies using [tags](/using-the-api/managing-companies#add-metadata-to-a-company).
 You can configure an endpoint to route webhooks for companies with a specific tag when creating or updating a webhook consumer in the portal.
