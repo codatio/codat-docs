@@ -7,7 +7,7 @@ description: "Learn how you can migrate your existing webhooks to use our new ev
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-We have recently released our [new webhook event types](link-to-announcement). To ensure a smooth transition to these types, we recommend using an "expand/contract" strategy. It allows your system to handle both the old rule types and the new event types during the migration, minimizing potential disruptions.
+We have recently released our [new webhook event types](/updates/240929-new-webhook-event-types). To ensure a smooth transition to these types, we recommend using an "expand/contract" strategy. It allows your system to handle both the old rule types and the new event types during the migration, minimizing potential disruptions.
 
 :::info In this guide:
 
@@ -65,15 +65,15 @@ Below is the summary of old rule types and new event types that replace them. Cl
 
 #### AccountCategoriesUpdated
 
-Triggered when a company's accounts are categorized, this event has been replaced by two more precise webhooks: `financialStatements.categorized` and `financialStatements.recategorized`. These webhooks provide detailed insights into who performed the account categorization. 
+Triggered when a company's accounts are categorized, this event has been replaced by two more precise webhooks: `financialStatements.categorized` and `financialStatements.recategorized`. These webhooks provide detailed insights into who performed the account categorization.
 
-The `financialStatements.categorized` event indicates the categories suggested by Codat's AI are ready for your review. 
+The `financialStatements.categorized` event indicates the categories suggested by Codat AI are ready for your review.
 
 The `financialStatements.recategorized` event notifies you when an analyst updates a category. Subscribing to both webhooks replicates the behavior of the previous `AccountCategoriesUpdated` webhook.
 
 | Rule type | Maps to event type |
 |---|---|
-| `Account Categories Updated` | [`financialStatements.{categorized}`](/lending-api#/webhooks/financialStatements.categorized/post) <br/> [`financialStatements.{recategorized}`](/lending-api#/webhooks/financialStatements.recategorized/post) |
+| `Account Categories Updated` | [`financialStatements.categorized`](/lending-api#/webhooks/financialStatements.categorized/post) <br/> [`financialStatements.recategorized`](/lending-api#/webhooks/financialStatements.recategorized/post) |
 
 <details>
   <summary><b>Compare webhook schemas</b></summary>
@@ -402,7 +402,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 ```json
 {
   "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
-  "type": "read.completed",
+  "eventType": "read.completed",
   "generatedDate": "2024-08-07T12:02:32.15033Z",
   "payload": {
     "referenceCompany": {
@@ -491,7 +491,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 ```json
 {
   "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
-  "type": "read.completed",
+  "eventType": "read.completed",
   "generatedDate": "2024-08-07T12:02:32.15033Z",
   "payload": {
     "referenceCompany": {
@@ -582,7 +582,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 ```json
 {
   "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
-  "type": "read.completed",
+  "eventType": "read.completed",
   "generatedDate": "2024-08-07T12:02:32.15033Z",
   "payload": {
     "referenceCompany": {
@@ -638,8 +638,8 @@ These event types provide detailed information, including whether the push opera
 
 | Rule type | Data status | Maps to event type |
 |---|---|---|
-| `Push Operation Status Changed()` | `Successful`  | [`{dataType}.write.successful`](/platform-api#/webhooks/bills.write.successful/post) |
-| `Push Operation Status Changed()` | `TimedOut` or `Failed`  | [`{dataType}.write.unsuccessful`](/platform-api#/webhooks/bills.write.unsuccessful/post) |
+| `Push Operation Status Changed()` | `Successful`  | [`{dataType}.write.successful`](/platform-api#/webhooks/dataType-.write.successful/post) |
+| `Push Operation Status Changed()` | `TimedOut` or `Failed`  | [`{dataType}.write.unsuccessful`](/platform-api#/webhooks/dataType-.write.unsuccessful/post) |
 
 <details>
   <summary><b>Compare webhook schemas</b></summary>
@@ -723,7 +723,7 @@ Triggered when a write operation times out. This webhook has been replaced by th
 
 | Rule type | Data status | Maps to event type |
 |---|---|---|
-| `Push Operation Timed Out` | `TimedOut` | [`{dataType}.write.unsuccessful`](/platform-api#/webhooks/bills.write.unsuccessful/post) |
+| `Push Operation Timed Out` | `TimedOut` | [`{dataType}.write.unsuccessful`](/platform-api#/webhooks/dataType-.write.unsuccessful/post) |
 
 <details>
   <summary><b>Compare webhook schemas</b></summary>
@@ -805,7 +805,7 @@ The original rule type is triggered when a [Sync for Expenses](/expenses/overvie
 
 | Rule type | Maps to event type |
 |---|---|
-| `Sync Completed` | `expenses.sync.successful` |
+| `Sync Completed` | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post) |
 
 <details>
   <summary><b>Compare webhook schemas</b></summary>
@@ -834,7 +834,7 @@ The original rule type is triggered when a [Sync for Expenses](/expenses/overvie
 ```json
 {
   "id":"33a4f8e9-09ae-4334-9b00-7bbe83024672",
-  "type":"expenses.sync.successful",
+  "eventType":"expenses.sync.successful",
   "generatedDate":"2022-10-23T00:00:00.000Z",
   "payload":{
     "referenceCompany": {
@@ -875,7 +875,7 @@ Triggered anytime a [Sync for Expenses](/expenses/overview) expenses sync fails,
 
 | Rule type | Maps to event type |
 |---|---|
-| `Sync Failed` | `expenses.sync.unsuccessful` |
+| `Sync Failed` | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post) |
 
 <details>
   <summary><b>Compare webhook schemas</b></summary>
@@ -905,7 +905,7 @@ Triggered anytime a [Sync for Expenses](/expenses/overview) expenses sync fails,
 ```json
 {
   "id":"72c1103b-7f17-4a3a-8db5-67c2d360a516",
-  "type":"expenses.sync.unsuccessful",
+  "eventType":"expenses.sync.unsuccessful",
   "generatedDate":"2022-10-23T00:00:00.000Z",
   "payload":{
     "referenceCompany": {
@@ -947,7 +947,7 @@ This legacy event is specific to [Sync for Commerce](/commerce/overview) and ind
 
 | Rule type | Maps to event type |
 |---|---|
-| `Sync Connection Deleted` | `connection.deleted` |
+| `Sync Connection Deleted` | [`connection.deleted`](/platform-api#/webhooks/connection.deleted/post) |
 
 <details>
   <summary><b>Compare webhook schemas</b></summary>
@@ -1015,3 +1015,11 @@ This legacy event is specific to [Sync for Commerce](/commerce/overview) and ind
 | `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant.|
 
 </details>
+
+---
+
+## Read next
+
+- [Manage webhook consumers](/using-the-api/webhooks/create-consumer)
+- [Support email notifications with Zapier](/using-the-api/webhooks/zapier-integration)
+- [Troubleshooting](/using-the-api/troubleshooting)
