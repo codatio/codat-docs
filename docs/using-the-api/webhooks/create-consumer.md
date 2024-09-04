@@ -45,6 +45,32 @@ You can create a webhook consumer programmatically using our [Create webhook](/p
 If your consumer endpoint is behind a firewall or NAT, you'll need to allow-list IP addresses `4.159.114.108` and `20.117.190.191`.
 :::
 
+### Routing webhooks
+
+Codat supports routing webhooks for specific companies using [tags](/using-the-api/managing-companies#add-metadata-to-a-company).
+You can configure an endpoint to route webhooks for companies with a specific tag when creating or updating a webhook consumer in the portal.
+
+Codat supports up to 10 company tags per consumer.
+A message will be attempted to be delivered when any tag defined on a company matches any tag defined on a consumer.
+
+To do this, simply add the desired tag in the **Company tags** field. Tags should be formatted as a key-value pair, separated by a colon.
+For example, to route webhooks for companies tagged with a `region` value of `us`, set the **Company tags** field to `region:us`.
+
+TODO: Add a screenshot once supported.
+
+Is this needed?
+```json
+{
+  "id": "8a210b68-6988-11ed-a1eb-0242ac120002",
+  "name": "Toft stores",
+  ...
+  "tags": {
+    "uid": "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
+    "region": "us"
+  }
+}
+```
+
 ### Custom headers
 
 Once you created your webhook consumer, you can use its advanced functionality to add a custom header to the endpoint. This can be useful in the following scenarios:
