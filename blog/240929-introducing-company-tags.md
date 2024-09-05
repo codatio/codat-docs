@@ -8,10 +8,13 @@ authors: dcoplowe
 
 import Diff from "@components/Diff"
 
-We've enhanced our company model to offer more flexibility.
-Developers can now programmatically add metadata to a company through the tags object.
+We've enhanced our company data model to offer more flexibility. You can now add metadata to a company using the `tags` object.
 
 <!--truncate-->
+
+### What's new?
+
+We've introduced a `tags` array to our `company` data model. Tags provide a simple way to include additional information about a company. For example, you can use tahs to set a foreign key, define an operating region or specify details about the financial services a company has requested. The array supports up to 10 user-defined key-value pairs.
 
 <Diff
   showDiffOnly={false}
@@ -32,7 +35,7 @@ Developers can now programmatically add metadata to a company through the tags o
 "lastSync":"2022-01-01T12:00:00.000Z",
 "created":"2022-01-01T12:00:00.000Z",
 "createdByUserName":"Danny DeVito",
-"tags": { // Supports up to 10 user-defined key-value pairs
+"tags": { 
     "uid": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
     "region": "us",
     "owningTeam": "commercial-lending"
@@ -41,16 +44,11 @@ Developers can now programmatically add metadata to a company through the tags o
 }`}
 />
 
-### What's new?
-
-Tags provide a simple way to add additional information to a company.
-This could include anything from setting a foreign key, defining an operating region, to specifying details about the financial services a company has requested.
-
 #### Key benefits
 
-- **Group companies effectively**: Use tags to group companies by type or other criteria relevant to your business domain.
-- **Enhanced support for event-based architectures**: All webhooks related to a specific company will include the `tags` object, enabling your webhook consumer to access this data easily.
-- **Route webhooks to specific endpoints**: Direct webhook messages for specific companies to the appropriate endpoints. [Learn more](/using-the-api/webhooks/create-consumer#route-webhooks).
+- **Group companies effectively**: use tags to group companies by type or other relevant criteria.
+- **Support event-based architectures**: all webhooks related to a specific company will include the `tags` object so your webhook consumer can access this data easily.
+- **Route webhooks to specific endpoints**: direct webhook messages for specific companies to the appropriate endpoints. See [Route webhooks](/using-the-api/webhooks/create-consumer#route-webhooks).
 
 ### Who is it relevant for?
 
@@ -58,4 +56,4 @@ Any client looking to add metadata to their companies in Codat, route webhooks e
 
 ### How to get started?
 
-This feature is available to all clients today. Learn how to programmatically set and manage tags for a company [here](/using-the-api/managing-companies#add-metadata-to-a-company).
+This feature is available to all clients today. Start with our documentation to [add metadata to a company](/using-the-api/managing-companies#add-metadata-to-a-company).
