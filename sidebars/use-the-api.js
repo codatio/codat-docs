@@ -60,7 +60,6 @@ module.exports = [
         items: [
           "using-the-api/webhooks/migration-guide",
           "using-the-api/webhooks/migration-guide-advanced",
-          "using-the-api/webhooks/migrating-to-new-event-types",
         ]
       },
     ],
