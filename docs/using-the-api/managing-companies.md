@@ -117,16 +117,20 @@ The `id` property that you receive in the response is the unique Codat identifie
 
 :::note Company name
 
-The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
+The name of the company helps you identify the company in the Codat Portal and doesn't have to be unique. Make sure to [avoid forbidden characters](/core-concepts/companies).
 :::
 
 #### Add metadata to a company 
 
-Codat allows clients to add metadata to a company using tags. These tags can store information such as a foreign key or UID and can also be used to route companies to specific webhook consumers. To learn more, see how to use [tags to route company-specific webhooks](/using-the-api/webhooks/create-consumer#routing-webhooks).
+You can store additional information about the company using the `tags` array. These tags could include anything from setting a foreign key, defining an operating region, to specifying details about the financial services a company has requested. You can add up to 10 tags when using the [Create company](/platform-api#/operations/create-company) endpoint or the [Update company](/platform-api#/operations/update-company) endpoint.
 
-Users can add up to 10 tags to a company when creating or updating it.
-This can be done through the [Create](/platform-api#/operations/create-company) or [Update](/platform-api#/operations/update-company) Company endpoint.
-For example, to add tags that define a user-defined ID (UID) and operating region, check out these code snippets:
+:::tip Use tags with webhooks
+
+You can use the `tags` array to route companies to specific webhook consumers. To learn more, see [Route webhooks](/using-the-api/webhooks/create-consumer#route-webhooks).
+
+:::
+
+For example, here's how you can add tags that define a user-defined ID (UID) and operating region:
 
 <Tabs>
 
@@ -357,12 +361,11 @@ if (companyUpdatedRes.company().isPresent()) {
 
 </Tabs>
 
-:::note Updating a company with tags
+:::caution Updating a company with existing tags
 
-If the `tags` object is null or empty when updating a company, all existing tags will be removed.
-To retain existing tags, ensure they are included in the update.
+If you use include a `null` or empty `tags` object in the [Update company](/platform-api#/operations/update-company) endpoint request, any existing tags for this company will be removed. To retain existing tags, ensure they are included in the update.
+
 :::
-
 
 ### Authorize access to company data
 
@@ -458,4 +461,4 @@ You've learned:
 
 - [Get data](/using-the-api/get-data)
 - [Create, update and delete data](/using-the-api/push)
-- [Routing webhooks using tags]((/dddd))
+- [Route webhooks using tags](/using-the-api/webhooks/create-consumer#route-webhooks)
