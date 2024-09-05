@@ -6,21 +6,58 @@ description: "Understand how to add, modify, and delete data in Codat's integrat
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
+Codat offers the ability to create, update, and delete records in the source platforms of our integrations using our standard data models.
+We support the following write operations: 
+
+- **Create** a new record using the `POST` method.
+- **Update** an existing record using the `PUT` method.
+- **Delete** an existing record using the `DELETE` method.
+
+:::note Push operations
+
+Codat now refers to push operations as write requests.
+
+:::
+
+### Supported accounting data types and write types
+
+| `dataType`       | Create  | Update  | Delete  |
+|------------------|---------|---------|---------|
+| bankAccounts     | &#9989; | &#9989; | -       |  
+| bankTransactions | &#9989; | -       | -       |
+| billCreditNotes  | &#9989; | &#9989; | -       |  
+| billPayments     | &#9989; | -       | &#9989; | 
+| bills            | &#9989; | &#9989; | &#9989; | 
+| chartOfAccounts  | &#9989; | -       | -       | 
+| creditNotes      | &#9989; | &#9989; | -       | 
+| customers        | &#9989; | &#9989; | -       | 
+| directCosts      | &#9989; | -       | &#9989; | 
+| directIncomes    | &#9989; | -       | -       | 
+| invoices         | &#9989; | &#9989; | &#9989; | 
+| items            | &#9989; | -       | -       | 
+| journalEntries   | &#9989; | -       | &#9989; | 
+| journals         | &#9989; | -       | -       | 
+| payments         | &#9989; | -       | -       | 
+| purchaseOrders   | &#9989; | &#9989; | -       | 
+| suppliers        | &#9989; | &#9989; | -       | 
+| transfers        | &#9989; | -       | -       |
+
 :::note Data coverage
 
 View the full details of Codat's support for creating and updating data for each accounting software in our <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
 
 :::
 
-Codat offers the ability to create, update, and delete records in the source platforms of our integrations using our standard data models. We support the following operations (also known as CUD): 
+### Process
 
-- **Create** a new record using the `POST` method.
-- **Update** an existing record using the `PUT` method.
-- **Delete** an existing record using the `DELETE` method.
+To make a write request is achieved by performing the following:
 
-The CUD process first requires you to [check the data model](/using-the-api/push#use-a-valid-data-model) of the data type you want to create, update, or delete. This helps you ensure all required properties are included in your request. Checking the model may be a one-time activity (for integrations with static properties) or be required more frequently (for integrations with higher customization options).
+1. **[Check the data model](#use-a-valid-data-model)**: For **Create** and **Update** requests you need to check the data model of the data type you want to write.
+This helps you ensure all required properties are included in your request. Checking the model may be a one-time activity (for integrations with static properties) or be required more frequently (for integrations with higher customization options).
 
-Next, you are ready to [perform the CUD operation](/using-the-api/push#perform-the-operation) using the relevant data model. You will receive a CUD operation key in return. You can then use it to [monitor the status of the operation](/using-the-api/push#monitor-the-status-of-your-operation), or display its results.
+2. **[Perform the write request](#perform-the-operation)**: Upon completion you will receive a write request ID that can be used to [monitor the status of the request](#monitor-the-status-of-your-operation).
+
+3. **[Consume the `dataType.write.{un}successful` webhook](#consume-the-data-types-write-webhook)**: Get notified on the outcome of the request.
 
 ```mermaid
 sequenceDiagram
@@ -28,26 +65,23 @@ sequenceDiagram
     participant codat as Codat
     
   opt If the data model check is required
-    app ->> codat: Get create/update {{dataType}} model
+    app ->> codat: Get create/update {dataType} model
     codat -->> app: Valid data type model
   end
 
     app ->> codat: Create, update, or delete record
-    codat -->> app: CUD operation key
+    codat -->> app: write ID (pushOperationKey)
 
-    codat -->> app: CUD operation status webhook
-
-    alt Status is successful
-        app ->> codat: Get CUD operation
-        codat -->> app: CUD operation
-    end
-``` 
+    codat ->> app: {dataType}.write.{un}successful webhook
+```
 
 ### Asynchronous operations
 
-Data creation and updates will be handled asynchronously and will take between a few seconds to a couple of minutes to complete, depending on the underlying platform. This means you will receive a `Pending` status in response to your CUD request. You can monitor the status of your request by listening to a [webhook event](/using-the-api/push#monitor-the-status-of-your-operation) to verify when the operation completes (preferred), or poll the status. 
+Write requests are asynchronous operations and will take between a few seconds to a couple of minutes to complete, depending on the underlying platform.
+This means you will receive a `Pending` status in response to your write request.
 
-A CUD operation may be `Pending` indefinitely for integrations using offline connectors when the desktop application is unreachable. Manage this by setting [timeouts](/using-the-api/push#monitor-the-status-of-your-operation#timeouts). 
+A write request may be `Pending` indefinitely for integrations using offline connectors when the desktop application is unreachable.
+Manage this by setting [timeouts](/using-the-api/push#monitor-the-status-of-your-operation#timeouts). 
 
 ### Supplemental data
 
@@ -249,6 +283,30 @@ This results in a corresponding response from the endpoint, which includes the f
   ```
    </TabItem>
 </Tabs>
+
+## Consume the data type's write webhook
+
+## Accessing created or updated records
+
+In cases where you need to access the created or updated record for example to displaying it to your customer.
+We recommend refreshing the data type 
+
+Once a write request has completed 
+
+```mermaid
+sequenceDiagram
+    participant app as Your application 
+    participant codat as Codat
+    
+    codat ->> app: {dataType}.write.{un}successful webhook
+
+    alt {dataType}.write.successful
+          app ->> codat: Refresh {dataType}
+          codat ->> app: read.completed webhook
+          app ->> codat: Get {dataType} by ID 
+          codat -->> app: {dataType} record
+    end
+```
 
 ## Monitor the status of your operation
 

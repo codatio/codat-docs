@@ -36,10 +36,11 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Modify data",
+    label: "Write data",
     collapsed: true,
     items: [
       "using-the-api/push",
+      "using-the-api/upload-attachments",
       "configure/portal/pull-and-push-history",
     ],
   },
