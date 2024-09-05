@@ -353,11 +353,15 @@ if (companyUpdatedRes.company().isPresent()) {
 
 </Tabs>
 
-
-
 </TabItem>
 
 </Tabs>
+
+:::note Updating a company with tags
+
+If the `tags` object is null or empty when updating a company, all existing tags will be removed.
+To retain existing tags, ensure they are included in the update.
+:::
 
 
 ### Authorize access to company data
