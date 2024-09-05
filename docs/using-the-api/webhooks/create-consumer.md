@@ -45,32 +45,6 @@ You can create a webhook consumer programmatically using our [Create webhook](/p
 If your consumer endpoint is behind a firewall or NAT, you'll need to allow-list IP addresses `4.159.114.108` and `20.117.190.191`.
 :::
 
-### Route webhooks
-
-Codat supports routing webhooks for specific companies using [tags](/using-the-api/managing-companies#add-metadata-to-a-company).
-You can configure an endpoint to route webhooks for companies with a specific tag when creating or updating a webhook consumer in the portal.
-
-Codat supports up to 10 company tags per consumer.
-A message will be attempted to be delivered when any tag defined on a company matches any tag defined on a consumer.
-
-To do this, simply add the desired tag in the **Company tags** field. Tags should be formatted as a key-value pair, separated by a colon.
-For example, to route webhooks for companies tagged with a `region` value of `us`, set the **Company tags** field to `region:us`.
-
-TODO: Add a screenshot once supported.
-
-Is this needed?
-```json
-{
-  "id": "8a210b68-6988-11ed-a1eb-0242ac120002",
-  "name": "Toft stores",
-  ...
-  "tags": {
-    "uid": "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
-    "region": "us"
-  }
-}
-```
-
 ### Custom headers
 
 Once you created your webhook consumer, you can use its advanced functionality to add a custom header to the endpoint. This can be useful in the following scenarios:
@@ -84,6 +58,16 @@ Once you created your webhook consumer, you can use its advanced functionality t
 It's not possible to add a custom header via our API. Instead, navigate to **Monitor > Webhooks > Events** and click on the relevant endpoint to see its detailed view. Then, select the **Advanced** tab and add your headers to the custom header section. 
 
 ![A fragment of the webhook UI that displays the detailed endpoint view with two custom headers added to it](/img/use-the-api/0050-custom-headers-section.png)
+
+### Route webhooks
+
+You can configure an endpoint to route webhooks to specific companies by using tags. You need to [add the tags to the company](/using-the-api/managing-companies#add-metadata-to-a-company) first. Then, add the desired tag to the **Company tags** field when creating or updating a webhook consumer. 
+
+We will attempt to deliver a message when a tag defined on a company matches a tag defined on a webhook consumer.
+
+Tags should be formatted as a key-value pair separated by a colon. For example, to route webhooks for companies tagged with a `region` value of `us`, set the **Company tags** field to `region:us`. You can add up to 10 company tag per webhook consumer.
+
+TODO: Add a screenshot once supported.
 
 ## View webhook consumers
 
