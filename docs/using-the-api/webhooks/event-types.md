@@ -11,7 +11,7 @@ Navigate to **Monitor > Webhooks > Events > Event Catalog** to view this list an
 
 :::caution Still using our legacy rules?
 
-Learn how to migrate to our new webhook event types [here](/using-the-api/webhooks/migrating-to-new-event-types).
+See our migration guide to [switch to new event types](/using-the-api/webhooks/migrating-to-new-event-types).
 
 :::
 
@@ -26,8 +26,8 @@ Learn how to migrate to our new webhook event types [here](/using-the-api/webhoo
 | [`connection.disconnected`](/platform-api#/webhooks/connection.disconnected/post)            | Triggered when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.                                      |
 | [`connection.reconnected`](/platform-api#/webhooks/connection.reconnected/post)              | Triggered when a connection is reconnected after becoming disconnected.                                                                                   |
 | [`connection.deleted`](/platform-api#/webhooks/connection.deleted/post)                      | Triggered when a connection is deleted.                                                                                                                   |
-| [`read.completed`](/platform-api#/webhooks/read.completed/post)                              | Indicates that the fetch of data types for a product has completed.                                                                                       |
-| [`{dataType}.write.successful`](/platform-api#/webhooks/dataType-.write.successful/post)     | Indicates that a data type has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.                     |
+| [`read.completed`](/platform-api#/webhooks/read.completed/post)                              | Indicates that the read of data types for a product has completed.                                                                                       |
+| [`{dataType}.write.successful`](/platform-api#/webhooks/dataType-.write.successful/post)     | Indicates that the specified data type has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.                     |
 | [`{dataType}.write.unsuccessful`](/platform-api#/webhooks/dataType-.write.unsuccessful/post) | Indicates that an attempt to create, update, delete a data type, or upload an attachment to a data type in the accounting software has been unsuccessful. |
 | [`client.rateLimit.reached`](/platform-api#/webhooks/client.rateLimit.reached/post)          | Triggered when the client’s request count to Codat's API surpasses the allocated quota.                                                                   |
 | [`client.rateLimit.reset`](/platform-api#/webhooks/client.rateLimit.reset/post)              | Triggered when the client's rate limit quota is reset, allowing additional requests to Codat's API.                                                       |
@@ -38,8 +38,8 @@ Learn how to migrate to our new webhook event types [here](/using-the-api/webhoo
 |-------------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | Lending API       | [`financialStatements.categorized`](/lending-api#/webhooks/financialStatements.categorized/post)              | Indicates that Codat AI has proposed categories for an SMBs financial statements.                          |
 | Lending API       | [`financialStatements.recategorized`](/lending-api#/webhooks/financialStatements.recategorized/post)          | Indicates that a user has updated Codat AI's proposed categories for an SMBs financial statements.         |
-| Bank Feeds API    | [`bankFeeds.sourceAccount.connected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.connected/post)       | Indicates a bank feed source account has changed to a status of connected.                                 |
-| Bank Feeds API    | [`bankFeeds.sourceAccount.disconnected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.disconnected/post) | Indicates a bank feed source account has changed to a status of disconnected.                              |
+| Bank Feeds API    | [`bankFeeds.sourceAccount.connected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.connected/post)       | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of connected.                                 |
+| Bank Feeds API    | [`bankFeeds.sourceAccount.disconnected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.disconnected/post) | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of disconnected.                              |
 | Sync for Expenses | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post)                  | Triggered when an expense sync successfully completes without any errors or warnings.                      |
 | Sync for Expenses | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)              | Triggered when an expense sync fails to complete successfully, resulting in at least one error or warning. |
 
