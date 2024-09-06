@@ -14,7 +14,7 @@ We've enhanced our company data model to offer more flexibility. You can now add
 
 ### What's new?
 
-We've introduced a `tags` array to our `company` data model. Tags provide a simple way to include additional information about a company. For example, you can use tahs to set a foreign key, define an operating region or specify details about the financial services a company has requested. The array supports up to 10 user-defined key-value pairs.
+We've introduced a `tags` object to our `company` data model. Tags provide a simple way to include additional information about a company. For example, you can use tahs to set a foreign key, define an operating region or specify details about the financial services a company has requested. The object supports up to 10 user-defined key-value pairs.
 
 <Diff
   showDiffOnly={false}
