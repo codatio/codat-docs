@@ -45,7 +45,7 @@ To switch to new event types using the recommended "expand/contract" strategy, f
 
 ## Understand new event types
 
-Below is the summary of old rule types and new event types that replace them. Click on the required event type to check the fields and schema of the replacement event type and how it maps to legacy rule types.
+Below is the summary of old rule types and new event types that replace them. Click on the required event type to check the fields and schema of the replacement event type and how it maps to legacy rule types. You can also view the dedicated page for [webhook event types](/using-the-api/webhooks/event-types). 
 
 | Existing rule type                                            | Replacement event type                                                                                                              |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
@@ -1020,6 +1020,7 @@ This legacy event is specific to [Sync for Commerce](/commerce/overview) and ind
 
 ## Read next
 
+- Review [webhook event types](/using-the-api/webhooks/event-types)
 - [Manage webhook consumers](/using-the-api/webhooks/create-consumer)
 - [Support email notifications with Zapier](/using-the-api/webhooks/zapier-integration)
 - [Troubleshooting](/using-the-api/troubleshooting)
