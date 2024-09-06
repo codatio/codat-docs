@@ -13,7 +13,7 @@ We support the following write operations:
 - **Update** an existing record using the `PUT` method.
 - **Delete** an existing record using the `DELETE` method.
 
-:::note Push operations
+:::note Push operations and write requests
 
 Codat now refers to push operations as write requests.
 
@@ -49,15 +49,13 @@ View the full details of Codat's support for creating and updating data for each
 :::
 
 ### Process
+To perform a write request, follow these steps:
 
-To make a write request is achieved by performing the following:
+1. **[Check the data model](#use-a-valid-data-model)**: For **Create** and **Update** requests, ensure you’re using the correct data model for the data type you want to write. This ensures all required properties are included. Depending on the integration, this step may be a one-time task (for static properties) or a regular check (for highly customizable integrations).
 
-1. **[Check the data model](#use-a-valid-data-model)**: For **Create** and **Update** requests you need to check the data model of the data type you want to write.
-This helps you ensure all required properties are included in your request. Checking the model may be a one-time activity (for integrations with static properties) or be required more frequently (for integrations with higher customization options).
+2. **[Perform the write request](#perform-the-request)**: Once completed, you will receive a write request ID, which can be used to [track the status of the request](#monitor-the-status-of-your-operation).
 
-2. **[Perform the write request](#perform-the-operation)**: Upon completion you will receive a write request ID that can be used to [monitor the status of the request](#monitor-the-status-of-your-operation).
-
-3. **[Consume the `dataType.write.{un}successful` webhook](#consume-the-data-types-write-webhook)**: Get notified on the outcome of the request.
+3. **[Consume the `dataType.write.{un}successful` webhook](#consume-the-data-types-write-webhook)**: Subscribe to this webhook to receive notifications on the success or failure of the write request.
 
 ```mermaid
 sequenceDiagram
@@ -89,15 +87,18 @@ We have introduced [supplemental data](/using-the-api/supplemental-data/overview
 
 ## Use a valid data model
 
-Each integration may have different requirements to the request body of a CUD operation. So, before triggering the operation, you need to know how the data should be inserted into the source platform. You can access the integration-specific model requirements using Codat's _Get model_ endpoints.
+Each integration may have different requirements to the request body of a write request.
+So, before triggering the operation, you need to know how the data should be inserted into the source platform. You can access the integration-specific model requirements using Codat's _Get model_ endpoints.
 
-In most cases, the models provide static data, such as detailing mandatory properties. Some platforms, like Netsuite, offer greater customization to their users, so the corresponding model may differ.
+In most cases, the models provide static data, such as detailing mandatory properties.
+Some platforms, like Netsuite, offer greater customization to their users, so the corresponding model may differ.
 
 :::info Deleting records
+
 Our data deletion endpoints, where available, simply require the record `id`, `companyId`, and `connectionId` to be included in the request URL.
 :::
 
-Let's use our [Get create account model](/accounting-api#/operations/get-create-chartOfAccounts-model) endpoint to view integration-specific requirements for creating the `chartOfAccounts` data type in Xero. 
+Let's use our [Get Create Account Model](/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model) endpoint from the [Sync for Expenses](/expenses/overview) product to view integration-specific requirements for creating the `chartOfAccounts` data type in Xero.
 
 ```sh
 GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/options/chartOfAccounts
@@ -110,7 +111,10 @@ The response indicates that three properties must be populated:
 
 The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".  
 
-```json title="Partial Get create account model response"
+<details>
+  <summary><b>Partial Get create account model response</b></summary>
+
+```json
 {
   "type": "Object",
   "displayName": "Nominal Account",
@@ -165,46 +169,213 @@ The `displayName` on the options can be used to display a more descriptive name,
   "required": true
 }
 ```
+</details>
 
-## Perform the operation
+## Perform the request
 
 :::caution Properties not in the _Get model_ response
 If you attempt to create or update a record using properties not documented in the  _Get model_ response, you may receive validation errors in response to your request.
+
+In some cases, our API references include `id`, `modifiedDate`, and `sourceModifiedDate` in create or update requests.
+These properties are read-only and cannot be used in write requests.
+
 :::
 
-Let's try creating a new account using our [Create account](/accounting-api#/operations/create-account) endpoint. The request body should be a JSON object which conforms to the structure of the [Get create account model](/accounting-api#/operations/get-create-chartOfAccounts-model) we called previously. 
+Let's create a new account using our [Create account](/sync-for-expenses-api#/operations/create-account) endpoint from the [Sync for Expenses](/expenses/overview) product. The request must fulfil the requirements defined in the [Get create account model](/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model) we called previously.
 
-We base our models on the `GET` request, which includes `modifiedDate` and `sourceModifiedDate` that are not used when creating or updating a record. 
-
-We will try to create an account using a valid request body, and a request body that leads to a validation error:
+We will create an account using a valid request, and a request that leads to a validation error:
 
 <Tabs>
-   <TabItem value="wo" label="Create an account">  
 
-  ```json  
-    {
-      "nominalCode": "4200123456", 
-      "name": "Codat Assets Account", 
-      "fullyQualifiedCategory": "Asset.Current" 
-    }
-  ```
-   </TabItem>
+<TabItem value="typescript" label="TypeScript">
+  <Tabs>
+    <TabItem value="wo" label="Create an account">  
 
-   <TabItem value="with" label="Create an account with an error">  
+```typescript
+const accountCreateResponse = await expensesClient.accounts.create({
+      companyId: companyId,
+	  connectionId: connectionId,
+	  accountPrototype: {
+        nominalCode: "4200123456",
+        name: "Codat Assets Account",
+        fullyQualifiedCategory: "Asset.Current",
+	  }
+  }
+);
+```
+    </TabItem>
 
-  ```json  
-    {
-      "nominalCode": "350045006500", // Nominal code intentionally consits of too many characters
-      "name": "Excessive Length Account", 
-      "fullyQualifiedCategory": "Asset.Current" 
-    }
-  ```
-   </TabItem>
+    <TabItem value="with" label="Create an account with an error">  
+
+```typescript
+const accountCreateResponse = await expensesClient.accounts.create({
+      companyId: companyId,
+	  connectionId: connectionId,
+	  accountPrototype: {
+        nominalCode: "350045006500", // Nominal code intentionally consists of too many characters
+        name: "Excessive Length Account",
+        fullyQualifiedCategory: "Asset.Current",
+	  }
+  }
+);
+```
+    </TabItem>
+  </Tabs>
+</TabItem>
+
+<TabItem value="python" label="Python">
+  <Tabs>
+    <TabItem value="wo" label="Create an account">  
+
+```python
+account_create_response = expenses_client.accounts.create(operations.CreateAccountRequest(
+      company_id=company_id,
+	  connection_id=connection_id,
+      account_prototype=shared.AccountPrototype(
+        nominal_code='4200123456',
+        name='Codat Assets Account',
+        fully_qualified_category='Asset.Current',
+      )
+  )
+)
+```
+    </TabItem>
+
+    <TabItem value="with" label="Create an account with an error">  
+
+```python
+account_create_response = expenses_client.accounts.create(operations.CreateAccountRequest(
+      company_id=company_id,
+	  connection_id=connection_id,
+      account_prototype=shared.AccountPrototype(
+        nominal_code='350045006500', # Nominal code intentionally consists of too many characters
+        name='Excessive Length Account',
+        fully_qualified_category='Asset.Current',
+      )
+  )
+)
+```
+    </TabItem>
+  </Tabs>
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+  <Tabs>
+    <TabItem value="wo" label="Create an account">  
+
+```c#
+var accountCreateResponse = await expensesClient.Accounts.CreateAsync(new CreateAccountRequest() {
+    CompanyId = companyId,
+	ConnectionId = connectionId,
+    AccountPrototype = new AccountPrototype(){
+      NominalCode = "4200123456",
+      Name = "Codat Assets Account",
+      FullyQualifiedCategory = "Asset.Current",
+	}
+});
+```
+    </TabItem>
+
+    <TabItem value="with" label="Create an account with an error">  
+
+```c#
+var accountCreateResponse = await expensesClient.Accounts.CreateAsync(new CreateAccountRequest() {
+    CompanyId = companyId,
+	ConnectionId = connectionId,
+    AccountPrototype = new AccountPrototype(){
+      NominalCode = "350045006500", // Nominal code intentionally consists of too many characters
+      Name = "Excessive Length Account",
+      FullyQualifiedCategory = "Asset.Current",
+	}
+});
+```
+    </TabItem>
+  </Tabs>
+</TabItem>
+
+<TabItem value="go" label="Go">
+  <Tabs>
+    <TabItem value="wo" label="Create an account">  
+
+```go
+ctx := context.Background()
+accountCreateResponse, err := expensesClient.Accounts.Create(ctx, operations.CreateAccountRequest{
+  CompanyID: companyID,
+  ConnectionID: connectionID,
+  AccountPrototype: &shared.AccountPrototype{
+    NominalCode: syncforexpenses.String("4200123456"),
+    Name: syncforexpenses.String("Codat Assets Account"),
+    FullyQualifiedCategory: syncforexpenses.String("Asset.Current"),
+  }
+})
+```
+    </TabItem>
+
+    <TabItem value="with" label="Create an account with an error">  
+
+```go
+ctx := context.Background()
+accountCreateResponse, err := expensesClient.Accounts.Create(ctx, operations.CreateAccountRequest{
+  CompanyID: companyID,
+  ConnectionID: connectionID,
+  AccountPrototype: &shared.AccountPrototype{
+    NominalCode: syncforexpenses.String("350045006500"), // Nominal code intentionally consists of too many characters
+    Name: syncforexpenses.String("Excessive Length Account"),
+    FullyQualifiedCategory: syncforexpenses.String("Asset.Current"),
+  }
+})
+```
+    </TabItem>
+  </Tabs>
+</TabItem>
+
+<TabItem value="java" label="Java">
+  <Tabs>
+    <TabItem value="wo" label="Create an account">  
+
+```java
+CreateAccountRequest accountCreateRequest = CreateAccountRequest.builder()
+  .companyId(companyId)
+  .connectionId(connectionId)
+  .accountPrototype(AccountPrototype.builder()
+      .nominalCode("4200123456")
+      .name("Codat Assets Account")
+      .fullyQualifiedCategory("Asset.Current")
+      .build())
+  .build();
+
+CreateAccountResponse accountCreateResponse = expensesClient.accounts().create()
+  .request(accountCreateRequest)
+  .call();
+```
+    </TabItem>
+
+    <TabItem value="with" label="Create an account with an error">  
+
+```java
+CreateAccountRequest accountCreateRequest = CreateAccountRequest.builder()
+  .companyId(companyId)
+  .connectionId(connectionId)
+  .accountPrototype(AccountPrototype.builder()
+      .nominalCode("350045006500") // Nominal code intentionally consists of too many characters
+      .name("Excessive Length Account")
+      .fullyQualifiedCategory("Asset.Current")
+      .build())
+  .build();
+
+CreateAccountResponse accountCreateResponse = expensesClient.accounts().create()
+  .request(accountCreateRequest)
+  .call();
+```
+    </TabItem>
+  </Tabs>
+</TabItem>
+
 </Tabs>
 
 This results in a corresponding response from the endpoint, which includes the following details:
 
-- **pushOperationKey**: a unique identifier generated by Codat to represent this single CUD operation that can be used to track its status
+- **pushOperationKey**: a unique identifier generated by Codat to represent this single write request that can be used to track its status
 - **dataType**: the type of data being created, in this case, `chartOfAccounts`
 - **status**: the status of the create operation, which can be `Pending`, `Failed`, `Success` or `TimedOut` 
 - **requestedOnUtc**: the datetime (in UTC) when the operation was requested 
@@ -212,107 +383,98 @@ This results in a corresponding response from the endpoint, which includes the f
 - **validation**: a human-readable object that contains validation details, including errors, encountered during the operation
 - **changes**: an array that communicates which record has changed (`recordRef` property) and the manner in which it changed (`type` property that can be `Unknown`, `Created`, `Modified`, or `Deleted`)
 
-<Tabs>
-   <TabItem value="wo" label="Account creation response">  
+<details>
+  <summary><b>Example responses</b></summary>
+  <Tabs>
+    <TabItem value="wo" label="Account creation response">  
 
-  ```json
-    {
-      "changes": [...],
-      "data": {
-        "id": "fdeaba98-6f74-4b03-9a67-3708ea442417",
-        "nominalCode": "4200123456",
-        "name": "Codat Assets Account",
-        "fullyQualifiedCategory": "Asset.Current",
-        "type": "Unknown",
-        "status": "Unknown",
-        "isBankAccount": false,
-        "modifiedDate": "2023-03-21T17:17:59.4604771Z",
-        "validDatatypeLinks": []
-      },
-      "dataType": "chartOfAccounts",
-      "companyId": "fa115de8-5269-474e-8b63-fd697ec04b1b",
-      "pushOperationKey": "8e42e5f6-c596-4ddf-a5e4-fdc9977f5a99",
-      "dataConnectionKey": "c39b4839-9017-4fed-b1c6-af6b31ae32a5",
-      "requestedOnUtc": "2023-03-21T17:17:58.9235368Z",
-      "completedOnUtc": "2023-03-21T17:17:59.4815194Z",
-      "status": "Success",
-      "validation": {
-        "errors": [],
-        "warnings": []
-      },
-      "statusCode": 200
-    }
-  ```
-  
-   </TabItem>
+    ```json
+      {
+        "changes": [...],
+        "dataType": "chartOfAccounts",
+        "companyId": "fa115de8-5269-474e-8b63-fd697ec04b1b",
+        "pushOperationKey": "8e42e5f6-c596-4ddf-a5e4-fdc9977f5a99",
+        "dataConnectionKey": "c39b4839-9017-4fed-b1c6-af6b31ae32a5",
+        "requestedOnUtc": "2023-03-21T17:17:58.9235368Z",
+        "completedOnUtc": "2023-03-21T17:17:59.4815194Z",
+        "status": "Success",
+        "validation": {
+          "errors": [],
+          "warnings": []
+        },
+        "statusCode": 200
+      }
+    ```
+    
+    </TabItem>
 
-   <TabItem value="with" label="Account creation with a validation error">  
+    <TabItem value="with" label="Account creation with a validation error">  
 
-  ```json
-    {
-      "changes": [...],
-      "data": {
-        "nominalCode": "350045006500",
-        "name": "Excessive Assets Account",
-        "fullyQualifiedCategory": "Asset.Current",
-        "type": "Unknown",
-        "status": "Unknown",
-        "isBankAccount": false,
-        "validDatatypeLinks": []
-      },
-      "dataType": "accounts",
-      "companyId": "fa115de8-5269-474e-8b63-fd697ec04b1b",
-      "pushOperationKey": "0c74f21b-0a43-492e-9aa8-0c8ad928e5b6",
-      "dataConnectionKey": "983a8fd1-a47b-48fa-b1ac-af88a6bcd3cd",
-      "requestedOnUtc": "2023-03-21T17:25:32.0939249Z",
-      "completedOnUtc": "2023-03-21T17:25:32.1587863Z",
-      "status": "Failed",
-      "errorMessage": "An error occurred in a downstream service. Correlation ID: 72e161a142c17bb5b3e480f873df0b21. Message: Push failed for Account: see validation for more information",
-      "validation": {
-        "errors": [
-          {
-            "itemId": "NominalCode",
-            "message": "Failed to push to Account as NominalCode must not be longer than 10 characters long.",
-            "validatorName": "Account"
-          }
-        ],
-        "warnings": []
-      },
-      "statusCode": 400
-    }
-  ```
-   </TabItem>
+    ```json
+      {
+        "changes": [...],
+        "dataType": "chartOfAccounts",
+        "companyId": "fa115de8-5269-474e-8b63-fd697ec04b1b",
+        "pushOperationKey": "8e42e5f6-c596-4ddf-a5e4-fdc9977f5a99",
+        "dataConnectionKey": "c39b4839-9017-4fed-b1c6-af6b31ae32a5",
+        "requestedOnUtc": "2023-03-21T17:17:58.9235368Z",
+        "completedOnUtc": "2023-03-21T17:17:59.4815194Z",
+        "status": "Failed",
+        "errorMessage": "An error occurred in a downstream service. Correlation ID: 72e161a142c17bb5b3e480f873df0b21. Message: Push failed for Account: see validation for more information",
+        "validation": {
+          "errors": [
+            {
+              "itemId": "NominalCode",
+              "message": "Failed to push to Account as NominalCode must not be longer than 10 characters long.",
+              "validatorName": "Account"
+            }
+          ],
+          "warnings": []
+        },
+        "statusCode": 400
+      }
+    ```
+    </TabItem>
 </Tabs>
+
+</details>
 
 ## Consume the data type's write webhook
 
+Subscribe to the [`{dataType}.write.{un}successful`](/platform-api#/webhooks/dataType-.write.successful/post) webhook to track the outcome of a completed write request.
+The payload includes information about the company and, on success, contains the record's ID.
+
+In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/events) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `{dataType}.write.{un}successful` event types. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/create-consumer).
+
 ## Accessing created or updated records
 
-In cases where you need to access the created or updated record for example to displaying it to your customer.
-We recommend refreshing the data type 
-
-Once a write request has completed 
+If you need to access the created or updated record, such as for displaying it to your customer, we recommend caching the `payload.record.id` from successful requests and periodically refreshing the data for that record.
 
 ```mermaid
 sequenceDiagram
     participant app as Your application 
     participant codat as Codat
     
-    codat ->> app: {dataType}.write.{un}successful webhook
+    codat ->> app: {dataType}.write.successful webhook
 
-    alt {dataType}.write.successful
+    app ->> app: Cache payload.record.id
+
+    loop Every hour
           app ->> codat: Refresh {dataType}
           codat ->> app: read.completed webhook
-          app ->> codat: Get {dataType} by ID 
-          codat -->> app: {dataType} record
+
+          loop For each payload.record.id
+            app ->> codat: Get {dataType} by payload.record.id 
+            codat -->> app: {dataType} record
+          end
+
+          app ->> app: Clear payload.record.id cache
     end
 ```
 
 ## Monitor the status of your operation
 
-Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](/using-the-api/webhooks/overview) for this purpose. 
-
-In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/rules) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `PushOperationStatusChanged` event type. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/overview).
+Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](#consume-the-data-types-write-webhook) for this purpose. 
 
 You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/platform-api#/operations/get-company-push-history) endpoint, or list a single operation via the [Get push operation](/platform-api#/operations/get-push-operation). This is useful when you want to include summary information to your customers outlining the status of their CUD history.
 
