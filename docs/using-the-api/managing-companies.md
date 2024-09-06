@@ -122,11 +122,11 @@ The name of the company helps you identify the company in the Codat Portal and d
 
 #### Add metadata to a company 
 
-You can store additional information about the company using the `tags` array. These tags could include anything from setting a foreign key, defining an operating region, to specifying details about the financial services a company has requested. You can add up to 10 tags when using the [Create company](/platform-api#/operations/create-company) endpoint or the [Update company](/platform-api#/operations/update-company) endpoint.
+You can store additional information about the company using the `tags` object. These tags could include anything from setting a foreign key, defining an operating region, to specifying details about the financial services a company has requested. You can add up to 10 tags when using the [Create company](/platform-api#/operations/create-company) endpoint or the [Update company](/platform-api#/operations/update-company) endpoint.
 
 :::tip Use tags with webhooks
 
-You can use the `tags` array to route companies to specific webhook consumers. To learn more, see [Route webhooks](/using-the-api/webhooks/create-consumer#route-webhooks).
+You can use the `tags` object to route companies to specific webhook consumers. To learn more, see [Route webhooks](/using-the-api/webhooks/create-consumer#route-webhooks).
 
 :::
 
