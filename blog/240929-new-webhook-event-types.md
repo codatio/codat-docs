@@ -12,15 +12,15 @@ We're excited to introduce our improved webhook event types. They offer more con
 
 ## What's new?
 
-We are replacing our existing rule types with an updated set of event types. These event types add granularity and context to our webhooks, allow you to increase precision of your webhook messages, and provide detailed insights into the trigger events. 
+We are replacing our existing rule types with an updated set of event types. They add context to our webhooks, allow you to increase precision of your webhook messages, and provide detailed insights into the trigger events. 
 
 - Check out the full range of our [webhook event types](/using-the-api/webhooks/event-types).
 
-We have also adopted the [standard webhooks payload specification](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md#payload-structure) payload specification. As a result, here's what's changed:
+We have also adopted the [standard webhooks payload specification](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md#payload-structure). As a result, here's what's changed:
 
 1. **Standardized top-level schema**
 
-  Event type schemas now conform to a default structure. It ensures the top-level properties are the same between all event types, making ingestion simpler. 
+  Event type schemas now conform to the same structure. It ensures the top-level properties are the same between all event types, making ingestion simpler. 
   
   ```json title="Default schema structure"
   {
