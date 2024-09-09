@@ -51,18 +51,18 @@ View the full details of Codat's support for creating and updating data for each
 ### Process
 To perform a write request, follow these steps:
 
-1. **[Check the data model](#use-a-valid-data-model)**: For **Create** and **Update** requests, ensure you’re using the correct data model for the data type you want to write. This ensures all required properties are included. Depending on the integration, this step may be a one-time task (for static properties) or a regular check (for highly customizable integrations).
+1. **[Check the expected data model](#use-a-valid-data-model)**: For **Create** and **Update** requests, ensure you’re using the correct data model for the data type you want to write. This ensures all required properties are included. Depending on the integration, this step may be a one-time task (for static properties) or a regular check (for highly customizable integrations).
 
-2. **[Perform the write request](#perform-the-request)**: Once completed, you will receive a write request ID, which can be used to [track the status of the request](#monitor-the-status-of-your-operation).
+2. **[Make a write request](#make-the-request)**: You will receive a write operation ID in response. This can be used to [track the status of the request](#monitor-the-status-of-your-operation).
 
-3. **[Consume the `dataType.write.{un}successful` webhook](#consume-the-data-types-write-webhook)**: Subscribe to this webhook to receive notifications on the success or failure of the write request.
+3. **[Consume the relevant `{dataType}.write.{unsuccessful,successful}` webhook](#consume-the-data-types-write-webhook)**: Subscribe to these webhooks and we will let you know when your write operation has completed.
 
 ```mermaid
 sequenceDiagram
     participant app as Your application 
     participant codat as Codat
     
-  opt If the data model check is required
+  opt If you check expected data model
     app ->> codat: Get create/update {dataType} model
     codat -->> app: Valid data type model
   end
