@@ -67,7 +67,7 @@ We will attempt to deliver a message when a tag defined on a company matches a t
 
 Tags should be formatted as a key-value pair separated by a colon. For example, to route webhooks for companies tagged with a `region` value of `us`, set the **Company tags** field to `region:us`. You can add up to 10 company tag per webhook consumer.
 
-TODO: Add a screenshot once supported.
+![A fragment of the webhook UI that allows you to add company tags to a consumer](/img/use-the-api/webhooks-add-company-tags.png)
 
 ## View webhook consumers
 
