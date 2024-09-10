@@ -5,9 +5,7 @@ description: Get help if you have questions or experience issues when connecting
 hide_table_of_contents: false
 ---
 
-## Error resolution 
-
-### I have not received an email with credentials. What do I do?
+## I haven't received an email with credentials
 
 - it s in spam- obvi check your spam or internet connection
 - you entered the wrong email - go to company > admin > web service users, view the user you created row and check that the account email address is what you wanted. 
@@ -25,7 +23,7 @@ if you still havent received it, this could be a problem with your inbox's setup
 
 https://www.intacct.com/ia/docs/en_US/help_action/Administration/Users/web-services-only-users.htm#EditaWebServicesuser
 
-### How do I resolve the 'Unable to connect to Intacct' error?
+## How do I resolve the 'Unable to connect to Intacct' error?
 
 Check that you entered the correct Web Services user credentials from the email you received, and that you have enabled the Web Services subscription.
 
@@ -41,17 +39,17 @@ to resolve, enable it and start the flow agian/ here is the detail article on th
 
 
 
-### How do I resolve the 'Missing permissions' error?
+## How do I resolve the 'Missing permissions' error?
 
 the web services user doesnt have the correct permissions or roles assigned to it. to resolve, cklikc try agian, go back to the permissions / roles assignment step and check that all the required permissions have been assigned. 
 you can also use this detailed artucle to verify and assign missing roles or permissions
 
 here we can list the full permissions, and if you still want them grnaular, then definitely look at the detailed article.
 
-### New error message on the multi entity issue
+## How do I resolve the 'Top level access only' error?
 
 you had multi entity turned on, but had restricted access.
-
+The Web Services user cannot access your subsidiary.
 
 we need clarity on what the erorr mesage in Link will say. 
 to resolve, go to Cmpany > Admin > Siubscriptions. scroll down to Multi-entity Management and click Configure next to the toggle. on the Manage multiple enities screen, untick the "Restrict access to top level only" checkbox and you also need to fill in the IET credits journal  with Inter Entity Journal. After that you can click save.

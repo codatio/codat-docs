@@ -5,7 +5,7 @@ sidebar_label: Overview
 hide_table_of_contents: false
 ---
 
-Your financial services provider has requested access to your Sage Intacct account and its data. They need to view, create or modify your business's financial data so that they can deliver their services to you. They use Codat to establish the connection to your Sage Intacct account and asked you to follow our Sage Intacct connection flow.
+Your financial services provider has requested access to your Sage Intacct account and its data. They need to view, create or modify your business's financial data so that they can deliver their services to you. They use Codat to establish the connection to your Sage Intacct account and asked you to follow our connection flow.
 
 :::info What is Codat?
 
