@@ -17,11 +17,15 @@ Codat will return a `429` status code for all requests to the API that are recei
 
 The response will also include a `Retry-After` header that will advise your calling system when the current rate limiting will deactivate.
 
-### Usage-based limits
+### How rate limits are calculated 
 
-If a client breaks the limits, it usually means there is an overlooked issue in their system or product. We will get in touch with the client to discuss possible improvements to reduce the number of calls. This will enhance the Codat experience for the client and their users. 
+Codat calculates its rate limits based on the number of active connected companies (ACCs).
+The rate limits are as follows:
 
-### Client-based limits
+- `1,000 + 1,000 x number of ACCs` requests per day
+- 10 concurrent requests per ACC
+
+For example, if you have 100 ACCs, you can make up to 101,000 requests per day.
 
 :::note What is an ACC?
 
@@ -29,52 +33,15 @@ ACC, or Active Connected Company, is a company that has an active, linked, and s
 
 :::
 
-Client-based limits set an upper limit on the number of configuration changes in a day. Codat sets these limits at: 
+### Why am I exceeding my quota?
 
-- 1,000 requests per day, or
-- 100 requests per day per ACC, **whichever is greater**. 
-
-These transactions are intended to be low volume. Therefore, a high number of requests in this area indicates potentially erroneous behavior and should trigger contact with the client. 
+If you are regularly exceeding our limits, it usually means there is an overlooked issue in your application or product.
+We will get in touch with the client to discuss possible improvements to reduce the number of calls.
+This will enhance the Codat experience for you and your customers. 
 
 :::tip Client rate limit reset
 
 Client-based limits are calculated daily and reset at 00:00 UTC each day. You can use our dedicated [ClientRateLimitReset](/using-the-api/webhooks/event-types) webhook event type to be notified when the client-based limit resets.
-
-:::
-
-
-### Company-based limits
-
-Company-based limits set an upper limit on the number of data-based requests an account can make against a company per day. This is to reduce the operational load. Codat sets these limits on the **ACC level** at: 
-
-- 1,000 requests per day, and
-- 10 concurrent requests.
-
-Note that these limits represent a global request count.
-
-:::tip Company rate limit reset
-
-Company-based limits are calculated daily and reset at 00:00 UTC each day. 
-
-:::
-
-:::note Calculating rate limits: example 1
-
-Account A has a production client with 2 active companies. The client-based daily limit is calculated as the greater of `(2*100 || 1,000)`, resulting in 1,000 allowed requests. Adding 1,000 \* 2 ACCs for the company-based limit gives Account A a total limit of 3,000 requests. 
-
-They choose to make 1,100 requests against both companies for a total of 2,200 requests and have 800 requests remaining for the day. 
-
-They then link a third company. Because the same daily total of requests still applies, they can use the remaining 800 requests to make calls against the third company.
-
-When the rate limit resets the following day, the company limit will increase to 1,000 \* 3 = 3,000 to account for the newly linked company. This gives Account A a total limit of 4,000 requests.
-
-:::
-
-:::note Calculating rate limits: example 2
-
-Account B has a production client with 140 active companies. The client-based limit is calculated as the greater of `(140* 100 || 1,000)`, resulting in 14,000 allowed requests. The company-based limit is calculated as `140*1,000`, resulting in 140,000 allowed requests. 
-
-This gives Account B a total limit of 154,000 requests.
 
 :::
 
