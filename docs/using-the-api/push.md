@@ -19,7 +19,7 @@ Codat now refers to push operations as write requests.
 
 :::
 
-### Supported accounting data types and write types
+## Supported accounting data types and write types
 
 | `dataType`       | Create  | Update  | Delete  |
 |------------------|---------|---------|---------|
@@ -48,12 +48,12 @@ View the full details of Codat's support for creating and updating data for each
 
 :::
 
-### Process
+## Process
 To perform a write request, follow these steps:
 
-1. **[Check the expected data model](#use-a-valid-data-model)**: For **Create** and **Update** requests, ensure you’re using the correct data model for the data type you want to write. This ensures all required properties are included. Depending on the integration, this step may be a one-time task (for static properties) or a regular check (for highly customizable integrations).
+1. **[Check the expected data model](#check-the-expected-data-model)**: For **Create** and **Update** requests, ensure you’re using the correct data model for the data type you want to write. This ensures all required properties are included. Depending on the integration, this step may be a one-time task (for static properties) or a regular check (for highly customizable integrations).
 
-2. **[Make a write request](#make-the-request)**: You will receive a write operation ID in response. This can be used to [track the status of the request](#monitor-the-status-of-your-operation).
+2. **[Make a write request](#make-a-write-request)**: You will receive a write operation ID in response. This can be used to [track the status of the operation](#monitor-the-status-of-your-operation).
 
 3. **[Consume the relevant `{dataType}.write.{unsuccessful,successful}` webhook](#consume-the-data-types-write-webhook)**: Subscribe to these webhooks and we will let you know when your write operation has completed.
 
@@ -62,7 +62,7 @@ sequenceDiagram
     participant app as Your application 
     participant codat as Codat
     
-  opt If you check expected data model
+  opt Check expected data model
     app ->> codat: Get create/update {dataType} model
     codat -->> app: Valid data type model
   end
@@ -73,7 +73,13 @@ sequenceDiagram
     codat ->> app: {dataType}.write.{un}successful webhook
 ```
 
-### Asynchronous operations
+:::info Need access to records?
+
+If your use case involves displaying created or updated records to your customers, [learn how to access records](#accessing-created-or-updated-records).
+
+:::
+
+## Asynchronous operations
 
 Write requests are asynchronous operations and will take between a few seconds to a couple of minutes to complete, depending on the underlying platform.
 This means you will receive a `Pending` status in response to your write request.
@@ -81,22 +87,18 @@ This means you will receive a `Pending` status in response to your write request
 A write request may be `Pending` indefinitely for integrations using offline connectors when the desktop application is unreachable.
 Manage this by setting [timeouts](/using-the-api/push#monitor-the-status-of-your-operation#timeouts). 
 
-### Supplemental data
+## Supplemental data
 
 We have introduced [supplemental data](/using-the-api/supplemental-data/overview) to many of our data types, enabling you to enrich these data types with additional properties not included in Codat's out-of-the box data models. You can create, update, and delete supplemental data using the same process as outlined above.
 
-## Use a valid data model
+## Check the expected data model
 
-Each integration may have different requirements to the request body of a write request.
-So, before triggering the operation, you need to know how the data should be inserted into the source platform. You can access the integration-specific model requirements using Codat's _Get model_ endpoints.
+Each integration may have different requirements to the body of a write request.
+So, before making the request, you need to know how the data should be inserted into the source platform.
+You can access the integration-specific model requirements using Codat's _Get model_ endpoints.
 
 In most cases, the models provide static data, such as detailing mandatory properties.
 Some platforms, like Netsuite, offer greater customization to their users, so the corresponding model may differ.
-
-:::info Deleting records
-
-Our data deletion endpoints, where available, simply require the record `id`, `companyId`, and `connectionId` to be included in the request URL.
-:::
 
 Let's use our [Get Create Account Model](/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model) endpoint from the [Sync for Expenses](/expenses/overview) product to view integration-specific requirements for creating the `chartOfAccounts` data type in Xero.
 
@@ -109,7 +111,7 @@ The response indicates that three properties must be populated:
 - `name`, an unrestricted string
 - `fullyQualifiedCategory`, an enum property that accepts a string chosen from a list of options
 
-The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".  
+The `displayName` on the options can be used to display a more descriptive name, such as "Current assets". 
 
 <details>
   <summary><b>Partial Get create account model response</b></summary>
@@ -171,7 +173,7 @@ The `displayName` on the options can be used to display a more descriptive name,
 ```
 </details>
 
-## Perform the request
+## Make a write request
 
 :::caution Properties not in the _Get model_ response
 If you attempt to create or update a record using properties not documented in the  _Get model_ response, you may receive validation errors in response to your request.
@@ -181,7 +183,8 @@ These properties are read-only and cannot be used in write requests.
 
 :::
 
-Let's create a new account using our [Create account](/sync-for-expenses-api#/operations/create-account) endpoint from the [Sync for Expenses](/expenses/overview) product. The request must fulfil the requirements defined in the [Get create account model](/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model) we called previously.
+Let's create a new account using our [Create account](/sync-for-expenses-api#/operations/create-account) endpoint from the [Sync for Expenses](/expenses/overview) product.
+The request must fulfil the requirements defined in the [Get create account model](/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model) we called previously.
 
 We will create an account using a valid request, and a request that leads to a validation error:
 
@@ -375,11 +378,11 @@ CreateAccountResponse accountCreateResponse = expensesClient.accounts().create()
 
 This results in a corresponding response from the endpoint, which includes the following details:
 
-- **pushOperationKey**: a unique identifier generated by Codat to represent this single write request that can be used to track its status
+- **pushOperationKey**: a unique identifier generated by Codat to represent this single write operation that can be used to track its status
 - **dataType**: the type of data being created, in this case, `chartOfAccounts`
 - **status**: the status of the create operation, which can be `Pending`, `Failed`, `Success` or `TimedOut` 
 - **requestedOnUtc**: the datetime (in UTC) when the operation was requested 
-- **completedOnUtc**: the datetime (in UTC) when the operaion was completed, null if `Pending`
+- **completedOnUtc**: the datetime (in UTC) when the operation was completed, null if `Pending`
 - **validation**: a human-readable object that contains validation details, including errors, encountered during the operation
 - **changes**: an array that communicates which record has changed (`recordRef` property) and the manner in which it changed (`type` property that can be `Unknown`, `Created`, `Modified`, or `Deleted`)
 
@@ -439,6 +442,42 @@ This results in a corresponding response from the endpoint, which includes the f
 
 </details>
 
+:::info Deleting records
+
+Our data deletion endpoints, where available, simply require the record `id`, `companyId`, and `connectionId` to be included in the request URL.
+:::
+
+
+## Monitor the status of your operation
+
+Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](#consume-the-data-types-write-webhook) for this purpose. 
+
+You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/platform-api#/operations/get-company-push-history) endpoint, or get a single operation via the [Get push operation](/platform-api#/operations/get-push-operation).
+This is useful when you want to include summary information to your customers outlining the status of their write history.
+
+### Handle unsuccessful write operations
+
+There are three common reasons a write operation might fail. Here's how to handle each scenario:
+
+#### Timeouts
+
+An operation can remain in a `Pending` status indefinitely, such as when a user's on-premise software is offline.
+To handle this, Codat provides a timeout feature.
+
+Use the `timeoutInMinutes` query parameter to set a maximum duration for your write operation. If the operation exceeds the specified time limit, its status will update to `TimedOut`.
+
+#### Invalid Properties
+
+A write operation can fail if a field's value references a non-existent record in the accounting software.
+When this happens, use the [Get push operation](/platform-api#/operations/get-push-operation) endpoint to check the validation object for details on what went wrong.
+
+#### Application Errors
+
+In some cases, Codat or the integration may throw an error.
+You can inspect the `errorMessage` field for your write operation via the [Get push operation](/platform-api#/operations/get-push-operation) endpoint to diagnose the issue.
+
+If an application error is identified, please raise a support ticket for further assistance.
+
 ## Consume the data type's write webhook
 
 Subscribe to the [`{dataType}.write.{un}successful`](/platform-api#/webhooks/dataType-.write.successful/post) webhook to track the outcome of a completed write request.
@@ -446,9 +485,46 @@ The payload includes information about the company and, on success, contains the
 
 In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/events) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `{dataType}.write.{un}successful` event types. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/create-consumer).
 
+<details>
+  <summary><b>Example payload</b></summary>
+
+```json
+{
+  "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+  "eventType": "bills.write.successful",
+  "generatedDate": "2023-05-03T10:00:23.000Z",
+  "payload": {
+    "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+    "type": "Create",
+    "referenceCompany": {
+      "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+      "name": "Toft stores"
+    },
+    "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+    "requestedOnDate": "2023-05-03T10:00:00.000Z",
+    "completedOnDate": "2023-05-03T10:00:23.000Z",
+    "status": "Success",
+    "record": {
+      "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+    }
+  }
+}
+```
+
+</details>
+
 ## Accessing created or updated records
 
-If you need to access the created or updated record, such as for displaying it to your customer, we recommend caching the `payload.record.id` from successful requests and periodically refreshing the data for that record.
+Codat does not store written records in its cache.
+To retrieve a created or updated record, we recommend setting the sync frequency of the relevant `dataType` to hourly.
+
+Next, cache the following properties from the `{dataType}.write.successful` payload sent by Codat:
+
+- `payload.referenceCompany.id` – The ID of the company the record was written against.
+- `payload.connectionId` – The connection ID linking the company to the accounting software where the record was created or updated.
+- `payload.record.id` – The ID of the record that was created or updated.
+
+Once these properties are cached, use the relevant data type's `GET` request to access the modified records.
 
 ```mermaid
 sequenceDiagram
@@ -471,15 +547,3 @@ sequenceDiagram
           app ->> app: Clear payload.record.id cache
     end
 ```
-
-## Monitor the status of your operation
-
-Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](#consume-the-data-types-write-webhook) for this purpose. 
-
-You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/platform-api#/operations/get-company-push-history) endpoint, or list a single operation via the [Get push operation](/platform-api#/operations/get-push-operation). This is useful when you want to include summary information to your customers outlining the status of their CUD history.
-
-### Timeouts
-
-It is possible for an operation to be in a `Pending` status indefinitely, for example, if a user's on-premise software is offline. Codat provides a timeout functionality for such scenarios. 
-
-To control the timeframe in which you want your CUD operation to complete, use the `timeoutInMinutes` parameter. If the deadline expires, the status of the operation will change to `TimedOut`.

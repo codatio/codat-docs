@@ -28,9 +28,9 @@ View the full details of Codat's support for uploading attachments for each acco
 
 To perform an attachment upload request, follow these steps:
 
-1. **[Perform the write request](#perform-the-request)**: Once completed, you will receive a write request ID, which can be used to track the status of the request.
+1. **[Make a write request](#make-a-write-request)**: Once completed, you will receive a write request ID, which can be used to track the status of the request.
 
-2. **[Consume the `dataType.write.{un}successful` webhook](#consume-the-data-types-write-webhook)**: Subscribe to this webhook to receive notifications on the success or failure of the write request.
+2. **[Consume the relevant `{dataType}.write.{unsuccessful,successful}` webhook](#consume-the-data-types-write-webhook)**: Subscribe to this webhook to receive notifications on the success or failure of the write request.
 
 
 ```mermaid
@@ -44,7 +44,7 @@ sequenceDiagram
     codat ->> app: {dataType}.write.{un}successful webhook
 ```
 
-## Perform the request
+## Make a write request
 
 To upload an attachment to a record, you’ll need the company ID, relevant connection ID, the record ID for the data type, and the file itself.
 
@@ -146,3 +146,32 @@ Subscribe to the [`{dataType}.write.{un}successful`](/platform-api#/webhooks/dat
 The payload includes information about the company, record ID to upload the attachment to and, on success, the attachment ID.
 
 In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/events) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `{dataType}.write.{un}successful` event types. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/create-consumer).
+
+<details>
+  <summary><b>Example payload</b></summary>
+
+```json
+{
+  "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+  "eventType": "bills.write.successful",
+  "generatedDate": "2023-05-03T10:00:23.000Z",
+  "payload": {
+    "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+    "type": "Create",
+    "referenceCompany": {
+      "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+      "name": "Toft stores"
+    },
+    "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+    "requestedOnDate": "2023-05-03T10:00:00.000Z",
+    "completedOnDate": "2023-05-03T10:00:23.000Z",
+    "status": "Success",
+    "record": {
+      "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+    },
+    "attachmentId": "att_2Ksoie6eDvErJo249lsieqpD9"
+  }
+}
+```
+
+</details>
