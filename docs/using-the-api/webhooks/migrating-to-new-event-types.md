@@ -364,7 +364,7 @@ Triggered when a data synchronization completes, the legacy event generates a no
 
 The `read.completed` replacement event uses the same trigger, but now provides detailed information about the read operation's outcome, including the status of the sync and whether any records were modified.
 
-See [Retrieve company data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
+See [Retrieve company data](/using-the-api/get-data).
 
 :::tip Adopting the new schema
 When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
@@ -450,7 +450,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 Triggered when the synchronization of a dataset fails, the replacement `read.completed` webhook now includes information on whether the data was successfully read into Codat's cache. This provides insight into both the completion of the read operation and its outcome.
 
-See [Retrieve company data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
+See [Retrieve company data](/using-the-api/get-data).
 
 :::tip Adopting the new schema
 When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
@@ -544,7 +544,7 @@ The replacement `read.completed` webhook now provides information on when the da
 
 To replicate the behavior of the legacy `DatasetDataChanged` webhook, check if the `recordsModified` Boolean value for the data type is `true`.
 
-See [Retrieve company data](/using-the-api/get-data). TODO: We need to update this doc to outline how clients can use this webhook to programmatically read data from our cache.
+See [Retrieve company data](/using-the-api/get-data).
 
 :::tip Adopting the new schema
 When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
