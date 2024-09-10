@@ -120,13 +120,18 @@ The `id` property that you receive in the response is the unique Codat identifie
 The name of the company helps you identify the company in the Codat Portal and doesn't have to be unique. Make sure to [avoid forbidden characters](/core-concepts/companies).
 :::
 
-#### Add metadata to a company 
+### Adding metadata to a company
 
-You can store additional information about the company using the `tags` object. These tags could include anything from setting a foreign key, defining an operating region, to specifying details about the financial services a company has requested. You can add up to 10 tags when using the [Create company](/platform-api#/operations/create-company) endpoint or the [Update company](/platform-api#/operations/update-company) endpoint.
+You can enrich a company profile with additional information using the `tags` object.
+These tags provide flexible ways to store metadata such as foreign key associations, operational regions, or specific details about the financial services requested by the company.
+
+Each company can have up to 10 tags.
+Tags can be applied either using the [Create company](/platform-api#/operations/create-company) endpoint or when updating the company via the [Update company](/platform-api#/operations/update-company) endpoint.
 
 :::tip Use tags with webhooks
 
-You can use the `tags` object to route companies to specific webhook consumers. To learn more, see [Route webhooks](/using-the-api/webhooks/create-consumer#route-webhooks).
+You can use the `tags` object to filter companies to specific webhook consumers.
+To learn more, see [here](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
 
 :::
 

@@ -59,13 +59,21 @@ It's not possible to add a custom header via our API. Instead, navigate to **Mon
 
 ![A fragment of the webhook UI that displays the detailed endpoint view with two custom headers added to it](/img/use-the-api/0050-custom-headers-section.png)
 
-### Route webhooks
+### Filter webhooks by company tags
 
-You can configure an endpoint to route webhooks to specific companies by using tags. You need to [add the tags to the company](/using-the-api/managing-companies#add-metadata-to-a-company) first. Then, add the desired tag to the **Company tags** field when creating or updating a webhook consumer. 
+You can configure a webhook consumer to filter companies based on their tags.
+For instance, if you want to receive webhooks only for companies tagged with a specific region or service, you can configure the consumer to match those tags.
+[Learn more about company tags](/using-the-api/managing-companies#adding-metadata-to-a-company).
 
-We will attempt to deliver a message when a tag defined on a company matches a tag defined on a webhook consumer.
+To set this up in the portal, navigate to **Monitor > Webhooks > Events** and select the relevant endpoint to view its details.
+Then, enter the tags you want the consumer to filter by in the **Company tags** field.
+Each webhook consumer can support up to 10 company tags.
 
-Tags should be formatted as a key-value pair separated by a colon. For example, to route webhooks for companies tagged with a `region` value of `us`, set the **Company tags** field to `region:us`. You can add up to 10 company tag per webhook consumer.
+Tags must be formatted as key-value pairs, separated by a colon.
+For example, to route webhooks for companies tagged with a `region` value of `us`, set the **Company tags** field to `region:us`.
+
+A message will be delivered whenever any of the company’s tags match those specified in the webhook consumer. 
+For example, a consumer configured with `region:us` and `service:t2k` will still receive messages from a company tagged with `region:us` and `service:minerva`, as at least one tag matches.
 
 ![A fragment of the webhook UI that allows you to add company tags to a consumer](/img/use-the-api/webhooks-add-company-tags.png)
 
