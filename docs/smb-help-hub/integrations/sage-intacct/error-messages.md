@@ -95,12 +95,3 @@ To resolve, navigate to **Company > Admin > Subscriptions** and complete these s
 3. In **Inter-entity transactions**, select **Inter Entity Journal** in the **IET credits journal** dropdown. Click **Save**. 
 
     ![Screenshot of Manage multiple entities screen with Inter Entity Journal selected in the IET credits journal dropdown.](/img/smb-help-hub/sage-intacct/0031-sageintacct-troubleshooting-6.png)
-
-you had multi entity turned on, but had restricted access.
-The Web Services user cannot access your subsidiary.
-
-we need clarity on what the erorr mesage in Link will say. 
-to resolve, go to Cmpany > Admin > Siubscriptions. scroll down to Multi-entity Management and click Configure next to the toggle. on the Manage multiple enities screen, untick the "Restrict access to top level only" checkbox and you also need to fill in the IET credits journal  with Inter Entity Journal. After that you can click save.
-
-This will make your instance similar to what it was as a single entity. You can uncheck this box if you would like which will allow users to select to work at the Top Level or the Entity Level.
-You will also need to fill in the IET credits journal. This journal is used when credits are applied to AR invoices or AP bills that generate an inter-entity transaction (IET) with no source payment record.
