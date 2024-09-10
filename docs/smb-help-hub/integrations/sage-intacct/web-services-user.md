@@ -511,7 +511,7 @@ For full access permissions, ensure that all permissions are selected for each o
 | Cash Management | Projects            | Contracts   |
 | General Ledger  | Inventory Control   | Taxes       |
 
-If you want to check the permissions at a granular level, review the [How do I assign permissions to the role?](/smb-help-hub/integrations/sage-intacct/web-services-user#how-do-i-assign-permissions-to-the-role) section.
+If you want to check the permissions at a granular level, review the [How do I assign permissions to the role?](/smb-help-hub/integrations/sage-intacct/web-services-user#how-do-i-set-role-permissions) section.
  
 <ReadNext
   links={[
