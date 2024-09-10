@@ -12,8 +12,11 @@ Most of the configuration for the auth flow is currently managed in <a href="htt
 However, you can use the SDK's `options` property to override the settings set in the Portal and control them programmatically instead. This is useful if you want more control over the UI based on application-specific logic or want to vary it conditionally.
 
 ```jsx live
-function LinkPlayground(props) {
-  const settings = {
+function AuthFlow() {
+  const onConnection = (connection) => alert(`Connection: ${connection.connectionId}`);
+  const onFinish = () => alert("On finish callback");
+
+  const config = {
     companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
     options: {
       nonModal: false,
@@ -31,7 +34,7 @@ function LinkPlayground(props) {
   return <div>
     <p>Click the button below to start authing.</p>
 
-    <AuthFlow {...settings}/>
+    <CodatLink {...config}/>
   </div>
 }
 ```

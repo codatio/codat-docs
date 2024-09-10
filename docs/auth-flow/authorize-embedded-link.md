@@ -16,8 +16,11 @@ Our Link SDK is a pre-built JavaScript component that neatly sits in your front-
 We built it to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey. As a result, clients using the SDK note that **89%** of their users successfully complete their journeys.
 
 ```jsx live
-function LinkPlayground(props) {
-  const settings = {
+function AuthFlow() {
+  const onConnection = (connection) => alert(`Connection: ${connection.connectionId}`);
+  const onFinish = () => alert("On finish callback");
+
+  const config = {
     companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
     options: {
       showLandingPage: true,
@@ -27,7 +30,7 @@ function LinkPlayground(props) {
   return <div>
     <p>Click the button below to start authing.</p>
 
-    <AuthFlow {...settings}/>
+    <CodatLink {...config}/>
   </div>
 }
 ```
@@ -41,6 +44,12 @@ Link SDK is imported at runtime, so you'll always get the latest version of our 
 ## Resources
 
 We've provided you with [rich examples on GitHub](https://github.com/codatio/sdk-link/tree/main/examples) that illustrate how you can add the Link component to your project.
+
+:::note Need help with designing your auth flow experience?
+
+Our user experience team is ready to help you design a high converting and trusted auth flow, and ensure your user journey complies with integration partnerships' requirements. Speak to your account manager to set up time with our experts.
+
+:::
 
 :::info Indicative demo
 
@@ -464,6 +473,17 @@ For an example of the component in action, [see our demo app](https://github.com
 
 </Tabs>
 
+## Callback functions
+
+Callback functions allow you to build custom logic into our SDK.
+
+We expose 4 props you can use to pass callback functions into the component.
+
+- `onConnection` - Called when a connection is successfully authorized and moved out of a `pending` state. Will execute with the connection as a parameter, which contains the `connectionId`
+- `onFinish` - Called when the user has completed all required steps and clicks 'Complete'.
+- `onClose` - Called when the user clicks the `x` button in the to right.
+- `onError` - Called when something goes wrong, returning the error.
+
 ## Customize Link
 
 You can configure Link's UI to match your company branding and reflect your company's values, and adjust Link's behavior using the [Codat Portal](https://app.codat.io/) or our SDK's advanced options. 
@@ -482,29 +502,6 @@ If you need more control over the UI based on application-specific logic, want t
 - [Manage UI settings in code](/auth-flow/customize/sdk-customize-code)
 
 To control the redirects that happen upon flow completion, you need to build out the required redirect configuration within your application.
-
-## Changelog
-
-#### March 2024
-- **Additional options**: we enhanced the `options` prop with `enableAdditionalConsent` and `allowedIntegrations`, new properties that help you manage additional consent journeys and the selection list of platforms displayed to the user.
-
-#### November 2023
-- **Options property**: we introduced a new prop that gives you programmatic control over Link settings.
-- **Markdown support**: text fields now accept Markdown, giving you more control over styling and formatting. This is available via the `text` property of the Link SDK only.
-- **@codat/sdk-link-types package released**: our new [NPM package](https://www.npmjs.com/package/@codat/sdk-link-types) means you don't have to manually import and maintain the type definitions.
-
-#### October 2023
-- **Support for non-modal views**: you can now [embed the component in non-modal views](/auth-flow/authorize-embedded-link#non-modal-styling) with our new `options` prop.
-- **Reduced latency after auth**: we now poll every second to check whether the user has authed, meaning connection is confirmed faster.
-- **Bugs**:
-  + Fixed an issue where 'Landing page' settings were not reflected.
-
-#### June 2023
-- **Support for non-React JavaScript apps**: without a dependency on React, you can use Link with all JavaScript frameworks or even vanilla JavaScript.
-- **Increased display control**: you now need to specify the dimensions of the Link component, which will expand to fit the given container size. Previously the component used a fixed width and height.
-- **Navigation improvements**: source types (accounting, commerce, banking, and file upload) can now be connected in any order you choose.
-- **Performance improvements**: Link loads quicker and can be loaded only when required.
-- **Connection status**: the connection status (success or error) is now shown during the Link flow. The SMB user can skip errors without interrupting the rest of the Link flow.
 
 <ReadNext
   links={[
