@@ -4020,10 +4020,48 @@
     }
   },
   "webhooks": {
+    "company.created": {
+      "post": {
+        "description": "Called when a company is created in Codat.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "company.deleted": {
+      "post": {
+        "description": "Triggered when a company is deleted in Codat.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "Company data connection status changed": {
       "post": {
+        "description": "Triggered anytime a data connection's status changes.",
         "requestBody": {
-          "description": "Triggered anytime a data connection's status changes.",
           "content": {
             "application/json": {
               "schema": {
@@ -4079,8 +4117,8 @@
     },
     "Data sync completed": {
       "post": {
+        "description": "Triggered when a data synchronization is completed; a notification will be generated for each `dataType` as the sync completes.",
         "requestBody": {
-          "description": "Triggered when a data synchronization is completed; a notification will be generated for each `dataType` as the sync completes.",
           "content": {
             "application/json": {
               "schema": {
@@ -4098,8 +4136,8 @@
     },
     "Dataset data changed": {
       "post": {
+        "description": "Triggered when a dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records.",
         "requestBody": {
-          "description": "Triggered when a dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records.",
           "content": {
             "application/json": {
               "schema": {
@@ -4117,8 +4155,8 @@
     },
     "Dataset status has changed to an error state": {
       "post": {
+        "description": "Triggered when the synchronization of a dataset fails.",
         "requestBody": {
-          "description": "Triggered when the synchronization of a dataset fails.",
           "content": {
             "application/json": {
               "schema": {
@@ -4136,8 +4174,8 @@
     },
     "New company synchronized": {
       "post": {
+        "description": "Triggered after a new company has successfully synchronized at least one dataType for the first time.",
         "requestBody": {
-          "description": "Triggered after a new company has successfully synchronized at least one dataType for the first time.",
           "content": {
             "application/json": {
               "schema": {
@@ -4550,62 +4588,61 @@
         "title": "Company",
         "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/parameters/companyId/schema"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the company",
-            "example": "Codat Ltd."
-          },
-          "description": {
-            "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-          },
-          "platform": {
-            "type": "string",
-            "deprecated": true,
-            "example": "Xero",
-            "description": "`platformKeys` name used when creating the company."
-          },
-          "redirect": {
-            "type": "string",
-            "format": "uri",
-            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
-            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/DateTime"
-          },
-          "created": {
-            "$ref": "#/components/schemas/DateTime"
-          },
-          "createdByUserName": {
-            "type": "string",
-            "description": "Name of user that created the company in Codat."
-          },
-          "dataConnections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Connection"
+          {
+            "type": "object",
+            "properties": {
+              "dataConnections": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
             }
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Group/definitions/groupRef"
-            },
-            "description": "An array of groups the company has been assigned to."
           }
-        },
-        "required": [
-          "id",
-          "name",
-          "redirect"
         ],
         "definitions": {
+          "companyDetails": {
+            "title": "Company details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the company",
+                "example": "Codat Ltd."
+              },
+              "description": {
+                "$ref": "#/components/schemas/CompanyRequestBody/properties/description"
+              },
+              "redirect": {
+                "type": "string",
+                "format": "uri",
+                "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+                "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+              },
+              "lastSync": {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              "created": {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              "createdByUserName": {
+                "type": "string",
+                "description": "Name of user that created the company in Codat."
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "redirect"
+            ]
+          },
           "companyGroupAssignment": {
             "title": "Group assignment",
             "type": "object",
@@ -4630,10 +4667,10 @@
                 "$ref": "#/components/parameters/companyId/schema"
               },
               "name": {
-                "$ref": "#/components/schemas/Company/properties/name"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/name"
               },
               "description": {
-                "$ref": "#/components/schemas/Company/properties/description"
+                "$ref": "#/components/schemas/CompanyRequestBody/properties/description"
               }
             }
           }
@@ -4642,7 +4679,6 @@
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
             "name": "string",
-            "platform": "string",
             "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
             "lastSync": "2022-01-01T12:00:00.000Z",
             "created": "2022-01-01T12:00:00.000Z",
@@ -4659,11 +4695,6 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
-              }
-            ],
-            "groups": [
-              {
-                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -4682,7 +4713,9 @@
             "example": "Bank of Dave"
           },
           "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
           },
           "groups": {
             "type": "array",
@@ -4694,6 +4727,69 @@
         },
         "required": [
           "name"
+        ]
+      },
+      "CompanyWebhook": {
+        "title": "Company webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event"
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "company.created",
+              "company.deleted"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
+          }
+        },
+        "examples": [
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "company.created",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "name": "Bank of Dave",
+              "description": "Requested a loan for refurb.",
+              "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "lastSync": "2022-01-01T12:00:00.000Z",
+              "created": "2022-01-01T12:00:00.000Z",
+              "tags": {
+                "customerRegion": "us",
+                "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "company.deleted",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "name": "Bank of Dave",
+              "description": "Requested a loan for refurb.",
+              "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "lastSync": "2022-01-01T12:00:00.000Z",
+              "created": "2022-01-01T12:00:00.000Z",
+              "tags": {
+                "customerRegion": "uk",
+                "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
+              }
+            }
+          }
         ]
       },
       "Connection": {

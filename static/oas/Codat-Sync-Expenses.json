@@ -14984,68 +14984,61 @@
         "title": "Company",
         "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/sync-for-expenses-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/parameters/companyId/schema"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the company",
-            "example": "Codat Ltd."
-          },
-          "description": {
-            "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-          },
-          "platform": {
-            "type": "string",
-            "deprecated": true,
-            "example": "Xero",
-            "description": "`platformKeys` name used when creating the company."
-          },
-          "redirect": {
-            "type": "string",
-            "format": "uri",
-            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
-            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
-          },
-          "created": {
-            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
-          },
-          "createdByUserName": {
-            "type": "string",
-            "description": "Name of user that created the company in Codat."
-          },
-          "dataConnections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Connection"
-            }
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "title": "Group reference",
-              "type": "object",
-              "properties": {
-                "id": {
-                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
+          {
+            "type": "object",
+            "properties": {
+              "dataConnections": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
                 }
               }
-            },
-            "description": "An array of groups the company has been assigned to."
+            }
           }
-        },
-        "required": [
-          "id",
-          "name",
-          "redirect"
         ],
         "definitions": {
+          "companyDetails": {
+            "title": "Company details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the company",
+                "example": "Codat Ltd."
+              },
+              "description": {
+                "$ref": "#/components/schemas/CompanyRequestBody/properties/description"
+              },
+              "redirect": {
+                "type": "string",
+                "format": "uri",
+                "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+                "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+              },
+              "lastSync": {
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
+              },
+              "created": {
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
+              },
+              "createdByUserName": {
+                "type": "string",
+                "description": "Name of user that created the company in Codat."
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "redirect"
+            ]
+          },
           "companyGroupAssignment": {
             "title": "Group assignment",
             "type": "object",
@@ -15073,10 +15066,10 @@
                 "$ref": "#/components/parameters/companyId/schema"
               },
               "name": {
-                "$ref": "#/components/schemas/Company/properties/name"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/name"
               },
               "description": {
-                "$ref": "#/components/schemas/Company/properties/description"
+                "$ref": "#/components/schemas/CompanyRequestBody/properties/description"
               }
             }
           }
@@ -15085,7 +15078,6 @@
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
             "name": "string",
-            "platform": "string",
             "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
             "lastSync": "2022-01-01T12:00:00.000Z",
             "created": "2022-01-01T12:00:00.000Z",
@@ -15102,11 +15094,6 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
-              }
-            ],
-            "groups": [
-              {
-                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -15189,12 +15176,20 @@
             "example": "Bank of Dave"
           },
           "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
           },
           "groups": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Company/properties/groups/items"
+              "title": "Group reference",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
+                }
+              }
             },
             "description": "Reference to the groups that the company is assigned to."
           }
