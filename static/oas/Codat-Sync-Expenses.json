@@ -14505,6 +14505,7 @@
             "name": "Travel",
             "currency": "GBP",
             "accountType": "Expense",
+            "fullyQualifiedCategory": "Expense.Overhead",
             "isBankAccount": false,
             "validTransactionTypes": [
               "Payment",
@@ -14548,6 +14549,12 @@
               "Expense",
               "Equity"
             ],
+            "nullable": false
+          },
+          "fullyQualifiedCategory": {
+            "type": "string",
+            "description": "Full account type and category of the account",
+            "example": "Expense.DirectCosts",
             "nullable": false
           },
           "isBankAccount": {
