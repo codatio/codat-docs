@@ -22,7 +22,7 @@ The response will also include a `Retry-After` header that will advise your call
 Codat calculates its rate limits based on the number of active connected companies (ACCs).
 The rate limits are as follows:
 
-- `1,000 + (1,000 x number of ACCs)` requests per day
+- `1,000 x (1 + number of ACCs)` requests per day
 - 10 concurrent requests per ACC
 
 For example, if you have 100 ACCs, you can make up to 101,000 requests per day.
