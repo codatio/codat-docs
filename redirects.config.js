@@ -634,6 +634,9 @@ module.exports = {
     to: "/lending/overview",
     from: "/assess/overview"
   }, {
+    to: "/lending/features/sales-overview#metrics",
+    from: "/assess/portal/data-integrity"
+  }, {
     to: "/lending/overview",
     from: "/assess/portal/categorization-of-accounts"
   }, {
