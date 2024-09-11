@@ -14197,9 +14197,48 @@
         }
       }
     },
+    "client.rateLimit.reached": {
+      "post": {
+        "description": "Called when your client’s request count to Codat's API surpasses the allocated quota.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "client.rateLimit.reset": {
+      "post": {
+        "description": "Called when your client's rate limit quota is reset, allowing additional requests to Codat's API.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "Client rate limit reached": {
       "post": {
-        "description": "Triggered when the number of requests to Codat's API from the client exceeds the current quota.",
+        "deprecated": true,
+        "description": "Called when your client’s requests to Codat's API exceed the allocated quota. \n\n**Note: This event type is deprecated. Developers should now use the `client.rateLimit.reached` event for handling rate limit notifications.**",
         "requestBody": {
           "content": {
             "application/json": {
@@ -14218,7 +14257,8 @@
     },
     "Client rate limit reset": {
       "post": {
-        "description": "Triggered when the rate limit quota has reset for the client, and more requests to Codat's API are available.",
+        "deprecated": true,
+        "description": "Called when the rate limit quota has reset for the client, and more requests to Codat's API are available.\n\nNote: This event type is deprecated. Developers should now use the `client.rateLimit.reset` event for handling rate limit notifications.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -14956,6 +14996,75 @@
               "ResetReason": "The quota was reset because it is a new day.",
               "DailyQuota": 1000,
               "ExpiresUtc": "2023-05-03T00:00:00Z"
+            }
+          }
+        ]
+      },
+      "ClientRateLimitWebhook": {
+        "title": "Client rate limit webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "client.rateLimit.reset",
+              "client.rateLimit.reached"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ClientRateLimitWebhook/definitions/clientRateLimitWebhookPayload"
+          }
+        },
+        "definitions": {
+          "clientRateLimitWebhookPayload": {
+            "title": "Client rate limit webhook payload",
+            "type": "object",
+            "properties": {
+              "dailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
+              },
+              "quotaRemaining": {
+                "type": "integer",
+                "description": "Total number of requests remaining for your client."
+              },
+              "expiryDate": {
+                "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
+                "description": "The date time in UTC when your daily quota is reset."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "eventType": "client.rateLimit.reset",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "dailyQuota": 12000,
+              "quotaRemaining": 11993,
+              "expiryDate": "2024-09-01T23:59:99Z"
+            }
+          },
+          {
+            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "eventType": "client.rateLimit.reached",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "dailyQuota": 12000,
+              "quotaRemaining": 0,
+              "expiryDate": "2024-09-01T12:14:14Z"
             }
           }
         ]
