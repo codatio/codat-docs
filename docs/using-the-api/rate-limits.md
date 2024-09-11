@@ -36,12 +36,12 @@ ACC, or Active Connected Company, is a company that has an active, linked, and s
 ### Why am I exceeding my quota?
 
 If you are regularly exceeding our limits, it usually means there is an overlooked issue in your application or product.
-We will get in touch with the client to discuss possible improvements to reduce the number of calls.
+We will get in touch with you to discuss possible improvements to reduce the number of calls.
 This will enhance the Codat experience for you and your customers. 
 
 :::tip Client rate limit reset
 
-Client-based limits are calculated daily and reset at 00:00 UTC each day. You can use our dedicated [ClientRateLimitReset](/using-the-api/webhooks/event-types) webhook event type to be notified when the client-based limit resets.
+Our rate limits are calculated daily and reset at 00:00 UTC each day. You can use our dedicated [ClientRateLimitReset](/using-the-api/webhooks/event-types) webhook event type to be notified when the limit resets.
 
 :::
 
