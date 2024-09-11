@@ -41,7 +41,7 @@ This will enhance the Codat experience for you and your customers.
 
 :::tip Client rate limit reset
 
-Our rate limits are calculated daily and reset at 00:00 UTC each day. You can use our dedicated [ClientRateLimitReset](/using-the-api/webhooks/event-types) webhook event type to be notified when the limit resets.
+Our rate limits are calculated daily and reset at 00:00 UTC each day. You can use our dedicated [client.rateLimit.{reset|reached}](/platform-api#/webhooks/client.rateLimit.reached/post) webhook event types to be notified about rate limit changes.
 
 :::
 
