@@ -30,7 +30,7 @@ To perform an attachment upload request, follow these steps:
 
 1. **[Make a write request](#make-a-write-request)**: Once completed, you will receive a write request ID, which can be used to track the status of the request.
 
-2. **[Consume the relevant `{dataType}.write.{unsuccessful,successful}` webhook](#consume-the-data-types-write-webhook)**: Subscribe to this webhook to receive notifications on the success or failure of the write request.
+2. **[Consume the relevant `{dataType}.write.{successful|unsuccessful}` webhook](#consume-the-data-types-write-webhook)**: Subscribe to this webhook to receive notifications on the success or failure of the write request.
 
 
 ```mermaid
@@ -142,10 +142,10 @@ UploadBillAttachmentResponse uploadAttachmentResponse = sdk.bills().uploadAttach
 
 ## Consume the data type's write webhook
 
-Subscribe to the [`{dataType}.write.{un}successful`](/platform-api#/webhooks/dataType-.write.successful/post) webhook to track the outcome of a completed write request.
+Subscribe to the [`{dataType}.write.{successful|unsuccessful}`](/platform-api#/webhooks/dataType-.write.successful/post) webhook to track the outcome of a completed write request.
 The payload includes information about the company, record ID to upload the attachment to and, on success, the attachment ID.
 
-In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/events) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `{dataType}.write.{un}successful` event types. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/create-consumer).
+In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/events) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `{dataType}.write.{successful|unsuccessful}` event types. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/create-consumer).
 
 <details>
   <summary><b>Example payload</b></summary>

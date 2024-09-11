@@ -55,7 +55,7 @@ To perform a write request, follow these steps:
 
 2. **[Make a write request](#make-a-write-request)**: You will receive a write operation ID in response. This can be used to [track the status of the operation](#monitor-the-status-of-your-operation).
 
-3. **[Consume the relevant `{dataType}.write.{unsuccessful,successful}` webhook](#consume-the-data-types-write-webhook)**: Subscribe to these webhooks and we will let you know when your write operation has completed.
+3. **[Consume the relevant `{dataType}.write.{successful|unsuccessful}` webhook](#consume-the-data-types-write-webhook)**: Subscribe to these webhooks and we will let you know when your write operation has completed.
 
 ```mermaid
 sequenceDiagram
@@ -70,7 +70,7 @@ sequenceDiagram
     app ->> codat: Create, update, or delete record
     codat -->> app: write ID (pushOperationKey)
 
-    codat ->> app: {dataType}.write.{un}successful webhook
+    codat ->> app: {dataType}.write.{successful|unsuccessful} webhook
 ```
 
 :::info Need access to records?
@@ -480,10 +480,10 @@ If an application error is identified, please raise a support ticket for further
 
 ## Consume the data type's write webhook
 
-Subscribe to the [`{dataType}.write.{un}successful`](/platform-api#/webhooks/dataType-.write.successful/post) webhook to track the outcome of a completed write request.
+Subscribe to the [`{dataType}.write.{successful|unsuccessful}`](/platform-api#/webhooks/dataType-.write.successful/post) webhook to track the outcome of a completed write request.
 The payload includes information about the company and, on success, contains the record's ID.
 
-In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/events) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `{dataType}.write.{un}successful` event types. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/create-consumer).
+In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/events) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `{dataType}.write.{successful|unsuccessful}` event types. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/create-consumer).
 
 <details>
   <summary><b>Example payload</b></summary>
