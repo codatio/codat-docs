@@ -4512,7 +4512,7 @@
             "balance": {
               "type": "number",
               "format": "decimal",
-              "description": "The remaining balance in the account with ID `accountId`.",
+              "description": "The remaining balance in the account with ID `accountId`. This field is optional for QuickBooks Online but is required for Xero, Sage, NetSuite, Exact, and FreeAgent.",
               "example": -999.99
             },
             "transactionType": {

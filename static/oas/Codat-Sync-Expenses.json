@@ -16223,7 +16223,11 @@
             "$ref": "#/components/schemas/RecordRef"
           },
           "accountRef": {
+            "description": "The `accountRef` contains the `id` of the account the transaction is against. The `accountRef` object is required for all integrations except QBD which currently supports either itemRef or accountRef.",
             "$ref": "#/components/schemas/RecordRef"
+          },
+          "itemRef": {
+            "$ref": "#/components/schemas/ItemRef"
           },
           "trackingRefs": {
             "type": "array",
@@ -16239,8 +16243,7 @@
           }
         },
         "required": [
-          "netAmount",
-          "accountRef"
+          "netAmount"
         ]
       },
       "IntegrationType": {
@@ -16261,7 +16264,7 @@
         "x-internal": true,
         "type": "object",
         "nullable": true,
-        "description": "Unique identifier of the customer the expense is billable to. The invoiceTo object is currently only supported for QBO and QBD.",
+        "description": "Unique identifier for the customer billed for the transaction. The `invoiceTo` object is currently supported only for QuickBooks Online and QuickBooks Desktop.",
         "properties": {
           "id": {
             "type": "string",
@@ -16275,6 +16278,19 @@
             "enum": [
               "customer"
             ]
+          }
+        }
+      },
+      "ItemRef": {
+        "x-internal": true,
+        "type": "object",
+        "title": "Item reference",
+        "nullable": true,
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "80000002-1675158984",
+            "description": "Unique identifier for the item associated with the transaction. The `itemRef` object is currently supported only for QuickBooks Desktop. You can specify either `itemRef` or `accountRef`, but not both."
           }
         }
       },
@@ -16943,7 +16959,11 @@
             "$ref": "#/components/schemas/RecordRef"
           },
           "accountRef": {
+            "description": "The `accountRef` contains the `id` of the account the transaction is against. The `accountRef` object is required for all integrations except QBD which currently supports either itemRef or accountRef.",
             "$ref": "#/components/schemas/RecordRef"
+          },
+          "itemRef": {
+            "$ref": "#/components/schemas/ItemRef"
           },
           "trackingRefs": {
             "type": "array",
@@ -16959,8 +16979,7 @@
           }
         },
         "required": [
-          "netAmount",
-          "accountRef"
+          "netAmount"
         ]
       },
       "ReimbursableExpenseTransactionRequest": {
