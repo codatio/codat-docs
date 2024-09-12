@@ -1676,7 +1676,8 @@
                 "example": "Codat Ltd."
               },
               "description": {
-                "$ref": "#/components/schemas/CreateCompany/properties/description"
+                "$ref": "#/components/schemas/CreateCompany/properties/description",
+                "nullable": true
               },
               "redirect": {
                 "type": "string",
@@ -1685,14 +1686,16 @@
                 "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
               },
               "lastSync": {
-                "$ref": "#/components/schemas/Connection/properties/created"
+                "$ref": "#/components/schemas/Connection/properties/created",
+                "nullable": true
               },
               "created": {
                 "$ref": "#/components/schemas/Connection/properties/created"
               },
               "createdByUserName": {
                 "type": "string",
-                "description": "Name of user that created the company in Codat."
+                "description": "Name of user that created the company in Codat.",
+                "nullable": true
               },
               "tags": {
                 "type": "object",
@@ -1743,7 +1746,7 @@
                 "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/name"
               },
               "description": {
-                "$ref": "#/components/schemas/CreateCompany/properties/description"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/description"
               }
             }
           }
