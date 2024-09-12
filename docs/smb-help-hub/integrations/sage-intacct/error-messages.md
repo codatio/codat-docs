@@ -1,6 +1,6 @@
 ---
-title: Find resolutions for errors and issues
-sidebar_label: Resolve errors
+title: Find resolutions for questions and issues
+sidebar_label: Resolve issues
 description: Get help if you have questions or experience issues when connecting to Sage Intacct
 hide_table_of_contents: false
 ---
