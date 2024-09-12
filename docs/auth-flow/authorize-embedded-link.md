@@ -262,7 +262,7 @@ For an example of the component in action, [see our demo app](https://github.com
   const onError = (error) => alert(`On error callback : ${error.message}`);
   ```
 
-5. **Initialize the Link SDK component in your app** 
+4. **Initialize the Link SDK component in your app** 
 
   Supply the `companyId` of the company you want to authorize:
 
@@ -283,7 +283,7 @@ For an example of the component in action, [see our demo app](https://github.com
    });
   };
  ```
-4. **Conditional steps**  
+5. **Conditional steps**  
 
   - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
 
@@ -473,16 +473,16 @@ For an example of the component in action, [see our demo app](https://github.com
 
 </Tabs>
 
-## Callback functions
+## Use callback functions
 
-Callback functions allow you to build custom logic into our SDK.
+You can add custom logic into our SDK by using callback functions to complete an action. Use the properties below to pass the callback functions into the SDK component:
 
-We expose 4 props you can use to pass callback functions into the component.
-
-- `onConnection` - Called when a connection is successfully authorized and moved out of a `pending` state. Will execute with the connection as a parameter, which contains the `connectionId`
-- `onFinish` - Called when the user has completed all required steps and clicks 'Complete'.
-- `onClose` - Called when the user clicks the `x` button in the to right.
-- `onError` - Called when something goes wrong, returning the error.
+| Property       | Description                                                                                                                                                                                                                                          | Parameters                                                                                                                                                                                                                                                                 |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `onConnection` | Called when a connection   is successfully authorized and moved out of a `pending` state or files are   uploaded.                                                                                                                                    | `connectionId ` - unique identifier of the connection                                                                                                                                                                                                                      |
+| `onFinish`     | Called when the user   executes the required steps of the connection flow and clicks the   "Complete" button. We recommend removing the `CodatLink` component   in this callback.                                                                    |                                                                                                                                                                                                                                                                            |
+| `onClose`      | Called when the user   clicks the "X" ("Close") button of the connection flow.   We recommend removing the `CodatLink` component in this callback.                                                                                                   |                                                                                                                                                                                                                                                                            |
+| `onError`      | Called when an error   occurs in the connection flow, returning the error information. We recommend   removing the `CodatLink` component only when the `userRecoverable` parameter   is `false`. Otherwise, log the error and keep the SDK rendered. | `correlationId` - internal identifier used to track errors within   Codat<br/>`message` - descriptive error   response <br/>`errorCode` - numerical code of the   error <br/> `userRecoverable` - boolean value   indicating whether the error can be resolved by the user |
 
 ## Customize Link
 
