@@ -28,6 +28,17 @@ module.exports = [
       "smb-help-hub/integrations/netsuite/troubleshooting",
     ],
   },
+  {
+    type: "category",
+    label: "Sage Intacct",
+    collapsed: true,
+    items: [
+      "smb-help-hub/integrations/sage-intacct/overview",
+      "smb-help-hub/integrations/sage-intacct/web-services-subscription",
+      "smb-help-hub/integrations/sage-intacct/web-services-user",
+      "smb-help-hub/integrations/sage-intacct/error-messages",
+    ],
+  },
   //{
   //  type: "category",
   //  label: "QuickBooks Desktop",
