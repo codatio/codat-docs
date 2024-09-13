@@ -19,7 +19,9 @@ const cruds = [
 const generatePath = (prefix, id) => {
 	const url = `${prefix}#/operations/${id}`
 
-	return url
+	return {
+		url,
+	}
 }
 
 const generateAPISitemap = (ref, prefix) => {
