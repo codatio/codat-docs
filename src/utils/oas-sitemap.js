@@ -19,16 +19,7 @@ const cruds = [
 const generatePath = (prefix, id) => {
 	const url = `${prefix}#/operations/${id}`
 
-	const siteRecord = `<url>
-		<loc>${url}</loc>
-		<changefreq>weekly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	`
-
-	//console.log(url)
-
-	return siteRecord
+	return url
 }
 
 const generateAPISitemap = (ref, prefix) => {
@@ -36,38 +27,42 @@ const generateAPISitemap = (ref, prefix) => {
 	const paths = ref.paths
 	
 	Object.keys(paths)
-		.forEach(path => arr.push(
-			cruds.forEach(crud => {
-				const endpoint = paths[path][crud]
-				if(!!endpoint) {
-					arr.push(generatePath(prefix, endpoint.operationId))
-				}
-			})
-		))
+		.forEach(path => cruds.forEach(crud => {
+			const endpoint = paths[path][crud]
+			if(!!endpoint) {
+				arr.push(generatePath(prefix, endpoint.operationId))
+			}
+		}))
 
-	return arr.join('')
+	return arr
 }
 
 
 const generateAPISitemaps = () => {
 	const refs = [
-		[ bankFeeds, 'https://docs.codat.io/bank-feeds-api' ],
-		[ lending, 'https://docs.codat.io/lending-api' ],
-		[ sfc, 'https://docs.codat.io/sync-for-commerce-api' ],
-		[ sfe, 'https://docs.codat.io/sync-for-expenses-api' ],
-		[ sfp, 'https://docs.codat.io/sync-for-payables-api' ],
-		[ billPay, 'https://docs.codat.io/sync-for-payables-v2-api' ],
-		[ platform, 'https://docs.codat.io/platform-api' ],
+		[ bankFeeds, '/bank-feeds-api' ],
+		[ lending, '/lending-api' ],
+		[ sfc, '/sync-for-commerce-api' ],
+		[ sfe, '/sync-for-expenses-api' ],
+		[ sfp, '/sync-for-payables-api' ],
+		[ billPay, '/sync-for-payables-v2-api' ],
+		[ platform, '/platform-api' ],
 	]
 
+	const refMaps = refs.map(ref => {
+		return generateAPISitemap(ref[0], ref[1])
+	})
 
-	const sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-	${refs.map(ref => generateAPISitemap(ref[0], ref[1]))}
-</urlset>
-		`
+	const sitemap = [].concat(...refMaps);
 
-	console.log(sitemap)
+// 	const sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+// 	${refs.map(ref => generateAPISitemap(ref[0], ref[1]))}
+// </urlset>
+// 		`
+
+	//console.log(sitemap)
+
 	return sitemap
 }
 
-return generateAPISitemaps()
+module.exports = { generateAPISitemaps }
