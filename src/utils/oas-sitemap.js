@@ -17,10 +17,10 @@ const cruds = [
 ]
 
 const generatePath = (prefix, id) => {
-	const url = `${prefix}#/operations/${id}`
+	const path = `${prefix}#/operations/${id}`
 
 	return {
-		url,
+		path,
 	}
 }
 

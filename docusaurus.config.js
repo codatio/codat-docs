@@ -290,13 +290,19 @@ const config = {
 
       sitemap: {
         createSitemapItems: async (params) => {
-          const { defaultCreateSitemapItems, ...rest } = params;
-          const items = await defaultCreateSitemapItems(rest);
-          //return items
-          return [
-            ...items,
-            ...generateAPISitemaps(),
-          ];
+          const { defaultCreateSitemapItems, routes, ...rest } = params;
+          
+          const newRoutes = [
+            routes,
+            ...generateAPISitemaps()
+          ]
+          
+          const items = await defaultCreateSitemapItems({
+            routes: newRoutes, 
+            ...rest
+          });
+
+          return items;
         },
       },
 
