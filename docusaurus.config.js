@@ -86,6 +86,7 @@ const config = {
   plugins: [
     "docusaurus-plugin-sass",
     '@docusaurus/theme-live-codeblock',
+    'docusaurus-plugin-image-zoom',
 
     [
       "docusaurus-plugin-module-alias",
@@ -283,6 +284,14 @@ const config = {
          * Possible values: "top" | "bottom"
          */
         playgroundPosition: 'bottom',
+      },
+
+      zoom: {
+        selector: '.markdown > p > img',
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        },
       },
     }),
 
