@@ -290,14 +290,12 @@ const config = {
 
       sitemap: {
         createSitemapItems: async (params) => {
-          const {defaultCreateSitemapItems, ...rest} = params;
+          const { defaultCreateSitemapItems, ...rest } = params;
           const items = await defaultCreateSitemapItems(rest);
-          console.log('foo')
-          console.log(items)
           //return items
           return [
             ...items,
-            ...generateAPISitemaps,
+            ...generateAPISitemaps(),
           ];
         },
       },
