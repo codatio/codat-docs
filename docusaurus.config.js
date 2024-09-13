@@ -81,6 +81,25 @@ const config = {
         theme: {
           customCss: './src/styles/custom.scss',
         },
+        sitemap: {
+          createSitemapItems: async (params) => {
+            const { defaultCreateSitemapItems, routes, ...rest } = params;
+            
+            const newRoutes = [
+              routes,
+              ...generateAPISitemaps()
+            ]
+            
+            const items = await defaultCreateSitemapItems({
+              routes: newRoutes, 
+              ...rest
+            });
+
+            console.log(newRoutes, items)
+
+            return items;
+          },
+        },
       }),
     ],
   ],
@@ -286,24 +305,6 @@ const config = {
          * Possible values: "top" | "bottom"
          */
         playgroundPosition: 'bottom',
-      },
-
-      sitemap: {
-        createSitemapItems: async (params) => {
-          const { defaultCreateSitemapItems, routes, ...rest } = params;
-          
-          const newRoutes = [
-            routes,
-            ...generateAPISitemaps()
-          ]
-          
-          const items = await defaultCreateSitemapItems({
-            routes: newRoutes, 
-            ...rest
-          });
-
-          return items;
-        },
       },
 
       zoom: {
