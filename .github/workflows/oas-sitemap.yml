@@ -24,7 +24,7 @@ jobs:
 
       - name: Execute script and save output
         run: |
-          node script.js > static/oas/sitemap.xml
+          node src/utils/oas-sitemap.js > static/oas/sitemap.xml
 
       - name: Commit and push if changes
         run: |
