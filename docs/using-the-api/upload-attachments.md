@@ -1,36 +1,32 @@
 ---
 title: "Upload attachments"
-description: "Understand how to upload attachments to records in Codat's supported accounting softwares"
+description: "Understand how to upload attachments to records in Codat's supported accounting software"
 ---
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-### Supported accounting data types
+Codat offers the ability to upload attachment to records in the supported accounting software. You can write an attachment for the following accounting data types: 
 
-| `dataType`       | UploadAttachment |
+| Data type       | UploadAttachment |
 |------------------|------------------|
-| billCreditNotes  | &#9989;          |  
-| bills            | &#9989;          | 
-| directCosts      | &#9989;          | 
-| directIncomes    | &#9989;          | 
-| invoices         | &#9989;          | 
-| transfers        | &#9989;          |
+| `billCreditNotes`  | &#9989;          |  
+| `bills`            | &#9989;          | 
+| `directCosts`      | &#9989;          | 
+| `directIncomes`    | &#9989;          | 
+| `invoices`         | &#9989;          | 
+| `transfers`        | &#9989;          |
 
 
-:::note Software coverage
+## Attachment upload process
 
-View the full details of Codat's support for uploading attachments for each accounting software in our <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
+An attachment upload process at Codat consists of the following steps:
 
-:::
+1. **[Make a write request](#make-a-write-request).**
+    Once completed, you will receive a write request ID. Use it to track the status of the request.
 
-### Process
-
-To perform an attachment upload request, follow these steps:
-
-1. **[Make a write request](#make-a-write-request)**: Once completed, you will receive a write request ID, which can be used to track the status of the request.
-
-2. **[Consume the relevant `{dataType}.write.{successful|unsuccessful}` webhook](#consume-the-data-types-write-webhook)**: Subscribe to this webhook to receive notifications on the success or failure of the write request.
+2. **[Consume the relevant write webhook](#consume-the-write-webhook).**
+    Subscribe to the relevant `{dataType}.write.{successful|unsuccessful}` webhook to receive notifications of the success or failure of the write request.
 
 
 ```mermaid
@@ -39,14 +35,16 @@ sequenceDiagram
     participant codat as Codat
     
     app ->> codat: Upload attachment
-    codat -->> app: write ID (pushOperationKey)
+    codat -->> app: Return write ID (previously pushOperationKey)
 
-    codat ->> app: {dataType}.write.{un}successful webhook
+    codat ->> app: {dataType}.write.{successful|unsuccessful} webhook
 ```
 
-## Make a write request
+### Make a write request
 
-To upload an attachment to a record, you’ll need the company ID, relevant connection ID, the record ID for the data type, and the file itself.
+To upload an attachment to a record, include the company ID, relevant connection ID, the record ID for the data type, and the attachment file itself in your API call.
+
+In the example below, we are uploading an attachment for our `bills` data type.
 
 <Tabs>
 
@@ -140,15 +138,19 @@ UploadBillAttachmentResponse uploadAttachmentResponse = sdk.bills().uploadAttach
 
 </Tabs>
 
-## Consume the data type's write webhook
+### Consume the write webhook
 
-Subscribe to the [`{dataType}.write.{successful|unsuccessful}`](/platform-api#/webhooks/dataType-.write.successful/post) webhook to track the outcome of a completed write request.
-The payload includes information about the company, record ID to upload the attachment to and, on success, the attachment ID.
+Subscribe to our data type-specific webhooks to track the outcome of a completed write request:
 
-In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.codat.io/monitor/events) of the Codat Portal, click **Add endpoint** to create a webhook consumer that listens for the `{dataType}.write.{successful|unsuccessful}` event types. You can review detailed instructions in our documentation for [consuming webhook messages](/using-the-api/webhooks/create-consumer).
+- `{dataType}.write.successful`
+- `{dataType}.write.unsuccessful`
+
+To create a webhook consumer for these event types, navigate to **Settings > Webhooks > Events > Configure consumer** in the [Codat Portal](https://app.codat.io) and click **Add endpoint**. See [Build webhook consumers to subscribe to events](/using-the-api/webhooks/create-consumer) for detailed instructions. 
+
+The webhook's payload includes information about the company ID and record ID the attachment upload was attempted for. If the write operation is successful, the payload also includes the attachment ID. We provided an example webhook payload for a successful write operation uploading an attachment to a bill. 
 
 <details>
-  <summary><b>Example payload</b></summary>
+  <summary><b>Example webhook payload</b></summary>
 
 ```json
 {
