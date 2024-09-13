@@ -4,8 +4,6 @@ description: "Frequently asked questions about our QuickBooks Desktop on-premise
 sidebar_label: FAQs
 ---
 
-Frequently asked questions about the [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop) (QBD) connector.
-
 ## Do I need to run the QBD connector on the same machine where QuickBooks is installed?
 
 Yes. Any user journey should make it clear that the user must run the connector on the machine they use to access QuickBooks. Functionality to email a link to the connector to a third-party (such as an accountant) can help to reduce these issues.
