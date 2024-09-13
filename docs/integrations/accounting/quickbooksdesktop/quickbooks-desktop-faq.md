@@ -36,4 +36,4 @@ This could be because:
 
 Switch on the machine and open the Web Connector application, and the data will be synced once the Web Connector responds. 
 
-<img src="/img/integrations/accounting/quickbooksdesktop/read-history-fetching-waiting-for-async-response.png">
+<img src="/img/integrations/accounting/quickbooksdesktop/read-history-fetching-waiting-for-async-response.png" />
