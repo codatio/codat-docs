@@ -23,3 +23,17 @@ You might need to request permission to install the connector from your IT depar
 ## Are there any limits on reading historical data from QBD?
 
 Yes. The QBD connector can read data that is dated from 1 January, 1980 onwards only. Data older than this can't be read using the integration.
+
+## What does the "Waiting for asynchronous response from third party" status mean?
+
+You can view the status of each data sync in the [Codat Portal](https://app.codat.io) by navigating to **Companies > Company > Data history** or by checking the `connectionInfo` property of our [Get connection](https://docs.codat.io/platform-api#/operations/get-connection) endpoint. 
+
+If a data type sync is listed as `Fetching` with the additional `Waiting for asynchronous response from third party` message, this means the Web Connector has not yet responded to Codat's sync request. 
+
+This could be because:
+- The Web Connector application is closed.
+- The machine that has QBD and the Web Connector installed is switched off. 
+
+Switch on the machine and open the Web Connector application, and the data will be synced once the Web Connector responds. 
+
+<img src="/img/integrations/accounting/quickbooksdesktop/read-history-fetching-waiting-for-async-response.png" />
