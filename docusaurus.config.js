@@ -84,18 +84,18 @@ const config = {
         sitemap: {
           createSitemapItems: async (params) => {
             const { defaultCreateSitemapItems, routes, ...rest } = params;
-            
+
+            const apiRoutes = generateAPISitemaps()
+
             const newRoutes = [
-              routes,
-              ...generateAPISitemaps()
+              ...routes,
+              ...apiRoutes
             ]
             
             const items = await defaultCreateSitemapItems({
               routes: newRoutes, 
               ...rest
             });
-
-            console.log(newRoutes, items)
 
             return items;
           },

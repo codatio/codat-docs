@@ -16,11 +16,32 @@ const cruds = [
 	'delete'
 ]
 
+  // {
+  //   plugin: { name: 'docusaurus-plugin-content-pages', id: 'default' },
+  //   path: '/sync-for-commerce-api/',
+  //   component: '@site/src/pages/sync-for-commerce-api/index.tsx',
+  //   exact: true,
+  //   metadata: {
+  //     sourceFilePath: 'src/pages/sync-for-commerce-api/index.tsx',
+  //     lastUpdatedAt: undefined
+  //   },
+  //   modules: { config: '@generated/docusaurus.config' },
+  //   context: {
+  //     plugin: '@generated/docusaurus-plugin-content-pages/default/__plugin.json'
+  //   }
+  // },
+
+
 const generatePath = (prefix, id) => {
-	const path = `${prefix}#/operations/${id}`
+	const path = `${prefix}/#/operations/${id}`
 
 	return {
 		path,
+		exact: true,
+		modules: { config: '@generated/docusaurus.config' },
+		context: {
+			plugin: '@generated/docusaurus-plugin-content-pages/default/__plugin.json'
+		}
 	}
 }
 
