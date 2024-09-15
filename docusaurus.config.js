@@ -14,6 +14,8 @@ import path from "path";
 import navbar from "./nav.config";
 import redirects from "./redirects.config";
 
+import { generateAPISitemaps} from "./src/utils/oas-sitemap.js"
+
 const BASE_URL = "";
 
 require('dotenv').config()
@@ -78,6 +80,25 @@ const config = {
         },
         theme: {
           customCss: './src/styles/custom.scss',
+        },
+        sitemap: {
+          createSitemapItems: async (params) => {
+            const { defaultCreateSitemapItems, routes, ...rest } = params;
+
+            const apiRoutes = generateAPISitemaps()
+
+            const newRoutes = [
+              ...routes,
+              ...apiRoutes
+            ]
+            
+            const items = await defaultCreateSitemapItems({
+              routes: newRoutes, 
+              ...rest
+            });
+
+            return items;
+          },
         },
       }),
     ],
