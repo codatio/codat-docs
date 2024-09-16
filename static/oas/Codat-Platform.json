@@ -628,6 +628,86 @@
         }
       }
     },
+    "/companies/{companyId}/products/{productIdentifier}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/productIdentifier"
+        }
+      ],
+      "put": {
+        "summary": "Add product",
+        "operationId": "add-product",
+        "x-speakeasy-name-override": "add-product",
+        "description": "Use the *Add product* endpoint to enable a product for the company specified by `companyId`.\n\n> Note: This feature is currently in alpha and available only to participants in the development program.",
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "204": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove product",
+        "operationId": "remove-product",
+        "x-speakeasy-name-override": "remove-product",
+        "description": "Use the *Remove product* endpoint to disable a product for the company specified by `companyId`.\n\n> Note: This feature is currently in alpha and available only to participants in the development program.",
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "204": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/connections": {
       "get": {
         "summary": "List connections",
@@ -4748,6 +4828,13 @@
                 "description": "Name of user that created the company in Codat.",
                 "nullable": true
               },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "An array of products that are currently enabled for the company."
+              },
               "tags": {
                 "type": "object",
                 "maxProperties": 10,
@@ -7865,6 +7952,21 @@
         },
         "description": "Number of records to return in a page. [Read more](https://docs.codat.io/using-the-api/paging)."
       },
+      "productIdentifier": {
+        "name": "productIdentifier",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "examples": [
+            "bank-feeds",
+            "lending",
+            "payables",
+            "expenses"
+          ]
+        },
+        "description": "Human-readable product identifier for a product."
+      },
       "query": {
         "name": "query",
         "in": "query",
@@ -7887,7 +7989,7 @@
       },
       "dataType": {
         "name": "dataType",
-        "description": "The key of a Codat data type",
+        "description": "The key of a Codat data type.",
         "in": "path",
         "required": true,
         "schema": {

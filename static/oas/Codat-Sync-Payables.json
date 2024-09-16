@@ -3272,6 +3272,13 @@
                 "description": "Name of user that created the company in Codat.",
                 "nullable": true
               },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "An array of products that are currently enabled for the company."
+              },
               "tags": {
                 "type": "object",
                 "maxProperties": 10,
