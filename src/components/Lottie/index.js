@@ -1,6 +1,8 @@
 import React from "react";
 import Lottie from "lottie-react";
 
+import styles from "./styles.module.scss";
+
 const App = (props) => {
 	const {
 		animation,
@@ -9,6 +11,7 @@ const App = (props) => {
 	} = props
 
 	return <Lottie 
+		className={styles.wrapper}
 		animationData={animation} 
 		loop={loop} 
 		{...rest}
