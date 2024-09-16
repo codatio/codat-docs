@@ -1642,6 +1642,20 @@
               },
               "description": {
                 "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/description"
+              },
+              "links": {
+                "type": "object",
+                "description": "A collection of links for the company.",
+                "properties": {
+                  "portal": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the company page in the portal."
+                  }
+                }
+              },
+              "tags": {
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
               }
             }
           }
