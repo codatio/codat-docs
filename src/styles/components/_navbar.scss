@@ -321,3 +321,30 @@ html[data-theme="dark"] {
     }
   }
 }
+
+@media only screen and (min-width: 997px) {
+  .navbar {
+    &__logo {
+      display: none;
+    }
+
+    &__brand {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 996px) {
+  .navbar {
+    &__logo {
+      width: 300px;
+      align-items: center;
+      display: flex;
+    }
+
+    &__brand {
+      margin-left: 1em;
+    }
+  }
+}
+
