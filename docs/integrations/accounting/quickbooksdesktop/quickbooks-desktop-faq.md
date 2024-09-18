@@ -30,8 +30,12 @@ If a data type sync is listed as `Fetching` with the additional `Waiting for asy
 
 This could be because:
 - The Web Connector application is closed.
-- The machine that has QBD and the Web Connector installed is switched off. 
+- The machine that has the Web Connector installed is switched off.
 
 Switch on the machine and open the Web Connector application, and the data will be synced once the Web Connector responds. 
+
+- The Web Connector's Auto-run feature has been disabled.
+- A QBD file is open and it is different from the one we are attempting to sync data with.
+- The user that created the connection is logged into the QBD file on a different machine to the Web Connector.
 
 <img src="/img/integrations/accounting/quickbooksdesktop/read-history-fetching-waiting-for-async-response.png" />
