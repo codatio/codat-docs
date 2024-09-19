@@ -22,11 +22,11 @@ Codat offers the ability to upload attachment to records in the supported accoun
 
 An attachment upload process at Codat consists of the following steps:
 
-1. **[Make a write request](#make-a-write-request).**
+1. **[Make a write request](#make-a-write-request)**
 
    Once completed, you will receive a write request ID. Use it to track the status of the request.
 
-3. **[Consume the relevant write webhook](#consume-the-write-webhook).**
+3. **[Consume the relevant write webhook](#consume-the-write-webhook)**
 
    Subscribe to the relevant `{dataType}.write.{successful|unsuccessful}` webhook to receive notifications of the success or failure of the write request.
 
