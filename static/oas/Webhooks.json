@@ -2614,8 +2614,12 @@
             "title": "Payload",
             "type": "object",
             "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
               "companyId": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
+                "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId",
+                "deprecated": true
               },
               "connectionId": {
                 "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
