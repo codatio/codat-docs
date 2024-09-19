@@ -6577,8 +6577,12 @@
             "title": "Payload",
             "type": "object",
             "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
               "companyId": {
-                "$ref": "#/components/parameters/companyId/schema"
+                "$ref": "#/components/parameters/companyId/schema",
+                "deprecated": true
               },
               "connectionId": {
                 "$ref": "#/components/parameters/connectionId/schema"
