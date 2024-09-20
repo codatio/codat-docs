@@ -4138,6 +4138,101 @@
         }
       }
     },
+    "connection.created": {
+      "post": {
+        "description": "Triggered when a connection is created by the SMB.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.connected": {
+      "post": {
+        "description": "Triggered when a connection is successfully linked by the SMB.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.disconnected": {
+      "post": {
+        "description": "Triggered when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.reconnected": {
+      "post": {
+        "description": "Triggered when a connection is reconnected after becoming disconnected.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.deleted": {
+      "post": {
+        "description": "Triggered when a connection is deleted.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "Company data connection status changed": {
       "post": {
         "description": "Triggered anytime a data connection's status changes.",
@@ -5289,6 +5384,247 @@
               "newStatus": "Linked",
               "oldStatus": "PendingAuth",
               "platformKey": "gbol"
+            }
+          }
+        ]
+      },
+      "ConnectionWebhook": {
+        "title": "Connection webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "connection.created",
+              "connection.connected",
+              "connection.disconnected",
+              "connection.reconnected",
+              "connection.deleted"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ConnectionWebhook/definitions/connectionWebhookPayload"
+          }
+        },
+        "definitions": {
+          "connectionWebhookPayload": {
+            "title": "Connection webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "connection": {
+                "$ref": "#/components/schemas/Connection"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.created",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "PendingAuth",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.connected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.disconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Unlinked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.disconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Deauthorized",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking",
+                "dataConnectionErrors": [
+                  {
+                    "statusCode": 401,
+                    "statusText": "The integration de-authorized access to the connection.",
+                    "errorMessage": "The integration de-authorized access to the connection.",
+                    "erroredOnUtc": "2022-12-27T09:53:29.000Z",
+                    "status": "Active"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.reconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.deleted",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
             }
           }
         ]
