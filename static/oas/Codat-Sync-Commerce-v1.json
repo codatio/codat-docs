@@ -17540,7 +17540,8 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/Dataset/properties/requested"
+            "$ref": "#/components/schemas/Dataset/properties/requested",
+            "nullable": true
           },
           "created": {
             "$ref": "#/components/schemas/Dataset/properties/requested"
@@ -17553,6 +17554,7 @@
           },
           "connectionInfo": {
             "type": "object",
+            "nullable": true,
             "additionalProperties": {
               "type": "string"
             }
