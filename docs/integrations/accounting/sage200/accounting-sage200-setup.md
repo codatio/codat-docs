@@ -130,7 +130,7 @@ _Note_: When submitting the Sage 200 API Credential Request Form:
 
 :::caution Balance sheets in Sage 200's sandbox data
 
-If you link a Codat test company to one of the [Sage sandbox accounts](https://developer.sage.com/api/payments/test-in-sandbox.html#testing), the balance sheet dataset will fail to sync, and shows the status `ValidationError`. This is because the dataset fails Codat's checks, which make sure that a balance sheet balances, that is, net assets are equal to equity.
+If you link a Codat test company to one of the Sage sandbox accounts, the balance sheet dataset will fail to sync, and shows the status `ValidationError`. This is because the dataset fails Codat's checks, which make sure that a balance sheet balances, that is, net assets are equal to equity.
 :::
 
 :::note Tax rates on line items
