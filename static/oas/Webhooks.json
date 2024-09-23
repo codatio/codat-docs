@@ -1591,25 +1591,6 @@
               "redirect"
             ]
           },
-          "companyGroupAssignment": {
-            "title": "Group assignment",
-            "type": "object",
-            "properties": {
-              "groupId": {
-                "allOf": [
-                  {
-                    "type": "string",
-                    "format": "uuid",
-                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
-                    "description": "Unique identifier for the group."
-                  },
-                  {
-                    "description": "Unique identifier of the group you want to assign the company to."
-                  }
-                ]
-              }
-            }
-          },
           "companyReference": {
             "title": "Company reference",
             "type": "object",

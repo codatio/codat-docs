@@ -172,12 +172,7 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith",
-                          "groups": [
-                            {
-                              "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                            }
-                          ]
+                          "createdByUserName": "Mike Smith"
                         }
                       ],
                       "pageNumber": 1,
@@ -343,23 +338,6 @@
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar"
                     }
-                  },
-                  "With a group": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "Technicalium",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar",
-                      "groups": [
-                        {
-                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
-                        }
-                      ]
-                    }
                   }
                 }
               }
@@ -405,16 +383,6 @@
                     "name": "Technicalium",
                     "description": "Technology services, including web and app design and development"
                   }
-                },
-                "With a group": {
-                  "value": {
-                    "name": "Technicalium",
-                    "groups": [
-                      {
-                        "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                      }
-                    ]
-                  }
                 }
               }
             }
@@ -425,7 +393,7 @@
     "/companies/{companyId}": {
       "put": {
         "summary": "Update company",
-        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/sync-for-payables-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/sync-for-payables-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/sync-for-payables-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/sync-for-payables-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-payables-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \n\nA [company](https://docs.codat.io/sync-for-payables-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-payables-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -561,23 +529,6 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar"
-                    }
-                  },
-                  "With groups": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18Z",
-                      "createdByUserName": "Dan Tzabar",
-                      "groups": [
-                        {
-                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
-                        }
-                      ]
                     }
                   }
                 }
@@ -3298,25 +3249,6 @@
               "redirect"
             ]
           },
-          "companyGroupAssignment": {
-            "title": "Group assignment",
-            "type": "object",
-            "properties": {
-              "groupId": {
-                "allOf": [
-                  {
-                    "type": "string",
-                    "format": "uuid",
-                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
-                    "description": "Unique identifier for the group."
-                  },
-                  {
-                    "description": "Unique identifier of the group you want to assign the company to."
-                  }
-                ]
-              }
-            }
-          },
           "companyReference": {
             "title": "Company reference",
             "type": "object",
@@ -3409,19 +3341,6 @@
             "type": "string",
             "example": "Requested early access to the new financing scheme.",
             "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "title": "Group reference",
-              "type": "object",
-              "properties": {
-                "id": {
-                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
-                }
-              }
-            },
-            "description": "Reference to the groups that the company is assigned to."
           }
         },
         "required": [
