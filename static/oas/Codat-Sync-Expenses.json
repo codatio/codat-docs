@@ -14159,14 +14159,14 @@
     }
   },
   "webhooks": {
-    "Sync Failed": {
+    "expenses.sync.successful": {
       "post": {
+        "description": "Triggered when an expense sync successfully completes without any errors or warnings.",
         "requestBody": {
-          "description": "Triggered anytime a sync fails.",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SyncFailedWebhook"
+                "$ref": "#/components/schemas/ExpensesSyncWebhook"
               }
             }
           }
@@ -14178,14 +14178,54 @@
         }
       }
     },
-    "Sync Complete": {
+    "expenses.sync.unsuccessful": {
       "post": {
+        "description": "Triggered when an expense sync fails to complete successfully, resulting in at least one error or warning.",
         "requestBody": {
-          "description": "Triggered anytime a sync completes.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpensesSyncWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "SyncCompleted": {
+      "post": {
+        "deprecated": true,
+        "description": "Triggered anytime an expense sync completes. Used for Sync for Expenses only.\n\n> This event type is deprecated. Use the `expenses.sync.successful` to get notified when an expense sync completes successfully.",
+        "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SyncCompleteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "SyncFailed": {
+      "post": {
+        "deprecated": true,
+        "description": "Indicates a failure occurred during an expense sync. Used for Sync for Expenses only.\n\n> This event type is deprecated. Use the `expenses.sync.unsuccessful` to get notified when an expense sync completes unsuccessfully.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SyncFailedWebhook"
               }
             }
           }
@@ -16209,6 +16249,76 @@
         },
         "required": [
           "id"
+        ]
+      },
+      "ExpensesSyncWebhook": {
+        "title": "Expenses sync webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "expenses.sync.successful",
+              "expenses.sync.unsuccessful"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ExpensesSyncWebhook/definitions/expensesSyncWebhookPayload"
+          }
+        },
+        "definitions": {
+          "expensesSyncWebhookPayload": {
+            "title": "Expenses sync webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "syncId": {
+                "type": "string",
+                "description": "Unique identifier of the sync."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "eventType": "expenses.sync.successful",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo"
+              },
+              "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "eventType": "expenses.sync.unsuccessful",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo"
+              },
+              "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
+            }
+          }
         ]
       },
       "ExpenseTransaction": {
