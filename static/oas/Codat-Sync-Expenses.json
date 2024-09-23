@@ -15444,7 +15444,8 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
+            "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1",
+            "nullable": true
           },
           "created": {
             "$ref": "#/components/schemas/TransferTransactionRequest/properties/date/allOf/1"
@@ -15457,6 +15458,7 @@
           },
           "connectionInfo": {
             "type": "object",
+            "nullable": true,
             "additionalProperties": {
               "type": "string"
             }

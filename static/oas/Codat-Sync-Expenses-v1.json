@@ -2378,7 +2378,8 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/Connection/properties/created"
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "nullable": true
           },
           "created": {
             "title": "Date time",
@@ -2397,6 +2398,7 @@
           },
           "connectionInfo": {
             "type": "object",
+            "nullable": true,
             "additionalProperties": {
               "type": "string"
             }
