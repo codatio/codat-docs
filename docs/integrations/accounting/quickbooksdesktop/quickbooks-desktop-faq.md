@@ -24,20 +24,18 @@ Yes. The QBD connector can read data that is dated from 1 January, 1980 onwards 
 
 ## What does the "Waiting for asynchronous response from third party" status mean?
 
-You can view the status of each data sync in the [Codat Portal](https://app.codat.io) by navigating to **Companies > Company > Data history** or by checking the `connectionInfo` property of our [Get connection](https://docs.codat.io/platform-api#/operations/get-connection) endpoint. 
+When a data type sync is listed as `Fetching` with the additional `Waiting for asynchronous response from third party` message, we try to surface the associated issue in **Companies > Company > Data history** of the [Codat Portal](https://app.codat.io) and in the `connectionInfo` property of our [Get connection](https://docs.codat.io/platform-api#/operations/get-connection) endpoint. 
 
-If a data type sync is listed as `Fetching` with the additional `Waiting for asynchronous response from third party` message, this means the Web Connector has not yet responded to Codat's sync request.
+If you don't see any connection errors surfaced with this message, this means the Web Connector has not yet responded to Codat's sync request.
 
 <img src="/img/integrations/accounting/quickbooksdesktop/read-history-fetching-waiting-for-async-response.png" />
 
- Where possible we surface the issues that can manifest as `Waiting for asynchronous response from third party` in **Companies > Company > Manage connections > Connection errors** or in the `dataConnectionErrors` property of our [Get connection](https://docs.codat.io/platform-api#/operations/get-connection) endpoint.
+We have summarized the possible reasons for the message and available resolutions in the table below. 
 
-If there are no connection errors and you are seeing the `Waiting for asynchronous response from third party` message it is very likely the Web connector is closed or the machine it is on is turned off. If there is a ection errors we have listed the resolutions in the table below.
-
-| **Potential Issue**                                                                                          | **Surfaced in Connection Errors?** | **User action to resolve**                                                   |
+| **Potential issue**                                                                                          | **Surfaced in connection errors?** | **User action to resolve**                                                   |
 |--------------------------------------------------------------------------------------------------------------|------------------------------------|------------------------------------------------------------------------------|
-| The machine that has the Web Connector installed is switched off                                             | No                                 | Turn on the machine                                                          |
+| The machine that has QBD and the Web Connector installed is switched off                                        | No                                 | Turn on the machine                                                          |
 | The Web Connector application is closed                                                                      | No                                 | Open the Web Connector                                                       |
 | The Web Connector's "Auto-run" feature has been disabled                                                     | Yes                                | Tick the "Auto-Run" box on the relevant connection row in the Web Connector  |
-| A QBD file is open and it is different from the one we are attempting to sync data with                      | Yes                                | Close QuickBooks Desktop                                                     |
-| The user that created the connection is logged into the QBD file on a different machine to the Web Connector | Yes                                | Log out of other instances of QuickBooks Desktop                             |
+| The open QBD company file is different from the one we are trying to sync data with                      | Yes                                | Close QuickBooks Desktop                                                     |
+| The user who created the connection opened the QBD company file on a machine that's different to the machine where they installed the Web Connector | Yes                                | Log out of all other instances of QuickBooks Desktop                             |
