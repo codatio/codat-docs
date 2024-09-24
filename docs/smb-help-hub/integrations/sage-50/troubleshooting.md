@@ -13,17 +13,17 @@ When you connect to your Sage 50 account using Codat, this streamlines the shari
 
 You can learn more about our relationship with your provider in our [Codat FAQs](/smb-help-hub/codat/faq).
 
-#### What kind of data does Codat transfer between my Sage 50 system and my financial services provider?
+#### What kind of data does Codat transfer between my Sage 50 system and my provider?
 
 Codat facilitates the transfer of key financial data such as invoices, payments, general ledger entries, and customer details, keeping both systems synchronized.
 
-#### Can I customize what data is shared between Sage 50 and my financial services provider through Codat?
+#### Can I customize what data is shared between Sage 50 and my provider through Codat?
 
 The data and frequency of data shared is specified by your financial services provider. Please reach out to their representative if you have any concerns.
 
-#### Is Codat’s integration with my financial services provider compatible with Sage 50 UK and Ireland?
+#### Is Codat’s connection compatible with Sage 50 UK and Ireland?
 
-Codat supports integration with Sage 50 UK and Ireland versions, ensuring your financial data can be linked to your financial services provider smoothly.
+Codat smoothly connects to Sage 50 UK and Ireland versions, ensuring your financial data can be linked to your financial services provider smoothly.
 
 #### How quickly will financial data sync between Sage 50 and my provider once connected?
 
@@ -43,7 +43,7 @@ Yes, Codat allows you to connect multiple Sage 50 accounts, making it easier to 
 
 Codat’s integration supports both the desktop and cloud versions of Sage 50.
 
-#### What setup is required to ensure my business data is synced properly with my financial services provider?
+#### What setup is required to ensure my business data is synced properly?
 
 You will need to install Codat’s on-premise connector on the machine running Sage 50 and configure the connection to your financial services provider.
 
@@ -57,7 +57,7 @@ No additional hardware is needed, but you need to install Codat's on-premise con
 
 The sync frequency is determined by your provider, but data can be updated in near real-time to ensure both Sage 50 and the provider have the latest information.
 
-#### Does the Codat integration support real-time data updates between my Sage 50 system and my financial services provider?
+#### Does Codat support real-time data updates between Sage 50 and my provider?
 
 Yes, Codat supports near real-time syncing, ensuring your financial services provider can promptly see the data updates from Sage 50.
 
@@ -71,7 +71,7 @@ Codat uses industry-standard encryption to secure the data transferred between S
 
 Codat encrypts data both in transit and at rest with strict access controls and authentication methods to protect your financial information during transmission.
 
-#### Does my business’ financial data remain private when shared with my financial services provider via Codat?
+#### Does my business’ financial data remain private when shared with my provider via Codat?
 
 Yes, Codat doesn't share your financial data with any third parties. Only the systems you authorize, such as your financial services provider, will be able to access it.
 
@@ -85,11 +85,11 @@ Yes, you can set access permissions within your Sage 50 account to control who i
 
 You need to install Codat’s on-premise connector, configure it to connect Sage 50, and follow Codat’s setup instructions to link it with your financial services provider.
 
-#### How long does it take to fully synchronize my Sage 50 data with my financial services provider using Codat?
+#### How long does it take Codat to fully synchronize my Sage 50 data with my provider?
 
 Depending on your business size and complexity, this can typically be completed in 30 minutes to a couple of hours.
 
-#### Do I need technical expertise to connect, or is it straightforward for non-technical staff?
+#### Do I need technical expertise to connect?
 
 Some technical knowledge may be required for setup, particularly to install the connector, but Codat’s guides make it accessible for non-technical staff.
 
@@ -97,7 +97,7 @@ Some technical knowledge may be required for setup, particularly to install the 
 
 Please reach out to your relationship manager through your usual channels at your financial services provider if you have any trouble using Codat. 
 
-#### Are there any common setup issues when linking Codat, Sage 50, and my financial services provider?
+#### Are there any common setup issues when linking Codat, Sage 50, and my provider?
 
 Common issues may include network or permissions problems, but these are typically resolved by adjusting firewall settings or reconfiguring the on-premise connector. See [Troubleshooting and performance](/smb-help-hub/integrations/sage-50/troubleshooting#troubleshooting-and-performance) for more information. 
 
@@ -107,11 +107,11 @@ Common issues may include network or permissions problems, but these are typical
 
 Yes, Codat offers ongoing support, including updates and troubleshooting, to keep the connection running smoothly.
 
-#### What kind of maintenance is required for the connection between Sage 50 and my financial services provider?
+#### What kind of maintenance is required for the connection between Sage 50 and my provider?
 
 Minimal maintenance is needed, though you’ll need to ensure Sage 50 and the Codat connector are up-to-date and functioning correctly.
 
-#### What should I do if the connection between Codat and my financial services provider stops working?
+#### What should I do if the connection between Codat and my provider stops working?
 
 Check the status of the on-premise connector, verify Internet connectivity, and contact Codat’s support team for further assistance, if needed.
 
@@ -129,11 +129,11 @@ If your data isn't syncing properly, follow this checklist to troubleshoot poten
 5. Review error logs within Codat's platform to identify specific issues.
 6. Restart the on-premise connector, if necessary.
 
-#### Can I monitor the performance of the integration between Sage 50 and my financial services provider?
+#### Can I monitor the performance of the connection between Sage 50 and my provider?
 
-Yes. Codat provides an integration dashboard where you can monitor the syncing status and any performance issues. You can also view error logs to diagnose data syncing problems quickly.
+Yes. Codat provides a dashboard where you can monitor the syncing status and performance issues. You can also view error logs to diagnose data syncing problems quickly.
 
-#### Does the connection affect Sage 50’s performance when syncing data with my financial services provider?
+#### Does the connection affect Sage 50’s performance when syncing data with my provider?
 
 The connection runs efficiently in the background, but you need to ensure that your system that is running Sage 50 has sufficient resources to handle syncing processes. Closing Sage 50 during synchronization can also improve performance and prevent conflicts.
 
