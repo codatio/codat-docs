@@ -30,6 +30,15 @@ module.exports = [
   },
   {
     type: "category",
+    label: "Sage 50",
+    collapsed: true,
+    items: [
+      "smb-help-hub/integrations/sage-50/overview",
+      "smb-help-hub/integrations/sage-50/troubleshooting",
+    ],
+  },
+  {
+    type: "category",
     label: "Sage Intacct",
     collapsed: true,
     items: [
