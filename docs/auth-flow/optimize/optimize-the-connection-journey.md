@@ -23,11 +23,11 @@ Consider these optimization areas a "go-live checklist". In the following sectio
 - The positive impact that you can expect from following our recommendations, **including the potential conversion rate increase\***.
 - A helpful checklist to use when building your authorization flow.
 
-Codat has analyzed implementations and the dropoff/conversion rate at each stage. We were able to attribute a positive correlation to the execution of each of the five critical areas.
+\* Codat has analyzed implementations and the dropoff/conversion rate at each stage. We were able to attribute a positive correlation to the execution of each of the five critical areas.
 
 ### Measuring success
 
-We also equip you with a tool for [monitoring your auth flow's performance](/auth-flow/optimize/optimize-the-connection-journey).
+We also equip you with a tool for [monitoring your auth flow's performance](/auth-flow/optimize/monitor-auth-flow).
 
 ### Resources
 
