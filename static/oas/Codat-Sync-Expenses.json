@@ -378,6 +378,21 @@
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar"
                     }
+                  },
+                  "With a tag": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Technicalium",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18.1950523Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "tags": {
+                        "region": "us"
+                      }
+                    }
                   }
                 }
               }
@@ -15307,6 +15322,9 @@
             "type": "string",
             "example": "Requested early access to the new financing scheme.",
             "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+          },
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
           }
         },
         "required": [
