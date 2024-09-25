@@ -2824,6 +2824,9 @@
             "type": "string",
             "example": "Requested early access to the new financing scheme.",
             "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+          },
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
           }
         },
         "required": [

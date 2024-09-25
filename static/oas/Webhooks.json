@@ -1242,6 +1242,25 @@
           }
         }
       }
+    },
+    "report.categorizedBankStatement.generate.successful": {
+      "post": {
+        "description": "Called when a categorized bank statement is successfully generated for a company.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportGenerationWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3015,6 +3034,71 @@
             }
           }
         }
+      },
+      "ReportGenerationWebhook": {
+        "title": "Report generation webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "report.categorizedBankStatement.generate.successful"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ReportGenerationWebhook/definitions/ReportGenerationPayload"
+          }
+        },
+        "definitions": {
+          "ReportGenerationPayload": {
+            "title": "Report generation payload",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "example": "a78e2625-7190-4d94-ae3b-071320451026",
+                "description": "Unique identifier of the report."
+              },
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "report.categorizedBankStatement.generate.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "bb42ce7e-720a-4ac5-b640-f24f53ff47c8",
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              }
+            }
+          }
+        ]
       },
       "SourceAccountWebhook": {
         "title": "Source account status changed webhook",
