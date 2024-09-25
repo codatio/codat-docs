@@ -48,15 +48,15 @@ module.exports = [
       "smb-help-hub/integrations/sage-intacct/error-messages",
     ],
   },
-  //{
-  //  type: "category",
-  //  label: "QuickBooks Desktop",
-  //  collapsed: true,
-  //  items: [
-  //    "smb-help-hub/integrations/qb-desktop/overview",
-  //    "smb-help-hub/integrations/qb-desktop/install-connector",
-  //    "smb-help-hub/integrations/qb-desktop/configure-connector",
-  //    "smb-help-hub/integrations/qb-desktop/troubleshooting",
-  //  ],
-  //},
+  {
+    type: "category",
+    label: "QuickBooks Desktop",
+    collapsed: true,
+    items: [
+      "smb-help-hub/integrations/qb-desktop/overview",
+      "smb-help-hub/integrations/qb-desktop/install-connector",
+      "smb-help-hub/integrations/qb-desktop/configure-connector",
+      "smb-help-hub/integrations/qb-desktop/troubleshooting",
+    ],
+  },
 ]
