@@ -61,16 +61,15 @@ It's not possible to add a custom header via our API. Instead, navigate to **Mon
 
 ### Filter webhooks by company tags
 
-You can configure a webhook consumer to filter companies based on their tags.
+You can configure a webhook consumer to filter companies based on their [tags](/using-the-api/managing-companies#adding-metadata-to-a-company).
 For instance, if you want to receive webhooks only for companies tagged with a specific region or service, you can configure the consumer to match those tags.
-[Learn more about company tags](/using-the-api/managing-companies#adding-metadata-to-a-company).
 
 To set this up in the portal, navigate to **Monitor > Webhooks > Events** and select the relevant endpoint to view its details.
 Then, enter the tags you want the consumer to filter by in the **Company tags** field.
 Each webhook consumer can support up to 10 company tags.
 
 Tags must be formatted as key-value pairs, separated by a colon.
-For example, to route webhooks for companies tagged with a `region` value of `us`, set the **Company tags** field to `region:us`.
+For example, to route webhooks for companies tagged with a `region` value of `us`, set the **Company tags** field to `region:us`. Any company tagged with a `region` value of `uk` will be ignored.
 
 A message will be delivered whenever any of the company’s tags match those specified in the webhook consumer. 
 For example, a consumer configured with `region:us` and `service:t2k` will still receive messages from a company tagged with `region:us` and `service:minerva`, as at least one tag matches.
