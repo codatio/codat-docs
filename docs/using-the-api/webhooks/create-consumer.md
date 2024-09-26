@@ -59,6 +59,19 @@ It's not possible to add a custom header via our API. Instead, navigate to **Mon
 
 ![A fragment of the webhook UI that displays the detailed endpoint view with two custom headers added to it](/img/use-the-api/0050-custom-headers-section.png)
 
+### Filter webhooks by company tags
+
+You can configure a webhook consumer to filter companies based on [tags you can add to a company profile](/using-the-api/managing-companies#adding-metadata-to-a-company). 
+For example, if you want to receive webhooks only for companies tagged with a specific region or service, you can configure the consumer to match those tags.
+
+To set this up in the [Codat Portal](https://app.codat.io/), navigate to **Monitor > Webhooks > Events** and select the relevant endpoint to view its details. Then, enter the tags you want to filter by in the **Company tags** field. Each webhook consumer can support up to 10 company tags.
+
+Tags must be formatted as key-value pairs separated by a colon. For example, to route webhooks for companies tagged with a `region` value of `us`, set the **Company tags** field to `region:us`. Any company tagged with a `region` value of `uk` will be ignored.
+
+A message will be delivered every time any of the company’s tags match the tags specified in the webhook consumer. For example, a consumer configured with `region:us` and `service:t2k` will still receive messages from a company tagged with `region:us` and `service:minerva` because one company tag matches.
+
+![A fragment of the webhook UI that allows you to add company tags to a consumer](/img/use-the-api/webhooks-add-company-tags.png)
+
 ## View webhook consumers
 
 In the [Codat Portal](https://app.codat.io/monitor/events), navigate to **Monitor > Webhooks > Events** to see the list of all consumer endpoints you have configured. 
