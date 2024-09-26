@@ -5385,6 +5385,7 @@
           },
           "dataConnectionErrors": {
             "type": "array",
+            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
             }
