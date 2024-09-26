@@ -120,18 +120,17 @@ The `id` property that you receive in the response is the unique Codat identifie
 The name of the company helps you identify the company in the Codat Portal and doesn't have to be unique. Make sure to [avoid forbidden characters](/core-concepts/companies).
 :::
 
-### Adding metadata to a company
+### Add metadata to a company
 
-You can enrich a company profile with additional information using the `tags` object.
-These tags provide flexible ways to store metadata such as foreign key associations, operational regions, or specific details about the financial services requested by the company.
+You can enrich a company profile with additional information using the `tags` object. These tags provide flexible ways to store metadata.
 
-Each company can have up to 10 tags.
-Tags can be applied either using the [Create company](/platform-api#/operations/create-company) endpoint or when updating the company via the [Update company](/platform-api#/operations/update-company) endpoint.
+For example, you can set foreign key associations, define operational regions, or record specific details about the financial services  a company has requested. 
+
+Each company can have up to 10 tags that you can add using the [Create company](/platform-api#/operations/create-company) endpoint or when updating the company via the [Update company](/platform-api#/operations/update-company) endpoint.
 
 :::tip Use tags with webhooks
 
-You can use the `tags` object to filter companies to specific webhook consumers.
-To learn more, see [here](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
+You can use the `tags` object to filter companies to specific webhook consumers. To learn more, see [Filter webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
 
 :::
 
@@ -466,4 +465,4 @@ You've learned:
 
 - [Get data](/using-the-api/get-data)
 - [Create, update and delete data](/using-the-api/push)
-- [Route webhooks using tags](/using-the-api/webhooks/create-consumer#route-webhooks)
+- [Filter webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags)
