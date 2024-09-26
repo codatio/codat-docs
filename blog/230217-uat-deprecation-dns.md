@@ -7,6 +7,14 @@ authors: pzaichkina
 description: On Friday 17 February, 2023, we will switch the existing public DNS for the UAT environment, which is now deprecated, to point to the Production environment. 
 ---
 
+:::caution Update: Sep 26, 2024
+
+Some UAT domains have remained aliased to our production instance. These aliases will be disabled on the 1st November 2024.
+
+If you are still pointing to, for example, `https://api-uat.codat.io`, you should instead point to `https://api.codat.io`.
+
+:::
+
 :::caution Update: February 17, 2023
 
 **Additional action required to link new companies in migrated Test accounts following the DNS switchover from UAT to Production**
