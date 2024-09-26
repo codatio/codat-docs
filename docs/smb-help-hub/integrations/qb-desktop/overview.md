@@ -2,7 +2,7 @@
 title: QuickBooks Desktop overview
 description: Summary view of the QuickBooks Desktop connection flow and available support
 sidebar_label: Overview
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 Your financial services provider has requested access to your QuickBooks Desktop account and its data. They need to view, create or modify your business's financial data so that they can deliver their services to you. They use Codat to establish the connection to your QuickBooks Desktop account and asked you to follow our QuickBooks Desktop connection flow.
@@ -12,12 +12,6 @@ Your financial services provider has requested access to your QuickBooks Desktop
 To learn more about the role we play in your provider's business processes, read our dedicated [FAQs](/smb-help-hub/codat/faq).
 
 :::
-
-## Supported versions
-
-
-Make sure you re running iwndows 10 or higher
-
 
 ## Supported access options
 
