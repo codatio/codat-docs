@@ -8,15 +8,15 @@ authors: dcoplowe
 
 import Diff from "@components/Diff"
 
-We've enhanced our company data model to offer more flexibility.
+We've enhanced our `company` data model to offer more flexibility.
 You can now add metadata to a company using the `tags` object.
 
 <!--truncate-->
 
 ### What's new?
 
-We've introduced a `tags` object to our company data model.
-Tags provide a simple way to include additional information about a company.
+We've introduced a `tags` object to our `company` [data model](platform-api#/schemas/Company). Tags provide a simple way to include additional information about a company.
+
 For example, you can use tags to set a foreign key, define an operating region or specify details about the financial services the company has requested.
 Each company can store up to 10 tags.
 
@@ -51,8 +51,8 @@ Each company can store up to 10 tags.
 #### Key benefits
 
 - **Group companies effectively**: use tags to group companies by type or other relevant criteria.
-- **Support event-based architectures**: all webhooks related to a specific company will include the `tags` object so your webhook consumer can access this data easily.
-- **Filter webhooks to specific consumers**: direct webhook messages for specific companies to the appropriate webhook endpoints. See [filter webhooks using company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
+- **Support event-based architectures**: all webhooks related to a specific company now include the `tags` object so your webhook consumer can access this data easily.
+- **Filter webhooks to specific consumers**: direct webhook messages for specific companies to the appropriate webhook endpoints. See how you can [filter webhooks using company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
 
 ### Who is it relevant for?
 
