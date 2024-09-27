@@ -92,8 +92,3 @@ All network activity is logged for the purposes of auditing.
 
 ### Real-time Monitoring
 Access to sensitive user groups or changes that result in a significant change in resource operational behavior are alerted in real-time. 
-
-
-
-
-
