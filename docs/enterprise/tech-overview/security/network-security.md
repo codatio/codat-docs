@@ -1,6 +1,6 @@
 ---
 title: "Network Security"
-description: "Our Network security practices."
+description: "Our Network security practices"
 ---
 
 ## Network Architecture

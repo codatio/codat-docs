@@ -32,15 +32,15 @@ module.exports = [
           },
           {
             type: "category",
-            label: "Security Features",
+            label: "Security Features & Practices",
             items: [
+                "enterprise/tech-overview/security/overview",
                 "enterprise/tech-overview/security/sso",
                 "enterprise/tech-overview/security/api-mTLS",
                 "enterprise/tech-overview/security/data-security",
                 "enterprise/tech-overview/security/network-security",
             ]
           },
-        "enterprise/tech-overview/security-and-data",
       ],
       label: "Technology Overview"
     },
