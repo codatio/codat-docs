@@ -3,21 +3,6 @@ title: "Overview"
 description: "Enterprise pages"
 ---
 
-|  .                   | Responsibility           | How is it done?              |
-|----------------------|--------------------------|------------------------------|
-| Codat Responsibility | Information and Data     | - Codat Control Framework <br /> - Data Retention Policy <br /> - Encryption Policy <br /> - Encryption Policy <br /> - Access Control Policy <br /> - Security & Data Protection <br /> - Information Security Policy <br /> - Acceptable Use Policy <br /> - Whitepaper - Data Security   |
-|                      | Devices (Mobile and PCs) | - People Operations Security Policy <br /> - Security Operations & Network Security Policy (Workplace Tech) <br /> - Security & Data Protection <br /> - Acceptable Use Policy |
-|                      | Accounts and Identities  | - Password Policy <br /> - Access Control Policy <br /> - Information Security Policy <br /> - People Operations Security Policy <br /> - Security & Data Protection <br /> - Acceptable Use Policy |
-|                      | Identity and Directory Infrastructure  | - Access Control Policy <br /> - Information Security Policy |
-|                      | Applications             | - Codat Control Framework <br /> - Information Security Policy <br /> - Secure Software Development Lifecycle Policy |
-|                      | Network Controls         | - Security Operations & Network Security Policy <br /> - Codat Control Framework <br /> - Information Security Policy <br /> - Whitepaper - Network Security |
-| Azure Responsibility | Operating System         | - Firmware security - Azure Security <br /> - Security features used with Azure VMs - Azure security <br /> - Best practices for secure PaaS deployments - Microsoft Azure|
-|                      | Phyisical Hosts          | - Azure information system components and boundaries|
-|                      | Phyisical Network        | - Azure information system components and boundaries |
-|                      | Physical Data Centre     | - Physical security of Azure datacenters - Microsoft Azure |
-
-
-
 # Architecture 
 
 The Codat technology system has a [microservice](https://en.wikipedia.org/wiki/Microservices) architecture, this modular structure parallelizes software development and enables a scalable and robust system to be created.

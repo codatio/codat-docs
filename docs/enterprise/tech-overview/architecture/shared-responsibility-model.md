@@ -6,7 +6,7 @@ draft: true
 
 Operations at Codat are performed entirely on cloud hosted platforms. As such, responsibilities vary across layers of the stack.
 
-|  .                   | Responsibility           | How is it done?              |
+|  &nbsp;              | Responsibility           | How is it done?              |
 |----------------------|--------------------------|------------------------------|
 | Codat Responsibility | Information and Data     | - Codat Control Framework <br /> - Data Retention Policy <br /> - Encryption Policy <br /> - Access Control Policy <br /> - Security & Data Protection <br /> - [Information Security Policy](https://trust.codat.io/)🔗 <br /> - [Acceptable Use Policy](https://trust.codat.io/)🔗 <br /> - [Data Security](/enterprise/tech-overview/security/data-security) |
 |                      | Devices (Mobile and PCs) | - People Operations Security Policy <br /> - Security Operations & Network Security Policy (Workplace Tech) <br /> - Security & Data Protection <br /> - [Acceptable Use Policy](https://trust.codat.io/)🔗 |
