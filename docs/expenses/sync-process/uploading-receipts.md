@@ -36,7 +36,7 @@ Content-Disposition: form-data; name="yourFileData"; filename="TEST_SEND_FILE.tx
 ### File size and format support
 :::note Exceptions
 
-Attachmets for `Adjustment` and `Transfer` type expense transactions are not supported for any integrations.
+Attachments for `Adjustment` and `Transfer` transaction types are not supported for any integrations.
 :::
 
 | Integration       | File size | File extension                                                                                                                                 |Supported transaction type
