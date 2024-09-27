@@ -18,3 +18,11 @@ Operations at Codat are performed entirely on cloud hosted platforms. As such, r
 |                      | Phyisical Hosts          | - [Information system components and boundaries (Azure)](https://learn.microsoft.com/en-us/azure/security/fundamentals/infrastructure-components)🔗 |
 |                      | Phyisical Network        | - [Information system components and boundaries (Azure)](https://learn.microsoft.com/en-us/azure/security/fundamentals/infrastructure-components)🔗 |
 |                      | Physical Data Centre     | - [Datacentre security overview (Azure)](https://learn.microsoft.com/en-us/compliance/assurance/assurance-datacenter-security)🔗 |
+
+# Azure Security
+Codat utilises the following security offerings provided by Microsoft Azure:
+ - Encryption at rest: SQL transparent data encryption, Storage Service Encryption, AES-256
+ - Encryption in transit: TLS/SSL enforced for all data transit, HSTS, IPSec
+ - Role level access: Azure RBAC, Active Directory
+
+Full details on Microsoft Azure security and data protection features can be found on the [Microsoft Trust Centre](https://www.microsoft.com/en-us/trustcenter/)🔗.

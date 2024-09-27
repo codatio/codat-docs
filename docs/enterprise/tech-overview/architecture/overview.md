@@ -26,10 +26,4 @@ This means that the underlying application infrastructure is managed by Microsof
 
 All data is stored on Microsoft Azure architecture.
 
-# Azure Security
-Codat utilizes the following security offerings provided by Microsoft Azure:
- - Encryption at rest: SQL transparent data encryption, Storage Service Encryption, AES-256
- - Encryption in transit: TLS/SSL enforced for all data transit, HSTS, IPSec
- - Role level access: Azure RBAC, Active Directory
-
-For a more detailed explanation of Microsoft Azure security and data protection features see [here](https://www.microsoft.com/en-us/trustcenter/).
+Please see the [Shared Responsibility Model](/enterprise/tech-overview/architecture/shared-responsibility-model) for more information on this. 
