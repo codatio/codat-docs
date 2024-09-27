@@ -34,14 +34,15 @@ Content-Disposition: form-data; name="yourFileData"; filename="TEST_SEND_FILE.tx
 ```
 
 ### File size and format support
+Please note that 'Adjustment' and 'Transfer' type expense transacstions do not support attachments at all, for any integration. 
 
-| Integration       | File size | File extension                                                                                                                                               |
-|-------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Xero**              | 3 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP |
-| **QuickBooks Online** | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               |
-| **NetSuite**          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP                                                                      |
-| **Dynamics 365 Business Central** | 350 MB | [No explicit requirements outlined](https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice) for text, image, and video files. |
-| **QuickBooks Desktop** | NA      | Does not support attachment upload                                                                                                                            |
+| Integration       | File size | File extension                                                                                                                                 |Supported Transaction Type
+|-------------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| **Xero**              | 3 MB      | 7Z, BMP, CSV, DOC, DOCX, EML, GIF, JPEG, JPG, KEYNOTE, MSG, NUMBERS, ODF,   ODS, ODT, PAGES, PDF, PNG, PPT, PPTX, RAR, RTF, TIF, TIFF, TXT, XLS, XLSX,   ZIP | All Supported Types |
+| **QuickBooks Online** | 100 MB    | AI, CSV, DOC, DOCX, EPS, GIF, JPEG, JPG, ODS, PAGES, PDF, PNG, RTF, TIF,   TXT, XLS, XLSX, XML                                                               | ReimbursableExpenses, ExpensePayment, ExpenseRefund |
+| **NetSuite**          | 100 MB    | BMP, CSV, XLS, XLSX, JSON, PDF, PJPG, PJPEG, PNG, TXT, SVG, TIF, TIFF,   DOC, DOCX, ZIP | ExpensePayment, ExpenseRefund                                                                     |
+| **Dynamics 365 Business Central** | 350 MB | [No explicit requirements outlined](https://learn.microsoft.com/en-gb/dynamics365/business-central/ui-how-add-link-to-record#to-attach-a-file-to-a-purchase-invoice) for text, image, and video files. | All Supported Types
+| **QuickBooks Desktop** | NA      | Does not support attachment upload | N/A                                                                                                                           |
 | **FreeAgent** | 5MB      | PNG, X-PNG, JPEG, PJG, GIF, X-PDF                                                                                                                            |
 
 #### Attach a receipt using Postman
