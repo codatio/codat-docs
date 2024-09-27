@@ -3,6 +3,7 @@ title: "Shared Responsibility Model"
 description: "Codat's PaaS Shared Responsibility Model"
 ---
 
+## The Shared Responsibility Model
 Operations at Codat are performed entirely on cloud hosted platforms. As such, responsibilities vary across layers of the stack.
 
 |  &nbsp;              | Responsibility           | How is it done?              |
@@ -18,7 +19,7 @@ Operations at Codat are performed entirely on cloud hosted platforms. As such, r
 |                      | Phyisical Network        | - [Information system components and boundaries (Azure)](https://learn.microsoft.com/en-us/azure/security/fundamentals/infrastructure-components)🔗 |
 |                      | Physical Data Centre     | - [Datacentre security overview (Azure)](https://learn.microsoft.com/en-us/compliance/assurance/assurance-datacenter-security)🔗 |
 
-# Azure Security
+## Azure Security
 Codat utilises the following security offerings provided by Microsoft Azure:
  - Encryption at rest: SQL transparent data encryption, Storage Service Encryption, AES-256
  - Encryption in transit: TLS/SSL enforced for all data transit, HSTS, IPSec

@@ -1,10 +1,9 @@
 ---
-title: "Overview"
-description: "Enterprise pages"
+title: "Architecture Overview"
+description: "A high level view of Codat platform architecture"
 ---
 
-# Architecture 
-
+## Introduction
 The Codat technology system has a [microservice](https://en.wikipedia.org/wiki/Microservices) architecture, this modular structure parallelizes software development and enables a scalable and robust system to be created.
 
 There are currently over 100 services that make up the Codat technology infrastructure, each with a separate instance for each of the two environments (integration, production). 
@@ -15,8 +14,7 @@ Load on instances is proactively monitored by Azure, and the engineering team is
 
 ![](/img/enterprise/architecture/architecture.png)
 
-# Hosting and Data Storage
-
+## Hosting and Data Storage
 Codat uses the [Microsoft Azure](https://azure.microsoft.com/en-us/) platform for all hosting and data storage.  Codat has ensured that all hosting and data storage by Azure is located in the UK only.
 
 Microsoft Azure is a growing collection of integrated cloud services that developers and IT professionals use to build, deploy and manage applications through a global network of data centres.
