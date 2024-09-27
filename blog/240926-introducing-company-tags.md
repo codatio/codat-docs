@@ -15,7 +15,7 @@ You can now add metadata to a company using the `tags` object.
 
 ### What's new?
 
-We've introduced a `tags` object to our `company` [data model](platform-api#/schemas/Company). Tags provide a simple way to include additional information about a company.
+We've introduced a `tags` object to our `company` [data model](/platform-api#/schemas/Company). Tags provide a simple way to include additional information about a company.
 
 For example, you can use tags to set a foreign key, define an operating region or specify details about the financial services the company has requested.
 Each company can store up to 10 tags.
