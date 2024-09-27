@@ -130,7 +130,7 @@ If you need to remove an associated tax rate from an expense, use one of the fol
 |-------------------|----------------------------------|
 | QuickBooks Online | `NON`                            |
 | Xero              | `NONE`                           |
-| Oracle NetSuite   | `-7`                             |
+| Oracle NetSuite   | US subsidiaries: `-7`<br/> Canadian subsidiaries: `114`<br/> All other subsidiaries: check the `UNDEF-{country code}` tax rate|
 | Dynamics 365      | Set up and apply a `0%` tax rate | 
 | QuickBooks Desktop| Null                             |
 | FreeAgent        | `taxRateRef` is not supported     |

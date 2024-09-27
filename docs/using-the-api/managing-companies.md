@@ -31,8 +31,8 @@ To create a new company, use the [Create company](/platform-api#/operations/crea
 
 ```javascript
 platformClient.companies.create({
-    name: "Platypus Properties",
-    description: "Platypuses are venomous mammals"
+    name: "Toft stores",
+    description: "Need a loan for refurb."
 }).then((companyCreatedRes: CreateCompanyResponse) => {
     if (companyCreatedRes.statusCode == 200) {
         console.log(companyCreatedRes.company.id, companyCreatedRes.company.name)
@@ -45,8 +45,8 @@ platformClient.companies.create({
 
 ```python
 req = shared.CompanyRequestBody(
-    name='Platypus Properties',
-    description='Platypuses are venomous mammals'
+    name='Toft stores',
+    description='Need a loan for refurb.'
     )
 
 company_created_res = platform_client.companies.create(req)
@@ -58,8 +58,8 @@ print(company_created_res.company.id, company_created_res.company.name)
 
 ```c#
 var companyCreatedRes = await platformClient.Companies.CreateAsync(new CompanyRequestBody() {
-    Name = "Platypus Properties",
-    Description = "Platypuses are venomous mammals"
+    Name = "Toft stores",
+    Description = "Need a loan for refurb."
   });
 
 if(companyCreatedRes.Company != null) {
@@ -75,8 +75,8 @@ if(companyCreatedRes.Company != null) {
 ctx := context.Background()
 
 companyCreatedRes, err := platformClient.Companies.Create(ctx, shared.CompanyRequestBody{
-    Name: "Platypus Properties",
-    Description: "Platypuses are venomous mammals"
+    Name: "Toft stores",
+    Description: "Need a loan for refurb."
 })
 
 if err != nil {
@@ -89,6 +89,25 @@ if companyCreatedRes.Company != nil {
 ```
 </TabItem>
 
+<TabItem value="java" label="Java">
+
+```go
+CompanyRequestBody req = CompanyRequestBody.builder()
+    .name("Toft stores")
+    .description("Need a loan for refurb.")
+    .build();
+
+CreateCompanyResponse companyCreatedRes = platformClient.companies().create()
+    .request(req)
+    .call();
+
+if (companyCreatedRes.company().isPresent()) {
+    // handle response
+}
+```
+</TabItem>
+
+
 </Tabs>
 
 :::caution Retain the company ID
@@ -98,7 +117,258 @@ The `id` property that you receive in the response is the unique Codat identifie
 
 :::note Company name
 
-The name of the company doesn't have to be unique. It's just there to help you identify the company in the portal. Make sure to [avoid forbidden characters](/core-concepts/companies).
+The name of the company helps you identify the company in the Codat Portal and doesn't have to be unique. Make sure to [avoid forbidden characters](/core-concepts/companies).
+:::
+
+### Add metadata to a company
+
+You can enrich a company profile with additional information using the `tags` object. These tags provide flexible ways to store metadata.
+
+For example, you can set foreign key associations, define operational regions, or record specific details about the financial services  a company has requested. 
+
+Each company can have up to 10 tags that you can add using the [Create company](/platform-api#/operations/create-company) endpoint or when updating the company via the [Update company](/platform-api#/operations/update-company) endpoint.
+
+:::tip Use tags with webhooks
+
+You can use the `tags` object to filter companies to specific webhook consumers. To learn more, see [Filter webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
+
+:::
+
+For example, here's how you can add tags that define a user-defined ID (UID) and operating region:
+
+<Tabs>
+
+<TabItem value="create-company" label="Create company">
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+platformClient.companies.create({
+    name: "Toft stores",
+    tags: {
+      uid: "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
+      region: "uk"
+    }
+}).then((companyCreatedRes: CreateCompanyResponse) => {
+    if (companyCreatedRes.statusCode == 200) {
+        console.log(companyCreatedRes.company.id, companyCreatedRes.company.name)
+    }
+});
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+req = shared.CompanyRequestBody(
+  name='Toft stores',
+  tags={
+    'uid': 'cust_1MtJUT2eZvKYlo2CNaw2HvEv',
+    'region': 'uk'
+  }
+)
+
+company_created_res = platform_client.companies.create(req)
+print(company_created_res.company.id, company_created_res.company.name)
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+var companyCreatedRes = await platformClient.Companies.CreateAsync(new CompanyRequestBody() {
+    Name = "Toft stores",
+    Tags = new Dict<string, string>(){
+      ["uid"] = "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
+      ["region"] = "uk"
+    }
+});
+
+if(companyCreatedRes.Company != null) {
+    var company = companyCreatedRes.Company;
+    logger.LogInformation('{CompanyId} {CompanyName}', company.Id, company.Name);
+}
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+
+companyCreatedRes, err := platformClient.Companies.Create(ctx, shared.CompanyRequestBody{
+    Name: "Toft stores",
+    Tags: map[string]string{
+      "uid": "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
+      "region": "uk"
+    }
+})
+
+if err != nil {
+    log.Fatal(err)
+}
+
+if companyCreatedRes.Company != nil {
+    fmt.Println("%s %s", companyCreatedRes.Company.Id, companyCreatedRes.Company.Name)
+}
+```
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+CompanyRequestBody req = CompanyRequestBody.builder()
+    .name("Toft stores")
+    .tags(
+      java.util.Map.ofEntries(
+        entry("uid", "cust_1MtJUT2eZvKYlo2CNaw2HvEv"),
+        entry("region", "uk")
+      )
+    )
+    .build();
+
+CreateCompanyResponse companyCreatedRes = platformClient.companies().create()
+    .request(req)
+    .call();
+
+if (companyCreatedRes.company().isPresent()) {
+    // handle response
+}
+```
+</TabItem>
+
+</Tabs>
+
+</TabItem>
+
+<TabItem value="update-company" label="Update company">
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+platformClient.companies.update({
+  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  companyRequestBody: {
+    name: "Toft stores",
+    tags: {
+      uid: "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
+      region: "uk"
+    }
+  }
+}).then((companyUpdatedRes: UpdateCompanyResponse) => {
+    if (companyUpdatedRes.statusCode == 200) {
+        console.log(companyUpdatedRes.company.id, companyUpdatedRes.company.name)
+    }
+});
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+req = shared.CompanyRequestBody(
+  name='Toft stores',
+  tags={
+    'uid': 'cust_1MtJUT2eZvKYlo2CNaw2HvEv',
+    'region': 'uk'
+  }
+)
+
+company_updated_res = platform_client.companies.update(operations.UpdateCompanyRequest(
+    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+    company_request_body=req)
+  )
+print(company_updated_res.company.id, company_updated_res.company.name)
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+var companyCreatedRes = await platformClient.Companies.UpdateAsync(new UpdateCompanyRequest() {
+  CompanyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  CompanyRequestBody = new CompanyRequestBody() {
+    Name = "Toft stores",
+    Tags = new Dict<string, string>(){
+      ["uid"] = "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
+      ["region"] = "uk"
+    }
+  }
+});
+
+if(companyCreatedRes.Company != null) {
+    var company = companyCreatedRes.Company;
+    logger.LogInformation('{CompanyId} {CompanyName}', company.Id, company.Name);
+}
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+
+companyUpdatedRes, err := platformClient.Companies.Create(ctx, operations.UpdateCompanyRequest{
+  CompanyID: "8a210b68-6988-11ed-a1eb-0242ac120002",
+  CompanyRequestBody: shared.CompanyRequestBody{
+    Name: "Toft stores",
+    Tags: map[string]string{
+      "uid": "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
+      "region": "uk"
+    }
+  }
+})
+
+if err != nil {
+    log.Fatal(err)
+}
+
+if companyUpdatedRes.Company != nil {
+    fmt.Println("%s %s", companyUpdatedRes.Company.Id, companyUpdatedRes.Company.Name)
+}
+```
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+UpdateCompanyRequest req = UpdateCompanyRequest.builder()
+    .companyId("8a210b68-6988-11ed-a1eb-0242ac120002")
+    .companyRequestBody(CompanyRequestBody.builder()
+        .name("Bank of Dave")
+        .tags(
+            java.util.Map.ofEntries(
+              entry("uid", "cust_1MtJUT2eZvKYlo2CNaw2HvEv"),
+              entry("region", "uk")
+            )
+        ).build()
+    )
+    .build();
+
+UpdateCompanyResponse companyUpdatedRes = platformClient.companies().update()
+    .request(req)
+    .call();
+
+if (companyUpdatedRes.company().isPresent()) {
+    // handle response
+}
+```
+</TabItem>
+
+</Tabs>
+
+</TabItem>
+
+</Tabs>
+
+:::caution Updating a company with existing tags
+
+If you use include a `null` or empty `tags` object in the [Update company](/platform-api#/operations/update-company) endpoint request, any existing tags for this company will be removed. To retain existing tags, ensure they are included in the update.
+
 :::
 
 ### Authorize access to company data
@@ -182,269 +452,11 @@ companyDeleteResponse, err := platformClient.Companies.Delete(ctx, operations.De
 
 </Tabs>
 
-## Manage groups of companies 
-
-You can use our *groups* feature and assign a company to one or more groups. You might choose to group companies based on the different products and services you provide, your internal team structures, different geographies, and more.
-
-If you're grouping companies for the first time, you need to create a group first using the [Create group](/platform-api#/operations/create-group) endpoint. You only need to do this operation once per group, so retain the `groupId` to reuse it within your application.
-
-You can see any groups you've already created using the [List groups](/platform-api#/operations/list-groups) endpoint.
-
-<Tabs>
-
-<TabItem value="nodejs" label="TypeScript">
-
-```javascript
-const groupCreateResponse = await platformClient.groups.create({
-  name: "Invoice finance team",
-});
-
-if (groupCreateResponse.statusCode == 200) {
-  //Assign to global param:
-  groupId = groupCreateResponse.group.id
-  console.log(groupId)
-}
-```
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-group_create_response = platform_client.groups.create(
-  shared.GroupPrototype(
-    name='Invoice finance team',
-))
-
-if group_create_response.group is not None:
-  # Assign to global param:
-  group_id = group_create_response.group.id
-  print(group_id)
-```
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```c#
-var groupCreateResponse = await platformClient.Groups.CreateAsync(new(){
-  Name = "Invoice finance team",
-});
-
-if(groupCreateResponse.Group != null){
-  //Assign to global param:
-  groupId = groupCreateResponse.group.Id;
-  Console.WriteLine(groupId);
-}
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-ctx := context.Background()
-groupCreateResponse, err := s.Groups.Create(ctx, &shared.GroupPrototype{
-    Name: platform.String("Invoice finance team"),
-})
-if err != nil {
-  //Assign to global param:
-  groupID = groupCreateResponse.Group.ID
-  fmt.Println(groupID)
-}
-```
-</TabItem>
-
-</Tabs>
-
-:::caution Create new groups with care
-
-It's not possible to update or delete existing groups, so double-check that the group's name is correct when creating it.
-:::
-
-Once you have created a group, you can assign a company to it in two ways: either at the point of company creation or after it has been created. For a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and pass the `groupId` that you want to add the company to.
-
-<Tabs>
-
-<TabItem value="nodejs" label="TypeScript">
-
-```javascript
-platformClient.companies.create({
-    name: "Platypus Properties",
-    groups: [{ id: groupId }]
-}).then((companyCreatedRes: CreateCompanyResponse) => {
-    if (companyCreatedRes.statusCode == 200) {
-      const company = companyCreatedRes.company
-      console.log(company.id, company.name, company.groups[0].id)
-    }
-});
-```
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-company_created_req = shared.CompanyRequestBody(
-  name='Platypus Properties',
-  groups=[shared.GroupRef(id=group_id)]
-)
-
-company_created_res = platform_client.companies.create(company_created_req)
-company = company_created_res.company
-print(company.id, company.name, company.groups[0].id)
-```
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```c#
-var companyCreatedRes = await platformClient.Companies.CreateAsync(new() {
-    Name = "Platypus Properties",
-    Groups = new List<GroupRef>(){
-      new(){ Id = groupId }
-    }
-  });
-
-if(companyCreatedRes.Company != null) {
-    var company = companyCreatedRes.Company;
-    logger.LogInformation("{CompanyId} {CompanyName} {GroupId}", company.Id, company.Name, company.Groups[0].Id);
-}
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-ctx := context.Background()
-companyCreatedRes, err := platformClient.Companies.Create(ctx, shared.CompanyRequestBody{
-    Name: "Platypus Properties",
-    Groups: []shared.GroupRef{
-      shared.GroupRef{ ID: groupID }
-    }
-})
-
-if err != nil {
-    log.Fatal(err)
-}
-
-if companyCreatedRes.Company != nil {
-  company := companyCreatedRes.Company
-  fmt.Println("%s %s %s", company.ID, company.Name, company.Groups[0].ID)
-}
-```
-</TabItem>
-
-</Tabs>
-
-If you need to add an existing company to a group, use the [Add company to group](/platform-api#/operations/add-company-to-group) endpoint.
-
-<Tabs>
-
-<TabItem value="nodejs" label="TypeScript">
-
-```javascript
-const companyAddRes = await sdk.groups.addCompany({
-  companyGroupAssignment: {
-    groupId: groupId,
-  },
-  companyId: company.id,
-});
-```
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-company_add_req = operations.AddCompanyToGroupRequest(
-  company_group_assignment=shared.CompanyGroupAssignment(
-    group_id=group_id,
-  ),
-  company_id=company.id,
-)
-
-company_add_res = platform_client.groups.add_company(company_add_req)
-```
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```c#
-var companyAddRes = await platformClient.Groups.AddCompanyAsync(new() {
-  CompanyGroupAssignment = new CompanyGroupAssignment() {
-    GroupId = groupId,
-  },
-  CompanyId = company.Id,
-});
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-ctx := context.Background()
-companyAddRes, err := platformClient.Groups.AddCompany(ctx, operations.AddCompanyToGroupRequest{
-  CompanyGroupAssignment: &shared.CompanyGroupAssignment{
-    GroupID: platform.String(groupID),
-  },
-  CompanyID: company.ID,
-})
-```
-</TabItem>
-
-</Tabs>
-
-To remove a company from a group, use the [Remove company from group](/platform-api#/operations/remove-company-from-group) endpoint.
-
-<Tabs>
-
-<TabItem value="nodejs" label="TypeScript">
-
-```javascript
-const companyRemoveRes = await platformClient.groups.removeCompany({
-  companyId: company.id,
-  groupId: groupId,
-});
-```
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-company_remove_req = operations.RemoveCompanyFromGroupRequest(
-  company_id=company.id,
-  group_id=group_id,
-)
-
-company_remove_res = platform_client.groups.remove_company(company_remove_req)
-```
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```c#
-var companyRemoveRes = await platformClient.Groups.RemoveCompanyAsync(new() {
-  CompanyId = company.Id,
-  GroupId = groupId,
-});
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-ctx := context.Background()
-companyRemoveRes, err := s.Groups.RemoveCompany(ctx, operations.RemoveCompanyFromGroupRequest{
-  CompanyID: company.ID,
-  GroupID: groupID,
-})
-```
-</TabItem>
-
-</Tabs>
-
 :::tip Recap
 You've learned:
 - How to create a company and authorize access to their data
 - The basics of reading data
 - Manage companies
-- Manage groups
 :::
 
 ---
@@ -453,3 +465,4 @@ You've learned:
 
 - [Get data](/using-the-api/get-data)
 - [Create, update and delete data](/using-the-api/push)
+- [Filter webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags)
