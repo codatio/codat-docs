@@ -1,9 +1,8 @@
 ---
 title: "Shared Responsibility Model"
-description: "Codat's PaaS Shared Responsibility Model"
+description: "Our PaaS shared responsibility model"
 ---
 
-## The Shared Responsibility Model
 Operations at Codat are performed entirely on cloud hosted platforms. As such, responsibilities vary across layers of the stack.
 
 |  &nbsp;              | Responsibility           | How is it done?              |
