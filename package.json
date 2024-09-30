@@ -24,7 +24,7 @@
     "@docusaurus/theme-mermaid": "^3.4.0",
     "@hotjar/browser": "^1.0.9",
     "@mdx-js/react": "^3.0.1",
-    "@stoplight/elements": "^8.3.4",
+    "@stoplight/elements": "^8.4.5",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
     "docusaurus-plugin-image-zoom": "^2.0.0",
