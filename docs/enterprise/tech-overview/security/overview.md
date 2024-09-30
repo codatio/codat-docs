@@ -1,5 +1,5 @@
 ---
-title: "Security Overview"
+title: "Security overview"
 description: "Our security and data protection philosophies"
 ---
 

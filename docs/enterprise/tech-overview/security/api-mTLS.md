@@ -1,5 +1,5 @@
 ---
-title: "API Mutual TLS"
+title: "API mutual TLS"
 description: "Learn about the prerequisites for setting up enterprise API mTLS"
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: "Network Security"
+title: "Network security"
 description: "Our network security practices"
 ---
 
-## Network Architecture
+## Network architecture
 Codat enforces a defense in depth network architecture with focuses on:
 * The principle of least privilege 
 * Network segmentation 
@@ -21,7 +21,7 @@ Below is a high level network architecture diagram of the Codat platform.
 ![Codat Platform network architecture](network-architecture-diagram.png)
 *Codat Platform network architecture*
 
-## Perimeter Security
+## Perimeter security
 
 ### Virtual Private Networks (VPNs)
 The network architecture at Codat is logically separated into virtual private networks. Each network represents a product environment, with direct access to that environment requiring the use of the appropriate VPN connection.
@@ -40,7 +40,7 @@ Our network architecture makes use of a Web Application Firewall (WAF), which ac
   * SQL Injection
 * IP Restrictions
 
-## Endpoint Security
+## Endpoint security
 
 ### Device Management
 All devices used to interact with our VPNs (see Virtual Private Networks) must be Codat provisioned and meet our hardening/compliance policies. This is enforced and ensures that:
@@ -59,7 +59,7 @@ All communication to codat.io mandates HTTPS (rather than HTTP) with best practi
 ![Qualys SSL Labs Scan Report](qualys-ssl-report.png)
 *Qualys SSL Labs Scan Report*
 
-### Internal Network Traffic
+### Internal network traffic
 All internal network traffic operates over SSL/TLS (HTTPS). 
 
 ### HTTP Strict Transport Security (HSTS)
@@ -68,27 +68,27 @@ At an application level, all HTTPS responses servicing requests (from the portal
 ### mTLS (enterprise offering)
 Enterprise customers can optionally conduct communication with our API via mutual TLS. As part of this setup, Codat is able to provide customers with a unique client certificate to use during the exchange. For more information, please raise with your account manager.  
 
-## Access Control
+## Access control
 
 ### Role Based AccessControl (RBAC)
 Access to systems and network infrastructure is underpinned by Azure RBAC and Active Directory. Full details on these features can be found on the [Microsoft Trust Centre](https://www.microsoft.com/en-us/trustcenter/)🔗. Group management is centralized and can only be modified via a ticket and approved change management process. Core groups are reviewed quarterly as part of our user access review policy. 
 
-### Multi–Factor Authentication & Device Compliance
+### Multi–factor authentication & device compliance
 Connections to any internal networks or infrastructure require several stringent access control checks to be met. These must include:
 * Authentication via centralized accounts with mandated 2FA. Such access is time-bound and requires regular re-authentication
 * Virtual Private Network (VPN) usage
 * Device compliance in the form of Codat provisioning and configuration
 
-### Principle of Least Privilege
+### Principle of least privilege
 The principle of least privilege is applied to network access. As such, an individual’s user account is not provisioned access to groups providing access to ‘sensitive’ network infrastructure or data by default. Should the need to access such systems or data arise, group access is provisioned via a time-bound privilege elevation process requiring approval and a specific work item as part of our change management process.  
 
-## Vulnerability Scanning
+## Vulnerability scanning
 Network level vulnerability scanning is conducted by various tooling on a continuous basis. Any findings identified through this process are either automatically resolved through compensating controls or Azure policy, or triaged through our risk management process.
 
-## Network Monitoring and Logging
+## Network monitoring and logging
 
-### Log Analysis
+### Log analysis
 All network activity is logged for the purposes of auditing.
 
-### Real-time Monitoring
+### Real-time monitoring
 Access to sensitive user groups or changes that result in a significant change in resource operational behavior are alerted in real-time. 
