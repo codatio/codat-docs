@@ -28,36 +28,35 @@ The network architecture at Codat is logically separated into virtual private ne
 
 This ensures that:
 * Data never leaves its environment (e.g. production data is only in production)
-* The principle of least privilege can be applied (see Access Control for more information)
+* The principle of least privilege can be applied (see [Access Control](/enterprise/tech-overview/security/network-security#access-control) for more information)
 * A single ingress and egress point can be enforced
 
 ### Firewalls
 Our network architecture makes use of a Web Application Firewall (WAF), which acts as an additional layer of protection filtering out malicious traffic. This WAF enforces numerous best practice checks on all ingress traffic. At a high level these include protection against attacks such as:
-* Distributed Denial of Service 
-* Denial of Service (and rate limiting)
+* Distributed denial of service (DDoS) 
+* Denial of service (and rate limiting)
 * The Open Web Application Security Project (OWASP) Top 10, including (not limited to):
-  * Cross-Site-Scripting 
-  * SQL Injection
-* IP Restrictions
+  * Cross-site-scripting 
+  * SQL injection
+* IP restrictions
 
 ## Endpoint security
 
-### Device Management
+### Device management
 All devices used to interact with our VPNs (see Virtual Private Networks) must be Codat provisioned and meet our hardening/compliance policies. This is enforced and ensures that:
 * Anti-virus software is installed and up to date
 * Full disk encryption is enabled
 * Latest operating system patches have been applied 
 * The device is enrolled in our asset inventory alongside an allocated owner
 
-
-## Traffic Encryption
+## Traffic encryption
 Please refer [Data Security](/enterprise/tech-overview/security/data-security) for a full breakdown of how data is encrypted at Codat. From a network perspective, best practice encryption mechanisms are applied as part of all data transportation.
 
 ### HTTPS
 All communication to codat.io mandates HTTPS (rather than HTTP) with best practice enforced. The report below provided by the independent third party SSL Labs attests to this configuration.
 
 ![Qualys SSL Labs Scan Report](qualys-ssl-report.png)
-*Qualys SSL Labs Scan Report*
+*[Qualys SSL Labs](https://www.ssllabs.com/ssltest/)🔗 Scan Report*
 
 ### Internal network traffic
 All internal network traffic operates over SSL/TLS (HTTPS). 
@@ -70,7 +69,7 @@ Enterprise customers can optionally conduct communication with our API via mutua
 
 ## Access control
 
-### Role Based AccessControl (RBAC)
+### Role Based Access Control (RBAC)
 Access to systems and network infrastructure is underpinned by Azure RBAC and Active Directory. Full details on these features can be found on the [Microsoft Trust Centre](https://www.microsoft.com/en-us/trustcenter/)🔗. Group management is centralized and can only be modified via a ticket and approved change management process. Core groups are reviewed quarterly as part of our user access review policy. 
 
 ### Multi–factor authentication & device compliance

@@ -42,7 +42,7 @@ Codat enforces current best practice encryption mechanisms as part of all data t
 All communication to codat.io mandates HTTPS (rather than HTTP) with best practice enforced. The report below provided by the independent third party SSL Labs attests to this configuration.
 
 ![Qualys SSL Labs Scan Report](qualys-ssl-report.png)
-*Qualys SSL Labs Scan Report*
+*[Qualys SSL Labs](https://www.ssllabs.com/ssltest/)🔗 Scan Report*
 
 ### Internal network traffic
 All internal network traffic operates over SSL/TLS (HTTPS). 
