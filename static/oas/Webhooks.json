@@ -1243,7 +1243,7 @@
         }
       }
     },
-    "report.categorizedBankStatement.generate.successful": {
+    "reports.categorizedBankStatement.generate.successful": {
       "post": {
         "description": "Called when a categorized bank statement is successfully generated for a company.",
         "requestBody": {
@@ -3050,7 +3050,7 @@
             "type": "string",
             "description": "The type of event.",
             "examples": [
-              "report.categorizedBankStatement.generate.successful"
+              "reports.categorizedBankStatement.generate.successful"
             ]
           },
           "generatedDate": {
@@ -3081,7 +3081,7 @@
         "examples": [
           {
             "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "eventType": "report.categorizedBankStatement.generate.successful",
+            "eventType": "reports.categorizedBankStatement.generate.successful",
             "generatedDate": "2023-05-03T10:00:23.000Z",
             "payload": {
               "id": "bb42ce7e-720a-4ac5-b640-f24f53ff47c8",
