@@ -8,7 +8,7 @@ The Codat technology system has a [microservice](https://en.wikipedia.org/wiki/M
 
 There are currently over 100 services that make up the Codat technology infrastructure, each with a separate instance for each of the two environments (integration, production). 
 
-Most importantly, each connection to an external data source is a separate service with the responsibility of handling authentication, authorisation, data fetch and data mapping. Services are configured to automatically scale out to multiple instances in the event of increased load, thus ensuring high levels of availability and performance. 
+Most importantly, each connection to an external data source is a separate service with the responsibility of handling authentication, authorization, data fetch and data mapping. Services are configured to automatically scale out to multiple instances in the event of increased load, thus ensuring high levels of availability and performance. 
 
 Load on instances is proactively monitored by Azure, and the engineering team is alerted in the event of unexpected spikes.
 

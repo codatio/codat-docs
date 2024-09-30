@@ -5,6 +5,8 @@ description: "Our PaaS shared responsibility model"
 
 Operations at Codat are performed entirely on cloud hosted platforms. As such, responsibilities vary across layers of the stack.
 
+The table below articulates the responsible parties at each layer of our Platform As A Service offering. 
+
 |  &nbsp;              | Responsibility           | How is it done?              |
 |----------------------|--------------------------|------------------------------|
 | Codat Responsibility | Information and Data     | &#x2022; Codat Control Framework <br /> &#x2022; Data Retention Policy <br /> &#x2022; Encryption Policy <br /> &#x2022; Access Control Policy <br /> &#x2022; Security & Data Protection <br /> &#x2022; [Information Security Policy](https://trust.codat.io/)🔗 <br /> &#x2022; [Acceptable Use Policy](https://trust.codat.io/)🔗 <br /> &#x2022; [Data Security](/enterprise/tech-overview/security/data-security) |
@@ -18,10 +20,4 @@ Operations at Codat are performed entirely on cloud hosted platforms. As such, r
 |                      | Phyisical Network        | &#x2022; [Information system components and boundaries (Azure)](https://learn.microsoft.com/en-us/azure/security/fundamentals/infrastructure-components)🔗 |
 |                      | Physical Data Centre     | &#x2022; [Datacentre security overview (Azure)](https://learn.microsoft.com/en-us/compliance/assurance/assurance-datacenter-security)🔗 |
 
-## Azure Security
-Codat utilises the following security offerings provided by Microsoft Azure:
- - Encryption at rest: SQL transparent data encryption, Storage Service Encryption, AES-256
- - Encryption in transit: TLS/SSL enforced for all data transit, HSTS, IPSec
- - Role level access: Azure RBAC, Active Directory
-
-Full details on Microsoft Azure security and data protection features can be found on the [Microsoft Trust Centre](https://www.microsoft.com/en-us/trustcenter/)🔗.
+Comprehensive details on the security and data protection features within Microsoft Azure can be found on the [Microsoft Trust Centre](https://www.microsoft.com/en-us/trustcenter/)🔗.

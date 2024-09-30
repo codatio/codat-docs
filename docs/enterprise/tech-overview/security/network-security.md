@@ -1,6 +1,6 @@
 ---
 title: "Network Security"
-description: "Our Network security practices"
+description: "Our network security practices"
 ---
 
 ## Network Architecture
@@ -11,7 +11,7 @@ Codat enforces a defense in depth network architecture with focuses on:
 * Encryption everywhere
 * Monitoring and incident response
 * Resilience and redundancy
-* Minimisation of attack surface
+* Minimization of attack surface
 * Regular audits and penetration testing
 * Cloud security principles
 * Vulnerability management
@@ -35,7 +35,7 @@ This ensures that:
 Our network architecture makes use of a Web Application Firewall (WAF), which acts as an additional layer of protection filtering out malicious traffic. This WAF enforces numerous best practice checks on all ingress traffic. At a high level these include protection against attacks such as:
 * Distributed Denial of Service 
 * Denial of Service (and rate limiting)
-* OWASP Top 10, including (not limited to):
+* The Open Web Application Security Project (OWASP) Top 10, including (not limited to):
   * Cross-Site-Scripting 
   * SQL Injection
 * IP Restrictions
@@ -71,11 +71,11 @@ Enterprise customers can optionally conduct communication with our API via mutua
 ## Access Control
 
 ### Role Based AccessControl (RBAC)
-Access to systems and network infrastructure is underpinned by RBAC. Group management is centralised and can only be modified via a ticket and approved change management process. Core groups are reviewed quarterly as part of our user access review policy.
+Access to systems and network infrastructure is underpinned by Azure RBAC and Active Directory. Full details on these features can be found on the [Microsoft Trust Centre](https://www.microsoft.com/en-us/trustcenter/)🔗. Group management is centralized and can only be modified via a ticket and approved change management process. Core groups are reviewed quarterly as part of our user access review policy. 
 
 ### Multi–Factor Authentication & Device Compliance
 Connections to any internal networks or infrastructure require several stringent access control checks to be met. These must include:
-* Authentication via centralised accounts with mandated 2FA. Such access is time-bound and requires regular re-authentication
+* Authentication via centralized accounts with mandated 2FA. Such access is time-bound and requires regular re-authentication
 * Virtual Private Network (VPN) usage
 * Device compliance in the form of Codat provisioning and configuration
 

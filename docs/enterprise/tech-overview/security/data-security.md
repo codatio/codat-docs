@@ -10,8 +10,7 @@ This section details how we store data at Codat and how protection is applied to
 * Databases will be encrypted using Transparent Data Encryption (TDE)
 * Microsoft manages the full key lifecycle and encryption standards within Azure. AES-256 is used as part of this process. Please see [Transparent data encryption for SQL Database, SQL Managed Instance, and Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/azure-sql/database/transparent-data-encryption-tde-overview?view=azuresql&viewFallbackFrom=sql-server-ver16&tabs=azure-portal)🔗 for more information on this
 
-
-### Enterprise Specific Considerations
+#### Enterprise Specific Considerations
 Enterprise customers have the option of dedicated databases which can facilitate customer specific encryption keys. 
 
 * Encryption keys will be stored in a Codat-managed Azure Key Vault with the option of client storage.
@@ -25,9 +24,9 @@ Enterprise customers have the option of dedicated databases which can facilitate
 * Please see [Transparent data encryption (TDE) with customer-managed keys at the database level](https://learn.microsoft.com/en-us/azure/azure-sql/database/transparent-data-encryption-byok-database-level-overview)🔗 for further information
 
 ### Azure Blob Storage
-Data is stored in Azure blob storage on a temporary basis for the purposes of staging and support. This data is encrypted at rest.
+Data is stored in Azure blob storage on a temporary basis for the purposes of staging and support, this data is encrypted at rest through Storage Service Encryption. For more details on this please see [Azure Storage encryption for data at rest](https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption)🔗.
 
-Dependant on contract, backups are protected using a customer dedicated key.
+Dependant on contract, backups may be protected using a customer dedicated key or through the usage of a managed Microsoft encryption key.
 
 ### Backups and Redundancy
 To ensure a continuous service, Codat follows a best practice data backup and redundancy methodology. 
@@ -62,6 +61,8 @@ As part of our data security posture, Codat enforced strict data access control.
 * Codat people device control:
   * Production data does not leave the production environment 
   * All Codat provisioned devices have full disk encryption
+
+Access control is enforced through Azure RBAC and Active Directory. Full details on these features can be found on the [Microsoft Trust Centre](https://www.microsoft.com/en-us/trustcenter/)🔗.
 
 ## Secrets Storage
 Parts of the application require the persistence of secrets (such as tokens or credentials). These are treated with particular care and sensitivity including:
