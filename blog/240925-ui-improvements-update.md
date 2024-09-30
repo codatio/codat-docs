@@ -1,5 +1,5 @@
 ---
-title: "2024-09-25: UI improvements to connection flows"
+title: "UI improvements to connection flows"
 date: "2024-09-25"
 tags: ["Update", "NetSuite", "Sage Intacct", "QuickBooks Desktop"]
 authors: ajacksoncodat
