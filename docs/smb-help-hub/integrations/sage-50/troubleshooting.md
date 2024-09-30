@@ -133,7 +133,7 @@ The connection runs efficiently in the background, but you need to ensure that y
 
 Ensure your firewall settings permit the connector's access and all necessary permissions are granted. Check that the machine running Sage 50 is not in sleep mode. Finally, you can restart Codat's on-premise connector if your financial services provider enabled this option for you.
 
-To restart, click **Abount** in the Sage 50 connector, then click **Restart connector**.
+To restart, click **About** in the Sage 50 connector, then click **Restart connector**.
 
 #### File access issues
 
