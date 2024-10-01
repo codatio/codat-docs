@@ -2970,11 +2970,13 @@
               "product": {
                 "type": "string",
                 "example": "lending",
-                "description": "Name of the product that requested the data types to be fetched."
+                "description": "Name of the product that requested the data types to be fetched.",
+                "nullable": true
               },
               "modifiedFromDate": {
                 "$ref": "#/components/schemas/Connection/properties/created",
-                "description": "The date time in UTC when the data types were last fetched and input into Codat's cache."
+                "description": "The date time in UTC when the data types were last fetched and input into Codat's cache.",
+                "nullable": true
               },
               "dataTypes": {
                 "type": "array",
@@ -3019,15 +3021,6 @@
                         "PermissionsError",
                         "PrerequisiteNotMet"
                       ]
-                    },
-                    "statusDescription": {
-                      "type": "string",
-                      "description": "A description of the current status of the dataset."
-                    },
-                    "errorMessage": {
-                      "type": "string",
-                      "example": "Authorization failed.",
-                      "description": "A message describing the error the dataset had if it has failed."
                     }
                   }
                 }
