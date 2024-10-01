@@ -3776,7 +3776,7 @@
     },
     "company.deleted": {
       "post": {
-        "description": "Triggered when a company is deleted in Codat.",
+        "description": "Called when a company is deleted in Codat.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3795,7 +3795,7 @@
     },
     "connection.created": {
       "post": {
-        "description": "Triggered when a connection is created by the SMB.",
+        "description": "Called when a connection is created by the SMB.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3814,7 +3814,7 @@
     },
     "connection.connected": {
       "post": {
-        "description": "Triggered when a connection is successfully linked by the SMB.",
+        "description": "Called when a connection is successfully linked by the SMB.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3833,7 +3833,7 @@
     },
     "connection.disconnected": {
       "post": {
-        "description": "Triggered when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.",
+        "description": "Called when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3852,7 +3852,7 @@
     },
     "connection.reconnected": {
       "post": {
-        "description": "Triggered when a connection is reconnected after becoming disconnected.",
+        "description": "Called when a connection is reconnected after becoming disconnected.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3871,7 +3871,7 @@
     },
     "connection.deleted": {
       "post": {
-        "description": "Triggered when a connection is deleted.",
+        "description": "Called when a connection is deleted.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3888,14 +3888,33 @@
         }
       }
     },
-    "Company data connection status changed": {
+    "read.completed": {
       "post": {
-        "description": "Triggered anytime a data connection's status changes.",
+        "description": "Called when the fetch of data types for a product has completed.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ConnectionStatusChangedWebhook"
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "read.completed.initial": {
+      "post": {
+        "description": "Called when the initial fetch of data types for a product has been completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
               }
             }
           }
@@ -3945,9 +3964,67 @@
         }
       }
     },
+    "client.rateLimit.reached": {
+      "post": {
+        "description": "Called when your client’s request count to Codat's API surpasses the allocated quota.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "client.rateLimit.reset": {
+      "post": {
+        "description": "Called when your client's rate limit quota is reset, allowing additional requests to Codat's API.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "Company data connection status changed": {
+      "post": {
+        "description": "Called anytime a data connection's status changes.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionStatusChangedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "Data sync completed": {
       "post": {
-        "description": "Triggered when a data synchronization is completed; a notification will be generated for each `dataType` as the sync completes.",
+        "deprecated": true,
+        "description": "Generated for each data type to indicate that data synchronization is successfully completed for that specific data type.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to `Success` for all data types in the array.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3966,7 +4043,8 @@
     },
     "Dataset data changed": {
       "post": {
-        "description": "Triggered when a dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records.",
+        "deprecated": true,
+        "description": "Generated for each data type to indicate that dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and verify that `payload.dataTypes[].status` is set to `Success` and `payload.dataTypes[].modifiedRecords` is `True` for any data type in the array.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3985,7 +4063,8 @@
     },
     "Dataset status has changed to an error state": {
       "post": {
-        "description": "Triggered when the synchronization of a dataset fails.",
+        "deprecated": true,
+        "description": "Indicates that the synchronization of a dataset failed.\n\nThis event type has been deprecated.\nTo replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to any of the following statuses for any data type in the array:\n\n- `FetchError`\n- `MapError`\n- `InternalError`\n- `ProcessingError`\n- `ValidationError`\n- `AuthError`\n- `RateLimitError`\n- `PermissionsError`\n- `PrerequisiteNotMet`",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4050,44 +4129,6 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/PushOperationTimedOutWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "client.rateLimit.reached": {
-      "post": {
-        "description": "Called when your client’s request count to Codat's API surpasses the allocated quota.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClientRateLimitWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "client.rateLimit.reset": {
-      "post": {
-        "description": "Called when your client's rate limit quota is reset, allowing additional requests to Codat's API.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClientRateLimitWebhook"
               }
             }
           }
@@ -7201,6 +7242,73 @@
               },
               "required": {
                 "$ref": "#/components/schemas/PushOption/definitions/pushOptionProperty/properties/required"
+              }
+            }
+          }
+        }
+      },
+      "ReadCompletedWebhook": {
+        "title": "Read completed webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event."
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/readCompletedWebhookPayload"
+          }
+        },
+        "definitions": {
+          "readCompletedWebhookPayload": {
+            "title": "Company fetch completed webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "product": {
+                "type": "string",
+                "example": "lending",
+                "description": "Name of the product that requested the data types to be fetched.",
+                "nullable": true
+              },
+              "modifiedFromDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC when the data types were last fetched and input into Codat's cache.",
+                "nullable": true
+              },
+              "dataTypes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "connectionId": {
+                      "$ref": "#/components/parameters/connectionId/schema"
+                    },
+                    "dataType": {
+                      "$ref": "#/components/schemas/DataStatus/properties/dataType"
+                    },
+                    "recordsModified": {
+                      "type": "boolean",
+                      "example": false,
+                      "description": "`True` if records have been created, updated or deleted in Codat's cache."
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/PullOperation/properties/status"
+                    }
+                  }
+                }
               }
             }
           }

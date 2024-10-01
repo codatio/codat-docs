@@ -211,9 +211,48 @@
         }
       }
     },
+    "read.completed": {
+      "post": {
+        "description": "Called when the fetch of data types for a product has completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "read.completed.initial": {
+      "post": {
+        "description": "Called when the initial fetch of data types for a product has been completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "DataSyncCompleted": {
       "post": {
-        "description": "Generated for each data type to indicate that data synchronization is successfully completed for that specific data type.",
+        "deprecated": true,
+        "description": "Generated for each data type to indicate that data synchronization is successfully completed for that specific data type.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to `Success` for all data types in the array.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -232,7 +271,8 @@
     },
     "DatasetDataChanged": {
       "post": {
-        "description": "Generated for each data type to indicate that dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records.",
+        "deprecated": true,
+        "description": "Generated for each data type to indicate that dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and verify that `payload.dataTypes[].status` is set to `Success` and `payload.dataTypes[].modifiedRecords` is `True` for any data type in the array.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -251,7 +291,8 @@
     },
     "DataSyncStatusChangedToError": {
       "post": {
-        "description": "Indicates that the synchronization of a dataset failed.",
+        "deprecated": true,
+        "description": "Indicates that the synchronization of a dataset failed.\n\nThis event type has been deprecated.\nTo replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to any of the following statuses for any data type in the array:\n\n- `FetchError`\n- `MapError`\n- `InternalError`\n- `ProcessingError`\n- `ValidationError`\n- `AuthError`\n- `RateLimitError`\n- `PermissionsError`\n- `PrerequisiteNotMet`",
         "requestBody": {
           "content": {
             "application/json": {
@@ -451,25 +492,6 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SourceAccountWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "read.completed": {
-      "post": {
-        "description": "Indicates that the fetch of data types for a product has completed.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReadCompletedWebhook"
               }
             }
           }
