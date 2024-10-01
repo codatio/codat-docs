@@ -49,94 +49,18 @@ Below is the summary of old rule types and new event types that replace them. Cl
 
 | Existing rule type                                            | Replacement event type                                                                                                              |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| [AccountCategoriesUpdated](#accountcategoriesupdated)         | `financialStatements.categorized`<br/>`financialStatements.recategorized`                                                           |
 | [ClientRateLimitReached](#clientratelimitreached)             | `client.rateLimit.reached`                                                                                                          |
 | [ClientRateLimitReset](#clientratelimitreset)                 | `client.rateLimit.reset`                                                                                                            |
 | [DataConnectionStatusChanged](#dataconnectionstatuschanged)   | `connection.created`<br/>`connection.connected`<br/>`connection.disconnected`<br/>`connection.reconnected`<br/>`connection.deleted` |
 | [DataSyncCompleted](#datasynccompleted)                       | `read.completed`                                                                                                                    |
 | [DataSyncStatusChangedToError](#datasyncstatuschangedtoerror) | `read.completed`                                                                                                                    |
-| [DatasetDataChanged](#datasetdatachanged)                     | `read.completed`                                                                                                                    |
-| [NewCompanySynchronized](#newcompanysynchronized)             | `{dataType}.write.successful`<br/>`{dataType}.write.unsuccessful`                                                                   |
+| [DatasetDataChanged](#datasetdatachanged)                     | `read.completed`                                            |
+| [NewCompanySynchronized](#newcompanysynchronized)             | `read.completed.initial`                                    |
 | [PushOperationStatusChanged](#pushoperationstatuschanged)     | `{dataType}.write.successful`<br/>`{dataType}.write.unsuccessful`                                                                   |
 | [PushOperationTimedOut](#pushoperationtimedout)               | `{dataType}.write.unsuccessful`                                                                                                     |
 | [SyncCompleted](#synccompleted)                               | `expenses.sync.successful`                                                                                                          |
 | [SyncFailed](#syncfailed)                                     | `expenses.sync.unsuccessful`                                                                                                        |
 | [SyncConnectionDeleted](#syncconnectiondeleted)               | `connection.deleted`                                                                                                                |
-
-#### AccountCategoriesUpdated
-
-Triggered when a company's accounts are categorized, this event has been replaced by two more precise webhooks: `financialStatements.categorized` and `financialStatements.recategorized`. These webhooks provide detailed insights into who performed the account categorization.
-
-The `financialStatements.categorized` event indicates the categories suggested by Codat AI are ready for your review.
-
-The `financialStatements.recategorized` event notifies you when an analyst updates a category. Subscribing to both webhooks replicates the behavior of the previous `AccountCategoriesUpdated` webhook.
-
-| Rule type | Maps to event type |
-|---|---|
-| `Account Categories Updated` | [`financialStatements.categorized`](/lending-api#/webhooks/financialStatements.categorized/post) <br/> [`financialStatements.recategorized`](/lending-api#/webhooks/financialStatements.recategorized/post) |
-
-<details>
-  <summary><b>Compare webhook schemas</b></summary>
-
-<Tabs>
-<TabItem value="old" label="Old schema">
-
-```json
-{
-  "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-  "RuleType": "Account Categories Updated",
-  "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-  "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-  "ClientName": "Bank of Dave",
-  "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-  "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-  "Message": "Account categories updated for company f1c35bdc-1546-41b9-baf4-3f31135af968.",
-  "Data": {
-    "modifiedDate": "2019-08-24T14:15:22Z"
-  }
-}
-```
-</TabItem>
-
-<TabItem value="new" label="New schema">
-
-```json
-{
-  "id":"a9367074-b5c3-42c4-9be4-be129f43577e",
-  "eventType":"financialStatements.{categorized,recategorized}",
-  "generatedDate":"2019-08-24T14:15:27Z",
-  "payload":{
-    "referenceCompany": {
-      "id":"8a210b68-6988-11ed-a1eb-0242ac120002",
-      "name": "Toft stores",
-      "description": "Looking to get a loan for refurb.",
-      "links": {
-        "portal": "https://app.codat.io/companies/8a210b68-6988-11ed-a1eb-0242ac120002/summary"
-      }
-    },
-    "categorizationDate": "2019-08-24T14:15:22Z"
-  }
-}
-```
-</TabItem>
-
-</Tabs>
-
-#### Property mapping
-
-| Old schema property                                  | New schema property |
-|--|--|
-| `AlertId`                                              | `id` |
-| `RuleType`                                             | `eventType` |
-| `RuleId`                                               | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
-| `ClientId`                                             | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
-| `ClientName`                                           | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
-| `CompanyId`                                            | `payload.referenceCompany.id` |
-| `DataConnectionId`                                     | Not replaced. The data connection ID is not required to access financial statements.  |
-| `Message`                                              | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
-| `Data.modifiedDate`                                    | `payload.categorizationDate`    |
-
-</details>
 
 #### ClientRateLimitReached
 
@@ -318,6 +242,9 @@ Triggered whenever a data connection's status changes, this event has been repla
       "description": "Looking to get a loan for refurb",
       "links": {
         "portal": "https://app.codat.io/companies/8a210b68-6988-11ed-a1eb-0242ac120002/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
       }
     },
     "connection":{
@@ -411,6 +338,9 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
       "description": "Looking to get a loan for refurb.",
       "links": {
         "portal": "https://app.codat.io/companies/8a210b68-6988-11ed-a1eb-0242ac120002/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
       }
     },
     "modifiedFromDate": "2024-08-06T12:00:00.00Z",
@@ -500,6 +430,9 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
       "description": "Looking to get a loan for refurb.",
       "links": {
         "portal": "https://app.codat.io/companies/8a210b68-6988-11ed-a1eb-0242ac120002/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
       }
     },
     "modifiedFromDate": "2024-08-06T12:00:00.00Z",
@@ -591,6 +524,9 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
       "description": "Looking to get a loan for refurb.",
       "links": {
         "portal": "https://app.codat.io/companies/8a210b68-6988-11ed-a1eb-0242ac120002/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
       }
     },
     "modifiedFromDate": "2024-08-06T12:00:00.00Z",
@@ -628,7 +564,88 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 #### NewCompanySynchronized
 
-This event type is no longer supported. You can use the [`read.completed`](/platform-api#/webhooks/read.completed/post) event type for the relevant data type instead.
+Triggered when initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.
+
+The replacement `read.completed.initial` webhook is called the first time the data type is stored in Codat's cache and uses the same payload as the `read.completed` webhook.
+
+:::tip Adopting the new schema
+When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
+:::
+
+| Rule type | Maps to event type |
+|---|---|
+| `New company synchronized` | [`read.completed.initial`](/platform-api#/webhooks/read.completed.initial/post) |
+
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
+<Tabs>
+<TabItem value="old" label="Old schema">
+
+```json
+{
+  "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
+  "RuleType": "New company synchronised",
+  "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+  "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+  "ClientName": "Bank of Dave",
+  "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
+  "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+  "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
+}
+```
+</TabItem>
+
+<TabItem value="new" label="New schema">
+
+```json
+{
+  "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+  "eventType": "read.completed.initial",
+  "generatedDate": "2024-08-07T12:02:32.15033Z",
+  "payload": {
+    "referenceCompany": {
+      "id":"8a210b68-6988-11ed-a1eb-0242ac120002",
+      "name": "Toft stores",
+      "description": "Looking to get a loan for refurb.",
+      "links": {
+        "portal": "https://app.codat.io/companies/8a210b68-6988-11ed-a1eb-0242ac120002/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
+      }
+    },
+    "modifiedFromDate": "2024-08-06T12:00:00.00Z",
+    "dataTypes": [
+      {
+        "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+        "dataType": "invoices",
+        "recordsModified": true,
+        "status": "ProcessingError"
+      }
+    ]
+  }
+}
+```
+</TabItem>
+
+</Tabs>
+
+#### Property mapping
+
+| Old schema property                                  | New schema property |
+|--|--|
+| `AlertId` | `id` |
+| `RuleType` | `eventType` |
+| `RuleId` | ![Static Badge](https://img.shields.io/badge/Deprecated-red) |
+| `ClientId` | Not replaced. If you need the Codat client ID, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `ClientName` | Not replaced. If you need the Codat client name, include it as a custom header in the API request. See [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers). |
+| `CompanyId` | `payload.referenceCompany.id` |
+| `DataConnectionId` | `payload.dataTypes[].connectionId` |
+| `Message` | Not replaced. Our email and webhooks services are no longer combined into a single service, making this property redundant. |
+| `Data.dataType`  | `payload.dataTypes[].dataType` |
+| `Data.datasetId` | Not replaced. If you encounter an issue, provide the company ID to support to assist with troubleshooting. |
+
+</details>
 
 #### PushOperationStatusChanged
 
@@ -682,6 +699,9 @@ These event types provide detailed information, including whether the push opera
       "description": "Looking to get a loan for refurb.",
       "links": {
         "portal": "https://app.codat.io/companies/8a210b68-6988-11ed-a1eb-0242ac120002/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
       }
     },
     "connectionId":"2e9d2c44-f675-40ba-8049-353bfcb5e171",
@@ -766,6 +786,9 @@ Triggered when a write operation times out. This webhook has been replaced by th
       "description": "Looking to get a loan for refurb.",
       "links": {
         "portal": "https://app.codat.io/companies/8a210b68-6988-11ed-a1eb-0242ac120002/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
       }
     },
     "connectionId":"2e9d2c44-f675-40ba-8049-353bfcb5e171",
@@ -843,6 +866,9 @@ The original rule type is triggered when a [Sync for Expenses](/expenses/overvie
       "description": "Looking to get a loan for refurb.",
       "links": {
         "portal": "https://app.codat.io/companies/1f9559e7-8368-48c9-bdf4-f158e16b8b85/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
       }
     },
     "syncId": "321363b4-efa9-4fbc-b71c-0b58d62f3248"
@@ -914,6 +940,9 @@ Triggered anytime a [Sync for Expenses](/expenses/overview) expenses sync fails,
       "description": "Looking to get a loan for refurb.",
       "links": {
         "portal": "https://app.codat.io/companies/1f9559e7-8368-48c9-bdf4-f158e16b8b85/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
       }
     },
     "syncId": "3bead2a1-1b3d-4d90-8077-cddc5ca68b01"
@@ -981,6 +1010,9 @@ This legacy event is specific to [Sync for Commerce](/commerce/overview) and ind
       "description": "Looking to get a loan for refurb",
       "links": {
         "portal": "https://app.codat.io/companies/8a210b68-6988-11ed-a1eb-0242ac120002/summary"
+      },
+      "tags": { // Contains custom tags associated with the company.
+        "yourUserDefinedKey": "yourUserDefinedValue", 
       }
     },
     "connection":{

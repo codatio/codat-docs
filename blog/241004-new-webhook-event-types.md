@@ -57,7 +57,7 @@ We have also adopted the [standard webhooks payload specification](https://githu
               "portal": "https://app.codat.io/companies/{companyId}/summary"
           },
           "tags": {
-              "clientDefinedKey": "clientDefinedValue",
+              "yourUserDefinedKey": "yourUserDefinedValue",
           }
       },
       // Properties specific to event types
