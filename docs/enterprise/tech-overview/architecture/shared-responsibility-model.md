@@ -20,4 +20,7 @@ The table below articulates the responsible parties at each layer of our Platfor
 |                      | Phyisical Network        | &#x2022; [Information system components and boundaries (Azure)](https://learn.microsoft.com/en-us/azure/security/fundamentals/infrastructure-components)🔗 |
 |                      | Physical Data Centre     | &#x2022; [Datacentre security overview (Azure)](https://learn.microsoft.com/en-us/compliance/assurance/assurance-datacenter-security)🔗 |
 
-Comprehensive details on the security and data protection features within Microsoft Azure can be found on the [Microsoft Trust Centre](https://www.microsoft.com/en-us/trustcenter/)🔗.
+Comprehensive details on the security and data protection features within Microsoft Azure can be found on the [Microsoft Trust Centre](https://www.microsoft.com/en-us/trustcenter/)🔗 and as part of Microsoft's [Shared responsibility in the cloud](https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility)🔗 documentation. 
+
+![Microsoft's division of responsibility in the cloud](ms-shared-responsibility.svg)
+*Microsoft's division of responsibility in the cloud*
