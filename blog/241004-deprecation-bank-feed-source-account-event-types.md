@@ -51,10 +51,10 @@ The initial release did not include the top-level schema, which provides metadat
 }`}
 />
 
-## Action Required
+## Action required
 
-To avoid disruption update your webhook consumer to handle the updated schema definition.
+If you are currently using `bankFeeds.sourceAccount.connected` and `bankFeeds.sourceAccount.disconnected` webhook event types, you will need to update your webhook consumer that listens to these event types to handle the updated schema definition.
 
-## Expected Impact
+## Expected impact
 
-If you do not migrate by **January 10, 2025**, receiving the `bankFeeds.sourceAccount.connected` and `bankFeeds.sourceAccount.disconnected` event types will result in deserialization errors, preventing your application from processing these events correctly.
+If you don't make changes to handle the updated schema definition by **January 10, 2025**, receiving the `bankFeeds.sourceAccount.connected` and `bankFeeds.sourceAccount.disconnected` event types to your webhook consumer will result in deserialization errors. This means your application will not process these events correctly.
