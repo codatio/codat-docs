@@ -18,7 +18,7 @@ If you are currently using company-specific webhooks and want to avoid disruptio
 - Update all webhook consumers to retrieve metadata from the `payload.referenceCompany.tags` property.
   See [Filter webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
 
-Once updated, the you will be able to access metadata from the `tags` property shown below:
+Once updated, you will be able to access metadata from the `tags` property shown below:
 
 ```json
 {
