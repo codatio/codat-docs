@@ -57,4 +57,4 @@ If you are currently using `bankFeeds.sourceAccount.connected` and `bankFeeds.so
 
 ## Expected impact
 
-If you don't make changes to handle the updated schema definition by **January 10, 2025**, receiving the `bankFeeds.sourceAccount.connected` and `bankFeeds.sourceAccount.disconnected` event types to your webhook consumer will result in deserialization errors. This means your application will not process these events correctly.
+If no action is taken to handle the updated schema definition by **January 10, 2025**, receiving the `bankFeeds.sourceAccount.connected` and `bankFeeds.sourceAccount.disconnected` event types to your webhook consumer will result in deserialization errors. This means your application will not process these events correctly.
