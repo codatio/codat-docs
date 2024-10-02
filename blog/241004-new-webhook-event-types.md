@@ -6,7 +6,7 @@ hide_table_of_contents: true
 authors: dcoplowe
 ---
 
-We're excited to introduce our improved webhook event types. They offer more contextual information within the webhook message and support stateless architectures better. 
+We're excited to introduce our improved webhook event types. They offer more contextual information within the webhook message and provide better support for stateless architectures. 
 
 <!--truncate-->
 
@@ -14,9 +14,11 @@ We're excited to introduce our improved webhook event types. They offer more con
 
 We are replacing our existing rule types with an updated set of event types. They add context to our webhooks, allow you to increase precision of your webhook messages, and provide detailed insights into the trigger events. 
 
-- Check out the full range of our [webhook event types](/using-the-api/webhooks/event-types).
+:::tip New event types
+Check out the full range of our new [webhook event types](/using-the-api/webhooks/event-types).
+:::
 
-We have also adopted the [standard webhooks payload specification](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md#payload-structure). As a result, here's what's changed:
+We have also adopted the payload structure recommended by the [Standard Webhooks specification](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md#payload-structure). As a result, here's what's new:
 
 1. **Standardized top-level schema**
 
@@ -35,13 +37,13 @@ We have also adopted the [standard webhooks payload specification](https://githu
 
 2. **Full payloads**
 
-  We've chosen to support full payloads, providing complete the data in each payload. This lets our webhooks to function more like a reverse API.
+  We've chosen to support full webhook payloads, providing complete data in each payload. This lets our webhooks to function more like a reverse API.
 
 3. **Reference company property**
 
-  Webhooks that include information about a specific company now have a `referenceCompany` property in their payload. It provides access to the company’s ID, name, description, links, and tags. 
+Webhooks that include information about a specific company now have a `referenceCompany` property in their payload. It provides access to the company’s ID, name, description, links, and tags. 
   
-  Tags are key-value pairs you can define when creating or updating a company. Use them to pass metadata, such as a foreign key, to your webhook consumer. Start with our documentation to [add tags to a company](/using-the-api/managing-companies#add-metadata-to-a-company).
+Tags are key-value pairs you can define when creating or updating a company. Use them to pass metadata, such as a foreign key, to your webhook consumer. Start with our documentation to [Add tags to a company](/using-the-api/managing-companies#add-metadata-to-a-company) and [Filter webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
   
   ```json title="Reference company property"
   {
