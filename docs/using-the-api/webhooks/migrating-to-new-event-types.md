@@ -1,13 +1,13 @@
 ---
 title: "Migrate to our new event types"
-sidebar_label: "Switch to new event types"
+sidebar_label: "Use new event types"
 description: "Learn how you can migrate your existing webhooks to use our new event types"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-We have recently released our [new webhook event types](/updates/240929-new-webhook-event-types). To ensure a smooth transition to these types, we recommend using an "expand/contract" strategy. It allows your system to handle both the old rule types and the new event types during the migration, minimizing potential disruptions.
+We have recently released our [new webhook event types](/updates/241004-new-webhook-event-types). To ensure a smooth transition to these types, we recommend using an "expand/contract" strategy. It allows your system to handle both the old rule types and the new event types during the migration, minimizing potential disruptions.
 
 :::info In this guide:
 
@@ -33,7 +33,7 @@ To switch to new event types using the recommended "expand/contract" strategy, f
 
 3. **Validate the new webhook consumer**
 
-   Test the new webhook consumer to ensure it is correctly receiving and processing the new event type. You can send test events and check the logs in the [Codat Portal](https://app.codat.io). Navigate to **Monitor > Events** and select the relevant endpoint to do this.
+   Test the new webhook consumer to ensure it is correctly receiving and processing the new event type. You can send test events and check the logs in the [Codat Portal](https://app.codat.io). Navigate to **Monitor > Events** and select the relevant endpoint to do this. See [Test a webhook consumer](/using-the-api/webhooks/create-consumer#test-a-webhook-consumer) for a step-by-step walkthrough. 
 
 4. **Enable the new webhook consumer**
 
@@ -45,7 +45,9 @@ To switch to new event types using the recommended "expand/contract" strategy, f
 
 ## Understand new event types
 
-Below is the summary of old rule types and new event types that replace them. Click on the required event type to check the fields and schema of the replacement event type and how it maps to legacy rule types. You can also view the dedicated page for [webhook event types](/using-the-api/webhooks/event-types). 
+Below is the summary of old rule types and new event types that replace them. Click on the required event type to check the fields and schema of the replacement event type and how it maps to legacy rule types. 
+
+You can also view the dedicated page for our new [webhook event types](/using-the-api/webhooks/event-types). 
 
 | Existing rule type                                            | Replacement event type                                                                                                              |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
@@ -64,7 +66,7 @@ Below is the summary of old rule types and new event types that replace them. Cl
 
 #### ClientRateLimitReached
 
-Triggered when the client's requests to Codat's API exceed the current quota, this event now follows our updated schema standards.
+Called when the client's requests to Codat's API exceed the current quota. This event now follows our updated schema standards.
 
 | Rule type | Maps to event type |
 |---|---|
@@ -126,7 +128,7 @@ Triggered when the client's requests to Codat's API exceed the current quota, th
 
 #### ClientRateLimitReset
 
-Triggered when the client's rate limit quota is reset, allowing more requests to Codat's API. This event now follows our updated schema standards.
+Called when the client's rate limit quota is reset, allowing more requests to Codat's API. This event now follows our updated schema standards.
 
 | Rule type | Maps to event type |
 |---|---|
@@ -192,7 +194,9 @@ Triggered when the client's rate limit quota is reset, allowing more requests to
 
 #### DataConnectionStatusChanged
 
-Triggered whenever a data connection's status changes, this event has been replaced by more precise webhooks that offer more detailed context on the state transition. The new webhooks now include the [full connection schema](/platform-api#/schemas/Connection), ensuring consistency across our APIs and webhooks.
+Called whenever a data connection's status changes, this event has been replaced by more precise webhooks that offer more detailed context on the state transition. 
+
+The new webhooks now include the [full connection schema](/platform-api#/schemas/Connection), ensuring consistency across our APIs and webhooks.
 
 | Rule type | Old status | New status | Maps to event type |
 |---|--|--|--|
@@ -287,11 +291,9 @@ Triggered whenever a data connection's status changes, this event has been repla
 
 #### DataSyncCompleted
 
-Triggered when a data synchronization completes, the legacy event generates a notification for each `dataType` as it finishes syncing regardless of the outcome. 
+Called when a data synchronization completes, the legacy event generates a notification for each `dataType` as it finishes syncing regardless of the outcome. 
 
-The `read.completed` replacement event uses the same trigger, but now provides detailed information about the read operation's outcome, including the status of the sync and whether any records were modified.
-
-See [Retrieve company data](/using-the-api/get-data).
+The `read.completed` replacement event uses the same trigger, but now provides detailed information about the read operation's outcome, including the status of the sync and whether any records were modified. See [Retrieve company data](/using-the-api/get-data).
 
 :::tip Adopting the new schema
 When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
@@ -378,9 +380,9 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 #### DataSyncStatusChangedToError
 
-Triggered when the synchronization of a dataset fails, the replacement `read.completed` webhook now includes information on whether the data was successfully read into Codat's cache. This provides insight into both the completion of the read operation and its outcome.
+Called when the synchronization of a dataset fails, the replacement `read.completed` webhook now includes information on whether the data was successfully read into Codat's cache. 
 
-See [Retrieve company data](/using-the-api/get-data).
+This provides insight into both the completion of the read operation and its outcome. See [Retrieve company data](/using-the-api/get-data).
 
 :::tip Adopting the new schema
 When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
@@ -471,7 +473,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 #### DatasetDataChanged
 
-Triggered when a dataset synchronization completes and results in updates within Codat's data cache, such as the creation of new records or changes to existing ones. 
+Called when a dataset synchronization completes and results in updates within Codat's data cache, such as the creation of new records or changes to existing ones. 
 
 The replacement `read.completed` webhook now provides information on when the data in Codat's cache was last modified and whether any records within a data type have been updated since the previous read operation.
 
@@ -564,7 +566,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 #### NewCompanySynchronized
 
-Triggered when initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.
+Called when initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.
 
 The replacement `read.completed.initial` webhook is called the first time the data type is stored in Codat's cache and uses the same payload as the `read.completed` webhook.
 
@@ -649,7 +651,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 #### PushOperationStatusChanged
 
-Triggered when the status of a write operation changes, this event has been replaced by two more precise webhooks: `{dataType}.write.successful` and `{dataType}.write.unsuccessful`. 
+Called when the status of a write operation changes, this event has been replaced by two more precise webhooks: `{dataType}.write.successful` and `{dataType}.write.unsuccessful`. 
 
 These event types provide detailed information, including whether the push operation was successful, the record ID, and the attachment ID when creating, updating, or deleting records.
 
@@ -739,7 +741,7 @@ These event types provide detailed information, including whether the push opera
 
 #### PushOperationTimedOut
 
-Triggered when a write operation times out. This webhook has been replaced by the `{dataType}.write.unsuccessful` event type.
+Called when a write operation times out. This webhook has been replaced by the `{dataType}.write.unsuccessful` event type.
 
 | Rule type | Data status | Maps to event type |
 |---|---|---|
@@ -824,7 +826,7 @@ Triggered when a write operation times out. This webhook has been replaced by th
 
 #### SyncCompleted
 
-The original rule type is triggered when a [Sync for Expenses](/expenses/overview) expense sync is completed. The replacement event type is triggered only when the sync completes successfully.
+The original rule type is Called when a [Sync for Expenses](/expenses/overview) expense sync is completed. The replacement event type is Called only when the sync completes successfully.
 
 | Rule type | Maps to event type |
 |---|---|
@@ -897,7 +899,7 @@ The original rule type is triggered when a [Sync for Expenses](/expenses/overvie
 
 #### SyncFailed
 
-Triggered anytime a [Sync for Expenses](/expenses/overview) expenses sync fails, this event now follows our updated schema standards.
+Called anytime a [Sync for Expenses](/expenses/overview) expenses sync fails, this event now follows our updated schema standards.
 
 | Rule type | Maps to event type |
 |---|---|
