@@ -4,7 +4,7 @@ description: "A high-level view of Codat platform architecture"
 ---
 
 ## Introduction
-Codat has a [microservice](https://en.wikipedia.org/wiki/Microservices) architecture, this modular structure parallelizes software development and enables a scalable and robust system to be created.
+Codat has a microservice architecture, this modular structure parallelizes software development and enables a scalable and robust system to be created.
 
 There are currently over 100 services that make up the Codat technology infrastructure, each with a separate instance for each of the two environments (integration, production). 
 
