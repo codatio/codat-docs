@@ -27,6 +27,7 @@ module.exports = [
                 "enterprise/tech-overview/architecture/data-flow",
                 "enterprise/tech-overview/architecture/rate-limits",
                 "enterprise/tech-overview/architecture/webhooks",
+                "enterprise/tech-overview/architecture/platform-as-a-service",
                 "enterprise/tech-overview/architecture/shared-responsibility-model",
             ]
           },

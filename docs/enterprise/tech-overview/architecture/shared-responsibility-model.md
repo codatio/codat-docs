@@ -1,11 +1,11 @@
 ---
 title: "Shared responsibility model"
-description: "Our PaaS shared responsibility model"
+description: "Our Microsoft Azure shared responsibility model"
 ---
 
 Operations at Codat are performed entirely on cloud hosted platforms. As such, responsibilities vary across layers of the stack.
 
-The table below articulates the responsible parties at each layer of our Platform-as-a-Service offering. 
+The table below articulates the responsible parties at each layer of our [platform as a service](/enterprise/tech-overview/architecture/platform-as-a-service) offering. 
 
 |  &nbsp;              | Responsibility           | How is it done?              |
 |----------------------|--------------------------|------------------------------|
