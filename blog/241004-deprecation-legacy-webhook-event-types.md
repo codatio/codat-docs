@@ -5,17 +5,17 @@ tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **January 10, 2025**, we will deprecate the rule-based event types following the release of our [new webhook event types](/updates/241004-new-webhook-event-types).
+On **January 10, 2025**, we will deprecate our legacy rule-based event types following the release of our [new webhook event types](/updates/241004-new-webhook-event-types).
 
 <!--truncate-->
 
 The new event types provide more contextual information in the webhook payload and are better suited for stateless architectures.
 
-## Action Required
+## Action required
 
-To avoid disruption in receiving webhook notifications, follow our [migration guide](/using-the-api/webhooks/migrating-to-new-event-types) to switch to the new event types.
+If you are currently using our legacy rule-based event types to receive webhook notifications, you need to change your notification configuration to use the new event types instead. Follow our [migration guide](/using-the-api/webhooks/migrating-to-new-event-types) to switch to the new types.
 
-### Event types being deprecated
+We will deprecate the following rule-based event types:
 
 - [Company data connection status changed](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#company-data-connection-status-changed)
 - [New company synchronized](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized)
@@ -30,6 +30,6 @@ To avoid disruption in receiving webhook notifications, follow our [migration gu
 - [Client rate limit reached](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reached)
 - [Client rate limit reset](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reset)
 
-## Expected Impact
+## Expected impact
 
-If you do not migrate by **January 10, 2025**, webhook notifications will no longer be delivered.
+If no action is taken by **January 10, 2025**, you will no longer receive webhook notifications from us.
