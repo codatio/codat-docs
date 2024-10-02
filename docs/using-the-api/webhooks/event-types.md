@@ -1,7 +1,6 @@
 ---
 title: "Webhook event types"
 sidebar_label: "Event types"
-hide_table_of_contents: true
 description: "Learn about the event types that are available to you for consumption"
 ---
 
@@ -19,19 +18,19 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 
 | Event type                                                                                   | Event description                                                                                                                                         |
 |----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`company.created`](/platform-api#/webhooks/company.created/post)                            | Triggered when a company is created in Codat.                                                                                                             |
-| [`company.deleted`](/platform-api#/webhooks/company.deleted/post)                            | Triggered when a company is deleted in Codat.                                                                                                             |
-| [`connection.created`](/platform-api#/webhooks/connection.created/post)                      | Triggered when a connection is created by the SMB.                                                                                                        |
-| [`connection.connected`](/platform-api#/webhooks/connection.connected/post)                  | Triggered when a connection is successfully linked by the SMB.                                                                                            |
-| [`connection.disconnected`](/platform-api#/webhooks/connection.disconnected/post)            | Triggered when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.                                      |
-| [`connection.reconnected`](/platform-api#/webhooks/connection.reconnected/post)              | Triggered when a connection is reconnected after becoming disconnected.                                                                                   |
-| [`connection.deleted`](/platform-api#/webhooks/connection.deleted/post)                      | Triggered when a connection is deleted.                                                                                                                   |
+| [`company.created`](/platform-api#/webhooks/company.created/post)                            | Called when a company is created in Codat.                                                                                                             |
+| [`company.deleted`](/platform-api#/webhooks/company.deleted/post)                            | Called when a company is deleted in Codat.                                                                                                             |
+| [`connection.created`](/platform-api#/webhooks/connection.created/post)                      | Called when a connection is created by the SMB.                                                                                                        |
+| [`connection.connected`](/platform-api#/webhooks/connection.connected/post)                  | Called when a connection is successfully linked by the SMB.                                                                                            |
+| [`connection.disconnected`](/platform-api#/webhooks/connection.disconnected/post)            | Called when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.                                      |
+| [`connection.reconnected`](/platform-api#/webhooks/connection.reconnected/post)              | Called when a connection is reconnected after becoming disconnected.                                                                                   |
+| [`connection.deleted`](/platform-api#/webhooks/connection.deleted/post)                      | Called when a connection is deleted.                                                                                                                   |
 | [`read.completed`](/platform-api#/webhooks/read.completed/post)                              | Indicates that the read of data types for a product has completed.                                                                                       |
 | [`read.completed.initial`](/platform-api#/webhooks/read.completed.initial/post)              | Indicates that the initial read of data types for a product has completed.                                                                                       |
 | [`{dataType}.write.successful`](/platform-api#/webhooks/dataType-.write.successful/post)     | Indicates that the specified data type has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.                     |
 | [`{dataType}.write.unsuccessful`](/platform-api#/webhooks/dataType-.write.unsuccessful/post) | Indicates that an attempt to create, update, delete a data type, or upload an attachment to a data type in the accounting software has been unsuccessful. |
-| [`client.rateLimit.reached`](/platform-api#/webhooks/client.rateLimit.reached/post)          | Triggered when the client’s request count to Codat's API surpasses the allocated quota.                                                                   |
-| [`client.rateLimit.reset`](/platform-api#/webhooks/client.rateLimit.reset/post)              | Triggered when the client's rate limit quota is reset, allowing additional requests to Codat's API.                                                       |
+| [`client.rateLimit.reached`](/platform-api#/webhooks/client.rateLimit.reached/post)          | Called when the client’s request count to Codat's API surpasses the allocated quota.                                                                   |
+| [`client.rateLimit.reset`](/platform-api#/webhooks/client.rateLimit.reset/post)              | Called when the client's rate limit quota is reset, allowing additional requests to Codat's API.                                                       |
 
 ### Product-specific event types
 
@@ -39,8 +38,8 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 |-------------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | Bank Feeds API    | [`bankFeeds.sourceAccount.connected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.connected/post)       | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of connected.                                 |
 | Bank Feeds API    | [`bankFeeds.sourceAccount.disconnected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.disconnected/post) | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of disconnected.                              |
-| Sync for Expenses | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post)                  | Triggered when an expense sync successfully completes without any errors or warnings.                      |
-| Sync for Expenses | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)              | Triggered when an expense sync fails to complete successfully, resulting in at least one error or warning. |
+| Sync for Expenses | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post)                  | Called when an expense sync successfully completes without any errors or warnings.                      |
+| Sync for Expenses | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)              | Called when an expense sync fails to complete successfully, resulting in at least one error or warning. |
 
 ---
 ## Read next
