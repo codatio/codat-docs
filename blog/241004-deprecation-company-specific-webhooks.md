@@ -4,15 +4,21 @@ date: "2024-10-04"
 tags: ["Deprecation"]
 authors: dcoplowe
 ---
-On **January 10, 2025**, we will deprecate company-specific webhooks in favor of our newly introduced [company tags](/updates/240926-introducing-company-tags).
+On **January 10, 2025**, we will deprecate company-specific webhooks delivered by our legacy rule services and replace them with recently introduced [company tags](/updates/240926-introducing-company-tags).
 
 <!--truncate-->
 
-This change is designed to simplify how metadata is handled in webhook payloads.
+This change is designed to simplify the way we handle metadata in webhook payloads.
 
-## Action Required
+## Action required
 
-To avoid disruption in receiving webhook notifications, you must move all metadata previously passed via URL paths into the `tags` property in the [company schema](/platform-api#/schemas/Company). Additionally, update all webhook consumers to retrieve metadata from the `payload.referenceCompany.tags` property. Once updated, the you will be able to access metadata from the tags property shown below:
+If you are currently using company-specific webhooks and want to avoid disruption in receiving webhook notifications:
+- Move all metadata previously passed via URL paths into the `tags` property in the [company schema](/platform-api#/schemas/Company).
+  See [Add metadata to a company](/using-the-api/managing-companies#add-metadata-to-a-company).
+- Update all webhook consumers to retrieve metadata from the `payload.referenceCompany.tags` property.
+  See [Filter webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
+
+Once updated, the you will be able to access metadata from the `tags` property shown below:
 
 ```json
 {
@@ -31,9 +37,8 @@ To avoid disruption in receiving webhook notifications, you must move all metada
     ...
   }
 }
+```
 
-Adding tags to a company can be done when [creating](/platform-api#/operations/create-company) or [updating](/platform-api#/operations/update-company) a company.
+## Expected impact
 
-## Expected Impact
-
-If you do not migrate by **January 10, 2025**, webhook notifications will no longer be received as this is delivered by the legacy rule services that is being sunset on **January 10, 2025**.
+If no action is taken by **January 10, 2025**, you will no longer receive company-specific webhook notifications because the legacy rule services that deliver them will be sunset on **January 10, 2025**.
