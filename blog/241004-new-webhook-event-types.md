@@ -1,6 +1,6 @@
 ---
 title: "Webhooks update: new event types"
-date: "2024-09-29"
+date: "2024-10-04"
 tags: ["Product", "Update"]
 hide_table_of_contents: true
 authors: dcoplowe
