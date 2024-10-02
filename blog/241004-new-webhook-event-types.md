@@ -12,7 +12,7 @@ We're excited to introduce our improved webhook event types. They offer more con
 
 ## What's new?
 
-We are replacing our existing rule types with an updated set of event types. They add context to our webhooks, allow you to increase precision of your webhook messages, and provide detailed insights into the trigger events. 
+We are replacing our existing rule types with an updated set of event types. They add context to our webhooks, allow you to increase the precision of your webhook messages, and provide detailed insights into the trigger events. 
 
 :::tip New event types
 Check out the full range of our new [webhook event types](/using-the-api/webhooks/event-types).
