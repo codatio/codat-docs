@@ -2540,7 +2540,14 @@
             "description": "Amount outstanding on the bill."
           },
           "sourceModifiedDate": {
-            "$ref": "#/components/schemas/Attachment/allOf/1"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Connection/properties/created"
+              },
+              {
+                "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+              }
+            ]
           }
         },
         "required": [
@@ -4289,7 +4296,14 @@
             "description": "Default currency the supplier's transactional data is recorded in."
           },
           "sourceModifiedDate": {
-            "$ref": "#/components/schemas/Attachment/allOf/1"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Connection/properties/created"
+              },
+              {
+                "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+              }
+            ]
           }
         },
         "definitions": {
