@@ -100,15 +100,27 @@ For an example of the component in action, [see our demo app](https://github.com
   import { useState } from "react";
   import { CodatLink } from "./components/CodatLink";
 
-  export const AuthFlow = ({ companyId }: {companyId: Company["id"]}) => {
-    const [modalOpen, setModalOpen] = useState(false);
+  function App() {
+  const [companyId, setCompanyId] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
-    const onConnection = (connection: ConnectionCallbackArgs) => 
-      alert(`On connection callback - ${connection.connectionId}`);
-    const onClose = () => setModalOpen(false);
-    const onFinish = () => alert("On finish callback");
-    const onError = (error: ErrorCallbackArgs) => 
-      alert(`On error callback - ${error.message}`);
+  const onConnection = (connection: ConnectionCallbackArgs) => {
+    // Perform any logic here that should happen when a connection is linked
+    console.log(`New connection linked with ID: ${connection.connectionId}`);
+  }
+  const onClose = () => setModalOpen(false);
+  const onFinish = () => {
+    onClose();
+    setIsFinished(true);
+  }
+  const onError = (error: ErrorCallbackArgs) => {
+    // this error should be logged in your error tracking service
+    console.error(`Codat Link SDK error`, error);
+    if (!error.userRecoverable) {
+      onClose();
+    }
+  }
 
     return (
       <div>
@@ -173,27 +185,38 @@ In the example below, you'll see that we use webpack's [magic comments](https://
   ```js
   // page.tsx
 
-  "use client";
+ "use client";
 
-  import {
-    ConnectionCallbackArgs,
-    ErrorCallbackArgs,
-  } from "@codat/sdk-link-types"
-  import { CodatLink } from "./components/CodatLink";
-  import Image from "next/image";
-  import styles from "./page.module.css";
-  import { useState } from "react";
-  
-  export default function Home() {
-    const [companyId, setCompanyId] = useState(""); //provide company ID
-    const [modalOpen, setModalOpen] = useState(false);
+import {CodatLink} from "./components/CodatLink";
+import Image from "next/image";
+import styles from "./page.module.css";
+import {useState} from "react";
+import {
+  ConnectionCallbackArgs,
+  ErrorCallbackArgs,
+} from "@codat/sdk-link-types";
 
-    const onConnection = (connection: ConnectionCallbackArgs) => 
-      alert(`On connection callback - ${connection.connectionId}`);
-    const onClose = () => setModalOpen(false);
-    const onFinish = () => alert("On finish callback");
-    const onError = (error: ErrorCallbackArgs) => 
-      alert(`On error callback - ${error.message}`);
+export default function Home() {
+  const [companyId, setCompanyId] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
+
+  const onConnection = (connection: ConnectionCallbackArgs) => {
+    // Perform any logic here that should happen when a connection is linked
+    console.log(`New connection linked with ID: ${connection.connectionId}`);
+  }
+  const onClose = () => setModalOpen(false);
+  const onFinish = () => {
+    onClose();
+    setIsFinished(true);
+  }
+  const onError = (error: ErrorCallbackArgs) => {
+    // this error should be logged in your error tracking service
+    console.error(`Codat Link SDK error`, error);
+    if (!error.userRecoverable) {
+      onClose();
+    }
+  }
   
     return (
       <main className={styles.main}>
@@ -251,15 +274,29 @@ For an example of the component in action, [see our demo app](https://github.com
   
   ```js
   const closeCallback = () => {
-   linkSdkTarget.style.pointerEvents = "none";
-   linkSdkTarget.removeChild(linkSdkTarget.children[0]);
+    linkSdkTarget.style.pointerEvents = "none";
+    linkSdkTarget.removeChild(linkSdkTarget.children[0]);
   };
-
+  
   const onClose = () => closeCallback();
-  const onConnection = (connection) =>
-   alert(`On connection callback  = ${connection.connectionId}`);
-  const onFinish = () => alert("On finish callback");
-  const onError = (error) => alert(`On error callback : ${error.message}`);
+  
+  const onConnection = (connection) => {
+    // Perform any logic here that should happen when a connection is linked
+    console.log(`New connection linked with ID: ${connection.connectionId}`);
+  };
+  
+  const onFinish = () => {
+    onClose();
+    toggleLinkCompletedDiv(true);
+  };
+  
+  const onError = (error) => (error) => {
+    // this error should be logged in your error tracking service
+    console.error(`Codat Link SDK error`, error);
+    if (!error.userRecoverable) {
+      onClose();
+    }
+  };
   ```
 
 4. **Initialize the Link SDK component in your app** 
@@ -313,9 +350,6 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
 ```js
 //app.component.ts
 
-  companyId = '';//provide company ID
-  linkOpen = false;
-
   openLink() {
     if (this.companyId) {
       this.linkOpen = true;
@@ -327,15 +361,26 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
   }
 
   onConnection(connection: ConnectionCallbackArgs) {
-    alert(`On connection callback : ${connection.connectionId}`);
+    // Perform any logic here that should happen when a connection is linked
+    console.log(`New connection linked with ID: ${connection.connectionId}`);
   }
 
   onError(error: ErrorCallbackArgs) {
-    alert(`On error callback : ${error.message}`);
+    // this error should be logged in your error tracking service
+    console.error(`Codat Link SDK error`, error);
+    if (!error.userRecoverable) {
+      this.closeLink();
+    }
   }
 
   onFinish() {
-    alert('On finish callback');
+    this.closeLink();
+    this.linkFinished = true;
+  }
+
+  reset() {
+    this.linkFinished = false;
+    }
   }
 
 ```
@@ -383,27 +428,40 @@ For an example of the component in action, [see our demo app](https://github.com
   <script setup lang="ts">
     import CodatLink from './components/CodatLink.vue'
     import { ref } from 'vue'
-    import type { ConnectionCallbackArgs, ErrorCallbackArgs } from 'https://link-sdk.codat.io'  
-
-    const companyId = ref('') //provide company ID
-    const modalOpen = ref(false) 
-
-    const onConnection = (connection: ConnectionCallbackArgs) =>
-      alert(`On connection callback - ${connection.connectionId}`);
-    const onClose = () => (modalOpen = false);
-    const onFinish = () => alert("On finish callback");
-    const onError = (error: ErrorCallbackArgs) =>
-      alert(`On error callback - ${error.message}`);
-
+    import type { ConnectionCallbackArgs, ErrorCallbackArgs } from 'https://link-sdk.codat.io'
+    
+    const companyId = ref('')
+    const modalOpen = ref(false)
+    const isFinished = ref(false);
+    
+    const handleOnConnection = (connection: ConnectionCallbackArgs) => {
+      // Perform any logic here that should happen when a connection is linked
+      console.log(`New connection linked with ID: ${connection.connectionId}`);}
+    
+    const handleOnClose = () => {
+      modalOpen.value = false
+    }
+    
+    const handleOnFinish = () => {
+      handleOnClose();
+      isFinished.value = true;
+    }
+    
+    const handleOnError = (error: ErrorCallbackArgs) => {
+      // this error should be logged in your error tracking service
+      console.error(`Codat Link SDK error`, error);
+      if (!error.userRecoverable) {
+        handleOnClose();
+      }
+    }
   </script>
 
   <div class="app">
     <main>
-        {#if modalOpen}
-        <div class="modal-wrapper">
-          <CodatLink {companyId} {onConnection} {onClose} {onError} {onFinish} />
-        </div>
-      {/if}
+      <div v-if="modalOpen" class="modalWrapper">
+        <CodatLink :company-id="companyId" :on-connection="handleOnConnection" :on-close="handleOnClose"
+          :on-finish="handleOnFinish" :on-error="handleOnError" />
+      </div>
     </main>
   </div>
   ```
@@ -440,15 +498,25 @@ For an example of the component in action, [see our demo app](https://github.com
     } from "https://link-sdk.codat.io";
 
     let modalOpen = false;
-    let companyId = "" //provide company ID
-
-    const onConnection = (connection: ConnectionCallbackArgs) =>
-      alert(`On connection callback - ${connection.connectionId}`);
+    let isFinished = false;
+    let companyId = "";
+  
+    const onConnection = (connection: ConnectionCallbackArgs) => {
+      // Perform any logic here that should happen when a connection is linked
+      console.log(`New connection linked with ID: ${connection.connectionId}`);
+    }
     const onClose = () => (modalOpen = false);
-    const onFinish = () => alert("On finish callback");
-    const onError = (error: ErrorCallbackArgs) =>
-      alert(`On error callback - ${error.message}`);
-
+    const onFinish = () => {
+      onClose();
+      isFinished = true;
+    }
+    const onError = (error: ErrorCallbackArgs) => {
+      // this error should be logged in your error tracking service
+      console.error(`Codat Link SDK error`, error);
+      if (!error.userRecoverable) {
+        onClose();
+      }
+    }
   </script>
 
   <div class="app">
@@ -480,8 +548,8 @@ You can add custom logic into our SDK by using callback functions to complete an
 | Property       | Description                                                                                                                                                                                                                                          | Arguments                                                                                                                                                                                                                                                                 |
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `onConnection` | Called when a connection   is successfully authorized and moved out of a `pending` state or files are   uploaded.                                                                                                                                    | A `connection` object containing the following properties: <br/>`connectionId` - unique identifier of the connection.                                                                                                                                                                                                                      |
-| `onFinish`     | Called when the user completes all required steps of the connection flow and clicks the   "Complete" button.<br/> We recommend removing the `CodatLink` component   in this callback.                                                                    |                                                                                                                                                                                                                                                                            |
-| `onClose`      | Called when the user   clicks the "X" ("Close") button of the connection flow. <br/>  We recommend removing the `CodatLink` component in this callback.                                                                                                   |                                                                                                                                                                                                                                                                            |
+| `onFinish`     | Called when the user completes all required steps of the connection flow and clicks the   "Complete" button.<br/> We recommend removing the `CodatLink` component   in this callback. In the React example above, we call `setModalOpen(false)` to do this.                                                                   |                                                                                                                                                                                                                                                                            |
+| `onClose`      | Called when the user   clicks the "X" ("Close") button of the connection flow. <br/>  We recommend removing the `CodatLink` component in this callback. In the React example above, we call `setModalOpen(false)` to do this.                                                                                                  |                                                                                                                                                                                                                                                                            |
 | `onError`      | Called when an error   occurs in the connection flow, returning the error information. <br/> We recommend   removing the `CodatLink` component only when the `userRecoverable` parameter   is `false`. Otherwise, log the error and keep the SDK rendered. |  An `error` object containing the following properties: <br/> `correlationId` - internal identifier used to track errors within   Codat,<br/>`message` - descriptive error   response, <br/>`errorCode` - numerical code of the   error, <br/> `userRecoverable` - boolean value   indicating whether the error can be resolved by the user. <br/><br/> `correlationId`, `message`, and `errorCode` are optional and may not be available in all errors. |
 
 ## Customize Link
