@@ -72,9 +72,42 @@ Our new service has a robust [retry policy](/using-the-api/webhooks/troubleshoot
 
 ### Company-specific webhooks
 
-With the new service, you are able to see the `companyId` in the **Channels** field of the endpoint's detailed view or the message log. 
+For scalability, we limit the number of webhook consumers to 50. This means there are new considerations for handling company-specific webhooks.
 
-![A fragment of the UI that displays the Channels column of the message log with the company ID value recorded in it](/img/use-the-api/0047-message-channels.png)
+The updated webhook service now supports passing metadata about a company and filtering companies using company tags.
+
+#### Passing metadata to a webhook consumer
+You can now pass metadata about a company by setting tags on your companies.
+
+For example, if you previously passed metadata via the webhook consumer's path, such as:
+
+```
+POST /region/{regionId}/accounts/{accountId}
+```
+
+You will now set this information when creating or updating a company:
+
+```json
+{
+    "name": "{you company name}",
+    "tags": {
+        "region": "{regionId}",
+        "account": "{accountId}",
+    }
+}
+```
+
+This metadata will then be passed to your webhook consumer in the `payload.referenceCompany.tags` property.
+
+For more details, [read our guide on adding metadata to a company](/using-the-api/managing-companies#add-metadata-to-a-company).
+
+#### Filter webhooks by company tags
+
+To route specific companies to designated webhook consumers, use the company tags filter for your webhook consumer.
+
+This feature allows you to send messages only for companies with tags that match any of the tags defined on the webhook consumer.
+
+For additional information, [read about filtering webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
 
 ---
 

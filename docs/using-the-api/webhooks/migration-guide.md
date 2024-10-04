@@ -18,9 +18,9 @@ Read our [advanced migration guide](/using-the-api/webhooks/migration-guide-adva
 
 ## How do I migrate?
 
-Reach out to your Codat contact so that we can enable the new webhooks service for you. As part of that, we will migrate your existing webhook rules to the new service. This includes the webhook notification URL, rule type, authorization header, `X-Codat-ClientId` header, and company ID, if used.
+Reach out to your Codat contact so that we can enable the new webhooks service for you. As part of that, we will migrate your existing webhook rules to the new service. This includes the webhook notification URL, rule type, authorization header, and `X-Codat-ClientId` header.
 
-Depending on the complexity of your setup, you may need to take additional steps during the migration. We describe these in more detail in our [advanced migration guide](/using-the-api/webhooks/migration-guide-advanced). 
+Depending on the complexity of your setup, you may need to take additional steps during the migration. We describe these in more detail in our [advanced migration guide](/using-the-api/webhooks/migration-guide-advanced).
 
 ---
 
