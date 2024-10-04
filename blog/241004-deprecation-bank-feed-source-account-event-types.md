@@ -11,7 +11,7 @@ On **January 10, 2025**, we will update the webhook payloads for the `bankFeeds.
 
 <!--truncate-->
 
-The initial release did not include the top-level schema, which provides metadata about the event.
+When these webhooks were initially released, they didn't include the top-level schema which provides metadata about the event. The payload now also includes reference company details.
 
 <Diff
   showDiffOnly={false}
