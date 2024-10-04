@@ -36,10 +36,11 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Modify data",
+    label: "Write data",
     collapsed: true,
     items: [
       "using-the-api/push",
+      "using-the-api/upload-attachments",
       "configure/portal/pull-and-push-history",
     ],
   },
@@ -60,7 +61,6 @@ module.exports = [
         items: [
           "using-the-api/webhooks/migration-guide",
           "using-the-api/webhooks/migration-guide-advanced",
-          "using-the-api/webhooks/migrating-to-new-event-types",
         ]
       },
     ],

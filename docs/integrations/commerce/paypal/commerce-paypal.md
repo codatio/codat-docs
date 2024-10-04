@@ -42,4 +42,4 @@ Attempting to sync data after the 90 day period has lapsed will result in an Aut
 
 To maintain a connection beyond 90 days, you will need to request that the merchant reauthorize the connection (this can be done at any time before or after the end of the 90 day period).
 
-PayPal’s X2SA API only allows data to be pulled for the last 90 days and Codat will only be able to sync/store/return data for 90 days from the latest sync you perform.
+PayPal’s X2SA API only allows data to be read for the last 90 days and Codat will only be able to sync/store/return data for 90 days from the latest sync you perform.

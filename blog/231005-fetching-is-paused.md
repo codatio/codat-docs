@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: mcclowes
 ---
 
-We recently released some important infrastructure changes to improve reliability when pulling data from third party platforms. It also means fewer API calls to third parties, so you're less likely to encounter rate limits.
+We recently released some important infrastructure changes to improve reliability when reading data from third party platforms. It also means fewer API calls to third parties, so you're less likely to encounter rate limits.
 
 <!--truncate-->
 

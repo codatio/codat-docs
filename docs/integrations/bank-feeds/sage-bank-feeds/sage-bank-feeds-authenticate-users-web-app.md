@@ -50,12 +50,13 @@ There are two authentication flows between Sage, Codat's Sage Bank Feeds integra
 5. The user is redirected from Sage to a URL which is constructed as follows:
 
    ```http
-   https://{authorizationRedirectUrl}?authorizationId={authId}&redirectUri={redirectUri}
+   https://{authorizationRedirectUrl}?authorizationId={authId}&redirectUri={redirectUri}&bankId={bankId}
    ```
 
    1. The `authorizationRedirectUrl` is the web app URL that you configured in the Codat Portal.
    2. The `authId` is the unique authorization identifier for the company.
    3. The `redirectUri` is the URI the SMB user will be redirected to after authentication through your web app (see step two in the next procedure).
+   4. The `bankId` is a unique Id that represents the bank the SMB has attempted to link to in Sage (this will be a bank representing your organisation).
 
 6. As configured in your web app, the user is redirected to a login or user authorization page.
 
@@ -72,7 +73,7 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 ### Your web app redirects the user to the bank account selection screen
 
 1. After a prompt, your web app sends a request to the <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__authorization"
-   target="blank">PUT /authorization</a> endpoint. The `authId` (from the URL in step five of the previous procedure) must be supplied in the request body as an additional property:
+   target="blank">PUT /authorization</a> endpoint. The `authId` and 'bankId' (both from the URL in step five of the previous procedure) must be supplied in the request body as additional properties:
 
    ```http
    PUT company/{companyId}/connections/{connectionId}/authorization
@@ -104,4 +105,4 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
 5. Sage redirects the SMB user to the Sage product from which they began the authentication flow.
 
-You can now use the <a href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint to retrieve the source bank accounts and push bank transactions. For details, see [Use your Sage Bank Feeds integration](/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-use).
+You can now use the <a href="https://api.codat.io/swagger/index.html#/Connection/get_companies__companyId__connections__connectionId__connectionInfo_bankFeedAccounts" target="_blank">GET /bankFeedAccounts</a> endpoint to retrieve the source bank accounts and write bank transactions. For details, see [Use your Sage Bank Feeds integration](/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-use).

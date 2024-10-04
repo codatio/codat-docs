@@ -28,7 +28,7 @@ Common uses of our liabilities feature include:
 ## Feature components
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=554962936&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=554962936&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "660px" }}
@@ -36,7 +36,7 @@ Common uses of our liabilities feature include:
 
 ## Supported outputs
 
-You can retrieve the data pulled by the feature by calling the **liabilities** [endpoints of our API](/lending-api#/operations/generate-loan-transactions). For example, use the [Get loan summaries](/lending-api#/operations/get-loan-summary) endpoint to review a company's loan repayment history and determine their drawdown to repayment ratio.
+You can retrieve the data read by the feature by calling the **liabilities** [endpoints of our API](/lending-api#/operations/generate-loan-transactions). For example, use the [Get loan summaries](/lending-api#/operations/get-loan-summary) endpoint to review a company's loan repayment history and determine their drawdown to repayment ratio.
 
 <Tabs>
 

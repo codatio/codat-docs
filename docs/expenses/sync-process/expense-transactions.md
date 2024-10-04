@@ -16,7 +16,7 @@ An expense is a transaction that represents the purchase made by your customer a
 - Associated tax rates
 - Applicable tracking categories
 
-With Sync for Expenses, you need to create the expense or transfer transactions first and push that dataset to Codat. We will describe options available to you on this page. 
+With Sync for Expenses, you need to create the expense or transfer transactions first and write that dataset to Codat. We will describe options available to you on this page. 
 
 Then, you need to [sync expenses](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting software. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
@@ -130,7 +130,7 @@ If you need to remove an associated tax rate from an expense, use one of the fol
 |-------------------|----------------------------------|
 | QuickBooks Online | `NON`                            |
 | Xero              | `NONE`                           |
-| Oracle NetSuite   | `-7`                             |
+| Oracle NetSuite   | US subsidiaries: `-7`<br/> Canadian subsidiaries: `114`<br/> All other subsidiaries: check the `UNDEF-{country code}` tax rate|
 | Dynamics 365      | Set up and apply a `0%` tax rate | 
 | QuickBooks Desktop| Null                             |
 | FreeAgent        | `taxRateRef` is not supported     |

@@ -31,13 +31,13 @@ Some corporate policies or particularly stringent anti-virus software may block 
 
 If any of your customers have issues regarding anti-virus blocking please report these to us using your normal Codat support channel.
 
-## Syncs and pushes are still marked as queued or pending even though the connector is running
+## Syncs and write operations are still marked as queued or pending even though the connector is running
 
 The connector's ability to access data is dependent on permissions granted by the User, normally at time of installation.
 
 ![](/img/old/f336207-c650d8d-QBD-Auth.png "c650d8d-QBD-Auth.png")
 
-If the user has not given the connector the permission to _always_ modify the company data file (allowing access even if QuickBooks is not running), the connector will be unable to process any queued syncs or pushes, unless the user has QuickBooks open and is logged in to the relevant company file. The connector will periodically check whether the correct file has been opened and will complete the queued/pending items as soon as possible.
+If the user has not given the connector the permission to _always_ modify the company data file (allowing access even if QuickBooks is not running), the connector will be unable to process any queued syncs or write operations, unless the user has QuickBooks open and is logged in to the relevant company file. The connector will periodically check whether the correct file has been opened and will complete the queued/pending items as soon as possible.
 
 ## The first link was successful but the company became deauthorized immediately after the datasets completed
 

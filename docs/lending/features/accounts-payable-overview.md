@@ -24,7 +24,7 @@ Common uses of our accounts payable feature include:
 ## Feature components
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1075181493&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=1075181493&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "300px" }}
@@ -32,7 +32,7 @@ Common uses of our accounts payable feature include:
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **accounts payable** [endpoints of our API](/lending-api#/operations/list-accounting-bill-credit-notes).
+You can retrieve the data read and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **accounts payable** [endpoints of our API](/lending-api#/operations/list-accounting-bill-credit-notes).
 
 For example, use the [List suppliers](/lending-api#/operations/list-accounting-suppliers) endpoint to access the company's current suppliers for further assessment.
 

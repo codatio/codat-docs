@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem";
 
 Once you have created your customer's expense transaction data, we automatically initiate a sync that records the expenses in the customer's accounting software. 
 
-You can continue pushing new expenses to Codat while a sync is ongoing. 
+You can continue writing new expenses to Codat while a sync is ongoing. 
 
 ## Check sync status
 
@@ -33,8 +33,8 @@ You can [read more](/using-the-api/webhooks/overview) about webhooks at Codat an
 | :--- | :-------------------------------------------- |
 | 1000 | In progress                                   |
 | 1010 | In progress (Long running - over ten minutes) |
-| 2000 | Success (Data pushed)                         |
-| 2040 | Success (No data pushed)                      |
+| 2000 | Success (Data written)                         |
+| 2040 | Success (No data written)                      |
 | 4000 | Configuration error                           |
 | 4040 | Company deleted/de-authorized                 |
 | 4220 | Company deleted/de-authorized                 |
@@ -42,7 +42,7 @@ You can [read more](/using-the-api/webhooks/overview) about webhooks at Codat an
 | 5000 | Generic server error                          |
 | 5080 | Duplication protection                        |
 | 5120 | Data processing error                         |
-| 5130 | Data push error                               |
+| 5130 | Data write error                               |
 
 </details>
 
@@ -193,7 +193,7 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/tran
 
 ## Monitor sync health
 
-Use the Sync for Expenses product menu in the [Codat Portal](https://app.codat.io/) to navigate to [Sync Health](https://app.codat.io/products/sync-for-expenses) and monitor the status of your syncs, review detailed logs and error messages, and view and retry pushing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
+Use the Sync for Expenses product menu in the [Codat Portal](https://app.codat.io/) to navigate to [Sync Health](https://app.codat.io/products/sync-for-expenses) and monitor the status of your syncs, review detailed logs and error messages, and view and retry writing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
 
 <img
   src="/img/sync-for-commerce/0006-sync-health-ui.png"
@@ -222,12 +222,12 @@ Here, you can view each item's status, search the items by their core ID or data
 
 #### Retry push items
 
-On the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to push the data of all failed push items into the accounting software. The button is only enabled if there are failed items to retry.
+On the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to write the data of all failed push items into the accounting software. The button is only enabled if there are failed items to retry.
 
 #### 💡 Tips and traps
 
-- Syncs are shown as failed if any of the included items fail to push. Therefore, if a sync contains a mix of failed and successfully pushed records, it will still be marked as failed. 
-- Sync history does not display the date range for data pulled from the platform that is used in the sync.
+- Syncs are shown as failed if any of the included items fail to write. Therefore, if a sync contains a mix of failed and successfully written records, it will still be marked as failed. 
+- Sync history does not display the date range for data read from the platform that is used in the sync.
 
 ---
 

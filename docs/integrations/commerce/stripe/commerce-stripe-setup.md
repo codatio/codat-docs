@@ -133,8 +133,8 @@ You can also click **Manage** to view the integration's settings page, and then 
 
 ## Check the commerce sync settings
 
-Syncing of all commerce data types must be enabled before you can pull commerce transactions from Stripe to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.
+Syncing of all commerce data types must be enabled before you can read commerce transactions from Stripe to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.
 
 ## Test the integration
 
-[Test your Stripe integration](/integrations/commerce/stripe/test-stripe) explains how to use the Stripe Test integration to pull test data into Codat.
+[Test your Stripe integration](/integrations/commerce/stripe/test-stripe) explains how to use the Stripe Test integration to read test data into Codat.

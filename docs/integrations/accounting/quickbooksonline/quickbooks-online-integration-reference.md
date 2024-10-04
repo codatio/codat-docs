@@ -10,19 +10,19 @@ Note the following information when building your application using our QuickBoo
 
 Direct Incomes includes Sales Receipts and Refund Receipts from QuickBooks Online.
 
-When pushing Direct Incomes to QuickBooks Online, you must enter Sales Receipts as positive amounts and Refund Receipts as negative amounts.
+When writing Direct Incomes to QuickBooks Online, you must enter Sales Receipts as positive amounts and Refund Receipts as negative amounts.
 
 ## Direct Costs
 
-When creating direct costs in QuickBooks Online for GB, FR, IE, CA, and AU locales, records with a tax amount specified on the line item will be classified as `Tax Exclusive`. Specifically for CA, if there are no tax amounts specified on any line items or all line items have a tax amount of zero, the expense will be pushed as `Out Of Scope Of Tax`.
+When creating direct costs in QuickBooks Online for GB, FR, IE, CA, and AU locales, records with a tax amount specified on the line item will be classified as `Tax Exclusive`. Specifically for CA, if there are no tax amounts specified on any line items or all line items have a tax amount of zero, the expense will be written as `Out Of Scope Of Tax`.
 
 ## Invoice Line Items
 
-When pushing an Invoice to QBO, you can create line items without referring to existing items in QBO. However, if you do not specify an existing item with an existing `itemID` for the invoice line item, Codat uses the _Default Item_ that is set for the company. This will also use the default `AccountRef` associated with the Default Item.
+When writing an Invoice to QBO, you can create line items without referring to existing items in QBO. However, if you do not specify an existing item with an existing `itemID` for the invoice line item, Codat uses the _Default Item_ that is set for the company. This will also use the default `AccountRef` associated with the Default Item.
 
 ## Payment Methods
 
-When pulling Payment Methods from QuickBooks Online, the Payment Method `type` is always `Unknown`.
+When reading Payment Methods from QuickBooks Online, the Payment Method `type` is always `Unknown`.
 
 ## Field coverage for supported data types
 
@@ -30,7 +30,7 @@ Codat's data model supports a wide range of fields within each data type.
 
 Sometimes a provider's API does not grant access to a field that exists in a Codat data type. Conversely, our data model sometimes does not support all the relevant fields on an object in a provider's API.
 
-The following table highlights selected fields that are not available in data pulled and pushed from QuickBooks Online.
+The following table highlights selected fields that are not available in data read from and written to QuickBooks Online.
 
 ### Unavailable provider fields
 

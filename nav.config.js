@@ -42,6 +42,10 @@ module.exports = {
           label: "Sync for Payables",
         },
         {
+          href: "/sync-for-payables-v2-api",
+          label: "Bill Pay kit",
+        },
+        {
           href: "/platform-api",
           label: "Platform API",
           hr: true,

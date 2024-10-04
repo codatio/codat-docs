@@ -1,6 +1,6 @@
 ---
 title: "Test your TrueLayer integration"
-description: "Test our TrueLayer integration by pulling test data from the Demo Bank account or an alternative banking source"
+description: "Test our TrueLayer integration by reading test data from the Demo Bank account or an alternative banking source"
 sidebar_label: Testing
 ---
 

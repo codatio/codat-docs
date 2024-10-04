@@ -19,14 +19,14 @@ The SMB user can do the following:
 4. Select the **Feed start date**&mdash;the date a bank feed connection should start from. 
 5. Connect the selected bank accounts to create bank feed connections.
 
-You'll be able to push bank transactions dated from the **Feed start date** and later. However, Xero's API does not support pushing historical data older than one year.  
+You'll be able to write bank transactions dated from the **Feed start date** and later. However, Xero's API does not support writing historical data older than one year.  
 
 :::info Target account names
 If the user chooses the **Create New Account** option, the target bank account is created with the same name as the source bank account it's mapped to. Bank account names can be changed in Xero at any time.
 :::
 
-:::caution Bank feeds must be pushed to Codat
-Transactions are not automatically downloaded to Xero when the user successfully connects a bank account. You need to [Push bank transactions](/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-push-bank-transactions).
+:::caution Bank feeds must be written to Codat
+Transactions are not automatically downloaded to Xero when the user successfully connects a bank account. You need to [Write bank transactions](/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-push-bank-transactions).
 :::
 
 ## Connection management
@@ -39,4 +39,4 @@ To disconnect a source bank account, the SMB user hovers over the **connected** 
 
 ## Read next
 
-Now that your SMB users have mapped and connected their bank accounts, you're ready to [Push bank transactions to Xero](/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-push-bank-transactions).
+Now that your SMB users have mapped and connected their bank accounts, you're ready to [Write bank transactions to Xero](/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-push-bank-transactions).

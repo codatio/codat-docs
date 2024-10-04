@@ -28,7 +28,7 @@ Common uses of our accounts receivable feature include:
 ## Feature components
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1688137158&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=1688137158&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "660px" }}
@@ -46,7 +46,7 @@ Call our [List reconciled invoices](/lending-api#/operations/list-reconciled-inv
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **accounts receivable** [endpoints of our API](/lending-api#/operations/list-reconciled-invoices).
+You can retrieve the data read and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **accounts receivable** [endpoints of our API](/lending-api#/operations/list-reconciled-invoices).
 
 For example, invoice finance providers looking to reduce their risk can use the [List reconciled invoices](/lending-api#/operations/list-reconciled-invoices) endpoint to evaluate an SMB's customers ability to repay.
 

@@ -33,7 +33,7 @@ The grouping period is set to **daily** by default.
 
 Sales are booked on a nominal account of the Xero type **Revenue**. This is the account that the merchant would typically use to book their sales. The merchant can select an existing account from Xero. If an account is not available, it needs to be created in Xero for this purpose.
 
-To represents the sales made over the course of the day, Codat pushes a single daily sales invoice to Xero.
+To represents the sales made over the course of the day, Codat writes a single daily sales invoice to Xero.
 
 The invoice is issued to the commerce services provider.
 
@@ -56,15 +56,15 @@ Refunds represent a catch-all for all refunds, cash or non-cash.
 
 Similar to **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)**, **Refunds** are usually booked on a nominal account that the merchant uses to book their revenue, of the Xero type **Revenue**.
 
-Typically, merchants would push **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)** and **Refunds** into the same account. However, they can use a different account if they wish to report them separately.
+Typically, merchants would write **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)** and **Refunds** into the same account. However, they can use a different account if they wish to report them separately.
 
 When purchase refunds are recorded in Xero, the negative revenue will be booked to the selected account.
 
-Codat pushes a single sales credit note to Xero daily to represent all refunds made over the course of that day. The credit note contains one line item for each tax rate, with this line item representing the total of all refunds at that tax rate.
+Codat writes a single sales credit note to Xero daily to represent all refunds made over the course of that day. The credit note contains one line item for each tax rate, with this line item representing the total of all refunds at that tax rate.
 
 If no refunds have been made for a given tax rate on that day, the corresponding line item will be omitted.
 
-Codat pushes refund payment data as cash refunds.
+Codat writes refund payment data as cash refunds.
 
 For each payment type refunded, a transaction is recorded against the credit note. This refund is taken from the selected account to receive **Payments** for each payment type (card, cash, etc).
 
@@ -74,7 +74,7 @@ For each payment type refunded, a transaction is recorded against the credit not
 
 Depending on the merchant’s preference, **Gratuity** can be booked in a **Revenue** or a **Liability** account.
 
-Gratuity is pushed to Xero as part of the daily sales invoice as a separate line item.
+Gratuity is written to Xero as part of the daily sales invoice as a separate line item.
 
 #### Prepaid
 
@@ -98,7 +98,7 @@ The Fees feature encompasses the transactions that involve the commerce service 
 
 **Payment fees** should be booked into a nominal account that the merchant uses to record their expenses, typically of the Xero **Expense** type.
 
-Codat pushes a single purchase invoice (bill) to Xero each day. This bill represents all fees taken by the commerce software over the course of that day. The bill contains a single line.
+Codat writes a single purchase invoice (bill) to Xero each day. This bill represents all fees taken by the commerce software over the course of that day. The bill contains a single line.
 
 The bill is recorded against the commerce services supplier, and the expense account for the line item is set to the selected commerce fees account.
 
@@ -107,7 +107,7 @@ The bill is recorded against the commerce services supplier, and the expense acc
 If the selected target account is a bank account, bills are represented as a bank transaction (spend money) and will not be represented as a bill/bill payment.
 :::
 
-To represent the payment of fees, a single payment is pushed for the full payment of the bill, representing the transfer of money out of the merchant’s holding account (also known as a clearing or a liquid account).
+To represent the payment of fees, a single payment is written for the full payment of the bill, representing the transfer of money out of the merchant’s holding account (also known as a clearing or a liquid account).
 
 #### Payment fee refund
 
@@ -115,14 +115,14 @@ When a merchant refunds a payment accepted using a commerce software, the commis
 
 Payment fee refunds are typically booked to the same accounts configured for **Payment fees**. Using the same account simplifies the processing of fee refunds, but the merchant should be able to select a different account if they want.
 
-A single bill credit note is pushed each day representing all fee refunds processed that day.
+A single bill credit note is written each day representing all fee refunds processed that day.
 
 :::caution Payment fee refunds account
 
 If the selected target account is a bank account, bills are represented as a bank transaction (receive money) and will not be represented as a credit note.
 :::
 
-A cash refund payment for the whole value of the credit note is simultaneously pushed, so the bill credit note is fully paid (as no further cash is owed to the merchant by the commerce software).
+A cash refund payment for the whole value of the credit note is simultaneously written, so the bill credit note is fully paid (as no further cash is owed to the merchant by the commerce software).
 
 ## Payments
 
@@ -162,8 +162,8 @@ For card payments, it’s recommended that the merchant creates a clearing accou
 If the user starts using other payments types after initial setup, the synchronization will stop until the accounts have been re-mapped via returning to the configuration page.
 :::
 
-Codat pushes a single payment to Xero per day per payment type which has been used that day.
+Codat writes a single payment to Xero per day per payment type which has been used that day.
 
-For example, if the merchant processes ten card payments and twenty cash payments in one day, two payments are pushed. These payments are recorded against the daily sales invoice (see **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)**).
+For example, if the merchant processes ten card payments and twenty cash payments in one day, two payments are written. These payments are recorded against the daily sales invoice (see **[Sales](/sfc/mapping-specifications/xero-mapping-specification#sales)**).
 
-If you are pushing **Sales** and **Payments** simultaneously, the sales invoices will be pushed to Xero fully paid (as no further cash is expected from customers).
+If you are writing **Sales** and **Payments** simultaneously, the sales invoices will be written to Xero fully paid (as no further cash is expected from customers).

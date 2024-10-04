@@ -53,7 +53,7 @@ Implementation period, covering Implementation Specialists and associated resour
 Synchronisation of data from commerce data source(s) into accounting software(s).
 
 **Client connector**  
-Codat built and owned connector, which pulls Company data from and/or pushes Company data to the Client’s system, to enable Commerce to Accounting synchronization to function.
+Codat built and owned connector, which reads Company data from and/or writes Company data to the Client’s system, to enable Commerce to Accounting synchronization to function.
 
 **Config UI (Sync Flow)**  
 White labelled user interface enabling a Company to configure Commerce to Accounting synchronization.
@@ -102,8 +102,8 @@ This product will appear as **Sync for Expenses (v2)** on your order form.
 
 #### Features
 
-- Pull accounting data
-- Push accounting data
+- Read accounting data
+- Write accounting data
 
 <hr/>
 
@@ -117,11 +117,11 @@ This product will appear as **Sync for Expenses (v2)** on your order form.
 
 #### Feature definitions
 
-**Pull accounting data**  
-Pull data from connected Accounting software.
+**Read accounting data**  
+Read data from connected Accounting software.
 
-**Push accounting data**  
-Pull data from connected Accounting software.
+**Write accounting data**  
+Read data from connected Accounting software.
  
 [See the documentation for a list of supported data types](/payroll/data-types)
 
@@ -135,8 +135,8 @@ This product will appear as **Sync for Payroll** on your order form.
 
 #### Features
 
-- Pull accounting data
-- Push accountant data
+- Read accounting data
+- Write accounting data
 - Update accounting data
 - Delete accounting data
 
@@ -152,10 +152,10 @@ This product will appear as **Sync for Payroll** on your order form.
 
 #### Feature definitions
 
-**Pull accounting data**  
+**Read accounting data**  
 Get data from connected Accounting software.
 
-**Push accounting data**  
+**Write accounting data**  
 Create data in connected Accounting software.
 
 **Update accounting data**  
@@ -176,7 +176,7 @@ This product will appear as **Sync for Payables** on your order form.
 
 #### Features
 
-- Push bank transactions
+- Write bank transactions
 - Config UI
 - Config API
 
@@ -192,11 +192,11 @@ This product will appear as **Sync for Payables** on your order form.
 
 #### Feature definitions
 
-**Push bank transactions**  
-Push Bank Transactions into connected accounting software as a bank statement
+**Write bank transactions**  
+Write Bank Transactions into connected accounting software as a bank statement
 
 **Config UI**  
-White labelled user interface enabling a Company to configure Bank Feeds (select accounting software accounts to which bank feeds should be pushed)
+White labelled user interface enabling a Company to configure Bank Feeds (select accounting software accounts to which bank feeds should be written)
 
 **Config API**  
 API endpoints allowing clients to configure bank feeds (typically via client-built Company user interface)
@@ -211,9 +211,9 @@ This product will appear as **Bank feeds** on your order form.
 
 #### Features
 
-- Pull accounting data
-- Pull commerce data
-- Pull banking data
+- Read accounting data
+- Read commerce data
+- Read banking data
 - Bank statements
 - Sales
 - Financial statements
@@ -236,14 +236,14 @@ Open banking provider access is subject to separate access requirements.
 
 #### Feature definitions
 
-**Pull accounting data**  
-Pull the following data from connected Accounting software: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
+**Read accounting data**  
+Read the following data from connected Accounting software: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
-**Pull commerce data**  
-Pull the following data from connected Commerce software: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
+**Read commerce data**  
+Read the following data from connected Commerce software: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
-**Pull banking data**  
-Pull the following data from connected Open Banking provider: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
+**Read banking data**  
+Read the following data from connected Open Banking provider: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
 **Bank statements**  
 Review data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information. See [full details of this feature](https://docs.codat.io/lending/features/bank-statements-overview). 

@@ -13,7 +13,7 @@
     "title": "Platform API",
     "version": "3.0.0",
     "summary": "Platform API",
-    "description": "An API for the common components of all of Codat's products.\n\nThese end points cover creating and managing your companies, data connections, and integrations.\n\n[Read about the building blocks of Codat...](https://docs.codat.io/core-concepts/companies) | [See our OpenAPI spec](https://github.com/codatio/oas) \n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Connection management | Configure connection management UI and retrieve access tokens for authentication. |\n| Groups | Define and manage sets of companies based on a chosen characteristic. |\n| Webhooks | Create and manage webhooks that listen to Codat's events. |\n| Integrations | Get a list of integrations supported by Codat and their logos. |\n| Refresh data | Initiate data refreshes, view pull status and history. |\n| Settings | Manage company profile configuration, sync settings, and API keys. |\n| Push data | Initiate and monitor Create, Update, and Delete operations. |\n| Supplemental data | Configure and pull additional data you can include in Codat's standard data types. |\n| Custom data type | Configure and pull additional data types that are not included in Codat's standardized data model. |\n<!-- End Codat Tags Table -->",
+    "description": "An API for the common components of all of Codat's products.\n\nThese end points cover creating and managing your companies, data connections, and integrations.\n\n[Read about the building blocks of Codat...](https://docs.codat.io/core-concepts/companies) | [See our OpenAPI spec](https://github.com/codatio/oas) \n\n---\n<!-- Start Codat Tags Table -->\n## Endpoints\n\n| Endpoints | Description |\n| :- |:- |\n| Companies | Create and manage your SMB users' companies. |\n| Connections | Create new and manage existing data connections for a company. |\n| Connection management | Configure connection management UI and retrieve access tokens for authentication. |\n| Webhooks | Create and manage webhooks that listen to Codat's events. |\n| Integrations | Get a list of integrations supported by Codat and their logos. |\n| Refresh data | Initiate data refreshes, view pull status and history. |\n| Settings | Manage company profile configuration, sync settings, and API keys. |\n| Push data | Initiate and monitor Create, Update, and Delete operations. |\n| Supplemental data | Configure and pull additional data you can include in Codat's standard data types. |\n| Custom data type | Configure and pull additional data types that are not included in Codat's standardized data model. |\n<!-- End Codat Tags Table -->",
     "contact": {
       "name": "Codat",
       "email": "support@codat.io"
@@ -119,10 +119,6 @@
       "description": "Configure UI and retrieve access tokens for authentication used by **Connections SDK**."
     },
     {
-      "name": "Groups",
-      "description": "Define and manage sets of companies based on a chosen characteristic."
-    },
-    {
       "name": "Webhooks",
       "description": "Create and manage webhooks that listen to Codat's events."
     },
@@ -192,12 +188,7 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith",
-                          "groups": [
-                            {
-                              "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                            }
-                          ]
+                          "createdByUserName": "Mike Smith"
                         }
                       ],
                       "pageNumber": 1,
@@ -364,7 +355,7 @@
                       "createdByUserName": "Dan Tzabar"
                     }
                   },
-                  "With a group": {
+                  "With a tag": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "name": "Technicalium",
@@ -374,11 +365,9 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
-                      "groups": [
-                        {
-                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
-                        }
-                      ]
+                      "tags": {
+                        "region": "us"
+                      }
                     }
                   }
                 }
@@ -425,16 +414,6 @@
                     "name": "Technicalium",
                     "description": "Technology services, including web and app design and development"
                   }
-                },
-                "With a group": {
-                  "value": {
-                    "name": "Technicalium",
-                    "groups": [
-                      {
-                        "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                      }
-                    ]
-                  }
                 }
               }
             }
@@ -474,23 +453,6 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar"
-                    }
-                  },
-                  "With groups": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18Z",
-                      "createdByUserName": "Dan Tzabar",
-                      "groups": [
-                        {
-                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
-                        }
-                      ]
                     }
                   }
                 }
@@ -561,7 +523,7 @@
       },
       "put": {
         "summary": "Update company",
-        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/platform-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/platform-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/platform-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -624,6 +586,86 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/products/{productIdentifier}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/productIdentifier"
+        }
+      ],
+      "put": {
+        "summary": "Add product",
+        "operationId": "add-product",
+        "x-speakeasy-name-override": "add-product",
+        "description": "Use the *Add product* endpoint to enable a product for the company specified by `companyId`.\n\n> Note: This feature is currently in alpha and available only to participants in the development program.",
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "204": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove product",
+        "operationId": "remove-product",
+        "x-speakeasy-name-override": "remove-product",
+        "description": "Use the *Remove product* endpoint to disable a product for the company specified by `companyId`.\n\n> Note: This feature is currently in alpha and available only to participants in the development program.",
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "204": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -1798,313 +1840,6 @@
           }
         },
         "description": "Retrieve information about a single dataset or pull operation."
-      }
-    },
-    "/companies/{companyId}/groups": {
-      "patch": {
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "summary": "Add company",
-        "operationId": "add-company-to-group",
-        "x-speakeasy-name-override": "add-company",
-        "description": "﻿Use the *Add company* endpoint to assign a company to a group. A company can belong to multiple groups, but can only be added to one group at a time.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.",
-        "tags": [
-          "Groups"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment"
-              },
-              "examples": {
-                "Example": {
-                  "value": {
-                    "groupId": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Company"
-                },
-                "examples": {
-                  "Example": {
-                    "value": {
-                      "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                      "name": "string",
-                      "platform": "string",
-                      "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
-                      "lastSync": "2022-01-01T12:00:00.000Z",
-                      "created": "2022-01-01T12:00:00.000Z",
-                      "createdByUserName": "string",
-                      "dataConnections": [
-                        {
-                          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                          "integrationKey": "dfxm",
-                          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                          "platformName": "Basiq",
-                          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                          "status": "Linked",
-                          "lastSync": "2022-10-27T10:22:43.6464237Z",
-                          "created": "2022-10-27T09:53:29Z",
-                          "sourceType": "Banking"
-                        }
-                      ],
-                      "groups": [
-                        {
-                          "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/groups/{groupId}": {
-      "delete": {
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          },
-          {
-            "name": "groupId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/Group/properties/id"
-            },
-            "description": "Unique identifier for the group."
-          }
-        ],
-        "summary": "Remove company",
-        "operationId": "remove-company-from-group",
-        "x-speakeasy-name-override": "remove-company",
-        "description": "﻿Use the *Remove company* endpoint to remove a company from a group.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.",
-        "tags": [
-          "Groups"
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/groups": {
-      "get": {
-        "summary": "List groups",
-        "operationId": "list-groups",
-        "description": "Use the *List group* endpoint to return a list of all groups that currently exist for your client.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.",
-        "tags": [
-          "Groups"
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group/definitions/groups"
-                },
-                "examples": {
-                  "Example": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "d7a6c4b4-dc87-45f6-b803-62f466398680",
-                          "name": "Corporate cards department"
-                        },
-                        {
-                          "id": "e4498145-3b04-42bb-927c-d35726560a5b",
-                          "name": "Invoice finance team"
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create group",
-        "operationId": "create-group",
-        "description": "﻿Use the *Create group* endpoint to generate a new group that you can assign your companies to.\n\n[Groups](https://docs.codat.io/platform-api#/schemas/Group) define a set of companies that are organized based on a chosen characteristic and can be managed in the same way.\n\n### Tips and traps\n\n* The maximum length for the group name is 50 characters.\n* It's possible to create up to 20 groups per client.",
-        "tags": [
-          "Groups"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Group/definitions/groupPrototype"
-              },
-              "examples": {
-                "Example": {
-                  "value": {
-                    "name": "Corporate cards department"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Group"
-                },
-                "examples": {
-                  "Example": {
-                    "value": {
-                      "id": "d7a6c4b4-dc87-45f6-b803-62f466398680",
-                      "name": "Corporate cards department"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "description": "Groups are not enabled for client.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorMessage"
-                },
-                "examples": {
-                  "Groups are not enabled for client": {
-                    "value": {
-                      "statusCode": 403,
-                      "service": "PublicApi",
-                      "error": "Groups are not enabled for your client. Reach out to your Codat contact if this is not expected.",
-                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
-                      "canBeRetried": "Unknown",
-                      "detailedErrorCode": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "Client has reached the maximum number of groups allowed.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorMessage"
-                },
-                "examples": {
-                  "Max number of allowed groups reached": {
-                    "value": {
-                      "statusCode": 409,
-                      "service": "PublicApi",
-                      "error": "Maximum number of groups reached.",
-                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
-                      "canBeRetried": "Unknown",
-                      "detailedErrorCode": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
       }
     },
     "/rules": {
@@ -4020,10 +3755,257 @@
     }
   },
   "webhooks": {
+    "company.created": {
+      "post": {
+        "description": "Called when a company is created in Codat.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "company.deleted": {
+      "post": {
+        "description": "Called when a company is deleted in Codat.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.created": {
+      "post": {
+        "description": "Called when a connection is created by the SMB.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.connected": {
+      "post": {
+        "description": "Called when a connection is successfully linked by the SMB.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.disconnected": {
+      "post": {
+        "description": "Called when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.reconnected": {
+      "post": {
+        "description": "Called when a connection is reconnected after becoming disconnected.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.deleted": {
+      "post": {
+        "description": "Called when a connection is deleted.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "read.completed": {
+      "post": {
+        "description": "Called when the fetch of data types for a product has completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "read.completed.initial": {
+      "post": {
+        "description": "Called when the initial fetch of data types for a product has been completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "{dataType}.write.successful": {
+      "post": {
+        "description": "Indicates that a `dataType` has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.\n\nFor example, to subscribe to events where a bill is written into the accounting software, use the `bills.write.successful` webhook.\n\n### Supported data types and write types\n\n| `dataType`       | Create  | Update  | Delete  | UploadAttachment |\n|------------------|---------|---------|---------|------------------|\n| bankAccounts     | &#9989; | &#9989; | -       | -                |  \n| bankTransactions | &#9989; | -       | -       | -                |\n| billCreditNotes  | &#9989; | &#9989; | -       | &#9989;          |  \n| billPayments     | &#9989; | -       | &#9989; | -                | \n| bills            | &#9989; | &#9989; | &#9989; | &#9989;          | \n| chartOfAccounts  | &#9989; | -       | -       | -                | \n| creditNotes      | &#9989; | &#9989; | -       | -                | \n| customers        | &#9989; | &#9989; | -       | -                | \n| directCosts      | &#9989; | -       | &#9989; | &#9989;          | \n| directIncomes    | &#9989; | -       | -       | &#9989;          | \n| invoices         | &#9989; | &#9989; | &#9989; | &#9989;          | \n| items            | &#9989; | -       | -       | -                | \n| journalEntries   | &#9989; | -       | &#9989; | -                | \n| journals         | &#9989; | -       | -       | -                | \n| payments         | &#9989; | -       | -       | -                | \n| purchaseOrders   | &#9989; | &#9989; | -       | -                | \n| suppliers        | &#9989; | &#9989; | -       | -                | \n| transfers        | &#9989; | -       | -       | &#9989;          | \n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "{dataType}.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that a `dataType` has not been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.\n\nFor example, to subscribe to events where a bill is written into the accounting software, use the `bills.write.unsuccessful` webhook.\n\n### Supported data types and write types\n\n| `dataType`       | Create  | Update  | Delete  | UploadAttachment |\n|------------------|---------|---------|---------|------------------|\n| bankAccounts     | &#9989; | &#9989; | -       | -                |  \n| bankTransactions | &#9989; | -       | -       | -                |\n| billCreditNotes  | &#9989; | &#9989; | -       | &#9989;          |  \n| billPayments     | &#9989; | -       | &#9989; | -                | \n| bills            | &#9989; | &#9989; | &#9989; | &#9989;          | \n| chartOfAccounts  | &#9989; | -       | -       | -                | \n| creditNotes      | &#9989; | &#9989; | -       | -                | \n| customers        | &#9989; | &#9989; | -       | -                | \n| directCosts      | &#9989; | -       | &#9989; | &#9989;          | \n| directIncomes    | &#9989; | -       | -       | &#9989;          | \n| invoices         | &#9989; | &#9989; | &#9989; | &#9989;          | \n| items            | &#9989; | -       | -       | -                | \n| journalEntries   | &#9989; | -       | &#9989; | -                | \n| journals         | &#9989; | -       | -       | -                | \n| payments         | &#9989; | -       | -       | -                | \n| purchaseOrders   | &#9989; | &#9989; | -       | -                | \n| suppliers        | &#9989; | &#9989; | -       | -                | \n| transfers        | &#9989; | -       | -       | &#9989;          | \n",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "client.rateLimit.reached": {
+      "post": {
+        "description": "Called when your client’s request count to Codat's API surpasses the allocated quota.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "client.rateLimit.reset": {
+      "post": {
+        "description": "Called when your client's rate limit quota is reset, allowing additional requests to Codat's API.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "Company data connection status changed": {
       "post": {
+        "description": "Called anytime a data connection's status changes.",
         "requestBody": {
-          "description": "Triggered anytime a data connection's status changes.",
           "content": {
             "application/json": {
               "schema": {
@@ -4041,8 +4023,9 @@
     },
     "Data sync completed": {
       "post": {
+        "deprecated": true,
+        "description": "Generated for each data type to indicate that data synchronization is successfully completed for that specific data type.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to `Success` for all data types in the array.",
         "requestBody": {
-          "description": "Triggered when a data synchronization is completed; a notification will be generated for each `dataType` as the sync completes.",
           "content": {
             "application/json": {
               "schema": {
@@ -4060,8 +4043,9 @@
     },
     "Dataset data changed": {
       "post": {
+        "deprecated": true,
+        "description": "Generated for each data type to indicate that dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and verify that `payload.dataTypes[].status` is set to `Success` and `payload.dataTypes[].modifiedRecords` is `True` for any data type in the array.",
         "requestBody": {
-          "description": "Triggered when a dataset synchronization has completed and this has resulted in updates within Codat's data cache - this could be through the creation of new records or a change to existing records.",
           "content": {
             "application/json": {
               "schema": {
@@ -4079,8 +4063,9 @@
     },
     "Dataset status has changed to an error state": {
       "post": {
+        "deprecated": true,
+        "description": "Indicates that the synchronization of a dataset failed.\n\nThis event type has been deprecated.\nTo replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to any of the following statuses for any data type in the array:\n\n- `FetchError`\n- `MapError`\n- `InternalError`\n- `ProcessingError`\n- `ValidationError`\n- `AuthError`\n- `RateLimitError`\n- `PermissionsError`\n- `PrerequisiteNotMet`",
         "requestBody": {
-          "description": "Triggered when the synchronization of a dataset fails.",
           "content": {
             "application/json": {
               "schema": {
@@ -4098,8 +4083,8 @@
     },
     "New company synchronized": {
       "post": {
+        "description": "Triggered after a new company has successfully synchronized at least one dataType for the first time.",
         "requestBody": {
-          "description": "Triggered after a new company has successfully synchronized at least one dataType for the first time.",
           "content": {
             "application/json": {
               "schema": {
@@ -4117,8 +4102,9 @@
     },
     "Push operation status has changed": {
       "post": {
+        "deprecated": true,
+        "description": "Indicates that a create, update, or delete operation's status has changed.\n\nThis event type has been deprecated. Use either the `{dataType}.write.successful` or `{dataType}.write.unsuccessful` instead.",
         "requestBody": {
-          "description": "Triggered when a push operation's status changes.",
           "content": {
             "application/json": {
               "schema": {
@@ -4136,8 +4122,9 @@
     },
     "Push operation has timed out": {
       "post": {
+        "deprecated": true,
+        "description": "Indicates that a create, update, or delete operation has timed out.\n\nThis event type has been deprecated.\nTo replicate it, use the `{dataType}.write.unsuccessful` webhook and check if `payload.status` is set to `TimedOut`.",
         "requestBody": {
-          "description": "Triggered when a push operation times out.",
           "content": {
             "application/json": {
               "schema": {
@@ -4155,7 +4142,8 @@
     },
     "Client rate limit reached": {
       "post": {
-        "description": "Triggered when the number of requests to Codat's API from the client exceeds the current quota.",
+        "deprecated": true,
+        "description": "Called when your client’s requests to Codat's API exceed the allocated quota. \n\n**Note: This event type is deprecated. Developers should now use the `client.rateLimit.reached` event for handling rate limit notifications.**",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4174,7 +4162,8 @@
     },
     "Client rate limit reset": {
       "post": {
-        "description": "Triggered when the rate limit quota has reset for the client, and more requests to Codat's API are available.",
+        "deprecated": true,
+        "description": "Called when the rate limit quota has reset for the client, and more requests to Codat's API are available.\n\nNote: This event type is deprecated. Developers should now use the `client.rateLimit.reset` event for handling rate limit notifications.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4486,6 +4475,75 @@
           }
         ]
       },
+      "ClientRateLimitWebhook": {
+        "title": "Client rate limit webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "client.rateLimit.reset",
+              "client.rateLimit.reached"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ClientRateLimitWebhook/definitions/clientRateLimitWebhookPayload"
+          }
+        },
+        "definitions": {
+          "clientRateLimitWebhookPayload": {
+            "title": "Client rate limit webhook payload",
+            "type": "object",
+            "properties": {
+              "dailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
+              },
+              "quotaRemaining": {
+                "type": "integer",
+                "description": "Total number of requests remaining for your client."
+              },
+              "expiryDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC when your daily quota is reset."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "eventType": "client.rateLimit.reset",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "dailyQuota": 12000,
+              "quotaRemaining": 11993,
+              "expiryDate": "2024-09-01T23:59:99Z"
+            }
+          },
+          {
+            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "eventType": "client.rateLimit.reached",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "dailyQuota": 12000,
+              "quotaRemaining": 0,
+              "expiryDate": "2024-09-01T12:14:14Z"
+            }
+          }
+        ]
+      },
       "Companies": {
         "title": "Companies",
         "x-internal": true,
@@ -4510,77 +4568,82 @@
         "title": "Company",
         "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/parameters/companyId/schema"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the company",
-            "example": "Codat Ltd."
-          },
-          "description": {
-            "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-          },
-          "platform": {
-            "type": "string",
-            "deprecated": true,
-            "example": "Xero",
-            "description": "`platformKeys` name used when creating the company."
-          },
-          "redirect": {
-            "type": "string",
-            "format": "uri",
-            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
-            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/DateTime"
-          },
-          "created": {
-            "$ref": "#/components/schemas/DateTime"
-          },
-          "createdByUserName": {
-            "type": "string",
-            "description": "Name of user that created the company in Codat."
-          },
-          "dataConnections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Connection"
-            }
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Group/definitions/groupRef"
-            },
-            "description": "An array of groups the company has been assigned to."
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "redirect"
-        ],
-        "definitions": {
-          "companyGroupAssignment": {
-            "title": "Group assignment",
+          {
             "type": "object",
             "properties": {
-              "groupId": {
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/Group/properties/id"
-                  },
-                  {
-                    "description": "Unique identifier of the group you want to assign the company to."
-                  }
-                ]
+              "dataConnections": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
               }
             }
+          }
+        ],
+        "definitions": {
+          "companyDetails": {
+            "title": "Company details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the company",
+                "example": "Codat Ltd."
+              },
+              "description": {
+                "$ref": "#/components/schemas/CompanyRequestBody/properties/description",
+                "nullable": true
+              },
+              "redirect": {
+                "type": "string",
+                "format": "uri",
+                "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+                "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+              },
+              "lastSync": {
+                "$ref": "#/components/schemas/DateTime",
+                "nullable": true
+              },
+              "created": {
+                "$ref": "#/components/schemas/DateTime"
+              },
+              "createdByUserName": {
+                "type": "string",
+                "description": "Name of user that created the company in Codat.",
+                "nullable": true
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "An array of products that are currently enabled for the company."
+              },
+              "tags": {
+                "type": "object",
+                "maxProperties": 10,
+                "propertyNames": {
+                  "pattern": "^.{1,27}$"
+                },
+                "additional properties": {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "redirect"
+            ]
           },
           "companyReference": {
             "title": "Company reference",
@@ -4590,10 +4653,24 @@
                 "$ref": "#/components/parameters/companyId/schema"
               },
               "name": {
-                "$ref": "#/components/schemas/Company/properties/name"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/name"
               },
               "description": {
-                "$ref": "#/components/schemas/Company/properties/description"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/description"
+              },
+              "links": {
+                "type": "object",
+                "description": "A collection of links for the company.",
+                "properties": {
+                  "portal": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the company page in the portal."
+                  }
+                }
+              },
+              "tags": {
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
               }
             }
           }
@@ -4602,11 +4679,14 @@
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
             "name": "string",
-            "platform": "string",
             "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
             "lastSync": "2022-01-01T12:00:00.000Z",
             "created": "2022-01-01T12:00:00.000Z",
             "createdByUserName": "string",
+            "tags": {
+              "region": "us",
+              "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
+            },
             "dataConnections": [
               {
                 "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
@@ -4619,11 +4699,6 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
-              }
-            ],
-            "groups": [
-              {
-                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -4642,18 +4717,79 @@
             "example": "Bank of Dave"
           },
           "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
           },
-          "groups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Group/definitions/groupRef"
-            },
-            "description": "Reference to the groups that the company is assigned to."
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
           }
         },
         "required": [
           "name"
+        ]
+      },
+      "CompanyWebhook": {
+        "title": "Company webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event"
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "company.created",
+              "company.deleted"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
+          }
+        },
+        "examples": [
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "company.created",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "name": "Bank of Dave",
+              "description": "Requested a loan for refurb.",
+              "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "lastSync": "2022-01-01T12:00:00.000Z",
+              "created": "2022-01-01T12:00:00.000Z",
+              "tags": {
+                "customerRegion": "us",
+                "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "company.deleted",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "name": "Bank of Dave",
+              "description": "Requested a loan for refurb.",
+              "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "lastSync": "2022-01-01T12:00:00.000Z",
+              "created": "2022-01-01T12:00:00.000Z",
+              "tags": {
+                "customerRegion": "uk",
+                "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
+              }
+            }
+          }
         ]
       },
       "Connection": {
@@ -4694,25 +4830,28 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/DateTime"
+            "$ref": "#/components/schemas/DateTime",
+            "nullable": true
           },
           "created": {
             "$ref": "#/components/schemas/DateTime"
           },
           "dataConnectionErrors": {
             "type": "array",
+            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
             }
           },
           "connectionInfo": {
             "type": "object",
+            "nullable": true,
             "additionalProperties": {
               "type": "string"
             }
-          },
-          "additionalProperties": false
+          }
         },
+        "additionalProperties": false,
         "required": [
           "id",
           "integrationId",
@@ -4924,6 +5063,247 @@
               "newStatus": "Linked",
               "oldStatus": "PendingAuth",
               "platformKey": "gbol"
+            }
+          }
+        ]
+      },
+      "ConnectionWebhook": {
+        "title": "Connection webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "connection.created",
+              "connection.connected",
+              "connection.disconnected",
+              "connection.reconnected",
+              "connection.deleted"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ConnectionWebhook/definitions/connectionWebhookPayload"
+          }
+        },
+        "definitions": {
+          "connectionWebhookPayload": {
+            "title": "Connection webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "connection": {
+                "$ref": "#/components/schemas/Connection"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.created",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "PendingAuth",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.connected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.disconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Unlinked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.disconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Deauthorized",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking",
+                "dataConnectionErrors": [
+                  {
+                    "statusCode": 401,
+                    "statusText": "The integration de-authorized access to the connection.",
+                    "errorMessage": "The integration de-authorized access to the connection.",
+                    "erroredOnUtc": "2022-12-27T09:53:29.000Z",
+                    "status": "Active"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.reconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.deleted",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
             }
           }
         ]
@@ -5534,6 +5914,207 @@
         "x-internal": true,
         "$ref": "#/components/schemas/DataStatus/properties/dataType"
       },
+      "DataTypeWriteWebhook": {
+        "title": "Write data type webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "bills.write.successful",
+              "bills.write.unsuccessful"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/dataTypeWriteWebhookPayload"
+          }
+        },
+        "definitions": {
+          "dataTypeWriteWebhookPayload": {
+            "title": "Payload",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier of the write request. This is also known as the push operation ID."
+              },
+              "type": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/writeType"
+              },
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "connectionId": {
+                "$ref": "#/components/parameters/connectionId/schema"
+              },
+              "requestedOnDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC the write request was submitted."
+              },
+              "completedOnDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC the write request completed."
+              },
+              "status": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/writeStatus"
+              },
+              "record": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/dataTypeWriteWebhookRecord",
+                "nullable": true
+              },
+              "attachmentId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Unique identifier for the uploaded attachment, null if no attachment uploaded."
+              }
+            }
+          },
+          "dataTypeWriteWebhookRecord": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The unique identifier of the data type created, updated, deleted, or had an attachment uploaded in the accounting platform."
+              }
+            }
+          },
+          "writeType": {
+            "title": "Write type",
+            "description": "Type of write request.",
+            "type": "string",
+            "enum": [
+              "Create",
+              "Update",
+              "Delete",
+              "UploadAttachment"
+            ]
+          },
+          "writeStatus": {
+            "title": "Write request status",
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Failed",
+              "Success",
+              "TimedOut"
+            ],
+            "description": "The current status of the write request, which is the same as the push operation status."
+          }
+        },
+        "examples": [
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Create",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Success",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              }
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "UploadAttachment",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Success",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              },
+              "attachmentId": "att_1AZtxr2eZvKYlo2CJDX8whov"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Update",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Failed"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Delete",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "TimedOut"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "UploadAttachment",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "TimedOut",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              }
+            }
+          }
+        ]
+      },
       "DateTime": {
         "title": "Date time",
         "type": "string",
@@ -5617,57 +6198,6 @@
                 "type": "string",
                 "nullable": true,
                 "description": "Name of validator."
-              }
-            }
-          }
-        }
-      },
-      "Group": {
-        "title": "Group",
-        "description": "A container you can use to organize companies together according to a shared characteristic of your choice.",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
-            "description": "Unique identifier for the group."
-          },
-          "name": {
-            "type": "string",
-            "description": "Descriptive name of the group.",
-            "example": "Invoice finance team"
-          }
-        },
-        "definitions": {
-          "groupPrototype": {
-            "title": "Group prototype",
-            "description": "The group template used to create a group.",
-            "type": "object",
-            "properties": {
-              "name": {
-                "$ref": "#/components/schemas/Group/properties/name"
-              }
-            }
-          },
-          "groups": {
-            "title": "Groups",
-            "type": "object",
-            "properties": {
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Group"
-                }
-              }
-            }
-          },
-          "groupRef": {
-            "title": "Group reference",
-            "type": "object",
-            "properties": {
-              "id": {
-                "$ref": "#/components/schemas/Group/properties/id"
               }
             }
           }
@@ -5900,24 +6430,6 @@
           },
           "Message": {
             "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/NewCompanySynchronizedWebhook/definitions/NewCompanySynchronizedWebhookData"
-          }
-        },
-        "definitions": {
-          "NewCompanySynchronizedWebhookData": {
-            "type": "object",
-            "title": "New company synchronized webhook data",
-            "companyName": {
-              "nullable": true,
-              "type": "string",
-              "description": "Name of company whose connection has changed."
-            },
-            "sourceType": {
-              "$ref": "#/components/schemas/Integration/definitions/sourceType",
-              "nullable": true
-            }
           }
         },
         "examples": [
@@ -5929,11 +6441,7 @@
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
             "RuleType": "New company synchronised",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
-            "Data": {
-              "companyName": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-              "sourceType": "Accounting"
-            }
+            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time"
           }
         ]
       },
@@ -6739,6 +7247,73 @@
           }
         }
       },
+      "ReadCompletedWebhook": {
+        "title": "Read completed webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event."
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/readCompletedWebhookPayload"
+          }
+        },
+        "definitions": {
+          "readCompletedWebhookPayload": {
+            "title": "Company fetch completed webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "product": {
+                "type": "string",
+                "example": "lending",
+                "description": "Name of the product that requested the data types to be fetched.",
+                "nullable": true
+              },
+              "modifiedFromDate": {
+                "$ref": "#/components/schemas/DateTime",
+                "description": "The date time in UTC when the data types were last fetched and input into Codat's cache.",
+                "nullable": true
+              },
+              "dataTypes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "connectionId": {
+                      "$ref": "#/components/parameters/connectionId/schema"
+                    },
+                    "dataType": {
+                      "$ref": "#/components/schemas/DataStatus/properties/dataType"
+                    },
+                    "recordsModified": {
+                      "type": "boolean",
+                      "example": false,
+                      "description": "`True` if records have been created, updated or deleted in Codat's cache."
+                    },
+                    "status": {
+                      "$ref": "#/components/schemas/PullOperation/properties/status"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
       "SupplementalDataConfiguration": {
         "description": "",
         "title": "Supplemental data configuration",
@@ -7408,6 +7983,21 @@
         },
         "description": "Number of records to return in a page. [Read more](https://docs.codat.io/using-the-api/paging)."
       },
+      "productIdentifier": {
+        "name": "productIdentifier",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "examples": [
+            "bank-feeds",
+            "lending",
+            "payables",
+            "expenses"
+          ]
+        },
+        "description": "Human-readable product identifier for a product."
+      },
       "query": {
         "name": "query",
         "in": "query",
@@ -7430,7 +8020,7 @@
       },
       "dataType": {
         "name": "dataType",
-        "description": "The key of a Codat data type",
+        "description": "The key of a Codat data type.",
         "in": "path",
         "required": true,
         "schema": {

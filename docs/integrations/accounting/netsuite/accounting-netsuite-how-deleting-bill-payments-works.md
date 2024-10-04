@@ -4,7 +4,7 @@ sidebar_label: "Delete Bill payments"
 description: "Learn how deleting Bill payments works in NetSuite."
 ---
 
-Depending on the original data that was pushed, a Codat Bill payment is created in NetSuite as one of the following objects:
+Depending on the original data that was written, a Codat Bill payment is created in NetSuite as one of the following objects:
 
 - Bill Payment
 - Vendor Prepayment Application (when applied to one or more Bills)

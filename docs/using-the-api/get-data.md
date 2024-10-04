@@ -6,7 +6,7 @@ description: "Learn how to manage companies, their connections, and their data v
 
 Once you've create a company, you can start retrieving data.
 
-## Pulling data
+## Reading data
 
 Once company is onboarded, you can start retrieving their financial data.
 

@@ -50,7 +50,7 @@ Build your account mapping process to use the Codat API as follows:
 
 If a new account is required for correct mapping, you can offer your customer to create one. You will need a user interface that supports additional steps, such as populating fields required for account creation by the specific accounting software. 
 
-Read our guidance on [creating, updating, and deleting data](/using-the-api/push) with Codat.
+Read our guidance on [writing data](/using-the-api/push) with Codat.
 :::
 
 ### Mapping validation

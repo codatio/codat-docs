@@ -20,7 +20,7 @@ Collect transaction data within your own application and map it to Codat's [Bank
 Make sure the transaction `amount` signs align with the `transactionType`. Codat issues a warning for inconsistencies, such as a `Debit` transaction with a positive amount.
 :::
 
-## Push bank transactions
+## Write bank transactions
 
 In Codat, creating a bank transaction is a two-step process (learn more about it [here](/using-the-api/push)). It requires you to check the data model of the data type you want to create first to ensure all required properties are included in your request. 
 
@@ -49,7 +49,7 @@ We recommend regularly uploading transactions throughout the day so that your cu
 Use our [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to create bank transactions. In response, you will receive a `pushOperation` object with a `Pending` status.
 
 :::caution Quantity limit
-A maximum of 1000 bank transactions can be pushed at a time.
+A maximum of 1000 bank transactions can be written at a time.
 :::
 
 <Tabs>
@@ -192,7 +192,7 @@ transactionsResponse, err := s.Transactions.Create(ctx, operations.CreateBankTra
 
 :::caution QuickBooks Online bank feeds syncing info
 
-Transactions pushed to QuickBooks Online bank feeds will show a `Success` status when they validated and saved by Codat. However, they will only become available in their accounting software after synchronization between QBO and Codat.
+Transactions written to QuickBooks Online bank feeds will show a `Success` status when they validated and saved by Codat. However, they will only become available in their accounting software after synchronization between QBO and Codat.
 
 QBO automatically polls Codat daily for updates, and users can also manually trigger that sync from the QBO interface.
 
@@ -201,7 +201,7 @@ QBO automatically polls Codat daily for updates, and users can also manually tri
 
 ### Monitor request status
 
-After you submit your request to create bank transactions to our API, it will have a status of `Pending`. Use the [PushOperationStatusChanged](/bank-feeds/setup#webhooks) webhook to track when the status of your push operation changes to `Success` or `Failed`.
+After you submit your request to create bank transactions to our API, it will have a status of `Pending`. Use the [PushOperationStatusChanged](/bank-feeds/setup#webhooks) webhook to track when the status of your write operation changes to `Success` or `Failed`.
 
 If the request is successful, you will receive a webhook like this:
 
@@ -220,4 +220,4 @@ If the request is successful, you will receive a webhook like this:
 }
 ```
 
-If you want to see a history of all push operations for a specific company, retrieve these by calling the [List create operations](/bank-feeds-api#/operations/list-create-operations) endpoint.
+If you want to see a history of all write operations for a specific company, retrieve these by calling the [List create operations](/bank-feeds-api#/operations/list-create-operations) endpoint.

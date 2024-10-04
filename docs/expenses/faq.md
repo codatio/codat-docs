@@ -37,7 +37,7 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 
 <li><b>Multiple transaction support</b></li>
 
-<p>Sync for Expenses handles the pushing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transaction">Get sync transaction</a> endpoint.</p>
+<p>Sync for Expenses handles the writing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transaction">Get sync transaction</a> endpoint.</p>
 
 <li><b>Enhanced developer experience</b></li>
 
@@ -74,7 +74,7 @@ If you want to use the accounting software logos in your user interface, you can
 	<Question
 		question="Can I use the Sandbox account to test a sync when implementing Sync for Expenses?"
 		answer={`
-<p>Sync for Expenses does not support Sandbox as a destination platform to sync transactions because it has been designed specifically for pulling, not pushing, data. We recommend signing up for a free QuickBooks or Xero developer account to test syncs, which will give you sandbox access as well.</p>
+<p>Sync for Expenses does not support Sandbox as a destination platform to sync transactions because it has been designed specifically for reading, not writing, data. We recommend signing up for a free QuickBooks or Xero developer account to test syncs, which will give you sandbox access as well.</p>
 <p>For more information on how to set up your accounting software integration, take a look at the <a href="https://docs.codat.io/integrations/accounting/overview">integration-specific documentation</a>.</p>
 		`}
 	/>
@@ -94,7 +94,7 @@ You can create a webhook consumer in the Codat portal to inform you when the cha
 	<Question
 		question="Am I able to update an attachment when I have already synced the expense transaction?"
 		answer={`
-Codat pushes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment directly from the accounting software. Next, you need to upload the correct document either directly to the accounting software or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments. 
+Codat writes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment directly from the accounting software. Next, you need to upload the correct document either directly to the accounting software or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments. 
 		`}
 	/>  
 	<Question

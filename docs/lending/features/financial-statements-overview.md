@@ -26,7 +26,7 @@ Common uses of our financial statements feature include:
 ## Feature components
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=1364518639&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=1364518639&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "450px" }}
@@ -44,7 +44,7 @@ Each account category consists of up to five levels, with the most relevant leve
   <summary>Supported account categories</summary>
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=340133827&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=340133827&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "450px" }}
@@ -77,7 +77,7 @@ That's it! Financial statements will return the updated category for the account
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by this feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **financial statements** [endpoints of our API](/lending-api#/operations/get-categorized-profit-and-loss-statement). 
+You can retrieve the data read and enriched by this feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **financial statements** [endpoints of our API](/lending-api#/operations/get-categorized-profit-and-loss-statement). 
 
 For example, a company's gearing ratio can be calculated using data returned by the [Get categorized balance sheet statement](/lending-api#/operations/get-categorized-balance-sheet-statement) endpoint. Check out our [loan qualification demo app](https://github.com/codatio/demo-loan-qualification/tree/main#demo-loan-qualification) written in C# to learn how to calculate other ratios. 
 

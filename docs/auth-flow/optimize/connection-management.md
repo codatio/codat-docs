@@ -12,7 +12,7 @@ import TabItem from "@theme/TabItem";
 
 Give your customers the ability to manage the access permissions they have given you by using our **Connections SDK** in your front end. This is key from a regulatory perspective, builds trust between you and your customer, and is required by some accounting software (e.g. Xero). 
 
-![An image of three in-app screenshots of the Connections UI. The first picture displays a list of three existing connections to Xero, Square, and Commerce Sandbox. The second image shows the entry for the Square connection with dates the authorization was given and recent data pull dates. It also lists the option to disconnect the connection. The final image displays a confirmation of the disconnection.](/img/auth-flow/auth-flow-connection-ui-examples.png)
+![An image of three in-app screenshots of the Connections UI. The first picture displays a list of three existing connections to Xero, Square, and Commerce Sandbox. The second image shows the entry for the Square connection with dates the authorization was given and recent data read dates. It also lists the option to disconnect the connection. The final image displays a confirmation of the disconnection.](/img/auth-flow/auth-flow-connection-ui-examples.png)
 
 ### Functionality
 
@@ -21,7 +21,8 @@ With its sleek UI and low-code deployment, the component provides the following 
 - Displays accounting, banking, and commerce connections in `Linked`, `Unlinked`, and `Deauthorized` statuses.
 - Provides the details of first authorization date and most recent sync date.
 - Allows the user to disconnect an active connection, setting it to a `Unlinked` state and retaining previously fetched data.
-- Enables the user to reauthorize a previously unlinked or deauthorized connection, setting it back to `Linked` status. 
+- Enables the user to reauthorize a previously unlinked or deauthorized connection, setting it back to `Linked` status.
+- Provides additional controls over specific integrations (e.g. [Pause the connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#pause-the-connector) for QuickBooks Desktop).
 
 You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
 

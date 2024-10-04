@@ -12,8 +12,8 @@ image: "/img/banners/social/commerce.png"
 | :--- | :-------------------------------------------- |
 | 1000 | In Progress                                   |
 | 1010 | In Progress (Long running - over ten minutes) |
-| 2000 | Success (Data pushed)                         |
-| 2040 | Success (No data pushed)                      |
+| 2000 | Success (Data written)                         |
+| 2040 | Success (No data written)                      |
 | 4000 | Configuration Error                           |
 | 4040 | Company deleted/de-authorized                 |
 | 4220 | Company deleted/de-authorized                 |
@@ -21,7 +21,7 @@ image: "/img/banners/social/commerce.png"
 | 5000 | Generic Server error                          |
 | 5080 | Duplication protection                        |
 | 5120 | Data processing error                         |
-| 5130 | Data push error                               |
+| 5130 | Data write error                               |
 
 ### Error messages
 
@@ -49,7 +49,7 @@ This section describes the errors that are related to Sync for Commerce configur
 | Invalid invoice level grouping selected. | Merchants should be able to configure grouping for their invoices. In Sync for Commerce, grouping is done by time (daily) and by country/location of orders. <br/> This error surfaces for the locations-based grouping where `selectedGroupByOptions` value is not from `groupByOptions`. <br/> During the configuration, the grouping object in the config API has `groupingLevels.invoiceLevels. selectedGroupByOptions` must have a value available from the `groupByOptions`. <br/> Update the configuration on the Codat configuration API with a valid invoice-level grouping option. |
 | Invalid invoice line level grouping selected. | This error surfaces for invalid groupings on `grouping.invoiceLineLevel` based grouping where `selectedGroupByOptions` value is not from `groupByOptions`. <br/> During the configuration, the grouping object in the config API that has `groupingLevels.invoiceLineLevel. selectedGroupByOptions` must have a value available from `groupByOptions`. <br/> Update the configuration on the Codat configuration API with a valid line-level grouping option. |
 | Payments cannot be enabled if invoice status is set to **draft**. | **Payments** cannot be enabled for synchronization if the invoices are not **Active** and are set to the **Draft** status. <br/> A draft invoice cannot have any associated payments. The merchant should change the preferred invoice status for **Payments** to **Submitted**. |
-| Config contains required accounts without selections. | Configuration requires accounts to be selected. This error surfaces if any of the required accounts is not selected (e.g., **Sales**). SMB has not selected a required nominal account for pushing sales/commerce data against. <br/> Make sure that the merchant cannot complete the configuration without selecting the accounts for required features. |
+| Config contains required accounts without selections. | Configuration requires accounts to be selected. This error surfaces if any of the required accounts is not selected (e.g., **Sales**). SMB has not selected a required nominal account for writing sales/commerce data against. <br/> Make sure that the merchant cannot complete the configuration without selecting the accounts for required features. |
 | No Sales Account Present. | This error surfaces if the merchant's accounting software has no nominal account categorized as a **Sales** account. <br/> You can build a feature to create a nominal account in the merchant’s accounting software, leveraging Codat’s Sync or public Core API resources. The merchants can manually add a **Sales** account on their respective accounting software. |
 | No schedule selected frequency. | This error surfaces if no schedule was configured during the configuration stage. <br/> Configure the data synchronization schedule. |
 | Selected schedule frequency not present in options. | This error surfaces if the configured schedule does not conform to the set of options surfaced by the configuration API. <br/> Configure a valid syncing schedule from the available scheduler options. |

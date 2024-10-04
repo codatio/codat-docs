@@ -1497,10 +1497,30 @@
     }
   },
   "webhooks": {
+    "connection.deleted": {
+      "post": {
+        "description": "Triggered when a connection is deleted.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "Sync Connection Deleted": {
       "post": {
+        "deprecated": true,
         "requestBody": {
-          "description": "A Sync for Commerce connection is deleted.",
+          "description": "A Sync for Commerce connection is deleted.\n\nThis event type has been deprecated. Subscribe to the `connection.deleted` event type instead.",
           "content": {
             "application/json": {
               "schema": {
@@ -1646,92 +1666,82 @@
         "title": "Company",
         "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/sync-for-sync-for-commerce-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/parameters/companyId/schema"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the company",
-            "example": "Codat Ltd."
-          },
-          "description": {
-            "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-          },
-          "platform": {
-            "type": "string",
-            "deprecated": true,
-            "example": "Xero",
-            "description": "`platformKeys` name used when creating the company."
-          },
-          "redirect": {
-            "type": "string",
-            "format": "uri",
-            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
-            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
-          },
-          "created": {
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ],
-            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-          },
-          "createdByUserName": {
-            "type": "string",
-            "description": "Name of user that created the company in Codat."
-          },
-          "dataConnections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Connection"
-            }
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "title": "Group reference",
-              "type": "object",
-              "properties": {
-                "id": {
-                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
-                }
-              }
-            },
-            "description": "An array of groups the company has been assigned to."
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "redirect"
-        ],
-        "definitions": {
-          "companyGroupAssignment": {
-            "title": "Group assignment",
+          {
             "type": "object",
             "properties": {
-              "groupId": {
-                "allOf": [
-                  {
-                    "type": "string",
-                    "format": "uuid",
-                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
-                    "description": "Unique identifier for the group."
-                  },
-                  {
-                    "description": "Unique identifier of the group you want to assign the company to."
-                  }
-                ]
+              "dataConnections": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
               }
             }
+          }
+        ],
+        "definitions": {
+          "companyDetails": {
+            "title": "Company details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the company",
+                "example": "Codat Ltd."
+              },
+              "description": {
+                "$ref": "#/components/schemas/CreateCompany/properties/description",
+                "nullable": true
+              },
+              "redirect": {
+                "type": "string",
+                "format": "uri",
+                "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+                "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+              },
+              "lastSync": {
+                "$ref": "#/components/schemas/Connection/properties/created",
+                "nullable": true
+              },
+              "created": {
+                "$ref": "#/components/schemas/Connection/properties/created"
+              },
+              "createdByUserName": {
+                "type": "string",
+                "description": "Name of user that created the company in Codat.",
+                "nullable": true
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "An array of products that are currently enabled for the company."
+              },
+              "tags": {
+                "type": "object",
+                "maxProperties": 10,
+                "propertyNames": {
+                  "pattern": "^.{1,27}$"
+                },
+                "additional properties": {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "redirect"
+            ]
           },
           "companyReference": {
             "title": "Company reference",
@@ -1741,10 +1751,24 @@
                 "$ref": "#/components/parameters/companyId/schema"
               },
               "name": {
-                "$ref": "#/components/schemas/Company/properties/name"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/name"
               },
               "description": {
-                "$ref": "#/components/schemas/Company/properties/description"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/description"
+              },
+              "links": {
+                "type": "object",
+                "description": "A collection of links for the company.",
+                "properties": {
+                  "portal": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the company page in the portal."
+                  }
+                }
+              },
+              "tags": {
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
               }
             }
           }
@@ -1753,11 +1777,14 @@
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
             "name": "string",
-            "platform": "string",
             "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
             "lastSync": "2022-01-01T12:00:00.000Z",
             "created": "2022-01-01T12:00:00.000Z",
             "createdByUserName": "string",
+            "tags": {
+              "region": "us",
+              "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
+            },
             "dataConnections": [
               {
                 "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
@@ -1770,11 +1797,6 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
-              }
-            ],
-            "groups": [
-              {
-                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -1848,7 +1870,7 @@
             "nullable": true
           },
           "syncUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "Datetime of the sync.",
             "nullable": true
           },
@@ -1899,7 +1921,7 @@
                 }
               },
               "startDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "The date time in UTC syncs should start from."
               },
               "syncHour": {
@@ -2410,25 +2432,34 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "nullable": true
           },
           "created": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "title": "Date time",
+            "type": "string",
+            "examples": [
+              "2022-10-23T00:00:00.000Z",
+              "2022-10-23T00:00:00.000Z"
+            ],
+            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
           },
           "dataConnectionErrors": {
             "type": "array",
+            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
             }
           },
           "connectionInfo": {
             "type": "object",
+            "nullable": true,
             "additionalProperties": {
               "type": "string"
             }
-          },
-          "additionalProperties": false
+          }
         },
+        "additionalProperties": false,
         "required": [
           "id",
           "integrationId",
@@ -2469,7 +2500,7 @@
                 "description": "A message about a error returned by Codat."
               },
               "erroredOnUtc": {
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Connection/properties/created"
               },
               "status": {
                 "title": "Error status",
@@ -2484,7 +2515,7 @@
               "resolvedOnUtc": {
                 "description": "The datetime in Utc that the error was resolved.",
                 "nullable": true,
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Connection/properties/created"
               }
             }
           },
@@ -2537,6 +2568,247 @@
           }
         ]
       },
+      "ConnectionWebhook": {
+        "title": "Connection webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "connection.created",
+              "connection.connected",
+              "connection.disconnected",
+              "connection.reconnected",
+              "connection.deleted"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ConnectionWebhook/definitions/connectionWebhookPayload"
+          }
+        },
+        "definitions": {
+          "connectionWebhookPayload": {
+            "title": "Connection webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "connection": {
+                "$ref": "#/components/schemas/Connection"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.created",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "PendingAuth",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.connected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.disconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Unlinked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.disconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Deauthorized",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking",
+                "dataConnectionErrors": [
+                  {
+                    "statusCode": 401,
+                    "statusText": "The integration de-authorized access to the connection.",
+                    "errorMessage": "The integration de-authorized access to the connection.",
+                    "erroredOnUtc": "2022-12-27T09:53:29.000Z",
+                    "status": "Active"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.reconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.deleted",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          }
+        ]
+      },
       "CreateCompany": {
         "title": "Create company request",
         "x-internal": true,
@@ -2550,14 +2822,12 @@
             "example": "Bank of Dave"
           },
           "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
           },
-          "groups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Company/properties/groups/items"
-            },
-            "description": "Reference to the groups that the company is assigned to."
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
           }
         },
         "required": [
@@ -3085,11 +3355,11 @@
             "type": "object",
             "properties": {
               "start": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "Start date of the Sync."
               },
               "finish": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "Finish date of the Sync."
               }
             },
@@ -3188,7 +3458,7 @@
             "example": "Customer 3b9bf2ed-a618-4af2-80f2-f2b57fddc748 is not in an Active state. (Archived)"
           },
           "syncUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "UTC DateTime for the Sync.",
             "nullable": true
           },
@@ -3216,11 +3486,11 @@
             "type": "object",
             "properties": {
               "start": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "Start date of the Sync."
               },
               "finish": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "Finish date of the Sync."
               }
             },
@@ -3263,7 +3533,7 @@
             "example": "Customer 3b9bf2ed-a618-4af2-80f2-f2b57fddc748 is not in an Active state. (Archived)"
           },
           "syncUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "UTC DateTime for the Sync.",
             "nullable": true
           },
@@ -3289,7 +3559,7 @@
         "type": "object",
         "properties": {
           "syncTo": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "The DateTime, upto which Sync will run up to starting from the previous successful sync",
             "nullable": true
           }

@@ -39,9 +39,143 @@
   "tags": [],
   "paths": {},
   "webhooks": {
+    "company.created": {
+      "post": {
+        "description": "Triggered when a company is created in Codat.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "company.deleted": {
+      "post": {
+        "description": "Triggered when a company is deleted in Codat.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.created": {
+      "post": {
+        "description": "Triggered when a connection is created by the SMB.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.connected": {
+      "post": {
+        "description": "Triggered when a connection is successfully linked by the SMB.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.disconnected": {
+      "post": {
+        "description": "Triggered when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.reconnected": {
+      "post": {
+        "description": "Triggered when a connection is reconnected after becoming disconnected.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "connection.deleted": {
+      "post": {
+        "description": "Triggered when a connection is deleted.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "DataConnectionStatusChanged": {
       "post": {
-        "description": "Triggered when a data connection status of a specific company changes.",
+        "deprecated": true,
+        "description": "Triggered when a data connection status of a specific company changes.\n\nThis event type has been deprecated. Subscribe to the following event types instead:\n\n- `connection.created`\n- `connection.connected`\n- `connection.disconnected`\n- `connection.reconnected`\n- `connection.deleted`",
         "requestBody": {
           "content": {
             "application/json": {
@@ -77,9 +211,48 @@
         }
       }
     },
+    "read.completed": {
+      "post": {
+        "description": "Called when the fetch of data types for a product has completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "read.completed.initial": {
+      "post": {
+        "description": "Called when the initial fetch of data types for a product has been completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "DataSyncCompleted": {
       "post": {
-        "description": "Generated for each data type to indicate that data synchronization is successfully completed for that specific data type.",
+        "deprecated": true,
+        "description": "Generated for each data type to indicate that data synchronization is successfully completed for that specific data type.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to `Success` for all data types in the array.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -98,7 +271,8 @@
     },
     "DatasetDataChanged": {
       "post": {
-        "description": "Generated for each data type to indicate that dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records.",
+        "deprecated": true,
+        "description": "Generated for each data type to indicate that dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and verify that `payload.dataTypes[].status` is set to `Success` and `payload.dataTypes[].modifiedRecords` is `True` for any data type in the array.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -117,7 +291,8 @@
     },
     "DataSyncStatusChangedToError": {
       "post": {
-        "description": "Indicates that the synchronization of a dataset failed.",
+        "deprecated": true,
+        "description": "Indicates that the synchronization of a dataset failed.\n\nThis event type has been deprecated.\nTo replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to any of the following statuses for any data type in the array:\n\n- `FetchError`\n- `MapError`\n- `InternalError`\n- `ProcessingError`\n- `ValidationError`\n- `AuthError`\n- `RateLimitError`\n- `PermissionsError`\n- `PrerequisiteNotMet`",
         "requestBody": {
           "content": {
             "application/json": {
@@ -136,7 +311,8 @@
     },
     "PushOperationStatusChanged": {
       "post": {
-        "description": "Indicates that a create, update, or delete operation's status has changed.",
+        "deprecated": true,
+        "description": "Indicates that a create, update, or delete operation's status has changed.\n\nThis event type has been deprecated. Use either the `{dataType}.write.successful` or `{dataType}.write.unsuccessful` instead.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -155,7 +331,8 @@
     },
     "PushOperationTimedOut": {
       "post": {
-        "description": "Indicates that a create, update, or delete operation has timed out.",
+        "deprecated": true,
+        "description": "Indicates that a create, update, or delete operation has timed out.\n\nThis event type has been deprecated.\nTo replicate it, use the `{dataType}.write.unsuccessful` webhook and check if `payload.status` is set to `TimedOut`.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -210,9 +387,48 @@
         }
       }
     },
+    "expenses.sync.successful": {
+      "post": {
+        "description": "Triggered when an expense sync successfully completes without any errors or warnings.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpensesSyncWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "expenses.sync.unsuccessful": {
+      "post": {
+        "description": "Triggered when an expense sync fails to complete successfully, resulting in at least one error or warning.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExpensesSyncWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "SyncCompleted": {
       "post": {
-        "description": "Triggered anytime an expense sync completes. Used for Sync for Expenses only.",
+        "deprecated": true,
+        "description": "Triggered anytime an expense sync completes. Used for Sync for Expenses only.\n\n> This event type is deprecated. Use the `expenses.sync.successful` to get notified when an expense sync completes successfully.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -231,7 +447,8 @@
     },
     "SyncFailed": {
       "post": {
-        "description": "Indicates a failure occurred during an expense sync. Used for Sync for Expenses only.",
+        "deprecated": true,
+        "description": "Indicates a failure occurred during an expense sync. Used for Sync for Expenses only.\n\n> This event type is deprecated. Use the `expenses.sync.unsuccessful` to get notified when an expense sync completes unsuccessfully.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -286,28 +503,732 @@
         }
       }
     },
-    "read.completed": {
+    "bills.write.successful": {
       "post": {
-        "description": "Indicates that the fetch of data types for a product has completed.",
+        "description": "Indicates that a bill has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ReadCompletedWebhook"
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Return a 200 status to indicate that the webhook was recieved successfully."
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bills.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create, update, delete a bill, or upload an attachment to a bill in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bankTransactions.write.successful": {
+      "post": {
+        "description": "Indicates that bank transactions have been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bankTransactions.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create bank transactions in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "items.write.successful": {
+      "post": {
+        "description": "Indicates that an item has been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "items.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create an item in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "suppliers.write.successful": {
+      "post": {
+        "description": "Indicates that a supplier has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "suppliers.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a supplier in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "directCosts.write.successful": {
+      "post": {
+        "description": "Indicates that a direct cost has been successfully created or deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "directCosts.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or delete a direct cost, or upload an attachment to a direct cost in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "invoices.write.successful": {
+      "post": {
+        "description": "Indicates that an invoice has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "invoices.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create, update, delete an invoice, or upload an attachment to an invoice in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bankAccounts.write.successful": {
+      "post": {
+        "description": "Indicates that a bank account has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "bankAccounts.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a bank account in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "purchaseOrders.write.successful": {
+      "post": {
+        "description": "Indicates that a purchase order has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "purchaseOrders.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a purchase order in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "billPayments.write.successful": {
+      "post": {
+        "description": "Indicates that a bill payment has been successfully created or deleted in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "billPayments.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or delete a bill payment in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "directIncomes.write.successful": {
+      "post": {
+        "description": "Indicates that a direct income has been successfully created or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "directIncomes.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or upload an attachment to a direct income in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "journalEntries.write.successful": {
+      "post": {
+        "description": "Indicates that a journal entry has been successfully created or deleted in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "journalEntries.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or delete a journal entry in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "chartOfAccounts.write.successful": {
+      "post": {
+        "description": "Indicates that an account has been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "chartOfAccounts.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create an account in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "billCreditNotes.write.successful": {
+      "post": {
+        "description": "Indicates that a bill credit note has been successfully created, updated, or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "billCreditNotes.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create, update a bill credit note, or upload an attachment to a bill credit note in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "creditNotes.write.successful": {
+      "post": {
+        "description": "Indicates that a credit note has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "creditNotes.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a credit note in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "customers.write.successful": {
+      "post": {
+        "description": "Indicates that a customer has been successfully created or updated in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "customers.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create or update a customer in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "journals.write.successful": {
+      "post": {
+        "description": "Indicates that a journal has been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "journals.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create a journal in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "transfers.write.successful": {
+      "post": {
+        "description": "Indicates that a transfer has been successfully created or had an attachment uploaded in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "transfers.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create a transfer, or upload an attachment to a transfer in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "payments.write.successful": {
+      "post": {
+        "description": "Indicates that a payment has been successfully created in the accounting software.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "payments.write.unsuccessful": {
+      "post": {
+        "description": "Indicates that an attempt to create a payment in the accounting software has been unsuccessful.\n\nCodat now refers to push operations as write requests.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received."
+          }
+        }
+      }
+    },
+    "client.rateLimit.reached": {
+      "post": {
+        "description": "Called when your client’s request count to Codat's API surpasses the allocated quota.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "client.rateLimit.reset": {
+      "post": {
+        "description": "Called when your client's rate limit quota is reset, allowing additional requests to Codat's API.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
           }
         }
       }
     },
     "ClientRateLimitReached": {
       "post": {
-        "description": "Triggered when the number of requests to Codat's API from the client exceeds the current quota.",
+        "deprecated": true,
+        "description": "Called when your client’s requests to Codat's API exceed the allocated quota. \n\n**Note: This event type is deprecated. Developers should now use the `client.rateLimit.reached` event for handling rate limit notifications.**",
         "requestBody": {
           "content": {
             "application/json": {
@@ -326,12 +1247,32 @@
     },
     "ClientRateLimitReset": {
       "post": {
-        "description": "Triggered when the rate limit quota has reset for the client, and more requests to Codat's API are available.",
+        "deprecated": true,
+        "description": "Called when the rate limit quota has reset for the client, and more requests to Codat's API are available.\n\nNote: This event type is deprecated. Developers should now use the `client.rateLimit.reset` event for handling rate limit notifications.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ClientRateLimitResetWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "reports.categorizedBankStatement.generate.successful": {
+      "post": {
+        "description": "Called when a categorized bank statement is successfully generated for a company.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportGenerationWebhook"
               }
             }
           }
@@ -362,7 +1303,7 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
           },
           "DataConnectionId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+            "$ref": "#/components/schemas/Connection/properties/id"
           },
           "RuleId": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
@@ -448,7 +1389,7 @@
                 "description": "The number of available requests per day."
               },
               "ExpiresUtc": {
-                "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "The date time in UTC when your daily quota is reset."
               }
             }
@@ -539,6 +1480,452 @@
           }
         ]
       },
+      "ClientRateLimitWebhook": {
+        "title": "Client rate limit webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "client.rateLimit.reset",
+              "client.rateLimit.reached"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ClientRateLimitWebhook/definitions/clientRateLimitWebhookPayload"
+          }
+        },
+        "definitions": {
+          "clientRateLimitWebhookPayload": {
+            "title": "Client rate limit webhook payload",
+            "type": "object",
+            "properties": {
+              "dailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
+              },
+              "quotaRemaining": {
+                "type": "integer",
+                "description": "Total number of requests remaining for your client."
+              },
+              "expiryDate": {
+                "$ref": "#/components/schemas/Connection/properties/created",
+                "description": "The date time in UTC when your daily quota is reset."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "eventType": "client.rateLimit.reset",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "dailyQuota": 12000,
+              "quotaRemaining": 11993,
+              "expiryDate": "2024-09-01T23:59:99Z"
+            }
+          },
+          {
+            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "eventType": "client.rateLimit.reached",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "dailyQuota": 12000,
+              "quotaRemaining": 0,
+              "expiryDate": "2024-09-01T12:14:14Z"
+            }
+          }
+        ]
+      },
+      "Company": {
+        "title": "Company",
+        "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/DOCS_PATH#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "dataConnections": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          }
+        ],
+        "definitions": {
+          "companyDetails": {
+            "title": "Company details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the company",
+                "example": "Codat Ltd."
+              },
+              "description": {
+                "nullable": true,
+                "type": "string",
+                "example": "Requested early access to the new financing scheme.",
+                "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+              },
+              "redirect": {
+                "type": "string",
+                "format": "uri",
+                "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+                "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+              },
+              "lastSync": {
+                "$ref": "#/components/schemas/Connection/properties/created",
+                "nullable": true
+              },
+              "created": {
+                "$ref": "#/components/schemas/Connection/properties/created"
+              },
+              "createdByUserName": {
+                "type": "string",
+                "description": "Name of user that created the company in Codat.",
+                "nullable": true
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "An array of products that are currently enabled for the company."
+              },
+              "tags": {
+                "type": "object",
+                "maxProperties": 10,
+                "propertyNames": {
+                  "pattern": "^.{1,27}$"
+                },
+                "additional properties": {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "redirect"
+            ]
+          },
+          "companyReference": {
+            "title": "Company reference",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
+              },
+              "name": {
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/name"
+              },
+              "description": {
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/description"
+              },
+              "links": {
+                "type": "object",
+                "description": "A collection of links for the company.",
+                "properties": {
+                  "portal": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the company page in the portal."
+                  }
+                }
+              },
+              "tags": {
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+            "name": "string",
+            "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
+            "lastSync": "2022-01-01T12:00:00.000Z",
+            "created": "2022-01-01T12:00:00.000Z",
+            "createdByUserName": "string",
+            "tags": {
+              "region": "us",
+              "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
+            },
+            "dataConnections": [
+              {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.6464237Z",
+                "created": "2022-10-27T09:53:29Z",
+                "sourceType": "Banking"
+              }
+            ]
+          }
+        ]
+      },
+      "CompanyWebhook": {
+        "title": "Company webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event"
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "company.created",
+              "company.deleted"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
+          }
+        },
+        "examples": [
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "company.created",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "name": "Bank of Dave",
+              "description": "Requested a loan for refurb.",
+              "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "lastSync": "2022-01-01T12:00:00.000Z",
+              "created": "2022-01-01T12:00:00.000Z",
+              "tags": {
+                "customerRegion": "us",
+                "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "company.deleted",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "name": "Bank of Dave",
+              "description": "Requested a loan for refurb.",
+              "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
+              "lastSync": "2022-01-01T12:00:00.000Z",
+              "created": "2022-01-01T12:00:00.000Z",
+              "tags": {
+                "customerRegion": "uk",
+                "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
+              }
+            }
+          }
+        ]
+      },
+      "Connection": {
+        "title": "Connection",
+        "description": "﻿A connection represents a [company's](https://docs.codat.io/DOCS_PATH#/schemas/Company) connection to a data source and allows you to synchronize data (pull and/or push) with that source.\n\nA company can have multiple data connections depending on the type of data source it is connecting to. For example, a single company can link to:\n\n- [Accounting data](https://docs.codat.io/accounting-api/overview) - 1 active connection.\n- [Banking data](https://docs.codat.io/banking-api/overview) - Multiple active connections.\n- [Commerce data](https://docs.codat.io/commerce-api/overview) - Multiple active connections.\nAny combination of accounting, banking, and commerce data connections is allowed.\n\nBefore you can use a data connection to pull or push data, the company must grant you access to their business data by [linking the connection](https://docs.codat.io/auth-flow/overview).",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+            "description": "Unique identifier for a company's data connection."
+          },
+          "integrationId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "fd321cb6-7963-4506-b873-e99593a45e30",
+            "description": "A Codat ID representing the integration."
+          },
+          "integrationKey": {
+            "type": "string",
+            "description": "A unique four-character ID that identifies the platform of the company's data connection. This ensures continuity if the platform changes its name in the future."
+          },
+          "sourceId": {
+            "type": "string",
+            "format": "uuid",
+            "example": "35b92968-9851-4095-ad60-395c95cbcba4",
+            "description": "A source-specific ID used to distinguish between different sources originating from the same data connection. In general, a data connection is a single data source. However, for TrueLayer, `sourceId` is associated with a specific bank and has a many-to-one relationship with the `integrationId`."
+          },
+          "sourceType": {
+            "title": "Source Type",
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "BankFeed",
+              "Commerce",
+              "Expense",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          },
+          "platformName": {
+            "type": "string",
+            "description": "Name of integration connected to company."
+          },
+          "linkUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "The link URL your customers can use to authorize access to their business application.",
+            "example": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/2e2eb431-c1fa-4dc9-93fa-d29781c12bcd/start"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
+          },
+          "lastSync": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "nullable": true
+          },
+          "created": {
+            "title": "Date time",
+            "type": "string",
+            "examples": [
+              "2022-10-23T00:00:00.000Z",
+              "2022-10-23T00:00:00.000Z"
+            ],
+            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
+          },
+          "dataConnectionErrors": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
+            }
+          },
+          "connectionInfo": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "integrationId",
+          "integrationKey",
+          "sourceId",
+          "platformName",
+          "linkUrl",
+          "status",
+          "created",
+          "sourceType"
+        ],
+        "definitions": {
+          "dataConnectionStatus": {
+            "title": "Data connection status",
+            "description": "The current authorization status of the data connection.",
+            "type": "string",
+            "enum": [
+              "PendingAuth",
+              "Linked",
+              "Unlinked",
+              "Deauthorized"
+            ]
+          },
+          "dataConnectionError": {
+            "title": "Data connection error",
+            "type": "object",
+            "properties": {
+              "statusCode": {
+                "type": "string",
+                "description": "The HTTP status code returned by the source platform when the error occurred."
+              },
+              "statusText": {
+                "type": "string",
+                "description": "A non-numeric status code/text returned by the source platform when the error occurred."
+              },
+              "errorMessage": {
+                "type": "string",
+                "description": "A message about a error returned by Codat."
+              },
+              "erroredOnUtc": {
+                "$ref": "#/components/schemas/Connection/properties/created"
+              },
+              "status": {
+                "title": "Error status",
+                "description": "The current status of a transient error. Null statuses indicate that the error is not transient.",
+                "type": "string",
+                "nullable": true,
+                "enum": [
+                  "Active",
+                  "Resolved"
+                ]
+              },
+              "resolvedOnUtc": {
+                "description": "The datetime in Utc that the error was resolved.",
+                "nullable": true,
+                "$ref": "#/components/schemas/Connection/properties/created"
+              }
+            }
+          },
+          "dataConnectionSourceType": {
+            "title": "Source Type",
+            "description": "The type of platform of the connection.",
+            "type": "string",
+            "enum": [
+              "Accounting",
+              "Banking",
+              "BankFeed",
+              "Commerce",
+              "Expense",
+              "Other",
+              "Unknown"
+            ],
+            "example": "Accounting"
+          }
+        },
+        "example": {
+          "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+          "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+          "integrationKey": "dfxm",
+          "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+          "platformName": "Basiq",
+          "linkUrl": "https://link-api.codat.io/companies/86bd88cb-44ab-4dfb-b32f-87b19b14287f/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+          "status": "Linked",
+          "lastSync": "2022-10-27T10:22:43.6464237Z",
+          "created": "2022-10-27T09:53:29Z",
+          "sourceType": "Banking"
+        }
+      },
       "ConnectionStatusChangedWebhook": {
         "title": "Connection status changed webhook",
         "x-internal": true,
@@ -555,7 +1942,7 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
           },
           "DataConnectionId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+            "$ref": "#/components/schemas/Connection/properties/id"
           },
           "RuleId": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
@@ -579,22 +1966,15 @@
             "title": "Connection status changed webhook data",
             "properties": {
               "dataConnectionId": {
-                "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+                "$ref": "#/components/schemas/Connection/properties/id"
               },
               "newStatus": {
                 "description": "The new authorization status of the data connection.",
-                "title": "Data connection status",
-                "type": "string",
-                "enum": [
-                  "PendingAuth",
-                  "Linked",
-                  "Unlinked",
-                  "Deauthorized"
-                ]
+                "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
               },
               "oldStatus": {
                 "description": "The old authorization status of the data connection.",
-                "$ref": "#/components/schemas/ConnectionStatusChangedWebhook/definitions/ConnectionStatusChangedWebhookData/properties/newStatus"
+                "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
               },
               "platformKey": {
                 "type": "string",
@@ -626,6 +2006,247 @@
           }
         ]
       },
+      "ConnectionWebhook": {
+        "title": "Connection webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "connection.created",
+              "connection.connected",
+              "connection.disconnected",
+              "connection.reconnected",
+              "connection.deleted"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ConnectionWebhook/definitions/connectionWebhookPayload"
+          }
+        },
+        "definitions": {
+          "connectionWebhookPayload": {
+            "title": "Connection webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "connection": {
+                "$ref": "#/components/schemas/Connection"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.created",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "PendingAuth",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.connected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.disconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Unlinked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.disconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Deauthorized",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking",
+                "dataConnectionErrors": [
+                  {
+                    "statusCode": 401,
+                    "statusText": "The integration de-authorized access to the connection.",
+                    "errorMessage": "The integration de-authorized access to the connection.",
+                    "erroredOnUtc": "2022-12-27T09:53:29.000Z",
+                    "status": "Active"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.reconnected",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "type": "connection.deleted",
+            "generatedDate": "2024-08-08T17:10:34.015Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              },
+              "connection": {
+                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                "integrationKey": "dfxm",
+                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                "platformName": "Basiq",
+                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                "status": "Linked",
+                "lastSync": "2022-10-27T10:22:43.646Z",
+                "created": "2022-10-27T09:53:29.000Z",
+                "sourceType": "Banking"
+              }
+            }
+          }
+        ]
+      },
       "DatasetDataChangedWebhook": {
         "title": "Dataset data changed webhook",
         "x-internal": true,
@@ -642,7 +2263,7 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
           },
           "DataConnectionId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+            "$ref": "#/components/schemas/Connection/properties/id"
           },
           "RuleId": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
@@ -702,7 +2323,7 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
           },
           "DataConnectionId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+            "$ref": "#/components/schemas/Connection/properties/id"
           },
           "RuleId": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
@@ -774,10 +2395,7 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
           },
           "DataConnectionId": {
-            "type": "string",
-            "format": "uuid",
-            "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "description": "Unique identifier for a company's data connection."
+            "$ref": "#/components/schemas/Connection/properties/id"
           },
           "RuleId": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
@@ -827,6 +2445,277 @@
           }
         ]
       },
+      "DataTypeWriteWebhook": {
+        "title": "Write data type webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "bills.write.successful",
+              "bills.write.unsuccessful"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/dataTypeWriteWebhookPayload"
+          }
+        },
+        "definitions": {
+          "dataTypeWriteWebhookPayload": {
+            "title": "Payload",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier of the write request. This is also known as the push operation ID."
+              },
+              "type": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/writeType"
+              },
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "connectionId": {
+                "$ref": "#/components/schemas/Connection/properties/id"
+              },
+              "requestedOnDate": {
+                "$ref": "#/components/schemas/Connection/properties/created",
+                "description": "The date time in UTC the write request was submitted."
+              },
+              "completedOnDate": {
+                "$ref": "#/components/schemas/Connection/properties/created",
+                "description": "The date time in UTC the write request completed."
+              },
+              "status": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/writeStatus"
+              },
+              "record": {
+                "$ref": "#/components/schemas/DataTypeWriteWebhook/definitions/dataTypeWriteWebhookRecord",
+                "nullable": true
+              },
+              "attachmentId": {
+                "type": "string",
+                "nullable": true,
+                "description": "Unique identifier for the uploaded attachment, null if no attachment uploaded."
+              }
+            }
+          },
+          "dataTypeWriteWebhookRecord": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The unique identifier of the data type created, updated, deleted, or had an attachment uploaded in the accounting platform."
+              }
+            }
+          },
+          "writeType": {
+            "title": "Write type",
+            "description": "Type of write request.",
+            "type": "string",
+            "enum": [
+              "Create",
+              "Update",
+              "Delete",
+              "UploadAttachment"
+            ]
+          },
+          "writeStatus": {
+            "title": "Write request status",
+            "type": "string",
+            "enum": [
+              "Pending",
+              "Failed",
+              "Success",
+              "TimedOut"
+            ],
+            "description": "The current status of the write request, which is the same as the push operation status."
+          }
+        },
+        "examples": [
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Create",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Success",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              }
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "UploadAttachment",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Success",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              },
+              "attachmentId": "att_1AZtxr2eZvKYlo2CJDX8whov"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Update",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "Failed"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "Delete",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "TimedOut"
+            }
+          },
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "bills.write.unsuccessful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+              "type": "UploadAttachment",
+              "referenceCompany": {
+                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                "name": "Toft stores",
+                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+              },
+              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+              "requestedOnDate": "2023-05-03T10:00:00.000Z",
+              "completedOnDate": "2023-05-03T10:00:23.000Z",
+              "status": "TimedOut",
+              "record": {
+                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+              }
+            }
+          }
+        ]
+      },
+      "ExpensesSyncWebhook": {
+        "title": "Expenses sync webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "expenses.sync.successful",
+              "expenses.sync.unsuccessful"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ExpensesSyncWebhook/definitions/expensesSyncWebhookPayload"
+          }
+        },
+        "definitions": {
+          "expensesSyncWebhookPayload": {
+            "title": "Expenses sync webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "syncId": {
+                "type": "string",
+                "description": "Unique identifier of the sync."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "eventType": "expenses.sync.successful",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo"
+              },
+              "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
+            }
+          },
+          {
+            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "eventType": "expenses.sync.unsuccessful",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo"
+              },
+              "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
+            }
+          }
+        ]
+      },
       "NewCompanySynchronizedWebhook": {
         "title": "New company synchronized webhook",
         "x-internal": true,
@@ -843,7 +2732,7 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
           },
           "DataConnectionId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+            "$ref": "#/components/schemas/Connection/properties/id"
           },
           "RuleId": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
@@ -856,36 +2745,6 @@
           },
           "Message": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/NewCompanySynchronizedWebhook/definitions/NewCompanySynchronizedWebhookData"
-          }
-        },
-        "definitions": {
-          "NewCompanySynchronizedWebhookData": {
-            "type": "object",
-            "title": "New company synchronized webhook data",
-            "companyName": {
-              "nullable": true,
-              "type": "string",
-              "description": "Name of company whose connection has changed."
-            },
-            "sourceType": {
-              "nullable": true,
-              "title": "Source Type",
-              "description": "The type of platform of the connection.",
-              "type": "string",
-              "enum": [
-                "Accounting",
-                "Banking",
-                "BankFeed",
-                "Commerce",
-                "Expense",
-                "Other",
-                "Unknown"
-              ],
-              "example": "Accounting"
-            }
           }
         },
         "examples": [
@@ -897,11 +2756,7 @@
             "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
             "RuleType": "New company synchronised",
             "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
-            "Data": {
-              "companyName": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-              "sourceType": "Accounting"
-            }
+            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time"
           }
         ]
       },
@@ -921,7 +2776,7 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
           },
           "DataConnectionId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+            "$ref": "#/components/schemas/Connection/properties/id"
           },
           "RuleId": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
@@ -1049,7 +2904,7 @@
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
           },
           "DataConnectionId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+            "$ref": "#/components/schemas/Connection/properties/id"
           },
           "RuleId": {
             "$ref": "#/components/schemas/SyncFailedWebhook/properties/RuleId"
@@ -1119,13 +2974,8 @@
             "description": "The type of event."
           },
           "generatedDate": {
-            "description": "The date time in UTC the event was generated in Codat.",
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ]
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
           },
           "payload": {
             "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/readCompletedWebhookPayload"
@@ -1137,32 +2987,18 @@
             "type": "object",
             "properties": {
               "referenceCompany": {
-                "title": "Company reference",
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
-                  },
-                  "name": {
-                    "type": "string",
-                    "description": "The name of the company",
-                    "example": "Codat Ltd."
-                  },
-                  "description": {
-                    "type": "string",
-                    "example": "Requested early access to the new financing scheme.",
-                    "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-                  }
-                }
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
               },
               "product": {
                 "type": "string",
                 "example": "lending",
-                "description": "Name of the product that requested the data types to be fetched."
+                "description": "Name of the product that requested the data types to be fetched.",
+                "nullable": true
               },
               "modifiedFromDate": {
-                "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
-                "description": "The date time in UTC when the data types were last fetched and input into Codat's cache."
+                "$ref": "#/components/schemas/Connection/properties/created",
+                "description": "The date time in UTC when the data types were last fetched and input into Codat's cache.",
+                "nullable": true
               },
               "dataTypes": {
                 "type": "array",
@@ -1170,7 +3006,7 @@
                   "type": "object",
                   "properties": {
                     "connectionId": {
-                      "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+                      "$ref": "#/components/schemas/Connection/properties/id"
                     },
                     "dataType": {
                       "$ref": "#/components/schemas/PushOperationStatusChangedWebhook/definitions/PushOperationStatusChangedWebhookData/properties/dataType"
@@ -1207,15 +3043,6 @@
                         "PermissionsError",
                         "PrerequisiteNotMet"
                       ]
-                    },
-                    "statusDescription": {
-                      "type": "string",
-                      "description": "A description of the current status of the dataset."
-                    },
-                    "errorMessage": {
-                      "type": "string",
-                      "example": "Authorization failed.",
-                      "description": "A message describing the error the dataset had if it has failed."
                     }
                   }
                 }
@@ -1223,6 +3050,71 @@
             }
           }
         }
+      },
+      "ReportGenerationWebhook": {
+        "title": "Report generation webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "reports.categorizedBankStatement.generate.successful"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ReportGenerationWebhook/definitions/ReportGenerationPayload"
+          }
+        },
+        "definitions": {
+          "ReportGenerationPayload": {
+            "title": "Report generation payload",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "example": "a78e2625-7190-4d94-ae3b-071320451026",
+                "description": "Unique identifier of the report."
+              },
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+            "eventType": "reports.categorizedBankStatement.generate.successful",
+            "generatedDate": "2023-05-03T10:00:23.000Z",
+            "payload": {
+              "id": "bb42ce7e-720a-4ac5-b640-f24f53ff47c8",
+              "referenceCompany": {
+                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "name": "Bank of Dave",
+                "description": "internal_id_mxO7rLfo",
+                "links": {
+                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                },
+                "tags": {
+                  "customerRegion": "us",
+                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                }
+              }
+            }
+          }
+        ]
       },
       "SourceAccountWebhook": {
         "title": "Source account status changed webhook",
@@ -1232,7 +3124,7 @@
             "type": "string",
             "format": "uuid",
             "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "description": "Unique identifier of the event"
+            "description": "Unique identifier of the event."
           },
           "eventType": {
             "type": "string",
@@ -1243,7 +3135,7 @@
             ]
           },
           "generatedDate": {
-            "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "The date time in UTC the event was generated in Codat."
           },
           "payload": {
@@ -1255,11 +3147,15 @@
             "title": "Payload",
             "type": "object",
             "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
               "companyId": {
-                "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId"
+                "$ref": "#/components/schemas/SyncFailedWebhook/properties/CompanyId",
+                "deprecated": true
               },
               "connectionId": {
-                "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/DataConnectionId"
+                "$ref": "#/components/schemas/Connection/properties/id"
               },
               "sourceAccount": {
                 "title": "Source account (v1)",
@@ -1310,7 +3206,7 @@
                     "description": "The latest balance for the bank account."
                   },
                   "modifiedDate": {
-                    "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
+                    "$ref": "#/components/schemas/Connection/properties/created",
                     "nullable": true,
                     "description": "The last date the bank account was modified."
                   },
@@ -1327,7 +3223,7 @@
                     ]
                   },
                   "feedStartDate": {
-                    "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate",
+                    "$ref": "#/components/schemas/Connection/properties/created",
                     "nullable": true
                   }
                 },

@@ -33,9 +33,9 @@ Are you looking to fetch additional _data types_ using endpoints that are not in
 ## Supported integrations
 
 We are rapidly expanding coverage across integrations and data types according to client demand. We currently cover the following integrations and data types:
- 
-<iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vToBP6lQMT_MrB8L5e_61w2LrmpoJPAVhxCVqCuoSpWgb6ga2hUXZHlLSdCr9jY_He1b-uYaDAnH6DV/pubhtml?widget=true&amp;headers=false"
+
+<iframe 
+  src="https://docs.google.com/spreadsheets/d/1ZkGe3zkWVC-8DWv3UtJOiiI42d2wAFzTFQZKDhkQeGY/pubhtml?widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "400px" }}
@@ -97,7 +97,7 @@ GET /integrations​/{platformKey}/datatypes/{datatype}/supplementalDataConfig
 Review the table below for platform schemas we use in our data types, which are available for you to fetch or create supplemental data. Refer to to the platform's individual documentation (for example, [Xero](https://developer.xero.com/documentation/api/accounting/overview) or [QBO](https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used/account)) for further details of their schemas and property coverage.
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQIOf4fqpv6L2Phe3iz5nLMPDdBVaAuI3La5dTMTn58TZq_6395WtUsUq7s7jAbeq2vwuseiCzu5DZG/pubhtml?widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1-d80bkqHOskCF8MJdF331SGX08YV5MKPjlmVul5wcMs/pubhtml?widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "400px" }}

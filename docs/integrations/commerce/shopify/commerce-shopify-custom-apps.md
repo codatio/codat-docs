@@ -80,8 +80,8 @@ To configure the Shopify integration for use with the _custom apps_ approach:
 
 4. Leave the **Has request to read all orders** toggle switched off.
 
-   :::note Orders pulled by default 
-   All orders are available to pull from Shopify by default when using the custom apps connection method.
+   :::note Orders read by default 
+   All orders are available to read from Shopify by default when using the custom apps connection method.
    :::
 
 5. Click **Save**.
@@ -94,7 +94,7 @@ If the integration was enabled successfully, the **Shopify Custom App enabled** 
 
 ## Check the commerce sync settings
 
-All commerce data types must be enabled before you can pull commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.
+All commerce data types must be enabled before you can read commerce transactions from Shopify to Codat. Follow the steps in [Commerce sync settings](/integrations/commerce/commerce-sync-settings); you only need to do this once.
 
 ## Next steps
 

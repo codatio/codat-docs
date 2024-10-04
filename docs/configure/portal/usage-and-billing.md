@@ -14,7 +14,7 @@ Use the dashboard on the Portal's [home page](https://app.codat.io/) for a real-
 
 :::tip Active company
 
-Active companies represent your customer connections where you have successfully pulled or pushed data within a specific billing period.
+Active companies represent your customer connections where you have successfully read or written data within a specific billing period.
 :::
 
 ## Start-up plan

@@ -123,7 +123,15 @@ Here's how your SMB users interact with the QBD connector.
 
 When installed, the QBD connector doesn’t require any further interaction by the SMB user, and administrator privileges are no longer required.
 
-The connector has a UI that is accessible from the system tray and the Start menu. Your SMB users do not usually need to interact with this, but there is functionality available for advanced users, such as adding connections to multiple companies, pausing syncs, and manually starting syncs.
+The connector has a UI that is accessible from the system tray and the Start menu. Your SMB users do not usually need to interact with this, but there is functionality available for advanced users, such as adding connections to multiple companies and adjusting auto-run timings.
+
+:::info QuickBooks Desktop limitation
+
+Your SMB user isn't able to interact with QBD while the software is syncing data through the connector. This is due to QBD's own limitations and applies to all connectors and syncs.
+
+:::
+
+Your user may need to pause a data sync so that they can interact with QuickBooks Desktop. To support this, implement our [Connections SDK](/auth-flow/optimize/connection-management) that provides this functionality out of the box. See [Pause the connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#pause-the-connector).
 
 ## System requirements
 

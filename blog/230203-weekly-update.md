@@ -21,8 +21,8 @@ Sync for Expenses is an API and a set of supporting tools. It has been built to 
 
 ### Accounting API
 
-- **New:** Support for pushing Direct Costs to FreeAgent
-- **New:** Push payment/billPayment on Xero with a line link type paymentOnAccount
+- **New:** Support for writing Direct Costs to FreeAgent
+- **New:** Write payment/billPayment on Xero with a line link type paymentOnAccount
 - **New:** Migrate FreeAgent tokens via PUT `/companies/{companyId}/connections/{connectionId}/authorization`
 
 ### Portal

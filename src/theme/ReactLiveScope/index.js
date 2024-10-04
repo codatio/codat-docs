@@ -4,18 +4,25 @@ import {
   ConnectionCallbackArgs,
   ErrorCallbackArgs,
 } from "@codat/sdk-link-types"
-import { CodatLink } from "@components/CodatLink";
+import { CodatLink as Wrapper } from "@components/CodatLink";
 
 import styles from "./styles.module.scss";
 
-export const AuthFlow = (props) => {
+export const CodatLink = (props) => {
+  const {
+    onConnection,
+    onClose,
+    onError,
+    onFinish,
+  } = props
+
   const [modalOpen, setModalOpen] = useState(false);
 
-  const onConnection = (connection) => 
+  const defaultOnConnection = (connection) => 
     alert(`On connection callback - ${connection.connectionId}`);
-  const onClose = () => setModalOpen(false);
-  const onFinish = () => alert("On finish callback");
-  const onError = (error) => 
+  const defaultOnClose = () => setModalOpen(false);
+  const defaultOnFinish = () => alert("On finish callback");
+  const defaultOnError = (error) => 
     alert(`On error callback - ${error.message}`);
 
   return (
@@ -26,12 +33,12 @@ export const AuthFlow = (props) => {
     
       {modalOpen && (
         <div className={styles.modal} onClick={onClose}>
-          <CodatLink
+          <Wrapper
             {...props}
-            onConnection={onConnection}
-            onError={onError}
-            onClose={onClose}
-            onFinish={onFinish}
+            onConnection={onConnection || defaultOnConnection}
+            onError={onError || defaultOnError}
+            onClose={onClose || defaultOnClose}
+            onFinish={onFinish || defaultOnFinish}
           />
         </div>
       )}
@@ -43,7 +50,7 @@ export const AuthFlow = (props) => {
 const ReactLiveScope = {
   React,
   ...React,
-  AuthFlow,
+  CodatLink,
 };
 
 export default ReactLiveScope;

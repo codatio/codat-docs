@@ -18,8 +18,8 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 | [Data sync completed](/using-the-api/webhooks/legacy/core-rules-types#data-sync-completed)                     |`Data sync completed`| Data synchronization is successfully completed in full for a specific data type. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
 | [Dataset data changed](/using-the-api/webhooks/legacy/core-rules-types#dataset-data-changed)                    |`Dataset data changed`|  A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
 | [Dataset status has changed to an error state](/using-the-api/webhooks/legacy/core-rules-types#dataset-status-has-changed-to-an-error-state) |`Data Sync Status Changed To Error`| The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
-| [Push operation status has changed](/using-the-api/webhooks/legacy/core-rules-types#push-operation-status-has-changed)       |`Push Operation Status Changed()`|  A push operation's status changes. | `dataType`, `status`, `pushOperationKey` |
-| [Push operation has timed out](/using-the-api/webhooks/legacy/core-rules-types#push-operation-has-timed-out)            |`Push Operation Timed Out`| A push operation times out. |  `dataType`, `pushOperationGuid` |
+| [Push operation status has changed](/using-the-api/webhooks/legacy/core-rules-types#push-operation-status-has-changed)       |`Push Operation Status Changed()`|  A write operation's status changes. | `dataType`, `status`, `pushOperationKey` |
+| [Push operation has timed out](/using-the-api/webhooks/legacy/core-rules-types#push-operation-has-timed-out)            |`Push Operation Timed Out`| A write operation times out. |  `dataType`, `pushOperationGuid` |
 | [Account categories updated](/using-the-api/webhooks/legacy/core-rules-types#account-categories-updated)              |`Account Categories Updated`| Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
 | [Sync Connection Deleted](/using-the-api/webhooks/legacy/core-rules-types#sync-connection-deleted)                 |`Sync Connection Deleted`| A Sync for Commerce connection is deleted. <br/> **Note:** Sync for Commerce only. |  |
 | [Expenses sync completed](/using-the-api/webhooks/legacy/core-rules-types#expenses-sync-completed)                 |`Sync Completed`| An expense sync has completed. <br/> **Note:** Sync for Expenses only. |`syncId`, `syncType`|
@@ -158,7 +158,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 ### Push operation status has changed
 
 **Type**: `Push Operation Status Changed()`   
-**Trigger:** A push operation's status changes.  
+**Trigger:** A write operation's status changes.  
 **Additional data:** `dataType`, `status`, `pushOperationKey`.
 
 ```json
@@ -182,7 +182,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 ### Push operation has timed out
 
 **Type**: `Push Operation Timed Out`  
-**Trigger:** A push operation times out.  
+**Trigger:** A write operation times out.  
 **Additional data:** `dataType`, `pushOperationGuid`.
 
 ```json

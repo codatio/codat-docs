@@ -48,22 +48,22 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 
 8. They select a start date for the bank feed.
 
-   :::caution Limitation on pushing historic transactions
+   :::caution Limitation on writing historic transactions
    
-   If the SMB user selects a bank feed start date older than seven days, it will be ignored. The integration only supports pushing historic transactions up to seven days old.
+   If the SMB user selects a bank feed start date older than seven days, it will be ignored. The integration only supports writing historic transactions up to seven days old.
 
    :::
 
 9. Finally, they click **Connect**.
 
-Your SMB user has now successfully connected their chosen bank accounts to QBO. The status of the data connection changes to `Linked`; you can now [push bank transactions to QBO](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) for the SMB user.
+Your SMB user has now successfully connected their chosen bank accounts to QBO. The status of the data connection changes to `Linked`; you can now [write bank transactions to QBO](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions) for the SMB user.
 
 ### Revoke credentials
 
-The **Revoke credentials** button allows the SMB user to revoke their previously generated credentials. This option invalidates all their existing credentials; you can no longer push bank transactions to QBO from any bank accounts that used those credentials.
+The **Revoke credentials** button allows the SMB user to revoke their previously generated credentials. This option invalidates all their existing credentials; you can no longer write bank transactions to QBO from any bank accounts that used those credentials.
 
 ---
 
 ## Read next
 
-[Push bank transactions from Codat to QBO](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions).
+[Write bank transactions from Codat to QBO](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions).

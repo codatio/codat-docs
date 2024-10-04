@@ -198,11 +198,11 @@ sequenceDiagram
     user ->> backend: Pay bill & submit bill payment
 
     backend ->> codat: Create bill payment
-    codat -->> backend: Push operation
-    Note over codat,backend: Poll the push operation endpoint
+    codat -->> backend: Write operation
+    Note over codat,backend: Poll the write operation endpoint
     loop status != success
-        backend ->> codat: Get push operation
-        codat ->> backend: Push operation status
+        backend ->> codat: Get write operation
+        codat ->> backend: Write operation status
     end
     backend ->> backend: Update bill status
     backend ->> user: Bill shown as paid

@@ -86,7 +86,7 @@ Finally, we are ready to return a decision array to the applicant. It shows them
 
 📈 If you want to understand the growth potential of the invoice financing services, you can read through [Credit Connect's blog](https://www.credit-connect.co.uk/news/demand-for-invoice-finance-predicted-to-grow/).
 
-💸 Read through our [Ampla case study](https://www.codat.io/case-study/ampla/) to see how Codat supports digital lenders in providing quicker, smarter credit decisions and offering more tailored lending services.
+💸 Read through our [Wayflyer case study](https://www.codat.io/case-studies/wayflyer/) to see how Codat supports digital lenders in providing quicker, smarter credit decisions and offering more tailored lending services.
 
 ### Recap
 

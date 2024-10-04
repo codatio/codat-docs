@@ -112,7 +112,7 @@ The demo app now has all the components that it needs to produce a loan qualific
 Try these suggestions to make the most of your experience with the demo app:
 
 - **View Lending API in the Portal**  
-  Navigate to **Products > Lending** in the [Portal](https://app.codat.io/) to view a visual representation of the financial data pulled by our endpoints, including `balanceSheet` and `profitAndLoss`.
+  Navigate to **Products > Lending** in the [Portal](https://app.codat.io/) to view a visual representation of the financial data read by our endpoints, including `balanceSheet` and `profitAndLoss`.
   
 - **Play around with thresholds**  
   In the `appsettings.json` file in the `Codat.Demos.Underwriting.Api\` directory, set your own example thresholds for data points used by the app's loan qualification service and see how this affects the application decision.

@@ -12,14 +12,14 @@ File extensions are not indicated when syncing Bill attachments with Exact.
 
 ## Items
 
-When pulling Items from Exact Online, the `type` field indicates whether the source business object is a stock-controlled item.
+When reading Items from Exact Online, the `type` field indicates whether the source business object is a stock-controlled item.
 
 - Stock-controlled items have a `type` of `Inventory`.
 - Non stock-controlled items have an `type` of `Unknown`.
 
 ## Journals
 
-You can pull the following types of journals from Exact Online:
+You can read the following types of journals from Exact Online:
 
 - General
 - Cash
@@ -30,8 +30,8 @@ You can pull the following types of journals from Exact Online:
 
 ## Journal entries
 
-The `postedOn` field is not populated when pulling journal entries from Exact Online. This information is not available from the Exact API.
+The `postedOn` field is not populated when reading journal entries from Exact Online. This information is not available from the Exact API.
 
 ## Transfers (Exact UK)
 
-Pushing Transfers is only supported for transfers between a bank account and a nominal account of type Balance Sheet.
+Writing Transfers is only supported for transfers between a bank account and a nominal account of type Balance Sheet.

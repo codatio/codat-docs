@@ -11,7 +11,7 @@ import TabItem from "@theme/TabItem";
 
 #### Functionality
 
-- Pull  
+- Read  
 - One time or ongoing Sync  
 - API  
 - Lending write-back
@@ -36,7 +36,7 @@ import TabItem from "@theme/TabItem";
 
 #### Functionality
 
-- Pull & Push ongoing Sync API
+- Read & Write ongoing Sync API
 
 #### Data sources
 
@@ -55,7 +55,7 @@ import TabItem from "@theme/TabItem";
 
 #### Functionality
 
-- Pull
+- Read
 - Ongoing Sync
 - API
 
@@ -73,7 +73,7 @@ import TabItem from "@theme/TabItem";
 
 #### Functionality
 
-- Pull
+- Read
 - Ongoing Sync
 - API
 
@@ -91,7 +91,7 @@ import TabItem from "@theme/TabItem";
 
 #### Functionality
 
-- Pull
+- Read
 - Ongoing Sync
 - API
 

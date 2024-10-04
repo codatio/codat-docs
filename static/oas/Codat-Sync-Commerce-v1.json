@@ -1186,7 +1186,7 @@
     "/companies/{companyId}": {
       "put": {
         "summary": "Update company",
-        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/sync-for-commerce-v1-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -1322,23 +1322,6 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar"
-                    }
-                  },
-                  "With groups": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18Z",
-                      "createdByUserName": "Dan Tzabar",
-                      "groups": [
-                        {
-                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
-                        }
-                      ]
                     }
                   }
                 }
@@ -13962,7 +13945,7 @@
             }
           },
           "ledgerLockDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "description": "If set in the accounting software, the date (in the ISO 8601 date/time format) after which accounting transactions cannot be edited. Commonly used when books are closed at year-end."
           },
           "registrationNumber": {
@@ -13976,7 +13959,7 @@
             "description": "Company tax number."
           },
           "financialYearStartDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "description": "Start date of the financial year for the company."
           },
           "baseCurrency": {
@@ -13994,7 +13977,7 @@
             "description": "URL addresses for the accounting source.\n\nFor example, for Xero integrations two URLs are returned. These have many potential use cases, such as [deep linking](https://developer.xero.com/documentation/api-guides/deep-link-xero)."
           },
           "createdDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "description": "Date the linked company was created in the accounting software."
           },
           "supplementalData": {
@@ -14292,11 +14275,11 @@
                 "description": "Current state of the credit note."
               },
               "issueDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date of the credit note as recorded in the accounting system."
               },
               "allocatedOnDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date on which the credit note was fully allocated."
               },
               "currency": {
@@ -14712,7 +14695,7 @@
                 "$ref": "#/components/schemas/AccountingCustomer/definitions/customerStatus"
               },
               "modifiedDate": {
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Dataset/properties/requested"
               }
             },
             "required": [
@@ -14748,7 +14731,7 @@
                 "description": "A customer or supplier associated with the direct income."
               },
               "issueDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "The date of the direct income as recorded in the accounting software."
               },
               "currency": {
@@ -14977,15 +14960,15 @@
                 }
               },
               "issueDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date of the invoice as recorded in the accounting system."
               },
               "dueDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date the customer is due to be paid by."
               },
               "paidOnDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date the invoice was marked as paid in the accounting system. If this field is not available from the accounting software, it is calculated by Codat using associated payments."
               },
               "currency": {
@@ -15025,7 +15008,7 @@
                           "$ref": "#/components/schemas/AccountingPayment/definitions/paymentLineLink/properties/currencyRate"
                         },
                         "allocatedOnDate": {
-                          "$ref": "#/components/schemas/Company/properties/created",
+                          "$ref": "#/components/schemas/Dataset/properties/requested",
                           "description": "The date the payment was allocated."
                         },
                         "totalAmount": {
@@ -15070,7 +15053,7 @@
                           "$ref": "#/components/schemas/AccountingPayment/definitions/paymentLineLink/properties/currencyRate"
                         },
                         "paidOnDate": {
-                          "$ref": "#/components/schemas/Company/properties/created",
+                          "$ref": "#/components/schemas/Dataset/properties/requested",
                           "description": "The date the payment was paid."
                         },
                         "totalAmount": {
@@ -15290,15 +15273,15 @@
                 "description": "Optional description of the journal entry."
               },
               "postedOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date on which the journal entry was posted to the accounting software, and had an impact on the general ledger. This may be different from the creation date.\n\nFor example, a user creates a journal entry on Monday and saves it as draft, which has no impact on the general ledger. On Thursday, they return to the entry and post it.\n\nThe **createdOn** date shows as Monday.\nThe **postedOn** date shows as Thursday.\nJournal entries can also be backdated, so the **postedOn** date may be earlier than the **createdOn** date."
               },
               "createdOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date on which the journal was created in the accounting software."
               },
               "updatedOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date on which the journal was last updated in the accounting software."
               },
               "journalRef": {
@@ -15501,7 +15484,7 @@
                 "$ref": "#/components/schemas/AccountingPayment/definitions/paymentLineLink/properties/currencyRate"
               },
               "date": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date the payment was recorded in the accounting software."
               },
               "note": {
@@ -15555,7 +15538,7 @@
                 }
               },
               "allocatedOnDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "The date the payment was allocated."
               }
             },
@@ -16234,7 +16217,7 @@
                 ]
               },
               "closedDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Date on which order was closed after the product was shipped, paid for, and any refund period had elapsed."
               },
               "totalAmount": {
@@ -16297,7 +16280,7 @@
             "x-internal": true,
             "properties": {
               "createdDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "The date the entity was created."
               }
             }
@@ -16314,7 +16297,7 @@
                   "modifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/Company/properties/created"
+                        "$ref": "#/components/schemas/Dataset/properties/requested"
                       },
                       {
                         "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -16332,7 +16315,7 @@
                   "sourceModifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/Company/properties/created"
+                        "$ref": "#/components/schemas/Dataset/properties/requested"
                       },
                       {
                         "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -16679,7 +16662,7 @@
               },
               "dueDate": {
                 "description": "Date by which payment must be made",
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Dataset/properties/requested"
               },
               "supplementalData": {
                 "$ref": "#/components/schemas/SupplementalData"
@@ -16769,7 +16752,7 @@
                   },
                   "dueDate": {
                     "description": "Date by which payment must be made",
-                    "$ref": "#/components/schemas/Company/properties/created"
+                    "$ref": "#/components/schemas/Dataset/properties/requested"
                   }
                 }
               },
@@ -17194,7 +17177,7 @@
                     },
                     "properties": {
                       "sourceCreatedDate": {
-                        "$ref": "#/components/schemas/Company/properties/created",
+                        "$ref": "#/components/schemas/Dataset/properties/requested",
                         "description": "The date on which this record was created in the originating system"
                       }
                     }
@@ -17325,92 +17308,82 @@
         "title": "Company",
         "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/parameters/companyId/schema"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the company",
-            "example": "Codat Ltd."
-          },
-          "description": {
-            "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-          },
-          "platform": {
-            "type": "string",
-            "deprecated": true,
-            "example": "Xero",
-            "description": "`platformKeys` name used when creating the company."
-          },
-          "redirect": {
-            "type": "string",
-            "format": "uri",
-            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
-            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
-          },
-          "created": {
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ],
-            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-          },
-          "createdByUserName": {
-            "type": "string",
-            "description": "Name of user that created the company in Codat."
-          },
-          "dataConnections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Connection"
-            }
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "title": "Group reference",
-              "type": "object",
-              "properties": {
-                "id": {
-                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
-                }
-              }
-            },
-            "description": "An array of groups the company has been assigned to."
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "redirect"
-        ],
-        "definitions": {
-          "companyGroupAssignment": {
-            "title": "Group assignment",
+          {
             "type": "object",
             "properties": {
-              "groupId": {
-                "allOf": [
-                  {
-                    "type": "string",
-                    "format": "uuid",
-                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
-                    "description": "Unique identifier for the group."
-                  },
-                  {
-                    "description": "Unique identifier of the group you want to assign the company to."
-                  }
-                ]
+              "dataConnections": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
               }
             }
+          }
+        ],
+        "definitions": {
+          "companyDetails": {
+            "title": "Company details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the company",
+                "example": "Codat Ltd."
+              },
+              "description": {
+                "$ref": "#/components/schemas/CreateCompany/properties/description",
+                "nullable": true
+              },
+              "redirect": {
+                "type": "string",
+                "format": "uri",
+                "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+                "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+              },
+              "lastSync": {
+                "$ref": "#/components/schemas/Dataset/properties/requested",
+                "nullable": true
+              },
+              "created": {
+                "$ref": "#/components/schemas/Dataset/properties/requested"
+              },
+              "createdByUserName": {
+                "type": "string",
+                "description": "Name of user that created the company in Codat.",
+                "nullable": true
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "An array of products that are currently enabled for the company."
+              },
+              "tags": {
+                "type": "object",
+                "maxProperties": 10,
+                "propertyNames": {
+                  "pattern": "^.{1,27}$"
+                },
+                "additional properties": {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "redirect"
+            ]
           },
           "companyReference": {
             "title": "Company reference",
@@ -17420,10 +17393,24 @@
                 "$ref": "#/components/parameters/companyId/schema"
               },
               "name": {
-                "$ref": "#/components/schemas/Company/properties/name"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/name"
               },
               "description": {
-                "$ref": "#/components/schemas/Company/properties/description"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/description"
+              },
+              "links": {
+                "type": "object",
+                "description": "A collection of links for the company.",
+                "properties": {
+                  "portal": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the company page in the portal."
+                  }
+                }
+              },
+              "tags": {
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
               }
             }
           }
@@ -17432,11 +17419,14 @@
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
             "name": "string",
-            "platform": "string",
             "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
             "lastSync": "2022-01-01T12:00:00.000Z",
             "created": "2022-01-01T12:00:00.000Z",
             "createdByUserName": "string",
+            "tags": {
+              "region": "us",
+              "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
+            },
             "dataConnections": [
               {
                 "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
@@ -17449,11 +17439,6 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
-              }
-            ],
-            "groups": [
-              {
-                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -17555,25 +17540,28 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Dataset/properties/requested",
+            "nullable": true
           },
           "created": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Dataset/properties/requested"
           },
           "dataConnectionErrors": {
             "type": "array",
+            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
             }
           },
           "connectionInfo": {
             "type": "object",
+            "nullable": true,
             "additionalProperties": {
               "type": "string"
             }
-          },
-          "additionalProperties": false
+          }
         },
+        "additionalProperties": false,
         "required": [
           "id",
           "integrationId",
@@ -17614,7 +17602,7 @@
                 "description": "A message about a error returned by Codat."
               },
               "erroredOnUtc": {
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Dataset/properties/requested"
               },
               "status": {
                 "title": "Error status",
@@ -17629,7 +17617,7 @@
               "resolvedOnUtc": {
                 "description": "The datetime in Utc that the error was resolved.",
                 "nullable": true,
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Dataset/properties/requested"
               }
             }
           },
@@ -17695,14 +17683,12 @@
             "example": "Bank of Dave"
           },
           "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
           },
-          "groups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Company/properties/groups/items"
-            },
-            "description": "Reference to the groups that the company is assigned to."
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
           }
         },
         "required": [
@@ -17823,10 +17809,16 @@
             "description": "A brief message about the error."
           },
           "requested": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "title": "Date time",
+            "type": "string",
+            "examples": [
+              "2022-10-23T00:00:00.000Z",
+              "2022-10-23T00:00:00.000Z"
+            ],
+            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
           },
           "completed": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "nullable": true
           },
           "progress": {
@@ -17894,7 +17886,7 @@
             "$ref": "#/components/schemas/Dataset/properties/dataType"
           },
           "lastSuccessfulSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Dataset/properties/requested"
           },
           "currentStatus": {
             "$ref": "#/components/schemas/Dataset/definitions/datasetStatus"
@@ -17940,11 +17932,11 @@
         "type": "object",
         "properties": {
           "start": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "description": "Start date of the Sync."
           },
           "finish": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "description": "Finish date of the Sync."
           }
         },
@@ -18667,10 +18659,10 @@
             "description": "A message about a transient or persistent error returned by Codat or the source platform."
           },
           "requested": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Dataset/properties/requested"
           },
           "completed": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Dataset/properties/requested"
           },
           "progress": {
             "type": "integer",
@@ -18760,11 +18752,11 @@
             "$ref": "#/components/parameters/connectionId/schema"
           },
           "requestedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "description": "The datetime when the push was requested."
           },
           "completedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "description": "The datetime when the push was completed, null if Pending."
           },
           "timeoutInMinutes": {
@@ -19002,11 +18994,11 @@
             "type": "object",
             "properties": {
               "start": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Start date of the Sync."
               },
               "finish": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Dataset/properties/requested",
                 "description": "Finish date of the Sync."
               }
             },
@@ -19061,7 +19053,7 @@
             "example": "Customer 3b9bf2ed-a618-4af2-80f2-f2b57fddc748 is not in an Active state. (Archived)"
           },
           "syncUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "description": "UTC DateTime for the Sync.",
             "nullable": true
           },
@@ -19087,7 +19079,7 @@
         "type": "object",
         "properties": {
           "syncTo": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Dataset/properties/requested",
             "description": "The DateTime, upto which Sync will run up to starting from the previous successful sync",
             "nullable": true
           }

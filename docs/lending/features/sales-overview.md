@@ -20,7 +20,7 @@ The primary use case for this feature is **revenue analysis**. Evaluate historic
 ## Feature components
 
 <iframe
-  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQXnkKj3esBrzpD--pKV_tVTfTHxDPpxz8BBFe2SjcNt6kB2-qcTFDxEye3kxHWu91mYRzLoCjYfpHH/pubhtml?gid=250863128&amp;single=true&amp;widget=true&amp;headers=false"
+  src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=250863128&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
   style={{ height: "550px" }}
@@ -56,7 +56,7 @@ Our metrics include a set of pre-calculated ratios and metrics focused on commer
 
 ## Supported outputs
 
-You can retrieve the data pulled and enriched by the feature by calling the **sales** [endpoints of our API](/lending-api#/).
+You can retrieve the data read and enriched by the feature by calling the **sales** [endpoints of our API](/lending-api#/).
 
 For example, recurring revenue-based lenders seeking to evaluate month-on-month growth can utilize the [Get commerce revenue metrics](/lending-api#/operations/get-commerce-revenue-metrics) endpoint.
 

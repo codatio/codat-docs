@@ -87,7 +87,7 @@ Sharing financial data manually will not be the norm in years to come – let th
 At the first point of engagement, data is manually extracted in the format that it is required which means they don’t have to download from different systems and format, they can spend time focused on their business and making that successful.
 Better rates - if you save money from the initial onboarding/ongoing servicing/reduction in bad debts, can you pass some of that benefit on to the customer?
 The link process enables small businesses to be serviced at competitive rates; using manual processes this segment is not profitable to service
-Consider using Codat’s push functionality to input lending transactions into the accounting software on their behalf, reducing the manual work for your customer even further
+Consider using Codat’s write functionality to input lending transactions into the accounting software on their behalf, reducing the manual work for your customer even further
 Suggested language
 
 Two examples of messaging to build into your flow or share with your clients:

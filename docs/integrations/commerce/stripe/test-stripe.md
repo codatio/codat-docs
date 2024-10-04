@@ -1,10 +1,10 @@
 ---
 title: "Test your Stripe integration"
-description: "Test our Stripe integration by pulling sample data to a test company"
+description: "Test our Stripe integration by reading sample data to a test company"
 sidebar_label: Testing
 ---
 
-You can use the Stripe Test integration to pull test data from Stripe to Codat.
+You can use the Stripe Test integration to read test data from Stripe to Codat.
 
 :::info Testing in Stripe
 Stripe lets you test accounts using [test API keys and test data](https://stripe.com/docs/connect/testing), such as bank account numbers, card numbers, and so on.
@@ -53,7 +53,7 @@ A new Standard connected account is created and is visible on the **Connect** pa
 
 ## Retrieve test commerce data
 
-Test the integration by pulling some test commerce data from Stripe to Codat.
+Test the integration by reading some test commerce data from Stripe to Codat.
 
 In the <a className="external" href="https://app.codat.io/" target="_blank">Codat Portal</a>:
 

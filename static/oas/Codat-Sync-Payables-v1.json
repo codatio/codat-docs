@@ -208,12 +208,7 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith",
-                          "groups": [
-                            {
-                              "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                            }
-                          ]
+                          "createdByUserName": "Mike Smith"
                         }
                       ],
                       "pageNumber": 1,
@@ -380,7 +375,7 @@
                       "createdByUserName": "Dan Tzabar"
                     }
                   },
-                  "With a group": {
+                  "With a tag": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "name": "Technicalium",
@@ -390,11 +385,9 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
-                      "groups": [
-                        {
-                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
-                        }
-                      ]
+                      "tags": {
+                        "region": "us"
+                      }
                     }
                   }
                 }
@@ -441,16 +434,6 @@
                     "name": "Technicalium",
                     "description": "Technology services, including web and app design and development"
                   }
-                },
-                "With a group": {
-                  "value": {
-                    "name": "Technicalium",
-                    "groups": [
-                      {
-                        "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
-                      }
-                    ]
-                  }
                 }
               }
             }
@@ -461,7 +444,7 @@
     "/companies/{companyId}": {
       "put": {
         "summary": "Update company",
-        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \nIf you use [groups](https://docs.codat.io/sync-for-payables-api#/schemas/Group) to manage a set of companies, use the [Add company](https://docs.codat.io/sync-for-payables-api#/operations/add-company-to-group) or [Remove company](https://docs.codat.io/sync-for-payables-api#/operations/remove-company-from-group) endpoints to add or remove a company from a group.\n\nA [company](https://docs.codat.io/sync-for-payables-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-payables-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \n\nA [company](https://docs.codat.io/sync-for-payables-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-payables-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "operationId": "update-company",
         "parameters": [
           {
@@ -597,23 +580,6 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar"
-                    }
-                  },
-                  "With groups": {
-                    "value": {
-                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
-                      "description": "",
-                      "platform": "",
-                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "dataConnections": [],
-                      "created": "2022-11-10T10:45:18Z",
-                      "createdByUserName": "Dan Tzabar",
-                      "groups": [
-                        {
-                          "id": "f8a6f6ed-9812-4d1e-ba48-4346348403c8"
-                        }
-                      ]
                     }
                   }
                 }
@@ -43748,9 +43714,48 @@
     }
   },
   "webhooks": {
+    "client.rateLimit.reached": {
+      "post": {
+        "description": "Called when your client’s request count to Codat's API surpasses the allocated quota.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "client.rateLimit.reset": {
+      "post": {
+        "description": "Called when your client's rate limit quota is reset, allowing additional requests to Codat's API.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "Client rate limit reached": {
       "post": {
-        "description": "Triggered when the number of requests to Codat's API from the client exceeds the current quota.",
+        "deprecated": true,
+        "description": "Called when your client’s requests to Codat's API exceed the allocated quota. \n\n**Note: This event type is deprecated. Developers should now use the `client.rateLimit.reached` event for handling rate limit notifications.**",
         "requestBody": {
           "content": {
             "application/json": {
@@ -43769,7 +43774,8 @@
     },
     "Client rate limit reset": {
       "post": {
-        "description": "Triggered when the rate limit quota has reset for the client, and more requests to Codat's API are available.",
+        "deprecated": true,
+        "description": "Called when the rate limit quota has reset for the client, and more requests to Codat's API are available.\n\nNote: This event type is deprecated. Developers should now use the `client.rateLimit.reset` event for handling rate limit notifications.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -44054,7 +44060,7 @@
                 "description": "File type of the attachment. This is represented by appending the file type to the [IETF standard file naming requirements](https://tools.ietf.org/html/rfc6838). For example, for a jpeg file the output is **image/jpeg**.\n\nSupported file types vary per platform. "
               },
               "dateCreated": {
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Connection/properties/created"
               },
               "fileSize": {
                 "type": "integer",
@@ -44343,7 +44349,7 @@
                     "description": "Date of the bill as recorded in the accounting software."
                   },
                   {
-                    "$ref": "#/components/schemas/Company/properties/created"
+                    "$ref": "#/components/schemas/Connection/properties/created"
                   }
                 ]
               },
@@ -44353,7 +44359,7 @@
                     "description": "Date the supplier is due to be paid."
                   },
                   {
-                    "$ref": "#/components/schemas/Company/properties/created"
+                    "$ref": "#/components/schemas/Connection/properties/created"
                   }
                 ]
               },
@@ -44445,7 +44451,7 @@
                           "$ref": "#/components/schemas/BillPayment/definitions/billPaymentLineLink/properties/currencyRate"
                         },
                         "allocatedOnDate": {
-                          "$ref": "#/components/schemas/Company/properties/created",
+                          "$ref": "#/components/schemas/Connection/properties/created",
                           "description": "The date the payment was allocated."
                         },
                         "totalAmount": {
@@ -44490,7 +44496,7 @@
                           "$ref": "#/components/schemas/BillPayment/definitions/billPaymentLineLink/properties/currencyRate"
                         },
                         "paidOnDate": {
-                          "$ref": "#/components/schemas/Company/properties/created",
+                          "$ref": "#/components/schemas/Connection/properties/created",
                           "description": "The date the payment was paid."
                         },
                         "totalAmount": {
@@ -44523,7 +44529,7 @@
                   "modifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/Company/properties/created"
+                        "$ref": "#/components/schemas/Connection/properties/created"
                       },
                       {
                         "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -44541,7 +44547,7 @@
                   "sourceModifiedDate": {
                     "allOf": [
                       {
-                        "$ref": "#/components/schemas/Company/properties/created"
+                        "$ref": "#/components/schemas/Connection/properties/created"
                       },
                       {
                         "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
@@ -44767,12 +44773,12 @@
                 "$ref": "#/components/schemas/BillCreditNote/definitions/billCreditNoteStatus"
               },
               "issueDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "Date the bill credit note was issued by the supplier.",
                 "example": "2022-03-15T00:00:00"
               },
               "allocatedOnDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "nullable": true,
                 "description": "Date the bill credit note was fully refunded or allocated.",
                 "example": "2022-09-15T16:35:00"
@@ -45223,7 +45229,7 @@
               "date": {
                 "allOf": [
                   {
-                    "$ref": "#/components/schemas/Company/properties/created"
+                    "$ref": "#/components/schemas/Connection/properties/created"
                   },
                   {
                     "description": "Date the bill payment was recorded in the accounting software."
@@ -45291,7 +45297,7 @@
                 }
               },
               "allocatedOnDate": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "AllocatedOnDate must be specified and be later than the issue date of the bill."
               }
             },
@@ -45759,7 +45765,7 @@
                 "description": "The number of available requests per day."
               },
               "ExpiresUtc": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "The date time in UTC when your daily quota is reset."
               }
             }
@@ -45864,6 +45870,75 @@
           }
         ]
       },
+      "ClientRateLimitWebhook": {
+        "title": "Client rate limit webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "client.rateLimit.reset",
+              "client.rateLimit.reached"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/ClientRateLimitWebhook/definitions/clientRateLimitWebhookPayload"
+          }
+        },
+        "definitions": {
+          "clientRateLimitWebhookPayload": {
+            "title": "Client rate limit webhook payload",
+            "type": "object",
+            "properties": {
+              "dailyQuota": {
+                "type": "integer",
+                "description": "The number of available requests per day."
+              },
+              "quotaRemaining": {
+                "type": "integer",
+                "description": "Total number of requests remaining for your client."
+              },
+              "expiryDate": {
+                "$ref": "#/components/schemas/Connection/properties/created",
+                "description": "The date time in UTC when your daily quota is reset."
+              }
+            }
+          }
+        },
+        "examples": [
+          {
+            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "eventType": "client.rateLimit.reset",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "dailyQuota": 12000,
+              "quotaRemaining": 11993,
+              "expiryDate": "2024-09-01T23:59:99Z"
+            }
+          },
+          {
+            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+            "eventType": "client.rateLimit.reached",
+            "generatedDate": "2024-09-01T00:00:00Z",
+            "payload": {
+              "dailyQuota": 12000,
+              "quotaRemaining": 0,
+              "expiryDate": "2024-09-01T12:14:14Z"
+            }
+          }
+        ]
+      },
       "Companies": {
         "title": "Companies",
         "x-internal": true,
@@ -45888,92 +45963,82 @@
         "title": "Company",
         "description": "﻿In Codat, a company represents a business sharing access to their data. Each company can have multiple [connections](https://docs.codat.io/sync-for-payables-api#/schemas/Connection) to different data sources such as one connection to [Xero](https://docs.codat.io/integrations/accounting/xero/accounting-xero) for accounting data, two connections to [Plaid](https://docs.codat.io/integrations/banking/plaid/banking-plaid) for two bank accounts and a connection to [Zettle](https://docs.codat.io/integrations/commerce/zettle/commerce-zettle) for POS data.\n\nTypically each company is one of your customers.\n\nWhen you create a company, you can specify a `name` and we will automatically generate a unique `id` for the company. You can also add a `description` to store any additional information about the company.",
         "type": "object",
-        "properties": {
-          "id": {
-            "$ref": "#/components/parameters/companyId/schema"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails"
           },
-          "name": {
-            "type": "string",
-            "description": "The name of the company",
-            "example": "Codat Ltd."
-          },
-          "description": {
-            "type": "string",
-            "example": "Requested early access to the new financing scheme.",
-            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
-          },
-          "platform": {
-            "type": "string",
-            "deprecated": true,
-            "example": "Xero",
-            "description": "`platformKeys` name used when creating the company."
-          },
-          "redirect": {
-            "type": "string",
-            "format": "uri",
-            "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
-            "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
-          },
-          "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
-          },
-          "created": {
-            "title": "Date time",
-            "type": "string",
-            "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
-            ],
-            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
-          },
-          "createdByUserName": {
-            "type": "string",
-            "description": "Name of user that created the company in Codat."
-          },
-          "dataConnections": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Connection"
-            }
-          },
-          "groups": {
-            "type": "array",
-            "items": {
-              "title": "Group reference",
-              "type": "object",
-              "properties": {
-                "id": {
-                  "$ref": "#/components/schemas/Company/definitions/companyGroupAssignment/properties/groupId/allOf/0"
-                }
-              }
-            },
-            "description": "An array of groups the company has been assigned to."
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "redirect"
-        ],
-        "definitions": {
-          "companyGroupAssignment": {
-            "title": "Group assignment",
+          {
             "type": "object",
             "properties": {
-              "groupId": {
-                "allOf": [
-                  {
-                    "type": "string",
-                    "format": "uuid",
-                    "example": "60d2fa12-8a04-11ee-b9d1-0242ac120002",
-                    "description": "Unique identifier for the group."
-                  },
-                  {
-                    "description": "Unique identifier of the group you want to assign the company to."
-                  }
-                ]
+              "dataConnections": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Connection"
+                }
               }
             }
+          }
+        ],
+        "definitions": {
+          "companyDetails": {
+            "title": "Company details",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/parameters/companyId/schema"
+              },
+              "name": {
+                "type": "string",
+                "description": "The name of the company",
+                "example": "Codat Ltd."
+              },
+              "description": {
+                "$ref": "#/components/schemas/CompanyRequestBody/properties/description",
+                "nullable": true
+              },
+              "redirect": {
+                "type": "string",
+                "format": "uri",
+                "description": "The `redirect` [Link URL](https://docs.codat.io/auth-flow/authorize-hosted-link) enabling the customer to start their auth flow journey for the company.",
+                "example": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739"
+              },
+              "lastSync": {
+                "$ref": "#/components/schemas/Connection/properties/created",
+                "nullable": true
+              },
+              "created": {
+                "$ref": "#/components/schemas/Connection/properties/created"
+              },
+              "createdByUserName": {
+                "type": "string",
+                "description": "Name of user that created the company in Codat.",
+                "nullable": true
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "An array of products that are currently enabled for the company."
+              },
+              "tags": {
+                "type": "object",
+                "maxProperties": 10,
+                "propertyNames": {
+                  "pattern": "^.{1,27}$"
+                },
+                "additional properties": {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "redirect"
+            ]
           },
           "companyReference": {
             "title": "Company reference",
@@ -45983,10 +46048,24 @@
                 "$ref": "#/components/parameters/companyId/schema"
               },
               "name": {
-                "$ref": "#/components/schemas/Company/properties/name"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/name"
               },
               "description": {
-                "$ref": "#/components/schemas/Company/properties/description"
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/description"
+              },
+              "links": {
+                "type": "object",
+                "description": "A collection of links for the company.",
+                "properties": {
+                  "portal": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to the company page in the portal."
+                  }
+                }
+              },
+              "tags": {
+                "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
               }
             }
           }
@@ -45995,11 +46074,14 @@
           {
             "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
             "name": "string",
-            "platform": "string",
             "redirect": "https://link.codat.io/company/27628208-459c-46a2-a705-5641ce25f739",
             "lastSync": "2022-01-01T12:00:00.000Z",
             "created": "2022-01-01T12:00:00.000Z",
             "createdByUserName": "string",
+            "tags": {
+              "region": "us",
+              "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
+            },
             "dataConnections": [
               {
                 "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
@@ -46012,11 +46094,6 @@
                 "lastSync": "2022-10-27T10:22:43.6464237Z",
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
-              }
-            ],
-            "groups": [
-              {
-                "id": "d7a6c4b4-dc87-45f6-b803-62f466398680"
               }
             ]
           }
@@ -46067,7 +46144,7 @@
             }
           },
           "ledgerLockDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "If set in the accounting software, the date (in the ISO 8601 date/time format) after which accounting transactions cannot be edited. Commonly used when books are closed at year-end."
           },
           "registrationNumber": {
@@ -46081,7 +46158,7 @@
             "description": "Company tax number."
           },
           "financialYearStartDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "Start date of the financial year for the company."
           },
           "baseCurrency": {
@@ -46099,7 +46176,7 @@
             "description": "URL addresses for the accounting source.\n\nFor example, for Xero integrations two URLs are returned. These have many potential use cases, such as [deep linking](https://developer.xero.com/documentation/api-guides/deep-link-xero)."
           },
           "createdDate": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "Date the linked company was created in the accounting software."
           },
           "supplementalData": {
@@ -46169,14 +46246,12 @@
             "example": "Bank of Dave"
           },
           "description": {
-            "$ref": "#/components/schemas/Company/properties/description"
+            "type": "string",
+            "example": "Requested early access to the new financing scheme.",
+            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
           },
-          "groups": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Company/properties/groups/items"
-            },
-            "description": "Reference to the groups that the company is assigned to."
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
           }
         },
         "required": [
@@ -46236,25 +46311,34 @@
             "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
           },
           "lastSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Connection/properties/created",
+            "nullable": true
           },
           "created": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "title": "Date time",
+            "type": "string",
+            "examples": [
+              "2022-10-23T00:00:00.000Z",
+              "2022-10-23T00:00:00.000Z"
+            ],
+            "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
           },
           "dataConnectionErrors": {
             "type": "array",
+            "nullable": true,
             "items": {
               "$ref": "#/components/schemas/Connection/definitions/dataConnectionError"
             }
           },
           "connectionInfo": {
             "type": "object",
+            "nullable": true,
             "additionalProperties": {
               "type": "string"
             }
-          },
-          "additionalProperties": false
+          }
         },
+        "additionalProperties": false,
         "required": [
           "id",
           "integrationId",
@@ -46295,7 +46379,7 @@
                 "description": "A message about a error returned by Codat."
               },
               "erroredOnUtc": {
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Connection/properties/created"
               },
               "status": {
                 "title": "Error status",
@@ -46310,7 +46394,7 @@
               "resolvedOnUtc": {
                 "description": "The datetime in Utc that the error was resolved.",
                 "nullable": true,
-                "$ref": "#/components/schemas/Company/properties/created"
+                "$ref": "#/components/schemas/Connection/properties/created"
               }
             }
           },
@@ -46594,7 +46678,7 @@
             "example": "invoices"
           },
           "lastSuccessfulSync": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Connection/properties/created"
           },
           "currentStatus": {
             "$ref": "#/components/schemas/PullOperation/properties/status"
@@ -46770,7 +46854,7 @@
                 "description": "If the journal has child journals, this value is true. If it doesn’t, it is false."
               },
               "createdOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "Journal creation date."
               },
               "status": {
@@ -46829,15 +46913,15 @@
                 "description": "Optional description of the journal entry."
               },
               "postedOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "Date on which the journal entry was posted to the accounting software, and had an impact on the general ledger. This may be different from the creation date.\n\nFor example, a user creates a journal entry on Monday and saves it as draft, which has no impact on the general ledger. On Thursday, they return to the entry and post it.\n\nThe **createdOn** date shows as Monday.\nThe **postedOn** date shows as Thursday.\nJournal entries can also be backdated, so the **postedOn** date may be earlier than the **createdOn** date."
               },
               "createdOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "Date on which the journal was created in the accounting software."
               },
               "updatedOn": {
-                "$ref": "#/components/schemas/Company/properties/created",
+                "$ref": "#/components/schemas/Connection/properties/created",
                 "description": "Date on which the journal was last updated in the accounting software."
               },
               "journalRef": {
@@ -47307,10 +47391,10 @@
             "description": "A message about a transient or persistent error returned by Codat or the source platform."
           },
           "requested": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Connection/properties/created"
           },
           "completed": {
-            "$ref": "#/components/schemas/Company/properties/created"
+            "$ref": "#/components/schemas/Connection/properties/created"
           },
           "progress": {
             "type": "integer",
@@ -47400,11 +47484,11 @@
             "$ref": "#/components/parameters/connectionId/schema"
           },
           "requestedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "The datetime when the push was requested."
           },
           "completedOnUtc": {
-            "$ref": "#/components/schemas/Company/properties/created",
+            "$ref": "#/components/schemas/Connection/properties/created",
             "description": "The datetime when the push was completed, null if Pending."
           },
           "timeoutInMinutes": {

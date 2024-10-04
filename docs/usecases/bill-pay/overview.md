@@ -78,7 +78,7 @@ Once Authorised, you can use the bank accounts endpoint to retrieve a list of ac
 
 ### [Payment reconciliation](payments)
 
-Once the transaction is completed, a bill payment can then be pushed to the customers accounting software and reconciled against the bill marking it as paid.
+Once the transaction is completed, a bill payment can then be written to the customers accounting software and reconciled against the bill marking it as paid.
 
 
 ## Compatible integrations

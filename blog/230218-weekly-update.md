@@ -25,7 +25,7 @@ We'd love to hear your opinions, so please let us know how you're finding them i
 
 ### Accounting API
 
-- **New:** We've added support for pushing Direct Incomes on FreeAgent
+- **New:** We've added support for writing Direct Incomes on FreeAgent
 
 ### Portal
 

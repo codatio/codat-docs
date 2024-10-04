@@ -74,7 +74,7 @@ Codat supports a range of [event types](/using-the-api/webhooks/event-types) you
 
 - [`PushOperationStatusChanged`](/using-the-api/webhooks/event-types)  
 
-  Listen to this event to track the completion of the operation to pay bills in the SMB's accounting software. When you receive a message from this webhook, check the `status` value in the body. A `Success` status means the bill payment or the bill credit note has been successfully pushed to the accounting software.
+  Listen to this event to track the completion of the operation to pay bills in the SMB's accounting software. When you receive a message from this webhook, check the `status` value in the body. A `Success` status means the bill payment or the bill credit note has been successfully written to the accounting software.
 
 ### Client libraries
 

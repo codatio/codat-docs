@@ -124,7 +124,7 @@ Once access to QuickBooks has been granted, the connector will process the datas
 
 If you have chosen to have your connectors perform a one-time synchronization, the connector will uninstall itself and set the company status to _deauthorised_.
 
-If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or pushes you have queued using the Codat portal or API. The connector will also be set to automatically start when the system reboots.
+If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or write operations you have queued using the Codat portal or API. The connector will also be set to automatically start when the system reboots.
 
 <img src="/img/old/e435017-Linked_Succesfully.png" />
 

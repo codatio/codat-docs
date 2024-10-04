@@ -14,6 +14,8 @@ import path from "path";
 import navbar from "./nav.config";
 import redirects from "./redirects.config";
 
+import { generateAPISitemaps} from "./src/utils/oas-sitemap.js"
+
 const BASE_URL = "";
 
 require('dotenv').config()
@@ -79,6 +81,25 @@ const config = {
         theme: {
           customCss: './src/styles/custom.scss',
         },
+        sitemap: {
+          createSitemapItems: async (params) => {
+            const { defaultCreateSitemapItems, routes, ...rest } = params;
+
+            const apiRoutes = generateAPISitemaps()
+
+            const newRoutes = [
+              ...routes,
+              ...apiRoutes
+            ]
+            
+            const items = await defaultCreateSitemapItems({
+              routes: newRoutes, 
+              ...rest
+            });
+
+            return items;
+          },
+        },
       }),
     ],
   ],
@@ -86,6 +107,7 @@ const config = {
   plugins: [
     "docusaurus-plugin-sass",
     '@docusaurus/theme-live-codeblock',
+    'docusaurus-plugin-image-zoom',
 
     [
       "docusaurus-plugin-module-alias",
@@ -283,6 +305,14 @@ const config = {
          * Possible values: "top" | "bottom"
          */
         playgroundPosition: 'bottom',
+      },
+
+      zoom: {
+        selector: '.markdown > p > img',
+        background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+        },
       },
     }),
 
