@@ -1,15 +1,15 @@
 ---
-title: "2025-01-10: Deprecation of rules service (legacy webhooks)"
+title: "2025-01-10: Deprecation of legacy webhooks"
 date: "2024-10-04"
 tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **January 10, 2025**, we will deprecate our legacy rule service following the release of our new webhooks service released earlier this year and [new webhook event types](/updates/241004-new-webhook-event-types) released on October 4, 2024.
+On **January 10, 2025**, we will deprecate our legacy rule-based webhooks service following the release of our new [webhooks service](/updates/240306-new-webhook-service-released) and [webhook event types](/updates/241004-new-webhook-event-types).
 
 <!--truncate-->
 
-The new service offers:
+Here's what our new webhooks service provides:
 
 ⚙️ **Smart retries**: We automatically retry missed events and failed webhook deliveries, ensuring your crucial messages reach their destination without hassle.
 
@@ -23,25 +23,17 @@ The new service offers:
 
 ## Action required
 
-If you are using our legacy rules service you will need to migrate over to the new webhooks service. Follow our [migration guide](/using-the-api/webhooks/migration-guide).
+If you are using our legacy rules-based webhook service, migrate to the new webhooks service following our [Migration guide for basic webhook setup](/using-the-api/webhooks/migration-guide).
 
-Additionally, you need to change your notification configuration to use the new event types instead. Follow our [migration guide](/using-the-api/webhooks/migrating-to-new-event-types) to switch to the new types.
+Additionally, you need to change your notification configuration to use the new event types instead. Follow our [New event types migration guide](/using-the-api/webhooks/migrating-to-new-event-types) to switch to the new types.
 
-### What if I'm using company-specific rules?
+### Company-specific rules
 
-The updated webhook service now supports passing metadata about a company and filtering companies using company tags.
+If you are currently using company-specific rules with our legacy service, use company tags with our updated webhook service instead. You can add metadata to a company using tags and filter the webhooks based on them.
 
-#### Passing metadata to a webhook consumer
+#### Company information using tags
 
-You can now pass metadata about a company by setting tags on your companies.
-
-For example, if you previously passed metadata via the webhook consumer's path, such as:
-
-```
-POST /region/{regionId}/accounts/{accountId}
-```
-
-You will now set this information when creating or updating a company:
+For example, if you previously passed company information via the webhook consumer's path (such as `POST /region/{regionId}/accounts/{accountId}`), you can use `tags` when creating or udating a company as follows:
 
 ```json
 {
@@ -53,17 +45,13 @@ You will now set this information when creating or updating a company:
 }
 ```
 
-This metadata will then be passed to your webhook consumer in the `payload.referenceCompany.tags` property.
+This metadata will then be passed to your webhook consumer in the `payload.referenceCompany.tags` property. See [Add metadata to a company](/using-the-api/managing-companies#add-metadata-to-a-company)
 
-For more details, [read our guide on adding metadata to a company](/using-the-api/managing-companies#add-metadata-to-a-company).
+#### Filter webhooks based on tags
 
-#### Filter webhooks by company tags
+To route specific companies to designated webhook consumers, use the company tags filter for your webhook consumer. This allows you to send messages only for companies with tags that match **any** of the tags defined on the webhook consumer.
 
-To route specific companies to designated webhook consumers, use the company tags filter for your webhook consumer.
-
-This feature allows you to send messages only for companies with tags that match any of the tags defined on the webhook consumer.
-
-For additional information, [read about filtering webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
+For additional information, see [Filter webhooks by company tags](/using-the-api/webhooks/create-consumer#filter-webhooks-by-company-tags).
 
 ## Expected impact
 
