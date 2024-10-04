@@ -5,6 +5,10 @@ description: "Understand how to add, modify, and delete data in Codat's integrat
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import Lottie from '@components/Lottie'
+import webhooks from '../../static/animations/webhooks.json'
+
+<Lottie animation={webhooks}/>
 
 Codat offers the ability to create, update, and delete records in the source platforms of our integrations using our standard data models.
 We support the following write operations: 
