@@ -1057,4 +1057,4 @@ This legacy event is specific to [Sync for Commerce](/commerce/overview) and ind
 - Review [webhook event types](/using-the-api/webhooks/event-types)
 - [Manage webhook consumers](/using-the-api/webhooks/create-consumer)
 - [Support email notifications with Zapier](/using-the-api/webhooks/zapier-integration)
-- [Troubleshooting](/using-the-api/troubleshooting)
+- [Troubleshooting](/using-the-api/webhooks/troubleshooting)
