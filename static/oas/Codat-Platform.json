@@ -7626,6 +7626,9 @@
               "eventTypes": {
                 "$ref": "#/components/schemas/WebhookConsumer/properties/eventTypes"
               },
+              "companyTags": {
+                "$ref": "#/components/schemas/WebhookConsumer/properties/companyTags"
+              },
               "companyId": {
                 "$ref": "#/components/schemas/WebhookConsumer/properties/companyId"
               }
