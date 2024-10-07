@@ -1844,9 +1844,9 @@
     },
     "/rules": {
       "get": {
-        "summary": "List webhooks",
+        "summary": "List webhooks (legacy)",
         "operationId": "list-rules",
-        "description": "List webhooks that you are subscribed to.",
+        "description": "Use the *List webhooks (legacy)* endpoint to retrieve all existing rule-based webhooks for your client.\n\n**Note:** This endpoint has been deprecated. Please use the [*List webhook consumers*](https://docs.codat.io/platform-api#/operations/list-webhook-consumers) endpoint for listing webhooks moving forward.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -1861,7 +1861,6 @@
             "$ref": "#/components/parameters/orderBy"
           }
         ],
-        "x-internal": true,
         "deprecated": true,
         "tags": [
           "Webhooks"
@@ -1931,14 +1930,13 @@
         }
       },
       "post": {
-        "summary": "Create webhook",
-        "description": "Create a new webhook configuration",
+        "summary": "Create webhook (legacy)",
+        "description": "Use the *Create webhooks (legacy)* endpoint to create a rule-based webhook for your client.\n\n**Note:** This endpoint has been deprecated. Please use the [*Create webhook consumer*](https://docs.codat.io/platform-api#/operations/create-webhook-consumer) endpoint to create a webhook moving forward.",
         "operationId": "create-rule",
         "deprecated": true,
         "tags": [
           "Webhooks"
         ],
-        "x-internal": true,
         "responses": {
           "200": {
             "description": "OK",
@@ -2098,10 +2096,9 @@
         }
       ],
       "get": {
-        "summary": "Get webhook",
+        "summary": "Get webhook (legacy)",
         "operationId": "get-webhook",
-        "description": "Get a single webhook",
-        "x-internal": true,
+        "description": "Use the *Get webhook (legacy)* endpoint to retrieve a specific webhook for your client.\n\n**Note:** This endpoint has been deprecated. Please use the [*List webhook consumers*](https://docs.codat.io/platform-api#/operations/list-webhook-consumers) endpoint for listing webhooks moving forward.",
         "deprecated": true,
         "tags": [
           "Webhooks"
@@ -7597,7 +7594,17 @@
               "type": "string"
             }
           },
+          "companyTags": {
+            "type": "array",
+            "description": "Company tags provide an additional way to filter messages, independent of event types. Company tags are case-sensitive, and only messages from companies with matching tags will be sent to this endpoint. Use the format `tagKey:tagValue`.",
+            "items": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "maxItems": 10
+          },
           "companyId": {
+            "deprecated": true,
             "type": "string",
             "format": "uuid",
             "nullable": true,
