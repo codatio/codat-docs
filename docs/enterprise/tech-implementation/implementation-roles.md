@@ -48,7 +48,13 @@ On this page, we provide descriptions and activities specific to each role invol
 
 **Required skills:** Leadership, technical expertise, software architecture, project management, problem solving, and communication.
 
-## Credit risk analyst (for lending use cases only)
+## Credit risk analyst
+
+:::tip Lending use case only
+
+This stakeholder's involvement is only required for lending use cases.
+
+:::
 
 **Role description:** Evaluates and manages the risk associated with lending products and financial services.
 
@@ -114,7 +120,7 @@ On this page, we provide descriptions and activities specific to each role invol
 
  :::tip Business change manager
 
-In addition to the above stakeholders, we strongly recommend appointing, or nominating an existing stakeholder to be, a dedicated **business change manager**.
+In addition to the above stakeholders, we strongly recommend appointing or nominating an existing stakeholder to be, a dedicated **business change manager**.
 
 **Role description:** Responsible for embedding the use of the API into the organization's architecture and driving user adoption.
 
