@@ -1418,9 +1418,7 @@
                         }
                       }
                     ],
-                    "status": "Open",
-                    "totalAmount": 7267.2,
-                    "amountDue": 7267.2
+                    "status": "Open"
                   }
                 }
               }
@@ -1428,8 +1426,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
@@ -1556,8 +1554,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "201": {
+            "description": "Created"
           },
           "400": {
             "$ref": "#/components/responses/BadRequest"
@@ -1765,8 +1763,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
@@ -2005,8 +2003,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
@@ -2115,8 +2113,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "application/json": {
                 "schema": {
@@ -2585,12 +2583,6 @@
               },
               "status": {
                 "$ref": "#/components/schemas/Bill/definitions/billStatus"
-              },
-              "totalAmount": {
-                "$ref": "#/components/schemas/Bill/properties/totalAmount"
-              },
-              "amountDue": {
-                "$ref": "#/components/schemas/Bill/properties/amountDue"
               }
             },
             "required": [
