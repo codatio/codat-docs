@@ -21,7 +21,7 @@ Engage with these stakeholders early on before the implementation to ensure thei
 
 | Key inputs | Key outputs |
 | ----------- | ----------- |
-| Your organization’s Data Governance Policy <br/> Third Party Technology Risk Assessment| Webhook encryption <br/> Compliant method for data ingestion, retention, and transfer <br/> Secure authentication method for customers to connect|
+| - Your organization’s Data Governance Policy <br/> - Third Party Technology Risk Assessment| - Webhook encryption <br/> - Compliant method for data ingestion, retention, and transfer <br/> - Secure authentication method for customers to connect|
 
 
 ## Front-end customer onboarding journeys
@@ -32,7 +32,7 @@ This involves creating intuitive user interfaces, integrating accounting platfor
 
 | Key inputs | Key outputs |
 | ----------- | ----------- |
-| Your organization’s Privacy Policy <br/> Your organization’s Design Principles <br/> [Codat’s Link SDK](/auth-flow/overview) <br/> [Codat’s Connection Management SDK](/auth-flow/optimize/connection-management)| Customer journey design <br/> Data privacy impact assessment <br/> User Acceptance Test (UAT) strategy <br/> External / client communications strategy|
+| - Your organization’s Privacy Policy <br/> - Your organization’s Design Principles <br/> - [Codat’s Link SDK](/auth-flow/overview) <br/> - [Codat’s Connection Management SDK](/auth-flow/optimize/connection-management)| - Customer journey design <br/> - Data privacy impact assessment <br/> - User Acceptance Test (UAT) strategy <br/> - External / client communications strategy|
 
 ## Colleague journey
 
@@ -40,7 +40,7 @@ Supporting your internal teams as they adapt to the new API integration is essen
 
 | Key inputs | Key outputs |
 | ----------- | ----------- |
-| | Colleague journey design <br/> Internal communications strategy|
+| | - Colleague journey design <br/> - Internal communications strategy|
  
 ## Architectural approach
 
@@ -50,7 +50,7 @@ This includes evaluating UI options for compatibility and scalability, designing
 
 | Key inputs | Key outputs |
 | ----------- | ----------- |
-| Third-party software / UI <br/> Internal data schema <br/> System impact assessment| Architecture diagram <br/> Environment strategy <br/> System Integration Test (SIT) strategy|
+| - Third-party software / UI <br/> - Internal data schema <br/> - System impact assessment| - Architecture diagram <br/> - Environment strategy <br/> - System Integration Test (SIT) strategy|
 
 ## Data ingestion and internal data sharing approach
 
@@ -60,7 +60,7 @@ Key activities include developing automated data ingestion pipelines, ensuring d
 
 | Key inputs | Key outputs |
 | ----------- | ----------- |
-| Your organization’s preferred cloud platform <br/> Your organization’s preferred data tools| Architecture diagram <br/> Ingestion plan <br/> Test to Prod deployment plan|
+| - Your organization’s preferred cloud platform <br/> - Your organization’s preferred data tools| - Architecture diagram <br/> - Ingestion plan <br/> - Test to Prod deployment plan|
 
 ## Product mapping
 
@@ -70,7 +70,7 @@ Activities will be specific to the use case and product consuming external data,
 
 | Key inputs | Key outputs |
 | ----------- | ----------- |
-| Product roadmap <br/> Your organization’s credit model| Solution design <br/> UAT strategy|
+| - Product roadmap <br/> - Your organization’s credit model| - Solution design <br/> - UAT strategy|
 
 ## Accounting software setup
 
@@ -80,4 +80,4 @@ Key activities involve configuring the accounting software developer portals, re
 
 | Key inputs | Key outputs |
 | ----------- | ----------- |
-| Password manager with MFA capability <br/> Dedicated team mailbox| Commercial agreements <br/> Compliant integrations <br/> System Integration Test (SIT) strategy <br/> Environment strategy|
+| - Password manager with MFA capability <br/> - Dedicated team mailbox| - Commercial agreements <br/> - Compliant integrations <br/> - System Integration Test (SIT) strategy <br/> - Environment strategy|
