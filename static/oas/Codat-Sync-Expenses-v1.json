@@ -2713,35 +2713,7 @@
               }
             }
           }
-        },
-        "examples": [
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "eventType": "expenses.sync.successful",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo"
-              },
-              "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
-            }
-          },
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "eventType": "expenses.sync.unsuccessful",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo"
-              },
-              "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
-            }
-          }
-        ]
+        }
       },
       "ExpenseTransaction": {
         "title": "Expense transaction",

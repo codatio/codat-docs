@@ -14208,6 +14208,20 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              },
+              "examples": {
+                "Reached": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "client.rateLimit.reached",
+                    "generatedDate": "2024-09-01T00:00:00Z",
+                    "payload": {
+                      "dailyQuota": 12000,
+                      "quotaRemaining": 0,
+                      "expiryDate": "2024-09-01T12:14:14Z"
+                    }
+                  }
+                }
               }
             }
           }
@@ -14227,6 +14241,20 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              },
+              "examples": {
+                "Reset": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "client.rateLimit.reset",
+                    "generatedDate": "2024-09-01T00:00:00Z",
+                    "payload": {
+                      "dailyQuota": 12000,
+                      "quotaRemaining": 11993,
+                      "expiryDate": "2024-09-01T23:59:99Z"
+                    }
+                  }
+                }
               }
             }
           }
@@ -14758,29 +14786,7 @@
               }
             }
           }
-        },
-        "examples": [
-          {
-            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
-            "eventType": "client.rateLimit.reset",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "dailyQuota": 12000,
-              "quotaRemaining": 11993,
-              "expiryDate": "2024-09-01T23:59:99Z"
-            }
-          },
-          {
-            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
-            "eventType": "client.rateLimit.reached",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "dailyQuota": 12000,
-              "quotaRemaining": 0,
-              "expiryDate": "2024-09-01T12:14:14Z"
-            }
-          }
-        ]
+        }
       },
       "Companies": {
         "title": "Companies",

@@ -14127,12 +14127,29 @@
   "webhooks": {
     "expenses.sync.successful": {
       "post": {
-        "description": "Triggered when an expense sync successfully completes without any errors or warnings.",
+        "description": "Called when an expense sync successfully completes without any errors or warnings.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ExpensesSyncWebhook"
+              },
+              "examples": {
+                "Successful": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "eventType": "expenses.sync.successful",
+                    "generatedDate": "2024-09-01T00:00:00Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Toft stores",
+                        "description": "Syncing expenses"
+                      },
+                      "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
+                    }
+                  }
+                }
               }
             }
           }
@@ -14146,12 +14163,29 @@
     },
     "expenses.sync.unsuccessful": {
       "post": {
-        "description": "Triggered when an expense sync fails to complete successfully, resulting in at least one error or warning.",
+        "description": "Called when an expense sync fails to complete successfully, resulting in at least one error or warning.",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ExpensesSyncWebhook"
+              },
+              "examples": {
+                "Unsuccessful": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "eventType": "expenses.sync.unsuccessful",
+                    "generatedDate": "2024-09-01T00:00:00Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Toft stores",
+                        "description": "Syncing expenses"
+                      },
+                      "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
+                    }
+                  }
+                }
               }
             }
           }
@@ -14211,6 +14245,20 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              },
+              "examples": {
+                "Reached": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "client.rateLimit.reached",
+                    "generatedDate": "2024-09-01T00:00:00Z",
+                    "payload": {
+                      "dailyQuota": 12000,
+                      "quotaRemaining": 0,
+                      "expiryDate": "2024-09-01T12:14:14Z"
+                    }
+                  }
+                }
               }
             }
           }
@@ -14230,6 +14278,20 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              },
+              "examples": {
+                "Reset": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "client.rateLimit.reset",
+                    "generatedDate": "2024-09-01T00:00:00Z",
+                    "payload": {
+                      "dailyQuota": 12000,
+                      "quotaRemaining": 11993,
+                      "expiryDate": "2024-09-01T23:59:99Z"
+                    }
+                  }
+                }
               }
             }
           }
@@ -15058,29 +15120,7 @@
               }
             }
           }
-        },
-        "examples": [
-          {
-            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
-            "eventType": "client.rateLimit.reset",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "dailyQuota": 12000,
-              "quotaRemaining": 11993,
-              "expiryDate": "2024-09-01T23:59:99Z"
-            }
-          },
-          {
-            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
-            "eventType": "client.rateLimit.reached",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "dailyQuota": 12000,
-              "quotaRemaining": 0,
-              "expiryDate": "2024-09-01T12:14:14Z"
-            }
-          }
-        ]
+        }
       },
       "Companies": {
         "title": "Companies",
@@ -16231,35 +16271,7 @@
               }
             }
           }
-        },
-        "examples": [
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "eventType": "expenses.sync.successful",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo"
-              },
-              "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
-            }
-          },
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "eventType": "expenses.sync.unsuccessful",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo"
-              },
-              "syncId": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd"
-            }
-          }
-        ]
+        }
       },
       "ExpenseTransaction": {
         "title": "Expense transaction",
