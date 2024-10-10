@@ -2700,6 +2700,34 @@
           }
         },
         "definitions": {
+          "transaction": {
+            "title": "Transaction",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Unique identifier of the transaction."
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "Unknown",
+                  "PushError",
+                  "Completed",
+                  "Failed",
+                  "Pending"
+                ],
+                "description": "Status of transaction."
+              },
+              "errorMessage": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Error message for failed transaction."
+              }
+            }
+          },
           "expensesSyncWebhookPayload": {
             "title": "Expenses sync webhook payload",
             "type": "object",
@@ -2710,6 +2738,12 @@
               "syncId": {
                 "type": "string",
                 "description": "Unique identifier of the sync."
+              },
+              "transactions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ExpensesSyncWebhook/definitions/transaction"
+                }
               }
             }
           }
