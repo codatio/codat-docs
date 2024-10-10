@@ -48,7 +48,7 @@ console.log(response.accountingCompanyInfo.companyName)
 request = operations.GetAccountingProfileRequest(
     company_id=company_id,
 )
-response = lending_client.company_info.get_accounting_profile(req)
+response = lending_client.company_info.get_accounting_profile(request=request)
 
 if response.status_code != 200:
   raise Exception("Could not get company's accounting profile")
