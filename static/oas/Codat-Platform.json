@@ -3760,6 +3760,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CompanyWebhook"
+              },
+              "examples": {
+                "Company created": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "type": "company.created",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "name": "Bank of Dave",
+                      "description": "Requested a loan for refurb.",
+                      "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "lastSync": "2022-01-01T12:00:00.000Z",
+                      "created": "2022-01-01T12:00:00.000Z",
+                      "tags": {
+                        "customerRegion": "us",
+                        "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -3779,6 +3800,27 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/CompanyWebhook"
+              },
+              "examples": {
+                "Company deleted": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "eventType": "company.deleted",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "name": "Bank of Dave",
+                      "description": "Requested a loan for refurb.",
+                      "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "lastSync": "2022-01-01T12:00:00.000Z",
+                      "created": "2022-01-01T12:00:00.000Z",
+                      "tags": {
+                        "customerRegion": "uk",
+                        "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -3798,6 +3840,41 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConnectionWebhook"
+              },
+              "examples": {
+                "Connection created": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "type": "connection.created",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      },
+                      "connection": {
+                        "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                        "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                        "integrationKey": "dfxm",
+                        "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                        "platformName": "Basiq",
+                        "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                        "status": "PendingAuth",
+                        "lastSync": "2022-10-27T10:22:43.646Z",
+                        "created": "2022-10-27T09:53:29.000Z",
+                        "sourceType": "Banking"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -3817,6 +3894,41 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConnectionWebhook"
+              },
+              "examples": {
+                "Connection connected": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "type": "connection.connected",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      },
+                      "connection": {
+                        "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                        "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                        "integrationKey": "dfxm",
+                        "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                        "platformName": "Basiq",
+                        "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                        "status": "Linked",
+                        "lastSync": "2022-10-27T10:22:43.646Z",
+                        "created": "2022-10-27T09:53:29.000Z",
+                        "sourceType": "Banking"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -3836,6 +3948,83 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConnectionWebhook"
+              },
+              "examples": {
+                "Unlinked": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "type": "connection.disconnected",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      },
+                      "connection": {
+                        "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                        "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                        "integrationKey": "dfxm",
+                        "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                        "platformName": "Basiq",
+                        "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                        "status": "Unlinked",
+                        "lastSync": "2022-10-27T10:22:43.646Z",
+                        "created": "2022-10-27T09:53:29.000Z",
+                        "sourceType": "Banking"
+                      }
+                    }
+                  }
+                },
+                "De-authorized": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "type": "connection.disconnected",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      },
+                      "connection": {
+                        "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                        "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                        "integrationKey": "dfxm",
+                        "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                        "platformName": "Basiq",
+                        "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                        "status": "Deauthorized",
+                        "lastSync": "2022-10-27T10:22:43.646Z",
+                        "created": "2022-10-27T09:53:29.000Z",
+                        "sourceType": "Banking",
+                        "dataConnectionErrors": [
+                          {
+                            "statusCode": "401",
+                            "statusText": "The integration de-authorized access to the connection.",
+                            "errorMessage": "The integration de-authorized access to the connection.",
+                            "erroredOnUtc": "2022-12-27T09:53:29.000Z",
+                            "status": "Active"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -3855,6 +4044,41 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConnectionWebhook"
+              },
+              "examples": {
+                "Reconnected": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "type": "connection.reconnected",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      },
+                      "connection": {
+                        "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                        "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                        "integrationKey": "dfxm",
+                        "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                        "platformName": "Basiq",
+                        "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                        "status": "Linked",
+                        "lastSync": "2022-10-27T10:22:43.646Z",
+                        "created": "2022-10-27T09:53:29.000Z",
+                        "sourceType": "Banking"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -3874,6 +4098,41 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ConnectionWebhook"
+              },
+              "examples": {
+                "Deleted": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "type": "connection.deleted",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      },
+                      "connection": {
+                        "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                        "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                        "integrationKey": "dfxm",
+                        "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                        "platformName": "Basiq",
+                        "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                        "status": "Linked",
+                        "lastSync": "2022-10-27T10:22:43.646Z",
+                        "created": "2022-10-27T09:53:29.000Z",
+                        "sourceType": "Banking"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -3893,6 +4152,34 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ReadCompletedWebhook"
+              },
+              "examples": {
+                "Read completed": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "read.completed",
+                    "generatedDate": "2022-10-23T00:00:00.000Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Toft stores",
+                        "description": "Requested early access to the new financing scheme.",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        }
+                      },
+                      "modifiedFromDate": "2022-10-23T00:00:00.000Z",
+                      "dataTypes": [
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "invoices",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        }
+                      ]
+                    }
+                  }
+                }
               }
             }
           }
@@ -3912,6 +4199,34 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ReadCompletedWebhook"
+              },
+              "examples": {
+                "Initial": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "read.completed.initial",
+                    "generatedDate": "2022-10-23T00:00:00.000Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Toft stores",
+                        "description": "Requested early access to the new financing scheme.",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        }
+                      },
+                      "modifiedFromDate": "2022-10-23T00:00:00.000Z",
+                      "dataTypes": [
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "invoices",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        }
+                      ]
+                    }
+                  }
+                }
               }
             }
           }
@@ -3931,6 +4246,55 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              },
+              "examples": {
+                "Record": {
+                  "value": {
+                    "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+                    "eventType": "{dataType}.write.successful",
+                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "payload": {
+                      "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+                      "type": "Create",
+                      "referenceCompany": {
+                        "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                        "name": "Toft stores",
+                        "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+                      },
+                      "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
+                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "status": "Success",
+                      "record": {
+                        "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+                      }
+                    }
+                  }
+                },
+                "Attachment": {
+                  "value": {
+                    "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+                    "eventType": "{dataType}.write.successful",
+                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "payload": {
+                      "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+                      "type": "UploadAttachment",
+                      "referenceCompany": {
+                        "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                        "name": "Toft stores",
+                        "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+                      },
+                      "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
+                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "status": "Success",
+                      "record": {
+                        "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+                      },
+                      "attachmentId": "att_1AZtxr2eZvKYlo2CJDX8whov"
+                    }
+                  }
+                }
               }
             }
           }
@@ -3950,6 +4314,71 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DataTypeWriteWebhook"
+              },
+              "examples": {
+                "Record": {
+                  "value": {
+                    "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+                    "eventType": "{dataType}.write.unsuccessful",
+                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "payload": {
+                      "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+                      "type": "Update",
+                      "referenceCompany": {
+                        "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                        "name": "Toft stores",
+                        "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+                      },
+                      "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
+                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "status": "Failed"
+                    }
+                  }
+                },
+                "Record timed out": {
+                  "value": {
+                    "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+                    "eventType": "{dataType}.write.unsuccessful",
+                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "payload": {
+                      "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+                      "type": "Delete",
+                      "referenceCompany": {
+                        "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                        "name": "Toft stores",
+                        "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+                      },
+                      "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
+                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "status": "TimedOut"
+                    }
+                  }
+                },
+                "Attachment": {
+                  "value": {
+                    "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+                    "eventType": "{dataType}.write.unsuccessful",
+                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "payload": {
+                      "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
+                      "type": "UploadAttachment",
+                      "referenceCompany": {
+                        "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
+                        "name": "Toft stores",
+                        "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
+                      },
+                      "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
+                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
+                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "status": "TimedOut",
+                      "record": {
+                        "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -3969,6 +4398,20 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              },
+              "examples": {
+                "Reached": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "client.rateLimit.reached",
+                    "generatedDate": "2024-09-01T00:00:00Z",
+                    "payload": {
+                      "dailyQuota": 12000,
+                      "quotaRemaining": 0,
+                      "expiryDate": "2024-09-01T12:14:14Z"
+                    }
+                  }
+                }
               }
             }
           }
@@ -3988,6 +4431,20 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/ClientRateLimitWebhook"
+              },
+              "examples": {
+                "Reset": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "client.rateLimit.reset",
+                    "generatedDate": "2024-09-01T00:00:00Z",
+                    "payload": {
+                      "dailyQuota": 12000,
+                      "quotaRemaining": 11993,
+                      "expiryDate": "2024-09-01T23:59:99Z"
+                    }
+                  }
+                }
               }
             }
           }
@@ -4517,29 +4974,7 @@
               }
             }
           }
-        },
-        "examples": [
-          {
-            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
-            "eventType": "client.rateLimit.reset",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "dailyQuota": 12000,
-              "quotaRemaining": 11993,
-              "expiryDate": "2024-09-01T23:59:99Z"
-            }
-          },
-          {
-            "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
-            "eventType": "client.rateLimit.reached",
-            "generatedDate": "2024-09-01T00:00:00Z",
-            "payload": {
-              "dailyQuota": 12000,
-              "quotaRemaining": 0,
-              "expiryDate": "2024-09-01T12:14:14Z"
-            }
-          }
-        ]
+        }
       },
       "Companies": {
         "title": "Companies",
@@ -4751,43 +5186,7 @@
           "payload": {
             "$ref": "#/components/schemas/Company/definitions/companyDetails"
           }
-        },
-        "examples": [
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "type": "company.created",
-            "generatedDate": "2024-08-08T17:10:34.015Z",
-            "payload": {
-              "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-              "name": "Bank of Dave",
-              "description": "Requested a loan for refurb.",
-              "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
-              "lastSync": "2022-01-01T12:00:00.000Z",
-              "created": "2022-01-01T12:00:00.000Z",
-              "tags": {
-                "customerRegion": "us",
-                "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
-              }
-            }
-          },
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "type": "company.deleted",
-            "generatedDate": "2024-08-08T17:10:34.015Z",
-            "payload": {
-              "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-              "name": "Bank of Dave",
-              "description": "Requested a loan for refurb.",
-              "redirect": "https://link.codat.io/company/0498e921-9b53-4396-a412-4f2f5983b0a2",
-              "lastSync": "2022-01-01T12:00:00.000Z",
-              "created": "2022-01-01T12:00:00.000Z",
-              "tags": {
-                "customerRegion": "uk",
-                "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
-              }
-            }
-          }
-        ]
+        }
       },
       "Connection": {
         "title": "Connection",
@@ -5106,204 +5505,7 @@
               }
             }
           }
-        },
-        "examples": [
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "type": "connection.created",
-            "generatedDate": "2024-08-08T17:10:34.015Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo",
-                "links": {
-                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
-                },
-                "tags": {
-                  "customerRegion": "us",
-                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
-                }
-              },
-              "connection": {
-                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                "integrationKey": "dfxm",
-                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                "platformName": "Basiq",
-                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                "status": "PendingAuth",
-                "lastSync": "2022-10-27T10:22:43.646Z",
-                "created": "2022-10-27T09:53:29.000Z",
-                "sourceType": "Banking"
-              }
-            }
-          },
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "type": "connection.connected",
-            "generatedDate": "2024-08-08T17:10:34.015Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo",
-                "links": {
-                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
-                },
-                "tags": {
-                  "customerRegion": "us",
-                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
-                }
-              },
-              "connection": {
-                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                "integrationKey": "dfxm",
-                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                "platformName": "Basiq",
-                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                "status": "Linked",
-                "lastSync": "2022-10-27T10:22:43.646Z",
-                "created": "2022-10-27T09:53:29.000Z",
-                "sourceType": "Banking"
-              }
-            }
-          },
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "type": "connection.disconnected",
-            "generatedDate": "2024-08-08T17:10:34.015Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo",
-                "links": {
-                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
-                },
-                "tags": {
-                  "customerRegion": "us",
-                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
-                }
-              },
-              "connection": {
-                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                "integrationKey": "dfxm",
-                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                "platformName": "Basiq",
-                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                "status": "Unlinked",
-                "lastSync": "2022-10-27T10:22:43.646Z",
-                "created": "2022-10-27T09:53:29.000Z",
-                "sourceType": "Banking"
-              }
-            }
-          },
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "type": "connection.disconnected",
-            "generatedDate": "2024-08-08T17:10:34.015Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo",
-                "links": {
-                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
-                },
-                "tags": {
-                  "customerRegion": "us",
-                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
-                }
-              },
-              "connection": {
-                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                "integrationKey": "dfxm",
-                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                "platformName": "Basiq",
-                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                "status": "Deauthorized",
-                "lastSync": "2022-10-27T10:22:43.646Z",
-                "created": "2022-10-27T09:53:29.000Z",
-                "sourceType": "Banking",
-                "dataConnectionErrors": [
-                  {
-                    "statusCode": 401,
-                    "statusText": "The integration de-authorized access to the connection.",
-                    "errorMessage": "The integration de-authorized access to the connection.",
-                    "erroredOnUtc": "2022-12-27T09:53:29.000Z",
-                    "status": "Active"
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "type": "connection.reconnected",
-            "generatedDate": "2024-08-08T17:10:34.015Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo",
-                "links": {
-                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
-                },
-                "tags": {
-                  "customerRegion": "us",
-                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
-                }
-              },
-              "connection": {
-                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                "integrationKey": "dfxm",
-                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                "platformName": "Basiq",
-                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                "status": "Linked",
-                "lastSync": "2022-10-27T10:22:43.646Z",
-                "created": "2022-10-27T09:53:29.000Z",
-                "sourceType": "Banking"
-              }
-            }
-          },
-          {
-            "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-            "type": "connection.deleted",
-            "generatedDate": "2024-08-08T17:10:34.015Z",
-            "payload": {
-              "referenceCompany": {
-                "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
-                "name": "Bank of Dave",
-                "description": "internal_id_mxO7rLfo",
-                "links": {
-                  "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
-                },
-                "tags": {
-                  "customerRegion": "us",
-                  "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
-                }
-              },
-              "connection": {
-                "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
-                "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
-                "integrationKey": "dfxm",
-                "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
-                "platformName": "Basiq",
-                "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
-                "status": "Linked",
-                "lastSync": "2022-10-27T10:22:43.646Z",
-                "created": "2022-10-27T09:53:29.000Z",
-                "sourceType": "Banking"
-              }
-            }
-          }
-        ]
+        }
       },
       "CreateApiKey": {
         "title": "Create API key",
@@ -6008,109 +6210,7 @@
             ],
             "description": "The current status of the write request, which is the same as the push operation status."
           }
-        },
-        "examples": [
-          {
-            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "eventType": "bills.write.successful",
-            "generatedDate": "2023-05-03T10:00:23.000Z",
-            "payload": {
-              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
-              "type": "Create",
-              "referenceCompany": {
-                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-                "name": "Toft stores",
-                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
-              },
-              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-              "requestedOnDate": "2023-05-03T10:00:00.000Z",
-              "completedOnDate": "2023-05-03T10:00:23.000Z",
-              "status": "Success",
-              "record": {
-                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
-              }
-            }
-          },
-          {
-            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "eventType": "bills.write.successful",
-            "generatedDate": "2023-05-03T10:00:23.000Z",
-            "payload": {
-              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
-              "type": "UploadAttachment",
-              "referenceCompany": {
-                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-                "name": "Toft stores",
-                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
-              },
-              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-              "requestedOnDate": "2023-05-03T10:00:00.000Z",
-              "completedOnDate": "2023-05-03T10:00:23.000Z",
-              "status": "Success",
-              "record": {
-                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
-              },
-              "attachmentId": "att_1AZtxr2eZvKYlo2CJDX8whov"
-            }
-          },
-          {
-            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "eventType": "bills.write.unsuccessful",
-            "generatedDate": "2023-05-03T10:00:23.000Z",
-            "payload": {
-              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
-              "type": "Update",
-              "referenceCompany": {
-                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-                "name": "Toft stores",
-                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
-              },
-              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-              "requestedOnDate": "2023-05-03T10:00:00.000Z",
-              "completedOnDate": "2023-05-03T10:00:23.000Z",
-              "status": "Failed"
-            }
-          },
-          {
-            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "eventType": "bills.write.unsuccessful",
-            "generatedDate": "2023-05-03T10:00:23.000Z",
-            "payload": {
-              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
-              "type": "Delete",
-              "referenceCompany": {
-                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-                "name": "Toft stores",
-                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
-              },
-              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-              "requestedOnDate": "2023-05-03T10:00:00.000Z",
-              "completedOnDate": "2023-05-03T10:00:23.000Z",
-              "status": "TimedOut"
-            }
-          },
-          {
-            "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "eventType": "bills.write.unsuccessful",
-            "generatedDate": "2023-05-03T10:00:23.000Z",
-            "payload": {
-              "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
-              "type": "UploadAttachment",
-              "referenceCompany": {
-                "id": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-                "name": "Toft stores",
-                "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
-              },
-              "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-              "requestedOnDate": "2023-05-03T10:00:00.000Z",
-              "completedOnDate": "2023-05-03T10:00:23.000Z",
-              "status": "TimedOut",
-              "record": {
-                "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
-              }
-            }
-          }
-        ]
+        }
       },
       "DateTime": {
         "title": "Date time",
@@ -7273,12 +7373,6 @@
             "properties": {
               "referenceCompany": {
                 "$ref": "#/components/schemas/Company/definitions/companyReference"
-              },
-              "product": {
-                "type": "string",
-                "example": "lending",
-                "description": "Name of the product that requested the data types to be fetched.",
-                "nullable": true
               },
               "modifiedFromDate": {
                 "$ref": "#/components/schemas/DateTime",
