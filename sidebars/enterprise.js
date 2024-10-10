@@ -4,7 +4,7 @@ module.exports = [
       href: "/",
       label: "All Docs",
       className: "back",
-    }, 
+    },
     {
         type: "doc",
         label: "Enterprise",
@@ -27,17 +27,21 @@ module.exports = [
                 "enterprise/tech-overview/architecture/data-flow",
                 "enterprise/tech-overview/architecture/rate-limits",
                 "enterprise/tech-overview/architecture/webhooks",
+                "enterprise/tech-overview/architecture/platform-as-a-service",
+                "enterprise/tech-overview/architecture/shared-responsibility-model",
             ]
           },
           {
             type: "category",
-            label: "Security Features",
+            label: "Security Features & Practices",
             items: [
+                "enterprise/tech-overview/security/overview",
                 "enterprise/tech-overview/security/sso",
-                "enterprise/tech-overview/security/mTLS",
+                "enterprise/tech-overview/security/api-mTLS",
+                "enterprise/tech-overview/security/data-security",
+                "enterprise/tech-overview/security/network-security",
             ]
           },
-        "enterprise/tech-overview/security-and-data",
       ],
       label: "Technology Overview"
     },

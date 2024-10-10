@@ -1,23 +1,20 @@
 ---
-title: "Overview"
-description: "Enterprise pages"
+title: "Architecture overview"
+description: "A high-level view of Codat platform architecture"
 ---
 
-
-# Architecture 
-
-The Codat technology system has a [microservice](https://en.wikipedia.org/wiki/Microservices) architecture, this modular structure parallelizes software development and enables a scalable and robust system to be created.
+## Introduction
+Codat has a microservice architecture, this modular structure parallelizes software development and enables a scalable and robust system to be created.
 
 There are currently over 100 services that make up the Codat technology infrastructure, each with a separate instance for each of the two environments (integration, production). 
 
-Most importantly, each connection to an external data source is a separate service with the responsibility of handling authentication, authorisation, data fetch and data mapping. Services are configured to automatically scale out to multiple instances in the event of increased load, thus ensuring high levels of availability and performance. 
+Most importantly, each connection to an external data source is a separate service with the responsibility of handling authentication, authorization, data fetch and data mapping. Services are configured to automatically scale out to multiple instances in the event of increased load, thus ensuring high levels of availability and performance. 
 
 Load on instances is proactively monitored by Azure, and the engineering team is alerted in the event of unexpected spikes.
 
 ![](/img/enterprise/architecture/architecture.png)
 
-# Hosting and Data Storage
-
+## Hosting and data storage
 Codat uses the [Microsoft Azure](https://azure.microsoft.com/en-us/) platform for all hosting and data storage.  Codat has ensured that all hosting and data storage by Azure is located in the UK only.
 
 Microsoft Azure is a growing collection of integrated cloud services that developers and IT professionals use to build, deploy and manage applications through a global network of data centres.
@@ -27,10 +24,4 @@ This means that the underlying application infrastructure is managed by Microsof
 
 All data is stored on Microsoft Azure architecture.
 
-# Azure Security
-Codat utilizes the following security offerings provided by Microsoft Azure:
- - Encryption at rest: SQL transparent data encryption, Storage Service Encryption, AES-256
- - Encryption in transit: TLS/SSL enforced for all data transit, HSTS, IPSec
- - Role level access: Azure RBAC, Active Directory
-
-For a more detailed explanation of Microsoft Azure security and data protection features see [here](https://www.microsoft.com/en-us/trustcenter/).
+Please see the [Shared Responsibility Model](/enterprise/tech-overview/architecture/shared-responsibility-model) for more information on this. 
