@@ -17,14 +17,14 @@ const usecases = [
     linkText: "Discover expense management →",
     linkTextMini: "Discover expense management →",
   },
-  {
-    icon: "/img/logos/usecases/sync-commerce.svg",
-    title: "Integrating commerce data",
-    description: "Sync sales and payment data from PoS, eCommerce, and payments platforms with your customers' accounting software.",
-    link: "/usecases/summary/integrating-commerce-data",
-    linkText: "Discover commerce data integration →",
-    linkTextMini: "Discover commerce data integration →",
-  },
+  // {
+  //   icon: "/img/logos/usecases/sync-commerce.svg",
+  //   title: "Integrating commerce data",
+  //   description: "Sync sales and payment data from PoS, eCommerce, and payments platforms with your customers' accounting software.",
+  //   link: "/usecases/summary/integrating-commerce-data",
+  //   linkText: "Discover commerce data integration →",
+  //   linkTextMini: "Discover commerce data integration →",
+  // },
   {
     icon: "/img/logos/usecases/accounts-payable.svg",
     title: "Automating payables",
