@@ -20,7 +20,7 @@ module.exports = [
         "enterprise/tech-overview/intro",
         {
             type: "category",
-            label: "Codat Architecture",
+            label: "Codat architecture",
             items: [
                 "enterprise/tech-overview/architecture/overview",
                 "enterprise/tech-overview/architecture/api",
@@ -33,7 +33,7 @@ module.exports = [
           },
           {
             type: "category",
-            label: "Security Features & Practices",
+            label: "Security features and practices",
             items: [
                 "enterprise/tech-overview/security/overview",
                 "enterprise/tech-overview/security/sso",
@@ -43,7 +43,7 @@ module.exports = [
             ]
           },
       ],
-      label: "Technology Overview"
+      label: "Technology overview"
     },
     {
         type: "category",
@@ -64,6 +64,6 @@ module.exports = [
           "enterprise/tech-implementation/syncing-data",
           "enterprise/tech-implementation/data-types"
         ],
-        label: "Technical Implementation",
+        label: "Technical implementation",
       },
   ]
