@@ -23,13 +23,14 @@ You can see the overview of Codat's networking flow topology on the image below.
 
 Codat uses the [Microsoft Azure](https://azure.microsoft.com/en-us/) platform for all hosting and data storage, located in the UK only. Microsoft Azure is a growing collection of integrated cloud services that developers and IT professionals use to build, deploy, and manage applications through a global network of data centres.
 
-In particular, Codat uses Azure’s [Platform as a service (PaaS)](https://azure.microsoft.com/en-gb/overview/what-is-paas/) offering. It includes hosting, networking, and storage infrastracture as well as middleware, development tools, and other resources required to support a complete web application lifecycle. This allows Codat to focus on the services we create while Microsoft manages the underlying application infrastructure and automatically patches the operating system, maintaining them to the highest standard. 
+In particular, Codat uses Azure’s [Platform as a service (PaaS)](https://azure.microsoft.com/en-gb/overview/what-is-paas/) offering. It includes hosting, networking, and storage infrastracture as well as middleware, development tools, and other resources required to support a complete web application lifecycle. 
+
+This allows Codat to focus on the services we create while Microsoft manages the underlying application infrastructure and automatically patches the operating system, maintaining them to the highest standard. 
 
 :::info Additional resources
-See Microsoft's [What is PaaS?]([/enterprise/tech-overview/architecture/platform-as-a-service](https://azure.microsoft.com/en-gb/resources/cloud-computing-dictionary/what-is-paas/) to learn more about cloud platform services and [Shared Responsibility Model](/enterprise/tech-overview/architecture/shared-responsibility-model) for more information on our use of Azure. 
+See Microsoft's [What is PaaS?](https://azure.microsoft.com/en-gb/resources/cloud-computing-dictionary/what-is-paas/) to learn more about cloud platform services and [Shared Responsibility Model](/enterprise/tech-overview/architecture/shared-responsibility-model) for more information on our use of Azure. 
 :::
 
 ## Read next
 
-- [Platform as a service](/enterprise/tech-overview/architecture/platform-as-a-service)
 - [Shared responsibility model](/enterprise/tech-overview/architecture/shared-responsibility-model)
