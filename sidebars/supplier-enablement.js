@@ -32,6 +32,7 @@ module.exports = [
     },
     href: "/supplier-enablement/resources/customer-faqs",
   },
+  "supplier-enablement/guides/customer-journey",
   {
     type: "link",
     label: "Relationship Portal",
