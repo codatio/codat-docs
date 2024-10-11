@@ -150,16 +150,31 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 <IntegrationsList filter={integrationsFilterExpenses}/>
 <br/>
 <details>
-<summary> Supported expense types per integration</summary>
+<summary> Supported integrations by endpoint</summary>
 
-| Expenses                    | Payment | Refund | Reward | Chargeback | Adjustment in | Adjustment out | Transfer | Reimbursable expense |
-|---------------------|---------|--------|--------|------------|-------------|--------------|---------------|---------------|
-| Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            |              |              |
-| QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️            | 
-| Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |              |
-| Oracle   NetSuite   | ✔️       | ✔️      |         |            |             |              |               |              |
-| QuickBooks Desktop  | ✔️       | ✔️  (credit card only)          |            |            |             |              |✔️              | ✔️            |
-| FreeAgent          | ✔️       |          |        |            |             |              | ✔️                |✔️            |   
+|                     | expense-transactions | reimbursable-expense-transactions | transfer-transactions | adjustment-transactions |
+|---------------------|----------------------|-----------------------------------|-----------------------|-------------------------|
+| Xero                | ✔️                  |                                   | ✔️                    | ✔️                     | 
+| QuickBooks   Online | ✔️                  | ✔️                                | ✔️                   | ✔️                      | 
+| Dynamics   365      | ✔️                  |                                   |                       | ✔️                      |
+| Oracle   NetSuite   | ✔️                  | ✔️                                |                      |                          |             
+| QuickBooks Desktop  | ✔️                  | ✔️                                | ✔️                   | ✔️                      |
+| FreeAgent           | ✔️                  | ✔️                                | ✔️                   |                         |   
+</details>
+
+<IntegrationsList filter={integrationsFilterExpenses}/>
+<br/>
+<details>
+<summary> Supported integrations by expense-transactions type</summary>
+
+|                     | Payment | Refund                | Reward                | Chargeback             |
+|---------------------|---------|-----------------------|-----------------------|------------------------|
+| Xero                | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| QuickBooks   Online | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| Dynamics   365      | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| Oracle   NetSuite   | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| QuickBooks Desktop  | ✔️     | ✔️ (credit card only) | ✔️ (credit card only) | ✔️ (credit card only) |
+| FreeAgent           | ✔️     |                       |                        |                       |              
 </details>
 
 ## Build with client libraries
