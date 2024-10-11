@@ -4,7 +4,7 @@ description: "Review Codat's shared responsibility model with Microsoft Azure"
 hide_table_of_contents: false
 ---
 
-Operations at Codat are performed entirely on cloud hosted platforms. As such, responsibilities vary across layers of the stack. You can see Microsoft's approach to dividing responsibility in the cloud on the image below. 
+Operations at Codat are performed entirely on cloud hosted platforms. As such, responsibilities vary across layers of the stack. You can see Microsoft's approach to dividing responsibility in the cloud below. 
 ![Microsoft's division of responsibility in the cloud](ms-shared-responsibility.svg)
 
 ## Resposibilities by party
