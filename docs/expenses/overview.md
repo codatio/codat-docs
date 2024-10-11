@@ -152,7 +152,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 <details>
 <summary> Supported integrations by endpoint</summary>
 
-|                     | expense-transactions | reimbursable-expense-transactions | transfer-transactions | adjustment-transactions |
+|Integration          | expense-transactions | reimbursable-expense-transactions | transfer-transactions | adjustment-transactions |
 |---------------------|----------------------|-----------------------------------|-----------------------|-------------------------|
 | Xero                | ✔️                  |                                   | ✔️                    | ✔️                     | 
 | QuickBooks   Online | ✔️                  | ✔️                                | ✔️                   | ✔️                      | 
@@ -162,12 +162,10 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 | FreeAgent           | ✔️                  | ✔️                                | ✔️                   |                         |   
 </details>
 
-<IntegrationsList filter={integrationsFilterExpenses}/>
-<br/>
 <details>
-<summary> Supported integrations by expense-transactions type</summary>
+<summary> Supported integrations by transaction type</summary>
 
-|                     | Payment | Refund                | Reward                | Chargeback             |
+| Integration                   | Payment | Refund                | Reward                | Chargeback             |
 |---------------------|---------|-----------------------|-----------------------|------------------------|
 | Xero                | ✔️     | ✔️                    | ✔️                    | ✔️                    |
 | QuickBooks   Online | ✔️     | ✔️                    | ✔️                    | ✔️                    |
