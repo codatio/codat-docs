@@ -54,7 +54,7 @@ In the request, make sure that the transaction's `id` is unique as it serves as 
     "type": "Payment",
     "issueDate": "2023-12-13T00:00:00+00:00",
     "currency": "GBP",
-    "currencyRate": 1.26,
+    "currencyRate": 1,
     "contactRef":{
         "id":"an-id-to-a-suppliers-record",
         "type": "Supplier"
@@ -62,12 +62,11 @@ In the request, make sure that the transaction's `id` is unique as it serves as 
     "bankAccountRef": {
       "id": "an-id-to-a-bank-or-credit-card-account"
     },
-    "postAsDraft": false,
     "merchantName": "Amazon UK",
     "lines": [
       {
-        "netAmount": 110.42,
-        "taxAmount": 14.43,
+        "netAmount": 100,
+        "taxAmount": 20,
         "taxRateRef": {
           "id": "an-id-to-a-taxRates-record"
         },
@@ -82,11 +81,12 @@ In the request, make sure that the transaction's `id` is unique as it serves as 
         ],
         "invoiceTo": {
             "id": "an-id-to-a-customers-record",
-            "dataType": "customers"
+            "type": "Customer"
         }
       }
     ],
-    "notes": "Amazon UK | Online Purchase | Order 123XX45"
+    "notes": "Amazon UK | Online Purchase | Order 123XX45",
+    "postAsDraft": false
   }
 ]
 
