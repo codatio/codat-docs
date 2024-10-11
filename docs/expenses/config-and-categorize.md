@@ -109,7 +109,7 @@ In some scenarios, different accounting software assign customers and suppliers 
   <thead></thead>
   <tbody>
     <tr>
-      <td style={{ textAlign: 'center' }} colspan="6"><b>Supported platforms</b></td>
+      <td style={{ textAlign: 'center' }} colspan="8"><b>Supported platforms</b></td>
     </tr>
     <tr>
       <td></td>
@@ -119,15 +119,17 @@ In some scenarios, different accounting software assign customers and suppliers 
       <td><b>Netsuite</b></td>
       <td><b>Microsoft Dynamics</b></td>
       <td><b>QuickBooks Desktop</b></td>
+      <td><b>FreeAgent</b></td>
     </tr>
     <tr>
-      <td rowspan="8"><i>Transaction types</i></td>
+      <td rowspan="4"><i>Transaction types</i></td>
       <td>Payments</td>
       <td>Supplier</td>
       <td>Supplier</td>
       <td>Supplier</td>
-      <td rowspan="8">Supplier is not associated with expense transactions due to a Dynamics platform limitation.</td>
+      <td rowspan="4">Supplier is not associated with expense-transactions due to a Dynamics platform limitation.</td>
       <td>Supplier</td>
+      <td rowspan="4">Supplier is not associated with expense-transactions due to a FreeAgent platform limitation.</td>
     </tr>
     <tr>
       <td>Refund</td>
@@ -140,43 +142,15 @@ In some scenarios, different accounting software assign customers and suppliers 
       <td>Rewards</td>
       <td>Customer</td>
       <td>Supplier</td>
-      <td>NA</td>
-      <td>NA</td>
+      <td>Supplier</td>
+      <td>Supplier</td>
     </tr>
     <tr>
       <td>Chargeback</td>
       <td>Customer</td>
       <td>Supplier</td>
-      <td>NA</td>
-      <td>NA</td>
-    </tr>
-    <tr>
-      <td>Transfer in - to be deprecated in June 2024</td>
-      <td>Customer</td>
-      <td>Supplier</td>
-      <td>NA</td>
-      <td>NA</td>
-    </tr> 
-    <tr>
-      <td>Transfer out - to be deprecated in June 2024</td>
       <td>Supplier</td>
       <td>Supplier</td>
-      <td>NA</td>
-      <td>NA</td>
-    </tr>
-    <tr>
-      <td>Adjustment in</td>
-      <td>If the expense account is a bank account, then supplier is used. If not, customer is used.</td>
-      <td>Customer</td>
-      <td>NA</td>
-      <td>NA</td>
-    </tr>
-    <tr>
-      <td>Adjustment out</td>
-      <td>Supplier</td>
-      <td>Customer</td>
-      <td>NA</td>
-      <td>NA</td>
     </tr>
   </tbody>
 </table>
@@ -192,14 +166,18 @@ The response can then be cached and displayed to the customer when they are fina
     "expenseProvider": "Partner Expense",
     "accounts": [
         {
-            "id": "c5194f9d-b443-4630-b2d4-339bd57d313c",
-            "name": "Interest Earned",
+            "id": "127f3b99-8dc2-4b7e-854c-91ef9bd2757b",
+            "nominalCode": "300",
+            "name": "Purchases",
             "currency": "GBP",
-            "accountType": "Asset",
+            "accountType": "Expense",
+            "fullyQualifiedCategory": "Expense.DirectCosts",
+            "isBankAccount": false,
             "validTransactionTypes": [
+                "Payment",
+                "Refund",
                 "Reward",
-                "Adjustment",
-                "Transfer"
+                "Chargeback"
             ]
         }
         ...
@@ -244,7 +222,7 @@ When writing an expense reconciliation, you can include a tracking category to f
 
 ### Tax rates
 
-[Tax rates](/sync-for-expenses-api#/schemas/TaxRateMappingInfo) enable your SMB customers to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax. Assigning a tax rate to a transaction is mandatory, unless the transaction is a `transferIn` or `transferOut`. 
+[Tax rates](/sync-for-expenses-api#/schemas/TaxRateMappingInfo) enable your SMB customers to accurately track taxes against purchases and, depending on the locale, allow them to recoup the tax.
 
 Accounting systems typically store a set of taxes and associated rates within the accounting software. This means users don't have to look up or remember the rate for each type of tax. For example, applying the tax "UK sales VAT" to the line items of an invoice in an accounting software will add the correct tax rate of 20%. 
 
