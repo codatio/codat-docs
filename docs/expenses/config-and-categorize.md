@@ -142,15 +142,15 @@ In some scenarios, different accounting software assign customers and suppliers 
       <td>Rewards</td>
       <td>Customer</td>
       <td>Supplier</td>
-      <td>NA</td>
-      <td>NA</td>
+      <td>Supplier</td>
+      <td>Supplier</td>
     </tr>
     <tr>
       <td>Chargeback</td>
       <td>Customer</td>
       <td>Supplier</td>
-      <td>NA</td>
-      <td>NA</td>
+      <td>Supplier</td>
+      <td>Supplier</td>
     </tr>
   </tbody>
 </table>
