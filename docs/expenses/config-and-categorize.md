@@ -109,7 +109,7 @@ In some scenarios, different accounting software assign customers and suppliers 
   <thead></thead>
   <tbody>
     <tr>
-      <td style={{ textAlign: 'center' }} colspan="6"><b>Supported platforms</b></td>
+      <td style={{ textAlign: 'center' }} colspan="8"><b>Supported platforms</b></td>
     </tr>
     <tr>
       <td></td>
@@ -177,7 +177,7 @@ The response can then be cached and displayed to the customer when they are fina
                 "Payment",
                 "Refund",
                 "Reward",
-                "Chargeback
+                "Chargeback"
             ]
         }
         ...
