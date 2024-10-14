@@ -20,7 +20,7 @@ module.exports = [
         "enterprise/tech-overview/intro",
         {
             type: "category",
-            label: "Codat architecture",
+            label: "Architecture",
             items: [
                 "enterprise/tech-overview/architecture/overview",
                 "enterprise/tech-overview/architecture/api",
@@ -32,7 +32,7 @@ module.exports = [
           },
           {
             type: "category",
-            label: "Security features and practices",
+            label: "Security",
             items: [
                 "enterprise/tech-overview/security/data-security",
                 "enterprise/tech-overview/security/network-security",
