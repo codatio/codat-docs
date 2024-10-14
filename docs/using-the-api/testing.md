@@ -57,7 +57,6 @@ You can also sign up and test with **Xero** and **QuickBooks Online**, both of w
 | [Exact NL](https://www.exact.com/nl/producten/accountancy/boekhouden/probeer) 	| Live integration 	| Free trial 	|  	|
 | [FreeAgent](https://signup.sandbox.freeagent.com/signup) 	| Live integration 	| Free trial 	| Temporary free account at the [FreeAgent   Sandbox](https://dev.freeagent.com/docs/quick_start). 	|
 | [FreshBooks](https://www.freshbooks.com/blog/freshbooks-trial) 	| Live integration 	| Free trial 	|  	|
-| [KashFlow](https://www.kashflow.com/support/kb/developer-account/) 	| Live integration 	| Free trial 	| Contact KashFlow support to request a test developer account. 	|
 | [MYOB](https://developer.myob.com/api/myob-business-api/api-overview/getting-started/) 	| Live integration 	| Demo company 	| Codat only supports data hosted online. When setting up the account, you will receive instructions on loading demo files.	|
 | [Microsoft 365 Dynamics Business   Central](https://learn.microsoft.com/en-gb/dynamics365/business-central/admin-sandbox-environments) 	| Live integration 	| Sandbox environment 	| [Read more](/integrations/accounting/dynamics365businesscentral/test-your-dynamics-365-business-central-integration) about testing this integration. 	|
 | [QuickBooks   Desktop](https://quickbooks.intuit.com/desktop/enterprise/contact/trial-download/?auto=true) 	| Live integration 	| Free trial 	|  	|
