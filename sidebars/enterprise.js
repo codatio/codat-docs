@@ -34,11 +34,10 @@ module.exports = [
             type: "category",
             label: "Security features and practices",
             items: [
-                "enterprise/tech-overview/security/overview",
-                "enterprise/tech-overview/security/sso",
-                "enterprise/tech-overview/security/api-mTLS",
                 "enterprise/tech-overview/security/data-security",
                 "enterprise/tech-overview/security/network-security",
+                "enterprise/tech-overview/security/api-mTLS",
+                "enterprise/tech-overview/security/sso",
             ]
           },
       ],
