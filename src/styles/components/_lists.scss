@@ -33,6 +33,7 @@ article .markdown > ol > li::before {
   top: 3px;
   line-height: 20px;
   width: 22px;
+  text-wrap: nowrap;
 }
 
 article .markdown > ol ul,
