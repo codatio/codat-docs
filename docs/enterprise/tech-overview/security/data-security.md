@@ -70,16 +70,13 @@ At an application level, all HTTPS responses servicing requests (from the portal
 As part of our data security posture, Codat enforces strict data access control. This includes the following practices:
 
 **1. Principle of least privilege**
-
-    By default, people do not have access to production client data. 
+  By default, people do not have access to production client data. 
 
 **2. Break-glass access**
-
-    Individuals have the ability to obtain break-glass access to production for the purposes of issue investigation. This access is time-bound, tied to a specific task, and must be approved by an elected set of leadership. It must be carried out through a connection to a dedicated production VPN that requires 2FA and a compliant Codat-provisioned device.
+  Individuals have the ability to obtain break-glass access to production for the purposes of issue investigation. This access is time-bound, tied to a specific task, and must be approved by an elected set of leadership. It must be carried out through a connection to a dedicated production VPN that requires 2FA and a compliant Codat-provisioned device.
 
 **3. Codat people device control**
-
-    All Codat provisioned devices have full disk encryption, and production data does not leave the production environment.
+  All Codat provisioned devices have full disk encryption, and production data does not leave the production environment.
 
 Access control is enforced through Azure RBAC and Active Directory. You can find more details about these features on the [Microsoft Trust Center](https://www.microsoft.com/en-us/trustcenter/)🔗.
 
