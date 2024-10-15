@@ -68,8 +68,9 @@ All communication to `codat.io` mandates HTTPS (not HTTP) with best practice enf
 
 All internal network traffic operates over SSL/TLS (HTTPS). 
 
-### HTTP Strict Transport Security (HSTS)
-At an application level, all HTTPS responses servicing requests (from the portal or API) include an HSTS header. 
+### HTTP Strict Transport Security
+
+At an application level, all HTTPS responses servicing requests (from the portal or API) include an HTTP Strict Transport Security (HSTS) header. 
 
 ### mTLS
 
