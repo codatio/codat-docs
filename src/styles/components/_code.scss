@@ -65,6 +65,8 @@ html[data-theme="dark"] {
 #__docusaurus {
   [class*="codeBlockContainer_"] {
     box-shadow: none;
+    border: 2px solid var(--token-secondary-bg-c-alt);
+    overflow: hidden;
 
     &:last-child {
       margin-bottom: 0;

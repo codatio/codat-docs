@@ -1,0 +1,25 @@
+.markdown,
+.sl-relative,
+.JsonSchemaViewer {
+  a {
+    position: relative;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 1px;
+      background: currentColor;
+      transition: transform 0.2s ease;
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scaleX(0);
+    }
+  }
+}

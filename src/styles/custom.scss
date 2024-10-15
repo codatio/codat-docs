@@ -29,6 +29,7 @@
 @use "./components/images";
 @use "./components/input";
 @use "./components/labels";
+@use "./components/links";
 @use "./components/lists";
 @use "./components/markdown";
 @use "./components/mermaid";
@@ -317,6 +318,14 @@ hr {
 
 .cordova-ee-card p {
   margin: 1rem 0 0;
+}
+
+.details {
+  summary {
+    &:before {
+      margin-top: 2px;
+    }
+  }
 }
 
 

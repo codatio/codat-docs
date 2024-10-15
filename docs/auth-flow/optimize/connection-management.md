@@ -237,7 +237,7 @@ For an example of the component in action, [see our demo app](https://github.com
    
 3. **If you're using content security policy (CSP) headers:**
     
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Don't use a hash because this can change at any time without warning.
 
 4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
@@ -318,7 +318,7 @@ In the snippet below, you'll see that we use webpack's [magic comments](https://
    
 3. **If you're using content security policy (CSP) headers:**
 
-    * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+    * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
     * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using  `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
@@ -387,7 +387,7 @@ For an example of the component in action, [see our demo app](https://github.com
   };
  ```
 4. **If you're using content security policy (CSP) headers**:
-    * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+    * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
     * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
@@ -457,7 +457,7 @@ In the snippet below, we use webpack's [magic comments](https://webpack.js.org/a
   ```
 
 4. **If you're using content security policy (CSP) headers**:
-      * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+      * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
@@ -510,7 +510,7 @@ For an example of the component in action, [see our demo app](https://github.com
   ```
    
 4. **If you're using content security policy (CSP) headers**:
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
@@ -575,7 +575,7 @@ For an example of the component in action, [see our demo app](https://github.com
   ```
    
 4. **If you're using content security policy (CSP) headers**:
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.

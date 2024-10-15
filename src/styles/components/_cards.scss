@@ -46,6 +46,12 @@ ul.card-container {
   &.mini {
     grid-auto-rows: auto;
   }
+
+  a {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 @media screen and (max-width: 1220px) {
