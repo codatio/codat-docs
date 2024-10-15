@@ -35,12 +35,6 @@ function AuthFlow() {
 }
 ```
 
-:::note Dynamic imports
-
-Link SDK is imported at runtime, so you'll always get the latest version of our auth flow UI with no risk of staleness. To achieve this, we use ES6's [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) feature (aka dynamic imports).
-
-:::
-
 ## Resources
 
 We've provided you with [rich examples on GitHub](https://github.com/codatio/sdk-link/tree/main/examples) that illustrate how you can add the Link component to your project.
@@ -84,23 +78,24 @@ For an example of the component in action, [see our demo app](https://github.com
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters.
+    You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters.
 
 2. **Use the component to mount the SDK** 
 
-  We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/App.css). Your component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/App.tsx), passing the relevant company ID and callbacks.
+    We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/App.css). Your component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/react/src/App.tsx), passing the relevant company ID and callbacks.
 
-  ```js
-  // AuthFlow.tsx
 
-  import {
-    ConnectionCallbackArgs,
-    ErrorCallbackArgs,
-  } from "@codat/sdk-link-types"
-  import { useState } from "react";
-  import { CodatLink } from "./components/CodatLink";
+```js
+// AuthFlow.tsx
 
-  function App() {
+import {
+  ConnectionCallbackArgs,
+  ErrorCallbackArgs,
+} from "@codat/sdk-link-types"
+import { useState } from "react";
+import { CodatLink } from "./components/CodatLink";
+
+function App() {
   const [companyId, setCompanyId] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
@@ -122,28 +117,28 @@ For an example of the component in action, [see our demo app](https://github.com
     }
   }
 
-    return (
-      <div>
-        <p>Some content</p>
+  return (
+    <div>
+      <p>Some content</p>
 
-        <button onClick={() => setModalOpen(true)}>
-             Start authing
-        </button>
-      
-        {modalOpen && (
-        <div className="modal-wrapper">
-          <CodatLink
-            companyId={companyId}
-            onConnection={onConnection}
-            onError={onError}
-            onClose={onClose}
-            onFinish={onFinish}
-          />
-        </div>
-      )};
+      <button onClick={() => setModalOpen(true)}>
+           Start authing
+      </button>
+    
+      {modalOpen && (
+      <div className="modal-wrapper">
+        <CodatLink
+          companyId={companyId}
+          onConnection={onConnection}
+          onError={onError}
+          onClose={onClose}
+          onFinish={onFinish}
+        />
       </div>
-    );
-  };
+    )};
+    </div>
+  );
+};
   ```
    
 3. **Conditional steps**
@@ -152,7 +147,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
     - **If you're using content security policy (CSP) headers**, edit these headers:
     
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -174,15 +169,15 @@ In the example below, you'll see that we use webpack's [magic comments](https://
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. 
+    You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/components/CodatLink.tsx" target="_blank">`CodatLink.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. 
   
-  We use [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above).
+    We use [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above).
 
 2. **Use the component to mount the SDK** 
 
-  We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/page.module.css). Your component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/page.tsx), passing the relevant company ID and callbacks.
+    We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/page.module.css). Your component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/next/src/app/page.tsx), passing the relevant company ID and callbacks.
 
-  ```js
+```js
   // page.tsx
 
  "use client";
@@ -235,7 +230,7 @@ export default function Home() {
       </main>
     );
   };
-  ```
+```
    
 3. **Conditional steps**
 
@@ -243,7 +238,7 @@ export default function Home() {
 
     - **If you're using content security policy (CSP) headers**, edit these headers:
 
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -256,23 +251,23 @@ For an example of the component in action, [see our demo app](https://github.com
 
 1. **Create a target `div` for the `CodatLink` component** 
 
-  It should have an `id` of `codat-link-container`.
+    It should have an `id` of `codat-link-container`.
   
-  The `CodatLink` component will be mounted within this div. We recommend setting `width: 460px; height: 840px` for this element and styling it as a modal by nesting it within a modal wrapper (e.g. `position: fixed; inset: 0`). The component is optimized to look best with these parameters.
+    The `CodatLink` component will be mounted within this div. We recommend setting `width: 460px; height: 840px` for this element and styling it as a modal by nesting it within a modal wrapper (e.g. `position: fixed; inset: 0`). The component is optimized to look best with these parameters.
 
-  The created `CodatLink` component expands to fit 100% of the specified dimensions.
+    The created `CodatLink` component expands to fit 100% of the specified dimensions.
    
 2. **Import the Link SDK component** 
 
-  If you're using the component inside a `script` tag, the tag must have `type="module"` set. 
+    If you're using the component inside a `script` tag, the tag must have `type="module"` set. 
 
-  ```bash
-   import { CodatLink } from "https://link-sdk.codat.io";
-  ```
+```bash
+ import { CodatLink } from "https://link-sdk.codat.io";
+```
 
 3. **Define callbacks** 
   
-  ```js
+```js
   const closeCallback = () => {
     linkSdkTarget.style.pointerEvents = "none";
     linkSdkTarget.removeChild(linkSdkTarget.children[0]);
@@ -297,13 +292,13 @@ For an example of the component in action, [see our demo app](https://github.com
       onClose();
     }
   };
-  ```
+```
 
 4. **Initialize the Link SDK component in your app** 
 
-  Supply the `companyId` of the company you want to authorize:
+    Supply the `companyId` of the company you want to authorize:
 
- ```js
+```js
   const target = document.querySelector("#codat-link-container");
   
   const openModal = () => {
@@ -319,14 +314,14 @@ For an example of the component in action, [see our demo app](https://github.com
      },
    });
   };
- ```
+```
+
 5. **Conditional steps**  
 
-  - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-
- - **If you're using content security policy (CSP) headers**, edit these headers:
-    * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
-    * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+    - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    - **If you're using content security policy (CSP) headers**, edit these headers:
+      * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
+      * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 </TabItem>
 
@@ -343,7 +338,7 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
 
 1. **Create a component that mounts the SDK** 
 
-  See the <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/angular/src/app/codat-link/" target="_blank">`codat-link folder`</a> for an example module.
+    See the <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/angular/src/app/codat-link/" target="_blank">`codat-link folder`</a> for an example module.
 
 2. **Define company ID and callbacks** 
 
@@ -401,10 +396,11 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
   ></app-codat-link>
 ```
 4. **Conditional steps**
-   - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
-   -  **If you're using content security policy (CSP) headers**, edit these headers:
-      * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
-      * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+
+    - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
+    -  **If you're using content security policy (CSP) headers**, edit these headers:
+        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
+        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
 
@@ -416,11 +412,11 @@ For an example of the component in action, [see our demo app](https://github.com
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/components/CodatLink.vue" target="_blank">`CodatLink.vue`</a> file to an appropriate location in your app. We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
+    You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/components/CodatLink.vue" target="_blank">`CodatLink.vue`</a> file to an appropriate location in your app. We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
 
 2. **Use this component to mount the SDK** 
 
-  We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/App.vue). The component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/App.vue), passing the relevant company ID and callbacks.
+    We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/App.vue). The component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/vue/src/App.vue), passing the relevant company ID and callbacks.
 
   ```js
   // App.vue
@@ -467,9 +463,10 @@ For an example of the component in action, [see our demo app](https://github.com
   ```
    
 4. **Conditional steps**
+
     - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
     - **If you're using content security policy (CSP) headers**, edit these headers:
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
+       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -482,10 +479,11 @@ For an example of the component in action, [see our demo app](https://github.com
 
 1. **Create a component that mounts the SDK** 
 
-  You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/lib/CodatLink.svelte" target="_blank">`CodatLink.svelte`</a> file to an appropriate location in your Svelte app. We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
+    You can copy and paste the example <a href="https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/lib/CodatLink.svelte" target="_blank">`CodatLink.svelte`</a> file to an appropriate location in your Svelte app. We recommend setting `width: 460px; height: 840px` for this component because it's optimized to look best with these parameters.
+
 2. **Use the component to mount the SDK**  
 
-  We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte). The component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte), passing the relevant company ID and callbacks.
+    We suggest wrapping the `CodatLink` component in a modal to [adjust its positioning](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte). The component can also manage when to [display the Link component](https://github.com/codatio/sdk-link/blob/main/examples/languages/svelte/src/App.svelte), passing the relevant company ID and callbacks.
 
   ```js
   // App.svelte
@@ -532,14 +530,21 @@ For an example of the component in action, [see our demo app](https://github.com
   ```
    
 4. **Conditional steps**
+
     - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
     - **If you're using content security policy (CSP) headers**, edit these headers:
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of of `script-src, style-src, font-src, connect-src, img-src`).
-       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
+        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
+        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
 
 </Tabs>
+
+:::note Dynamic imports
+
+Link SDK is imported at runtime, so you'll always get the latest version of our auth flow UI with no risk of staleness. To achieve this, we use ES6's [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) feature (aka dynamic imports).
+
+:::
 
 ## Use callback functions
 
@@ -548,9 +553,9 @@ You can add custom logic into our SDK by using callback functions to complete an
 | Property       | Description                                                                                                                                                                                                                                          | Arguments                                                                                                                                                                                                                                                                 |
 |----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `onConnection` | Called when a connection   is successfully authorized and moved out of a `pending` state or files are   uploaded.                                                                                                                                    | A `connection` object containing the following properties: <br/>`connectionId` - unique identifier of the connection.                                                                                                                                                                                                                      |
-| `onFinish`     | Called when the user completes all required steps of the connection flow and clicks the   "Complete" button.<br/> We recommend removing the `CodatLink` component   in this callback. In the React example above, we call `setModalOpen(false)` to do this.                                                                   |                                                                                                                                                                                                                                                                            |
+| `onFinish`     | Called when the user completes all required steps of the connection flow and clicks the   "Complete" button.<br/> We recommend unmounting the `CodatLink` component   in this callback. In the React example above, we call `setModalOpen(false)` to do this.                                                                   |                                                                                                                                                                                                                                                                            |
 | `onClose`      | Called when the user   clicks the "X" ("Close") button of the connection flow. <br/>  We recommend removing the `CodatLink` component in this callback. In the React example above, we call `setModalOpen(false)` to do this.                                                                                                  |                                                                                                                                                                                                                                                                            |
-| `onError`      | Called when an error   occurs in the connection flow, returning the error information. <br/> We recommend   removing the `CodatLink` component only when the `userRecoverable` parameter   is `false`. Otherwise, log the error and keep the SDK rendered. |  An `error` object containing the following properties: <br/> `correlationId` - internal identifier used to track errors within   Codat,<br/>`message` - descriptive error   response, <br/>`errorCode` - numerical code of the   error, <br/> `userRecoverable` - boolean value   indicating whether the error can be resolved by the user. <br/><br/> `correlationId`, `message`, and `errorCode` are optional and may not be available in all errors. |
+| `onError`      | Called when an error   occurs in the connection flow, returning the error information. <br/><br/>  **Log these errors.** We also recommend   unmounting the `CodatLink` component in production if the `userRecoverable` parameter   is `false`. |  An `error` object containing the following properties: <ul><li>`correlationId` - internal identifier used to track errors within   Codat</li><li>`message` - descriptive error   response</li><li>`errorCode` - numerical code of the   error</li><li>`userRecoverable` - boolean value   indicating whether the error can be resolved by the user.</li></ul> `correlationId`, `message`, and `errorCode` are optional and may not be available in all errors. |
 
 ## Customize Link
 

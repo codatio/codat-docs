@@ -32,8 +32,10 @@ html[data-theme="dark"] {
     color: var(--markdown-bold-c);
   }
 
-  code {
+  code:not([class*="codeBlockLines"]) {
     font-size: 95%;
+    padding: 0.2em 0.5em;
+    white-space: nowrap;
   }
   
   pre code {
@@ -75,6 +77,11 @@ html[data-theme="dark"] {
     margin-bottom: 3em;
   }
 
+  a {
+    position: relative;
+    text-decoration: none;
+  }
+
   h1,
   h2,
   h3,
@@ -90,6 +97,14 @@ html[data-theme="dark"] {
 
     > a.hash-link {
       color: inherit;
+
+      &:hover {
+        opacity: 0.5;
+      }
+      
+      &:after {
+        display: none;
+      }
     }
   }
 
