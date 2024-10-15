@@ -16381,6 +16381,11 @@
               }
             }
           },
+          "reference": {
+            "type": "string",
+            "nullable": true,
+            "description": "User-friendly reference for the expense transaction."
+          },
           "merchantName": {
             "type": "string",
             "example": "Amazon UK",
