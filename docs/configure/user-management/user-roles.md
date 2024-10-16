@@ -32,18 +32,18 @@ _Administrator_ users have full access to all the features available in the Coda
 
 ### User roles summary
 
-| Action                                     	| Onboarding 	| Analyst 	| Developer 	| Administrator 	|
-|-------------------------------------------	|------------	|---------	|-----------	|---------------	|
+| Action                                       	| Onboarding 	| Analyst 	| Developer 	| Administrator 	|
+|-------------------------------------------	  |------------	|---------	|-----------	|---------------	|
 | Manage (add and delete) Companies            	| ✔          	| ✔       	| ✔         	| ✔             	|
 | Manage Connections and view their status      | ✔          	| ✔       	| ✔         	| ✔             	|
-| View company and integration data (Portal)    | ✔           	| ✔       	| ✔         	| ✔             	|
-| View company and integration data (API)       | ✔           	| ✔       	| ✔         	| ✔             	|
-| Upload files on behalf of a company          	| ✔           	| ✔        	| ✔         	| ✔             	|
-| View and resolve webhooks and events         	|            	| ✔       	| ✔         	| ✔             	|
-| Add and update rules                      	|            	|         	| ✔         	| ✔             	|
-| Configure Link                            	|            	|         	| ✔         	| ✔             	|
-| Manage integrations                       	|            	|         	| ✔         	| ✔             	|
-| Update settings                           	|            	|         	| ✔         	| ✔             	|
-| Manage upcoming deprecations              	|            	|         	| ✔         	| ✔             	|
-| Add and update users                      	|            	|         	|           	| ✔             	|
+| View contributed company data (Portal)        |            	| ✔       	| ✔         	| ✔             	|
+| View contributed company data (API)           | ✔          	| ✔       	| ✔         	| ✔             	|
+| Upload files on behalf of a company          	| ✔          	| ✔        	| ✔         	| ✔             	|
+| Manage and view webhooks                    	|            	|         	| ✔         	| ✔             	|
+| Configure Link                              	|            	|         	| ✔         	| ✔             	|
+| Manage integrations                         	|            	|         	| ✔         	| ✔             	|
+| Manage data type settings                  	  |            	|         	| ✔         	| ✔             	|
+| Manage upcoming deprecations                	|            	|         	| ✔         	| ✔             	|
+| Manage other settings                         |            	|         	| ✔         	| ✔             	|
+| Add and update users                        	|            	|         	|           	| ✔             	|
 
