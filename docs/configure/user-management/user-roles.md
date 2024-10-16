@@ -39,6 +39,7 @@ _Administrator_ users have full access to all the features available in the Coda
 | View company and integration data (Portal)    | ✔           	| ✔       	| ✔         	| ✔             	|
 | View company and integration data (API)       | ✔           	| ✔       	| ✔         	| ✔             	|
 | Upload files on behalf of a company          	| ✔           	| ✔        	| ✔         	| ✔             	|
+| View company financial data                   |             	| ✔       	| ✔         	| ✔             	|
 | View and resolve webhooks and events         	|            	| ✔       	| ✔         	| ✔             	|
 | Add and update rules                      	|            	|         	| ✔         	| ✔             	|
 | Configure Link                            	|            	|         	| ✔         	| ✔             	|
