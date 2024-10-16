@@ -126,3 +126,20 @@ button.sl-bg-primary {
     margin-bottom: 0;
   }
 }
+
+.TextRequestBody {
+  margin-bottom: 0 !important;
+  padding: 16px !important;
+
+  > .sl-code-editor {
+    --color-text: var(--ifm-pre-color);
+
+    > div {
+      padding: 0px;
+    }
+  }
+}
+
+.SendButtonHolder {
+  padding-left: 0 !important;
+}
