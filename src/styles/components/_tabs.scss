@@ -56,18 +56,19 @@ html[data-theme="dark"] {
     font-weight: 400;
     line-height: 100%;
     letter-spacing: 0;
-
     border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0);
-
+    border: 0px solid rgba(0, 0, 0, 0);
+    border-bottom: 1px;
     padding-block-start: calc(var(--ifm-tabs-padding-vertical) - 1px);
-
     transition: border-color 0.2s ease-out, opacity 0.2s ease-out;
+
+    &:first-child {
+      padding-left: 0;
+    }
 
     &--active {
       font-weight: 500;
-
-      border-color: var(--tabs-border-c);
+      color: var(--ifm-link-color);
     }
 
     + .tabs__item {
