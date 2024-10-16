@@ -1,9 +1,10 @@
 .markdown,
 .sl-relative,
-.JsonSchemaViewer {
+.JsonSchemaViewer,
+ul.card-container div:not(.header) {
   a {
     position: relative;
-    text-decoration: none;
+    text-decoration: none !important;
 
     &::after {
       content: '';
@@ -20,6 +21,30 @@
 
     &:hover::after {
       transform: scaleX(0);
+    }
+  }
+}
+
+ul.card-container .header {
+  a {
+    position: relative;
+    text-decoration: none !important;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 1px;
+      background: currentColor;
+      transition: transform 0.2s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
     }
   }
 }
