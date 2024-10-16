@@ -10,7 +10,7 @@ While the Portal provides a simple way of exploring data, you'll need to use the
 
 We've packaged up Codat's functionality mainly by *product*, with our *Platform API* providing core functionalities used across our product. You can explore each API and its endpoints in our API references.
 
-| Product API | Description |
+| Product API &nbsp&nbsp&nbsp | Description |
 | :- | :- |
 | **[Bank Feeds API](/bank-feeds-api)** | Set up bank feeds from accounts in your application to supported accounting software. |
 | **[Lending API](/lending-api)** | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features. |
@@ -36,7 +36,7 @@ Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
 
 ### Utilities
 
-| API | Description |
+| API &nbsp&nbsp&nbsp&nbsp | Description |
 | :- | :- |  
 | **[Platform API](/codat-api)** | Manage the building blocks of Codat, including companies, connections, and more. Prev. 'Common API'|
 | **[Files API](/files-api)** | Capture your SMB's business documents with our file upload functionality. |
