@@ -131,12 +131,12 @@
       "description": "Extra functionality for building an account management UI."
     },
     {
-      "name": "Company information",
-      "description": "Get detailed information about a company from the underlying accounting software."
-    },
-    {
       "name": "Transactions",
       "description": "Create new bank account transactions for a company's connections, and see previous operations."
+    },
+    {
+      "name": "Company information",
+      "description": "Get detailed information about a company from the underlying accounting software."
     }
   ],
   "paths": {
@@ -3302,7 +3302,7 @@
           "Source accounts"
         ],
         "summary": "Generate source account credentials",
-        "description": "﻿The _Generate Bank Account Credentials_ endpoint can be used to generate credentials for QuickBooks Online to use for authentication of the Bank Feed in their portal, each time this is used a new set of credentials will be generated.\n\nThe old credentials will still be valid until the revoke credentials endpoint is used, which will revoke all credentials associated to the data connection.\n",
+        "description": "﻿The _Generate bank account credentials_ endpoint can be used to generate credentials for QuickBooks Online to authenticate the Bank Feed in the QBO portal. Each time this endpoint is called, a new set of credentials will be generated.\n\nThe old credentials will still be valid until the revoke credentials endpoint is used, which will revoke all credentials associated to the data connection.\n\n> **For QuickBooks Online only**\n>\n> Only call this endpoint when onboarding SMBs that use  QuickBooks Online.",
         "operationId": "generate-credentials",
         "parameters": [
           {
@@ -3409,8 +3409,8 @@
         "tags": [
           "Account mapping"
         ],
-        "summary": "List bank feed account mappings",
-        "description": "﻿The *List bank account mappings* endpoint returns information about a source bank account and any current or potential target mapping accounts.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nThis endpoint is only needed if building an account management UI.",
+        "summary": "List bank feed accounts",
+        "description": "﻿The *List bank accounts* endpoint returns information about a source bank account and any current or potential target mapping accounts.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end user's account in the underlying software).\n\n> **For custom builds only**\n> \n> Only use this endpoint if you are building your own account management UI.",
         "operationId": "get-bank-account-mapping",
         "responses": {
           "200": {
@@ -3418,7 +3418,41 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankFeedMapping"
+                  "$ref": "#/components/schemas/BankFeedMapping/definitions/bankFeedMappings"
+                },
+                "examples": {
+                  "Example": {
+                    "value": [
+                      {
+                        "sourceAccountId": "account-001",
+                        "status": "pending",
+                        "targetAccountOptions": [
+                          {
+                            "name": "Money Bank account",
+                            "id": "d21e25d6-98c5-4bfb-b469-105833bea3c8",
+                            "accountNumber": "789",
+                            "sortCode": "123456"
+                          },
+                          {
+                            "name": "Bank of Dave account",
+                            "id": "d06ff4b2-e4f2-4681-9841-014bd008cdab",
+                            "accountNumber": "99887766",
+                            "sortCode": "998866"
+                          },
+                          {
+                            "name": "LuxLend account",
+                            "id": "c8f252fc-84f3-4a8b-ace8-ae99f41a81ae",
+                            "accountNumber": "123456789",
+                            "sortCode": "123456"
+                          }
+                        ],
+                        "sourceAccountName": "account-001",
+                        "sourceAccountNumber": "12345670",
+                        "sourceBalance": 99.99,
+                        "sourceCurrency": "GBP"
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -3451,13 +3485,21 @@
           "Account mapping"
         ],
         "summary": "Create bank feed account mapping",
-        "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting software (target account).\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nTo find valid target account options, first call list bank feed account mappings.\n\nThis endpoint is only needed if building an account management UI.",
+        "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting software (target account).\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end user's account in the underlying software).\n\nTo find valid target account options, first call the [List bank feed account mappings](https://docs.codat.io//bank-feeds-api#/operations/get-bank-account-mapping) endpoint.\n\n> **For custom builds only**\n>\n> Only use this endpoint if you are building your own account management UI.",
         "operationId": "create-bank-account-mapping",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BankFeedAccountMapping"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "sourceAccountId": "acc-002",
+                    "targetAccountId": "account-081"
+                  }
+                }
               }
             }
           }
@@ -3795,7 +3837,7 @@
         ],
         "operationId": "get-create-operation",
         "x-speakeasy-name-override": "get-create-operation",
-        "description": "Retrieve push operation.",
+        "description": "The **Get create operation** endpoint returns a specific [write operation](/using-the-api/push) identified by the `pushOperationKey` that was performed on the company.\n\nWrite operations are actions that send requests to Codat, enabling the creation, updating, deletion of records, or uploading attachments in the connected accounting software.\n\nFor bank feeds, your push operations will only relate to the `bankTransactions` data type.",
         "responses": {
           "200": {
             "description": "OK",
@@ -3859,7 +3901,7 @@
         ],
         "operationId": "list-create-operations",
         "x-speakeasy-name-override": "list-create-operations",
-        "description": "List create operations.",
+        "description": "The **List create operations** endpoint returns a list of [write operations](/using-the-api/push) performed on the company.\n\nWrite operations are actions that send requests to Codat, enabling the creation, updating, deletion of records, or uploading attachments in the connected accounting software. \n\nFor bank feeds, use this endpoint to view write operations related to the `bankTransactions` data type.",
         "responses": {
           "200": {
             "description": "OK",
@@ -4420,24 +4462,23 @@
             "nullable": true,
             "description": "Unique ID for the target account."
           },
-          "Status": {
+          "status": {
             "type": "string",
             "nullable": true,
             "description": "Status of the POST request."
           },
-          "Error": {
+          "error": {
             "type": "string",
             "nullable": true,
             "description": "Error returned during the post request"
           }
         },
-        "description": "The result from POSTing a Bank Account mapping.",
         "examples": [
           {
             "sourceAccountId": "acc-002",
             "targetAccountId": "account-081",
-            "Status": "Failed",
-            "Error": "A feed connection already exists to this account"
+            "status": "Failed",
+            "error": "A feed connection already exists to this account"
           }
         ]
       },
@@ -4524,6 +4565,14 @@
                 "description": "The account number of the account."
               }
             }
+          },
+          "bankFeedMappings": {
+            "title": "Bank feed mappings",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BankFeedMapping"
+            },
+            "additionalProperties": false
           }
         },
         "examples": [

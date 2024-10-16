@@ -3075,7 +3075,7 @@
         ],
         "operationId": "get-company-push-history",
         "x-speakeasy-name-override": "list-operations",
-        "description": "List push operation records.",
+        "description": "The **List push operations** endpoint returns a list of [push operations](/using-the-api/push) performed on the company.\n\nWrite operations are actions that send requests to Codat, enabling the creation, updating, deletion of records, or uploading attachments in the connected accounting software.",
         "responses": {
           "200": {
             "description": "OK",
@@ -3138,7 +3138,7 @@
         ],
         "operationId": "get-push-operation",
         "x-speakeasy-name-override": "get-operation",
-        "description": "Retrieve push operation.",
+        "description": "The **Get push operation** endpoint returns a specific [push operation](/using-the-api/push) identified by the `pushOperationKey` that was performed on the company.\n\nWrite operations are actions that send requests to Codat, enabling the creation, updating, deletion of records, or uploading attachments in the connected accounting software.",
         "responses": {
           "200": {
             "description": "OK",
