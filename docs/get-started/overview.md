@@ -3,60 +3,40 @@ title: "Get started"
 description: "Take your first steps through the information and support available to you"
 ---
 
+import Cards from "@components/Cards";
+
 ## Reference content
 
-<ul className="card-container">
-  <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/accounting-2.png"
-        className="mini-icon"
-      />
-      <h3>Documentation</h3>
-    </div>
-    <p>
-      Begin with our <a href="/core-concepts/overview">core concepts</a>, or press <code>Ctrl-K</code> to bring up the quick search bar to find the information you need.
-    </p>
-  </li>
-  <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/Stack.png"
-        className="mini-icon"
-      />
-      <h3>API reference</h3>
-    </div>
-    <p>
-      Jump in and start using the Codat API endpoints through our interactive{" "}
-      <a href="/using-the-api/overview">API references</a>.
-    </p>
-  </li>
-  <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/Financial-Services.png"
-        className="mini-icon"
-      />
-      <h3>Libraries</h3>
-    </div>
-    <p>
-      Use our{" "}<a href="/get-started/libraries">client library SDKs</a>{" "}to get building quickly.
-    </p>
-  </li>
-  <li className="card dark hypercard">
-    <div className="header">
-      <img
-        src="/img/cochat/logo-openai-mini.png"
-        className="mini-icon"
-      />
-      <h3>Ask Cochat</h3>
-    </div>
-      <p>
-        Get instant assistance with{" "}<a href="https://cochat.codat.io" target="_blank">Cochat,</a>{" "}
-        our beta AI tool trained on the Codat docs. Try{" "}<a href="https://cochat.codat.io" target="_blank">asking it a question</a>{" or "}<a href="/cochat">read more</a>.
-      </p>
-  </li>
-</ul>
+<Cards>
+  <Cards.Card
+    title="Documentation"
+    image="/img/wp-icons/accounting-2.png"
+  >
+    Begin with our <a href="/core-concepts/overview">core concepts</a>, or press <code>Ctrl-K</code> to bring up the quick search bar to find the information you need.
+  </Cards.Card>
+
+  <Cards.Card
+    image="/img/wp-icons/Stack.png"
+    title="API reference"
+  >
+    Jump in and start using the Codat API endpoints through our interactive <a href="/using-the-api/overview">API references</a>.
+  </Cards.Card>
+
+  <Cards.Card
+    image="/img/wp-icons/Financial-Services.png"
+    title="Libraries"
+  >
+    Use our <a href="/get-started/libraries">client library SDKs</a> to get building quickly.
+  </Cards.Card>
+
+  <Cards.Card
+    image="/img/cochat/logo-openai-mini.png"
+    title="Ask Cochat"
+    className="dark hypercard"
+  >
+    Get instant assistance with{" "}<a href="https://cochat.codat.io" target="_blank">Cochat,</a> our beta AI tool trained on the Codat docs. Try <a href="https://cochat.codat.io" target="_blank">asking it a question</a>{" or "}<a href="/cochat">read more</a>.
+  </Cards.Card>
+</Cards>
 
 ## Beginner guides
 
@@ -95,126 +75,53 @@ description: "Take your first steps through the information and support availabl
 
 ## Tutorials
 
-<ul className="card-container mini">
-  <li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="/lending/guides/invoice-finance/introduction">
-          <img
-            src="/img/logos/usecases/lending.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Invoice financing</h4>
-        <p>
-          <a href="/lending/guides/invoice-finance/introduction">See the tutorial →</a>
-        </p>    
-      </div>
-    </div>
-    <p>Lend against invoices leveraging our Accounting API</p>
-  </li>
-  <li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="/payables/guides/bill-pay/introduction">
-          <img
-            src="/img/logos/usecases/payments.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Bill pay</h4>
-        <p>
-          <a href="/payables/guides/bill-pay/introduction">See the tutorial →</a>
-        </p>    
-      </div>
-    </div>
-    <p>Streamline your customers' Accounts Payable processes</p>
-  </li>
-  <li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="/bank-feeds/guides/bank-feeds-tutorial">
-          <img
-            src="/img/logos/usecases/sync.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Bank feeds reconciliation with QuickBooks Online</h4>
-        <p>
-          <a href="/bank-feeds/guides/bank-feeds-tutorial">See the tutorial →</a>
-        </p>    
-      </div>
-    </div>
-    <p>Save your customers' time by automating bank transaction reconciliation</p>
-  </li>
-<li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="/guides/retool-dashboard">
-          <img
-            src="/img/logos/usecases/lending.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Building a prototype dashboard with Retool</h4>
-        <p>
-          <a href="/guides/retool-dashboard">Watch video →</a>
-        </p>    
-      </div>
-    </div>
-    <p>Ingest and visualize Codat data in a custom Retool dashboard in 10 minutes</p>
-  </li>
-
-   <li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="/lending/guides/loan-writeback/introduction">
-          <img
-            src="/img/logos/usecases/lending.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Loan writeback</h4>
-        <p>
-          <a href="/lending/guides/loan-writeback/introduction">Follow the guide →</a>
-        </p>    
-      </div>
-    </div>
-    <p>Follow our best practices to correctly account for a loan programmatically</p>
-  </li>
-    <li className="card mini">
-    <div className="card-row">
-      <div className="header">
-        <a href="/lending/guides/loan-qualification/introduction">
-          <img
-            src="/img/logos/usecases/lending.svg"
-            className="icon usecase"
-          />
-        </a>
-      </div>
-      
-      <div className="content">
-        <h4>Loan qualification</h4>
-        <p>
-          <a href="/lending/guides/loan-qualification/introduction">Follow the guide →</a>
-        </p>    
-      </div>
-    </div>
-    <p>See how Codat helps check a loan applicant’s finances and automate decision-making</p>
-  </li>
-</ul>
+<Cards>
+  <Cards.MiniCard
+    title="Invoice financing"
+    subtitle="See the tutorial"
+    image="/img/logos/usecases/lending.svg"
+    link="/lending/guides/invoice-finance/introduction"
+  >
+    Lend against invoices leveraging our Accounting API
+  </Cards.MiniCard>
+  <Cards.MiniCard
+    title="Bill pay"
+    subtitle="See the tutorial"
+    image="/img/logos/usecases/payments.svg"
+    link="/payables/guides/bill-pay/introduction"
+  >
+    Streamline your customers' Accounts Payable processes
+  </Cards.MiniCard>
+  <Cards.MiniCard
+    title="Bank feeds reconciliation with QuickBooks Online"
+    subtitle="See the tutorial"
+    image="/img/logos/usecases/sync.svg"
+    link="/bank-feeds/guides/bank-feeds-tutorial"
+  >
+    Save your customers' time by automating bank transaction reconciliation
+  </Cards.MiniCard>
+  <Cards.MiniCard
+    title="Building a prototype dashboard with Retool"
+    subtitle="Watch video"
+    image="/img/logos/usecases/lending.svg"
+    link="/guides/retool-dashboard"
+  >
+    Ingest and visualize Codat data in a custom Retool dashboard in 10 minutes
+  </Cards.MiniCard>
+  <Cards.MiniCard
+    title="Loan writeback"
+    subtitle="Follow the guide"
+    image="/img/logos/usecases/lending.svg"
+    link="/lending/guides/loan-writeback/introduction"
+  >
+    Follow our best practices to correctly account for a loan programmatically
+  </Cards.MiniCard>
+  <Cards.MiniCard
+    title="Loan qualification"
+    subtitle="Follow the guide"
+    image="/img/logos/usecases/lending.svg"
+    link="/lending/guides/loan-qualification/introduction"
+  >
+    See how Codat helps check a loan applicant’s finances and automate decision-making
+  </Cards.MiniCard>
+</Cards>
