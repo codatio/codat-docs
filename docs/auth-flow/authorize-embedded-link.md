@@ -147,7 +147,7 @@ function App() {
 
     - **If you're using content security policy (CSP) headers**, edit these headers:
     
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
+       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -238,7 +238,7 @@ export default function Home() {
 
     - **If you're using content security policy (CSP) headers**, edit these headers:
 
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
+       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -320,7 +320,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
     - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
     - **If you're using content security policy (CSP) headers**, edit these headers:
-      * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
+      * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
       * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
 
 </TabItem>
@@ -399,7 +399,7 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
 
     - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
     -  **If you're using content security policy (CSP) headers**, edit these headers:
-        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
+        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
         * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -466,7 +466,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
     - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
     - **If you're using content security policy (CSP) headers**, edit these headers:
-       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
+       * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
        * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
@@ -533,7 +533,7 @@ For an example of the component in action, [see our demo app](https://github.com
 
     - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
     - **If you're using content security policy (CSP) headers**, edit these headers:
-        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
+        * Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
         * Add `unsafe-inline` to `style-src`. Do *not* use a hash because this can change at any time without warning.
  
 </TabItem>
