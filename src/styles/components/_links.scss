@@ -1,6 +1,7 @@
 .markdown,
 .sl-relative,
-.JsonSchemaViewer {
+.JsonSchemaViewer,
+ul.card-container div:not(.header) {
   a {
     position: relative;
     text-decoration: none !important;
@@ -24,7 +25,7 @@
   }
 }
 
-ul.card-container {
+ul.card-container .header {
   a {
     position: relative;
     text-decoration: none !important;
