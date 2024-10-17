@@ -22,6 +22,17 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    .client {
+      filter: blur(4px);
+      transition: .3s;
+    }
+
+    .actionButton {
+      display: initial;
+    }
+  }
 }
 
 .client {
@@ -31,4 +42,15 @@
   align-items: center;
   justify-content: center;
   padding: 0.25em;
+}
+
+.actionButton {
+  position: absolute !important;
+  display: none;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5em;
+  cursor: pointer;
+  border: 2px solid var(--token-secondary-bg-c-alt);
+  z-index: 1;
 }
