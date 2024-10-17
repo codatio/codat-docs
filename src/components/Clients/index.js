@@ -17,6 +17,8 @@ const Clients = (props) => {
     <p className={styles.header}>Trusted by leading fintechs and financial institutions</p>
     
     <div className={styles.clientsList}>
+      <a className={styles.actionButton} href="https://www.codat.io/case-studies/">Read our case studies</a>
+
       {
         clients.map((client, i) => {
           return <Client key={i} {...client}/>
