@@ -47,10 +47,14 @@
 .actionButton {
   position: absolute !important;
   display: none;
-  background-color: white;
+  background-color: var(--ifm-background-color);
   border-radius: 8px;
   padding: 0.5em;
   cursor: pointer;
   border: 2px solid var(--token-secondary-bg-c-alt);
   z-index: 1;
+
+  a:after {
+    display: none !important;
+  }
 }
