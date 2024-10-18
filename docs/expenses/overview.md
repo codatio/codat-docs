@@ -1,6 +1,6 @@
 ---
-title: Sync for Expenses overview
-sidebar_label: Sync for Expenses
+title: Expenses overview
+sidebar_label: Expenses
 description: Write categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation
 displayed_sidebar: expenses
 image: "/img/sync-for-expenses/sfe-banner.png"
@@ -8,7 +8,7 @@ hide_title: true
 hide_description: true
 hide_table_of_contents: true
 tags: [overview, syncforexpense]
-banner_title: Sync for Expenses
+banner_title: Expenses
 banner_class: expenses
 banner_icon: "/img/logos/products/logo_expenses_clear.svg"
 banner_image: "/img/banners/bank-feeds.png"
