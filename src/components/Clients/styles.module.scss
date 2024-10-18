@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid #efefef;
-  border-bottom: 1px solid #efefef;
+  border-top: 1px solid var(--token-primary-bg-c);
+  border-bottom: 1px solid var(--token-primary-bg-c);
   padding: 2.5em 1em;
   max-width: initial;
   margin: 2em var(--padding-margin);
@@ -33,6 +33,10 @@
       display: initial;
     }
   }
+
+  a:after {
+    display: none !important;
+  }
 }
 
 .client {
@@ -44,6 +48,12 @@
   padding: 0.25em;
 }
 
+html[data-theme="dark"] {
+  .client img {
+    filter: invert(1) grayscale(100%) brightness(100);
+  }
+}
+
 .actionButton {
   position: absolute !important;
   display: none;
@@ -53,8 +63,9 @@
   cursor: pointer;
   border: 2px solid var(--token-secondary-bg-c-alt);
   z-index: 1;
+  transition: 0.2s;
 
-  a:after {
-    display: none !important;
+  &:hover {
+    transform: scale(1.05)
   }
 }
