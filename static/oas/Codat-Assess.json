@@ -4132,7 +4132,26 @@
             "type": "object",
             "properties": {
               "sourceRef": {
-                "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/sourceRef"
+                "title": "Report source reference",
+                "description": "A source reference containing the `sourceType` object \"Banking\".",
+                "type": "object",
+                "properties": {
+                  "sourceType": {
+                    "description": "The data source type.",
+                    "type": "string"
+                  }
+                },
+                "examples": [
+                  {
+                    "Example": {
+                      "value": {
+                        "sourceRef": {
+                          "sourceType": "Banking"
+                        }
+                      }
+                    }
+                  }
+                ]
               },
               "platformName": {
                 "description": "Name of the banking data source, e.g. \"Plaid\".",
@@ -4161,55 +4180,6 @@
               }
             }
           },
-          "sourceRef": {
-            "title": "Report source reference",
-            "description": "A source reference containing the `sourceType` object \"Banking\".",
-            "type": "object",
-            "properties": {
-              "sourceType": {
-                "description": "The data source type.",
-                "type": "string"
-              }
-            },
-            "examples": [
-              {
-                "Example": {
-                  "value": {
-                    "sourceRef": {
-                      "sourceType": "Banking"
-                    }
-                  }
-                }
-              }
-            ]
-          },
-          "accountRef": {
-            "title": "Account reference",
-            "description": "An account reference containing the account id and name.",
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "The id of the account.",
-                "type": "string"
-              },
-              "name": {
-                "description": "The name of the account.",
-                "type": "string"
-              }
-            },
-            "examples": [
-              {
-                "Example": {
-                  "value": {
-                    "accountRef": {
-                      "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
-                      "name": "Business Current Account"
-                    }
-                  }
-                }
-              }
-            ]
-          },
           "enhancedCashFlowItem": {
             "type": "object",
             "properties": {
@@ -4217,113 +4187,139 @@
                 "description": "An array of transaction data.",
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/enhancedCashFlowTransaction"
-                }
-              }
-            }
-          },
-          "enhancedCashFlowTransaction": {
-            "title": "Cash flow transaction",
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "The unique identifier of the bank transaction.",
-                "type": "string"
-              },
-              "date": {
-                "description": "The date the bank transaction was posted.",
-                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
-              },
-              "description": {
-                "description": "The description of the bank transaction.",
-                "type": "string"
-              },
-              "amount": {
-                "description": "The bank transaction amount.",
-                "type": "number",
-                "format": "decimal"
-              },
-              "currency": {
-                "$ref": "#/components/schemas/Currency",
-                "description": "The currency code for bank transaction."
-              },
-              "transactionCategory": {
-                "description": "Contains an array of category levels.",
-                "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/transactionCategory"
-              },
-              "platformName": {
-                "description": "Returns the payment processor responsible for the transaction.",
-                "type": "string"
-              },
-              "counterpartyNames": {
-                "description": "An array of counterparty names involved in the transaction.",
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "sourceRef": {
-                "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/sourceRef"
-              },
-              "accountRef": {
-                "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/accountRef"
-              },
-              "modifiedDate": {
-                "description": "The date the bank transaction was last modified.",
-                "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
-              }
-            }
-          },
-          "transactionCategory": {
-            "title": "Transaction category",
-            "type": "object",
-            "properties": {
-              "confidence": {
-                "description": "Returns the aggregate confidence of the suggested category for the transaction. The value is between 0 and 100.",
-                "type": "number",
-                "format": "decimal"
-              },
-              "confidences": {
-                "description": "An ordered array of category level confidences where each element is the confidence of the corresponding item in the `levels` array.",
-                "type": "array",
-                "items": {
-                  "type": "number",
-                  "format": "decimal"
-                }
-              },
-              "levels": {
-                "description": "The suggested category is an ordered array of category levels where each element (or level) is a subcategory of the previous element (or level).",
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            },
-            "examples": [
-              {
-                "Example": {
-                  "value": {
+                  "title": "Cash flow transaction",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "The unique identifier of the bank transaction.",
+                      "type": "string"
+                    },
+                    "date": {
+                      "description": "The date the bank transaction was posted.",
+                      "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
+                    },
+                    "description": {
+                      "description": "The description of the bank transaction.",
+                      "type": "string"
+                    },
+                    "amount": {
+                      "description": "The bank transaction amount.",
+                      "type": "number",
+                      "format": "decimal"
+                    },
+                    "currency": {
+                      "$ref": "#/components/schemas/Currency",
+                      "description": "The currency code for bank transaction."
+                    },
                     "transactionCategory": {
-                      "confidence": 92.7,
-                      "levels": [
-                        "Asset",
-                        "Current",
-                        "Bank",
-                        "BankTransfers",
-                        "ShareholderTransfers"
-                      ],
-                      "confidences": [
-                        92.7,
-                        95,
-                        96,
-                        97.5,
-                        100
+                      "description": "Contains an array of category levels.",
+                      "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/enhancedCashFlowItem/properties/transactions/items/definitions/transactionCategory"
+                    },
+                    "platformName": {
+                      "description": "Returns the payment processor responsible for the transaction.",
+                      "type": "string"
+                    },
+                    "counterpartyNames": {
+                      "description": "An array of counterparty names involved in the transaction.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "sourceRef": {
+                      "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/accounts/properties/sourceRef"
+                    },
+                    "accountRef": {
+                      "$ref": "#/components/schemas/EnhancedCashFlowTransactions/definitions/enhancedCashFlowItem/properties/transactions/items/definitions/accountRef"
+                    },
+                    "modifiedDate": {
+                      "description": "The date the bank transaction was last modified.",
+                      "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
+                    }
+                  },
+                  "definitions": {
+                    "accountRef": {
+                      "title": "Account reference",
+                      "description": "An account reference containing the account id and name.",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "description": "The id of the account.",
+                          "type": "string"
+                        },
+                        "name": {
+                          "description": "The name of the account.",
+                          "type": "string"
+                        }
+                      },
+                      "examples": [
+                        {
+                          "Example": {
+                            "value": {
+                              "accountRef": {
+                                "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                                "name": "Business Current Account"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "transactionCategory": {
+                      "title": "Transaction category",
+                      "type": "object",
+                      "properties": {
+                        "confidence": {
+                          "description": "Returns the aggregate confidence of the suggested category for the transaction. The value is between 0 and 100.",
+                          "type": "number",
+                          "format": "decimal"
+                        },
+                        "confidences": {
+                          "description": "An ordered array of category level confidences where each element is the confidence of the corresponding item in the `levels` array.",
+                          "type": "array",
+                          "items": {
+                            "type": "number",
+                            "format": "decimal"
+                          }
+                        },
+                        "levels": {
+                          "description": "The suggested category is an ordered array of category levels where each element (or level) is a subcategory of the previous element (or level).",
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "examples": [
+                        {
+                          "Example": {
+                            "value": {
+                              "transactionCategory": {
+                                "confidence": 92.7,
+                                "levels": [
+                                  "Asset",
+                                  "Current",
+                                  "Bank",
+                                  "BankTransfers",
+                                  "ShareholderTransfers"
+                                ],
+                                "confidences": [
+                                  92.7,
+                                  95,
+                                  96,
+                                  97.5,
+                                  100
+                                ]
+                              }
+                            }
+                          }
+                        }
                       ]
                     }
                   }
                 }
               }
-            ]
+            }
           }
         },
         "examples": [
