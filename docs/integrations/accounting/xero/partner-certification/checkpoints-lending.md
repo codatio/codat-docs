@@ -36,7 +36,7 @@ While Codat handles the initial connection to Xero via the Codat Link UI, Xero r
 
 | Requirement | Recommendations |
 | :-- | :-- |
-| Display the name of the tenant that has been connected | This can be retrieved from our [Get company info](/accounting-api#/operations/get-company-info) endpoint. |
+| Display the name of the tenant that has been connected | This can be retrieved from our [Get company info](/lending-api#/operations/get-accounting-profile) endpoint. |
 | Display the current status of the connection. If disconnected, provide a button to reconnect to Xero | Use our [Get connection](/platform-api#/operations/get-company-connection) endpoint to check the `status` of the connection and use the `linkUrl` to reconnect|
 | Provide a button to terminate the connection | When a user clicks on the button, use our [Unlink connection](/platform-api#/operations/unlink-connection) endpoint to disconnect from Xero. |
 | Handle a disconnect from Xero's side | Use a webhook to listen to our [DataConnectionStatusChanged](/using-the-api/webhooks/event-types) event that identifies when a disconnect happens. When the alert is triggered, change the connection status in your UI and display a "Reconnect" or "Connect" button. Xero recommends setting a regular daily sync of light data types so you can check each connected company's connection status every day.|
