@@ -76,18 +76,4 @@ module.exports = [
       "payables/guides/bill-pay/how-the-demo-app-works",
     ],
   },
-  {
-    type: "doc",
-    id: "payables/data-types",
-    label: "Supported data types",
-    customProps: {
-      hr: true,
-      section: "Reference",
-    },
-  },
-  {
-    type: "link",
-    href: "/sync-for-payables-api",
-    label: "API reference",
-  },
 ]
