@@ -2,7 +2,7 @@
 title: "Codat developer update — Q3 2024"
 date: "2024-10-18"
 tags: ["Product", "Update"]
-hide_table_of_contents: true
+hide_table_of_contents: false
 authors: pzaichkina
 ---
 
