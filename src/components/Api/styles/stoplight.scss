@@ -110,7 +110,7 @@ button.sl-bg-primary {
 }
 
 .TryItPanel {
-  background: white;
+  background: var(--token-primary-bg-c);
 
   > * {
     margin: 0.25em 0;
