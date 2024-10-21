@@ -841,6 +841,7 @@
     "bankFeeds.sourceAccount.connected": {
       "post": {
         "description": "Called when a bank feed source account has become connected.",
+        "x-speakeasy-feature-flag": "bank-feeds",
         "requestBody": {
           "content": {
             "application/json": {
@@ -890,6 +891,7 @@
     "bankFeeds.sourceAccount.disconnected": {
       "post": {
         "description": "Called when a bank feed source account has become disconnected.",
+        "x-speakeasy-feature-flag": "bank-feeds",
         "requestBody": {
           "content": {
             "application/json": {
