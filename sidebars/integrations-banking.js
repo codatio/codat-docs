@@ -1,22 +1,12 @@
 const integrations = [
   {
     type: "category",
-    label: "Basiq",
+    label: "Plaid",
     collapsed: true,
     customProps: {
       hr: true,
       section: "Bank integrations",
     },
-    items: [
-      "integrations/banking/basiq/banking-basiq",
-      "integrations/banking/basiq/banking-basiq-setup",
-      "integrations/banking/basiq/test-your-basiq-integration",
-    ],
-  },
-  {
-    type: "category",
-    label: "Plaid",
-    collapsed: true,
     items: [
       "integrations/banking/plaid/banking-plaid",
       "integrations/banking/plaid/banking-plaid-setup",
