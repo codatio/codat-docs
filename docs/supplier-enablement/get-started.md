@@ -1,20 +1,15 @@
 ---
 title: "Get started with Supplier Enablement"
-description: "Review our product demo and get in touch"
+description: "Ready to use Supplier Enablement? Reach out to your account manager so that we can enable it for you and get you started. In the process, we will set up your Codat instance to match your business processes, company specifics, and requirements. It's that easy."
 sidebar_label: Get started
 displayed_sidebar: supplierEnablement
 hide_table_of_contents: true
 ---
 
-import { IntegrationsList } from "@components/Integrations";
-import { integrationsFilterSupplierEnablement } from "@components/Integrations/integrations";
-
-Ready to use Supplier Enablement? Reach out to your account manager so that we can enable it for you and get you started. In the process, we will set up your Codat instance to match your business processes, company specifics, and requirements. It's that easy.
-
 <iframe
   width="560"
   height="315"
-  src="https://www.youtube.com/embed/z-UW2uY7TSo"
+  src="https://www.youtube.com/embed/z-UW2uY7TSo?si=b3_a_vWUo5927MAf"
   title="YouTube video player"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
