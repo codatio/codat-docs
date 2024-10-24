@@ -1,7 +1,7 @@
 ---
 title: "Enable products"
 sidebar_label: "Products"
-description: "Enable the products you need for your usecase"
+description: "Enable the products you need for your use case"
 ---
 
 import Products from "@components/Products";

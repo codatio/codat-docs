@@ -26,6 +26,14 @@ const usecases = [
     linkTextMini: "Discover commerce data integration →",
   },
   {
+    icon: "/img/logos/usecases/supplier-enablement.svg",
+    title: "Growing B2B payment volume",
+    description: "Grow commercial card volume with comprehensive and up-to-date supplier and spend data.",
+    link: "/usecases/summary/growing-b2b-payments",
+    linkText: "Discover B2B payment volume growth →",
+    linkTextMini: "Discover B2B payment volume growth →",
+  },
+  {
     icon: "/img/logos/usecases/accounts-payable.svg",
     title: "Automating payables",
     description: "Read unpaid bills from customers' accounting software and mark them as paid to automate the accounts payable process.",

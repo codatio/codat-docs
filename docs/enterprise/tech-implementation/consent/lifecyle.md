@@ -8,11 +8,11 @@ description: "Recommendations for managing the customer consent lifecycle"
 ####  Onboarding a new customer for the first time
 
 A customer hasn't granted access to integrations before, they will authenticate either through a specific product user journey or as part of a general new customer onboarding process.
-####  Onboarding an existing customer onto a new product (multi usecase)
+####  Onboarding an existing customer onto a new product (multi use case)
 
-Codat recommends that each customer grants access to all data during their first integration setup, but only relevant data will be read into Codat based on the usecase.
+Codat recommends that each customer grants access to all data during their first integration setup, but only relevant data will be read into Codat based on the use case.
 
-This means Codat will initially only read relevant data for that first usecase, but can later read data for a other usecases without requiring the customer to re-authenticate.
+This means Codat will initially only read relevant data for that first use case, but can later read data for a other use cases without requiring the customer to re-authenticate.
 
 For example, a user might connect their Xero via a Dashboard customer journey. They grant access to all data within their Xero account, but you initially only read data types that are relevant to the Dashboard product, because that is all the user has consented to.
 #### An existing customer wants to add integration package(s) for existing product
