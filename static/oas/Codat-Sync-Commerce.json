@@ -2586,7 +2586,8 @@
               "connection.connected",
               "connection.disconnected",
               "connection.reconnected",
-              "connection.deleted"
+              "connection.deleted",
+              "connection.failed"
             ]
           },
           "generatedDate": {
