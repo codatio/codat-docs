@@ -1,4 +1,4 @@
----
+   ---
 title: "New webhook event type: connection.failed"
 date: "2024-10-30"
 tags: ["Product", "Update"]
@@ -6,15 +6,13 @@ hide_table_of_contents: true
 authors: dcoplowe
 ---
 
-Following the release of our new event types earlier this month, we have expanded our support for connection-related notifications.
-The `connection.failed` webhook can be used to alert teams about any issues an SMB encounters while attempting to connect their business software.
+We have expanded our support for connection-related notifications. Use the `connection.failed` webhook to be alerted if your SMB customer encounters issues when connecting their business software.
 
 <!--truncate-->
 
 ## What's new?
 
-You can now subscribe to the connection.failed webhook, which details the failed connection and includes information on the specific error that occurred.
-This helps you quickly identify and address the issue at hand.
+You can now subscribe to the `connection.failed` webhook. It provides details of the failed connection, including information on the specific error that occurred. This helps you quickly identify and address the issue.
 
 ```json title="Connection event type schema structure"
 {
@@ -58,12 +56,12 @@ This helps you quickly identify and address the issue at hand.
 ```
 
 :::tip New event types
-Check out the full range of our new [webhook event types](/using-the-api/webhooks/event-types).
+Codat supports a wide range of event types. See [Webhook event types](/using-the-api/webhooks/event-types) to review all available events.
 :::
 
 ## Who is this relevant for?
 
-Any client currently using our webhooks or clients looking to improve link conversion through calls to action. 
+Any client currently using our webhooks or clients looking to improve completion rates of their connection flows through calls to action. 
 
 ## How to get started?
 
