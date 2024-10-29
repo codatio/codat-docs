@@ -62,7 +62,7 @@ The response lists all source bank accounts and their statuses&mdash;either `pen
 When writing bank transactions to Xero:
 
 - You can only write bank transactions to one target account at a time.
-- Within the same request, transactions must be written in chronological order.
+- Within a single request, the array of transactions _must_ be in chronological order.
 - Transactions must have a `date` set to the current day or earlier, but be aware of the limitation described in "Writing historic transactions", below.
 - A maximum of 1000 transactions can be written at a time.
 
