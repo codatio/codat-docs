@@ -2778,7 +2778,7 @@
               "$ref": "#/components/schemas/BillMappingOptions/definitions/accountMappingOption"
             }
           },
-          "taxRate": {
+          "taxRates": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/BillMappingOptions/definitions/taxRateMappingOption"
