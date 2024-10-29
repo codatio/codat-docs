@@ -626,6 +626,324 @@
         }
       }
     },
+    "nipendo.read.completed": {
+      "post": {
+        "x-svix-feature-flag": "nipendo",
+        "description": "Called when the fetch of data types for Nipendo has completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              },
+              "examples": {
+                "Read completed": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "nipendo.read.completed",
+                    "generatedDate": "2022-10-23T00:00:00.000Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Toft stores",
+                        "description": "Requested early access to the new financing scheme.",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        }
+                      },
+                      "modifiedFromDate": "2022-10-23T00:00:00.000Z",
+                      "dataTypes": [
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "chartOfAccounts",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "bills",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "billCreditNotes",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "billPayments",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "suppliers",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "items",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "itemReceipts",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "taxRates",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "one-ap.read.completed": {
+      "post": {
+        "x-svix-feature-flag": "one-ap",
+        "description": "Called when the fetch of data types for One AP has completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              },
+              "examples": {
+                "Read completed": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "one-ap.read.completed",
+                    "generatedDate": "2022-10-23T00:00:00.000Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Toft stores",
+                        "description": "Requested early access to the new financing scheme.",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        }
+                      },
+                      "modifiedFromDate": "2022-10-23T00:00:00.000Z",
+                      "dataTypes": [
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "chartOfAccounts",
+                          "recordsModified": true,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "billPayments",
+                          "recordsModified": true,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "billCreditNotes",
+                          "recordsModified": true,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "bills",
+                          "recordsModified": true,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "suppliers",
+                          "recordsModified": true,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "customers",
+                          "recordsModified": true,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "taxRates",
+                          "recordsModified": true,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "trackingCategories",
+                          "recordsModified": true,
+                          "status": "Complete"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "rosetta.read.completed": {
+      "post": {
+        "x-svix-feature-flag": "rosetta",
+        "description": "Called when the fetch of data types for Rosetta has completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              },
+              "examples": {
+                "Read completed": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "rosetta.read.completed",
+                    "generatedDate": "2022-10-23T00:00:00.000Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Toft stores",
+                        "description": "Requested early access to the new financing scheme.",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        }
+                      },
+                      "modifiedFromDate": "2022-10-23T00:00:00.000Z",
+                      "dataTypes": [
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "chartOfAccounts",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "bills",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "billPayments",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "invoices",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "payments",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "journalEntries",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "your-business-insights.read.completed": {
+      "post": {
+        "x-svix-feature-flag": "your-business-insights",
+        "description": "Called when the fetch of data types for Your Business Insights has completed.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook"
+              },
+              "examples": {
+                "Read completed": {
+                  "value": {
+                    "id": "743ec94a-8aa4-44bb-8bd4-e1855ee0e74b",
+                    "eventType": "your-business-insights.read.completed",
+                    "generatedDate": "2022-10-23T00:00:00.000Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Toft stores",
+                        "description": "Requested early access to the new financing scheme.",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        }
+                      },
+                      "modifiedFromDate": "2022-10-23T00:00:00.000Z",
+                      "dataTypes": [
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "invoices",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "payments",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        },
+                        {
+                          "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+                          "dataType": "customers",
+                          "recordsModified": false,
+                          "status": "Complete"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "DataSyncCompleted": {
       "post": {
         "deprecated": true,
