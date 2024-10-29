@@ -24,7 +24,7 @@ This article explains how to:
 Call the [`GET connectionInfo/bankFeedAccounts`](/bank-feeds-api#/operations/get-bank-feeds) endpoint to view details of the source bank accounts for a specified company and data connection.
 
 ```http title="List bank feed bank accounts"
-GET /companies/{connectionId}/connections/{connectionId}>/connectionInfo/bankFeedAccounts
+GET /companies/{connectionId}/connections/{connectionId}/connectionInfo/bankFeedAccounts
 ```
 
 The response lists all source bank accounts and their statuses&mdash;either `pending`, `connected`, or `disconnected`. The `feedStartDate` property is returned for `connected` bank accounts only.
@@ -79,7 +79,7 @@ To write bank transactions for a `connected` source bank account, make the follo
 1. Post the bank transactions using the [`POST /push/bankAccounts/{accountId}/bankTransactions`](/bank-feeds-api#/operations/create-bank-transactions) endpoint:
 
    ```http title="Create bank transactions"
-   POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts/<ACCOUNT_ID>/bankTransactions
+   POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions
    ```
 
    For the `accountId`, supply the ID of a `connected` source bank account (returned from the `GET /connectionInfo/BankFeedAccounts` request).  
