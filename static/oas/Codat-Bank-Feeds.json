@@ -5058,7 +5058,7 @@
                 "propertyNames": {
                   "pattern": "^.{1,27}$"
                 },
-                "additional properties": {
+                "additionalProperties": {
                   "type": "string",
                   "maxLength": 100
                 },
