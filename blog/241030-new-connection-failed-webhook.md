@@ -1,4 +1,4 @@
-   ---
+---
 title: "New webhook event type: connection.failed"
 date: "2024-10-30"
 tags: ["Product", "Update"]
