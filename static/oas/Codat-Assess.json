@@ -1416,353 +1416,7 @@
                   "$ref": "#/components/schemas/EnhancedCashFlowTransactions"
                 },
                 "example": {
-                  "reportInfo": {
-                    "pageNumber": 1,
-                    "pageSize": 10,
-                    "totalResults": 2194,
-                    "reportName": "Cash flow transactions report",
-                    "companyName": "test",
-                    "generatedDate": "2023-03-24T16:44:17.5302732Z"
-                  },
-                  "dataSources": [
-                    {
-                      "accounts": [
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "platformName": "Banking Sandbox",
-                          "accountProvider": "Lloyds Bank",
-                          "accountName": "Business Savings Account",
-                          "accountType": "Debit",
-                          "currency": "GBP",
-                          "currentBalance": 0
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "platformName": "Banking Sandbox",
-                          "accountProvider": "Lloyds Bank",
-                          "accountName": "Banking - Business Credit Card",
-                          "accountType": "Credit",
-                          "currency": "GBP",
-                          "currentBalance": 0
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "platformName": "Banking Sandbox",
-                          "accountProvider": "Lloyds Bank",
-                          "accountName": "Business Undeposited Funds",
-                          "accountType": "Debit",
-                          "currency": "GBP",
-                          "currentBalance": 0
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "platformName": "Banking Sandbox",
-                          "accountProvider": "Lloyds Bank",
-                          "accountName": "Business Current Account",
-                          "accountType": "Debit",
-                          "currency": "GBP",
-                          "currentBalance": 0
-                        }
-                      ]
-                    }
-                  ],
-                  "reportItems": [
-                    {
-                      "transactions": [
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
-                            "name": "Business Current Account"
-                          },
-                          "id": "ab5e07a0-5578-4d91-8421-2dc72713b74f",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment m86SDGpQr3",
-                          "amount": -6905.44,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 52.53,
-                            "levels": [
-                              "Expense",
-                              "Operating"
-                            ],
-                            "confidences": [
-                              56,
-                              52.53
-                            ]
-                          },
-                          "platformName": "Shopify",
-                          "counterpartyNames": [
-                            "Shopify"
-                          ],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
-                            "name": "Business Current Account"
-                          },
-                          "id": "9846bbed-46d3-472c-a848-1ce8ebea7213",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment from customer a5c68c7b-6825-46de-bf63-6ad23ef506a4",
-                          "amount": 4332.84,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 88,
-                            "levels": [
-                              "Expense"
-                            ],
-                            "confidences": [
-                              88
-                            ]
-                          },
-                          "platformName": "Amazon",
-                          "counterpartyNames": [
-                            "Amazon",
-                            "Amazon Marketplace"
-                          ],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
-                            "name": "Business Undeposited Funds"
-                          },
-                          "id": "94b213fb-d742-435e-90f1-bfe723a076d5",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment from customer a5c68c7b-6825-46de-bf63-6ad23ef506a4",
-                          "amount": 4034.3,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 61.08,
-                            "levels": [
-                              "Income",
-                              "Revenue"
-                            ],
-                            "confidences": [
-                              65,
-                              61.08
-                            ]
-                          },
-                          "platformName": "Shopify",
-                          "counterpartyNames": [],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
-                            "name": "Business Current Account"
-                          },
-                          "id": "cfceb7ff-eaa2-45b6-aca7-fa0e0b439161",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment to supplier 78792d13-90a0-4ea2-8e07-81c3c893997e",
-                          "amount": -313.76,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 40.98,
-                            "levels": [
-                              "Expense",
-                              "CostOfSales"
-                            ],
-                            "confidences": [
-                              40.98,
-                              99.9
-                            ]
-                          },
-                          "platformName": "Amazon",
-                          "counterpartyNames": [],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
-                            "name": "Business Undeposited Funds"
-                          },
-                          "id": "ba814f14-0fe3-41d0-9308-57f40642ac75",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment to supplier 46d2e1fb-b4e9-469c-814a-21ff8105a26e",
-                          "amount": -614.4,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 55.84,
-                            "levels": [
-                              "Income",
-                              "Revenue"
-                            ],
-                            "confidences": [
-                              55.84,
-                              75.5
-                            ]
-                          },
-                          "platformName": "Zettle",
-                          "counterpartyNames": [],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
-                            "name": "Business Current Account"
-                          },
-                          "id": "e67cc30e-fd5c-4eea-8365-ec40dfdd3ef6",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment from customer a5c68c7b-6825-46de-bf63-6ad23ef506a4",
-                          "amount": 5199.62,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 57.85,
-                            "levels": [
-                              "Expense"
-                            ],
-                            "confidences": [
-                              57.85
-                            ]
-                          },
-                          "platformName": "Amazon",
-                          "counterpartyNames": [],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
-                            "name": "Business Current Account"
-                          },
-                          "id": "e0f08a0b-3575-4dde-98c4-3c854028d2d2",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment to supplier 18ac18dc-945b-4083-9013-e8a100b999fa",
-                          "amount": -21420.94,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 70.58,
-                            "levels": [
-                              "Expense",
-                              "Operating"
-                            ],
-                            "confidences": [
-                              70.58,
-                              100
-                            ]
-                          },
-                          "platformName": "Amazon",
-                          "counterpartyNames": [],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
-                            "name": "Business Undeposited Funds"
-                          },
-                          "id": "4b70d379-8284-4f44-bb37-c7935df950cc",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment to supplier 630a3f16-5f01-4986-ae6b-82333ec49449",
-                          "amount": -30924.22,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 48.26,
-                            "levels": [
-                              "Income"
-                            ],
-                            "confidences": [
-                              48.26
-                            ]
-                          },
-                          "platformName": "DoorDash",
-                          "counterpartyNames": [],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
-                            "name": "Business Undeposited Funds"
-                          },
-                          "id": "76b73373-9345-472e-8edf-5be849d797fe",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment to supplier bQATU4eSb9",
-                          "amount": -568.78,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 65.21,
-                            "levels": [
-                              "Income",
-                              "Revenue"
-                            ],
-                            "confidences": [
-                              65.21,
-                              100
-                            ]
-                          },
-                          "platformName": "Uber",
-                          "counterpartyNames": [
-                            "Uber"
-                          ],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        },
-                        {
-                          "sourceRef": {
-                            "sourceType": "Banking"
-                          },
-                          "accountRef": {
-                            "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
-                            "name": "Business Undeposited Funds"
-                          },
-                          "id": "ee92fd6f-e0f7-4391-85fd-4b50921b973f",
-                          "date": "2022-11-08T00:00:00",
-                          "description": "Payment to supplier 9c37eb21-579a-4886-8296-3a853076b7bd",
-                          "amount": -13050.79,
-                          "currency": "GBP",
-                          "transactionCategory": {
-                            "confidence": 92.33,
-                            "levels": [
-                              "Income",
-                              "Revenue"
-                            ],
-                            "confidences": [
-                              92.33,
-                              92.33
-                            ]
-                          },
-                          "platformName": "DoorDash",
-                          "counterpartyNames": [
-                            "DoorDash"
-                          ],
-                          "modifiedDate": "2022-11-08T12:00:00"
-                        }
-                      ]
-                    }
-                  ]
+                  "$ref": "#/components/examples/EnhancedCashflowExample"
                 }
               }
             }
@@ -6107,6 +5761,359 @@
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"
+      }
+    },
+    "examples": {
+      "EnhancedCashflowExample": {
+        "value": {
+          "reportInfo": {
+            "pageNumber": 1,
+            "pageSize": 10,
+            "totalResults": 2194,
+            "reportName": "Cash flow transactions report",
+            "companyName": "test",
+            "generatedDate": "2023-03-24T16:44:17.5302732Z"
+          },
+          "dataSources": [
+            {
+              "accounts": [
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "platformName": "Banking Sandbox",
+                  "accountProvider": "Lloyds Bank",
+                  "accountName": "Business Savings Account",
+                  "accountType": "Debit",
+                  "currency": "GBP",
+                  "currentBalance": 0
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "platformName": "Banking Sandbox",
+                  "accountProvider": "Lloyds Bank",
+                  "accountName": "Banking - Business Credit Card",
+                  "accountType": "Credit",
+                  "currency": "GBP",
+                  "currentBalance": 0
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "platformName": "Banking Sandbox",
+                  "accountProvider": "Lloyds Bank",
+                  "accountName": "Business Undeposited Funds",
+                  "accountType": "Debit",
+                  "currency": "GBP",
+                  "currentBalance": 0
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "platformName": "Banking Sandbox",
+                  "accountProvider": "Lloyds Bank",
+                  "accountName": "Business Current Account",
+                  "accountType": "Debit",
+                  "currency": "GBP",
+                  "currentBalance": 0
+                }
+              ]
+            }
+          ],
+          "reportItems": [
+            {
+              "transactions": [
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                    "name": "Business Current Account"
+                  },
+                  "id": "ab5e07a0-5578-4d91-8421-2dc72713b74f",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment m86SDGpQr3",
+                  "amount": -6905.44,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 52.53,
+                    "levels": [
+                      "Expense",
+                      "Operating"
+                    ],
+                    "confidences": [
+                      56,
+                      52.53
+                    ]
+                  },
+                  "platformName": "Shopify",
+                  "counterpartyNames": [
+                    "Shopify"
+                  ],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                    "name": "Business Current Account"
+                  },
+                  "id": "9846bbed-46d3-472c-a848-1ce8ebea7213",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment from customer a5c68c7b-6825-46de-bf63-6ad23ef506a4",
+                  "amount": 4332.84,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 88,
+                    "levels": [
+                      "Expense"
+                    ],
+                    "confidences": [
+                      88
+                    ]
+                  },
+                  "platformName": "Amazon",
+                  "counterpartyNames": [
+                    "Amazon",
+                    "Amazon Marketplace"
+                  ],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                    "name": "Business Undeposited Funds"
+                  },
+                  "id": "94b213fb-d742-435e-90f1-bfe723a076d5",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment from customer a5c68c7b-6825-46de-bf63-6ad23ef506a4",
+                  "amount": 4034.3,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 61.08,
+                    "levels": [
+                      "Income",
+                      "Revenue"
+                    ],
+                    "confidences": [
+                      65,
+                      61.08
+                    ]
+                  },
+                  "platformName": "Shopify",
+                  "counterpartyNames": [],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                    "name": "Business Current Account"
+                  },
+                  "id": "cfceb7ff-eaa2-45b6-aca7-fa0e0b439161",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment to supplier 78792d13-90a0-4ea2-8e07-81c3c893997e",
+                  "amount": -313.76,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 40.98,
+                    "levels": [
+                      "Expense",
+                      "CostOfSales"
+                    ],
+                    "confidences": [
+                      40.98,
+                      99.9
+                    ]
+                  },
+                  "platformName": "Amazon",
+                  "counterpartyNames": [],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                    "name": "Business Undeposited Funds"
+                  },
+                  "id": "ba814f14-0fe3-41d0-9308-57f40642ac75",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment to supplier 46d2e1fb-b4e9-469c-814a-21ff8105a26e",
+                  "amount": -614.4,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 55.84,
+                    "levels": [
+                      "Income",
+                      "Revenue"
+                    ],
+                    "confidences": [
+                      55.84,
+                      75.5
+                    ]
+                  },
+                  "platformName": "Zettle",
+                  "counterpartyNames": [],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                    "name": "Business Current Account"
+                  },
+                  "id": "e67cc30e-fd5c-4eea-8365-ec40dfdd3ef6",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment from customer a5c68c7b-6825-46de-bf63-6ad23ef506a4",
+                  "amount": 5199.62,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 57.85,
+                    "levels": [
+                      "Expense"
+                    ],
+                    "confidences": [
+                      57.85
+                    ]
+                  },
+                  "platformName": "Amazon",
+                  "counterpartyNames": [],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+                    "name": "Business Current Account"
+                  },
+                  "id": "e0f08a0b-3575-4dde-98c4-3c854028d2d2",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment to supplier 18ac18dc-945b-4083-9013-e8a100b999fa",
+                  "amount": -21420.94,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 70.58,
+                    "levels": [
+                      "Expense",
+                      "Operating"
+                    ],
+                    "confidences": [
+                      70.58,
+                      100
+                    ]
+                  },
+                  "platformName": "Amazon",
+                  "counterpartyNames": [],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                    "name": "Business Undeposited Funds"
+                  },
+                  "id": "4b70d379-8284-4f44-bb37-c7935df950cc",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment to supplier 630a3f16-5f01-4986-ae6b-82333ec49449",
+                  "amount": -30924.22,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 48.26,
+                    "levels": [
+                      "Income"
+                    ],
+                    "confidences": [
+                      48.26
+                    ]
+                  },
+                  "platformName": "DoorDash",
+                  "counterpartyNames": [],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                    "name": "Business Undeposited Funds"
+                  },
+                  "id": "76b73373-9345-472e-8edf-5be849d797fe",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment to supplier bQATU4eSb9",
+                  "amount": -568.78,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 65.21,
+                    "levels": [
+                      "Income",
+                      "Revenue"
+                    ],
+                    "confidences": [
+                      65.21,
+                      100
+                    ]
+                  },
+                  "platformName": "Uber",
+                  "counterpartyNames": [
+                    "Uber"
+                  ],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                },
+                {
+                  "sourceRef": {
+                    "sourceType": "Banking"
+                  },
+                  "accountRef": {
+                    "id": "809b9470-c9fa-4257-bc9f-06a1dc7b0cbc",
+                    "name": "Business Undeposited Funds"
+                  },
+                  "id": "ee92fd6f-e0f7-4391-85fd-4b50921b973f",
+                  "date": "2022-11-08T00:00:00",
+                  "description": "Payment to supplier 9c37eb21-579a-4886-8296-3a853076b7bd",
+                  "amount": -13050.79,
+                  "currency": "GBP",
+                  "transactionCategory": {
+                    "confidence": 92.33,
+                    "levels": [
+                      "Income",
+                      "Revenue"
+                    ],
+                    "confidences": [
+                      92.33,
+                      92.33
+                    ]
+                  },
+                  "platformName": "DoorDash",
+                  "counterpartyNames": [
+                    "DoorDash"
+                  ],
+                  "modifiedDate": "2022-11-08T12:00:00"
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   }
