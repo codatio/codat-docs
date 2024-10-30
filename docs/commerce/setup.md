@@ -12,8 +12,7 @@ Sync for Commerce can be implemented within a commerce software (Point of Sales,
 
 Follow the guidance below to perform the initial setup for Sync for Commerce and enable your customers to select the systems they want to connect and start the Sync configuration process.
 
-Before you begin, check how to [use Codat's API](/using-the-api/overview), because you will need to have access to the API to complete the setup. 
-you need to have access to Codat's API. 
+Before you begin, check how to [use Codat's API](/using-the-api/overview), because you will need to have access to the API to complete the setup.
 
 :::info Codat connector
 
