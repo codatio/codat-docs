@@ -2413,7 +2413,7 @@
                 "description": "Name of the bank account in the accounting software."
               },
               "accountType": {
-                "$ref": "#/components/schemas/BankAccount/definitions/bankAccountPrototype/properties/accountType"
+                "$ref": "#/components/schemas/BankAccountType"
               },
               "accountNumber": {
                 "type": "string",
@@ -2458,15 +2458,7 @@
                 "$ref": "#/components/schemas/BankAccount/allOf/0/properties/name"
               },
               "accountType": {
-                "title": "Bank Account Type",
-                "x-internal": true,
-                "enum": [
-                  "Unknown",
-                  "Credit",
-                  "Debit"
-                ],
-                "type": "string",
-                "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
+                "$ref": "#/components/schemas/BankAccountType"
               },
               "accountNumber": {
                 "$ref": "#/components/schemas/BankAccount/allOf/0/properties/accountNumber"
@@ -2486,6 +2478,17 @@
             ]
           }
         }
+      },
+      "BankAccountType": {
+        "title": "Bank Account Type",
+        "x-internal": true,
+        "enum": [
+          "Unknown",
+          "Credit",
+          "Debit"
+        ],
+        "type": "string",
+        "description": "The type of transactions and balances on the account.  \nFor Credit accounts, positive balances are liabilities, and positive transactions **reduce** liabilities.  \nFor Debit accounts, positive balances are assets, and positive transactions **increase** assets."
       },
       "Bill": {
         "title": "Bill",
@@ -3890,7 +3893,7 @@
                     "$ref": "#/components/schemas/PaymentMappingOptions/definitions/bankAccountStatus"
                   },
                   "accountType": {
-                    "$ref": "#/components/schemas/BankAccount/definitions/bankAccountPrototype/properties/accountType"
+                    "$ref": "#/components/schemas/BankAccountType"
                   }
                 }
               },
