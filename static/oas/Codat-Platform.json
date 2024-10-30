@@ -1842,6 +1842,64 @@
         "description": "Retrieve information about a single dataset or pull operation."
       }
     },
+    "/companies/{companyId}/accessToken": {
+      "get": {
+        "summary": "Get company access token",
+        "operationId": "get-company-access-token",
+        "x-speakeasy-name-override": "get-access-token",
+        "description": "Use the _Get company access token_ endpoint to return an access token for the specified company ID to use in Codat's embedded UI products.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyAccessToken"
+                },
+                "examples": {
+                  "Simple company": {
+                    "value": {
+                      "expiresIn": 86400,
+                      "accessToken": "string",
+                      "tokenType": "Bearer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/rules": {
       "get": {
         "summary": "List webhooks (legacy)",
@@ -5195,6 +5253,50 @@
                 "sourceType": "Banking"
               }
             ]
+          }
+        ]
+      },
+      "CompanyAccessToken": {
+        "title": "Company access token",
+        "description": "Details of the access token provisioned for a company.",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CompanyAccessToken/definitions/accessToken"
+          }
+        ],
+        "definitions": {
+          "accessToken": {
+            "title": "Access token",
+            "type": "object",
+            "properties": {
+              "expiresIn": {
+                "type": "integer",
+                "description": "The number of seconds until the access token expires.",
+                "example": 86400
+              },
+              "accessToken": {
+                "type": "string",
+                "description": "The access token for the company."
+              },
+              "tokenType": {
+                "type": "string",
+                "description": "The type of token.",
+                "example": "Bearer"
+              }
+            },
+            "required": [
+              "expiresIn",
+              "accessToken",
+              "tokenType"
+            ]
+          }
+        },
+        "examples": [
+          {
+            "expiresIn": 86400,
+            "accessToken": "string",
+            "tokenType": "Bearer"
           }
         ]
       },
