@@ -5148,12 +5148,19 @@
           "planType": {
             "type": "string",
             "nullable": true,
-            "description": "Accounting software subscription type such as Trial, Demo, Standard"
+            "description": "Accounting software subscription type such as Trial, Demo, Standard."
           },
           "multicurrencyEnabled": {
             "type": "boolean",
+            "description": "Boolean showing if the organisation has multicurrency enabled."
+          },
+          "currencies": {
+            "type": "array",
             "nullable": true,
-            "description": "Boolean showing if the organisation has multicurrency enabled"
+            "description": "Array of enabled currencies for the linked company.",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
