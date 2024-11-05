@@ -299,7 +299,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿The *List companies* endpoint returns a list of [companies] associated to your instances.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies](https://docs.codat.io/platform-api#/schemas/Company) associated to your instances.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"

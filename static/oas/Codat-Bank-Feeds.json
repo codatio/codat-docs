@@ -396,7 +396,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿The *List companies* endpoint returns a list of [companies] associated to your instances.\n\nA [company](https://docs.codat.io/bank-feeds-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies](https://docs.codat.io/bank-feeds-api#/schemas/Company) associated to your instances.\n\nA [company](https://docs.codat.io/bank-feeds-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -683,7 +683,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/bank-feeds-api#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/platform-api#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -2980,7 +2980,7 @@
           }
         },
         "operationId": "get-create-bankAccounts-model",
-        "description": "The *Get create/update bank account model* endpoint returns the expected data for the request payload when creating and updating a [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company and integration.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating and updating a bank account.\r\n"
+        "description": "The *Get create/update bank account model* endpoint returns the expected data for the request payload when creating and updating a [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company and integration.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bankAccounts": {
@@ -3050,7 +3050,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/bank-feeds-api#/operations/get-create-update-bankAccounts-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating an account.",
+        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/bank-feeds-api#/operations/get-create-update-bankAccounts-model).",
         "operationId": "create-bank-account"
       }
     },
@@ -3137,7 +3137,7 @@
           "Source accounts"
         ],
         "summary": "List source accounts",
-        "description": "﻿The _List source accounts_ endpoint returns a list of [source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account within Codat's domain from which transactions are synced into the accounting platform.\n\n> ### Versioning\n> If you are integrating the Bank Feeds API with Codat after August 1, 2024, please use the v2 version of the API, as detailed in the schema below. For integrations completed before August 1, 2024, select the v1 version from the schema dropdown below.",
+        "description": "﻿The _List source accounts_ endpoint returns a list of [source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[Source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account within Codat's domain from which transactions are synced into the accounting platform.\n\n> ### Versioning\n> If you are integrating the Bank Feeds API with Codat after August 1, 2024, please use the v2 version of the API, as detailed in the schema below. For integrations completed before August 1, 2024, select the v1 version from the schema dropdown below.",
         "operationId": "list-source-accounts",
         "responses": {
           "200": {
@@ -3604,7 +3604,7 @@
           "Transactions"
         ],
         "summary": "Create bank transactions",
-        "description": "﻿The *Create bank transactions* endpoint creates new [bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bankTransactions-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating a bank account transactions.\n",
+        "description": "﻿The *Create bank transactions* endpoint creates new [bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bankTransactions-model).\n",
         "operationId": "create-bank-transactions",
         "parameters": [
           {
@@ -4186,7 +4186,7 @@
                 "type": "array",
                 "items": {
                   "title": "Accounting: Bank account",
-                  "description": "> **Accessing Bank Accounts through Banking API**\n> \n> This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators. \n> \n> To view bank account data through the Banking API, please refer to the new datatype [here](https://docs.codat.io/bank-feeds-api#/schemas/Account)\n\n> View the coverage for bank accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA list of bank accounts associated with a company and a specific data connection.\n\nBank accounts data includes:\n* The name and ID of the account in the accounting software.\n* The currency and balance of the account.\n* The sort code and account number.",
+                  "description": "> **Accessing Bank Accounts through Banking API**\n> \n> This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators. \n> \n> To view bank account data through the Banking API, please refer to the new [Banking: Account](https://docs.codat.io/bank-feeds-api#/schemas/Account) data type.\n\n## Overview\n\nA list of bank accounts associated with a company and a specific data connection.\n\nBank accounts data includes:\n* The name and ID of the account in the accounting software.\n* The currency and balance of the account.\n* The sort code and account number.",
                   "type": "object",
                   "allOf": [
                     {

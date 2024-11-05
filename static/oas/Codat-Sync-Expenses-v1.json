@@ -1181,7 +1181,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿The *List companies* endpoint returns a list of [companies] associated to your instances.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) associated to your instances.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -1573,7 +1573,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/sync-for-expenses-v1-api#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/platform-api#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"

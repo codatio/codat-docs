@@ -678,7 +678,7 @@
         ],
         "summary": "Get customer",
         "operationId": "get-customer",
-        "description": "The *Get customer* endpoint returns a single customer for a given customerId.\n\n[Customers](https://docs.codat.io/commerce-api#/schemas/Customer) are people or organizations that place orders, make payments and receive goods and/or services from the SMB.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-customers) for integrations that support getting a specific customer.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
+        "description": "The *Get customer* endpoint returns a single customer for a given customerId.\n\n[Customers](https://docs.codat.io/commerce-api#/schemas/Customer) are people or organizations that place orders, make payments and receive goods and/or services from the SMB.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n",
         "responses": {
           "200": {
             "description": "OK",
@@ -1171,7 +1171,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get dispute* endpoint returns a single dispute for a given disputeId.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for integrations that support getting a specific dispute.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        "description": "The *Get dispute* endpoint returns a single dispute for a given disputeId.\n\n[Disputes](https://docs.codat.io/commerce-api#/schemas/Dispute) are created when a customer is unsatisfied with their purchase or believe they have been charged incorrectly.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-info": {
@@ -1591,7 +1591,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get location* endpoint returns a single location for a given locationId.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for integrations that support getting a specific location.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        "description": "The *Get location* endpoint returns a single location for a given locationId.\n\n[Locations](https://docs.codat.io/commerce-api#/schemas/Location) hold information on the geographic location at which stocks of [products](https://docs.codat.io/commerce-api#/schemas/Product) may be held or where [orders](https://docs.codat.io/commerce-api#/schemas/Order) were placed.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-orders": {
@@ -3793,7 +3793,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get order* endpoint returns a single order for a given orderId.\n\n[Orders](https://docs.codat.io/commerce-api#/schemas/Order) contain the transaction details for all products sold by the company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for integrations that support getting a specific order.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        "description": "The *Get order* endpoint returns a single order for a given orderId.\n\n[Orders](https://docs.codat.io/commerce-api#/schemas/Order) contain the transaction details for all products sold by the company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-payments": {
@@ -4445,7 +4445,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get payment* endpoint returns a single payment for a given paymentId.\n\n[Payments](https://docs.codat.io/commerce-api#/schemas/Payment) contain details of all payments made by customers to the company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for integrations that support getting a specific payment.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        "description": "The *Get payment* endpoint returns a single payment for a given paymentId.\n\n[Payments](https://docs.codat.io/commerce-api#/schemas/Payment) contain details of all payments made by customers to the company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-paymentMethods": {
@@ -4905,7 +4905,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get payment method* endpoint returns a single payment method for a given paymentMethodId.\n\n[Payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) represent the payment method(s) used to make payments.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for integrations that support getting a specific payment method.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        "description": "The *Get payment method* endpoint returns a single payment method for a given paymentMethodId.\n\n[Payment methods](https://docs.codat.io/commerce-api#/schemas/PaymentMethod) represent the payment method(s) used to make payments.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-products": {
@@ -7226,7 +7226,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get transaction* endpoint returns a single transaction for a given transactionId.\n\n[Transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) detail all financial affairs recorded in the commerce or point of sale system.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-transactions) for integrations that support getting a specific transaction.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        "description": "The *Get transaction* endpoint returns a single transaction for a given transactionId.\n\n[Transactions](https://docs.codat.io/commerce-api#/schemas/Transaction) detail all financial affairs recorded in the commerce or point of sale system.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-productCategories": {
@@ -7403,7 +7403,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-productCategories) for integrations that support getting a specific product.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Product categories](https://docs.codat.io/commerce-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-taxComponents": {
@@ -7663,7 +7663,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get tax* endpoint returns a single tax for a given taxId.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce software, including tax rate's name and value.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-taxComponents) for integrations that support getting a specific tax.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
+        "description": "The *Get tax* endpoint returns a single tax for a given taxId.\n\n[Tax components](https://docs.codat.io/commerce-api#/schemas/TaxComponent) are tax rates from the commerce software, including tax rate's name and value.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     }
   },
@@ -7718,7 +7718,7 @@
       },
       "CompanyInfo": {
         "title": "Commerce: Company profile",
-        "description": "In the Codat system, company profile includes standard commercial details about \na linked company, such as their address, phone number, and company registration.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=companyInfo) for this data type.\n",
+        "description": "In the Codat system, company profile includes standard commercial details about \na linked company, such as their address, phone number, and company registration.\n",
         "type": "object",
         "allOf": [
           {
@@ -7863,7 +7863,7 @@
       },
       "Customer": {
         "title": "Commerce: Customer",
-        "description": "When a customer places an order with the connected commerce store their details are added to the Customers dataset. You can use the data from the Customers endpoints to calculate key metrics, such as customer churn.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-customers) for this data type.",
+        "description": "When a customer places an order with the connected commerce store their details are added to the Customers dataset. You can use the data from the Customers endpoints to calculate key metrics, such as customer churn.",
         "type": "object",
         "allOf": [
           {
@@ -8062,7 +8062,7 @@
       },
       "Dispute": {
         "title": "Commerce: Dispute",
-        "description": "A customer may file a payment dispute with their bank or other card issuer when they're unsatisfied with their purchase or believe they have been charged incorrectly. For example:  \n- They didn't receive an order.  \n- The product they received was different to the commerce store's description.  \n- They've been the victim of online fraud.  \n\nYou can use data from the Disputes endpoints to calculate key metrics, such as the number of chargebacks.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
+        "description": "A customer may file a payment dispute with their bank or other card issuer when they're unsatisfied with their purchase or believe they have been charged incorrectly. For example:  \n- They didn't receive an order.  \n- The product they received was different to the commerce store's description.  \n- They've been the victim of online fraud.  \n\nYou can use data from the Disputes endpoints to calculate key metrics, such as the number of chargebacks.",
         "type": "object",
         "allOf": [
           {
@@ -8260,7 +8260,7 @@
       "Location": {
         "title": "Commerce: Location",
         "type": "object",
-        "description": "The Location datatype holds information on the geographic location at which stocks of products may be held, as referenced in the Products data type.\n\nA Location also holds information on geographic locations where orders were placed, as referenced in the Orders data type.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-locations) for this data type.",
+        "description": "The Location datatype holds information on the geographic location at which stocks of products may be held, as referenced in the Products data type.\n\nA Location also holds information on geographic locations where orders were placed, as referenced in the Orders data type.",
         "allOf": [
           {
             "$ref": "#/components/schemas/Order/allOf/0"
@@ -8388,7 +8388,7 @@
       },
       "Order": {
         "title": "Commerce: Order",
-        "description": "Orders contain the transaction details for all products sold by the company, and include details of any payments, service charges, or refunds related to each order. You can use data from the Orders endpoints to calculate key metrics, such as gross sales values and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-orders) for this data type.\n",
+        "description": "Orders contain the transaction details for all products sold by the company, and include details of any payments, service charges, or refunds related to each order. You can use data from the Orders endpoints to calculate key metrics, such as gross sales values and monthly recurring revenue (MRR).\n",
         "allOf": [
           {
             "type": "object",
@@ -8858,7 +8858,7 @@
       },
       "Payment": {
         "title": "Commerce: Payment",
-        "description": "Payments contain details of all payments made by customers to a company, including: amounts, currency used, payment method, payment provider, and payment status.\n\nRefunds are recorded as separate, negative payments. Note that a refund can only occur in relation to a payment that has been completed (i.e. has a status of `Paid`). When a customer cancels an order _before_ a payment has been completed, the payment shows as `Cancelled`.\n\nYou can use data from the Payments endpoints to calculate key metrics, such as gross sales and monthly recurring revenue (MRR).\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-payments) for this data type.",
+        "description": "Payments contain details of all payments made by customers to a company, including: amounts, currency used, payment method, payment provider, and payment status.\n\nRefunds are recorded as separate, negative payments. Note that a refund can only occur in relation to a payment that has been completed (i.e. has a status of `Paid`). When a customer cancels an order _before_ a payment has been completed, the payment shows as `Cancelled`.\n\nYou can use data from the Payments endpoints to calculate key metrics, such as gross sales and monthly recurring revenue (MRR).",
         "type": "object",
         "allOf": [
           {
@@ -9004,7 +9004,7 @@
       },
       "PaymentMethod": {
         "title": "Commerce: Payment method",
-        "description": "A Payment Method represents the payment method(s) used to make payments.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-paymentMethods) for this data type.",
+        "description": "A Payment Method represents the payment method(s) used to make payments.",
         "type": "object",
         "allOf": [
           {
@@ -9135,7 +9135,7 @@
       },
       "Product": {
         "title": "Commerce: Product",
-        "description": "A Product is an item in the company's inventory, and includes information about the price and quantity of all products, and variants thereof, available for sale.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-products) for this data type.\n",
+        "description": "A Product is an item in the company's inventory, and includes information about the price and quantity of all products, and variants thereof, available for sale.\n",
         "type": "object",
         "allOf": [
           {
@@ -9407,7 +9407,7 @@
       },
       "ProductCategory": {
         "title": "Commerce: Product category",
-        "description": "Product categories are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-productCategories) for this data type.",
+        "description": "Product categories are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.",
         "type": "object",
         "allOf": [
           {
@@ -9549,7 +9549,7 @@
       },
       "TaxComponent": {
         "title": "Commerce: Tax component",
-        "description": "The Tax Components endpoints return tax rates data from the commerce software, including tax rate names and values. This is to support the mapping of tax rates from the commerce software to those in the accounting software.\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-disputes) for this data type.",
+        "description": "The Tax Components endpoints return tax rates data from the commerce software, including tax rate names and values. This is to support the mapping of tax rates from the commerce software to those in the accounting software.",
         "type": "object",
         "allOf": [
           {
@@ -9663,7 +9663,7 @@
       },
       "Transaction": {
         "title": "Commerce: Transaction",
-        "description": "Details of all financial transactions recorded in the commerce or point of sale system are added to the Transactions data type. For example, payments, service charges, and fees.\n\nYou can use data from the Transactions endpoints to calculate key metrics, such as:  \n- Transaction volumes  \n- Average transaction volume  \n- Average transaction value  \n- Returns  \n- Payouts\n\nExplore our [data coverage](https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&dataType=commerce-transactions) for this data type.",
+        "description": "Details of all financial transactions recorded in the commerce or point of sale system are added to the Transactions data type. For example, payments, service charges, and fees.\n\nYou can use data from the Transactions endpoints to calculate key metrics, such as:  \n- Transaction volumes  \n- Average transaction volume  \n- Average transaction value  \n- Returns  \n- Payouts",
         "type": "object",
         "allOf": [
           {
