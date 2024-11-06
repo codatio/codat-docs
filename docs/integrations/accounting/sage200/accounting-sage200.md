@@ -17,4 +17,4 @@ See [Set up the Sage 200cloud integration](/integrations/accounting/sage200/acco
 
 ## Supported versions
 
-The integration supports Sage 200 **Standard** online only. Sage 200 Desktop is not supported.
+The integration supports Sage 200 **Standard** Online only. Sage 200 Professional (Desktop) is not supported.

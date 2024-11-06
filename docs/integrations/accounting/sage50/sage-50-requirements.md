@@ -5,13 +5,14 @@ description: "Software, hardware, environment and network requirements and confi
 sidebar_label: Requirements
 ---
 
-## Sage 50 cloud support
-
-Codat support both Sage 50 and Sage 50 cloud (also known as Sage 50c).
-
 ## Supported versions
 
-Codat support versions 26, 27, 28, 29 and 30 of Sage 50c Accounts Standard & Professional. This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>. If you experience issues with the supported versions, please use our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new) to raise a ticket. If you would like to register your interest in an unsupported version, please contact your account manager.
+Codat supports the following variations:
+- Sage 50 and Sage 50 cloud (Sage 50c) 
+- Versions 26, 27, 28, 29 and 30 
+- Standard and Professional plans
+
+This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>. If you experience issues with the supported versions, please use our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new) to raise a ticket. If you would like to register your interest in an unsupported version, please contact your account manager.
 
 ## Unsupported versions
 
