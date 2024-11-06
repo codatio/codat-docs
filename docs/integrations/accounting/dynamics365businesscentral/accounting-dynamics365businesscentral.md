@@ -18,6 +18,8 @@ For more details about the supported data types and operations, see [Dynamics 36
 
 The integration supports all versions of Dynamics 365 Business Central released after April 2023 (versions 22 and later). For information about how to check your current version, see <a className="external" href="https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/update-rollout-timeline" target="_blank">Major Updates and Minor Updates for Business Central Online</a> in the Dynamics 365 documentation.
 
+The integration supports the Dynamics 365 Business Central [desktop app](https://learn.microsoft.com/en-gb/dynamics365/business-central/install-desktop-app).
+
 ## Set up the integration
 
 See [Set up the Dynamics 365 Business Central integration](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral-setup) to learn how to set up and enable the integration.
