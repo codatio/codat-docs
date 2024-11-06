@@ -1,5 +1,5 @@
 ---
-title: "Zapier integration (beta)"
+title: "Zapier integration"
 description: "Create your own notification workflows triggered by our webhooks"
 ---
 
