@@ -4665,20 +4665,18 @@
             "description": "The type of the report requested in the query string."
           }
         },
-        "examples": {
-          "Example 1": {
-            "value": {
-              "lastGenerated": "2023-01-25T22:36:05.125Z",
-              "inProgress": true,
-              "queued": "2023-01-25T22:36:05.125Z",
-              "success": true,
-              "errorMessage": "string",
-              "lastInvocationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-              "reportType": "string",
-              "fileSize": 0
-            }
+        "examples": [
+          {
+            "lastGenerated": "2023-01-25T22:36:05.125Z",
+            "inProgress": true,
+            "queued": "2023-01-25T22:36:05.125Z",
+            "success": true,
+            "errorMessage": "string",
+            "lastInvocationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "reportType": "string",
+            "fileSize": 0
           }
-        }
+        ]
       },
       "LoanSummary": {
         "title": "Loan summary",
@@ -4851,10 +4849,6 @@
             "items": {
               "$ref": "#/components/schemas/LoanTransactions/definitions/reportItems"
             }
-          },
-          "errors": {
-            "type": "array",
-            "description": "If there are no errors, an empty array is returned."
           }
         },
         "definitions": {
