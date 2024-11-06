@@ -341,7 +341,7 @@ const sourceAccountResponse = bankFeedsClient.sourceAccounts.create({
     sourceAccount: {
       id: "ac-001",
       accountName: "Checking Account",
-      accountType: "Debit",
+      accountType: "checking",
       accountNumber: "01120912",
       currency: "USD",
       balance: 4002
@@ -359,7 +359,7 @@ const sourceAccountResponse = bankFeedsClient.sourceAccounts.create({
 source_account_request = operations.CreateSourceAccountRequest(
     id="ac-001",
     accountName="Checking Account",
-    accountType="Debit",
+    accountType=AccountType.CHECKING,
     accountNumber="01120912",
     currency="USD",
     balance=4002
@@ -380,7 +380,7 @@ var sourceAccountResponse = await bankFeedsClient.SourceAccounts.CreateAsync(new
     SourceAccount = new SourceAccount() {
       Id = "ac-001",
       AccountName = "Checking Account",
-      AccountType = "Debit",
+      AccountType = AccountType.Checking,
       AccountNumber = "01120912",
       Currency = "USD",
       Balance = 4002
@@ -401,7 +401,7 @@ sourceAccountResponse, err := bankFeedsClient.SourceAccounts.Create(ctx, operati
     SourceAccount: &shared.SourceAccount{
       ID: bankfeeds.String("ac-001"),
       AccountName: bankfeeds.String("Checking Account"),
-      AccountType: bankfeeds.String("Debit"),
+      AccountType: shared.AccountTypeChecking,
       AccountNumber: bankfeeds.String("01120912"),
       Currency: bankfeeds.String("USD"),
       Balance: 4002
@@ -410,6 +410,29 @@ sourceAccountResponse, err := bankFeedsClient.SourceAccounts.Create(ctx, operati
     ConnectionID: connectionResponse.Connection.ID
 })
 ```
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+CreateSourceAccountRequest req = CreateSourceAccountRequest.builder()
+    .requestBody(CreateSourceAccountRequestBody.of(SourceAccountV2.builder()
+        .id("ac-001")
+        .accountName("Checking Account")
+        .accountType(AccountType.LOAN)
+        .accountNumber("01120912")
+        .currency("USD")
+        .balance(new BigDecimal("4002"))
+        .build()))
+    .companyId(companyId)
+    .connectionId(connectionId)
+    .build();
+
+CreateSourceAccountResponse res = bankFeedsClient.sourceAccounts().create()
+    .request(req)
+    .call();
+```
+
 </TabItem>
 
 </Tabs>
@@ -433,7 +456,7 @@ const sourceAccountUpdateResponse = bankFeedsClient.sourceAccounts.update({
   sourceAccount: {
     id: "ac-001",
     accountName: "Bank of Dave Checking Account",
-    accountType: "Debit",
+    accountType: "checking",
     accountNumber: "01120912",
     currency: "USD",
     balance: 4002
@@ -454,7 +477,7 @@ source_account_update_request = operations.UpdateSourceAccountRequest(
   source_account=shared.SourceAccount(
     id="ac-001",
     accountName="Bank of Dave Checking Account",
-    accountType="Debit",
+    accountType=AccountType.CHECKING,
     accountNumber="01120912",
     currency="USD",
     balance=4002
@@ -476,7 +499,7 @@ var sourceAccountUpdateResponse = await sdk.SourceAccounts.UpdateAsync(new() {
     SourceAccount = new SourceAccount() {
         Id = "ac-001",
         AccountName = "Checking Account",
-        AccountType = "Debit",
+        AccountType = AccountType.Checking,
         AccountNumber = "01120912",
         Currency = "USD",
         Balance = 4002
@@ -497,7 +520,7 @@ res, err := bankFeedsClient.SourceAccounts.Update(ctx, operations.UpdateSourceAc
     SourceAccount: &shared.SourceAccount{
         ID: bankfeeds.String("ac-001"),
         AccountName: bankfeeds.String("Checking Account"),
-        AccountType: bankfeeds.String("Debit"),
+        AccountType: shared.AccountTypeChecking,
         AccountNumber: bankfeeds.String("01120912"),
         Currency: bankfeeds.String("USD"),
         Balance: 4002
