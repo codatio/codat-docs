@@ -7,7 +7,7 @@ sidebar_label: Requirements
 
 ## Supported versions
 
-Codat supports the following variation of Sage 50:
+Codat supports the following variations of Sage 50:
 
 - Sage 50 and Sage 50 cloud (Sage 50c) 
 - Versions 26, 27, 28, 29 and 30 
