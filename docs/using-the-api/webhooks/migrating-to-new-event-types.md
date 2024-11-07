@@ -711,7 +711,7 @@ These event types provide detailed information, including whether the push opera
     "connectionId":"2e9d2c44-f675-40ba-8049-353bfcb5e171",
     "requestedOnDate":"2022-10-23T00:00:00.000Z",
     "completedOnDate":"2022-10-23T00:00:00.000Z",
-    "status":"Successful",
+    "status":"Success",
     "record": { // only populated on success for records, and always populated for attachments.
       "id": "inv_sedi984199smdjsua9124" 
     },
