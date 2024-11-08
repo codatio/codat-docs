@@ -24,13 +24,13 @@ sequenceDiagram
     participant codat as Codat
     
         backend ->> codat: Create transfer (bank account -> lender)
-        codat -->> backend:  transfer
+        codat -->> backend:  Transfer
 
         backend ->> codat: Create direct cost
-        codat -->> backend: direct cost
+        codat -->> backend: Direct cost
         
         backend ->> codat: Create bank feed transactions (transfer and direct cost amounts)
-        codat -->> backend: bank feed transactions
+        codat -->> backend: Bank feed transactions
 ```
 
 To perform these operations, you will need the following properties:
@@ -235,10 +235,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ### Create direct cost
 
-Check the [Get create direct cost model](/lending-api#/operations/get-create-directCosts-model), then use the [Create direct cost](/lending-api#/operations/create-direct-cost) endpoint to capture the amount of fees or interest (`feeAndInterestAmount`) incurred by the borrower.
-
-Note that the direct cost is charged to the lender’s bank account here.
-This ensures the account balances to zero once the finance invoice repayment is complete.
+Check the [Get create direct cost model](/lending-api#/operations/get-create-directCosts-model), then use the [Create direct cost](/lending-api#/operations/create-direct-cost) endpoint to capture the amount of fees or interest (`feeAndInterestAmount`) incurred by the borrower. The direct cost is charged to the lender’s bank account to ensure the account balances to zero once the finance invoice repayment is complete.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
