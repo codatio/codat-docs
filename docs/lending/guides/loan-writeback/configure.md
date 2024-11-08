@@ -15,7 +15,7 @@ Once your SMB customer's loan has been approved, provide them with a user interf
 * **Supplier record**, a record to identify you, the lender, in future transactions.
 
 Your solution also requires a **lender bank account** - a virtual account that contains the lender's transactions.
-This account, also known as a container, clearing, or drawdown account, is essential for managing and tracking funds related to lending activities.
+This account, also known as a container, clearing, or drawdown account, is used to manage and track funds related to lending activities.
 
 :::info Let your customers take control
 
