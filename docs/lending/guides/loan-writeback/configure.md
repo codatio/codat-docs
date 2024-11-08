@@ -546,15 +546,11 @@ In response, you will receive account creation details which you can display to 
 
 ### Bank feed source account
 
-Finally, you’ll need to create and map a source account to enable bank feed transactions that the SMB can reconcile in their accounting software.
-This two-step process establishes the lender’s bank account, defined as `lendersBankAccountId` in your solution.
+Finally, create and map a source account to enable the flow of bank transactions that the SMB can reconcile in their accounting software. This two-step process establishes the lender’s bank account, defined as `lendersBankAccountId`, in your solution.
 
 #### Create source account
 
-To create the lender’s bank account, start by setting up a source account in the loan's agreed currency.
-Ensure it has a zero balance and specify an ID and account number of your choice.
-
-UK-specific requirements: For bank accounts in GBP, `sortCode` is also a required field. 
+Use the [Create source account](/lending-api#/operations/create-source-account) endpoint to create a representation of the lender's bank account within Codat's domain. The account must be in the loan's agreed currency. Ensure it has a zero balance and specify an ID and account number of your choice. For bank accounts in GBP, `sortCode` is also a required field. 
 
 <Tabs>
 
@@ -674,9 +670,7 @@ String lendersBankAccountId = sourceAccountResponse.oneOf.sourceAccountV2.id;
 
 #### Map source account
 
-The second step to complete the setup of the lender’s account in the accounting software is to create a representation of the source account.
-This is achieved by mapping the source account without assigning a target account.
-When no target account is specified, one will be created automatically.
+To complete the setup, create a representation of the source account in the accounting software. Use the [Create bank feed account mapping](/lending-api#/operations/create-bank-account-mapping) endpoint to achieve this, mapping the source account without assigning a target account. This will create a target account automatically.
 
 <Tabs>
 
