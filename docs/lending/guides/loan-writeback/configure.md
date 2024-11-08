@@ -63,7 +63,7 @@ sequenceDiagram
     backend -->> frontend: View configuration
 
     backend -->> codat: Create source account
-    codat -->> backend: source account
+    codat -->> backend: Source account
 
     backend -->> codat: Map source account
     codat -->> backend: Mapped source account
@@ -71,7 +71,7 @@ sequenceDiagram
 
 ### Bank account
 
-The loan writeback process involves two bank accounts:
+The loan writeback process uses two bank accounts:
 - A borrower's business bank account where the money lent is deposited.
 - A lender's bank account, which is a virtual account in the accounting software that serves as a container for lender transactions. This account is created when [setting up the bank feed source account](#bank-feed-source-account).
 

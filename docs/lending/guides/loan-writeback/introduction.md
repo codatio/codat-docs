@@ -102,7 +102,7 @@ In the example, you can also see that each bank feed transaction matches a bank 
 
 The lender agrees to provide the SMB with an advance of £800 for a £1000 invoice with a £50 fee. The lender deposits £800 into the SMB's bank account and the SMB's customer pays for the invoice within the payment period.
 
-OUpon receiving payment from the customer, the funds are transferred from the borrower's bank account into the borrower's bank account, settling the loan and associated fees.
+Upon receiving payment from the customer, the funds are transferred from the borrower's bank account into the borrower's bank account, settling the loan and associated fees.
 The lender’s fee is then deducted from this payment.
 
 As a result, the lender's account transactions balance to zero, and the advance and the outstanding amount remain in the borrower's account.
