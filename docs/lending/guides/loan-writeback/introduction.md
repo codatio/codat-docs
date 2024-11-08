@@ -18,13 +18,22 @@ This guide takes you through the steps needed to implement and run the loan writ
 
 This solution covers the loan writeback procedure for both general lending, such as term loans, and selective invoice finance.
 
+:::tip Use our SDK
+
+Save time by using our Lending SDK to integrate directly with our API.
+The loan writeback namespace includes all the methods you need to develop your loan writeback solution.
+
+Check out our docs for [typescript](https://github.com/codatio/client-sdk-typescript/tree/main/lending#loanwriteback), [python](https://github.com/codatio/client-sdk-python/tree/main/lending#loan_writeback), [C#](https://github.com/codatio/client-sdk-csharp/tree/main/lending#loanwriteback), [Go](https://github.com/codatio/client-sdk-go/tree/main/lending#loanwriteback), and [Java](https://github.com/codatio/client-sdk-java/tree/main/lending#loanwriteback).
+
+:::
+
 ### What is loan writeback?
 
 Loan writeback (also known as lending writeback) is the process of continuously updating an accounting software with information about a loan. It helps maintain an accurate position of the loan during the entire lending cycle by recording the loan liability, any interest, fees, or repayments, and facilitating the reconciliation of bank accounts.
 
-:::warning Bank feeds is required for loan writeback
+:::warning Bank feeds authorization
 
-Loan writeback requires the lender to support the [bank feeds](/bank-feeds/overview) functionality so that the lender can record their own bank transactions associated with issuing the loan in their borrower's accounting software. 
+For some accounting software, you must obtain approval to integrate bank feeds prior to implementing loan writeback.
 
 :::
 
@@ -34,7 +43,9 @@ A bookkeeper can account for a loan in numerous ways in an accounting software. 
 
 This results in loans being improperly recorded as revenue and repayments as operating costs. At the end of the reporting period, this can make it hard for the bookkeeper to close their books. 
 
-By implementing loan writeback functionality in your application, you can make sure loan bookeeping is done regularly, correctly, and quickly so that you always see an up-to-date state of the borrower's accounts.
+By implementing loan writeback functionality in your application, you can make sure loan bookkeeping is done regularly, correctly, and quickly so that you always see an up-to-date state of the borrower's accounts.
+
+POLINA (I'm trying to say that write back is useful for you too): Loan writeback not only helps SMBs make their accounts more accurate but also helps you and other lenders identify loans in an SMBs accounting software thus helping you improve your underwriting by being able to accurately identify the SMBs debt repayment history.
 
 :::info Mandatory loan writeback
 
@@ -52,7 +63,7 @@ The process of loan writeback involves recording loan withdrawals, repayments, a
 
 3. **Record** payments owed to you, the lender, in your SMB's accounting software. 
 
-The first two steps are identical for the general lending and invoice finance scenarios. The process of recording repayments differs based on the lending option.
+The process is identical for the general lending and invoice finance scenarios.
 
 ```mermaid
 sequenceDiagram
@@ -113,8 +124,6 @@ As a result, the lender's account transactions balance to zero, and the advance 
 </Tabs>
 
 ## Prerequisites
-
-* As a lender, use Codat's [Bank Feeds API](/bank-feeds/overview) to represent your bank account in Codat's domain. Keep hold of the [source bank account](/bank-feeds-api#/operations/create-source-account) `id` — you will use it when recording deposits and repayments. 
 
 * If you are implementing loan writeback for Xero, *Xero Bank Feeds API* needs to be enabled for your registered app. Xero usually does this during the certification process for lenders' apps so that you can test your solution before completing the certification.
 

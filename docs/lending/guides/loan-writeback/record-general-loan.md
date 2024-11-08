@@ -1,13 +1,15 @@
 ---
-title: "Record general loan repayments"
-description: "Record the repayment of money owed to the lender for a general loan in the SMB's accounting software"
-sidebar_label: "Record: general loans"
+title: "Record loan repayments"
+description: "Record the repayment of money owed to the lender for a loan in the SMB's accounting software"
+sidebar_label: "Record repayments"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Based on the loan's terms and conditions, the borrower will periodically repay the lender the loan amount and any associated fees. 
+The loan writeback process is the same for both general lending and invoice finance.
+The key distinction lies in the repayment method: general lending usually involves recurring payments, while invoice finance is repaid when the SMB’s customer pays the invoice.
+Since the underlying process is the same, we will focus on general lending and also provide additional details on how to further automate the process for invoice financiers. 
 
 To reflect that programmatically, perform these steps every time a repayment is made:
 
@@ -58,7 +60,7 @@ To perform these operations, you will need the following properties:
 
 ### Create transfer
 
-Use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again, this time to record the loan repayment amount. Note that you are performing a transfer *from* `borrowersBankAccount.id` *to* `lendersBankAccountId`.
+Use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again, this time to record the total repayment amount. Note that you are performing a transfer *from* `borrowersBankAccount.id` *to* `lendersBankAccountId`.
 
 <Tabs>
 <TabItem value="nodejs" label="TypeScript">
@@ -71,14 +73,14 @@ codatLending.loanWriteback.transfers.create({
             accountRef: {
                 id: borrowersBankAccount.id,
             },
-            amount: repaymentAmount,
+            amount: totalRepaymentAmount,
             currency: borrowersBankAccount.currency,
         },
         to: {
             accountRef: {
                 id: lendersBankAccountId,
             },
-            amount: repaymentAmount,
+            amount: totalRepaymentAmount,
             currency: borrowersBankAccount.currency,
         },
     },
@@ -102,14 +104,14 @@ transfers_create_request = operations.CreateTransferRequest(
             account_ref=shared.AccountRef(
                 id=borrowers_bank_account.id,
             ),
-            amount=Decimal(repayment_amount),
+            amount=Decimal(total_repayment_amount),
             currency=borrowers_bank_account.currency,
         ),
         to=shared.TransferAccount(
             account_ref=shared.AccountRef(
                 id=lenders_bank_account_id,
             ),
-            amount=Decimal(repayment_amount),
+            amount=Decimal(total_repayment_amount),
             currency=borrowers_bank_account.currency,
         ),
     ),
@@ -131,14 +133,14 @@ var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateA
             AccountRef = new AccountRef() {
                 Id = borrowersBankAccount.Id,
             },
-            Amount = repaymentAmount,
+            Amount = totalRepaymentAmount,
             Currency = borrowersBankAccount.Currency,
         },
         To = new TransferAccount() {
             AccountRef = new AccountRef() {
                 Id = lendersBankAccountId,
             },
-            Amount = repaymentAmount,
+            Amount = totalRepaymentAmount,
             Currency = borrowersBankAccount.Currency,
         },
     },
@@ -159,14 +161,14 @@ transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx,
             AccountRef: &shared.AccountRef{
                 ID: lending.String(borrowersBankAccount.ID),
             },
-            Amount: types.MustNewDecimalFromString(repaymentAmount),
+            Amount: types.MustNewDecimalFromString(totalRepaymentAmount),
             Currency: lending.String(borrowersBankAccount.Currency),
         },
         To: &shared.TransferAccount{
             AccountRef: &shared.AccountRef{
                 ID: lending.String(lendersBankAccountID),
             },
-            Amount: types.MustNewDecimalFromString(repaymentAmount),
+            Amount: types.MustNewDecimalFromString(totalRepaymentAmount),
             Currency: lending.String(borrowersBankAccount.Currency),
         },
     },
@@ -189,7 +191,7 @@ CreateTransferRequest req = CreateTransferRequest.builder()
                 .id(borrowersBankAccount.id)
                 .build()
             )
-            .amount(repaymentAmount)
+            .amount(totalRepaymentAmount)
             .currency(borrowersBankAccount.currency)
             .build())
         .to(TransferAccount.builder()
@@ -197,7 +199,7 @@ CreateTransferRequest req = CreateTransferRequest.builder()
                 .id(lendersBankAccountId)
                 .build()
             )
-            .amount(repaymentAmount)
+            .amount(totalRepaymentAmount)
             .currency(borrowersBankAccount.currency)
             .build())
         .build())
@@ -224,14 +226,14 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
         "accountRef": {
             "id": borrowersBankAccount.id,
         },
-        "account": repaymentAmount,
+        "account": totalRepaymentAmount,
         "currency": borrowersBankAccount.currency,
     },
     "to": {
         "accountRef": {
             "id": lendersBankAccountId,
         },
-        "account": repaymentAmount,
+        "account": totalRepaymentAmount,
         "currency": borrowersBankAccount.currency,
     }
 }
@@ -673,6 +675,16 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 </Tabs>
 
 At the end of this 3-stage process, your borrower will have the loan writeback reflected correctly in their accounting software. This saves them time on reconciliation and makes sure they (and you!) have clarity on the state of the loan.
+
+## Automate invoice finance repayment
+
+Certain accounting software providers offer webhook notifications to alert you about changes to invoices in the SMB’s accounts.
+By subscribing to these notifications, you can automatically trigger repayments once the customer pays the SMB.
+
+To enhance your repayment automation, check out the supported webhooks from [Xero](https://developer.xero.com/documentation/guides/webhooks/overview/) and [Intuit](https://developer.intuit.com/app/developer/qbo/docs/develop/webhooks).
+
+Some accounting software providers support webhook notifications to get notified about changes to invoices in the SMB's accounts. 
+This means you can subscribe to these and automatically trigger the repayment once the customer has paid the SMB.
 
 :::tip Recap
 In this guide, you have learned:
