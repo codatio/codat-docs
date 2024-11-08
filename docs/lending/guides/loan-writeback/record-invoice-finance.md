@@ -41,7 +41,7 @@ To perform these operations, you will need the following properties:
 
 ### Create transfer
 
-Once the SMB's customer pays the invoice, use the [Create Transfer](/lending-api#/operations/create-transfer) endpoint to record both the advance and the fees/interest for the loan.
+Once the SMB's customer pays the invoice, use the [Create transfer](/lending-api#/operations/create-transfer) endpoint to record the advance and the fees/interest for the loan.
 This transfer should be made *from* `borrowersBankAccount.id` *to* `lendersBankAccountId`.
 
 The repayment amount is calculated as:
