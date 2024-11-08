@@ -44,7 +44,7 @@ You should allow a minimum of 72 hours for MYOB to set up your developer account
 5. In the **Website** box, you should put a link to your company's website in the following format: `https://www.[example].com`.
 6. In the **Description** box, you should put a short description of what your app will allow your customers to do.
 7. Select **Register App**.
-8. On the** Developer Dashboard** you will now find your application key and secret. You'll need these for the next stage of the process.
+8. On the **Developer Dashboard** you will now find your application key and secret. You'll need these for the next stage of the process.
 
 :::caution MYOB Limitation
 
