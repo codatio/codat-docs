@@ -102,8 +102,7 @@ In the example, you can also see that each bank feed transaction matches a bank 
 
 The lender agrees to provide the SMB with an advance of £800 for a £1000 invoice with a £50 fee. The lender deposits £800 into the SMB's bank account and the SMB's customer pays for the invoice within the payment period.
 
-Upon receiving payment from the customer, the funds are transferred from the borrower's bank account into the borrower's bank account, settling the loan and associated fees.
-The lender’s fee is then deducted from this payment.
+When the SMB receives payment from the customer, the funds are transferred from the borrower's bank account into the lender's bank account, settling the loan and associated fees. The lender’s fee is then deducted from this payment.
 
 As a result, the lender's account transactions balance to zero, and the advance and the outstanding amount remain in the borrower's account.
 
@@ -115,7 +114,7 @@ As a result, the lender's account transactions balance to zero, and the advance 
 
 ## Prerequisites
 
-* As a lender, use Codat's [Bank Feeds API](/bank-feeds/overview) to represent your bank account in Codat's domain. Keep hold of the [source bank account](/bank-feeds-api#/operations/create-source-account) `id` as you will use it when recording deposits and repayments. 
+* As a lender, use Codat's [Bank Feeds API](/bank-feeds/overview) to represent your bank account in Codat's domain. Keep hold of the [source bank account](/bank-feeds-api#/operations/create-source-account) `id` — you will use it when recording deposits and repayments. 
 
 * If you are implementing loan writeback for Xero, *Xero Bank Feeds API* needs to be enabled for your registered app. Xero usually does this during the certification process for lenders' apps so that you can test your solution before completing the certification.
 
@@ -123,7 +122,7 @@ As a result, the lender's account transactions balance to zero, and the advance 
 
   You should also create and connect a test company to use while building your solution.
 
-* Familiarize yourself with Codat's asynchronous approach to [creating and updating data](/using-the-api/push), which leverages [webhooks](/using-the-api/webhooks/overview). This process can be summarized as follows:
+* Familiarize yourself with Codat's asynchronous approach to [writing data](/using-the-api/push), which leverages [webhooks](/using-the-api/webhooks/overview). This process can be summarized as follows:
 
 ```mermaid
   sequenceDiagram
@@ -137,7 +136,7 @@ As a result, the lender's account transactions balance to zero, and the advance 
 
     alt Status is successful
         backend ->> codat: Get write operation
-        codat -->> backend: write operation
+        codat -->> backend: Write operation
     end
 ```
 
