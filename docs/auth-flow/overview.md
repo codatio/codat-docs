@@ -85,7 +85,7 @@ Browser and mobile compatibility of Link varies for different integrations:
 
   - Some integrations are **desktop-only**, e.g. [Sage 50](/integrations/accounting/sage50/accounting-sage50), [QuickBooks Desktop](/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop).
   - Others require **downloading a desktop package**, e.g. [Oracle NetSuite](/integrations/accounting/netsuite/accounting-netsuite), [Microsoft Dynamics 365 Business Central](/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral).
-  - Other integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform, e.g. [Sage 200cloud](/integrations/accounting/sage200/accounting-sage200), [Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct).
+  - Other integrations require switching to complex flows on **non mobile-optimized websites** due to the complexity of the third-party platform, e.g. [Sage 200 Standard](/integrations/accounting/sage200/accounting-sage200), [Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct).
 
 :::tip Change management
 

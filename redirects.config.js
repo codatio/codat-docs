@@ -215,7 +215,7 @@ var acc = [{
   platformKey: "ndsk",
   to: "/integrations/accounting/quickbooksonline/accounting-quickbooksonline"
 }, {
-  integration: "Sage 200cloud",
+  integration: "Sage 200 Standard",
   platformKey: "jcrp",
   to: "/integrations/accounting/sage200/accounting-sage200"
 }, {

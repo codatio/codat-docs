@@ -60,7 +60,7 @@ export const integrationsFilterSupplierEnablement = [
   "Oracle NetSuite",
   "QuickBooks Desktop",
   "QuickBooks Online",
-  "Sage 200cloud",
+  "Sage 200 Standard",
   "Sage 50",
   "Sage Business Cloud Accounting",
   "Sage Intacct",
@@ -414,7 +414,7 @@ export const accountingIntegrations = [
     "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
   },
   {
-    "name": "Sage 200cloud",
+    "name": "Sage 200 Standard",
     "to": "/integrations/accounting/sage200/accounting-sage200",
     "sourceType": "accounting",
     "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
