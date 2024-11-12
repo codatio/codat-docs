@@ -52,7 +52,7 @@ Subscribe to the Sage API for Sage 200 Unlimited.
 2. In the top-right corner, select **Sign in**, and follow the instructions to register your details.  
    When your registration is complete, you're automatically taken to your account profile.
 3. Return to the <a href="https://developer.columbus.sage.com/products/" target="_blank">Sage API page</a>.
-4. Under Products, choose **Sage 200 Unlimited**. The **Sage 200 Unlimited** page is displayed listing the APIs available for this product and it covers both Sage200 Standard and Sage200 Extra/Professional.
+4. Under Products, choose **Sage 200 Unlimited**. The **Sage 200 Unlimited** page is displayed listing the APIs available for this product and it covers both Sage 200 Standard and Sage 200 Extra/Professional.
 5. Select **Subscribe**.
 6. Select the **By subscribing to Sage 200 Unlimited...** checkbox and select **Confirm**.
 
@@ -92,7 +92,7 @@ Make sure that your secure keys don't contain any spaces.
 
 You can also click **Manage** to view the integration's settings page, and then enable the integration from there.
 
-Your Sage200 cloud integration is now set up.
+Your Sage 200 Standard integration is now set up.
 
 ## Test your integration
 
@@ -103,11 +103,11 @@ We recommend that you test your integration before sending Link URLs to customer
 Unfortunately, you can't use a trial account to test your integration. Sage doesn't allow the creation or update of records from their trial accounts.
 :::
 
-1. Set up some test data in your Sage200 Standard account. For example, some new or amended invoices.
+1. Set up some test data in your Sage 200 Standard account. For example, some new or amended invoices.
 2. Next, go to the Codat Portal where you've enabled your integration and [create a test company](/configure/portal/companies#add-a-new-company).
 3. Find the Link URL for your test company. Select **Request data** next to the company name.
 4. Use the Link URL to connect your Sage 200 Standard account.
-   - When Link opens, select **Sage200 Standard**, and then select **Continue to Sage 200 Standard**.
+   - When Link opens, select **Sage 200 Standard**, and then select **Continue to Sage 200 Standard**.
    - Log in to your Sage 200 Standard account.
    - Authorize access to your account details.
 5. Make sure that test data from your account is displayed for your test company in the Codat Portal.
