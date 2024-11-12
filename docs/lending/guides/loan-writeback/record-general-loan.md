@@ -7,11 +7,13 @@ sidebar_label: "Record repayments"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The loan writeback process is the same for both general lending and invoice finance.
-The key distinction lies in the repayment method: general lending usually involves recurring payments, while invoice finance is repaid when the SMB’s customer pays the invoice.
-Since the underlying process is the same, we will focus on general lending and also provide additional details on how to further automate the process for invoice financiers. 
+The loan writeback process is the same for general lending and invoice finance. The key distinction lies in the repayment method: general lending usually involves recurring payments, while invoice finance is repaid when the SMB’s customer pays the invoice.
 
-To reflect that programmatically, perform these steps every time a repayment is made:
+On this page, we focus on general lending and provide additional details on automating the process for invoice finance providers. 
+
+## Record repayment
+
+To reflect loan repayments programmatically, perform these steps every time a repayment is made:
 
 1. [Create a transfer](/lending/guides/loan-writeback/record-general-loan#create-transfer) from the borrower's bank account to the lender's for each repayment.
 
@@ -25,9 +27,7 @@ This means you need to create a transfer of £320 to represent the payment, a di
 
 :::info Repay on your terms
 
-Our example demonstrates how to record loan repayments with terms that include monthly payments covering both drawdown and fees.
-To separate repayments from fee or interest payments, include a transfer from the borrower’s account to the lender’s account that equals the amount of fees or interest.
-Then, create the associated direct cost to register the fees and/or interest.
+Our example shows how to record loan repayments with monthly payments covering both drawdown and fees. To separate repayments from fee or interest payments, include a transfer from the borrower’s account to the lender’s account that equals the amount of fees or interest. Then, create the associated direct cost to register the fees and/or interest.
 
 :::
 
@@ -676,15 +676,11 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 At the end of this 3-stage process, your borrower will have the loan writeback reflected correctly in their accounting software. This saves them time on reconciliation and makes sure they (and you!) have clarity on the state of the loan.
 
-## Automate invoice finance repayment
+## Invoice finance repayments
 
-Certain accounting software providers offer webhook notifications to alert you about changes to invoices in the SMB’s accounts.
-By subscribing to these notifications, you can automatically trigger repayments once the customer pays the SMB.
+Some accounting software providers offer webhook notifications that alert you about changes to invoices in the SMB’s accounts. By subscribing to these notifications, you can automatically trigger repayments once the customer pays the SMB.
 
 To enhance your repayment automation, check out the supported webhooks from [Xero](https://developer.xero.com/documentation/guides/webhooks/overview/) and [Intuit](https://developer.intuit.com/app/developer/qbo/docs/develop/webhooks).
-
-Some accounting software providers support webhook notifications to get notified about changes to invoices in the SMB's accounts. 
-This means you can subscribe to these and automatically trigger the repayment once the customer has paid the SMB.
 
 :::tip Recap
 In this guide, you have learned:

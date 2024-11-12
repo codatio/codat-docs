@@ -18,12 +18,11 @@ This guide takes you through the steps needed to implement and run the loan writ
 
 This solution covers the loan writeback procedure for both general lending, such as term loans, and selective invoice finance.
 
-:::tip Use our SDK
+:::tip Save time with our SDK
 
-Save time by using our Lending SDK to integrate directly with our API.
-The loan writeback namespace includes all the methods you need to develop your loan writeback solution.
+Deploy your loan writeback solution quicker by using our Lending SDK to integrate directly with our API. The loan writeback namespace includes all the methods you need to develop your loan writeback solution.
 
-Check out our docs for [typescript](https://github.com/codatio/client-sdk-typescript/tree/main/lending#loanwriteback), [python](https://github.com/codatio/client-sdk-python/tree/main/lending#loan_writeback), [C#](https://github.com/codatio/client-sdk-csharp/tree/main/lending#loanwriteback), [Go](https://github.com/codatio/client-sdk-go/tree/main/lending#loanwriteback), and [Java](https://github.com/codatio/client-sdk-java/tree/main/lending#loanwriteback).
+Check out our SDKs for [TypeScript](https://github.com/codatio/client-sdk-typescript/tree/main/lending#loanwriteback), [Python](https://github.com/codatio/client-sdk-python/tree/main/lending#loan_writeback), [C#](https://github.com/codatio/client-sdk-csharp/tree/main/lending#loanwriteback), [Go](https://github.com/codatio/client-sdk-go/tree/main/lending#loanwriteback), and [Java](https://github.com/codatio/client-sdk-java/tree/main/lending#loanwriteback).
 
 :::
 
@@ -45,7 +44,7 @@ This results in loans being improperly recorded as revenue and repayments as ope
 
 By implementing loan writeback functionality in your application, you can make sure loan bookkeeping is done regularly, correctly, and quickly so that you always see an up-to-date state of the borrower's accounts.
 
-POLINA (I'm trying to say that write back is useful for you too): Loan writeback not only helps SMBs make their accounts more accurate but also helps you and other lenders identify loans in an SMBs accounting software thus helping you improve your underwriting by being able to accurately identify the SMBs debt repayment history.
+Critically, the loan writeback functionality helps lenders clearly identify loans in an SMB's accounting software. As a result, the lender sees a more accurate picture of the SMB's debt repayment history, which leads to improved underwriting.
 
 :::info Mandatory loan writeback
 
