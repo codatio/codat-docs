@@ -12,11 +12,11 @@ Once the borrower's customer has paid for the goods or services they purchased, 
 
 To reflect that programmatically, perform these steps:
 
-1. [Create a transfer](/lending/guides/loan-writeback/record-invoice-finance#create-transfer) from the borrower's bank account to the lender's to account for the advance amount plus fees and/or interest.
+1. [Create a transfer](/lending/guides/loan-writeback/record-general-loan#create-transfer) from the borrower's bank account to the lender's to account for the advance amount plus fees and/or interest.
 
-2. To record interest or fees, [create a direct cost](/lending/guides/loan-writeback/record-invoice-finance#create-direct-cost) against the lender's bank account.
+2. To record interest or fees, [create a direct cost](/lending/guides/loan-writeback/record-general-loan#create-direct-cost) against the lender's bank account.
 
-3. [Create bank feed transactions](/lending/guides/loan-writeback/record-invoice-finance#create-bank-feed-transactions) to represent the transfer and direct cost in the lender's bank account.
+3. [Create bank feed transactions](/lending/guides/loan-writeback/record-general-loan#create-bank-feed-transactions) to represent the transfer and direct cost in the lender's bank account.
 
 ```mermaid
 sequenceDiagram
