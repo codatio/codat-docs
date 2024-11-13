@@ -208,7 +208,8 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
+                          "createdByUserName": "Mike Smith",
+                          "referenceSubsidiaryCompanies": []
                         }
                       ],
                       "pageNumber": 1,
@@ -249,36 +250,95 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Joe Bloggs"
+                          "createdByUserName": "Joe Bloggs",
+                          "referenceSubsidiaryCompanies": []
                         },
                         {
-                          "id": "096db70b-78de-4ff0-aa98-299cb5fe17a0",
-                          "name": "Godata",
-                          "description": "A new digital agency with a passion for creating amazing digital experiences",
-                          "platform": "",
-                          "redirect": "https://link.codat.io/company/096db70b-78de-4ff0-aa98-299cb5fe17a0",
-                          "lastSync": "2022-01-01T12:30:00.000Z",
+                          "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                          "name": "Toft stores",
+                          "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                          "dataConnections": [],
+                          "created": "2022-11-10T10:45:18Z",
+                          "createdByUserName": "Dan Tzabar",
+                          "referenceSubsidiaryCompanies": [
+                            {
+                              "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                              "name": "Toft stores UK",
+                              "links": {
+                                "portal": "https://app.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/summary"
+                              }
+                            },
+                            {
+                              "id": "db94eddc-9212-4568-9b5c-3eab0e325913",
+                              "name": "Toft stores US",
+                              "links": {
+                                "portal": "https://app.codat.io/companies/db94eddc-9212-4568-9b5c-3eab0e325913/summary"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                          "name": "Toft stores UK",
+                          "redirect": "https://link.codat.io/company/c8d3af58-7011-47ce-b3f2-89faf300ef6d",
                           "dataConnections": [
                             {
-                              "id": "a70bc148-dc21-46b2-a257-d9c58ac15cbb",
-                              "integrationId": "1c312d69-e638-46d4-ad31-72e6c3ba8390",
-                              "integrationKey": "vjms",
-                              "sourceId": "396c3158-5dd7-481b-a7c4-a795ca31792b",
-                              "platformName": "Pandle",
-                              "linkUrl": "https://link-api.codat.io/companies/096db70b-78de-4ff0-aa98-299cb5fe17a0/connections/a70bc148-dc21-46b2-a257-d9c58ac15cbb/start",
+                              "id": "d5ab61b7-1ad0-46fd-9f9f-b6761047941e",
+                              "integrationId": "cc750323-5a47-4f28-8d8e-30fbbf2ce137",
+                              "integrationKey": "akxx",
+                              "sourceId": "9815b998-024d-4415-a40b-89903b2cad6f",
+                              "platformName": "Oracle NetSuite",
+                              "linkUrl": "https://link-api.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/connections/d5ab61b7-1ad0-46fd-9f9f-b6761047941e/start",
                               "status": "Linked",
                               "lastSync": "2022-01-01T12:30:00.000Z",
                               "created": "2022-01-01T11:30:00Z",
                               "sourceType": "Accounting"
                             }
                           ],
-                          "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
+                          "created": "2022-11-10T10:45:18Z",
+                          "createdByUserName": "Dan Tzabar",
+                          "referenceParentCompany": {
+                            "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                            "name": "Toft stores",
+                            "links": {
+                              "portal": "https://app.codat.io/companies/ab12c58d-a678-4ebf-a159-ae99e1807bd0/summary"
+                            }
+                          },
+                          "referenceSubsidiaryCompanies": []
+                        },
+                        {
+                          "id": "db94eddc-9212-4568-9b5c-3eab0e325913",
+                          "name": "Toft stores US",
+                          "redirect": "https://link.codat.io/company/db94eddc-9212-4568-9b5c-3eab0e325913",
+                          "dataConnections": [
+                            {
+                              "id": "1e5c8c9e-27fd-4ba9-9a2a-d02ba65bc2fb",
+                              "integrationId": "cc750323-5a47-4f28-8d8e-30fbbf2ce137",
+                              "integrationKey": "akxx",
+                              "sourceId": "9815b998-024d-4415-a40b-89903b2cad6f",
+                              "platformName": "Oracle NetSuite",
+                              "linkUrl": "https://link-api.codat.io/companies/db94eddc-9212-4568-9b5c-3eab0e325913/connections/1e5c8c9e-27fd-4ba9-9a2a-d02ba65bc2fb/start",
+                              "status": "Linked",
+                              "lastSync": "2022-01-01T12:30:00.000Z",
+                              "created": "2022-01-01T11:30:00Z",
+                              "sourceType": "Accounting"
+                            }
+                          ],
+                          "created": "2022-11-10T10:45:18Z",
+                          "createdByUserName": "Dan Tzabar",
+                          "referenceParentCompany": {
+                            "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                            "name": "Toft stores",
+                            "links": {
+                              "portal": "https://app.codat.io/companies/ab12c58d-a678-4ebf-a159-ae99e1807bd0/summary"
+                            }
+                          },
+                          "referenceSubsidiaryCompanies": []
                         }
                       ],
                       "pageNumber": 1,
                       "pageSize": 100,
-                      "totalResults": 2,
+                      "totalResults": 3,
                       "_links": {
                         "current": {
                           "href": "/companies?page=1&pageSize=100"
@@ -360,7 +420,8 @@
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar"
+                      "createdByUserName": "Dan Tzabar",
+                      "referenceSubsidiaryCompanies": []
                     }
                   },
                   "With a description": {
@@ -372,7 +433,8 @@
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar"
+                      "createdByUserName": "Dan Tzabar",
+                      "referenceSubsidiaryCompanies": []
                     }
                   },
                   "With a tag": {
@@ -387,7 +449,8 @@
                       "createdByUserName": "Dan Tzabar",
                       "tags": {
                         "region": "us"
-                      }
+                      },
+                      "referenceSubsidiaryCompanies": []
                     }
                   }
                 }
@@ -573,13 +636,75 @@
                   "Simple company": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
+                      "name": "Toft stores holdings",
                       "description": "",
                       "platform": "",
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
-                      "createdByUserName": "Dan Tzabar"
+                      "createdByUserName": "Dan Tzabar",
+                      "referenceSubsidiaryCompanies": []
+                    }
+                  },
+                  "Parent multi-entity company": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Toft stores",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "referenceSubsidiaryCompanies": [
+                        {
+                          "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                          "name": "Toft stores UK",
+                          "links": {
+                            "portal": "https://app.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/summary"
+                          }
+                        },
+                        {
+                          "id": "db94eddc-9212-4568-9b5c-3eab0e325913",
+                          "name": "Toft stores US",
+                          "links": {
+                            "portal": "https://app.codat.io/companies/db94eddc-9212-4568-9b5c-3eab0e325913/summary"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "Subsidiary multi-entity company": {
+                    "value": {
+                      "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                      "name": "Toft stores UK",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                      "dataConnections": [
+                        {
+                          "id": "d5ab61b7-1ad0-46fd-9f9f-b6761047941e",
+                          "integrationId": "cc750323-5a47-4f28-8d8e-30fbbf2ce137",
+                          "integrationKey": "akxx",
+                          "sourceId": "9815b998-024d-4415-a40b-89903b2cad6f",
+                          "platformName": "Oracle NetSuite",
+                          "linkUrl": "https://link-api.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/connections/d5ab61b7-1ad0-46fd-9f9f-b6761047941e/start",
+                          "status": "Linked",
+                          "lastSync": "2022-01-01T12:30:00.000Z",
+                          "created": "2022-01-01T11:30:00Z",
+                          "sourceType": "Accounting"
+                        }
+                      ],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "referenceParentCompany": {
+                        "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                        "name": "Toft stores",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/ab12c58d-a678-4ebf-a159-ae99e1807bd0/summary"
+                        }
+                      },
+                      "referenceSubsidiaryCompanies": []
                     }
                   }
                 }
@@ -46028,6 +46153,7 @@
                 "description": "An array of products that are currently enabled for the company."
               },
               "tags": {
+                "title": "Tags",
                 "type": "object",
                 "maxProperties": 10,
                 "propertyNames": {
@@ -46038,6 +46164,20 @@
                   "maxLength": 100
                 },
                 "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+              },
+              "referenceParentCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference",
+                "nullable": true,
+                "description": "The parent entity or controlling organization of this company. Null if the company has no parent."
+              },
+              "referenceSubsidiaryCompanies": {
+                "type": "array",
+                "nullable": false,
+                "description": "A list of subsidiary companies owned or controlled by this entity. Empty if the company has no children.",
+                "minItems": 0,
+                "items": {
+                  "$ref": "#/components/schemas/Company/definitions/companyReference"
+                }
               }
             },
             "required": [
