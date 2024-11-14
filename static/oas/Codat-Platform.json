@@ -3401,7 +3401,7 @@
       ],
       "put": {
         "summary": "Configure",
-        "description": "The *Configure* endpoint allows you to maintain or change configuration required to return supplemental data for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.\n\n**Integration-specific behaviour**\nSee the *examples* for integration-specific frequently requested properties.",
+        "description": "The *Configure* endpoint allows you to maintain or change configuration required to return supplemental data for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/supplemental-data/overview) is additional data you can include in Codat's standard data types.\n\n**Integration-specific behaviour**\nSee the *examples* for integration-specific frequently requested properties.",
         "operationId": "configure-supplemental-data",
         "x-speakeasy-name-override": "configure",
         "tags": [
@@ -3526,7 +3526,7 @@
       },
       "get": {
         "summary": "Get configuration",
-        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.",
+        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/supplemental-data/overview) is additional data you can include in Codat's standard data types.",
         "operationId": "get-supplemental-data-configuration",
         "x-speakeasy-name-override": "get-configuration",
         "tags": [
