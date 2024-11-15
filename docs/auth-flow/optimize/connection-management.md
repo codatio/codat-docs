@@ -263,7 +263,7 @@ In the snippet below, you'll see that we use webpack's [magic comments](https://
 
   You can copy and paste the example <a href="https://github.com/codatio/sdk-connections/blob/main/examples/languages/next/src/components/CodatConnections.tsx" target="_blank">`CodatConnections.tsx`</a> file to an appropriate location in your app. We recommend setting the component to `width: 460px; height: 840px` because it's optimized to look best with these parameters. 
   
-  We use [`"use client"`](https://nextjs.org/docs/getting-started/react-essentials#the-use-client-directive) in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above).
+  We use [`"use client"`](https://react.dev/reference/rsc/use-client) in the script to define this as client-side code, and the import is ignored in webpack to avoid NextJS caching (as above).
 
 2. **Use the component to mount the SDK** 
 

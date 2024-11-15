@@ -5,8 +5,6 @@ description: "Getting to grips with accounting terminology and principles"
 
 Throughout our documentation, you may see unfamiliar terms and accounting-specific principles. While we try to keep things as simple as possible, some understanding of accounting will definitely help you out. We've collated a number of third-party resources that might help get you started below.
 
-You can also refer to our new (work in progress) [glossary](/glossary) for a quick rundown of terms we use in our docs.
-
 <ul className="card-container col-1">
   <li className="card animation-pulse">
     <div className="header">

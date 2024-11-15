@@ -1,20 +1,20 @@
 ---
-title: "Set up the Sage 200cloud integration"
+title: "Set up the Sage 200 Standard integration"
 slug: "accounting-sage200-setup"
-description: "Explore our API integration with Sage 200cloud."
+description: "Explore our API integration with Sage 200 Standard."
 sidebar_label: Setup
 ---
 
-## About Sage 200cloud
+## About Sage 200 Standard
 
-Sage 200cloud is an accounting solution for small to medium-sized businesses. This cloud-based application provides a flexible tool for organizations to manage their stock, financials, sales, purchases, and sales orders.
+Sage 200 Standard is an accounting solution for small to medium-sized businesses. This cloud-based application provides a flexible tool for organizations to manage their stock, financials, sales, purchases, and sales orders.
 
 :::note Supported versions
 
-Codat currently supports Sage 200cloud Standard **only**.
+Codat currently supports Sage 200 Standard Standard **only**.
 :::
 
-## Set up Sage 200cloud
+## Set up Sage 200 Standard
 
 :::caution Changes in authenticating integrations
 
@@ -23,7 +23,7 @@ Sage has recently modified the way applications and integrations are authenticat
 If you're a Codat **customer who already has an account** with Sage, please refer to section [Request new credentials](/integrations/accounting/sage200/accounting-sage200-setup#section-request-new-credentials) below. **Customers who need to set up their Sage accounts** are requested to follow the process described below.
 :::
 
-Before you can access data from customers using Sage 200cloud for their accounting, you need to set up a Sage 200cloud integration in the Codat Portal. You'll need to:
+Before you can access data from customers using Sage 200 Standard for their accounting, you need to set up a Sage 200 Standard integration in the Codat Portal. You'll need to:
 
 - Request an account from Sage and obtain API credentials.
 - Wait for Sage to send through your secure keys.
@@ -52,7 +52,7 @@ Subscribe to the Sage API for Sage 200 Unlimited.
 2. In the top-right corner, select **Sign in**, and follow the instructions to register your details.  
    When your registration is complete, you're automatically taken to your account profile.
 3. Return to the <a href="https://developer.columbus.sage.com/products/" target="_blank">Sage API page</a>.
-4. Under Products, choose **Sage 200 Unlimited**. The **Sage 200 Unlimited** page is displayed listing the APIs available for this product and it covers both Sage200 Standard and Sage200 Extra/Professional.
+4. Under Products, choose **Sage 200 Unlimited**. The **Sage 200 Unlimited** page is displayed listing the APIs available for this product and it covers both Sage 200 Standard and Sage 200 Extra/Professional.
 5. Select **Subscribe**.
 6. Select the **By subscribing to Sage 200 Unlimited...** checkbox and select **Confirm**.
 
@@ -71,7 +71,7 @@ Subscribe to the Sage API for Sage 200 Unlimited.
 
 1. In the Codat Portal, go to the <a className="external" href="https://app.codat.io/settings/integrations/accounting" target="_blank">**Accounting integrations**</a> page.
 
-2. Locate **Sage200cloud** and click **Set up**.
+2. Locate **Sage 200 Standard** and click **Set up**.
 
 3. Under **Integration settings**, enter the values for the **Client ID** and **Client secret** that you received from Sage.
 
@@ -79,7 +79,7 @@ Subscribe to the Sage API for Sage 200 Unlimited.
 
 5. Click **Save**. A confirmation message appears if the settings were saved successfully.
 
-6. The **Enable Sage200cloud** dialog is displayed. Select whether to enable the integration now or later.
+6. The **Enable Sage 200 Standard** dialog is displayed. Select whether to enable the integration now or later.
 
 :::note
 Make sure that your secure keys don't contain any spaces.
@@ -88,27 +88,27 @@ Make sure that your secure keys don't contain any spaces.
 ## Enable the Sage 200 integration
 
 1. In the Codat Portal, go to the <a className="external" href="https://app.codat.io/settings/integrations/accounting" target="blank">**Accounting integrations**</a> page.
-2. Locate **Sage 200cloud** and click the toggle to enable the integration.
+2. Locate **Sage 200 Standard** and click the toggle to enable the integration.
 
 You can also click **Manage** to view the integration's settings page, and then enable the integration from there.
 
-Your Sage200 cloud integration is now set up.
+Your Sage 200 Standard integration is now set up.
 
 ## Test your integration
 
-We recommend that you test your integration before sending Link URLs to customers. You'll need your own Sage200cloud account to do this.
+We recommend that you test your integration before sending Link URLs to customers. You'll need your own Sage 200 Standard account to do this.
 
-:::note Sage200cloud trial accounts
+:::note Sage 200 Standard trial accounts
 
 Unfortunately, you can't use a trial account to test your integration. Sage doesn't allow the creation or update of records from their trial accounts.
 :::
 
-1. Set up some test data in your Sage200cloud account. For example, some new or amended invoices.
+1. Set up some test data in your Sage 200 Standard account. For example, some new or amended invoices.
 2. Next, go to the Codat Portal where you've enabled your integration and [create a test company](/configure/portal/companies#add-a-new-company).
 3. Find the Link URL for your test company. Select **Request data** next to the company name.
-4. Use the Link URL to connect your Sage 200cloud account.
-   - When Link opens, select **Sage200cloud**, and then select **Continue to Sage 200cloud**.
-   - Log in to your Sage 200cloud account.
+4. Use the Link URL to connect your Sage 200 Standard account.
+   - When Link opens, select **Sage 200 Standard**, and then select **Continue to Sage 200 Standard**.
+   - Log in to your Sage 200 Standard account.
    - Authorize access to your account details.
 5. Make sure that test data from your account is displayed for your test company in the Codat Portal.
 
@@ -134,5 +134,5 @@ If you link a Codat test company to one of the Sage sandbox accounts, the balanc
 :::
 
 :::note Tax rates on line items
-Due to a Sage 200cloud limitation, tax rates on line items for invoices, credit notes, bills, and bill credit notes appear differently to other integrations. For more information, see [Sage 200cloud limitations](/integrations/accounting/sage200/sage200-limitations).
+Due to a Sage 200 Standard limitation, tax rates on line items for invoices, credit notes, bills, and bill credit notes appear differently to other integrations. For more information, see [Sage 200 Standard limitations](/integrations/accounting/sage200/sage200-limitations).
 :::

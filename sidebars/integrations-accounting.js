@@ -110,7 +110,7 @@ const integrations = [
   },
   {
     type: "category",
-    label: "Sage 200cloud",
+    label: "Sage 200 Standard",
     collapsed: true,
     items: [
       {
