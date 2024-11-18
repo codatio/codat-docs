@@ -78,4 +78,5 @@ Total amounts and total tax amounts are shown for each line.
 ```
 
 ## Invoices
-When working with Sage 200, the inline discount is applied directly to the final transaction amount. This means that the discount amount is not stored or available as a separate value in Codat. Instead, the system incorporates the discount into the total calculation without retaining it as a distinct field. As a result, both `lineItems.discountAmount` and `totalDiscount` will be returned as null.
+
+When working with Sage 200 Standard, the inline discount is applied directly to the final transaction amount. This means that the discount amount is not stored or available as a separate value in Codat. Instead, the system incorporates the discount into the total calculation without retaining it as a distinct field. As a result, both `lineItems.discountAmount` and `totalDiscount` will be returned as null.
