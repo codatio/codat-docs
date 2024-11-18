@@ -33,7 +33,7 @@ Your application's UI must meet the following requirements:
 
 | Requirement | Recommendations |
 | :-- | :-- |
-| Display the name of the tenant that has been connected | Use our [Get company info](/accounting-api#/operations/get-company-info) endpoint to retrieve this detail. |
+| Display the name of the tenant that has been connected | Use our [Get company info](/bank-feeds-api#/operations/get-company-information) endpoint to retrieve this detail. |
 | Display the current status of the connection. If disconnected, provide a button to reconnect to Xero | Use our [Get connection](/bank-feeds-api#/operations/get-connection) endpoint to check the `status` of the connection and use the `linkUrl` to reconnect.|
 | Provide a button to terminate the connection | When a user clicks on the button, use our [Unlink connection](/bank-feeds-api#/operations/unlink-connection) endpoint to disconnect from Xero. |
 | Handle a disconnect from Xero's side | Use our [Data connection status changed](/using-the-api/webhooks/event-types) webhook to identify when a disconnect happens. When the alert is triggered, change the connection status in your UI and display a "Reconnect" or "Connect" button. Xero recommends setting a regular daily sync of light data types so you can check each connected company's connection status every day.|
