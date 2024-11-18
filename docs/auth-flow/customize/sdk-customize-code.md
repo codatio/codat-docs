@@ -49,6 +49,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
 ```js
 <CodatLink
   companyId={companyId}
+  onConnectionStarted={onConnectionStarted}
   onConnection={onConnection}
   onError={onError}
   onClose={onClose}
