@@ -37,12 +37,6 @@ Icon requirements:
 
 You can set your brand's primary color to define the color of buttons and other elements within the Link Flow. We recommend using a dark primary color, because light colors may cause accessibility issues.
 
-:::tip Sync flow
-
-This primary color setting also applies to the Sync flow, a journey specific to our [Sync for Commerce](/commerce/overview) product.
-
-:::
-
 <img
   src="/img/old/1cef143-branding.PNG"
   alt="Branding settings screen with company name, logo, icon, and color picker displayed"

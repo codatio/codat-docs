@@ -208,7 +208,7 @@ if err == nil && statementResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending API enabled, configure your instance to work with our bank statements feature. 
+Once you have the Lending product enabled, configure your instance to work with our bank statements feature. 
 
 #### Configure data sources
 

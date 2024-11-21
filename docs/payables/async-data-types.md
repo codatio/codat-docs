@@ -8,6 +8,6 @@ image: "/img/banners/social/payables.png"
 
 import DataTypes from '@components/DataTypes'
 
-<DataTypes productName="payables"/>
+<DataTypes productName="billpayasync"/>
 
 <br/>

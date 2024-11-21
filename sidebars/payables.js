@@ -7,7 +7,7 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Sync for Payables",
+    label: "Bill Pay",
     id: "payables/overview",
     className: "header  top-level-item products product sfpayables",
   },
@@ -30,7 +30,7 @@ module.exports = [
   "payables/payments",
   {
     type: "doc",
-    id: "payables/data-types",
+    id: "payables/async-data-types",
     label: "Supported data types",
   },
   {
@@ -49,12 +49,12 @@ module.exports = [
   },
     {
       type: "doc",
-      id: "payables/data-types",
+      id: "payables/sync-data-types",
       label: "Supported data types",
     },
     {
       type: "link",
-      href: "/sync-for-payables-api",
+      href: "/sync-for-payables-v2-api",
       label: "API reference",
     },  
   {

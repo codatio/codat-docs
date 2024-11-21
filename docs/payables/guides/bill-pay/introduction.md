@@ -11,7 +11,7 @@ This guide is for developers building a bill payment solution or other applicati
 
 ### Summary
 
-🎯 Our *bill pay demo app* showcases a simple AP automation workflow, built using standard endpoints of [Sync for Payables](/payables/overview). It help you understand the core features of a bill payment solution and how you can build your own solutions to streamline and automate the Accounts Payable (AP).
+🎯 Our *bill pay demo app* showcases a simple AP automation workflow, built using standard endpoints of [Bill Pay](/payables/overview). It help you understand the core features of a bill payment solution and how you can build your own solutions to streamline and automate the Accounts Payable (AP).
 
 🛠️ The demo app is built using Next.js and React. You can use a hosted version or run the code locally. The code is stored in a [public GitHub repository](https://github.com/codatio/demo-bill-pay). [Hosted Link](/auth-flow/authorize-hosted-link) is used for the authorization flow.
 

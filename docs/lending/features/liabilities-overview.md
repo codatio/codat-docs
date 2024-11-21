@@ -248,7 +248,7 @@ if generateSummaryResponse.StatusCode == 202 {
 
 ## Get started
 
-Once you have the Lending API enabled, configure your instance to work with our liabilities feature. 
+Once you have the Lending product enabled, configure your instance to work with our liabilities feature. 
 
 #### Configure data sources
 

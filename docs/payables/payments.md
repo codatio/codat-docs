@@ -33,7 +33,7 @@ You can see how this flow completes on our detailed process diagram below.
 
 </details>
 
-We built Sync for Payables to handle various bill pay scenarios, for example:
+We built Bill Pay to handle various bill pay scenarios, for example:
 
 - A payment made against a bill, e.g. a credit card payment, cheque payment, or cash payment
 - An allocation of a supplier's credit note to a bill or a refund
@@ -41,9 +41,9 @@ We built Sync for Payables to handle various bill pay scenarios, for example:
 
 ## Ways to pay a bill
 
-In this diagram, we have summarized approaches to bill payments and reconciliation that are available to you via Sync for Payables. Next, we will go through those options in detail. 
+In this diagram, we have summarized approaches to bill payments and reconciliation that are available to you via Bill Pay. Next, we will go through those options in detail. 
 
-![A diagram of all bill payment options that Sync for Payables supports](/img/payables/payables-payment-type.png)
+![A diagram of all bill payment options that Bill Pay supports](/img/payables/payables-payment-type.png)
 
 ### Single bill payment
 
@@ -512,7 +512,7 @@ Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for
 
 In some accounting software (for example, Xero) your SMB customer can make a batch payment. It allows them to pay multiple bills from multiple suppliers in a single payment.
 
-To do this with Sync for Payables, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and leave the `supplierRef` parameter blank.
+To do this with Bill Pay, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and leave the `supplierRef` parameter blank.
 
 <Tabs>
 
@@ -724,7 +724,7 @@ billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
 
 If a company receives a credit note from their supplier, the company could use it to partially or fully offset the balance of any outstanding bills from the same supplier. 
 
-With Sync for Payables, you can do that using the following steps:
+With Bill Pay, you can do that using the following steps:
 
 1. Create a bill credit note.
 2. Allocate the credit note to a bill.
@@ -1675,7 +1675,7 @@ billPaymentDeleteResponse, err := payablesClient.BillPayments.Delete(ctx,
 
 :::tip Recap
 
-This concludes the bill pay process supported by Sync for Payables. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system. 
+This concludes the bill pay process supported by our Bill Pay product. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system. 
 
 As a result, the customer will see these bills marked as paid in their software and their accounts payable liability and supplier balances reduced.
 

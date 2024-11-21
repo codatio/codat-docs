@@ -1,6 +1,6 @@
 ---
-title: "Get started with Bank Feeds API"
-description: "Understand the basics of using Bank Feeds API and learn how to perform the initial setup for the product"
+title: "Get started with Bank Feeds"
+description: "Understand the basics of using the Bank Feeds product and learn how to perform the initial setup for the product"
 sidebar_label: Get started
 displayed_sidebar: bankfeeds
 ---
@@ -12,7 +12,7 @@ import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@comp
 
 ## Journey overview
 
-The diagram below represents the overall activity flow when using Bank Feeds API, including your SMB customer and their accounting software. It assumes you are using Codat's mapping interface to let the user select the accounts used for writing bank statements.
+The diagram below represents the overall activity flow when using Bank Feeds, including your SMB customer and their accounting software. It assumes you are using Codat's mapping interface to let the user select the accounts used for writing bank statements.
 
 If you are using one of the [other mapping UI options](/bank-feeds/mapping/overview), you can visualize the flow by simply changing the actor of the mapping operation from `Codat` to `Your application` or `Accounting software`.
 
@@ -45,11 +45,11 @@ sequenceDiagram
 
 ```
 
-Once you decide to build this flow with Bank Feeds API, you need to configure Codat accordingly. Let's go through these requirements in detail.
+Once you decide to build this flow with Bank Feeds, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
-## Enable Bank Feeds API
+## Enable Bank Feeds
 
-Reach out to your Codat account manager to enable Bank Feeds API for your client. 
+Reach out to your Codat account manager to enable Bank Feeds for your client. 
 
 ## Manage data sources
 
@@ -57,11 +57,11 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
 
 <IntegrationsList integrations={bankfeedsIntegrations}/>
 
-Some of these integrations require additional setup specific to bank feeds. We walk you through these in our integration-specific instructions in the _Manage integrations_ section of our Bank Feeds API documentation. 
+Some of these integrations require additional setup specific to bank feeds. We walk you through these in our integration-specific instructions in the _Manage integrations_ section of our Bank Feeds documentation. 
 
 ## Authorization flow
 
-As part of using Bank Feeds API, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow. 
+As part of using Bank Feeds, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow. 
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
@@ -71,7 +71,7 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 ## Webhooks
 
-Codat supports a range of [webhook events](/using-the-api/webhooks/event-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to set up an endpoint to listen to the following event type and get the most out of Bank Feeds API:
+Codat supports a range of [webhook events](/using-the-api/webhooks/event-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to set up an endpoint to listen to the following event type and get the most out of Bank Feeds:
 
 - [PushOperationStatusChanged](/using-the-api/webhooks/event-types)  
 
@@ -80,7 +80,7 @@ Codat supports a range of [webhook events](/using-the-api/webhooks/event-types) 
 
 ## Client libraries
 
-Use our comprehensive [Bank Feeds API library](/get-started/libraries) to kick-start and simplify your build. 
+Use our comprehensive [Bank Feeds library](/get-started/libraries) to kick-start and simplify your build. 
 Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
 <Tabs>
@@ -194,7 +194,7 @@ func main() {
 
 :::tip Recap
 
-You have enabled Bank Feeds API, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product. 
+You have enabled Bank Feeds, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product. 
 
 Next, you will create a Codat [company](../terms/company), its [connection](../terms/connection), and a source bank account to build out the core infrastructure required to establish a bank feed.
   

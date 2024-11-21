@@ -1,36 +1,36 @@
 ---
-title: "Get started with Sync for Payables"
+title: "Get started with Bill Pay"
 sidebar_label: Get started
-description: "View the core steps required to perform the initial setup for Sync for Payables"
+description: "View the core steps required to perform the initial setup for the Bill Pay product"
 image: "/img/banners/social/payables.png"
 ---
 
 import { IntegrationsList } from "@components/Integrations";
-import { integrationsFilterPayables } from "@components/Integrations/integrations";
+import { integrationsFilterBillPayAsync } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 
 ## Journey overview
 
-The diagram below represents the overall activity flow when using Sync for Payables. You can manage bills, suppliers, and payment methods in different ways and order. 
+The diagram below represents the overall activity flow when using Bill Pay. You can manage bills, suppliers, and payment methods in different ways and order. 
 
 We will take you through each of these elements so that you can build the flow that suits you and your customers best.
 
 ![Accounts payable process flow including customer steps](/img/payables/payables-process-flow.png)
 
-Once you decide to build with Sync for Payables, you need to configure Codat accordingly. Let's go through these requirements in detail.
+Once you decide to build with Bill Pay, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
-## Enable Sync for Payables
+## Enable Bill Pay
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Settings > Organizational settings > Products**.
-3. In the list of products, find _Sync for Payables_ and click **Enable**. Then, follow the on-screen prompt.
+3. In the list of products, find _Bill Pay_ and click **Enable**. Then, follow the on-screen prompt.
 
-## Configure Sync for Payables
+## Configure Bill Pay
 
 ### Data types
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Sync for Payables and set them to `fetch on first link`: 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Bill Pay and set them to `fetch on first link`: 
 
 | Data source | Accounting                                                                                                                                                                     |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,11 +44,11 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
 
 You can also view detailed configuration instructions by clicking on the relevant tile:
 
-<IntegrationsList filter={integrationsFilterPayables} />
+<IntegrationsList filter={integrationsFilterBillPayAsync} />
 
 ### Authorization flow
 
-As part of using Sync for Payables, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow.
+As part of using Bill Pay, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow.
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
@@ -58,7 +58,7 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 ### Webhooks
 
-Codat supports a range of [event types](/using-the-api/webhooks/event-types) you can listen to that help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to add [webhook consumer endpoints](/using-the-api/webhooks/create-consumer) and get the most out of Sync for Payables:
+Codat supports a range of [event types](/using-the-api/webhooks/event-types) you can listen to that help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to add [webhook consumer endpoints](/using-the-api/webhooks/create-consumer) and get the most out of Bill Pay:
 
 - [`NewCompanySynchronized`](/using-the-api/webhooks/event-types)
 
@@ -78,7 +78,7 @@ Codat supports a range of [event types](/using-the-api/webhooks/event-types) you
 
 ### Client libraries
 
-Use our comprehensive [Sync for Payables library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
+Use our comprehensive [Bill Pay library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
 <Tabs>
 
@@ -189,7 +189,7 @@ func main() {
 
 :::tip Recap
 
-You have enabled Sync for Payables, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product.
+You have enabled Bill Pay, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product.
 
 Next, you will create a company and its connection to build out the core infrastructure required to manage accounts payable with Codat.
 
@@ -199,5 +199,5 @@ Next, you will create a company and its connection to build out the core infrast
 
 ## Read next
 
-* Check out our [client libraries](/get-started/libraries) to kick start your Sync for Payables build.
+* Check out our [client libraries](/get-started/libraries) to kick start your Bill Pay build.
 * [Configure customer](/payables/configure-customer) to continue building your accounts payable management process.

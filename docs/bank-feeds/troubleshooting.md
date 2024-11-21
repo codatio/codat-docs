@@ -1,6 +1,7 @@
 ---
 title: "Troubleshooting and FAQ"
-description: "Commonly asked questions and troubleshooting advice for Bank Feeds API"
+sidebar_label: Resolve issues
+description: "Commonly asked questions and troubleshooting advice for the Bank Feeds product"
 displayed_sidebar: bankfeeds
 image: "/img/banners/social/bankfeeds.png"
 ---

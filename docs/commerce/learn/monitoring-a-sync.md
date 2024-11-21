@@ -34,12 +34,6 @@ You can also navigate to the **Config** tab to view and download the customer's 
   alt="Detailed view of a sync log entry with Summary, Config, and Push Items tabs"
 />
 
-:::caution View and retry write items
-
-At this time, it is possible to view and retry failed push items for **Sync for Expenses only**.
-
-:::
-
 ## View push items
 
 In the same detailed record view, select the **Push items** tab to access a list of **push items**. The list contains an item for each accounting data type that was produced in the selected sync (for example, an item for invoices, or credit notes). 

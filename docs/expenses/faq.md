@@ -1,7 +1,7 @@
 ---
-title: "Sync for Expenses FAQs"
-sidebar_label: FAQs
-description: "Frequently asked questions about Sync for Expenses"
+title: "Expenses FAQs"
+sidebar_label: Product help
+description: "Frequently asked questions about Codat's Expenses product"
 displayed_sidebar: expenses
 ---
 
@@ -9,7 +9,7 @@ import Questions, { Question } from '@components/Questions';
 
 <Questions>
 	<Question
-		question="Where can I see a roadmap for integration and feature support for Sync for Expenses?"
+		question="Where can I see a roadmap for integration and feature support for Expenses?"
 		answer={`
 Codat does not currently publish a public product roadmap. If you would like to learn more about upcoming product releases, speak to your Codat contact.
 		`}
@@ -21,9 +21,9 @@ Our <a href="https://docs.codat.io/get-started/migration">token migration proces
 		`}
 	/>
 	<Question
-		question="Why should I move our existing accounting integrations to Sync for Expenses?"
+		question="Why should I move our existing accounting integrations to Expenses?"
 		answer={`
-Moving your existing integrations to Sync for Expenses lets you leverage the following benefits:
+Moving your existing integrations to Expenses lets you leverage the following benefits:
 
 <ol>
 
@@ -33,19 +33,19 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 
 <li><b>Standardization of expense data</b></li>
 
-<p>Sync for Expenses standardizes transaction data using an opinionated model that is based on feedback from our customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting software. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.</p>
+<p>Expenses standardizes transaction data using an opinionated model that is based on feedback from our customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting software. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.</p>
 
 <li><b>Multiple transaction support</b></li>
 
-<p>Sync for Expenses handles the writing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transaction">Get sync transaction</a> endpoint.</p>
+<p>Expenses handles the writing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transaction">Get sync transaction</a> endpoint.</p>
 
 <li><b>Enhanced developer experience</b></li>
 
-<p>Our detailed documentation aimed at developers and a variety of <a href="/get-started/libraries">client libraries</a> in multiple languages mean you can get up and running with Sync for Expenses quickly.</p>
+<p>Our detailed documentation aimed at developers and a variety of <a href="/get-started/libraries">client libraries</a> in multiple languages mean you can get up and running with Expenses quickly.</p>
 
 <li><b>Adjacency to Codat’s product range</b></li>
 
-<p>You can use Sync for Expenses alongside all Codat products. For example, if you are issuing credit cards, Codat's <a href="https://docs.codat.io/lending/overview" target="_blank">Lending API</a> product would allow you to determine the risk associated with the company that has the same <code>companyId</code> and API key.</p>
+<p>You can use Expenses alongside all Codat products. For example, if you are issuing credit cards, Codat's <a href="https://docs.codat.io/lending/overview" target="_blank">Lending</a> product would allow you to determine the risk associated with the company that has the same <code>companyId</code> and API key.</p>
 
 <p>Likewise, you can use our <code>billPayments</code> data type to retrieve a list of bills from your customer's accounting software and enable them to pay these and reconcile their payments.</p>
 
@@ -53,7 +53,7 @@ Moving your existing integrations to Sync for Expenses lets you leverage the fol
 		`}
 	/>
 	<Question
-		question="What can we reuse from our existing Codat build for Sync for Expenses?"
+		question="What can we reuse from our existing Codat build for Expenses?"
 		answer={`
 <p>You can reuse the chart of accounts, tracking categories, and tax rates settings. However, we recommend using the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options">Mapping options</a> endpoint for expenses because of the transaction type support.</p>
 <p>Authentication, company creation and connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products.</p>
@@ -66,15 +66,15 @@ If a user disconnects, you can use a <a href="https://docs.codat.io/using-the-ap
 		`}
 	/>
 	<Question
-		question="Where can I find logo files for the accounting software supported by Sync for Expenses?"
+		question="Where can I find logo files for the accounting software supported by Expenses?"
 		answer={`
 If you want to use the accounting software logos in your user interface, you can get these via our <a href="https://docs.codat.io/platform-api#/operations/get-integrations-branding">Get branding</a> endpoint. 
 		`}
 	/>	
 	<Question
-		question="Can I use the Sandbox account to test a sync when implementing Sync for Expenses?"
+		question="Can I use the Sandbox account to test a sync when implementing Expenses?"
 		answer={`
-<p>Sync for Expenses does not support Sandbox as a destination platform to sync transactions because it has been designed specifically for reading, not writing, data. We recommend signing up for a free QuickBooks or Xero developer account to test syncs, which will give you sandbox access as well.</p>
+<p>Expenses does not support Sandbox as a destination platform to sync transactions because it has been designed specifically for reading, not writing, data. We recommend signing up for a free QuickBooks or Xero developer account to test syncs, which will give you sandbox access as well.</p>
 <p>For more information on how to set up your accounting software integration, take a look at the <a href="https://docs.codat.io/integrations/accounting/overview">integration-specific documentation</a>.</p>
 		`}
 	/>
@@ -94,13 +94,13 @@ You can create a webhook consumer in the Codat portal to inform you when the cha
 	<Question
 		question="Am I able to update an attachment when I have already synced the expense transaction?"
 		answer={`
-Codat writes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment directly from the accounting software. Next, you need to upload the correct document either directly to the accounting software or using Sync for Expenses. When using Sync for Expenses, you benefit from its support for multiple attachments. 
+Codat writes attachments synchronously to the expense transactions. To update any of these documents, you need to remove the attachment directly from the accounting software. Next, you need to upload the correct document either directly to the accounting software or using Expenses. When using Expenses, you benefit from its support for multiple attachments. 
 		`}
 	/>  
 	<Question
 		question="How do you handle transactions in foreign currency?"
 		answer={`
-Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about <a href="https://docs.codat.io/expenses/fx-management">expenses in foreign currency</a> and platform support for different transaction types. 
+Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about <a href="https://docs.codat.io/expenses/fx-management">expenses in foreign currency</a> and platform support for different transaction types. 
 		`}
 	/> 
 	<Question
@@ -121,4 +121,4 @@ Each transaction Id is unique to a client's company but they aren't unique acros
 
 ## Read next
 
-* Try Sync for Expenses in our interactive [API reference](/sync-for-expenses-api#/)
+* Try Expenses in our interactive [API reference](/sync-for-expenses-api#/)

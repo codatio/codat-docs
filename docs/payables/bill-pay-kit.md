@@ -6,7 +6,7 @@ description: "Simplify the deployment of the bill pay process to your app with o
 ---
 
 import { IntegrationsList } from "@components/Integrations";
-import { integrationsFilterBillPayKit } from "@components/Integrations/integrations";
+import { integrationsFilterBillPaySync } from "@components/Integrations/integrations";
 
 ## Overview
 
@@ -38,7 +38,7 @@ Crucially, the kit offers synchronous functionality, providing real-time updates
 
 <br />
 
-<IntegrationsList filter={integrationsFilterBillPayKit} />
+<IntegrationsList filter={integrationsFilterBillPaySync} />
 
 :::tip Java client library
 

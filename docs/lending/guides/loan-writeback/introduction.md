@@ -137,7 +137,7 @@ As a result, the lender's account transactions balance to zero, and the advance 
 
 * If you are implementing loan writeback for Xero, *Xero Bank Feeds API* needs to be enabled for your registered app. Xero usually does this during the certification process for lenders' apps so that you can test your solution before completing the certification.
 
-* As a lender, use Codat's [Bank Feeds API](/bank-feeds/overview) to represent your bank account in Codat's domain. Keep hold of the [source bank account](/bank-feeds-api#/operations/create-source-account) `id` as you will use it when recording deposits and repayments. 
+* As a lender, use Codat's [Bank Feeds](/bank-feeds/overview) product to represent your bank account in Codat's domain. Keep hold of the [source bank account](/bank-feeds-api#/operations/create-source-account) `id` as you will use it when recording deposits and repayments. 
 
 ---
 

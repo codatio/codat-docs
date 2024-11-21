@@ -1,14 +1,14 @@
 ---
 title: "Bank transactions reconciliation with QBO Bank Feeds"
-description: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds API"
+description: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds"
 displayed_sidebar: "bankfeeds"
 image: "/img/banners/social/bankfeeds.png"
 hide_title: true
 hide_description: true
 sidebar_label: "Build a bank feed to QBO"
-banner_title: Bank Feeds API for bank transaction reconciliation in QBO
+banner_title: Bank Feeds for bank transaction reconciliation in QBO
 banner_image: "/img/banners/bank-feeds.png"
-banner_text: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds API"
+banner_text: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds product"
 ---  
 
 import Tabs from '@theme/Tabs';

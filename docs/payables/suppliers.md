@@ -1,6 +1,6 @@
 ---
 title: Manage suppliers
-description: "View, create, and update suppliers using Sync for Payables"
+description: "View, create, and update suppliers using Bill Pay"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -12,7 +12,7 @@ In accounts payable, each bill is associated with a [supplier](/sync-for-payable
 
 Their records also contain key information, such as contact details, that can be used to notify the supplier once a payment is made.
 
-To pay a bill in Sync for Payables, you can use your customer's existing supplier or create a new one. We have highlighted this alternative sequence of steps in our detailed process diagram below. 
+To pay a bill in Bill Pay, you can use your customer's existing supplier or create a new one. We have highlighted this alternative sequence of steps in our detailed process diagram below. 
 
 <details>
 <summary><b>Detailed process diagram</b></summary>
@@ -125,7 +125,7 @@ if suppliersResponse.StatusCode == 200 {
 
 :::tip Supplier balances
 
-Sync for Payables does not expose supplier balances on the supplier endpoints. Instead, you can:
+Bill Pay does not expose supplier balances on the supplier endpoints. Instead, you can:
 - Aggregate bills by supplier
 - Use the [Aged debtors](/sync-for-payables-api#/operations/get-aged-debtors-report) report
 :::

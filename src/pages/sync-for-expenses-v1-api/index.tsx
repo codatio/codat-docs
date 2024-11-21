@@ -5,7 +5,7 @@ const URL = "/oas/Codat-Sync-Expenses-v1.json"
 
 const ExpensesSyncV1Api = () => {
   return (
-    <Api url={URL} title="Sync for Expenses v1 API reference"/>
+    <Api url={URL} title="Expenses v1 API reference"/>
   );
 }
 

@@ -7,7 +7,8 @@ import SyncPayroll from "../../../static/oas/Codat-Sync-Payroll.json"
 import BankFeeds from "../../../static/oas/Codat-Bank-Feeds.json"
 import SyncCommerce from "../../../static/oas/Codat-Sync-Commerce.json"
 import SyncExpenses from "../../../static/oas/Codat-Sync-Expenses.json"
-import SyncPayables from "../../../static/oas/Codat-Sync-Payables.json"
+import BillPaySync from "../../../static/oas/Codat-Sync-Payables.json"
+import BillPayAsync from "../../../static/oas/Codat-Sync-Payables-v1.json"
 
 import styles from "./styles.module.scss";
 
@@ -17,7 +18,7 @@ const objToArr = obj => Object.keys(obj).map((key) => {
 
 const products = {
   'lending': {
-    name: 'Lending API',
+    name: 'Lending',
     spec: Lending,
     path: "/lending-api",
   },
@@ -27,7 +28,7 @@ const products = {
     path: "/sync-for-payroll-api",
   },
   'bankFeeds': {
-    name: 'Bank Feeds API',
+    name: 'Bank Feeds',
     spec: BankFeeds,
     path: "/bank-feeds-api",
   },
@@ -37,14 +38,19 @@ const products = {
     path: "/sync-for-commerce-api",
   },
   'expenses': {
-    name: 'Sync for Expenses',
+    name: 'Expenses',
     spec: SyncExpenses,
     path: "/sync-for-expenses-api",
   },
-  'payables': {
-    name: 'Sync for Payables',
-    spec: SyncPayables,
+  'billpayasync': {
+    name: 'Bill Pay (async)',
+    spec: BillPayAsync,
     path: "/sync-for-payables-api",
+  },
+  'billpaysync': {
+    name: 'Bill Pay (sync)',
+    spec: BillPaySync,
+    path: "/sync-for-payables-v2-api",
   },
 }
 

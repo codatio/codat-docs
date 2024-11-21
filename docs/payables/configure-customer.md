@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-When implementing your Sync for Payables solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting software as a connection. You can do that when the customer starts interacting with your application.  
+When implementing your Bill Pay solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting software as a connection. You can do that when the customer starts interacting with your application.  
 
 We have highlighted this sequence of steps in our detailed process diagram below. 
 
@@ -44,7 +44,7 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 ## Create a company
 
-Within Sync for Payables, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting software. 
+Within Bill Pay, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting software. 
 
 <Tabs>
 
@@ -271,7 +271,7 @@ unlinkResponse, err := payablesClient.Connections.Unlink(ctx, operations.UnlinkC
 
 :::tip Recap
 
-You have created the structure of key objects required by Codat's Sync for Payables: a company and its connection to an accounting data source.
+You have created the structure of key objects required by Codat's Bill Pay product: a company and its connection to an accounting data source.
 
 Next, you can choose to manage your customer's suppliers, bills or payment methods prior to paying the bills.
 

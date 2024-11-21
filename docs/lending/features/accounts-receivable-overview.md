@@ -176,7 +176,7 @@ if invoicesResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending API enabled, configure your instance to work with our accounts receivable feature. 
+Once you have the Lending product enabled, configure your instance to work with our accounts receivable feature. 
 
 #### Configure data sources
 

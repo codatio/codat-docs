@@ -7,7 +7,7 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Sync for Expenses",
+    label: "Expenses",
     id: "expenses/overview",
     className: "header  top-level-item products product sfe",
   },

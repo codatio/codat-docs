@@ -77,7 +77,7 @@ Enhance the auth flow functionality and give your customers the ability to manag
 
 ## Supported products
 
-Link is compatible with our entire [product range](/using-the-api/overview#apis) except [Sync for Commerce](/commerce/overview). To set up your Sync for Commerce authorization flow, follow the instructions in our [dedicated documentation](/commerce/overview).
+Link is compatible with our entire [product range](/using-the-api/overview#apis).
 
 ## Supported integrations
 

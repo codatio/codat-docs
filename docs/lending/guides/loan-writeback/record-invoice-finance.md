@@ -824,4 +824,4 @@ In this guide, you have learned:
 ## Read next
 
 * Check out our [invoice finance guide](/lending/guides/invoice-finance/introduction) to see how you can make automated decisions on selected invoices.
-* Review other features of the [Lending API](/lending/overview).
+* Review other features of the [Lending](/lending/overview) product.

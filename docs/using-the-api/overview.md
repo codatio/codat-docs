@@ -12,11 +12,10 @@ We've packaged up Codat's functionality mainly by *product*, with our *Platform 
 
 | Product API | Description |
 | :- | :- |
-| **[Bank Feeds API](/bank-feeds-api)** | Set up bank feeds from accounts in your application to supported accounting software. |
-| **[Lending API](/lending-api)** | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features. |
-| **[Sync for Commerce](/sync-for-commerce-api)** | Write merchants' data from your e-commerce or point-of-sale (POS) platform into your merchants' accounting software. |
-| **[Sync for Expenses](/sync-for-expenses-api)** | Streamline expense reconciliation from the corporate card and expense management systems to your customers' accounting software. |
-| **[Sync for Payables](/sync-for-payables-api)** | Make it easier for your customers to manage and pay suppliers from a single interface. |
+| **[Bank Feeds](/bank-feeds-api)** | Set up bank feeds from accounts in your application to supported accounting software. |
+| **[Lending](/lending-api)** | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features. |
+| **[Expenses](/sync-for-expenses-api)** | Streamline expense reconciliation from the corporate card and expense management systems to your customers' accounting software. |
+| **[Bill Pay (async)](/sync-for-payables-api)**, **[Bill Pay (sync)](/sync-for-payables-v2-api#/)** | Make it easier for your customers to manage and pay suppliers from a single interface. |
 
 Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
 

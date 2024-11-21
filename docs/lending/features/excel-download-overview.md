@@ -1,7 +1,7 @@
 ---
 title: "Excel download overview"
 sidebar_label: "Excel download"
-description: "Download the Lending API reports to Excel"
+description: "Download Lending reports to Excel"
 image: "/img/banners/social/lending.png"
 ---
 
@@ -219,5 +219,5 @@ You can also generate and download the **data export** report by clicking the **
 ---
 
 ## Read next
-- [Lending API reference](/lending-api#/)
+- [Lending reference](/lending-api#/)
 - [Troubleshooting and FAQs](/lending/troubleshooting)

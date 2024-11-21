@@ -564,4 +564,4 @@ In this guide, you have learned:
 ## Read next
 
 * Looking to implement loan writeback for Xero? View Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/).
-* Review other features of the [Lending API](/lending/overview).
+* Review other features of the [Lending](/lending/overview) product.

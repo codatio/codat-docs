@@ -1,6 +1,6 @@
 ---
 title: Manage bills
-description: "View and create bills using Sync for Payables"
+description: "View and create bills using Bill Pay"
 ---
 
 import Tabs from "@theme/Tabs";
@@ -15,7 +15,7 @@ If the company receives an invoice and owes money as a result, we call this a **
 
 ## Overview
 
-In Codat, a [bill](../terms/bill) represents an *accounts payable* invoice issued to an SMB by their [supplier](../terms/supplier). With Sync for Payables, you can:
+In Codat, a [bill](../terms/bill) represents an *accounts payable* invoice issued to an SMB by their [supplier](../terms/supplier). With Bill Pay, you can:
 
 - Retrieve and update your customer's existing bills.
 - Create new bills in your system and reflect them in your customer's accounting software.  

@@ -5,7 +5,7 @@ module.exports = [
     id: "lending/overview",
     customProps: {
       hr: true,
-      section: "Financial assessment",
+      section: "Business lending",
     },
   },
   {
@@ -13,7 +13,7 @@ module.exports = [
     className: "top-level-item top-level-item-single products product supplier-enablement",
     id: "supplier-enablement/overview",
     customProps: {
-      section: "Virtual card",
+      section: "Commercial banking",
     },
   },
   {
@@ -21,7 +21,7 @@ module.exports = [
     className: "top-level-item top-level-item-single products product bankfeed",
     id: "bank-feeds/overview",
     customProps: {
-      section: "Accounting sync",
+      section: "Accounting automation",
     },
   },
   {

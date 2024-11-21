@@ -112,7 +112,7 @@ if suppliersResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending API enabled, configure your instance to work with our accounts payable feature. 
+Once you have the Lending product enabled, configure your instance to work with our accounts payable feature. 
 
 #### Configure data sources
 

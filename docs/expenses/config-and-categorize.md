@@ -1,6 +1,6 @@
 ---
 title: "Map customer transactions"
-description: Map accounts, suppliers, and customers to create transactions using the Sync for Expenses product
+description: Map accounts, suppliers, and customers to create transactions using the Expenses product
 sidebar_label: Map transactions
 tags: [syncforexpense, mappingOptions, Config]
 ---
@@ -32,7 +32,7 @@ Your customers should be able set a bank account, customer, and supplier for eac
 }
 ```
 
-If your customer doesn't provide these values on the transaction itself, Sync for Expenses will use default values you configure for the company as a fallback.
+If your customer doesn't provide these values on the transaction itself, Expenses will use default values you configure for the company as a fallback.
 
 :::caution Default and mandatory values
 
@@ -59,7 +59,7 @@ POST https://api.codat.io/companies/{companyId}/sync/expenses/config
     }
 }
 ```
-If a configuration is set for a company, but the customer sets a bank account, supplier, and customer value on the expense transaction level, Sync for Expenses will use the values from the trasaction when creating the expense in the accounting software.
+If a configuration is set for a company, but the customer sets a bank account, supplier, and customer value on the expense transaction level, Expenses will use the values from the transaction when creating the expense in the accounting software.
 
 :::caution Suppliers in Microsoft Dynamics
 
@@ -252,7 +252,7 @@ In some cases, your customers might not need to track tax on expenses. We recomm
 
 ### Refresh mapping options
 
-The default [sync settings](/expenses/getting-started#data-types) set for Sync for Expenses' data types will refresh the mapping options on an daily basis, however, you can also refresh the options manually by making a request to the [Mapping options](/sync-for-expenses-api#/operations/get-mapping-options) endpoint.
+The default [sync settings](/expenses/getting-started#data-types) set for the product's data types will refresh the mapping options on an daily basis, however, you can also refresh the options manually by making a request to the [Mapping options](/sync-for-expenses-api#/operations/get-mapping-options) endpoint.
 
 ``` http
 POST https://api.codat.io/companies/{companyId}/data/all

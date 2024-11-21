@@ -14,7 +14,7 @@ When implementing your bank feed solution, you need to create your customer as a
 
 You can see how these elements fit together and where they sit in the overall bank feeds process on the diagram below.
 
-![A diagram demonstrating the relationship between various Codat concepts and subsequent steps of the Bank Feeds API process](/img/bank-feeds/bankfeeds-concept-flow.png)
+![A diagram demonstrating the relationship between various Codat concepts and subsequent steps of the Bank Feeds process](/img/bank-feeds/bankfeeds-concept-flow.png)
 
 :::tip Authorize your API calls
 Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
@@ -22,7 +22,7 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 ## Create a company
 
-Within Bank Feeds API, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software. 
+Within Bank Feeds, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software. 
 
 Use the [Create company](/bank-feeds-api#/operations/create-company) endpoint to represent your customer in Codat.
 Make sure to store the company ID as you will use it to establish a connection to an accounting software. 
@@ -571,7 +571,7 @@ res, err := bankFeedsClient.SourceAccounts.Delete(ctx, operations.DeleteSourceAc
 
 :::tip Recap
 
-You have created the structure of key objects required by Codat's Bank Feeds API: a company, its connection to an accounting data source, and a source account. 
+You have created the structure of key objects required by Codat's Bank Feeds product: a company, its connection to an accounting data source, and a source account. 
 
 Next, provide your customer with a **mapping** process interface so they can associate the source account with a target account in their accounting software.
 :::

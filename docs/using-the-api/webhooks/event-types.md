@@ -36,10 +36,10 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 
 | Product           | Event type                                                                                                    | Event description                                                                                          |
 |-------------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Bank Feeds API    | [`bankFeeds.sourceAccount.connected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.connected/post)       | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of connected.                                 |
-| Bank Feeds API    | [`bankFeeds.sourceAccount.disconnected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.disconnected/post) | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of disconnected.                              |
-| Sync for Expenses | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post)                  | Called when an expense sync successfully completes without any errors or warnings.                      |
-| Sync for Expenses | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)              | Called when an expense sync fails to complete successfully, resulting in at least one error or warning. |
+| Bank Feeds    | [`bankFeeds.sourceAccount.connected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.connected/post)       | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of connected.                                 |
+| Bank Feeds    | [`bankFeeds.sourceAccount.disconnected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.disconnected/post) | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of disconnected.                              |
+| Expenses | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post)                  | Called when an expense sync successfully completes without any errors or warnings.                      |
+| Expenses | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)              | Called when an expense sync fails to complete successfully, resulting in at least one error or warning. |
 
 ---
 ## Read next
