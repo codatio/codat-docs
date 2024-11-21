@@ -15,7 +15,7 @@ When a user selects an integration (clicks "Next") in the Link SDK, the `onConne
 
 ![Integration Selection](/img/link/integration_selection.png)
 
-This indicates a connection has been successfully created in a pending state, allowing you to track users reaching this point in the link flow. By calling [get /{connectionId}](https://docs.codat.io/platform-api#/operations/get-connection) you can identify which integration was selected.
+This indicates a connection has been successfully created in a pending state, allowing you to track users reaching this point in the link flow. By calling [Get connection](https://docs.codat.io/platform-api#/operations/get-connection) you can identify which integration was selected.
 
 ## Who is this relevant for?
 
