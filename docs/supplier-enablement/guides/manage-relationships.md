@@ -35,6 +35,14 @@ You can request supplier and spend data from your customer in two ways:
 - [During the initial company creation](#request-financial-data-during-company-creation)
 - [After company creation at a later stage](#request-financial-data-after-company-creation)
 
+:::tip Your customer's journey
+
+Once you request the information, your customer will need to go through a set of steps to allow you to see their business data in the Relationship Portal. You can learn more about this in the [Customer journey](/supplier-enablement/guides/customer-journey) guide.
+
+:::
+
+![An image of the Relationship Manager Portal user interface with the request financials window open](/img/supplier-enablement/0064-se-rm-portal-financials-request.png)
+
 #### Request financial data during company creation
 
 When you follow the [company creation](/supplier-enablement/guides/manage-relationships#add-a-new-company) flow and click the **Add company** button after filling out the company details, you will see the information request window pop up. It is used to onboard your client and request access their financial data. 
@@ -66,6 +74,14 @@ Next, click **Request**. This will display an email preview that will be sent to
 You will see a confirmation message once the email is sent.
 
 ![An image of the Relationship Portal user interface with the email preview window open](/img/supplier-enablement/0065-se-rm-portal-email-preview.png)
+
+#### Multi-entity companies
+
+If you want to request _spend analysis data_ from a customer who has multiple subsidiary companies, you don't need to create and request data for each subsidiary individually. 
+
+When responding to your request, the customer should follow the [multi-entity connection journey](/supplier-enablement/guides/customer-journey#multi-entity-connection-journey). They will be asked to create the relevant subsidiaries and connect an accounting platform for each one during that journey. 
+
+As a result, you will see the main legal entity and its subsidiaries in the Relationship Portal.
 
 ### Support your customer
 
