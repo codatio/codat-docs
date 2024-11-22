@@ -14727,6 +14727,11 @@
             "validTransactionTypes": [
               "Payment",
               "Refund"
+            ],
+            "validFor": [
+              "expense-transactions.Payment",
+              "expense-transactions.Refund",
+              "reimbursable-expense-transactions"
             ]
           }
         },
@@ -14781,6 +14786,10 @@
           "validTransactionTypes": {
             "$ref": "#/components/schemas/validTransactionTypes",
             "description": "Supported transaction types for the account."
+          },
+          "validFor": {
+            "$ref": "#/components/schemas/validFor",
+            "description": "Supported endpoints for the account."
           }
         }
       },
@@ -18379,6 +18388,26 @@
             "$ref": "#/components/schemas/PushOperation"
           }
         ]
+      },
+      "validFor": {
+        "title": "Valid endpoints",
+        "x-internal": true,
+        "type": "array",
+        "description": "Supported endpoints for the account.",
+        "nullable": false,
+        "items": {
+          "type": "string",
+          "enum": [
+            "expense-transactions.Payment",
+            "expense-transactions.Refund",
+            "expense-transactions.Reward",
+            "expense-transactions.Chargeback",
+            "reimbursable-expense-transactions",
+            "transfer-transactions",
+            "adjustment-transactions"
+          ],
+          "example": "expense-transactions.Payment"
+        }
       },
       "validTransactionTypes": {
         "title": "Valid transaction types",
