@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: ajacksoncodat
 ---
 
-We have added to the callback functionality of the Link SDK. The `onConnectionStarted` callback will pass a `connectionId` to the SDK component.
+We have added to the callback functionality of the Link SDK. The `onConnectionStarted` prop allows you to provide a callback function to the SDK component. This function will be called with a Connection argument, including its`connectionId`.
 
 <!--truncate-->
 
