@@ -107,7 +107,6 @@ if (companyCreatedRes.company().isPresent()) {
 ```
 </TabItem>
 
-
 </Tabs>
 
 :::caution Retain the company ID
@@ -371,14 +370,13 @@ If you use include a `null` or empty `tags` object in the [Update company](/plat
 
 :::
 
-#### Filtering companies by metadata 
+#### Filter companies by metadata 
 
-To filter companies by metadata, use the `tags` query parameter on the [List Companies](/platform-api#/operations/list-companies) endpoint.
-This allows you to retrieve companies based on tags you’ve assigned, such as finding a specific company by customer ID or retrieving a group of companies sharing the same tag.
-The tags query parameter uses the same query language as Codat's query parameter.
-[Read more](/using-the-api/querying).
+Once you have enriched the company with additional metadata in the form of tags, you can use it for filtering. This allows you to retrieve companies based on specific criteria, such as finding a specific company by customer ID or retrieving a group of companies that the same tag.
 
-For example, to return a specific company by your customer ID:
+To do so, use the `tags` query parameter on the [List companies](/platform-api#/operations/list-companies) endpoint.  The `tags` query parameter uses the same query language as Codat's query parameters. See more on querying in [Query data](/using-the-api/querying).
+
+Here is a query example that returns a specific company by a customer ID:
 
 <Tabs>
 
