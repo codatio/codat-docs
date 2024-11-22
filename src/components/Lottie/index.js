@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Lottie from "lottie-react";
 
 import BrowserOnly from "@docusaurus/BrowserOnly";
@@ -13,13 +13,16 @@ const App = (props) => {
 	} = props
 
 return <BrowserOnly>
-{ () => 
-	<Lottie
-		className={styles.wrapper}
-		animationData={animation}
-		loop={loop}
-		{...rest}
-	/>}
+	{ 
+		() => <Suspense>
+			<Lottie
+				className={styles.wrapper}
+				animationData={animation}
+				loop={loop}
+				{...rest}
+			/>
+		</Suspense>
+	}
 </BrowserOnly>
 };
 
