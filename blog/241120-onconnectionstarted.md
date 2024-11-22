@@ -1,5 +1,5 @@
 ---
-title: "2024-11-20: `onConnectionStarted` callback added to Link SDK"
+title: "`onConnectionStarted` callback added to Link SDK"
 date: "2024-11-20"
 tags: ["Product", "Update"]
 authors: ajacksoncodat
