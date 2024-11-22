@@ -371,6 +371,70 @@ If you use include a `null` or empty `tags` object in the [Update company](/plat
 
 :::
 
+#### Filtering companies by metadata 
+
+To filter companies by metadata, use the `tags` query parameter on the [List Companies](/platform-api#/operations/list-companies) endpoint.
+This allows you to retrieve companies based on tags you’ve assigned, such as finding a specific company by customer ID or retrieving a group of companies sharing the same tag.
+The tags query parameter uses the same query language as Codat's query parameter.
+[Read more](/using-the-api/querying).
+
+For example, to return a specific company by your customer ID:
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const result = await platformClient.companies.list({
+    tags:`uid=${customerId}`,
+  });
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+res = platform_client.companies.list(operations.ListCompaniesRequest(
+    tags=f'uid={customerId}'
+))
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+var res = await platformClient.Companies.ListAsync(new() {
+    Tags = $"uid={customerId}",
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+res, err := platformClient.Companies.List(ctx, operations.ListCompaniesRequest{
+    Tags: platform.String(fmt.Sprintf("uid=%d", customerId)),
+})
+```
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+ListCompaniesRequest req = ListCompaniesRequest.builder()
+  .tags(String.format("uid=%d", customerId))
+  .build();
+
+ListCompaniesResponse res = platformClient.companies().list()
+  .request(req)
+  .call();
+```
+</TabItem>
+
+</Tabs>
+
+
 ### Authorize access to company data
 
 Once you've created the company, they'll need to give you permission to read their data from a given source, like their accounting software. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
