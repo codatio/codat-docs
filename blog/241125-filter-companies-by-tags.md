@@ -9,7 +9,7 @@ authors: dcoplowe
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The *List companies* endpoint now supports querying by tags, streamlining company management in Codat. This feature lets you retrieve companies based on specific criteria, such as finding a specific company by customer ID.
+The *List companies* endpoint now supports querying by tags, streamlining company management in Codat. This feature lets you retrieve companies based on specific criteria.
 
 <!--truncate-->
 
