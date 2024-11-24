@@ -23,6 +23,6 @@ All clients using Link SDK to deploy the auth flow in their application.
 
 ## How to get started?
 
-To implement an auth flow with our Link SDK, see [Get started with Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link). 
+To implement an auth flow with our Link SDK, see [Get started with Link SDK](/auth-flow/authorize-embedded-link). 
 
-If you are already using Link SDK, add this callback into your component. See [Use callback functions](https://docs.codat.io/auth-flow/authorize-embedded-link) for more details.
+If you are already using Link SDK, add this callback into your component. See [Use callback functions](/auth-flow/authorize-embedded-link) for more details.
