@@ -24,7 +24,7 @@ With its sleek UI and low-code deployment, the component provides the following 
 - Enables the user to reauthorize a previously unlinked or deauthorized connection, setting it back to `Linked` status.
 - Provides additional controls over specific integrations (e.g. [Pause the connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#pause-the-connector) for QuickBooks Desktop).
 
-You can read more about [Connection statuses](https://docs.codat.io/core-concepts/connections#connection-status) at Codat.
+You can read more about [Connection statuses](/core-concepts/connections#connection-status) at Codat.
 
 ## Example implementation
 
@@ -44,7 +44,7 @@ The Connections SDK is an independent component and doesn't require our [Link SD
 
 ### Access token
 
-Once your customer authorizes within your application, use the [Get access token](/platform-api#/operations/get-connection-management-access-token) endpoint to retrieve an access token for this customer's company. 
+Once your customer authorizes within your application, use the [Get access token](/platform-api#/operations/get-company-access-token) endpoint to retrieve an access token for this customer's company. 
 
 :::tip Token validity
 The token is only valid for one hour and applies to a single company.
