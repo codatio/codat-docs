@@ -81,6 +81,8 @@ The `options` prop is optional and accepts an object containing the following op
 | `sourceTypes`             | Controls the data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for. |
 | `text`                    | Contains options that control what text is displayed to the user. Markdown is supported.                                        |
 | `enableAdditionalConsent` | Determines whether an additional consent journey for further use cases is displayed to the user.      |
+| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.      |
+
 
 The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
 
