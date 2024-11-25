@@ -1,3 +1,5 @@
+name: AI Code reviewer
+
 on:
   pull_request:
     types: [opened, synchronize]
