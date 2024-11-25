@@ -9,6 +9,11 @@ authors: dcoplowe
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+:::warning
+
+Please contact your account manager to access this feature.
+:::
+
 The *List companies* endpoint now supports querying by tags, streamlining company management in Codat. This feature lets you retrieve companies based on specific criteria.
 
 <!--truncate-->
