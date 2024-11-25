@@ -5,7 +5,7 @@ tags: ["Product", "Update", "Bank Feeds"]
 authors: mcclowes
 ---
 
-Building and launching a best-in-class bank feeds has never been easier than with our new Bank Feeds SDK.
+Building and launching a best-in-class bank feeds solution has never been easier than with our new Bank Feeds SDK.
 
 <!--truncate-->
 
@@ -13,72 +13,69 @@ Building and launching a best-in-class bank feeds has never been easier than wit
 
 ## What's new?
 
-Our new [Bank Feeds SDK](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types) brings together all the complex pieces of creating a simple Bank Feeds setup experience.
+Our new [Bank Feeds SDK](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types) brings together all the complex pieces to create a simple Bank Feeds setup experience.
 
-It allows your users to securely share access to their accounting software (through our [Link SDK](auth-flow/authorize-embedded-link)) and set up the mapping between your accounts and the relevant ones in their software in one seamless flow.
+It leverages our [Link SDK](auth-flow/authorize-embedded-link) to allow your users to quickly and securely share access to their accounting software. It also enables them to set up the mapping between your accounts and the accounts in their software in one seamless flow.
 
-All of this is included in a single [low-code JavaScript component](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). Our rich config props allow your application to interact with the SDK and customize text and branding to create a trusted, compelling experience.
+All of this is included in a single [low-code JavaScript component](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). Our rich configuration properties allow your application to interact with the SDK and customize text and branding in a way that creates a trusted, compelling experience.
 
-This is supported by easier creation of source accounts via our new [batch source accounts endpoint](https://docs.codat.io/bank-feeds-api#/operations/create-batch-source-account) allowing you to create many source accounts at once.
+This is supported by easier creation of many source accounts at once via our new batch [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoint.
 
 ## The flow
 
-1. Your user clicks that they want to set up bank feeds
-2. [Create a company](https://docs.codat.io/bank-feeds-api#/operations/create-company) for their business
-3. [Get an access token](https://docs.codat.io/platform-api#/operations/get-company-access-token) for that company
-4. Initialize the Bank Feeds SDK (passing in the access token)
-5. You user selects their accounting software and authorizes
-6. Use the `onConnection` callback function prop to [create source accounts](https://docs.codat.io/bank-feeds-api#/operations/create-batch-source-account) at the right time
-7. Your user is redirected to map these source accounts to the relevant accounts in their accounting platform.
-8. Use the `onFinish` callback function
+Once your user initiates the bank feeds setup process, engage our SDK to establish the feed in a few easy steps:
 
-If your user authorizes but doesn't complete setup, we'll bring them straight back to where they left off.
+1. Call the [Create a company](/bank-feeds-api#/operations/create-company) endpoint to create a representation of your customer in Codat.
+2. Get an access token for this company by calling the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint.
+3. Initialize the Bank Feeds SDK, passing the access token to the component. The SDK will direct your customer to select their accounting software and authorize access to it.
+4. Use the SDK's `onConnection` callback function prop to call the [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoint once authorized. The SDK will redirect your customer to map these source accounts to the relevant accounts in their accounting platform.
+5. Use the SDK's `onFinish` callback function to manage the completion of the bank feeds setup flow once the accounts are mapped. 
 
-Once they're fully set up, you can use this component to allow them to reconfigure their accounts or set up any additional accounts. 
+If your user authorizes your access but doesn't complete the accounts setup, we'll bring them straight back to where they left off when they return to the flow. Once they're fully set up, you can use this component to allow them to reconfigure their accounts or set up additional accounts. 
 
-You should also use our [Connection SDK](http://localhost:3000/auth-flow/optimize/connection-management) to allow users to reconnect or disconnect access to their accounting software. This is mandated by integratino partners.
+We also recommend using our [Connections SDK](/auth-flow/optimize/connection-management) to allow users to reauthorize or revoke your access to their accounting software. Providing your customers with this control is mandated by integration partners.
 
 ## How to get started?
 
-You can access the SDK on [NPM](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types).
+You can access the SDK on [NPM](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). We recommend all clients already using our [Bank Feeds](/bank-feeds/overview) product to migrate to the Bank Feeds SDK. 
 
-You should create a component which initializes the compoenent:
+First, create a component which initializes the SDK:
 
 ```react
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom/client";
-import { CodatBankFeedsProps, initializeCodatBankFeeds } from "@codat/sdk-bank-feeds-types";
-
-const CodatBankFeeds: React.FC<CodatBankFeedsProps> = (props: CodatBankFeedsProps) => {
-  const [componentMount, setComponentMount] = useState<HTMLDivElement | null>(
-    null
-  );
-
-  useEffect(() => {
-    const target = componentMount;
-    if (target && target.children.length === 0) {
-      initializeCodatBankFeeds(target, props);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [componentMount]);
-
-  return (
-    <div ref={setComponentMount}/>
-  );
-};
+  import React, { useEffect, useState } from "react";
+  import ReactDOM from "react-dom/client";
+  import { CodatBankFeedsProps, initializeCodatBankFeeds } from "@codat/sdk-bank-feeds-types";
+  
+  const CodatBankFeeds: React.FC<CodatBankFeedsProps> = (props: CodatBankFeedsProps) => {
+    const [componentMount, setComponentMount] = useState<HTMLDivElement | null>(
+      null
+    );
+  
+    useEffect(() => {
+      const target = componentMount;
+      if (target && target.children.length === 0) {
+        initializeCodatBankFeeds(target, props);
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [componentMount]);
+  
+    return (
+      <div ref={setComponentMount}/>
+    );
+  };
 ```
 
-Then you can then use that component where needed:
+Then use the component in your solution as needed:
 
 ```react
- <CodatBankFeeds
-  accessToken="ACCESS_TOKEN"
-  companyId="COMPANY_ID"
-  onClose={() => alert("onClose")}
-  onError={() => alert("onError")}
-  onConnection={() => alert("onConnection")}
-  onConnectionStarted={() => alert("onConnectionStarted")}
-  onFinish={() => alert("onFinish")}
-  options={{}}
-/>
+   <CodatBankFeeds
+    accessToken="ACCESS_TOKEN"
+    companyId="COMPANY_ID"
+    onClose={() => alert("onClose")}
+    onError={() => alert("onError")}
+    onConnection={() => alert("onConnection")}
+    onConnectionStarted={() => alert("onConnectionStarted")}
+    onFinish={() => alert("onFinish")}
+    options={{}}
+  />
 ```
