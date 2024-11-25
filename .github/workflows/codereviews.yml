@@ -13,7 +13,7 @@ jobs:
     name: ChatGPT Code Review
     steps:
       - name: GenAI Code Review
-        uses: mcclowes/genai-code-review@v1
+        uses: mcclowes/genai-code-review@v1.0.0
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
