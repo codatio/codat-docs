@@ -18,6 +18,11 @@ module.exports = [
   },
   {
     type: "doc",
+    label: "Bank Feeds SDK",
+    id: "bank-feeds/bank-feeds-sdk",
+  },
+  {
+    type: "doc",
     label: "Create account",
     id: "bank-feeds/create-account",
     customProps: {

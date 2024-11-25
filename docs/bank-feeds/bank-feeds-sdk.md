@@ -1,10 +1,13 @@
 ---
-title: "Launch your bank feed faster with Bank Feeds SDK"
-date: "2024-11-24"
-tags: ["Product", "Update", "Bank Feeds"]
-image: "/img/updates/bank-feeds-bento.png"
-authors: mcclowes
+title: "Bank Feeds SDK"
+description: "Understand the basics of using Bank Feeds API and learn how to perform the initial setup for the product"
+displayed_sidebar: bankfeeds
 ---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem"
+import {IntegrationsList} from '@components/Integrations'
+import {bankfeedsExternalMappingIntegrations, bankfeedsIntegrations} from '@components/Integrations/integrations'
 
 Building and launching a best-in-class bank feeds solution has never been easier than with our new Bank Feeds SDK.
 
@@ -12,7 +15,7 @@ Building and launching a best-in-class bank feeds solution has never been easier
 
 ![Bank Feeds SDK features](/img/updates/bank-feeds-bento.png)
 
-## What's new?
+## Overview
 
 Our new [Bank Feeds SDK](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types) brings together all the complex pieces to create a simple Bank Feeds setup experience.
 
@@ -21,16 +24,6 @@ It leverages our [Link SDK](auth-flow/authorize-embedded-link) to allow your use
 All of this is included in a single [low-code JavaScript component](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). Our rich configuration properties allow your application to interact with the SDK and customize text and branding in a way that creates a trusted, compelling experience.
 
 This is supported by easier creation of many source accounts at once via our new batch [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoint.
-
-## Who's this for?
-
-Anyone looking to build to Codat's Bank Feeds product should use this SDK.
-
-If you've already built your own user interface, consider migrating to take advantage of the new SDK's benefits and numerous upcoming features, including:
-
-- An embedded, improved mapping UI.
-- Advanced features include support for integrating with multi-entity structures.
-- Reduced maintenance as Bank Feeds SDK is always up to date.
 
 ## The flow
 
@@ -50,7 +43,17 @@ We also recommend using our [Connections SDK](/auth-flow/optimize/connection-man
 
 You can access the SDK on [NPM](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). We recommend all clients already using our [Bank Feeds](/bank-feeds/overview) product to migrate to the Bank Feeds SDK. 
 
-First, create a component which initializes the SDK:
+##### NPM
+```sh
+npm add @codat/sdk-bank-feeds-types
+```
+
+##### Yarn
+```sh
+yarn add @codat/sdk-bank-feeds-types
+```
+
+Then, create a component which initializes the SDK:
 
 ```react
   import React, { useEffect, useState } from "react";
@@ -90,3 +93,10 @@ Then use the component in your solution as needed:
     options={{}}
   />
 ```
+
+
+---
+
+## Read next
+
+* [Create the key elements](/bank-feeds/create-account) of the Codat infrastructure required to establish a bank feed.

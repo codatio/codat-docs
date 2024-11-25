@@ -141,7 +141,7 @@ Our Lending API empowers you with a host of features to help you streamline your
 
 ## Build with client libraries
 
-Use our [comprehensive SDKs](/get-started/libraries) to kickstart and simplify your developers' journey automating the collection of your customers' financial data and making an assessment of a small business's financial health and performance.
+Use our [comprehensive SDKs](/get-started/libraries) to kickstart and simplify your developer journey automating the collection of your customers' financial data and making an assessment of a small business's financial health and performance.
 
 Our Lending SDK comes in multiple languages and provides all the necessary methods to build your solution, enabling you to develop everything from a merchant capital product to loan writeback with just a single SDK.
 
