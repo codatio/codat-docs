@@ -94,7 +94,7 @@ npm add @codat/sdk-bank-feeds-types
 yarn add @codat/sdk-bank-feeds-types
 ```
 
-[Read more...](/bank-feeds/create-account)
+[Read more...](/bank-feeds/bank-feeds-sdk)
 
 ### Backend
 
