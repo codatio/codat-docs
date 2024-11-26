@@ -80,7 +80,25 @@ Codat supports a range of [webhook events](/using-the-api/webhooks/event-types) 
 
 ## Client libraries
 
-Use our comprehensive [Bank Feeds API library](/get-started/libraries) to kick-start and simplify your build. 
+### Frontend
+
+Our low-code [Bank Feeds SDK](/bank-feeds/create-account) lets you build a seamless, high-converting user experience, embedded right within your front-end application.
+
+##### NPM
+```sh
+npm add @codat/sdk-bank-feeds-types
+```
+
+##### Yarn
+```sh
+yarn add @codat/sdk-bank-feeds-types
+```
+
+[Read more...](/bank-feeds/bank-feeds-sdk)
+
+### Backend
+
+For your bankend services, use our comprehensive [Bank Feeds API library](/get-started/libraries) to kick-start and simplify your build. 
 Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
 <Tabs>

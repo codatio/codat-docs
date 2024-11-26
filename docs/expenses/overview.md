@@ -177,7 +177,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 
 ## Build with client libraries
 
-Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey automating the expense management process for your customers. The SDKs come in multiple languages and provide sample requests and responses for the full range of spend management scenarios.
+Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developer journey automating the expense management process for your customers. The SDKs come in multiple languages and provide sample requests and responses for the full range of spend management scenarios.
 
 <ClientLibraries productName={"sync-for-expenses"} />
 

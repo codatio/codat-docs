@@ -14,3 +14,13 @@ article .markdown {
     margin-bottom: 2em;
   }
 }
+
+
+// Image zoom overlay
+.medium-zoom-overlay {
+  z-index: 1000;
+}
+
+.medium-zoom-image {
+  z-index: 1001;
+}
