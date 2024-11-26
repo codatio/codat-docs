@@ -24,13 +24,13 @@ This is supported by easier creation of many source accounts at once via our new
 
 ## Who's this for?
 
-Anyone looking to build to Codat's Bank Feeds product should use this SDK.
+Anyone looking to build to Codat's [Bank Feeds](/bank-feeds/overview) product should use this SDK.
 
-If you've already built your own user interface, consider migrating to take advantage of the new SDK's benefits and numerous upcoming features, including:
+If you've already built your own user interface, consider migrating to take advantage of the new SDK's benefits, including:
 
-- An embedded, improved mapping UI.
-- Advanced features include support for integrating with multi-entity structures.
-- Reduced maintenance as Bank Feeds SDK is always up to date.
+- An improved embedded mapping UI
+- Advanced features, such as support for integrating with multi-entity company structures
+- Reduced maintenance with a Bank Feeds SDK that is always up to date
 
 ## The flow
 
