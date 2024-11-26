@@ -5,30 +5,30 @@ tags: ["Product", "Update"]
 hide_table_of_contents: true
 authors: dcoplowe
 ---
-
-Our webhooks service now supports replaying missed messages on an endpoint.  
-This allows you to set up a webhook consumer (or endpoint) and replay messages from up to the past two weeks.
+You can now replay missed messages from the previous two weeks with this update to our webhooks service. 
 
 <!--truncate-->
 
 ## What's new?
 
-Our webhooks service now caches all generated events, even if no consumers have been configured.  
-This means you can request Codat to resend all previously missed events when you start using the webhooks service, on a consumer-by-consumer basis.
+Our webhooks service caches all generated events even if no consumers have been configured. With this latest update to the service, you can request Codat to resend all events missed in the previous two weeks. You can do so when you start using the webhooks service, on a consumer-by-consumer basis.
 
 ![Display replay button](/img/use-the-api/webhooks-replay-missed-messages.png)
 
 ## Who is this relevant for?
 
-- **Clients migrating** to our new service who want to ensure no messages are lost during the migration process.  
-- **Clients in development** who want to test their solutions with genuine, previously generated events.
+- Clients **migrating** to our new service who want to ensure no messages are lost during the migration process.  
+- Clients **developing** their solution with Codat who want to test that solution with genuine previously generated events.
 
 ## How to get started?
 
-To replay missed events:  
-1. Navigate to **Settings > Webhooks > Configure consumers**.  
-2. Select an existing consumer or create a new one.  
-3. Go to the consumer and click the triple-dot to view settings and select Replay missing messages.  
-4. Select the starting date for the messages you wish to replay (up to two weeks).
+You can use this functionality immediately if you are already using our new webhooks service. To replay missed events, follow these steps:  
+
+1. Navigate to **Settings > Webhooks > Configure consumers** in the [Codat Portal](https://app.codat.io/monitor/events).  
+2. Select an existing webhook consumer or create a new one.  
+3. In the detailed consumer view, click theclick the triple-dot menu and select **Replay missing messages**.
+4. Select the starting date for the messages you wish to replay and confirm by pressing **Replay**.
+
+Alternatively, you can scroll the consumer detail page to view the **Message Attempts** section and use the triple-dot menu to replay an individual message. See our detailed documentation on how to [Recover failed messages](/using-the-api/webhooks/troubleshooting#recover-failed-messages).
 
 ![Select replay options](/img/use-the-api/webhooks-replay-missed-messages-duration.png)
