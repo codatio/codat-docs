@@ -13,9 +13,13 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Get started",
     id: "payables/get-started",
+    customProps: {
+      hr: true,
+      section: "Prerequisites",
+    },
   },
+  "payables/configure-customer",
   {
     type: "doc",
     id: "payables/configure-customer",

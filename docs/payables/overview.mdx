@@ -18,7 +18,7 @@ banner_text: "Handle your customers' most complex accounts payable workflows acr
 
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
-import { integrationsFilterBillPayAsync } from "@components/Integrations/integrations";
+import { integrationsFilterBillPayAsync, integrationsFilterBillPaySync } from "@components/Integrations/integrations";
 import ClientLibraries from '@components/ClientLibraries'
 
 ## What is it?
@@ -106,9 +106,13 @@ You can then display the updated list of bills to your customer so they can keep
 
 ## Supported integrations
 
-<br />
+Our asynchronous Bill Pay solution supports the following integrations:
 
 <IntegrationsList filter={integrationsFilterBillPayAsync} />
+
+Our synchronous Bill Pay solution supports the following integrations:
+
+<IntegrationsList filter={integrationsFilterBillPaySync} />
 
 ## Build with client libraries
 

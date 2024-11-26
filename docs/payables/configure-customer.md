@@ -1,7 +1,7 @@
 ---
 title: "Configure customer in Codat"
 description: "Create a company and its connection that form the structure required to execute the bill pay process"
-sidebar_label: Configure customer
+sidebar_label: Create customer
 displayed_sidebar: payables
 ---
 
