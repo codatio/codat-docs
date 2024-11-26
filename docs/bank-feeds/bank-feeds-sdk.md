@@ -1,6 +1,6 @@
 ---
 title: "Bank Feeds SDK"
-description: "Understand the basics of using Bank Feeds API and learn how to perform the initial setup for the product"
+description: "See how your can simplify the deployment of the Bank Feeds product with our Bank Feeds SDK"
 displayed_sidebar: bankfeeds
 ---
 
