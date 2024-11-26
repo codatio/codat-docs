@@ -13,10 +13,6 @@ The *List companies* endpoint now supports querying by tags, streamlining compan
 
 <!--truncate-->
 
-:::warning Get in touch
-Please contact your account manager to access this feature.
-:::
-
 ## What's new?
 
 You can now use the `tags` query parameter on the [*List companies*](/platform-api#/operations/list-companies) endpoint to filter by one or more tags assigned to your companies. The `tags` query parameter supports the following operators, using [Codat’s query language](https://docs.codat.io/using-the-api/querying):
