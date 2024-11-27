@@ -49,7 +49,7 @@ Call our [List suppliers](/sync-for-payables-api#/operations/list-suppliers) end
 - `defaultCurrency=USD` returns suppliers that provide goods or services in dollars.
 - `supplierName=Acme` returns suppliers with a name that matches the query.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -134,7 +134,7 @@ Bill Pay does not expose supplier balances on the supplier endpoints. Instead, y
 
 When your customer's company does business with a new supplier for the first time, you will need to create a supplier before creating a bill against that supplier. Use the [Create supplier](/sync-for-payables-api#/operations/create-supplier) endpoint to do that.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 

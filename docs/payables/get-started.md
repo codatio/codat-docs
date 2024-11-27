@@ -1,6 +1,6 @@
 ---
 title: "Get started with Bill Pay products"
-sidebar_label: Enable product
+sidebar_label: Configure product
 description: "View the core steps required to perform the initial setup for the Bill Pay product"
 image: "/img/banners/social/payables.png"
 ---

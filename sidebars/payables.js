@@ -19,10 +19,9 @@ module.exports = [
       section: "Prerequisites",
     },
   },
-  "payables/configure-customer",
   {
     type: "doc",
-    id: "payables/configure-customer",
+    id: "payables/async/configure-customer",
     customProps: {
       hr: true,
       section: "Asynchronous solution",
@@ -34,7 +33,7 @@ module.exports = [
   "payables/payments",
   {
     type: "doc",
-    id: "payables/async-data-types",
+    id: "payables/async/async-data-types",
     label: "Supported data types",
   },
   {
@@ -51,9 +50,10 @@ module.exports = [
       section: "Synchronous solution",
     },
   },
+  "payables/sync/configure-customer",
     {
       type: "doc",
-      id: "payables/sync-data-types",
+      id: "payables/sync/sync-data-types",
       label: "Supported data types",
     },
     {
