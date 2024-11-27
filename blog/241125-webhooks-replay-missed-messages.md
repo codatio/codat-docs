@@ -29,4 +29,4 @@ You can use this functionality immediately if you are already using our new webh
 3. In the detailed consumer view, click the click the triple-dot menu and select **Replay missing messages**.
 4. Select the starting date for the messages you wish to replay and confirm by pressing **Replay**.
 
-Alternatively, you can scroll the consumer detail page to view the **Message Attempts** section and use the triple-dot menu to replay an individual message. See our detailed documentation on how to [Recover failed messages](/using-the-api/webhooks/troubleshooting#recover-failed-and-missed-messages).
+Alternatively, you can scroll the consumer detail page to view the **Message Attempts** section and use the triple-dot menu to replay an individual message. See our detailed documentation on how to [Recover failed and missed messages](/using-the-api/webhooks/troubleshooting#recover-failed-and-missed-messages).
