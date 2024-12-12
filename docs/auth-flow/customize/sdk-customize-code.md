@@ -67,6 +67,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
     },
     text: {...},
     enableAdditionalConsent: true,
+    enableMultiEntityLinking: true,
   }}
 />
 ```
