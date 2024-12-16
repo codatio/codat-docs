@@ -1241,7 +1241,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿The *List companies* endpoint returns a list of [companies](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) associated to your instances.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) associated to your instances.\n\nA [company](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-expenses-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n\n## Filter by tags\n\nThe *List companies* endpoint supports the filtering of companies using [tags](https://docs.codat.io/using-the-api/managing-companies#add-metadata-to-a-company). It supports the following operators with [Codat’s query language](https://docs.codat.io/using-the-api/querying):\n\n- equals (`=`)\n- not equals (`!=`)\n- contains (`~`)\n\nFor example, you can use the querying to filter companies tagged with a specific foreign key, region, or owning team: \n- Foreign key: `uid = {yourCustomerId}`\n- Region: `region != uk`\n- Owning team and region: `region = uk && owningTeam = invoice-finance`",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -1254,6 +1254,15 @@
           },
           {
             "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "region=uk && team=invoice-finance",
+            "description": "Filter companies by tags using the \"equals\" (=), \"not equals\" (!=), and \"contains\" (~) operators with [Codat’s query language](https://docs.codat.io/using-the-api/querying)."
           }
         ]
       },
