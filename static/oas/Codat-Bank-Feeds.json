@@ -3535,7 +3535,7 @@
           "Source accounts"
         ],
         "summary": "Update source account",
-        "description": "﻿The _Update source account_ endpoint updates a single source account for a single data connection connected to a single company.\n\n### Tips and pitfalls\n\n* This endpoint only updates the `accountName` field.\n* Updates made here apply exclusively to source accounts and will not affect target accounts in the accounting software.",
+        "description": "﻿The _Update source account_ endpoint updates a single source account for a single data connection connected to a single company.\n\n### Tips and pitfalls\n\n* This endpoint makes it possible to update the `accountName`, `status`, and `balance` fields.\n    * The `status` field can only be updated to 'disconnected'.\n    * The `balance` field can only be updated on accounts that are **not** 'connected'.\n* Updates made here apply exclusively to source accounts and will not affect target accounts in the accounting software.",
         "operationId": "update-source-account",
         "parameters": [
           {
