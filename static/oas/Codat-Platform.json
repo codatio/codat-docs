@@ -111,12 +111,12 @@
       "description": "Create and manage your SMB users' companies."
     },
     {
-      "name": "Connections",
-      "description": "Create new and manage existing data connections for a company."
-    },
-    {
       "name": "Connection management",
       "description": "Configure UI and retrieve access tokens for authentication used by **Connections SDK**."
+    },
+    {
+      "name": "Connections",
+      "description": "Create new and manage existing data connections for a company."
     },
     {
       "name": "Webhooks",
@@ -359,7 +359,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿The *List companies* endpoint returns a list of [companies](https://docs.codat.io/platform-api#/schemas/Company) associated to your instances.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies](https://docs.codat.io/platform-api#/schemas/Company) associated to your instances.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n\n## Filter by tags\n\nThe *List companies* endpoint supports the filtering of companies using [tags](https://docs.codat.io/using-the-api/managing-companies#add-metadata-to-a-company). It supports the following operators with [Codat’s query language](https://docs.codat.io/using-the-api/querying):\n\n- equals (`=`)\n- not equals (`!=`)\n- contains (`~`)\n\nFor example, you can use the querying to filter companies tagged with a specific foreign key, region, or owning team: \n- Foreign key: `uid = {yourCustomerId}`\n- Region: `region != uk`\n- Owning team and region: `region = uk && owningTeam = invoice-finance`",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -372,6 +372,15 @@
           },
           {
             "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "region=uk && team=invoice-finance",
+            "description": "Filter companies by tags using the \"equals\" (=), \"not equals\" (!=), and \"contains\" (~) operators with [Codat’s query language](https://docs.codat.io/using-the-api/querying)."
           }
         ]
       },
@@ -1212,6 +1221,64 @@
         }
       }
     },
+    "/companies/{companyId}/accessToken": {
+      "get": {
+        "summary": "Get company access token",
+        "operationId": "get-company-access-token",
+        "x-speakeasy-name-override": "get-access-token",
+        "description": "Use the _Get company access token_ endpoint to return an access token for the specified company ID to use in Codat's embedded UI products.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyAccessToken"
+                },
+                "examples": {
+                  "Simple company": {
+                    "value": {
+                      "expiresIn": 86400,
+                      "accessToken": "string",
+                      "tokenType": "Bearer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/connectionManagement/accessToken": {
       "parameters": [
         {
@@ -1219,13 +1286,15 @@
         }
       ],
       "get": {
-        "summary": "Get access token",
+        "summary": "Get access token (old)",
         "operationId": "get-connection-management-access-token",
-        "x-speakeasy-name-override": "get-access-token",
+        "deprecated": true,
+        "x-speakeasy-deprecation-message": "The endpoint for generating company-specific connection management access tokens has been deprecated.\nCodat now supports a global company access token, providing seamless access across multiple products.\nUpdate your integration to use the global token for improved efficiency and consistency.\n",
+        "x-speakeasy-deprecation-replacement": "get-company-access-token",
         "tags": [
           "Connection management"
         ],
-        "description": "﻿Use the *Get access token* endpoint to retrieve a new access token for use with the [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management). The token is only valid for one hour and applies to a single company.\n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
+        "description": "﻿The new `/companies/{companyId}/accessToken` endpoint replaces this endpoint and includes additional functionality.\n\nUse the *Get access token* endpoint to retrieve a new access token for use with the [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management). The token is only valid for one hour and applies to a single company.\n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
         "responses": {
           "200": {
             "description": "Success",
@@ -1272,9 +1341,9 @@
       "get": {
         "summary": "Get CORS settings",
         "operationId": "get-connection-management-cors-settings",
-        "x-speakeasy-group": "connection-management.cors-settings",
+        "x-speakeasy-group": "cors",
         "tags": [
-          "Connection management"
+          "Settings"
         ],
         "description": "﻿The *Get CORS settings* endpoint returns the allowed origins (i.e. your domains) you want to allow cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)) with Codat. \n\nEnabling CORS with Codat is required by our embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) to access Codat's API endpoints.\n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
         "responses": {
@@ -1308,9 +1377,9 @@
         "summary": "Set CORS settings",
         "operationId": "set-connection-management-cors-settings",
         "x-speakeasy-name-override": "set",
-        "x-speakeasy-group": "connection-management.cors-settings",
+        "x-speakeasy-group": "cors",
         "tags": [
-          "Connection management"
+          "Settings"
         ],
         "description": "﻿The *Set CORS settings* endpoint allows you to register allowed origins (i.e. your domains) for use in cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).\n \nEnabling CORS with Codat is required by our embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) to access Codat's API endpoints. \n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
         "requestBody": {
@@ -1965,64 +2034,6 @@
           }
         },
         "description": "Retrieve information about a single dataset or pull operation."
-      }
-    },
-    "/companies/{companyId}/accessToken": {
-      "get": {
-        "summary": "Get company access token",
-        "operationId": "get-company-access-token",
-        "x-speakeasy-name-override": "get-access-token",
-        "description": "Use the _Get company access token_ endpoint to return an access token for the specified company ID to use in Codat's embedded UI products.\n",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "tags": [
-          "Companies"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanyAccessToken"
-                },
-                "examples": {
-                  "Simple company": {
-                    "value": {
-                      "expiresIn": 86400,
-                      "accessToken": "string",
-                      "tokenType": "Bearer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
       }
     },
     "/rules": {
@@ -5927,7 +5938,7 @@
                         "$ref": "#/components/schemas/DateTime"
                       },
                       {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                        "description": "The date when the record was last fetched from the accounting software, commerce software, or open banking provider and updated in Codat’s data cache.\n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                       }
                     ]
                   }
