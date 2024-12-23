@@ -27,14 +27,17 @@ module.exports = [
       section: "Asynchronous solution",
     },
   },
-  "payables/suppliers",
-  "payables/bills",
-  "payables/mapping",
-  "payables/payments",
+  "payables/async/suppliers",
+  "payables/async/bills",
+  "payables/async/mapping",
+  "payables/async/payments",
   {
     type: "doc",
     id: "payables/async/async-data-types",
     label: "Supported data types",
+    customProps: {
+      hr: true,
+    },
   },
   {
     type: "link",
@@ -51,10 +54,16 @@ module.exports = [
     },
   },
   "payables/sync/configure-customer",
+  "payables/sync/suppliers",
+  "payables/sync/bills",
+  "payables/sync/pay-bill",
     {
       type: "doc",
       id: "payables/sync/sync-data-types",
       label: "Supported data types",
+      customProps: {
+        hr: true,
+      },
     },
     {
       type: "link",

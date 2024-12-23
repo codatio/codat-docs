@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 ## Create a connection
 
-Next, use the <a href={props.endpointlink}>Create connection</a> endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source, fetching or creating suppliers, bills, and payment methods. In the request body, specify a `platformKey` of the accounting software you're looking to connect.
+Next, use the <a href={props.endpointlink} target="_blank">Create connection</a> endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source, fetching or creating suppliers, bills, and payment methods. In the request body, specify a `platformKey` of the accounting software you're looking to connect.
 
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 

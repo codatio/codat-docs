@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 ## Create a company
 
-Within Bill Pay, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our <a href={props.endpointlink}>Create company</a> endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting software. 
+Within Bill Pay, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our <a href={props.endpointlink} target="_blank">Create company</a> endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting software. 
 
 <Tabs groupId="language">
 

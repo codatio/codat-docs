@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 ## Deauthorize a connection
 
-If your customer wants to revoke their approval and sever the connection to their accounting software, use the <a href={props.endpointlink}>Unlink connection</a> endpoint.
+If your customer wants to revoke their approval and sever the connection to their accounting software, use the <a href={props.endpointlink} target="_blank">Unlink connection</a> endpoint.
 
 You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI.
 

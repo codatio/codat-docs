@@ -33,7 +33,7 @@ You can see how this flow completes on our detailed process diagram below.
 
 </details>
 
-We built Bill Pay to handle various bill pay scenarios, for example:
+We built **async Bill Pay** to handle a wide range of bill pay scenarios, for example:
 
 - A payment made against a bill, e.g. a credit card payment, cheque payment, or cash payment
 - An allocation of a supplier's credit note to a bill or a refund

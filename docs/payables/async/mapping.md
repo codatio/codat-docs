@@ -1,5 +1,6 @@
 ---
-title: Map payment methods
+title: Manage payment accounts
+sidebar_label: Manage accounts
 description: "Provide your SMBs with the ability to choose how to make payments"
 ---
 
