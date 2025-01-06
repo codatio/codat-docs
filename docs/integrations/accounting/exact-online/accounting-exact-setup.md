@@ -135,8 +135,8 @@ If you experience issues with your app after enabling the recommended scopes, pl
 | **Logistics**    |              |
 | items            | Manage       |
 | **Financial**    |              |
-| generalledgers   | Read         |
-| accounting       | Read         |
+| generalledgers   | Read (Manage for Bank Feeds)       |
+| accounting       | Read (Manage for Bank Feeds)         |
 | receivables      | Read         |
 | payables         | Read         |
 | costcenters      | Read         |
