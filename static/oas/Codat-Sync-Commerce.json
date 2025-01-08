@@ -1895,6 +1895,26 @@
           }
         }
       },
+      "CompanyUpdateRequest": {
+        "title": "Update company request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/CreateCompany/properties/description"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
+          }
+        }
+      },
       "Configuration": {
         "title": "Configuration",
         "type": "object",
