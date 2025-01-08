@@ -1185,9 +1185,10 @@
     },
     "/companies/{companyId}": {
       "put": {
-        "summary": "Update company",
-        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
-        "operationId": "update-company",
+        "summary": "Replace company",
+        "description": "﻿Use the *Replace company* endpoint to replace the existing name, description, and tags of the company. Calling the endpoint will replace existing values even if new values haven't been defined in the payload.\n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "operationId": "replace-company",
+        "x-speakeasy-name-override": "replace",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -1245,6 +1246,75 @@
                   "value": {
                     "name": "Same name",
                     "description": "Additional documents required"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update company",
+        "description": "﻿Use the *Update company* endpoint to update the name, description, or tags of the company.\n\nThe *Update company* endpoint doesn't have any required fields. If any of the fields provided are `null` or not provided, they won't be included in the update.  \n\nA [company](https://docs.codat.io/sync-for-commerce-v1-api#/schemas/Company) represents a business sharing access to their data.",
+        "operationId": "update-company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyUpdateRequest"
+              },
+              "examples": {
+                "Update tags": {
+                  "value": {
+                    "tags": {
+                      "refrence": "new reference"
+                    }
+                  }
+                },
+                "Update name": {
+                  "value": {
+                    "name": "New Name"
                   }
                 }
               }
@@ -17544,6 +17614,26 @@
       },
       "CompanyRequestBody": {
         "$ref": "#/components/schemas/CreateCompany"
+      },
+      "CompanyUpdateRequest": {
+        "title": "Update company request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/CreateCompany/properties/description"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
+          }
+        }
       },
       "ConfigAccount": {
         "x-internal": true,
