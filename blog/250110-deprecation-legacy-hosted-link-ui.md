@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 authors: rachelcodat
 ---
 
-On **April 10, 2025**, we will deprecate our legacy hosted link ui following the release of our (new link UI)[./250110-new-hosted-link-ui] which now offers a (more secure experience)[./250110-secure-linking].
+On **April 10, 2025**, we will deprecate our legacy hosted link ui following the release of our [new link UI](./250110-new-hosted-link-ui) which now offers a [more secure experience](./250110-secure-linking).
 
 <!--truncate-->
 
@@ -17,8 +17,8 @@ If you are using the secure linking the following changes will occur:
 
 ### Hosted/Self built Link
 All Link URLs (for the company or data connection) will have a one time passcode added as a query parameter. For example:
-Company Link `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0` ->  `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0?link.otp=IVHHW9`
-Connection Link `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start` -> `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start?otp=IVHHW9`
+- Company Link `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0` ->  `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0?link.otp=IVHHW9`
+- Connection Link `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start` -> `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start?otp=IVHHW9`
 
 If you are is programmatically adding query parameters to this URL e.g. by appending ?link.showSandboxIntegrations=false you will need to check this code handles URLs that already contain query strings.
 
