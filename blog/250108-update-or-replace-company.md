@@ -6,12 +6,8 @@ hide_table_of_contents: true
 authors: dcoplowe
 ---
 
-We have to introduced a new `PATCH` endpoint that allows you to update specific company properties without affecting others. This complements our existing `PUT` endpoint, which replaces all company details provided in the request body.
-
-## What's New?
-
-We have added a new PATCH endpoint to allow you to update specific company properties. 
-This works in parallel with our existing PUT endpoint that will replace all company details irrespective of whether they are presented in the request body.  
+We have introduced a new [`PATCH`](/platform-api#/operations/update-company) endpoint, designed to let you update specific company properties without impacting others. 
+For most scenarios where you are currently using the [`PUT`](/platform-api#/operations/replace-company) endpoint, we recommend switching to `PATCH` to enjoy greater flexibility and precision when updating company details.
 
 ## What's new?
 
@@ -28,8 +24,10 @@ This feature is ideal for users who need to make partial updates to a company's 
 
 ## How to get started?
 
-To start using the `PATCH` endpoint:
-1. Explore our [client libraries](/get-started/libraries) for faster implementation and easier maintenance.
-2. Refer to the API documentation for detailed examples and usage.
+To start using the `PATCH` method either:
+
+- **Use our [client libraries](/get-started/libraries)** - leverage our libraries for quicker implementation and reduced maintenance.
+- **Update your existing libraries** - if you're already using our client libraries, just update to the latest version, and the `update` method will automatically use `PATCH`.
+- **Review the [API reference](/platform-api#/operations/update-company)** - find detailed examples and usage guidelines to ensure a seamless integration.
 
 [Learn more about our libraries](/get-started/libraries) and start streamlining your updates today!

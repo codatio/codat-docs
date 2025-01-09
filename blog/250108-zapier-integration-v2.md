@@ -1,5 +1,5 @@
 ---
-title: "Updates to our Zapier integration"
+title: "Zapier app 2.0 released"
 date: "2025-01-08"
 tags: ["Product", "Update"]
 hide_table_of_contents: true
@@ -12,7 +12,7 @@ We’re excited to announce that our Zapier integration now supports subscriptio
 
 ## What's new?
 
-- **Subscribe to the latest event types** - stay updated with the newest triggers available.
+- **Subscribe to our latest event types** - stay updated with the newest triggers available.
 - **Multiple subscriptions** - subscribe to one or more event types at the same time.
 - **New webhook schema** - take advantage of our updated webhook schema for seamless integration.
 
