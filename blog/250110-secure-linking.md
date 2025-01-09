@@ -14,8 +14,8 @@ Link now supports a fully secure version to improve the relability of data provi
 To reduce the risk of link urls being leaked, end users will no longer be able to reuse the same link urls twice. Links will expire after 1 day.
 
 All Link URLs (for the company or data connection) will have a one time passcode added as a query parameter. For example:
-Company Link `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0` ->  `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0?link.otp=IVHHW9`
-Connection Link `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start` -> `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start?otp=IVHHW9`
+- Company Link: `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0` ->  `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0?link.otp=IVHHW9`
+- Connection Link: `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start` -> `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start?otp=IVHHW9`
 
 Once these urls have been used the user will then have an authenticated session in which they can share their data.
 
