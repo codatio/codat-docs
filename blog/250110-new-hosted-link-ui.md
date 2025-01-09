@@ -3,7 +3,7 @@ title: "2025-01-10: New link flow"
 date: "2025-01-10"
 tags: ["Product", "Update"]
 authors: rachelcodat
-
+---
 Our hosted link flow UI has been updated with a cleaner layout and now allows users to connect their integrations in any order. There is also now the option to make (linking more secure)[./250101-secure-linking].
 
 <!--truncate-->
