@@ -15,7 +15,7 @@ Please reach out to your account manager to enable the new link flow and let the
 
 If you are using the secure linking the following changes will occur: 
 
-#### Hosted/Self built Link
+#### Hosted or self built Link
 All Link URLs (for the company or data connection) will have a one time passcode added as a query parameter. For example:
 - Company Link `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0` ->  `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0?link.otp=IVHHW9`
 - Connection Link `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start` -> `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start?otp=IVHHW9`
