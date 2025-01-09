@@ -18,18 +18,24 @@ We’re excited to announce that our Zapier integration now supports subscriptio
 
 ## Who is this relevant for?
 
-Zapier provides no-code workflows that allow different web applications to be used in the same workflow. Their products focus on automating recurring tasks, and users can set up "rules" that set up the flow of data between different tools and services... now including Codat!
+This is relevant for anyone looking to simplify and automate their workflows using Zapier's no-code platform. 
 
-There are two parts to a 'Zap' automation:
-- *Triggers* (if X happens in Source A...)
-- *Actions* (...do Y in B)
+Zapier enables you to connect different web applications and automate repetitive tasks by setting up "rules" that define how data flows between tools and services.
+With Codat now part of Zapier, you can easily build workflows tailored to your needs without writing any code.
 
-The Codat Zapier app exposes all of the [Codat webhooks](/using-the-api/webhooks/event-types) as *triggers*. This means you can start building workflows on top of Codat without writing a line of code.
+### Why should you care?
 
-Some simple use cases might include:
-- Posting a message on Slack or via email whenever a new Company has shared data
-- Post a message when sync errors have occurred
-- Adding companies that you onboard to a spreadsheet automatically
+With the Codat Zapier app, all [Codat webhooks](/using-the-api/webhooks/event-types) are available as *triggers*.
+This makes it possible to automate processes and streamline operations, no matter your technical expertise.
+
+### Example use cases
+
+Here’s how you can use Zapier with Codat:
+- **Real-time notifications** - send a Slack message or email whenever a new company shares data with you.
+- **Error tracking** - post an alert when a sync error occurs to ensure quick resolution.
+- **Data management** - automatically add onboarded companies to a spreadsheet.
+
+If you’re looking to save time and enhance efficiency, this integration is perfect for you!
 
 ## How to get started?
 
