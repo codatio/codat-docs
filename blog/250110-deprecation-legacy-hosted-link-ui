@@ -5,11 +5,9 @@ tags: ["Deprecation"]
 authors: rachelcodat
 ---
 
-On **April 10, 2025**, we will deprecate our legacy hosted link ui following the release of our (new link UI)[250110-new-hosted-link-ui] which now offers a (more secure experience)[250110-secure-linking].
+On **April 10, 2025**, we will deprecate our legacy hosted link ui following the release of our (new link UI)[./250110-new-hosted-link-ui] which now offers a (more secure experience)[./250110-secure-linking].
 
 <!--truncate-->
-
-_Any further details of the upcoming change._
 
 ## Action required
 
