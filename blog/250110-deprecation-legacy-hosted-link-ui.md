@@ -15,7 +15,7 @@ Please reach out to your account manager to enable the new link flow and let the
 
 If you are using the secure linking the following changes will occur: 
 
-### Hosted/Self built Link
+#### Hosted/Self built Link
 All Link URLs (for the company or data connection) will have a one time passcode added as a query parameter. For example:
 - Company Link `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0` ->  `https://link.codat.io/company/7b755b07-9285-4748-90f9-e0636ae69cf0?link.otp=IVHHW9`
 - Connection Link `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start` -> `https://link-api.codat.io/companies/5208c1e6-9ad8-45cf-8d11-05cd44bf7c76/connections/6929c7a4-7089-454d-a482-67b46c16ceba/start?otp=IVHHW9`
@@ -26,7 +26,7 @@ End users will no longer be able to reuse the same link twice so a new URL will 
 
 The invite company link is not supported when secure linking is enabled
 
-###Link SDK
+#### Link SDK
 To use Link SDK with the secure link you will need to retrieve an access token from `api.codat.io/companies/:companyId/accessToken` and set the access token property when initializing Link SDK
 
 ## Expected impact if no action is taken
