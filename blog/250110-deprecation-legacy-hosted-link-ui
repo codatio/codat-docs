@@ -1,11 +1,11 @@
 ---
-title: "2025-01-10: Deprecation of legacy hosted link flow"
+title: "2025-01-10: Deprecation of legacy hosted link UI"
 date: "2025-01-10"
 tags: ["Deprecation"]
 authors: rachelcodat
 ---
 
-On **April 10, 2025**, we will deprecate our legacy hosted link flow following the release of our new link flow which now offers a more secure experience. (Add links here)
+On **April 10, 2025**, we will deprecate our legacy hosted link ui following the release of our (new link UI)[250110-new-hosted-link-ui] which now offers a (more secure experience)[250110-secure-linking].
 
 <!--truncate-->
 
