@@ -3,6 +3,7 @@ title: "2025-01-10: Secure linking"
 date: "2025-01-10"
 tags: ["Product", "Update"]
 authors: rachelcodat
+---
 
 Link now supports a fully secure version to improve the relability of data provided by your customers.
 
