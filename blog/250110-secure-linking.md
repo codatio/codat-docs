@@ -42,4 +42,4 @@ If you are currently adding query parameters to Link URLs (for example, by appen
 
 #### If using Link SDK
 
-To use one-time Link URLs with Link SDK, you need to retrieve an access token for your customer using the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint and pass it when initializing the SDK.
+To enforce the imited validity of Link URLs using the Link SDK, you need to retrieve an access token for your customer using the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint and pass it when initializing the SDK. This serves as an equivalent to a one-time password appended to a Link URL.
