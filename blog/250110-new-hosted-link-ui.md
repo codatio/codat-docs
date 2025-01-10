@@ -23,5 +23,5 @@ This update is relevant for clients who use our Hosted Link flow to connect thei
 
 ## How to get started?
 
-Contact your Codat account manager with the request to enable the new Hosted Link flow. Additionally, inform them if you want to enable the use of one-time Link URLs.
+Contact your Codat account manager with the request to enable the new Hosted Link flow. Additionally, inform them if you want to enable the use of one-time Link URLs, otherwise one-time URLs will be enabled together with the new flow.
 
