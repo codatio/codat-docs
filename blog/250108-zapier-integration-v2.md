@@ -18,7 +18,7 @@ We've published a new version of our Zapier app. With version 2.0, you can:
 - **Create multiple subscriptions** to listen to one or more event types at the same time.
 - **Use the updated webhook schema** for seamless integration.
 
-- ![Zapier event type selection screen](/img/updates/250108-zapier-integration-v2.png)
+![Zapier event type selection screen](/img/updates/250108-zapier-integration-v2.png)
 
 ## Who is this relevant for?
 
