@@ -17,7 +17,7 @@ We have released a new version of our Zapier app that supports our latest webhoo
 2. Click the Zap you want to edit, then click **Edit** on the Zap's trigger tile.
 3. On the trigger detail screen, click **Setup**, then click **Update** and follow on-screen instructions.
 
-![Update Zapier app version](/img/updates/250109-deprecation-zapier-integration-v1.png)
+![Update Zapier app version](/img/updates/250109-deprecation-zapier-integration-v1.gif)
 
 ## Expected impact if no action is taken
 
