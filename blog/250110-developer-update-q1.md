@@ -22,6 +22,32 @@ The SDK's rich configuration properties allow you to build interactions and cust
 
 [Read more →](/updates/241124-bank-feeds-sdk)
 
+### Updated Link flow interface
+
+We have updated the user interface of our Hosted Link experience to match the experience provided by the Link SDK. The Hosted Link flow now boasts a cleaner, adaptive layout and allows users to connect their integrations in any order.
+
+![](/img/updates/hosted-link-updated-UI.png)
+
+[Read more →](/updates/250110-new-hosted-link-ui)
+
+### Introducing one-time Link URLs
+ 
+To reduce the risk of Link URLs being leaked or reused, we have introduced the option to limit the validity and number of uses of these URLs. When enabled, your customers won't be able to use the same Link URL more than once, and links will expire after one day even if they weren't used.
+
+[Read more →](/updates/250110-secure-linking)
+
+### Zapier app 2.0 released
+ 
+We’re excited to announce that we've upgraded our Zapier integration, making it even easier to automate your workflows. Codat app version 2.0 supports our latest [webhook event types](/using-the-api/webhooks/event-types), allows you to listen to multiple event types at the same time, and uses the updated webhook schema.
+
+[Read more →](/updates/250108-zapier-integration-v2)
+
+### New company update endpoint
+ 
+You can now use our new [Update company](/platform-api#/operations/update-company) endpoint to update specific company properties without impacting others. To differentiate the methods used by endpoints, we have also renamed our existing endpoint that overwrites all company values to [Replace company](/platform-api#/operations/replace-company).
+
+[Read more →](/updates/250108-update-or-replace-company)
+
 ### Filter companies using tags
 
 You can now use the `tags` query parameter on the [List companies](/platform-api#/operations/list-companies) endpoint to filter your companies by one or more tags.
@@ -111,4 +137,14 @@ If you are using these webhook event types, update your corresponding webhook co
 
 ## Changes planned for April 10, 2025
 
-There are no changes to our services scheduled for the 10th of April, 2025.
+### Deprecation of Zapier app version 1.0
+ 
+On **April 10, 2025**, we will deprecate version 1.0 of our Zapier app following the [release of version 2.0](/updates/250108-zapier-integration-v2) that supports our [latest webhook event types](/using-the-api/webhooks/event-types). To ensure the non-stop service of your workflows, update your existing Zaps to use the latest version of our app before **April 10, 2025**.
+ 
+[Read more →](/updates/250109-deprecation-zapier-integration-v1)
+
+### Deprecation of legacy Hosted Link UI
+ 
+On **April 10, 2025**, we will deprecate our legacy Hosted Link user interface following the release of our [new Hosted Link UI](/updates/250110-new-hosted-link-ui). If you haven't enabled the new Hosted Link UI by **April 10, 2025**, we will automatically enable it for you, and you won't be able to return to the legacy UI.
+ 
+[Read more →](/updates/250110-deprecation-legacy-hosted-link-ui)
