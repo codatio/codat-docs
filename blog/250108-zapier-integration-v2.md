@@ -6,7 +6,7 @@ hide_table_of_contents: true
 authors: dcoplowe
 ---
 
-We’re excited to announce that we've upgraded our Zapier integration to support subscriptions to our latest [webhook event types](/using-the-api/webhooks/event-types), making it easier than ever to automate your workflows.
+We’re excited to announce that we've upgraded our Zapier integration to support our latest [webhook event types](/using-the-api/webhooks/event-types), making it even easier to automate your workflows.
 
 <!--truncate-->
 
