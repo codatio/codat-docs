@@ -7,7 +7,7 @@ Our QuickBooks Desktop connector enables SMBs who use QuickBooks Desktop to shar
 
 - QuickBooks Desktop app
 - QuickBooks Enterprise Cloud
-- Right Networks
+- Rightworks
 
 The connector utilizes the Intuit Web Connector, a Windows application that runs on the SMB user's local machine.
 
