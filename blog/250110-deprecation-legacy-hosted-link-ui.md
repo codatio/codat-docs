@@ -13,7 +13,7 @@ The new [Hosted Link interface](/updates/250110-new-hosted-link-ui) boasts a cle
 
 ## Action required
 
-Contact your Codat account manager with the request to enable the new Hosted Link flow. Additionally, inform them if you want to enable the use of one-time Link URLs.
+Contact your Codat account manager with the request to enable the new Hosted Link flow. Additionally, inform them if you want to disable the use of one-time Link URLs, otherwise this functionality will be enabled by default.
 
 You can learn more about the new [Hosted Link interface](/updates/250110-new-hosted-link-ui) and [one-time Link URLs](/updates/250110-secure-linking) before submitting your request.
 
