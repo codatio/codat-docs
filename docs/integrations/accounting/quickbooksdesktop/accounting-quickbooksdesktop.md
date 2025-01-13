@@ -3,24 +3,11 @@ title: "QuickBooks Desktop (on-premise)"
 description: "Learn about our QuickBooks Desktop on-premise connector"
 ---
 
-:::caution New web connector documentation
-
-This documentation describes the use of our new QuickBooks Desktop web connector. If you are using our legacy on-premise connector, refer to the previous version of our documentation:
-
-* [QuickBooks Desktop (on-premise) overview](/integrations/accounting/quickbooksdesktop/legacy/accounting-quickbooksdesktop)
-* [Install the QuickBooks Desktop connector on Right Networks](/integrations/accounting/quickbooksdesktop/legacy/install-qbd-connector-right-networks)
-* [Install the QuickBooks Desktop connector](/integrations/accounting/quickbooksdesktop/legacy/installing-the-quickbooks-connector)
-* [FAQs](/integrations/accounting/quickbooksdesktop/legacy/quickbooks-desktop-faq)
-* [Troubleshooting](/integrations/accounting/quickbooksdesktop/legacy/quickbooks-desktop-troubleshooting)
-* [QuickBooks Desktop requirements](/integrations/accounting/quickbooksdesktop/legacy/software-and-hardware-requirements)
-
-:::
-
 Our QuickBooks Desktop connector enables SMBs who use QuickBooks Desktop to share their consented accounting data through the Codat platform, supporting the following ways of connecting to QBD:
 
 - QuickBooks Desktop app
 - QuickBooks Enterprise Cloud
-- Right Networks
+- Rightworks
 
 The connector utilizes the Intuit Web Connector, a Windows application that runs on the SMB user's local machine.
 
@@ -30,7 +17,7 @@ View the coverage of our QuickBooks Desktop connector in the [Data coverage expl
 
 :::caution Attachments not supported
 
-Uploading and downloading attachments to QuickBooks Desktop is not supported for any data type. This functionality is not supported by the QuickBooks SDK.
+Uploading and downloading attachments to QuickBooks Desktop is not supported for any data type. This functionality is not supported by Intuit's own QuickBooks SDK.
 
 :::
 

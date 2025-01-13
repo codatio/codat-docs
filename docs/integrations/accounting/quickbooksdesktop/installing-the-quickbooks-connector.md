@@ -42,7 +42,7 @@ Before they start the linking process, the user must open QuickBooks Desktop and
 
 If the user selects "QuickBooks Desktop app" on the initial Link screen, they will be directed to download the web connector from a Codat Link URL.
 
-If they select "QuickBooks Enterprise Cloud" or "Right Networks", they will immediately proceed to the [next step](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#2-run-the-configuration-file-to-authorize-access-to-quickbooks) as these hosted environments already have the web connector installed.
+If they select "QuickBooks Enterprise Cloud" or "Rightworks", they will immediately proceed to the [next step](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#2-run-the-configuration-file-to-authorize-access-to-quickbooks) as these hosted environments already have the web connector installed.
 
 :::info Connector download file
 
