@@ -28,14 +28,6 @@ import Cards from "@components/Cards";
   >
     Use our <a href="/get-started/libraries">client library SDKs</a> to get building quickly.
   </Cards.Card>
-
-  <Cards.Card
-    image="/img/cochat/logo-openai-mini.png"
-    title="Ask Cochat"
-    className="dark hypercard"
-  >
-    Get instant assistance with{" "}<a href="https://cochat.codat.io" target="_blank">Cochat,</a> our beta AI tool trained on the Codat docs. Try <a href="https://cochat.codat.io" target="_blank">asking it a question</a>{" or "}<a href="/cochat">read more</a>.
-  </Cards.Card>
 </Cards>
 
 ## Beginner guides
