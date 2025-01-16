@@ -15,27 +15,6 @@ const RaiseSupportTicket = () => {
       </div>
       <div className="container">
         <ul className="card-container">
-          <li className="card dark hypercard">
-            <div className="header">
-              <img
-                src="/img/cochat/logo-openai-mini.png"
-                className="mini-icon"
-              />
-              <h3>Ask Cochat</h3>
-            </div>
-            <p>
-              Having trouble? Get instant assistance with{" "}
-              <a href="https://cochat.codat.io" target="_blank">
-                Cochat,
-              </a>{" "}
-              our beta AI tool trained on the Codat docs. Try{" "}
-              <a href="https://cochat.codat.io" target="_blank">
-                asking it a question
-              </a>
-              {" or "}
-              <a href="/cochat">read more</a>.
-            </p>
-          </li>
           <li className="card animation-pulse">
             <div className="header">
               <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
