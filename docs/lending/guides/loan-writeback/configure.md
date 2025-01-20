@@ -670,7 +670,7 @@ String lendersBankAccountId = sourceAccountResponse.oneOf.sourceAccountV2.id;
 
 #### Map source account
 
-To complete the setup, create a representation of the source account in the accounting software. Use the [Create bank feed account mapping](/lending-api#/operations/create-bank-account-mapping) endpoint to achieve this, mapping the source account without assigning a target account. This will create a target account automatically.
+To complete the setup, create a representation of the source account in the accounting software. Use the [Create bank feed account mapping](/lending-api#/operations/create-bank-account-mapping) endpoint to achieve this, mapping the source account without assigning a target account. When implementing for Xero, this will create a target account automatically on the next operation (e.g. when you call the [List bank feed account mappings](https://docs.codat.io/lending-api#/operations/get-bank-account-mapping) endpoint).
 
 <Tabs>
 
