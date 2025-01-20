@@ -6998,8 +6998,8 @@
         ]
       },
       "SourceAccountBatchCreateResponse": {
-        "title": "Batch source account request created response",
-        "description": "The account ID and source account object of the successfully created source account.",
+        "title": "Batch source account request creation response",
+        "description": "Account ID and resulting object of the batch `Create source account` request.",
         "type": "object",
         "properties": {
           "sourceAccountId": {
@@ -7010,7 +7010,28 @@
             ]
           },
           "result": {
-            "$ref": "#/components/schemas/SourceAccount"
+            "$ref": "#/components/schemas/SourceAccountBatchCreateResponse/definitions/sourceAccountBatchCreateResult"
+          }
+        },
+        "definitions": {
+          "sourceAccountBatchCreateResult": {
+            "title": "Source Account Batch Create Result",
+            "description": "Status details and corresponding object of the `Create account` operation.",
+            "type": "object",
+            "properties": {
+              "statusCode": {
+                "type": "integer",
+                "description": "The HTTP status code for the creation of the source account"
+              },
+              "error": {
+                "type": "string",
+                "nullable": true,
+                "description": "A brief description of the error."
+              },
+              "account": {
+                "$ref": "#/components/schemas/SourceAccount"
+              }
+            }
           }
         }
       },
@@ -7280,8 +7301,8 @@
         ]
       },
       "SourceAccountV2BatchCreateResponse": {
-        "title": "Batch source account (v2) request created response",
-        "description": "The account ID and source account object of the successfully created source account.",
+        "title": "Batch source account (v2) creation response",
+        "description": "Account ID and resulting object of the batch `Create source account` request.",
         "type": "object",
         "properties": {
           "sourceAccountId": {
@@ -7292,7 +7313,28 @@
             ]
           },
           "result": {
-            "$ref": "#/components/schemas/SourceAccountV2"
+            "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse/definitions/sourceAccountV2BatchCreateResult"
+          }
+        },
+        "definitions": {
+          "sourceAccountV2BatchCreateResult": {
+            "title": "Source Account V2 Batch CreateResult",
+            "description": "Status details and corresponding object of the `Create account` operation.",
+            "type": "object",
+            "properties": {
+              "statusCode": {
+                "type": "integer",
+                "description": "The HTTP status code for the creation of the source account"
+              },
+              "error": {
+                "type": "string",
+                "nullable": true,
+                "description": "A brief description of the error."
+              },
+              "account": {
+                "$ref": "#/components/schemas/SourceAccountV2"
+              }
+            }
           }
         }
       },
