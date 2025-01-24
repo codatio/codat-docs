@@ -20,11 +20,11 @@ We provide a [free account](https://signup.codat.io/) that lets you explore and 
 
 Your new account already has the Accounting API product, the Codat Sandbox integration, and the relevant data types enabled to get you started quicker.
 
-### <input type="checkbox" unchecked /> Update your auth flow settings
+### Update your auth flow settings
 
 On the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections) page, check that **Sandbox integrations** and the **Accounting** integration category are both enabled. Disable the **Commerce** and **Banking** integration categories.
 
-### <input type="checkbox" unchecked /> Listen for webhooks
+### Listen for webhooks
 
 The app uses several webhooks to track the completion of an accounting data connection and the completion of data syncs for the `invoice` and `customer` data types.
 
@@ -61,7 +61,7 @@ We will use [ngrok](https://ngrok.com/) to listen for Codat's webhooks.
    </TabItem>
 </Tabs>
 
-### <input type="checkbox" unchecked /> Configure Codat webhooks
+### Configure Codat webhooks
 
 On the **Settings > Webhooks > [Rules](https://app.codat.io/settings/webhooks/rules)** page, create two rules for all companies, one for each webhook we will use:
 
@@ -74,7 +74,7 @@ Click **Create rule** to open the new rule creation window. Select the rule type
 
    ![](/img/use-cases/invoice-finance/rule-creation-screen.png)
 
-### <input type="checkbox" unchecked /> Clone the code
+### Clone the code
 
 Clone our demo repo on [GitHub](https://github.com/codatio/demo-invoice-finance) to download the invoice finance lending demo app. 
 

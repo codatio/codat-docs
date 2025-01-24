@@ -54,7 +54,7 @@ This diagram shows the steps of the invoice financing process as performed by th
 ```  
 :::  
 
-### <input type="checkbox" unchecked /> Start a new loan application  
+### Start a new loan application  
 
 :::note Loan application frontend
 
@@ -73,7 +73,7 @@ Codat returns the company and application `id`s in the endpoint response togethe
     "linkUrl": "https://link.codat.io/company/a9e28b79-6a98-4190-948d-3bd4d60e7c0a"
   }
 ```
-### <input type="checkbox" unchecked /> Share financial data  
+### Share financial data  
 
 Next, you need to provide Codat with access to an accounting software so we can fetch the data required to assess the risk of the loan application. Open the `linkUrl` returned in the response from `POST /applications/start` in your browser. Follow the flow built using [Link](/auth-flow/overview), our hosted or embedded integrated authorization flow. 
 
@@ -86,7 +86,7 @@ We fetch the applicant's unpaid invoices, customers associated to these unpaid i
 
 ![](/img/use-cases/invoice-finance/0015-sanbox-inv-finance.png)
 
-### <input type="checkbox" unchecked /> Receive the decision on the loan 
+### Receive the decision on the loan 
 
 The demo app now has all the components that it needs to assess the risk associated with each customer, and risk associated with each invoice. These assessments determine the decision on each unpaid invoice included in the loan request. 
 

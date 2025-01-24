@@ -19,17 +19,17 @@ import TabItem from "@theme/TabItem";
 
 We provide a [free trial](https://signup.codat.io/) that lets you discover our APIs and other products, including Lending. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
 
-### <input type="checkbox" unchecked /> Enable the Lending product 
+### Enable the Lending product 
 
 In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Lending API** in the list of products and enable it. This also enables the data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
 
 We use Lending API's [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
 
-### <input type="checkbox" unchecked /> Update your auth flow settings
+### Update your auth flow settings
 
 In the **Settings > Auth Flow > Link** [settings](https://app.codat.io/settings/link-settings/data-connections), ensure the _Sandbox integrations_ switch is toggled on. Check that the _Accounting_ integration category is enabled, and disable _Commerce_ and _Banking_ integration categories. 
 
-### <input type="checkbox" unchecked /> Listen for webhooks
+### Listen for webhooks
 
 The app will use several webhooks to track the completion of the financial data sync and the categorization of accounts, and Sandbox linking completion. 
 
@@ -66,7 +66,7 @@ We will use [ngrok](https://ngrok.com/) here to listen for Codat's webhooks.
    </TabItem>
 </Tabs>
 
-### <input type="checkbox" unchecked /> Configure Codat webhooks
+### Configure Codat webhooks
 
 In the **Settings > Webhooks > [Rules](https://app.codat.io/settings/webhooks/rules)** section of the Codat Portal, create three rules, one for each webhook we will use:
 
@@ -80,7 +80,7 @@ Click **Create rule** to open the new rule creation window. Select the rule type
 
    ![](/img/use-cases/loan-qualification/rule-creation-screen.png)
 
-### <input type="checkbox" unchecked /> Clone the code
+### Clone the code
 
 Clone our demo repo on [GitHub](https://github.com/codatio/demo-loan-qualification) to download the loan qualification demo app. 
 
