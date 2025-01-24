@@ -167,6 +167,9 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement"
+                      ],
                       "referenceSubsidiaryCompanies": []
                     }
                   },
@@ -180,6 +183,9 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement"
+                      ],
                       "referenceSubsidiaryCompanies": []
                     }
                   },
@@ -193,6 +199,9 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement"
+                      ],
                       "tags": {
                         "region": "us"
                       },
@@ -289,6 +298,12 @@
                           ],
                           "created": "2022-01-01T11:30:00Z",
                           "createdByUserName": "Mike Smith",
+                          "products": [
+                            "supplier-enablement",
+                            "lending",
+                            "expenses-v1",
+                            "commerce"
+                          ],
                           "referenceSubsidiaryCompanies": []
                         }
                       ],
@@ -331,6 +346,11 @@
                           ],
                           "created": "2022-01-01T11:30:00Z",
                           "createdByUserName": "Joe Bloggs",
+                          "products": [
+                            "supplier-enablement",
+                            "lending",
+                            "payables-v2"
+                          ],
                           "referenceSubsidiaryCompanies": []
                         },
                         {
@@ -340,6 +360,9 @@
                           "dataConnections": [],
                           "created": "2022-11-10T10:45:18Z",
                           "createdByUserName": "Dan Tzabar",
+                          "products": [
+                            "supplier-enablement"
+                          ],
                           "referenceSubsidiaryCompanies": [
                             {
                               "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
@@ -377,6 +400,11 @@
                           ],
                           "created": "2022-11-10T10:45:18Z",
                           "createdByUserName": "Dan Tzabar",
+                          "products": [
+                            "lending",
+                            "supplier-enablement",
+                            "payables"
+                          ],
                           "referenceParentCompany": {
                             "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                             "name": "Toft stores",
@@ -406,6 +434,9 @@
                           ],
                           "created": "2022-11-10T10:45:18Z",
                           "createdByUserName": "Dan Tzabar",
+                          "products": [
+                            "supplier-enablement"
+                          ],
                           "referenceParentCompany": {
                             "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                             "name": "Toft stores",
@@ -517,6 +548,12 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement",
+                        "lending",
+                        "expenses-v1",
+                        "commerce"
+                      ],
                       "referenceSubsidiaryCompanies": []
                     }
                   },
@@ -530,6 +567,12 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement",
+                        "lending",
+                        "expenses-v1",
+                        "commerce"
+                      ],
                       "referenceSubsidiaryCompanies": [
                         {
                           "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
@@ -571,6 +614,12 @@
                       ],
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement",
+                        "lending",
+                        "expenses-v1",
+                        "commerce"
+                      ],
                       "referenceParentCompany": {
                         "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                         "name": "Toft stores",
