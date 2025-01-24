@@ -3341,13 +3341,13 @@
                   {
                     "type": "array",
                     "items": {
-                      "$ref": "#/components/schemas/SourceAccountV2"
+                      "$ref": "#/components/schemas/SourceAccountV2/definitions/sourceAccountV2Prototype"
                     }
                   },
                   {
                     "type": "array",
                     "items": {
-                      "$ref": "#/components/schemas/SourceAccount"
+                      "$ref": "#/components/schemas/SourceAccount/definitions/sourceAccountPrototype"
                     }
                   }
                 ]
@@ -6935,7 +6935,7 @@
         ],
         "definitions": {
           "sourceAccountPrototype": {
-            "title": "Source account prototype",
+            "title": "Source account (v1)",
             "type": "object",
             "properties": {
               "id": {
@@ -6962,7 +6962,10 @@
               "modifiedDate": {
                 "$ref": "#/components/schemas/SourceAccount/properties/modifiedDate"
               }
-            }
+            },
+            "required": [
+              "id"
+            ]
           },
           "sourceAccounts": {
             "title": "Source accounts",
@@ -7151,7 +7154,7 @@
         ],
         "definitions": {
           "sourceAccountV2Prototype": {
-            "title": "Source account version 2 prototype",
+            "title": "Source account (v2)",
             "type": "object",
             "properties": {
               "id": {
@@ -7184,7 +7187,15 @@
               "accountInfo": {
                 "$ref": "#/components/schemas/SourceAccountV2/definitions/accountInfo"
               }
-            }
+            },
+            "required": [
+              "id",
+              "accountName",
+              "accountType",
+              "accountNumber",
+              "currency",
+              "balance"
+            ]
           },
           "accountInfo": {
             "title": "Account Info",
