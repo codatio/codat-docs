@@ -67,7 +67,3 @@ You can also sign up and test with **Xero** and **QuickBooks Online**, both of w
 | [Xero](https://central.xero.com/s/article/Use-the-demo-company#Web) 	| Live integration 	| Demo company 	| Demo does not include automatic bank feeds and the ability to invite   other users. You are able to add your own data, but the demo company resets   itself after 28 days. <br/> [Read more](/integrations/accounting/xero/accounting-xero-test) about testing this integration.	|
 | [Zoho Books](https://www.zoho.com/books/signup/) 	| Live integration 	| Test company 	| When setting up a test organisation, you can choose to import or create   test data. <br/> [Read more](/integrations/accounting/zoho-books/accounting-zohobooks-setup) about testing this integration.	|
 | [Plaid](https://plaid.com/docs/sandbox/) 	| Live integration 	| Sandbox environment 	| Initial setup for Plaid needs to be complete to gain access to the   sandbox environment with demo data. <br/> [Read more](/integrations/banking/plaid/test-your-plaid-integration) about testing this integration.	|
-
----
-## Read next
-* Review our [plans and pricing](https://www.codat.io/plans/)

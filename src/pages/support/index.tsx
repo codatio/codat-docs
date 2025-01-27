@@ -43,27 +43,6 @@ const RaiseSupportTicket = () => {
           </li>
           <li className="card">
             <div className="header">
-              <img src="/img/wp-icons/Coins.png" className="mini-icon" />
-              <h3>Sales inquiry</h3>
-            </div>
-            <p>
-              Click{" "}
-              <a href="https://signup.codat.io/" target="_blank">
-                here
-              </a>{" "}
-              to sign up for your free plan, or{" "}
-              <a
-                href="https://www.codat.io/plans/#get-in-touch"
-                target="_blank"
-              >
-                contact our sales team
-              </a>{" "}
-              to schedule a demo and learn about Enterprise pricing
-              opportunities.
-            </p>
-          </li>
-          <li className="card">
-            <div className="header">
               <img src="/img/wp-icons/CreditCard.png" className="mini-icon" />
               <h3>Billing inquiry</h3>
             </div>

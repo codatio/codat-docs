@@ -36,7 +36,7 @@ If you are currently using these integrations and want to continue doing so, you
 
 **Our enterprise plan includes access to all of our integrations, plus access to unit pricing that works at scale, premium technical support, enterprise grade SSO, and more.**
 
-You can either [get in touch here](https://www.codat.io/plans/#get-in-touch) or speak to your account manager (if applicable).
+You can either [get in touch here](https://codat.io/#get-in-touch) or speak to your account manager (if applicable).
 
 ## Expected impact if no action is taken
 

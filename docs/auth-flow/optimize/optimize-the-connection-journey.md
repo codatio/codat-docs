@@ -41,7 +41,7 @@ For further resources on good design practices and some inspiration, Codat recom
 While these recommendations apply universally, some examples are more relevant for specific use cases, such as lending and underwriting, insights, or reconciliation.
 :::
 
-For more examples and further help optimizing your flow, you can contact your account manager if you are on our [Enterprise plan](https://www.codat.io/plans/).
+For more examples and further help optimizing your flow, you can [contact your account manager](https://codat.io/#get-in-touch).
 
 ---
 
