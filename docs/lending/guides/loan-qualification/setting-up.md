@@ -15,9 +15,9 @@ import TabItem from "@theme/TabItem";
 * Set up your local environment
 * Run the demo app
 
-### Create a Codat account 
+### Log into your Codat account 
 
-We provide a [free trial](https://signup.codat.io/) that lets you discover our APIs and other products, including Lending. It also comes equipped with a sample company. When you start working on your own loan qualification solution, you may want to explore our other [plans](https://www.codat.io/plans/).
+Log into your Codat Test account. When you start working on your own loan qualification solution, you may want to contact our [Sales team](https://codat.io/#get-in-touch) to implement it in Production. 
 
 ### Enable the Lending product 
 
