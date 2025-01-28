@@ -3410,21 +3410,17 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "anyOf": [
-                          {
-                            "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
-                          },
-                          {
-                            "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
-                          }
-                        ]
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
                       }
-                    }
-                  ]
+                    ]
+                  }
                 }
               }
             }
@@ -3434,24 +3430,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "anyOf": [
-                          {
-                            "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
-                          },
-                          {
-                            "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
-                          },
-                          {
-                            "$ref": "#/components/schemas/SourceAccountBatchErrorResponse"
-                          }
-                        ]
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchErrorResponse"
                       }
-                    }
-                  ]
+                    ]
+                  }
                 }
               }
             }
@@ -3476,24 +3468,20 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "oneOf": [
-                    {
-                      "type": "array",
-                      "items": {
-                        "anyOf": [
-                          {
-                            "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
-                          },
-                          {
-                            "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
-                          },
-                          {
-                            "$ref": "#/components/schemas/SourceAccountBatchErrorResponse"
-                          }
-                        ]
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchErrorResponse"
                       }
-                    }
-                  ]
+                    ]
+                  }
                 }
               }
             }
