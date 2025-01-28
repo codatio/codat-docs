@@ -3472,7 +3472,31 @@
             "$ref": "#/components/responses/Not-Found"
           },
           "409": {
-            "$ref": "#/components/responses/Conflict"
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
+                          },
+                          {
+                            "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
+                          },
+                          {
+                            "$ref": "#/components/schemas/SourceAccountBatchErrorResponse"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
           },
           "429": {
             "$ref": "#/components/responses/Too-Many-Requests"
