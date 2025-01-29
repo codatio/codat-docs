@@ -974,7 +974,7 @@ Called anytime a [Expenses](/expenses/overview) expenses sync fails, this event 
 
 #### SyncConnectionDeleted
 
-This legacy event is specific to our legacy [Sync for Commerce](/commerce/overview) product and indicates that a data connection has been deleted. This has now been replaced by the platform-wide `connection.deleted` event type.
+This legacy event is specific to our legacy [Sync for Commerce](/commerce/overview) solution and indicates that a data connection has been deleted. This has now been replaced by the platform-wide `connection.deleted` event type.
 
 | Rule type | Maps to event type |
 |---|---|

@@ -1,7 +1,7 @@
 ---
 title: "Expenses FAQs"
-sidebar_label: Product help
-description: "Frequently asked questions about Codat's Expenses product"
+sidebar_label: Solution help
+description: "Frequently asked questions about Codat's Expenses solution"
 displayed_sidebar: expenses
 ---
 
@@ -11,7 +11,7 @@ import Questions, { Question } from '@components/Questions';
 	<Question
 		question="Where can I see a roadmap for integration and feature support for Expenses?"
 		answer={`
-Codat does not currently publish a public product roadmap. If you would like to learn more about upcoming product releases, speak to your Codat contact.
+Codat does not currently publish a public solution roadmap. If you would like to learn more about upcoming solution releases, speak to your Codat contact.
 		`}
 	/>
 	<Question
@@ -43,9 +43,9 @@ Moving your existing integrations to Expenses lets you leverage the following be
 
 <p>Our detailed documentation aimed at developers and a variety of <a href="/get-started/libraries">client libraries</a> in multiple languages mean you can get up and running with Expenses quickly.</p>
 
-<li><b>Adjacency to Codat’s product range</b></li>
+<li><b>Adjacency to Codat’s solution range</b></li>
 
-<p>You can use Expenses alongside all Codat products. For example, if you are issuing credit cards, Codat's <a href="https://docs.codat.io/lending/overview" target="_blank">Lending</a> product would allow you to determine the risk associated with the company that has the same <code>companyId</code> and API key.</p>
+<p>You can use Expenses alongside all Codat solutions. For example, if you are issuing credit cards, Codat's <a href="https://docs.codat.io/lending/overview" target="_blank">Lending</a> solution would allow you to determine the risk associated with the company that has the same <code>companyId</code> and API key.</p>
 
 <p>Likewise, you can use our <code>billPayments</code> data type to retrieve a list of bills from your customer's accounting software and enable them to pay these and reconcile their payments.</p>
 
@@ -56,7 +56,7 @@ Moving your existing integrations to Expenses lets you leverage the following be
 		question="What can we reuse from our existing Codat build for Expenses?"
 		answer={`
 <p>You can reuse the chart of accounts, tracking categories, and tax rates settings. However, we recommend using the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-mapping-options">Mapping options</a> endpoint for expenses because of the transaction type support.</p>
-<p>Authentication, company creation and connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat products.</p>
+<p>Authentication, company creation and connection linking journeys can be reused between builds. This is because the companies can use the same Id between Codat solutions.</p>
 		`}
 	/>
 	<Question

@@ -8,7 +8,7 @@ hide_description: true
 sidebar_label: "Build a bank feed to QBO"
 banner_title: Bank Feeds for bank transaction reconciliation in QBO
 banner_image: "/img/banners/bank-feeds.png"
-banner_text: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds product"
+banner_text: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds solution"
 ---  
 
 import Tabs from '@theme/Tabs';
@@ -55,7 +55,7 @@ Use our SDKs to easily implement the bank feeds solution in your app. We strongl
 
 First, install the client library: 
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="csharp" label="C#">
 
@@ -94,7 +94,7 @@ or
 
 Next, import the package and add your Base64 encoded API key within an authorization header. You can copy your authorization header in the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal. In our example, we chose to call the client library `bank_feeds_client`.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="csharp" label="C#">
 
@@ -196,7 +196,7 @@ When an SMB user clicks the button or link you added, initiate the process descr
 
 Use our [Create company](/bank-feeds-api#/operations/create-company) endpoint to trigger company creation, which will represent your SMB customer in Codat. In response, you will receive a company Id, which is required by subsequent endpoints.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="csharp" label="C#">
 
@@ -260,7 +260,7 @@ if companyCreatedRes.Company != nil {
 
 Next, call the [Create connection](/bank-feeds-api#/operations/create-connection) endpoint to establish a data link to QBO Bank Feeds for the company. We pass the response from the previous endpoint in the request, and also include the platform key, which for QBO Bank Feeds is `hcws`.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="csharp" label="C#">
 
@@ -323,7 +323,7 @@ connectionCreatedRes, err := bankFeedsClient.Connections.Create(ctx, operations.
 
 Now, use the [Create source account](/bank-feeds-api#/operations/create-source-account) endpoint to add your SMB's source bank accounts to Codat. These are the accounts the SMB user will be able to connect to QBO Bank Feeds. In the response, you will receive the source account created in the connected platform.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="csharp" label="C#">
 
@@ -414,7 +414,7 @@ In response, you will receive login credentials that your user needs to enter in
 
 ![](/img/use-cases/bank-feeds/0027-qbo-feeds-instruction.PNG)
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="csharp" label="C#">
 
@@ -503,7 +503,7 @@ Use the [Create bank transactions](/bank-feeds-api#/operations/create-bank-trans
 
 Because of the way bank transactions work, we recommend you post seven days of transactions on the initial sync. For subsequent syncs, we recommend you post daily transaction data. 
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="csharp" label="C#">
 

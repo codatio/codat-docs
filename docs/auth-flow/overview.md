@@ -75,9 +75,9 @@ Enhance the auth flow functionality and give your customers the ability to manag
   </li>
 </ul>
 
-## Supported products
+## Supported solutions
 
-Link is compatible with our entire [product range](/using-the-api/overview#apis).
+Link is compatible with our entire [solution range](/using-the-api/overview#apis).
 
 ## Supported integrations
 
@@ -89,7 +89,7 @@ Browser and mobile compatibility of Link varies for different integrations:
 
 :::tip Change management
 
-As with all Codat products, Link SDK is subject to [our change management policy](/using-the-api/change-policy). We will give appropriate notice for changes to our auth flow UI and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
+As with all Codat solutions, Link SDK is subject to [our change management policy](/using-the-api/change-policy). We will give appropriate notice for changes to our auth flow UI and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
 
 We also provide updates in our [SDK changelog](/auth-flow/authorize-embedded-link#changelog).
 

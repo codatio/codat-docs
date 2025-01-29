@@ -229,7 +229,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 **Type**:  `Sync Connection Deleted`   
 **Trigger:** A Sync for Commerce connection is deleted.  
-**Note:** This rule is specific to Sync for Commerce and cannot be used for other products.
+**Note:** This rule is specific to Sync for Commerce and cannot be used for other solutions.
 
 ```json
 {
@@ -248,7 +248,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 **Type**: `Sync Completed`  
 **Trigger:** An expense sync has completed.  
 **Additional data:** `syncId`, `syncType`.  
-**Note:** This rule is specific to Expenses and cannot be used for other products.
+**Note:** This rule is specific to Expenses and cannot be used for other solutions.
 
 ```json
 {
@@ -271,7 +271,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 **Type**: `Sync Failed`  
 **Trigger:** A failure occurred during an expense sync.  
 **Additional data:** `syncId`, `syncType`, `FailureStage`.  
-**Note:** This rule is specific to Expenses and cannot be used for other products.
+**Note:** This rule is specific to Expenses and cannot be used for other solutions.
 
 ```json
 {

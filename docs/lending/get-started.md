@@ -1,7 +1,7 @@
 ---
 title: "Get started with Lending"
 sidebar_label: Get started
-description: "Learn how to perform the initial setup for the Lending product"
+description: "Learn how to perform the initial setup for the Lending solution"
 image: "/img/banners/social/lending.png"
 ---
 
@@ -13,7 +13,7 @@ import ReadNext from "@components/ReadNext";
 
 :::tip Your lending journey
 
-Our Lending product supports the data collection step of your lending journey, which starts in your own web application. Enable Lending and configure it, then embed our [Link SDK](/auth-flow/authorize-embedded-link) in your app to handle the auth flow. Determine where the collected data will be stored and manage the subsequent steps of the lending process in your app. 
+Our Lending solution supports the data collection step of your lending journey, which starts in your own web application. Enable Lending and configure it, then embed our [Link SDK](/auth-flow/authorize-embedded-link) in your app to handle the auth flow. Determine where the collected data will be stored and manage the subsequent steps of the lending process in your app. 
 
 :::
 
@@ -27,7 +27,7 @@ Our Lending product supports the data collection step of your lending journey, w
 
 ### Data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the product. Follow the respective guides for integration-specific instructions. 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the solution. Follow the respective guides for integration-specific instructions. 
 
 Data source coverage varies by feature, so be sure to review the coverage for the features you want to use. 
 
@@ -133,7 +133,7 @@ Once the connection is established, Codat will retrieve data for the data types 
 Use our comprehensive [Lending library](/get-started/libraries) to kick-start and simplify your build.
 Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 

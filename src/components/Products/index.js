@@ -119,7 +119,7 @@ const Products = ({mini, products, verbose}) => {
                   <div className="content">
                     <h4>{product.name}</h4>
                     <p>
-                      <a href={product.link}>Explore product →</a>
+                      <a href={product.link}>Explore solution →</a>
                     </p>    
                   </div>
                 </div>

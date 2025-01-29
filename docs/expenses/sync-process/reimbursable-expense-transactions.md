@@ -17,7 +17,7 @@ Check our [supported expense types](/expenses/overview#supported-integrations) f
 
 :::
 
-With the Expenses product, you need to create the reimbursable expense transactions first. 
+With the Expenses solution, you need to create the reimbursable expense transactions first. 
 
 This will initiate the [sync](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting software. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 

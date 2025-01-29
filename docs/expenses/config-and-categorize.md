@@ -1,6 +1,6 @@
 ---
 title: "Map customer transactions"
-description: Map accounts, suppliers, and customers to create transactions using the Expenses product
+description: Map accounts, suppliers, and customers to create transactions using the Expenses solution
 sidebar_label: Map transactions
 tags: [syncforexpense, mappingOptions, Config]
 ---
@@ -252,7 +252,7 @@ In some cases, your customers might not need to track tax on expenses. We recomm
 
 ### Refresh mapping options
 
-The default [sync settings](/expenses/getting-started#data-types) set for the product's data types will refresh the mapping options on an daily basis, however, you can also refresh the options manually by making a request to the [Mapping options](/sync-for-expenses-api#/operations/get-mapping-options) endpoint.
+The default [sync settings](/expenses/getting-started#data-types) set for the solution's data types will refresh the mapping options on an daily basis, however, you can also refresh the options manually by making a request to the [Mapping options](/sync-for-expenses-api#/operations/get-mapping-options) endpoint.
 
 ``` http
 POST https://api.codat.io/companies/{companyId}/data/all

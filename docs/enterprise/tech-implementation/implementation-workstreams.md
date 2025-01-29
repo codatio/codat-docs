@@ -66,7 +66,7 @@ Key activities include developing automated data ingestion pipelines, ensuring d
 
 Mapping external data to your products, such as credit models for lending, requires meticulous planning and execution. 
 
-Activities will be specific to the use case and product consuming external data, but could include analyzing external data sources to identify relevant data points, developing algorithms and models to integrate this data into your existing products, conducting rigorous testing and validation, and continuously refining the models based on performance and feedback.
+Activities will be specific to the use case and solution consuming external data, but could include analyzing external data sources to identify relevant data points, developing algorithms and models to integrate this data into your existing products, conducting rigorous testing and validation, and continuously refining the models based on performance and feedback.
 
 | Key inputs | Key outputs |
 | ----------- | ----------- |

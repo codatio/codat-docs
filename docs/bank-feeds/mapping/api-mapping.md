@@ -20,7 +20,7 @@ Use the [List bank feed account mappings](/bank-feeds-api#/operations/get-bank-a
 
 These options are filtered based on the currency and the type of the source account. For example, if the source account is a credit card in a USD currency, the endpoint will only return USD credit accounts as options.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -177,7 +177,7 @@ Sometimes the mapping isn't immediately saved to the underlying accounting softw
 
 Poll the [List bank feed account mappings](/bank-feeds-api#/operations/get-bank-account-mapping) endpoint until the status changes to `connected`. You can then proceed to create bank transactions in the target account.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 

@@ -1,6 +1,6 @@
 ---
 title: Manage bills
-description: "View and create bills using Bill Pay"
+description: "View and create bills using Codat's async Bill Pay solution"
 sidebar_label: Manage bills
 ---
 
@@ -8,17 +8,16 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem"
 import RetrieveBills from '../_retrieve-bills.md'
 import CreateBills from '../_create-bills.md'
+import UploadAttachment from '../_upload-attachment.md'
 
 :::tip Invoices or bills?
 
-We distinguish between invoices where the company *owes* money and those where the company *is owed* money. 
-
-If the company receives an invoice and owes money as a result, we call this a **bill**.
+We distinguish between invoices where the company *owes* money and those where the company *is owed* money. If the company receives an invoice and owes money as a result, we call this a **bill**.
 :::
 
 ## Overview
 
-In Codat, a bill represents an *accounts payable* invoice issued to an SMB by their [supplier](../terms/supplier). With Bill Pay, you can:
+In Codat, a bill represents an *accounts payable* invoice issued to an SMB by their supplier. With asynchronous Bill Pay, you can:
 
 - Retrieve and update your customer's existing bills.
 - Create new bills in your system and reflect them in your customer's accounting software.  
@@ -49,28 +48,34 @@ We have highlighted this alternative sequence of steps in our detailed process d
 
 </details>
 
-:::tip Narrow down the supplier list
+## Retrieve bills
 
-Supplier endpoints of the async Bill Pay solution provide full, unfiltered supplier records. You can use [query parameters](/using-the-api/querying) to narrow down the list of results. For example:
+:::tip Narrow down the bill list
 
-- `status=Active` returns only active suppliers.
-- `defaultCurrency=USD` returns suppliers that provide goods or services in dollars.
-- `supplierName=Acme` returns suppliers with a name that matches the query.
-
-You can use [query parameters](/using-the-api/querying) to narrow down the list of results, for example:
+Bill endpoints of the async Bill Pay solution provide full, unfiltered bill records. You can use [query parameters](/using-the-api/querying) to narrow down the list of results. For example:
 
 - `supplierRef.supplierName=acme` returns bills associated with the specified supplier.
 - `dueDate>2023-06-01&&dueDate<2023-06-30` returns bills due for payment between 1 and 30 June.
 - `amountDue>0` returns outstanding bills with non-zero due amounts.
 :::
 
-<RetrieveBills listendpoint="/sync-for-payables-api#/operations/list-suppliers" createendpoint="/sync-for-payables-api#/operations/create-supplier" />
+<RetrieveBills listendpoint="/sync-for-payables-api#/operations/list-suppliers" createendpoint="/sync-for-payables-api#/operations/create-supplier" downloadendpoint="/sync-for-payables-api#/operations/download-bill-attachment" />
+
+## Create bill
+
+:::tip Reference data
+
+Bills should always correspond to a supplier that issued them. Ensure the relevant supplier exists before creating a new bill.
+
+You may also need to associate the bill's line items with a specific account or tax rate. Use the [List accounts](/sync-for-payables-api#/operations/list-accounts) or [Create account](/sync-for-payables-api#/operations/create-account) endpoints to manage available reference accounts and [List tax rates](/sync-for-payables-api#/operations/list-tax-rates) to view tax rates available to assign. 
+
+:::
+
+<CreateBills endpoint="/sync-for-payables-api#/operations/create-bill" />
 
 ## Update bill
 
-In some cases, your SMB customer may want to update their existing bill - for example, to change a tax rate, change a nominal code for a line item, or associate it to a different supplier. 
-
-Use our [Update bill](/sync-for-payables-api#/operations/update-bill) endpoint to perform this operation.
+In some cases, your SMB customer may want to update their existing bill - for example, to change a tax rate, change a nominal code for a line item, or associate it to a different supplier. Use our [Update bill](/sync-for-payables-api#/operations/update-bill) endpoint to perform this operation.
 
 <Tabs groupId="language">
 
@@ -209,8 +214,6 @@ billUpdateResponse, err := payablesClient.Bills.Update(ctx, operations.UpdateBil
 
 </Tabs>
 
-add a tax rates and accounts section
-
 ## Delete bill
 
 In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill. 
@@ -270,106 +273,10 @@ billDeleteResponse, err := payablesClient.Bills.Delete(ctx, operations.DeleteBil
 
 </Tabs>
 
-## Upload attachment
-
-When creating a new bill, your SMB customer may want to save a copy of the PDF invoice issued by their supplier against the bill in their accounting software. Use the [Upload bill attachment](/sync-for-payables-api#/operations/upload-bill-attachments) endpoint to support this action. 
-
-Different accounting software supports different file formats and sizes. View the [attachment schema](/sync-for-payables-api#/schemas/Attachment) for integration-specific guidance or check the platform's own documentation. 
-
-<Tabs groupId="language">
-
-<TabItem value="nodejs" label="TypeScript">
-
-```javascript
-const fileName = 'bill-receipt.pdf';
-var fs = require('fs');
-var fileBuffer = fs.readFileSync(fileName, null).buffer;
-var fileArray = new Uint16Array( fileBuffer.slice(266,(sizeofArray*sizeOfArrayElement));
-
-const attachmentUploadResponse = await payablesClient.bills.uploadAttachment({
-    attachmentUpload: {
-      file: {
-        content: fileArray,
-        fileName: fileName,
-      },
-    },
-    billId: billId,
-    companyId: companyId,
-    connectionId: connectionId,
-  });
-```
-
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-file_name = 'bill-receipt.pdf'
-with open(file_name, mode='rb') as file:
-    contents = file.read()
-    attachment_upload_request = operations.UploadBillAttachmentRequest(
-        attachment_upload=shared.AttachmentUpload(
-            file=shared.CodatFile(
-                content=contents,
-                file_name=file_name,
-            ),
-        ),
-        bill_id=bill_id,
-        company_id=company_id,
-        connection_id=connection_id,
-    )
-    attachment_upload_response = payablesClient.bills.upload_attachment(attachment_upload_request)
-```
-
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```csharp
-var fileName = "bill-receipt.pdf";
-var file = File.ReadAllBytes(fileName);
-
-var attachmentUploadResponse = await payablesClient.Bills.UploadAttachmentAsync(new() {
-    AttachmentUpload = new AttachmentUpload() {
-        File = new CodatFile() {
-            Content = file,
-            FileName = fileName,
-        },
-    },
-    BillId = billId,
-    CompanyId = companyId,
-    ConnectionId = connectionId,
-};);
-```
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-fileName := "bill-receipt.pdf"
-content, err := os.ReadFile(fileName)
-
-ctx := context.Background()
-attachmentUploadResponse, err := payablesClient.Bills.UploadAttachment(ctx, 
-  operations.UploadBillAttachmentRequest{
-    AttachmentUpload: &shared.AttachmentUpload{
-      File: shared.CodatFile{
-        Content: content,
-        FileName: fileName,
-      },
-    },
-    BillID: billID,
-    CompanyID: companyID,
-    ConnectionID: connectionID,
-  }
-)
-```
-</TabItem>
-
-</Tabs>
+<UploadAttachment endpoint="/sync-for-payables-api#/operations/upload-bill-attachments" schema="/sync-for-payables-api#/schemas/Attachment" />
 
 ---
 
 ## Read next
 
-- [Manage your customers' payment methods](/payables/mapping) so they can choose how to make payments.
+- Enable your customers to [make payments](/payables/async/payments) covering their outstanding bills.

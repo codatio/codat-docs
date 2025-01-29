@@ -60,7 +60,7 @@ You can retrieve the data read and enriched by the feature by calling the **sale
 
 For example, recurring revenue-based lenders seeking to evaluate month-on-month growth can utilize the [Get commerce revenue metrics](/lending-api#/operations/get-commerce-revenue-metrics) endpoint.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -242,7 +242,7 @@ if err == nil && revenueResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending product enabled, configure your instance to work with our sales feature. 
+Once you have the Lending solution enabled, configure your instance to work with our sales feature. 
 
 #### Configure data sources
 

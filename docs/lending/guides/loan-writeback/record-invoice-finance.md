@@ -56,7 +56,7 @@ outstandingAmount = invoiceAmount - advanceAmount - feeAndInterestAmount
 ```
 Store `outstandingAmount` and `outstandingAmountTransferDate` in your application for use later on.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -210,7 +210,7 @@ Check the [Get create direct cost model](/lending-api#/operations/get-create-dir
 
 Store the `feeAndInterestAmount` and the direct cost's `issueDate` for use later on in your application.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -437,7 +437,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 Next, use the [Create payment](/lending-api#/operations/create-payment) endpoint to acknowledge payment has been received for the invoice. Store the `invoicePaymentDate` for use later on in your application.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -629,7 +629,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 Finally, use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint again to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account. You will need the previously stored values for this operation.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -824,4 +824,4 @@ In this guide, you have learned:
 ## Read next
 
 * Check out our [invoice finance guide](/lending/guides/invoice-finance/introduction) to see how you can make automated decisions on selected invoices.
-* Review other features of the [Lending](/lending/overview) product.
+* Review other features of the [Lending](/lending/overview) solution.

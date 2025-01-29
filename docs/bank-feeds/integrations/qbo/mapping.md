@@ -32,7 +32,7 @@ The Revoke credentials button appears immediately after their credentials are ge
 Should you desire a more integrated user experience, you have the option to generate and display the credentials directly within your own application through the API.
 To do this, call the [Generate credentials](/bank-feeds-api#/operations/generate-credentials) endpoint.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -102,7 +102,7 @@ Credentials for a company can be revoked at any point by using the [Delete crede
 
 This will remove **all** credentials associated with the company, if you wish to reconnect the company and re-establish the bank feed, you should generate new credentials via the Credentials page or API.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 

@@ -19,17 +19,16 @@ module.exports = [
       section: "Prerequisites",
     },
   },
+  "payables/configure-customer",
   {
     type: "doc",
-    id: "payables/async/configure-customer",
+    id: "payables/async/suppliers",
     customProps: {
       hr: true,
       section: "Asynchronous solution",
     },
   },
-  "payables/async/suppliers",
   "payables/async/bills",
-  "payables/async/mapping",
   "payables/async/payments",
   {
     type: "doc",
@@ -46,15 +45,12 @@ module.exports = [
   },
   {
     type: "doc",
-    id: "payables/bill-pay-kit",
-    label: "Bill pay kit",
+    id: "payables/sync/suppliers",
     customProps: {
       hr: true,
       section: "Synchronous solution",
     },
   },
-  "payables/sync/configure-customer",
-  "payables/sync/suppliers",
   "payables/sync/bills",
   "payables/sync/pay-bill",
     {

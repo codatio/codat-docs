@@ -1,12 +1,12 @@
 ---
 title: "Loan qualification build guide"
-description: "Lend with Codat and our Lending product" 
+description: "Lend with Codat and our Lending solution" 
 displayed_sidebar: "lending"
 hide_title: true
 hide_description: true
 banner_title: Loan qualification
 banner_image: "/img/banners/risk-cropped.png"
-banner_text: "Lend with Codat and our Lending product"
+banner_text: "Lend with Codat and our Lending solution"
 sidebar_label: "Introduction"
 ---
 
@@ -43,7 +43,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 The app's codebase is available via our [GitHub repo](https://github.com/codatio/demo-loan-qualification). Clone it locally to try out the application.
 
-The codebase uses Codat and its [Lending](/lending/overview) product to make a lending decision. We will walk you through the setup in the Portal and the code [next](/guides/loan-qualification/setting-up).
+The codebase uses Codat and its [Lending](/lending/overview) solution to make a lending decision. We will walk you through the setup in the Portal and the code [next](/guides/loan-qualification/setting-up).
 
 ### Why we use _Lending_
 

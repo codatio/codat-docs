@@ -125,4 +125,4 @@ For example, if you're using the [NewCompanySynchronized](/using-the-api/webhook
 
 To perform the test, build and publish your workflow first. Zapier will generate a new webhook consumer in Codat, including a description of the event type to which the trigger subscribes. Follow [our testing instructions](/using-the-api/webhooks/create-consumer#test-a-webhook-consumer) to test the Zapier webhook consumer.
 
-Alternatively, you can wait for a Codat product or service to trigger your Zap.
+Alternatively, you can wait for a Codat solution or service to trigger your Zap.

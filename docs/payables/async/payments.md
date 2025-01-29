@@ -1,37 +1,16 @@
 ---
 title: Record and reconcile bill payments
-sidebar_label: Record payments
+sidebar_label: Pay bills
 description: "Record and reconcile bill payments in the SMB's accounting software"
 image: "/img/banners/social/payables.png"
 ---
 
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
 ## Overview
 
-Once the mapping is complete, your SMB customer will make a payment from your application, which you should then record and reconcile back to the SMB's accounting software. A **bill payment** represents an allocation of money within any of your customer's accounts payable (AP) accounts.
-
-You can see how this flow completes on our detailed process diagram below. 
-
-<details>
-<summary><b>Detailed process diagram</b></summary>
-
-```mermaid
-
-  sequenceDiagram
-      participant smb as SMB customer
-      participant app as Your application 
-      participant codat as Codat
-      participant acctg as Accounting software
-      
-      smb ->> app: Pays a bill
-      app ->> codat: Creates bill payment
-      codat ->> acctg: Records bill payment
-      acctg ->> smb: Displays paid bill
-```
-
-</details>
+Finally, your SMB customer will make a payment from your application, which you should then record and reconcile back to the SMB's accounting software. A **bill payment** represents an allocation of money within any of your customer's accounts payable (AP) accounts.
 
 We built **async Bill Pay** to handle a wide range of bill pay scenarios, for example:
 
@@ -39,32 +18,314 @@ We built **async Bill Pay** to handle a wide range of bill pay scenarios, for ex
 - An allocation of a supplier's credit note to a bill or a refund
 - A bill payment made directly to an AP account, e.g. an overpayment or a prepayment
 
-## Ways to pay a bill
-
-In this diagram, we have summarized approaches to bill payments and reconciliation that are available to you via Bill Pay. Next, we will go through those options in detail. 
+We have summarized the approaches to bill payments and reconciliation available to you on the diagram:
 
 ![A diagram of all bill payment options that Bill Pay supports](/img/payables/payables-payment-type.png)
 
-### Single bill payment
+## Manage payment accounts
 
-If your SMB customer is making a payment to pay off a bill in full, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and include the following properties in the request:
+Your SMB customers may have multiple bank accounts they can use to pay for a bill. In your application, enable them to select or create the account the payment should originate from.
 
-- A `totalAmount` value (**always positive**) that indicates the amount of the bill that was paid. 
-- A `lines` array that contains one element with the following properties:
-  - An `amount` equal to the `totalAmount` above
-  - A `links` array that contains one element with the following properties:
-    - A `type` of link, in this case a `Bill`
-    - An `id` of the bill that was paid
-    - An `amount` with value of **`-totalAmount`** to indicate the full amount is allocated to the bill.
+<details>
+<summary><b>Foreign currency payments</b></summary>
+
+To facilitate payments in a foreign currency, you can:
+- Convert the payment to the currency of the account.
+- Create a new account in the payment currency.
+
+Use the [Get create/update bank account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoint to view the list of the company's currently enabled currencies. It can return:
+
+- *Single value*: the account's base currency in platforms that only support the base currency
+- *Multiple values*: several currencies enabled by the SMB user in their accounting software
+- *No values*: empty array for platforms where any and all currencies can be selected
+
+</details>
+
+### Retrieve accounts
+
+If your SMB customer is making payments from an existing bank account, retrieve a list of their accounts and allow them to map payment methods against each one. 
+
+Use the [List accounts](/sync-for-payables-api#/operations/list-accounts) endpoint and filter by `isBankAccount=true` to return a list of valid bank accounts.
+
+<Tabs groupId="language">
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const accountsListResponse = await payablesClient.accounts.list({
+    companyId: companyId,
+    query: 'isBankAccount=true'
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+accounts_list_request = operations.ListAccountsRequest(
+    company_id=company_id,
+    query='isBankAccount=true'
+)
+
+accounts_list_response = payables_client.accounts.list(accounts_list_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accountsListResponse = await payablesClient.Accounts.ListAsync(new ListAccountsRequest() {
+    CompanyId = companyId,
+    Query = "isBankAccount=true"
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+accountsListResponse, err := payablesClient.Accounts.List(ctx, operations.ListAccountsRequest{
+    CompanyID: companyID,
+    Query: "isBankAccount=true"
+})
+```
+</TabItem>
+
+</Tabs>
+
+### Create account
+
+If the SMB customer plans to make payments from a new payment method or account that you provide, create the new account in their accounting software. The account will contain their transactions, making the SMB's payment reconciliation workflows easier. 
+
+You can also use the [Get create bank account model](/sync-for-payables-api#/operations/get-create-bankAccounts-model) or [Get create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoints first to check integration-specific requirements for account creation, or [read more](/using-the-api/push) about creating data with Codat.
+
+<details>
+<summary><b>Create account in Sage Intacct</b></summary>
+
+For Sage Intacct, use the [Create account](/sync-for-payables-api#/operations/create-account) endpoint to reflect that account in the customer's accounting software. 
+
+<Tabs groupId="language">
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const accountCreateResponse = await payablesClient.accounts.create({
+	accountPrototype: {
+    name: "BillPay Debit Account"
+		fullyQualifiedName: "BillPay Debit Account",
+    fullyQualifiedCategory: "Asset.Current",
+		nominalCode: "610",
+		currency: "USD",
+    status: AccountStatus.Active,
+    type: AccountType.Asset,
+		currentBalance: 0,
+	},
+  companyId: companyId,
+	connectionId: connectionId
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+account_create_request = operations.CreateAccountRequest(
+	account_prototype=shared.AccountPrototype(
+		name='BillPay Debit Account',
+		fully_qualified_name='BillPay Debit Account',
+    fully_qualified_category='Asset.Current',
+    nominal_code='610',
+		currency='USD',
+    status=shared.AccountStatus.ACTIVE,
+    type=shared.AccountType.ASSET,
+		current_balance=0,
+	),
+  company_id=company_id,
+	connection_id=connection_id
+)
+
+account_create_response = payables_client.accounts.create(account_create_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accountCreateResponse = await payablesClient.Accounts.CreateAsync(new CreateAccountRequest() {
+  AccountPrototype = new AccountPrototype(){
+    Name = "BillPay Debit Account",
+		FullyQualifiedName = "BillPay Debit Account",
+    FullyQualifiedCategory = "Asset.Current",
+    NominalCode = "610",
+		Currency = "USD",
+    Status = AccountStatus.Active,
+    Type = AccountType.Asset,
+		CurrentBalance = 0,
+	},
+  CompanyId = companyId,
+	ConnectionId = connectionId
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+accountCreateResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAccountRequest{
+	AccountPrototype: &shared.AccountPrototype{
+    Name: syncforpayables.String("BillPay Debit Account"),
+		FullyQualifiedName: syncforpayables.String("BillPay Debit Account"),
+    FullyQualifiedCategory: syncforpayables.String("Asset.Current"),
+    NominalCode: syncforpayables.String("610"),
+		Currency: syncforpayables.String("USD"),
+    Status: shared.AccountStatusActive.ToPointer(),
+    Type: shared.AccountTypeAsset.ToPointer(),
+		CurrentBalance: 0
+	},
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+})
+```
+</TabItem>
+
+</Tabs>
+
+</details>
+
+<details>
+<summary><b>Create account in other integrations</b></summary>
+
+To create a new bank account in MYOB, Xero, QuickBooks Online, or NetSuite use the [Create bank account](/sync-for-payables-api#/operations/create-bank-account) endpoint.
+
+Xero doesn't support the creation of credit accounts.
+
+<Tabs groupId="language">
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const accountCreateResponse = await payablesClient.accounts.create({
+	account: {
+		accountName: "BillPay Debit Account",
+		accountType: AccountType.Debit,
+		accountNumber: "80088008",
+		currency: "USD",
+		balance: 0,
+		availableBalance: 0,
+	},
+    companyId: companyId,
+	connectionId: connectionId
+  });
+```
+
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+account_create_request = operations.CreateAccountsRequest(
+	account=shared.Account(
+		account_name="BillPay Debit Account",
+		account_type=shared.AccountType.DEBIT,
+		account_number="80088008",
+		currency="USD",
+		balance=0,
+		available_balance=0,
+	)
+    company_id=company_id,
+	connection_id=connection_id
+)
+
+account_create_response = payables_client.accounts.create(account_create_request)
+```
+
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```csharp
+var accountCreateResponse = await payablesClient.Accounts.CreateAsync(new CreateAccountRequest() {
+	Account=new Account(){
+		AccountName = "BillPay Debit Account",
+		AccountType = AccountType.Debit,
+		AccountNumber = "80088008",
+		Currency = "USD",
+		Balance = 0,
+		AvailableBalance = 0,
+	}
+    CompanyId = companyId,
+	ConnectionId = connectionId
+});
+```
+
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+accountsResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAccountRequest{
+	Account: &shared.Account{
+		AccountName: syncforpayables.String("BillPay Debit Account"),
+		AccountType: AccountType.Debit,
+		AccountNumber: "80088008",
+		Currency: syncforpayables.String("USD"),
+		Balance: 0,
+		AvailableBalance: 0,
+	},
+    CompanyID: companyID,
+    ConnectionID: connectionID,
+})
+```
+</TabItem>
+
+</Tabs>
+
+</details>
+
+#### Choosing an account type
+
+Use the following `accountType` values that correspond to the payment methods you provide. 
+
+| **Payment method**                                                    | **Account type** |
+|-----------------------------------------------------------------------|------------------|
+| Automated Clearing House (ACH)   or Real-Time Payments (RTP) networks | `Debit`          |
+| Cheque/check payments                                                 | `Debit`          |
+| Electronic bank transfer                                              | `Debit`          |
+| BACS (Bankers' Automated   Clearing System)                           | `Debit`          |
+| Commercial/business credit   card                                     | `Credit`         |
+| BNPL (Buy Now, Pay Later)                                             | `Credit`         |
+
+## Single bill payment
+
+If your SMB customer is making a payment to pay off a **single bill in full**, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and include the following properties in the request:
+
+| Property      | Details                                                                                                                                                                                                   |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `totalAmount` | **Always positive** value that indicates the amount of the bill that was   paid                                                                                                                           |
+| `lines`       | Array that contains one element with the following:   <ul><li>`amount` equal to the `totalAmount` of the payment</li><li>`links` array that must contain one element</li></ul>                            |
+| `links`       | Array that contains one element with the following: <ul><li>`type` of link, in this case a `Bill`</li><li>`id` of the bill that was paid</li><li>`amount` with value of **`-totalAmount`** to indicate the full   amount is allocated to the bill</li></ul> |
 
 In case of **partial payments**, use the same endpoint and adjust the `amount` values according to the amount of the partial payment.
 
-When paying a bill, pay attention to the following:
+:::tip Bill payment tips
+
+When paying a bill, check the following:
 
 - `supplierRef.id` is the same `id` as the `supplierRef.id` on the bill.
-- `accountRef.id` is the account the payment is made from as indicated during mapping.
+- `accountRef.id` is the payment account indicated during mapping.
 - `totalAmount` is the same as the `amountDue` on the bill.
 - `date` is the date that the payment is made to the supplier.
+
+:::
 
 For example, review the bill mapped from Xero in the dropdown below and see how it can be paid using the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) in the subsequent code snippets.
 
@@ -122,7 +383,7 @@ For example, review the bill mapped from Xero in the dropdown below and see how 
 ```
 </details>
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -272,7 +533,7 @@ billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
 
 </Tabs>
 
-### Multiple bill payment
+## Multiple bill payment
 
 Your SMB customer may want pay multiple bills from a single supplier using one payment. Use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint to do so and include a `lines` array with multiple elements for each bill and its respective amount.
 
@@ -508,13 +769,13 @@ Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for
 
 </details>
 
-### Batch bill payment
+## Batch bill payment
 
 In some accounting software (for example, Xero) your SMB customer can make a batch payment. It allows them to pay multiple bills from multiple suppliers in a single payment.
 
-To do this with Bill Pay, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and leave the `supplierRef` parameter blank.
+To do this with async Bill Pay, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and leave the `supplierRef` parameter blank.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -720,11 +981,9 @@ billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
 
 </Tabs>
 
-### Bill credit note
+## Bill credit note
 
-If a company receives a credit note from their supplier, the company could use it to partially or fully offset the balance of any outstanding bills from the same supplier. 
-
-With Bill Pay, you can do that using the following steps:
+If your customer receives a credit note from their supplier, they can use it to partially or fully offset the balance of any outstanding bills from the same supplier. You can reflect that with Bill Pay as follows:
 
 1. Create a bill credit note.
 2. Allocate the credit note to a bill.
@@ -733,7 +992,7 @@ With Bill Pay, you can do that using the following steps:
 
 Start by creating a credit note using our [Create bill credit note](/sync-for-payables-api#/operations/create-bill-credit-note) endpoint. 
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -1210,7 +1469,7 @@ Now that you have the credit note, offset its balance against outstanding bills.
 
 In some accounting software, you can combine a credit note and a partial payment to pay off the full balance of a bill.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -1555,7 +1814,7 @@ Credit note allocations are coming soon for MYOB.
 
 </details>
 
-### Delete bills and payments
+## Delete bills and payments
 
 In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill. 
 
@@ -1563,7 +1822,7 @@ Use the [Delete bill](/sync-for-payables-api#/operations/delete-bill) and [Delet
 
 #### Delete bills
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -1618,7 +1877,7 @@ billDeleteResponse, err := payablesClient.Bills.Delete(ctx, operations.DeleteBil
 
 #### Delete bill payments
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -1675,7 +1934,7 @@ billPaymentDeleteResponse, err := payablesClient.BillPayments.Delete(ctx,
 
 :::tip Recap
 
-This concludes the bill pay process supported by our Bill Pay product. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system. 
+This concludes the bill pay process supported by our asynchronous Bill Pay solution. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system. 
 
 As a result, the customer will see these bills marked as paid in their software and their accounts payable liability and supplier balances reduced.
 

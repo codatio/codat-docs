@@ -1,6 +1,6 @@
 ---
 title: "Get started with Bank Feeds"
-description: "Understand the basics of using the Bank Feeds product and learn how to perform the initial setup for the product"
+description: "Understand the basics of using the Bank Feeds solution and learn how to perform the initial setup for the solution"
 sidebar_label: Get started
 displayed_sidebar: bankfeeds
 ---
@@ -53,7 +53,7 @@ Reach out to your Codat account manager to enable Bank Feeds for your client.
 
 ## Manage data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the product. 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the solution. 
 
 <IntegrationsList integrations={bankfeedsIntegrations}/>
 
@@ -83,7 +83,7 @@ Codat supports a range of [webhook events](/using-the-api/webhooks/event-types) 
 Use our comprehensive [Bank Feeds library](/get-started/libraries) to kick-start and simplify your build. 
 Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -194,7 +194,7 @@ func main() {
 
 :::tip Recap
 
-You have enabled Bank Feeds, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the product. 
+You have enabled Bank Feeds, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhook. This completes the initial setup of the solution. 
 
 Next, you will create a Codat [company](../terms/company), its [connection](../terms/connection), and a source bank account to build out the core infrastructure required to establish a bank feed.
   

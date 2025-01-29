@@ -48,7 +48,7 @@ To upload an attachment to a record, include the company ID, relevant connection
 
 In the example below, we are uploading an attachment for our `bills` data type.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="typescript" label="TypeScript">
 

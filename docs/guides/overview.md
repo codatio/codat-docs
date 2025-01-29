@@ -46,7 +46,7 @@ Our current guides and tutorials:
         </p>    
       </div>
     </div>
-    <p>Lend against invoices leveraging our Lending product</p>
+    <p>Lend against invoices leveraging our Lending solution</p>
   </li>
   <li className="card mini">
     <div className="card-row">

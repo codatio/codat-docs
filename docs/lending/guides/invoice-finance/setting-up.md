@@ -18,7 +18,7 @@ import TabItem from "@theme/TabItem";
 
 We provide a [free account](https://signup.codat.io/) that lets you explore and test our APIs and other products. It also comes equipped with a sample company. When you start working on your own invoice financing solution, you may want to explore our other [plans](https://www.codat.io/plans/).
 
-Your new account already has the Accounting API product, the Codat Sandbox integration, and the relevant data types enabled to get you started quicker.
+Your new account already has the Accounting API solution, the Codat Sandbox integration, and the relevant data types enabled to get you started quicker.
 
 ### <input type="checkbox" unchecked /> Update your auth flow settings
 

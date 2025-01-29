@@ -9,7 +9,7 @@ import Products from "@components/Products";
 
 A bank feed is a connection between a source bank account—in your application—and a target bank account in a supported accounting software.
 
-Read more about our [Bank Feeds](/bank-feeds/overview) product.
+Read more about our [Bank Feeds](/bank-feeds/overview) solution.
 
 ## Set up bank feeds integrations
 
@@ -20,6 +20,6 @@ Read more about our [Bank Feeds](/bank-feeds/overview) product.
 - [Exact Online (NL)](/integrations/accounting/exact-online/accounting-exact-online)
 - [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
 
-## Relevant products
+## Relevant solutions
 
 <Products mini={true} products={["Bank Feeds"]}/>

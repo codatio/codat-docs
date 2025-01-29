@@ -52,7 +52,7 @@ Use our [Create bank transactions](/bank-feeds-api#/operations/create-bank-trans
 A maximum of 1000 bank transactions can be written at a time.
 :::
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 

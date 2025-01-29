@@ -38,7 +38,7 @@ Common uses of our liabilities feature include:
 
 You can retrieve the data read by the feature by calling the **liabilities** [endpoints of our API](/lending-api#/operations/generate-loan-transactions). For example, use the [Get loan summaries](/lending-api#/operations/get-loan-summary) endpoint to review a company's loan repayment history and determine their drawdown to repayment ratio.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -248,7 +248,7 @@ if generateSummaryResponse.StatusCode == 202 {
 
 ## Get started
 
-Once you have the Lending product enabled, configure your instance to work with our liabilities feature. 
+Once you have the Lending solution enabled, configure your instance to work with our liabilities feature. 
 
 #### Configure data sources
 

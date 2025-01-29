@@ -81,7 +81,7 @@ You can retrieve the data read and enriched by this feature by [downloading a re
 
 For example, a company's gearing ratio can be calculated using data returned by the [Get categorized balance sheet statement](/lending-api#/operations/get-categorized-balance-sheet-statement) endpoint. Check out our [loan qualification demo app](https://github.com/codatio/demo-loan-qualification/tree/main#demo-loan-qualification) written in C# to learn how to calculate other ratios. 
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -250,7 +250,7 @@ if err == nil && reportResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending product enabled, configure your instance to work with our financial statements feature. 
+Once you have the Lending solution enabled, configure your instance to work with our financial statements feature. 
 
 #### Configure data sources
 

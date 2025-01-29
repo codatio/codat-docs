@@ -1,7 +1,7 @@
 ---
 title: "Get started with Expenses"
 sidebar_label: "Get started"
-description: View the core steps required to perform the initial setup for the Expenses product
+description: View the core steps required to perform the initial setup for the Expenses solution
 tags: [syncforexpense, gettingstarted, prerequisites, platformsupport]
 displayed_sidebar: expenses
 ---
@@ -90,7 +90,7 @@ You can also choose to enable additional data types that may enhance your Expens
 
 ### Manage data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the product. 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the solution. 
 
 You can also view detailed configuration instructions by clicking on the relevant tile:
 
@@ -128,7 +128,7 @@ Use our comprehensive [Expenses library](/get-started/libraries) to kick-start a
 
 :::tip Recap
 
-You have enabled Expenses, set up the relevant integrations, configured auth flow parameters, and noted the recommended event types. This completes the initial setup of the product.
+You have enabled Expenses, set up the relevant integrations, configured auth flow parameters, and noted the recommended event types. This completes the initial setup of the solution.
 
 Next, you will create a company and its connections to build out the core infrastructure required to manage expenses with Codat.
 

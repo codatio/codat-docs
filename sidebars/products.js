@@ -13,7 +13,7 @@ module.exports = [
     className: "top-level-item top-level-item-single products product supplier-enablement",
     id: "supplier-enablement/overview",
     customProps: {
-      section: "Commercial banking",
+      section: "Spend insights",
     },
   },
   {

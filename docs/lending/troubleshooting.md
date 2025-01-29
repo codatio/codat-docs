@@ -19,7 +19,7 @@ image: "/img/banners/social/lending.png"
 | 215 | Data connection not found or data connection is not an accounting data source. | 
 | 220 | Access denied. | 
 | 230 | Company has no data source connected. | 
-| 300 | You don't have the Lending product enabled. Enable Lending in the Codat Portal or contact your sales representative. | 
+| 300 | You don't have the Lending solution enabled. Enable Lending in the Codat Portal or contact your sales representative. | 
 | 320 | Calculated equity for one or more periods don't equal net assets. | 
 | 330 | Can't generate Excel for company `{companyId}` because required parameters are missing from the request. | 
 | 331 | Can't generate report for type `{reportType}`. | 

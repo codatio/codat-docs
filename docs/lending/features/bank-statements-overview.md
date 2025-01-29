@@ -85,7 +85,7 @@ You can retrieve the data read and enriched by the feature by [downloading a rep
 
 For example, use the [Get categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) endpoint to precisely calculate the current position of the company's outstanding loans.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -208,7 +208,7 @@ if err == nil && statementResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending product enabled, configure your instance to work with our bank statements feature. 
+Once you have the Lending solution enabled, configure your instance to work with our bank statements feature. 
 
 #### Configure data sources
 

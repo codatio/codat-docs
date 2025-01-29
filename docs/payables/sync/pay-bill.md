@@ -1,42 +1,52 @@
 ---
-title: Solution kit for the bill pay scenario
-sidebar_label: Pay single bills
+title: Create bill payments
+sidebar_label: Pay a bill
 displayed_sidebar: payables
-description: "Simplify the deployment of the bill pay process to your app with our solution kit"
+description: "Record and reconcile bill payments in the SMB's accounting software"
 ---
 
-## Pay a bill
+## Overview
 
-With the Bill pay kit, your customer can create a new bill or view and choose a bill from a list of unpaid bills from their accounting software. 
+Finally, your SMB customer will make a payment from your application, which you should then record and reconcile back to the SMB's accounting software. A **bill payment** represents an allocation of money within any of your customer's accounts payable (AP) accounts.
 
-### Create a bill
+:::tip Bill type coverage
+Our **sync Bill Pay** solution focuses on providing a fast implementation experience and streamlined recording of payments. As a result, it supports payments of **single bills only**. If you want to cover more bill types, review our [async Bill Pay solution](/payables/async/payments).
+:::
 
-Use the [Create bill](/sync-for-payables-v2-api#/operations/create-bill) endpoint to create a new bill in your SMB customer's accounting software. Ensure you have the following detail:
+## Manage payment accounts
 
-1. Tax rate and a nominal account
+:::tip Foreign currency payments
 
-    You  need to provide a tax rate and a nominal account that the bill will be recorded against. Call our [Get bill mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-bills) endpoint to get this detail from your customer's accounting software. 
+If you facilitate payments in a foreign currency, you should convert the payment to the currency of the account or create a new account in that currency.
 
-2. Supplier record
+:::
 
-    Bills should always correspond to a supplier that issued them. Use the [List suppliers](https://docs.codat.io/sync-for-payables-v2-api#/operations/list-suppliers) endpoint to check that the relevant supplier exists and then associate it with the bill. You can use querying to retrieve only active suppliers or suppliers created within a specific timeframe. If the supplier doesn't exist, you can create it using the [Create supplier](https://docs.codat.io/sync-for-payables-v2-api#/operations/create-suppliers) endpoint.
+Your SMB customers may have multiple bank accounts they can use to pay for a bill. In your application, enable them to set the bank account the payment should originate from.
 
-Use the [Upload bill attachment](https://docs.codat.io/sync-for-payables-v2-api#/operations/upload-bill-attachment) endpoint to assign an attachment against a specific `billId`. This ensures your accounts payable flow has a full audit trail for your SMB and confirms the legitimacy and accuracy of the transaction in the accounting software. 
+### Retrieve accounts
 
-### Retrieve a bill
+If your SMB customer is making payments from an existing bank account, retrieve a list of their accounts and allow them to map payment methods against each one. Use the [Get payment mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-payments) endpoint to do so. 
 
-When the [List bills](/sync-for-payables-v2-api#/operations/list-bills) endpoint is called, you will receive a list of all outstanding bills. We define outstanding bills as those with the status of `Open` and `Partially paid`. 
+By default, this endpoint returns a list of active bank accounts. You can use [querying](/using-the-api/querying) to change that.
 
-Alongside these bills, you can also view attachments for a specific bill using the [List bill attachments](/sync-for-payables-v2-api#/operations/list-bill-attachments) endpoint and download them by calling the [Download bill attachment](/sync-for-payables-v2-api#/operations/download-bill-attachment) endpoint.
+### Create account
+
+If the SMB customer plans to make payments from a new payment method or account that you provide, create the new account in their accounting software using our simplified [Create bank account](/sync-for-payables-v2-api#/operations/create-bank-account) endpoint. The account will contain their transactions, making the SMB's payment reconciliation workflows easier. 
 
 ## Record a payment 
 
-When an SMB pays their bill in your application, use the [Create bill payment](/sync-for-payables-v2-api#/operations/create-bill-payment) endpoint to represent an allocation of money within any of your customer's accounts payable accounts. 
-
-To create the payment, your SMB customer must set the bank account used to process the payment. You can retrieve and display a list of relevant accounts using the [Get payment mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-payments) endpoint.
-
 :::tip Partial payments
 
-The kit is built for the scenario where a single bill is paid in full. If you need to record a partial payment, use the same [Create bill payment](/sync-for-payables-v2-api#/operations/create-bill-payment) endpoint and adjust the values to reflect the amount of the partial payment.
+Our sync Bill Pay solution supports payments where a singe bill is paid **in full**. To record a partial payment, use the same endpoint and adjust the values to reflect the amount of the partial payment.
+
+:::
+
+When an SMB pays their bill in your application, use the [Create bill payment](/sync-for-payables-v2-api#/operations/create-bill-payment) endpoint to represent this allocation of money in your customer's accounting software. This endpoint uses a simplified bill payment model, requiring only the following fields: `amount`, `date`, `reference`, `accountRef`, and `currencyRate`.
+
+:::tip Recap
+
+This concludes the bill pay process supported by our synchronous Bill Pay solution. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system. 
+
+As a result, the customer will see these bills marked as paid in their software and their accounts payable liability and supplier balances reduced.
 
 :::

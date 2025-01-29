@@ -12,7 +12,7 @@ We recommend you use an additional instance of Codat for testing purposes. We wo
 
 * All users with access to the existing client
 * Client settings and feature overrides
-* Enabled products and deprecations
+* Enabled solutions and deprecations
 * Integration-specific settings and credentials
 * Client sync settings
 * Webhook consumer endpoints and settings

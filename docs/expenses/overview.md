@@ -24,7 +24,7 @@ import Products from "@components/Products";
 
 ## What is it?
 
-**Expenses** is a standardized API-based product that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
+**Expenses** is a standardized API-based solution that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
 
 With **58% of small businesses** saying they choose one spending solution over another based on **quality of their accounting integrations**, Expenses enables you to write categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
 
@@ -172,4 +172,4 @@ Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify 
 
 ## Read next
 
-* [Start building](/expenses/getting-started) with the Expenses product
+* [Start building](/expenses/getting-started) with the Expenses solution

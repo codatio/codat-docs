@@ -50,7 +50,7 @@ You can retrieve the data read and enriched by the feature by [downloading a rep
 
 For example, invoice finance providers looking to reduce their risk can use the [List reconciled invoices](/lending-api#/operations/list-reconciled-invoices) endpoint to evaluate an SMB's customers ability to repay.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -176,7 +176,7 @@ if invoicesResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending product enabled, configure your instance to work with our accounts receivable feature. 
+Once you have the Lending solution enabled, configure your instance to work with our accounts receivable feature. 
 
 #### Configure data sources
 

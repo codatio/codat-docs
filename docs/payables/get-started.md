@@ -1,7 +1,7 @@
 ---
 title: "Get started with Bill Pay products"
-sidebar_label: Configure product
-description: "View the core steps required to perform the initial setup for the Bill Pay product"
+sidebar_label: Configure solution
+description: "View the core steps required to perform the initial setup for the Bill Pay solution"
 image: "/img/banners/social/payables.png"
 ---
 
@@ -41,7 +41,7 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 ### Manage data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the product. 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the solution. 
 
 You can also view detailed configuration instructions by clicking on the relevant tile:
 
@@ -196,7 +196,7 @@ func main() {
 
 :::tip Recap
 
-You have enabled Bill Pay, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhooks. This completes the initial setup of the product.
+You have enabled Bill Pay, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhooks. This completes the initial setup of the solution.
 
 Next, you will create a company and its connection to build out the core infrastructure required to manage accounts payable with Codat. 
 

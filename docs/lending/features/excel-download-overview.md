@@ -40,7 +40,7 @@ The process to download an Excel report via the API is as follows:
 
 1. [Request](/lending-api#/operations/generate-excel-report) an Excel report for download.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -94,7 +94,7 @@ response, err := lendingClient.ExcelReports.Generate(ctx,
 
 2. [Check the progress status](/lending-api#/operations/get-excel-report-generation-status) of the latest report requested (optional).
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -147,7 +147,7 @@ response, err := lendingClient.ExcelReports.GetStatus(ctx, operations.GetExcelRe
 
 3. [Download](/lending-api#/operations/download-excel-report) the latest Excel report.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 

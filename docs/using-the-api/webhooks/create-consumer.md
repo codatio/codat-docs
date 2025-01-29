@@ -104,7 +104,7 @@ You can use this signature to verify that the message truly came from Codat befo
 
 ### Install library
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="JavaScript">
 
@@ -239,7 +239,7 @@ You need to use the raw request body when verifying webhooks because the cryptog
 Watch out for frameworks that parse the request as JSON and then stringify it, because this will also break the signature verification.
 ::: 
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="JavaScript">
 

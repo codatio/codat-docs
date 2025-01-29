@@ -11,7 +11,7 @@ Our integrations with <a class="external" href="https://plaid.com/" target="_bla
 
 <IntegrationsList sourceType="banking"/>
 
-To view and compare banking data coverage by integration, use the <a  class="external" href="https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&integrationKey=evqv&dataType=bankAccounts" target="_blank">Data coverage explorer</a> and select the **Banking API** product.
+To view and compare banking data coverage by integration, use the <a  class="external" href="https://knowledge.codat.io/supported-features/banking?view=tab-by-data-type&integrationKey=evqv&dataType=bankAccounts" target="_blank">Data coverage explorer</a> and select the **Banking API** solution.
 
 ## Banking sandbox
 
