@@ -1515,26 +1515,6 @@
           }
         }
       }
-    },
-    "Sync Connection Deleted": {
-      "post": {
-        "deprecated": true,
-        "requestBody": {
-          "description": "A Sync for Commerce connection is deleted.\n\nThis event type has been deprecated. Subscribe to the `connection.deleted` event type instead.",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SyncConnectionDeletedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
     }
   },
   "components": {
@@ -3108,66 +3088,6 @@
                 "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
               }
             }
-          }
-        ]
-      },
-      "SyncConnectionDeletedWebhook": {
-        "title": "Sync connection deleted webhook",
-        "description": "A Sync for Commerce connection is deleted.",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/parameters/clientId/schema"
-          },
-          "ClientName": {
-            "type": "string",
-            "description": "Name of your client in Codat."
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "RuleId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the rule.",
-            "deprecated": true
-          },
-          "RuleType": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "34d52a089f08a"
-            },
-            "description": "The type of rule."
-          },
-          "AlertId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the webhook event."
-          },
-          "Message": {
-            "type": "string",
-            "description": "A human-readable message about the webhook."
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Sync Connection Deleted",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Sync connection for company 8a210b68-6988-11ed-a1eb-0242ac120002 deleted"
-          },
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Sync Connection Deleted",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Sync connection for company Tesco (8a210b68-6988-11ed-a1eb-0242ac120002) deleted"
           }
         ]
       },
