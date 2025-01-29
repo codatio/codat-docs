@@ -2131,46 +2131,6 @@
           }
         }
       }
-    },
-    "SyncCompleted": {
-      "post": {
-        "deprecated": true,
-        "description": "Triggered anytime an expense sync completes. Used for Sync for Expenses only.\n\n> This event type is deprecated. Use the `expenses.sync.successful` to get notified when an expense sync completes successfully.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SyncCompleteWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "SyncFailed": {
-      "post": {
-        "deprecated": true,
-        "description": "Indicates a failure occurred during an expense sync. Used for Sync for Expenses only.\n\n> This event type is deprecated. Use the `expenses.sync.unsuccessful` to get notified when an expense sync completes unsuccessfully.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SyncFailedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
     }
   },
   "components": {
