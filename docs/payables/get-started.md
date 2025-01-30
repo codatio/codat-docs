@@ -1,5 +1,5 @@
 ---
-title: "Get started with Bill Pay products"
+title: "Get started with Bill Pay solution"
 sidebar_label: Configure solution
 description: "View the core steps required to perform the initial setup for the Bill Pay solution"
 image: "/img/banners/social/payables.png"
