@@ -448,6 +448,41 @@ svix verify --secret whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw --msg-id msg_p5jXN8A
 
 </Tabs>
 
+## Transform webhook properties in-flight
+
+Sometimes, you may need to modify webhook properties before they are sent to your application.  
+With transformations, you can adjust the webhook's HTTP method, target URL, and message schema to better fit your needs.
+
+### Applying a transformation  
+
+In the [Codat Portal](https://app.codat.io/monitor/events), go to **Monitor > Webhooks > Events** and select the endpoint where you want to apply a transformation.  
+
+In the **Transformations** section, click **Edit transformations**.
+A code block will appear containing the function handler that receives and returns the `WebhookObject`.
+
+The handler must return the modified `WebhookObject`; otherwise, no transformation will be applied.  
+
+
+![A fragment of the webhook transformations UI used to edit transformations](/img/use-the-api/webhooks-transformation-edit.png)
+
+#### `WebhookObject` properties  
+
+| Property        | Type    | Description |
+|----------------|---------|-------------|
+| **`method`**   | string  | The HTTP method used to communicate with your application. Codat supports only `POST` (default) or `PUT`. |
+| **`url`**      | string  | The endpoint URL where the message will be sent. |
+| **`payload`**  | object  | A JSON object representing the full webhook event schema. This is not just the `payload` component of Codat’s schemas but the complete event schema for each event type, which can be modified as needed. |
+| **`cancel`**   | bool    | Determines whether to cancel the webhook dispatch. Defaults to `false`. Canceled messages appear as successful dispatches in logs. |
+
+## Example: canceling requests using Company tags  
+
+You may want to prevent webhook notifications for specific groups of companies due to compliance reasons or business rules.  
+Using [company tags](/using-the-api/managing-companies#add-metadata-to-a-company), you can tag companies and cancel webhook events for those with a specific tag using transformations.  
+
+In this example, webhooks are canceled for companies with the tag `us-compliant` set to `true`.
+
+![An example of the us-compliant transformation](/img/use-the-api/webhooks-transformation-example.png)  
+
 ---
 
 ## Read next
