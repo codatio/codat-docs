@@ -1,6 +1,6 @@
 ---
 title: "Shopify update: company relink may be required"
-date: "2025-01-10"
+date: "2025-01-31"
 tags: ["Product", "Update"]
 authors: dcoplowe
 ---
