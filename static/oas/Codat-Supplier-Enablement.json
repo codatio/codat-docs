@@ -308,6 +308,176 @@
       }
     }
   },
+  "webhooks": {
+    "reports.spendAnalysis.generate.successful": {
+      "post": {
+        "description": "Called when a spend analysis report is successfully generated.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "title": "Report generation webhook",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "description": "Unique identifier of the event."
+                  },
+                  "eventType": {
+                    "type": "string",
+                    "description": "The type of event.",
+                    "examples": [
+                      "reports.categorizedBankStatement.generate.successful",
+                      "reports.creditModel.generate.successful"
+                    ]
+                  },
+                  "generatedDate": {
+                    "$ref": "#/components/schemas/DateTime",
+                    "description": "The date time in UTC the event was generated in Codat."
+                  },
+                  "payload": {
+                    "$ref": "#/webhooks/reports.spendAnalysis.generate.successful/post/requestBody/content/application~1json/schema/definitions/ReportGenerationPayload"
+                  }
+                },
+                "definitions": {
+                  "ReportGenerationPayload": {
+                    "title": "Report generation payload",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "format": "uuid",
+                        "example": "a78e2625-7190-4d94-ae3b-071320451026",
+                        "description": "Unique identifier of the report."
+                      },
+                      "referenceCompany": {
+                        "title": "Company reference",
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "$ref": "#/components/parameters/companyId/schema"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "The name of the company",
+                            "example": "Codat Ltd."
+                          },
+                          "description": {
+                            "nullable": true,
+                            "type": "string",
+                            "example": "Requested early access to the new financing scheme.",
+                            "description": "Additional information about the company. This can be used to store foreign IDs, references, etc."
+                          },
+                          "links": {
+                            "type": "object",
+                            "description": "A collection of links for the company.",
+                            "properties": {
+                              "portal": {
+                                "type": "string",
+                                "format": "uri",
+                                "description": "Link to the company page in the portal."
+                              }
+                            }
+                          },
+                          "tags": {
+                            "title": "Tags",
+                            "type": "object",
+                            "maxProperties": 10,
+                            "propertyNames": {
+                              "pattern": "^.{1,27}$"
+                            },
+                            "additionalProperties": {
+                              "type": "string",
+                              "maxLength": 100
+                            },
+                            "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Successful": {
+                  "value": {
+                    "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+                    "eventType": "reports.spendAnalysis.generate.successful",
+                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "payload": {
+                      "id": "bb42ce7e-720a-4ac5-b640-f24f53ff47c8",
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "reports.spendAnalysis.generate.unsuccessful": {
+      "post": {
+        "description": "Called when a spend analysis report has failed to be generated for a company.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/webhooks/reports.spendAnalysis.generate.successful/post/requestBody/content/application~1json/schema"
+              },
+              "examples": {
+                "Unsuccessful": {
+                  "value": {
+                    "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+                    "eventType": "reports.spendAnalysis.generate.unsuccessful",
+                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "payload": {
+                      "id": "bb42ce7e-720a-4ac5-b640-f24f53ff47c8",
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    }
+  },
   "components": {
     "schemas": {
       "AnalysisSummary": {
