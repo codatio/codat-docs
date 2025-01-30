@@ -130,6 +130,8 @@ As a result, the lender's account transactions balance to zero, and the advance 
 
   You should also create and connect a test company to use while building your solution.
 
+* As a lender, use Codat's [Bank Feeds](/bank-feeds/overview) solution to represent your bank account in Codat's domain. Keep hold of the [source bank account](/bank-feeds-api#/operations/create-source-account) `id` as you will use it when recording deposits and repayments. 
+
 * Familiarize yourself with Codat's asynchronous approach to [writing data](/using-the-api/push), which leverages [webhooks](/using-the-api/webhooks/overview). This process can be summarized as follows:
 
 ```mermaid

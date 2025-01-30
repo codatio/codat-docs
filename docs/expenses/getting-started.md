@@ -1,7 +1,7 @@
 ---
-title: "Get started with Sync for Expenses"
+title: "Get started with Expenses"
 sidebar_label: "Get started"
-description: View the core steps required to perform the initial setup for Sync for Expenses
+description: View the core steps required to perform the initial setup for the Expenses solution
 tags: [syncforexpense, gettingstarted, prerequisites, platformsupport]
 displayed_sidebar: expenses
 ---
@@ -13,7 +13,7 @@ import TabItem from "@theme/TabItem"
 
 ## Journey overview
 
-The diagram below represents the end-to-end sync process for writing expenses from your application to your SMB customer's accounting software. Once you decide to build with Sync for Expenses, you need to configure Codat accordingly. Let's go through these requirements in detail.
+The diagram below represents the end-to-end sync process for writing expenses from your application to your SMB customer's accounting software. Once you decide to build with Expenses, you need to configure Codat accordingly. Let's go through these requirements in detail.
 
 ```mermaid
 
@@ -50,18 +50,18 @@ sequenceDiagram
     app ->> smb: Marks expense as uploaded
 ```
 
-## Enable Sync for Expenses
+## Enable Expenses
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Settings > Organizational settings > Products**.
-3. In the list of products, find _Sync for Expenses_ and click **Enable**. Then, follow the on-screen prompt.
+3. In the list of products, find _Expenses_ and click **Enable**. Then, follow the on-screen prompt.
 
-## Configure Sync for Expenses
+## Configure Expenses
 ### Data types
 
-By default, the data types required for Sync for Expenses will be activated automatically when Sync for Expenses is enabled for your Codat instance. If you need to manage the data types, navigate to **Settings > Integrations > Data types** in the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
+By default, the data types required for Expenses will be activated automatically when Expenses is enabled for your Codat instance. If you need to manage the data types, navigate to **Settings > Integrations > Data types** in the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
 
-Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Sync for Expenses with the following settings: 
+Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Expenses with the following settings: 
 
 | Data type name | `dataType` | Use case | Fetch on first link? | Sync frequency |
 | :- | :- | :- | :- | :- |
@@ -75,14 +75,14 @@ Enable the [data types](/core-concepts/data-type-settings#override-the-default-s
 
 #### Additional data types
 
-You can also choose to enable additional data types that may enhance your Sync for Expenses experience. With these, you can choose the [synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) and first link fetch based on your requirements. We recommend setting it to a daily or a monthly sync.
+You can also choose to enable additional data types that may enhance your Expenses experience. With these, you can choose the [synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) and first link fetch based on your requirements. We recommend setting it to a daily or a monthly sync.
 
 <details>
   <summary>Additional data types</summary>
 
 | Data type name | `dataType` | Solution enhancement |
 | :- | :- | :- | 
-| Direct costs        | `directCosts`        | Sync for Expenses uses direct cost to represent the expense transaction within the accounting software.        |
+| Direct costs        | `directCosts`        | Expenses uses direct cost to represent the expense transaction within the accounting software.        |
 | Direct incomes      | `directIncomes`      | Direct incomes are used to represent any income-generating transaction type, such as cashback rewards.    |
 | Journal entries     | `journalEntries`     | Journal entries are used when an accounting software does not support a representation of direct costs. They are also used to represent transfers, such as topping up or paying down an expense card.   |
 | Transfers           | `transfers`          | A record of an expense transaction between two bank accounts, such as topping up or paying down the expense card.        |
@@ -90,7 +90,7 @@ You can also choose to enable additional data types that may enhance your Sync f
 
 ### Manage data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the product. 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the solution. 
 
 You can also view detailed configuration instructions by clicking on the relevant tile:
 
@@ -98,7 +98,7 @@ You can also view detailed configuration instructions by clicking on the relevan
 
 ### Authorization flow
 
-As part of using Sync for Expenses, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow.
+As part of using Expenses, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/authorize-embedded-link) - our pre-built, embeddable, conversion-optimized, and white-labeled authorization flow.
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
@@ -108,7 +108,7 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 ### Webhooks
 
-Codat supports a range of [event types](/using-the-api/webhooks/event-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to set up the following webhook consumers and get the most out of Sync for Expenses:
+Codat supports a range of [event types](/using-the-api/webhooks/event-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to set up the following webhook consumers and get the most out of Expenses:
 
 - [NewCompanySynchronized](/using-the-api/webhooks/event-types)
 
@@ -124,11 +124,11 @@ Codat supports a range of [event types](/using-the-api/webhooks/event-types) to 
 
 ### Client libraries
 
-Use our comprehensive [Sync for Expenses library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
+Use our comprehensive [Expenses library](/get-started/libraries) to kick-start and simplify your build. Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
 :::tip Recap
 
-You have enabled Sync for Expenses, set up the relevant integrations, configured auth flow parameters, and noted the recommended event types. This completes the initial setup of the product.
+You have enabled Expenses, set up the relevant integrations, configured auth flow parameters, and noted the recommended event types. This completes the initial setup of the solution.
 
 Next, you will create a company and its connections to build out the core infrastructure required to manage expenses with Codat.
 
@@ -138,5 +138,5 @@ Next, you will create a company and its connections to build out the core infras
 
 ## Read next
 
-- Check out our [client libraries](/get-started/libraries) to kick start your Sync for Expenses build.
+- Check out our [client libraries](/get-started/libraries) to kick start your Expenses build.
 - [Configure customer](/expenses/configure-customer) to continue building your expense management process.

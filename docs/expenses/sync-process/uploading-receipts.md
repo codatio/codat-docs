@@ -78,4 +78,4 @@ Alternatively, the user can upload the correct file directly to the accounting s
 ---
 ## Read next
 
-* Try Sync for Expenses in our interactive [API reference](/sync-for-expenses-api#/)
+* Try the Expenses solution in our interactive [API reference](/sync-for-expenses-api#/)

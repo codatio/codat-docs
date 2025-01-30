@@ -74,4 +74,4 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 In this reference section, you have learned and understood in detail the data points we chose for our loan qualification model, how we fetched the data used in the calculation of these data points, and how all of this influenced the decision on the loan made automatically. 
 
-Next, you can find out more about [Lending API](/lending/overview), or explore other use cases.
+Next, you can find out more about [Lending](/lending/overview), or explore other use cases.

@@ -41,7 +41,7 @@ The alternative process will differ for each product, but might involve uploadin
 
 This question should be added into a wider set of FAQs that are surfaced within the Strategic Consent Journey.
 
-#### “Will you share my data with any third parties”
+#### “Will you share my data with any third parties?”
 
 A customer might be concerned that their data will be used for reasons other than the specific product or journey they are connecting via.
 

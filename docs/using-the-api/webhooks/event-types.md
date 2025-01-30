@@ -26,23 +26,23 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 | [`connection.reconnected`](/platform-api#/webhooks/connection.reconnected/post)              | Called when a connection is reconnected after becoming disconnected.                                                                                   |
 | [`connection.failed`](/platform-api#/webhooks/connection.failed/post)              | Called when a connection failed linking to the SMB. |
 | [`connection.deleted`](/platform-api#/webhooks/connection.deleted/post)                      | Called when a connection is deleted.                                                                                                                   |
-| [`read.completed`](/platform-api#/webhooks/read.completed/post)                              | Indicates that the read of data types for a product has completed.                                                                                       |
-| [`read.completed.initial`](/platform-api#/webhooks/read.completed.initial/post)              | Indicates that the initial read of data types for a product has completed.                                                                                       |
+| [`read.completed`](/platform-api#/webhooks/read.completed/post)                              | Indicates that the read of data types for a solution has completed.                                                                                       |
+| [`read.completed.initial`](/platform-api#/webhooks/read.completed.initial/post)              | Indicates that the initial read of data types for a solution has completed.                                                                                       |
 | [`{dataType}.write.successful`](/platform-api#/webhooks/dataType-.write.successful/post)     | Indicates that the specified data type has been successfully created, updated, deleted, or had an attachment uploaded in the accounting software.                     |
 | [`{dataType}.write.unsuccessful`](/platform-api#/webhooks/dataType-.write.unsuccessful/post) | Indicates that an attempt to create, update, delete a data type, or upload an attachment to a data type in the accounting software has been unsuccessful. |
 | [`client.rateLimit.reached`](/platform-api#/webhooks/client.rateLimit.reached/post)          | Called when the client’s request count to Codat's API surpasses the allocated quota.                                                                   |
 | [`client.rateLimit.reset`](/platform-api#/webhooks/client.rateLimit.reset/post)              | Called when the client's rate limit quota is reset, allowing additional requests to Codat's API.                                                       |
 
-### Product-specific event types
+### Solution-specific event types
 
-| Product           | Event type                                                                                                    | Event description                                                                                          |
+| Solution           | Event type                                                                                                    | Event description                                                                                          |
 |-------------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Bank Feeds API    | [`bankFeeds.sourceAccount.connected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.connected/post)       | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of connected.                                 |
-| Bank Feeds API    | [`bankFeeds.sourceAccount.disconnected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.disconnected/post) | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of disconnected.                              |
-| Sync for Expenses | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post)                  | Called when an expense sync successfully completes without any errors or warnings.                      |
-| Sync for Expenses | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)              | Called when an expense sync fails to complete successfully, resulting in at least one error or warning. |
-| Lending API | [`report.categorizedBankStatement.generate.successful`](/lending-api#/webhooks/report.categorizedBankStatement.generate.successful/post) | Called when a [categorized bank statement](/lending/features/bank-statements-overview) is successfully generated for a company. |
-| Lending API | [`AccountCategoriesUpdated`](/lending-api#/webhooks/Account-categories-updated/post) | Called when Codat AI had [categorized accounts](/lending/features/financial-statements-overview) for a company. |
+| Bank Feeds    | [`bankFeeds.sourceAccount.connected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.connected/post)       | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of connected.                                 |
+| Bank Feeds    | [`bankFeeds.sourceAccount.disconnected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.disconnected/post) | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of disconnected.                              |
+| Expenses | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post)                  | Called when an expense sync successfully completes without any errors or warnings.                      |
+| Expenses | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)              | Called when an expense sync fails to complete successfully, resulting in at least one error or warning. |
+| Lending | [`report.categorizedBankStatement.generate.successful`](/lending-api#/webhooks/report.categorizedBankStatement.generate.successful/post) | Called when a [categorized bank statement](/lending/features/bank-statements-overview) is successfully generated for a company. |
+| Lending | [`AccountCategoriesUpdated`](/lending-api#/webhooks/Account-categories-updated/post) | Called when Codat AI had [categorized accounts](/lending/features/financial-statements-overview) for a company. |
 
 ---
 ## Read next

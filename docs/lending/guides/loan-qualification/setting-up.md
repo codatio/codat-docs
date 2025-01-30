@@ -10,7 +10,7 @@ import TabItem from "@theme/TabItem";
 ### 🚀 In this section, you will...
 
 * Create your Codat account
-* Enable the Lending API
+* Enable the Lending solution
 * Configure webhooks
 * Set up your local environment
 * Run the demo app
@@ -21,9 +21,9 @@ Log into your Codat Test account. When you start working on your own loan qualif
 
 ### Enable the Lending product 
 
-In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Lending API** in the list of products and enable it. This also enables the data types required by this product. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
+In the **Settings > Organization settings > [Products](https://app.codat.io/settings/products)** section of the Codat Portal, find **Lending** in the list of products and enable it. This also enables the data types required by this solution. For example, `balanceSheet` and `profitandLoss`, which are used by the demo app, will be enabled.
 
-We use Lending API's [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
+We use Lending's [categorization](/lending/features/financial-statements-overview#categorized-financial-accounts) feature. It allows you to perform automated decisioning based on the categorized accounts. 
 
 ### Update your auth flow settings
 

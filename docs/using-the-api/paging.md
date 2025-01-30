@@ -41,7 +41,7 @@ Note: `totalResults` returns the number of results after applying any filter you
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="csharp" label="C#">
 
 ```c

@@ -1,6 +1,6 @@
 ---
-title: Sync for Expenses overview
-sidebar_label: Sync for Expenses
+title: Expenses overview
+sidebar_label: Expenses
 description: Write categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation
 displayed_sidebar: expenses
 image: "/img/sync-for-expenses/sfe-banner.png"
@@ -8,13 +8,13 @@ hide_title: true
 hide_description: true
 hide_table_of_contents: true
 tags: [overview, syncforexpense]
-banner_title: Sync for Expenses
+banner_title: Expenses
 banner_class: expenses
 banner_icon: "/img/logos/products/logo_expenses_clear.svg"
 banner_image: "/img/banners/bank-feeds.png"
 banner_text: "Write categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
-// video_text: What is Sync for Expenses?
+// video_text: What is Expenses?
 ---
 
 import {IntegrationsList} from '@components/Integrations'
@@ -24,15 +24,15 @@ import Products from "@components/Products";
 
 ## What is it?
 
-**Sync for Expenses** is a standardized API-based product that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
+**Expenses** is a standardized API-based solution that makes it easy to build and maintain accounting integrations and an end-to-end expense management process that customers love. 
 
-With **58% of small businesses** saying they choose one spending solution over another based on **quality of their accounting integrations**, Sync for Expenses enables you to write categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
+With **58% of small businesses** saying they choose one spending solution over another based on **quality of their accounting integrations**, Expenses enables you to write categorized expenses and attachments to your customers' accounting software via our high-quality accounting integrations. 
 
 It includes built-in logic so you can easily handle all of the complexities of expense reconciliation, such as refunds, accounting for multiple currencies, and allowing users to correct errors.
 
 ## Who is it for?
 
-With Sync for Expenses, corporate card providers, expense management providers, and neobanks can easily embed accounting automation features in their solution that would otherwise take months or even years to design, build, and maintain from scratch. 
+With Expenses, corporate card providers, expense management providers, and neobanks can easily embed accounting automation features in their solution that would otherwise take months or even years to design, build, and maintain from scratch. 
 
 ## Why use it?
 
@@ -85,7 +85,7 @@ With Sync for Expenses, corporate card providers, expense management providers, 
       <h3>Get standardized data</h3>
     </div>
     <p>
-      Sync for Expenses is completely standardized with a data model based on the experience of expense card providers. 
+      Expenses is completely standardized with a data model based on the experience of expense card providers. 
     </p>
   </li>
 
@@ -111,7 +111,7 @@ With Sync for Expenses, corporate card providers, expense management providers, 
       <h3>Two-way sync</h3>
     </div>
     <p>
-      Sync for Expenses stays in touch with the SMB customer’s general ledger so that your integrations are more robust and reliable.
+      Expenses stays in touch with the SMB customer’s general ledger so that your integrations are more robust and reliable.
     </p>
   </li>
 
@@ -119,7 +119,7 @@ With Sync for Expenses, corporate card providers, expense management providers, 
 
 ## How does it work?
 
-With Sync for Expenses, you can build a solution that covers all the key steps of expense management.
+With Expenses, you can build a solution that covers all the key steps of expense management.
 
 ### [Configure customer](/expenses/configure-customer)
 
@@ -127,13 +127,13 @@ Start by creating a [company](../terms/company) to represent your SMB customer i
 
 ### [Map customer transactions](/expenses/config-and-categorize)
 
-Create expense configuration for your customer's company so that Sync for Expenses can attribute their spend to the correct accounts, suppliers, and customers. 
+Create expense configuration for your customer's company so that Expenses can attribute their spend to the correct accounts, suppliers, and customers. 
 
 Expenses can also be categorized according to your SMB's bookkeeping. Provide your customer with the opportunity to choose the accounts, tracking categories, and tax rates that their expenses will be mapped to. 
 
 ### [Create and update transactions](/expenses/sync-process/expense-transactions)
 
-Once the customer has categorized their expenses using the mapping options, use Sync for Expenses to write their everyday purchases to the SMB's accounting software. Sync for Expenses also enables SMB customers to write attachments for a complete audit trail.
+Once the customer has categorized their expenses using the mapping options, use Expenses to write their everyday purchases to the SMB's accounting software. Expenses also enables SMB customers to write attachments for a complete audit trail.
 
 You can also create [transfers](/expenses/sync-process/transfer-transactions) and [reimbursements](/expenses/sync-process/reimbursable-expense-transactions).
 
@@ -185,4 +185,4 @@ Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify 
 
 ## Read next
 
-* [Start building](/expenses/getting-started) with Sync for Expenses
+* [Start building](/expenses/getting-started) with the Expenses solution

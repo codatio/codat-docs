@@ -82,7 +82,7 @@ Finally, we are ready to return a decision array to the applicant. It shows them
 
 🗝️ You may want to enhance this simple working guide with some UI elements - why not use [Link](/auth-flow/authorize-embedded-link) to seamlessly include our authorization journey into your app?
 
-🛍️ Take your digital lending solution one step further by using Lending API's [Reconciled invoices](/lending/features/accounts-receivable-overview#reconciled-invoices) feature enrichment. 
+🛍️ Take your digital lending solution one step further by using Lending's [Reconciled invoices](/lending/features/accounts-receivable-overview#reconciled-invoices) feature enrichment. 
 
 📈 If you want to understand the growth potential of the invoice financing services, you can read through [Credit Connect's blog](https://www.credit-connect.co.uk/news/demand-for-invoice-finance-predicted-to-grow/).
 
@@ -92,4 +92,4 @@ Finally, we are ready to return a decision array to the applicant. It shows them
 
 In this reference section, you have learned and understood in detail the checks we performed during our invoice finance decisioning process, how we fetched and filtered the data, and how all of this influenced the decision on the loan made automatically. 
 
-Next, you can find out more about [Lending API](/lending/overview), or [explore other use cases](/usecases/overview).
+Next, you can find out more about [Lending](/lending/overview), or [explore other use cases](/usecases/overview).

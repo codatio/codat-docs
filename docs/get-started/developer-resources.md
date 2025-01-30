@@ -9,7 +9,7 @@ updatedAt: "2022-10-19T21:11:21.969Z"
 
 - **[Invoice finance](/lending/guides/invoice-finance/introduction)** - Go through the invoice financing process flow, from establishing a connection with a borrower's accounting software to issuing a decision on selected invoices.
 - **[Bill pay](/payables/guides/bill-pay/introduction)** - Streamline and automate the Accounts Payable (AP) process for your SMB customers.
-- **[Bank transactions reconcilliation](/bank-feeds/guides/bank-feeds-tutorial)** - Reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds API.
+- **[Bank transactions reconcilliation](/bank-feeds/guides/bank-feeds-tutorial)** - Reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds solution.
 - **[Loan writeback](/lending/guides/loan-writeback/introduction)** - Simplify your implementation with our loan writeback best practices guide and correctly account for a loan programmatically.
 - **[Loan qualification](/lending/guides/loan-qualification/introduction)** - See how Codat helps check a loan applicant’s finances and automate decision-making.
 - **[Prototype dashboard with Retool](/guides/retool-dashboard)** - Ingest and visualize Codat data in a custom Retool dashboard in 10 minutes.
@@ -40,12 +40,3 @@ Examples of what you can do with Codat with code you can use in your app.
 Minimal code to quickly start building something with Codat.
 
 - **[Next.js starter](https://github.com/codatio/starter-project-nextjs-codat)** - You're 5 minutes away from your first Codat API call with this simple Next.js app starter.
-
-## Postman Collection 
-
-**[Codat's POSTMAN Collection](https://postman.codat.io/#ea0cd8f9-c78c-4dcf-b1ab-164927e41ff2)** - A collection of Postman scripts covering multiple products and processes, such as our:
-- Authentication journey
-- Sync for Commerce
-- Sync for Expenses
-- Xero's General Lending Write Back
-- Self-Service OAUTH migrations

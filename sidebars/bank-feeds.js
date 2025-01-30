@@ -7,7 +7,7 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Bank Feeds API",
+    label: "Bank Feeds",
     id: "bank-feeds/overview",
     className: "header top-level-item products product bankfeed",
   },

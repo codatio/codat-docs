@@ -22,6 +22,36 @@ const Card = (props) => {
   )
 }
 
+const CardTwo = (props) => {
+  const {
+    image,
+    title,
+    link,
+    linkText,
+    children,
+    className
+  } = props
+
+  return (
+    <li className={`card two ${className}`}>
+      <div className="header">
+        <img
+          src={image}
+          className="mini-icon"
+        />
+
+        <h3>{title}</h3>
+      </div>
+
+      {children}
+
+      <p>
+        <a href={link}>{linkText} →</a>
+      </p>  
+    </li>
+  )
+}
+
 const MiniCard = (props) => {
   const {
     image,
@@ -72,5 +102,6 @@ const Cards = (props) => {
 
 Cards.Card = Card
 Cards.MiniCard = MiniCard
+Cards.CardTwo = CardTwo
 
 export default Cards

@@ -24,7 +24,7 @@ import Products from "@components/Products";
 
 ## What is it?
 
-With our **Supplier Enablement** product, you can access your clients' accounts payable data within minutes and gain insights on their spend and supplier activity. 
+With our **Supplier Enablement** solution, you can access your clients' accounts payable data within minutes and gain insights on their spend and supplier activity. 
 
 Use this detail to identify suppliers eligible for your clients' virtual card programs, run targeted supplier outreach campaigns on your clients' behalf, and grow your commercial card volume in B2B payments. 
 
@@ -93,7 +93,7 @@ With **Supplier Enablement**, we enable banks and other commercial card issuers 
 
 ![A diagram flow of the supplier enablement solution](/img/supplier-enablement/se-overview-diagram.png)
 
-Reach out to your Codat contact to enjoy **Supplier Enablement**'s rich product features and dynamic data refreshes through our comprehensive UI:
+Reach out to your Codat contact to enjoy **Supplier Enablement**'s rich features and dynamic data refreshes through our comprehensive UI:
 
 1. **Relationship and onboarding management**
 

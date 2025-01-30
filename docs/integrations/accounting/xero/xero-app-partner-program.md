@@ -29,7 +29,7 @@ Some Financial Services use cases are not eligible for Xero Partnership. Speak t
 
 #### Xero’s technical requirements
 
-Xero’s technical requirements can be complex and vary by use case. Codat’s products take care of many of Xero’s requirements for you, but there are some that require you to take action. 
+Xero’s technical requirements can be complex and vary by use case. Codat’s solutions take care of many of Xero’s requirements for you, but there are some that require you to take action. 
 
 We recommend working closely with Codat to ensure Xero’s technical requirements are addressed during your implementation. 
 

@@ -104,7 +104,7 @@ You can access the integration-specific model requirements using Codat's _Get mo
 In most cases, the models provide static data, such as detailing mandatory properties.
 Some platforms, like Netsuite, offer greater customization to their users, so the corresponding model may differ.
 
-Let's use our [Get Create Account Model](/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model) endpoint from the [Sync for Expenses](/expenses/overview) product to view integration-specific requirements for creating the `chartOfAccounts` data type in Xero.
+Let's use our [Get Create Account Model](/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model) endpoint from the [Expenses](/expenses/overview) solution to view integration-specific requirements for creating the `chartOfAccounts` data type in Xero.
 
 ```sh
 GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/options/chartOfAccounts
@@ -187,12 +187,12 @@ These properties are read-only and cannot be used in write requests.
 
 :::
 
-Let's create a new account using our [Create account](/sync-for-expenses-api#/operations/create-account) endpoint from the [Sync for Expenses](/expenses/overview) product.
+Let's create a new account using our [Create account](/sync-for-expenses-api#/operations/create-account) endpoint from the [Expenses](/expenses/overview) solution.
 The request must fulfil the requirements defined in the [Get create account model](/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model) we called previously.
 
 We will create an account using a valid request, and a request that leads to a validation error:
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="typescript" label="TypeScript">
   <Tabs>

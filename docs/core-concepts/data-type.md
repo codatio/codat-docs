@@ -7,7 +7,7 @@ tags:
 
 In Codat, each type of data you want to create, update, or retrieve for a given company from a data source is represented by a data type. It has a defined schema with known properties and validation rules.
 
-The data types you use will depend on the Codat product you use. For reference, our [Lending API](/lending/data-types) offers the broadest range of data types.
+The data types you use will depend on the Codat solution you use. For reference, our [Lending](/lending/data-types) solution offers the broadest range of data types.
 
 ## Data types based on source
 

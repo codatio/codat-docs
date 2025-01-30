@@ -50,7 +50,7 @@ Once your customer authorizes within your application, use the [Get access token
 The token is only valid for one hour and applies to a single company.
 :::
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -623,7 +623,7 @@ Use the `text` property to control some of the text displayed within the Connect
 
 :::tip Change management
 
-As with all Codat products, this SDK is subject to [our change management policy](/using-the-api/change-policy). We will give appropriate notice for changes to it and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
+As with all Codat solutions, this SDK is subject to [our change management policy](/using-the-api/change-policy). We will give appropriate notice for changes to it and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
 :::
 
 #### April 2024

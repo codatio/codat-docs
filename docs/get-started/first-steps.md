@@ -51,7 +51,7 @@ Codat uses API keys, Base64 encoded within an authorization header, to control a
 
 Then, replace `{basicAuthHeader}` in the code snippets below.
 
-<Tabs>
+<Tabs groupId="language">
   <TabItem value="csharp" label="C#">  
 
   ##### Installation
@@ -170,7 +170,7 @@ Copy this URL for use in the next step. Note that this URL can be accessed again
 
 To create a company in Codat, use the `POST /companies` endpoint with a request body containing the `name` of the company. It does not have to be unique and serves to identify your customer in Codat.
 
-<Tabs>
+<Tabs groupId="language">
   <TabItem value="csharp" label="C#">  
 
   ```c
@@ -302,7 +302,7 @@ Once the flow is complete, you can verify the company's status under the <a href
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
-<Tabs>
+<Tabs groupId="language">
   <TabItem value="csharp" label="C#">  
 
   ```c
@@ -426,7 +426,7 @@ For example, to query invoices, use the <a href="/lending-api#/operations/list-i
 
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
-<Tabs>
+<Tabs groupId="language">
   <TabItem value="csharp" label="C#">  
 
   ##### Installation

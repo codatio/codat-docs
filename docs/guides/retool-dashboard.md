@@ -11,4 +11,4 @@ description: "Ingest and visualize Codat data in a custom Retool dashboard in 10
 
 - [Sign up for Retool](https://retool.com/)
 - [Download the dashboard template](https://github.com/codatio/codat-docs/blob/main/static/documents/template-retool-company-data-explorer.json)  
-- [Lending API docs](https://docs.codat.io/lending-api) 
+- [Lending docs](https://docs.codat.io/lending-api) 

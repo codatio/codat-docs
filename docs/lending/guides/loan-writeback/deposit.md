@@ -41,7 +41,7 @@ To record the transfer of money from the lender's bank account to the borrower's
 
 2. Call the [Create transfer](/lending-api#/operations/create-transfer) endpoint to perform the transfer of money. Note that you are performing a transfer *from* `lendersBankAccountId` *to* `borrowersBankAccount.id`.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -200,7 +200,7 @@ To record the loan deposit into the lender's bank account:
 
 We provided example bank transaction creation payloads in the snippets below:
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript

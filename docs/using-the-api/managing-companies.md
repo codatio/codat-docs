@@ -25,7 +25,7 @@ You can either onboard users:
 
 To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body.  The `name` parameter is mandatory to execute this request. You can also provide a `description` to store additional information about the company.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -139,7 +139,7 @@ For example, here's how you can add tags that define a user-defined ID (UID) and
 
 <TabItem value="create-company" label="Create company">
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -244,7 +244,7 @@ if (companyCreatedRes.company().isPresent()) {
 
 <TabItem value="update-company" label="Update company">
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -471,7 +471,7 @@ Once the user finishes the Link flow, they will be redirected back to the Redire
 
 You can delete a company and its data using the [Delete company](/platform-api#/operations/create-company) endpoint.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 

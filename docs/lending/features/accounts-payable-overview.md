@@ -36,7 +36,7 @@ You can retrieve the data read and enriched by the feature by [downloading a rep
 
 For example, use the [List suppliers](/lending-api#/operations/list-accounting-suppliers) endpoint to access the company's current suppliers for further assessment.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -112,7 +112,7 @@ if suppliersResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending API enabled, configure your instance to work with our accounts payable feature. 
+Once you have the Lending solution enabled, configure your instance to work with our accounts payable feature. 
 
 #### Configure data sources
 

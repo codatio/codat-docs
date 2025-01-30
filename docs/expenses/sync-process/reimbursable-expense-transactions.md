@@ -17,7 +17,7 @@ Check our [supported expense types](/expenses/overview#supported-integrations) f
 
 :::
 
-With Sync for Expenses, you need to create the reimbursable expense transactions first. 
+With the Expenses solution, you need to create the reimbursable expense transactions first. 
 
 This will initiate the [sync](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting software. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
@@ -105,7 +105,7 @@ This functionality is currently only available for QuickBooks Online and QuickBo
 
 ### Multicurrency transactions
 
-Sync for Expenses validates each reimbursable expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
+Expenses validates each reimbursable expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
 
 For reimbursable expenses, the currency of the expense is the currency of the supplier (so the currency that the employee will be reimbursed in). If the employee needs to be reimbursed in a different currency, they need to be set up as a new supplier for each required currency.
 

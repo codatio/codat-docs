@@ -33,13 +33,21 @@ const other = [
     link: "/lending/overview",
     linkText: "Start assessing your customers →",
   },
+  {
+    logo: "/img/logos/products/logo_commerce_clear.svg",
+    slug: "commerce",
+    name: "Sync for Commerce",
+    description: "Sync your merchants' data between commerce and accounting systems to automate bookkeeping.",
+    link: "/commerce/overview",
+    linkText: "Begin syncing merchants' data →",
+  },
 ]
 
 const allProducts = [
   {
     logo: "/img/logos/products/logo_bankfeeds_clear.svg",
     slug: "bank-feeds",
-    name: "Bank Feeds API",
+    name: "Bank Feeds",
     description: "Write bank transaction data into your customers' accounting software with an automated feed.",
     link: "/bank-feeds/overview",
     linkText: "Build your first bank feed →",
@@ -47,7 +55,7 @@ const allProducts = [
   {
     logo: "/img/logos/products/logo_lending_clear.svg",
     slug: "lending",
-    name: "Lending API",
+    name: "Lending",
     description: "Get insight into financial health for smarter, more efficient lending.",
     link: "/lending/overview",
     linkText: "Start assessing your customers →",
@@ -61,17 +69,9 @@ const allProducts = [
     linkText: "Manage supplier relationship →",
   },
   {
-    logo: "/img/logos/products/logo_commerce_clear.svg",
-    slug: "commerce",
-    name: "Sync for Commerce",
-    description: "Sync your merchants' data between commerce and accounting systems to automate bookkeeping.",
-    link: "/commerce/overview",
-    linkText: "Begin syncing merchants' data →",
-  },
-  {
     logo: "/img/logos/products/logo_expenses_clear.svg",
     slug: "expenses",
-    name: "Sync for Expenses",
+    name: "Expenses",
     description: "Embedded accounting integrations for corporate card providers. Standardize how you sync with bookkeeping software and ERPs.",
     link: "/expenses/overview",
     linkText: "Sync expenses data →",
@@ -79,7 +79,7 @@ const allProducts = [
   {
     logo: "/img/logos/products/logo_payables_clear.svg",
     slug: "payables",
-    name: "Sync for Payables",
+    name: "Bill Pay",
     description: "Embedded accounting integrations for accounts payable automation.",
     link: "/payables/overview",
     linkText: "Begin syncing merchants' data →",
@@ -96,6 +96,8 @@ const Products = ({mini, products, verbose}) => {
       .map(productName => {
         return allProducts[allProducts.findIndex(product => product.name === productName)]
       })
+
+  validProducts.sort((a, b) => a.name > b.name ? 1 : -1)
 
   if(!!mini) {
     return (
@@ -117,7 +119,7 @@ const Products = ({mini, products, verbose}) => {
                   <div className="content">
                     <h4>{product.name}</h4>
                     <p>
-                      <a href={product.link}>Explore product →</a>
+                      <a href={product.link}>Explore solution →</a>
                     </p>    
                   </div>
                 </div>

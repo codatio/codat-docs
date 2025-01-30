@@ -7,7 +7,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Lending API",
+    label: "Lending",
     href: "/lending/overview",
     className: "header top-level-item products product lending",
   },

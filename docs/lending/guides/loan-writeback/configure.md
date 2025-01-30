@@ -77,7 +77,7 @@ The loan writeback process uses two bank accounts:
 
 First, your customer needs to choose one of their existing business bank accounts. This account will be used to depost the loan. Call our [List bank accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -144,7 +144,7 @@ In order to create a *spend money* transaction, Codat requires you, the lender, 
 
 Let your customer check if your record already exists in their accounts. Use our [List suppliers](/lending-api#/operations/list-accounting-suppliers) endpoint to fetch the list of existing suppliers. 
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -204,7 +204,7 @@ If this is the first time you have lent to this SMB customer, you may need to cr
 1. Use our [Get create/update supplier model](/lending-api#/operations/get-create-update-suppliers-model) to get the expected data for the supplier creation request payload. The data required can vary depending on the platform.
 2. Use that payload to call the [Create supplier](/lending-api#/operations/create-supplier) endpoint to create the new supplier record in the accounting software.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -361,7 +361,7 @@ Similarly, store the `supplier` and use it in future transactions.
 
 Next, use our [List accounts](/lending-api#/operations/list-accounting-accounts) endpoint filtered by `type=Expense` to retrieve the customer's existing expense accounts. Let them choose one that will be used to record fees and interest. 
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -424,7 +424,7 @@ If the customer wants to create a new nominal expense account for this purpose, 
 
 Next, call the [Create account](/lending-api#/operations/create-account) endpoint to create the new account. 
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript

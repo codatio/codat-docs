@@ -1,7 +1,7 @@
 ---
-title: "Get started with Lending API"
+title: "Get started with Lending"
 sidebar_label: Get started
-description: "Learn how to perform the initial setup for the Lending API product"
+description: "Learn how to perform the initial setup for the Lending solution"
 image: "/img/banners/social/lending.png"
 ---
 
@@ -13,21 +13,21 @@ import ReadNext from "@components/ReadNext";
 
 :::tip Your lending journey
 
-Our Lending API supports the data collection step of your lending journey, which starts in your own web application. Enable Lending API and configure it, then embed our [Link SDK](/auth-flow/authorize-embedded-link) in your app to handle the auth flow. Determine where the collected data will be stored and manage the subsequent steps of the lending process in your app. 
+Our Lending solution supports the data collection step of your lending journey, which starts in your own web application. Enable Lending and configure it, then embed our [Link SDK](/auth-flow/authorize-embedded-link) in your app to handle the auth flow. Determine where the collected data will be stored and manage the subsequent steps of the lending process in your app. 
 
 :::
 
-## Enable Lending API
+## Enable Lending
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Settings > Organizational settings > Products**.
-3. In the list of products, find _Lending API_ and click **Enable**. Then, follow the on-screen prompt.
+3. In the list of products, find _Lending_ and click **Enable**. Then, follow the on-screen prompt.
 
-## Configure Lending API
+## Configure Lending
 
 ### Data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the product. Follow the respective guides for integration-specific instructions. 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the solution. Follow the respective guides for integration-specific instructions. 
 
 Data source coverage varies by feature, so be sure to review the coverage for the features you want to use. 
 
@@ -45,7 +45,7 @@ Data source coverage varies by feature, so be sure to review the coverage for th
 
 ### Authorization flow
 
-As part of using the Lending API, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/overview) - our pre-built, conversion-optimized white-label authorization flow. 
+As part of using Lending, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/overview) - our pre-built, conversion-optimized white-label authorization flow. 
 
 We recommend you fully embed this auth flow in your experience by using our [Link SDK](/auth-flow/authorize-embedded-link) in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible. 
 
@@ -57,7 +57,7 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 ### Data types
 
-Set the minimum set of [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for the Lending API to `fetch on first link`. Each feature may also have additional data type requirements, so be sure to review these for the feature you want to use.
+Set the minimum set of [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Lending to `fetch on first link`. Each feature may also have additional data type requirements, so be sure to review these for the feature you want to use.
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. As a minimum, you need the following data types enabled:
 
@@ -71,7 +71,7 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 Codat supports a range of [event types](/using-the-api/webhooks/event-types) you can listen to that help you manage your data pipelines. Many of these events send a message for each `dataType` separately.
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Create consumer** and click **Add endpoint** to add a new [webhook consumer endpoint](/using-the-api/webhooks/overview) and get the most out of Lending API:
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Create consumer** and click **Add endpoint** to add a new [webhook consumer endpoint](/using-the-api/webhooks/overview) and get the most out of Lending:
 
 - [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)  
 
@@ -86,7 +86,7 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate
   This means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
   
 
-## Use Lending API
+## Use Lending
 
 Before you can collect your SMB customer's data, you need to create a Codat [company](../terms/company) and connect it to a data source (for example, an accounting software). You can do that in two ways:
 
@@ -122,7 +122,7 @@ Once the connection is established, Codat will retrieve data for the data types 
       <h3>Developers</h3>
     </div>
     <p>
-      Interact with our <a href="/lending-api">Lending API reference</a> to understand required body parameters, responses, and errors. Use our <a href="/get-started/libraries">client SDKs</a> to simplify your implementation journey.
+      Interact with our <a href="/lending-api">Lending reference</a> to understand required body parameters, responses, and errors. Use our <a href="/get-started/libraries">client SDKs</a> to simplify your implementation journey.
     </p>
   </li>
 
@@ -130,10 +130,10 @@ Once the connection is established, Codat will retrieve data for the data types 
 
 ### Client libraries
 
-Use our comprehensive [Lending API library](/get-started/libraries) to kick-start and simplify your build.
+Use our comprehensive [Lending library](/get-started/libraries) to kick-start and simplify your build.
 Simply install the library in one of the supported languages and pass your base64-encoded API key to the constructor.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -251,5 +251,5 @@ func main() {
     ["Accounts payable", "/lending/features/accounts-payable-overview", ],
   ]}
 >
-  <p>Explore the features that make up our Lending API:</p>
+  <p>Explore the features that make up our Lending:</p>
 </ReadNext>

@@ -16,7 +16,7 @@ An expense is a transaction that represents the purchase made by your customer a
 - Associated tax rates
 - Applicable tracking categories
 
-With Sync for Expenses, you need to create the expense or transfer transactions first and write that dataset to Codat. We will describe options available to you on this page. 
+With Expenses, you need to create the expense or transfer transactions first and write that dataset to Codat. We will describe options available to you on this page. 
 
 Then, you need to [sync expenses](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting software. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
@@ -120,7 +120,7 @@ This functionality is currently only available for QuickBooks Online and QuickBo
 
 ### Multicurrency expense transactions
 
-Sync for Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
+Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
  
 ### Default tax rates
 
@@ -137,7 +137,7 @@ If you need to remove an associated tax rate from an expense, use one of the fol
 
 ### Transaction types
 
-Sync for Expenses maps and processes expense transactions based on the following transaction types:
+Expenses maps and processes expense transactions based on the following transaction types:
 
 | Transaction type | Description                                                                                                                                                                                                                                               |
 |------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

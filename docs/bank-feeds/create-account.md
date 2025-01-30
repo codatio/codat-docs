@@ -14,7 +14,7 @@ When implementing your bank feed solution, you need to create your customer as a
 
 You can see how these elements fit together and where they sit in the overall bank feeds process on the diagram below.
 
-![A diagram demonstrating the relationship between various Codat concepts and subsequent steps of the Bank Feeds API process](/img/bank-feeds/bankfeeds-concept-flow.png)
+![A diagram demonstrating the relationship between various Codat concepts and subsequent steps of the Bank Feeds process](/img/bank-feeds/bankfeeds-concept-flow.png)
 
 :::tip Authorize your API calls
 Remember to [authenticate](/using-the-api/authentication) when making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
@@ -22,12 +22,12 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 ## Create a company
 
-Within Bank Feeds API, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software. 
+Within Bank Feeds, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software. 
 
 Use the [Create company](/bank-feeds-api#/operations/create-company) endpoint to represent your customer in Codat.
 Make sure to store the company ID as you will use it to establish a connection to an accounting software. 
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -114,7 +114,7 @@ In the request body, specify a `platformKey` of the accounting software you're l
 
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -187,7 +187,7 @@ For QBO, the `linkUrl` contains a one-time password (OTP) that expires after one
 <details>
   <summary><b>View code snippets</b></summary>
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -255,7 +255,7 @@ If your customer wants to revoke their approval and sever the connection to thei
 
 You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI. 
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -332,7 +332,7 @@ For bank accounts in GBP, `sortCode` is also a required field.
 
 :::
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -447,7 +447,7 @@ You can create multiple accounts in different currencies using the same [Create 
 
 You may need to modify a source account before the mapping is finalized. For example, your customer might want a bank account name to appear in their accounting software. To do that, use the [Update source account](/bank-feeds-api#/operations/update-source-account) endpoint.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -538,7 +538,7 @@ res, err := bankFeedsClient.SourceAccounts.Update(ctx, operations.UpdateSourceAc
 
 If your customer decides to close their account, you can also remove it from Codat using the [Delete source account](/bank-feeds-api#/operations/delete-source-account) endpoint. This will not delete the account from your customer's accounting software, but it will disable the bank feed, preventing any new transactions from appearing.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -594,7 +594,7 @@ res, err := bankFeedsClient.SourceAccounts.Delete(ctx, operations.DeleteSourceAc
 
 :::tip Recap
 
-You have created the structure of key objects required by Codat's Bank Feeds API: a company, its connection to an accounting data source, and a source account. 
+You have created the structure of key objects required by Codat's Bank Feeds solution: a company, its connection to an accounting data source, and a source account. 
 
 Next, provide your customer with a **mapping** process interface so they can associate the source account with a target account in their accounting software.
 :::

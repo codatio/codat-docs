@@ -1,16 +1,16 @@
 ---
-title: "Configure customer in Codat"
+title: "Configure your SMB customer in Codat"
 description: "Create a company and its connection that form the structure required to execute the bill pay process"
-sidebar_label: Configure customer
+sidebar_label: Set up company
 displayed_sidebar: payables
 ---
 
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
 ## Overview
 
-When implementing your Sync for Payables solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting software as a connection. You can do that when the customer starts interacting with your application.  
+When implementing your Bill Pay solution, you need to create your SMB customer as a **company** in Codat before registering their accounting software as a connection. You can do that when the customer starts interacting with your application.  
 
 We have highlighted this sequence of steps in our detailed process diagram below. 
 
@@ -44,9 +44,11 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 ## Create a company
 
-Within Sync for Payables, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-api#/operations/create-company) endpoint. It returns the company schema containing the ID that you will use to establish a connection to an accounting software. 
+Within Bill Pay, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company (async)](/sync-for-payables-api#/operations/create-company) or [Create company (sync)](/sync-for-payables-v2-api#/operations/create-company) endpoints. 
 
-<Tabs>
+The endpoints return the company schema containing the ID that you will use to establish a connection to an accounting software. 
+
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -119,9 +121,13 @@ if companyResponse.StatusCode == 200 {
 
 ## Create a connection
 
-Next, use the [Create connection](/sync-for-payables-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source, fetching or creating suppliers, bills, and payment methods. 
+Next, use the [Create connection (async)](/sync-for-payables-api#/operations/create-connection) or [Create connection (sync)](/sync-for-payables-v2-api#/operations/create-connection) endpoints to connect the company to an accounting data source via one of our integrations. 
 
-In the request body, specify a `platformKey` of the accounting software you're looking to connect.
+This will allow you to synchronize data with that source, fetching or creating suppliers, bills, and payment methods. In the request body, specify a `platformKey` of the accounting software you're looking to connect.
+
+<Tabs>
+
+<TabItem value="async" label="Async Bill Pay">
 
 | Accounting software | platformKey |
 | ---  | ---  |
@@ -132,9 +138,24 @@ In the request body, specify a `platformKey` of the accounting software you're l
 | Sage Intacct | `knfz` |
 | Xero | `gbol` |
 
+</TabItem>
+
+<TabItem value="sync" label="Sync Bill Pay">
+
+| Accounting software | platformKey |
+| ---  | ---  |
+| FreeAgent | `fbrh` |
+| Oracle NetSuite | `akxx` |
+| QuickBooks Online | `qhyg` |
+| Xero | `gbol` |
+
+</TabItem>
+
+</Tabs>
+
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -202,11 +223,11 @@ fmt.Println(connectionResponse.Connection.LinkUrl)
 
 ## Deauthorize a connection
 
-If your customer wants to revoke their approval and sever the connection to their accounting software, use the [Unlink connection](/sync-for-payables-api#/operations/unlink-connection) endpoint.
+If your customer wants to revoke their approval and sever the connection to their accounting software, use the [Unlink connection (async)](/sync-for-payables-api#/operations/Unlink-connection) or [Unlink connection (sync)](/sync-for-payables-v2-api#/operations/Unlink-connection) endpoints.
 
 You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -271,7 +292,7 @@ unlinkResponse, err := payablesClient.Connections.Unlink(ctx, operations.UnlinkC
 
 :::tip Recap
 
-You have created the structure of key objects required by Codat's Sync for Payables: a company and its connection to an accounting data source.
+You have created the structure of key objects required by Codat's Bill Pay solution: a company and its connection to an accounting data source.
 
 Next, you can choose to manage your customer's suppliers, bills or payment methods prior to paying the bills.
 
@@ -281,7 +302,7 @@ Next, you can choose to manage your customer's suppliers, bills or payment metho
 
 ## Read next
 
-* [Manage your customer's suppliers](/payables/suppliers)
-* [Manage your customer's bills](/payables/bills)
-* [Manage your customer's payment methods](/payables/mapping)
+* Manage your customer's suppliers [asynchronously](/payables/suppliers) or [synchronously](/payables/suppliers)
+* Manage your customer's bills [asynchronously](/payables/suppliers) or [synchronously](/payables/suppliers)
+* Pay your customer's bills [asynchronously](/payables/mapping) or [synchronously](/payables/suppliers)
 

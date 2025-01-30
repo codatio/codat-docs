@@ -1,12 +1,12 @@
 ---
 title: "Invoice financing build guide"
 displayed_sidebar: "lending"
-description: "Selective invoice financing with Codat and our Lending API" 
+description: "Selective invoice financing with Codat and our Lending solution" 
 hide_title: true
 hide_description: true
 banner_title: Invoice financing build guide
 banner_image: "/img/banners/lending-cropped.png"
-banner_text: "Selective invoice financing with Codat and our Lending API"
+banner_text: "Selective invoice financing with Codat and our Lending solution"
 ---
 
 :::tip Who is this guide for?
@@ -41,11 +41,11 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 The app's codebase is available via our [GitHub repo](https://github.com/codatio/demo-invoice-finance). Clone it locally to try out the application.
 
-The codebase uses Codat's [Lending API](/lending/overview) product to make an invoice financing decision. We will walk you through the setup in the Portal and the code when [setting up the demo app](/lending/guides/invoice-finance/setting-up). 
+The codebase uses Codat's [Lending](/lending/overview) solution to make an invoice financing decision. We will walk you through the setup in the Portal and the code when [setting up the demo app](/lending/guides/invoice-finance/setting-up). 
 
-### Why we use _Lending API_
+### Why we use _Lending_
 
-The demo app relies on Codat's [Lending API](/lending/overview) product, which simplifies the following aspects of invoice financing:
+The demo app relies on Codat's [Lending](/lending/overview) solution, which simplifies the following aspects of invoice financing:
 
 - Invoice collection
 

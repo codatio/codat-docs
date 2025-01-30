@@ -1,7 +1,7 @@
 ---
 title: "Excel download overview"
 sidebar_label: "Excel download"
-description: "Download the Lending API reports to Excel"
+description: "Download Lending reports to Excel"
 image: "/img/banners/social/lending.png"
 ---
 
@@ -40,7 +40,7 @@ The process to download an Excel report via the API is as follows:
 
 1. [Request](/lending-api#/operations/generate-excel-report) an Excel report for download.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -94,7 +94,7 @@ response, err := lendingClient.ExcelReports.Generate(ctx,
 
 2. [Check the progress status](/lending-api#/operations/get-excel-report-generation-status) of the latest report requested (optional).
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -147,7 +147,7 @@ response, err := lendingClient.ExcelReports.GetStatus(ctx, operations.GetExcelRe
 
 3. [Download](/lending-api#/operations/download-excel-report) the latest Excel report.
 
-<Tabs>
+<Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
@@ -219,5 +219,5 @@ You can also generate and download the **data export** report by clicking the **
 ---
 
 ## Read next
-- [Lending API reference](/lending-api#/)
+- [Lending reference](/lending-api#/)
 - [Troubleshooting and FAQs](/lending/troubleshooting)

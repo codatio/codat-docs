@@ -16,7 +16,7 @@ You can do this in two ways:
 
 :::caution Prerequisites
 
-To use the data upload functionality, you need to create a Codat [company](../../terms/company) first. We walk you through this in [Get started with Lending API](/lending/get-started#use-lending-api).
+To use the data upload functionality, you need to create a Codat [company](../../terms/company) first. We walk you through this in [Get started with Lending](/lending/get-started#use-lending-api).
 
 :::
 

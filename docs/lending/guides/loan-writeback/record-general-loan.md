@@ -62,7 +62,7 @@ To perform these operations, you will need the following properties:
 
 Use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again, this time to record the total repayment amount. Note that you are performing a transfer *from* `borrowersBankAccount.id` *to* `lendersBankAccountId`.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -247,7 +247,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 Check the [Get create direct cost model](/lending-api#/operations/get-create-directCosts-model), then use the [Create direct cost](/lending-api#/operations/create-direct-cost) endpoint to capture the amount of fees or interest incurred by the borrower.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -529,7 +529,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 Use the [Create bank account transactions](/lending-api#/operations/create-bank-transactions) endpoint to deposit the total amount (including the repayment, fees, and any interest) into the lender's bank account.
 
-<Tabs>
+<Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
@@ -694,4 +694,4 @@ In this guide, you have learned:
 ## Read next
 
 * Looking to implement loan writeback for Xero? View Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/).
-* Review other features of the [Lending API](/lending/overview).
+* Review other features of the [Lending](/lending/overview) solution.

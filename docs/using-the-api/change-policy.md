@@ -1,16 +1,16 @@
 ---
 title: "Change policy"
-description: "Learn how we communicate key product changes to you"
+description: "Learn how we communicate key solution changes to you"
 createdAt: "2021-11-03T11:41:14.711Z"
 updatedAt: "2022-10-04T14:20:08.975Z"
 ---
 
-We always try to make changes to our product in a backward-compatible way. This means you can choose whether, when, and how to update your code and take advantage of the new functionality.
+We always try to make changes to our solution in a backward-compatible way. This means you can choose whether, when, and how to update your code and take advantage of the new functionality.
 
 ## Backwards-compatible changes
 
 The following changes are normally considered as backward-compatible.
-- Any additive changes to the Codat API or front-end products, such as:
+- Any additive changes to the Codat API or front-end solutions, such as:
     - a new datatype or API endpoint
     - a new field within a datatype or API endpoint
     - a new integration

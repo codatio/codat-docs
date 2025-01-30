@@ -193,7 +193,7 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/tran
 
 ## Monitor sync health
 
-Use the Sync for Expenses product menu in the [Codat Portal](https://app.codat.io/) to navigate to [Sync Health](https://app.codat.io/products/sync-for-expenses) and monitor the status of your syncs, review detailed logs and error messages, and view and retry writing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
+Use the Expenses menu in the [Codat Portal](https://app.codat.io/) to navigate to [Sync Health](https://app.codat.io/products/sync-for-expenses) and monitor the status of your syncs, review detailed logs and error messages, and view and retry writing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
 
 <img
   src="/img/sync-for-commerce/0006-sync-health-ui.png"
@@ -234,5 +234,5 @@ On the **Push items** tab, you can also retry the push items in failed status. C
 ## Read next
 
 * Attach receipts to the expense transaction using [attachment upload](/expenses/sync-process/uploading-receipts)
-* Review our [FAQ](/expenses/faq) to find out more about Sync for Expenses
-* Try Sync for Expenses in our interactive [API reference](/sync-for-expenses-api#/)
+* Review our [FAQ](/expenses/faq) to find out more about Expenses
+* Try Expenses in our interactive [API reference](/sync-for-expenses-api#/)

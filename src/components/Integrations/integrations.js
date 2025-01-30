@@ -41,7 +41,7 @@ export const integrationsFilterCommerceComm = [
   "Zettle",
 ]
 
-export const integrationsFilterPayables = [
+export const integrationsFilterBillPayAsync = [
   "MYOB Business",
   "Oracle NetSuite",
   "QuickBooks Desktop",
@@ -67,7 +67,7 @@ export const integrationsFilterSupplierEnablement = [
   "Xero",
 ];
 
-export const integrationsFilterBillPayKit = [
+export const integrationsFilterBillPaySync = [
   "Xero",
   "QuickBooks Online",
   "FreeAgent",
@@ -193,26 +193,26 @@ export const sfeIntegrations = [
   {
     "name": "QuickBooks Online",
     "to": "/integrations/accounting/quickbooksonline/accounting-quickbooksonline",
-    "type": "Sync For Expenses",
+    "type": "Expenses",
     "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
   },
   {
     "name": "Xero",
     "to": "/integrations/accounting/xero/accounting-xero",
-    "type": "Sync For Expenses",
+    "type": "Expenses",
     "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
   },
   {
     "name": "Oracle NetSuite",
     "to": "/integrations/accounting/netsuite/accounting-netsuite",
-    "type": "Sync For Expenses",
+    "type": "Expenses",
     "tags": ["Credit Cards only"],
     "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
   },
   {
     "name": "Dynamics 365 Business Central",
     "to": "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
-    "type": "Sync For Expenses",
+    "type": "Expenses",
     "tags": ["Payments, Refund, Chargeback & Rewards only"],
     "img": "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png"
   }

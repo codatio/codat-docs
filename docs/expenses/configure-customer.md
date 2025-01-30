@@ -10,9 +10,9 @@ import TabItem from "@theme/TabItem"
 
 ## Overview
 
-When implementing your Sync for Expenses solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting software as a connection. You can do that when the customer starts interacting with your application.  
+When implementing your Expenses solution, you need to create your SMB customer as a [company](../terms/company) in Codat before registering their accounting software as a connection. You can do that when the customer starts interacting with your application.  
 
-Next, you will connect the company to a data source via one of our integrations. With Sync for Expenses, each company will have two data connections: one to the SMB's accounting software, and another one - to the partner expense integration, i.e. your application.
+Next, you will connect the company to a data source via one of our integrations. With Expenses, each company will have two data connections: one to the SMB's accounting software, and another one - to the partner expense integration, i.e. your application.
 
 ![A diagram displaying the relationship of a company and two data connections](/img/sync-for-expenses/sfe-connections.png) 
 
@@ -22,7 +22,7 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 ## Create a company
 
-Within Sync for Expenses, a company represents your SMB customer that manages their expenses using your application. To create it, use our [Create company](/sync-for-expenses-api#/operations/create-company) endpoint. It returns a JSON response containing the company `id`. You will use this `id` to establish a connection to an accounting software. 
+Within Expenses, a company represents your SMB customer that manages their expenses using your application. To create it, use our [Create company](/sync-for-expenses-api#/operations/create-company) endpoint. It returns a JSON response containing the company `id`. You will use this `id` to establish a connection to an accounting software. 
 
 <Tabs>
 
@@ -124,7 +124,7 @@ PATCH /companies/{companyId}/connections/{connectionId}
 
 :::tip Recap
 
-You have created the structure of key objects required by Codat's Sync for Expenses: a company and its connections to an accounting data source and your partner expense integration.
+You have created the structure of key objects required by Codat's Expenses: a company and its connections to an accounting data source and your partner expense integration.
 
 Next, learn how to configure the company to associate the expenses with correct accounts, suppliers, and customers and enable your customers to indicate their preferred expense mapping options. 
 

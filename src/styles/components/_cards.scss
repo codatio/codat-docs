@@ -226,6 +226,21 @@ html[data-theme="dark"] {
       animation: spin var(--timer) linear infinite;
     }
   }
+
+  &.two {
+    .header {
+      margin-bottom: 0.5em;
+
+      h3 {
+        font-size: 1.4em;
+      }
+
+      img {
+        height: 50px !important;
+        width: 50px;
+      }
+    }
+  }
 }
 
 .tertiary {

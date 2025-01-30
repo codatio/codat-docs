@@ -23,27 +23,23 @@ module.exports = {
       items: [
         {
           href: "/bank-feeds-api",
-          label: "Bank Feeds API",
-        },
-        {
-          href: "/lending-api",
-          label: "Lending API",
-        },
-        {
-          href: "/sync-for-commerce-api",
-          label: "Sync for Commerce",
-        },
-        {
-          href: "/sync-for-expenses-api",
-          label: "Sync for Expenses",
+          label: "Bank Feeds",
         },
         {
           href: "/sync-for-payables-api",
-          label: "Sync for Payables",
+          label: "Bill Pay (async)",
         },
         {
           href: "/sync-for-payables-v2-api",
-          label: "Bill Pay kit",
+          label: "Bill Pay (sync)",
+        },
+        {
+          href: "/sync-for-expenses-api",
+          label: "Expenses",
+        },
+        {
+          href: "/lending-api",
+          label: "Lending",
         },
         {
           href: "/platform-api",

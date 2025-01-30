@@ -5,7 +5,7 @@ description: "Make it easier for SMBs to manage and pay suppliers from a single 
 ---
 
 import { IntegrationsList } from "@components/Integrations";
-import { integrationsFilterPayables } from "@components/Integrations/integrations";
+import { integrationsFilterBillPaySync } from "@components/Integrations/integrations";
 
 ![An image from the static](/img/use-cases/billpay/billPay.png)
 
@@ -85,7 +85,7 @@ Once the transaction is completed, a bill payment can then be written to the cus
 
 <br />
 
-<IntegrationsList filter={integrationsFilterPayables} />
+<IntegrationsList filter={integrationsFilterBillPaySync} />
 
 ---
 

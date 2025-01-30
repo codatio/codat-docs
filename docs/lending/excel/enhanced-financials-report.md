@@ -31,7 +31,7 @@ We've also created a [Metrics Template Excel file](/documents/assess-metrics.xls
 
 ## Troubleshooting
 
-All data types relevant to the generation of the Enhanced Financials report are activated automatically when the Lending API product is enabled for your Codat client.
+All data types relevant to the generation of the Enhanced Financials report are activated automatically when the Lending solution is enabled for your Codat client.
 
 However, if you are unable to generate the lending report or the report is incomplete, check that the following data types are enabled:
 

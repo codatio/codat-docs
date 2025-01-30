@@ -16,7 +16,7 @@ import TabItem from "@theme/TabItem";
 
 ### Log into your Codat account 
 
-Use your Codat testing account to explore and test our APIs and other products. It also comes equipped with a sample company. When you start working on your own invoice financing solution, [reach out to your account manager](https://codat.io/#get-in-touch) to discuss your usage of Codat.
+Use your Codat testing account to explore and test our APIs and other solutions. It also comes equipped with a sample company. When you start working on your own invoice financing solution, [reach out to your account manager](https://codat.io/#get-in-touch) to discuss your usage of Codat.
 
 ### Update your auth flow settings
 

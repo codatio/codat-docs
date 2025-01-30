@@ -828,7 +828,7 @@ Called when a write operation times out. This webhook has been replaced by the `
 
 #### SyncCompleted
 
-The original rule type is Called when a [Sync for Expenses](/expenses/overview) expense sync is completed. The replacement event type is Called only when the sync completes successfully.
+The original rule type is Called when a [Expenses](/expenses/overview) expense sync is completed. The replacement event type is Called only when the sync completes successfully.
 
 | Rule type | Maps to event type |
 |---|---|
@@ -901,7 +901,7 @@ The original rule type is Called when a [Sync for Expenses](/expenses/overview) 
 
 #### SyncFailed
 
-Called anytime a [Sync for Expenses](/expenses/overview) expenses sync fails, this event now follows our updated schema standards.
+Called anytime a [Expenses](/expenses/overview) expenses sync fails, this event now follows our updated schema standards.
 
 | Rule type | Maps to event type |
 |---|---|
@@ -976,7 +976,7 @@ Called anytime a [Sync for Expenses](/expenses/overview) expenses sync fails, th
 
 #### SyncConnectionDeleted
 
-This legacy event is specific to [Sync for Commerce](/commerce/overview) and indicates that a data connection has been deleted. This has now been replaced by the platform-wide `connection.deleted` event type.
+This legacy event is specific to our legacy [Sync for Commerce](/commerce/overview) solution and indicates that a data connection has been deleted. This has now been replaced by the platform-wide `connection.deleted` event type.
 
 | Rule type | Maps to event type |
 |---|---|
