@@ -215,7 +215,7 @@ var acc = [{
   platformKey: "ndsk",
   to: "/integrations/accounting/quickbooksonline/accounting-quickbooksonline"
 }, {
-  integration: "Sage 200cloud",
+  integration: "Sage 200 Standard",
   platformKey: "jcrp",
   to: "/integrations/accounting/sage200/accounting-sage200"
 }, {
@@ -457,10 +457,7 @@ module.exports = {
   }, {
     from: "/integrations/commerce/commerce-platform-keys",
     to: "/integrations/commerce/overview"
-  }, {
-    from: "/integrations/accounting/quickbooksdesktop/install-qbd-connector-right-networks",
-    to: "/integrations/accounting/quickbooksdesktop/legacy/install-qbd-connector-right-networks"
-  },
+  }, 
   // sfc
 
   {

@@ -29,6 +29,7 @@
 @use "./components/images";
 @use "./components/input";
 @use "./components/labels";
+@use "./components/links";
 @use "./components/lists";
 @use "./components/markdown";
 @use "./components/mermaid";
@@ -54,44 +55,44 @@
 /* 600 weight */
 
 :root {
-
   // ------------- Colors
 
-  --color-black: #0d0d0d;
+  --color-black:              #0d0d0d;
 
-  --color-interface-core: #556680;
-  --color-interface-dark: #556680;
-  --color-interface-5: #f7fafd;
-  --color-interface-10: #f0f4fa;
-  --color-interface-20: #e4ecf6;
-  --color-interface-40: #BBCADD;
-  --color-interface-60: #93A5BD;
-  --color-interface-80: #7586A3;
+  --color-interface-core:     #556680;
+  --color-interface-dark:     #556680;
+  --color-interface-5:        #f7fafd;
+  --color-interface-10:       #f0f4fa;
+  --color-interface-20:       #e4ecf6;
+  --color-interface-40:       #BBCADD;
+  --color-interface-60:       #93A5BD;
+  --color-interface-80:       #7586A3;
 
-  --color-primary: var(--color-interface-core);
+  --color-primary:            var(--color-interface-core);
 
-  --color-warning-10: #fff7eb;
-  --color-warning-20: #ffeed6;
-  --color-warning-dark: #754300;
+  --color-warning-10:         #fff7eb;
+  --color-warning-20:         #ffeed6;
+  --color-warning-dark:       #754300;
 
-  --color-error-10: #fdebee;
-  --color-error-20: #fcd6dd;
-  --color-error-dark: #750024;
+  --color-error-10:           #fdebee;
+  --color-error-20:           #fcd6dd;
+  --color-error-dark:         #750024;
 
-  --color-neutral-10: #ecf5fd;
-  --color-neutral-20: #daebfc;
-  --color-neutral-dark: #004194;
+  --color-neutral-10:         #ecf5fd;
+  --color-neutral-20:         #daebfc;
+  --color-neutral-dark:       #004194;
 
-  --color-positive-10: #eaf6ed;
-  --color-positive-20: #eaf6ed;
-  --color-positive-dark: #004c00;
+  --color-positive-10:        #eaf6ed;
+  --color-positive-20:        #eaf6ed;
+  --color-positive-dark:      #004c00;
 
-  --color-codat-primary: #482deb;
-  --color-link-primary: #482deb;
+  --color-codat-primary:      #482deb;
+  --color-codat-primary-dark: #351dc6;
+  --color-link-primary:       #482deb;
 
-  --ifm-color-link: var(--color-codat-primary);
-  --ifm-background-color: var(--token-primary-bg-c);
-  --ifm-pre-core: #2b3442;
+  --ifm-color-link:           var(--color-codat-primary);
+  --ifm-background-color:     var(--token-primary-bg-c);
+  --ifm-pre-core:             #2b3442;
 
   // ------------ Fonts
 
@@ -169,17 +170,42 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
+  //https://colorffy.com/dark-theme-generator?colors=482deb-d0d0d
+  /** Dark theme primary colors */
+  --color-primary-a0: #482deb;
+  --color-primary-a10: #6745ee;
+  --color-primary-a20: #805cf1;
+  --color-primary-a30: #9672f4;
+  --color-primary-a40: #aa89f7;
+  --color-primary-a50: #bca0f9;
+
+  /** Dark theme surface colors */
+  --color-surface-a0: #000000;
+  --color-surface-a10: #1e1e1e;
+  --color-surface-a20: #353535;
+  --color-surface-a30: #4e4e4e;
+  --color-surface-a40: #696969;
+  --color-surface-a50: #858585;
+
+  /** Dark theme mixed surface colors */
+  --color-surface-mixed-a0: #11091b;
+  --color-surface-mixed-a10: #262230;
+  --color-surface-mixed-a20: #3e3946;
+  --color-surface-mixed-a30: #56525e;
+  --color-surface-mixed-a40: #706c77;
+  --color-surface-mixed-a50: #8b8890;
+
   --token-primary-bg-c: #03060b;
   --token-secondary-bg-c: #13171c;
   --token-secondary-bg-c-alt: #252c35;
   --token-secondary-bg-c-alt-dark: #303842;
 
-  --ifm-link-color: var(--c-blue-70);
-  --ifm-link-hover-color: rgba(77, 141, 255, 0.8);
+  --ifm-link-color:         var(--color-primary-a50);
+  --ifm-link-hover-color:   var(--color-primary-a40);
 
-  --color-primary: white;
-  --ifm-color-primary: var(--color-codat-primary);
-  --ifm-color-secondary: var(--color-interface-5);
+  --color-primary:          white;
+  --ifm-color-primary:      var(--color-codat-primary);
+  --ifm-color-secondary:    var(--color-interface-5);
 
   --ifm-background-surface-color: var(--token-primary-bg-c);
 
@@ -317,6 +343,14 @@ hr {
 
 .cordova-ee-card p {
   margin: 1rem 0 0;
+}
+
+.details {
+  summary {
+    &:before {
+      margin-top: 2px;
+    }
+  }
 }
 
 

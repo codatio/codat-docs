@@ -107,7 +107,6 @@ if (companyCreatedRes.company().isPresent()) {
 ```
 </TabItem>
 
-
 </Tabs>
 
 :::caution Retain the company ID
@@ -370,6 +369,69 @@ if (companyUpdatedRes.company().isPresent()) {
 If you use include a `null` or empty `tags` object in the [Update company](/platform-api#/operations/update-company) endpoint request, any existing tags for this company will be removed. To retain existing tags, ensure they are included in the update.
 
 :::
+
+#### Filter companies by metadata 
+
+Once you have enriched the company with additional metadata in the form of tags, you can use it for filtering. This allows you to retrieve companies based on specific criteria, such as finding a specific company by customer ID or retrieving a group of companies that the same tag.
+
+To do so, use the `tags` query parameter on the [List companies](/platform-api#/operations/list-companies) endpoint.  The `tags` query parameter uses the same query language as Codat's query parameters. See more on querying in [Query data](/using-the-api/querying).
+
+Here is a query example that returns a specific company by a customer ID:
+
+<Tabs>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+const result = await platformClient.companies.list({
+    tags:`uid=${customerId}`,
+  });
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+res = platform_client.companies.list(operations.ListCompaniesRequest(
+    tags=f'uid={customerId}'
+))
+```
+</TabItem>
+
+<TabItem value="csharp" label="C#">
+
+```c#
+var res = await platformClient.Companies.ListAsync(new() {
+    Tags = $"uid={customerId}",
+});
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+ctx := context.Background()
+res, err := platformClient.Companies.List(ctx, operations.ListCompaniesRequest{
+    Tags: platform.String(fmt.Sprintf("uid=%d", customerId)),
+})
+```
+</TabItem>
+
+<TabItem value="java" label="Java">
+
+```java
+ListCompaniesRequest req = ListCompaniesRequest.builder()
+  .tags(String.format("uid=%d", customerId))
+  .build();
+
+ListCompaniesResponse res = platformClient.companies().list()
+  .request(req)
+  .call();
+```
+</TabItem>
+
+</Tabs>
+
 
 ### Authorize access to company data
 

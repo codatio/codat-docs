@@ -22,7 +22,7 @@ When these webhooks were initially released, they didn't include the top-level s
 
     "companyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
     "connectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-    "sourceAccount": {
+    "bankAccount": {
       "id": "acc-002",
       "accountName": "account-081",
       "sortCode": "123456",

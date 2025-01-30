@@ -24,8 +24,8 @@ To switch to new event types using the recommended "expand/contract" strategy, f
 
    Modify your application logic to handle the existing and the new event types at the same time:
    - Create a new POST endpoint specifically designed to consume the new webhook event type.
-   - Introduce a feature toggle to control the activation of this endpoint. Enabling the toggle should keep the endpoint inactive and prevent it from processing any events.
-   - Apply the same feature toggle to your existing webhook consumer. Enabling the toggle should stop the endpoint from processing the old rule types.
+   - Create a feature toggle to control the activation of the **new** endpoint. **Enabling** the toggle should **activate** the endpoint to start processing events.
+   - Create another feature toggle to control your **existing** webhook consumer. **Disabling** the toggle should **stop** the endpoint from processing the old rule types.
 
 2. **Configure the new webhook consumer in the Portal**
 
@@ -33,15 +33,17 @@ To switch to new event types using the recommended "expand/contract" strategy, f
 
 3. **Validate the new webhook consumer**
 
-   Test the new webhook consumer to ensure it is correctly receiving and processing the new event type. You can send test events and check the logs in the [Codat Portal](https://app.codat.io). Navigate to **Monitor > Events** and select the relevant endpoint to do this. See [Test a webhook consumer](/using-the-api/webhooks/create-consumer#test-a-webhook-consumer) for a step-by-step walkthrough. 
+   Test the new webhook consumer to ensure it is correctly receiving and processing the new event type. You can send test events and check the logs in the [Codat Portal](https://app.codat.io). Navigate to **Monitor > Events** and select the relevant endpoint to do this. See [Test a webhook consumer](/using-the-api/webhooks/create-consumer#test-a-webhook-consumer) for a step-by-step walkthrough.
 
 4. **Enable the new webhook consumer**
 
-   When you’ve confirmed that the new webhook consumer is functioning correctly, enable the endpoint's feature toggle. This will direct your application to process events via the new webhook consumer without losing events.
+   When you’ve confirmed that the new webhook consumer is functioning correctly, activate the endpoint by enabling the feature toggle you created to control it. This will direct your application to process events via the new webhook consumer without losing events.
+   
+   At this stage both webhook consumers will be active and may receive and process the same events as a result. Include logic in your application that prevents the same event from being processed by both endpoints to avoid duplication. 
 
-5. **Disable the old webhook consumer**
+6. **Disable the old webhook consumer**
 
-   Once you are happy with the new webhook consumer, use the feature toggle to disable your old endpoint, delete the old consumer from the Portal, and remove the application logic consuming the old rule types. 
+   Once you are happy with the new webhook consumer, deactivate your old endpoint by disabling the feature toggle you created to control it, delete the old consumer from the Portal, and remove the application logic consuming the old rule types. 
 
 ## Understand new event types
 
@@ -709,7 +711,7 @@ These event types provide detailed information, including whether the push opera
     "connectionId":"2e9d2c44-f675-40ba-8049-353bfcb5e171",
     "requestedOnDate":"2022-10-23T00:00:00.000Z",
     "completedOnDate":"2022-10-23T00:00:00.000Z",
-    "status":"Successful",
+    "status":"Success",
     "record": { // only populated on success for records, and always populated for attachments.
       "id": "inv_sedi984199smdjsua9124" 
     },

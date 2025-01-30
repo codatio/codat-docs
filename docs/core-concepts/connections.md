@@ -228,7 +228,7 @@ var res = await codatPlatform.Connections.UnlinkAsync(new UnlinkConnectionReques
 
 You can delete a data connection using the [Codat Portal](https://app.codat.io/). Navigate to **Companies**, choose the company you want to manage connections for, then select **Manage connections** and use the three-dot menu to delete the connection.
 
-Alternatively, you can send a request to the <a href="/platform-api#/operations/delete-connection" target="_blank">DELETE /connectionId endpoint</a> and provide the `companyId` and `connectionId` as path parameters.
+Alternatively, you can send a request to the <a href="/platform-api#/operations/delete-connection" target="_blank">`DELETE /connectionId`</a> endpoint and provide the `companyId` and `connectionId` as path parameters.
 
 <Tabs>
   <TabItem value="curl" label="cURL">
@@ -353,7 +353,7 @@ Alternatively, you can send a request to the <a href="/platform-api#/operations/
 When you delete a data connection:
 
 - You can't make any data read or write operations against the underlying data provider.
-- The data connection isn't returned by `GET /connections` or `GET / companies`.
+- The data connection isn't returned by `GET /connections` or `GET /companies`.
 
 ## Provide credentials or tokens for a data connection
 

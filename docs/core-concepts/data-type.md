@@ -69,4 +69,3 @@ The data types you use will depend on the Codat solution you use. For reference,
 
 - Next concept: [Data status](/core-concepts/status)
 - [Data type settings](/core-concepts/data-type-settings)
-- Explore the [data model](/data-model/all-datatypes)

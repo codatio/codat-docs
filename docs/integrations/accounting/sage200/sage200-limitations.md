@@ -1,14 +1,14 @@
 ---
-title: "Sage 200cloud limitations"
+title: "Sage 200 Standard limitations"
 slug: "sage200-limitations"
 sidebar_label: Limitations
 ---
 
-Details of Sage 200cloud limitations and how Codat handles these.
+Details of Sage 200 Standard limitations and how Codat handles these.
 
 ## Grouping of tax rates for line items
 
-Due to a Sage 200cloud limitation, line items on invoices, credit notes, bills, and bill credit notes are grouped into separate lines for tax rates:
+Due to a Sage 200 Standard limitation, line items on invoices, credit notes, bills, and bill credit notes are grouped into separate lines for tax rates:
 
 - A `Goods Summary` line
 - A `Tax Summary - Standard rate` for each tax code.
@@ -76,3 +76,7 @@ Total amounts and total tax amounts are shown for each line.
     "note": "0000000126"
   }
 ```
+
+## Invoices
+
+When working with Sage 200 Standard, the inline discount is applied directly to the final transaction amount. This means that the discount amount is not stored or available as a separate value in Codat. Instead, the system incorporates the discount into the total calculation without retaining it as a distinct field. As a result, both `lineItems.discountAmount` and `totalDiscount` will be returned as null.

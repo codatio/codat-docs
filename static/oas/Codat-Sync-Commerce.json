@@ -439,7 +439,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/sync-for-sync-for-commerce-api#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/platform-api#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -1515,26 +1515,6 @@
           }
         }
       }
-    },
-    "Sync Connection Deleted": {
-      "post": {
-        "deprecated": true,
-        "requestBody": {
-          "description": "A Sync for Commerce connection is deleted.\n\nThis event type has been deprecated. Subscribe to the `connection.deleted` event type instead.",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/SyncConnectionDeletedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
     }
   },
   "components": {
@@ -1725,16 +1705,31 @@
                 "description": "An array of products that are currently enabled for the company."
               },
               "tags": {
+                "title": "Tags",
                 "type": "object",
                 "maxProperties": 10,
                 "propertyNames": {
                   "pattern": "^.{1,27}$"
                 },
-                "additional properties": {
+                "additionalProperties": {
                   "type": "string",
                   "maxLength": 100
                 },
                 "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+              },
+              "referenceParentCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference",
+                "nullable": true,
+                "description": "The parent entity or controlling organization of this company. Null if the company has no parent."
+              },
+              "referenceSubsidiaryCompanies": {
+                "type": "array",
+                "nullable": false,
+                "description": "A list of subsidiary companies owned or controlled by this entity. Empty if the company has no children.",
+                "minItems": 0,
+                "items": {
+                  "$ref": "#/components/schemas/Company/definitions/companyReference"
+                }
               }
             },
             "required": [
@@ -1877,6 +1872,26 @@
           "dataPushed": {
             "type": "boolean",
             "description": "Boolean of whether the sync resulted in data being pushed."
+          }
+        }
+      },
+      "CompanyUpdateRequest": {
+        "title": "Update company request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/CreateCompany/properties/description"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
           }
         }
       },
@@ -2586,7 +2601,8 @@
               "connection.connected",
               "connection.disconnected",
               "connection.reconnected",
-              "connection.deleted"
+              "connection.deleted",
+              "connection.failed"
             ]
           },
           "generatedDate": {
@@ -3072,66 +3088,6 @@
                 "href": "/companies/{id}/data/{dataType}?page=1&pageSize=10"
               }
             }
-          }
-        ]
-      },
-      "SyncConnectionDeletedWebhook": {
-        "title": "Sync connection deleted webhook",
-        "description": "A Sync for Commerce connection is deleted.",
-        "x-internal": true,
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/parameters/clientId/schema"
-          },
-          "ClientName": {
-            "type": "string",
-            "description": "Name of your client in Codat."
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "RuleId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the rule.",
-            "deprecated": true
-          },
-          "RuleType": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "34d52a089f08a"
-            },
-            "description": "The type of rule."
-          },
-          "AlertId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the webhook event."
-          },
-          "Message": {
-            "type": "string",
-            "description": "A human-readable message about the webhook."
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Sync Connection Deleted",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Sync connection for company 8a210b68-6988-11ed-a1eb-0242ac120002 deleted"
-          },
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Sync Connection Deleted",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Sync connection for company Tesco (8a210b68-6988-11ed-a1eb-0242ac120002) deleted"
           }
         ]
       },
@@ -3773,7 +3729,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/sync-for-sync-for-commerce-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/platform-api#/schemas/ApiKeyDetails) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/platform-api#/operations/list-api-keys), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"

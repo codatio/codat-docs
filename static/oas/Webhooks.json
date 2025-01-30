@@ -227,6 +227,68 @@
         }
       }
     },
+    "connection.failed": {
+      "post": {
+        "description": "Called when a connection failed linking to the SMB.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              },
+              "examples": {
+                "Connection failed": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "type": "connection.failed",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      },
+                      "connection": {
+                        "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                        "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                        "integrationKey": "dfxm",
+                        "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                        "platformName": "Basiq",
+                        "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                        "status": "PendingAuth",
+                        "created": "2022-10-27T09:53:29.000Z",
+                        "sourceType": "Banking",
+                        "dataConnectionErrors": [
+                          {
+                            "statusCode": "403",
+                            "statusText": "User cancelled linking",
+                            "errorMessage": "User cancelled",
+                            "erroredOnUtc": "2022-10-27T09:53:29.000Z",
+                            "status": "Active"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "connection.disconnected": {
       "post": {
         "description": "Called when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.",
@@ -841,6 +903,7 @@
     "bankFeeds.sourceAccount.connected": {
       "post": {
         "description": "Called when a bank feed source account has become connected.",
+        "x-svix-feature-flag": "bank-feeds",
         "requestBody": {
           "content": {
             "application/json": {
@@ -890,6 +953,7 @@
     "bankFeeds.sourceAccount.disconnected": {
       "post": {
         "description": "Called when a bank feed source account has become disconnected.",
+        "x-svix-feature-flag": "bank-feeds",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3214,6 +3278,25 @@
         }
       }
     },
+    "reports.categorizedBankStatement.generate.unsuccessful": {
+      "post": {
+        "description": "Called when a categorized bank statement has failed to be generated for a company.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReportGenerationWebhook"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "reports.categorizedBankStatement.generate.successful": {
       "post": {
         "description": "Called when a categorized bank statement is successfully generated for a company.",
@@ -3570,7 +3653,7 @@
                 "propertyNames": {
                   "pattern": "^.{1,27}$"
                 },
-                "additional properties": {
+                "additionalProperties": {
                   "type": "string",
                   "maxLength": 100
                 },
@@ -3939,7 +4022,8 @@
               "connection.connected",
               "connection.disconnected",
               "connection.reconnected",
-              "connection.deleted"
+              "connection.deleted",
+              "connection.failed"
             ]
           },
           "generatedDate": {
@@ -4309,10 +4393,8 @@
                 "description": "Status of transaction."
               },
               "errorMessage": {
-                "type": [
-                  "string",
-                  "null"
-                ],
+                "type": "string",
+                "nullable": true,
                 "description": "Error message for failed transaction."
               }
             }
@@ -4666,6 +4748,9 @@
             }
           }
         }
+      },
+      "ReportGenerationUnsuccessfulWebhook": {
+        "$ref": "#/components/schemas/ReportGenerationWebhook"
       },
       "ReportGenerationWebhook": {
         "title": "Report generation webhook",

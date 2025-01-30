@@ -150,21 +150,34 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 <IntegrationsList filter={integrationsFilterExpenses}/>
 <br/>
 <details>
-<summary> Supported expense types per integration</summary>
+<summary> Supported integrations by endpoint</summary>
 
-| Expenses                    | Payment | Refund | Reward | Chargeback | Adjustment in | Adjustment out | Transfer | Reimbursable expense |
-|---------------------|---------|--------|--------|------------|-------------|--------------|---------------|---------------|
-| Xero                | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            |              |              |
-| QuickBooks   Online | ✔️       | ✔️      | ✔️      | ✔️          | ✔️           | ✔️            | ✔️             | ✔️            | 
-| Dynamics   365      | ✔️       | ✔️      | ✔️      | ✔️          |             |              |               |              |
-| Oracle   NetSuite   | ✔️       | ✔️      |         |            |             |              |               |              |
-| QuickBooks Desktop  | ✔️       | ✔️  (credit card only)          |            |            |             |              |✔️              | ✔️            |
-| FreeAgent          | ✔️       |          |        |            |             |              | ✔️                |✔️            |   
+|Integration          | expense-transactions | reimbursable-expense-transactions | transfer-transactions | adjustment-transactions |
+|---------------------|----------------------|-----------------------------------|-----------------------|-------------------------|
+| Xero                | ✔️                  |                                   | ✔️                    | ✔️                     | 
+| QuickBooks   Online | ✔️                  | ✔️                                | ✔️                   | ✔️                      | 
+| Dynamics   365      | ✔️                  |                                   |                       | ✔️                      |
+| Oracle   NetSuite   | ✔️                  | ✔️                                |                      |                          |             
+| QuickBooks Desktop  | ✔️                  | ✔️                                | ✔️                   | ✔️                      |
+| FreeAgent           | ✔️                  | ✔️                                | ✔️                   |                         |   
+</details>
+
+<details>
+<summary> Supported integrations by transaction type</summary>
+
+| Integration                   | Payment | Refund                | Reward                | Chargeback             |
+|---------------------|---------|-----------------------|-----------------------|------------------------|
+| Xero                | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| QuickBooks   Online | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| Dynamics   365      | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| Oracle   NetSuite   | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| QuickBooks Desktop  | ✔️     | ✔️ (credit card only) | ✔️ (credit card only) | ✔️ (credit card only) |
+| FreeAgent           | ✔️     |                       |                        |                       |              
 </details>
 
 ## Build with client libraries
 
-Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developers' journey automating the expense management process for your customers. The SDKs come in multiple languages and provide sample requests and responses for the full range of spend management scenarios.
+Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developer journey automating the expense management process for your customers. The SDKs come in multiple languages and provide sample requests and responses for the full range of spend management scenarios.
 
 <ClientLibraries productName={"sync-for-expenses"} />
 

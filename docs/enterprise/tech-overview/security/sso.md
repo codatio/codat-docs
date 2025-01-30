@@ -41,9 +41,9 @@ In order to support SSO, you need to connect your Active Directory (AD) or Ident
 
     a. Return SAML responses that include the groups claim. This ensures that an ID representing each AD group the user belongs to is sent to us for mapping the client/role access. 
 
-    b. Set the Reply URL (Assertion Customer Service URL) to `https://authentication.codat.io/login/callback?connection=`. 
+    b. Set the Reply URL (Assertion Customer Service URL) to `https://authentication.codat.io/login/callback?connection=[client-name]-[instance-name]-saml-connection`. 
 
-    c. Ensure a Redirect URL of `https://authentication.codat.io/login/callback?connection=` is set.
+    c. Ensure a Redirect URL of `https://authentication.codat.io/login/callback?connection=[client-name]-[instance-name]-saml-connection` is set.
    
     d. Include the following claims for each user in the SAML responses from the authenticating IdP:
 

@@ -12,8 +12,6 @@ In this guide, we will cover the ways you can ownload the resulting reports gene
 
 Before you can review spend data, you need to request access to it. We cover this in detail in our [Request information](/supplier-enablement/guides/analyze-spend) guide.
 
-need to [request access to your customer's data](/supplier-enablement/guides/manage-relationships).
-
 ## Download data
 
 ### Check data status

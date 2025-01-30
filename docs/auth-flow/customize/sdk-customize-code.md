@@ -28,6 +28,7 @@ function AuthFlow() {
       //},
       //text: {...},
       enableAdditionalConsent: true,
+      enableMultiEntityLinking: true,
     }
   }
 
@@ -49,6 +50,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
 ```js
 <CodatLink
   companyId={companyId}
+  onConnectionStarted={onConnectionStarted}
   onConnection={onConnection}
   onError={onError}
   onClose={onClose}
@@ -65,6 +67,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
     },
     text: {...},
     enableAdditionalConsent: true,
+    enableMultiEntityLinking: true,
   }}
 />
 ```
@@ -80,6 +83,8 @@ The `options` prop is optional and accepts an object containing the following op
 | `sourceTypes`             | Controls the data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for. |
 | `text`                    | Contains options that control what text is displayed to the user. Markdown is supported.                                        |
 | `enableAdditionalConsent` | Determines whether an additional consent journey for further use cases is displayed to the user.      |
+| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.      |
+
 
 The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
 
@@ -187,6 +192,12 @@ To request additional consent, set the `enableAdditionalConsent` option to `true
 ![](/img/auth-flow/additional-consent-journey.png)
 
 By default, this option is set to `false`. Next, use [custom text](/auth-flow/customize/sdk-customize-code#custom-text) to manage the content displayed to them during this journey.
+
+## Multi-entity linking
+
+You may want to enable your customers to authorize access to multiple companies within a single accounting platform in the same connection flow. This is relevant for integrations that allow their users to operate several subsidiaries within the same account. 
+
+To provide your customers with this option, set the `enableMultiEntityLinking` option to `true`. Ths will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support. By default, this option is set to `false`.
 
 ---
 ## Read next

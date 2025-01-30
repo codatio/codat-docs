@@ -1,6 +1,7 @@
 ---
 title: "Set up your Basiq integration"
 description: "Explore our API integration with Basiq"
+unlisted: true
 sidebar_label: Setup
 ---
 

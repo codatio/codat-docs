@@ -1,36 +1,36 @@
 ---
-title: "Overview"
-description: "Enterprise pages"
+title: "Architecture overview"
+description: "Explore a high-level overview of Codat's platform architecture"
+sidebar_label: "Overview"
+hide_table_of_contents: false
 ---
 
+## Introduction
 
-# Architecture 
+Codat has a **microservice architecture**. This modular structure parallelizes software development and enables a scalable and robust system to be created.
 
-The Codat technology system has a [microservice](https://en.wikipedia.org/wiki/Microservices) architecture, this modular structure parallelizes software development and enables a scalable and robust system to be created.
+There are currently over 100 services that make up the Codat technology infrastructure, each with a separate instance for each of the two environments (integration and production). Most importantly, each connection to an external data source is a separate service that handles authentication, authorization, data fetch, and data mapping. 
 
-There are currently over 100 services that make up the Codat technology infrastructure, each with a separate instance for each of the two environments (integration, production). 
+Services are configured to automatically scale out to multiple instances in the event of increased load. This ensures high levels of availability and performance. The load on instances is proactively monitored by [Microsoft Azure](https://azure.microsoft.com/en-us/), and the engineering team is alerted in the event of unexpected spikes.
 
-Most importantly, each connection to an external data source is a separate service with the responsibility of handling authentication, authorisation, data fetch and data mapping. Services are configured to automatically scale out to multiple instances in the event of increased load, thus ensuring high levels of availability and performance. 
+### Networking flow topology
 
-Load on instances is proactively monitored by Azure, and the engineering team is alerted in the event of unexpected spikes.
+You can see the overview of Codat's networking flow topology on the image below. Clients call through a Web Application Firewall (WAF) to our gateway, which is routed to the correct service.
 
 ![](/img/enterprise/architecture/architecture.png)
 
-# Hosting and Data Storage
+## Hosting and data storage
 
-Codat uses the [Microsoft Azure](https://azure.microsoft.com/en-us/) platform for all hosting and data storage.  Codat has ensured that all hosting and data storage by Azure is located in the UK only.
+Codat uses the [Microsoft Azure](https://azure.microsoft.com/en-us/) platform for all hosting and data storage, located in the UK only. Microsoft Azure is a growing collection of integrated cloud services that developers and IT professionals use to build, deploy, and manage applications through a global network of data centres.
 
-Microsoft Azure is a growing collection of integrated cloud services that developers and IT professionals use to build, deploy and manage applications through a global network of data centres.
-In particular Codat uses [Azure’s Platform-as-a-service PaaS](https://azure.microsoft.com/en-gb/overview/what-is-paas/) offering rather than Infrastructure-as-a-service (IaaS). 
+In particular, Codat uses Azure’s [Platform as a service (PaaS)](https://azure.microsoft.com/en-gb/overview/what-is-paas/) offering. It includes hosting, networking, and storage infrastracture as well as middleware, development tools, and other resources required to support a complete web application lifecycle. 
 
-This means that the underlying application infrastructure is managed by Microsoft themselves, ensuring it is maintained to the highest standard. Operating System patching is carried out automatically by Microsoft.
+This allows Codat to focus on the services we create while Microsoft manages the underlying application infrastructure and automatically patches the operating system, maintaining them to the highest standard. 
 
-All data is stored on Microsoft Azure architecture.
+:::info Additional resources
+See Microsoft's [What is PaaS?](https://azure.microsoft.com/en-gb/resources/cloud-computing-dictionary/what-is-paas/) to learn more about cloud platform services and [Shared Responsibility Model](/enterprise/tech-overview/architecture/shared-responsibility-model) for more information on our use of Azure. 
+:::
 
-# Azure Security
-Codat utilizes the following security offerings provided by Microsoft Azure:
- - Encryption at rest: SQL transparent data encryption, Storage Service Encryption, AES-256
- - Encryption in transit: TLS/SSL enforced for all data transit, HSTS, IPSec
- - Role level access: Azure RBAC, Active Directory
+## Read next
 
-For a more detailed explanation of Microsoft Azure security and data protection features see [here](https://www.microsoft.com/en-us/trustcenter/).
+- [Shared responsibility model](/enterprise/tech-overview/architecture/shared-responsibility-model)

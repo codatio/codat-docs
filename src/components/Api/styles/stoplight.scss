@@ -108,3 +108,38 @@ button.sl-bg-primary {
     background-color: var(--color-canvas-tint);
   }
 }
+
+.TryItPanel {
+  background: var(--token-primary-bg-c);
+
+  > * {
+    margin: 0.25em 0;
+    overflow: hidden;
+    border-radius: 4px;
+
+    &:nth-child(2) {
+      overflow: auto;
+    }
+  }
+
+  .ParameterGrid{
+    margin-bottom: 0;
+  }
+}
+
+.TextRequestBody {
+  margin-bottom: 0 !important;
+  padding: 16px !important;
+
+  > .sl-code-editor {
+    --color-text: var(--ifm-pre-color);
+
+    > div {
+      padding: 0px;
+    }
+  }
+}
+
+.SendButtonHolder {
+  padding-left: 0 !important;
+}

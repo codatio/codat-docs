@@ -25,9 +25,14 @@ An event that fails three times and then succeeds will be delivered roughly 35 m
 
 :::
 
-## Recover failed messages
+## Recover failed and missed messages
 
-If you want to resend or recover one or more messages in case of your app's downtime or incorrect configuration, you can do so in the [Codat Portal](https://app.codat.io/monitor/events). 
+Our webhooks service can recover two types of messages:
+
+- **Failed messages** occur when the message wasn't delivered even after all attempts to deliver the message have been exhausted. You can **recover** such messages.
+- **Missed messages** occur when the endpoint has been disabled, the endpoint didn't exist at the time of sending the message (but created afterward), or the endpoint initially configured to listen to other event types and has been updated to include additional ones. You can **replay** such messages.
+
+If you want to replay or recover one or more messages in case of your app's downtime or incorrect configuration, you can do so in the [Codat Portal](https://app.codat.io/monitor/events).
 
 Navigate to **Monitor > Webhooks > Events > Endpoints** to view your consumer endpoints and retry the messages manually or automatically. 
 
@@ -49,12 +54,7 @@ Then, click the triple-dot menu on the right and choose one of the applicable op
 
 ![A fragment of the UI that displays multiple message recovery options](/img/use-the-api/0046-multiple-message-retry.png)
 
-For more granular date control, you can scroll to the endpoint's message attempts, click on the triple-dot options menu of a specific message, and choose **Replay > Replay all failed messages since this time**.
-
-:::info Missing messages
-
-A message could be missing if the endpoint was disabled, did not exist and was created after the send date, or was listening to other event types and is now listening to an additional one. 
-:::
+For more granular date control, you can scroll to the endpoint's message attempts, click the triple-dot options menu of a specific message, and choose **Replay > Replay all failed messages since this time**.
 
 ## Endpoint failures
 

@@ -5,12 +5,22 @@ article .markdown {
   > p > img,
   > ol > li > p > img,
   > ul > li > p > img {
-    border: 1px solid #ededed;
+    border: 2px solid var(--token-secondary-bg-c-alt);
     border-radius: 6px;
     text-align: center;
     width: auto;
-    max-height: 450px;
+    max-height: 60vh;
     margin: auto;
     margin-bottom: 2em;
   }
+}
+
+
+// Image zoom overlay
+.medium-zoom-overlay {
+  z-index: 1000;
+}
+
+.medium-zoom-image {
+  z-index: 1001;
 }

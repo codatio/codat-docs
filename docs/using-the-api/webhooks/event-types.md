@@ -24,6 +24,7 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 | [`connection.connected`](/platform-api#/webhooks/connection.connected/post)                  | Called when a connection is successfully linked by the SMB.                                                                                            |
 | [`connection.disconnected`](/platform-api#/webhooks/connection.disconnected/post)            | Called when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.                                      |
 | [`connection.reconnected`](/platform-api#/webhooks/connection.reconnected/post)              | Called when a connection is reconnected after becoming disconnected.                                                                                   |
+| [`connection.failed`](/platform-api#/webhooks/connection.failed/post)              | Called when a connection failed linking to the SMB. |
 | [`connection.deleted`](/platform-api#/webhooks/connection.deleted/post)                      | Called when a connection is deleted.                                                                                                                   |
 | [`read.completed`](/platform-api#/webhooks/read.completed/post)                              | Indicates that the read of data types for a solution has completed.                                                                                       |
 | [`read.completed.initial`](/platform-api#/webhooks/read.completed.initial/post)              | Indicates that the initial read of data types for a solution has completed.                                                                                       |
@@ -40,6 +41,8 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 | Bank Feeds    | [`bankFeeds.sourceAccount.disconnected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.disconnected/post) | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of disconnected.                              |
 | Expenses | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post)                  | Called when an expense sync successfully completes without any errors or warnings.                      |
 | Expenses | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)              | Called when an expense sync fails to complete successfully, resulting in at least one error or warning. |
+| Lending | [`report.categorizedBankStatement.generate.successful`](/lending-api#/webhooks/report.categorizedBankStatement.generate.successful/post) | Called when a [categorized bank statement](/lending/features/bank-statements-overview) is successfully generated for a company. |
+| Lending | [`AccountCategoriesUpdated`](/lending-api#/webhooks/Account-categories-updated/post) | Called when Codat AI had [categorized accounts](/lending/features/financial-statements-overview) for a company. |
 
 ---
 ## Read next

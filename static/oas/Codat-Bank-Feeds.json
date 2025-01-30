@@ -131,12 +131,12 @@
       "description": "Extra functionality for building an account management UI."
     },
     {
-      "name": "Company information",
-      "description": "Get detailed information about a company from the underlying accounting software."
-    },
-    {
       "name": "Transactions",
       "description": "Create new bank account transactions for a company's connections, and see previous operations."
+    },
+    {
+      "name": "Company information",
+      "description": "Get detailed information about a company from the underlying accounting software."
     }
   ],
   "paths": {
@@ -166,7 +166,11 @@
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar"
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement"
+                      ],
+                      "referenceSubsidiaryCompanies": []
                     }
                   },
                   "With a description": {
@@ -178,7 +182,11 @@
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar"
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement"
+                      ],
+                      "referenceSubsidiaryCompanies": []
                     }
                   },
                   "With a tag": {
@@ -191,9 +199,13 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement"
+                      ],
                       "tags": {
                         "region": "us"
-                      }
+                      },
+                      "referenceSubsidiaryCompanies": []
                     }
                   }
                 }
@@ -285,7 +297,14 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
+                          "createdByUserName": "Mike Smith",
+                          "products": [
+                            "supplier-enablement",
+                            "lending",
+                            "expenses-v1",
+                            "commerce"
+                          ],
+                          "referenceSubsidiaryCompanies": []
                         }
                       ],
                       "pageNumber": 1,
@@ -326,36 +345,111 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Joe Bloggs"
+                          "createdByUserName": "Joe Bloggs",
+                          "products": [
+                            "supplier-enablement",
+                            "lending",
+                            "payables-v2"
+                          ],
+                          "referenceSubsidiaryCompanies": []
                         },
                         {
-                          "id": "096db70b-78de-4ff0-aa98-299cb5fe17a0",
-                          "name": "Godata",
-                          "description": "A new digital agency with a passion for creating amazing digital experiences",
-                          "platform": "",
-                          "redirect": "https://link.codat.io/company/096db70b-78de-4ff0-aa98-299cb5fe17a0",
-                          "lastSync": "2022-01-01T12:30:00.000Z",
+                          "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                          "name": "Toft stores",
+                          "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                          "dataConnections": [],
+                          "created": "2022-11-10T10:45:18Z",
+                          "createdByUserName": "Dan Tzabar",
+                          "products": [
+                            "supplier-enablement"
+                          ],
+                          "referenceSubsidiaryCompanies": [
+                            {
+                              "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                              "name": "Toft stores UK",
+                              "links": {
+                                "portal": "https://app.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/summary"
+                              }
+                            },
+                            {
+                              "id": "db94eddc-9212-4568-9b5c-3eab0e325913",
+                              "name": "Toft stores US",
+                              "links": {
+                                "portal": "https://app.codat.io/companies/db94eddc-9212-4568-9b5c-3eab0e325913/summary"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                          "name": "Toft stores UK",
+                          "redirect": "https://link.codat.io/company/c8d3af58-7011-47ce-b3f2-89faf300ef6d",
                           "dataConnections": [
                             {
-                              "id": "a70bc148-dc21-46b2-a257-d9c58ac15cbb",
-                              "integrationId": "1c312d69-e638-46d4-ad31-72e6c3ba8390",
-                              "integrationKey": "vjms",
-                              "sourceId": "396c3158-5dd7-481b-a7c4-a795ca31792b",
-                              "platformName": "Pandle",
-                              "linkUrl": "https://link-api.codat.io/companies/096db70b-78de-4ff0-aa98-299cb5fe17a0/connections/a70bc148-dc21-46b2-a257-d9c58ac15cbb/start",
+                              "id": "d5ab61b7-1ad0-46fd-9f9f-b6761047941e",
+                              "integrationId": "cc750323-5a47-4f28-8d8e-30fbbf2ce137",
+                              "integrationKey": "akxx",
+                              "sourceId": "9815b998-024d-4415-a40b-89903b2cad6f",
+                              "platformName": "Oracle NetSuite",
+                              "linkUrl": "https://link-api.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/connections/d5ab61b7-1ad0-46fd-9f9f-b6761047941e/start",
                               "status": "Linked",
                               "lastSync": "2022-01-01T12:30:00.000Z",
                               "created": "2022-01-01T11:30:00Z",
                               "sourceType": "Accounting"
                             }
                           ],
-                          "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
+                          "created": "2022-11-10T10:45:18Z",
+                          "createdByUserName": "Dan Tzabar",
+                          "products": [
+                            "lending",
+                            "supplier-enablement",
+                            "payables"
+                          ],
+                          "referenceParentCompany": {
+                            "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                            "name": "Toft stores",
+                            "links": {
+                              "portal": "https://app.codat.io/companies/ab12c58d-a678-4ebf-a159-ae99e1807bd0/summary"
+                            }
+                          },
+                          "referenceSubsidiaryCompanies": []
+                        },
+                        {
+                          "id": "db94eddc-9212-4568-9b5c-3eab0e325913",
+                          "name": "Toft stores US",
+                          "redirect": "https://link.codat.io/company/db94eddc-9212-4568-9b5c-3eab0e325913",
+                          "dataConnections": [
+                            {
+                              "id": "1e5c8c9e-27fd-4ba9-9a2a-d02ba65bc2fb",
+                              "integrationId": "cc750323-5a47-4f28-8d8e-30fbbf2ce137",
+                              "integrationKey": "akxx",
+                              "sourceId": "9815b998-024d-4415-a40b-89903b2cad6f",
+                              "platformName": "Oracle NetSuite",
+                              "linkUrl": "https://link-api.codat.io/companies/db94eddc-9212-4568-9b5c-3eab0e325913/connections/1e5c8c9e-27fd-4ba9-9a2a-d02ba65bc2fb/start",
+                              "status": "Linked",
+                              "lastSync": "2022-01-01T12:30:00.000Z",
+                              "created": "2022-01-01T11:30:00Z",
+                              "sourceType": "Accounting"
+                            }
+                          ],
+                          "created": "2022-11-10T10:45:18Z",
+                          "createdByUserName": "Dan Tzabar",
+                          "products": [
+                            "supplier-enablement"
+                          ],
+                          "referenceParentCompany": {
+                            "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                            "name": "Toft stores",
+                            "links": {
+                              "portal": "https://app.codat.io/companies/ab12c58d-a678-4ebf-a159-ae99e1807bd0/summary"
+                            }
+                          },
+                          "referenceSubsidiaryCompanies": []
                         }
                       ],
                       "pageNumber": 1,
                       "pageSize": 100,
-                      "totalResults": 2,
+                      "totalResults": 3,
                       "_links": {
                         "current": {
                           "href": "/companies?page=1&pageSize=100"
@@ -396,7 +490,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿The *List companies* endpoint returns a list of [companies] associated to your instances.\n\nA [company](https://docs.codat.io/bank-feeds-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies](https://docs.codat.io/bank-feeds-api#/schemas/Company) associated to your instances.\n\nA [company](https://docs.codat.io/bank-feeds-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n\n## Filter by tags\n\nThe *List companies* endpoint supports the filtering of companies using [tags](https://docs.codat.io/using-the-api/managing-companies#add-metadata-to-a-company). It supports the following operators with [Codat’s query language](https://docs.codat.io/using-the-api/querying):\n\n- equals (`=`)\n- not equals (`!=`)\n- contains (`~`)\n\nFor example, you can use the querying to filter companies tagged with a specific foreign key, region, or owning team: \n- Foreign key: `uid = {yourCustomerId}`\n- Region: `region != uk`\n- Owning team and region: `region = uk && owningTeam = invoice-finance`",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -409,6 +503,15 @@
           },
           {
             "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "region=uk && team=invoice-finance",
+            "description": "Filter companies by tags using the \"equals\" (=), \"not equals\" (!=), and \"contains\" (~) operators with [Codat’s query language](https://docs.codat.io/using-the-api/querying)."
           }
         ]
       }
@@ -438,13 +541,93 @@
                   "Simple company": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
+                      "name": "Toft stores holdings",
                       "description": "",
                       "platform": "",
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
-                      "createdByUserName": "Dan Tzabar"
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement",
+                        "lending",
+                        "expenses-v1",
+                        "commerce"
+                      ],
+                      "referenceSubsidiaryCompanies": []
+                    }
+                  },
+                  "Parent multi-entity company": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Toft stores",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement",
+                        "lending",
+                        "expenses-v1",
+                        "commerce"
+                      ],
+                      "referenceSubsidiaryCompanies": [
+                        {
+                          "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                          "name": "Toft stores UK",
+                          "links": {
+                            "portal": "https://app.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/summary"
+                          }
+                        },
+                        {
+                          "id": "db94eddc-9212-4568-9b5c-3eab0e325913",
+                          "name": "Toft stores US",
+                          "links": {
+                            "portal": "https://app.codat.io/companies/db94eddc-9212-4568-9b5c-3eab0e325913/summary"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "Subsidiary multi-entity company": {
+                    "value": {
+                      "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                      "name": "Toft stores UK",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                      "dataConnections": [
+                        {
+                          "id": "d5ab61b7-1ad0-46fd-9f9f-b6761047941e",
+                          "integrationId": "cc750323-5a47-4f28-8d8e-30fbbf2ce137",
+                          "integrationKey": "akxx",
+                          "sourceId": "9815b998-024d-4415-a40b-89903b2cad6f",
+                          "platformName": "Oracle NetSuite",
+                          "linkUrl": "https://link-api.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/connections/d5ab61b7-1ad0-46fd-9f9f-b6761047941e/start",
+                          "status": "Linked",
+                          "lastSync": "2022-01-01T12:30:00.000Z",
+                          "created": "2022-01-01T11:30:00Z",
+                          "sourceType": "Accounting"
+                        }
+                      ],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement",
+                        "lending",
+                        "expenses-v1",
+                        "commerce"
+                      ],
+                      "referenceParentCompany": {
+                        "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                        "name": "Toft stores",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/ab12c58d-a678-4ebf-a159-ae99e1807bd0/summary"
+                        }
+                      },
+                      "referenceSubsidiaryCompanies": []
                     }
                   }
                 }
@@ -514,9 +697,10 @@
         }
       },
       "put": {
-        "summary": "Update company",
-        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \n\nA [company](https://docs.codat.io/bank-feeds-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
-        "operationId": "update-company",
+        "summary": "Replace company",
+        "description": "﻿Use the *Replace company* endpoint to replace the existing name, description, and tags of the company. Calling the endpoint will replace existing values even if new values haven't been defined in the payload.\n\nA [company](https://docs.codat.io/bank-feeds-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/bank-feeds-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "operationId": "replace-company",
+        "x-speakeasy-name-override": "replace",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -578,6 +762,133 @@
                 }
               }
             }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update company",
+        "description": "﻿Use the *Update company* endpoint to update the name, description, or tags of the company.\n\nThe *Update company* endpoint doesn't have any required fields. If any of the fields provided are `null` or not provided, they won't be included in the update.  \n\nA [company](https://docs.codat.io/bank-feeds-api#/schemas/Company) represents a business sharing access to their data.",
+        "operationId": "update-company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyUpdateRequest"
+              },
+              "examples": {
+                "Update tags": {
+                  "value": {
+                    "tags": {
+                      "refrence": "new reference"
+                    }
+                  }
+                },
+                "Update name": {
+                  "value": {
+                    "name": "New Name"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/accessToken": {
+      "get": {
+        "summary": "Get company access token",
+        "operationId": "get-company-access-token",
+        "x-speakeasy-name-override": "get-access-token",
+        "description": "Use the _Get company access token_ endpoint to return an access token for the specified company ID to use in Codat's embedded UI products.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyAccessToken"
+                },
+                "examples": {
+                  "Simple company": {
+                    "value": {
+                      "expiresIn": 86400,
+                      "accessToken": "string",
+                      "tokenType": "Bearer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
           }
         }
       }
@@ -683,7 +994,7 @@
       },
       "post": {
         "summary": "Create connection",
-        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/bank-feeds-api#/operations/list-integrations) endpoint to access valid platform keys. ",
+        "description": "﻿Creates a connection for the company by providing a valid `platformKey`. \n\nUse the [List Integrations](https://docs.codat.io/platform-api#/operations/list-integrations) endpoint to access valid platform keys. ",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -2980,7 +3291,7 @@
           }
         },
         "operationId": "get-create-bankAccounts-model",
-        "description": "The *Get create/update bank account model* endpoint returns the expected data for the request payload when creating and updating a [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company and integration.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating and updating a bank account.\r\n"
+        "description": "The *Get create/update bank account model* endpoint returns the expected data for the request payload when creating and updating a [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company and integration.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bankAccounts": {
@@ -3050,8 +3361,141 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/bank-feeds-api#/operations/get-create-update-bankAccounts-model).\r\n\r\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts) for integrations that support creating an account.",
+        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/bank-feeds-api#/operations/get-create-update-bankAccounts-model).",
         "operationId": "create-bank-account"
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts/batch": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Source accounts"
+        ],
+        "summary": "Create source accounts",
+        "description": "The _Batch create source accounts_ endpoint allows you to create multiple representations of your SMB's bank accounts within Codat's domain. The company can then map the source account to an existing or new target account in their accounting software.\n\n> ### Versioning\n> If you are integrating the Bank Feeds API with Codat after August 1, 2024, please use the v2 version of the API, as detailed in the schema below. For integrations completed before August 1, 2024, select the v1 version from the schema dropdown below.",
+        "operationId": "create-batch-source-account",
+        "x-speakeasy-name-override": "create-batch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SourceAccountV2/definitions/sourceAccountV2Prototype"
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/SourceAccount/definitions/sourceAccountPrototype"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "Multi-Status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchErrorResponse"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchCreateResponse"
+                      },
+                      {
+                        "$ref": "#/components/schemas/SourceAccountBatchErrorResponse"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
       }
     },
     "/companies/{companyId}/connections/{connectionId}/connectionInfo/bankFeedAccounts": {
@@ -3067,8 +3511,8 @@
         "tags": [
           "Source accounts"
         ],
-        "summary": "Create source account",
-        "description": "The _Create Source Account_ endpoint allows you to create a representation of a bank account within Codat's domain. The company can then map the source account to an existing or new target account in their accounting software.\n\n#### Account mapping variability\n\nThe method of mapping the source account to the target account varies depending on the accounting software your company uses.\n\n#### Mapping options:\n\n1. **API Mapping**: Integrate the mapping journey directly into your application for a seamless user experience.\n2. **Codat UI Mapping**: If you prefer a quicker setup, you can utilize Codat's provided user interface for mapping.\n3. **Accounting Platform Mapping**: For some accounting software, the mapping process must be conducted within the software itself.\n\n### Integration-specific behaviour\n\n| Bank Feed Integration | API Mapping | Codat UI Mapping | Accounting Platform Mapping |\n| --------------------- | ----------- | ---------------- | --------------------------- |\n| Xero                  | ✅          | ✅               |                             |\n| FreeAgent             | ✅          | ✅               |                             |\n| Oracle NetSuite       | ✅          | ✅               |                             |\n| Exact Online (NL)     | ✅          | ✅               |                             |\n| QuickBooks Online     |             |                  | ✅                          |\n| Sage                  |             |                  | ✅                          |\n\n> ### Versioning\n> If you are integrating the Bank Feeds API with Codat after August 1, 2024, please use the v2 version of the API, as detailed in the schema below. For integrations completed before August 1, 2024, select the v1 version from the schema dropdown below.",
+        "summary": "Create single source account",
+        "description": "The _Create Source Account_ endpoint allows you to create a representation of a bank account within Codat's domain. The company can then map the source account to an existing or new target account in their accounting software.\n\n> ### Versioning\n> If you are integrating the Bank Feeds API with Codat after August 1, 2024, please use the v2 version of the API, as detailed in the schema below. For integrations completed before August 1, 2024, select the v1 version from the schema dropdown below.",
         "operationId": "create-source-account",
         "requestBody": {
           "content": {
@@ -3076,14 +3520,48 @@
               "schema": {
                 "oneOf": [
                   {
-                    "$ref": "#/components/schemas/SourceAccountV2"
+                    "$ref": "#/components/schemas/SourceAccountV2/definitions/sourceAccountV2Prototype"
                   },
                   {
-                    "$ref": "#/components/schemas/SourceAccount"
+                    "$ref": "#/components/schemas/SourceAccount/definitions/sourceAccountPrototype"
                   }
                 ]
               },
-              "examples": {}
+              "examples": {
+                "Version 2": {
+                  "value": {
+                    "id": "acc-001",
+                    "accountName": "account-081",
+                    "accountType": "checking",
+                    "accountNumber": "12345670",
+                    "routingInfo": {
+                      "bankCode": "021001088",
+                      "type": "bankcode"
+                    },
+                    "currency": "GBP",
+                    "balance": 99.99,
+                    "accountInfo": {
+                      "description": "account description 1",
+                      "nickname": "account 123",
+                      "accountOpenDate": "2023-05-06T00:00:00.000Z",
+                      "availableBalance": 10
+                    },
+                    "modifiedDate": "2024-08-02T00:00:00.000Z"
+                  }
+                },
+                "Version 1": {
+                  "value": {
+                    "id": "acc-002",
+                    "accountName": "account-081",
+                    "sortCode": "123456",
+                    "accountType": "Credit",
+                    "accountNumber": "12345670",
+                    "currency": "GBP",
+                    "balance": 99.99,
+                    "modifiedDate": "2023-01-09T14:14:14.1057478Z"
+                  }
+                }
+              }
             }
           }
         },
@@ -3137,7 +3615,7 @@
           "Source accounts"
         ],
         "summary": "List source accounts",
-        "description": "﻿The _List source accounts_ endpoint returns a list of [source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account within Codat's domain from which transactions are synced into the accounting platform.\n\n> ### Versioning\n> If you are integrating the Bank Feeds API with Codat after August 1, 2024, please use the v2 version of the API, as detailed in the schema below. For integrations completed before August 1, 2024, select the v1 version from the schema dropdown below.",
+        "description": "﻿The _List source accounts_ endpoint returns a list of [source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) for a given company's connection.\n\n[Source accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankFeedAccount) are the bank's bank account within Codat's domain from which transactions are synced into the accounting platform.\n\n> ### Versioning\n> If you are integrating the Bank Feeds API with Codat after August 1, 2024, please use the v2 version of the API, as detailed in the schema below. For integrations completed before August 1, 2024, select the v1 version from the schema dropdown below.",
         "operationId": "list-source-accounts",
         "responses": {
           "200": {
@@ -3188,7 +3666,7 @@
           "Source accounts"
         ],
         "summary": "Update source account",
-        "description": "﻿The _Update source account_ endpoint updates a single source account for a single data connection connected to a single company.\n\n### Tips and pitfalls\n\n* This endpoint only updates the `accountName` field.\n* Updates made here apply exclusively to source accounts and will not affect target accounts in the accounting software.",
+        "description": "﻿The _Update source account_ endpoint updates a single source account for a single data connection connected to a single company.\n\n### Tips and pitfalls\n\n* This endpoint makes it possible to update the `accountName`, `status`, and `balance` fields.\n    * The `status` field can only be updated to 'disconnected'.\n    * The `balance` field can only be updated on accounts that are **not** 'connected'.\n* Updates made here apply exclusively to source accounts and will not affect target accounts in the accounting software.",
         "operationId": "update-source-account",
         "parameters": [
           {
@@ -3302,7 +3780,7 @@
           "Source accounts"
         ],
         "summary": "Generate source account credentials",
-        "description": "﻿The _Generate Bank Account Credentials_ endpoint can be used to generate credentials for QuickBooks Online to use for authentication of the Bank Feed in their portal, each time this is used a new set of credentials will be generated.\n\nThe old credentials will still be valid until the revoke credentials endpoint is used, which will revoke all credentials associated to the data connection.\n",
+        "description": "﻿The _Generate bank account credentials_ endpoint can be used to generate credentials for QuickBooks Online to authenticate the Bank Feed in the QBO portal. Each time this endpoint is called, a new set of credentials will be generated.\n\nThe old credentials will still be valid until the revoke credentials endpoint is used, which will revoke all credentials associated to the data connection.\n\n> **For QuickBooks Online only**\n>\n> Only call this endpoint when onboarding SMBs that use  QuickBooks Online.",
         "operationId": "generate-credentials",
         "parameters": [
           {
@@ -3409,8 +3887,8 @@
         "tags": [
           "Account mapping"
         ],
-        "summary": "List bank feed account mappings",
-        "description": "﻿The *List bank account mappings* endpoint returns information about a source bank account and any current or potential target mapping accounts.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nThis endpoint is only needed if building an account management UI.",
+        "summary": "List bank feed accounts",
+        "description": "﻿The *List bank accounts* endpoint returns information about a source bank account and any current or potential target mapping accounts.\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end user's account in the underlying software).\n\n> **For custom builds only**\n> \n> Only use this endpoint if you are building your own account management UI.",
         "operationId": "get-bank-account-mapping",
         "responses": {
           "200": {
@@ -3418,7 +3896,41 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BankFeedMapping"
+                  "$ref": "#/components/schemas/BankFeedMapping/definitions/bankFeedMappings"
+                },
+                "examples": {
+                  "Example": {
+                    "value": [
+                      {
+                        "sourceAccountId": "account-001",
+                        "status": "pending",
+                        "targetAccountOptions": [
+                          {
+                            "name": "Money Bank account",
+                            "id": "d21e25d6-98c5-4bfb-b469-105833bea3c8",
+                            "accountNumber": "789",
+                            "sortCode": "123456"
+                          },
+                          {
+                            "name": "Bank of Dave account",
+                            "id": "d06ff4b2-e4f2-4681-9841-014bd008cdab",
+                            "accountNumber": "99887766",
+                            "sortCode": "998866"
+                          },
+                          {
+                            "name": "LuxLend account",
+                            "id": "c8f252fc-84f3-4a8b-ace8-ae99f41a81ae",
+                            "accountNumber": "123456789",
+                            "sortCode": "123456"
+                          }
+                        ],
+                        "sourceAccountName": "account-001",
+                        "sourceAccountNumber": "12345670",
+                        "sourceBalance": 99.99,
+                        "sourceCurrency": "GBP"
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -3451,13 +3963,21 @@
           "Account mapping"
         ],
         "summary": "Create bank feed account mapping",
-        "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting software (target account).\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end users account in the underlying platform).\n\nTo find valid target account options, first call list bank feed account mappings.\n\nThis endpoint is only needed if building an account management UI.",
+        "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting software (target account).\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end user's account in the underlying software).\n\nTo find valid target account options, first call the [List bank feed account mappings](https://docs.codat.io//bank-feeds-api#/operations/get-bank-account-mapping) endpoint.\n\n> **For custom builds only**\n>\n> Only use this endpoint if you are building your own account management UI.\n\n#### Account mapping variability\n\nThe method of mapping the source account to the target account varies depending on the accounting software your company uses.\n\n#### Mapping options:\n\n1. **API Mapping**: Integrate the mapping journey directly into your application for a seamless user experience.\n2. **Codat UI Mapping**: If you prefer a quicker setup, you can utilize Codat's provided user interface for mapping.\n3. **Accounting Platform Mapping**: For some accounting software, the mapping process must be conducted within the software itself.\n\n### Integration-specific behaviour\n\n| Bank Feed Integration | API Mapping | Codat UI Mapping | Accounting Platform Mapping |\n| --------------------- | ----------- | ---------------- | --------------------------- |\n| Xero                  | ✅          | ✅               |                             |\n| FreeAgent             | ✅          | ✅               |                             |\n| Oracle NetSuite       | ✅          | ✅               |                             |\n| Exact Online (NL)     | ✅          | ✅               |                             |\n| QuickBooks Online     |             |                  | ✅                          |\n| Sage                  |             |                  | ✅                          |",
         "operationId": "create-bank-account-mapping",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BankFeedAccountMapping"
+              },
+              "examples": {
+                "Example": {
+                  "value": {
+                    "sourceAccountId": "acc-002",
+                    "targetAccountId": "account-081"
+                  }
+                }
               }
             }
           }
@@ -3562,7 +4082,7 @@
           "Transactions"
         ],
         "summary": "Create bank transactions",
-        "description": "﻿The *Create bank transactions* endpoint creates new [bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bankTransactions-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankTransactions) for integrations that support creating a bank account transactions.\n",
+        "description": "﻿The *Create bank transactions* endpoint creates new [bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nThe required properties may vary based on the integration. For detailed requirements specific to each accounting software, refer to the API reference examples.\nAlternatively, you can view the [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bank-transactions-model) for more information.",
         "operationId": "create-bank-transactions",
         "parameters": [
           {
@@ -3772,6 +4292,61 @@
         }
       }
     },
+    "/companies/{companyId}/connections/{connectionId}/options/bankAccounts/{accountId}/bankTransactions": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Get create bank transactions model",
+        "description": "The *Get create bank account transactions model* endpoint returns the expected data for the request payload when creating [bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company and integration.\n\n[Bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of money that has moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.",
+        "operationId": "get-create-bank-transactions-model",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          },
+          {
+            "$ref": "#/components/parameters/connectionId"
+          },
+          {
+            "$ref": "#/components/parameters/accountId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PushOption"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/push/{pushOperationKey}": {
       "parameters": [
         {
@@ -3795,7 +4370,7 @@
         ],
         "operationId": "get-create-operation",
         "x-speakeasy-name-override": "get-create-operation",
-        "description": "Retrieve push operation.",
+        "description": "The **Get create operation** endpoint returns a specific [write operation](/using-the-api/push) identified by the `pushOperationKey` that was performed on the company.\n\nWrite operations are actions that send requests to Codat, enabling the creation, updating, deletion of records, or uploading attachments in the connected accounting software.\n\nFor bank feeds, your push operations will only relate to the `bankTransactions` data type.",
         "responses": {
           "200": {
             "description": "OK",
@@ -3859,7 +4434,7 @@
         ],
         "operationId": "list-create-operations",
         "x-speakeasy-name-override": "list-create-operations",
-        "description": "List create operations.",
+        "description": "The **List create operations** endpoint returns a list of [write operations](/using-the-api/push) performed on the company.\n\nWrite operations are actions that send requests to Codat, enabling the creation, updating, deletion of records, or uploading attachments in the connected accounting software. \n\nFor bank feeds, use this endpoint to view write operations related to the `bankTransactions` data type.",
         "responses": {
           "200": {
             "description": "OK",
@@ -3967,49 +4542,10 @@
         }
       }
     },
-    "Client rate limit reached": {
-      "post": {
-        "deprecated": true,
-        "description": "Called when your client’s requests to Codat's API exceed the allocated quota. \n\n**Note: This event type is deprecated. Developers should now use the `client.rateLimit.reached` event for handling rate limit notifications.**",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Client rate limit reset": {
-      "post": {
-        "deprecated": true,
-        "description": "Called when the rate limit quota has reset for the client, and more requests to Codat's API are available.\n\nNote: This event type is deprecated. Developers should now use the `client.rateLimit.reset` event for handling rate limit notifications.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClientRateLimitResetWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
     "bankFeeds.sourceAccount.connected": {
       "post": {
-        "description": "Called when a bank feed source account has become connected.",
+        "description": "Triggered when a bank feed source account has become connected to a target account. This occurs when a user sets up mapping between the two.",
+        "x-svix-feature-flag": "bank-feeds",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4059,6 +4595,7 @@
     "bankFeeds.sourceAccount.disconnected": {
       "post": {
         "description": "Called when a bank feed source account has become disconnected.",
+        "x-svix-feature-flag": "bank-feeds",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4124,12 +4661,13 @@
             "description": "Password to enable the bank feeds platform to securely retrieve transactions."
           }
         },
-        "examples": {
-          "QuickBooks Online Bank Feeds": {
+        "examples": [
+          {
+            "QuickBooks Online Bank Feeds": null,
             "username": "S0MW-TR0P-7DS0",
             "password": "cO0ajh0uGyTN0Pwh"
           }
-        }
+        ]
       },
       "BankAccounts": {
         "x-internal": true,
@@ -4142,7 +4680,7 @@
                 "type": "array",
                 "items": {
                   "title": "Accounting: Bank account",
-                  "description": "> **Accessing Bank Accounts through Banking API**\n> \n> This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators. \n> \n> To view bank account data through the Banking API, please refer to the new datatype [here](https://docs.codat.io/bank-feeds-api#/schemas/Account)\n\n> View the coverage for bank accounts in the <a className=\"external\" href=\"https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bankAccounts\" target=\"_blank\">Data coverage explorer</a>.\n\n## Overview\n\nA list of bank accounts associated with a company and a specific data connection.\n\nBank accounts data includes:\n* The name and ID of the account in the accounting software.\n* The currency and balance of the account.\n* The sort code and account number.",
+                  "description": "> **Accessing Bank Accounts through Banking API**\n> \n> This datatype was originally used for accessing bank account data both in accounting integrations and open banking aggregators. \n> \n> To view bank account data through the Banking API, please refer to the new [Banking: Account](https://docs.codat.io/bank-feeds-api#/schemas/Account) data type.\n\n## Overview\n\nA list of bank accounts associated with a company and a specific data connection.\n\nBank accounts data includes:\n* The name and ID of the account in the accounting software.\n* The currency and balance of the account.\n* The sort code and account number.",
                   "type": "object",
                   "allOf": [
                     {
@@ -4203,7 +4741,7 @@
                                   "$ref": "#/components/schemas/DateTime"
                                 },
                                 {
-                                  "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                                  "description": "The date when the record was last fetched from the accounting software, commerce software, or open banking provider and updated in Codat’s data cache.\n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                                 }
                               ]
                             }
@@ -4221,7 +4759,7 @@
                                   "$ref": "#/components/schemas/DateTime"
                                 },
                                 {
-                                  "description": "The date when a record was last modified in the source platform, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The integration platform does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                                  "description": "The date when a record was last modified in the accounting software, usually by the business or a business process. For example, when payments are made against an invoice. \n\nIt is not populated ([read more](https://docs.codat.io/using-the-api/modified-dates#source-modified-date)) when:\n  - Pulling attachments\n  - The accounting software does not provide modification dates for a data type\n  - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred\n  - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                                 }
                               ]
                             }
@@ -4420,24 +4958,23 @@
             "nullable": true,
             "description": "Unique ID for the target account."
           },
-          "Status": {
+          "status": {
             "type": "string",
             "nullable": true,
             "description": "Status of the POST request."
           },
-          "Error": {
+          "error": {
             "type": "string",
             "nullable": true,
             "description": "Error returned during the post request"
           }
         },
-        "description": "The result from POSTing a Bank Account mapping.",
         "examples": [
           {
             "sourceAccountId": "acc-002",
             "targetAccountId": "account-081",
-            "Status": "Failed",
-            "Error": "A feed connection already exists to this account"
+            "status": "Failed",
+            "error": "A feed connection already exists to this account"
           }
         ]
       },
@@ -4459,7 +4996,8 @@
             "description": "Account number for the source account."
           },
           "sourceBalance": {
-            "type": "string",
+            "type": "number",
+            "format": "decimal",
             "description": "Balance for the source account."
           },
           "sourceCurrency": {
@@ -4524,6 +5062,14 @@
                 "description": "The account number of the account."
               }
             }
+          },
+          "bankFeedMappings": {
+            "title": "Bank feed mappings",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BankFeedMapping"
+            },
+            "additionalProperties": false
           }
         },
         "examples": [
@@ -4635,156 +5181,8 @@
                 "Other"
               ]
             }
-          },
-          "required": [
-            "id",
-            "date",
-            "amount"
-          ]
+          }
         }
-      },
-      "ClientRateLimitReachedWebhook": {
-        "title": "Client rate limit reached webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has reached their rate limit.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/ClientName"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitReachedWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reached webhook data",
-            "properties": {
-              "DailyQuota": {
-                "type": "integer",
-                "description": "The number of available requests per day."
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/DateTime",
-                "description": "The date time in UTC when your daily quota is reset."
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reached",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
-            "Data": {
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
-      },
-      "ClientRateLimitResetWebhook": {
-        "title": "Client rate limit reset webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has had their rate limit reset.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "title": "Client ID",
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for your client in Codat."
-          },
-          "ClientName": {
-            "type": "string",
-            "description": "Name of your client in Codat."
-          },
-          "RuleId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the rule.",
-            "deprecated": true
-          },
-          "RuleType": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "34d52a089f08a"
-            },
-            "description": "The type of rule."
-          },
-          "AlertId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the webhook event."
-          },
-          "Message": {
-            "type": "string",
-            "description": "A human-readable message about the webhook."
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitResetWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reset webhook data",
-            "properties": {
-              "QuotaRemaining": {
-                "type": "integer",
-                "description": "Total number of requests remaining for your client.",
-                "nullable": true
-              },
-              "ResetReason": {
-                "type": "string",
-                "description": "The reason for your rate limit quota being reset."
-              },
-              "DailyQuota": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
-                "nullable": true
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
-                "nullable": true
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reset",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
-            "Data": {
-              "QuotaRemaining": 1000,
-              "ResetReason": "The quota was reset because it is a new day.",
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
       },
       "ClientRateLimitWebhook": {
         "title": "Client rate limit webhook",
@@ -5002,16 +5400,31 @@
                 "description": "An array of products that are currently enabled for the company."
               },
               "tags": {
+                "title": "Tags",
                 "type": "object",
                 "maxProperties": 10,
                 "propertyNames": {
                   "pattern": "^.{1,27}$"
                 },
-                "additional properties": {
+                "additionalProperties": {
                   "type": "string",
                   "maxLength": 100
                 },
                 "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+              },
+              "referenceParentCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference",
+                "nullable": true,
+                "description": "The parent entity or controlling organization of this company. Null if the company has no parent."
+              },
+              "referenceSubsidiaryCompanies": {
+                "type": "array",
+                "nullable": false,
+                "description": "A list of subsidiary companies owned or controlled by this entity. Empty if the company has no children.",
+                "minItems": 0,
+                "items": {
+                  "$ref": "#/components/schemas/Company/definitions/companyReference"
+                }
               }
             },
             "required": [
@@ -5079,6 +5492,50 @@
           }
         ]
       },
+      "CompanyAccessToken": {
+        "title": "Company access token",
+        "description": "Details of the access token provisioned for a company.",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CompanyAccessToken/definitions/accessToken"
+          }
+        ],
+        "definitions": {
+          "accessToken": {
+            "title": "Access token",
+            "type": "object",
+            "properties": {
+              "expiresIn": {
+                "type": "integer",
+                "description": "The number of seconds until the access token expires.",
+                "example": 86400
+              },
+              "accessToken": {
+                "type": "string",
+                "description": "The access token for the company."
+              },
+              "tokenType": {
+                "type": "string",
+                "description": "The type of token.",
+                "example": "Bearer"
+              }
+            },
+            "required": [
+              "expiresIn",
+              "accessToken",
+              "tokenType"
+            ]
+          }
+        },
+        "examples": [
+          {
+            "expiresIn": 86400,
+            "accessToken": "string",
+            "tokenType": "Bearer"
+          }
+        ]
+      },
       "CompanyInformation": {
         "title": "Company information",
         "description": "Information about the company from the underlying accounting software.",
@@ -5097,12 +5554,19 @@
           "planType": {
             "type": "string",
             "nullable": true,
-            "description": "Accounting software subscription type such as Trial, Demo, Standard"
+            "description": "Accounting software subscription type such as Trial, Demo, Standard."
           },
           "multicurrencyEnabled": {
             "type": "boolean",
+            "description": "Boolean showing if the organisation has multicurrency enabled."
+          },
+          "currencies": {
+            "type": "array",
             "nullable": true,
-            "description": "Boolean showing if the organisation has multicurrency enabled"
+            "description": "Array of enabled currencies for the linked company.",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -5206,6 +5670,26 @@
           "dataPushed": {
             "type": "boolean",
             "description": "Boolean of whether the sync resulted in data being pushed."
+          }
+        }
+      },
+      "CompanyUpdateRequest": {
+        "title": "Update company request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/CompanyRequestBody/properties/description"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
           }
         }
       },
@@ -6328,6 +6812,39 @@
           "id"
         ],
         "definitions": {
+          "sourceAccountPrototype": {
+            "title": "Source account (v1)",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/SourceAccount/properties/id"
+              },
+              "accountName": {
+                "$ref": "#/components/schemas/SourceAccount/properties/accountName"
+              },
+              "accountType": {
+                "$ref": "#/components/schemas/SourceAccount/properties/accountType"
+              },
+              "accountNumber": {
+                "$ref": "#/components/schemas/SourceAccount/properties/accountNumber"
+              },
+              "sortCode": {
+                "$ref": "#/components/schemas/SourceAccount/properties/sortCode"
+              },
+              "currency": {
+                "$ref": "#/components/schemas/SourceAccount/properties/currency"
+              },
+              "balance": {
+                "$ref": "#/components/schemas/SourceAccount/properties/balance"
+              },
+              "modifiedDate": {
+                "$ref": "#/components/schemas/SourceAccount/properties/modifiedDate"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
           "sourceAccounts": {
             "title": "Source accounts",
             "type": "array",
@@ -6361,6 +6878,77 @@
           }
         ]
       },
+      "SourceAccountBatchCreateResponse": {
+        "title": "Batch source account request creation response",
+        "description": "Account ID and resulting object of the batch `Create source account` request.",
+        "type": "object",
+        "properties": {
+          "sourceAccountId": {
+            "type": "string",
+            "description": "Unique ID for the source account.",
+            "examples": [
+              "12345"
+            ]
+          },
+          "result": {
+            "$ref": "#/components/schemas/SourceAccountBatchCreateResponse/definitions/sourceAccountBatchCreateResult"
+          }
+        },
+        "definitions": {
+          "sourceAccountBatchCreateResult": {
+            "title": "Source Account Batch Create Result",
+            "description": "Status details and corresponding object of the `Create account` operation.",
+            "type": "object",
+            "properties": {
+              "statusCode": {
+                "type": "integer",
+                "description": "The HTTP status code for the creation of the source account"
+              },
+              "error": {
+                "type": "string",
+                "nullable": true,
+                "description": "A brief description of the error."
+              },
+              "account": {
+                "$ref": "#/components/schemas/SourceAccount"
+              }
+            }
+          }
+        }
+      },
+      "SourceAccountBatchErrorResponse": {
+        "title": "Batch source account creation error",
+        "description": "Describes the error that occured when trying to create the specified source account.",
+        "type": "object",
+        "properties": {
+          "sourceAccountId": {
+            "type": "string",
+            "description": "Unique ID for the source account.",
+            "examples": [
+              "12345"
+            ]
+          },
+          "result": {
+            "type": "object",
+            "properties": {
+              "statusCode": {
+                "description": "The error status code for the attempted creation of the source account.",
+                "type": "string",
+                "examples": [
+                  409
+                ]
+              },
+              "error": {
+                "description": "The error description for the attempted creation of the source account.",
+                "type": "string",
+                "examples": [
+                  "A bank account already exists with the same Id"
+                ]
+              }
+            }
+          }
+        }
+      },
       "SourceAccountV2": {
         "title": "Source account (v2)",
         "type": "object",
@@ -6389,6 +6977,11 @@
           "accountNumber": {
             "type": "string",
             "description": "The account number."
+          },
+          "sortCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "The sort code."
           },
           "routingInfo": {
             "$ref": "#/components/schemas/SourceAccountV2/definitions/routingInfo"
@@ -6438,6 +7031,50 @@
           "balance"
         ],
         "definitions": {
+          "sourceAccountV2Prototype": {
+            "title": "Source account (v2)",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/SourceAccountV2/properties/id"
+              },
+              "accountName": {
+                "$ref": "#/components/schemas/SourceAccountV2/properties/accountName"
+              },
+              "accountType": {
+                "$ref": "#/components/schemas/SourceAccountV2/properties/accountType"
+              },
+              "accountNumber": {
+                "$ref": "#/components/schemas/SourceAccountV2/properties/accountNumber"
+              },
+              "routingInfo": {
+                "$ref": "#/components/schemas/SourceAccountV2/definitions/routingInfo"
+              },
+              "sortCode": {
+                "$ref": "#/components/schemas/SourceAccountV2/properties/sortCode"
+              },
+              "currency": {
+                "$ref": "#/components/schemas/SourceAccount/properties/currency"
+              },
+              "balance": {
+                "$ref": "#/components/schemas/SourceAccountV2/properties/balance"
+              },
+              "modifiedDate": {
+                "$ref": "#/components/schemas/SourceAccountV2/properties/modifiedDate"
+              },
+              "accountInfo": {
+                "$ref": "#/components/schemas/SourceAccountV2/definitions/accountInfo"
+              }
+            },
+            "required": [
+              "id",
+              "accountName",
+              "accountType",
+              "accountNumber",
+              "currency",
+              "balance"
+            ]
+          },
           "accountInfo": {
             "title": "Account Info",
             "type": "object",
@@ -6552,6 +7189,44 @@
           }
         ]
       },
+      "SourceAccountV2BatchCreateResponse": {
+        "title": "Batch source account (v2) creation response",
+        "description": "Account ID and resulting object of the batch `Create source account` request.",
+        "type": "object",
+        "properties": {
+          "sourceAccountId": {
+            "type": "string",
+            "description": "Unique ID for the source account.",
+            "examples": [
+              "12345"
+            ]
+          },
+          "result": {
+            "$ref": "#/components/schemas/SourceAccountV2BatchCreateResponse/definitions/sourceAccountV2BatchCreateResult"
+          }
+        },
+        "definitions": {
+          "sourceAccountV2BatchCreateResult": {
+            "title": "Source Account V2 Batch CreateResult",
+            "description": "Status details and corresponding object of the `Create account` operation.",
+            "type": "object",
+            "properties": {
+              "statusCode": {
+                "type": "integer",
+                "description": "The HTTP status code for the creation of the source account"
+              },
+              "error": {
+                "type": "string",
+                "nullable": true,
+                "description": "A brief description of the error."
+              },
+              "account": {
+                "$ref": "#/components/schemas/SourceAccountV2"
+              }
+            }
+          }
+        }
+      },
       "SourceAccountWebhook": {
         "title": "Source account status changed webhook",
         "type": "object",
@@ -6594,7 +7269,14 @@
                 "$ref": "#/components/parameters/connectionId/schema"
               },
               "sourceAccount": {
-                "$ref": "#/components/schemas/SourceAccount"
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/SourceAccountV2"
+                  },
+                  {
+                    "$ref": "#/components/schemas/SourceAccount"
+                  }
+                ]
               }
             }
           }
@@ -6971,7 +7653,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/bank-feeds-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/platform-api#/schemas/ApiKeyDetails) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/platform-api#/operations/list-api-keys), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"

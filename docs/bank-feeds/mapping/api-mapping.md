@@ -26,9 +26,9 @@ These options are filtered based on the currency and the type of the source acco
 
 ```javascript
 const mappingResponse = bankFeedsClient.accountMapping.get({
-    companyId: companyResponse.company.id,
-    connectionId: connectionResponse.connection.id
-  });
+  companyId: companyResponse.company.id,
+  connectionId: connectionResponse.connection.id
+});
 ```
 
 </TabItem>
@@ -37,8 +37,8 @@ const mappingResponse = bankFeedsClient.accountMapping.get({
 
 ```python
 mapping_request = operations.GetBankAccountMappingRequest(
-    company_id=company_response.company.id,
-    connection_id=connection_response.connection.id
+  company_id=company_response.company.id,
+  connection_id=connection_response.connection.id
 )
 
 mapping_response = s.account_mapping.get(mapping_request)

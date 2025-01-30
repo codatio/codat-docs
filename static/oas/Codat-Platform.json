@@ -111,12 +111,12 @@
       "description": "Create and manage your SMB users' companies."
     },
     {
-      "name": "Connections",
-      "description": "Create new and manage existing data connections for a company."
-    },
-    {
       "name": "Connection management",
       "description": "Configure UI and retrieve access tokens for authentication used by **Connections SDK**."
+    },
+    {
+      "name": "Connections",
+      "description": "Create new and manage existing data connections for a company."
     },
     {
       "name": "Webhooks",
@@ -188,7 +188,14 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
+                          "createdByUserName": "Mike Smith",
+                          "products": [
+                            "supplier-enablement",
+                            "lending",
+                            "expenses-v1",
+                            "commerce"
+                          ],
+                          "referenceSubsidiaryCompanies": []
                         }
                       ],
                       "pageNumber": 1,
@@ -229,36 +236,111 @@
                             }
                           ],
                           "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Joe Bloggs"
+                          "createdByUserName": "Joe Bloggs",
+                          "products": [
+                            "supplier-enablement",
+                            "lending",
+                            "payables-v2"
+                          ],
+                          "referenceSubsidiaryCompanies": []
                         },
                         {
-                          "id": "096db70b-78de-4ff0-aa98-299cb5fe17a0",
-                          "name": "Godata",
-                          "description": "A new digital agency with a passion for creating amazing digital experiences",
-                          "platform": "",
-                          "redirect": "https://link.codat.io/company/096db70b-78de-4ff0-aa98-299cb5fe17a0",
-                          "lastSync": "2022-01-01T12:30:00.000Z",
+                          "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                          "name": "Toft stores",
+                          "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                          "dataConnections": [],
+                          "created": "2022-11-10T10:45:18Z",
+                          "createdByUserName": "Dan Tzabar",
+                          "products": [
+                            "supplier-enablement"
+                          ],
+                          "referenceSubsidiaryCompanies": [
+                            {
+                              "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                              "name": "Toft stores UK",
+                              "links": {
+                                "portal": "https://app.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/summary"
+                              }
+                            },
+                            {
+                              "id": "db94eddc-9212-4568-9b5c-3eab0e325913",
+                              "name": "Toft stores US",
+                              "links": {
+                                "portal": "https://app.codat.io/companies/db94eddc-9212-4568-9b5c-3eab0e325913/summary"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                          "name": "Toft stores UK",
+                          "redirect": "https://link.codat.io/company/c8d3af58-7011-47ce-b3f2-89faf300ef6d",
                           "dataConnections": [
                             {
-                              "id": "a70bc148-dc21-46b2-a257-d9c58ac15cbb",
-                              "integrationId": "1c312d69-e638-46d4-ad31-72e6c3ba8390",
-                              "integrationKey": "vjms",
-                              "sourceId": "396c3158-5dd7-481b-a7c4-a795ca31792b",
-                              "platformName": "Pandle",
-                              "linkUrl": "https://link-api.codat.io/companies/096db70b-78de-4ff0-aa98-299cb5fe17a0/connections/a70bc148-dc21-46b2-a257-d9c58ac15cbb/start",
+                              "id": "d5ab61b7-1ad0-46fd-9f9f-b6761047941e",
+                              "integrationId": "cc750323-5a47-4f28-8d8e-30fbbf2ce137",
+                              "integrationKey": "akxx",
+                              "sourceId": "9815b998-024d-4415-a40b-89903b2cad6f",
+                              "platformName": "Oracle NetSuite",
+                              "linkUrl": "https://link-api.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/connections/d5ab61b7-1ad0-46fd-9f9f-b6761047941e/start",
                               "status": "Linked",
                               "lastSync": "2022-01-01T12:30:00.000Z",
                               "created": "2022-01-01T11:30:00Z",
                               "sourceType": "Accounting"
                             }
                           ],
-                          "created": "2022-01-01T11:30:00Z",
-                          "createdByUserName": "Mike Smith"
+                          "created": "2022-11-10T10:45:18Z",
+                          "createdByUserName": "Dan Tzabar",
+                          "products": [
+                            "lending",
+                            "supplier-enablement",
+                            "payables"
+                          ],
+                          "referenceParentCompany": {
+                            "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                            "name": "Toft stores",
+                            "links": {
+                              "portal": "https://app.codat.io/companies/ab12c58d-a678-4ebf-a159-ae99e1807bd0/summary"
+                            }
+                          },
+                          "referenceSubsidiaryCompanies": []
+                        },
+                        {
+                          "id": "db94eddc-9212-4568-9b5c-3eab0e325913",
+                          "name": "Toft stores US",
+                          "redirect": "https://link.codat.io/company/db94eddc-9212-4568-9b5c-3eab0e325913",
+                          "dataConnections": [
+                            {
+                              "id": "1e5c8c9e-27fd-4ba9-9a2a-d02ba65bc2fb",
+                              "integrationId": "cc750323-5a47-4f28-8d8e-30fbbf2ce137",
+                              "integrationKey": "akxx",
+                              "sourceId": "9815b998-024d-4415-a40b-89903b2cad6f",
+                              "platformName": "Oracle NetSuite",
+                              "linkUrl": "https://link-api.codat.io/companies/db94eddc-9212-4568-9b5c-3eab0e325913/connections/1e5c8c9e-27fd-4ba9-9a2a-d02ba65bc2fb/start",
+                              "status": "Linked",
+                              "lastSync": "2022-01-01T12:30:00.000Z",
+                              "created": "2022-01-01T11:30:00Z",
+                              "sourceType": "Accounting"
+                            }
+                          ],
+                          "created": "2022-11-10T10:45:18Z",
+                          "createdByUserName": "Dan Tzabar",
+                          "products": [
+                            "supplier-enablement"
+                          ],
+                          "referenceParentCompany": {
+                            "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                            "name": "Toft stores",
+                            "links": {
+                              "portal": "https://app.codat.io/companies/ab12c58d-a678-4ebf-a159-ae99e1807bd0/summary"
+                            }
+                          },
+                          "referenceSubsidiaryCompanies": []
                         }
                       ],
                       "pageNumber": 1,
                       "pageSize": 100,
-                      "totalResults": 2,
+                      "totalResults": 3,
                       "_links": {
                         "current": {
                           "href": "/companies?page=1&pageSize=100"
@@ -299,7 +381,7 @@
           }
         },
         "operationId": "list-companies",
-        "description": "﻿The *List companies* endpoint returns a list of [companies] associated to your instances.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "description": "﻿The *List companies* endpoint returns a list of [companies](https://docs.codat.io/platform-api#/schemas/Company) associated to your instances.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.\n\n## Filter by tags\n\nThe *List companies* endpoint supports the filtering of companies using [tags](https://docs.codat.io/using-the-api/managing-companies#add-metadata-to-a-company). It supports the following operators with [Codat’s query language](https://docs.codat.io/using-the-api/querying):\n\n- equals (`=`)\n- not equals (`!=`)\n- contains (`~`)\n\nFor example, you can use the querying to filter companies tagged with a specific foreign key, region, or owning team: \n- Foreign key: `uid = {yourCustomerId}`\n- Region: `region != uk`\n- Owning team and region: `region = uk && owningTeam = invoice-finance`",
         "parameters": [
           {
             "$ref": "#/components/parameters/page"
@@ -312,6 +394,15 @@
           },
           {
             "$ref": "#/components/parameters/orderBy"
+          },
+          {
+            "name": "tags",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "region=uk && team=invoice-finance",
+            "description": "Filter companies by tags using the \"equals\" (=), \"not equals\" (!=), and \"contains\" (~) operators with [Codat’s query language](https://docs.codat.io/using-the-api/querying)."
           }
         ]
       },
@@ -340,7 +431,11 @@
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar"
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement"
+                      ],
+                      "referenceSubsidiaryCompanies": []
                     }
                   },
                   "With a description": {
@@ -352,7 +447,11 @@
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
-                      "createdByUserName": "Dan Tzabar"
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement"
+                      ],
+                      "referenceSubsidiaryCompanies": []
                     }
                   },
                   "With a tag": {
@@ -365,9 +464,13 @@
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement"
+                      ],
                       "tags": {
                         "region": "us"
-                      }
+                      },
+                      "referenceSubsidiaryCompanies": []
                     }
                   }
                 }
@@ -446,13 +549,93 @@
                   "Simple company": {
                     "value": {
                       "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
-                      "name": "My First Company",
+                      "name": "Toft stores holdings",
                       "description": "",
                       "platform": "",
                       "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
                       "dataConnections": [],
                       "created": "2022-11-10T10:45:18Z",
-                      "createdByUserName": "Dan Tzabar"
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement",
+                        "lending",
+                        "expenses-v1",
+                        "commerce"
+                      ],
+                      "referenceSubsidiaryCompanies": []
+                    }
+                  },
+                  "Parent multi-entity company": {
+                    "value": {
+                      "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "name": "Toft stores",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                      "dataConnections": [],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement",
+                        "lending",
+                        "expenses-v1",
+                        "commerce"
+                      ],
+                      "referenceSubsidiaryCompanies": [
+                        {
+                          "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                          "name": "Toft stores UK",
+                          "links": {
+                            "portal": "https://app.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/summary"
+                          }
+                        },
+                        {
+                          "id": "db94eddc-9212-4568-9b5c-3eab0e325913",
+                          "name": "Toft stores US",
+                          "links": {
+                            "portal": "https://app.codat.io/companies/db94eddc-9212-4568-9b5c-3eab0e325913/summary"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "Subsidiary multi-entity company": {
+                    "value": {
+                      "id": "c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                      "name": "Toft stores UK",
+                      "description": "",
+                      "platform": "",
+                      "redirect": "https://link.codat.io/company/c8d3af58-7011-47ce-b3f2-89faf300ef6d",
+                      "dataConnections": [
+                        {
+                          "id": "d5ab61b7-1ad0-46fd-9f9f-b6761047941e",
+                          "integrationId": "cc750323-5a47-4f28-8d8e-30fbbf2ce137",
+                          "integrationKey": "akxx",
+                          "sourceId": "9815b998-024d-4415-a40b-89903b2cad6f",
+                          "platformName": "Oracle NetSuite",
+                          "linkUrl": "https://link-api.codat.io/companies/c8d3af58-7011-47ce-b3f2-89faf300ef6d/connections/d5ab61b7-1ad0-46fd-9f9f-b6761047941e/start",
+                          "status": "Linked",
+                          "lastSync": "2022-01-01T12:30:00.000Z",
+                          "created": "2022-01-01T11:30:00Z",
+                          "sourceType": "Accounting"
+                        }
+                      ],
+                      "created": "2022-11-10T10:45:18Z",
+                      "createdByUserName": "Dan Tzabar",
+                      "products": [
+                        "supplier-enablement",
+                        "lending",
+                        "expenses-v1",
+                        "commerce"
+                      ],
+                      "referenceParentCompany": {
+                        "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
+                        "name": "Toft stores",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/ab12c58d-a678-4ebf-a159-ae99e1807bd0/summary"
+                        }
+                      },
+                      "referenceSubsidiaryCompanies": []
                     }
                   }
                 }
@@ -522,9 +705,10 @@
         }
       },
       "put": {
-        "summary": "Update company",
-        "description": "﻿Use the *Update company* endpoint to update both the name and description of the company. \n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
-        "operationId": "update-company",
+        "summary": "Replace company",
+        "description": "﻿Use the *Replace company* endpoint to replace the existing name, description, and tags of the company. Calling the endpoint will replace existing values even if new values haven't been defined in the payload.\n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.\nEach company can have multiple [connections](https://docs.codat.io/platform-api#/schemas/Connection) to different data sources, such as one connection to Xero for accounting data, two connections to Plaid for two bank accounts, and a connection to Zettle for POS data.",
+        "operationId": "replace-company",
+        "x-speakeasy-name-override": "replace",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -582,6 +766,75 @@
                   "value": {
                     "name": "Same name",
                     "description": "Additional documents required"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update company",
+        "description": "﻿Use the *Update company* endpoint to update the name, description, or tags of the company.\n\nThe *Update company* endpoint doesn't have any required fields. If any of the fields provided are `null` or not provided, they won't be included in the update.  \n\nA [company](https://docs.codat.io/platform-api#/schemas/Company) represents a business sharing access to their data.",
+        "operationId": "update-company",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyUpdateRequest"
+              },
+              "examples": {
+                "Update tags": {
+                  "value": {
+                    "tags": {
+                      "refrence": "new reference"
+                    }
+                  }
+                },
+                "Update name": {
+                  "value": {
+                    "name": "New Name"
                   }
                 }
               }
@@ -1087,6 +1340,64 @@
         }
       }
     },
+    "/companies/{companyId}/accessToken": {
+      "get": {
+        "summary": "Get company access token",
+        "operationId": "get-company-access-token",
+        "x-speakeasy-name-override": "get-access-token",
+        "description": "Use the _Get company access token_ endpoint to return an access token for the specified company ID to use in Codat's embedded UI products.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/companyId"
+          }
+        ],
+        "tags": [
+          "Companies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyAccessToken"
+                },
+                "examples": {
+                  "Simple company": {
+                    "value": {
+                      "expiresIn": 86400,
+                      "accessToken": "string",
+                      "tokenType": "Bearer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/connectionManagement/accessToken": {
       "parameters": [
         {
@@ -1094,13 +1405,15 @@
         }
       ],
       "get": {
-        "summary": "Get access token",
+        "summary": "Get access token (old)",
         "operationId": "get-connection-management-access-token",
-        "x-speakeasy-name-override": "get-access-token",
+        "deprecated": true,
+        "x-speakeasy-deprecation-message": "The endpoint for generating company-specific connection management access tokens has been deprecated.\nCodat now supports a global company access token, providing seamless access across multiple products.\nUpdate your integration to use the global token for improved efficiency and consistency.\n",
+        "x-speakeasy-deprecation-replacement": "get-company-access-token",
         "tags": [
           "Connection management"
         ],
-        "description": "﻿Use the *Get access token* endpoint to retrieve a new access token for use with the [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management). The token is only valid for one hour and applies to a single company.\n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
+        "description": "﻿The new `/companies/{companyId}/accessToken` endpoint replaces this endpoint and includes additional functionality.\n\nUse the *Get access token* endpoint to retrieve a new access token for use with the [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management). The token is only valid for one hour and applies to a single company.\n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
         "responses": {
           "200": {
             "description": "Success",
@@ -1147,9 +1460,9 @@
       "get": {
         "summary": "Get CORS settings",
         "operationId": "get-connection-management-cors-settings",
-        "x-speakeasy-group": "connection-management.cors-settings",
+        "x-speakeasy-group": "cors",
         "tags": [
-          "Connection management"
+          "Settings"
         ],
         "description": "﻿The *Get CORS settings* endpoint returns the allowed origins (i.e. your domains) you want to allow cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)) with Codat. \n\nEnabling CORS with Codat is required by our embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) to access Codat's API endpoints.\n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
         "responses": {
@@ -1183,9 +1496,9 @@
         "summary": "Set CORS settings",
         "operationId": "set-connection-management-cors-settings",
         "x-speakeasy-name-override": "set",
-        "x-speakeasy-group": "connection-management.cors-settings",
+        "x-speakeasy-group": "cors",
         "tags": [
-          "Connection management"
+          "Settings"
         ],
         "description": "﻿The *Set CORS settings* endpoint allows you to register allowed origins (i.e. your domains) for use in cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).\n \nEnabling CORS with Codat is required by our embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) to access Codat's API endpoints. \n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
         "requestBody": {
@@ -1840,303 +2153,6 @@
           }
         },
         "description": "Retrieve information about a single dataset or pull operation."
-      }
-    },
-    "/rules": {
-      "get": {
-        "summary": "List webhooks (legacy)",
-        "operationId": "list-rules",
-        "description": "Use the *List webhooks (legacy)* endpoint to retrieve all existing rule-based webhooks for your client.\n\n**Note:** This endpoint has been deprecated. Please use the [*List webhook consumers*](https://docs.codat.io/platform-api#/operations/list-webhook-consumers) endpoint for listing webhooks moving forward.",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/page"
-          },
-          {
-            "$ref": "#/components/parameters/pageSize"
-          },
-          {
-            "$ref": "#/components/parameters/query"
-          },
-          {
-            "$ref": "#/components/parameters/orderBy"
-          }
-        ],
-        "deprecated": true,
-        "tags": [
-          "Webhooks"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Webhook/definitions/webhooks"
-                },
-                "examples": {
-                  "Example": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "fcfbfe0b-fe73-47ed-a7fe-0018567f5da2",
-                          "type": "DataConnectionStatusChanged",
-                          "notifiers": {
-                            "emails": [],
-                            "webhook": "https://webhook.site/6d385ea9-bcf9-48e4-9103-1958ccb54997"
-                          }
-                        }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 100,
-                      "totalResults": 1,
-                      "_links": {
-                        "current": {
-                          "href": "/rules?page=1&pageSize=100"
-                        },
-                        "self": {
-                          "href": "/rules"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "$ref": "#/components/responses/Malformed-Query"
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create webhook (legacy)",
-        "description": "Use the *Create webhooks (legacy)* endpoint to create a rule-based webhook for your client.\n\n**Note:** This endpoint has been deprecated. Please use the [*Create webhook consumer*](https://docs.codat.io/platform-api#/operations/create-webhook-consumer) endpoint to create a webhook moving forward.",
-        "operationId": "create-rule",
-        "deprecated": true,
-        "tags": [
-          "Webhooks"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Webhook"
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Webhook/definitions/createRule"
-              },
-              "examples": {
-                "Company data connection status changed": {
-                  "value": {
-                    "type": "DataConnectionStatusChanged",
-                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                    "notifiers": {
-                      "emails": [
-                        "info@client.com"
-                      ],
-                      "webhook": "https://webhook.client.com"
-                    }
-                  }
-                },
-                "New company synchronized": {
-                  "value": {
-                    "type": "New company synchronised",
-                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                    "notifiers": {
-                      "emails": [
-                        "info@client.com"
-                      ],
-                      "webhook": "https://webhook.client.com"
-                    }
-                  }
-                },
-                "Data sync completed": {
-                  "value": {
-                    "type": "Data sync completed",
-                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                    "notifiers": {
-                      "emails": [
-                        "info@client.com"
-                      ],
-                      "webhook": "https://webhook.client.com"
-                    }
-                  }
-                },
-                "Dataset data changed": {
-                  "value": {
-                    "type": "Dataset data changed",
-                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                    "notifiers": {
-                      "emails": [
-                        "info@client.com"
-                      ],
-                      "webhook": "https://webhook.client.com"
-                    }
-                  }
-                },
-                "Dataset status has changed to an error state": {
-                  "value": {
-                    "type": "Data Sync Status Changed To Error",
-                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                    "notifiers": {
-                      "emails": [
-                        "info@client.com"
-                      ],
-                      "webhook": "https://webhook.client.com"
-                    }
-                  }
-                },
-                "Push operation status has changed": {
-                  "value": {
-                    "type": "Push Operation Status Changed",
-                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                    "notifiers": {
-                      "emails": [
-                        "info@client.com"
-                      ],
-                      "webhook": "https://webhook.client.com"
-                    }
-                  }
-                },
-                "Push operation has timed out": {
-                  "value": {
-                    "type": "Push Operation Timed Out",
-                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                    "notifiers": {
-                      "emails": [
-                        "info@client.com"
-                      ],
-                      "webhook": "https://webhook.client.com"
-                    }
-                  }
-                },
-                "Account categories updated": {
-                  "value": {
-                    "type": "Account Categories Updated",
-                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                    "notifiers": {
-                      "emails": [
-                        "info@client.com"
-                      ],
-                      "webhook": "https://webhook.client.com"
-                    }
-                  }
-                },
-                "Sync Connection Deleted": {
-                  "value": {
-                    "type": "Sync Connection Deleted",
-                    "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                    "notifiers": {
-                      "emails": [
-                        "info@client.com"
-                      ],
-                      "webhook": "https://webhook.client.com"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "description": "Create a webhook with the given configuration."
-        }
-      }
-    },
-    "/rules/{ruleId}": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/ruleId"
-        }
-      ],
-      "get": {
-        "summary": "Get webhook (legacy)",
-        "operationId": "get-webhook",
-        "description": "Use the *Get webhook (legacy)* endpoint to retrieve a specific webhook for your client.\n\n**Note:** This endpoint has been deprecated. Please use the [*List webhook consumers*](https://docs.codat.io/platform-api#/operations/list-webhook-consumers) endpoint for listing webhooks moving forward.",
-        "deprecated": true,
-        "tags": [
-          "Webhooks"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Webhook"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
       }
     },
     "/webhooks": {
@@ -3045,7 +3061,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "This is the generic documentation for creation and updating of data. See the equivalent endpoint for a given data type for more specific information. \n\nBefore pushing data into accounting software, it is often necessary to collect some details from the user as to how they would like the data to be inserted. This includes names and amounts on transactional entities, but also factors such as categorisation of entities, which is often handled differently between different accounting software. A good example of this is specifying where on the balance sheet/profit and loss reports the user would like a newly-created nominal account to appear.\n\nCodat tries not to limit users to pushing to a very limited number of standard categories, so we have implemented \"options\" endpoints, which allow us to expose to our clients the fields which are required to be pushed for a specific linked company, and the options which may be selected for each field.\n\n\n> **Supported Integrations**\n> \n> Check out our [coverage explorer](https://knowledge.codat.io/) for integrations that support push (POST/PUT methods)."
+        "description": "This is the generic documentation for creation and updating of data. See the equivalent endpoint for a given data type for more specific information. \n\nBefore pushing data into accounting software, it is often necessary to collect some details from the user as to how they would like the data to be inserted. This includes names and amounts on transactional entities, but also factors such as categorisation of entities, which is often handled differently between different accounting software. A good example of this is specifying where on the balance sheet/profit and loss reports the user would like a newly-created nominal account to appear.\n\nCodat tries not to limit users to pushing to a very limited number of standard categories, so we have implemented \"options\" endpoints, which allow us to expose to our clients the fields which are required to be pushed for a specific linked company, and the options which may be selected for each field."
       }
     },
     "/companies/{companyId}/push": {
@@ -3075,7 +3091,7 @@
         ],
         "operationId": "get-company-push-history",
         "x-speakeasy-name-override": "list-operations",
-        "description": "List push operation records.",
+        "description": "The **List push operations** endpoint returns a list of [push operations](/using-the-api/push) performed on the company.\n\nWrite operations are actions that send requests to Codat, enabling the creation, updating, deletion of records, or uploading attachments in the connected accounting software.",
         "responses": {
           "200": {
             "description": "OK",
@@ -3138,7 +3154,7 @@
         ],
         "operationId": "get-push-operation",
         "x-speakeasy-name-override": "get-operation",
-        "description": "Retrieve push operation.",
+        "description": "The **Get push operation** endpoint returns a specific [push operation](/using-the-api/push) identified by the `pushOperationKey` that was performed on the company.\n\nWrite operations are actions that send requests to Codat, enabling the creation, updating, deletion of records, or uploading attachments in the connected accounting software.",
         "responses": {
           "200": {
             "description": "OK",
@@ -3218,7 +3234,7 @@
       ],
       "put": {
         "summary": "Configure",
-        "description": "The *Configure* endpoint allows you to maintain or change configuration required to return supplemental data for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.\n\n**Integration-specific behaviour**\nSee the *examples* for integration-specific frequently requested properties.",
+        "description": "The *Configure* endpoint allows you to maintain or change configuration required to return supplemental data for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/supplemental-data/overview) is additional data you can include in Codat's standard data types.\n\n**Integration-specific behaviour**\nSee the *examples* for integration-specific frequently requested properties.",
         "operationId": "configure-supplemental-data",
         "x-speakeasy-name-override": "configure",
         "tags": [
@@ -3343,7 +3359,7 @@
       },
       "get": {
         "summary": "Get configuration",
-        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/additional-data) is additional data you can include in Codat's standard data types.",
+        "description": "The *Get configuration* endpoint returns supplemental data configuration previously created for each integration and data type combination.\n\n[Supplemental data](https://docs.codat.io/using-the-api/supplemental-data/overview) is additional data you can include in Codat's standard data types.",
         "operationId": "get-supplemental-data-configuration",
         "x-speakeasy-name-override": "get-configuration",
         "tags": [
@@ -3765,7 +3781,7 @@
                 "Company created": {
                   "value": {
                     "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-                    "type": "company.created",
+                    "eventType": "company.created",
                     "generatedDate": "2024-08-08T17:10:34.015Z",
                     "payload": {
                       "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
@@ -3845,7 +3861,7 @@
                 "Connection created": {
                   "value": {
                     "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-                    "type": "connection.created",
+                    "eventType": "connection.created",
                     "generatedDate": "2024-08-08T17:10:34.015Z",
                     "payload": {
                       "referenceCompany": {
@@ -3899,7 +3915,7 @@
                 "Connection connected": {
                   "value": {
                     "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-                    "type": "connection.connected",
+                    "eventType": "connection.connected",
                     "generatedDate": "2024-08-08T17:10:34.015Z",
                     "payload": {
                       "referenceCompany": {
@@ -3940,6 +3956,68 @@
         }
       }
     },
+    "connection.failed": {
+      "post": {
+        "description": "Called when a connection failed linking to the SMB.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionWebhook"
+              },
+              "examples": {
+                "Connection failed": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "eventType": "connection.failed",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "referenceCompany": {
+                        "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                        "name": "Bank of Dave",
+                        "description": "internal_id_mxO7rLfo",
+                        "links": {
+                          "portal": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/summary"
+                        },
+                        "tags": {
+                          "customerRegion": "us",
+                          "uid": "335a086e-8563-4b03-94e3-39544225ecb6"
+                        }
+                      },
+                      "connection": {
+                        "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
+                        "integrationId": "bf083d72-62c7-493e-aec9-81b4dbba7e2c",
+                        "integrationKey": "dfxm",
+                        "sourceId": "bdd831ce-eebd-4896-89a7-20e5ee8989ee",
+                        "platformName": "Basiq",
+                        "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
+                        "status": "PendingAuth",
+                        "created": "2022-10-27T09:53:29.000Z",
+                        "sourceType": "Banking",
+                        "dataConnectionErrors": [
+                          {
+                            "statusCode": "403",
+                            "statusText": "User cancelled linking",
+                            "errorMessage": "User cancelled",
+                            "erroredOnUtc": "2022-10-27T09:53:29.000Z",
+                            "status": "Active"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "connection.disconnected": {
       "post": {
         "description": "Called when a connection is disconnected either due to being unlinked or de-authorized by the SMB or integration.",
@@ -3953,7 +4031,7 @@
                 "Unlinked": {
                   "value": {
                     "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-                    "type": "connection.disconnected",
+                    "eventType": "connection.disconnected",
                     "generatedDate": "2024-08-08T17:10:34.015Z",
                     "payload": {
                       "referenceCompany": {
@@ -4049,7 +4127,7 @@
                 "Reconnected": {
                   "value": {
                     "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-                    "type": "connection.reconnected",
+                    "eventType": "connection.reconnected",
                     "generatedDate": "2024-08-08T17:10:34.015Z",
                     "payload": {
                       "referenceCompany": {
@@ -4103,7 +4181,7 @@
                 "Deleted": {
                   "value": {
                     "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
-                    "type": "connection.deleted",
+                    "eventType": "connection.deleted",
                     "generatedDate": "2024-08-08T17:10:34.015Z",
                     "payload": {
                       "referenceCompany": {
@@ -4455,184 +4533,6 @@
           }
         }
       }
-    },
-    "Company data connection status changed": {
-      "post": {
-        "description": "Called anytime a data connection's status changes.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ConnectionStatusChangedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Data sync completed": {
-      "post": {
-        "deprecated": true,
-        "description": "Generated for each data type to indicate that data synchronization is successfully completed for that specific data type.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to `Success` for all data types in the array.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DataSyncCompletedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Dataset data changed": {
-      "post": {
-        "deprecated": true,
-        "description": "Generated for each data type to indicate that dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records.\n\nThis event type has been deprecated. To replicate it, use the `read.completed` webhook and verify that `payload.dataTypes[].status` is set to `Success` and `payload.dataTypes[].modifiedRecords` is `True` for any data type in the array.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DatasetDataChangedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Dataset status has changed to an error state": {
-      "post": {
-        "deprecated": true,
-        "description": "Indicates that the synchronization of a dataset failed.\n\nThis event type has been deprecated.\nTo replicate it, use the `read.completed` webhook and check if `payload.dataTypes[].status` is set to any of the following statuses for any data type in the array:\n\n- `FetchError`\n- `MapError`\n- `InternalError`\n- `ProcessingError`\n- `ValidationError`\n- `AuthError`\n- `RateLimitError`\n- `PermissionsError`\n- `PrerequisiteNotMet`",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/DatasetStatusChangedErrorWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "New company synchronized": {
-      "post": {
-        "description": "Triggered after a new company has successfully synchronized at least one dataType for the first time.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewCompanySynchronizedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Push operation status has changed": {
-      "post": {
-        "deprecated": true,
-        "description": "Indicates that a create, update, or delete operation's status has changed.\n\nThis event type has been deprecated. Use either the `{dataType}.write.successful` or `{dataType}.write.unsuccessful` instead.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PushOperationStatusChangedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Push operation has timed out": {
-      "post": {
-        "deprecated": true,
-        "description": "Indicates that a create, update, or delete operation has timed out.\n\nThis event type has been deprecated.\nTo replicate it, use the `{dataType}.write.unsuccessful` webhook and check if `payload.status` is set to `TimedOut`.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PushOperationTimedOutWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Client rate limit reached": {
-      "post": {
-        "deprecated": true,
-        "description": "Called when your client’s requests to Codat's API exceed the allocated quota. \n\n**Note: This event type is deprecated. Developers should now use the `client.rateLimit.reached` event for handling rate limit notifications.**",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
-    },
-    "Client rate limit reset": {
-      "post": {
-        "deprecated": true,
-        "description": "Called when the rate limit quota has reset for the client, and more requests to Codat's API are available.\n\nNote: This event type is deprecated. Developers should now use the `client.rateLimit.reset` event for handling rate limit notifications.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ClientRateLimitResetWebhook"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the webhook was received successfully."
-          }
-        }
-      }
     }
   },
   "components": {
@@ -4800,135 +4700,6 @@
         "format": "uuid",
         "description": "Unique identifier for your client in Codat."
       },
-      "ClientRateLimitReachedWebhook": {
-        "title": "Client rate limit reached webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has reached their rate limit.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitReachedWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reached webhook data",
-            "properties": {
-              "DailyQuota": {
-                "type": "integer",
-                "description": "The number of available requests per day."
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/DateTime",
-                "description": "The date time in UTC when your daily quota is reset."
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reached",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota of 1000 requests for bae71d36-ff47-420a-b4a6-f8c9ddf41140 has been reached.",
-            "Data": {
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
-      },
-      "ClientRateLimitResetWebhook": {
-        "title": "Client rate limit reset webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a client that has had their rate limit reset.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ClientRateLimitResetWebhook/definitions/ClientRateLimitResetWebhookData"
-          }
-        },
-        "definitions": {
-          "ClientRateLimitResetWebhookData": {
-            "type": "object",
-            "title": "Client rate limit reset webhook data",
-            "properties": {
-              "QuotaRemaining": {
-                "type": "integer",
-                "description": "Total number of requests remaining for your client.",
-                "nullable": true
-              },
-              "ResetReason": {
-                "type": "string",
-                "description": "The reason for your rate limit quota being reset."
-              },
-              "DailyQuota": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/DailyQuota",
-                "nullable": true
-              },
-              "ExpiresUtc": {
-                "$ref": "#/components/schemas/ClientRateLimitReachedWebhook/definitions/ClientRateLimitReachedWebhookData/properties/ExpiresUtc",
-                "nullable": true
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Rate Limit Reset",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "The current daily rate limit quota for client 30e0f9d2-52c0-4c9f-a806-bcd98a3bcd7e has been reset to 1000 requests.",
-            "Data": {
-              "QuotaRemaining": 1000,
-              "ResetReason": "The quota was reset because it is a new day.",
-              "DailyQuota": 1000,
-              "ExpiresUtc": "2023-05-03T00:00:00Z"
-            }
-          }
-        ]
-      },
       "ClientRateLimitWebhook": {
         "title": "Client rate limit webhook",
         "type": "object",
@@ -5059,16 +4830,31 @@
                 "description": "An array of products that are currently enabled for the company."
               },
               "tags": {
+                "title": "Tags",
                 "type": "object",
                 "maxProperties": 10,
                 "propertyNames": {
                   "pattern": "^.{1,27}$"
                 },
-                "additional properties": {
+                "additionalProperties": {
                   "type": "string",
                   "maxLength": 100
                 },
                 "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
+              },
+              "referenceParentCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference",
+                "nullable": true,
+                "description": "The parent entity or controlling organization of this company. Null if the company has no parent."
+              },
+              "referenceSubsidiaryCompanies": {
+                "type": "array",
+                "nullable": false,
+                "description": "A list of subsidiary companies owned or controlled by this entity. Empty if the company has no children.",
+                "minItems": 0,
+                "items": {
+                  "$ref": "#/components/schemas/Company/definitions/companyReference"
+                }
               }
             },
             "required": [
@@ -5136,6 +4922,50 @@
           }
         ]
       },
+      "CompanyAccessToken": {
+        "title": "Company access token",
+        "description": "Details of the access token provisioned for a company.",
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CompanyAccessToken/definitions/accessToken"
+          }
+        ],
+        "definitions": {
+          "accessToken": {
+            "title": "Access token",
+            "type": "object",
+            "properties": {
+              "expiresIn": {
+                "type": "integer",
+                "description": "The number of seconds until the access token expires.",
+                "example": 86400
+              },
+              "accessToken": {
+                "type": "string",
+                "description": "The access token for the company."
+              },
+              "tokenType": {
+                "type": "string",
+                "description": "The type of token.",
+                "example": "Bearer"
+              }
+            },
+            "required": [
+              "expiresIn",
+              "accessToken",
+              "tokenType"
+            ]
+          }
+        },
+        "examples": [
+          {
+            "expiresIn": 86400,
+            "accessToken": "string",
+            "tokenType": "Bearer"
+          }
+        ]
+      },
       "CompanyRequestBody": {
         "title": "Create company request",
         "x-internal": true,
@@ -5160,6 +4990,26 @@
         "required": [
           "name"
         ]
+      },
+      "CompanyUpdateRequest": {
+        "title": "Update company request",
+        "x-internal": true,
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of company being connected.",
+            "pattern": "^[A-Za-z0-9\\s\\-',&@.,?!\\s]+$",
+            "minLength": 1,
+            "example": "Bank of Dave"
+          },
+          "description": {
+            "$ref": "#/components/schemas/CompanyRequestBody/properties/description"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
+          }
+        }
       },
       "CompanyWebhook": {
         "title": "Company webhook",
@@ -5388,81 +5238,6 @@
           }
         ]
       },
-      "ConnectionStatusChangedWebhook": {
-        "title": "Connection status changed webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a company's data connection status changed.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/ConnectionStatusChangedWebhook/definitions/ConnectionStatusChangedWebhookData"
-          }
-        },
-        "definitions": {
-          "ConnectionStatusChangedWebhookData": {
-            "type": "object",
-            "title": "Connection status changed webhook data",
-            "properties": {
-              "dataConnectionId": {
-                "$ref": "#/components/parameters/connectionId/schema"
-              },
-              "newStatus": {
-                "description": "The new authorization status of the data connection.",
-                "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
-              },
-              "oldStatus": {
-                "description": "The old authorization status of the data connection.",
-                "$ref": "#/components/schemas/Connection/definitions/dataConnectionStatus"
-              },
-              "platformKey": {
-                "$ref": "#/components/parameters/platformKey/schema"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "DataConnectionStatusChanged",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Data connection for SandBox status changed from PendingAuth to Linked",
-            "Data": {
-              "dataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-              "newStatus": "Linked",
-              "oldStatus": "PendingAuth",
-              "platformKey": "gbol"
-            }
-          }
-        ]
-      },
       "ConnectionWebhook": {
         "title": "Connection webhook",
         "type": "object",
@@ -5481,7 +5256,8 @@
               "connection.connected",
               "connection.disconnected",
               "connection.reconnected",
-              "connection.deleted"
+              "connection.deleted",
+              "connection.failed"
             ]
           },
           "generatedDate": {
@@ -5622,7 +5398,7 @@
                         "$ref": "#/components/schemas/DateTime"
                       },
                       {
-                        "description": "The date when the record was last fetched from the data source and updated in Codat’s data cache. \n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
+                        "description": "The date when the record was last fetched from the accounting software, commerce software, or open banking provider and updated in Codat’s data cache.\n\nUse it to identify and retrieve records that have changed since your last fetch. For example, filtering `modifiedDate` to today will provide new records updated in Codat today.\n\nThis date is populated for all data types except for attachments, balance sheets, company information, and profit & loss reports ([read more](https://docs.codat.io/using-the-api/modified-dates#modified-date)).\n\nIn Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>."
                       }
                     ]
                   }
@@ -5631,136 +5407,6 @@
             }
           }
         }
-      },
-      "DatasetDataChangedWebhook": {
-        "title": "Dataset data changed webhook",
-        "x-internal": true,
-        "description": "Webhook request body to notify that a data synchronization has completed.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "title": "Dataset data changed webhook data",
-            "type": "object",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType"
-              },
-              "datasetId": {
-                "$ref": "#/components/parameters/datasetId/schema"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Dataset data changed",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Data has changed for dataset type invoices, company 8a210b68-6988-11ed-a1eb-0242ac120002",
-            "Data": {
-              "dataType": "invoices",
-              "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
-            }
-          }
-        ]
-      },
-      "DatasetStatusChangedErrorWebhook": {
-        "title": "Dataset status changed to error webhook",
-        "x-internal": true,
-        "description": "Webhook request body to notify that a data synchronization has completed.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/DatasetStatusChangedErrorWebhook/definitions/DatasetStatusChangedErrorWebhookData"
-          }
-        },
-        "definitions": {
-          "DatasetStatusChangedErrorWebhookData": {
-            "type": "object",
-            "title": "Dataset status changed to error webhook data",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType"
-              },
-              "datasetStatus": {
-                "type": "string",
-                "description": "The current status of the dataset's sync."
-              },
-              "datasetId": {
-                "$ref": "#/components/parameters/datasetId/schema"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Data Sync Status Changed To Error",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "ERROR: syncing payments triggered a ProcessingError notification at 2020-04-21T12:12:57.4250446Z.",
-            "Data": {
-              "dataType": "invoices",
-              "datasetStatus": "ProcessingError",
-              "datasetId": "6586f21b-ad4d-4d06-a309-712af47184a2"
-            }
-          }
-        ]
       },
       "DataStatus": {
         "title": "Data status",
@@ -6031,83 +5677,6 @@
             "nullable": true
           }
         }
-      },
-      "DataSyncCompletedWebhook": {
-        "title": "Data sync completed webhook",
-        "x-internal": true,
-        "description": "Webhook request body to notify the completion of a data sync.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientId"
-          },
-          "ClientName": {
-            "type": "string",
-            "description": "Name of your client in Codat."
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier for the rule.",
-            "deprecated": true
-          },
-          "RuleType": {
-            "type": "string",
-            "x-stoplight": {
-              "id": "34d52a089f08a"
-            },
-            "description": "The type of rule."
-          },
-          "AlertId": {
-            "type": "string",
-            "format": "uuid",
-            "description": "Unique identifier of the webhook event."
-          },
-          "Message": {
-            "type": "string",
-            "description": "A human-readable message about the webhook."
-          },
-          "Data": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/definitions/DataSyncCompletedWebhookData"
-          }
-        },
-        "definitions": {
-          "DataSyncCompletedWebhookData": {
-            "type": "object",
-            "title": "Data sync completed webhook data",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType",
-                "nullable": true
-              },
-              "datasetId": {
-                "$ref": "#/components/parameters/datasetId/schema"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Data sync completed",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Data sync of type creditNotes completed for company 7626befb-0c7d-49a4-9366-bc4c81b4e4b7",
-            "Data": {
-              "dataType": "creditNotes",
-              "datasetId": "1541a5ee-0d84-4b6e-a7f7-c07c1f216333"
-            }
-          }
-        ]
       },
       "DataType": {
         "x-internal": true,
@@ -6498,50 +6067,6 @@
           }
         ]
       },
-      "NewCompanySynchronizedWebhook": {
-        "title": "New company synchronized webhook",
-        "x-internal": true,
-        "description": "Webhook request body to notify that a new company has successfully synchronized at least one dataType for the first time.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "New company synchronised",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time"
-          }
-        ]
-      },
       "PagingInfo": {
         "type": "object",
         "title": "Pagination information",
@@ -6684,11 +6209,6 @@
             "deprecated": true,
             "example": "sartANTjHAkLdbyDfaynoTQb7pkmj6hXHmnQKMrB",
             "description": "The API key for this Codat instance."
-          },
-          "alertAuthHeader": {
-            "type": "string",
-            "example": "Bearer tXEiHiRK7XCtI8TNHbpGs1LI1pumdb4Cl1QIo7B2",
-            "description": "Alert or webhooks authorization header."
           },
           "confirmCompanyName": {
             "type": "boolean",
@@ -7028,146 +6548,6 @@
           },
           {
             "$ref": "#/components/schemas/PagingInfo"
-          }
-        ]
-      },
-      "PushOperationStatusChangedWebhook": {
-        "title": "Push operation status changed webhook",
-        "x-internal": true,
-        "description": "Webhook request body for a push operation status change.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/PushOperationStatusChangedWebhook/definitions/PushOperationStatusChangedWebhookData"
-          }
-        },
-        "definitions": {
-          "PushOperationStatusChangedWebhookData": {
-            "type": "object",
-            "title": "Push operation status changed webhook data",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType"
-              },
-              "status": {
-                "$ref": "#/components/schemas/PushOperation/definitions/pushOperationStatus"
-              },
-              "pushOperationKey": {
-                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Push Operation Status Changed()",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "invoices triggered notification for PushOperationStatusChanged at 2019-05-22T18:19:42.742Z",
-            "Data": {
-              "dataType": "invoices",
-              "status": "Success",
-              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73"
-            }
-          }
-        ]
-      },
-      "PushOperationTimedOutWebhook": {
-        "title": "Push operation timed out webhook",
-        "x-internal": true,
-        "description": "Webhook request body notifying that a push push operation has timed out.",
-        "type": "object",
-        "properties": {
-          "ClientId": {
-            "$ref": "#/components/schemas/ClientId"
-          },
-          "ClientName": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/ClientName"
-          },
-          "CompanyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "DataConnectionId": {
-            "$ref": "#/components/parameters/connectionId/schema"
-          },
-          "RuleId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleId"
-          },
-          "RuleType": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/RuleType"
-          },
-          "AlertId": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/AlertId"
-          },
-          "Message": {
-            "$ref": "#/components/schemas/DataSyncCompletedWebhook/properties/Message"
-          },
-          "Data": {
-            "$ref": "#/components/schemas/PushOperationTimedOutWebhook/definitions/PushOperationTimedOutWebhookData"
-          }
-        },
-        "definitions": {
-          "PushOperationTimedOutWebhookData": {
-            "type": "object",
-            "title": "Push operation timed out webhook data",
-            "properties": {
-              "dataType": {
-                "$ref": "#/components/schemas/DataStatus/properties/dataType"
-              },
-              "pushOperationKey": {
-                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey"
-              },
-              "pushOperationGuid": {
-                "$ref": "#/components/schemas/PushOperation/properties/pushOperationKey",
-                "deprecated": true,
-                "x-speakeasy-deprecation-replacement": "pushOperationKey"
-              }
-            }
-          }
-        },
-        "examples": [
-          {
-            "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-            "ClientName": "Bank of Dave",
-            "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-            "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-            "RuleType": "Push Operation Timed Out",
-            "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-            "Message": "ERROR: pushing invoices never finished in time, timing out at 2020-09-07T08:42:13",
-            "Data": {
-              "dataType": "invoices",
-              "pushOperationKey": "c2f8847d-3047-4619-a157-6d947d8e4a73",
-              "pushOperationGuid": "c2f8847d-3047-4619-a157-6d947d8e4a73"
-            }
           }
         ]
       },
@@ -7549,116 +6929,6 @@
         },
         "additionalProperties": false
       },
-      "Webhook": {
-        "title": "Webhook",
-        "description": "Configuration to provide an event notification to a URL or list of email addresses based on the given type or condition.",
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "format": "uuid",
-                "nullable": false,
-                "description": "Unique identifier for the configured notification.",
-                "example": "ff89c50e-a719-4ef5-a182-9917e53927b6"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Webhook/definitions/createRule"
-          }
-        ],
-        "definitions": {
-          "createRule": {
-            "title": "Create webhook",
-            "description": "Create a message that notifies a URL of an event based on its given type or condition.",
-            "type": "object",
-            "properties": {
-              "type": {
-                "type": "string",
-                "description": "The type of webhook."
-              },
-              "companyId": {
-                "$ref": "#/components/parameters/companyId/schema"
-              },
-              "notifiers": {
-                "$ref": "#/components/schemas/Webhook/definitions/webhookNotifier"
-              }
-            },
-            "examples": [
-              {
-                "type": "DataConnectionStatusChanged",
-                "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-                "notifiers": {
-                  "emails": [
-                    "info@client.com"
-                  ],
-                  "webhook": "https://webhook.client.com"
-                }
-              }
-            ],
-            "required": [
-              "type",
-              "notifiers"
-            ]
-          },
-          "webhookNotifier": {
-            "type": "object",
-            "title": "Webhook notifiers",
-            "properties": {
-              "emails": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "format": "email",
-                  "description": "Receiver's email address.",
-                  "example": "info@client.com"
-                }
-              },
-              "webhook": {
-                "type": "string",
-                "format": "uri",
-                "description": "The URI the webhook service will use to post events.",
-                "example": "https://webhook.client.com"
-              }
-            }
-          },
-          "webhooks": {
-            "title": "Webhooks",
-            "allOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "results": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Webhook"
-                    }
-                  }
-                }
-              },
-              {
-                "$ref": "#/components/schemas/PagingInfo"
-              }
-            ]
-          }
-        },
-        "examples": [
-          {
-            "id": "ff89c50e-a719-4ef5-a182-9917e53927b6",
-            "type": "DataConnectionStatusChanged",
-            "companyId": "39b73b17-cc2e-429e-915d-71654e9dcd1e",
-            "notifiers": {
-              "emails": [
-                "info@client.com"
-              ],
-              "webhook": "https://webhook.client.com"
-            }
-          }
-        ]
-      },
       "WebhookConsumer": {
         "title": "Webhook consumer",
         "type": "object",
@@ -7690,20 +6960,13 @@
           },
           "companyTags": {
             "type": "array",
+            "nullable": true,
             "description": "Company tags provide an additional way to filter messages, independent of event types. Company tags are case-sensitive, and only messages from companies with matching tags will be sent to this endpoint. Use the format `tagKey:tagValue`.",
             "items": {
               "type": "string",
               "maxLength": 128
             },
             "maxItems": 10
-          },
-          "companyId": {
-            "deprecated": true,
-            "type": "string",
-            "format": "uuid",
-            "nullable": true,
-            "example": "8a210b68-6988-11ed-a1eb-0242ac120002",
-            "description": "Unique identifier of the company to indicate company-specific events. The associated webhook consumer will receive events only for the specified ID."
           }
         },
         "definitions": {
@@ -7722,9 +6985,6 @@
               },
               "companyTags": {
                 "$ref": "#/components/schemas/WebhookConsumer/properties/companyTags"
-              },
-              "companyId": {
-                "$ref": "#/components/schemas/WebhookConsumer/properties/companyId"
               }
             }
           },
@@ -8131,17 +7391,6 @@
           "$ref": "#/components/schemas/DataType"
         }
       },
-      "ruleId": {
-        "name": "ruleId",
-        "in": "path",
-        "required": true,
-        "schema": {
-          "type": "string",
-          "format": "uuid",
-          "example": "7318949f-c008-4936-a8ff-10d7ab563fa6"
-        },
-        "description": "Unique ID of the webhook or rule."
-      },
       "datasetId": {
         "name": "datasetId",
         "in": "path",
@@ -8189,7 +7438,7 @@
     "securitySchemes": {
       "auth_header": {
         "name": "Authorization",
-        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/platform-api#/schemas/apiKeys) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/codat-api#/api-keys/api-keys-list), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
+        "description": "The word \"Basic\" followed by a space and your API key. [API keys](https://docs.codat.io/platform-api#/schemas/ApiKeyDetails) are tokens used to control access to the API. You can get an API key via [the Codat Portal](https://app.codat.io/developers/api-keys), via [the API](https://docs.codat.io/platform-api#/operations/list-api-keys), or [read more](https://docs.codat.io/using-the-api/authentication) about authentication at Codat.",
         "type": "apiKey",
         "in": "header",
         "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"

@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid #efefef;
-  border-bottom: 1px solid #efefef;
+  border-top: 1px solid var(--token-primary-bg-c);
+  border-bottom: 1px solid var(--token-primary-bg-c);
   padding: 2.5em 1em;
   max-width: initial;
   margin: 2em var(--padding-margin);
@@ -22,6 +22,21 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  &:hover {
+    .client {
+      filter: blur(4px);
+      transition: .3s;
+    }
+
+    .actionButton {
+      display: initial;
+    }
+  }
+
+  a:after {
+    display: none !important;
+  }
 }
 
 .client {
@@ -31,4 +46,26 @@
   align-items: center;
   justify-content: center;
   padding: 0.25em;
+}
+
+html[data-theme="dark"] {
+  .client img {
+    filter: invert(1) grayscale(100%) brightness(100);
+  }
+}
+
+.actionButton {
+  position: absolute !important;
+  display: none;
+  background-color: var(--ifm-background-color);
+  border-radius: 8px;
+  padding: 0.5em;
+  cursor: pointer;
+  border: 2px solid var(--token-secondary-bg-c-alt);
+  z-index: 1;
+  transition: 0.2s;
+
+  &:hover {
+    transform: scale(1.05)
+  }
 }

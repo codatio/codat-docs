@@ -57,7 +57,6 @@ You can also sign up and test with **Xero** and **QuickBooks Online**, both of w
 | [Exact NL](https://www.exact.com/nl/producten/accountancy/boekhouden/probeer) 	| Live integration 	| Free trial 	|  	|
 | [FreeAgent](https://signup.sandbox.freeagent.com/signup) 	| Live integration 	| Free trial 	| Temporary free account at the [FreeAgent   Sandbox](https://dev.freeagent.com/docs/quick_start). 	|
 | [FreshBooks](https://www.freshbooks.com/blog/freshbooks-trial) 	| Live integration 	| Free trial 	|  	|
-| [KashFlow](https://www.kashflow.com/support/kb/developer-account/) 	| Live integration 	| Free trial 	| Contact KashFlow support to request a test developer account. 	|
 | [MYOB](https://developer.myob.com/api/myob-business-api/api-overview/getting-started/) 	| Live integration 	| Demo company 	| Codat only supports data hosted online. When setting up the account, you will receive instructions on loading demo files.	|
 | [Microsoft 365 Dynamics Business   Central](https://learn.microsoft.com/en-gb/dynamics365/business-central/admin-sandbox-environments) 	| Live integration 	| Sandbox environment 	| [Read more](/integrations/accounting/dynamics365businesscentral/test-your-dynamics-365-business-central-integration) about testing this integration. 	|
 | [QuickBooks   Desktop](https://quickbooks.intuit.com/desktop/enterprise/contact/trial-download/?auto=true) 	| Live integration 	| Free trial 	|  	|
@@ -68,7 +67,3 @@ You can also sign up and test with **Xero** and **QuickBooks Online**, both of w
 | [Xero](https://central.xero.com/s/article/Use-the-demo-company#Web) 	| Live integration 	| Demo company 	| Demo does not include automatic bank feeds and the ability to invite   other users. You are able to add your own data, but the demo company resets   itself after 28 days. <br/> [Read more](/integrations/accounting/xero/accounting-xero-test) about testing this integration.	|
 | [Zoho Books](https://www.zoho.com/books/signup/) 	| Live integration 	| Test company 	| When setting up a test organisation, you can choose to import or create   test data. <br/> [Read more](/integrations/accounting/zoho-books/accounting-zohobooks-setup) about testing this integration.	|
 | [Plaid](https://plaid.com/docs/sandbox/) 	| Live integration 	| Sandbox environment 	| Initial setup for Plaid needs to be complete to gain access to the   sandbox environment with demo data. <br/> [Read more](/integrations/banking/plaid/test-your-plaid-integration) about testing this integration.	|
-
----
-## Read next
-* Review our [plans and pricing](https://www.codat.io/plans/)

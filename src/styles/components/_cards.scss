@@ -126,6 +126,12 @@ html[data-theme="dark"] {
     align-items: center;
     flex-shrink: 0;
 
+    > a {
+      &:after {
+        display: none;
+      }
+    }
+
     h3 {
       font-size: 16px;
     }

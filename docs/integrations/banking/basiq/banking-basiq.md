@@ -2,6 +2,7 @@
 title: "Basiq"
 description: "Learn about our Basiq integration"
 sidebar_label: Overview
+unlisted: true
 ---
 <p>
   <a class="external" href="https://basiq.io/" target="_blank">

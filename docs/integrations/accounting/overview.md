@@ -72,7 +72,7 @@ Each integration has a unique 4-character key that identifies it in our APIs. Fo
 | QuickBooks Desktop | pqsw |
 | QuickBooks Online | qhyg |
 | QuickBooks Online Sandbox | ndsk |
-| Sage 200cloud | jcrp |
+| Sage 200 Standard | jcrp |
 | Sage 50 (UK) | hbql |
 | Sage Business Cloud Accounting | tgff |
 | Sage Intacct | knfz |
