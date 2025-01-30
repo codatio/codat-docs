@@ -1,55 +1,65 @@
 ---
 title: "Accounting automation with Codat"
 sidebar_label: "Accounting automation"
-description: "An overview of the expense management use case supported by Codat"
+description: "Become your customers' top choice for business payments by automating more of their financial processes while Codat takes care of the accounting know-how "
 ---
 
 import Products from "@components/Products";
 
-Make expense management easier for your small business customers with Codat. We integrate data from corporate cards and expenses management platforms into accounting software your customers use.
-
 ## How Codat can help
 
-We can support corporate card providers, neobanks, and expense management platforms in their expense management activity by leveraging our [Bank Feeds](/bank-feeds/overview) and [Expenses](/expenses/overview) products. This will provide your customer with greater visibility of spend tracking against expense categories, and automatically reconcile expense payments against bank statement lines.
+With Codat's array of accounting automation solutions covering [Bank Feeds](/bank-feeds/overview), [Expenses](/expenses/overview), and [Bill Pay](/payables/overview) processes, and high-quality integrations, corporate card providers, banks and neobanks, and expense management platforms can focus on shipping fully-featured products faster and growing their market share. 
 
-![](/img/use-cases/summary-pages/795ecc39-managing-expenses.png)
+<div className="video-container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/CK6n1TDQNWE?si=Sv3p0178lq9VDKD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
+</div>
 
-### Relevant solutions
+## Relevant solutions
 
 <Products mini={true} products={["Expenses", "Bill Pay", "Bank Feeds"]}/>
 
 ### Expenses
 
-Codat’s Expenses product lets you take expense management one step further, as it is a standardized API with a set of supporting tools. This simplifies the provision of high-quality integrations with multiple accounting software and lets you leverage the following benefits:
+Take expense management one step further by syncing expense transactions, receipts, and other attachments with your customers' accounting software in a simple, standard manner: 
 
-- Connect to your SMB's accounting software faster, as Codat handles authorization and linking, and takes into account intricate details such as rate limits.
-- Automatically categorize and tag expenses according to your SMB's bookkeeping. We attribute the spend to the correct chart of accounts and enable further categorization via tracking categories.
-- Easily write any purchases to the SMB's accounting software, where they are represented with an expense. Your customers can also write attachments for complete auditability.
-- Synchronize and map expenses with control. Our API is built to standardize data based on feedback from customers and industry expertise, so you can sync transactions based on what they represent and let Codat handle the processing and formatting them in a way required by the accounting software.
+- Connect to your SMB's accounting software faster while we take care of authorization, linking, and rate limits.
+- Easily write any purchases to the SMB's accounting software and automatically categorize and tag expenses according to your SMB's bookkeeping.
+- Focus on solving your customers' problems while we handle the logic for multiple currencies, tax, transfers, and reimbursements.
 
 ### Bank Feeds
 
-We have done the heavy lifting for you by building integrations with a standardized data model to the accounting software your customers already use. This gives you access to real-time data that you can read, create, or update to support your use case.
+Embed a bank feeds solution into your application that looks and feels like a natural part of the accounting software your customers use:
 
-For example, you can read the following data from our endpoints:
-- `bankAccounts` to retrieve a list of bank accounts that can be mapped, enabling the user to dictate which bank account their expenses should be recorded against.
-- `accounts` to retrieve a list of accounts that can be mapped, enabling the user to dictate which GL account different categories of expenses should be recorded against.
-- `trackingCategories` to retrieve a list of tracking categories that can be mapped, enabling the user to track expenses against identifiers that sit outside of their chart of accounts, including departments and locations.
-- `taxRates` to retrieve a list of tax rates that can be used against the direct cost depending on the category of spend.
+- We create the associated infrastructure for you, leveraging integrations with a standardized data model to the accounting software your customers already use.
+- Read, create, or update your customers's bank transactions, refunds, and top-ups in real time, while we automate the upload of bank statements into your customers' accounting software.
 
-Then, use the same API to create a direct cost within the customer's accounting application, thus recording an expense. Once the direct cost has been created, a bank transaction line can then be written to the customer's accounting software and reconciled against the direct cost. You can also record refunds and top-ups using Codat. 
+### Bill Pay
 
-### Payables
+Enjoy a hassle-free way to integrate your bill pay product with your customers' accounting software so you can keep their supplier information, invoices, and payments in sync:
 
+- Our mapping engine ensures only the necessary data for your use case is synced, and payments ready for reconciliation without your customers lifting a finger.
 
+- Bill Pay's asynchronous version handles even the most complex accounts payable workflows with ease, including scenarios that manage credit notes, refunds, partial payments, and bulk payments.
 
-## Use case demos
+- Synchronous Bill Pay is designed to integrate a real-time bill pay flow into your app as quickly as possible, focusing on simplicity and efficiency of its endpoints.
 
-Codat provides you with demo guides, where you can see our products in action. Check back soon to view our demo built specifically for the expense management use case.
+![Decorative image of schematic graphs, charts, and amounts that represent a customer's risk profile using Codat's Lending solution](/img/use-cases/summary-pages/accounting-automation.png)
+
+## Guides
+
+Looking for code to launch your use case ASAP? Check out our guides:
+
+- **[Build a bank feed to QBO](/bank-feeds/guides/bank-feeds-tutorial)**
+
+  Example-based tutorial focused on supporting your customers in reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds solution
+
+- **[Automate bill payments](/payables/guides/bill-pay/introduction)**
+
+  A showcase of a simple accounts payable automation workflow that helps you understand the core features of a bill payment solution
 
 ---
 
-### Read next
+## Read next
 
-Start building with our demo guides that showcase Codat's solutions in action:
-- [Bill pay build guide](/payables/guides/bill-pay/introduction)
+- Review the full range of [use cases](/usecases/overview) Codat's solutions support
+- See how you can get started with Codat's [Bank Feeds](/bank-feeds/overview), [Expenses](/expenses/overview), and [Bill Pay](/payables/overview) solutions

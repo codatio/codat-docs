@@ -6,7 +6,7 @@ hide_title: true
 hide_description: true
 banner_title: Loan qualification
 banner_image: "/img/banners/risk-cropped.png"
-banner_text: "Lend with Codat and our Lending solution"
+banner_text: "Make lending easier with real-time checks of an applicant's finances and automated decision-making"
 sidebar_label: "Introduction"
 ---
 

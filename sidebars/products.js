@@ -1,19 +1,19 @@
 module.exports = [ 
   {
     type: "doc",
-    className: "top-level-item top-level-item-single products product lending",
-    id: "lending/overview",
+    className: "top-level-item top-level-item-single products product supplier-enablement",
+    id: "supplier-enablement/overview",
     customProps: {
       hr: true,
-      section: "Business lending",
+      section: "Spend insights",
     },
   },
   {
     type: "doc",
-    className: "top-level-item top-level-item-single products product supplier-enablement",
-    id: "supplier-enablement/overview",
+    className: "top-level-item top-level-item-single products product lending",
+    id: "lending/overview",
     customProps: {
-      section: "Spend insights",
+      section: "Business lending",
     },
   },
   {
