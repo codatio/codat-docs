@@ -19,7 +19,7 @@ Building and launching a best-in-class bank feeds solution has never been easier
 
 Our new [Bank Feeds SDK](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types) brings together all the complex pieces to create a simple Bank Feeds setup experience.
 
-It leverages our [Link SDK](auth-flow/authorize-embedded-link) to allow your users to quickly and securely share access to their accounting software. It also enables them to set up the mapping between your accounts and the accounts in their software in one seamless flow.
+It leverages our [Link SDK](/auth-flow/authorize-embedded-link) to allow your users to quickly and securely share access to their accounting software. It also enables them to set up the mapping between your accounts and the accounts in their software in one seamless flow.
 
 All of this is included in a single [low-code JavaScript component](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). Our rich configuration properties allow your application to interact with the SDK and customize text and branding in a way that creates a trusted, compelling experience.
 
