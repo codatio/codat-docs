@@ -448,36 +448,37 @@ svix verify --secret whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw --msg-id msg_p5jXN8A
 
 </Tabs>
 
-## Transform webhook properties in-flight
+## Transform webhook properties
 
-Sometimes, you may need to modify webhook properties before they are sent to your application.  
-With transformations, you can adjust the webhook's HTTP method, target URL, and message schema to better fit your needs.
+You may want to modify a webhook's properties (e.g. HTTP method, target URL, and message schema) before it is sent to your application to better fit your needs. To do so, you can now apply a transformation to the webhook.
 
-### Applying a transformation  
+#### Apply a transformation  
 
-In the [Codat Portal](https://app.codat.io/monitor/events), go to **Monitor > Webhooks > Events** and select the endpoint where you want to apply a transformation.  
+To apply a transformation to a webhook, follow these steps: 
 
-In the **Transformations** section, click **Edit transformations**.
-A code block will appear containing the function handler that receives and returns the `WebhookObject`.
-
-The handler must return the modified `WebhookObject`; otherwise, no transformation will be applied.  
-
+1. Go to **Monitor > Webhooks > Events** in the [Codat Portal](https://app.codat.io/monitor/events).
+2. Select the endpoint where you want to apply a transformation.
+3. In the detailed endpoint view, click **Advanced**, then **Edit transformations** 
+    A code block will appear containing the function handler that receives and returns the `WebhookObject`.
+4. Add the changes to the properties as required and save.
+    The handler must return the modified `WebhookObject`; otherwise, no transformation will be applied.  
 
 ![A fragment of the webhook transformations UI used to edit transformations](/img/use-the-api/webhooks-transformation-edit.png)
 
-#### `WebhookObject` properties  
+##### `WebhookObject` properties  
+
+The following are the properties of the `WebhookObject` that you can transform to fit your needs:
 
 | Property        | Type    | Description |
 |----------------|---------|-------------|
-| **`method`**   | string  | The HTTP method used to communicate with your application. Codat supports only `POST` (default) or `PUT`. |
+| **`method`**   | string  | The HTTP method used to communicate with your application. Codat supports only `POST` (default) or `PUT` methods. |
 | **`url`**      | string  | The endpoint URL where the message will be sent. |
-| **`payload`**  | object  | A JSON object representing the full webhook event schema. This is not just the `payload` component of Codat’s schemas but the complete event schema for each event type, which can be modified as needed. |
+| **`payload`**  | object  | A JSON object representing the full webhook event schema. This is the complete event schema for each event type, not just the `payload` component of Codat’s schemas. You can modify it as needed.|
 | **`cancel`**   | bool    | Determines whether to cancel the webhook dispatch. Defaults to `false`. Canceled messages appear as successful dispatches in logs. |
 
-## Example: canceling requests using Company tags  
+#### Example: cancel requests using company tags  
 
-You may want to prevent webhook notifications for specific groups of companies due to compliance reasons or business rules.  
-Using [company tags](/using-the-api/managing-companies#add-metadata-to-a-company), you can tag companies and cancel webhook events for those with a specific tag using transformations.  
+You may want to prevent webhook notifications for specific groups of companies due to compliance reasons or business rules. Using [company tags](/using-the-api/managing-companies#add-metadata-to-a-company), you can tag companies and cancel webhook events for those with a specific tag using transformations.  
 
 In this example, webhooks are canceled for companies with the tag `us-compliant` set to `true`.
 

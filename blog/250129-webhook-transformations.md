@@ -5,22 +5,20 @@ tags: ["Product", "Update"]
 authors: dcoplowe
 ---
 
-![An example of a webhook transformation](/img/use-the-api/webhooks-transformation-example.png)
-
-Modify webhook properties in-flight with our new **Webhook transformations** feature.
-You can now dynamically adjust HTTP methods, target URLs, and message schemas before webhooks are sent to your application.
+Modify webhook properties in-flight with our new **webhook transformations** feature before they are sent to your application.
 
 <!--truncate-->
 
 ## What's new?
 
-We’ve introduced **Webhook transformations**, allowing you to modify webhook properties before they reach your application.  
-With this update, you can:
+We’ve introduced **webhook transformations**, allowing you to modify webhook properties before they reach your application. For example, you can:
 
-- Change the webhook's **HTTP method** (`POST` or `PUT`).  
-- Redirect webhooks to a different **target URL**.
-- Modify the webhook **event** schema.
-- **Cancel** webhook delivery based on specific conditions.  
+- Change the webhook's HTTP method (`POST` or `PUT`).  
+- Redirect webhooks to a different target URL.
+- Modify the webhook event** schema.
+- Cancel webhook delivery based on specific conditions.  
+
+![An example of a webhook transformation](/img/use-the-api/webhooks-transformation-example.png)
 
 ## Who is this relevant for?
 
@@ -32,8 +30,8 @@ This update is useful for developers and teams who:
 ## How to get started?
 
 1. In the [Codat Portal](https://app.codat.io/monitor/events), go to **Monitor > Webhooks > Events** and select an endpoint.  
-2. In the **Transformations** section, click **Edit transformations**.  
-3. Modify the `WebhookObject` to adjust the method, URL, event payload, or cancel conditions.  
-4. Save your changes—your transformation is now active.
+2. In the detailed endpoint view, click **Advanced**, then **Edit transformations**.  
+3. Modify the `WebhookObject` to adjust the properties you wish to change.  
+4. Save your changes — your transformation is now active.
 
-For a step-by-step guide, check out our documentation on [Webhook transformations](/using-the-api/webhooks/create-consumer#transform-webhook-properties-in-flight).
+For a step-by-step guide, check out our documentation on [Webhook transformations](/using-the-api/webhooks/create-consumer#transform-webhook-properties).
