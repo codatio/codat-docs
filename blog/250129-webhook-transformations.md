@@ -1,5 +1,5 @@
 ---
-title: "Introducing webhook transformations"
+title: "Webhooks: introducing transformations"
 date: "2025-01-31"
 tags: ["Product", "Update"]
 authors: dcoplowe
@@ -11,7 +11,7 @@ Modify webhook properties in-flight with our new **webhook transformations** fea
 
 ## What's new?
 
-We’ve introduced **webhook transformations**, allowing you to modify webhook properties before they reach your application. For example, you can:
+We’ve introduced **webhook transformations**, allowing you to modify webhook properties before they are sent to your application. For example, you can:
 
 - Change the webhook's HTTP method (`POST` or `PUT`).  
 - Redirect webhooks to a different target URL.
