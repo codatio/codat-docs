@@ -11,7 +11,7 @@ Handle your customers' essential accounts payable workflows across major account
 
 ## What’s new? 
 
-The [Bill pay kit](/payables/bill-pay-kit) is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting software. 
+The [Bill pay kit](/payables/overview) is our solution designed to help neobanks and B2B payment providers integrate a bill pay flow into their app as quickly as possible. It's ideal for facilitating essential bill payment processes within your SMB's accounting software. 
 
 With the Bill pay solution kit, you can: 
 
@@ -27,4 +27,4 @@ The Bill pay solution kit is available for all clients using [Sync for Payables]
 
 ## How to get started?
 
-You can review the full [solution kit for the Bill pay scenario in our docs](/payables/bill-pay-kit). If you are not a [Sync for Payables](/payables/overview) client, please contact your Codat Account Manager to learn more. 
+You can review the full [solution kit for the Bill pay scenario in our docs](/payables/overview). If you are not a [Sync for Payables](/payables/overview) client, please contact your Codat Account Manager to learn more. 
