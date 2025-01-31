@@ -15,10 +15,10 @@ For Codat clients, this change affects existing connections of Codat companies a
 
 | Data type                  | Impact |
 |----------------------------|--------|
-| `commerce-Locations`  | Will not be populated. |
-| `order`             | The `country` property may default to `XXX`. |
-| `commerce-CompanyInfo` | The `addresses` and `phoneNumbers` arrays may have fewer entries. |
-| `product`              | The `variants[].inventory` property will be empty. |
+| `commerce-locations`  | Will not be populated. |
+| `commerce-order`             | The `country` property may default to `XXX`. |
+| `commerce-companyInfo` | The `addresses` and `phoneNumbers` arrays may have fewer entries. |
+| `commerce-product`              | The `variants[].inventory` property will be empty. |
 
 ## Action required
 
