@@ -5,7 +5,7 @@ tags: ["Product", "Update", "Shopify"]
 authors: dcoplowe
 ---
 
-On **February 1, 2025**, Shopify will migrate all users to the latest version of their API. As a result, Codat companies with existing Shopify connections may need to be relinked.
+On **February 1, 2025**, Shopify will migrate all users to the latest version of their API. As a result, Codat companies with existing Shopify connections need to be relinked.
 
 <!--truncate-->
 
@@ -15,16 +15,16 @@ This change may affect existing connections, making some data no longer accessib
 
 | Data type                  | Impact |
 |----------------------------|--------|
-| **`commerce-Locations`**   | Will not be populated. |
-| **`order`**                | The `country` property may default to `XXX`. |
-| **`commerce-CompanyInfo`** | The `addresses` and `phoneNumbers` arrays may have fewer entries. |
-| **`product`**              | The `variants[].inventory` property will be empty. |
+| `commerce-Locations`  | Will not be populated. |
+| `order`             | The `country` property may default to `XXX`. |
+| `commerce-CompanyInfo` | The `addresses` and `phoneNumbers` arrays may have fewer entries. |
+| `product`              | The `variants[].inventory` property will be empty. |
 
 ## Action required
 
 To prevent service disruptions and continue accessing impacted data types, contact the users of your Shopify app and prompt them to relink their Shopify account after **February 1, 2025**.
 
-To relink, send the affected users their **company `redirect` URL** from the [List companies](/platform-api#/operations/list-companies) endpoint.
+To relink, send the affected users their company `redirect` URL from the [List companies](/platform-api#/operations/list-companies) endpoint.
 
 If you're using Codat's embedded [Connection Management UI](/auth-flow/optimize/connection-management), direct the affected users to the interface to re-authenticate their connection.
 
