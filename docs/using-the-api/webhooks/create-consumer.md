@@ -482,7 +482,21 @@ You may want to prevent webhook notifications for specific groups of companies d
 
 In this example, webhooks are canceled for companies with the tag `us-compliant` set to `true`.
 
-![An example of the us-compliant transformation](/img/use-the-api/webhooks-transformation-example.png)  
+```javascript
+function handler(webhook) {
+  if(webhook.payload.payload.referenceCompany.tags === undefined){
+    return webhook
+  }
+    
+  if(webhook.payload.payload.referenceCompany.tags['us-compliant'] === "true")
+  {
+    webhook.cancel = true
+  }
+  
+  // and return it
+  return webhook
+}
+```
 
 ---
 
