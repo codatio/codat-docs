@@ -24,7 +24,11 @@ For Codat clients, this change affects existing connections of Codat companies a
 
 To prevent service disruptions and continue accessing impacted data types, contact the users of your Shopify app and prompt them to relink their Shopify account after **February 1, 2025**.
 
-To relink, provide affected users with the `linkUrl` of their Shopify connection from the `dataConnections` array in their Codat company. Retrieve this information using the [List companies](/platform-api#/operations/list-companies) endpoint, which returns an array of companies and their associated data connections.
+To relink, provide affected users with the `linkUrl` of their Shopify connection from the `dataConnections` array in their Codat company. Retrieve this information using the [List companies](/platform-api#/operations/list-companies) endpoint, which returns an array of companies and their associated data connections. To only return companies with Shopify connections use the following query:
+
+```
+dataConnections.platformName~Xero
+```
 
 If you're using Codat's embedded [Connection Management UI](/auth-flow/optimize/connection-management), direct the affected users to the interface to re-authenticate their connection.
 
