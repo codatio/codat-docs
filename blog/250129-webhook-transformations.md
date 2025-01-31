@@ -15,10 +15,10 @@ We’ve introduced **webhook transformations**, allowing you to modify webhook p
 
 - Change the webhook's HTTP method (`POST` or `PUT`).  
 - Redirect webhooks to a different target URL.
-- Modify the webhook event** schema.
+- Modify the webhook event schema.
 - Cancel webhook delivery based on specific conditions.  
 
-![An example of a webhook transformation](/img/use-the-api/webhooks-transformation-example.png)
+![An example of a webhook transformation](/img/use-the-api/webhooks-transformation-edit.png)
 
 ## Who is this relevant for?
 
@@ -34,4 +34,4 @@ This update is useful for developers and teams who:
 3. Modify the `WebhookObject` to adjust the properties you wish to change.  
 4. Save your changes — your transformation is now active.
 
-For a step-by-step guide, check out our documentation on [Webhook transformations](/using-the-api/webhooks/create-consumer#transform-webhook-properties).
+For a step-by-step guide, read how to [Transform webhook properties](/using-the-api/webhooks/create-consumer#transform-webhook-properties).
