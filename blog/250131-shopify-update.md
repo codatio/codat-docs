@@ -5,13 +5,13 @@ tags: ["Product", "Update", "Shopify"]
 authors: dcoplowe
 ---
 
-On **February 1, 2025**, Shopify will migrate all users to the latest version of their API. As a result, Codat companies with existing Shopify connections need to be relinked.
+On **February 1, 2025**, Shopify will migrate all app partners to the latest version of the Shopify API. As a result, Codat companies with existing Shopify connections need to be relinked.
 
 <!--truncate-->
 
-As described in Shopify's [2024-10 release notes](https://shopify.dev/docs/api/release-notes/2024-10#breaking-changes), all app partners are required to adopt a new API scope to continue accessing Shopify's location information. 
+As described in Shopify's [2024-10 release notes](https://shopify.dev/docs/api/release-notes/2024-10#breaking-changes), all app partners are required to adopt a new API scope. Otherwise, app partners won'be able to access Shopify's location information from **February 1, 2025**. 
 
-This change may affect existing connections, making some data no longer accessible for currently connected companies from **February 1, 2025**. This change impacts the following Codat data types:
+For Codat clients, this change affects existing connections of Codat companies and impacts the following Codat data types:
 
 | Data type                  | Impact |
 |----------------------------|--------|
