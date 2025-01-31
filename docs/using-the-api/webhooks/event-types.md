@@ -43,8 +43,8 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 | Expenses            | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)              | Called when an expense sync fails to complete successfully, resulting in at least one error or warning. |
 | Lending             | [`report.categorizedBankStatement.generate.successful`](/lending-api#/webhooks/report.categorizedBankStatement.generate.successful/post) | Called when a [categorized bank statement](/lending/features/bank-statements-overview) is successfully generated for a company. |
 | Lending             | [`AccountCategoriesUpdated`](/lending-api#/webhooks/Account-categories-updated/post) | Called when Codat AI had [categorized accounts](/lending/features/financial-statements-overview) for a company. |
-| Supplier Enablement | [`reports.spendAnalysis.generate.unsuccessful`](/supplier-enablement-api#/webhooks/reports.spendAnalysis.generate.unsuccessful/post) | Called when a spend analysis report has failed to be generated for a company. |
 | Supplier Enablement | [`reports.spendAnalysis.generate.successful`](/supplier-enablement-api#/webhooks/reports.spendAnalysis.generate.successful/post) | Called when a spend analysis report is successfully generated. |
+| Supplier Enablement | [`reports.spendAnalysis.generate.unsuccessful`](/supplier-enablement-api#/webhooks/reports.spendAnalysis.generate.unsuccessful/post) | Called when a spend analysis report has failed to be generated for a company. |
 
 ---
 ## Read next
