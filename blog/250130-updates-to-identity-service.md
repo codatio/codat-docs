@@ -6,14 +6,17 @@ hide_table_of_contents: true
 authors: dcoplowe
 ---
 
-We've recently upgraded our service that manages user logins and security. As a result, starting **Monday, February 10, 2025**, some users may need to reset their password if they haven't logged in to the Portal or the Relationship Manager.
+We've recently upgraded our service that manages user logins and security. As a result, starting **Monday, February 3, 2025**, some users may need to reset their password if they haven't logged in to the [Portal](https://app.codat.io/) or the [Relationship manager](https://relationships.codat.io/).
 
 <!--truncate-->
 
+This change only affects users who log in with an **email and password**.
+
 ## Action required
 
-To avoid any disruptions, log in to either the [Portal](https://app.codat.io/) or the [Relationship manager](https://relationships.codat.io/) by **February 10, 2025**.
+If you created your account using **email and password** but have **not logged in before the deadline**, you will receive an email prompting you to reset your password.
+Follow the instructions to restore access to Codat’s portals.
 
 ## Expected impact if no action is taken
 
-If you haven't logged into the Portal or the Relationship Manager before the deadline, you won't be able to access your account without resetting your password. In this case, you will receive an email with instructions to reset your password when you next attempt to log in.
+After **February 3, 2025**, users who haven’t logged in will need to **reset their password** before accessing their account. A password reset email will be sent on this date with instructions to complete the process.
