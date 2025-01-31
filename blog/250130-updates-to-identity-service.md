@@ -12,9 +12,10 @@ We've recently upgraded our login and security management service. As a result, 
 
 ## Action required
 
-If you signed up for a Codat account using **email and password** but haven't logged in to the [Portal](https://app.codat.io/) or the [Relationship Manager](https://relationships.codat.io/) before **February 3, 2025**, you will receive an email prompting you to reset your password. 
+If you signed up for a Codat account using **email and password** but haven't logged in to the [Portal](https://app.codat.io/) or the [Relationship Manager](https://relationships.codat.io/) between **January 13, 2025** and **February 3, 2025**, you will receive an email detailing action required to keep access to your account.
 
-Follow the instructions in the email to restore access to Codat’s services and avoid disruptions to your use of our solutions. Other users don't need to take any action. 
+Follow the instructions in the email to and reset your account password.
+Once you've done this, you'll be able to sign in with that new password and access Codat’s services.
 
 ## Expected impact if no action is taken
 
