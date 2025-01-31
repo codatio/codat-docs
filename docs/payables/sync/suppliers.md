@@ -60,5 +60,5 @@ Next, you can choose to manage your supplier's bills or payment methods prior to
 ---
 ## Read next
 
-* [Manage your customer's bills](/payables/bills)
-* [Manage your customer's payment methods](/payables/mapping)
+* [Manage your customer's bills](/payables/sync/bills)
+* [Pay your customer's bills](/payables/sync/pay-bill)

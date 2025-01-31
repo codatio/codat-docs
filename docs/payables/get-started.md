@@ -206,6 +206,5 @@ Next, you will create a company and its connection to build out the core infrast
 
 ## Read next
 
-* [Set up your customer](/payables/async/configure-customer) for Bill Pay's **async** solution to continue building your AP management process.
-* [Set up your customer](/payables/sync/configure-customer) for Bill Pay's **sync** solution to continue building your AP management process.
+* [Set up your SMB customer](/payables/configure-customer) for Bill Pay's solution to continue building your AP management process.
 * Check out our [client libraries](/get-started/libraries) to kickstart your Bill Pay build.

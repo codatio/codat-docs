@@ -302,7 +302,7 @@ Next, you can choose to manage your customer's suppliers, bills or payment metho
 
 ## Read next
 
-* Manage your customer's suppliers [asynchronously](/payables/suppliers) or [synchronously](/payables/suppliers)
-* Manage your customer's bills [asynchronously](/payables/suppliers) or [synchronously](/payables/suppliers)
-* Pay your customer's bills [asynchronously](/payables/mapping) or [synchronously](/payables/suppliers)
+* Manage your customer's suppliers [asynchronously](/payables/async/suppliers) or [synchronously](/payables/sync/suppliers)
+* Manage your customer's bills [asynchronously](/payables/async/suppliers) or [synchronously](/payables/sync/suppliers)
+* Pay your customer's bills [asynchronously](/payables/async/payments) or [synchronously](/payables/sync/pay-bills)
 
