@@ -21,4 +21,4 @@ We have released a new version of our Zapier app that supports our latest webhoo
 
 ## Expected impact if no action is taken
 
-If you don’t update your Zaps by **April 10, 2025**, yur workflows will stop functioning because version 1.0 will no longer receive legacy event types. Ensure your workflows continue without interruption by updating the Zaps today.
+If you don’t update your Zaps by **April 10, 2025**, your workflows will stop functioning because version 1.0 will no longer receive legacy event types. Ensure your workflows continue without interruption by updating the Zaps today.
