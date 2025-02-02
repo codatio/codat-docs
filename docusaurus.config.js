@@ -105,6 +105,7 @@ const config = {
   ],
 
   plugins: [
+    '@datalayer/jupyter-docusaurus-plugin',
     "docusaurus-plugin-sass",
     '@docusaurus/theme-live-codeblock',
     'docusaurus-plugin-image-zoom',
