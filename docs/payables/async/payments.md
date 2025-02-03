@@ -1465,7 +1465,7 @@ billCreditNoteCreateResponse, err := payablesClient.BillCreditNotes.Create(ctx,
 
 #### Allocate credit note to a bill
 
-Now that you have the credit note, offset its balance against outstanding bills. [Create a bill payment](/payables/payments#single-bill-payment) and include the credit note in the `links` array.
+Now that you have the credit note, offset its balance against outstanding bills. [Create a bill payment](/payables/async/payments#single-bill-payment) and include the credit note in the `links` array.
 
 In some accounting software, you can combine a credit note and a partial payment to pay off the full balance of a bill.
 
