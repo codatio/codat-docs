@@ -1,12 +1,12 @@
 ---
-title: "Codat solution refresh"
+title: "Introducing Codat's solution updates"
 date: "2025-02-04"
 tags: ["Product", "Update"]
 authors: pzaichkina
 ---
 import Products from "@components/Products";
 
-Codat's solutions got a refresh - now with a focus on what matters most. 
+Codat's solutions and documentation got a refresh - smarter navigation, clearer structure, and with a focus on what matters most. 
 
 <!--truncate-->
 
@@ -14,7 +14,9 @@ Codat's solutions got a refresh - now with a focus on what matters most.
 
 As we focus on supporting you in building deeper connections with your business customers, we evolved our solutions and reorganized our documentation so you can find the support you need, fast.
 
-Each of Codat's solutions is tailored to a specific use case we're experts in, so our homepage and navigation structure put these flagship use cases front and center. Our range of solutions also boasts updated, clearer names while delivering the same reliable insights and best-in-class experience you are used to. 
+Each of Codat's solutions is tailored to a specific use case we're experts in, so our homepage and navigation structure put these flagship use cases front and center. 
+
+Our range of solutions also boasts updated, clearer names while delivering the same reliable insights and best-in-class experience you are used to. 
 
 ### Codat for business users
 
