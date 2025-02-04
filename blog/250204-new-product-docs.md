@@ -1,6 +1,6 @@
 ---
 title: "Codat solution refresh"
-date: "2024-02-04"
+date: "2025-02-04"
 tags: ["Product", "Update"]
 authors: pzaichkina
 ---
