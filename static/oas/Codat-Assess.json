@@ -4324,7 +4324,7 @@
           "reportInfo": {
             "title": "Report information",
             "type": "object",
-            "description": "Report additional information, which is specific to Lending API reports.",
+            "description": "Report additional information, which is specific to Lending reports.",
             "properties": {
               "pageNumber": {
                 "type": "integer",
