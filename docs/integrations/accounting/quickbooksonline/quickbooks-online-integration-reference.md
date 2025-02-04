@@ -20,6 +20,8 @@ When creating direct costs in QuickBooks Online for GB, FR, IE, CA, and AU local
 
 When writing an Invoice to QBO, you can create line items without referring to existing items in QBO. However, if you do not specify an existing item with an existing `itemID` for the invoice line item, Codat uses the _Default Item_ that is set for the company. This will also use the default `AccountRef` associated with the Default Item.
 
+Due to a platform limitation, when pulling invoices from QBO, Codat maps the default accounts for shipping and gratuity lines. These mapped accounts may therefore be incorrect if the default accounts have changed since the invoice was created.
+
 ## Payment Methods
 
 When reading Payment Methods from QuickBooks Online, the Payment Method `type` is always `Unknown`.
