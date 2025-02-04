@@ -4032,7 +4032,7 @@
       ],
       "get": {
         "summary": "Get company information",
-        "description": "Use the *Get company information* endpoint to return information about the company available from the underlying accounting software.\n\n",
+        "description": "Use the *Get company information* endpoint to return information about the company available from the underlying accounting software.\n\n### Supported Integrations\n| Integration           | Supported |\n|-----------------------|-----------|\n| Oracle NetSuite       | Yes       |\n| Xero                  | Yes       |\n| Exact                 | No        |\n| FreeAgent             | No        |\n| Sage                  | No        |\n| QuickBooks Online     | No        |",
         "operationId": "get-company-information",
         "tags": [
           "Company information"
