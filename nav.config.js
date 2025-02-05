@@ -22,8 +22,13 @@ module.exports = {
       className: "navbar__link--api",
       items: [
         {
+          href: "/supplier-enablement-api",
+          label: "Spend Insights",
+        },
+        {
           href: "/bank-feeds-api",
           label: "Bank Feeds",
+          hr: true,
         },
         {
           href: "/sync-for-payables-api",

@@ -1,6 +1,6 @@
 ---
 title: "Request business data from your customers"
-displayed_sidebar: supplierEnablement
+displayed_sidebar: spendInsights
 description: "Learn how to onboard and manage companies that represent your customers"
 ---
 

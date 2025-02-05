@@ -1,36 +1,36 @@
 ---
-title: Supplier Enablement overview
-sidebar_label: Supplier Enablement
+title: Spend Insights overview
+sidebar_label: Spend Insights
 description: Manage comprehensive and actionable vendor and spend data from your clients to grow commercial card volume in B2B payments
-displayed_sidebar: supplierEnablement
+displayed_sidebar: spendInsights
 image: "/img/banners/social/supplier-enablement.png"
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
-tags: [overview, supplierenablement]
-banner_title: Supplier Enablement
+tags: [overview, spendinsights]
+banner_title: Spend Insights
 banner_class: supplier-enablement
 banner_icon: "/img/logos/products/logo_supplier_enablement_clear.svg"
 banner_image: "/img/banners/supplier-enablement.png"
 banner_text: "Manage comprehensive and actionable vendor and spend data from your clients to grow commercial card volume in B2B payments"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
-// video_text: What is Supplier Enablement?
+// video_text: What is Spend Insights?
 ---
 
 import { IntegrationsList } from "@components/Integrations";
-import { integrationsFilterSupplierEnablement } from "@components/Integrations/integrations";
+import { integrationsFilterSpendInsights } from "@components/Integrations/integrations";
 import ClientLibraries from "@components/ClientLibraries";
 import Products from "@components/Products";
 
 ## What is it?
 
-With our **Supplier Enablement** solution, you can access your clients' accounts payable data within minutes and gain insights on their spend and supplier activity. 
+With our **Spend Insights** solution, you can access your clients' accounts payable data within minutes and gain insights on their spend and supplier activity. 
 
 Use this detail to identify suppliers eligible for your clients' virtual card programs, run targeted supplier outreach campaigns on your clients' behalf, and grow your commercial card volume in B2B payments. 
 
 ## Who is it for?
 
-With **Supplier Enablement**, we enable banks and other commercial card issuers to make their supplier onboarding process simpler and more effective, helping them grow revenue per customer and reduce spend churn when moving banking customers to their virtual card product.  
+With **Spend Insights**, we enable banks and other commercial card issuers to make their supplier onboarding process simpler and more effective, helping them grow revenue per customer and reduce spend churn when moving banking customers to their virtual card product.  
 
 ## Why use it?
 
@@ -91,9 +91,9 @@ With **Supplier Enablement**, we enable banks and other commercial card issuers 
 
 ## How does it work?
 
-![A diagram flow of the supplier enablement solution](/img/supplier-enablement/se-overview-diagram.png)
+![A diagram flow of the Spend Insights solution](/img/supplier-enablement/se-overview-diagram.png)
 
-Reach out to your Codat contact to enjoy **Supplier Enablement**'s rich features and dynamic data refreshes through our comprehensive UI:
+Reach out to your Codat contact to enjoy **Spend Insights**'s rich features and dynamic data refreshes through our comprehensive UI:
 
 1. **Relationship and onboarding management**
 
@@ -113,10 +113,10 @@ Reach out to your Codat contact to enjoy **Supplier Enablement**'s rich features
 
 ## Supported integrations
 
-<IntegrationsList filter={integrationsFilterSupplierEnablement} />
+<IntegrationsList filter={integrationsFilterSpendInsights} />
 
 ---
 
 ## Read next
 
-* [Start your journey](/supplier-enablement/get-started) with Supplier Enablement
+* [Start your journey](/supplier-enablement/get-started) with Spend Insights

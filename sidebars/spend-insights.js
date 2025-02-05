@@ -7,7 +7,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Supplier Enablement",
+    label: "Spend Insights",
     href: "/supplier-enablement/overview",
     className: "header top-level-item products product supplier-enablement",
   },

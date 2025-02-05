@@ -51,7 +51,7 @@ export const integrationsFilterBillPayAsync = [
   "Xero",
 ];
 
-export const integrationsFilterSupplierEnablement = [
+export const integrationsFilterSpendInsights = [
   "FreeAgent",
   "FreshBooks",
   "Dynamics 365 Business Central",

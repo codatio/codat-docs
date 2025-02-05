@@ -1,8 +1,8 @@
 ---
-title: "Get started with Supplier Enablement"
-description: "Ready to use Supplier Enablement? Reach out to your account manager so that we can enable it for you and get you started. In the process, we will set up your Codat instance to match your business processes, company specifics, and requirements. It's that easy."
+title: "Get started with Spend Insights"
+description: "Ready to use Spend Insights? Reach out to your account manager so that we can enable it for you and get you started. In the process, we will set up your Codat instance to match your business processes, company specifics, and requirements. It's that easy."
 sidebar_label: Get started
-displayed_sidebar: supplierEnablement
+displayed_sidebar: spendInsights
 hide_table_of_contents: true
 ---
 

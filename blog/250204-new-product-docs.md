@@ -26,7 +26,7 @@ We have also renamed our range of solutions to reflect their focus clearly while
 
 ### Codat for business users
 
-<Products mini={true} verbose={true} products={["Supplier Enablement"]}/>
+<Products mini={true} verbose={true} products={["Spend Insights"]}/>
 
 ### Codat for technology teams
 
