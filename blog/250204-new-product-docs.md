@@ -12,7 +12,7 @@ Codat's solutions and documentation got a refresh - clearer naming, smarter navi
 
 Codat exists to transform how financial institutions help businesses grow and thrive. We are proud of the products we have built for software developers that raise the bar in financial services for small and medium-sized businesses.
 
-As we have continued on this journey, we have built solutions for client-facing teams, simplifying their processes and delivering deeper and more actionable insights into business data. 
+As we have continued on this journey, we have built solutions for client-facing teams, simplifying their processes and delivering deeper insights into business data. 
 
 The changes to our solution offering and documentation reflect this evolution.
 
@@ -20,9 +20,7 @@ The changes to our solution offering and documentation reflect this evolution.
 
 As we focus on supporting you in building deeper connections with your business customers, we have evolved our solutions and reorganized our documentation so that you can find the support you need, fast.
 
-
 Each of Codat's expert solutions is tailored to a specific use case, so our homepage and navigation structure put these flagship use cases front and center. 
-
 
 We have also renamed our range of solutions to reflect their focus clearly while delivering the same best-in-class experience you are used to. 
 
