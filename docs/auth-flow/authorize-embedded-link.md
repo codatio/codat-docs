@@ -76,6 +76,26 @@ Link SDK is imported at runtime, so you'll always get the latest version of our 
 
 :::
 
+## Authorize user
+
+By default, we enforce additional security measures within our Link SDK. The SDK requires an access token to verify your customer, serving as an equivalent to a one-time password. Contact your account manager if you want to disable these measures. 
+
+### Access token
+
+Once your customer authorizes within your application, use the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint to retrieve an access token for this customer's company. 
+
+Pass the token to the Link SDK when initializing. We use this to verify your customer and get company-specific information to display in the UI.
+
+:::tip Token validity
+The token is only valid for one day and applies to a single company.
+:::
+
+#### CORS settings
+
+[Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for access token to work. To control the domain list that your application can make token requests from, register the allowed origins using the [Set CORS settings](/platform-api#/operations/set-connection-management-cors-settings) endpoint.
+
+To display the origins you previously registered for your instance, use the [Get CORS settings](/platform-api#/operations/get-connection-management-cors-settings) endpoint. 
+
 ## Use callback functions
 
 You can add custom logic into our SDK by using callback functions to complete an action. Use the properties below to pass the callback functions into the SDK component:

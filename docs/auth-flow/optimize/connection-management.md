@@ -44,10 +44,10 @@ The Connections SDK is an independent component and doesn't require our [Link SD
 
 ### Access token
 
-Once your customer authorizes within your application, use the [Get access token](/platform-api#/operations/get-connection-management-access-token) endpoint to retrieve an access token for this customer's company. 
+Once your customer authorizes within your application, use the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint to retrieve an access token for this customer's company. 
 
 :::tip Token validity
-The token is only valid for one hour and applies to a single company.
+The token is only valid for one day and applies to a single company.
 :::
 
 <Tabs groupId="language">
