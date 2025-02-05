@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: rachelcodat
 ---
 
-You can now send one-time Link URL to your customers to improve the relability of data provided by them. 
+You can now send one-time Link URL to your customers to improve the reliability of data provided by them. 
 
 <!--truncate-->
 
