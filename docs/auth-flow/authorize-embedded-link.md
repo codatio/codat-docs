@@ -80,7 +80,7 @@ Link SDK is imported at runtime, so you'll always get the latest version of our 
 
 By default, we enforce additional security measures within our Link SDK. The SDK requires an access token to verify your customer, serving as an equivalent to a one-time password. Contact your account manager if you want to disable these measures. 
 
-### Access token
+#### Access token
 
 Once your customer authorizes within your application, use the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint to retrieve an access token for this customer's company. 
 
