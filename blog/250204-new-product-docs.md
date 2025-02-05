@@ -18,11 +18,13 @@ The changes to our solution offering and documentation reflect this evolution.
 
 ## What's new?
 
-As we focus on supporting you in building deeper connections with your business customers, we evolved our solutions and reorganized our documentation so you can find the support you need, fast.
+As we focus on supporting you in building deeper connections with your business customers, we have evolved our solutions and reorganized our documentation so that you can find the support you need, fast.
 
-Each of Codat's solutions is tailored to a specific use case we're experts in, so our homepage and navigation structure put these flagship use cases front and center. 
 
-Our range of solutions also boasts updated, clearer names while delivering the same reliable insights and best-in-class experience you are used to. 
+Each of Codat's expert solutions is tailored to a specific use case, so our homepage and navigation structure put these flagship use cases front and center. 
+
+
+We have also renamed our range of solutions to reflect their focus clearly while delivering the same best-in-class experience you are used to. 
 
 ### Codat for business users
 
