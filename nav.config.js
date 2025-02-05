@@ -24,11 +24,11 @@ module.exports = {
         {
           href: "/supplier-enablement-api",
           label: "Spend Insights",
-          hr: true,
         },
         {
           href: "/bank-feeds-api",
           label: "Bank Feeds",
+          hr: true,
         },
         {
           href: "/sync-for-payables-api",
