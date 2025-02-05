@@ -1,7 +1,7 @@
 ---
 title: "Customer FAQs"
 description: "Frequently asked questions about sharing information using Codat"
-displayed_sidebar: supplierEnablement
+displayed_sidebar: spendInsights
 ---
 
 import Questions, { Question } from '@components/Questions';

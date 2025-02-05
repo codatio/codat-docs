@@ -38,4 +38,4 @@ This will update the types of information you previously requested (financials, 
 
 ## Read next
 
-- [Supplier Enablement overview](/supplier-enablement/overview)
+- [Spend Insights overview](/supplier-enablement/overview)

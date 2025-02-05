@@ -5,7 +5,6 @@ module.exports = [
     id: "supplier-enablement/overview",
     customProps: {
       hr: true,
-      section: "Spend insights",
     },
   },
   {
