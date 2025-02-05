@@ -1,14 +1,20 @@
 ---
-title: "Introducing Codat's solution updates"
+title: "Updates to Codat's solution range"
 date: "2025-02-04"
 tags: ["Product", "Update"]
 authors: pzaichkina
 ---
 import Products from "@components/Products";
 
-Codat's solutions and documentation got a refresh - smarter navigation, clearer structure, and with a focus on what matters most. 
+Codat's solutions and documentation got a refresh - clearer naming, smarter navigation, now with a focus on what matters most. 
 
 <!--truncate-->
+
+Codat exists to transform how financial institutions help businesses grow and thrive. We are proud of the products we have built for software developers that raise the bar in financial services for small and medium-sized businesses.
+
+As we have continued on this journey, we have built solutions for client-facing teams, simplifying their processes and delivering deeper and more actionable insights into business data. 
+
+The changes to our solution offering and documentation reflect this evolution.
 
 ## What's new?
 
