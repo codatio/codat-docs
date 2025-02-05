@@ -84,6 +84,15 @@ In this scenario, allow your user to authorize this connection by sending them d
 
 ## Use URL to initiate Link
 
+By default, we enforce additional security measures within Hosted Link. Link URLs have a one-time password (OTP) added as a query parameter to limit the validity and number of uses of these URLs. Contact your account manager if you want to disable these measures. 
+
+:::tip Link validity
+Link URLs enhanced by OTPs behave as follows:
+
+- Your customers aren't able to use the same Link URL more than once.
+- Company-specific and connection-specific Link URLs expire after one day even if they weren't used.
+:::
+
 #### Use the Hosted Link URL
 
 Use the Hosted Link URL if your customer's connection is meant to be persistent, and your customer may need to view or update their connection in the future.
@@ -102,7 +111,21 @@ If a user already has an integration connection that hasn't been authorized and 
   alt="Connection URL modal to manage an existing connection"
 />
 
+:::warning Query parameters in Link URLs
+
+If your application already adds query parameters to Link URLs (for example, by appending `?link.showSandboxIntegrations=false`), confirm that your code can handle URLs that already contain query strings.
+
+:::
+
 #### Use the Invite company URL
+
+:::warning Not compatible with OTPs
+
+By default, Hosted Link has an additional authorization enabled that uses OTPs. As a result, it's not possible to use the generic **Invite company** button to invite your customers to share their data.
+
+Contact your account manager if you want to disable these measures.
+
+:::
 
 We recommend using the _Invite company URL_ if both of these criteria apply to your use case:
 

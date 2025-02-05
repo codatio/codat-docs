@@ -32,7 +32,7 @@ Optionally, you can [set up a webhook](/using-the-api/webhooks/event-types) to m
 
 ## Display a list of integrations
 
-Next, you need to provide your customer with a list of platforms they can provide you access to, including the platform name and logo. For additional guidance on best practices of integration selection, see [Platfrom selection](/auth-flow/optimize/platform-selection). 
+Next, you need to provide your customer with a list of platforms they can provide you access to, including the platform name and logo. For additional guidance on best practices of integration selection, see [Platform selection](/auth-flow/optimize/platform-selection). 
 
 #### Retrieve all available integrations
 
@@ -71,17 +71,15 @@ Direct your user to the `linkUrl`. The page will prompt them to enter their cred
 
 :::tip One-time passwords for Link
 
-Hosted Link supports one-time password (OTP) functionality. Reach out to your Codat contact to learn more.
+Link URLs now have one-time passwords (OTP) appended to them. As a result, they behave as follows:
 
-:::
+- Your customers aren't able to use the same Link URL more than once.
+- Company-specific and connection-specific Link URLs expire after one day even if they weren't used.
 
-:::info Platform-specific pages
+Contact your account manager if you want to disable these measures. 
 
-For some integrations, the authorization flow may include additional instructions or steps. For example:
+If your application already adds query parameters to Link URLs (for example, by appending `?link.showSandboxIntegrations=false`), confirm that your code can handle URLs that already contain query strings.
 
-- Sage Intacct and NetSuite require complex user permissions.
-- Microsoft Dynamics 365 Business Central requires your users to install a package on their machine.
-- Xero requires your customer to confirm the company they want to link.
 :::
 
 Once the customer successfully authorized the data connection, redirect them back to your app. Make sure to handle all possible redirect status codes and error messages so that your users understand what has gone wrong. 
