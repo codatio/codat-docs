@@ -840,7 +840,7 @@
         "summary": "Get company access token",
         "operationId": "get-company-access-token",
         "x-speakeasy-name-override": "get-access-token",
-        "description": "Use the _Get company access token_ endpoint to return an access token for the specified company ID to use in Codat's embedded UI products.\n",
+        "description": "Use the _Get company access token_ endpoint to return an access token for the specified company ID. The token is valid for one day. \n\nThe token is required by Codat's embeddable UIs (such as [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) and [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)) to verify the identity of the user and improve the reliability of data provided by them.",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"

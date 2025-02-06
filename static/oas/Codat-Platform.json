@@ -1345,7 +1345,7 @@
         "summary": "Get company access token",
         "operationId": "get-company-access-token",
         "x-speakeasy-name-override": "get-access-token",
-        "description": "Use the _Get company access token_ endpoint to return an access token for the specified company ID to use in Codat's embedded UI products.\n",
+        "description": "Use the _Get company access token_ endpoint to return an access token for the specified company ID. The token is valid for one day. \n\nThe token is required by Codat's embeddable UIs (such as [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) and [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)) to verify the identity of the user and improve the reliability of data provided by them.",
         "parameters": [
           {
             "$ref": "#/components/parameters/companyId"
@@ -1413,7 +1413,7 @@
         "tags": [
           "Connection management"
         ],
-        "description": "﻿The new `/companies/{companyId}/accessToken` endpoint replaces this endpoint and includes additional functionality.\n\nUse the *Get access token* endpoint to retrieve a new access token for use with the [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management). The token is only valid for one hour and applies to a single company.\n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
+        "description": "﻿The new [Get company access token](https://docs.codat.io/platform-api#/operations/get-company-access-token) endpoint replaces this endpoint and includes additional functionality.",
         "responses": {
           "200": {
             "description": "Success",
@@ -1464,7 +1464,7 @@
         "tags": [
           "Settings"
         ],
-        "description": "﻿The *Get CORS settings* endpoint returns the allowed origins (i.e. your domains) you want to allow cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)) with Codat. \n\nEnabling CORS with Codat is required by our embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) to access Codat's API endpoints.\n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
+        "description": "﻿The *Get CORS settings* endpoint returns the allowed origins (i.e. your domains) you want to allow cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)) with Codat. \n\nEnabling CORS with Codat is required by our embeddable UIs (such as [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) and [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)) to access Codat's API endpoints.",
         "responses": {
           "200": {
             "$ref": "#/components/responses/ConnectionManagementAllowedOrigins"
@@ -1500,7 +1500,7 @@
         "tags": [
           "Settings"
         ],
-        "description": "﻿The *Set CORS settings* endpoint allows you to register allowed origins (i.e. your domains) for use in cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).\n \nEnabling CORS with Codat is required by our embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) to access Codat's API endpoints. \n\nThe embeddable [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) lets your customers control access to their data by allowing them to manage their existing connections.",
+        "description": "﻿The *Set CORS settings* endpoint allows you to register allowed origins (i.e. your domains) for use in cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).\n \nEnabling CORS with Codat is required by our embeddable UIs (such as [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) and [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)) to access Codat's API endpoints. ",
         "requestBody": {
           "content": {
             "application/json": {
