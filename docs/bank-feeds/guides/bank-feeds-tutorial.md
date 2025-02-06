@@ -412,7 +412,7 @@ Finally, use our [Generate source account credentials](/bank-feeds-api#/operatio
 
 In response, you will receive login credentials that your user needs to enter in QBO Banking to link a bank account. Share them with the user, and consider providing instructions on steps to take in QBO. For example, this is how we manage it in our QBO Link flow:
 
-![](/img/use-cases/bank-feeds/0027-qbo-feeds-instruction.PNG)
+![](/img/use-cases/bank-feeds/0027-qbo-feeds-instructions.png)
 
 <Tabs groupId="language">
 
