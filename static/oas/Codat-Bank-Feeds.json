@@ -5488,6 +5488,10 @@
                 "created": "2022-10-27T09:53:29Z",
                 "sourceType": "Banking"
               }
+            ],
+            "products": [
+              "spend-insights",
+              "lending"
             ]
           }
         ]
