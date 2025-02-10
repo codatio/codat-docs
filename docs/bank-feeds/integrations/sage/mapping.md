@@ -100,9 +100,9 @@ For Sage bank feeds, an extra step is required to authorize the connection. This
 
 <Tabs>
 
-<TabItem value="request-url" label="Request Url">
+<TabItem value="request-url" label="Request URL">
 
-authorize data connection request url
+Authorize data connection request URL
 
 ```http
 PUT company/{companyId}/connections/{connectionId}/authorization
@@ -111,7 +111,7 @@ PUT company/{companyId}/connections/{connectionId}/authorization
 
 <TabItem value="request-body" label="Request Body">
 
-sample request body:
+Sample request body:
 
 ```json
 {
@@ -128,7 +128,7 @@ If your request responds with a `200` response status code, the next step is to 
 ```
 {redirectUri}?state={authId}
 
-// example:
+// Example:
 
 redirect_uri=https://snd01eu.Sagebankdrive.com/api/v1/indirectredirect/11111-22222-33333-88888-9999?state=1122-3344-5566-7788
 ```
@@ -139,7 +139,7 @@ Once the connection is successfully set up, Sage will show a dialog box featurin
 
 For example:
 
-![Sage account selection screen](/img/old/f73be1e-redirect_screen.PNG "Sage dialog listing the available source bank accounts")
+![Sage account selection screen](/img/old/sage-mapping-redirect-screen.png "Sage dialog listing the available source bank accounts")
 
 The dataConnection status will then change to linked, and which point you will be able to [write bankTransactions](/bank-feeds/pushing-transactions).
 
