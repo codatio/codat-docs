@@ -18,7 +18,7 @@ The Codat provided user interface is designed to enable you to launch QuickBooks
 
 To utilize the mapping UI, direct your company's users to the `linkUrl` provided in the [create-data-connection](/bank-feeds/setup#creating-a-data-connection) response. The linkUrl has a one-time password (OTP) that will expire after 60 minutes. If the password expires, you can retrieve the `linkUrl` again (with a new OTP) using the [`get-connection`](/bank-feeds-api#/operations/get-connection) endpoint.
 
-On the Set up QuickBooks page, they click Get credentials to generate their unique one-time username and password for connecting an account to QBO (see step six in the next procedure). 
+On the Set up QuickBooks page, they click Get credentials to generate their unique one-time username and password for connecting an account to QBO. 
 
 ![Image](/img/bank-feeds/qbo-bank-feeds/400590b-qbo-bank-feeds_smb-customer-steps-revised.png "The Set up QuickBooks page that allows your SMB user to get their credentials.")
 
