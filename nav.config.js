@@ -22,7 +22,7 @@ module.exports = {
       className: "navbar__link--api",
       items: [
         {
-          href: "/supplier-enablement-api",
+          href: "/spend-insights-api",
           label: "Spend Insights",
         },
         {
