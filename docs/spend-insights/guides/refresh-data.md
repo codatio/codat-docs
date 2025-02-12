@@ -18,19 +18,19 @@ In the Relationship Portal, each company has a status associated with it that re
 - _Available_, meaning the information has been successfully updated, and the reports for the company are ready to be viewed.
 - _Error_, indicating that an issue has occurred during the data refresh (for example, your customer has exited the authorization process without granting your organization access to their data).
 
-![An image of the Relationship Portal user interface with the Status column highlighted](/img/supplier-enablement/0069-se-rm-portal-status.png)
+![An image of the Relationship Portal user interface with the Status column highlighted](/img/spend-insights/0069-se-rm-portal-status.png)
 
-You can also see the date and time of the most recent information update in the same column next to the status. If you click the download icon, you can also see update timestamps for each individual report. For details on these reports and how to download them, see our [Check spend data](/supplier-enablement/guides/analyze-spend#download-reports) guide.
+You can also see the date and time of the most recent information update in the same column next to the status. If you click the download icon, you can also see update timestamps for each individual report. For details on these reports and how to download them, see our [Check spend data](/spend-insights/guides/analyze-spend#download-reports) guide.
 
 ## Refresh data
 
-When your customer receives the [information request email](/supplier-enablement/guides/analyze-spend#request-financial-data-during-company-creation) and grants your organization access to their spend data, this data is fetched automatically. 
+When your customer receives the [information request email](/spend-insights/guides/analyze-spend#request-financial-data-during-company-creation) and grants your organization access to their spend data, this data is fetched automatically. 
 
 Any time you want to see the most up-to-date information (for example, during periodic checks of your customers' accounts payable position), you can initiate a refresh manually in the Relationship Portal. 
 
 To do that, locate your customer's company in the list, click the triple-dot menu and select **Refresh data**. You will see a message confirming the refresh has been initiated. 
 
-![An image of the Relationship Portal user interface with the Refresh data option highlighted](/img/supplier-enablement/0070-se-rm-portal-refresh-data.png)
+![An image of the Relationship Portal user interface with the Refresh data option highlighted](/img/spend-insights/0070-se-rm-portal-refresh-data.png)
 
 This will update the types of information you previously requested (financials, spend detail or both) in the background. Once the update is complete, the **Status** column will display the status of _Available_ with the date and time of the refresh. 
 
@@ -38,4 +38,4 @@ This will update the types of information you previously requested (financials, 
 
 ## Read next
 
-- [Spend Insights overview](/supplier-enablement/overview)
+- [Spend Insights overview](/spend-insights/overview)

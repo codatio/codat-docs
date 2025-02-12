@@ -1,8 +1,8 @@
 module.exports = [ 
   {
     type: "doc",
-    className: "top-level-item top-level-item-single products product supplier-enablement",
-    id: "supplier-enablement/overview",
+    className: "top-level-item top-level-item-single products product spend-insights",
+    id: "spend-insights/overview",
     customProps: {
       hr: true,
     },

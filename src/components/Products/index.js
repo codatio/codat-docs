@@ -62,10 +62,10 @@ const allProducts = [
   },
   {
     logo: "/img/logos/products/logo_supplier_enablement_clear.svg",
-    slug: "supplier-enablement",
+    slug: "spend-insights",
     name: "Spend Insights",
     description: "Manage comprehensive vendor and spend data to grow commercial card volume.",
-    link: "/supplier-enablement/overview",
+    link: "/spend-insights/overview",
     linkText: "Manage supplier relationship →",
   },
   {

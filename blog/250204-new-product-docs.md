@@ -40,7 +40,7 @@ If you are using or planning to use Codat, this update is for you - our new look
 
 | Formerly...         | ...Evolved into                                                                                                                                 |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Supplier Enablement** | Codat focuses on the [spend insights](/usecases/summary/spend-insights) use case, providing the relevant functionality in our [Spend Insights](/supplier-enablement/overview) solution.  |
+| **Supplier Enablement** | Codat focuses on the [spend insights](/usecases/summary/spend-insights) use case, providing the relevant functionality in our [Spend Insights](/spend-insights/overview) solution.  |
 | **Lending API**        | Codat now refers to this solution as [Lending](/lending/overview).                                                                                         |
 | **Bank Feeds API**      | Codat now refers to this solution as [Bank Feeds](/bank-feeds/overview) with a focus on the [accounting automation](/usecases/summary/accounting-automation) use case.                                             |
 | **Sync for Expenses**   | Codat now refers to this solution as [Expenses](/expenses/overview) with a focus on the [accounting automation](/usecases/summary/accounting-automation) use case.                                               |

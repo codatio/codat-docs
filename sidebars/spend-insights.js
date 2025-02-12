@@ -8,10 +8,10 @@ module.exports = [
   {
     type: "link",
     label: "Spend Insights",
-    href: "/supplier-enablement/overview",
-    className: "header top-level-item products product supplier-enablement",
+    href: "/spend-insights/overview",
+    className: "header top-level-item products product spend-insights",
   },
-  "supplier-enablement/get-started",
+  "spend-insights/get-started",
   {
     type: "link",
     label: "Request information",
@@ -19,10 +19,10 @@ module.exports = [
       hr: true,
       section: "Manage opportunities",
     },
-    href: "/supplier-enablement/guides/manage-relationships",
+    href: "/spend-insights/guides/manage-relationships",
   },
-  "supplier-enablement/guides/analyze-spend",
-  "supplier-enablement/guides/refresh-data",
+  "spend-insights/guides/analyze-spend",
+  "spend-insights/guides/refresh-data",
   {
     type: "link",
     label: "Customer FAQs",
@@ -30,7 +30,7 @@ module.exports = [
       hr: true,
       section: "Resources",
     },
-    href: "/supplier-enablement/resources/customer-faqs",
+    href: "/spend-insights/resources/customer-faqs",
   },
   {
     type: "link",
