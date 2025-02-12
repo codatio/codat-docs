@@ -16,6 +16,6 @@ hide_table_of_contents: true
 
 The following user guides are available to share with your organization's Relationship Managers and Analysts:
 
-- [Request information](/supplier-enablement/guides/manage-relationships)
-- [Review spend data](/supplier-enablement/guides/analyze-spend)
-- [Keep data fresh](/supplier-enablement/guides/refresh-data)
+- [Request information](/spend-insights/guides/manage-relationships)
+- [Review spend data](/spend-insights/guides/analyze-spend)
+- [Keep data fresh](/spend-insights/guides/refresh-data)

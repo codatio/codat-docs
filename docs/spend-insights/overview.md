@@ -3,7 +3,7 @@ title: Spend Insights overview
 sidebar_label: Spend Insights
 description: Manage comprehensive and actionable vendor and spend data from your clients to grow commercial card volume in B2B payments
 displayed_sidebar: spendInsights
-image: "/img/banners/social/supplier-enablement.png"
+image: "/img/banners/social/spend-insights.png"
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
@@ -11,7 +11,7 @@ tags: [overview, spendinsights]
 banner_title: Spend Insights
 banner_class: supplier-enablement
 banner_icon: "/img/logos/products/logo_supplier_enablement_clear.svg"
-banner_image: "/img/banners/supplier-enablement.png"
+banner_image: "/img/banners/spend-insights.png"
 banner_text: "Manage comprehensive and actionable vendor and spend data from your clients to grow commercial card volume in B2B payments"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Spend Insights?
@@ -91,7 +91,7 @@ With **Spend Insights**, we enable banks and other commercial card issuers to ma
 
 ## How does it work?
 
-![A diagram flow of the Spend Insights solution](/img/supplier-enablement/se-overview-diagram.png)
+![A diagram flow of the Spend Insights solution](/img/spend-insights/se-overview-diagram.png)
 
 Reach out to your Codat contact to enjoy **Spend Insights**'s rich features and dynamic data refreshes through our comprehensive UI:
 
@@ -119,4 +119,4 @@ Reach out to your Codat contact to enjoy **Spend Insights**'s rich features and 
 
 ## Read next
 
-* [Start your journey](/supplier-enablement/get-started) with Spend Insights
+* [Start your journey](/spend-insights/get-started) with Spend Insights
