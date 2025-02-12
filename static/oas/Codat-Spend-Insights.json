@@ -303,7 +303,7 @@
           "Spend analysis"
         ],
         "summary": "Get supplier analysis",
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/spend-insights#/schemas/SupplierAnalysis) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/spend-insights#/schemas/SupplierAnalysis) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/lending-api#/operations/refresh-company-data) and have an existing [spend analysis report generated](https://docs.codat.io/spend-insights#/operations/generate-report).",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/spend-insights#/schemas/SupplierAnalysis) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/spend-insights#/schemas/SupplierAnalysis) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have an existing [spend analysis report generated](https://docs.codat.io/spend-insights-api#/operations/generate-report).",
         "operationId": "get-supplier-analysis",
         "x-speakeasy-name-override": "get-supplier-analysis",
         "responses": {
@@ -366,7 +366,7 @@
           "Spend analysis"
         ],
         "summary": "Get payment method analysis",
-        "description": "The *List payment methods* endpoint returns a [payment method analysis](https://docs.codat.io/spend-insights#/schemas/PaymentMethodAnalysis) for a given company's spend analysis report.\n\n[Payment method analysis](https://docs.codat.io/spend-insights#/schemas/PaymentMethodAnalysis) is a breakdown of each payment method in a spend analysis report.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/lending-api#/operations/refresh-company-data) and have an existing [spend analysis report generated](https://docs.codat.io/spend-insights#/operations/generate-report).",
+        "description": "The *List payment methods* endpoint returns a [payment method analysis](https://docs.codat.io/spend-insights#/schemas/PaymentMethodAnalysis) for a given company's spend analysis report.\n\n[Payment method analysis](https://docs.codat.io/spend-insights#/schemas/PaymentMethodAnalysis) is a breakdown of each payment method in a spend analysis report.\n\nBefore using this endpoint, you must have an existing [spend analysis report generated](https://docs.codat.io/spend-insights-api#/operations/generate-report).",
         "operationId": "get-payment-method-analysis",
         "x-speakeasy-name-override": "get-payment-method-analysis",
         "responses": {
@@ -586,7 +586,6 @@
       "PaymentMethodAnalysis": {
         "title": "Payment method analysis",
         "description": "Payment method analysis data.",
-        "type": "object",
         "properties": {
           "results": {
             "type": "array",
@@ -1041,7 +1040,6 @@
       "SupplierAnalysis": {
         "title": "Supplier analysis",
         "description": "Data of the supplier analysis report.",
-        "type": "object",
         "properties": {
           "results": {
             "type": "array",
@@ -1441,36 +1439,32 @@
             "schema": {
               "$ref": "#/components/schemas/PaymentMethodAnalysis"
             },
-            "example": {
-              "Payment method analysis": {
-                "value": [
-                  {
-                    "biggestCountPaymentMethod": "BankTransfer",
-                    "suppliersCount": 50,
-                    "percentageSuppliersByCount": 60,
-                    "percentageBillsByCount": 55,
-                    "percentageBillsByAmount": 62,
-                    "billsCount": 75,
-                    "billsOutstandingCount": 8,
-                    "billsAmount": 3500000,
-                    "billsOutstandingAmount": 200000,
-                    "billsOutstandingPercentageByAmount": 5.71,
-                    "paymentsCount": 70,
-                    "latePaymentsCount": 2,
-                    "paymentsAmount": 3200000,
-                    "averagePaymentAmount": 45714.29,
-                    "latePaymentsAmount": 50000,
-                    "latePaymentsPercentageByAmount": 1.56,
-                    "averageBillPaymentTermsWeighted": 25,
-                    "averageBillSettlementPeriodWeighted": 20,
-                    "directCostsPercentageByCount": 50,
-                    "directCostsPercentageByAmount": 55,
-                    "directCostsCount": 30,
-                    "directCostsAmount": 750000
-                  }
-                ]
+            "example": [
+              {
+                "biggestCountPaymentMethod": "BankTransfer",
+                "suppliersCount": 50,
+                "percentageSuppliersByCount": 60,
+                "percentageBillsByCount": 55,
+                "percentageBillsByAmount": 62,
+                "billsCount": 75,
+                "billsOutstandingCount": 8,
+                "billsAmount": 3500000,
+                "billsOutstandingAmount": 200000,
+                "billsOutstandingPercentageByAmount": 5.71,
+                "paymentsCount": 70,
+                "latePaymentsCount": 2,
+                "paymentsAmount": 3200000,
+                "averagePaymentAmount": 45714.29,
+                "latePaymentsAmount": 50000,
+                "latePaymentsPercentageByAmount": 1.56,
+                "averageBillPaymentTermsWeighted": 25,
+                "averageBillSettlementPeriodWeighted": 20,
+                "directCostsPercentageByCount": 50,
+                "directCostsPercentageByAmount": 55,
+                "directCostsCount": 30,
+                "directCostsAmount": 750000
               }
-            }
+            ]
           }
         }
       },
@@ -1481,54 +1475,50 @@
             "schema": {
               "$ref": "#/components/schemas/SupplierAnalysis"
             },
-            "example": {
-              "Supplier analysis": {
-                "value": [
+            "example": [
+              {
+                "supplierId": "QEvy8jOe9V",
+                "supplierName": "Big Dave Supplies Co.",
+                "contactName": "David Smith",
+                "emailAddress": "david.smith@bigdavesupplies.com",
+                "taxNumber": "987654321",
+                "addresses": [
                   {
-                    "supplierId": "QEvy8jOe9V",
-                    "supplierName": "Big Dave Supplies Co.",
-                    "contactName": "David Smith",
-                    "emailAddress": "david.smith@bigdavesupplies.com",
-                    "taxNumber": "987654321",
-                    "addresses": [
-                      {
-                        "type": "Delivery",
-                        "line1": "Apartment 1",
-                        "city": "Las Vegas",
-                        "region": "Nevada",
-                        "country": "United States",
-                        "postalCode": "89107"
-                      },
-                      {
-                        "type": "Billing",
-                        "line1": "Apartment 1",
-                        "city": "Las Vegas",
-                        "region": "Nevada",
-                        "country": "United States",
-                        "postalCode": "89107"
-                      }
-                    ],
-                    "importedDate": "2023-10-26T14:35:12",
-                    "latestBilled": "2023-11-15T00:00:00",
-                    "billsCount": 5,
-                    "billsOutstandingCount": 1,
-                    "billsAmount": 12500.75,
-                    "billsOutstandingAmount": 2500,
-                    "billsOutstandingPercentageByAmount": 20,
-                    "paymentsCount": 4,
-                    "latePaymentsCount": 1,
-                    "paymentsAmount": 10000.75,
-                    "averagePaymentAmount": 2500.19,
-                    "latePaymentsAmount": 1000,
-                    "latePaymentsPercentageByAmount": 10,
-                    "biggestCountPaymentMethod": "CreditCard",
-                    "biggestSpendPaymentMethod": "CreditCard",
-                    "averageBillPaymentTermsWeighted": 30.2,
-                    "averageBillSettlementPeriodWeighted": 25.5
+                    "type": "Delivery",
+                    "line1": "Apartment 1",
+                    "city": "Las Vegas",
+                    "region": "Nevada",
+                    "country": "United States",
+                    "postalCode": "89107"
+                  },
+                  {
+                    "type": "Billing",
+                    "line1": "Apartment 1",
+                    "city": "Las Vegas",
+                    "region": "Nevada",
+                    "country": "United States",
+                    "postalCode": "89107"
                   }
-                ]
+                ],
+                "importedDate": "2023-10-26T14:35:12",
+                "latestBilled": "2023-11-15T00:00:00",
+                "billsCount": 5,
+                "billsOutstandingCount": 1,
+                "billsAmount": 12500.75,
+                "billsOutstandingAmount": 2500,
+                "billsOutstandingPercentageByAmount": 20,
+                "paymentsCount": 4,
+                "latePaymentsCount": 1,
+                "paymentsAmount": 10000.75,
+                "averagePaymentAmount": 2500.19,
+                "latePaymentsAmount": 1000,
+                "latePaymentsPercentageByAmount": 10,
+                "biggestCountPaymentMethod": "CreditCard",
+                "biggestSpendPaymentMethod": "CreditCard",
+                "averageBillPaymentTermsWeighted": 30.2,
+                "averageBillSettlementPeriodWeighted": 25.5
               }
-            }
+            ]
           }
         }
       },
