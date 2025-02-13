@@ -1458,9 +1458,101 @@
     },
     "/connectionManagement/corsSettings": {
       "get": {
-        "summary": "Get CORS settings",
+        "summary": "Get CORS settings (old)",
         "operationId": "get-connection-management-cors-settings",
         "x-speakeasy-group": "cors",
+        "deprecated": true,
+        "x-speakeasy-deprecation-message": "The new [Get CORS settings](https://docs.codat.io/platform-api#/operations/get-cors-settings) endpoint replaces this endpoint and includes additional functionality.\nUpdate your integrations to use the new path `/corsSettings` as the existing route will be removed in a future release.\n",
+        "x-speakeasy-deprecation-replacement": "get-cors-settings",
+        "tags": [
+          "Settings"
+        ],
+        "description": "﻿The *Get CORS settings* endpoint returns the allowed origins (i.e. your domains) you want to allow cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)) with Codat. \n\nEnabling CORS with Codat is required by our embeddable UIs (such as [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) and [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)) to access Codat's API endpoints.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConnectionManagementAllowedOrigins"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      },
+      "post": {
+        "summary": "Set CORS settings (old)",
+        "operationId": "set-connection-management-cors-settings",
+        "x-speakeasy-name-override": "set",
+        "x-speakeasy-group": "cors",
+        "deprecated": true,
+        "x-speakeasy-deprecation-message": "The new [Set CORS settings](https://docs.codat.io/platform-api#/operations/set-cors-settings) endpoint replaces this endpoint and includes additional functionality.\nUpdate your integrations to use the new path `/corsSettings` as the existing route will be removed in a future release.\n",
+        "x-speakeasy-deprecation-replacement": "set-cors-settings",
+        "tags": [
+          "Settings"
+        ],
+        "description": "﻿The *Set CORS settings* endpoint allows you to register allowed origins (i.e. your domains) for use in cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).\n \nEnabling CORS with Codat is required by our embeddable UIs (such as [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) and [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)) to access Codat's API endpoints. ",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConnectionManagementAllowedOrigins"
+              },
+              "examples": {
+                "Allowed origins": {
+                  "$ref": "#/components/examples/connectionManagementAllowedOriginsResponse"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ConnectionManagementAllowedOrigins"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/corsSettings": {
+      "get": {
+        "summary": "Get CORS settings",
+        "operationId": "get-cors-settings",
         "tags": [
           "Settings"
         ],
@@ -1494,13 +1586,12 @@
       },
       "post": {
         "summary": "Set CORS settings",
-        "operationId": "set-connection-management-cors-settings",
+        "operationId": "set-cors-settings",
         "x-speakeasy-name-override": "set",
-        "x-speakeasy-group": "cors",
         "tags": [
           "Settings"
         ],
-        "description": "﻿The *Set CORS settings* endpoint allows you to register allowed origins (i.e. your domains) for use in cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).\n \nEnabling CORS with Codat is required by our embeddable UIs (such as [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) and [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)) to access Codat's API endpoints. ",
+        "description": "﻿The *Set CORS settings* endpoint allows you to register allowed origins (i.e. your domains) for use in cross-origin resource sharing ([CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)).\n \nEnabling CORS with Codat is required by our embeddable UIs (such as [Connections SDK](https://docs.codat.io/auth-flow/optimize/connection-management) and [Link SDK](https://docs.codat.io/auth-flow/authorize-embedded-link)) to access Codat's API endpoints.",
         "requestBody": {
           "content": {
             "application/json": {
