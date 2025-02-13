@@ -92,9 +92,9 @@ The token is only valid for one day and applies to a single company.
 
 #### CORS settings
 
-[Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for access token to work. To control the domain list that your application can make token requests from, register the allowed origins using the [Set CORS settings](/platform-api#/operations/set-connection-management-cors-settings) endpoint.
+[Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for access token to work. To control the domain list that your application can make token requests from, register the allowed origins using the [Set CORS settings](/platform-api#/operations/set-cors-settings) endpoint.
 
-To display the origins you previously registered for your instance, use the [Get CORS settings](/platform-api#/operations/get-connection-management-cors-settings) endpoint. 
+To display the origins you previously registered for your instance, use the [Get CORS settings](/platform-api#/operations/get-cors-settings) endpoint. 
 
 ## Use callback functions
 
