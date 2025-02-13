@@ -39,8 +39,10 @@ Once your user initiates the bank feeds setup process, engage our SDK to establi
 1. Call the [Create a company](/bank-feeds-api#/operations/create-company) endpoint to create a representation of your customer in Codat.
 2. Get an access token for this company by calling the [Get company access token](/bank-feeds-api#/operations/get-company-access-token) endpoint.
 3. Initialize the Bank Feeds SDK, passing the access token to the component. 
+  
   The SDK will direct your customer to select their accounting software and create a data connection for that software as a result.
 4. Use the SDK's `onConnectionStarted` callback function prop to call the [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoint. 
+  
   Once accounts have been created, the SDK will redirect your customer to authorize the data connection and map these source accounts to the relevant accounts in their accounting software.
 5. Use the SDK's `onFinish` callback function to manage the completion of the bank feeds setup flow once the accounts are mapped.
 
