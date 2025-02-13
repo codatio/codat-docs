@@ -178,7 +178,7 @@
                           "created": "2022-01-01T11:30:00Z",
                           "createdByUserName": "Mike Smith",
                           "products": [
-                            "supplier-enablement",
+                            "spend-insights",
                             "lending",
                             "expenses-v1",
                             "commerce"
@@ -226,7 +226,7 @@
                           "created": "2022-01-01T11:30:00Z",
                           "createdByUserName": "Joe Bloggs",
                           "products": [
-                            "supplier-enablement",
+                            "spend-insights",
                             "lending",
                             "payables-v2"
                           ],
@@ -240,7 +240,7 @@
                           "created": "2022-11-10T10:45:18Z",
                           "createdByUserName": "Dan Tzabar",
                           "products": [
-                            "supplier-enablement"
+                            "spend-insights"
                           ],
                           "referenceSubsidiaryCompanies": [
                             {
@@ -281,7 +281,7 @@
                           "createdByUserName": "Dan Tzabar",
                           "products": [
                             "lending",
-                            "supplier-enablement",
+                            "spend-insights",
                             "payables"
                           ],
                           "referenceParentCompany": {
@@ -314,7 +314,7 @@
                           "created": "2022-11-10T10:45:18Z",
                           "createdByUserName": "Dan Tzabar",
                           "products": [
-                            "supplier-enablement"
+                            "spend-insights"
                           ],
                           "referenceParentCompany": {
                             "id": "ab12c58d-a678-4ebf-a159-ae99e1807bd0",
@@ -421,7 +421,7 @@
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
                       "products": [
-                        "supplier-enablement"
+                        "spend-insights"
                       ],
                       "referenceSubsidiaryCompanies": []
                     }
@@ -437,7 +437,7 @@
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
                       "products": [
-                        "supplier-enablement"
+                        "spend-insights"
                       ],
                       "referenceSubsidiaryCompanies": []
                     }
@@ -453,7 +453,7 @@
                       "created": "2022-11-10T10:45:18.1950523Z",
                       "createdByUserName": "Dan Tzabar",
                       "products": [
-                        "supplier-enablement"
+                        "spend-insights"
                       ],
                       "tags": {
                         "region": "us"
@@ -722,7 +722,7 @@
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar",
                       "products": [
-                        "supplier-enablement",
+                        "spend-insights",
                         "lending",
                         "expenses-v1",
                         "commerce"
@@ -741,7 +741,7 @@
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar",
                       "products": [
-                        "supplier-enablement",
+                        "spend-insights",
                         "lending",
                         "expenses-v1",
                         "commerce"
@@ -788,7 +788,7 @@
                       "created": "2022-11-10T10:45:18Z",
                       "createdByUserName": "Dan Tzabar",
                       "products": [
-                        "supplier-enablement",
+                        "spend-insights",
                         "lending",
                         "expenses-v1",
                         "commerce"
