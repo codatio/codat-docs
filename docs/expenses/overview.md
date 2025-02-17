@@ -160,6 +160,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 | Oracle   NetSuite   | ✔️                  | ✔️                                |                      |                          |             
 | QuickBooks Desktop  | ✔️                  | ✔️                                | ✔️                   | ✔️                      |
 | FreeAgent           | ✔️                  | ✔️                                | ✔️                   |                         |   
+| Zoho Books          | ✔️                  | ✔️                                |                      |                          |   
 </details>
 
 <details>
@@ -172,7 +173,8 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 | Dynamics   365      | ✔️     | ✔️                    | ✔️                    | ✔️                    |
 | Oracle   NetSuite   | ✔️     | ✔️                    | ✔️                    | ✔️                    |
 | QuickBooks Desktop  | ✔️     | ✔️ (credit card only) | ✔️ (credit card only) | ✔️ (credit card only) |
-| FreeAgent           | ✔️     |                       |                        |                       |              
+| FreeAgent           | ✔️     |                       |                        |                       |            
+| Zoho Books          | ✔️     |                       |                        |                       |      
 </details>
 
 ## Build with client libraries
