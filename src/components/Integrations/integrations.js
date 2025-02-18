@@ -23,7 +23,8 @@ export const integrationsFilterExpenses = [
   "Oracle NetSuite",
   "Dynamics 365 Business Central",
   "QuickBooks Desktop",
-  "FreeAgent"
+  "FreeAgent",
+  "Zoho Books"
 ]
 
 export const integrationsFilterCommerceAcc = [
@@ -71,7 +72,8 @@ export const integrationsFilterBillPaySync = [
   "Xero",
   "QuickBooks Online",
   "FreeAgent",
-  "Oracle NetSuite"
+  "Oracle NetSuite",
+  "Zoho Books"
 ];
 
 export const bankfeedsIntegrations = [
