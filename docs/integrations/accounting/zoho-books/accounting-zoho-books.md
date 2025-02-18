@@ -1,7 +1,6 @@
 ---
 title: "Zoho Books"
-description: "Learn about our Zoho Books integration."
-sidebar_label: Overview
+description: "Learn about our Zoho Books integration"
 ---
 
 You can synchronize accounting data with <a href="https://www.zoho.com/books/" target="_blank">Zoho Books</a> using our Zoho Books integration.
