@@ -72,7 +72,8 @@ export const integrationsFilterBillPaySync = [
   "Xero",
   "QuickBooks Online",
   "FreeAgent",
-  "Oracle NetSuite"
+  "Oracle NetSuite",
+  "Zoho Books"
 ];
 
 export const bankfeedsIntegrations = [
