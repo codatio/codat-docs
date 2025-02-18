@@ -73,6 +73,11 @@ module.exports = [
   },
   {
     type: "doc",
+    label: "Zoho Books",
+    id: "integrations/accounting/zoho-books/accounting-zoho-books"
+  },
+  {
+    type: "doc",
     id: "expenses/fx-management",
     label: "Expenses in foreign currency",
     customProps: {
