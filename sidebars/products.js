@@ -5,6 +5,9 @@ module.exports = [
     id: "spend-insights/overview",
     customProps: {
       hr: true,
+      customProps: {
+        section: "Banking intelligence",
+      },
     },
   },
   {
