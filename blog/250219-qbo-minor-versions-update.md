@@ -17,4 +17,4 @@ As Intuit's [January 21, 2025 change notice](https://blogs.intuit.com/2025/01/21
 
 None.
 
-To stay informed, ensure you receive and review **Codat's quarterly developer updates** email
+To stay informed, ensure you receive and review **Codat's quarterly developer updates** email.
