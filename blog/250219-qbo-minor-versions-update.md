@@ -5,14 +5,16 @@ tags: ["Product", "Update", "QuickBooks Online"]
 authors: dcoplowe
 ---
 
-On **August 1, 2025**, Intuit will migrate all apps using minor versions to **minor version 75**. We are conducting a full review to confirm any impact. 
+On **August 1, 2025**, Intuit will migrate all apps using minor versions to **minor version 75**. This change should not impact your use of Codat.
 
 <!--truncate-->
 
-According to Intuit's [January 21, 2025 change notice](https://blogs.intuit.com/2025/01/21/changes-to-our-accounting-api-that-may-impact-your-application/), the migration from minor versions 1 through 74 of the QuickBooks Online Accounting API to **minor version 75** will happen automatically. 
+As Intuit's [January 21, 2025 change notice](https://blogs.intuit.com/2025/01/21/changes-to-our-accounting-api-that-may-impact-your-application/) indicates, the migration from minor versions 1 through 74 of the QuickBooks Online Accounting API to **minor version 75** should happen automatically.
 
-Based on our initial assessment, this change is unlikely to impact Codat's clients. We are continuing to actively analyze the potential impact and will provide a detailed update by the next deprecation cycle on **April 5, 2025**. This update will confirm whether any action is required and outline necessary steps if changes are needed.
+**This change should not impact your use of Codat.** We are continuing to actively analyze the potential impact and will provide a detailed update by the next deprecation cycle on **April 5, 2025** if it emerges that any action needs to be taken, which would outline necessary steps if changes are needed.
 
 ## Action required
 
-To stay informed, ensure you receive and review **Codat's quarterly developer updates** email.
+None.
+
+To stay informed, ensure you receive and review **Codat's quarterly developer updates** email
