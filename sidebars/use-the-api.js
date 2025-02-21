@@ -32,6 +32,7 @@ module.exports = [
         ],
       },
       "using-the-api/custom-data",
+      "using-the-api/get-data-troubleshooting",
     ],
   },
   {
