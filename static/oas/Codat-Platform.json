@@ -6843,7 +6843,7 @@
         },
         "definitions": {
           "readCompletedWebhookPayload": {
-            "title": "Company fetch completed webhook payload",
+            "title": "Read result webhook payload",
             "type": "object",
             "properties": {
               "referenceCompany": {
@@ -6857,7 +6857,64 @@
               "dataTypes": {
                 "type": "array",
                 "items": {
+                  "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/dataTypeReadSummary"
+                }
+              }
+            }
+          },
+          "dataTypeReadSummary": {
+            "title": "Summary of data type reads",
+            "type": "object",
+            "properties": {
+              "connectionId": {
+                "$ref": "#/components/parameters/connectionId/schema"
+              },
+              "dataType": {
+                "$ref": "#/components/schemas/DataStatus/properties/dataType"
+              },
+              "recordsModified": {
+                "type": "boolean",
+                "example": false,
+                "description": "`True` if records have been created, updated or deleted in Codat's cache."
+              },
+              "status": {
+                "$ref": "#/components/schemas/PullOperation/properties/status"
+              }
+            }
+          },
+          "customProductReadCompleteWebhook": {
+            "title": "Read completed webhook",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook/properties/id"
+              },
+              "eventType": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook/properties/eventType"
+              },
+              "generatedDate": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook/properties/generatedDate"
+              },
+              "payload": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/customProductReadCompleteWebhookPayload"
+              }
+            }
+          },
+          "customProductReadCompleteWebhookPayload": {
+            "title": "Read result webhook payload",
+            "type": "object",
+            "properties": {
+              "referenceCompany": {
+                "$ref": "#/components/schemas/Company/definitions/companyReference"
+              },
+              "modifiedFromDate": {
+                "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/readCompletedWebhookPayload/properties/modifiedFromDate"
+              },
+              "dataTypes": {
+                "type": "array",
+                "items": {
                   "type": "object",
+                  "title": "Summary of data type reads",
                   "properties": {
                     "connectionId": {
                       "$ref": "#/components/parameters/connectionId/schema"
@@ -6866,13 +6923,57 @@
                       "$ref": "#/components/schemas/DataStatus/properties/dataType"
                     },
                     "recordsModified": {
-                      "type": "boolean",
-                      "example": false,
-                      "description": "`True` if records have been created, updated or deleted in Codat's cache."
+                      "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/dataTypeReadSummary/properties/recordsModified"
                     },
                     "status": {
                       "$ref": "#/components/schemas/PullOperation/properties/status"
+                    },
+                    "issues": {
+                      "type": "array",
+                      "nullable": true,
+                      "description": "A array of issues encountered during a data read.",
+                      "items": {
+                        "$ref": "#/components/schemas/ReadCompletedWebhook/definitions/issue"
+                      }
                     }
+                  }
+                }
+              }
+            }
+          },
+          "issue": {
+            "title": "Issue",
+            "type": "object",
+            "description": "Details of a problem encountered during a data read.",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "The type of issue.",
+                "example": "warning.validation"
+              },
+              "message": {
+                "type": "string",
+                "description": "A message describing the issue.",
+                "example": "Something doesn't look right about these accounts from Xero. You can see more information in the logs."
+              },
+              "links": {
+                "title": "Links",
+                "type": "object",
+                "properties": {
+                  "logs": {
+                    "type": "string",
+                    "description": "A link to the validation logs, providing details on any errors or warnings encountered.",
+                    "example": "https://api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/sync/{datasetId}/validation"
+                  },
+                  "portal": {
+                    "type": "string",
+                    "description": "A link to the company's past data read history in the Codat portal.",
+                    "example": "https://app.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/pull-history"
+                  },
+                  "readMore": {
+                    "type": "string",
+                    "description": "A link to Codat's documentation with additional information on how to troubleshoot this issue.",
+                    "example": "https://docs.codat.io/using-the-api/get-data-troubleshooting#warning.validation"
                   }
                 }
               }
