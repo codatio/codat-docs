@@ -1,16 +1,19 @@
 ---
-title: "Troubleshooting get data"
+title: "Resolve issues when reading data"
 sidebar_label: "Troubleshooting"
-description: "Frequently asked questions and troubleshooting guidance for getting data"
+description: "Learn how to troubleshoot issues that occur when reading data"
 ---
+
+This page provides guidance on effectively troubleshooting and resolving issues that may occue when reading data for each possible issue type. Navigate to the relevant issue type to see the proposed resolution.
 
 ### warning.validation<a name="warning.validation"></a>
 
-**Issue:** A validation warning was raised when getting data for a given data type.
+**Details:** A validation warning was raised when reading data for a given data type.
 
-**Cause:** This occurs when the data retrieved does not meet the expected validation criteria.
+**Cause:** This occurs when the retrieved data doesn't meet the expected validation criteria.
 
 **Solution:**
-1. Review the validation logs to determine if the validation criteria apply to your use case.
-2. If the criteria do not apply, you can safely ignore the warning.
-3. If the criteria do apply, update your application logic to handle this exception accordingly. (THIS IS BAD BUT I CAN'T THINK OF A BETTER WAY FOR NOW AS WE CANNOT SUPPRESS WARNINGS Maybe we should?)
+
+Review the validation logs to determine if the validation criteria apply to your use case:
+* If the criteria don't apply, you can safely ignore the warning.
+* If they do apply, update your application logic to handle this exception accordingly. (THIS IS BAD BUT I CAN'T THINK OF A BETTER WAY FOR NOW AS WE CANNOT SUPPRESS WARNINGS Maybe we should?)

@@ -22,6 +22,7 @@ module.exports = [
       "using-the-api/paging",
       "using-the-api/ordering-results",
       "using-the-api/modified-dates",
+      "using-the-api/get-data-troubleshooting",
       {
         type: "category",
         label: "Supplemental data",
@@ -32,7 +33,6 @@ module.exports = [
         ],
       },
       "using-the-api/custom-data",
-      "using-the-api/get-data-troubleshooting",
     ],
   },
   {
