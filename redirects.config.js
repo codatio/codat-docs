@@ -511,7 +511,14 @@ module.exports = {
     from: "/expenses/sync-process/monitoring-a-sync",
     to: "/expenses/sync-process/syncing-expenses"
   },
-  // assess
+  // spend-insights
+
+  {
+    to: "/spend-insights/overview",
+    from: "/supplier-enablement/overview"
+  },
+  
+    // assess
 
   {
     to: "/lending/overview",
