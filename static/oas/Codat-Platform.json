@@ -139,6 +139,10 @@
       "description": "Initiate and monitor Create, Update, and Delete operations."
     },
     {
+      "name": "Read data",
+      "description": "View validation outcomes for completed read data operations."
+    },
+    {
       "name": "Supplemental data",
       "description": "Configure and pull additional data you can include in Codat's standard data types."
     },
@@ -3074,6 +3078,80 @@
           "204": {
             "description": "No Content",
             "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/sync/{datasetId}/validation": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/datasetId"
+        }
+      ],
+      "get": {
+        "summary": "Get validation results",
+        "tags": [
+          "Read data"
+        ],
+        "operationId": "get-read-validation-results",
+        "x-speakeasy-name-override": "get-validation-results",
+        "description": "Use the **Get validation results** endpoint to review warnings and errors encountered during the data type validation phase.\n\nThe validation result [schema](https://docs.codat.io/platform-api#/schemas/ValidationResult) contains two message arrays:\n\n- **`warnings`** array lists potential issues with the data type that may require attention but don't block usage.\n- **`errors`** array contains critical issues that must be resolved before the data type can be used.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidationResult"
+                },
+                "examples": {
+                  "Validation result": {
+                    "value": {
+                      "errors": [
+                        {
+                          "ruleId": "accounting-bill-030",
+                          "itemId": "fc2f2d1a-ff4d-40c6-a7fb-4bd7d04f4008",
+                          "message": "A bill's lines summed (69.99) should be the same as TotalAmount (70.00).",
+                          "validatorName": "BillValidator"
+                        }
+                      ],
+                      "warnings": [
+                        {
+                          "ruleId": "accounting-bill-032",
+                          "itemId": "1d3979e5-7c28-432e-b562-04e9013c1ea0",
+                          "message": "A bill's lines sub total amount summed (3201.20) should be the same as SubTotal (3201.25)",
+                          "validatorName": "BillValidator"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -7124,6 +7202,48 @@
           }
         },
         "additionalProperties": false
+      },
+      "ValidationResult": {
+        "title": "Validation result",
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationResult/definitions/validationItem"
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationResult/definitions/validationItem"
+            }
+          }
+        },
+        "definitions": {
+          "validationItem": {
+            "title": "Validation item",
+            "type": "object",
+            "properties": {
+              "ruleId": {
+                "type": "string",
+                "description": "The unique identifier of the rule that wasn't met."
+              },
+              "itemId": {
+                "type": "string",
+                "description": "The unique identifier of the item that was validated."
+              },
+              "message": {
+                "type": "string",
+                "description": "The message that describes the validation warning or error."
+              },
+              "validatorName": {
+                "type": "string",
+                "description": "The name of the validator that was used to validate the item."
+              }
+            }
+          }
+        }
       },
       "WebhookConsumer": {
         "title": "Webhook consumer",
