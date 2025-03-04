@@ -1,10 +1,9 @@
 ---
 title: "Webhooks: mTLS support"
-date: "2025-02-27"
+date: "2025-03-05"
 tags: ["Product", "Update", "Webhooks"]
 authors: dcoplowe
 ---
-
 You can now secure your webhook consumers with two-way authentication in the Portal.
 
 <!--truncate-->
