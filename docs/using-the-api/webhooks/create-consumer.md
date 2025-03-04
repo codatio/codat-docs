@@ -96,35 +96,31 @@ There are many reasons a message to your endpoint could fail. Have a look at our
 
 :::
 
-## Security
+## Webhook security
 
-Codat provides multiple options to secure your webhook consumers.  
-You can:  
-- Use **Basic Authentication** to authenticate access to your consumer by including the `Authorization` header in the request. [Learn more](#custom-headers). 
-- Set up **mutual TLS (mTLS)** to verify both the server and client identities.  
-- Verify that webhook messages were **genuinely sent by Codat**.  
+Codat provides multiple options to secure your webhook consumers and ensure that only authorized systems receive and process webhook events securely. You can use:  
+- [Custom headers](#custom-headers) to authenticate access to your consumer by including the `Authorization` header in the request.
+- [mutual TLS (mTLS)](#configure-mutual-tls) to verify both the server and client identities.  
+- [Webhook signatures](#verify-webhook-signature) to verify that webhook messages were genuinely sent by Codat. 
 
-These security measures help ensure that only authorized systems receive and process webhook events securely.    
+### Configure mutual TLS
 
-### Configure mutual-TLS (mTLS)
+:::tip Prerequisites
+
+To configure mTLS in the Codat Portal, you need a **PEM-encoded private key** and an **X.509 certificate**.
+:::
 
 Mutual TLS (mTLS) is an authentication protocol that ensures both the client and server verify each other’s identities before establishing a secure connection. Unlike standard TLS, which only authenticates the server, mTLS uses client certificates to enforce two-way authentication.
 
-#### Prerequisites
+Follow the steps below to configure mTLS for a webhook consumer in Codat: 
 
-Before configuring mTLS, ensure you have:  
-- A **PEM-encoded private key**
-- An **X.509 certificate**  
-
-#### Steps to configure mTLS a webhook consumer  
-
-1. Navigate to **Monitor > Webhooks > Events** to view your webhook consumers.  
+1. Navigate to **Monitor > Webhooks > Events** in the [Codat Portal](https://app.codat.io/monitor/events) to view your webhook consumers.  
 2. Select the webhook consumer you want to configure mTLS for.  
-3. Go to the **Advanced** tab and click **Configure mTLS**.  
-4. In the text box, enter your **private key** followed by the **X.509 certificate**.  
-5. Click **Save** to apply the configuration.  
-
-![A fragment of the webhook UI that allows you to configure mTLS on your webhook consumers](/img/use-the-api/webhook-mTLS-configuration.png)
+3. In the detailed endpoint view, click **Advanced**, then **Configure mTLS**.
+  ![A fragment of the webhook UI that directs the user to the mTLS configuration page](/img/use-the-api/webhook-advanced-mTLS.png)
+5. In the displayed text box, enter your **PEM-enconded private key** and the **X.509 certificate**.
+  ![A fragment of the webhook UI that allows you to configure mTLS on your webhook consumers](/img/use-the-api/webhook-mTLS-configuration.png)
+6. Click **Save** to apply the configuration.
 
 ### Verify webhook signature
 
