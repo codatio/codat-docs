@@ -118,7 +118,7 @@ Follow the steps below to configure mTLS for a webhook consumer in Codat:
 2. Select the webhook consumer you want to configure mTLS for.  
 3. In the detailed endpoint view, click **Advanced**, then **Configure mTLS**.
   ![A fragment of the webhook UI that directs the user to the mTLS configuration page](/img/use-the-api/webhook-advanced-mTLS.png)
-5. In the displayed text box, enter your **PEM-enconded private key** and the **X.509 certificate**.
+5. In the displayed text box, enter your **PEM-enconded private key** and the **X.509 certificate**, ensuring they are separated by a new line.
   ![A fragment of the webhook UI that allows you to configure mTLS on your webhook consumers](/img/use-the-api/webhook-mTLS-configuration.png)
 6. Click **Save** to apply the configuration.
 
