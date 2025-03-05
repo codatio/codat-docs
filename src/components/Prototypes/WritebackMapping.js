@@ -124,13 +124,18 @@ const PrototypeWritebackMapping = () => {
         <p>Select or create the expense account you want any fees or interest tracked against.</p>
       </ComponentMapper>
 
-      <div className={`input-group ${styles.card}`}>
+      <ComponentMapper 
+        arr={getBankAccountsResponse}
+        initialComponent={{
+          id: "lender",
+          name: "Lender account",
+        }}
+      >
         <h5 className={styles.category}>Lender account</h5>
-        
-        <p><b>We'll also create a new bank account in your accounting software</b></p>
 
-        <p>This account acts as the lender's virtual account and is used for double-entry accounting purposes.</p>
-      </div>
+        <p>Select lender's virtual account that will be used for double-entry accounting purposes.</p>
+      </ComponentMapper>
+
     </div>
   );
 };

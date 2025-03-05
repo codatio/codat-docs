@@ -45,6 +45,9 @@ sequenceDiagram
         
     backend ->> codat: List bank accounts
     codat -->> backend: bank accounts
+
+    backend ->> codat: List source bank accounts
+    codat -->> backend: source bank accounts
     
     backend -->> frontend: Configuration options
     
@@ -60,10 +63,12 @@ sequenceDiagram
         codat -->> backend: supplier
     end
 
-    backend -->> frontend: View configuration
+    alt create lender's source bank account
+        backend -->> codat: Create source account
+        codat -->> backend: Source account
+    end    
 
-    backend -->> codat: Create source account
-    codat -->> backend: Source account
+    backend -->> frontend: View configuration
 
     backend -->> codat: Map source account
     codat -->> backend: Mapped source account
@@ -73,7 +78,8 @@ sequenceDiagram
 
 The loan writeback process uses two bank accounts:
 - A borrower's business bank account where the money lent is deposited.
-- A lender's bank account, which is a virtual account in the accounting software that serves as a container for lender transactions. This account is created when [setting up the bank feed source account](#bank-feed-source-account).
+- A lender's bank account, which is a virtual account in the accounting software that serves as a container for lender transactions. 
+    The borrower can choose an existing source bank account or ask to create a new one. This is done when [setting up the bank feed source account](#bank-feed-source-account).
 
 First, your customer needs to choose one of their existing business bank accounts. This account will be used to depost the loan. Call our [List bank accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
 
@@ -547,6 +553,8 @@ In response, you will receive account creation details which you can display to 
 ### Bank feed source account
 
 Finally, create and map a source account to enable the flow of bank transactions that the SMB can reconcile in their accounting software. This two-step process establishes the lender’s bank account, defined as `lendersBankAccountId`, in your solution.
+
+If your borrower wants to use an existing bank feed source account to represent the lender, it's expected you have completed the mapping for this scenario using [Bank Feeds](/bank-feeds/mapping/api-mapping).
 
 #### Create source account
 
