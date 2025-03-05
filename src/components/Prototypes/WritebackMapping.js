@@ -42,6 +42,34 @@ const getAccountsResponse = [
   },
 ]
 
+const getLendersResponse = [
+  {
+    id: "83a6bc48-4adf-4088-b075-032d0676c167",
+    name: "Business savings account",
+    value: "Lloyds",
+  },
+  {
+    id: "c163f200-b671-470d-9af9-f1b968ff3d4f",
+    name: "Business expenses card",
+    value: "Capital on Tap",
+  },
+  {
+    id: "d3b94f5f-8629-4360-9583-9a9a44ec6970",
+    name: "Business current account",
+    value: "Virgin Money",
+  },
+  {
+    id: "d3b94f5f-8629-4360-9583-9a9a44ec6970",
+    name: "Virtual lender account",
+    value: "Lender Bank Account",
+  },
+  {
+    id: "b85181b5-c9eb-4cc7-8e06-0507aa0d4123",
+    name: "Create new account",
+    value: "+",
+  },
+]
+
 const ComponentInput = ({component, onClick}) => {
   if (!component) return <div/>
 
@@ -125,7 +153,7 @@ const PrototypeWritebackMapping = () => {
       </ComponentMapper>
 
       <ComponentMapper 
-        arr={getBankAccountsResponse}
+        arr={getLendersResponse}
         initialComponent={{
           id: "lender",
           name: "Lender account",
