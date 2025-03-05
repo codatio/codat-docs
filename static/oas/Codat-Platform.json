@@ -948,6 +948,38 @@
           "204": {
             "description": "OK"
           },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorMessage"
+                },
+                "examples": {
+                  "Standard product not supported": {
+                    "value": {
+                      "statusCode": 400,
+                      "service": "PublicApi",
+                      "error": "Bank Feeds doesn't support data refreshing. For more information, refer to your solution’s documentation [here](https://docs.codat.io).",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  },
+                  "Read in progress": {
+                    "value": {
+                      "statusCode": 400,
+                      "service": "PublicApi",
+                      "error": "Data cannot be refreshed while a read operation is in progress. Allow the read to complete before attempting to refresh.",
+                      "correlationId": "bc997528a9d7abb9161ef45f05d38599",
+                      "canBeRetried": "Unknown",
+                      "detailedErrorCode": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
