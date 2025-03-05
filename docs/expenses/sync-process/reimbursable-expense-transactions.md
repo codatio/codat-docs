@@ -115,8 +115,11 @@ If you need to remove an associated tax rate from a reimbursable expense, use on
 
 | Platform          | Default tax rate                 |
 |-------------------|----------------------------------|
+| FreeAgent         | `taxRateRef` is not supported    |
+| Oracle NetSuite   | US subsidiaries: `-7`<br/> Canadian subsidiaries: `114`<br/> All other subsidiaries: check the `UNDEF-{country code}` tax rate|
 | QuickBooks Online | `NON`                            |
-| QuickBooks Desktop| `Null`                            |
+| QuickBooks Desktop| null                             |
+| Zoho Books        | null                             |
 
 ## Update reimbursable expenses
 
