@@ -96,13 +96,39 @@ There are many reasons a message to your endpoint could fail. Have a look at our
 
 :::
 
-## Verify webhook signature
+## Webhook security
+
+Codat provides multiple options to secure your webhook consumers and ensure that only authorized systems receive and process webhook events securely. You can use:  
+- [Custom headers](#custom-headers) to authenticate access to your consumer by including the `Authorization` header in the request.
+- [mutual TLS (mTLS)](#configure-mutual-tls) to verify both the server and client identities.  
+- [Webhook signatures](#verify-webhook-signature) to verify that webhook messages were genuinely sent by Codat. 
+
+### Configure mutual TLS
+
+:::tip Prerequisites
+
+To configure mTLS in the Codat Portal, you need a **PEM-encoded private key** and an **X.509 certificate**.
+:::
+
+Mutual TLS (mTLS) is an authentication protocol that ensures both the client and server verify each other’s identities before establishing a secure connection. Unlike standard TLS, which only authenticates the server, mTLS uses client certificates to enforce two-way authentication.
+
+Follow the steps below to configure mTLS for a webhook consumer in Codat: 
+
+1. Navigate to **Monitor > Webhooks > Events** in the [Codat Portal](https://app.codat.io/monitor/events) to view your webhook consumers.  
+2. Select the webhook consumer you want to configure mTLS for.  
+3. In the detailed endpoint view, click **Advanced**, then **Configure mTLS**.
+  ![A fragment of the webhook UI that directs the user to the mTLS configuration page](/img/use-the-api/webhook-advanced-mTLS.png)
+5. In the displayed text box, enter your **PEM-enconded private key** and the **X.509 certificate** on two separate lines.
+  ![A fragment of the webhook UI that allows you to configure mTLS on your webhook consumers](/img/use-the-api/webhook-mTLS-configuration.png)
+6. Click **Save** to apply the configuration.
+
+### Verify webhook signature
 
 A webhook signature is your way to verify that the messages are sent by Codat and helps you avoid impersonation or replay attacks. We sign every webhook and its metadata with a unique security key for each endpoint and include timestamps for when the message attempt occurred.
 
 You can use this signature to verify that the message truly came from Codat before processing it. To do the verification, we suggest using a library called Svix.
 
-### Install library
+#### Install library
 
 <Tabs groupId="language">
 
@@ -222,7 +248,7 @@ scoop install svix
 
 </Tabs>
 
-### Verify webhook
+#### Verify webhook
 
 To verify incoming webhooks, retrieve the secret key for your endpoint first. 
 
