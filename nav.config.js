@@ -93,6 +93,12 @@ module.exports = {
           label: "Get help",
         },
         {
+          href: "https://help.codat.io/",
+          label: "End user support",
+          target: "_blank",
+          rel: null,
+        },
+        {
           href: "https://status.codat.io/",
           label: "API status",
           target: "_blank",
