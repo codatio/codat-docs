@@ -70,12 +70,6 @@ module.exports = {
           rel: null,
         },
         {
-          href: "https://twitter.com/codatdata",
-          label: "Twitter",
-          target: "_blank",
-          rel: null,
-        },
-        {
           href: "https://www.codat.io/blog/",
           label: "Blog",
           target: "_blank",
