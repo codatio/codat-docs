@@ -945,7 +945,7 @@
           "Companies"
         ],
         "responses": {
-          "204": {
+          "202": {
             "description": "OK"
           },
           "400": {
