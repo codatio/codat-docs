@@ -3712,7 +3712,6 @@
         "type": "object",
         "required": [
           "dataType",
-          "lastSuccessfulSync",
           "currentStatus"
         ],
         "properties": {
