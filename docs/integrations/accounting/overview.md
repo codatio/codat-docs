@@ -20,8 +20,6 @@ If you've got an existing integration that you'd like to migrate to Codat, we ca
 
 Codat's integrations are able to connect to the following accounting software. You can see more information, including set up instructions for each integration, by clicking through to the documentation at the links below.
 
-You can also explore the data types supported by each integration in the interactive <a className="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data coverage explorer</a>.
-
 <IntegrationsList sourceType="accounting"/>
 
 ## Setting up accounting integrations

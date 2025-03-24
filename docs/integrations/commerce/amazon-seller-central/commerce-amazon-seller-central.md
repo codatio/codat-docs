@@ -8,10 +8,6 @@ description: "Learn about our Amazon Seller Central integration"
 
 Our Commerce API supports Amazon Seller Central and allows your linked customers to share their Amazon Seller Central data through Codat. You can then retrieve this data in the same standardized format as our other commerce integrations.
 
-## Data type coverage
-
-View the coverage of our Amazon Seller Central integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=qkdj" target="_blank">Data coverage explorer</a>.
-
 ## Set up the integration
 
 See [Set up the Amazon Seller Central Integration](/integrations/commerce/amazon-seller-central/set-up-amazon-seller-central) to learn how to set up and enable the integration.

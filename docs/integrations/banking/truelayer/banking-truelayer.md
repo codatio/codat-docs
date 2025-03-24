@@ -6,10 +6,6 @@ sidebar_label: Overview
 
 Our banking integration with <a  class="external" href="https://truelayer.com/" target="_blank">TrueLayer</a> lets you securely connect to and retrieve your SMB customers' banking data in a standardized format.
 
-## Data type coverage
-
-View the coverage of our TrueLayer integration in the <a className="external" href="https://knowledge.codat.io/supported-features/banking?view=tab-by-integration&integrationKey=evqv" target="_blank">Data coverage explorer</a>.
-
 The following banking data is available through the integration:
 
 - [Banking accounts](/banking-api#/schemas/banking-accounts)

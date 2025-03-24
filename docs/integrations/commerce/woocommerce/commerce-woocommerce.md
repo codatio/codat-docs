@@ -8,10 +8,6 @@ description: "Learn about our WooCommerce integration"
 
 Use Codat's Commerce API with WooCommerce to securely connect to, retrieve, and view your customers' commerce transactions.
 
-## Data type coverage
-
-View the coverage of our WooCommerce integration in the [Data coverage explorer](https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=ltpp).
-
 ## Set up the integration
 
 See [Set up the WooCommerce integration](/integrations/commerce/woocommerce/commerce-woocommerce-setup) to learn how to set up and enable the integration.

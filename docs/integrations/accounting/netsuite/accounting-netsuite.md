@@ -7,10 +7,6 @@ You can synchronize accounting data with Oracle NetSuite using our Oracle NetSui
 
 [Oracle NetSuite](https://www.netsuite.com/portal/products/erp/financial-management/finance-accounting.shtml) is an online service that enables companies to manage all key business processes in a single system.
 
-## Data type coverage
-
-View the coverage of our Oracle NetSuite integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=akxx" target="_blank">Data coverage explorer</a>.
-
 For more details about the supported data types and operations, see [Oracle NetSuite integration reference](/integrations/accounting/netsuite/oracle-netsuite-integration-reference).
 
 ## Set up the integration

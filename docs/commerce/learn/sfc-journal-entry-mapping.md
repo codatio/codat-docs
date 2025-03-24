@@ -23,11 +23,6 @@ Codat recommends using **journal entries** to benefit from these advantages:
 
   Journal entries simplify the recording of tax data because tax rates and their associated accounts do not need to be managed separately.
 
-:::note Journal entry coverage
-
-[View](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) the accounting software where we provide coverage for Journal entries.
-:::
-
 ## Choosing a sync type
 
 Your merchant can choose the sync type they prefer while performing their company's configuration for the first time in the Sync Flow. Note that the selection cannot be changed after the initial configuration is complete.

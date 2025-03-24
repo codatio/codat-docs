@@ -9,10 +9,6 @@ Pandle is a cloud accounting software designed to make the recording of transact
 
 You can read accounting data from <a className="external" href="http://www.pandle.com">Pandle</a> using our Pandle integration.
 
-## Data type coverage
-
-View the coverage of our Pandle integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=vjms" target="_blank">Data coverage explorer</a>.
-
 ## Set up the integration
 
 :::caution Pandle Maintenance Periods

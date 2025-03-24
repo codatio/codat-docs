@@ -11,10 +11,6 @@ description: "Learn about our BigCommerce integration"
 
 With Codat's BigCommerce integration, you can securely connect to, retrieve, and view your SMB customers' commerce transactions from BigCommerce. Data is standardized to our data model and available through our [Commerce API](/commerce-api/#/).
 
-## Data type coverage
-
-View the coverage of our BigCommerce integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=vqzp" target="_blank">Data coverage explorer</a>.
-
 For more information about the supported data types, see [BigCommerce integration reference](/integrations/commerce/bigcommerce/commerce-bigcommerce-integration-reference).
 
 ## Sandbox stores

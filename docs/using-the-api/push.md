@@ -46,12 +46,6 @@ Codat now refers to push operations as write requests.
 | suppliers        | &#9989; | &#9989; | -       | 
 | transfers        | &#9989; | -       | -       |
 
-:::note Data coverage
-
-View the full details of Codat's support for creating and updating data for each accounting software in our <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
-
-:::
-
 ## Process
 To perform a write request, follow these steps:
 

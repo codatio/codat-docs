@@ -5,10 +5,6 @@ description: "Learn about our Zoho Books integration"
 
 You can synchronize accounting data with <a href="https://www.zoho.com/books/" target="_blank">Zoho Books</a> using our Zoho Books integration.
 
-## Data type coverage
-
-View the coverage of our Zoho Books integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=rwuv" target="_blank">Data coverage explorer</a>.
-
 For more information about the supported data types, see [Zoho Books integration reference](zoho-books-integration-reference).
 
 ## Set up the integration
