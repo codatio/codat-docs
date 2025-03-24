@@ -13,10 +13,6 @@ unlisted: true
 
 Our banking integration with Basiq lets you securely connect to and retrieve your SMB customers' banking data in a standardized format.
 
-## Data type coverage
-
-View the coverage of our Basiq integration in the <a className="external" href="https://knowledge.codat.io/supported-features/banking?view=tab-by-integration&integrationKey=dxfm" target="_blank">Data coverage explorer</a>.
-
 The following banking data is available through the integration:
 
 - [Banking accounts](/banking-api#/schemas/banking-accounts)

@@ -6,11 +6,6 @@ updatedAt: "2022-10-20T08:48:19.088Z"
 unlisted: true
 ---
 
-:::info Data type coverage
-
-View the coverage of our Mollie integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=dxfw" target="_blank">Data coverage explorer</a>.
-:::
-
 ## Disputes
 
 Disputes are mapped from the Mollie chargebacks API. The dispute `status` is not available for chargebacks retrieved from Mollie.

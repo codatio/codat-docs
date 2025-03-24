@@ -11,10 +11,6 @@ Our QuickBooks Desktop connector enables SMBs who use QuickBooks Desktop to shar
 
 The connector utilizes the Intuit Web Connector, a Windows application that runs on the SMB user's local machine.
 
-## Data type coverage
-
-View the coverage of our QuickBooks Desktop connector in the [Data coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pqsw).
-
 :::caution Attachments not supported
 
 Uploading and downloading attachments to QuickBooks Desktop is not supported for any data type. This functionality is not supported by Intuit's own QuickBooks SDK.

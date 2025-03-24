@@ -5,10 +5,6 @@ description: "Learn about our FreshBooks integration."
 
 You can synchronize accounting data with <a className="external" href="https://www.freshbooks.com/" target="_blank">FreshBooks</a> using our FreshBooks integration.
 
-## Data type coverage
-
-View the coverage of our FreshBooks integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=vxvy" target="_blank">Data coverage explorer</a>.
-
 ## Supported versions
 
 FreshBooks Classic organizations are not supported. FreshBooks Classic is a legacy version of FreshBooks and uses a different API.

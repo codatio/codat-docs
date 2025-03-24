@@ -7,10 +7,6 @@ sidebar_label: Overview
 
 The Codat Sage 50 (UK & Ireland) on-premise connector is a Windows application that enables SMBs using Sage 50 (UK & Ireland) to fully integrate with the Codat platform.
 
-## Data type coverage
-
-View the coverage of our Sage 50 (UK & Ireland) integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=hbql" target="_blank">Data coverage explorer</a>.
-
 ## Branding, link journey and enabling the integration
 
 Before your SMB users will be able to download and install the on-premise connector, you will need to perform the following steps in the Codat portal.

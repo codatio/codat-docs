@@ -16,10 +16,6 @@ If you're an existing user, you must configure your Stripe integration to use St
 See [Set up the Stripe integration](/integrations/commerce/stripe/commerce-stripe-setup) for the steps you need to take to update your integration.
 :::
 
-## Data type coverage
-
-View the coverage of our Stripe integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=exgd" target="_blank">Data coverage explorer</a>.
-
 ## Available integrations
 
 Codat provides two Stripe integrations: **Stripe Test** and **Stripe**. The following table explains what each integration is used for.

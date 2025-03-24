@@ -12,10 +12,6 @@ payments and charges on behalf of small businesses.
 
 Use Codat's Commerce API with PayPal to securely connect to, retrieve, and view your customers' commerce transactions.
 
-## Data type coverage
-
-View the coverage of our PayPal integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=gvom" target="_blank">Data coverage explorer</a>.
-
 ## Set up the integration
 
 See [Set up the PayPal Integration](/integrations/commerce/paypal/set-up-paypal-in-production) to learn how to set up and enable the integration.

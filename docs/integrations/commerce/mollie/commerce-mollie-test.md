@@ -70,7 +70,7 @@ In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>:
 Click **Data history > Read history** to check the progress of the initial sync (if configured in your sync settings). If no data has been read, click **Refresh data**.
 
 Data is only available where:
-- The data type [is supported](https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=dxfw)
+- The data type is supported
 - You've [created test data](#create-some-data-in-mollie)
 :::
 
