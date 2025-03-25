@@ -1668,7 +1668,13 @@
                         },
                         "taxRateRef": {
                           "id": "INPUT2"
-                        }
+                        },
+                        "trackingRefs": [
+                          {
+                            "id": "dba3d4da-f9ed-4eee-8e0b-452d11fdb1fa",
+                            "dataType": "trackingCategories"
+                          }
+                        ]
                       }
                     ],
                     "status": "Open"
@@ -1736,7 +1742,13 @@
                           },
                           "taxRateRef": {
                             "id": "INPUT2"
-                          }
+                          },
+                          "trackingRefs": [
+                            {
+                              "id": "dba3d4da-f9ed-4eee-8e0b-452d11fdb1fa",
+                              "dataType": "trackingCategories"
+                            }
+                          ]
                         }
                       ],
                       "status": "Open",
@@ -2921,6 +2933,13 @@
               },
               "taxRateRef": {
                 "$ref": "#/components/schemas/Bill/definitions/billTaxRateRef"
+              },
+              "trackingRefs": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/Bill/definitions/trackingRef"
+                }
               }
             },
             "required": [
@@ -2963,6 +2982,30 @@
               },
               "pagination": {
                 "$ref": "#/components/schemas/Pagination"
+              }
+            }
+          },
+          "trackingRef": {
+            "type": "object",
+            "title": "Tracking reference",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "e9a1b63d-9ff0-40e7-8038-016354b987e6",
+                "description": "Unique identifier of the linked tracking category or the unique identifier of the linked customer."
+              },
+              "dataType": {
+                "type": "string",
+                "example": "trackingCategories",
+                "description": "The type of the linked reference.",
+                "enum": [
+                  "trackingCategories",
+                  "customers"
+                ]
+              },
+              "isBillable": {
+                "type": "boolean",
+                "description": "If a customer has been set as the trackingRefs.id then this boolean can be used to set whether the line item is billable to the customer or not."
               }
             }
           }
