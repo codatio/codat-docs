@@ -72,7 +72,7 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
 ### Your web app redirects the user to the bank account selection screen
 
-1. After a prompt, your web app sends a request to the <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__authorization"
+1. After a prompt, your web app sends a request to the <a href="https://docs.codat.io/platform-api#/operations/update-connection-authorization"
    target="blank">PUT /authorization</a> endpoint. The `authId` and 'bankId' (both from the URL in step five of the previous procedure) must be supplied in the request body as additional properties:
 
    ```http
