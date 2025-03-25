@@ -14,6 +14,7 @@ module.exports = [
     "spend-insights/get-started",
     {
       type: "link",
+      label: "Create account",
       customProps: {
         hr: true,
         section: "User guides",
@@ -25,6 +26,7 @@ module.exports = [
     "spend-insights/guides/analyze-spend",
     {
       type: "link",
+      label: "Customer queries",
       customProps: {
         hr: true, 
         section: "Customer support",
