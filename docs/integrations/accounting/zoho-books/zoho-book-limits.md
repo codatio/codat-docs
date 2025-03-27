@@ -34,7 +34,7 @@ Our Zoho Books integration works within these limits to minimize the performance
 
 ### API daily rate limit
 
-The _API daily rate limit_ lets organizations make a limited number of API calls to Zoho Books per day (up to 2,500 or 500 per user, whichever is lower);
+The _API daily rate limit_ lets organizations make a limited number of API calls to Zoho Books per day. The limit varies based on the plan your organization uses (see Zoho Books' [API Call Limit](https://www.zoho.com/books/api/v3/introduction/#api-call-limit)).
 
 If the cumulative number of API calls to the organization you are trying to link to exceeds the daily limit, you might encounter the following issues:
 
@@ -45,7 +45,7 @@ The daily rate is shared between all API requests made to an organization from a
 
 ### Per-minute rate limit
 
-Zoho Books can make about 60 API calls per minute—the _per-minute rate limit_.
+Zoho Books usesrs can make about 100 API calls per minute for each organization — the _per-minute rate limit_.
 
 This rate limit can affect the performance of the integration when reading data from and writing to Zoho Books.
 

@@ -92,9 +92,16 @@ Bills are mapped from _vendor bills_ in Oracle NetSuite.
 When writing Bills to Oracle NetSuite:
 
 - The `status` property must be set to `Open`.
-- A bill can't be created from a purchase order.
 - NetSuite makes a distinction between `Expense` and `Item` line records in vendor bills. Codat validates whether a line item is an `Expense` or `Item` type based on the value of `lineItems.itemRef.id`. If this isn't populated, Codat treats the line item as an `Expense` type.
 - In NetSuite, when reading Bills line items, the `taxAmount` and `taxRateRef` fields are not available because NetSuite does not provide information about which line item the tax relates to.
+
+You can create a Bill linked to a Purchase Order in any of the following ways:
+
+1. Add `purchaseOrderRefs ` reference into the main body of the bill and add `purchaseOrderLineRef ` to the line items. 
+2. Add just the `purchaseOrderLineRef` reference to the line items. 
+3. Add just the `purchaseOrderRefs` reference into the main body of the bill.
+
+Check the [Purchase Order prerequisites](/integrations/accounting/netsuite/oracle-netsuite-integration-reference#purchase-orders) before creating a Bill linked to a Purchase Order.
 
 ## Bill credit notes
 
@@ -106,19 +113,7 @@ Codat treats NetSuite _Vendor Prepayments_ as either Bill payments or Direct cos
 
 If a transaction is voided in NetSuite, a _reversing journal_ is posted to offset the original transaction and is then linked to the original transaction. Codat treats these reversing journals as refunds.
 
-In NetSuite, portions of a Bill Credit Note can be allocated to a particular Bill. In this case, the Bill payment amount shown in Codat is the _sum total_ of the allocated bill credit note portions. The individual allocations are not shown.
-
-:::note Example of bill credit note payments in NetSuite
-
-Say you have a $10 bill credit note (x) and an outstanding $20 bill (y) in NetSuite.
-
-1. You apply $5 of x to y, which leaves $15 outstanding.
-2. Read the Bill payment to Codat: the `lines.links.amount` of x is equal to $5.
-3. You apply a further $3 of x to y, which leaves $12 of y outstanding.
-4. Read the bill payment to Codat: the `lines.links.amount` of x is now equal to $8.
-
-The individual bill credit note allocations are not shown in the bill payment.
-:::
+In NetSuite, portions of a Bill Credit Note can be allocated to a particular Bill. In this case, the Bill payment amount shown in Codat reflects the individual allocation. 
 
 When writing Bill payments to Oracle NetSuite:
 
@@ -164,6 +159,11 @@ When writing Purchase orders to Oracle NetSuite:
 - The `shipto` field can't be written.
 
 - The `accountRef` or `itemRef` fields can only be written for a single line item. Writing the `itemRef` will override the `accountRef`. If the `accountRef` is written, you can view the reference in the Expense sub-list in the NetSuite user interface.
+
+It's possible to [create a Bill](/integrations/accounting/netsuite/oracle-netsuite-integration-reference#bills) with a link to a Purchase order. You may need to perform extra steps depending on the item type: 
+
+- For inventory-based items and expense lines, you need to convert the Purchase order into an Item Receipt in Netsuite, then proceed to create a Bill. 
+- For service-based items, you can create a Bill immediately after creating the Purchase order.
 
 ## Sales orders
 
