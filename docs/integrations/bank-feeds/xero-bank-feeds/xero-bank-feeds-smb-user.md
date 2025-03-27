@@ -19,7 +19,7 @@ The SMB user can do the following:
 4. Select the **Feed start date**&mdash;the date a bank feed connection should start from. 
 5. Connect the selected bank accounts to create bank feed connections.
 
-Whilst Codat does not perform any validation based on the Feed start date, Xero's API does not support writing historical data older than one year. 
+Whilse Codat doesn't validate the Feed start date, Xero's API doesn't support writing historical data older than one year. 
 
 :::info Target account names
 If the user chooses the **Create New Account** option, the target bank account is created with the same name as the source bank account it's mapped to. Bank account names can be changed in Xero at any time.
