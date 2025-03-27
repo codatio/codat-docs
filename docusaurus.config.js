@@ -74,7 +74,7 @@ const config = {
           blogDescription: "Engineering and product updates from Codat.",
           postsPerPage: 10,
           routeBasePath: "/updates",
-          blogSidebarCount: 8,
+          blogSidebarCount: 15,
           blogSidebarTitle: "Latest updates",
           editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || 'main'}/`,
         },
