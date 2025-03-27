@@ -7,6 +7,8 @@ authors: rachelcodat
 
 On **April 10, 2025**, we will deprecate our legacy Hosted Link user interface following the release of our new Hosted Link UI.
 
+<!--truncate-->
+
 Legacy Hosted Link UI:
 
 ![](/img/old/e802c95-2022-11-21_20-15-14.png)
@@ -14,8 +16,6 @@ Legacy Hosted Link UI:
 New Hosted Link UI:
 
 ![](/img/updates/hosted-link-updated-UI.png)
-
-<!--truncate-->
 
 The new [Hosted Link interface](/updates/250110-new-hosted-link-ui) boasts a cleaner, adaptive layout to match our Link SDK user experience and allows you to enable [one-time Link URLs](/updates/250110-secure-linking).
 
