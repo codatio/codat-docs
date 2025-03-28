@@ -1,7 +1,7 @@
 ---
 title: "Sync for Expenses: Zoho Books"
 date: "2025-02-17"
-tags: ["Product", "Update", "Webhooks", "Sync for Expenses", "Zoho Books"]
+tags: ["Product", "Update", "Sync for Expenses", "Zoho Books"]
 authors: StanleyCodat
 ---
 Zoho Books is now live on Sync for Expenses.
