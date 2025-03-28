@@ -18,4 +18,4 @@ Any client using Sync for Expenses.
 
 ## How to get started?  
 
-Check out our documentation on how to [set up the Zoho Books integration](/integrations/accounting/freeagent/accounting-freeagent-setup), together with our [Sync for Expenses API](/sync-for-expenses-api) documentation.
+Check out our documentation on how to [set up the FreeAgent integration](/integrations/accounting/freeagent/accounting-freeagent-setup), together with our [Sync for Expenses API](/sync-for-expenses-api) documentation.
