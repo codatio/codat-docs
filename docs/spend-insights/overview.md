@@ -111,9 +111,15 @@ Reach out to your Codat contact to enjoy **Spend Insights**'s rich features and 
 
   Your Analysts and Relationship Managers can easily keep records up to date with a single click, providing ongoing service excellence to your clients.
 
-## Supported integrations
+## Data sources
+
+#### Continuous data streaming
 
 <IntegrationsList filter={integrationsFilterSpendInsights} />
+
+#### Guided file upload
+
+here be the paper door connections
 
 ---
 

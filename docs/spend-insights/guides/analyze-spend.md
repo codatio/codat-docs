@@ -1,6 +1,6 @@
 ---
 title: "Analyze your customers' spend data"
-sidebar_label: Review spend data
+sidebar_label: Get spend insights
 description: "Learn how to analyze spend and supplier information from your customer"
 ---
 
