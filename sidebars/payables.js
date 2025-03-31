@@ -53,19 +53,19 @@ module.exports = [
   },
   "payables/sync/bills",
   "payables/sync/pay-bill",
-    {
-      type: "doc",
-      id: "payables/sync/sync-data-types",
-      label: "Supported data types",
-      customProps: {
-        hr: true,
-      },
+  {
+    type: "doc",
+    id: "payables/sync/sync-data-types",
+    label: "Supported data types",
+    customProps: {
+      hr: true,
     },
-    {
-      type: "link",
-      href: "/sync-for-payables-v2-api",
-      label: "API reference",
-    },  
+  },
+  {
+    type: "link",
+    href: "/sync-for-payables-v2-api",
+    label: "API reference",
+  },
   {
     type: "category",
     label: "Automate bill payment",
@@ -85,4 +85,4 @@ module.exports = [
       "payables/guides/bill-pay/how-the-demo-app-works",
     ],
   },
-]
+];

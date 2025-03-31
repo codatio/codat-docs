@@ -1,19 +1,25 @@
 import React from "react";
 
 const ReadNext = (props) => {
-	const {children, links} = props
+  const { children, links } = props;
 
-	return <div className="callout read-next">
-		<h2 id="read-next">Read next</h2>
+  return (
+    <div className="callout read-next">
+      <h2 id="read-next">Read next</h2>
 
-		{children}
+      {children}
 
-		<ul>
-			{links.map((link, i) => {
-				return <li key={i}><a href={link[1]}>{link[0]}</a></li>
-			})}
-		</ul>
-	</div>
-}
+      <ul>
+        {links.map((link, i) => {
+          return (
+            <li key={i}>
+              <a href={link[1]}>{link[0]}</a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
 
 export default ReadNext;

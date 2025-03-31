@@ -49,32 +49,32 @@ module.exports = [
   {
     type: "doc",
     label: "FreeAgent",
-    id: "integrations/accounting/freeagent/accounting-freeagent"
+    id: "integrations/accounting/freeagent/accounting-freeagent",
   },
   {
     type: "doc",
     label: "Oracle NetSuite",
-    id: "integrations/accounting/netsuite/accounting-netsuite"
+    id: "integrations/accounting/netsuite/accounting-netsuite",
   },
   {
     type: "doc",
     label: "QuickBooks Desktop",
-    id: "integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop"
+    id: "integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop",
   },
   {
     type: "doc",
     label: "QuickBooks Online",
-    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline"
+    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
   },
   {
     type: "doc",
     label: "Xero",
-    id: "integrations/accounting/xero/accounting-xero"
+    id: "integrations/accounting/xero/accounting-xero",
   },
   {
     type: "doc",
     label: "Zoho Books",
-    id: "integrations/accounting/zoho-books/accounting-zoho-books"
+    id: "integrations/accounting/zoho-books/accounting-zoho-books",
   },
   {
     type: "doc",

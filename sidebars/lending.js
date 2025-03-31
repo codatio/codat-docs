@@ -1,5 +1,5 @@
 module.exports = [
- {
+  {
     type: "link",
     href: "/",
     label: "All Docs",
@@ -28,60 +28,60 @@ module.exports = [
   "lending/features/accounts-payable-overview",
   "lending/features/company-info-overview",
   "lending/features/excel-download-overview",
-{
-  type: "category",
-  label: "Loan writeback",
-  customProps: {
-    hr: true,
-    section: "Guides",
-  },
-  collapsed: true,
-  items: [
-    {
-      type: "doc",
-      id: "lending/guides/loan-writeback/introduction",
-      label: "Introduction",
+  {
+    type: "category",
+    label: "Loan writeback",
+    customProps: {
+      hr: true,
+      section: "Guides",
     },
-    "lending/guides/loan-writeback/configure",
-    "lending/guides/loan-writeback/deposit",
-    "lending/guides/loan-writeback/record-general-loan",
-  ],
-},
-{
-  type: "category",
-  label: "Loan qualification",
-  collapsed: true,
-  items: [
-    "lending/guides/loan-qualification/introduction",
-    "lending/guides/loan-qualification/setting-up",
-    "lending/guides/loan-qualification/process-loan",
-    "lending/guides/loan-qualification/uw-decision",
-  ],
-},
-{
-  type: "category",
-  label: "Invoice finance",
-  collapsed: true,
-  items: [
-    {
-      type: "doc",
-      id: "lending/guides/invoice-finance/introduction",
-      label: "Introduction",
-    },
-    "lending/guides/invoice-finance/setting-up",
-    "lending/guides/invoice-finance/process-invoice",
-    "lending/guides/invoice-finance/inv-fin-decision",
-  ],
-},
-{
-  type: "link",
-  href: '/lending/functions/data-upload',
-  label: "Data upload",
-  customProps: {
-    hr: true,
-    section: "Reference",
+    collapsed: true,
+    items: [
+      {
+        type: "doc",
+        id: "lending/guides/loan-writeback/introduction",
+        label: "Introduction",
+      },
+      "lending/guides/loan-writeback/configure",
+      "lending/guides/loan-writeback/deposit",
+      "lending/guides/loan-writeback/record-general-loan",
+    ],
   },
-},
+  {
+    type: "category",
+    label: "Loan qualification",
+    collapsed: true,
+    items: [
+      "lending/guides/loan-qualification/introduction",
+      "lending/guides/loan-qualification/setting-up",
+      "lending/guides/loan-qualification/process-loan",
+      "lending/guides/loan-qualification/uw-decision",
+    ],
+  },
+  {
+    type: "category",
+    label: "Invoice finance",
+    collapsed: true,
+    items: [
+      {
+        type: "doc",
+        id: "lending/guides/invoice-finance/introduction",
+        label: "Introduction",
+      },
+      "lending/guides/invoice-finance/setting-up",
+      "lending/guides/invoice-finance/process-invoice",
+      "lending/guides/invoice-finance/inv-fin-decision",
+    ],
+  },
+  {
+    type: "link",
+    href: "/lending/functions/data-upload",
+    label: "Data upload",
+    customProps: {
+      hr: true,
+      section: "Reference",
+    },
+  },
   "lending/troubleshooting",
   "lending/data-types",
   {

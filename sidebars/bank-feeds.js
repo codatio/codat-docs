@@ -1,5 +1,5 @@
 module.exports = [
- {
+  {
     type: "link",
     href: "/",
     label: "All Docs",
@@ -35,13 +35,10 @@ module.exports = [
     label: "Establish bank feed",
     collapsed: true,
     link: {
-      type: 'doc',
+      type: "doc",
       id: "bank-feeds/mapping/overview",
     },
-    items: [
-      "bank-feeds/mapping/codat-ui",
-      "bank-feeds/mapping/api-mapping",
-    ],
+    items: ["bank-feeds/mapping/codat-ui", "bank-feeds/mapping/api-mapping"],
   },
   {
     type: "doc",

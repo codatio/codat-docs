@@ -32,7 +32,7 @@ module.exports = [
           "assess/guides/migration-guides/deprecation-account-categories-portal",
           "assess/guides/migration-guides/deprecation-account-categories-excel",
         ],
-      }, 
+      },
     ],
   },
   {
@@ -43,8 +43,16 @@ module.exports = [
       "assess/enhanced-financials/overview",
       "assess/enhanced-financials/categorize-accounts",
       "assess/enhanced-financials/supported-account-categories",
-      { type: "link", label: "Enhanced profit and loss accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-profit-and-loss" },
-      { type: "link", label: "Enhanced balance sheet accounts", href: "/assess-api#/operations/get-accounts-for-enhanced-balance-sheet" },
+      {
+        type: "link",
+        label: "Enhanced profit and loss accounts",
+        href: "/assess-api#/operations/get-accounts-for-enhanced-profit-and-loss",
+      },
+      {
+        type: "link",
+        label: "Enhanced balance sheet accounts",
+        href: "/assess-api#/operations/get-accounts-for-enhanced-balance-sheet",
+      },
     ],
   },
   {
@@ -53,7 +61,11 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/enhanced-cash-flow/overview",
-      { type: "link", label: "Enhanced cash flow transactions", href: "/assess-api#/operations/get-enhanced-cash-flow-transactions" },
+      {
+        type: "link",
+        label: "Enhanced cash flow transactions",
+        href: "/assess-api#/operations/get-enhanced-cash-flow-transactions",
+      },
     ],
   },
   {
@@ -62,7 +74,11 @@ module.exports = [
     collapsed: true,
     items: [
       "assess/enhanced-invoices/overview",
-      { type: "link", label: "Enhanced invoices report", href: "/assess-api#/operations/get-enhanced-invoices-report" },
+      {
+        type: "link",
+        label: "Enhanced invoices report",
+        href: "/assess-api#/operations/get-enhanced-invoices-report",
+      },
     ],
   },
   {
@@ -70,8 +86,16 @@ module.exports = [
     label: "Enhanced liabilties",
     collapsed: true,
     items: [
-      { type: "link", label: "Enhanced liabilties loan summary", href: "/assess-api#/operations/get-loan-summary" },
-      { type: "link", label: "Enhanced liabilties loan transactions", href: "/assess-api#/operations/list-loan-transactions" },
+      {
+        type: "link",
+        label: "Enhanced liabilties loan summary",
+        href: "/assess-api#/operations/get-loan-summary",
+      },
+      {
+        type: "link",
+        label: "Enhanced liabilties loan transactions",
+        href: "/assess-api#/operations/list-loan-transactions",
+      },
     ],
   },
   {
@@ -110,7 +134,7 @@ module.exports = [
     items: [
       "assess/portal/overview",
       "assess/portal/data-integrity",
-      "assess/portal/categorize-accounts"
+      "assess/portal/categorize-accounts",
     ],
   },
   {
@@ -130,11 +154,9 @@ module.exports = [
     type: "category",
     label: "Liabilities",
     collapsed: true,
-    items: [
-      "assess/loans/loan-transactions",
-    ],
+    items: ["assess/loans/loan-transactions"],
   },
-  'assess/troubleshooting',
+  "assess/troubleshooting",
   {
     type: "link",
     href: "/assess-api",
