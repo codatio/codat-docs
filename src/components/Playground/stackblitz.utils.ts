@@ -40,7 +40,7 @@ export interface EditorOptions {
 
 const loadSourceFiles = async (files: string[]) => {
   const sourceFiles = await Promise.all(
-    files.map((f) => fetch(`/docs/code/stackblitz/${f}`))
+    files.map((f) => fetch(`/docs/code/stackblitz/${f}`)),
   );
   return await Promise.all(sourceFiles.map((res) => res.text()));
 };
@@ -104,7 +104,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
   if (options.angularModuleOptions) {
     if (options.angularModuleOptions.imports) {
       app_module_ts = `${options.angularModuleOptions.imports.join(
-        "\n"
+        "\n",
       )}\n${app_module_ts}`;
     }
     if (options.angularModuleOptions.declarations) {
@@ -112,7 +112,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
         "/* CUSTOM_DECLARATIONS */",
         options.angularModuleOptions.declarations
           .map((d) => `\n  ${d}`)
-          .join(",")
+          .join(","),
       );
     }
   }

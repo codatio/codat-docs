@@ -1,5 +1,5 @@
 import React, { useState, Suspense } from "react";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 import BrowserOnly from "@docusaurus/BrowserOnly";
 
@@ -13,18 +13,20 @@ import styles from "./styles.module.scss";
 import "./styles/stoplight.scss";
 
 const LazyStoplight = React.lazy(() => import("../Stoplight"));
-const Fallback = (
-  <div className={styles.stoplightFallback} />
-);
+const Fallback = <div className={styles.stoplightFallback} />;
 
-const Api = ({ url, title="API reference", socialBanner="https://docs.codat.io/img/meta/codat-bg.png"}) => {
+const Api = ({
+  url,
+  title = "API reference",
+  socialBanner = "https://docs.codat.io/img/meta/codat-bg.png",
+}) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <Layout title={title}>
       <Helmet>
-        <meta data-rh="true" name="og:image" content={socialBanner}/>
-        <meta data-rh="true" name="twitter:image" content={socialBanner}/>
+        <meta data-rh="true" name="og:image" content={socialBanner} />
+        <meta data-rh="true" name="twitter:image" content={socialBanner} />
       </Helmet>
 
       <div className={styles.apiNav}>
@@ -33,15 +35,16 @@ const Api = ({ url, title="API reference", socialBanner="https://docs.codat.io/i
       </div>
 
       <main>
-        <div className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
-          {
-            menuOpen
-            ? "Hide endpoints"
-            : "Show all endpoints"
-          }
+        <div
+          className={styles.menuToggle}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "Hide endpoints" : "Show all endpoints"}
         </div>
 
-        <div className={clsx(styles.stoplightWrapper, !menuOpen && "menu-closed")}>
+        <div
+          className={clsx(styles.stoplightWrapper, !menuOpen && "menu-closed")}
+        >
           <BrowserOnly>
             {() => (
               <Suspense fallback={Fallback}>
@@ -50,8 +53,10 @@ const Api = ({ url, title="API reference", socialBanner="https://docs.codat.io/i
             )}
           </BrowserOnly>
         </div>
-        
-        <div className={clsx(styles.stoplightPlaceholder, "col")}><p>Our API reference is not supported at this screen size.</p></div>
+
+        <div className={clsx(styles.stoplightPlaceholder, "col")}>
+          <p>Our API reference is not supported at this screen size.</p>
+        </div>
       </main>
     </Layout>
   );

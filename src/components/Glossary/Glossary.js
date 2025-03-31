@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
-import Link from '@docusaurus/Link';
+import React, { useEffect, useState } from "react";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
+import Link from "@docusaurus/Link";
 
 const Glossary = () => {
   const [content, setContent] = useState();
@@ -9,13 +9,13 @@ const Glossary = () => {
 
   useEffect(() => {
     if (typeof window !== undefined) {
-      const JSONurl = withBaseUrl('docs/glossary.json');
+      const JSONurl = withBaseUrl("docs/glossary.json");
 
       if (!content) {
         if (!window._cachedGlossary) {
           fetch(JSONurl)
-            .then(res => res.json())
-            .then(obj => {
+            .then((res) => res.json())
+            .then((obj) => {
               setContent(obj);
               window._cachedGlossary = obj;
             });
@@ -24,29 +24,41 @@ const Glossary = () => {
         }
       }
     }
-  }, [content])
+  }, [content]);
 
-  const linkPath = key => withBaseUrl(`${key.replace('/\\/g', '/')}`).replace(/\/docs/, "");
+  const linkPath = (key) =>
+    withBaseUrl(`${key.replace("/\\/g", "/")}`).replace(/\/docs/, "");
 
   return (
     <BrowserOnly
-      fallback={<div>The fallback content to display on prerendering</div>}>
-      {() =>
-        <div>{content ?
-          <>
-            {
-              Object.keys(content).map(key => {
+      fallback={<div>The fallback content to display on prerendering</div>}
+    >
+      {() => (
+        <div>
+          {content ? (
+            <>
+              {Object.keys(content).map((key) => {
                 return (
                   <p key={key}>
-                    <Link to={linkPath(key)}>{content[key].metadata.title}</Link>: <span style={{ display: 'inline-flex' }} dangerouslySetInnerHTML={{ __html: content[key].metadata.hoverText }} />
+                    <Link to={linkPath(key)}>
+                      {content[key].metadata.title}
+                    </Link>
+                    :{" "}
+                    <span
+                      style={{ display: "inline-flex" }}
+                      dangerouslySetInnerHTML={{
+                        __html: content[key].metadata.hoverText,
+                      }}
+                    />
                   </p>
-                )
-              })
-            }
-          </> :
-          'loading...'}
+                );
+              })}
+            </>
+          ) : (
+            "loading..."
+          )}
         </div>
-      }
+      )}
     </BrowserOnly>
   );
 };

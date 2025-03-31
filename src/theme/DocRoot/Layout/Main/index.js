@@ -1,11 +1,14 @@
-import React from 'react';
-import clsx from 'clsx';
-import {useDocsSidebar} from '@docusaurus/theme-common/internal';
-import styles from './styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import { useDocsSidebar } from "@docusaurus/theme-common/internal";
+import styles from "./styles.module.css";
 
-import Navbar from '@theme/Navbar';
+import Navbar from "@theme/Navbar";
 
-export default function DocRootLayoutMain({hiddenSidebarContainer, children}) {
+export default function DocRootLayoutMain({
+  hiddenSidebarContainer,
+  children,
+}) {
   const sidebar = useDocsSidebar();
 
   return (
@@ -14,14 +17,17 @@ export default function DocRootLayoutMain({hiddenSidebarContainer, children}) {
       <main
         className={clsx(
           styles.docMainContainer,
-          (hiddenSidebarContainer || !sidebar) && styles.docMainContainerEnhanced,
-        )}>
+          (hiddenSidebarContainer || !sidebar) &&
+            styles.docMainContainerEnhanced,
+        )}
+      >
         <div
           className={clsx(
-            'container padding-bottom--lg',
+            "container padding-bottom--lg",
             styles.docItemWrapper,
             hiddenSidebarContainer && styles.docItemWrapperEnhanced,
-          )}>
+          )}
+        >
           {children}
         </div>
       </main>

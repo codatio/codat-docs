@@ -151,13 +151,13 @@ export default function Playground({
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn(
-      "No code usage examples provided for this Playground example."
+      "No code usage examples provided for this Playground example.",
     );
     return;
   }
   if (typeof mode !== "undefined" && mode !== "ios" && mode !== "md") {
     console.warn(
-      `Invalid mode provided: ${mode}. Accepted values are: "ios" or "md".`
+      `Invalid mode provided: ${mode}. Accepted values are: "ios" or "md".`,
     );
     return;
   }
@@ -276,7 +276,7 @@ export default function Playground({
          */
         io.disconnect();
       },
-      { threshold: 0 }
+      { threshold: 0 },
     );
 
     io.observe(hostRef.current!);
@@ -330,7 +330,7 @@ export default function Playground({
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => ({
           [fileName]: hostRef.current!.querySelector<HTMLElement>(
-            `#${getCodeSnippetId(usageTarget, fileName)} code`
+            `#${getCodeSnippetId(usageTarget, fileName)} code`,
           ).outerText,
         }))
         .reduce((acc, curr) => ({ ...acc, ...curr }), {});

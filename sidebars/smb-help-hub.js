@@ -59,4 +59,4 @@ module.exports = [
       "smb-help-hub/integrations/qb-desktop/troubleshooting",
     ],
   },
-]
+];

@@ -1,5 +1,5 @@
 module.exports = [
-{
+  {
     type: "link",
     href: "/",
     label: "All Docs",

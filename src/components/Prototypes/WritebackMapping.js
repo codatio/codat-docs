@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const getBankAccountsResponse = [
   {
@@ -17,7 +17,7 @@ const getBankAccountsResponse = [
     name: "Business current account",
     value: "Virgin Money",
   },
-]
+];
 
 const getAccountsResponse = [
   {
@@ -40,7 +40,7 @@ const getAccountsResponse = [
     name: "Create new account",
     value: "+",
   },
-]
+];
 
 const getLendersResponse = [
   {
@@ -68,20 +68,22 @@ const getLendersResponse = [
     name: "Create new account",
     value: "+",
   },
-]
+];
 
-const ComponentInput = ({component, onClick}) => {
-  if (!component) return <div/>
+const ComponentInput = ({ component, onClick }) => {
+  if (!component) return <div />;
 
   if (component?.mappedAccount) {
-    return <div className={styles.confirmed}>✅ {component.name} → {component.mappedAccount}</div>
+    return (
+      <div className={styles.confirmed}>
+        ✅ {component.name} → {component.mappedAccount}
+      </div>
+    );
   }
 
   return (
     <div className="input-row" key={component.id}>
-      <label for={`account-${component.id}`}>
-        {component.name}
-      </label>
+      <label for={`account-${component.id}`}>{component.name}</label>
 
       <input
         list={component.id}
@@ -91,44 +93,50 @@ const ComponentInput = ({component, onClick}) => {
       />
     </div>
   );
-}
+};
 
-const ComponentMapper = ({children, initialComponent, arr}) => {
-  const [ component, setComponent ] = useState(initialComponent)
+const ComponentMapper = ({ children, initialComponent, arr }) => {
+  const [component, setComponent] = useState(initialComponent);
 
-  const setComponentMapping = value => {
+  const setComponentMapping = (value) => {
     setComponent({
       ...component,
       mappedAccount: value,
-    })
-  }
+    });
+  };
 
-  return <div className={`input-group ${styles.card}`}>
-    {children}
+  return (
+    <div className={`input-group ${styles.card}`}>
+      {children}
 
-    <ComponentInput component={component} onClick={e => setComponentMapping(e.target.value)}/>
+      <ComponentInput
+        component={component}
+        onClick={(e) => setComponentMapping(e.target.value)}
+      />
 
-    <datalist id={component.id}>
-      {
-        arr.map((account, i) => <option key={i} value={account.name}>{account.value}</option>)
-      }
-    </datalist>
-  </div>
-}
+      <datalist id={component.id}>
+        {arr.map((account, i) => (
+          <option key={i} value={account.name}>
+            {account.value}
+          </option>
+        ))}
+      </datalist>
+    </div>
+  );
+};
 
 const PrototypeWritebackMapping = () => {
-// Select bank account: Select the business bank account the funds will be deposited.
-// Select/create expense account: Select or create the expense account you want any fees or interest tracked against.
-// A comment that a new bank account will be created in your accounting software. This account acts as the lenders virtual account and is used for double-entry accounting purposes.
+  // Select bank account: Select the business bank account the funds will be deposited.
+  // Select/create expense account: Select or create the expense account you want any fees or interest tracked against.
+  // A comment that a new bank account will be created in your accounting software. This account acts as the lenders virtual account and is used for double-entry accounting purposes.
 
   return (
     <div className="prototype">
       <h4>Example mapping UI</h4>
 
-
       <p>Map your loan writeback components to a relevant account.</p>
 
-      <ComponentMapper 
+      <ComponentMapper
         arr={getBankAccountsResponse}
         initialComponent={{
           id: "deposit",
@@ -137,22 +145,27 @@ const PrototypeWritebackMapping = () => {
       >
         <h5 className={styles.category}>Deposit account</h5>
 
-        <p>Select the business bank account where the funds will be deposited.</p>
+        <p>
+          Select the business bank account where the funds will be deposited.
+        </p>
       </ComponentMapper>
 
       <ComponentMapper
         arr={getAccountsResponse}
-        initialComponent={  {
+        initialComponent={{
           id: "expense",
           name: "Expense account",
         }}
       >
         <h5 className={styles.category}>Expense account</h5>
 
-        <p>Select or create the expense account you want any fees or interest tracked against.</p>
+        <p>
+          Select or create the expense account you want any fees or interest
+          tracked against.
+        </p>
       </ComponentMapper>
 
-      <ComponentMapper 
+      <ComponentMapper
         arr={getLendersResponse}
         initialComponent={{
           id: "lender",
@@ -161,9 +174,11 @@ const PrototypeWritebackMapping = () => {
       >
         <h5 className={styles.category}>Lender account</h5>
 
-        <p>Select lender's virtual account that will be used for double-entry accounting purposes.</p>
+        <p>
+          Select lender's virtual account that will be used for double-entry
+          accounting purposes.
+        </p>
       </ComponentMapper>
-
     </div>
   );
 };

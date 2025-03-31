@@ -1,5 +1,5 @@
 module.exports = [
- {
+  {
     type: "link",
     href: "/",
     label: "All Docs",
@@ -32,7 +32,7 @@ module.exports = [
       },
       "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup",
       "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-smb-user",
-      "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions",     
+      "integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-push-bank-transactions",
     ],
   },
   {
@@ -47,7 +47,7 @@ module.exports = [
       },
       "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup",
       "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-use",
-      "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app",    
+      "integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app",
     ],
   },
   {
@@ -76,4 +76,4 @@ module.exports = [
     href: "/integrations/accounting/freeagent/accounting-freeagent",
     label: "FreeAgent",
   },
-]
+];

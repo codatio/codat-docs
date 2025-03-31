@@ -36,7 +36,9 @@ const Content = React.forwardRef(({ setContent, content, url, theme }, ref) => {
       {content ? (
         <>
           <h4>{content.metadata.title}</h4>
-          <div dangerouslySetInnerHTML={{__html: content.metadata.hoverText}}></div>
+          <div
+            dangerouslySetInnerHTML={{ __html: content.metadata.hoverText }}
+          ></div>
         </>
       ) : (
         "loading..."
@@ -48,7 +50,7 @@ const Content = React.forwardRef(({ setContent, content, url, theme }, ref) => {
 const Tooltip = (props) => {
   const { children, pathName } = props;
   const [content, setContent] = useState();
-  
+
   const cleanSourcePath = pathName.replace(/\/$/, "");
   const cleanLinkPath = pathName.replace(/\/docs/, "");
 

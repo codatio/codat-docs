@@ -1,7 +1,8 @@
-module.exports = [ 
+module.exports = [
   {
     type: "doc",
-    className: "top-level-item top-level-item-single products product spend-insights",
+    className:
+      "top-level-item top-level-item-single products product spend-insights",
     id: "spend-insights/overview",
     customProps: {
       hr: true,
@@ -26,7 +27,8 @@ module.exports = [
   },
   {
     type: "doc",
-    className: "top-level-item top-level-item-single products product sfpayables",
+    className:
+      "top-level-item top-level-item-single products product sfpayables",
     id: "payables/overview",
   },
   {

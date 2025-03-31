@@ -33,27 +33,27 @@ module.exports = [
   {
     type: "doc",
     label: "QuickBooks Online",
-    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline"
+    id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
   },
   {
     type: "doc",
     label: "Sage Intacct",
-    id: "integrations/accounting/sage-intacct/accounting-sage-intacct"
+    id: "integrations/accounting/sage-intacct/accounting-sage-intacct",
   },
   {
     type: "doc",
     label: "Sage Business Cloud",
-    id: "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud"
+    id: "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
   },
   {
     type: "doc",
     label: "Xero",
-    id: "integrations/accounting/xero/accounting-xero"
+    id: "integrations/accounting/xero/accounting-xero",
   },
   {
     type: "doc",
     label: "Dynamics 365 Business Central",
-    id: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral"
+    id: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
   },
   {
     type: "doc",
@@ -69,4 +69,4 @@ module.exports = [
     href: "/sync-for-payroll-api#/",
     label: "API reference",
   },
-]
+];
