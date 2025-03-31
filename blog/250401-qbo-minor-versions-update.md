@@ -1,6 +1,6 @@
 ---
 title: "QuickBooks Online: Minor version update – no action required"
-date: "2025-042-01"
+date: "2025-04-01"
 tags: ["Product", "Update", "QuickBooks Online"]
 authors: dcoplowe
 ---
