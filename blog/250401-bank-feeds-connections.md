@@ -1,6 +1,6 @@
 ---
 title: "Bank Feeds: updates to account mapping interface"
-date: "2025-01-10"
+date: "2025-04-01"
 tags: ["Product", "Update", "Bank Feeds"]
 authors: pzaichkina
 ---
