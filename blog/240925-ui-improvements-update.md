@@ -19,7 +19,7 @@ We have revised and improved the connection flows a small business customer goes
 - **Deep links** in the linking journey take users directly to the pages they need to execute the steps of the flow.
 - Links to **end user documentation** that supports your customer in their journey and allows them to troubleshoot as they go. 
 
-See our dedicated [NetSuite](/smb-help-hub/integrations/netsuite/overview), [Sage Intacct](/smb-help-hub/integrations/sage-intacct/overview), and [QuickBooks Desktop](/smb-help-hub/integrations/qb-desktop/overview) **end user documentation**.
+See our dedicated [NetSuite](https://help.codat.io/integrations/netsuite/overview), [Sage Intacct](https://help.codat.io/integrations/sage-intacct/overview), and [QuickBooks Desktop](https://help.codat.io/integrations/qb-desktop/overview) **end user documentation**.
 
 ### NetSuite
 

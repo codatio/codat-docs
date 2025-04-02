@@ -22,7 +22,6 @@ const integrationsBanking = require("./sidebars/integrations-banking");
 const integrationsCommerce = require("./sidebars/integrations-commerce");
 const integrationsBankFeeds = require("./sidebars/integrations-bank-feeds");
 const enterprise = require("./sidebars/enterprise");
-const smbHelpHub = require("./sidebars/smb-help-hub");
 
 module.exports = {
   docs: [
@@ -184,7 +183,6 @@ module.exports = {
   integrationsBankFeeds: integrationsBankFeeds,
   enterprise: enterprise,
   spendInsights: spendInsights,
-  smbHelpHub: smbHelpHub,
   //accountingAPI: accountingAPI,
   //bankingAPI: bankingAPI,
   //commerceAPI: commerceAPI,
