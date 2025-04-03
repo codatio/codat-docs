@@ -1,5 +1,5 @@
 ---
-title: "2025-07-10: ADD TITLE"
+title: "2025-07-10: Deprecation of using foreign currencies in Journal Entries for Netsuite integration"
 date: "2025-04-04"
 tags: ["Deprecation","NetSuite"]
 authors: ivasiutkova
@@ -16,6 +16,6 @@ If you are currently using Journal Entries you will need to review your current 
 
 ## Expected impact if no action is taken
 
-All journal entries would be moved to use base currency. `netAmount` would be adjusted using the currency rate and the field `currency` would show the base currency. If you don't change your application by **July 10, 2025**, Journal Entries would be returned in base currency.
+All journal entries would be moved to use base currency. If a journal entry is originally created in foreign currency its `netAmount` would be adjusted using the currency rate and the field `currency` would refer to the base currency. If you don't change your application by **July 10, 2025**, you will experience amount inconsistencies for the entries done in foreign currencies.
 
 
