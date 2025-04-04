@@ -1,20 +1,27 @@
 ---
-title: "Idempotency"
-description: "Understand how to make idempotent requests"
+title: "Idempotency in Codat's API calls"
+sidebar_label: "Idempotency"
+description: "Understand how to make idempotent requests to Codat's POST and PATCH endpoints"
 ---
 
-## What is idempotency
+## What is idempotency?
 
-Idempotency means that multiple identical requests should have the same outcome as a single request. For example, if you submit the same POST request to create an invoice multiple times with an idempotency key, only one invoice should be created. This helps prevent duplicate records from being created if a request needs to be retried due to network issues or timeouts.
+In the context of API requests, idempotency ensures that the outcome of executing multiple identical requests has the same outcome as executing the request once. It prevents the creation of duplicate records if an API request needs to be retried due to network issues or timeouts.
+
+For example, if you submit the same POST request to create an invoice multiple times, including an idempotency key in the request ensures only one invoice is created.
 
 ## Idempotency in Codat requests
 
-Codat allows request idempotency on `POST` or `PATCH` requests through the inclusion of an `Idempotency-Key` header with a GUID value. When this is included Codat will cache the initial response for use on subsequent requests with the same `Idempotency-Key` header. This cache lasts 90 minutes. This is available across our API on all endpoints that support `POST` or `PATCH`.
+You can include an `Idempotency-Key` header with a unique GUID value when making `POST` or `PATCH` requests to all of Codat's endpoints that support these methods. Codat will cache the initial response and will use it on all following requests with the same `Idempotency-Key` header. This cache lasts 90 minutes. 
 
 ### 💡 Tips and traps
 
-- The `Idempotency-Key` must be a unique GUID.
-- The request must have either `POST` or `PATCH` methods.
-- There must be only one `Idempotency-Key` header included.
-- A request that reuses an `Idempotency-Key` header with a different body will result in a `422 Unprocessable Content` status code.
-- A request that with an `Idempotency-Key` that matches an existing request that's still in progress will result in a `409 Conflict` status code.
+- The `Idempotency-Key` header must be a unique GUID.
+- You can only include a single `Idempotency-Key` header into your request.
+- You can only include the `Idempotency-Key` header in `POST` or `PATCH` requests.
+- It's not possible to reuse the same `Idempotency-Key` header across different requests.
+
+#### Possible error codes
+
+- A request that reuses the same `Idempotency-Key` header with a different body will result in a `422 Unprocessable Content` status code.
+- A request that uses an `Idempotency-Key` matching an existing in-progress requestwill result in a `409 Conflict` status code.
