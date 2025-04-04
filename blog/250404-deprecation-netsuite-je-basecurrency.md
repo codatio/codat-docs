@@ -1,21 +1,24 @@
 ---
-title: "2025-07-10: Deprecation of foreign currency support in Journal Entries for NetSuite integration"
+title: "2025-07-10: NetSuite: Deprecation of foreign currency support in Journal Entries"
 date: "2025-04-04"
-tags: ["Deprecation","NetSuite"]
+tags: ["Deprecation", "NetSuite"]
 authors: ivasiutkova
 ---
-On **July 10, 2025**, we will update the way how we map Journal Entries for Netsuite integration.
+
+On **July 10, 2025**, we will change the way we record the `netAmount` and `currency` fields of Journal Entries in foreign currency for our NetSuite integration.
 
 <!--truncate-->
 
-Journal Entries would now be mapped in base currency (with currency conversion for amounts), not the original foreign currency. This is to align the use of Journal entries to build financial statements, which are presented in the company's base currency.
+We currently record the `netAmount` and `currency` of foreign currency journal entries using the currency of the original NetSuite transaction. After this change, we will record the company's base currency as `currency` instead and convert the associated monetary amount in `netAmount`. 
+
+This is to simplify the inclusion of the Journal Entries data type into financial statements, which are presented in the company's base currency. 
 
 ## Action required
 
-If your system or application handles Journal Entries with foreign currencies, you **must update your implementation** to support base currency mapping before July 10, 2025.
+If your application's logic anticipates NetSuite's foreign currency journal entries to be in the original transaction currency, you must update it to anticipate records in base currency instead.
 
 ## Expected impact if no action is taken
 
-All journal entries would still be processed however if a journal entry is originally created in foreign currency its `netAmount` would be adjusted using the currency rate and the field `currency` would refer to the base currency. Any logic assuming the original currency will likely break or produce incorrect results.
+After **July 10, 2025**, all NetSuite journal entries originally created in foreign currency will be recorded in base `currency` instead, and the `netAmount` will be converted to the base currency. Any follow-on logic that assumes the original transaction currency is likely to produce incorrect results.
 
 
