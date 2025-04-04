@@ -41,9 +41,9 @@ module.exports = [
     collapsed: true,
     items: [
       "using-the-api/push",
+      "using-the-api/write-data/idempotency",
       "using-the-api/upload-attachments",
       "configure/portal/pull-and-push-history",
-      "using-the-api/write-data/idempotency",
     ],
   },
   {
