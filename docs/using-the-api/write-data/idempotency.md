@@ -8,7 +8,7 @@ description: "Understand how to make idempotent requests to Codat's POST and PAT
 
 In the context of API requests, idempotency ensures that the outcome of executing multiple identical requests has the same outcome as executing the request once. It prevents the creation of duplicate records if an API request needs to be retried due to network issues or timeouts.
 
-For example, if you submit the same POST request to create an invoice multiple times, including an idempotency key in the request ensures only one invoice is created.
+For example, if you submit the same `POST` request to create an invoice multiple times, including an idempotency key in the request ensures only one invoice is created.
 
 ## Idempotency in Codat requests
 
