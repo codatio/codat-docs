@@ -15,9 +15,9 @@ We have **standardised the sign conversion** (signum) of accounts balances. Asse
 
 **Xero**: Income and Expense accounts are now returning current balance.
 
-**Dynamics 365 BC** Bank Accounts are now returning their current balance.
+**Dynamics 365 BC** Accounts with `isBankAccount: true` are now returning their current balance.
 
-**Sage50** Bank Accounts current balances are now returned in the bank account’s currency.
+**Sage50** Accounts with `isBankAccount: true` now support balances in bank account’s currency.
 
 These changes ensure consistent interpretation of balances across systems, improving accuracy in reporting and analysis.
 
