@@ -40,9 +40,9 @@ module.exports = [
     label: "Write data",
     collapsed: true,
     items: [
-      "using-the-api/write-data/push",
-      "using-the-api/write-data/upload-attachments",
-      "using-the-api/write-data/pull-and-push-history",
+      "using-the-api/push",
+      "using-the-api/upload-attachments",
+      "configure/portal/pull-and-push-history",
       "using-the-api/write-data/idempotency",
     ],
   },

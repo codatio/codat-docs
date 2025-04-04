@@ -6,7 +6,7 @@ description: "Understand how to add, modify, and delete data in Codat's integrat
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Lottie from '@components/Lottie'
-import webhooks from '../../../static/animations/webhooks.json'
+import webhooks from '../../static/animations/webhooks.json'
 
 <Lottie animation={webhooks}/>
 
