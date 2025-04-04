@@ -11,18 +11,20 @@ We have updated the way we display Current Balances for Chart of Accounts for in
 
 ## What's new?
 
-We have updated the signum of accounts balances to represent the status of an Account and bring it in lnline across integrations. Asset/Expense accounts are positive when in debit, and Income/Liability/Equity accounts are positive when in credit.
+We have **standardised the sign conversion** (signum) of accounts balances. Asset/Expense accounts now show positive balances when in debit; Income/Liability/Equity accounts now show positive balances when in credit.
 
-Xero Income and Expense accounts are now returning current balance.
+**Xero**: Income and Expense accounts are now returning current balance.
 
-Dynamics 365 BC Bank Accounts are now returning balance.
+**Dynamics 365 BC** Bank Accounts are now returning their current balance.
 
-Sage50 Bank Accounts current balances are now returned in the bank account’s currency.
+**Sage50** Bank Accounts current balances are now returned in the bank account’s currency.
+
+These changes ensure consistent interpretation of balances across systems, improving accuracy in reporting and analysis.
 
 ## Who is this relevant for?
 
-Anyone using balances from Chart of Accounts as part of their implementation.
+Anyone relying on Chart of Accounts balances as part of their integration or financial reporting setup.
 
 ## How to get started?
 
-Available for all by scheduling Chart of Accounts data pull
+This update would be available from July 10, 2025. You would need to schedule a Chart of Accounts data sync to reflect the changes.
