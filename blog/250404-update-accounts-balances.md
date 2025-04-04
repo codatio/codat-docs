@@ -1,5 +1,5 @@
 ---
-title: "2025-07-10: Aligning Account Current Balances across integrations"
+title: "Aligning Account Current Balances across integrations"
 date: "2025-04-04"
 tags: ["Product", "Update","Xero","NetSuite","Dynamics 365 BC","Sage Intacct", "Sage 50", "Sage 200", "Zoho Books"]
 authors: ivasiutkova
