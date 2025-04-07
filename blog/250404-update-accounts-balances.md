@@ -22,7 +22,7 @@ As a result, you will also see some changes to how we present data for the follo
 
 - **Xero**: _Income_ and _Expense_ accounts now return a `currentBalance` value instead of `null`.
 - **Dynamics 365 BC**: accounts with `isBankAccount: true` now return a `currentBalance` value instead of `null`.
-- **Sage50**: accounts with `isBankAccount: true` now return a `currentBalance` in bank account’s currency.
+- **Sage 50**: accounts with `isBankAccount: true` now return a `currentBalance` in bank account’s currency.
 
 ## Who is this relevant for?
 
