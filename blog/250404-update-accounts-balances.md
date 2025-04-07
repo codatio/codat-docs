@@ -26,7 +26,10 @@ As a result, you will also see some changes to how we present data for the follo
 
 ## Who is this relevant for?
 
-This improvement applies to all clients using our **Xero**, **NetSuite**, **Dynamics 365 BC**, **Sage Intacct**, **Sage 50**, **Sage 200**, and **Zoho Books** integrations that utilize the `currentBalance` field of our [Account](/lending-api#/schemas/AccountingAccount) (also known as Chart of Accounts) data type as part of their integration or financial reporting setup. 
+This improvement is relevant to clients who: 
+
+- Use our Xero, NetSuite, Dynamics 365 BC, Sage Intacct, Sage 50, Sage 200, or Zoho Books integrations, **and**
+- Use the `currentBalance` field of our [Account](/lending-api#/schemas/AccountingAccount) (also known as Chart of Accounts) data type as part of their setup. 
 
 ## How to get started?
 
