@@ -16,9 +16,9 @@ We have standardized the way we convert the `currentBalance` signage (signum) of
 - _Asset_ and _Expense_ accounts now show positive `currentBalance` when in debit.
 - _Income_, _Liability_, and _Equity_ accounts now show positive `currentBalance` when in credit.
 
-These changes ensure consistent interpretation of balances across integrations, improving accuracy in reporting and analysis.
+These changes apply to our **entire solution suite** and ensure consistent interpretation of balances across integrations, improving accuracy in reporting and analysis.
 
-As a result, you will notice some changes to how we present data for the following integrations: 
+As a result, you will see some changes to how we present data for the following integrations: 
 
 - **Xero**: _Income_ and _Expense_ accounts now return a `currentBalance` value instead of `null`.
 - **Dynamics 365 BC**: accounts with `isBankAccount: true` now return a `currentBalance` value instead of `null`.
