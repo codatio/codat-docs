@@ -1,6 +1,6 @@
 ---
 title: "2025-07-10: NetSuite: Deprecation of foreign currency support in Journal Entries"
-date: "2025-04-04"
+date: "2025-04-07"
 tags: ["Deprecation", "NetSuite"]
 authors: ivasiutkova
 ---
