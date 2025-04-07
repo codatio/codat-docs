@@ -1,5 +1,5 @@
 ---
-title: "Standardized signage in account current balance"
+title: "Account current balance: standardized signage"
 date: "2025-04-07"
 tags: ["Product", "Update","Xero","NetSuite","Dynamics 365 BC","Sage Intacct", "Sage 50", "Sage 200", "Zoho Books"]
 authors: ivasiutkova
@@ -30,4 +30,4 @@ This improvement is relevant for all clients that use the `currentBalance` field
 
 ## How to get started?
 
-The update is already available for all clients. To reflect the changes in the data, schedule a Chart of Accounts data sync. 
+The update is already available to all clients. To reflect the changes in the data, schedule a Chart of Accounts data sync. 
