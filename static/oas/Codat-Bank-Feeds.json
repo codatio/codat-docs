@@ -4932,6 +4932,11 @@
             "type": "string",
             "nullable": true,
             "description": "Unique ID for the target account"
+          },
+          "feedStartDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "nullable": true,
+            "description": "The date from which bank transactions can be provided to the platform."
           }
         },
         "required": [
