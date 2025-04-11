@@ -9,6 +9,12 @@ On **April 14, 2025**, we will update the way we display account current balance
 
 <!--truncate-->
 
+:::note Updated April 11, 2025
+
+This page has been updated to reflect the change to the default state of Xero Income and Expense accounts current balance..
+
+:::
+
 ## What's new?
 
 We have standardized the way we convert the `currentBalance` signage (signum) of our [Account](/lending-api#/schemas/AccountingAccount) data type across our **Xero**, **NetSuite**, **Dynamics 365 BC**, **Sage Intacct**, **Sage 50**, **Sage 200**, and **Zoho Books** integrations:
