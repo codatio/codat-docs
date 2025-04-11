@@ -20,9 +20,13 @@ On **April 14, 2025**, we will enable this change for our clients. It applies to
 
 As a result, you will also see some changes to how we present data for the following integrations: 
 
-- **Xero**: _Income_ and _Expense_ accounts now return a `currentBalance` value instead of `null`.
 - **Dynamics 365 BC**: accounts with `isBankAccount: true` now return a `currentBalance` value instead of `null`.
 - **Sage 50**: accounts with `isBankAccount: true` now return a `currentBalance` in bank account’s currency.
+
+As part of this product update you can also apply for the following change:
+
+- **Xero**: _Income_ and _Expense_ accounts to return a `currentBalance` value instead of `null`. _Please contact your Account Manager to enable this change_.
+
 
 ## Who is this relevant for?
 
