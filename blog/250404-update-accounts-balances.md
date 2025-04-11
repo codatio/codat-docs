@@ -11,7 +11,7 @@ On **April 14, 2025**, we will update the way we display account current balance
 
 :::note Updated April 11, 2025
 
-This page has been updated to reflect the change to the default state of Xero Income and Expense accounts current balance..
+This page has been updated to reflect the change to the default state of Xero Income and Expense accounts current balance.
 
 :::
 
