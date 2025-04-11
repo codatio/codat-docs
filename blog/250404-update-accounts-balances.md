@@ -11,7 +11,7 @@ On **April 14, 2025**, we will update the way we display account current balance
 
 :::note Updated April 11, 2025
 
-This page has been updated to reflect the change to the default state of Xero Income and Expense accounts current balance.
+This page has been updated to reflect that you can elect to enable the change to the default state of current balance for Xero's _Income_ and _Expense_ accounts.
 
 :::
 
@@ -29,9 +29,11 @@ As a result, you will also see some changes to how we present data for the follo
 - **Dynamics 365 BC**: accounts with `isBankAccount: true` now return a `currentBalance` value instead of `null`.
 - **Sage 50**: accounts with `isBankAccount: true` now return a `currentBalance` in bank account’s currency.
 
-As part of this product update you can also apply for the following change:
+You can also choose to opt in to the following change in presenting data: 
 
-- **Xero**: _Income_ and _Expense_ accounts to return a `currentBalance` value instead of `null`. _Please contact your Account Manager to enable this change_.
+- **Xero**: _Income_ and _Expense_ accounts to return a `currentBalance` value instead of `null`.
+
+Let your Account Manager know if you want to enable this change.
 
 ## Who is this relevant for?
 
@@ -43,3 +45,5 @@ This improvement is relevant to clients who:
 ## How to get started?
 
 The update will be enabled for all clients on **April 14, 2025**. To reflect the changes in the data, schedule a Chart of Accounts data sync after that date. 
+
+If you want to enable the change to Xero's _Income_ and _Expense_ account `currentBalance`, let your Account Manager know. 
