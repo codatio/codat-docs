@@ -22,6 +22,10 @@ You might need to request permission to install the connector from your IT depar
 
 Yes. The QBD connector can read data that is dated from 1 January, 1980 onwards only. Data older than this can't be read using the integration.
 
+## Why do I see gaps in financial reports?
+
+By default, we read the data types used in financial reports in 3-month batches to reduce the number of requests made to QBD. As a result, the data we use in reports is complete but aggregated into 3-month periods. If you need a month-by-month breakdown of the financial reports, request them from Codat's [Support](mailto:support@codat.io) team.
+
 ## What does the "Waiting for asynchronous response from third party" status mean?
 
 When a data type sync is listed as `Fetching` with the additional `Waiting for asynchronous response from third party` message, we try to surface the associated issue in **Companies > Company > Data history** of the [Codat Portal](https://app.codat.io) and in the `connectionInfo` property of our [Get connection](https://docs.codat.io/platform-api#/operations/get-connection) endpoint. 
