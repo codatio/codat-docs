@@ -11,7 +11,7 @@ On **April 14, 2025**, we will update the way we display account current balance
 
 :::note Updated April 11, 2025
 
-This page has been updated to reflect that you can elect to enable the change to the default state of current balance for Xero's _Income_ and _Expense_ accounts.
+This page has been updated to reflect that you can choose whether to enable the change to the `currentBalance` value returned by Xero's _Income_ and _Expense_ accounts.
 
 :::
 
