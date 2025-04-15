@@ -154,12 +154,13 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 
 |Integration          | expense-transactions | reimbursable-expense-transactions | transfer-transactions | adjustment-transactions |
 |---------------------|----------------------|-----------------------------------|-----------------------|-------------------------|
-| Xero                | ✔️                  |                                   | ✔️                    | ✔️                     | 
-| QuickBooks   Online | ✔️                  | ✔️                                | ✔️                   | ✔️                      | 
 | Dynamics   365      | ✔️                  |                                   |                       | ✔️                      |
+| FreeAgent           | ✔️                  | ✔️                                | ✔️                   |                         |
 | Oracle   NetSuite   | ✔️                  | ✔️                                |                      |                          |             
 | QuickBooks Desktop  | ✔️                  | ✔️                                | ✔️                   | ✔️                      |
-| FreeAgent           | ✔️                  | ✔️                                | ✔️                   |                         |   
+| QuickBooks   Online | ✔️                  | ✔️                                | ✔️                   | ✔️                      |
+| Sage Intacct        | ✔️ (credit card only)                  |                                   |                       |                         | 
+| Xero                | ✔️                  |                                   | ✔️                    | ✔️                     | 
 | Zoho Books          | ✔️                  | ✔️                                |                      |                          |   
 </details>
 
@@ -168,12 +169,13 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 
 | Integration                   | Payment | Refund                | Reward                | Chargeback             |
 |---------------------|---------|-----------------------|-----------------------|------------------------|
-| Xero                | ✔️     | ✔️                    | ✔️                    | ✔️                    |
-| QuickBooks   Online | ✔️     | ✔️                    | ✔️                    | ✔️                    |
 | Dynamics   365      | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| FreeAgent           | ✔️     |                       |                        |                       | 
 | Oracle   NetSuite   | ✔️     | ✔️                    | ✔️                    | ✔️                    |
 | QuickBooks Desktop  | ✔️     | ✔️ (credit card only) | ✔️ (credit card only) | ✔️ (credit card only) |
-| FreeAgent           | ✔️     |                       |                        |                       |            
+| QuickBooks   Online | ✔️     | ✔️                    | ✔️                    | ✔️                    |
+| Sage Intacct  | ✔️ (credit card only)    | ✔️ (credit card only) |            |                       |
+| Xero                | ✔️     | ✔️                    | ✔️                    | ✔️                    |           
 | Zoho Books          | ✔️     |                       |                        |                       |      
 </details>
 
