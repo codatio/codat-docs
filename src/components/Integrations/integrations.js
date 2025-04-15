@@ -18,12 +18,13 @@ export const integrationsFilterPayroll = [
 ];
 
 export const integrationsFilterExpenses = [
-  "QuickBooks Online",
-  "Xero",
-  "Oracle NetSuite",
-  "Dynamics 365 Business Central",
-  "QuickBooks Desktop",
   "FreeAgent",
+  "Dynamics 365 Business Central",
+  "Oracle NetSuite",
+  "QuickBooks Desktop",
+  "QuickBooks Online",
+  "Sage Intacct",
+  "Xero",
   "Zoho Books",
 ];
 
