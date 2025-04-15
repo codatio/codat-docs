@@ -68,6 +68,11 @@ module.exports = [
   },
   {
     type: "doc",
+    label: "Sage Intacct",
+    id: "integrations/accounting/sage-intacct/accounting-sage-intacct",
+  },
+  {
+    type: "doc",
     label: "Xero",
     id: "integrations/accounting/xero/accounting-xero",
   },
