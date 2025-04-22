@@ -52,28 +52,235 @@ export const integrationsFilterBillPayAsync = [
   "Xero",
 ];
 
-export const integrationsFilterSpendInsights = [
-  "FreeAgent",
-  "FreshBooks",
-  "Dynamics 365 Business Central",
-  "Exact Online",
-  "MYOB Business",
-  "Oracle NetSuite",
-  "QuickBooks Desktop",
-  "QuickBooks Online",
-  "Sage 200 Standard",
-  "Sage 50",
-  "Sage Business Cloud Accounting",
-  "Sage Intacct",
-  "Xero",
-];
-
 export const integrationsFilterBillPaySync = [
   "Xero",
   "QuickBooks Online",
   "FreeAgent",
   "Oracle NetSuite",
   "Zoho Books"
+];
+
+export const spendInsightsDirectIntegrations = [
+  {
+    "name": "Dynamics 365 Business Central",
+    "to": "https://help.codat.io/integrations/dynamics-bc/overview",
+    "sourceType": "accounting",
+    "tags": ["Premium"],
+    "img": "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png"
+  },
+  {
+    "name": "Exact Online",
+    "to": "https://help.codat.io/integrations/exact/overview",
+    "sourceType": "accounting",
+    "tags": ["NL", "UK"],
+    "img": "https://static.codat.io/public/officialLogos/Square/B0FF8466-1421-415B-A551-1DC3B73006F4.png"
+  },
+  {
+    "name": "FreeAgent",
+    "to": "https://help.codat.io/integrations/freeagent/overview",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/3DA57C23-A4FA-4BC8-8C02-A7A686ED8B36.png"
+  },
+  {
+    "name": "FreshBooks",
+    "to": "https://help.codat.io/integrations/freshbooks/overview",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/C08D614F-CBA9-4D30-ADF8-DCCE4F6AE25D.png"
+  },
+  {
+    "name": "MYOB Business",
+    "to": "https://help.codat.io/integrations/myob/overview",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/00812DF4-8A0F-4F06-9566-16E5CA1346AE.png"
+  },
+  {
+    "name": "Oracle NetSuite",
+    "to": "https://help.codat.io/integrations/netsuite/overview",
+    "sourceType": "accounting",
+    "tags": ["Premium"],
+    "img": "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png"
+  },
+  {
+    "name": "QuickBooks Desktop",
+    "to": "https://help.codat.io/integrations/qb-desktop/overview",
+    "sourceType": "accounting",
+    "tags": ["Premium", "On-premise"],
+    "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
+    "name": "QuickBooks Online",
+    "to": "https://help.codat.io/integrations/qb-online/overview",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png"
+  },
+  {
+    "name": "Sage 200 Standard",
+    "to": "https://help.codat.io/integrations/sage-200/overview",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
+  },
+  {
+    "name": "Sage 50",
+    "to": "https://help.codat.io/integrations/sage-50/overview",
+    "sourceType": "accounting",
+    "tags": ["Premium", "On-premise", "UK", "Ireland"],
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
+  },
+  {
+    "name": "Sage Business Cloud Accounting",
+    "to": "https://help.codat.io/integrations/sage-bc/overview",
+    "sourceType": "accounting",
+    "tags": ["UK", "US", "Ireland", "Canada", "France", "Germany", "Spain"],
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
+  },
+  {
+    "name": "Sage Intacct",
+    "to": "https://help.codat.io/integrations/sage-intacct/overview",
+    "sourceType": "accounting",
+    "tags": ["Premium"],
+    "img": "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png"
+  },
+  {
+    "name": "Workday",
+    "to": "https://help.codat.io/integrations/workday/overview",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/285ABF36-49C5-437B-B210-23270FA87F55.png"
+  },
+  {
+    "name": "Xero",
+    "to": "https://help.codat.io/integrations/xero/overview",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png"
+  },
+];
+
+export const spendInsightsFileUpload = [
+  {
+    "name": "Business ByDesign",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/sap.png"
+  },
+  {
+    "name": "Business One",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/sap.png"
+  },
+  {
+    "name": "Cloud ERP",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/oracle.png"
+  },
+  {
+    "name": "Dynamics 365 Business Central",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/dynamics.png"
+  },
+  {
+    "name": "Dynamics 365 Finance",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/dynamics.png"
+  },
+  {
+    "name": "Dynamics 365 Finance and Operations",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/dynamics.png"
+  },
+  {
+    "name": "Dynamics Great Plains",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/dynamics.png"
+  },
+  {
+    "name": "Dynamics SL",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/dynamics.png"
+  },
+  {
+    "name": "E-Business Suite (EBS)",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/oracle.png"
+  },
+  {
+    "name": "EBS R12",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/oracle.png"
+  },
+  {
+    "name": "ECC",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/sap.png"
+  },
+  {
+    "name": "Epicor",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/eusj.png"
+  },
+  {
+    "name": "Fusion",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/oracle.png"
+  },
+  {
+    "name": "JD Edwards EnterpriseOne",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/oracle-jd-edwards.png"
+  },
+  {
+    "name": "JD Edwards World",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/oracle-jd-edwards.png"
+  },
+  {
+    "name": "NetWeaver",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/sap.png"
+  },
+  {
+    "name": "PeopleSoft",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/omvm.png"
+  },
+  {
+    "name": "S/4HANA Cloud",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/sap.png"
+  },
+  {
+    "name": "S/4HANA On-Premises",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/sap.png"
+  },
+  {
+    "name": "Tyler Tech",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/zkqw.png"
+  },
+  {
+    "name": "Workday",
+    "to": "/spend-insights/resources/link-file",
+    "sourceType": "accounting",
+    "img": "https://static.codat.io/public/officialLogos/Square/workday.png"
+  },
 ];
 
 export const bankfeedsIntegrations = [

@@ -1,7 +1,7 @@
 ---
 title: Spend Insights overview
 sidebar_label: Spend Insights
-description: Manage comprehensive and actionable vendor and spend data from your clients to grow commercial card volume in B2B payments
+description: Manage comprehensive and actionable vendor and spend data from your customers to grow commercial card volume in B2B payments
 displayed_sidebar: spendInsights
 image: "/img/banners/social/spend-insights.png"
 hide_title: true
@@ -12,21 +12,21 @@ banner_title: Spend Insights
 banner_class: supplier-enablement
 banner_icon: "/img/logos/products/logo_supplier_enablement_clear.svg"
 banner_image: "/img/banners/spend-insights.png"
-banner_text: "Manage comprehensive and actionable vendor and spend data from your clients to grow commercial card volume in B2B payments"
+banner_text: "Manage comprehensive and actionable vendor and spend data from your customers to grow commercial card volume in B2B payments"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Spend Insights?
 ---
 
 import { IntegrationsList } from "@components/Integrations";
-import { integrationsFilterSpendInsights } from "@components/Integrations/integrations";
+import { spendInsightsDirectIntegrations, spendInsightsFileUpload } from "@components/Integrations/integrations";
 import ClientLibraries from "@components/ClientLibraries";
 import Products from "@components/Products";
 
 ## What is it?
 
-With our **Spend Insights** solution, you can access your clients' accounts payable data within minutes and gain insights on their spend and supplier activity. 
+With our **Spend Insights** solution, you can access your customers' accounts payable data within minutes and gain insights on their spend and supplier activity. 
 
-Use this detail to identify suppliers eligible for your clients' virtual card programs, run targeted supplier outreach campaigns on your clients' behalf, and grow your commercial card volume in B2B payments. 
+Use this detail to identify suppliers eligible for your customers' virtual card programs, run targeted supplier outreach campaigns on your customers' behalf, and grow your commercial card volume in B2B payments. 
 
 ## Who is it for?
 
@@ -111,15 +111,34 @@ Reach out to your Codat contact to enjoy **Spend Insights**'s rich features and 
 
   Your Analysts and Relationship Managers can easily keep records up to date with a single click, providing ongoing service excellence to your clients.
 
+
+
+1. Share connection
+- share data without providing login credentials
+- limited access ensures BMO can only download specific supplier reports
+
+2. Effortless integration
+- no more static files. data is shared directly from netsuite or quickbooks online
+- reduced data processing time from days to minutes
+
+3. continuous improvement
+- ongoing access to real-time supplier data ensures you maximise returns while we maximise your effort
+
+
+
 ## Data sources
 
 #### Continuous data streaming
 
-<IntegrationsList filter={integrationsFilterSpendInsights} />
+Compel your customers to establish a digital connection with their accounting software and get real-time access to their data at your fingertips for most up-to-date insights.
+
+<IntegrationsList filter={spendInsightsDirectIntegrations} />
 
 #### Guided file upload
 
-here be the paper door connections
+Guide your customers through a straightforward, low-effort process to obtain and upload their supplier and bill information for insightful spend analysis and card offers.
+
+<IntegrationsList filter={spendInsightsFileUpload} />
 
 ---
 
