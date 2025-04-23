@@ -1729,6 +1729,9 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
@@ -1795,6 +1798,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
