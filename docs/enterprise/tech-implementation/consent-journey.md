@@ -1,5 +1,6 @@
 ---
-title: "Consent journey"
+title: "Customer consent journey"
+sidebar_label: "Consent journey"
 description: "Explore best practice and solutions to providing a consent journey for your customers"
 ---
 
@@ -19,7 +20,7 @@ To address this, Codat provides you with Link, our consent and authorization jou
 
 We prepared a consent journey prototype using an example business insights dashboard use case. 
 
-[View the protype in full screen →](https://www.figma.com/proto/YWkKvsYgeHJskPsfuIpy7w/Codat---Generic-bank---Consent-Journey?page-id=601%3A4488&type=design&node-id=641-11421&viewport=1275%2C-2886%2C0.1&t=rrDznIIhmQ8EayyY-1&scaling=contain&starting-point-node-id=641%3A11421&mode=design).
+[View the protype in full screen →](https://www.figma.com/proto/YWkKvsYgeHJskPsfuIpy7w/Codat---Generic-bank---Consent-Journey?page-id=601%3A4488&type=design&node-id=641-11421&viewport=1275%2C-2886%2C0.1&t=rrDznIIhmQ8EayyY-1&scaling=contain&starting-point-node-id=641%3A11421&mode=design)
 
 :::
 
@@ -143,7 +144,7 @@ Link, Codat’s authentication solution, is used at multiple stages of the custo
 
 * **What happens when a customer connects?**
 
-When a customer connects, Codat will start extracting and caching relevant data types. This process will likely take a few minutes but will depend on the amount of historical data being extracted.
+  When a customer connects, Codat will start extracting and caching relevant data types. This process will likely take a few minutes but will depend on the amount of historical data being extracted.
 
 * **How does Codat highlight a completed sync?**
 
