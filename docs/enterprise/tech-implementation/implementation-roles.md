@@ -1,7 +1,7 @@
 ---
-title: "Implementation roles"
+title: "Roles involved in implementation"
 description: "Best practice recommendations for enterprise clients for the stakeholders to involve in the API implementation"
-sidebar_label: "Roles involved"
+sidebar_label: "Role requirements"
 ---
 
 To ensure the successful implementation of an API that consumes external data, it is essential to clearly define a workstream structure and roles and responsibilities for each team member. This way, your organization can achieve a seamless and effective API implementation, setting your solution up for success and internal efficiencies.
