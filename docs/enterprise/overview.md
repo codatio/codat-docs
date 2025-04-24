@@ -3,7 +3,7 @@ title: Enterprise at Codat
 hide_title: true
 hide_description: true
 sidebar_label: Enterprise at Codat
-hide_table_of_contents: false
+hide_table_of_contents: true
 className: index
 tags:
   - Overview
@@ -58,13 +58,13 @@ banner_text: "Gain additional insight into the technology suite and implementati
       View our best practice recommendations for enterprise clients looking to implement, build, and testing Codat's solutions.
     </p>
   </li>
-  <li className="card dark hypercard">
+  <li className="card">
     <div className="header">
       <img
         src="/img/wp-icons/Stack.png"
         className="mini-icon"
       />
-      <h3>API reference</h3>
+      <h3><a href="https://docs.codat.io/using-the-api/overview" target="_blank">API reference</a></h3>
     </div>
     <p>
       Start using the Codat API endpoints through our interactive API references or review our <a href="https://github.com/codatio/oas">Open API Specification</a>.
