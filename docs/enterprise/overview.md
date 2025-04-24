@@ -9,9 +9,9 @@ tags:
   - Overview
   - Codat
   - Home
-banner_title: Build powerful products with financial data
-banner_image: "/img/banners/accounting-json.png"
-banner_text: "Codat solves challenges for developers building the next generation of financial products for small businesses."
+//banner_title: Build powerful products with financial data
+//banner_image: "/img/banners/accounting-json.png"
+//banner_text: "Codat solves challenges for developers building the next generation of financial products for small businesses."
 ---
 
 
