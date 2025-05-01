@@ -457,13 +457,6 @@ This is useful when you want to include summary information to your customers ou
 
 There are three common reasons a write operation might fail. Here's how to handle each scenario:
 
-#### Timeouts
-
-An operation can remain in a `Pending` status indefinitely, such as when a user's on-premise software is offline.
-To handle this, Codat provides a timeout feature.
-
-Use the `timeoutInMinutes` query parameter to set a maximum duration for your write operation. If the operation exceeds the specified time limit, its status will update to `TimedOut`.
-
 #### Invalid Properties
 
 A write operation can fail if a field's value references a non-existent record in the accounting software.
@@ -475,6 +468,13 @@ In some cases, Codat or the integration may throw an error.
 You can inspect the `errorMessage` field for your write operation via the [Get push operation](/platform-api#/operations/get-push-operation) endpoint to diagnose the issue.
 
 If an application error is identified, please raise a support ticket for further assistance.
+
+### Timeouts
+
+An operation can remain in a `Pending` status indefinitely. This is particularly true for our on-premise integrations, such as Sage 50 (UK) and QuickBooks Desktop, where we need to communicate with software running on an end user machine.
+To handle this, Codat provides a timeout feature.
+
+Use the `timeoutInMinutes` query parameter to set a maximum duration for your write operation. If the operation exceeds the specified time limit, its status will update to `TimedOut`. Please note that this only updates the status of the push operation. If the operation has already moved beyond the `Pending` stage when the timeout is reached, the request will still proceed upstream, meaning its perfectly possible to have a push operation which has both timed out, but created or mutated data in the 3rd party software. Whilst the `timeoutInMinutes` feature can be utilized by any integration, its main use-case is push operations to on-premise integrations, where long running `Pending` operations are common. 
 
 ## Consume the data type's write webhook
 
