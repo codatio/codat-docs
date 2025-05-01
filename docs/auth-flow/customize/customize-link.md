@@ -60,7 +60,7 @@ Let your users know that some integrations are not optimized or will not connect
 #### Secured by Codat
 Toggle whether the _Secured by Codat_ logo is shown on your authorization flow.
 
-### Restart journey  
+#### Restart journey  
 Allow your customers to restart the linking process for accounting software in case their first connection attempt fails. The "Try again" button will appear on the error page.
 
 The possibility to restart the linking process for commerce and banking platforms is available by default.
