@@ -446,23 +446,19 @@ Our data deletion endpoints, where available, simply require the record `id`, `c
 :::
 
 
-## Monitor the status of your operation
+## Monitor operation status
 
 Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](#consume-the-data-types-write-webhook) for this purpose. 
 
 You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/platform-api#/operations/get-company-push-history) endpoint, or get a single operation via the [Get push operation](/platform-api#/operations/get-push-operation).
 This is useful when you want to include summary information to your customers outlining the status of their write history.
 
-### Handle unsuccessful write operations
-
-There are three common reasons a write operation might fail. Here's how to handle each scenario:
-
-#### Invalid Properties
+### Invalid properties
 
 A write operation can fail if a field's value references a non-existent record in the accounting software.
 When this happens, use the [Get push operation](/platform-api#/operations/get-push-operation) endpoint to check the validation object for details on what went wrong.
 
-#### Application Errors
+### Application errors
 
 In some cases, Codat or the integration may throw an error.
 You can inspect the `errorMessage` field for your write operation via the [Get push operation](/platform-api#/operations/get-push-operation) endpoint to diagnose the issue.
@@ -471,10 +467,13 @@ If an application error is identified, please raise a support ticket for further
 
 ### Timeouts
 
-An operation can remain in a `Pending` status indefinitely. This is particularly true for our on-premise integrations, such as Sage 50 (UK) and QuickBooks Desktop, where we need to communicate with software running on an end user machine.
-To handle this, Codat provides a timeout feature.
+Write operations can stay in a `Pending` state indefinitely. For example, this can happen with our on-premise integrations like Sage 50 (UK) or QuickBooks Desktop, which rely on software that runs on a user's machine.
 
-Use the `timeoutInMinutes` query parameter to set a maximum duration for your write operation. If the operation exceeds the specified time limit, its status will update to `TimedOut`. Please note that this only updates the status of the push operation. If the operation has already moved beyond the `Pending` stage when the timeout is reached, the request will still proceed upstream, meaning its perfectly possible to have a push operation which has both timed out, but created or mutated data in the 3rd party software. Whilst the `timeoutInMinutes` feature can be utilized by any integration, its main use-case is push operations to on-premise integrations, where long running `Pending` operations are common. 
+To manage this, Codat offers a timeout feature. You can use the `timeoutInMinutes` query parameter to set how long the write operation should wait. If the operation exceeds the time limit, its status will change to `TimedOut`.
+
+This only changes the **status** of the write operation. If the operation has already moved upstream from the `Pending` stage when the timeout was reached, it may still create or change the data in the target software. 
+
+While `timeoutInMinutes` parameter works with any integration, we recommend using it with on-premise integrations, where operation delays are more common.
 
 ## Consume the data type's write webhook
 
