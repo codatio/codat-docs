@@ -199,7 +199,7 @@ By default, this option is set to `false`. Next, use [custom text](/auth-flow/cu
 
 You may want to enable your customers to authorize access to multiple companies within a single accounting platform in the same connection flow. This is relevant for integrations that allow their users to operate several subsidiaries within the same account. 
 
-To provide your customers with this option, set the `enableMultiEntityLinking` option to `true`. Ths will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support. By default, this option is set to `false`.
+To provide your customers with this option, set the `enableMultiEntityLinking` option to `true`. This will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support. By default, this option is set to `false`.
 
 ---
 ## Read next
