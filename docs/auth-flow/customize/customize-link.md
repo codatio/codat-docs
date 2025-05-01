@@ -46,18 +46,24 @@ To enable them to proceed and explore your product, make upfront authorization f
 :::
 
 
-### Retries  
-Allow your customers to restart the linking process for accounting software in case their first connection attempt fails. The "Try again" button will appear on the error page.
-
-The possibility to restart the linking process for commerce and banking platforms is available by default.
-
 ## Onboarding
+
+#### Multi-entity support
+
+You may want to enable your customers to authorize access to multiple companies within a single accounting platform in the same connection flow. This is relevant for integrations that allow their users to operate several subsidiaries within the same account.
+
+This will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support.
 
 #### Mobile support warning  
 Let your users know that some integrations are not optimized or will not connect via mobile when accessing the connection journey on mobile.
 
-#### Powered by Codat
-Toggle whether the _Powered by Codat_ logo is shown on your authorization flow.
+#### Secured by Codat
+Toggle whether the _Secured by Codat_ logo is shown on your authorization flow.
+
+### Restart journey  
+Allow your customers to restart the linking process for accounting software in case their first connection attempt fails. The "Try again" button will appear on the error page.
+
+The possibility to restart the linking process for commerce and banking platforms is available by default.
 
 #### Landing page  
 If enabled, an extra page will appear at the start of Link. The page's content is customizable, which is an excellent opportunity to explain the value of linking. You can customize the header and the body of the message.
