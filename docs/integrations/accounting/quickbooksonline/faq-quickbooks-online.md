@@ -72,3 +72,7 @@ In Codat, QBO's "classes" and "locations" are mapped to [tracking categories](/a
 
 In QuickBooks Online, you can use free text tags to track your transactions and gain additional insights. However, QBO does not surface these tags via their API, so they are not available in Codat.
 
+## Which QuickBooks User Roles can connect? 
+
+In QuickBooks Online, only the `Primary Admin` or User's with a `Company Admin` role have rights to connect apps, so the usre completing the Codat Link flow will need to have either one of these roles.
+
