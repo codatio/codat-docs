@@ -49,7 +49,12 @@ To enable them to proceed and explore your product, make upfront authorization f
 
 Use this setting to let your customers authorize access to multiple companies within a single accounting software in the same connection flow. Enabling this will display an additional subsidiary selection step in the flow.
 
-This setting is only relevant for integrations that allow their users to operate several subsidiaries within the same account.
+This setting is only relevant for integrations that allow their users to operate several subsidiaries within the same account. The screenshot below demonstrates the difference in the connection flow for multi-entity integrations with the setting toggled off (left) and on (right).
+
+<img
+  src="/img/auth-flow/multi-entity-setting-off-on.png"
+  alt="A comparison screenshot that shows the difference of the connection flow with the multi-entity setting toggled off and on. Without the setting, the screen displays a dropdown list of multiple entities found in a NetSuite account, and it's only possible to select one entity. With the setting toggled on, the screen displays a checklist of multiple entities found in a NetSuite account and all entities are selected."
+/>
 
 #### Mobile support warning  
 Let your users know that some integrations are not optimized or will not connect via mobile when accessing the connection journey on mobile.
