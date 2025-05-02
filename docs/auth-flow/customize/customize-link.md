@@ -11,8 +11,6 @@ Our Link settings allow you to configure the authorization process based on your
 
 ## Data connections
 
-### What data are you looking to connect?
-
 #### Sandbox integrations
 
 Allow sandbox and test integrations to appear in the link flow. 
@@ -21,7 +19,7 @@ Some integrations split their production and sandbox data into separate environm
 
 :::note Sandbox integrations in the auth flow
 
-Sandbox integrations appear in the auth flow by default. You can override this behavior by appending the `link.showSandboxIntegrations` query parameter to the Link URL with a value of "true" or "false".
+Sandbox integrations appear in the auth flow by default. You can override this behavior by appending the `link.showSandboxIntegrations` query parameter to the Link URL with a value of `true` or `false`.
 :::
 
 #### Integration categories
@@ -45,14 +43,13 @@ To enable them to proceed and explore your product, make upfront authorization f
 
 :::
 
-
 ## Onboarding
 
 #### Multi-entity support
 
-You may want to enable your customers to authorize access to multiple companies within a single accounting platform in the same connection flow. This is relevant for integrations that allow their users to operate several subsidiaries within the same account.
+Use this setting to let your customers authorize access to multiple companies within a single accounting software in the same connection flow. Enabling this will display an additional subsidiary selection step in the flow.
 
-This will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support.
+This setting is only relevant for integrations that allow their users to operate several subsidiaries within the same account.
 
 #### Mobile support warning  
 Let your users know that some integrations are not optimized or will not connect via mobile when accessing the connection journey on mobile.
@@ -61,9 +58,9 @@ Let your users know that some integrations are not optimized or will not connect
 Toggle whether the _Secured by Codat_ logo is shown on your authorization flow.
 
 #### Restart journey  
-Allow your customers to restart the linking process for accounting software in case their first connection attempt fails. The "Try again" button will appear on the error page.
+Allow your customers to restart the linking process for accounting software in case their first connection attempt fails. Enabling this setting will add a "Try again" button to the connection error page.
 
-The possibility to restart the linking process for commerce and banking platforms is available by default.
+It's possible to restart the linking process for commerce and banking platforms by default and no additional settings are required.
 
 #### Landing page  
 If enabled, an extra page will appear at the start of Link. The page's content is customizable, which is an excellent opportunity to explain the value of linking. You can customize the header and the body of the message.
