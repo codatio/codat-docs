@@ -66,6 +66,7 @@ export const integrationsFilterSpendInsights = [
   "Sage 50",
   "Sage Business Cloud Accounting",
   "Sage Intacct",
+  "Workday",
   "Xero",
 ];
 
@@ -436,6 +437,13 @@ export const accountingIntegrations = [
     to: "/integrations/accounting/wave/accounting-wave",
     sourceType: "accounting",
     img: "https://static.codat.io/public/officialLogos/Square/A28BD05E-21F0-4CD8-A907-1E0464CF8EC5.png",
+  },
+  {
+    name: "Workday",
+    to: "/integrations/accounting/workday/overview",
+    sourceType: "accounting",
+    tags: ["Premium"],
+    img: "https://static.codat.io/public/officialLogos/Square/285ABF36-49C5-437B-B210-23270FA87F55.png",
   },
   {
     name: "Xero",
