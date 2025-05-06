@@ -344,6 +344,11 @@ var acc = [
     to: "/integrations/accounting/wave/accounting-wave",
   },
   {
+    integration: "Workday",
+    platformKey: "rvam",
+    to: "/integrations/accounting/workday/overview",
+  },
+  {
     integration: "Xero",
     platformKey: "gbol",
     to: "/integrations/accounting/xero/accounting-xero",

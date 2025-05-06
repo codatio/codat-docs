@@ -137,6 +137,7 @@ const integrations = [
     ],
   },
   "integrations/accounting/wave/accounting-wave",
+  "integrations/accounting/workday/overview",
   {
     type: "category",
     label: "Xero",
