@@ -3,15 +3,15 @@ title: "Workday"
 description: "Learn about our Workday integration."
 ---
 
-You can access [Spend Insights](/spend-insights/overview) from <a className="external" href="https://www.workday.com/" target="_blank">Workday</a> using our Workday integration.
+You can leverage the actionable vendor and spend activity insights of our [Spend Insights](/spend-insights/overview) solution based on the accounts payable data from our <a className="external" href="https://www.workday.com/" target="_blank">Workday</a> integration.
 
 Workday is a financial management, human capital management, and student information system software provider aimed at the middle-market segment.
 
 ## Getting started
 
-No set up is required to start using Workday, simply enable Workday in the portal to connect your first Workday customers.
+No set up is required to start using Workday. Enable Workday in the [Codat Portal](https://app.codat.io) to connect data from your first Workday customers.
 
-If you need a test instance, you’ll need to go through their partnership program, which includes extensive training as part of the approval process.
+If you require a test Workday instance, you’ll need to go through Workday's partnership program, which includes extensive training as part of the approval process. Reach out to your Codat account manager to discuss this.
 
 ### Enable the Workday integration
 
