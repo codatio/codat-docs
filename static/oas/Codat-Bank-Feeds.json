@@ -137,6 +137,10 @@
     {
       "name": "Company information",
       "description": "Get detailed information about a company from the underlying accounting software."
+    },
+    {
+      "name": "Managed bank feeds",
+      "description": "Manage bank feed syncs for source accounts."
     }
   ],
   "paths": {
@@ -4473,6 +4477,205 @@
           }
         }
       }
+    },
+    "/companies/{companyId}/connections/{connectionId}/bankFeedAccounts/{sourceAccountId}/managedBankFeeds/syncs/{syncId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "sourceAccountId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The ID of the source bank account."
+        },
+        {
+          "name": "syncId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "description": "The ID of the sync."
+        }
+      ],
+      "get": {
+        "tags": [
+          "Managed bank feeds"
+        ],
+        "summary": "Get sync",
+        "operationId": "fetch-managed-bank-feed-sync-by-id",
+        "description": "The _Get sync_ endpoint returns the [sync status](https://docs.codat.io/bank-feeds-api#/schemas/SyncStatusResult) for a given 'syncId'. \n\nA sync is a single execution that fetches bank transactions from a connected bank account and records them in the company's accounting software.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncStatusResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/bankFeedAccounts/{sourceAccountId}/managedBankFeeds/syncs/latest": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "sourceAccountId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The ID of the source bank account."
+        }
+      ],
+      "get": {
+        "tags": [
+          "Managed bank feeds"
+        ],
+        "summary": "Get latest sync",
+        "operationId": "get-latest-managed-bank-feed-sync",
+        "description": "The _Get latest sync_ endpoint returns the status for a given source account's [most recent sync](https://docs.codat.io/bank-feeds-api#/schemas/SyncStatusResult). \n\nA sync is a single execution that fetches bank transactions from a connected bank account and records them in the company's accounting software.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncStatusResult"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/bankFeedAccounts/{sourceAccountId}/managedBankFeeds/syncs": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "sourceAccountId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The ID of the source bank account."
+        }
+      ],
+      "post": {
+        "tags": [
+          "Managed bank feeds"
+        ],
+        "summary": "Run ad-hoc sync",
+        "operationId": "run-managed-bank-feed-adhoc-sync",
+        "description": "The _Run ad-hoc sync_ endpoint immediately runs a sync with a fetch period from the last successful sync to the execution time of the new sync.\n\nA sync is a single execution that fetches bank transactions from a connected bank account and records them in the company's accounting software.\n\nUse either the [_Get latest sync_](https://docs.codat.io/bank-feeds-api#/operations/get-latest-managed-bank-feed-sync) endpoint or the [_Get sync_](https://docs.codat.io/bank-feeds-api#/operations/fetch-managed-bank-feed-sync-by-id) endpoint to get the result of this sync.",
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartScheduledSyncResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
     }
   },
   "webhooks": {
@@ -7288,6 +7491,98 @@
                 ]
               }
             }
+          }
+        }
+      },
+      "StartScheduledSyncResult": {
+        "title": "Start scheduled sync result",
+        "type": "object",
+        "description": "Represents the result of an ad-hoc sync request.",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The unique identifier for the created sync."
+          }
+        }
+      },
+      "SyncStatusResult": {
+        "title": "Sync status",
+        "type": "object",
+        "description": "Represents the status of a managed bank feed sync.",
+        "properties": {
+          "syncId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The unique identifier for the sync."
+          },
+          "clientId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The ID of the client associated with the company that owns the source bank account."
+          },
+          "companyId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The ID of the company that owns the source bank account."
+          },
+          "companyName": {
+            "type": "string",
+            "description": "The name of the company that owns the source bank account."
+          },
+          "dataConnectionId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The ID of the target accounting data connection."
+          },
+          "sourceAccountId": {
+            "type": "string",
+            "description": "The ID of the source bank account from which transactions are fetched."
+          },
+          "periodStartUtc": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The start of the sync period."
+          },
+          "periodEndUtc": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The end of the sync period."
+          },
+          "executionStartUtc": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The UTC timestamp when the sync started executing."
+          },
+          "status": {
+            "type": "string",
+            "description": "The current status of the sync. Known values are `Started`, `Failed`, `SuccessDataPushed`, `SuccessNoDataPushed`, `PartialSuccessDataPushed`.",
+            "example": "SuccessDataPushed"
+          },
+          "executionEndUtc": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "The UTC timestamp when the sync execution ended, if completed (i.e. `status` is any value other than `Started`)."
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true,
+            "description": "Error message if the sync failed."
+          },
+          "errorCode": {
+            "type": "string",
+            "nullable": true,
+            "description": "Error code if the sync failed."
+          },
+          "pushOperationKeys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true,
+            "description": "List of write operation keys associated with the sync, if the sync resulted in write attempts."
           }
         }
       }
