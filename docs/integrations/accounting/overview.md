@@ -41,7 +41,7 @@ Some integrations have more complex requirements in terms of registration and pa
 | [Sage 50 UK & Ireland](https://www.sage.com/en-gb/products/sage-50-accounts/) <br/> `On-premise` | Registration not required | ✅                           | ❌                       |                                                                                                                                                                                                                                                                                              |
 | [Sage 200 Cloud](https://www.sage.com/en-gb/products/sage-200/)                          | Hard                      | ❌                           | ❌                       | New partners are approved manually within several days after registration. Contact your solutions engineer in case of complications.                                                                                                                                                         |
 | [Wave](https://www.waveapps.com/)                                    | Easy                      | ❌                           | ❌                       | Registrations completed before July 2022 need to request partner status via wave@codat.io to access profit & loss and balance sheet report. The reports are enabled by default for registrations completed after July 2022.                                                                  |
-| [Workday](https://www.workday.com/) | Registration not required | ✅ | TBC | Supported for [Spend Insights](/spend-insights/overview) only. |
+| [Workday](https://www.workday.com/) | Registration not required | ✅ | None known | This integration is only supported by our [Spend Insights](/spend-insights/overview) solution. |
 | [Xero](https://www.xero.com/)                                    | Easy                      | ✅                           | ✅                       | You must certify your integration and partner with Xero to connect more than 25 companies. This involves extra technical requirements and, in some cases, additional charges. Use cases such as financial brokering, insurance, FX hending, and lending (in some regions) are not permitted. |
 | [ZohoBooks](https://www.zoho.com/uk/books/)                               | Easy                      | ✅                           | ❌                       |                                                                                                                                                                                                                                                                                              |
 
@@ -77,5 +77,6 @@ Each integration has a unique 4-character key that identifies it in our APIs. Fo
 | Sage Intacct | knfz |
 | Sandbox | mqjo |
 | Wave | pbtz |
+| Workday | rvam |
 | Xero | gbol |
 | Zoho Books | rwuv |
