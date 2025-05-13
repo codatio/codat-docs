@@ -139,7 +139,7 @@ Once the connection is successfully set up, Sage will show a dialog box featurin
 
 For example:
 
-![Sage account selection screen](/img/old/sage-mapping-redirect-screen.PNG "Sage dialog listing the available source bank accounts")
+![Sage account selection screen](/img/integrations/accounting/sage-mapping-redirect-screen.png "Sage dialog listing the available source bank accounts")
 
 The dataConnection status will then change to linked, and which point you will be able to [write bankTransactions](/bank-feeds/pushing-transactions).
 
