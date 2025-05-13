@@ -34,10 +34,10 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Relationship Portal",
+    label: "Codat Portal",
     customProps: {
       hr: true,
     },
-    href: "https://relationships.codat.io/",
+    href: "https://app.codat.io/",
   },
 ];
