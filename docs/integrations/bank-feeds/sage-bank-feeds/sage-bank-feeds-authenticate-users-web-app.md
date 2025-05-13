@@ -99,7 +99,7 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
 3. If the SMB user was successfully authenticated with Codat, Sage displays a dialog listing the available source bank accounts&mdash;the bank account in your application that will send bank feeds. For example:
 
-   ![Sage account selection screen](/img/old/sage-mapping-redirect-screen.PNG "Sage dialog listing the available source bank accounts")
+   ![Sage account selection screen](/img/integrations/accounting/sage-mapping-redirect-screen.png "Sage dialog listing the available source bank accounts")
 
 4. The SMB user selects the bank account they want to use, then clicks **OK**.
 
