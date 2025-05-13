@@ -4511,7 +4511,8 @@
           "Managed bank feeds"
         ],
         "summary": "Get sync",
-        "operationId": "fetch-managed-bank-feed-sync-by-id",
+        "operationId": "get-managed-bank-feed-sync",
+        "x-speakeasy-name-override": "get-sync",
         "description": "The _Get sync_ endpoint returns the [sync status](https://docs.codat.io/bank-feeds-api#/schemas/SyncStatusResult) for a given 'syncId'. \n\nA sync is a single execution that fetches bank transactions from a connected bank account and records them in the company's accounting software.",
         "responses": {
           "200": {
@@ -4572,6 +4573,7 @@
         ],
         "summary": "Get latest sync",
         "operationId": "get-latest-managed-bank-feed-sync",
+        "x-speakeasy-name-override": "get-latest-sync",
         "description": "The _Get latest sync_ endpoint returns the status for a given source account's [most recent sync](https://docs.codat.io/bank-feeds-api#/schemas/SyncStatusResult). \n\nA sync is a single execution that fetches bank transactions from a connected bank account and records them in the company's accounting software.",
         "responses": {
           "200": {
@@ -4634,7 +4636,8 @@
           "Managed bank feeds"
         ],
         "summary": "Run ad-hoc sync",
-        "operationId": "run-managed-bank-feed-adhoc-sync",
+        "operationId": "run-managed-bank-feed-ad-hoc-sync",
+        "x-speakeasy-name-override": "run-ad-hoc-sync",
         "description": "The _Run ad-hoc sync_ endpoint immediately runs a sync with a fetch period from the last successful sync to the execution time of the new sync.\n\nA sync is a single execution that fetches bank transactions from a connected bank account and records them in the company's accounting software.\n\nUse either the [_Get latest sync_](https://docs.codat.io/bank-feeds-api#/operations/get-latest-managed-bank-feed-sync) endpoint or the [_Get sync_](https://docs.codat.io/bank-feeds-api#/operations/fetch-managed-bank-feed-sync-by-id) endpoint to get the result of this sync.",
         "responses": {
           "201": {
@@ -7504,7 +7507,10 @@
             "format": "uuid",
             "description": "The unique identifier for the created sync."
           }
-        }
+        },
+        "required": [
+          "syncId"
+        ]
       },
       "SyncStatusResult": {
         "title": "Sync status",
@@ -7584,7 +7590,19 @@
             "nullable": true,
             "description": "List of write operation keys associated with the sync, if the sync resulted in write attempts."
           }
-        }
+        },
+        "required": [
+          "syncId",
+          "clientId",
+          "companyId",
+          "companyName",
+          "dataConnectionId",
+          "sourceAccountId",
+          "periodStartUtc",
+          "periodEndUtc",
+          "executionStartUtc",
+          "status"
+        ]
       }
     },
     "parameters": {
