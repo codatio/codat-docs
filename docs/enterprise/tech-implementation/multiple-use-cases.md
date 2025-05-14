@@ -4,7 +4,7 @@ description: "See how your organization can use Codat's solutions to implement m
 sidebar_label: "Manage multiple use cases"
 ---
 
-This guide is aimed at Enterprise clients who use Codat's solutions for multiple use cases and covers the following:
+This guide is aimed at enterprise clients who use Codat's solutions for multiple use cases and covers the following:
 
 - Configuration required to address multiple use cases
 - API requests for customers who share data for multiple use cases
@@ -24,19 +24,22 @@ You can apply **sync settings** that fit your use case best to these data types.
 
 Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoind and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint. 
 
-Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use `\\\{productIdentifier}.read.completed` webhooks.
+Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use `\{productIdentifier}.read.completed` webhooks.
 
 ## Assign products to companies
 
-If you have implemented Codat with a central data ingestion layer, you can add products to companies 
-This guidance is suitable for enterprise clients who have implemented Codat with a central data ingestion layer:
+The following guidance is suitable for enterprise clients who have implemented Codat with a central data ingestion layer.
 
-### Creating new companies
-- when a company has a product assigned to it, the product sync settings will apply for the first fetch each time that company has a new connection status of Linked, e.g.;
+### Create new company
+
+You can assign a product to a company at the point of creating that company. As a result, product-level sync settings will apply to the first data fetch every time the company gains a new connection in the `Linked` status. 
 
 ![sync flow for creating new companies with products](/static/img/enterprise/implementation/consent/syncflowproductsnew.png)
 
-### Updating existing companies
+### Update existing company
+
+If you assign a product to an existing company that already has a connection in the `Linked` status, product-level sync settings will apply to the connection once the product is added. 
+
 - when a company has a product assigned to an existing connection with Linked status, the product sync settings will apply upon adding the product 
 
 [Add product to an existing company](/platform-api#/operations/add-product)
@@ -109,9 +112,9 @@ Migration plan for existing companies
 |------|-------------------------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | 1. Disable client level sync settings | No further syncs scheduled, except those already triggered by client-level sync settings | 1. Enable client level sync settings                                           |
 | 2. Wait an hour (or previous most frequent sync schedule) | Allows for any client-level sync settings already in progress to complete      | 1. Enable client level sync settings                                           |
-| 3. Disable previous webhook events        | Events will no longer be sent                                                 | 1. Subscribe to previously disabled webhook events<br>2. Enable client level sync settings                                         |
-| 4. Enable new webhooks (`\{productIdentifier}.read.completed` series) | For standard products - `read.completed` series should be enabled<br>For custom products - `\{productIdentifier}.read.completed` series should be enabled | 1. Unsubscribe from `read.completed` series or `\{productIdentifier}.read.completed` event series<br>2. Subscribe to previously disabled webhook events<br>3. Enable client level sync settings |
-| 5. Add products to all companies using [PUT/companies/product](/platform-api#/operations/add-product)`PUT /\{companyId}/products/\{productIdentifier}` | This will prompt a fetch for the product’s data types                          | 1. `DELETE /\{companyId}/products/\{productIdentifier}`<br>https://docs.codat.io/platform-api#/operations/remove-product<br>2. Unsubscribe from `read.completed` series or `\{productIdentifier}.read.completed` event series<br>3. Subscribe to previously disabled webhook events<br>4. Enable client level sync settings |
+| 3. Disable previous webhook events        | Events will no longer be sent                                                 | 1. Subscribe to previously disabled webhook events<br/>2. Enable client level sync settings                                         |
+| 4. Enable new webhooks (`\{productIdentifier}.read.completed` series) | For standard products - `read.completed` series should be enabled<br/>For custom products - `\{productIdentifier}.read.completed` series should be enabled | 1. Unsubscribe from `read.completed` series or `\{productIdentifier}.read.completed` event series<br/>2. Subscribe to previously disabled webhook events<br/>3. Enable client level sync settings |
+| 5. Add products to all companies using [PUT/companies/product](/platform-api#/operations/add-product)`PUT /\{companyId}/products/\{productIdentifier}` | This will prompt a fetch for the product’s data types                          | 1. `DELETE /\{companyId}/products/\{productIdentifier}`<br/>https://docs.codat.io/platform-api#/operations/remove-product<br/>2. Unsubscribe from `read.completed` series or `\{productIdentifier}.read.completed` event series<br/>3. Subscribe to previously disabled webhook events<br/>4. Enable client level sync settings |
 
 
 ## Additional considerations:
