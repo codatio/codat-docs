@@ -45,6 +45,7 @@ module.exports = [
       "enterprise/tech-implementation/implementation-roles",
       "enterprise/tech-implementation/implementation-workstreams",
       "enterprise/tech-implementation/managing-platform-credentials",
+      "enterprise/tech-implementation/multiple-use-cases",
     ],
     label: "Technical implementation",
   },

@@ -1,40 +1,37 @@
 ---
-
-title: "Managing multiple use cases"
-description: "Using Codat features to implement multiple use cases"
-sidebar_label: "Managing multiple use cases"
-
+title: "Manage multiple use cases with Codat"
+description: "See how your organization can use Codat's solutions to implement multiple use cases"
+sidebar_label: "Manage multiple use cases"
 ---
 
-This guide is aimed at Enterprise clients who use one Codat for multiple use cases (products) and includes:
+This guide is aimed at Enterprise clients who use Codat's solutions for multiple use cases and covers the following:
 
 - Configuration required to address multiple use cases
-- Managing API requests for customers who connect to multiple use cases
-- How Codat’s products features work
+- API requests for customers who share data for multiple use cases
+- Features and specifics of Codat's solutions
+
+## Key terms and features
+
+**Products** are feature packages representing a use case that can be enabled in the Codat Portal. Codat supports:
+
+    - **Standard products** that include data types defined by Codat as relevant and are available globally for all clients, such as Bank Feeds, Expenses, or Lending.
+    - **Custom products** that include data types requested by the client for a bespoke solution and are only available for use by that client. 
+
+You can apply **sync settings** that fit your use case best to these data types. Codat distinguishes:
+
+    - **Client-level** sync settings that are managed via **Settings > Data Types** in the Codat Portal.
+    - **Product-level** sync settings that are mainted by Codat upon client request.
+
+Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoind and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint. 
+
+Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use `{productIdentifier}.read.completed` webhooks.
+
+## Assign products to companies
 
 
-# Key Codat features to manage multiple use cases 
--Products
-:used to described the packages of Codat features which can be enabled/disabled in Codat portal such as Bank Feeds, Sync for Expenses, Lending
--Data object
-:an additional property on the [Create new company](/platform-api#/operations/create-company) 'POST/companies' and [Add product to an existing company](/platform-api#/operations/add-product)
-'PUT/companies/product' requests where you tell Codat which product(s) a company is connecting to
--Webhooks
-:enhanced to give product-specific alerts
-1. standard products 
-2. custom products use {productIdentifier}.read.completed 
-
-# Key terms
-- Products - a defined feature in Codat which represents a use case
-- Standard product = data types defined by Codat and available globally for all clients
-- Custom product = data types defined between Codat and the client, as part of a bespoke product, only available for use by one client 
-1. Client-level sync settings = managed in the Codat portal at Settings > Data Types 
-2. Product-level sync settings = data types managed in backend by Codat
-
-# Using products with companies
 This guidance is suitable for enterprise clients who have implemented Codat with a central data ingestion layer:
 
-## Creating new companies
+### Creating new companies
 - when a company has a product assigned to it, the product sync settings will apply for the first fetch each time that company has a new connection status of Linked, e.g.;
 
 ! [sync flow for creating new companies with products] (/static/img/enterprise/implementation/consent/syncflowproductsnew.png)
@@ -52,10 +49,10 @@ This guidance is suitable for enterprise clients who have implemented Codat with
 
 - to remove a product from a company, use (Remove a product)[/platform-api#/operations/remove-product]
 
-## Refreshing data 
+### Refreshing data 
 Currently the *Refresh Data* button in the portal applies client level sync settings (those defined in the Codat portal > Settings > Data types page, rather than any product level sync settings). 
 
-### Refreshing via API
+#### Refreshing via API
 Previously, Codat supported the queueing of all data types from client level sync settings per company using [Refresh All](/platform-api#/operations/refresh-company-data)'POST/company/{companyId}/refresh/all' or queueing individual data types for a company using [Queue data type](/platform-api#/operations/refresh-data-type) 'POST/company/{companyId/data/queue/{dataType}'.  These remain available to clients using client-level sync settings.
 
 For clients using products, specifically custom products, you can refresh data using [Product Refresh](/platform-api#/operations/refresh-product-data) 'POST/company/{companyId}/product/{productIdentifier}/refresh'
@@ -68,7 +65,7 @@ When refreshing a data for a product, remember:
 
 - If a company has multiple custom products enabled, you refresh data for each product individually
 
-## Managing data types across multiple products
+### Managing data types across multiple products
 Some data types may be required across multiple use cases/products.  Whilst the impact of this will depend on your architecture, Codat distinguishes between product-level syncs to reduce the need for you to build additional caching or data storage on your side.
 
 :::info
@@ -82,7 +79,7 @@ For Product A, the recordsModifiedFrom date will align with its previous sync, c
 :::
  
 
-## Custom product webhooks
+### Custom product webhooks
 '{productIdentifier}.read.completed' events will be sent to the endpoint you’ve defined when Codat has successfully fetched or exhausted fetching the data.  Therefore, unless you are using one of the sub-events such as .successful or .unsuccessful, you will expect to see a status for all data types in that product as Complete or an Error state.  
 
 
@@ -93,14 +90,14 @@ For example:
 
 If Codat continues to receive those error responses from the accounting platform after the 10 retries, i.e. around 12 hours later, that would trigger the dataset to be flagged with FetchError status and read.completed webhook is sent
 
-## Specific events (applies to both read.completed series and '{productIdentifer}.read.completed series')
+### Specific events (applies to both read.completed series and '{productIdentifer}.read.completed series')
 'read.completed.successful' is sent if all data types have a successful sync, but may have validation warnings (not validation errors)
 
 'read.completed.unsuccessful' is sent if Codat has completed the fetch for all data types and some are not successful.
 
 The first webhook received after successful company connection - read.completed.successful.initial or read.completed.successful or read.completed - will present recordsModified as false. The next time you receive an event from the read.completed series i.e. after the next sync at defined frequency, will provide a true reflection of whether any records have been modified since that first fetch of data.
 
-### Considerations when starting to implement multiple use cases
+## Considerations when starting to implement multiple use cases
 The following plan shares the steps to move away from companies syncs being driven by the same client-level sync settings to product-specific sync settings
 
  
