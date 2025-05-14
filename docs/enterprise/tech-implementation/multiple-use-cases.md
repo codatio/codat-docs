@@ -125,11 +125,11 @@ The plan below reflects the activities required to migrate company syncs from us
 
 When planning to implement multi-use case support, assess how this change may impact the following areas:
 
-- Environment management: do you have multiple development, testing, and staging environments?
+- **Environment management:** do you have multiple development, testing, and staging environments?
 
-- Developer apps with partners: will you require more than one developer app for each accounting integration you support?
+- **Developer apps with partners:** will you require more than one developer app for each accounting integration you support?
 
-- Consent journey: how will you ask your customers for additional consent in a transparent and compliant way?
+- **Consent journey:** how will you ask your customers for additional consent in a transparent and compliant way?
 
 For more information on implementing multi-use case support, get in touch with your Codat contact.
 
