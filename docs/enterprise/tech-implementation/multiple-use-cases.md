@@ -88,24 +88,24 @@ Codat ensures that, for product A, the `recordsModifiedFrom` date will align wit
  
 ### Custom product webhooks
 
-Codat's webhook service supports custom `&#123;productIdentifier}.read.completed' event types that will be sent to the configured enpoint when Codat has successfully fetched or exhausted fetching data.  
+Codat's webhook service supports custom `{productIdentifier}.read.completed` event types that will be sent to the configured enpoint when Codat has successfully fetched or exhausted fetching data.  
 
 As a result, unless you are using one of the sub-event types, such as `.successful` or `.unsuccessful`, you will see a `Complete` or `Error` status for all data types in that product.
 
 A data type may end up in an `Error` state in the following scenario: 
 
-1. Codat tries to perform a scheduled daily sync defined by product-level sync settings for a `Linked connection`.
+1. Codat tries to perform a scheduled daily sync defined by product-level sync settings for a `Linked` connection.
 2. The linked accounting software is experiencing downtime.
 3. Codat receives an error response from the accounting software.
 4. Codat retries the data sync up to 10 times over a 12-hour period and continues receiving error responses from the software. 
-5. Codat flags the data set with a `FetchError` status and sends a `read.completed' webhook.
+5. Codat flags the data set with a `FetchError` status and sends a `read.completed` webhook.
 
 ### Specific event types
 
 You may choose to receive webhooks for more specific event types, such as successful or unsuccessful reads:
 
-- 'read.completed.successful' or '&#123;productIdentifer}.read.completed.successful` are sent of all data types have synced successfully. The synced data types may have validation warnings, but not validation errors. 
-- 'read.completed.unsuccessful' or '&#123;productIdentifer}.read.completed.unsuccessful` are sent if Codat has completed the fetch for all data types, but some have completed with errors. 
+- `read.completed.successful` or `{productIdentifer}.read.completed.successful` are sent of all data types have synced successfully. The synced data types may have validation warnings, but not validation errors. 
+- `read.completed.unsuccessful` or `{productIdentifer}.read.completed.unsuccessful` are sent if Codat has completed the fetch for all data types, but some have completed with errors. 
 
 The first webhook you receive after an initial successful company connection (this could be a `read.completed.successful.initial`, `read.completed.successful` or `read.completed` event type) will present `recordsModified` as `false`. Next time you receive a notification from a `read.completed` event, such as after the next scheduled sync, you will see a true reflection of any record modifications since that first fetch of data.
 
@@ -118,7 +118,7 @@ The plan below reflects the activities required to migrate company syncs from us
 |**1** | Disable client-level sync settings |    | No further syncs scheduled except those already triggered| Re-enable client-level sync settings                                           |
 |**2** | Wait for an hour or for the duration of the most frequent previous sync schedule |     | Allows any client-level syncs already in progress to complete      | Re-enable client-level sync settings                                           |
 |**3** | Disable previous webhook configuration        | Event notifications will no longer be sent     |   |1. Resubscribe to previously disabled webhook events<br/>2. Re-enable client-level sync settings                                         |
-|**4** | Configure webhooks for new event types | **Standard products**: subscribe to `read.completed` event types. <br/> **Custom products**: subscribe to product-specific `&#123;productIdentifier}.read.completed` event types. |   | 1. Unsubscribe from the new event types<br/>2.Resubscribe to previously disabled webhook event types<br/>3. Re-enable client-level sync settings |
+|**4** | Configure webhooks for new event types | **Standard products**: subscribe to `read.completed` event types. <br/> **Custom products**: subscribe to product-specific `{productIdentifier}.read.completed` event types. |   | 1. Unsubscribe from the new event types<br/>2.Resubscribe to previously disabled webhook event types<br/>3. Re-enable client-level sync settings |
 |**5** | Add products to all companies using the [Add product](/platform-api#/operations/add-product) endpoint|     | This will trigger a fetch of the product’s data types for the updated companies   | 1. [Remove product](/platform-api#/operations/remove-product) from the company <br/>2. Unsubscribe from the new event type series<br/>3. Resubscribe to previously disabled webhook event types<br/>4. Re-enable client-level sync settings |
 
 #### Additional considerations
