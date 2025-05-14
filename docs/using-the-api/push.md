@@ -510,7 +510,7 @@ In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.
 
 </details>
 
-## Accessing created or updated records
+## Access created or updated records
 
 Codat does not store written records in its cache.
 To retrieve a created or updated record, we recommend setting the sync frequency of the relevant `dataType` to hourly.
