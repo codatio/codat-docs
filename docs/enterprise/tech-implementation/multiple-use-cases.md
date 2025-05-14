@@ -24,28 +24,28 @@ You can apply **sync settings** that fit your use case best to these data types.
 
 Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoind and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint. 
 
-Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use `{productIdentifier}.read.completed` webhooks.
+Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use `\\\{productIdentifier}.read.completed` webhooks.
 
 ## Assign products to companies
 
-
+If you have implemented Codat with a central data ingestion layer, you can add products to companies 
 This guidance is suitable for enterprise clients who have implemented Codat with a central data ingestion layer:
 
 ### Creating new companies
 - when a company has a product assigned to it, the product sync settings will apply for the first fetch each time that company has a new connection status of Linked, e.g.;
 
-! [sync flow for creating new companies with products] (/static/img/enterprise/implementation/consent/syncflowproductsnew.png)
+![sync flow for creating new companies with products](/static/img/enterprise/implementation/consent/syncflowproductsnew.png)
 
-##Updating existing companies
+### Updating existing companies
 - when a company has a product assigned to an existing connection with Linked status, the product sync settings will apply upon adding the product 
 
 [Add product to an existing company](/platform-api#/operations/add-product)
 
-![sync flow for creating new companies with products] (/static/img/enterprise/implementation/consent/syncflowproductsexisting.png)
+![sync flow for creating new companies with products](/static/img/enterprise/implementation/consent/syncflowproductsexisting.png)
 
 - assumes that customer has already given consent which includes data type requirements for the additional use case or product 
 
-! [sync flow for updating existing companies with products] (/static/img/enterprise/implementation/consent/syncflowproductsexisting.png)
+![sync flow for updating existing companies with products] (/static/img/enterprise/implementation/consent/syncflowproductsexisting.png)
 
 - to remove a product from a company, use (Remove a product)[/platform-api#/operations/remove-product]
 
@@ -53,9 +53,9 @@ This guidance is suitable for enterprise clients who have implemented Codat with
 Currently the *Refresh Data* button in the portal applies client level sync settings (those defined in the Codat portal > Settings > Data types page, rather than any product level sync settings). 
 
 #### Refreshing via API
-Previously, Codat supported the queueing of all data types from client level sync settings per company using [Refresh All](/platform-api#/operations/refresh-company-data)'POST/company/{companyId}/refresh/all' or queueing individual data types for a company using [Queue data type](/platform-api#/operations/refresh-data-type) 'POST/company/{companyId/data/queue/{dataType}'.  These remain available to clients using client-level sync settings.
+Previously, Codat supported the queueing of all data types from client level sync settings per company using [Refresh All](/platform-api#/operations/refresh-company-data)'POST/company/\{companyId}/refresh/all' or queueing individual data types for a company using [Queue data type](/platform-api#/operations/refresh-data-type) 'POST/company/\{companyId/data/queue/\{dataType}'.  These remain available to clients using client-level sync settings.
 
-For clients using products, specifically custom products, you can refresh data using [Product Refresh](/platform-api#/operations/refresh-product-data) 'POST/company/{companyId}/product/{productIdentifier}/refresh'
+For clients using products, specifically custom products, you can refresh data using [Product Refresh](/platform-api#/operations/refresh-product-data) 'POST/company/\{companyId}/product/\{productIdentifier}/refresh'
 
 Note that this can't be used for Codat's standard solutions. Please refer to individual solutions' documentation instead. 
 
@@ -80,7 +80,7 @@ For Product A, the recordsModifiedFrom date will align with its previous sync, c
  
 
 ### Custom product webhooks
-'{productIdentifier}.read.completed' events will be sent to the endpoint you’ve defined when Codat has successfully fetched or exhausted fetching the data.  Therefore, unless you are using one of the sub-events such as .successful or .unsuccessful, you will expect to see a status for all data types in that product as Complete or an Error state.  
+'\{productIdentifier}.read.completed' events will be sent to the endpoint you’ve defined when Codat has successfully fetched or exhausted fetching the data.  Therefore, unless you are using one of the sub-events such as .successful or .unsuccessful, you will expect to see a status for all data types in that product as Complete or an Error state.  
 
 
 For example:
@@ -90,7 +90,7 @@ For example:
 
 If Codat continues to receive those error responses from the accounting platform after the 10 retries, i.e. around 12 hours later, that would trigger the dataset to be flagged with FetchError status and read.completed webhook is sent
 
-### Specific events (applies to both read.completed series and '{productIdentifer}.read.completed series')
+### Specific events (applies to both read.completed series and '\{productIdentifer}.read.completed series')
 'read.completed.successful' is sent if all data types have a successful sync, but may have validation warnings (not validation errors)
 
 'read.completed.unsuccessful' is sent if Codat has completed the fetch for all data types and some are not successful.
@@ -110,8 +110,8 @@ Migration plan for existing companies
 | 1. Disable client level sync settings | No further syncs scheduled, except those already triggered by client-level sync settings | 1. Enable client level sync settings                                           |
 | 2. Wait an hour (or previous most frequent sync schedule) | Allows for any client-level sync settings already in progress to complete      | 1. Enable client level sync settings                                           |
 | 3. Disable previous webhook events        | Events will no longer be sent                                                 | 1. Subscribe to previously disabled webhook events<br>2. Enable client level sync settings                                         |
-| 4. Enable new webhooks (`{productIdentifier}.read.completed` series) | For standard products - `read.completed` series should be enabled<br>For custom products - `{productIdentifier}.read.completed` series should be enabled | 1. Unsubscribe from `read.completed` series or `{productIdentifier}.read.completed` event series<br>2. Subscribe to previously disabled webhook events<br>3. Enable client level sync settings |
-| 5. Add products to all companies using [PUT/companies/product](/platform-api#/operations/add-product)`PUT /{companyId}/products/{productIdentifier}` | This will prompt a fetch for the product’s data types                          | 1. `DELETE /{companyId}/products/{productIdentifier}`<br>https://docs.codat.io/platform-api#/operations/remove-product<br>2. Unsubscribe from `read.completed` series or `{productIdentifier}.read.completed` event series<br>3. Subscribe to previously disabled webhook events<br>4. Enable client level sync settings |
+| 4. Enable new webhooks (`\{productIdentifier}.read.completed` series) | For standard products - `read.completed` series should be enabled<br>For custom products - `\{productIdentifier}.read.completed` series should be enabled | 1. Unsubscribe from `read.completed` series or `\{productIdentifier}.read.completed` event series<br>2. Subscribe to previously disabled webhook events<br>3. Enable client level sync settings |
+| 5. Add products to all companies using [PUT/companies/product](/platform-api#/operations/add-product)`PUT /\{companyId}/products/\{productIdentifier}` | This will prompt a fetch for the product’s data types                          | 1. `DELETE /\{companyId}/products/\{productIdentifier}`<br>https://docs.codat.io/platform-api#/operations/remove-product<br>2. Unsubscribe from `read.completed` series or `\{productIdentifier}.read.completed` event series<br>3. Subscribe to previously disabled webhook events<br>4. Enable client level sync settings |
 
 
 ## Additional considerations:
