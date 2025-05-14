@@ -24,7 +24,7 @@ You can apply **sync settings** that fit your use case best to these data types.
 
 Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoind and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint. 
 
-Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use `\{productIdentifier}.read.completed` webhooks.
+Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use `{productIdentifier}.read.completed` webhooks.
 
 ## Assign products to companies
 
@@ -34,7 +34,7 @@ The following guidance is suitable for enterprise clients who have implemented C
 
 You can assign a product to a company at the point of creating that company. As a result, product-level sync settings will apply to the first data fetch every time the company gains a new connection in the `Linked` status. 
 
-![sync flow for creating new companies with products](/img/enterprise/implementation/consent/syncflowproductsnew.png)
+![Sync flow diagram for creating new companies with products](/img/enterprise/implementation/consent/syncflowproductsnew.png)
 
 ### Update existing company
 
@@ -42,17 +42,17 @@ You can assign a product to an existing company that already has a connection in
 
 This scenario assumes your customer has consented to the data type requirements of the additional use case. 
 
-![sync flow for updating existing companies with products] (/img/enterprise/implementation/consent/syncflowproductsexisting.png)
+![Sync flow diagram for updating existing companies with products](/img/enterprise/implementation/consent/syncflowproductsexisting.png)
 
 To remove a product from an existing company, use the [Remove product](/platform-api#/operations/remove-product) endpoint.
 
-### Refresh data 
+## Refresh data 
 
-#### Refresh in the Portal
+### Refresh in the Portal
 
 The **Refresh data** button in the Codat Portal uses the client-level sync settings defined in **Settings > Data types** when a data refresh is triggered. It doesn't use any product-level sync settings that may have been maintained. 
 
-#### Refresh via API
+### Refresh via API
 
 :::warning Not applicable to standard solutions
 
@@ -75,61 +75,62 @@ Some data types may be required and used by multiple use cases and products.  Wh
 
 :::info Data type syncs in streaming or event-based architecture
 
- a team that uses a product's output is likely to expect a complete set of data that covers the period and frequency defined by that team. They don't want to be impacted by data syncs for a shared data type triggered by a different team, such as: 
+If your organization employs several products that share a data type, teams using these products expect to see a complete set of data that covers the sync period and frequency defined by that team. They don't want to be impacted by data syncs triggered by a different team. 
+
+It may be that:
 
 - Product A fetches invoices and payments once a day around 11 PM.
 - Product B fetches payments every hour on the hour.
 
-For Product A, the `recordsModifiedFrom` date will align with its previously scheduled sync, capturing all records modified after 11 PM the day before.
+Codat ensures that, for product A, the `recordsModifiedFrom` date will align with its previously scheduled sync and will capture all records modified after 11 PM the day before.
 
 :::
  
-
 ### Custom product webhooks
-'\{productIdentifier}.read.completed' events will be sent to the endpoint you’ve defined when Codat has successfully fetched or exhausted fetching the data.  Therefore, unless you are using one of the sub-events such as .successful or .unsuccessful, you will expect to see a status for all data types in that product as Complete or an Error state.  
 
+Codat's webhook service supports custom `{productIdentifier}.read.completed' event types that will be sent to the configured enpoint when Codat has successfully fetched or exhausted fetching data.  
 
-For example:
-1. Codat fetches data as per the daily regular sync schedule (defined by the product-level sync settings) for a Linked connection and the accounting platform is experiencing some downtime
-2. Codat receives an error response from the accounting platform
-3. Codat retries up to 10 times on an exponential backoff over a 12 hour period 
+As a result, unless you are using one of the sub-event types, such as `.successful` or `.unsuccessful`, you will see a `Complete` or `Error` status for all data types in that product.
 
-If Codat continues to receive those error responses from the accounting platform after the 10 retries, i.e. around 12 hours later, that would trigger the dataset to be flagged with FetchError status and read.completed webhook is sent
+A data type may end up in an `Error` state in the following scenario: 
 
-### Specific events (applies to both read.completed series and '\{productIdentifer}.read.completed series')
-'read.completed.successful' is sent if all data types have a successful sync, but may have validation warnings (not validation errors)
+1. Codat tries to perform a scheduled daily sync defined by product-level sync settings for a `Linked connection`.
+2. The linked accounting software is experiencing downtime.
+3. Codat receives an error response from the accounting software.
+4. Codat retries the data sync up to 10 times over a 12-hour period and continues receiving error responses from the software. 
+5. Codat flags the data set with a `FetchError` status and sends a `read.completed' webhook.
 
-'read.completed.unsuccessful' is sent if Codat has completed the fetch for all data types and some are not successful.
+### Specific event types
 
-The first webhook received after successful company connection - read.completed.successful.initial or read.completed.successful or read.completed - will present recordsModified as false. The next time you receive an event from the read.completed series i.e. after the next sync at defined frequency, will provide a true reflection of whether any records have been modified since that first fetch of data.
+You may choose to receive webhooks for more specific event types, such as successful or unsuccessful reads:
 
-## Considerations when starting to implement multiple use cases
-The following plan shares the steps to move away from companies syncs being driven by the same client-level sync settings to product-specific sync settings
+- 'read.completed.successful' or '{productIdentifer}.read.completed.successful` are sent of all data types have synced successfully. The synced data types may have validation warnings, but not validation errors. 
+- 'read.completed.unsuccessful' or '{productIdentifer}.read.completed.unsuccessful` are sent if Codat has completed the fetch for all data types, but some have completed with errors. 
 
- 
+The first webhook you receive after an initial successful company connection (this could be a `read.completed.successful.initial`, `read.completed.successful` or `read.completed` event type) will present `recordsModified` as `false`. Next time you receive a notification from a `read.completed` event, such as after the next scheduled sync, you will see a true reflection of any record modifications since that first fetch of data.
 
+## Implementation considerations
 
-Migration plan for existing companies
+The plan below reflects the activities required to migrate company syncs from using client-level sync settings to product-specific sync settings. 
 
-| Step | Impact on Webhooks                                                | Impact on Sync                                                                 | Rollback Actions                                                                                                                   |
-|------|-------------------------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| 1. Disable client level sync settings | No further syncs scheduled, except those already triggered by client-level sync settings | 1. Enable client level sync settings                                           |
-| 2. Wait an hour (or previous most frequent sync schedule) | Allows for any client-level sync settings already in progress to complete      | 1. Enable client level sync settings                                           |
-| 3. Disable previous webhook events        | Events will no longer be sent                                                 | 1. Subscribe to previously disabled webhook events<br/>2. Enable client level sync settings                                         |
-| 4. Enable new webhooks (`\{productIdentifier}.read.completed` series) | For standard products - `read.completed` series should be enabled<br/>For custom products - `\{productIdentifier}.read.completed` series should be enabled | 1. Unsubscribe from `read.completed` series or `\{productIdentifier}.read.completed` event series<br/>2. Subscribe to previously disabled webhook events<br/>3. Enable client level sync settings |
-| 5. Add products to all companies using [PUT/companies/product](/platform-api#/operations/add-product)`PUT /\{companyId}/products/\{productIdentifier}` | This will prompt a fetch for the product’s data types                          | 1. `DELETE /\{companyId}/products/\{productIdentifier}`<br/>https://docs.codat.io/platform-api#/operations/remove-product<br/>2. Unsubscribe from `read.completed` series or `\{productIdentifier}.read.completed` event series<br/>3. Subscribe to previously disabled webhook events<br/>4. Enable client level sync settings |
+|**#** | Activity | Impact on webhooks                                                | Impact on sync                                                                 | Rollback actions                                                                                                                   |
+|----|------|-------------------------------------------------------------------|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+|**1** | Disable client-level sync settings |    | No further syncs scheduled except those already triggered| Re-enable client-level sync settings                                           |
+|**2** | Wait for an hour or for the duration of the most frequent previous sync schedule |     | Allows any client-level syncs already in progress to complete      | Re-enable client-level sync settings                                           |
+|**3** | Disable previous webhook configuration        | Event notifications will no longer be sent     |   |1. Resubscribe to previously disabled webhook events<br/>2. Re-enable client-level sync settings                                         |
+|**4** | Configure webhooks for new event types | Subscribe to `read.completed` series if using **standard products**. <br/> Subscribe to `{productIdentifier}.read.completed` series if using **custom products**. |   | 1. Unsubscribe from the new event types<br/>2.Resubscribe to previously disabled webhook event types<br/>3. Re-enable client-level sync settings |
+|**5** | Add products to all companies using the [Add product](/platform-api#/operations/add-product) endpoint|     | This will trigger a fetch of the product’s data types for the updated companies   | 1. [Remove product](/platform-api#/operations/remove-product) from the company <br/>2. Unsubscribe from the new event type series<br/>3. Resubscribe to previously disabled webhook event types<br/>4. Re-nable client-level sync settings |
 
+#### Additional considerations
 
-## Additional considerations:
-You may want to assess how supporting multiple use cases impacts your
+When planning to implement multi-use case support, assess how this change may impact the following areas:
 
-- Environment management (where enterprise clients typically use multiple development, testing and staging environments)
+- Environment management: do you have multiple development, testing, and staging environments?
 
-- Developer Apps with Partners (for example where one or more developer apps may be required per accounting platform)
+- Developer apps with partners: will you require more than one developer app for each accounting integration you support?
 
-- Consent Journey - how you ask your customers for consent to optimise their customer experience whilst ensuring you ask for consent in a transparent and compliant way
+- Consent journey: how will you ask your customers for additional consent in a transparent and compliant way?
 
-
-For more information, please get in touch with your Codat contact to discuss implementing support for multiple use cases.
+For more information on implementing multi-use case support, get in touch with your Codat contact.
 
  
