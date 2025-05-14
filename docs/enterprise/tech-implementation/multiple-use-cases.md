@@ -34,51 +34,54 @@ The following guidance is suitable for enterprise clients who have implemented C
 
 You can assign a product to a company at the point of creating that company. As a result, product-level sync settings will apply to the first data fetch every time the company gains a new connection in the `Linked` status. 
 
-![sync flow for creating new companies with products](/static/img/enterprise/implementation/consent/syncflowproductsnew.png)
+![sync flow for creating new companies with products](/img/enterprise/implementation/consent/syncflowproductsnew.png)
 
 ### Update existing company
 
-If you assign a product to an existing company that already has a connection in the `Linked` status, product-level sync settings will apply to the connection once the product is added. 
+You can assign a product to an existing company that already has a connection in the `Linked` status using the [Add product](/platform-api#/operations/add-product) endpoint. The product-level sync settings will apply to the connection once the product is added. 
 
-- when a company has a product assigned to an existing connection with Linked status, the product sync settings will apply upon adding the product 
+This scenario assumes your customer has consented to the data type requirements of the additional use case. 
 
-[Add product to an existing company](/platform-api#/operations/add-product)
+![sync flow for updating existing companies with products] (/img/enterprise/implementation/consent/syncflowproductsexisting.png)
 
-![sync flow for creating new companies with products](/static/img/enterprise/implementation/consent/syncflowproductsexisting.png)
+To remove a product from an existing company, use the [Remove product](/platform-api#/operations/remove-product) endpoint.
 
-- assumes that customer has already given consent which includes data type requirements for the additional use case or product 
+### Refresh data 
 
-![sync flow for updating existing companies with products] (/static/img/enterprise/implementation/consent/syncflowproductsexisting.png)
+#### Refresh in the Portal
 
-- to remove a product from a company, use (Remove a product)[/platform-api#/operations/remove-product]
+The **Refresh data** button in the Codat Portal uses the client-level sync settings defined in **Settings > Data types** when a data refresh is triggered. It doesn't use any product-level sync settings that may have been maintained. 
 
-### Refreshing data 
-Currently the *Refresh Data* button in the portal applies client level sync settings (those defined in the Codat portal > Settings > Data types page, rather than any product level sync settings). 
+#### Refresh via API
 
-#### Refreshing via API
-Previously, Codat supported the queueing of all data types from client level sync settings per company using [Refresh All](/platform-api#/operations/refresh-company-data)'POST/company/\{companyId}/refresh/all' or queueing individual data types for a company using [Queue data type](/platform-api#/operations/refresh-data-type) 'POST/company/\{companyId/data/queue/\{dataType}'.  These remain available to clients using client-level sync settings.
+:::warning Not applicable to standard solutions
 
-For clients using products, specifically custom products, you can refresh data using [Product Refresh](/platform-api#/operations/refresh-product-data) 'POST/company/\{companyId}/product/\{productIdentifier}/refresh'
+The methods listed below can't be used to refresh data for Codat's **standard solutions**. Refer to individual solutions' documentation instead.
 
-Note that this can't be used for Codat's standard solutions. Please refer to individual solutions' documentation instead. 
+:::
 
-When refreshing a data for a product, remember:
+If you are using **client-level** sync settings, you can queue a data type refresh with these settings for a company using the [Refresh all data](/platform-api#/operations/refresh-company-data) or [Refresh data type](/platform-api#/operations/refresh-data-type) endpoints.
 
-- If a data sync is already in progress for a custom product, the refresh request will return a Bad request (400) response
+If you are using **product-level** settings applied to **custom products**, you can refresh the data using the [Refresh product data](/platform-api#/operations/refresh-product-data) endpoint. 
 
-- If a company has multiple custom products enabled, you refresh data for each product individually
+When refreshing data for a custom product, remember:
 
-### Managing data types across multiple products
-Some data types may be required across multiple use cases/products.  Whilst the impact of this will depend on your architecture, Codat distinguishes between product-level syncs to reduce the need for you to build additional caching or data storage on your side.
+- If a data sync is already in progress for a custom product, the refresh request will return a `Bad request (400)` response.
+- If a company has multiple custom products assigned, you have to refresh data for each product individually. 
 
-:::info
-For example, if you have implemented using streaming or event based architecture, a consuming product team will likely expect complete set of data to cover same period and frequency for their product and will not want to be impacted by the sync of data for a data type shared across multiple use cases, e.g.:
+### Manage data types in multiple products
 
-Product A: Fetches invoices and payments once daily around 11 PM.
+Some data types may be required and used by multiple use cases and products.  While the impact of this depends on your architecture, Codat supports product-level syncs to reduce your need for additional caching or data storage.
 
-Product B: Fetches payments hourly, on the hour.
+:::info Data type syncs in streaming or event-based architecture
 
-For Product A, the recordsModifiedFrom date will align with its previous sync, capturing all records modified after 11 PM the day before.
+ a team that uses a product's output is likely to expect a complete set of data that covers the period and frequency defined by that team. They don't want to be impacted by data syncs for a shared data type triggered by a different team, such as: 
+
+- Product A fetches invoices and payments once a day around 11 PM.
+- Product B fetches payments every hour on the hour.
+
+For Product A, the `recordsModifiedFrom` date will align with its previously scheduled sync, capturing all records modified after 11 PM the day before.
+
 :::
  
 
