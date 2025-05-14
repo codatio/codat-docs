@@ -24,7 +24,7 @@ You can apply **sync settings** that fit your use case best to these data types.
 
 Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoind and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint. 
 
-Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use the `&#123;productIdentifier}.read.completed` webhooks.
+Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use the `{productIdentifier}.read.completed` webhooks.
 
 ## Assign products to companies
 
