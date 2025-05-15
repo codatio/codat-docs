@@ -20,9 +20,9 @@ This guide is aimed at enterprise clients who use Codat's solutions for multiple
 You can apply **sync settings** that fit your use case best to these data types. Codat distinguishes:
 
     - **Client-level** sync settings that are managed via **Settings > Data Types** in the Codat Portal.
-    - **Product-level** sync settings that are mainted by Codat upon client request.
+    - **Product-level** sync settings that are maintained by Codat upon client request.
 
-Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoind and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint. 
+Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoint and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint. 
 
 Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use the `{productIdentifier}.read.completed` webhooks.
 
@@ -88,7 +88,7 @@ Codat ensures that, for product A, the `recordsModifiedFrom` date will align wit
  
 ### Custom product webhooks
 
-Codat's webhook service supports custom `{productIdentifier}.read.completed` event types that will be sent to the configured enpoint when Codat has successfully fetched or exhausted fetching data.  
+Codat's webhook service supports custom `{productIdentifier}.read.completed` event types that will be sent to the configured endpoint when Codat has successfully fetched or exhausted fetching data.  
 
 As a result, unless you are using one of the sub-event types, such as `.successful` or `.unsuccessful`, you will see a `Complete` or `Error` status for all data types in that product.
 
