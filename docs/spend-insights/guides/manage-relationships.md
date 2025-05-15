@@ -14,8 +14,6 @@ In this guide, we will cover the ways you can request financial data from your c
 
 To create your client as a company in the Relationship Portal and start the onboarding process, click the **Add a company** button.  
 
-![An image of the Relationship Portal user interface with five companies listed as examples and the Add company button highlighted](/img/spend-insights/0054-se-rm-portal-add-company.png)
-
 This will open the company creation window with the following sections:
 
 - **Company info**: use it to add the company name and description.
@@ -26,7 +24,6 @@ Company name and contact name and emails are mandatory fields, but you don't hav
 
 When ready, click the **Add company** button. This creates a record in the Relationship Portal.
 
-![An image of the Relationship Portal user interface with the company creation window open](/img/spend-insights/0062-se-rm-portal-create.png)
 
 ### Request financial data
 

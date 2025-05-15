@@ -1,17 +1,19 @@
 ---
 title: "Customer questions and concerns"
-description: "See how to address customers' commonly asked questions and concerns about sharing information using Codat"
+description: "Address customers' commonly asked questions and concerns about sharing information using Codat"
 sidebar_label: "Questions and concerns"
 displayed_sidebar: spendInsights
 ---
 
-This page provides guidance on communicating the value and benefits of sharing business data to your customers and addressing their concerns and questions. The answers are written from your organization's perspective, so you can share them exactly as they are or amend them to reflect your business processes.
+This page provides guidance on communicating the value and benefits of sharing business data to your customers and addressing their concerns and questions. 
 
-## Communicating benefits
+The answers are written from your organization's perspective, so you can share them exactly as they are or amend them to reflect your business processes.
+
+## Communicate benefits
 
 You can earn higher rebates from cards, streamline your operations, boost working capital, and protect your business against check fraud if you share vendor information with us via a seamless secure digital journey.
 
-### Why share information?
+### Why share information
 
 Your business's up-to-date and detailed spend and supplier information will help us better support your payables optimization journey, driving up the rebates you earn and further boosting your working capital.
 
@@ -24,8 +26,7 @@ As a result, your business can enjoy the following benefits:
 
 1. **Better card program results**
 
-	- Enhance your rebate earnings and optimize your working capital.
-	- Drive higher card acceptance and better payment optimization with deeper supplier and spend insights.
+	Enhance your rebate earnings, optimize your working capital, and drive higher card acceptance and better payment optimization using our deeper supplier and spend insights.
 
 2. **Significant time savings**
 
@@ -41,28 +42,27 @@ As a result, your business can enjoy the following benefits:
 
 5. **Share data securely**
 
-	- Encrypted data sharing in transit and at rest makes digital data sharing more secure than email.
-	- We can't access your login credentials or your account and only use your data to optimize your card program.
+	We can't access your login credentials or your account and only use your data to optimize your card program. Your data is encrypted in transit and at rest, making digital sharing more secure than email.
 
-### How to get started?
+### How to get started
 
 Sharing your information digitally is easy and secure, and you can do so in three easy steps:
 
-1. Ensure you have admin-level access.
+1. **Ensure you have admin-level access**
 
 	You need to be an administrator user (or equivalent) of your accounting software to set up digital data sharing. 
 
-2. Schedule a call with us. 
+2. **Schedule a call with us**
 
 	Get in touch with your representative so that they can guide you through the setup process that takes just a few minutes.
 
-3. Enjoy the benefits!
+3. **Enjoy the benefits!**
 
 	Your representative or account manager will access your business's up-to-date spend analysis reports and optimize your card program to grow your rebates.
 
-## Addressing questions and concerns
+## Address customer queries
 
-### Building trust
+### Build trust
 
 #### Who is Codat? I don't trust them with my data
 
@@ -78,9 +78,11 @@ We provide additional resources that cover Codat's security, functionality, and 
 
 #### Why am I sharing my data?
 
-Sharing a spend file is one of the essential pieces for driving the success of your card program. This information enables us to accurately analyze your spend, identify cardable opportunities within your supply chain and, ultimately, help you achieve your AP goals. This includes improving working capital, preserving float, increasing rebate revenue, or other goals your finance team may have.
+Sharing a spend file is one of the essential pieces for driving the success of your card program. This information enables us to accurately analyze your spend, identify card opportunities within your supply chain and help you achieve your AP goals. This includes improving working capital, preserving float, increasing rebate revenue, or other goals your finance team may have.
 
-However, we understand that it can be challenging to share this information. Sharing this information directly from your financial software is a new option that saves you time and removes the hassle of manually submitting financial data to us. The journey to connect your financial software takes just a couple of minutes and is a faster and more secure way of providing this information. It also means that we will have access to the most up-to-date and relevant financial data to provide our service.
+We understand that it can be challenging to share this information. Sharing this information directly from your financial software is a new option that saves you time and removes the hassle of manually submitting financial data to us. 
+
+The journey to connect your financial software takes just a couple of minutes and is a faster and more secure way of providing this information. It also means that we will have access to the most up-to-date and relevant financial data to provide our service.
 
 #### I don't want anyone to see or change all my data
 
@@ -90,7 +92,13 @@ Our use of your data is subject to your consent, and we aren't permitted to use 
 
 Codat employs a comprehensive data security program. Your data is encrypted in transit using at least TLS 1.2 protocol, and at rest using Advanced Encryption Standard (AES-256) technology. It is protected to the standards required by the General Data Protection Regulation (GDPR). Codat are externally certified to ISO 27001 information security standards. 
 
-### Connection concerns
+:::tip Need more support?
+
+We provide additional details of Codat's security policies and certifications on our dedicated [Trust Center](https://trust.codat.io/).
+
+:::
+
+### Connection process
 
 #### I want to connect but I don't have the right permissions
 
@@ -171,13 +179,19 @@ Let us know the details of your company policy so that we can address specific c
 
 Let us know once you receive approval to establish the digital sharing connection from your IT department. We can provide security documentation to assist your IT team.
 
-#### Your bank is not my primary bank. Do you offer the digital connection service for other banks?
+#### You are not my primary financial service provider. Do you offer the digital connection service for other providers?
 
-That’s okay! We can connect to your accounting software to evaluate suppliers without needing access to another bank’s systems. Other banks currently don’t offer this technology.
+That’s okay! We can connect to your accounting software to evaluate suppliers without needing access to another provider’s systems. Other providers currently don’t offer this technology.
 
 #### I don’t have time for a setup call
 
 The call usually takes 10–30 minutes. Alternatively, we provide self-serve instructions to support the connection process. You can always contact your representative if you need assistance.
+
+:::tip Need more support?
+
+We provide step-by-step walkthroughs on connecting to every accounting software and ERP that Codat supports on our dedicated [Help Hub](https://help.codat.io/resources/about). You can share the relevant software links with your customers. 
+
+:::
 
 ### Value exchange
 

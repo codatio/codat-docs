@@ -11,38 +11,42 @@ module.exports = [
       href: "/spend-insights/overview",
       className: "header top-level-item products product spend-insights",
     },
-    "spend-insights/get-started",
     {
       type: "link",
       label: "Create account",
       customProps: {
         hr: true,
-        section: "User guides",
+        section: "Codat user guides",
       },
       href: "/spend-insights/guides/create-account",
     },
-    "spend-insights/guides/create-customer",
-    "spend-insights/guides/connect-customer",
+    "spend-insights/guides/onboard-customer",
     "spend-insights/guides/analyze-spend",
     {
       type: "link",
-      label: "Customer queries",
+      label: "Questions and concerns",
       customProps: {
         hr: true, 
         section: "Customer support",
       },
       href: "/spend-insights/resources/customer-faqs",
     },
-    "spend-insights/resources/benefits",
-    "spend-insights/resources/concerns",
     "spend-insights/resources/link-software",
     "spend-insights/resources/link-file",  
     {
       type: "link",
-      label: "Relationship Portal",
+      label: "Codat Portal",
       customProps: {
         hr: true,
       },
       href: "https://app.codat.io/",
+    },
+    {
+      type: "link",
+      label: "Connection Help Hub",
+      customProps: {
+        hr: true,
+      },
+      href: "https://help.codat.io/",
     },
   ];

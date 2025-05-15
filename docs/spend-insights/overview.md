@@ -1,20 +1,20 @@
 ---
 title: Spend Insights overview
 sidebar_label: Spend Insights
-description: Manage comprehensive and actionable vendor and spend data from your customers to grow commercial card volume in B2B payments
+description: Grow commercial card volume by accessing deeper actionable vendor and spend insights from your customers
 displayed_sidebar: spendInsights
 image: "/img/banners/social/spend-insights.png"
 hide_title: true
 hide_description: true
-hide_table_of_contents: true
+hide_table_of_contents: false
 tags: [overview, spendinsights]
 banner_title: Spend Insights
 banner_class: supplier-enablement
 banner_icon: "/img/logos/products/logo_supplier_enablement_clear.svg"
 banner_image: "/img/banners/spend-insights.png"
-banner_text: "Manage comprehensive and actionable vendor and spend data from your customers to grow commercial card volume in B2B payments"
-// video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
-// video_text: What is Spend Insights?
+banner_text: "Grow commercial card volume by accessing deeper actionable vendor and spend insights from your customers"
+video_url: "https://www.youtube.com/embed/z-UW2uY7TSo?si=b3_a_vWUo5927MAf"
+video_text: What is Spend Insights?
 ---
 
 import { IntegrationsList } from "@components/Integrations";
@@ -24,13 +24,37 @@ import Products from "@components/Products";
 
 ## What is it?
 
-With our **Spend Insights** solution, you can access your customers' accounts payable data within minutes and gain insights on their spend and supplier activity. 
+With Codat's **Spend Insights** solution, **banks** and other **commercial card issuers** can make their supplier onboarding process simpler and more effective, growing revenue per customer and reducing spend churn when moving banking customers to virtual card products.
 
-Use this detail to identify suppliers eligible for your customers' virtual card programs, run targeted supplier outreach campaigns on your customers' behalf, and grow your commercial card volume in B2B payments. 
+**Spend Insights** makes it easy for your customers to share accounts payable data and enables your Sales Analysts, Relationship Managers, and Card Analysts to access this data within minutes with the ability to carry out ongoing monitoring.
 
-## Who is it for?
+Leverage robust data enriched with deeper personalized insights provided by **Spend Insights** to identify suppliers eligible for your customers' virtual card programs, run targeted supplier outreach campaigns on your customers' behalf, and grow your commercial card volume in B2B payments. 
 
-With **Spend Insights**, we enable banks and other commercial card issuers to make their supplier onboarding process simpler and more effective, helping them grow revenue per customer and reduce spend churn when moving banking customers to their virtual card product.  
+## How does it work?
+
+![A diagram flow of the Spend Insights solution](/img/spend-insights/se-overview-diagram.png)
+
+Our comprehensive Codat Portal provides a rich and insightful platform with dynamic data refreshes to your Analysts and Managers, and Codat's digital connection flow makes data sharing effortless for your customers: 
+
+1. **Relationship and onboarding management**
+
+  Your Analysts and Relationship Managers have the clients they are responsible for and their data at their fingertips in the Codat Portal and can easily onboard new clients. 
+
+2. **Easy and secure authorization journey**
+
+  Your clients share their accounts payable data with Codat directly from their ERP or accounting software within minutes without providing login credentials so that your organization can gain immediate insights. 
+
+3. **Effortless digital connection**
+
+  Codat supports direct data sharing from many popular ERPs and accounting software, removing the need for static files shared via email and reducing data processing time from days to minutes.
+
+4. **Comprehensive financial position and spend analyses**
+
+  Access an insightful view of your clients' financial position and their spend activity, including individual transactions, payment methods, terms, bill status, and more. 
+  
+4. **Ongoing monitoring and data refresh**
+
+  Your Analysts and Relationship Managers can easily keep records up to date with a single click, providing ongoing service excellence to your clients with this real-time supplier data.
 
 ## Why use it?
 
@@ -89,59 +113,20 @@ With **Spend Insights**, we enable banks and other commercial card issuers to ma
 
 </ul>
 
-## How does it work?
-
-![A diagram flow of the Spend Insights solution](/img/spend-insights/se-overview-diagram.png)
-
-Reach out to your Codat contact to enjoy **Spend Insights**'s rich features and dynamic data refreshes through our comprehensive UI:
-
-1. **Relationship and onboarding management**
-
-  Your Analysts and Relationship Managers have the clients they are responsible for and their data at their fingertips and can easily onboard new clients. 
-
-2. **Easy and secure authorization journey**
-
-  Your clients share their accounts payable data with Codat directly from their ERP or accounting software within minutes so that your organization can gain immediate insights. 
-
-3. **Comprehensive financial position and spend analyses**
-
-  Access an insightful view of your clients' financial position and their spend activity, including individual transactions, payment methods, terms, bill status, and more. 
-  
-4. **Ongoing monitoring and data refresh**
-
-  Your Analysts and Relationship Managers can easily keep records up to date with a single click, providing ongoing service excellence to your clients.
-
-
-
-1. Share connection
-- share data without providing login credentials
-- limited access ensures BMO can only download specific supplier reports
-
-2. Effortless integration
-- no more static files. data is shared directly from netsuite or quickbooks online
-- reduced data processing time from days to minutes
-
-3. continuous improvement
-- ongoing access to real-time supplier data ensures you maximise returns while we maximise your effort
-
-
-
 ## Data sources
 
 #### Continuous data streaming
 
 Compel your customers to establish a digital connection with their accounting software and get real-time access to their data at your fingertips for most up-to-date insights.
 
-<IntegrationsList filter={spendInsightsDirectIntegrations} />
+<IntegrationsList integrations={spendInsightsDirectIntegrations} />
 
-#### Guided file upload
+#### Intelligent file upload
 
-Guide your customers through a straightforward, low-effort process to obtain and upload their supplier and bill information for insightful spend analysis and card offers.
+Let us guide your customers through a straightforward, low-effort process to obtain and upload their supplier and bill information for insightful spend analysis and card offers.
 
-<IntegrationsList filter={spendInsightsFileUpload} />
+<IntegrationsList integrations={spendInsightsFileUpload} />
 
----
+## Get started
 
-## Read next
-
-* [Start your journey](/spend-insights/get-started) with Spend Insights
+Ready to use **Spend Insights**? Reach out to your account manager so that we can enable it for you and get you started. In the process, we will set up your Codat instance to match your business processes, company specifics, and requirements. It's that easy.
