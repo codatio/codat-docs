@@ -36,7 +36,7 @@ If you experience compatibility issues with companies using older versions of th
 
 :::caution QuickBooks Desktop for Mac
 
-Codat does not currently support Intuit QuickBooks for Mac OS. Only the QuickBooks Desktop for Windows versions listed above are supported.
+Codat doesn't support Intuit QuickBooks for Mac OS because this functionality is not supported by Intuit's own QuickBooks SDK. Only the QuickBooks Desktop for Windows versions listed above are supported.
 
 :::
 
