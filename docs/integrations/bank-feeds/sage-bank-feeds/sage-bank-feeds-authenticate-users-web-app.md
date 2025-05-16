@@ -83,7 +83,8 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
    ```json
    {
-      "authorizationId": {authId}
+      "authorizationId": {authId},
+      "bankId": {bankId}
    }
    ```
 
