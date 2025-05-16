@@ -1692,6 +1692,9 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
+          },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
           },
@@ -2289,6 +2292,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/Malformed-Query"
           },
           "401": {
             "$ref": "#/components/responses/Unauthorized"
@@ -4849,7 +4855,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Create direct income* endpoint creates a new [direct income](https://docs.codat.io/accounting-api#/schemas/DirectIncome) for a given company's connection.\n\n[Direct incomes](https://docs.codat.io/accounting-api#/schemas/DirectIncome) are sales of items directly to a customer where payment is received at the point of the sale. For example, cash sales of items to a customer, referral commissions, and service fee refunds are considered direct incomes.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create direct income model](https://docs.codat.io/accounting-api#/operations/get-create-directIncomes-model).",
+        "description": "The *Create direct income* endpoint creates a new [direct income](https://docs.codat.io/accounting-api#/schemas/DirectIncome) for a given company's connection.\n\n[Direct incomes](https://docs.codat.io/accounting-api#/schemas/DirectIncome) are incomes received directly from the business' operations at the point of the sale.\n\n**Integration-specific behaviour**\n\nRequired data may vary by integration. To see what data to post, first call [Get create direct income model](https://docs.codat.io/accounting-api#/operations/get-create-directIncomes-model).",
         "operationId": "create-accounting-direct-income"
       }
     },
@@ -14877,7 +14883,7 @@
       },
       "AccountingDirectIncome": {
         "title": "Accounting: Direct income",
-        "description": "> **Language tip:**  Direct incomes may also be referred to as **Receive transactions**, **Receive money transactions**, **Sales receipts**, or **Cash sales** in various accounting software.\n\n## Overview\n\nDirect incomes are incomes received directly from the business' operations. For example, cash sales of items to a customer, referral commissions, and service fee refunds are considered direct incomes.\n\nDirect incomes include: \n\n- Selling an item directly to a contact, and receiving payment at the point of the sale.\n- Refunding an item in cash to a contact.\n- Depositing money into a bank account.\n\nDirect incomes is a child data type of [account transactions](https://docs.codat.io/accounting-api#/schemas/AccountTransaction).\n",
+        "description": "> **Language tip:**  Direct incomes may also be referred to as **Receive transactions**, **Receive money transactions**, **Sales receipts**, or **Cash sales** in various accounting software.\n\n## Overview\n\nDirect incomes are incomes received directly from the business' operations. For example, cash sales of items to a customer, referral commissions, and service fee refunds are considered direct incomes made at the point of sale.\n\nDirect incomes include: \n\n- Selling an item directly to a contact, and receiving payment at the point of the sale.\n- Refunding an item sold at the point of sale in cash to a contact.\n\nDirect incomes is a child data type of [account transactions](https://docs.codat.io/accounting-api#/schemas/AccountTransaction).\n",
         "type": "object",
         "allOf": [
           {

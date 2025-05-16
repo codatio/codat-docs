@@ -15,14 +15,20 @@ import Logo from "@theme/Logo";
 import styles from "./styles.module.css";
 
 export default function BlogSidebarDesktop({ sidebar }: Props): JSX.Element {
-  const isDeprecation = (item) => item.permalink.includes("deprecation") && !item.title.includes("Completed")
+  const isDeprecation = (item) =>
+    item.permalink.includes("deprecation") && !item.title.includes("Completed");
   const deprecations = sidebar.items.filter((item) => isDeprecation(item));
-  const latest = sidebar.items.filter((item) => !isDeprecation(item));
+
+  const isRelevant = (item) => !item.permalink.includes("deprecation");
+  const latest = sidebar.items.filter(
+    (item) => !isDeprecation(item) && isRelevant,
+  );
+  console.log(latest, deprecations, sidebar);
 
   return (
     <aside className={styles.sidebarWrapper}>
       <div className={styles.sidebarLWrapper}>
-        <Logo className={styles.sidebarLOverride}/>
+        <Logo className={styles.sidebarLOverride} />
       </div>
 
       <nav
@@ -38,7 +44,7 @@ export default function BlogSidebarDesktop({ sidebar }: Props): JSX.Element {
         </div>
 
         <ul className={clsx(styles.sidebarItemList, "clean-list")}>
-          {deprecations?.length > 1
+          {deprecations?.length >= 1
             ? deprecations.map((item) => (
                 <li key={item.permalink} className={styles.sidebarItem}>
                   <Link

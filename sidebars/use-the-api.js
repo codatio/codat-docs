@@ -41,6 +41,7 @@ module.exports = [
     collapsed: true,
     items: [
       "using-the-api/push",
+      "using-the-api/write-data/idempotency",
       "using-the-api/upload-attachments",
       "configure/portal/pull-and-push-history",
     ],
@@ -63,7 +64,7 @@ module.exports = [
           "using-the-api/webhooks/migration-guide",
           "using-the-api/webhooks/migration-guide-advanced",
           "using-the-api/webhooks/migrating-to-new-event-types",
-        ]
+        ],
       },
     ],
   },
@@ -84,9 +85,6 @@ module.exports = [
     type: "category",
     label: "Change management",
     collapsed: true,
-    items: [
-      "using-the-api/change-policy",
-      "configure/portal/developers",
-    ],
+    items: ["using-the-api/change-policy", "configure/portal/developers"],
   },
 ];

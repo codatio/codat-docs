@@ -16,10 +16,6 @@ unlisted: true
 
 Use Codat's Commerce API with PrestaShop to securely connect to, retrieve, and view your customers’ commerce transactions.
 
-## Data type coverage
-
-View the coverage of our PrestaShop integration in the <a className="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-integration&integrationKey=zgbz" target="_blank">Data coverage explorer</a>.
-
 ## Set up the integration
 
 See [Set up the PrestaShop integration](/integrations/commerce/prestashop/set-up-prestashop-in-production) to learn how to set up and enable the integration.

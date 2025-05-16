@@ -30,10 +30,7 @@ module.exports = [
     type: "category",
     label: "Advanced features",
     collapsed: true,
-    items: [
-      "commerce/advanced-setup",
-      "commerce/advanced-data-sync",
-    ],
+    items: ["commerce/advanced-setup", "commerce/advanced-data-sync"],
   },
   // {
   //   type: "category",
@@ -80,42 +77,42 @@ module.exports = [
   {
     type: "doc",
     label: "Xero",
-    id: "integrations/accounting/xero/accounting-xero"
+    id: "integrations/accounting/xero/accounting-xero",
   },
   {
     type: "doc",
     label: "MYOB Business",
-    id: "integrations/accounting/myob/accounting-myob"
+    id: "integrations/accounting/myob/accounting-myob",
   },
   {
     type: "doc",
     label: "FreeAgent",
-    id: "integrations/accounting/freeagent/accounting-freeagent"
+    id: "integrations/accounting/freeagent/accounting-freeagent",
   },
   {
     type: "doc",
     label: "Exact Online",
-    id: "integrations/accounting/exact-online/accounting-exact-online"
+    id: "integrations/accounting/exact-online/accounting-exact-online",
   },
   {
     type: "doc",
     label: "Clover",
-    id: "integrations/commerce/clover/commerce-clover"
+    id: "integrations/commerce/clover/commerce-clover",
   },
   {
     type: "doc",
     label: "Lightspeed Restaurant",
-    id: "integrations/commerce/lightspeed-k/commerce-lightspeed-k"
+    id: "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
   },
   {
     type: "doc",
     label: "Shopify",
-    id: "integrations/commerce/shopify/commerce-shopify"
+    id: "integrations/commerce/shopify/commerce-shopify",
   },
   {
     type: "doc",
     label: "Zettle",
-    id: "integrations/commerce/zettle/commerce-zettle"
+    id: "integrations/commerce/zettle/commerce-zettle",
   },
   {
     type: "doc",

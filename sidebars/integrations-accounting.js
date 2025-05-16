@@ -9,9 +9,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
+        label: "Overview",
       },
       "integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral-setup",
       "integrations/accounting/dynamics365businesscentral/test-your-dynamics-365-business-central-integration",
@@ -24,9 +24,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/exact-online/accounting-exact-online',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/exact-online/accounting-exact-online",
+        label: "Overview",
       },
       "integrations/accounting/exact-online/accounting-exact-setup",
       "integrations/accounting/exact-online/exact-online-integration-reference",
@@ -38,9 +38,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/freeagent/accounting-freeagent',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/freeagent/accounting-freeagent",
+        label: "Overview",
       },
       "integrations/accounting/freeagent/accounting-freeagent-setup",
       "integrations/accounting/freeagent/freeagent-integration-reference",
@@ -53,9 +53,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/myob/accounting-myob',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/myob/accounting-myob",
+        label: "Overview",
       },
       "integrations/accounting/myob/accounting-myob-setup",
       "integrations/accounting/myob/myob-integration-reference",
@@ -68,9 +68,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/netsuite/accounting-netsuite',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/netsuite/accounting-netsuite",
+        label: "Overview",
       },
       "integrations/accounting/netsuite/accounting-netsuite-setup",
       "integrations/accounting/netsuite/company-linking-journey",
@@ -85,9 +85,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/quickbooksonline/accounting-quickbooksonline',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/quickbooksonline/accounting-quickbooksonline",
+        label: "Overview",
       },
       "integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup",
       "integrations/accounting/quickbooksonline/faq-quickbooks-online",
@@ -100,9 +100,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/sage-intacct/accounting-sage-intacct',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/sage-intacct/accounting-sage-intacct",
+        label: "Overview",
       },
       "integrations/accounting/sage-intacct/accounting-sage-intacct-setup",
       "integrations/accounting/sage-intacct/sage-intacct-integration-reference",
@@ -114,9 +114,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/sage200/accounting-sage200',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/sage200/accounting-sage200",
+        label: "Overview",
       },
       "integrations/accounting/sage200/accounting-sage200-setup",
       "integrations/accounting/sage200/sage200-limitations",
@@ -128,24 +128,25 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
+        label: "Overview",
       },
       "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud-setup",
       "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud-reference",
     ],
   },
   "integrations/accounting/wave/accounting-wave",
+  "integrations/accounting/workday/overview",
   {
     type: "category",
     label: "Xero",
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/xero/accounting-xero',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/xero/accounting-xero",
+        label: "Overview",
       },
       "integrations/accounting/xero/accounting-xero-setup",
       "integrations/accounting/xero/accounting-xero-test",
@@ -159,17 +160,16 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/accounting/zoho-books/accounting-zoho-books',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/accounting/zoho-books/accounting-zoho-books",
+        label: "Overview",
       },
       "integrations/accounting/zoho-books/accounting-zohobooks-setup",
       "integrations/accounting/zoho-books/zoho-book-limits",
       "integrations/accounting/zoho-books/zoho-books-integration-reference",
     ],
   },
-
-]
+];
 
 const onPremIntegrations = [
   {
@@ -204,7 +204,7 @@ const onPremIntegrations = [
     ],
   },
   "integrations/accounting/offline-connectors",
-]
+];
 
 const sandboxIntegrations = [
   {
@@ -215,7 +215,7 @@ const sandboxIntegrations = [
       section: "Sandbox",
     },
   },
-]
+];
 
 module.exports = [
   {
@@ -233,4 +233,4 @@ module.exports = [
   ...integrations,
   ...onPremIntegrations,
   ...sandboxIntegrations,
-]
+];

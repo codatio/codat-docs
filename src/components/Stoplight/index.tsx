@@ -6,11 +6,13 @@ interface StoplightProps {
 }
 
 const Stoplight = ({ apiDescriptionUrl }: StoplightProps) => {
-  return <API 
-    apiDescriptionUrl={apiDescriptionUrl}
-    router="hash"
-    hideInternal="true"
-  />;
+  return (
+    <API
+      apiDescriptionUrl={apiDescriptionUrl}
+      router="hash"
+      hideInternal="true"
+    />
+  );
 };
 
 export default Stoplight;

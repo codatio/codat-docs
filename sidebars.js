@@ -22,7 +22,6 @@ const integrationsBanking = require("./sidebars/integrations-banking");
 const integrationsCommerce = require("./sidebars/integrations-commerce");
 const integrationsBankFeeds = require("./sidebars/integrations-bank-feeds");
 const enterprise = require("./sidebars/enterprise");
-const smbHelpHub = require("./sidebars/smb-help-hub");
 
 module.exports = {
   docs: [
@@ -38,7 +37,7 @@ module.exports = {
       collapsed: true,
       className: "top-level-item top-level-item-list get-started",
       link: {
-        type: 'doc',
+        type: "doc",
         id: "get-started/overview",
       },
       items: [
@@ -64,7 +63,7 @@ module.exports = {
       collapsed: true,
       className: "top-level-item top-level-item-list usecases",
       link: {
-        type: 'doc',
+        type: "doc",
         id: "usecases/overview",
       },
       items: usecases,
@@ -78,7 +77,7 @@ module.exports = {
       },
       className: "top-level-item top-level-item-list learn",
       link: {
-        type: 'doc',
+        type: "doc",
         id: "core-concepts/overview",
       },
       items: [
@@ -101,7 +100,7 @@ module.exports = {
       collapsed: true,
       className: "top-level-item top-level-item-list config",
       link: {
-        type: 'doc',
+        type: "doc",
         id: "configure/portal/dashboard",
       },
       items: [
@@ -116,19 +115,18 @@ module.exports = {
             "configure/user-management/adding-users",
             "configure/user-management/user-roles",
             "configure/user-management/sso",
-
           ],
         },
-       // {
-       //   type: "category",
-       //   label: "Plans",
-       //   collapsed: true,
-       //   items: [
-       //     "configure/plans/free",
-       //     "configure/create-account",
-       //     "configure/portal/usage-and-billing",
-       //   ],
-       // },
+        // {
+        //   type: "category",
+        //   label: "Plans",
+        //   collapsed: true,
+        //   items: [
+        //     "configure/plans/free",
+        //     "configure/create-account",
+        //     "configure/portal/usage-and-billing",
+        //   ],
+        // },
         "configure/portal/account-management",
       ],
     },
@@ -138,7 +136,7 @@ module.exports = {
       collapsed: true,
       className: "top-level-item top-level-item-list api",
       link: {
-        type: 'doc',
+        type: "doc",
         id: "using-the-api/overview",
       },
       items: useApi,
@@ -149,7 +147,7 @@ module.exports = {
       collapsed: true,
       className: "top-level-item top-level-item-list auth",
       link: {
-        type: 'doc',
+        type: "doc",
         id: "auth-flow/overview",
       },
       items: authFlow,
@@ -169,7 +167,7 @@ module.exports = {
           label: "Bank feeds",
         },
         "integrations/file-upload",
-      ]
+      ],
     },
     ...products,
   ],
@@ -185,7 +183,6 @@ module.exports = {
   integrationsBankFeeds: integrationsBankFeeds,
   enterprise: enterprise,
   spendInsights: spendInsights,
-  smbHelpHub: smbHelpHub,
   //accountingAPI: accountingAPI,
   //bankingAPI: bankingAPI,
   //commerceAPI: commerceAPI,

@@ -9,8 +9,6 @@ In Codat, an integration represents a third-party data source that you can conne
 
 You can connect a company to a single accounting source and a single bank feeds source, and multiple commerce and banking platforms. 
 
-[Explore integration coverage  →](https://knowledge.codat.io/supported-features/accounting).
-
 ## Integration categories
 
 <ul className="card-container">
@@ -96,4 +94,3 @@ You can connect a company to a single accounting source and a single bank feeds 
 ## Read next
 
 - Next concept: [Data type settings](/core-concepts/data-type-settings)
-- [Explore integration coverage](https://knowledge.codat.io/supported-features/accounting)

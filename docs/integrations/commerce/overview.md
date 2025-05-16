@@ -15,8 +15,6 @@ You can connect to the following commerce software using our integrations:
 
 <IntegrationsList sourceType="commerce"/>
 
-To view and compare commerce data coverage by integration, use the <a  class="external" href="https://knowledge.codat.io/supported-features/commerce?view=tab-by-data-type&integrationKey=aiwb&dataType=commerce-companyInfo" target="_blank">Data coverage explorer</a> and select the **Commerce API** solution.
-
 ## Commerce sandbox
 
 For testing and evaluation, you can use our Commerce Sandbox integration to explore the data you can work with. This doesn't need any setup apart from enabling the integration itself.

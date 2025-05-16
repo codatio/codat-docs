@@ -18,10 +18,6 @@ Our banking integration with Plaid lets you securely connect to and retrieve you
 You'll automatically gain access to any new financial institutions that Plaid adds to their platform.
 :::
 
-## Data type coverage
-
-View the coverage of our Plaid integration in the <a className="external" href="https://knowledge.codat.io/supported-features/banking?view=tab-by-integration&integrationKey=suuo" target="_blank">Data coverage explorer</a>.
-
 The following banking data is available through the integration:
 
 - [Banking accounts](/banking-api#/schemas/Account)

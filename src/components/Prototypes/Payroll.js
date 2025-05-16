@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 const defaultComponents = [
   {
@@ -45,18 +45,20 @@ const getAccountsResponse = [
     name: "Payroll Expenses 401k",
     nominalCode: "97",
   },
-]
+];
 
-const ComponentInput = ({component, onClick}) => {
+const ComponentInput = ({ component, onClick }) => {
   if (component.mappedAccount) {
-    return <div className={styles.confirmed}>✅ {component.name} → {component.mappedAccount.name}</div>
+    return (
+      <div className={styles.confirmed}>
+        ✅ {component.name} → {component.mappedAccount.name}
+      </div>
+    );
   }
 
   return (
     <div className="input-row" key={component.id}>
-      <label for={`account-${component.id}`}>
-        {component.name}
-      </label>
+      <label for={`account-${component.id}`}>{component.name}</label>
 
       <input
         list="accounts"
@@ -66,48 +68,59 @@ const ComponentInput = ({component, onClick}) => {
       />
     </div>
   );
-}
+};
 
 const PrototypePayroll = () => {
-  const [ components, setComponents ] = useState(defaultComponents)
+  const [components, setComponents] = useState(defaultComponents);
 
-  const setComponentMapping = component => value => {
-    const newComponents = components
-    const match = getAccountsResponse.find(account => value === account.name)
-    if (!match) return 
+  const setComponentMapping = (component) => (value) => {
+    const newComponents = components;
+    const match = getAccountsResponse.find((account) => value === account.name);
+    if (!match) return;
 
-    const targetIndex = components.findIndex(targetComponent => targetComponent.id === component)
-    newComponents[targetIndex].mappedAccount = match
+    const targetIndex = components.findIndex(
+      (targetComponent) => targetComponent.id === component,
+    );
+    newComponents[targetIndex].mappedAccount = match;
 
-    setComponents([...newComponents])
-  }
+    setComponents([...newComponents]);
+  };
 
-  const categories = Array.from(new Set(components.map(component => component.category)))
+  const categories = Array.from(
+    new Set(components.map((component) => component.category)),
+  );
 
   return (
     <div className="prototype">
       <h4>Example mapping UI</h4>
 
-
       <p>Map your payroll components to a relevant account.</p>
 
-      { categories.map(category => {
+      {categories.map((category) => {
         return (
           <div className={`input-group ${styles.card}`} key={category}>
             <h5 className={styles.category}>{category}</h5>
 
             {components
-              .filter(component => component.category === category)
-              .map((component) => <ComponentInput onClick={e => setComponentMapping(component.id)(e.target.value)} component={component}/>)
-            }
+              .filter((component) => component.category === category)
+              .map((component) => (
+                <ComponentInput
+                  onClick={(e) =>
+                    setComponentMapping(component.id)(e.target.value)
+                  }
+                  component={component}
+                />
+              ))}
           </div>
-        )
+        );
       })}
 
       <datalist id="accounts">
-        {
-          getAccountsResponse.map((account, i) => <option key={i} value={account.name}>{account.nominalCode}</option>)
-        }
+        {getAccountsResponse.map((account, i) => (
+          <option key={i} value={account.name}>
+            {account.nominalCode}
+          </option>
+        ))}
       </datalist>
     </div>
   );

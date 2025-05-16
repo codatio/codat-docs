@@ -31,9 +31,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/commerce/clover/commerce-clover',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/commerce/clover/commerce-clover",
+        label: "Overview",
       },
       "integrations/commerce/clover/set-up-your-clover-integration",
       "integrations/commerce/clover/test-your-clover-integration",
@@ -45,9 +45,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/commerce/lightspeed-k/commerce-lightspeed-k',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+        label: "Overview",
       },
       "integrations/commerce/lightspeed-k/commerce-lightspeed-k-setup",
     ],
@@ -58,9 +58,9 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/commerce/shopify/commerce-shopify',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/commerce/shopify/commerce-shopify",
+        label: "Overview",
       },
       {
         type: "category",
@@ -69,7 +69,7 @@ const integrations = [
         items: [
           "integrations/commerce/shopify/commerce-shopify-public-apps",
           "integrations/commerce/shopify/commerce-shopify-custom-apps",
-        ]
+        ],
       },
       "integrations/commerce/shopify/test-shopify",
     ],
@@ -110,16 +110,16 @@ const integrations = [
     collapsed: true,
     items: [
       {
-        type: 'doc',
-        id: 'integrations/commerce/zettle/commerce-zettle',
-        label: 'Overview'
+        type: "doc",
+        id: "integrations/commerce/zettle/commerce-zettle",
+        label: "Overview",
       },
       "integrations/commerce/zettle/commerce-zettle-setup",
       "integrations/commerce/zettle/test-zettle",
       "integrations/commerce/zettle/zettle-integration-reference",
     ],
   },
-]
+];
 
 module.exports = [
   {
@@ -135,4 +135,4 @@ module.exports = [
     className: "header",
   },
   ...integrations,
-]
+];

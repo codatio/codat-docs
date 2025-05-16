@@ -9,7 +9,15 @@ On **July 01, 2024**, Xero will introduce [new pricing plans](https://www.xero.c
 
 <!--truncate-->
 
-:::note Client impact
+:::info Updated on 12 March, 2025
+
+This page has been updated to add clarifications to the client impact.
+
+:::
+
+:::tip Client impact
+
+Xero's introduction of pricing and plan changes is only applicable to clients in the United Kingdom, Australia, and New Zealand.
 
 Codat doesn't surface `Organisation Classes` data in its standardized `Company profile` data model. As a result, this change only impacts Codat customers who: 
 

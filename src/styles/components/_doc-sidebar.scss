@@ -387,7 +387,11 @@ nav {
 .blog {
   [class^="sidebarItemLink"] {
     color: var(--ifm-font-color-base);
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 

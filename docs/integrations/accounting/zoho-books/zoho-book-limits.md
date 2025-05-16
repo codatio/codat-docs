@@ -28,13 +28,14 @@ The Zoho Books API has the following connection limits and rate limits:
 
 - API daily rate limit
 - Per-minute rate limit
+- Concurrent rate limit
 - Refresh token limit
 
 Our Zoho Books integration works within these limits to minimize the performance impact of reading and writing large volumes of data. To do so, the integration maximises the number of records retrieved per API call for most data types. However, for certain data types, the integration can only fetch a single record for each API call to Zoho Books, impacting performance. This also applies to additional data types where the restrictions on reading reduced datasets described above are removed.
 
-### API daily rate limit
+#### API daily rate limit
 
-The _API daily rate limit_ lets organizations make a limited number of API calls to Zoho Books per day (up to 2,500 or 500 per user, whichever is lower);
+The _API daily rate limit_ lets organizations make a limited number of API calls to Zoho Books per day. The limit varies based on the plan your organization uses (see Zoho Books' [API Call Limit](https://www.zoho.com/books/api/v3/introduction/#api-call-limit)).
 
 If the cumulative number of API calls to the organization you are trying to link to exceeds the daily limit, you might encounter the following issues:
 
@@ -43,13 +44,19 @@ If the cumulative number of API calls to the organization you are trying to link
 
 The daily rate is shared between all API requests made to an organization from all users, and any service providers, such as Codat, that can access data through the Zoho Books API.
 
-### Per-minute rate limit
+#### Per-minute rate limit
 
-Zoho Books can make about 60 API calls per minute—the _per-minute rate limit_.
+Zoho Books usesrs can make about 100 API calls per minute for each organization — the _per-minute rate limit_.
 
 This rate limit can affect the performance of the integration when reading data from and writing to Zoho Books.
 
-### Refresh token limit
+#### Concurrent rate limit
+
+Zoho Books also limits the maximum number of API calls that can be simultaneously active for the same organization using its _concurrent rate limit_. 
+
+The concurrent rate limit varies based on the plan of the organization and is noted in Zoho Books' [Concurrent Rate Limiter](https://www.zoho.com/books/api/v3/introduction/#concurrent-rate-limiter).
+
+#### Refresh token limit
 
 The _refresh token limit_ applies to each user.
 

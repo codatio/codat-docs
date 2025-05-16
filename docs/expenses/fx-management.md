@@ -37,7 +37,7 @@ Expenses includes built-in validations against such scenarios for every platform
 
 Payments are a transaction type that represents regular spend taking place on an account. You can [read more](/expenses/sync-process/expense-transactions#transaction-types) about transaction types used in Expenses. 
 
-In multi-currency scenarios, there are five possible combinations of currencies that participate in a payment:
+In multi-currency scenarios, there are five possible combinations of currencies that participate in a payment. We used an example set of currencies in the table below, and your currency set may differ based on your use case and client base.
 
 | Currency variables       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |--------------------------|------------|------------|------------|------------|------------|
@@ -152,7 +152,7 @@ We validate the multi-currency transactions you write to Expenses to ensure the 
 
 Refunds are a transaction type that represents any refunds and returns on an original transaction. You can [read more](/expenses/sync-process/expense-transactions#transaction-types) about transaction types used in Expenses. 
 
-In multi-currency scenarios, there are five possible combinations of currencies that participate in a refund:
+In multi-currency scenarios, there are five possible combinations of currencies that participate in a refund. We used an example set of currencies in the table below, and your currency set may differ based on your use case and client base.
 
 | Currency variables       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |--------------------------|------------|------------|------------|------------|------------|
@@ -275,6 +275,8 @@ We validate the multi-currency transactions you write to Expenses to ensure the 
 A transfer is the movement of money between two bank accounts. This can be a bank withdrawal, a top-up of a debit card account, or a pay-down of a credit card account. As a result, different variables participate in the possible currency combinations: the company's base currency, and the currencies of the sender and receiver bank accounts. 
 
 You can [read more](/expenses/sync-process/transfer-transactions) about creating a transfer in Expenses. 
+
+In multi-currency scenarios, there are five possible combinations of currencies that participate in a transfer. We used an example set of currencies in the table below, and your currency set may differ based on your use case and client base.
 
 | Currency variables       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 |--------------------------|------------|------------|------------|------------|------------|

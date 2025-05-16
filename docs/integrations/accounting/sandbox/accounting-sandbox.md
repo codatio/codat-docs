@@ -7,10 +7,6 @@ The Codat Sandbox integration contains sample data for developers to test our in
 
 We've tried to make our Sandbox data as varied as possible, and the data sets provide different levels of detail. However, the data is auto-generated and its completeness and accuracy can't be guaranteed.
 
-## Data type coverage
-
-View the coverage of our Sandbox integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=mqjo" target="_blank">Data coverage explorer</a>.
-
 ## Set up the integration
 
 All Codat accounts come with access to our Sandbox integration and it should be enabled by default.

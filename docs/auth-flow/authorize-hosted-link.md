@@ -84,7 +84,7 @@ In this scenario, allow your user to authorize this connection by sending them d
 
 ## Use URL to initiate Link
 
-By default, we enforce additional security measures within Hosted Link. Link URLs have a one-time password (OTP) added as a query parameter to limit the validity and number of uses of these URLs. Contact your account manager if you want to disable these measures. 
+You can request additional security measures within Hosted Link. Link URLs can have a one-time password (OTP) added as a query parameter to limit the validity and number of uses of these URLs. Contact your account manager if you want to enable these measures. 
 
 :::tip Link validity
 Link URLs enhanced by OTPs behave as follows:

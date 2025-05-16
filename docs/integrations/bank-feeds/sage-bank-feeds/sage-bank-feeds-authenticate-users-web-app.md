@@ -72,7 +72,7 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
 ### Your web app redirects the user to the bank account selection screen
 
-1. After a prompt, your web app sends a request to the <a href="https://api.codat.io/swagger/index.html#/Connection/put_companies__companyId__connections__connectionId__authorization"
+1. After a prompt, your web app sends a request to the <a href="https://docs.codat.io/platform-api#/operations/update-connection-authorization"
    target="blank">PUT /authorization</a> endpoint. The `authId` and 'bankId' (both from the URL in step five of the previous procedure) must be supplied in the request body as additional properties:
 
    ```http
@@ -83,7 +83,8 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
    ```json
    {
-      "authorizationId": {authId}
+      "authorizationId": {authId},
+      "bankId": {bankId}
    }
    ```
 
@@ -99,7 +100,7 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
 3. If the SMB user was successfully authenticated with Codat, Sage displays a dialog listing the available source bank accounts&mdash;the bank account in your application that will send bank feeds. For example:
 
-   ![Sage account selection screen](/img/old/sage-mapping-redirect-screen.PNG "Sage dialog listing the available source bank accounts")
+   ![Sage account selection screen](/img/integrations/accounting/sage-mapping-redirect-screen.png "Sage dialog listing the available source bank accounts")
 
 4. The SMB user selects the bank account they want to use, then clicks **OK**.
 

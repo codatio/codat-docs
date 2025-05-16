@@ -8,10 +8,6 @@ You can read accounting data from <a className="external" href="https://www.clea
 
 Clear Books provides online accounting software for UK-based small businesses.
 
-## Data type coverage
-
-View the coverage of our Clear Books integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=jhch" target="_blank">Data coverage explorer</a>.
-
 ## Set up the integration
 
 No application registration is required for the Clear Books integration to work. While linking their data, the SMB user is asked to enter their API key as shown:

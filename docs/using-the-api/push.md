@@ -46,12 +46,6 @@ Codat now refers to push operations as write requests.
 | suppliers        | &#9989; | &#9989; | -       | 
 | transfers        | &#9989; | -       | -       |
 
-:::note Data coverage
-
-View the full details of Codat's support for creating and updating data for each accounting software in our <a class="external" href="https://knowledge.codat.io/supported-features/accounting" target="_blank">Data Coverage Explorer</a>.
-
-:::
-
 ## Process
 To perform a write request, follow these steps:
 
@@ -452,35 +446,34 @@ Our data deletion endpoints, where available, simply require the record `id`, `c
 :::
 
 
-## Monitor the status of your operation
+## Monitor operation status
 
 Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](#consume-the-data-types-write-webhook) for this purpose. 
 
 You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/platform-api#/operations/get-company-push-history) endpoint, or get a single operation via the [Get push operation](/platform-api#/operations/get-push-operation).
 This is useful when you want to include summary information to your customers outlining the status of their write history.
 
-### Handle unsuccessful write operations
-
-There are three common reasons a write operation might fail. Here's how to handle each scenario:
-
-#### Timeouts
-
-An operation can remain in a `Pending` status indefinitely, such as when a user's on-premise software is offline.
-To handle this, Codat provides a timeout feature.
-
-Use the `timeoutInMinutes` query parameter to set a maximum duration for your write operation. If the operation exceeds the specified time limit, its status will update to `TimedOut`.
-
-#### Invalid Properties
+### Invalid properties
 
 A write operation can fail if a field's value references a non-existent record in the accounting software.
 When this happens, use the [Get push operation](/platform-api#/operations/get-push-operation) endpoint to check the validation object for details on what went wrong.
 
-#### Application Errors
+### Application errors
 
 In some cases, Codat or the integration may throw an error.
 You can inspect the `errorMessage` field for your write operation via the [Get push operation](/platform-api#/operations/get-push-operation) endpoint to diagnose the issue.
 
 If an application error is identified, please raise a support ticket for further assistance.
+
+### Timeouts
+
+Write operations can stay in a `Pending` state indefinitely. For example, this can happen with our on-premise integrations like Sage 50 (UK) or QuickBooks Desktop, which rely on software that runs on a user's machine.
+
+To manage this, Codat offers a timeout feature. You can use the `timeoutInMinutes` query parameter to set how long the write operation should wait. If the operation exceeds the time limit, its status will change to `TimedOut`.
+
+This only changes the **status** of the write operation. If the operation has already moved upstream from the `Pending` stage when the timeout was reached, it may still create or change the data in the target software. 
+
+While `timeoutInMinutes` parameter works with any integration, we recommend using it with on-premise integrations, where operation delays are more common.
 
 ## Consume the data type's write webhook
 
@@ -517,7 +510,7 @@ In the **Settings > Webhooks > Events > Configure consumer** [view](https://app.
 
 </details>
 
-## Accessing created or updated records
+## Access created or updated records
 
 Codat does not store written records in its cache.
 To retrieve a created or updated record, we recommend setting the sync frequency of the relevant `dataType` to hourly.

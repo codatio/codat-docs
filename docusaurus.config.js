@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 import { ProvidePlugin } from "webpack";
 
@@ -14,11 +14,11 @@ import path from "path";
 import navbar from "./nav.config";
 import redirects from "./redirects.config";
 
-import { generateAPISitemaps} from "./src/utils/oas-sitemap.js"
+import { generateAPISitemaps } from "./src/utils/oas-sitemap.js";
 
 const BASE_URL = "";
 
-require('dotenv').config()
+require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -34,31 +34,31 @@ const config = {
   projectName: "codat-docs",
 
   //onBrokenLinks: 'throw',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: "warn",
   //onBrokenMarkdownLinks: 'warn',
-  onBrokenAnchors: 'warn',
+  onBrokenAnchors: "warn",
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   customFields: {
-    'DEVELOPMENT': process.env.NODE_ENV === 'development',
-    'ZENDESK_KEY': process.env.ZENDESK_KEY,
-    'FEATURE_DEV_FLAG': process.env.FEATURE_DEV_FLAG,
-    'FEATURE_NEW_PRODUCTS_FLAG': process.env.FEATURE_NEW_PRODUCTS_FLAG,
+    DEVELOPMENT: process.env.NODE_ENV === "development",
+    ZENDESK_KEY: process.env.ZENDESK_KEY,
+    FEATURE_DEV_FLAG: process.env.FEATURE_DEV_FLAG,
+    FEATURE_NEW_PRODUCTS_FLAG: process.env.FEATURE_NEW_PRODUCTS_FLAG,
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           routeBasePath: "/",
-          sidebarPath: './sidebars.js',
-          editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || 'main'}/`,
+          sidebarPath: "./sidebars.js",
+          editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || "main"}/`,
           exclude: ["README.md"],
           lastVersion: "current",
           versions: {
@@ -74,27 +74,24 @@ const config = {
           blogDescription: "Engineering and product updates from Codat.",
           postsPerPage: 10,
           routeBasePath: "/updates",
-          blogSidebarCount: 8,
+          blogSidebarCount: 15,
           blogSidebarTitle: "Latest updates",
-          editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || 'main'}/`,
+          editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || "main"}/`,
         },
         theme: {
-          customCss: './src/styles/custom.scss',
+          customCss: "./src/styles/custom.scss",
         },
         sitemap: {
           createSitemapItems: async (params) => {
             const { defaultCreateSitemapItems, routes, ...rest } = params;
 
-            const apiRoutes = generateAPISitemaps()
+            const apiRoutes = generateAPISitemaps();
 
-            const newRoutes = [
-              ...routes,
-              ...apiRoutes
-            ]
-            
+            const newRoutes = [...routes, ...apiRoutes];
+
             const items = await defaultCreateSitemapItems({
-              routes: newRoutes, 
-              ...rest
+              routes: newRoutes,
+              ...rest,
             });
 
             return items;
@@ -106,8 +103,8 @@ const config = {
 
   plugins: [
     "docusaurus-plugin-sass",
-    '@docusaurus/theme-live-codeblock',
-    'docusaurus-plugin-image-zoom',
+    "@docusaurus/theme-live-codeblock",
+    "docusaurus-plugin-image-zoom",
 
     [
       "docusaurus-plugin-module-alias",
@@ -115,7 +112,7 @@ const config = {
         alias: {
           "styled-components": path.resolve(
             __dirname,
-            "./node_modules/styled-components"
+            "./node_modules/styled-components",
           ),
           react: path.resolve(__dirname, "./node_modules/react"),
           "react-dom": path.resolve(__dirname, "./node_modules/react-dom"),
@@ -124,9 +121,10 @@ const config = {
       },
     ],
 
-    [ // only works on prod
-      '@docusaurus/plugin-client-redirects',
-      redirects
+    [
+      // only works on prod
+      "@docusaurus/plugin-client-redirects",
+      redirects,
     ],
 
     //"@docusaurus/plugin-sitemap",
@@ -164,26 +162,23 @@ const config = {
     }),
 
     [
-      '@docusaurus/plugin-google-gtag',
+      "@docusaurus/plugin-google-gtag",
       {
         trackingID: process.env.GTM_ID,
         anonymizeIP: true,
       },
     ],
 
-    'vercel-analytics'
+    "vercel-analytics",
   ],
 
-  themes: [
-    "@docusaurus/theme-mermaid",
-    "docusaurus-theme-search-typesense"
-  ],
+  themes: ["@docusaurus/theme-mermaid", "docusaurus-theme-search-typesense"],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: '/img/meta/codat-bg.png',
+      image: "/img/meta/codat-bg.png",
 
       metadata: [
         { name: "keywords", content: "codat, docs, updates" },
@@ -274,16 +269,16 @@ const config = {
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
 
       typesense: {
-        typesenseCollectionName: 'codat-docs', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        typesenseCollectionName: "codat-docs", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
         typesenseServerConfig: {
           nodes: [
             {
-              host: 'm6ygplbafcj51wk4p.a1.typesense.net',
+              host: "m6ygplbafcj51wk4p.a1.typesense.net",
               port: 443,
-              protocol: 'https',
-            }
+              protocol: "https",
+            },
           ],
-          apiKey: 'aWuDOXCgmWy7LXTRBg8RbfjGvjRmiRir',
+          apiKey: "aWuDOXCgmWy7LXTRBg8RbfjGvjRmiRir",
         },
         typesenseSearchParameters: {}, // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
         contextualSearch: true, // Optional
@@ -296,7 +291,7 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
-        additionalLanguages: ['bash', 'diff', 'json'],
+        additionalLanguages: ["bash", "diff", "json"],
       },
 
       liveCodeBlock: {
@@ -304,14 +299,14 @@ const config = {
          * The position of the live playground, above or under the editor
          * Possible values: "top" | "bottom"
          */
-        playgroundPosition: 'bottom',
+        playgroundPosition: "bottom",
       },
 
       zoom: {
-        selector: '.markdown > p > img',
+        selector: ".markdown > p > img",
         background: {
-          light: 'rgb(255, 255, 255)',
-          dark: 'rgb(50, 50, 50)'
+          light: "rgb(255, 255, 255)",
+          dark: "rgb(50, 50, 50)",
         },
       },
     }),

@@ -5,10 +5,6 @@ description: "Learn about our Wave integration."
 
 You can read accounting data from <a className="external" href="https://www.waveapps.com/" target="_blank">Wave</a> using our Wave integration.
 
-## Data type coverage
-
-View the coverage of our Wave integration in the <a className="external" href="https://knowledge.codat.io/supported-features/accounting?view=tab-by-integration&integrationKey=pbtz" target="_blank">Data coverage explorer</a>.
-
 ## Set up the integration
 
 Wave is a global accounting software that simplifies accounting processes for small business owners.
