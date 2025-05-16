@@ -43,7 +43,7 @@ module.exports = [
     },
     {
       type: "link",
-      label: "Connection Help Hub",
+      label: "Help Hub",
       customProps: {
         hr: true,
       },
