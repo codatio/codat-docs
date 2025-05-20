@@ -18,7 +18,7 @@ video_text: Lending with Codat
 
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
-import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/Integrations/integrations";
+import { integrationsAccountingFilterLending, bankingIntegrations, commerceIntegrations } from "@components/Integrations/integrations";
 import ClientLibraries from "@components/ClientLibraries";
 
 ## What is it?
@@ -129,7 +129,7 @@ Our Lending solution empowers you with a host of features to help you streamline
 
 #### Accounting
 
-<IntegrationsList integrations={accountingIntegrations} />
+<IntegrationsList filter={integrationsAccountingFilterLending} />
 
 #### Banking
 
