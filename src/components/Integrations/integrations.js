@@ -78,6 +78,24 @@ export const integrationsFilterBillPaySync = [
   "Zoho Books",
 ];
 
+export const integrationsAccountingFilterLending = [
+    "Dynamics 365 Business Central",
+    "Exact Online",
+    "FreeAgent",
+    "FreshBooks",
+    "MYOB Business",
+    "Oracle NetSuite",
+    "QuickBooks Desktop",
+    "QuickBooks Online",
+    "Sage 50",
+    "Sage 200 Standard",
+    "Sage Business Cloud Accounting",
+    "Sage Intacct",
+    "Wave",
+    "Xero",
+    "Zoho Books"
+]
+
 export const bankfeedsIntegrations = [
   {
     name: "QuickBooks Online bank feeds",
