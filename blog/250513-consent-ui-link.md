@@ -22,10 +22,10 @@ We've expanded the [Link](/auth-flow/overview) consent view with new optional fi
 | :- | :- | :- |
 | **Purpose** | Why they are sharing access to their data and how it will be used. | Your data will be used to provide you your analysis on your spending. |
 | **Access** | The nature and duration of the access. | Your data will be retrieved monthly for the duration of this service. |
-| **Account information** | The account metadata that will be retrieved | Company name |
-| **Platform data** | The financial data that will be retrieved | Invoices, Suppliers |
-| **Retention** | How and for how long the data will be handled | You control access to your data, and can disconnect access at any time via your account settings. |
-| **Communication** | Details of any communication will be set around the Codat connection | You will be notified by email whenever access expires. |
+| **Account information** | The account metadata that will be retrieved. | Company name |
+| **Platform data** | The financial data that will be retrieved. | Invoices, Suppliers |
+| **Retention** | How and for how long the data will be handled. | You control access to your data, and can disconnect access at any time via your account settings. |
+| **Communication** | Details of any communication will be set around the Codat connection. | You will be notified by email whenever access expires. |
 
 ![Open view](/img/updates/consent/consent-open.png)
 
