@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDiffViewer, { DiffMethod } from "react-diff-viewer-continued";
+import styles from "./Diff.module.scss";
 
 const Diff = (props) => {
   const {
@@ -10,7 +11,7 @@ const Diff = (props) => {
   } = props;
 
   return (
-    <div className="diff-checker">
+    <div className={`diff-checker ${styles.diffChecker}`}>
       <ReactDiffViewer
         oldValue={oldCode}
         newValue={newCode}

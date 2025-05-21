@@ -27,7 +27,12 @@ module.exports = [
   },
   {
     type: "link",
-    label: "See the demo",
+    label: "NPM",
+    href: "https://www.npmjs.com/package/@codat/sdk-link-types",
+  },
+  {
+    type: "link",
+    label: "Try it out",
     href: "https://sdk-link.vercel.app/",
   },
   {
