@@ -6,9 +6,7 @@ displayed_sidebar: spendInsights
 hide_table_of_contents: true
 ---
 
-<div className="video-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/z-UW2uY7TSo?si=b3_a_vWUo5927MAf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
-</div>
+
 
 --- 
 
