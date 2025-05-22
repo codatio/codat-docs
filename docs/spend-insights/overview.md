@@ -13,8 +13,6 @@ banner_class: supplier-enablement
 banner_icon: "/img/logos/products/logo_supplier_enablement_clear.svg"
 banner_image: "/img/banners/spend-insights.png"
 banner_text: "Grow commercial card volume by accessing deeper actionable vendor and spend insights from your customers"
-video_url: "https://www.youtube.com/embed/z-UW2uY7TSo?si=b3_a_vWUo5927MAf"
-video_text: What is Spend Insights?
 ---
 
 import { IntegrationsList } from "@components/Integrations";
