@@ -2,10 +2,18 @@
   margin-left: 0 !important;
   margin-right: 0 !important;
   display: flex;
+  
+  @media (max-width: 996px) {
+    flex-direction: column;
+  }
 }
 
 .blogContainer {
   padding: 0;
+  
+  @media (max-width: 996px) {
+    width: 100%;
+  }
 }
 
 .blogPage {
@@ -42,6 +50,11 @@
 .article {
   padding: 1em;
   max-width: 1000px;
+  
+  @media (max-width: 996px) {
+    width: 100%;
+    max-width: 100%;
+  }
 } 
 
 .devFlag {
