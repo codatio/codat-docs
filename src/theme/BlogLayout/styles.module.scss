@@ -18,6 +18,10 @@
 
 .blogPage {
   padding: 2em 1em;
+  
+  @media (max-width: 996px) {
+    padding: 1em 0.5em;
+  }
 }
 
 .updatesHeader {
@@ -32,6 +36,11 @@
 
   > *:last-child {
     grid-column: 1 / -1;
+  }
+  
+  @media (max-width: 996px) {
+    padding: 0.5em;
+    grid-gap: 0.5em;
   }
 }
 
