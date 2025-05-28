@@ -570,7 +570,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 Called when initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.
 
-The replacement `read.completed.initial` webhook is called the first time the data type is stored in Codat's cache and uses the same payload as the `read.completed` webhook.
+The replacement `read.completed.initial` webhook is called the first time a sync is completed after a data connection is linked. Uses the same payload as the `read.completed` webhook.
 
 :::tip Adopting the new schema
 When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.
