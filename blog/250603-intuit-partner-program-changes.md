@@ -1,7 +1,7 @@
 ---
 title: "New Intuit App Partner Program"
 date: "2025-06-03"
-tags: ["QuickBooks", "Update", "Intuit"]
+tags: ["QuickBooks Online", "Update", "Intuit"]
 authors: mcclowes
 ---
 
