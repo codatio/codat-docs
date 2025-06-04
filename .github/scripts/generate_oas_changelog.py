@@ -21,7 +21,7 @@ def get_last_run_commit():
     if last_run_file.exists():
         return last_run_file.read_text().strip()
     
-    # If no last run file exists, get a commit from one month ago
+    # If no last run file exists, get a commit from three months ago
     from git import Repo
     
     # Try to find the repository root
@@ -34,26 +34,34 @@ def get_last_run_commit():
     
     repo = Repo(repo_path)
     
-    # Calculate the date one month ago with timezone awareness
+    # Calculate the date three months ago with timezone awareness
     from datetime import timezone
-    one_month_ago = datetime.now(timezone.utc) - timedelta(days=30)
-    print(f"Looking for commits before: {one_month_ago}")
+    now = datetime.now(timezone.utc)
+    print(f"Current system time: {now}")
+    three_months_ago = now - timedelta(days=90)
+    print(f"Looking for commits before: {three_months_ago}")
     
     # Get all commits and sort them by date
     commits = list(repo.iter_commits())
     commits.sort(key=lambda x: x.committed_datetime, reverse=True)
     
-    # Find the first commit before one month ago
+    if not commits:
+        raise Exception("No commits found in repository")
+    
+    print(f"Most recent commit date: {commits[0].committed_datetime}")
+    print(f"Oldest commit date: {commits[-1].committed_datetime}")
+    
+    # Find the first commit before three months ago
     for commit in commits:
         print(f"Checking commit {commit.hexsha} from {commit.committed_datetime}")
-        if commit.committed_datetime < one_month_ago:
-            print(f"Found commit from before one month ago: {commit.hexsha}")
+        if commit.committed_datetime < three_months_ago:
+            print(f"Found commit from before three months ago: {commit.hexsha}")
             return commit.hexsha
     
-    # If no commit is found before one month ago, return the first commit
-    first_commit = commits[-1]
-    print(f"No commits found before one month ago, using first commit: {first_commit.hexsha}")
-    return first_commit.hexsha
+    # If no commit is found before three months ago, use the oldest commit
+    oldest_commit = commits[-1]
+    print(f"No commits found before three months ago, using oldest commit: {oldest_commit.hexsha}")
+    return oldest_commit.hexsha
 
 def save_last_run_commit(commit):
     # Get the script's directory
