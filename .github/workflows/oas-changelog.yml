@@ -14,10 +14,11 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: Checkout codat-docs
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Fetch all history
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -43,6 +44,7 @@ jobs:
         if: steps.changelog.outputs.has_changes == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "docs: Add OAS changelog for $(date +%Y-%m)"
           title: "docs: OAS Changelog for $(date +%Y-%m)"
           body: |
@@ -51,4 +53,7 @@ jobs:
             Changes were detected in the OAS repository and have been summarized in a new blog post.
           branch: oas-changelog-$(date +%Y-%m)
           base: main
-          delete-branch: true 
+          delete-branch: true
+          labels: |
+            documentation
+            automated pr 
