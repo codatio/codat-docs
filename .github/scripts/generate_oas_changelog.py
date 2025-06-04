@@ -182,11 +182,14 @@ def main():
     last_commit = get_last_run_commit()
     print(f"Last run commit: {last_commit}")
     
+    # Initialize changes flag
+    has_changes = False
+    
     # Use the local static/oas directory
     oas_path = Path('static/oas')
     if not oas_path.exists():
         print("OAS directory not found at static/oas")
-        with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+        with open('output.txt', 'w') as f:
             f.write('has_changes=false\n')
         return
     
@@ -198,7 +201,7 @@ def main():
     
     if last_commit == current_commit:
         print("No new commits since last run")
-        with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+        with open('output.txt', 'w') as f:
             f.write('has_changes=false\n')
         return
     
@@ -218,7 +221,7 @@ def main():
     
     if not oas_files:
         print("No OAS files changed")
-        with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+        with open('output.txt', 'w') as f:
             f.write('has_changes=false\n')
         return
     
@@ -257,12 +260,9 @@ def main():
                     f.write(content)
                 
                 print(f"Created blog post: {filename}")
-                with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-                    f.write('has_changes=true\n')
+                has_changes = True
             else:
                 print(f"No significant changes in {api_name}")
-                with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-                    f.write('has_changes=false\n')
                 
         except Exception as e:
             print(f"Error processing {file_path}: {str(e)}")
@@ -270,6 +270,10 @@ def main():
     
     # Save the current commit as the last run
     save_last_run_commit(current_commit)
+    
+    # Write final output
+    with open('output.txt', 'w') as f:
+        f.write(f'has_changes={str(has_changes).lower()}\n')
 
 if __name__ == "__main__":
     main() 
