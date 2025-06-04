@@ -32,6 +32,7 @@ def get_last_run_commit():
         if not (repo_path / '.git').exists():
             raise Exception("Could not find Git repository")
     
+    print(f"Using repository at: {repo_path.absolute()}")
     repo = Repo(repo_path)
     
     # Calculate the date three months ago with timezone awareness
@@ -44,8 +45,16 @@ def get_last_run_commit():
     # Get all commits and sort them by date
     # Use git log to get the full history
     commits = []
-    for commit in repo.iter_commits('--all'):
-        commits.append(commit)
+    try:
+        # First try to get all commits
+        for commit in repo.iter_commits('--all'):
+            commits.append(commit)
+    except Exception as e:
+        print(f"Error getting commits with --all: {e}")
+        # If that fails, try getting commits from the current branch
+        for commit in repo.iter_commits():
+            commits.append(commit)
+    
     commits.sort(key=lambda x: x.committed_datetime, reverse=True)
     
     if not commits:
