@@ -147,6 +147,7 @@ This update summarizes the changes made to the {api_name} OpenAPI Specification.
 def main():
     # Get the last run commit
     last_commit = get_last_run_commit()
+    print(f"Last run commit: {last_commit}")
     
     # Use the local static/oas directory
     oas_path = Path('static/oas')
@@ -160,6 +161,7 @@ def main():
     from git import Repo
     repo = Repo('.')
     current_commit = repo.head.commit.hexsha
+    print(f"Current commit: {current_commit}")
     
     if last_commit == current_commit:
         print("No new commits since last run")
