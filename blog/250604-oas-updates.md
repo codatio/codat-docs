@@ -1,7 +1,7 @@
 ---
 title: "OpenAPI Specification Updates"
 date: 2025-06-04
-author: "codat-bot"
+authors: "codat-bot"
 ---
 
 This update summarizes the changes made to our OpenAPI Specifications.
