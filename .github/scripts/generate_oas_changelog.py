@@ -3,7 +3,7 @@
 import os
 import yaml
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 def load_yaml_file(file_path):
@@ -20,7 +20,21 @@ def get_last_run_commit():
     last_run_file = Path('.github/last_oas_check')
     if last_run_file.exists():
         return last_run_file.read_text().strip()
-    return None
+    # return None # uncomment later
+    # If no last run file exists, get a commit from one month ago
+    from git import Repo
+    repo = Repo('.')
+    
+    # Calculate the date one month ago
+    one_month_ago = datetime.now() - timedelta(days=30)
+    
+    # Find the first commit before one month ago
+    for commit in repo.iter_commits():
+        if commit.committed_datetime < one_month_ago:
+            return commit.hexsha
+    
+    # If no commit is found before one month ago, return the first commit
+    return repo.iter_commits().next().hexsha
 
 def save_last_run_commit(commit):
     last_run_file = Path('.github/last_oas_check')
