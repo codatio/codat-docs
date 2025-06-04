@@ -131,7 +131,7 @@ def is_significant_change(changes):
 
 def generate_blog_post(changes, api_name):
     today = datetime.now()
-    filename = f"blog/{today.strftime('%y%m%d')}-oas-update-{api_name.lower().replace(' ', '-')}.md"
+    filename = f"{today.strftime('%y%m%d')}-oas-update-{api_name.lower().replace(' ', '-')}.md"
     
     content = f"""---
 title: "OAS Update: {api_name}"
