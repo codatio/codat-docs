@@ -30,7 +30,10 @@ def get_last_run_commit():
         # If we're in a subdirectory (like in GitHub Actions), try parent
         repo_path = repo_path.parent
         if not (repo_path / '.git').exists():
-            raise Exception("Could not find Git repository")
+            # If we're in codat-docs/codat-docs, go up one more level
+            repo_path = repo_path.parent
+            if not (repo_path / '.git').exists():
+                raise Exception("Could not find Git repository")
     
     print(f"Using repository at: {repo_path.absolute()}")
     repo = Repo(repo_path)
