@@ -37,14 +37,23 @@ def get_last_run_commit():
     # Calculate the date one month ago with timezone awareness
     from datetime import timezone
     one_month_ago = datetime.now(timezone.utc) - timedelta(days=30)
+    print(f"Looking for commits before: {one_month_ago}")
+    
+    # Get all commits and sort them by date
+    commits = list(repo.iter_commits())
+    commits.sort(key=lambda x: x.committed_datetime, reverse=True)
     
     # Find the first commit before one month ago
-    for commit in repo.iter_commits():
+    for commit in commits:
+        print(f"Checking commit {commit.hexsha} from {commit.committed_datetime}")
         if commit.committed_datetime < one_month_ago:
+            print(f"Found commit from before one month ago: {commit.hexsha}")
             return commit.hexsha
     
     # If no commit is found before one month ago, return the first commit
-    return next(repo.iter_commits()).hexsha
+    first_commit = commits[-1]
+    print(f"No commits found before one month ago, using first commit: {first_commit.hexsha}")
+    return first_commit.hexsha
 
 def save_last_run_commit(commit):
     # Get the script's directory
