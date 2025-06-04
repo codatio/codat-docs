@@ -25,8 +25,9 @@ def get_last_run_commit():
     from git import Repo
     repo = Repo('.')
     
-    # Calculate the date one month ago
-    one_month_ago = datetime.now() - timedelta(days=30)
+    # Calculate the date one month ago with timezone awareness
+    from datetime import timezone
+    one_month_ago = datetime.now(timezone.utc) - timedelta(days=30)
     
     # Find the first commit before one month ago
     for commit in repo.iter_commits():
@@ -140,7 +141,8 @@ def main():
     oas_path = Path('static/oas')
     if not oas_path.exists():
         print("OAS directory not found at static/oas")
-        print("::set-output name=has_changes::false")
+        with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+            f.write('has_changes=false\n')
         return
     
     # Get current git commit hash for tracking
@@ -150,7 +152,8 @@ def main():
     
     if last_commit == current_commit:
         print("No new commits since last run")
-        print("::set-output name=has_changes::false")
+        with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+            f.write('has_changes=false\n')
         return
     
     # Get the list of changed files
@@ -169,7 +172,8 @@ def main():
     
     if not oas_files:
         print("No OAS files changed")
-        print("::set-output name=has_changes::false")
+        with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+            f.write('has_changes=false\n')
         return
     
     # Process each changed OAS file
@@ -197,10 +201,12 @@ def main():
                     f.write(content)
                 
                 print(f"Created blog post: {filename}")
-                print("::set-output name=has_changes::true")
+                with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                    f.write('has_changes=true\n')
             else:
                 print(f"No significant changes in {api_name}")
-                print("::set-output name=has_changes::false")
+                with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                    f.write('has_changes=false\n')
                 
         except Exception as e:
             print(f"Error processing {file_path}: {str(e)}")
