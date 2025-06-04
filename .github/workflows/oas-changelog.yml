@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      issues: write  # Required for label management
 
     steps:
       - name: Checkout repository
