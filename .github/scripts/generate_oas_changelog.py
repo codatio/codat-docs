@@ -135,8 +135,13 @@ def main():
     
     # Get the list of changed files
     changed_files = []
-    for commit in oas_repo.iter_commits(f"{last_commit}..{current_commit}"):
-        changed_files.extend(commit.stats.files.keys())
+    if last_commit is None:
+        # If this is the first run, get all files in the current commit
+        changed_files = list(oas_repo.head.commit.stats.files.keys())
+    else:
+        # Otherwise, get files changed between last_commit and current_commit
+        for commit in oas_repo.iter_commits(f"{last_commit}..{current_commit}"):
+            changed_files.extend(commit.stats.files.keys())
     
     # Filter for OAS files
     oas_files = [f for f in changed_files if f.endswith(('.yaml', '.yml', '.json'))]
