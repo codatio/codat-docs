@@ -5,7 +5,11 @@ tags: ["QuickBooks", "Update", "Intuit"]
 authors: mcclowes
 ---
 
-Intuit will be launching a [new App Partner Program](https://blogs.intuit.com/2025/05/15/introducing-the-intuit-app-partner-program/) on the 28th of July. The new program aims to introduce an improved developer experience but may impact apps that currently have a high volume of calls to Intuit APIs, with the introduction of tiered program and variable API fees. You can refer to a [full overview of the program](https://blogs.intuit.com/2025/05/15/introducing-the-intuit-app-partner-program/) and [FAQs](https://developer.intuit.com/app/developer/qbo/docs/get-started/partner-faq) for additional context.
+Intuit will be launching a [new App Partner Program](https://blogs.intuit.com/2025/05/15/introducing-the-intuit-app-partner-program/) on the 28th of July. 
+
+<!--truncate-->
+
+The new program aims to introduce an improved developer experience but may impact apps that currently have a high volume of calls to Intuit APIs, with the introduction of tiered program and variable API fees. You can refer to a [full overview of the program](https://blogs.intuit.com/2025/05/15/introducing-the-intuit-app-partner-program/) and [FAQs](https://developer.intuit.com/app/developer/qbo/docs/get-started/partner-faq) for additional context.
 
 ### Integrations effected
 
