@@ -35,7 +35,7 @@ def get_last_run_commit():
             return commit.hexsha
     
     # If no commit is found before one month ago, return the first commit
-    return repo.iter_commits().next().hexsha
+    return next(repo.iter_commits()).hexsha
 
 def save_last_run_commit(commit):
     last_run_file = Path('.github/last_oas_check')
