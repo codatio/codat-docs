@@ -39,6 +39,7 @@ jobs:
       - name: Generate changelog
         id: changelog
         run: |
+          cd codat-docs
           python .github/scripts/generate_oas_changelog.py
 
       - name: Create Pull Request
