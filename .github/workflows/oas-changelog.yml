@@ -40,18 +40,23 @@ jobs:
             cat output.txt >> $GITHUB_OUTPUT
           fi
 
+      - name: Set date variables
+        id: date
+        run: |
+          echo "date=$(date +%Y-%m)" >> $GITHUB_OUTPUT
+
       - name: Create Pull Request
         if: steps.changelog.outputs.has_changes == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "docs: Add OAS changelog for $(date +%Y-%m)"
-          title: "docs: OAS Changelog for $(date +%Y-%m)"
+          commit-message: "docs: Add OAS changelog for ${{ steps.date.outputs.date }}"
+          title: "docs: OAS Changelog for ${{ steps.date.outputs.date }}"
           body: |
             This PR contains the OAS changelog for the current month.
             
             Changes were detected in the OAS repository and have been summarized in a new blog post.
-          branch: oas-changelog-$(date +%Y-%m)
+          branch: "oas-changelog-${{ steps.date.outputs.date }}"
           base: main
           delete-branch: true
           labels: |
