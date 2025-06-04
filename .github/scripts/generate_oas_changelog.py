@@ -42,12 +42,16 @@ def get_last_run_commit():
     print(f"Looking for commits before: {three_months_ago}")
     
     # Get all commits and sort them by date
-    commits = list(repo.iter_commits())
+    # Use git log to get the full history
+    commits = []
+    for commit in repo.iter_commits('--all'):
+        commits.append(commit)
     commits.sort(key=lambda x: x.committed_datetime, reverse=True)
     
     if not commits:
         raise Exception("No commits found in repository")
     
+    print(f"Total number of commits found: {len(commits)}")
     print(f"Most recent commit date: {commits[0].committed_datetime}")
     print(f"Oldest commit date: {commits[-1].committed_datetime}")
     
