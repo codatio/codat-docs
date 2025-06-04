@@ -15,15 +15,24 @@ def load_json_file(file_path):
         return json.load(f)
 
 def get_last_run_commit():
-    # This would ideally be stored in a file or database
-    # For now, we'll use a simple file in the .github directory
-    last_run_file = Path('.github/last_oas_check')
+    # Get the script's directory
+    script_dir = Path(__file__).parent.parent
+    last_run_file = script_dir / 'last_oas_check'
     if last_run_file.exists():
         return last_run_file.read_text().strip()
     
     # If no last run file exists, get a commit from one month ago
     from git import Repo
-    repo = Repo('.')
+    
+    # Try to find the repository root
+    repo_path = Path('.')
+    if not (repo_path / '.git').exists():
+        # If we're in a subdirectory (like in GitHub Actions), try parent
+        repo_path = repo_path.parent
+        if not (repo_path / '.git').exists():
+            raise Exception("Could not find Git repository")
+    
+    repo = Repo(repo_path)
     
     # Calculate the date one month ago with timezone awareness
     from datetime import timezone
@@ -38,7 +47,9 @@ def get_last_run_commit():
     return next(repo.iter_commits()).hexsha
 
 def save_last_run_commit(commit):
-    last_run_file = Path('.github/last_oas_check')
+    # Get the script's directory
+    script_dir = Path(__file__).parent.parent
+    last_run_file = script_dir / 'last_oas_check'
     last_run_file.parent.mkdir(parents=True, exist_ok=True)
     last_run_file.write_text(commit)
 
