@@ -1,16 +1,14 @@
 ---
 title: "OpenAPI Specification Updates"
 date: 2025-06-04
-author: "Codat Bot"
+author: "codat-bot"
 ---
-
-# OpenAPI Specification Updates
 
 This update summarizes the changes made to our OpenAPI Specifications.
 
+<!--truncate-->
 
 ## Codat-Bank-Feeds
-
 
 ### New Endpoints
 

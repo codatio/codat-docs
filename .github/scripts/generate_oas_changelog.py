@@ -136,12 +136,12 @@ def generate_blog_post(all_changes):
     content = f"""---
 title: "OpenAPI Specification Updates"
 date: {today.strftime('%Y-%m-%d')}
-author: "Codat Bot"
+author: "codat-bot"
 ---
 
-# OpenAPI Specification Updates
+This update summarizes recent changes made to our OpenAPI Specifications.
 
-This update summarizes the changes made to our OpenAPI Specifications.
+<!--truncate-->
 
 """
 

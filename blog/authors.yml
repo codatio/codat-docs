@@ -1,3 +1,9 @@
+codat-bot:
+  name: Codat
+  title: Engineering
+  url: https://github.com/codat-engineering
+  image_url: https://github.com/codat-engineering.png
+
 mcclowes:
   name: Max Clayton Clowes
   title: Product Director, Client Experience
