@@ -4,7 +4,6 @@ import os
 import yaml
 import json
 from datetime import datetime
-from git import Repo
 from pathlib import Path
 
 def load_yaml_file(file_path):
@@ -123,10 +122,17 @@ def main():
     # Get the last run commit
     last_commit = get_last_run_commit()
     
-    # Initialize the OAS repo
-    oas_path = os.environ.get('OAS_PATH', 'oas')
-    oas_repo = Repo(oas_path)
-    current_commit = oas_repo.head.commit.hexsha
+    # Use the local static/oas directory
+    oas_path = Path('static/oas')
+    if not oas_path.exists():
+        print("OAS directory not found at static/oas")
+        print("::set-output name=has_changes::false")
+        return
+    
+    # Get current git commit hash for tracking
+    from git import Repo
+    repo = Repo('.')
+    current_commit = repo.head.commit.hexsha
     
     if last_commit == current_commit:
         print("No new commits since last run")
@@ -137,12 +143,12 @@ def main():
     changed_files = []
     if last_commit is None:
         # If this is the first run, get all files in the current commit
-        tree = oas_repo.head.commit.tree
-        changed_files = [item.path for item in tree.traverse() if item.type == 'blob']
+        tree = repo.head.commit.tree
+        changed_files = [item.path for item in tree.traverse() if item.type == 'blob' and str(item.path).startswith('static/oas/')]
     else:
         # Otherwise, get files changed between last_commit and current_commit
-        for commit in oas_repo.iter_commits(f"{last_commit}..{current_commit}"):
-            changed_files.extend(commit.stats.files.keys())
+        for commit in repo.iter_commits(f"{last_commit}..{current_commit}"):
+            changed_files.extend([f for f in commit.stats.files.keys() if f.startswith('static/oas/')])
     
     # Filter for OAS files
     oas_files = [f for f in changed_files if f.endswith(('.yaml', '.yml', '.json'))]
@@ -159,11 +165,11 @@ def main():
         # Load old and new versions
         try:
             if file_path.endswith(('.yaml', '.yml')):
-                old_spec = load_yaml_file(f"oas/{file_path}")
-                new_spec = load_yaml_file(f"oas/{file_path}")
+                old_spec = load_yaml_file(file_path)
+                new_spec = load_yaml_file(file_path)
             else:
-                old_spec = load_json_file(f"oas/{file_path}")
-                new_spec = load_json_file(f"oas/{file_path}")
+                old_spec = load_json_file(file_path)
+                new_spec = load_json_file(file_path)
             
             changes = analyze_changes(old_spec, new_spec)
             
@@ -171,7 +177,9 @@ def main():
                 filename, content = generate_blog_post(changes, api_name)
                 
                 # Write the blog post
-                with open(f"codat-docs/{filename}", 'w') as f:
+                blog_path = Path('blog')
+                blog_path.mkdir(exist_ok=True)
+                with open(blog_path / filename, 'w') as f:
                     f.write(content)
                 
                 print(f"Created blog post: {filename}")
