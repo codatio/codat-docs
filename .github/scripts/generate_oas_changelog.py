@@ -137,7 +137,8 @@ def main():
     changed_files = []
     if last_commit is None:
         # If this is the first run, get all files in the current commit
-        changed_files = list(oas_repo.head.commit.stats.files.keys())
+        tree = oas_repo.head.commit.tree
+        changed_files = [item.path for item in tree.traverse() if item.type == 'blob']
     else:
         # Otherwise, get files changed between last_commit and current_commit
         for commit in oas_repo.iter_commits(f"{last_commit}..{current_commit}"):
