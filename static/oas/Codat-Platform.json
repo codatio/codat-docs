@@ -5348,9 +5348,7 @@
           "connectionInfo": {
             "type": "object",
             "nullable": true,
-            "additionalProperties": {
-              "type": "string"
-            }
+            "additionalProperties": true
           }
         },
         "additionalProperties": false,
