@@ -40,7 +40,7 @@ jobs:
         id: changelog
         run: |
           cd codat-docs
-          python .github/scripts/generate_oas_changelog.py
+          OAS_PATH="../oas" python .github/scripts/generate_oas_changelog.py
 
       - name: Create Pull Request
         if: steps.changelog.outputs.has_changes == 'true'

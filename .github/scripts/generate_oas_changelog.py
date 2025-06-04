@@ -124,7 +124,8 @@ def main():
     last_commit = get_last_run_commit()
     
     # Initialize the OAS repo
-    oas_repo = Repo('oas')
+    oas_path = os.environ.get('OAS_PATH', 'oas')
+    oas_repo = Repo(oas_path)
     current_commit = oas_repo.head.commit.hexsha
     
     if last_commit == current_commit:
