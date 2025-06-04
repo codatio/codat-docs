@@ -129,51 +129,54 @@ def is_significant_change(changes):
     
     return significant
 
-def generate_blog_post(changes, api_name):
+def generate_blog_post(all_changes):
     today = datetime.now()
-    filename = f"{today.strftime('%y%m%d')}-oas-update-{api_name.lower().replace(' ', '-')}.md"
+    filename = f"{today.strftime('%y%m%d')}-oas-updates.md"
     
     content = f"""---
-title: "OAS Update: {api_name}"
+title: "OpenAPI Specification Updates"
 date: {today.strftime('%Y-%m-%d')}
 author: "Codat Bot"
 ---
 
-# OAS Update: {api_name}
+# OpenAPI Specification Updates
 
-This update summarizes the changes made to the {api_name} OpenAPI Specification.
+This update summarizes the changes made to our OpenAPI Specifications.
 
 """
 
-    if changes['endpoints_added']:
-        content += "\n## New Endpoints\n\n"
-        for endpoint in changes['endpoints_added']:
-            content += f"- `{endpoint}`\n"
+    for api_name, changes in all_changes.items():
+        content += f"\n## {api_name}\n\n"
 
-    if changes['endpoints_removed']:
-        content += "\n## Removed Endpoints\n\n"
-        for endpoint in changes['endpoints_removed']:
-            content += f"- `{endpoint}`\n"
+        if changes['endpoints_added']:
+            content += "\n### New Endpoints\n\n"
+            for endpoint in changes['endpoints_added']:
+                content += f"- `{endpoint}`\n"
 
-    if changes['endpoints_modified']:
-        content += "\n## Modified Endpoints\n\n"
-        for endpoint in changes['endpoints_modified']:
-            content += f"- `{endpoint}`\n"
+        if changes['endpoints_removed']:
+            content += "\n### Removed Endpoints\n\n"
+            for endpoint in changes['endpoints_removed']:
+                content += f"- `{endpoint}`\n"
 
-    if changes['models_added']:
-        content += "\n## New Models\n\n"
-        for model in changes['models_added']:
-            content += f"- `{model}`\n"
+        if changes['endpoints_modified']:
+            content += "\n### Modified Endpoints\n\n"
+            for endpoint in changes['endpoints_modified']:
+                content += f"- `{endpoint}`\n"
 
-    if changes['models_removed']:
-        content += "\n## Removed Models\n\n"
-        for model in changes['models_removed']:
-            content += f"- `{model}`\n"
+        if changes['models_added']:
+            content += "\n### New Models\n\n"
+            for model in changes['models_added']:
+                content += f"- `{model}`\n"
 
-    if changes['models_modified']:
-        content += "\n## Modified Models\n\n"
-        for model in changes['models_modified']:
-            content += f"- `{model}`\n"
+        if changes['models_removed']:
+            content += "\n### Removed Models\n\n"
+            for model in changes['models_removed']:
+                content += f"- `{model}`\n"
+
+        if changes['models_modified']:
+            content += "\n### Modified Models\n\n"
+            for model in changes['models_modified']:
+                content += f"- `{model}`\n"
 
     return filename, content
 
@@ -225,6 +228,9 @@ def main():
             f.write('has_changes=false\n')
         return
     
+    # Store all changes
+    all_changes = {}
+    
     # Process each changed OAS file
     for file_path in oas_files:
         api_name = Path(file_path).stem
@@ -251,15 +257,7 @@ def main():
             changes = analyze_changes(old_spec, new_spec)
             
             if is_significant_change(changes):
-                filename, content = generate_blog_post(changes, api_name)
-                
-                # Write the blog post
-                blog_path = Path('blog')
-                blog_path.mkdir(exist_ok=True)
-                with open(blog_path / filename, 'w') as f:
-                    f.write(content)
-                
-                print(f"Created blog post: {filename}")
+                all_changes[api_name] = changes
                 has_changes = True
             else:
                 print(f"No significant changes in {api_name}")
@@ -267,6 +265,18 @@ def main():
         except Exception as e:
             print(f"Error processing {file_path}: {str(e)}")
             continue
+    
+    # Generate a single blog post if there are any changes
+    if all_changes:
+        filename, content = generate_blog_post(all_changes)
+        
+        # Write the blog post
+        blog_path = Path('blog')
+        blog_path.mkdir(exist_ok=True)
+        with open(blog_path / filename, 'w') as f:
+            f.write(content)
+        
+        print(f"Created blog post: {filename}")
     
     # Save the current commit as the last run
     save_last_run_commit(current_commit)
