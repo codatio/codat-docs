@@ -20,7 +20,7 @@ def get_last_run_commit():
     last_run_file = Path('.github/last_oas_check')
     if last_run_file.exists():
         return last_run_file.read_text().strip()
-    # return None # uncomment later
+    
     # If no last run file exists, get a commit from one month ago
     from git import Repo
     repo = Repo('.')
@@ -182,11 +182,21 @@ def main():
         
         # Load old and new versions
         try:
+            # Get the old version from the last commit
+            try:
+                old_content = repo.git.show(f"{last_commit}:{file_path}")
+                if file_path.endswith(('.yaml', '.yml')):
+                    old_spec = yaml.safe_load(old_content)
+                else:
+                    old_spec = json.loads(old_content)
+            except Exception:
+                # If file doesn't exist in old commit, treat it as an empty spec
+                old_spec = {'paths': {}, 'components': {'schemas': {}}}
+            
+            # Load new version
             if file_path.endswith(('.yaml', '.yml')):
-                old_spec = load_yaml_file(file_path)
                 new_spec = load_yaml_file(file_path)
             else:
-                old_spec = load_json_file(file_path)
                 new_spec = load_json_file(file_path)
             
             changes = analyze_changes(old_spec, new_spec)
