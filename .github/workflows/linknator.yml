@@ -23,7 +23,7 @@ jobs:
         run: npm install -g linkinator
       
       - name: Run linkinator
-        run: npx linkinator https://docs.codat.io --recurse --verbosity error --skip .*github.* --format json --timeout 10000 > link-results.json
+        run: npx linkinator https://docs.codat.io --recurse --verbosity error --skip ".*github.*" --format json --timeout 10000 > link-results.json
         continue-on-error: true  # Ensure the workflow continues even if linkinator finds broken links
       
       - name: Delete Previous Comments
