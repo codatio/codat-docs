@@ -1,0 +1,51 @@
+{
+  "default": true,
+  "MD013": false,
+  "MD024": false,
+  "MD033": false,
+  "MD041": false,
+  "MD013": {
+    "line_length": 120
+  },
+  "MD033": {
+    "allowed_elements": [
+      "img",
+      "kbd",
+      "br",
+      "hr",
+      "sup",
+      "sub"
+    ]
+  },
+  "MD041": {
+    "level": 2
+  },
+  "MD024": {
+    "siblings_only": true
+  },
+  "MD007": {
+    "indent": 2
+  },
+  "MD012": {
+    "maximum": 1
+  },
+  "MD022": true,
+  "MD025": true,
+  "MD026": {
+    "punctuation": ".,;:!"
+  },
+  "MD029": {
+    "style": "ordered"
+  },
+  "MD030": {
+    "ul_single": 1,
+    "ol_single": 1,
+    "ul_multi": 1,
+    "ol_multi": 1
+  },
+  "MD031": true,
+  "MD032": true,
+  "MD036": false,
+  "MD040": true,
+  "MD047": true
+} 
