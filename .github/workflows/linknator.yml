@@ -8,6 +8,7 @@ on:
 jobs:
   link-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     if: github.event_name != 'pull_request' || github.actor != 'codatbot' 
     steps:
       - name: Checkout code
