@@ -88,7 +88,7 @@ def save_last_run_commit(commit):
 
 def analyze_changes(old_spec, new_spec):
     changes = {
-        'endpoints_added': [],
+        'endpoints_added': [],  # List of tuples (path, operation_id)
         'endpoints_removed': [],
         'endpoints_modified': [],
         'models_added': [],
@@ -100,8 +100,26 @@ def analyze_changes(old_spec, new_spec):
     old_paths = set(old_spec.get('paths', {}).keys())
     new_paths = set(new_spec.get('paths', {}).keys())
     
-    changes['endpoints_added'] = list(new_paths - old_paths)
+    # Get added endpoints with their operation IDs
+    for path in new_paths - old_paths:
+        for method in ['get', 'post', 'put', 'patch', 'delete']:
+            if method in new_spec['paths'][path]:
+                operation_id = new_spec['paths'][path][method].get('operationId')
+                changes['endpoints_added'].append((path, operation_id))
+    
+    # Get removed endpoints
     changes['endpoints_removed'] = list(old_paths - new_paths)
+    
+    # Get modified endpoints
+    for path in old_paths & new_paths:
+        old_methods = set(old_spec['paths'][path].keys())
+        new_methods = set(new_spec['paths'][path].keys())
+        
+        # Check for modified methods
+        for method in old_methods & new_methods:
+            if old_spec['paths'][path][method] != new_spec['paths'][path][method]:
+                operation_id = new_spec['paths'][path][method].get('operationId')
+                changes['endpoints_modified'].append((path, operation_id))
     
     # Compare schemas (models)
     old_schemas = set(old_spec.get('components', {}).get('schemas', {}).keys())
@@ -129,9 +147,47 @@ def is_significant_change(changes):
     
     return significant
 
+def get_operation_url(api_name, endpoint, operation_id):
+    # Mapping of OAS files to their API reference URLs
+    api_reference_urls = {
+        'Codat-Bank-Feeds': 'https://docs.codat.io/bank-feeds-api#/',
+        'Codat-Lending': 'https://docs.codat.io/lending-api#/',
+        'Codat-Sync-Commerce': 'https://docs.codat.io/sync-for-commerce-api#/',
+        'Codat-Sync-Expenses': 'https://docs.codat.io/sync-for-expenses-api#/',
+        'Codat-Sync-Payables-v1': 'https://docs.codat.io/sync-for-payables-api#/',
+        'Codat-Sync-Payables': 'https://docs.codat.io/sync-for-payables-v2-api#/',
+        'Codat-Platform': 'https://docs.codat.io/platform-api#/'
+    }
+    
+    base_url = api_reference_urls.get(api_name, '')
+    if not base_url:
+        return None
+    
+    # Extract the operation ID from the endpoint if not provided
+    if not operation_id:
+        # Try to extract operation ID from the endpoint path
+        parts = endpoint.split('/')
+        if len(parts) > 1:
+            operation_id = '-'.join(parts[1:])
+    
+    if operation_id:
+        return f"{base_url}operations/{operation_id}"
+    return None
+
 def generate_blog_post(all_changes):
     today = datetime.now()
     filename = f"{today.strftime('%y%m%d')}-oas-updates.md"
+    
+    # Mapping of OAS files to their API reference URLs
+    api_reference_urls = {
+        'Codat-Bank-Feeds': 'https://docs.codat.io/bank-feeds-api#/',
+        'Codat-Lending': 'https://docs.codat.io/lending-api#/',
+        'Codat-Sync-Commerce': 'https://docs.codat.io/sync-for-commerce-api#/',
+        'Codat-Sync-Expenses': 'https://docs.codat.io/sync-for-expenses-api#/',
+        'Codat-Sync-Payables-v1': 'https://docs.codat.io/sync-for-payables-api#/',
+        'Codat-Sync-Payables': 'https://docs.codat.io/sync-for-payables-v2-api#/',
+        'Codat-Platform': 'https://docs.codat.io/platform-api#/'
+    }
     
     content = f"""---
 title: "OpenAPI Specification Updates"
@@ -146,12 +202,21 @@ This update summarizes recent changes made to our OpenAPI Specifications.
 """
 
     for api_name, changes in all_changes.items():
+        # Get the API reference URL if available
+        api_url = api_reference_urls.get(api_name, '')
         content += f"\n## {api_name}\n\n"
+        
+        if api_url:
+            content += f"View the full API reference: [{api_name}]({api_url})\n\n"
 
         if changes['endpoints_added']:
             content += "\n### New Endpoints\n\n"
-            for endpoint in changes['endpoints_added']:
-                content += f"- `{endpoint}`\n"
+            for endpoint, operation_id in changes['endpoints_added']:
+                operation_url = get_operation_url(api_name, endpoint, operation_id)
+                if operation_url:
+                    content += f"- [`{endpoint}`]({operation_url})\n"
+                else:
+                    content += f"- `{endpoint}`\n"
 
         if changes['endpoints_removed']:
             content += "\n### Removed Endpoints\n\n"
@@ -160,8 +225,12 @@ This update summarizes recent changes made to our OpenAPI Specifications.
 
         if changes['endpoints_modified']:
             content += "\n### Modified Endpoints\n\n"
-            for endpoint in changes['endpoints_modified']:
-                content += f"- `{endpoint}`\n"
+            for endpoint, operation_id in changes['endpoints_modified']:
+                operation_url = get_operation_url(api_name, endpoint, operation_id)
+                if operation_url:
+                    content += f"- [`{endpoint}`]({operation_url})\n"
+                else:
+                    content += f"- `{endpoint}`\n"
 
         if changes['models_added']:
             content += "\n### New Models\n\n"
