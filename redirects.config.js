@@ -366,11 +366,6 @@ var bank = [
     to: "/integrations/banking/overview",
   },
   {
-    integration: "Basiq",
-    platformKey: "dfxm",
-    to: "/integrations/banking/basiq/banking-basiq",
-  },
-  {
     integration: "Plaid",
     platformKey: "suuo",
     to: "/integrations/banking/plaid/banking-plaid",
