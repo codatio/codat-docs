@@ -1,0 +1,59 @@
+name: Spell Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  spell-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install -g cspell
+        
+      - name: Create cspell config
+        run: |
+          cat > cspell.json << EOL
+          {
+            "version": "0.2",
+            "language": "en",
+            "files": ["**/*.md", "**/*.mdx"],
+            "exclude": ["**/node_modules/**", "**/dist/**", "**/.git/**"],
+            "words": [
+              "Codat",
+              "API",
+              "APIs",
+              "SDK",
+              "SDKs",
+              "webhook",
+              "webhooks",
+              "endpoint",
+              "endpoints",
+              "authentication",
+              "authorization",
+              "metadata",
+              "datatype",
+              "datatypes",
+              "datasource",
+              "datasources"
+            ],
+            "ignorePaths": [
+              "package-lock.json",
+              "yarn.lock",
+              "node_modules/**"
+            ]
+          }
+          EOL
+          
+      - name: Run spell check
+        run: cspell "**/*.md" "**/*.mdx" --config cspell.json 
