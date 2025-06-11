@@ -1055,6 +1055,11 @@
                   "type": "string",
                   "description": "Name of the supplier."
                 },
+                "phoneNumber": {
+                  "type": "string",
+                  "nullable": true,
+                  "description": "Phone number of the supplier."
+                },
                 "contactName": {
                   "type": "string",
                   "description": "Name of the contact for the supplier."
@@ -1241,6 +1246,7 @@
             {
               "supplierId": "QEvy8jOe9V",
               "supplierName": "Big Dave Supplies Co.",
+              "phoneNumber": "+1-800-555-0199",
               "contactName": "David Smith",
               "emailAddress": "david.smith@bigdavesupplies.com",
               "taxNumber": "987654321",
@@ -1283,6 +1289,7 @@
             {
               "supplierId": "CLf7vnAx3C",
               "supplierName": "The Acme Corporation",
+              "phoneNumber": "+1-800-555-0123",
               "contactName": "Wile E. Coyote",
               "emailAddress": "wile.e.coyote@acme.com",
               "taxNumber": "123456789",
@@ -1479,6 +1486,7 @@
               {
                 "supplierId": "QEvy8jOe9V",
                 "supplierName": "Big Dave Supplies Co.",
+                "phoneNumber": "+1-800-555-0199",
                 "contactName": "David Smith",
                 "emailAddress": "david.smith@bigdavesupplies.com",
                 "taxNumber": "987654321",
