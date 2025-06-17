@@ -63,8 +63,8 @@ In your IdP, perform the following setup:
 
 4. Once we have the above information, we can send our SAML `metadata.xml` file containing EntityId, Signing Key and Urls.
 
-When this setup is complete, you will be provided with a unique login URL per each environment (Codat instance) to be 
-used for logging in. Users will **not** be able to login via the normal Codat Portal login page.
+Once this setup is complete, we will provide you with a unique login URL to be use for logging in.
+This should be used instead of the normal Codat Portal login page.
 
 Note: to help maintain best in class security we support SP-Initiated and not IdP-Initiated flows. Please refer to Auth0's documentation 
 on [IdP-Initiated Risks and considerations](https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/identity-provider-initiated-single-sign-on#risks-and-considerations)
