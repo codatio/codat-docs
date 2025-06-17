@@ -21,33 +21,5 @@ jobs:
       - name: Install dependencies
         run: npm install -g cspell
         
-      - name: Create cspell config
-        run: |
-          cat > cspell.json << EOL
-          {
-            "version": "0.2",
-            "language": "en",
-            "files": ["**/*.md", "**/*.mdx"],
-            "exclude": ["**/node_modules/**", "**/dist/**", "**/.git/**"],
-            "ignorePaths": [
-              "package-lock.json",
-              "yarn.lock",
-              "node_modules/**"
-            ],
-            "patterns": [
-              {
-                "name": "match_markdown_frontmatter",
-                "pattern": "/^(-{3}|\\[+\\]{3})$(\\s|\\S)*?^\\1$/gm"
-              }
-            ],
-            "languageSettings": [
-              {
-                "languageId": "markdown",
-                "ignoreRegExpList": ["match_markdown_frontmatter"]
-              }
-            ]
-          }
-          EOL
-          
       - name: Run spell check
-        run: cspell "**/*.md" "**/*.mdx" --config cspell.json --words-only cspell-words.txt 
+        run: cspell "**/*.md" "**/*.mdx" --words-only cspell-words.txt 
