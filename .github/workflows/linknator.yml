@@ -1,4 +1,4 @@
-name: Broken Links Check
+name: Broken links check
 
 on:
   pull_request:
@@ -8,6 +8,8 @@ on:
 jobs:
   link-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.event_name != 'pull_request' || github.actor != 'codatbot' 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -21,7 +23,7 @@ jobs:
         run: npm install -g linkinator
       
       - name: Run linkinator
-        run: npx linkinator https://docs.codat.io --recurse --retry --verbosity error --skip .*github.* --format json > link-results.json
+        run: npx linkinator https://docs.codat.io --recurse --verbosity error --skip ".*github.*" --format json --timeout 10000 > link-results.json
         continue-on-error: true  # Ensure the workflow continues even if linkinator finds broken links
       
       - name: Delete Previous Comments
