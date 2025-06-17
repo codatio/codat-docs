@@ -40,10 +40,12 @@ In your IdP, perform the following setup:
 
 2. Provision an SSO app registration (or equivalent) in the IdP. This should be configured to: 
 
-    a. Return SAML responses that include the `groups` claim. This ensures that an ID representing each AD group the user belongs to is sent to us for mapping the client/role access. 
+    a. Return SAML responses that include the `groups` claim. This ensures that an ID representing each AD group the user 
+    belongs to is sent to us for mapping the client/role access.
 
-    b. Set the `Reply URL (Assertion Customer Service URL)` and `Redirect URL` to `https://authentication.codat.io/login/callback?connection=[client-name]-[instance-name]-saml-connection`. 
-   
+    b. Set the `Reply URL (Assertion Customer Service URL)` and `Redirect URL` to 
+    `https://authentication.codat.io/login/callback?connection=[client-name]-[instance-name]-saml-connection`  
+
     c. Include the following claims for each user in the SAML responses from the authenticating IdP:
 
     - `email`
@@ -52,17 +54,17 @@ In your IdP, perform the following setup:
 
     If claims are not named as above, please let us know the names and namespaces of the claims.
 
-4. Send us the `metadata.xml` file or, alternatively, all of the following:
+3. Send us the `metadata.xml` file or, alternatively, all of the following:
 
     - IdP sign-in URL
     - IdP sign-out URL (if required)
     - Signing certificate
     - SAML claim attributes, including name and namespace (see 2d above)
 
-5. Once we have the above information, we can send our SAML `metadata.xml` file containing EntityId, Signing Key and Urls.
+4. Once we have the above information, we can send our SAML `metadata.xml` file containing EntityId, Signing Key and Urls.
 
-When this setup is complete, you will be provided with a unique login URL per each environment (Codat instance) to be used for logging in. 
-Users will **not** be able to login via the normal Codat Portal login page. 
+When this setup is complete, you will be provided with a unique login URL per each environment (Codat instance) to be 
+used for logging in. Users will **not** be able to login via the normal Codat Portal login page.
 
 Note: to help maintain best in class security we support SP-Initiated and not IdP-Initiated flows. Please refer to Auth0's documentation 
 on [IdP-Initiated Risks and considerations](https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/identity-provider-initiated-single-sign-on#risks-and-considerations)
