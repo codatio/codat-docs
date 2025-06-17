@@ -106,7 +106,7 @@ In the request body, specify a `platformKey` of the accounting software you're l
 
 | Accounting software | platformKey |
 | ---  | ---  |
-| Quickbooks Online Bankfeeds | `hcws` |
+| QuickBooks Online Bankfeeds | `hcws` |
 | Oracle NetSuite | `akxx` |
 | Xero | `gbol` |
 | FreeAgent | `fbrh` |

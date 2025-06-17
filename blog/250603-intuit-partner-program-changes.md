@@ -19,7 +19,7 @@ QuickBooks Desktop should not be effected by these changes.
 
 ### Next Steps
 
-Codat is working with Intuit to assess current volume of all Codat supported Quickbooks apps, and will be in touch directly in the coming weeks to any clients where we would recommend any integration changes. 
+Codat is working with Intuit to assess current volume of all Codat supported QuickBooks apps, and will be in touch directly in the coming weeks to any clients where we would recommend any integration changes. 
 
 ### Timeline of the app partner roll out
 

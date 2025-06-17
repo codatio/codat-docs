@@ -58,7 +58,7 @@ When your user runs the `QuickBooksDesktopConnector.exe`, it will launch the "QB
 
 :::info What if the SMB user isn't a Windows admin?
 
-If the SMB user isn't a Windows administrator on their own system, a different administrator must approve the installation and run Quickbooks Desktop using the **Run as Administrator** option. This applies both during the initial link and when adding companies to an existing connector. When installed in this way, the connector is only able to sync data while Quickbooks Desktop is closed.
+If the SMB user isn't a Windows administrator on their own system, a different administrator must approve the installation and run QuickBooks Desktop using the **Run as Administrator** option. This applies both during the initial link and when adding companies to an existing connector. When installed in this way, the connector is only able to sync data while QuickBooks Desktop is closed.
 
 :::
 

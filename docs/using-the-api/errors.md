@@ -80,7 +80,7 @@ The content of an error response includes a more detailed error message and a `c
 ```json
 {
 "statusCode": 404,
-"service": "QuickbooksOnline",
+"service": "QuickBooksOnline",
 "error": "InvoicePdfNotFoundException: Invoice not found for company 360cb9b3-d9cf-4f66-b8db-8a3523fe3dc5 and invoice ID 12345",
 "correlationId": "131f0225-5467-421a-b179-4531d6b4a942"
 }

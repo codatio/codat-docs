@@ -45,7 +45,7 @@ The product variants listed here are earlier implementations of a current produc
 
 #### Supported integrations
 
-Xero, Quickbooks Online, NetSuite, Microsoft Dynamics 365
+Xero, QuickBooks Online, NetSuite, Microsoft Dynamics 365
 
 #### Accounting data types
 
