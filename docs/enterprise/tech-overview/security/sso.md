@@ -24,7 +24,8 @@ Before performing any setup on your side, please fill out the questionaire below
 
 ### Connect your Identity Provider
 
-In order to support SSO, you need to connect your Identity Provider (IdP) to Codat. Common examples of integrating IdPs include Active Directory (AD), PingFererate or OKTA. In your IdP, perform the following setup:
+In order to support SSO, you need to connect your Identity Provider (IdP) to Codat. Common examples of integrating IdPs include Active Directory (AD), PingFederate or OKTA. 
+In your IdP, perform the following setup:
 
 1. Set up groups corresponding to the four Codat roles (Administrator, Analyst, Onboarding, Developer) for each Codat instance you have, and add at least one test user to each group for later testing.
 
@@ -60,9 +61,12 @@ In order to support SSO, you need to connect your Identity Provider (IdP) to Cod
 
 5. Once we have the above information, we can send our SAML `metadata.xml` file containing EntityId, Signing Key and Urls.
 
-When this setup is complete, you will be provided with a unique login URL per each environment (Codat instance) to be used for logging in. Users will **not** be able to login via the normal Codat Portal login page. 
+When this setup is complete, you will be provided with a unique login URL per each environment (Codat instance) to be used for logging in. 
+Users will **not** be able to login via the normal Codat Portal login page. 
 
-Note: to help maintain best in class security we support SP-Initiated and not IdP-Initiated flows. Please refer to Auth0's documentation on [IdP-Initiated Risks and considerations](https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/identity-provider-initiated-single-sign-on#risks-and-considerations) for more information on this.
+Note: to help maintain best in class security we support SP-Initiated and not IdP-Initiated flows. Please refer to Auth0's documentation 
+on [IdP-Initiated Risks and considerations](https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/identity-provider-initiated-single-sign-on#risks-and-considerations)
+ for more information on this.
 
 ### Add a new user
 
