@@ -1,0 +1,64 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "files": ["**/*.md", "**/*.mdx"],
+  "exclude": ["**/node_modules/**", "**/dist/**", "**/.git/**"],
+  "ignorePaths": [
+    "package-lock.json",
+    "yarn.lock",
+    "node_modules/**"
+  ],
+  "patterns": [
+    {
+      "name": "match_markdown_frontmatter",
+      "pattern": "/^(-{3}|\\[+\\]{3})$(\\s|\\S)*?^\\1$/gm"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": "markdown",
+      "ignoreRegExpList": ["match_markdown_frontmatter"]
+    }
+  ],
+  "words": [
+    "Codat",
+    "Codat's",
+    "API",
+    "APIs",
+    "SDK",
+    "SDKs",
+    "webhook",
+    "webhooks",
+    "endpoint",
+    "endpoints",
+    "authentication",
+    "authorization",
+    "metadata",
+    "datatype",
+    "datatypes",
+    "datasource",
+    "datasources",
+    "Xero",
+    "QuickBooks",
+    "Intuit",
+    "Xero's",
+    "Intuit's",
+    "MYOB",
+    "Chargebee",
+    "BigCommerce",
+    "NetSuite",
+    "trji",
+    "qudb",
+    "pbbf",
+    "fbrh",
+    "vxvy",
+    "pdvj",
+    "akxx",
+    "pqsw",
+    "qhyg",
+    "ndsk",
+    "jcrp",
+    "hbql",
+    "tgff"
+  ]
+} 

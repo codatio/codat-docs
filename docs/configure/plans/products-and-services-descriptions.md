@@ -291,7 +291,7 @@ This product will appear as **Lending API** on your order form.
 
    <li className="card">
     <h3>Desktop platforms</h3>
-    <p>Required for access to Quickbooks Desktop and Sage 50 (UK & Ireland)</p>
+    <p>Required for access to QuickBooks Desktop and Sage 50 (UK & Ireland)</p>
   </li>
 
    <li className="card">

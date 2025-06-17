@@ -13,7 +13,7 @@ You'll need to:
 
 ## Enable and update commerce sync settings
 
-Update your [commerce sync settings](/integrations/commerce/commerce-sync-settings#update-commerce-sync-settings-via-the-api) to automatically retrieve data from a company when they authorise your connection to their data.
+Update your [commerce sync settings](/integrations/commerce/commerce-sync-settings#update-commerce-sync-settings-via-the-api) to automatically retrieve data from a company when they authorize your connection to their data.
 
 ## Create a company and data connection
 
@@ -23,7 +23,7 @@ Create a Codat company and data connection for your customer.
 2. Enter a **companyName** and **platformType** and submit your request.
    The response returned includes:
    
-   - The **linkUrl** which allows your customer to authorise your connection to their data.
+   - The **linkUrl** which allows your customer to authorize your connection to their data.
    - The data connection **id** which allows you to sync the company's data.
 
 3. Copy the **linkUrl** and send it to your customer.
@@ -61,7 +61,7 @@ Create a Codat company and data connection for your customer.
 
 ## Read commerce data sets
 
-When your customer authorises your connection to their company data, Codat automatically fetches their datasets. You can read these datasets from the following endpoints. Use the company and data connection **id** that you've already created. See above.
+When your customer authorizes your connection to their company data, Codat automatically fetches their datasets. You can read these datasets from the following endpoints. Use the company and data connection **id** that you've already created. See above.
 
 `GET /companies/{{companyId}}/connections/{{connectionId}}/data/commerce-customers`
 
