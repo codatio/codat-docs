@@ -235,7 +235,7 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/option
 
 </Tabs>
 
-The response indicates that the following properties must be populated (`requried: true`) when you create a journalEntry to represent payroll in Xero:
+The response indicates that the following properties must be populated (`required: true`) when you create a journalEntry to represent payroll in Xero:
 - `postedOn` 
 - `journalLines` which also require the following sub properties
     - `description`
@@ -429,7 +429,7 @@ When you make the request, you will receive a pushOperation response, this will 
 - **dataType**: the type of data being created, in this case, `journalEntry`
 - **status**: the status of the create operation, which can be `Pending`, `Failed`, `Success` or `TimedOut` 
 - **requestedOnUtc**: the datetime (in UTC) when the operation was requested 
-- **completedOnUtc**: the datetime (in UTC) when the operaion was completed, null if `Pending`
+- **completedOnUtc**: the datetime (in UTC) when the operation was completed, null if `Pending`
 - **validation**: a human-readable object that contains validation details, including errors, encountered during the operation.
 - **changes**: an array that communicates which record has changed (`recordRef` property) and the manner in which it changed (`type` property that can be `Unknown`, `Created`, `Modified`, or `Deleted`)
 

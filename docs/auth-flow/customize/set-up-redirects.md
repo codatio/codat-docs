@@ -161,7 +161,7 @@ It's also possible to send users to completely different websites and subdomains
 
 <br/>
 
-To use this dynamic host behaviour, you'll need to list each allowed host in **Allowed redirect URLs**.
+To use this dynamic host behavior, you'll need to list each allowed host in **Allowed redirect URLs**.
 
 For the above example, `https://{environment}.mybank.io/success`, you'd have to explicitly list all valid environments:
 - `https://local.mybank.io/success`

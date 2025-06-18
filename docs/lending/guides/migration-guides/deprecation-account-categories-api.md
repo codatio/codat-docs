@@ -23,7 +23,7 @@ The following endpoints will stop working:
 ## Instructions for migration
 
 1. Map to the new endpoints
-2. Review the changes in behaviour
+2. Review the changes in behavior
 
 ### Map to the new endpoints
 
@@ -39,9 +39,9 @@ Identify the endpoints you are using today and the recommended alternative solut
 | [List financial metrics](/assess-api#/operations/get-enhanced-financial-metrics) <br/><br/> [Get the marketing metrics from an accounting source](/assess-api#/operations/get-accounting-marketing-metrics) 	| We are no longer supporting the precalculated metrics available on these endpoints. You can calculate these using your own formulas from our new endpoints: <br/>[Enhanced profit and loss accounts](/assess-api#/operations/get-accounts-for-enhanced-profit-and-loss) <br/>[Enhanced balance sheet accounts](/assess-api#/operations/get-accounts-for-enhanced-balance-sheet) <br/><br/>If you would like to continue using the same formulas for the precalculated metrics we offered, you can find the formulas [here](https://docs.google.com/spreadsheets/d/1xpyQHOTQWHybOZpSnfXx54tkag0qmJ1mR76bQt9wink/edit?usp=sharing)  	|
 
 
-### Changes in behaviour
+### Changes in behavior
 
-The behaviour changes below apply to the latest endpoints only, the behaviour on the endpoints being deprecated has not changed.
+The behavior changes below apply to the latest endpoints only, the behavior on the endpoints being deprecated has not changed.
 
 1. Our **supported categories** have changed - you will need to map to the [latest categories](/lending/enhanced-financials/overview#accounts-and-account-categories).
 2. We no longer require the balance sheet to balance. This means if <i>Assets - Liabilities</i> does not equal <i> Equity</i> , we will still return data via the endpoint. If you require this validation, we recommend you implement these rules in your own environment.

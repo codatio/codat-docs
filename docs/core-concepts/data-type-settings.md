@@ -71,7 +71,7 @@ To manually trigger your data to be synchronized:
 You can also view **Read history** and **Write history** to check the status of previous read and write data syncs.
 
 :::note Default sync history
-For most data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. These default settings can be overriden via our API using [advanced sync settings](/knowledge-base/advanced-sync-settings).
+For most data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. These default settings can be overridden via our API using [advanced sync settings](/knowledge-base/advanced-sync-settings).
 :::
 
 ---

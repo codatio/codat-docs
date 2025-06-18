@@ -114,7 +114,7 @@ It's possible to create negative _spend money transactions_ and _receive money t
 
 In Xero, contacts only become a customer or a supplier once an AP or AR transaction is applied to them e.g. an invoice or a bill. Up until this point, they remain as just a contact and not a customer or a supplier within Xero.
 
-To cater for this behaviour in the Codat standard, contacts appear as both Customers and Suppliers if they are a contact in Xero. This allows you to always find the ID for a contact to create either a bill, or an invoice say (as any contact may be used in both AP or AR context).
+To cater for this behavior in the Codat standard, contacts appear as both Customers and Suppliers if they are a contact in Xero. This allows you to always find the ID for a contact to create either a bill, or an invoice say (as any contact may be used in both AP or AR context).
 
 ### How might Xero rate limits affect my integration?
 

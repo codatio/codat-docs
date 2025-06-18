@@ -35,7 +35,7 @@ To download the available reports, click the **Download** button next to the com
 Codat offers the following report options:
 
 * **Spend summary** provides a one-page summary view of top supplier opportunities for the customer.
-* **Spend analysis** covers the summary and detaileds of the customer's spend and suppliers in an Excel format. 
+* **Spend analysis** covers the summary and details of the customer's spend and suppliers in an Excel format. 
 
 ![An image of the Portal user interface with the download dropdown displayed and download button highlighted for an example company](/img/spend-insights/si-reports-download.png)
 

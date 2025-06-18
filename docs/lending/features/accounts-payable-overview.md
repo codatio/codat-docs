@@ -19,7 +19,7 @@ Common uses of our accounts payable feature include:
 
 - **Digital data collection:** get an ongoing feed of supplier invoices.
 
-- **Supplier risk analysis:** gain insights into the borrower's relationship with the supplier including a fully history of bills, payment behaviour, and discounts provided on previous bills. 
+- **Supplier risk analysis:** gain insights into the borrower's relationship with the supplier including a fully history of bills, payment behavior, and discounts provided on previous bills. 
 
 ## Feature components
 

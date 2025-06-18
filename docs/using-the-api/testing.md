@@ -4,7 +4,7 @@ sidebar_label: "Test your solution"
 description: "Review our suggestions, best practices, and strategies for testing your Codat build"
 ---
 
-Testing is a key component of any software development process, both during the implementation and after go-live if changes are made to the solution. Here is what Codat recomments for testing your Codat build.
+Testing is a key component of any software development process, both during the implementation and after go-live if changes are made to the solution. Here is what Codat recommentd for testing your Codat build.
 
 ## Using a test instance
 
@@ -65,5 +65,5 @@ You can also sign up and test with **Xero** and **QuickBooks Online**, both of w
 | [Pandle](https://my.pandle.com/users/sign_up) 	| Live integration 	| Free account 	|  	|
 | [Wave](https://my.waveapps.com/register/) 	| Live integration 	| Free account 	|  	|
 | [Xero](https://central.xero.com/s/article/Use-the-demo-company#Web) 	| Live integration 	| Demo company 	| Demo does not include automatic bank feeds and the ability to invite   other users. You are able to add your own data, but the demo company resets   itself after 28 days. <br/> [Read more](/integrations/accounting/xero/accounting-xero-test) about testing this integration.	|
-| [Zoho Books](https://www.zoho.com/books/signup/) 	| Live integration 	| Test company 	| When setting up a test organisation, you can choose to import or create   test data. <br/> [Read more](/integrations/accounting/zoho-books/accounting-zohobooks-setup) about testing this integration.	|
+| [Zoho Books](https://www.zoho.com/books/signup/) 	| Live integration 	| Test company 	| When setting up a test organization, you can choose to import or create   test data. <br/> [Read more](/integrations/accounting/zoho-books/accounting-zohobooks-setup) about testing this integration.	|
 | [Plaid](https://plaid.com/docs/sandbox/) 	| Live integration 	| Sandbox environment 	| Initial setup for Plaid needs to be complete to gain access to the   sandbox environment with demo data. <br/> [Read more](/integrations/banking/plaid/test-your-plaid-integration) about testing this integration.	|

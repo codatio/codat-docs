@@ -21,7 +21,7 @@ Common uses of our liabilities feature include:
 
 - **Debt capacity:** evaluates if the business can handle more debt without financial strain.
 
-- **Repayment behaviour:** indicates if the borrower makes payments on time or defaults.
+- **Repayment behavior:** indicates if the borrower makes payments on time or defaults.
 
 - **Loan structuring:** tailors new loan terms to fit the borrower's financial situation.
 
