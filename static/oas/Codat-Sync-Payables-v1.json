@@ -4559,7 +4559,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -9697,7 +9697,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -14424,7 +14424,7 @@
                               },
                               {
                                 "field": "CurrencyRate",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
                               }
                             ]
                           }
@@ -20199,7 +20199,7 @@
                                 "information": [
                                   {
                                     "field": "AccountRef.Id",
-                                    "details": "If an ID which corresponds to a bank account is provided, a 'bill payment check' will be added to QuickBooks Desktop, If an ID which corresponds to a credit card account is provided, a 'bill payment credit card' will be added QuickBooks Desktop. "
+                                    "details": "If an ID which corresponds to a bank account is provided, a 'bill payment check' will be added to Quickbooks Desktop, If an ID which corresponds to a credit card account is provided, a 'bill payment credit card' will be added Quickbooks Desktop. "
                                   }
                                 ]
                               }
@@ -20232,7 +20232,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -20257,7 +20257,7 @@
                               },
                               {
                                 "field": "CurrencyRate",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
                               }
                             ]
                           }
@@ -28639,7 +28639,7 @@
                               },
                               {
                                 "field": "CurrencyRate",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
                               }
                             ]
                           }
@@ -32581,7 +32581,7 @@
                                   },
                                   {
                                     "field": "JournalLines.Currency",
-                                    "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                    "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
                                   }
                                 ],
                                 "information": [
