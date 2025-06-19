@@ -82,7 +82,7 @@ The loan writeback process uses two bank accounts:
     
     The borrower can choose an existing source bank account or ask to create a new one. This is done when [setting up the bank feed source account](#bank-feed-source-account).
 
-First, your customer needs to choose one of their existing business bank accounts. This account will be used to depost the loan. Call our [List bank accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
+First, your customer needs to choose one of their existing business bank accounts. This account will be used to deposit the loan. Call our [List bank accounts](/lending-api#/operations/list-accounting-bank-accounts) endpoint to retrieve the customer's existing bank accounts. 
 
 <Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">

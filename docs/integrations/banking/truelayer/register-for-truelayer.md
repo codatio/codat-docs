@@ -42,7 +42,7 @@ An AIS Agent Agreement between the customer and TrueLayer
 
 The key factor here is whether the customer’s app or website will be displaying account information acquired through the TrueLayer’s Data API back to an end-user. For example:
 
-✅ - customer’s app or website allows the end-user to view and categorise account transactions. This may either be consolidated data or simply their bank transactions.
+✅ - customer’s app or website allows the end-user to view and categorize account transactions. This may either be consolidated data or simply their bank transactions.
 ❌ - customer’s app or website is simply acquiring bank information to assist with internal decision making (e.g. KYC or credit analysis) without displaying this information back to an end-user.
 
 TrueLayer has further information on this here.

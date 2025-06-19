@@ -14,7 +14,7 @@ The following rules can be configured in the Codat Portal to trigger webhook eve
 | Rule | Type | Trigger | Additional data | 
 | :- | :- | :- | :- |
 | [Company data connection status changed](/using-the-api/webhooks/legacy/core-rules-types#company-data-connection-status-changed)  |`DataConnectionStatusChanged`| A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
-| [New company synchronized](/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized)                |`New company synchronised`|  All datasets created during the initial sync of a company are completed. | |
+| [New company synchronized](/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized)                |`New company synchronized`|  All datasets created during the initial sync of a company are completed. | |
 | [Data sync completed](/using-the-api/webhooks/legacy/core-rules-types#data-sync-completed)                     |`Data sync completed`| Data synchronization is successfully completed in full for a specific data type. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
 | [Dataset data changed](/using-the-api/webhooks/legacy/core-rules-types#dataset-data-changed)                    |`Dataset data changed`|  A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
 | [Dataset status has changed to an error state](/using-the-api/webhooks/legacy/core-rules-types#dataset-status-has-changed-to-an-error-state) |`Data Sync Status Changed To Error`| The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
@@ -63,7 +63,7 @@ In line with industry standard security practices, we have removed personally id
 
 ### New company synchronized
 
-**Type**: `New company synchronised`  
+**Type**: `New company synchronized`  
 **Trigger:** Initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.   
 
 ```json
@@ -73,7 +73,7 @@ In line with industry standard security practices, we have removed personally id
   "CompanyId": "8a210b68-6988-11ed-a1eb-0242ac120002",
   "DataConnectionId": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
   "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
-  "RuleType": "New company synchronised",
+  "RuleType": "New company synchronized",
   "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
   "Message": "Company 8a210b68-6988-11ed-a1eb-0242ac120002 synced for the first time",
   "Data": {

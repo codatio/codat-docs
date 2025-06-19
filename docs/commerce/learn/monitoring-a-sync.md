@@ -27,7 +27,7 @@ To view more detailed information about a record, click on an item in your **syn
 
 It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/commerce/error-documentation#error-messages) for recommendations on how to resolve these. 
 
-You can also navigate to the **Config** tab to view and download the customer's sync configuration, which helps establish root causes for any errors that occured. 
+You can also navigate to the **Config** tab to view and download the customer's sync configuration, which helps establish root causes for any errors that occurred. 
 
 <img
   src="/img/sync-for-commerce/0007-sync-details-ui.png"

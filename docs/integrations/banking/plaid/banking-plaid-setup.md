@@ -85,7 +85,7 @@ When you are ready to connect to live data, you will need to request access from
 
 ## Customizing Plaid's Link
 
-You are able to customise your Plaid link journey and utilise the customised version in the link flow powered by Codat.
+You are able to customise your Plaid link journey and utilize the customised version in the link flow powered by Codat.
 
 Log into https://dashboard.plaid.com/link
 
