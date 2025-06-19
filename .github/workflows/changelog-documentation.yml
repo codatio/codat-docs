@@ -1,4 +1,4 @@
-name: Documentation Release Notes Generator
+name: Changelog generator - documentation
 
 on:
   schedule:

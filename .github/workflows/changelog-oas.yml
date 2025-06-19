@@ -1,4 +1,4 @@
-name: OAS Changelog Generator
+name: Changelog generator - OAS
 
 on:
   schedule:

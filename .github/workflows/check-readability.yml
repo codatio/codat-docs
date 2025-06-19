@@ -1,4 +1,4 @@
-name: Report readability
+name: Check - readability
 
 # This action only works on pull request events
 on: pull_request

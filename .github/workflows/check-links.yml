@@ -1,4 +1,4 @@
-name: Broken links check
+name: Check - broken links
 
 on:
   pull_request:
