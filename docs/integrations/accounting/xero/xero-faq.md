@@ -209,3 +209,7 @@ For example:
   "statusCode": 200
 }
 ```
+### For certain bills and invoices, why does the sum of the line items not add up to the exact Total Amount?
+
+In Xero, it is possible for an end user to overwrite the total of an AR/AP Invoice to within 0.10 decimal places of the total of the line items. The adjustment is attributed to a rounding account, but left off from being a line item on the bill itself.
+Codat does not throw an error in these cases, but instead logs a warning. These warnings are visible via the [read.completed webhook payloads](https://docs.codat.io/using-the-api/webhooks/event-types), or the [Get Validation Results endpoint](platform-api#/operations/get-read-validation-results)
