@@ -883,7 +883,10 @@ func main() {
   
 Query: `dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked`
 
-_Note_: the page size value is obligatory for querying.
+:::Note
+- The page size value is obligatory for querying.
+- The response will exclude companies that had connections but they were deleted.
+:::
 
 <Tabs>
 
