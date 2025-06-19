@@ -1,0 +1,144 @@
+# Documentation Release Notes for May 2025
+
+## New Documentation
+
+- Added new Markdown file: `docs/cochat.md`
+- Added new Markdown file: `docs/enterprise/banks/overview.md`
+- Added new Markdown file: `docs/enterprise/tech-implementation/consent/build.md`
+- Added new Markdown file: `docs/enterprise/tech-implementation/consent/considerations.md`
+- Added new Markdown file: `docs/enterprise/tech-implementation/consent/lifecyle.md`
+- Added new Markdown file: `docs/enterprise/tech-implementation/consent/overview.md`
+- Added new Markdown file: `docs/enterprise/tech-implementation/consent/uiexamples.md`
+- Added new Markdown file: `docs/enterprise/tech-implementation/data-types.md`
+- Added new Markdown file: `docs/enterprise/tech-implementation/getting-started.md`
+- Added new Markdown file: `docs/enterprise/tech-implementation/syncing-data.md`
+- Added new Markdown file: `docs/enterprise/tech-overview/architecture/api.md`
+- Added new Markdown file: `docs/enterprise/tech-overview/architecture/data-flow.md`
+- Added new Markdown file: `docs/enterprise/tech-overview/architecture/rate-limits.md`
+- Added new Markdown file: `docs/enterprise/tech-overview/architecture/webhooks.md`
+- Added new Markdown file: `docs/enterprise/tech-overview/intro.md`
+- Added new Markdown file: `docs/enterprise/tech-overview/security/overview.md`
+- Added new Markdown file: `docs/smb-help-hub/codat/faq.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/netsuite/bundles.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/netsuite/overview.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/netsuite/suitecloud.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/netsuite/troubleshooting.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/qb-desktop/configure-connector.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/qb-desktop/install-connector.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/qb-desktop/overview.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/qb-desktop/troubleshooting.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/sage-50/overview.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/sage-50/troubleshooting.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/sage-intacct/error-messages.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/sage-intacct/overview.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/sage-intacct/web-services-subscription.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/sage-intacct/web-services-user.md`
+- Added new Markdown file: `docs/smb-help-hub/integrations/shopify/custom-apps.md`
+- Added new Markdown file: `docs/smb-help-hub/overview.md`
+- Added new Markdown file: `docs/spend-insights/guides/connect-customer.md`
+- Added new Markdown file: `docs/spend-insights/guides/connect-software.md`
+- Added new Markdown file: `docs/spend-insights/guides/create-customer.md`
+- Added new Markdown file: `docs/spend-insights/guides/manage-relationships.md`
+- Added new Markdown file: `docs/spend-insights/guides/refresh-data.md`
+
+## Updated Documentation
+
+- Updated Markdown file: `blog/240621-xero-organisation-update.md`
+- Updated Markdown file: `blog/240925-ui-improvements-update.md`
+- Updated Markdown file: `blog/250110-deprecation-legacy-hosted-link-ui.md`
+- Updated Markdown file: `blog/250110-new-hosted-link-ui.md`
+- Updated Markdown file: `blog/250513-consent-ui-link.md`
+- Updated Markdown file: `docs/auth-flow/authorize-embedded-link.md`
+- Updated Markdown file: `docs/auth-flow/authorize-hosted-link.md`
+- Updated Markdown file: `docs/auth-flow/customize/customize-link.md`
+- Updated Markdown file: `docs/auth-flow/customize/sdk-customize-code.md`
+- Updated Markdown file: `docs/bank-feeds/bank-feeds-sdk.md`
+- Updated Markdown file: `docs/bank-feeds/integrations/sage/mapping.md`
+- Updated Markdown file: `docs/commerce/learn/sfc-journal-entry-mapping.md`
+- Updated Markdown file: `docs/configure/portal/account-management.md`
+- Updated Markdown file: `docs/configure/user-management/user-roles.md`
+- Updated Markdown file: `docs/core-concepts/integrations.md`
+- Updated Markdown file: `docs/enterprise/overview.md`
+- Updated Markdown file: `docs/enterprise/tech-implementation/implementation-roles.md`
+- Updated Markdown file: `docs/enterprise/tech-implementation/implementation-workstreams.md`
+- Updated Markdown file: `docs/enterprise/tech-implementation/managing-platform-credentials.md`
+- Updated Markdown file: `docs/enterprise/tech-implementation/multiple-use-cases.md`
+- Updated Markdown file: `docs/expenses/fx-management.md`
+- Updated Markdown file: `docs/expenses/overview.md`
+- Updated Markdown file: `docs/integrations/accounting/clearbooks/accounting-clearbooks.md`
+- Updated Markdown file: `docs/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral.md`
+- Updated Markdown file: `docs/integrations/accounting/freeagent/accounting-freeagent.md`
+- Updated Markdown file: `docs/integrations/accounting/freshbooks/accounting-freshbooks.md`
+- Updated Markdown file: `docs/integrations/accounting/kashflow/accounting-kashflow.md`
+- Updated Markdown file: `docs/integrations/accounting/myob/accounting-myob.md`
+- Updated Markdown file: `docs/integrations/accounting/netsuite/accounting-netsuite.md`
+- Updated Markdown file: `docs/integrations/accounting/netsuite/oracle-netsuite-integration-reference.md`
+- Updated Markdown file: `docs/integrations/accounting/overview.md`
+- Updated Markdown file: `docs/integrations/accounting/pandle/accounting-pandle.md`
+- Updated Markdown file: `docs/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop.md`
+- Updated Markdown file: `docs/integrations/accounting/quickbooksdesktop/quickbooks-desktop-faq.md`
+- Updated Markdown file: `docs/integrations/accounting/quickbooksdesktop/software-and-hardware-requirements.md`
+- Updated Markdown file: `docs/integrations/accounting/quickbooksonline/accounting-quickbooksonline.md`
+- Updated Markdown file: `docs/integrations/accounting/quickbooksonline/faq-quickbooks-online.md`
+- Updated Markdown file: `docs/integrations/accounting/sage-intacct/accounting-sage-intacct.md`
+- Updated Markdown file: `docs/integrations/accounting/sage50/accounting-sage50.md`
+- Updated Markdown file: `docs/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud.md`
+- Updated Markdown file: `docs/integrations/accounting/sandbox/accounting-sandbox.md`
+- Updated Markdown file: `docs/integrations/accounting/wave/accounting-wave.md`
+- Updated Markdown file: `docs/integrations/accounting/workday/overview.md`
+- Updated Markdown file: `docs/integrations/accounting/xero/accounting-xero.md`
+- Updated Markdown file: `docs/integrations/accounting/zoho-books/accounting-zoho-books.md`
+- Updated Markdown file: `docs/integrations/accounting/zoho-books/zoho-book-limits.md`
+- Updated Markdown file: `docs/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-authenticate-users-web-app.md`
+- Updated Markdown file: `docs/integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds-smb-user.md`
+- Updated Markdown file: `docs/integrations/banking/basiq/banking-basiq.md`
+- Updated Markdown file: `docs/integrations/banking/plaid/banking-plaid.md`
+- Updated Markdown file: `docs/integrations/banking/truelayer/banking-truelayer.md`
+- Updated Markdown file: `docs/integrations/commerce/amazon-seller-central/commerce-amazon-seller-central.md`
+- Updated Markdown file: `docs/integrations/commerce/bigcommerce/commerce-bigcommerce.md`
+- Updated Markdown file: `docs/integrations/commerce/clover/commerce-clover.md`
+- Updated Markdown file: `docs/integrations/commerce/lightspeed-k/commerce-lightspeed-k.md`
+- Updated Markdown file: `docs/integrations/commerce/mollie/commerce-mollie-test.md`
+- Updated Markdown file: `docs/integrations/commerce/mollie/commerce-mollie.md`
+- Updated Markdown file: `docs/integrations/commerce/mollie/mollie-integration-reference.md`
+- Updated Markdown file: `docs/integrations/commerce/overview.md`
+- Updated Markdown file: `docs/integrations/commerce/paypal/commerce-paypal.md`
+- Updated Markdown file: `docs/integrations/commerce/prestashop/commerce-prestashop.md`
+- Updated Markdown file: `docs/integrations/commerce/square/commerce-square.md`
+- Updated Markdown file: `docs/integrations/commerce/stripe/commerce-stripe.md`
+- Updated Markdown file: `docs/integrations/commerce/sumup/commerce-sumup.md`
+- Updated Markdown file: `docs/integrations/commerce/woocommerce/commerce-woocommerce.md`
+- Updated Markdown file: `docs/integrations/commerce/zettle/commerce-zettle.md`
+- Updated Markdown file: `docs/lending/commerce-metrics/troubleshooting.md`
+- Updated Markdown file: `docs/lending/overview.md`
+- Updated Markdown file: `docs/spend-insights/get-started.md`
+- Updated Markdown file: `docs/spend-insights/guides/analyze-spend.md`
+- Updated Markdown file: `docs/spend-insights/guides/create-account.md`
+- Updated Markdown file: `docs/spend-insights/guides/manage-relationships.md`
+- Updated Markdown file: `docs/spend-insights/guides/onboard-customer.md`
+- Updated Markdown file: `docs/spend-insights/overview.md`
+- Updated Markdown file: `docs/spend-insights/resources/customer-faqs.md`
+- Updated Markdown file: `docs/spend-insights/resources/link-file.md`
+- Updated Markdown file: `docs/spend-insights/resources/link-software.md`
+- Updated Markdown file: `docs/using-the-api/push.md`
+
+## Removed Documentation
+
+- Removed Markdown file: `blog/240404-QBD-Sync-for-Expenses.md`
+- Removed Markdown file: `blog/240622-FreeAgent-Sync-for-Expenses.md`
+- Removed Markdown file: `blog/250217-Zoho-Books-Sync-for-Expenses.md`
+- Removed Markdown file: `blog/250401-bank-feeds-connections.md`
+- Removed Markdown file: `blog/250401-qbo-minor-versions-update.md`
+- Removed Markdown file: `blog/250404-deprecation-netsuite-je-basecurrency.md`
+- Removed Markdown file: `blog/250404-update-accounts-balances.md`
+- Removed Markdown file: `blog/250407-developer-update-q2.md`
+- Removed Markdown file: `blog/250513-consent-ui-link.md`
+- Removed Markdown file: `docs/configure/portal/_manage-account.md`
+- Removed Markdown file: `docs/enterprise/tech-implementation/consent-journey.md`
+- Removed Markdown file: `docs/enterprise/tech-implementation/multiple-use-cases.md`
+- Removed Markdown file: `docs/integrations/accounting/workday/overview.md`
+- Removed Markdown file: `docs/spend-insights/guides/create-account.md`
+- Removed Markdown file: `docs/spend-insights/guides/onboard-customer.md`
+- Removed Markdown file: `docs/spend-insights/resources/link-file.md`
+- Removed Markdown file: `docs/spend-insights/resources/link-software.md`
+- Removed Markdown file: `docs/using-the-api/write-data/idempotency.md`
