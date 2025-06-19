@@ -14,7 +14,7 @@ Before your SMB users will be able to download and install the on-premise connec
 From the SMB perspective, they will see the on-premise connector app as being owned and branded by you rather than Codat.
 
 - Create your branding - this will be used on the link site and the on-premise connector app.
-- Optionally, configure the Codat link flow. This will create a download link for the connector and provide the unique company ID for each of your SMB users. Alternatively, you can choose to build this functionality yourself by reading the download end point and customer ID from the Codat API e.g. to offer this from within your own site, or to implement a specific workflow, to maintain tighly branded look/feel etc.
+- Optionally, configure the Codat link flow. This will create a download link for the connector and provide the unique company ID for each of your SMB users. Alternatively, you can choose to build this functionality yourself by reading the download end point and customer ID from the Codat API e.g. to offer this from within your own site, or to implement a specific workflow, to maintain tightly branded look/feel etc.
 - Enable the on-premise connector (QBD/Sage 50) integration
 
 ## The on-premise connector

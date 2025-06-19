@@ -238,7 +238,7 @@ We recommend you [configure webhook consumers](/using-the-api/webhooks/create-co
 
 - [Dataset status has changed to an error state](/using-the-api/webhooks/event-types)  
 
-  This means an issue occured when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
+  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
  
 - [Dataset data changed](/using-the-api/webhooks/event-types)  
 

@@ -588,7 +588,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 ```json
 {
   "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e",
-  "RuleType": "New company synchronised",
+  "RuleType": "New company synchronized",
   "RuleId": "70af3071-65d9-4ec3-b3cb-5283e8d55dac",
   "ClientId": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
   "ClientName": "Bank of Dave",

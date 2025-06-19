@@ -16,7 +16,7 @@ Some simple use cases might include:
 
 ## What is Zapier?
 
-[Zapier](https://zapier.com/apps/Codat/integrations) provides no-code workflows that let you connect Codat to more than 2,000 other web applcations. These automated connections are called Zaps. You can set them up in minutes with no coding to automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
+[Zapier](https://zapier.com/apps/Codat/integrations) provides no-code workflows that let you connect Codat to more than 2,000 other web applications. These automated connections are called Zaps. You can set them up in minutes with no coding to automate your day-to-day tasks and build workflows between apps that otherwise wouldn't be possible.
 
 Each Zap consists of two parts: a **trigger** that determines the starting condition of the workflow (If X happens in Source A...) and an **action** that happens in another app as a result (...do Y in Target B).
 

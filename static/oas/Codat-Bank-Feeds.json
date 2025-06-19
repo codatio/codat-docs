@@ -7131,7 +7131,7 @@
       },
       "SourceAccountBatchErrorResponse": {
         "title": "Batch source account creation error",
-        "description": "Describes the error that occured when trying to create the specified source account.",
+        "description": "Describes the error that occurred when trying to create the specified source account.",
         "type": "object",
         "properties": {
           "sourceAccountId": {

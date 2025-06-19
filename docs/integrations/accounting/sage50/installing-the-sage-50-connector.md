@@ -13,7 +13,7 @@ Customers must install and run the Sage 50 connector on the same computer where 
 To install the Sage 50 connector, the user who is connecting their company data—the SMB user—must complete the following tasks:
 
 1. [Download the connector](/integrations/accounting/sage50/installing-the-sage-50-connector#1-download-the-connector)
-2. [Launch the connector and enter their licence key](/integrations/accounting/sage50/installing-the-sage-50-connector#2-launch-the-connector-and-enter-their-licence-key)
+2. [Launch the connector and enter their license key](/integrations/accounting/sage50/installing-the-sage-50-connector#2-launch-the-connector-and-enter-their-license-key)
 3. [Verify company data file](/integrations/accounting/sage50/installing-the-sage-50-connector#3-verify-company-data-file)
 4. [Select a company data file](/integrations/accounting/sage50/installing-the-sage-50-connector#4-select-a-company-data-file)
 5. [Enter their Sage 50 credentials](/integrations/accounting/sage50/installing-the-sage-50-connector#5-enter-their-sage-50-credentials)
@@ -38,7 +38,7 @@ The Sage 50 connector is packaged as a .exe file. To increase your clients' trus
 Additionally, the file is signed with an Extended Validation Code Signing Digital Certificate issued by GlobalSign.
 :::
 
-## 2. Launch the connector and enter their licence key
+## 2. Launch the connector and enter their license key
 
 When the connector has been downloaded and run, a screen similar to the following is displayed.
 
@@ -46,13 +46,13 @@ When the connector has been downloaded and run, a screen similar to the followin
 
 If the user's computer has anti-virus software installed, they might be asked to confirm they trust the source of the file. This confirmation is specific to each anti-virus program.
 
-The user should have been provided with a _Licence Key_ when they downloaded the Sage 50 connector. They should enter this in the **Licence Key** box and then click **Install**.
+The user should have been provided with a _License Key_ when they downloaded the Sage 50 connector. They should enter this in the **License Key** box and then click **Install**.
 
-The user's licence key is their Codat company ID.
+The user's license key is their Codat company ID.
 
 <img src="/img/old/7955324-Connect_to_Sage_50_License_Key.png" />
 
-If the licence key is valid, the connector will be installed; this takes a few minutes to complete. The user will see an error if the licence key is not valid.
+If the license key is valid, the connector will be installed; this takes a few minutes to complete. The user will see an error if the license key is not valid.
 
 The progress bar shows the status of the installation; for example:
 

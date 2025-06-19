@@ -21,7 +21,7 @@ We've improved our data type coverage for a number of integrations.
 - Create Journal Entries
 - Get `Jobs` on Tracking Categories
 
-#### Freshbooks 
+#### FreshBooks 
 
 - Get Bills
 - Get Bill Payments

@@ -70,7 +70,7 @@ Codat handles authorization and linking to your SMB's accounting software and ta
 ### [Retrieve accounts payable invoices](bills)
 
 A list of unpaid [bills](/accounting-api#/schemas/Bill) (accounts payable invoices) can be retrieved from the accounting software, in the Accounting API a bill is an itemised record of goods purchased from or services provided by a supplier.
-Alternatively, Bills can also be created within your application and then synchronised to the accounting software.
+Alternatively, Bills can also be created within your application and then synchronized to the accounting software.
 
 ### [Payment account mapping](mapping)
 
