@@ -21,8 +21,6 @@ The red exclamation mark indicates that a matching accounting account could not 
 
 **Transaction type abbreviations used in the user interface**
 
-|Abbreviations| | |
-|----|----|----|
-|UNK - Unknown, <br/> CR - Credit <br/> DR - Debit, <br/> INT - Interest <br/> DIV - Dividend, <br/> FEE - Fee|SCHG - Service Charge, <br/> DEP - Deposit, <br/> ATM - Automated Teller Machine, <br/> POS - Point of Sale, <br/> TFR - Transfer, <br/> CHK - Check|PMT - Payment, <br/> CSH - Cash, <br/> DDEP - Direct Deposit, <br/> DDR - Direct Debit, <br/> RPMT - Repeat Payment, <br/> OTH - Other|
-
-
+| Abbreviations                                                                                                 |                                                                                                                                                      |                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| UNK - Unknown, <br/> CR - Credit <br/> DR - Debit, <br/> INT - Interest <br/> DIV - Dividend, <br/> FEE - Fee | SCHG - Service Charge, <br/> DEP - Deposit, <br/> ATM - Automated Teller Machine, <br/> POS - Point of Sale, <br/> TFR - Transfer, <br/> CHK - Check | PMT - Payment, <br/> CSH - Cash, <br/> DDEP - Direct Deposit, <br/> DDR - Direct Debit, <br/> RPMT - Repeat Payment, <br/> OTH - Other |

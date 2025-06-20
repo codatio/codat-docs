@@ -6,8 +6,8 @@ hide_description: true
 hide_table_of_contents: true
 ---
 
-import DataTypes from '@components/DataTypes'
+import DataTypes from "@components/DataTypes";
 
-<DataTypes productName="expenses"/>
+<DataTypes productName="expenses" />
 
-<br/>
+<br />

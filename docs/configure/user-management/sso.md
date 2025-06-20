@@ -31,7 +31,7 @@ Apart from the immediate benefits of saving time on every sign-in and having one
 - Simplified administration. Administrators can maintain strong and consistent security policies, and manage and close user accounts with ease.
 
 :::note Enterprise SSO support
- 
+
 The Codat Portal does not currently support Enterprise SSO using SAML.
 
 :::

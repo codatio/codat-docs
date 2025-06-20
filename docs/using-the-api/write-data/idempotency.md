@@ -12,7 +12,7 @@ For example, if you submit the same `POST` request to create an invoice multiple
 
 ## Idempotency in Codat requests
 
-You can include an `Idempotency-Key` header with a unique GUID value when making `POST` or `PATCH` requests to all of Codat's endpoints that support these methods. Codat will cache the initial response and will use it on all following requests with the same `Idempotency-Key` header. This cache lasts 90 minutes. 
+You can include an `Idempotency-Key` header with a unique GUID value when making `POST` or `PATCH` requests to all of Codat's endpoints that support these methods. Codat will cache the initial response and will use it on all following requests with the same `Idempotency-Key` header. This cache lasts 90 minutes.
 
 ### 💡 Tips and traps
 

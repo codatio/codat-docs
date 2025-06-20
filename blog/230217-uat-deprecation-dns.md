@@ -4,7 +4,7 @@ date: "2023-02-17"
 tags: ["Deprecation", "Completed", "UAT"]
 draft: false
 authors: pzaichkina
-description: On Friday 17 February, 2023, we will switch the existing public DNS for the UAT environment, which is now deprecated, to point to the Production environment. 
+description: On Friday 17 February, 2023, we will switch the existing public DNS for the UAT environment, which is now deprecated, to point to the Production environment.
 ---
 
 :::caution Update: Sep 26, 2024
@@ -31,7 +31,7 @@ For details of the affected integrations and the Redirect URIs you need to add, 
 
 ## Summary of changes
 
-On Friday 17 February, 2023, we will switch the existing public DNS for the UAT environment, which is now deprecated, to point to the Production environment. This change was previously communicated in the entry <a href="https://docs.codat.io/updates/230131-uat-deprecation">\[Upcoming 2023-01-31] Deprecation of UAT environment</a>. 
+On Friday 17 February, 2023, we will switch the existing public DNS for the UAT environment, which is now deprecated, to point to the Production environment. This change was previously communicated in the entry <a href="https://docs.codat.io/updates/230131-uat-deprecation">\[Upcoming 2023-01-31] Deprecation of UAT environment</a>.
 
 We apologise for delaying the DNS switchover from the initially proposed date; this will ensure that the change is as seamless as possible.
 

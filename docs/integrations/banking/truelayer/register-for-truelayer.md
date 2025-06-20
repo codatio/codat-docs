@@ -69,6 +69,7 @@ This would depend on the route the customer takes.
 
 Data API (Non-Agent): TrueLayer will conduct a KYB check on the business entity using various data sources. We may also request a data flow diagram/screenshots of the customer's user journey.
 AIS Agent Process: KYB check on the business entity, KYC check on the fit and proper, evidence of the companies system and controls, policy documents (listed in application form) and valid PII and Cyber insurance.
+
 ### 5. Once the due diligence process has been completed, what steps / actions should Codat’s customer expect to go through as part of onboarding?
 
 TrueLayer’s legal team will prepare a Joint Agreement and, if required, the AIS Agent Agreement for signature by relevant parties. TrueLayer will require some basic corporate details, signatory details and contacts for notices from the customer to prepare the agreements for signature. TrueLayer will typically ask for signatures via Docusign.

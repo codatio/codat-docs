@@ -15,18 +15,18 @@ To ensure the QBD Connector can continue operating on user machines, Codat will 
 
 This will require manual intervention from end users (your customers) of the Codat QuickBooks Desktop Connector. They will need to re-authorize the application to access the connected QuickBooks Desktop company file on or after **July 31st, 2023** after Codat has released the new version of the connector. Until action is taken the connector will be unable to communicate with QuickBooks Desktop.
 
-Codat will send a notification email to all effected clients once the update has been released. 
+Codat will send a notification email to all effected clients once the update has been released.
 
 :::info Update - 17 July, 2023
 
 This notice has been changed to clarify that the end user action should be taken _on or after July 31st, 2023_, to enable the updated QBD Connector to operate on user machines.
-::: 
+:::
 
 ## Background
 
-The connector communicates with QuickBooks as an "Integrated application". When an integrated application attempts to retrieve data from a company file, QuickBooks validates the certificate to ensure that the application has the appropriate level of access granted by a suitably permissioned user. The settings for these can be found by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application.
+The connector communicates with QuickBooks as an "Integrated application". When an integrated application attempts to retrieve data from a company file, QuickBooks validates the certificate to ensure that the application has the appropriate level of access granted by a suitably permissioned user. The settings for these can be found by navigating to `Edit > Preferences > Integrated Applications > Company Preferences` in the QuickBooks Desktop application.
 
-With the rise of malware, desktop applications are typically *signed* with a certificate issued by a suitable authority, which serves to verify the identity of the authors of an application. These certificates have a validity window, and Codat's current certificate validity will expire soon.
+With the rise of malware, desktop applications are typically _signed_ with a certificate issued by a suitable authority, which serves to verify the identity of the authors of an application. These certificates have a validity window, and Codat's current certificate validity will expire soon.
 
 When Codat updates the certificate used to sign the connector, existing connectors will no longer be recognized by QuickBooks, causing a prompt for the user to approve the connection to the company file.
 
@@ -70,7 +70,7 @@ The end user should validate that the pop-up is referring to the company they ar
 
 #### 3. The QuickBooks Desktop application is closed
 
-If the connector attempts to access the company file when the QBD application is closed, it will display an error message saying `Timed out attempting to communicate with QBD.` 
+If the connector attempts to access the company file when the QBD application is closed, it will display an error message saying `Timed out attempting to communicate with QBD.`
 
 The connector cannot initiate communication with QBD when it is closed, and any previously granted permissions to access QBD while it is not running do not transfer to the new certificate.
 ![Image](/img/integrations/accounting/quickbooksdesktop/timed-out.png "Timed Out")
@@ -92,11 +92,12 @@ The end user may choose to remove the existing application signed with the old c
 ![Image](/img/integrations/accounting/quickbooksdesktop/integrated-applications-modal-company-preferences.png "Company Preferences")
 
 #### Incorrectly approved access
+
 If the user incorrectly approves access, the connector will fail to perform the queued operation and show a message indicating that the incorrect company file is open.
 
 ![Image](/img/integrations/accounting/quickbooksdesktop/incorrect-company-open.png "Connector, Incorrect Company Open")
 
-The user can remove the erroneously approved connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences`  in the QuickBooks Desktop application, opening the correct company file, and approving the connector's access to it.
+The user can remove the erroneously approved connection by navigating to `Edit > Preferences > Integrated Applications > Company Preferences` in the QuickBooks Desktop application, opening the correct company file, and approving the connector's access to it.
 
 #### Denied access
 

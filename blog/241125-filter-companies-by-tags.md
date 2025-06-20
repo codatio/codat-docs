@@ -6,16 +6,16 @@ hide_table_of_contents: true
 authors: dcoplowe
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-The *List companies* endpoint now supports querying by tags, streamlining company management in Codat. This feature lets you retrieve companies based on specific criteria.
+The _List companies_ endpoint now supports querying by tags, streamlining company management in Codat. This feature lets you retrieve companies based on specific criteria.
 
 <!--truncate-->
 
 ## What's new?
 
-You can now use the `tags` query parameter on the [*List companies*](/platform-api#/operations/list-companies) endpoint to filter by one or more tags assigned to your companies. The `tags` query parameter supports the following operators, using [Codat’s query language](https://docs.codat.io/using-the-api/querying):
+You can now use the `tags` query parameter on the [_List companies_](/platform-api#/operations/list-companies) endpoint to filter by one or more tags assigned to your companies. The `tags` query parameter supports the following operators, using [Codat’s query language](https://docs.codat.io/using-the-api/querying):
 
 - Equals (`=`)
 - Not equals (`!=`)
@@ -29,9 +29,10 @@ Here is a query example that returns a specific company by a customer ID:
 
 ```javascript
 const result = await platformClient.companies.list({
-    tags:`uid=${customerId}`,
-  });
+  tags: `uid=${customerId}`,
+});
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -41,6 +42,7 @@ res = platform_client.companies.list(operations.ListCompaniesRequest(
     tags=f'uid={customerId}'
 ))
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -50,6 +52,7 @@ var res = await platformClient.Companies.ListAsync(new() {
     Tags = $"uid={customerId}",
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -60,6 +63,7 @@ res, err := platformClient.Companies.List(ctx, operations.ListCompaniesRequest{
     Tags: platform.String(fmt.Sprintf("uid=%d", customerId)),
 })
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -73,6 +77,7 @@ ListCompaniesResponse res = platformClient.companies().list()
   .request(req)
   .call();
 ```
+
 </TabItem>
 
 </Tabs>

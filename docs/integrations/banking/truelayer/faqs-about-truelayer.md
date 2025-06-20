@@ -4,7 +4,6 @@ description: "Frequently asked questions about our TrueLayer integration"
 sidebar_label: FAQs
 ---
 
-
 If your TrueLayer question isn't answered on this page, please contact our support team.
 
 ## What does a customer see when they link their bank account?

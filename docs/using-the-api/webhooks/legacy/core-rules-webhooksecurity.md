@@ -24,7 +24,6 @@ To enable security for your organization's webhooks.
 | Basic                          | A base-64 encoded username and password are added to the authorization header of the HTTP request. |
 | Bearer                         | A custom value or token is added to the authorization header.                                      |
 
-
 To enable webhook security, use any valid header value in ASCII in the **alertAuthHeader**. For example:
 
 `PUT <https://api.codat.io/profile>`

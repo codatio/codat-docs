@@ -49,4 +49,4 @@ For non-textual comparisons (like dates and numbers), the logic compares values 
 
 For textual comparisons (like account description), a combination of _Jaro-Winkler_ similarity and _Overlap coefficient_ (with thresholds) is used to compare how closely the string values match.
 
-In the event that the company has bank accounts with different currencies, those transactions will be matched with an accounting source with the same currency. For these companies, the matching percentage will be less accurate. 
+In the event that the company has bank accounts with different currencies, those transactions will be matched with an accounting source with the same currency. For these companies, the matching percentage will be less accurate.

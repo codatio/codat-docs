@@ -6,13 +6,13 @@ hide_table_of_contents: true
 authors: dcoplowe
 ---
 
-We have introduced a new [Update company](/platform-api#/operations/update-company) endpoint that uses the `PATCH` method to update specific company properties without impacting others. 
+We have introduced a new [Update company](/platform-api#/operations/update-company) endpoint that uses the `PATCH` method to update specific company properties without impacting others.
 
 <!--truncate-->
 
 ## What's new?
 
-You can now use our new [Update company](/platform-api#/operations/update-company) endpoint to update one or more company properties without overwriting properties not included in your request. To differentiate it,  we have also renamed our existing endpoint that uses the `PUT` method and overwrites all company values to [Replace company](/platform-api#/operations/replace-company). 
+You can now use our new [Update company](/platform-api#/operations/update-company) endpoint to update one or more company properties without overwriting properties not included in your request. To differentiate it, we have also renamed our existing endpoint that uses the `PUT` method and overwrites all company values to [Replace company](/platform-api#/operations/replace-company).
 
 For most scenarios where you are currently using the existing [Replace company](/platform-api#/operations/replace-company) endpoint, we recommend switching to [Update company](/platform-api#/operations/update-company) to enjoy greater flexibility and precision when updating company details.
 

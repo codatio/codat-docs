@@ -4,7 +4,7 @@ description: "Learn how to set up the Shopify integration using the custom apps 
 sidebar_label: Custom apps
 ---
 
-This article explains how to set up the Shopify integration using the _custom apps_ approach for enabling your merchants to connect and share their commerce data. 
+This article explains how to set up the Shopify integration using the _custom apps_ approach for enabling your merchants to connect and share their commerce data.
 
 Before you start, make sure you understand the merchant connection flow when using custom apps.
 
@@ -18,17 +18,17 @@ _Shopify store connection UI_
 
 The merchant is asked to create and install a custom app in their Shopify admin account and get its API access token.
 
-The UI contains a link to the  <a class="external" href="https://help.shopify.com/en/manual/apps/custom-apps" target="_blank">Custom apps</a> page in the Shopify Help Center. The merchant needs to complete the following tasks in the Help article:
+The UI contains a link to the <a class="external" href="https://help.shopify.com/en/manual/apps/custom-apps" target="_blank">Custom apps</a> page in the Shopify Help Center. The merchant needs to complete the following tasks in the Help article:
 
 1. Enable custom app development from the Shopify admin
 
-2. Create and install a custom app  
+2. Create and install a custom app
 
 3. Create the app
 
 4. Select API scopes
 
-      The merchant must assign the following API scopes to their custom app:
+   The merchant must assign the following API scopes to their custom app:
 
    ```
    read_customers, read_inventory, read_orders, read_products, read_shopify_payments_disputes,
@@ -43,7 +43,7 @@ Next, the merchant needs to:
 
 2. In Shopify, copy the **Admin API access token** for the custom app that they created.
 
-3. Enter the token in the **Shopify access token** field in the store connection UI. 
+3. Enter the token in the **Shopify access token** field in the store connection UI.
 
 4. Click **Continue** to submit the store name and access token to Codat.
 
@@ -80,7 +80,7 @@ To configure the Shopify integration for use with the _custom apps_ approach:
 
 4. Leave the **Has request to read all orders** toggle switched off.
 
-   :::note Orders read by default 
+   :::note Orders read by default
    All orders are available to read from Shopify by default when using the custom apps connection method.
    :::
 

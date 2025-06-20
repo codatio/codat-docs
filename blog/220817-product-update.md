@@ -20,4 +20,4 @@ We've got a host of Portal and DX improvements for you this week.
 
 #### Assess
 
-- **New:** Banking metrics are now available for all clients using Assess. 
+- **New:** Banking metrics are now available for all clients using Assess.

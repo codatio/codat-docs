@@ -10,6 +10,6 @@ The Portal has been rearranged to make accessing Codat functionality and setting
 
 <!--truncate-->
 
-- The vertical navbar has been replaced with a horizontal one, and sections of the Portal have their own vertical nav in its place. 
+- The vertical navbar has been replaced with a horizontal one, and sections of the Portal have their own vertical nav in its place.
 - All settings are now in the settings section.
 - We've added a monitor section for the functionality that helps you monitor and maintain a healthy Codat solution.

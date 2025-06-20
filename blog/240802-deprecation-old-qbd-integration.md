@@ -16,8 +16,9 @@ The new connector simplifies your customer’s linking journey and provides more
 Clients using our legacy QBD integration need to move their existing QBD connections to the new integration by **January 10, 2025**, in order to continue syncing data with QBD.
 
 The migration involves:
- - Testing performed with Codat’s support alongside the existing integration.
- - Reauthorizing your customers who have existing QBD integration.
+
+- Testing performed with Codat’s support alongside the existing integration.
+- Reauthorizing your customers who have existing QBD integration.
 
 Your customers' existing connections will retain their historical data. Once your customer reauthorizes the connection via the new connector, you will be able to sync data with this connection as normal.
 

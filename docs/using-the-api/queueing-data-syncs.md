@@ -60,15 +60,16 @@ If you try to queue a synchronization for a data type that is already in process
 ```
 "error": "DatasetAlreadyInProgressException: Cannot queue {dataType} sync for {companyId} as previous sync {dataSetId} is still in progress"
 ```
+
 :::
 
 Refreshing data can take different amounts of time depending on the integration and the amount of data being retrieved. You can use [webhooks](/using-the-api/webhooks/overview) to be updated when the operation completes.
 
 ### Records deleted between syncs
 
-For our accounting source data types, Codat stores records deleted by a company in the underlying accounting software between successive data syncs to ensure better consistency in the data. If such records are not relevant for your use case, you can exclude them by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag. 
+For our accounting source data types, Codat stores records deleted by a company in the underlying accounting software between successive data syncs to ensure better consistency in the data. If such records are not relevant for your use case, you can exclude them by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag.
 
-Records that were created and deleted by a company before the first sync took place will never be read and stored by Codat. 
+Records that were created and deleted by a company before the first sync took place will never be read and stored by Codat.
 
 ## Scheduled refresh
 
@@ -76,26 +77,27 @@ Codat can also refresh data at a set schedule, based on the set 'Sync frequency'
 
 ### Sync frequency
 
-The recommended sync frequency is weekly. It provides you with recent enough data while catering for data types that do not change often and decreasing the number of API calls required. 
+The recommended sync frequency is weekly. It provides you with recent enough data while catering for data types that do not change often and decreasing the number of API calls required.
 
 Some data types like company, tax rates and charts of accounts will rarely change (monthly if at all), but are so small to sync they have no performance impact.
 
-However, you can set a more frequent sync schedule if it is required for your use case. 
+However, you can set a more frequent sync schedule if it is required for your use case.
 
 - **Monthly**: We recommend that you sync at least one data type monthly (e.g. Company info) to ensure connection token does not expire when not actively synchronizing data (unless only a one-time sync is required).
 - **Weekly (recommended)**: Keeps data reasonably fresh, particularly where data types change less frequently, while also reducing the number of required API calls.
 - **Daily**: Gives you close-to-live picture of most data types while staying within the conservative rate limits of most accounting software.
-- **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing. 
+- **Hourly**: Recommended for specific use cases only and may require consideration for the rate limits, e.g. invoices and payments for invoice financing.
 
 ## 💡 Tips and traps
 
 - Ensure to perform a monthly sync for at least one data type to keep your connection token operational if you are not performing active synchronization. You can disregard this if you only require a one-time sync.
 
-- If you are building your own reports or accessing Codat-generated ones that rely on multiple data types, fetch all required data types before you generate the report. Otherwise, there may be inconsistencies in the data freshness. You can check for possible inconsistencies using the data types' `lastSuccessfulSync` properties. 
+- If you are building your own reports or accessing Codat-generated ones that rely on multiple data types, fetch all required data types before you generate the report. Otherwise, there may be inconsistencies in the data freshness. You can check for possible inconsistencies using the data types' `lastSuccessfulSync` properties.
 
-    For example, if you calculate a company's accounts receivable (AR) position using invoices, credit notes, payments, account transactions, and customers with `lastSuccessfulSync` dates of `2023-07-10`, and compare it to the AR position on the balance sheet with the `lastSuccessfulSync` of `2023-07-11`, the results are likely to differ.
+  For example, if you calculate a company's accounts receivable (AR) position using invoices, credit notes, payments, account transactions, and customers with `lastSuccessfulSync` dates of `2023-07-10`, and compare it to the AR position on the balance sheet with the `lastSuccessfulSync` of `2023-07-11`, the results are likely to differ.
 
 - For most data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. These default settings can be overridden via our API using [advanced sync settings](/knowledge-base/advanced-sync-settings).
+
 ---
 
 ## Read next

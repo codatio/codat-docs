@@ -16,8 +16,11 @@ Maxio was previously know as Chargify. Maxio is a financial operations platform 
 :::
 
 <p>
-  <a href="https://www.chargify.com/" target="_blank">Maxio</a> 
-  is a subscription billing management platform that enables merchants to streamline their recurring billing and subscription payment processes.
+  <a href="https://www.chargify.com/" target="_blank">
+    Maxio
+  </a>
+  is a subscription billing management platform that enables merchants to
+  streamline their recurring billing and subscription payment processes.
 </p>
 
 Use Codat's Commerce API with Maxio to securely connect to, retrieve, and view your customers' recurring sales and subscription transactions.

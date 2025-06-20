@@ -30,7 +30,7 @@ An AWS account is also required, although Amazon does not currently charge for t
 2. In the Apps & Services menu, click **Develop Apps**. The Developer Central page appears.
 3. You will need to complete the Developer Registration Form.
 
-    **Data Access Section**
+   **Data Access Section**
    Please select My organization builds and offers publicly available applications.
 
    **Use Cases Section**

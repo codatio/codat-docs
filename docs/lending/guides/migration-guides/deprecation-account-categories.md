@@ -8,6 +8,7 @@ draft: true
 ---
 
 ## What is happening?
+
 On the **10th July 2023**, we will be deprecating the legacy version of Account Categories and all related features, including:
 
 - Account categories
@@ -17,10 +18,7 @@ On the **10th July 2023**, we will be deprecating the legacy version of Account 
 - Marketing metrics
 
 To understand what exactly will change and how to leverage alternatives (including migration instructions), refer to the pages below:
+
 - [Clients who have built to the Lending product](/lending/overview)
 - [Clients who use Assess in the Portal](/lending/overview)
 - [Clients who use the data extract to Excel in the Portal](/lending/overview)
-
-
-
-

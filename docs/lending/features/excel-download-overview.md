@@ -46,8 +46,8 @@ The process to download an Excel report via the API is as follows:
 
 ```javascript
 const response = await lendingClient.excelReports.generate({
-    companyId: companyId,
-    reportType: ExcelReportTypes.EnhancedInvoices
+  companyId: companyId,
+  reportType: ExcelReportTypes.EnhancedInvoices,
 });
 ```
 
@@ -81,7 +81,7 @@ var response = await lendingClient.ExcelReports.GenerateAsync(new() {
 
 ```go
 ctx := context.Background()
-response, err := lendingClient.ExcelReports.Generate(ctx, 
+response, err := lendingClient.ExcelReports.Generate(ctx,
     operations.GenerateExcelReportRequest{
         CompanyID: companyID,
         ReportType: shared.ExcelReportTypesEnhancedInvoices,
@@ -100,8 +100,8 @@ response, err := lendingClient.ExcelReports.Generate(ctx,
 
 ```javascript
 const response = await lendingClient.excelReports.getStatus({
-    companyId: companyId,
-    reportType: ExcelReportTypes.EnhancedInvoices,
+  companyId: companyId,
+  reportType: ExcelReportTypes.EnhancedInvoices,
 });
 ```
 
@@ -153,8 +153,8 @@ response, err := lendingClient.ExcelReports.GetStatus(ctx, operations.GetExcelRe
 
 ```javascript
 const response = await lendingClient.excelReports.download({
-    companyId: companyId,
-    reportType: ExcelReportTypes.EnhancedInvoices,
+  companyId: companyId,
+  reportType: ExcelReportTypes.EnhancedInvoices,
 });
 ```
 
@@ -204,11 +204,11 @@ Only one request will be processed at a time per SMB company and per report type
 
 You can also generate and download a report in an Excel format via the [Portal](https://app.codat.io):
 
-1. Navigate to **Companies** and select a company you wish to download a report for. 
+1. Navigate to **Companies** and select a company you wish to download a report for.
 
-2. In the side navigation, choose **Lending > Reports**. This page lists the names of reports available for generation and their descriptions. 
+2. In the side navigation, choose **Lending > Reports**. This page lists the names of reports available for generation and their descriptions.
 
-    ![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](/img/old/a3d1d09-ReportsPage1.png)
+   ![A screenshot of the reports page showing the Audit Report row with a sub-row showing a report that was generated](/img/old/a3d1d09-ReportsPage1.png)
 
 3. Click the **Generate report** button next to the desired report to produce a new report. The **Last generated** field will be updated to the date and time you initiated the generation. It will keep this timestamp until the next time you generate the report.
 
@@ -219,5 +219,6 @@ You can also generate and download the **data export** report by clicking the **
 ---
 
 ## Read next
+
 - [Lending reference](/lending-api#/)
 - [Troubleshooting and FAQs](/lending/troubleshooting)

@@ -6,7 +6,7 @@ image: "/img/banners/social/lending.png"
 draft: true
 ---
 
-Our Enhanced Financials Excel report gives you the same data you'd get from the [Enhanced Financials](/lending/enhanced-financials/overview) endpoints but in an Excel workbook.  You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints.
+Our Enhanced Financials Excel report gives you the same data you'd get from the [Enhanced Financials](/lending/enhanced-financials/overview) endpoints but in an Excel workbook. You can use the report to test some companies and familiarise yourself with the data before building to the equivalent API endpoints.
 
 The report contains the output of the following features:
 
@@ -19,13 +19,13 @@ You can generate the Enhanced Financials Excel report using the API or the Codat
 
 ## Using the report
 
-To get the most out of the report, try creating a pivot table and grouping the data by category levels 1-5 to replicate a financial statement view.  You can also create formulas to calculate financial ratios from this data.
+To get the most out of the report, try creating a pivot table and grouping the data by category levels 1-5 to replicate a financial statement view. You can also create formulas to calculate financial ratios from this data.
 
 ![Enhanced Financials Report](/img/lending/enhanced-financials.png "Enhanced Financials Report")
 
 ### Metrics template
 
-We've also created a [Metrics Template Excel file](/documents/assess-metrics.xlsx).  You can paste data into this file from the Enhanced Financials Excel report to calculate key financial metrics and ratios.
+We've also created a [Metrics Template Excel file](/documents/assess-metrics.xlsx). You can paste data into this file from the Enhanced Financials Excel report to calculate key financial metrics and ratios.
 
 [![Metrics Template](/img/lending/metrics-template.png "Metrics Template")](/documents/assess-metrics.xlsx)
 

@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 authors: e-donnelly
 ---
 
-On the **24th July 2023**, we will be deprecating the legacy version of  `Account Categories` and all related features, including:
+On the **24th July 2023**, we will be deprecating the legacy version of `Account Categories` and all related features, including:
 
 <!--truncate-->
 
@@ -17,8 +17,8 @@ On the **24th July 2023**, we will be deprecating the legacy version of  `Accoun
 - [`PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/categories`](/assess-api#/operations/update-accounts-categories)
 - [`PATCH /data/companies/{companyId}/connections/{connectionId}/assess/accounts/{accountId}/categories`](/assess-api#/operations/update-account-category)
 - [`GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedBalanceSheet`](/assess-api#/operations/get-enhanced-balance-sheet)
-- [`GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedProfitandLoss`](/assess-api#/operations/get-enhanced-profit-and-loss)  
-- [`GET /data/companies/{companyId}/connections/{connectionId}/assess/financialMetrics`](/assess-api#/operations/get-enhanced-financial-metrics) 
+- [`GET /data/companies{companyId}/connections/{connectionId}/assess/enhancedProfitandLoss`](/assess-api#/operations/get-enhanced-profit-and-loss)
+- [`GET /data/companies/{companyId}/connections/{connectionId}/assess/financialMetrics`](/assess-api#/operations/get-enhanced-financial-metrics)
 - [`GET /data/companies/{companyId}/connections/{connectionId}/assess/accountingMetrics/marketing`](/assess-api#/operations/get-accounting-marketing-metrics)
 
 #### Assess in the Portal
@@ -35,6 +35,7 @@ On the **24th July 2023**, we will be deprecating the legacy version of  `Accoun
 #### Data export to Excel
 
 The following sheets only:
+
 - Account Categories
 - Categorized Account Balances
 
@@ -45,7 +46,6 @@ Explore alternative options you can use in our [Migration Guide`](/lending/overv
 ## Expected impact if no action is taken
 
 After the **24th July 2023**, the deprecated endpoints will no longer work, the portal screens will be removed and Account Categories features will be removed from the data export to Excel.
-
 
 :::caution Update: July 24, 2023
 

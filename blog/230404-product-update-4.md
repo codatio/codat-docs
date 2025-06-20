@@ -16,12 +16,12 @@ We've improved our data type coverage for a number of integrations.
 - Customer tracking on Expense lines (Direct Cost - Read and Write)
 - Create `Payment` on Account refunds
 
-#### MYOB 
+#### MYOB
 
 - Create Journal Entries
 - Get `Jobs` on Tracking Categories
 
-#### FreshBooks 
+#### FreshBooks
 
 - Get Bills
 - Get Bill Payments

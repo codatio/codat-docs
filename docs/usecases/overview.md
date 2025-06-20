@@ -6,4 +6,4 @@ description: "Codat's solution range supports a variety of use cases, helping yo
 
 import Usecases from "@components/Usecases";
 
-<Usecases/>
+<Usecases />

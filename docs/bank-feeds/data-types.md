@@ -4,8 +4,8 @@ sidebar_label: Data types
 displayed_sidebar: bankfeeds
 ---
 
-import DataTypes from '@components/DataTypes'
+import DataTypes from "@components/DataTypes";
 
-<DataTypes productName="bankFeeds"/>
+<DataTypes productName="bankFeeds" />
 
-<br/>
+<br />

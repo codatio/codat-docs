@@ -3,9 +3,9 @@ import TabItem from "@theme/TabItem";
 
 ## Upload attachment
 
-When creating a new bill, your SMB customer may want to save a copy of the PDF invoice issued by their supplier against the bill in their accounting software. Use the <a href={props.endpoint} target="_blank">Upload bill attachment</a> endpoint to support this action. 
+When creating a new bill, your SMB customer may want to save a copy of the PDF invoice issued by their supplier against the bill in their accounting software. Use the <a href={props.endpoint} target="_blank">Upload bill attachment</a> endpoint to support this action.
 
-Different accounting software supports different file formats and sizes. View the <a href={props.schema} target="_blank">Attachment</a> schema for integration-specific guidance or check the software's own documentation. 
+Different accounting software supports different file formats and sizes. View the <a href={props.schema} target="_blank">Attachment</a> schema for integration-specific guidance or check the software's own documentation.
 
 <Tabs groupId="language">
 
@@ -72,6 +72,7 @@ var attachmentUploadResponse = await payablesClient.Bills.UploadAttachmentAsync(
     ConnectionId = connectionId,
 };);
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -81,7 +82,7 @@ fileName := "bill-receipt.pdf"
 content, err := os.ReadFile(fileName)
 
 ctx := context.Background()
-attachmentUploadResponse, err := payablesClient.Bills.UploadAttachment(ctx, 
+attachmentUploadResponse, err := payablesClient.Bills.UploadAttachment(ctx,
   operations.UploadBillAttachmentRequest{
     AttachmentUpload: &shared.AttachmentUpload{
       File: shared.CodatFile{
@@ -95,6 +96,7 @@ attachmentUploadResponse, err := payablesClient.Bills.UploadAttachment(ctx,
   }
 )
 ```
+
 </TabItem>
 
 </Tabs>

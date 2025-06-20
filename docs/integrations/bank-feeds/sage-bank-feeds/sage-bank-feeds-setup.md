@@ -116,15 +116,15 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
    In the request body, specify a bank account. For example, to add a credit card account, send the following request (all fields shown are required):
 
    ```json
-      {
-       "id": "acc-002", // set to desired unique ID
-       "accountName": "account-081",
-       "sortCode": "123456",
-       "accountType": "Credit",
-       "accountNumber": "12345670",
-       "currency": "GBP",
-       "balance": 99.99 // can be 0
-     }
+   {
+     "id": "acc-002", // set to desired unique ID
+     "accountName": "account-081",
+     "sortCode": "123456",
+     "accountType": "Credit",
+     "accountNumber": "12345670",
+     "currency": "GBP",
+     "balance": 99.99 // can be 0
+   }
    ```
 
 4. The endpoint returns a `200` code and the created bank account.
@@ -148,7 +148,7 @@ Alternatively, you can [authenticate users through your own web app](/integratio
 
 3. The default Codat authentication site is loaded in a new browser tab:
 
- ![Default Codat authentication UI - Connect your bank account to Sage](/img/old/bc09b4a-sage-bank-feeds_default-auth-UI-revised-wording.png)
+![Default Codat authentication UI - Connect your bank account to Sage](/img/old/bc09b4a-sage-bank-feeds_default-auth-UI-revised-wording.png)
 
 4. They enter their data connection ID in the **Connection ID** box, then click **Submit**.
 

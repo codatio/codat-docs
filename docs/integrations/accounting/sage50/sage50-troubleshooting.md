@@ -2,7 +2,6 @@
 title: "Sage50 troubleshooting"
 ---
 
-
 ## Restarting the connector
 
 If your client can't restart for some reason, they can do the following:
@@ -41,9 +40,8 @@ To white-list the connector folder, your users should:
 4. Click on Browse
 5. Using the tree hierarchy, select the folder in which the connector has been installed (`C:\Users\YOUR_USERNAME\AppData\Local\Codat`) and click OK.
 
-*Note: We recommend that the user selects the whole folder and not just individual connector locations. *
+_Note: We recommend that the user selects the whole folder and not just individual connector locations. _
 Double-check that the folder where the connector is located is displayed in the list and close the Avast! Dashboard
-
 
 ## White-listing our offline connectors in Webroot SecureAnywhere desktop app
 
@@ -59,19 +57,19 @@ Open their Webroot SecureAnywhere Desktop app and click on Settings icon in the 
 Navigate to the 'Whitelisted Scripts' tab and click on Advanced Whitelist
 Using the tree hierarchy, select the folder in which the connector has been installed (`C:\Users\YOUR_USERNAME\AppData\Local\Codat`) and click Select.
 
-*Note: We recommend that the user selects the whole folder and not just individual connector locations. *
+_Note: We recommend that the user selects the whole folder and not just individual connector locations. _
 
 Double-check that the folder where the connector is located is displayed in the list and close the Webroot SecureAnywhere desktop app.
 
 ## Company cannot be found
 
-Once the offline connector is installed, you should be able to select the required Sage 50 company from the dropdown list. In some cases (for example, if your data is stored in a different place), you may need to perform the following steps to locate your company. 
+Once the offline connector is installed, you should be able to select the required Sage 50 company from the dropdown list. In some cases (for example, if your data is stored in a different place), you may need to perform the following steps to locate your company.
 
 1. Log into your **Sage 50** application and select the company you would like to sync data for. Navigate to **Help > About**, then find and copy the data directory information for this company.
 
 ![A screenshot of the interface of Sage 50 accounting software, with the About section open for Bob's Burgers example company. Among program details, license information and contact details, data directory information is pointed out using a red box and arrow.](/img/integrations/accounting/sage-50/sage50-connector-app-about-section.png)
 
-2. Return to the connector and paste the copied data directory information in the data directory field. Enter the username and password associated with that company and click the "Link company and perform sync" button. 
+2. Return to the connector and paste the copied data directory information in the data directory field. Enter the username and password associated with that company and click the "Link company and perform sync" button.
 
 ![A screenshot of the Sage 50 offline connector with the data directory, username and password fields filled in. The Link company and perform sync button is outlined with a red box.](/img/integrations/accounting/sage-50/sage50-connector-app-about-section.png)
 

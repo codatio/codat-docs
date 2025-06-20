@@ -71,7 +71,6 @@ To read more about different ways to customize Link, read [Customize your Link](
 You can also [build your own authorization journey](/auth-flow/build/build-your-own-authorization-journey).
 :::
 
-
 ---
 
 ## Read next

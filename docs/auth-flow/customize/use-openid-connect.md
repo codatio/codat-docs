@@ -26,11 +26,13 @@ Update your redirect URL and Hosted Link URLs.
    https://redirect.com/site/{companyId}?firstName={openId_given_name}&email={openId_email}&phone={openId_phone_number}
    ```
 2. Append `?openId=true` to a Link URL before you send it to a customer. For example:
+
    ```http
    https://link-uat.codat.io/{companyId}/link?openId=true
    ```
 
    When the customer connects their accounting software any available profile values are substituted in the redirect URL. For example:
+
    ```http
    https://redirect.com/site /{companyId}?firstName=John&email=john.smith@theworld.com&phone+441234555666
    ```
@@ -41,25 +43,25 @@ Codat supports a subset of the available [OpenID Connect fields](https://openid.
 
 The following table lists OpenID Connect fields and the accounting software for which they are supported.
 
-| Field and type                               | Description                                                                     | Platform availability            |
-|----------------------------------------------|---------------------------------------------------------------------------------|----------------------------------|
-| **openId_name**, _string_                    | Full name of the customer.                                                      | Sandbox                          |
-| **openId_given_name**, _string_              | First name of the customer.                                                     | Sandbox, QuickBooks Online, Xero |
-| **openId_middle_name**, _string_             | Middle name of the customer.                                                    | Sandbox                          |
-| **openId_family_name**, _string_             | Last name of the customer.                                                      | Sandbox, QuickBooks Online, Xero |
-| **openId_nickname**, _string_                | Alternative or casual name of the customer.                                     | Sandbox                          |
-| **openId_preferred_username**, _string_      | Short name the customer prefers to be known by.                                 | Sandbox                          |
-| **openId_gender**, _string_                  | Gender of the customer.                                                         | Sandbox                          |
-| **openId_birthdate**, _string_               | Birthday of the customer in the in `YYYY-MM-DD` format.                         | Sandbox                          |
-| **openId_address**, _JSON object_            | Postal address the customer prefers to be contacted at.                         | Sandbox, QuickBooks Online       |
-| **openId_email**, _string_                   | Email address the customer prefers to be contacted by.                          | Sandbox, QuickBooks Online, Xero |
-| **openId_email_verified**, _boolean_         | If `true`, this email address has been verified.                                | Sandbox, QuickBooks Online       |
-| **openId_phone_number**, _string_            | Phone number the customer prefers to be contacted on.                           | Sandbox, QuickBooks Online       |
-| **openId_phone_number_verified**, _boolean_  | If `true`, this phone number has been verified.                                 | Sandbox, QuickBooks Online       |
-| **openId_locale**, _string_                  | Language and country code for the locale of the customer. For example: `en-GB`. | Sandbox                          |
-| **openId_profile**, _string_                 | URL of the profile page for the customer.                                       | Sandbox                          |
-| **openId_picture**, _string_                 | URL of the profile image for the customer.                                      | Sandbox                          |
-| **openId_website**, _string_                 | URL of the web page or blog of the customer.                                    | Sandbox                          |
-| **openId_zoneinfo**, _string_                | Time zone for the location of the customer. For example: `Europe/Paris`.        | Sandbox                          |
-| **openId_birthdate**, _string_               | Birthday of the customer in `YYYY-MM-DD` format.                                | Sandbox                          |
-| **openId_updated_at**, -number_              | Time the customer last updated their profile.                                   | Sandbox                          |
+| Field and type                              | Description                                                                     | Platform availability            |
+| ------------------------------------------- | ------------------------------------------------------------------------------- | -------------------------------- |
+| **openId_name**, _string_                   | Full name of the customer.                                                      | Sandbox                          |
+| **openId_given_name**, _string_             | First name of the customer.                                                     | Sandbox, QuickBooks Online, Xero |
+| **openId_middle_name**, _string_            | Middle name of the customer.                                                    | Sandbox                          |
+| **openId_family_name**, _string_            | Last name of the customer.                                                      | Sandbox, QuickBooks Online, Xero |
+| **openId_nickname**, _string_               | Alternative or casual name of the customer.                                     | Sandbox                          |
+| **openId_preferred_username**, _string_     | Short name the customer prefers to be known by.                                 | Sandbox                          |
+| **openId_gender**, _string_                 | Gender of the customer.                                                         | Sandbox                          |
+| **openId_birthdate**, _string_              | Birthday of the customer in the in `YYYY-MM-DD` format.                         | Sandbox                          |
+| **openId_address**, _JSON object_           | Postal address the customer prefers to be contacted at.                         | Sandbox, QuickBooks Online       |
+| **openId_email**, _string_                  | Email address the customer prefers to be contacted by.                          | Sandbox, QuickBooks Online, Xero |
+| **openId_email_verified**, _boolean_        | If `true`, this email address has been verified.                                | Sandbox, QuickBooks Online       |
+| **openId_phone_number**, _string_           | Phone number the customer prefers to be contacted on.                           | Sandbox, QuickBooks Online       |
+| **openId_phone_number_verified**, _boolean_ | If `true`, this phone number has been verified.                                 | Sandbox, QuickBooks Online       |
+| **openId_locale**, _string_                 | Language and country code for the locale of the customer. For example: `en-GB`. | Sandbox                          |
+| **openId_profile**, _string_                | URL of the profile page for the customer.                                       | Sandbox                          |
+| **openId_picture**, _string_                | URL of the profile image for the customer.                                      | Sandbox                          |
+| **openId_website**, _string_                | URL of the web page or blog of the customer.                                    | Sandbox                          |
+| **openId_zoneinfo**, _string_               | Time zone for the location of the customer. For example: `Europe/Paris`.        | Sandbox                          |
+| **openId_birthdate**, _string_              | Birthday of the customer in `YYYY-MM-DD` format.                                | Sandbox                          |
+| **openId_updated_at**, -number\_            | Time the customer last updated their profile.                                   | Sandbox                          |

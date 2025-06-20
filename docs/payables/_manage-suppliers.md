@@ -3,7 +3,7 @@ import TabItem from "@theme/TabItem";
 
 ## Retrieve supplier
 
-Call our <a href={props.listendpoint} target="_blank">List suppliers</a> endpoint to retrieve the full list of your customer's existing suppliers. 
+Call our <a href={props.listendpoint} target="_blank">List suppliers</a> endpoint to retrieve the full list of your customer's existing suppliers.
 
 <Tabs groupId="language">
 
@@ -11,14 +11,14 @@ Call our <a href={props.listendpoint} target="_blank">List suppliers</a> endpoin
 
 ```javascript
 const suppliersResponse = await payablesClient.suppliers.list({
-    companyId: companyId
-  });
+  companyId: companyId,
+});
 
-if(suppliersResponse.statusCode != 200){
-  throw new Error("Could not get current suppliers")
+if (suppliersResponse.statusCode != 200) {
+  throw new Error("Could not get current suppliers");
 }
- 
-console.log(suppliersResponse.suppliers[0].supplierName)
+
+console.log(suppliersResponse.suppliers[0].supplierName);
 ```
 
 </TabItem>
@@ -61,7 +61,7 @@ Console.WriteLine(suppliersResponse.Suppliers[0].SupplierName);
 
 ```go
 ctx := context.Background()
-suppliersResponse, err := payablesClient.Suppliers.List(ctx, 
+suppliersResponse, err := payablesClient.Suppliers.List(ctx,
   operations.ListSuppliersRequest{
     CompanyID: companyID
 })
@@ -91,15 +91,15 @@ When your customer's company does business with a new supplier for the first tim
 
 ```javascript
 const supplierCreateResponse = await payablesClient.suppliers.create({
-    supplier: {
-      supplierName: "Kelly's Industrial Supplies",
-      contactName: "Kelly's Industrial Supplies",
-      emailAddress: "sales@kellysupplies.com",
-      status: SupplierStatus.Active,
-    },
-    companyId: companyId,
-    connectionId: connectionId,
-  });
+  supplier: {
+    supplierName: "Kelly's Industrial Supplies",
+    contactName: "Kelly's Industrial Supplies",
+    emailAddress: "sales@kellysupplies.com",
+    status: SupplierStatus.Active,
+  },
+  companyId: companyId,
+  connectionId: connectionId,
+});
 ```
 
 </TabItem>

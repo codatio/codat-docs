@@ -4,6 +4,7 @@ date: "2024-10-04"
 tags: ["Deprecation"]
 authors: dcoplowe
 ---
+
 On **January 10, 2025**, we will deprecate company-specific webhooks delivered by our legacy rule services and replace them with recently introduced [company tags](/updates/240926-introducing-company-tags).
 
 <!--truncate-->
@@ -13,6 +14,7 @@ This change is designed to simplify the way we handle metadata in webhook payloa
 ## Action required
 
 If you are currently using company-specific webhooks and want to avoid disruption in receiving webhook notifications:
+
 - Move all metadata previously passed via URL paths into the `tags` property in the [company schema](/platform-api#/schemas/Company).
   See [Add metadata to a company](/using-the-api/managing-companies#add-metadata-to-a-company).
 - Update all webhook consumers to retrieve metadata from the `payload.referenceCompany.tags` property.

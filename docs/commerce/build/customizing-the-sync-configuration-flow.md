@@ -106,20 +106,20 @@ We recommend grouping your updates to ensure that related values are updated con
 
 ##### Main title
 
-| Default value                  | `data-textkey` value         |
-| :----------------------------- | :--------------------------- |
+| Default value                    | `data-textkey` value         |
+| :------------------------------- | :--------------------------- |
 | Set up Sync to `{platform name}` | configure-setupSidebar-title |
 
 ##### Checkbox captions
 
-| Default value                         | `data-textkey` value                                  |
-| :------------------------------------ | :---------------------------------------------------- |
+| Default value                           | `data-textkey` value                                  |
+| :-------------------------------------- | :---------------------------------------------------- |
 | Connect to `{commerce software name}`   | configure-setupSidebar-checkboxes-connectToCommerce   |
 | Connect to `{accounting software name}` | configure-setupSidebar-checkboxes-connectToAccounting |
-| Set up sales                          | configure-setupSidebar-checkboxes-sales               |
-| Set up fees                           | configure-setupSidebar-checkboxes-fees                |
-| Set up payments                       | configure-setupSidebar-checkboxes-payments            |
-| Set up sync schedule                  | configure-setupSidebar=checkboxes-syncSchedule        |
+| Set up sales                            | configure-setupSidebar-checkboxes-sales               |
+| Set up fees                             | configure-setupSidebar-checkboxes-fees                |
+| Set up payments                         | configure-setupSidebar-checkboxes-payments            |
+| Set up sync schedule                    | configure-setupSidebar=checkboxes-syncSchedule        |
 
 ##### Buttons
 
@@ -136,21 +136,21 @@ We recommend grouping your updates to ensure that related values are updated con
 
 ##### Sales title and description
 
-| Default value | data-textkey value |
-|---|---|
-| Sales | configure-content-sales-title |
+| Default value                                 | data-textkey value                  |
+| --------------------------------------------- | ----------------------------------- |
+| Sales                                         | configure-content-sales-title       |
 | Sales title description: no value by default. | configure-content-sales-description |
 
 ##### Sales feature categories title and description
 
-| Default value | data-textkey value |
-|---|---|
-| Accounts | configure-content-sales-accounts-title |
-| Configure accounts mapping from `{commerce software name}` to `{accounting software name}`. | configure-content-sales-accounts-description |
-| Tax rates | configure-content-sales-taxRates-title |
+| Default value                                                                                | data-textkey value                           |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| Accounts                                                                                     | configure-content-sales-accounts-title       |
+| Configure accounts mapping from `{commerce software name}` to `{accounting software name}`.  | configure-content-sales-accounts-description |
+| Tax rates                                                                                    | configure-content-sales-taxRates-title       |
 | Configure tax rates mapping from `{commerce software name}` to `{accounting software name}`. | configure-content-sales-taxRates-description |
-| Other | configure-content-sales-other-title |
-| Other title description: no value by default. | configure-content-sales-other-description |
+| Other                                                                                        | configure-content-sales-other-title          |
+| Other title description: no value by default.                                                | configure-content-sales-other-description    |
 
 ##### Sales feature categories
 
@@ -171,15 +171,15 @@ We recommend grouping your updates to ensure that related values are updated con
 ##### Fees title and description
 
 | Default value                                | data-textkey value                 |
-|----------------------------------------------|------------------------------------|
+| -------------------------------------------- | ---------------------------------- |
 | Fees                                         | configure-content-fees-title       |
 | Fees title description: no value by default. | configure-content-fees-description |
 
 ##### Fees feature categories title and description
 
-| Default value                                                                           | data-textkey value                          |
-|-----------------------------------------------------------------------------------------|---------------------------------------------|
-| Accounts                                                                                | configure-content-fees-accounts-title       |
+| Default value                                                                               | data-textkey value                          |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| Accounts                                                                                    | configure-content-fees-accounts-title       |
 | Configure accounts mapping from `{commerce software name}` to `{accounting software name}`. | configure-content-fees-accounts-description |
 
 ##### Fees feature categories
@@ -196,7 +196,7 @@ We recommend grouping your updates to ensure that related values are updated con
 ##### Payments title and description
 
 | Default value                                    | data-textkey value                     |
-|--------------------------------------------------|----------------------------------------|
+| ------------------------------------------------ | -------------------------------------- |
 | Payments                                         | configure-content-payments-title       |
 | Payments title description: no value by default. | configure-content-payments-description |
 

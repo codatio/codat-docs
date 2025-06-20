@@ -20,10 +20,10 @@ See [Set up the Stripe integration](/integrations/commerce/stripe/commerce-strip
 
 Codat provides two Stripe integrations: **Stripe Test** and **Stripe**. The following table explains what each integration is used for.
 
-|Integration|Connects to...|Retrieves...|
-|----|----|----|
-|**Stripe Test**|Stripe _test mode_ using the _test client ID_ and _test Secret key_.|Test data from Stripe, available for Company info, Customers, Disputes, Payments, Products, and Transactions.|
-|**Stripe**|Stripe _live mode_ using the _live client ID_ and _live Secret key_. To enable live mode, you must first activate your Stripe account by providing additional information about your business.|Live data from production Stripe accounts.|
+| Integration     | Connects to...                                                                                                                                                                                 | Retrieves...                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| **Stripe Test** | Stripe _test mode_ using the _test client ID_ and _test Secret key_.                                                                                                                           | Test data from Stripe, available for Company info, Customers, Disputes, Payments, Products, and Transactions. |
+| **Stripe**      | Stripe _live mode_ using the _live client ID_ and _live Secret key_. To enable live mode, you must first activate your Stripe account by providing additional information about your business. | Live data from production Stripe accounts.                                                                    |
 
 ## Switch between test and live modes
 

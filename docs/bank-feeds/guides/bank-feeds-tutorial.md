@@ -9,10 +9,10 @@ sidebar_label: "Build a bank feed to QBO"
 banner_title: Bank Feeds for bank transaction reconciliation in QBO
 banner_image: "/img/banners/bank-feeds.png"
 banner_text: "Example-based tutorial on reconciling bank transactions with QuickBooks Online using Codat's Bank Feeds solution"
----  
+---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 :::info Integrations and languages
 
@@ -22,7 +22,7 @@ This tutorial focuses on reconciling bank feeds with QuickBooks Online (QBO), an
 
 ## Summary
 
-🎯 Our QuickBooks Online Bank Feeds integration makes it possible for your customers to connect bank accounts from your application to QBO. See how you can support your users by syncing their bank transaction data to QBO Bank Feeds, ensuring the records match each other. 
+🎯 Our QuickBooks Online Bank Feeds integration makes it possible for your customers to connect bank accounts from your application to QBO. See how you can support your users by syncing their bank transaction data to QBO Bank Feeds, ensuring the records match each other.
 
 ⏳ Estimated time to review: 10-15 minutes
 
@@ -37,13 +37,13 @@ This saves your customers time and gives them the context they need to properly 
 
 ## Solution overview
 
-We have done the heavy lifting for you by building bank feeds integrations with a standardized data model to the accounting software your customers already use. This gives you access to real-time data that you can fetch, create, or update to support your customers. In this tutorial, we focus on our QuickBooks Online Bank Feeds integration. 
+We have done the heavy lifting for you by building bank feeds integrations with a standardized data model to the accounting software your customers already use. This gives you access to real-time data that you can fetch, create, or update to support your customers. In this tutorial, we focus on our QuickBooks Online Bank Feeds integration.
 
 :::tip Prerequisites
 
 1. Make sure you have enabled the QuickBooks Online Bank Feeds integration. You can do that in the [Codat Portal](https://app.codat.io/settings/integrations/bankfeeds), or [read more](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup) for detailed instructions.
 
-2. Intuit must have approved your company to appear in the QuickBooks Online bank selection screen. Submit a request to Codat so that we can organize this with Intuit on your behalf. 
+2. Intuit must have approved your company to appear in the QuickBooks Online bank selection screen. Submit a request to Codat so that we can organize this with Intuit on your behalf.
 
 We also expect that your application has a UI that your SMB users interact with.
 
@@ -51,9 +51,9 @@ We also expect that your application has a UI that your SMB users interact with.
 
 ### Preparation
 
-Use our SDKs to easily implement the bank feeds solution in your app. We strongly recommend utilizing our SDKs to make your build simple to implement and easy to maintain. 
+Use our SDKs to easily implement the bank feeds solution in your app. We strongly recommend utilizing our SDKs to make your build simple to implement and easy to maintain.
 
-First, install the client library: 
+First, install the client library:
 
 <Tabs groupId="language">
 
@@ -62,6 +62,7 @@ First, install the client library:
 ```bash
     dotnet add package Codat.BankFeeds
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -69,10 +70,13 @@ First, install the client library:
 ```bash
     npm add @codat/platform
 ```
+
 or
+
 ```bash
     yarn add @codat/platform
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -80,6 +84,7 @@ or
 ```bash
     pip install codat-bank-feeds
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -87,10 +92,10 @@ or
 ```bash
     go get github.com/codatio/client-sdk-go/bank-feeds
 ```
+
 </TabItem>
 
 </Tabs>
-
 
 Next, import the package and add your Base64 encoded API key within an authorization header. You can copy your authorization header in the [Developers](https://app.codat.io/developers/api-keys) section of the Codat Portal. In our example, we chose to call the client library `bank_feeds_client`.
 
@@ -108,6 +113,7 @@ var bankFeedsClient = new CodatBankFeedsSDK(
     }
 );
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -121,6 +127,7 @@ const bankFeedsClient = new CodatBankFeeds({
   },
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -135,6 +142,7 @@ bank_feeds_client = codatbankfeeds.CodatBankFeeds(
     ),
 )
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -155,15 +163,16 @@ func main() {
     )
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
 ### Bank feeds process flow
 
-``` mermaid
+```mermaid
     sequenceDiagram
-        participant frontend as User 
+        participant frontend as User
         participant backend as Bank
         participant codat as Codat
         participant qbo as QBO Portal
@@ -210,6 +219,7 @@ if(companyCreatedRes.Company != null) {
     logger.LogInformation('{CompanyId} {CompanyName}', company.Id, company.Name);
 }
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -223,6 +233,7 @@ bankFeedsClient.companies.create({
     }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -235,6 +246,7 @@ req = shared.CompanyRequestBody(
 company_created_res = bank_feeds_client.companies.create(req)
 print(company_created_res.company.id, company_created_res.company.name)
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -254,6 +266,7 @@ if companyCreatedRes.Company != nil {
     fmt.Println("%s %s", companyCreatedRes.Company.ID, companyCreatedRes.Company.Name)
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -272,6 +285,7 @@ var connectionCreatedRes = await bankFeedsClient.Connections.CreateAsync(new Cre
     CompanyId = companyCreatedRes.Company.Id,
 });
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -288,6 +302,7 @@ bankFeedsClient.connections.create({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -302,6 +317,7 @@ req = operations.CreateConnectionRequest(
 
 connection_created_res = bank_feeds_client.connections.create(req)
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -315,6 +331,7 @@ connectionCreatedRes, err := bankFeedsClient.Connections.Create(ctx, operations.
     CompanyID: companyCreatedRes.Company.ID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
@@ -341,6 +358,7 @@ var accountCreatedRes = await bankFeedsClient.SourceAccounts.CreateAsync(new Cre
     ConnectionId = connectionCreatedRes.Connection.Id,
 });
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -363,6 +381,7 @@ bankFeedsClient.sourceAccounts.create({
   }
 
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -383,6 +402,7 @@ account_create_req = operations.CreateSourceAccountRequest(
 
 account_created_res = bank_feeds_client.source_accounts.create(account_create_req)
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -402,13 +422,14 @@ accountCreatedRes, err := bankFeedsClient.SourceAccounts.Create(ctx, operations.
     ConnectionID: connectionCreatedRes.Connection.ID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
 
 ### Authorize the connection
 
-Finally, use our [Generate source account credentials](/bank-feeds-api#/operations/generate-credentials) endpoint to authorize the previously created data connection. Embed the call to this endpoint in the UI flow the user triggered when choosing to link their bank accounts. 
+Finally, use our [Generate source account credentials](/bank-feeds-api#/operations/generate-credentials) endpoint to authorize the previously created data connection. Embed the call to this endpoint in the UI flow the user triggered when choosing to link their bank accounts.
 
 In response, you will receive login credentials that your user needs to enter in QBO Banking to link a bank account. Share them with the user, and consider providing instructions on steps to take in QBO. For example, this is how we manage it in our QBO Link flow:
 
@@ -427,6 +448,7 @@ var credentialsRes = await bankFeedsClient.SourceAccounts.GenerateCredentialsAsy
 var companyCredentials = credentialsRes.BankAccountCredentials;
 logger.LogInformation("{Username} {Password}", companyCredentials.Username, companyCredentials.Password);
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -443,6 +465,7 @@ bankFeedsClient.sourceAccounts.generateCredentials({
 });
 
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -453,10 +476,11 @@ credentials_res = bank_feeds_client.source_accounts.generate_credentials(
         company_id=company_created_res.company.id,
         connection_id=connection_created_res.connection.id
     ))
-    
+
 company_credentials = credentials_res.bank_account_credentials
 print(company_credentials.username, company_credentials.password)
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -478,6 +502,7 @@ if credentialsRes.BankAccountCredentials != nil {
     fmt.Println("%s %s", companyCredentials.Username, companyCredentials.Password)
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -499,9 +524,9 @@ Once this is complete, you can sync transactions between the bank and Codat. QBO
 
 :::
 
-Use the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to post your SMB user's bank transactions to Codat. 
+Use the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint to post your SMB user's bank transactions to Codat.
 
-Because of the way bank transactions work, we recommend you post seven days of transactions on the initial sync. For subsequent syncs, we recommend you post daily transaction data. 
+Because of the way bank transactions work, we recommend you post seven days of transactions on the initial sync. For subsequent syncs, we recommend you post daily transaction data.
 
 <Tabs groupId="language">
 
@@ -539,6 +564,7 @@ var res = await bankFeedsClient.Transactions.CreateAsync(new CreateBankTransacti
 
 
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -577,6 +603,7 @@ bankFeedsClient.transactions.create({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -613,6 +640,7 @@ req = operations.CreateBankTransactionsRequest(
 
 res = bank_feeds_client.transactions.create(req)
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -648,11 +676,12 @@ res, err := bankFeedsClient.Transactions.Create(ctx, operations.CreateBankTransa
     ConnectionID: connectionCreatedRes.Connection.ID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
 
-Repeat the request for the remainder of the SMB user's source bank accounts. Keep the bank transactions in Codat up to date, as QBO polls Codat periodically to read these transactions to their bank feeds. 
+Repeat the request for the remainder of the SMB user's source bank accounts. Keep the bank transactions in Codat up to date, as QBO polls Codat periodically to read these transactions to their bank feeds.
 
 :::tip Recap
 
@@ -664,5 +693,5 @@ That's it - you have followed Codat's bank transactions reconciliation process f
 
 ## Read next
 
-* Expand your coverage of bank feeds to [Xero](/integrations/bank-feeds/xero-bank-feeds/) and [Sage](/integrations/bank-feeds/sage-bank-feeds/)
-* Learn more about how Codat can automate your lending solutions on the examples of [loan qualification](/lending/guides/invoice-finance/introduction) and [invoice financing](/lending/guides/invoice-finance/introduction)
+- Expand your coverage of bank feeds to [Xero](/integrations/bank-feeds/xero-bank-feeds/) and [Sage](/integrations/bank-feeds/sage-bank-feeds/)
+- Learn more about how Codat can automate your lending solutions on the examples of [loan qualification](/lending/guides/invoice-finance/introduction) and [invoice financing](/lending/guides/invoice-finance/introduction)

@@ -4,12 +4,12 @@ sidebar_label: First steps
 description: "A practical introduction to Codat's Portal and API"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 :::note Prerequisites
 
-You need an account and API key to follow this guide. [Get in touch](https://www.codat.io/#get-in-touch) to discuss creating an account today. 
+You need an account and API key to follow this guide. [Get in touch](https://www.codat.io/#get-in-touch) to discuss creating an account today.
 
 :::
 
@@ -52,99 +52,104 @@ Codat uses API keys, Base64 encoded within an authorization header, to control a
 Then, replace `{basicAuthHeader}` in the code snippets below.
 
 <Tabs groupId="language">
-  <TabItem value="csharp" label="C#">  
+  <TabItem value="csharp" label="C#">
 
-  ##### Installation
-  
-  ```bash
-    dotnet add package Codat.Platform
-  ```
+##### Installation
 
-  ##### Authentication
+```bash
+  dotnet add package Codat.Platform
+```
 
-  ```c
-    using CodatPlatform;
-    using CodatPlatform.Models.Shared;
+##### Authentication
 
-    var codatPlatform = new CodatPlatformSDK(
-        security: new Security() {
-            AuthHeader = "{basicAuthHeader}",
-        }
-    );
-  ```
+```c
+  using CodatPlatform;
+  using CodatPlatform.Models.Shared;
+
+  var codatPlatform = new CodatPlatformSDK(
+      security: new Security() {
+          AuthHeader = "{basicAuthHeader}",
+      }
+  );
+```
+
   </TabItem>
   
-  <TabItem value="nodejs" label="TypeScript">  
+  <TabItem value="nodejs" label="TypeScript">
 
-  ##### Installation
-  
-  ```bash
-    npm add @codat/platform
-  ```
-  or
-  ```bash
-    yarn add @codat/platform
-  ```
+##### Installation
 
-  ##### Authentication
+```bash
+  npm add @codat/platform
+```
 
-  ```javascript
-    import { CodatPlatform } from "@codat/platform";
+or
 
-    const codatCommon = new CodatPlatform({
-      security: {
-        authHeader: '{basicAuthHeader}',
-      },
-    });
-    
-  ```
+```bash
+  yarn add @codat/platform
+```
+
+##### Authentication
+
+```javascript
+import { CodatPlatform } from "@codat/platform";
+
+const codatCommon = new CodatPlatform({
+  security: {
+    authHeader: "{basicAuthHeader}",
+  },
+});
+```
+
   </TabItem>
 
   <TabItem value="python" label="Python">
 
-  ##### Installation
-  
-  ```bash
-    pip install codat-platform
-  ```
+##### Installation
 
-  ##### Authentication
+```bash
+  pip install codat-platform
+```
 
-  ```python
-    import codatplatform
-    from codatplatform.models import shared
+##### Authentication
 
-    codat_platform = codatplatform.CodatPlatform(
-      security=shared.Security(
-          auth_header='{basicAuthHeader}',
-      ),
-    )
-  ```  
+```python
+  import codatplatform
+  from codatplatform.models import shared
+
+  codat_platform = codatplatform.CodatPlatform(
+    security=shared.Security(
+        auth_header='{basicAuthHeader}',
+    ),
+  )
+```
+
   </TabItem>
 
-  <TabItem value="go" label="Go">  
+  <TabItem value="go" label="Go">
 
-  ##### Installation
-  
-  ```bash
-    go get github.com/codatio/client-sdk-go/platform
-  ```
+##### Installation
 
-  ##### Authentication
+```bash
+  go get github.com/codatio/client-sdk-go/platform
+```
 
-  ```go
-    import(
-      "context"
-      "log"
-      "github.com/codatio/client-sdk-go/platform"
-    )
+##### Authentication
 
-    codatPlatform := codatplatform.New(
-        codatplatform.WithSecurity(shared.Security{
-            AuthHeader: "{basicAuthHeader}",
-        }),
-    )
-  ```
+```go
+  import(
+    "context"
+    "log"
+    "github.com/codatio/client-sdk-go/platform"
+  )
+
+  codatPlatform := codatplatform.New(
+      codatplatform.WithSecurity(shared.Security{
+          AuthHeader: "{basicAuthHeader}",
+      }),
+  )
+```
+
   </TabItem>
 </Tabs>
 
@@ -171,91 +176,96 @@ Copy this URL for use in the next step. Note that this URL can be accessed again
 To create a company in Codat, use the `POST /companies` endpoint with a request body containing the `name` of the company. It does not have to be unique and serves to identify your customer in Codat.
 
 <Tabs groupId="language">
-  <TabItem value="csharp" label="C#">  
+  <TabItem value="csharp" label="C#">
 
-  ```c
-  using CodatPlatform.Models.Shared;
+```c
+using CodatPlatform.Models.Shared;
 
-  var res = await codatPlatform.Companies.CreateAsync(new CompanyRequestBody() {
-      Description = "Requested early access to the new financing scheme.",
-      Name = "Bank of Dave",
+var res = await codatPlatform.Companies.CreateAsync(new CompanyRequestBody() {
+    Description = "Requested early access to the new financing scheme.",
+    Name = "Bank of Dave",
+});
+
+if(res.Company != null) {
+  logger.LogInformation('{CompanyId} {CompanyName}', res.Company.Id, res.Company.Name)
+}
+```
+
+  </TabItem>
+
+  <TabItem value="nodejs" label="TypeScript">
+
+```javascript
+  import { CreateCompanyResponse } from "@codat/platform/dist/sdk/models/operations";
+
+  codatPlatform.companies.create({
+    description: "Requested early access to the new financing scheme.",
+    name: "Bank of Dave",
+  }).then((res: CreateCompanyResponse) => {
+    if (res.statusCode == 200) {
+      console.log(res.company.id, res.company.name)
+    }
   });
+```
 
-  if(res.Company != null) {
-    logger.LogInformation('{CompanyId} {CompanyName}', res.Company.Id, res.Company.Name)
-  }
-  ```
   </TabItem>
 
-  <TabItem value="nodejs" label="TypeScript">  
+  <TabItem value="python" label="Python">
 
-  ```javascript
-    import { CreateCompanyResponse } from "@codat/platform/dist/sdk/models/operations";
-    
-    codatPlatform.companies.create({
-      description: "Requested early access to the new financing scheme.",
-      name: "Bank of Dave",
-    }).then((res: CreateCompanyResponse) => {
-      if (res.statusCode == 200) {
-        console.log(res.company.id, res.company.name)
-      }
-    });
-  ```
-  </TabItem>
-
-  <TabItem value="python" label="Python">  
-
-  ```python
-    req = shared.CompanyRequestBody(
-      description='Requested early access to the new financing scheme.',
-      name='Bank of Dave',
-    )
-
-    res = codat_platform.companies.create(req)
-
-    if res.company is not None:
-      print(res.company.id, res.company.name)
-  ```  
-  </TabItem>
-
-  <TabItem value="go" label="Go">  
-
-  ```go
-  import(
-    "github.com/codatio/client-sdk-go/platform/pkg/models/shared"
-    "fmt"
+```python
+  req = shared.CompanyRequestBody(
+    description='Requested early access to the new financing scheme.',
+    name='Bank of Dave',
   )
 
-  ctx := context.Background()
-  
-  res, err := codatPlatform.Companies.Create(ctx, shared.CompanyRequestBody{
-    Description: codatplatform.String("Requested early access to the new financing scheme."),
-    Name: "Bank of Dave",
-  })
+  res = codat_platform.companies.create(req)
 
-  if err != nil {
-    log.Fatal(err)
-  }
+  if res.company is not None:
+    print(res.company.id, res.company.name)
+```
 
-  if res.Company != nil {
-      fmt.Println("%s %s", res.Company.Id, res.Company.Name)
-  }
-  ```
   </TabItem>
 
-  <TabItem value="curl" label="cURL">  
+  <TabItem value="go" label="Go">
 
-  ```bash
-    curl --request POST \
-        --url "https://api.codat.io/companies" \
-        --header "Authorization: $CODAT_AUTH_HEADER" \
-        --header "accept: application/json" \
-        --header "content-type: application/json" \
-        --data '{
-                "name": "SMB company name",
-                "description": "Any additional information about the company"
-        }
-  ```    
+```go
+import(
+  "github.com/codatio/client-sdk-go/platform/pkg/models/shared"
+  "fmt"
+)
+
+ctx := context.Background()
+
+res, err := codatPlatform.Companies.Create(ctx, shared.CompanyRequestBody{
+  Description: codatplatform.String("Requested early access to the new financing scheme."),
+  Name: "Bank of Dave",
+})
+
+if err != nil {
+  log.Fatal(err)
+}
+
+if res.Company != nil {
+    fmt.Println("%s %s", res.Company.Id, res.Company.Name)
+}
+```
+
+  </TabItem>
+
+  <TabItem value="curl" label="cURL">
+
+```bash
+  curl --request POST \
+      --url "https://api.codat.io/companies" \
+      --header "Authorization: $CODAT_AUTH_HEADER" \
+      --header "accept: application/json" \
+      --header "content-type: application/json" \
+      --data '{
+              "name": "SMB company name",
+              "description": "Any additional information about the company"
+      }
+```
+
   </TabItem>
 </Tabs>
 
@@ -303,84 +313,89 @@ Once the flow is complete, you can verify the company's status under the <a href
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
 <Tabs groupId="language">
-  <TabItem value="csharp" label="C#">  
+  <TabItem value="csharp" label="C#">
 
-  ```c
-  using CodatPlatform.Models.Shared;
-  using CodatPlatform.Models.Operations;
-  using System.Net;
+```c
+using CodatPlatform.Models.Shared;
+using CodatPlatform.Models.Operations;
+using System.Net;
 
-  var res = await sdk.Companies.GetAsync(new GetCompanyRequest() {
-    CompanyId = "{companyId}",
+var res = await sdk.Companies.GetAsync(new GetCompanyRequest() {
+  CompanyId = "{companyId}",
+});
+
+if res.statusCode == (int)HttpStatusCode.OK {
+  logger.LogInformation("{Redirect}", res.Company.Redirect)
+}
+```
+
+  </TabItem>
+
+  <TabItem value="nodejs" label="TypeScript">
+
+```javascript
+  import { GetCompanyResponse } from "@codat/common/dist/sdk/models/operations";
+
+  codatCommon.companies.get({
+    companyId: "{companyId}",
+  }).then((res: GetCompanyResponse) => {
+    if (res.statusCode == 200) {
+      console.log(res.company.redirect)
+    }
   });
+```
 
-  if res.statusCode == (int)HttpStatusCode.OK {
-    logger.LogInformation("{Redirect}", res.Company.Redirect)
-  }
-  ```
   </TabItem>
 
-  <TabItem value="nodejs" label="TypeScript">  
+  <TabItem value="python" label="Python">
 
-  ```javascript
-    import { GetCompanyResponse } from "@codat/common/dist/sdk/models/operations";
-
-    codatCommon.companies.get({
-      companyId: "{companyId}",
-    }).then((res: GetCompanyResponse) => {
-      if (res.statusCode == 200) {
-        console.log(res.company.redirect)
-      }
-    });
-  ```
-  </TabItem>
-
-  <TabItem value="python" label="Python">  
-
-  ```python
-    req = operations.GetCompanyRequest(
-      company_id='{companyId}',
-    )
-
-    res = codat_common.companies.get(req)
-
-    if res.company is not None:
-      print(res.company.redirect)
-  ```  
-  </TabItem>
-
-  <TabItem value="go" label="Go">  
-
-  ```go
-  import(
-    "github.com/codatio/client-sdk-go/common/pkg/models/shared"
-    "fmt"
+```python
+  req = operations.GetCompanyRequest(
+    company_id='{companyId}',
   )
 
-  ctx := context.Background()
-  
-  res, err := s.Companies.Get(ctx, operations.GetCompanyRequest{
-        CompanyID: "{companyId}",
-    })
+  res = codat_common.companies.get(req)
 
-  if err != nil {
-    log.Fatal(err)
-  }
+  if res.company is not None:
+    print(res.company.redirect)
+```
 
-  if res.Company != nil {
-      fmt.Println("%s",res.Company.Redirect)
-  }
-  ```
   </TabItem>
 
-  <TabItem value="curl" label="cURL">  
+  <TabItem value="go" label="Go">
 
-  ```bash
-    curl --request GET \
-        --url "https://api.codat.io/companies/{companyId}" \
-        --header "Authorization: $CODAT_AUTH_HEADER" \
-        --header "accept: application/json"
-  ```
+```go
+import(
+  "github.com/codatio/client-sdk-go/common/pkg/models/shared"
+  "fmt"
+)
+
+ctx := context.Background()
+
+res, err := s.Companies.Get(ctx, operations.GetCompanyRequest{
+      CompanyID: "{companyId}",
+  })
+
+if err != nil {
+  log.Fatal(err)
+}
+
+if res.Company != nil {
+    fmt.Println("%s",res.Company.Redirect)
+}
+```
+
+  </TabItem>
+
+  <TabItem value="curl" label="cURL">
+
+```bash
+  curl --request GET \
+      --url "https://api.codat.io/companies/{companyId}" \
+      --header "Authorization: $CODAT_AUTH_HEADER" \
+      --header "accept: application/json"
+```
+
   </TabItem>
 </Tabs>
 
@@ -427,153 +442,161 @@ For example, to query invoices, use the <a href="/lending-api#/operations/list-i
 Remember to replace `{companyId}` with your company `id` obtained previously.
 
 <Tabs groupId="language">
-  <TabItem value="csharp" label="C#">  
+  <TabItem value="csharp" label="C#">
 
-  ##### Installation
-  
-  ```bash
-    dotnet add package Codat.Lending
-  ```
+##### Installation
 
-  ##### Usage
+```bash
+  dotnet add package Codat.Lending
+```
 
-  ```c
-  using CodatLending;
-  using CodatLending.Models.Shared;
-  using CodatLending.Models.Operations;
+##### Usage
 
-  var codatLending = new CodatLendingSDK(
-    security: new Security() {
-          AuthHeader = "{basicAuthHeader}",
-      }
-  );
+```c
+using CodatLending;
+using CodatLending.Models.Shared;
+using CodatLending.Models.Operations;
 
-  var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccountingInvoicesRequest() {
-      CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
+var codatLending = new CodatLendingSDK(
+  security: new Security() {
+        AuthHeader = "{basicAuthHeader}",
+    }
+);
+
+var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccountingInvoicesRequest() {
+    CompanyId = "8a210b68-6988-11ed-a1eb-0242ac120002",
+});
+
+if(res.StatusCode == (int)HttpStatusCode.OK){
+  logger.LogInformation(res.invoices.results[0].Id)
+}
+```
+
+  </TabItem>
+
+  <TabItem value="nodejs" label="TypeScript">
+
+##### Installation
+
+```bash
+  npm add @codat/lending
+```
+
+or
+
+```bash
+  yarn add @codat/lending
+```
+
+##### Usage
+
+```javascript
+  import { CodatLending } from "@codat/lending";
+  import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
+
+  const codatLending = new CodatLending({
+    security: {
+      authHeader: "{basicAuthHeader}",
+    },
   });
 
-  if(res.StatusCode == (int)HttpStatusCode.OK){
-    logger.LogInformation(res.invoices.results[0].Id)
-  }
-  ```
+  codatLending.accountsReceivable.invoices.list({
+    companyId: "{companyId}"
+  }).then((res: ListInvoicesResponse) => {
+    if (res.statusCode == 200) {
+      console.log(res.accounting_invoices.results[0].id)
+    }
+  });
+```
+
   </TabItem>
 
-  <TabItem value="nodejs" label="TypeScript">  
+  <TabItem value="python" label="Python">
 
-  ##### Installation
-  
-  ```bash
-    npm add @codat/lending
-  ```
-  or
-  ```bash
-    yarn add @codat/lending
-  ```
+##### Installation
 
-  ##### Usage
+```bash
+  pip install codat-lending
+```
 
-  ```javascript
-    import { CodatLending } from "@codat/lending";
-    import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
-    
-    const codatLending = new CodatLending({
-      security: {
-        authHeader: "{basicAuthHeader}",
-      },
-    });
+##### Usage
 
-    codatLending.accountsReceivable.invoices.list({
-      companyId: "{companyId}"
-    }).then((res: ListInvoicesResponse) => {
-      if (res.statusCode == 200) {
-        console.log(res.accounting_invoices.results[0].id)
-      }
-    });
-  ```
-  </TabItem>
+```python
+  import codatlending
+  from codatlending.models import operations
 
-  <TabItem value="python" label="Python">  
-
-  ##### Installation
-  ```bash
-    pip install codat-lending
-  ```
-
-  ##### Usage
-
-  ```python
-    import codatlending
-    from codatlending.models import operations
-
-    codat_lending = codatlending.CodatLending(
-        security=shared.Security(
-            auth_header="{basicAuthHeader}",
-        ),
-    )
-
-    req = operations.ListInvoicesRequest(company_id='{companyId}')
-
-    res = codat_lending.accounts_receivable.invoices.list(req)
-
-    if res.invoices is not None:
-      print(res.accounting_invoices.results[0].id)
-  ```
-  </TabItem>
-
-  <TabItem value="go" label="Go">  
-
-  ##### Installation
-  
-  ```bash
-    go get github.com/codatio/client-sdk-go/lending
-  ```
-
-  ##### Usage
-
-  ```go
-  package main
-
-  import(
-    "context"
-    "log"
-    "github.com/codatio/client-sdk-go/lending"
-    "github.com/codatio/client-sdk-go/lending/pkg/models/operations"
-    "fmt"
+  codat_lending = codatlending.CodatLending(
+      security=shared.Security(
+          auth_header="{basicAuthHeader}",
+      ),
   )
 
-  func main() {
-      codatLending := codatlending.New(
-          codatlending.WithSecurity(shared.Security{
-              AuthHeader: "{basicAuthHeader}",
-          }),
-      )
+  req = operations.ListInvoicesRequest(company_id='{companyId}')
 
-      ctx := context.Background()
-      res, err := codatLending.AccountsReceivable.Invoices.List(ctx, operations.ListInvoicesRequest{
-          CompanyID: "{companyId}"
-      })
+  res = codat_lending.accounts_receivable.invoices.list(req)
 
-      if err != nil {
-          log.Fatal(err)
-      }
+  if res.invoices is not None:
+    print(res.accounting_invoices.results[0].id)
+```
 
-      if res.Invoices != nil {
-        fmt.Println("%s ",res.AccountingInvoices.Results[0].id)
-      }
-  }
-  ```
   </TabItem>
 
-  <TabItem value="curl" label="cURL">  
+  <TabItem value="go" label="Go">
 
-  ```bash
-    curl --request GET \
-        --url "https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=10" \
-        --header "Authorization: {basicAuthHeader}" \
-        --header "accept: application/json"
-  ```
+##### Installation
+
+```bash
+  go get github.com/codatio/client-sdk-go/lending
+```
+
+##### Usage
+
+```go
+package main
+
+import(
+  "context"
+  "log"
+  "github.com/codatio/client-sdk-go/lending"
+  "github.com/codatio/client-sdk-go/lending/pkg/models/operations"
+  "fmt"
+)
+
+func main() {
+    codatLending := codatlending.New(
+        codatlending.WithSecurity(shared.Security{
+            AuthHeader: "{basicAuthHeader}",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := codatLending.AccountsReceivable.Invoices.List(ctx, operations.ListInvoicesRequest{
+        CompanyID: "{companyId}"
+    })
+
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.Invoices != nil {
+      fmt.Println("%s ",res.AccountingInvoices.Results[0].id)
+    }
+}
+```
+
   </TabItem>
-</Tabs>  
+
+  <TabItem value="curl" label="cURL">
+
+```bash
+  curl --request GET \
+      --url "https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=10" \
+      --header "Authorization: {basicAuthHeader}" \
+      --header "accept: application/json"
+```
+
+  </TabItem>
+</Tabs>
 
 In the JSON response, the API provides ten detailed invoices as a result.
 

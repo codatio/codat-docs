@@ -20,14 +20,14 @@ The product variants listed here are earlier implementations of a current produc
 
 #### Data sources
 
-- Accounting  
+- Accounting
 
 #### Accounting data types
 
-- Accounts Receivable  
-- Account Transactions  
-- Ref Data  
-- At request: *Suppliers, Bills, Bill Credit Notes*  
+- Accounts Receivable
+- Account Transactions
+- Ref Data
+- At request: _Suppliers, Bills, Bill Credit Notes_
 
 </TabItem>
 
@@ -59,7 +59,6 @@ Xero, QuickBooks Online, NetSuite, Microsoft Dynamics 365
 
 ---
 
-
 ## Other products
 
 <Tabs>
@@ -67,24 +66,24 @@ Xero, QuickBooks Online, NetSuite, Microsoft Dynamics 365
 
 #### Functionality
 
-- Read  
-- One time or ongoing Sync  
-- API  
+- Read
+- One time or ongoing Sync
+- API
 - Lending write-back
 
 #### Data sources
 
-- Accounting  
+- Accounting
 - Commerce
 - Banking
 
 #### Accounting data types
 
-- Company Info  
-- Financial Statements  
-- Accounts Receivable  
-- Accounts Payable  
-- Ref Data  
+- Company Info
+- Financial Statements
+- Accounts Receivable
+- Accounts Payable
+- Ref Data
 
 </TabItem>
 
@@ -98,7 +97,7 @@ Xero, QuickBooks Online, NetSuite, Microsoft Dynamics 365
 
 #### Data sources
 
-- Accounting  
+- Accounting
 
 #### Data types
 
@@ -116,7 +115,7 @@ Xero, QuickBooks Online, NetSuite, Microsoft Dynamics 365
 
 #### Data sources
 
-- Banking  
+- Banking
 
 #### Data types
 
@@ -134,7 +133,7 @@ Xero, QuickBooks Online, NetSuite, Microsoft Dynamics 365
 
 #### Data sources
 
-- Commerce  
+- Commerce
 
 #### Data types
 

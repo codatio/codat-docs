@@ -6,14 +6,18 @@ image: "/img/banners/social/lending.png"
 ---
 
 import { IntegrationsList } from "@components/Integrations";
-import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/Integrations/integrations";
+import {
+  accountingIntegrations,
+  bankingIntegrations,
+  commerceIntegrations,
+} from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 import ReadNext from "@components/ReadNext";
 
 :::tip Your lending journey
 
-Our Lending solution supports the data collection step of your lending journey, which starts in your own web application. Enable Lending and configure it, then embed our [Link SDK](/auth-flow/authorize-embedded-link) in your app to handle the auth flow. Determine where the collected data will be stored and manage the subsequent steps of the lending process in your app. 
+Our Lending solution supports the data collection step of your lending journey, which starts in your own web application. Enable Lending and configure it, then embed our [Link SDK](/auth-flow/authorize-embedded-link) in your app to handle the auth flow. Determine where the collected data will be stored and manage the subsequent steps of the lending process in your app.
 
 :::
 
@@ -27,9 +31,9 @@ Our Lending solution supports the data collection step of your lending journey, 
 
 ### Data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the solution. Follow the respective guides for integration-specific instructions. 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** to enable and set up the integrations that will serve as a data source for the solution. Follow the respective guides for integration-specific instructions.
 
-Data source coverage varies by feature, so be sure to review the coverage for the features you want to use. 
+Data source coverage varies by feature, so be sure to review the coverage for the features you want to use.
 
 #### Accounting
 
@@ -45,15 +49,15 @@ Data source coverage varies by feature, so be sure to review the coverage for th
 
 ### Authorization flow
 
-As part of using Lending, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/overview) - our pre-built, conversion-optimized white-label authorization flow. 
+As part of using Lending, you will need your customers to authorize your access to their data. To do so, use [Link](/auth-flow/overview) - our pre-built, conversion-optimized white-label authorization flow.
 
-We recommend you fully embed this auth flow in your experience by using our [Link SDK](/auth-flow/authorize-embedded-link) in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible. 
+We recommend you fully embed this auth flow in your experience by using our [Link SDK](/auth-flow/authorize-embedded-link) in your front-end code. You can also choose our out-of-the-box [Hosted Link](/auth-flow/authorize-hosted-link) auth flow option to get up and running as quick as possible.
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
-* [Customize Link settings](/auth-flow/customize/customize-link)
-* [Set up company branding](/auth-flow/customize/branding)
-* [Set up redirects](/auth-flow/customize/set-up-redirects)
+- [Customize Link settings](/auth-flow/customize/customize-link)
+- [Set up company branding](/auth-flow/customize/branding)
+- [Set up redirects](/auth-flow/customize/set-up-redirects)
 
 ### Data types
 
@@ -61,9 +65,9 @@ Set the minimum set of [data types](/core-concepts/data-type-settings#override-t
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. As a minimum, you need the following data types enabled:
 
-|  Data source          | Accounting                                                                                                                                                                                            | Banking                                                                                                                                                                             | Commerce                                                                                                     |
-|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| Data types | `company`<br/>`chartOfAccounts`<br/>`balanceSheet`<br/>`profitAndLoss`<br/>`bankAccounts`<br/>`bankTransactions` | `banking-accounts`<br/>`banking-transactions`<br/>`banking-transactionCategories`<br/>`banking-accountBalances` | `commerce-companyInfo`<br/>`commerce-customers`<br/>`commerce-orders` |
+| Data source | Accounting                                                                                                       | Banking                                                                                                         | Commerce                                                              |
+| ----------- | ---------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Data types  | `company`<br/>`chartOfAccounts`<br/>`balanceSheet`<br/>`profitAndLoss`<br/>`bankAccounts`<br/>`bankTransactions` | `banking-accounts`<br/>`banking-transactions`<br/>`banking-transactionCategories`<br/>`banking-accountBalances` | `commerce-companyInfo`<br/>`commerce-customers`<br/>`commerce-orders` |
 
 Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) on the same screen. We recommend setting it to a daily or a monthly sync.
 
@@ -73,25 +77,24 @@ Codat supports a range of [event types](/using-the-api/webhooks/event-types) you
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Create consumer** and click **Add endpoint** to add a new [webhook consumer endpoint](/using-the-api/webhooks/overview) and get the most out of Lending:
 
-- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)  
+- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)
 
-  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
- 
-- [`Dataset data changed`](/using-the-api/webhooks/event-types)  
+  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again.
+
+- [`Dataset data changed`](/using-the-api/webhooks/event-types)
 
   This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
 - [`Account categories updated`](/using-the-api/webhooks/event-types)
 
-  This means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
-  
+  This means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components.
 
 ## Use Lending
 
 Before you can collect your SMB customer's data, you need to create a Codat [company](../terms/company) and connect it to a data source (for example, an accounting software). You can do that in two ways:
 
-* In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
-* By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
+- In the [Codat Portal](https://app.codat.io) by navigating to **Companies > Create company**
+- By calling the [Create company](/lending-api#/operations/create-company) endpoint of our API
 
 Remember to [authenticate](/using-the-api/authentication) if you are making calls to our API. Navigate to **Developers > API keys** in the Portal to pick up your authorization header.
 
@@ -140,11 +143,13 @@ Simply install the library in one of the supported languages and pass your base6
 #### Install
 
 ##### NPM
+
 ```sh
 npm add @codat/lending
 ```
 
 ##### Yarn
+
 ```sh
 yarn add @codat/lending
 ```
@@ -155,10 +160,10 @@ yarn add @codat/lending
 import { CodatBankFeeds } from "@codat/lending";
 
 const lendingClient = new CodatLending({
-        security: {
-            authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-        },
-    });
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
 ```
 
 </TabItem>
@@ -243,12 +248,12 @@ func main() {
 
 <ReadNext
   links={[
-    ["Bank statements", "/lending/features/bank-statements-overview", ],
-    ["Sales", "/lending/features/sales-overview", ],
-    ["Financial statements", "/lending/features/financial-statements-overview", ],
-    ["Liabilities", "/lending/features/liabilities-overview", ],
-    ["Accounts receivable", "/lending/features/accounts-receivable-overview", ],
-    ["Accounts payable", "/lending/features/accounts-payable-overview", ],
+    ["Bank statements", "/lending/features/bank-statements-overview"],
+    ["Sales", "/lending/features/sales-overview"],
+    ["Financial statements", "/lending/features/financial-statements-overview"],
+    ["Liabilities", "/lending/features/liabilities-overview"],
+    ["Accounts receivable", "/lending/features/accounts-receivable-overview"],
+    ["Accounts payable", "/lending/features/accounts-payable-overview"],
   ]}
 >
   <p>Explore the features that make up our Lending:</p>

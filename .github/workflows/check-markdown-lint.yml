@@ -1,4 +1,4 @@
-name: Check - linting
+name: Check - markdown formatting
 
 on:
   pull_request:
@@ -17,7 +17,7 @@ on:
       - 'docs/**/*.mdx'
 
 jobs:
-  markdown-lint:
+  markdown-format:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -29,8 +29,8 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install markdownlint
-        run: npm install -g markdownlint-cli
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Run markdownlint
-        run: markdownlint 'blog/**/*.md' 'blog/**/*.mdx' 'docs/**/*.md' 'docs/**/*.mdx' --config .markdownlint.json 
+      - name: Check markdown formatting with Prettier
+        run: npm run format:mdx:check 

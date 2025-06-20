@@ -4,9 +4,9 @@ description: "Reconcile payments to the SMB's accounting software"
 ---
 
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
-When the user has completed their mapping and makes a payment from your application, this can then be reconciled back to the users accounting software. 
+When the user has completed their mapping and makes a payment from your application, this can then be reconciled back to the users accounting software.
 A bill payment in Codat usually represents an allocation of money within any customer accounts payable account. This includes, but is not strictly limited to:
 
 - A payment made against a bill — for example, a credit card payment, cheque payment, or cash payment.
@@ -18,12 +18,13 @@ Depending on the bill payments which are allowed by the underlying accounting so
 ## Paying a bill with a billPayment
 
 If the scenario is a company making a payment to pay off a bill in full, then it should have the following properties:
-- A `totalAmount` indicating the amount of the bill that was paid. This is **always positive**. 
+
+- A `totalAmount` indicating the amount of the bill that was paid. This is **always positive**.
 - A lines array containing one element with the following properties:
-  - An amount equal to the `totalAmount` above. 
+  - An amount equal to the `totalAmount` above.
   - A links array containing one element with the following properties:
-    - A `type` indicating the type of link, in this case a Bill. 
-    - An `id` containing the ID of the bill that was paid. 
+    - A `type` indicating the type of link, in this case a Bill.
+    - An `id` containing the ID of the bill that was paid.
     - An `amount` of **-**totalAmount (negative `totalAmount`), indicating that the entirety of the paid amount is allocated to the bill.
 
 <Tabs>
@@ -103,36 +104,35 @@ Here is a sample payment for the Xero bill. Note that:
 
 ```json
 {
-	"supplierRef": {
-		"id": "dec56ceb-65e9-43b3-ac98-7fe09eb37e31"
-	},
-	"accountRef": {
-		"id": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
-	},
-	"totalAmount": 135.85,
-	"currency": "GBP",
-	"currencyRate": 1,
-	"date": "2023-04-17T00:00:00",
-	"lines": [
-		{
-			"amount": 135.85,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "59978bef-af2f-4a7e-9728-4997597c0980",
-					"amount": -135.85,
-					"currencyRate": 1
-				}
-			]
-		}
-	]
+  "supplierRef": {
+    "id": "dec56ceb-65e9-43b3-ac98-7fe09eb37e31"
+  },
+  "accountRef": {
+    "id": "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+  },
+  "totalAmount": 135.85,
+  "currency": "GBP",
+  "currencyRate": 1,
+  "date": "2023-04-17T00:00:00",
+  "lines": [
+    {
+      "amount": 135.85,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "59978bef-af2f-4a7e-9728-4997597c0980",
+          "amount": -135.85,
+          "currencyRate": 1
+        }
+      ]
+    }
+  ]
 }
 ```
 
 </TabItem>
 
 </Tabs>
-
 
 ## Payment of multiple bills
 
@@ -205,43 +205,43 @@ To do this with Codat, you should leave the `supplierRef` parameter blank when c
 
 ```json title="Batch Payment for multiple suppliers"
 {
-	"accountRef": {
-		"id": "d96ffd74-2394-4666-81c4-eebb76e51e21"
-	},
-	"totalAmount": 6,
-	"date": "2022-09-06T00:00:00",
-	"lines": [
-		{
-			"amount": 1,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "0394819c-b784-454d-991c-c4711b9aca12",
-					"amount": -1
-				}
-			]
-		},
-		{
-			"amount": 2,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "428e3e38-e8fb-4c56-91b5-dd09dc2e6505",
-					"amount": -2
-				}
-			]
-		},
-		{
-			"amount": 3,
-			"links": [
-				{
-					"type": "Bill",
-					"id": "76129542-2b2f-482f-b2b3-e612d9c1ba08",
-					"amount": -3
-				}
-			]
-		}
-	]
+  "accountRef": {
+    "id": "d96ffd74-2394-4666-81c4-eebb76e51e21"
+  },
+  "totalAmount": 6,
+  "date": "2022-09-06T00:00:00",
+  "lines": [
+    {
+      "amount": 1,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "0394819c-b784-454d-991c-c4711b9aca12",
+          "amount": -1
+        }
+      ]
+    },
+    {
+      "amount": 2,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "428e3e38-e8fb-4c56-91b5-dd09dc2e6505",
+          "amount": -2
+        }
+      ]
+    },
+    {
+      "amount": 3,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "76129542-2b2f-482f-b2b3-e612d9c1ba08",
+          "amount": -3
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -249,41 +249,40 @@ To do this with Codat, you should leave the `supplierRef` parameter blank when c
 
 <TabItem value="QuickBooks Online" label="QuickBooks Online">
 
-
 ```json
 {
-    "supplierRef": {
-      "id": "77",
-      "supplierName": "AtoB"
-    },
-    "accountRef": {
-      "id": "122"
-    },
-    "totalAmount": 2500,
-    "currency": "USD",
-    "currencyRate": 1,
-    "date": "2023-04-17T00:00:00",
-    "lines": [
-      {
-        "amount": 2500,
-        "links": [
-          {
-            "type": "Bill",
-            "id": "302",
-            "amount": -1200,
-            "currencyRate": 1
-          },
-          {
-            "type": "Bill",
-            "id": "303",
-            "amount": -1300,
-            "currencyRate": 1
-          }
-        ]
-      }
-    ],
-    "reference": "1"
-  }
+  "supplierRef": {
+    "id": "77",
+    "supplierName": "AtoB"
+  },
+  "accountRef": {
+    "id": "122"
+  },
+  "totalAmount": 2500,
+  "currency": "USD",
+  "currencyRate": 1,
+  "date": "2023-04-17T00:00:00",
+  "lines": [
+    {
+      "amount": 2500,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "302",
+          "amount": -1200,
+          "currencyRate": 1
+        },
+        {
+          "type": "Bill",
+          "id": "303",
+          "amount": -1300,
+          "currencyRate": 1
+        }
+      ]
+    }
+  ],
+  "reference": "1"
+}
 ```
 
 </TabItem>
@@ -298,37 +297,37 @@ Note that if locations is set to mandatory in the companies NetSuite Account, th
 
 ```json
 {
-  "supplierRef":{
-    "id":"727",
-    "supplierName":"Vendor -.B"
+  "supplierRef": {
+    "id": "727",
+    "supplierName": "Vendor -.B"
   },
-  "totalAmount":2,
+  "totalAmount": 2,
   "accountRef": {
     "id": "854"
   },
-  "currency":"GBP",
-  "currencyRate":1,
-  "date":"2023-04-18T00:00:00",
-  "lines":[
+  "currency": "GBP",
+  "currencyRate": 1,
+  "date": "2023-04-18T00:00:00",
+  "lines": [
     {
-      "amount":2,
-      "links":[
+      "amount": 2,
+      "links": [
         {
-          "type":"Bill",
-          "id":"288274",
-          "amount":-1,
-          "currencyRate":1
+          "type": "Bill",
+          "id": "288274",
+          "amount": -1,
+          "currencyRate": 1
         },
         {
-          "type":"Bill",
-          "id":"287594",
-          "amount":-1,
-          "currencyRate":1
+          "type": "Bill",
+          "id": "287594",
+          "amount": -1,
+          "currencyRate": 1
         }
       ]
     }
   ],
-  "reference":"location-5"
+  "reference": "location-5"
 }
 ```
 
@@ -433,14 +432,11 @@ Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can b
 
 </TabItem>
 
-
-
 </Tabs>
-
 
 ## Using a bill credit note to pay a bill
 
-If a company receives a credit note from their supplier, the company could use this to offset the balance of any outstanding invoices from the same supplier. 
+If a company receives a credit note from their supplier, the company could use this to offset the balance of any outstanding invoices from the same supplier.
 
 With the billPayment API, you can partially or fully offset the balance of an invoice by adding the credit note in the `lines` array.
 
@@ -465,49 +461,47 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 <TabItem value="Xero" label="Xero">
 
-
 ```json title="Credit Note Example"
 {
-	"billCreditNoteNumber": "JMY-1987",
-	"supplierRef": {
-		"id": "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
-		"supplierName": "Swanston Security"
-	},
-	"withholdingTax": [],
-	"totalAmount": 25.44,
-	"totalDiscount": 0,
-	"subTotal": 25.44,
-	"totalTaxAmount": 4.24,
-	"discountPercentage": 0,
-	"remainingCredit": 0,
-	"status": "Submitted",
-	"issueDate": "2023-02-09T00:00:00",
-	"currency": "GBP",
-	"currencyRate": 1,
-	"lineItems": [
-		{
-			"description": "Refund as agreed due to window break when guard absent",
-			"unitAmount": 21.2,
-			"quantity": 1,
-			"discountAmount": 0,
-			"subTotal": 21.2,
-			"taxAmount": 4.24,
-			"totalAmount": 25.44,
-			"accountRef": {
-				"id": "f96c9458-d724-47bf-8f74-a9d5726465ce"
-			},
-			"discountPercentage": 0,
-			"taxRateRef": {
-				"id": "INPUT2",
-				"name": "20% (VAT on Expenses)",
-				"effectiveTaxRate": 20
-			},
-			"trackingCategoryRefs": []
-		}
-	]
+  "billCreditNoteNumber": "JMY-1987",
+  "supplierRef": {
+    "id": "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
+    "supplierName": "Swanston Security"
+  },
+  "withholdingTax": [],
+  "totalAmount": 25.44,
+  "totalDiscount": 0,
+  "subTotal": 25.44,
+  "totalTaxAmount": 4.24,
+  "discountPercentage": 0,
+  "remainingCredit": 0,
+  "status": "Submitted",
+  "issueDate": "2023-02-09T00:00:00",
+  "currency": "GBP",
+  "currencyRate": 1,
+  "lineItems": [
+    {
+      "description": "Refund as agreed due to window break when guard absent",
+      "unitAmount": 21.2,
+      "quantity": 1,
+      "discountAmount": 0,
+      "subTotal": 21.2,
+      "taxAmount": 4.24,
+      "totalAmount": 25.44,
+      "accountRef": {
+        "id": "f96c9458-d724-47bf-8f74-a9d5726465ce"
+      },
+      "discountPercentage": 0,
+      "taxRateRef": {
+        "id": "INPUT2",
+        "name": "20% (VAT on Expenses)",
+        "effectiveTaxRate": 20
+      },
+      "trackingCategoryRefs": []
+    }
+  ]
 }
 ```
-
 
 </TabItem>
 
@@ -563,7 +557,6 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 <TabItem value="NetSuite" label="NetSuite">
 
 ```json
-
 {
   "billCreditNoteNumber": "VENDCRED1987",
   "supplierRef": {
@@ -609,7 +602,6 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
     }
   ]
 }
-
 ```
 
 </TabItem>
@@ -617,7 +609,6 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 <TabItem value="Sage Intacct" label="Sage Intacct">
 
 ```json title="Sage Intacct"
-
 {
   "supplierRef": {
     "id": "3"
@@ -675,7 +666,6 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
     }
   ]
 }
-
 ```
 
 </TabItem>
@@ -733,6 +723,7 @@ Once the credit note has been created, you can offset the balance of the credit 
 For some accounting software, you can also use a combination of a `billCreditNote` and partial payment to pay off the full balance of a `bill`.
 
 ##### Allocating a Credit note against a bill
+
 <Tabs>
 
 <TabItem value="Request URL" label="Request URL">
@@ -755,7 +746,6 @@ With the Xero integration its only possible to fully allocate a `billCreditNote`
 :::
 
 ```json
-
 {
   "supplierRef": {
     "id": "3a0d40a2-2698-4cf5-b7b2-30133c632ab6"
@@ -784,7 +774,6 @@ With the Xero integration its only possible to fully allocate a `billCreditNote`
     }
   ]
 }
-
 ```
 
 </TabItem>
@@ -920,7 +909,6 @@ Allocating a `billCreditNote` with a `billPayment` is **coming soon** for myob.
 
 :::
 
-
 </TabItem>
 
 </Tabs>
@@ -928,12 +916,3 @@ Allocating a `billCreditNote` with a `billPayment` is **coming soon** for myob.
 </TabItem>
 
 </Tabs>
-
-
-
-
-
-
-
-
-

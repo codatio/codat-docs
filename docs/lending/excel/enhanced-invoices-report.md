@@ -6,7 +6,7 @@ image: "/img/banners/social/lending.png"
 draft: true
 ---
 
-Our Enhanced Invoices Excel report gives you the same data you'd get from the [Enhanced Invoices](/lending/features/accounts-receivable-overview#reconciled-invoices) endpoint but in an Excel workbook.  You can use the report to test some companies and familiarize yourself with the data before building to the equivalent API endpoint.
+Our Enhanced Invoices Excel report gives you the same data you'd get from the [Enhanced Invoices](/lending/features/accounts-receivable-overview#reconciled-invoices) endpoint but in an Excel workbook. You can use the report to test some companies and familiarize yourself with the data before building to the equivalent API endpoint.
 
 The report contains the output of the following features:
 
@@ -27,6 +27,6 @@ You can generate the Enhanced Invoices Excel report using the API or the Codat P
 
 ## Using the report
 
-The report is ordered so the most recent invoices are at the top of the document.  Excel is limited to one million rows of data; however, this limitation does not apply to the [Enhanced Invoices API](/lending-api#/operations/get-enhanced-invoices-report).
+The report is ordered so the most recent invoices are at the top of the document. Excel is limited to one million rows of data; however, this limitation does not apply to the [Enhanced Invoices API](/lending-api#/operations/get-enhanced-invoices-report).
 
 ![Enhanced Invoices Report](/img/lending/enhanced-invoices-blur.png "Enhanced Invoices Report")

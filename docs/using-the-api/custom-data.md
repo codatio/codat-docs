@@ -4,10 +4,10 @@ sidebar_label: "Custom data"
 description: "Leverage existing integrations to fetch data types not included in Codat's out-of-the box data model"
 ---
 
-import {IntegrationsList} from '@components/Integrations'
-import {integrationsFilterCustomData} from '@components/Integrations/integrations'
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import { IntegrationsList } from "@components/Integrations";
+import { integrationsFilterCustomData } from "@components/Integrations/integrations";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 :::caution Advanced feature
 Request guidance from your Codat contact if you want to implement this feature of our API.
@@ -15,11 +15,11 @@ Request guidance from your Codat contact if you want to implement this feature o
 
 ## What are custom data types?
 
-Codat's standard data models leverage our extensive industry experience and knowledge, which we used to identify and standardize a multitude of data types that best support your business. 
+Codat's standard data models leverage our extensive industry experience and knowledge, which we used to identify and standardize a multitude of data types that best support your business.
 
 However, your use case may require additional data types from our integrations that are excluded from our standard model. For example, we do not currently fetch any data from Xero's [Payroll](https://developer.xero.com/documentation/api/payrolluk/overview) and NetSuite's [Expense Reports](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_N908140.html#Expense-Reports) endpoints.
 
-With custom data, you can fetch new, non-standardized data types that are not included in our out-of-the-box data model for the integrations we support. You will need to configure and request these custom data types using our API endpoints. 
+With custom data, you can fetch new, non-standardized data types that are not included in our out-of-the-box data model for the integrations we support. You will need to configure and request these custom data types using our API endpoints.
 
 ![A diagram that compares standard data types at Codat with custom data types](/img/use-the-api/custom-data.png)
 
@@ -31,7 +31,7 @@ Are you looking to fetch, create, or update additional _properties_ in data type
 
 ## Supported integrations
 
-<iframe 
+<iframe
   src="https://docs.google.com/spreadsheets/d/1DmS8whMQ3iJtggfAkKvNgK__FdoYfnmtZvob_D5SsfY/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
@@ -44,14 +44,14 @@ Are you looking to fetch, create, or update additional _properties_ in data type
 
 Use our [Configure custom data type](/platform-api#/operations/configure-custom-data-type) endpoint to create a new data type for each integration you require. Keep these guidelines in mind:
 
-- You can only indicate a single data source for each custom data type. 
+- You can only indicate a single data source for each custom data type.
 - It is not possible to specify nested objects or arrays within the `requiredData` property.
 - You can query the underlying platform's API by specifying the query as part of the `dataSource` property.
 
-We advise you make your custom configuration as similar as possible to our standard data types so you can interact with them in exactly the same way. 
+We advise you make your custom configuration as similar as possible to our standard data types so you can interact with them in exactly the same way.
 
 <Tabs>
-  <TabItem value="request" label="Request">  
+  <TabItem value="request" label="Request">
 
 ```json
 PUT /integrations​/{platformKey}/datatypes/custom/{customDataIdentifier}
@@ -63,12 +63,13 @@ PUT /integrations​/{platformKey}/datatypes/custom/{customDataIdentifier}
       "{nameYourField}": "$.{fieldNameFromUnderlyingPlatform}"
     },
     "keyBy": [“$.{fieldNameFromUnderlyingPlatform}”],//required
-    "sourceModifiedDate": ["{fieldNameFromUnderlyingPlatform}"]  
+    "sourceModifiedDate": ["{fieldNameFromUnderlyingPlatform}"]
 }
 
-```  
+```
+
   </TabItem>
-  <TabItem value="example" label="Example">  
+  <TabItem value="example" label="Example">
 
 ```json title="Example request using QuickBooks Online's CashFlow endpoint"
 
@@ -86,12 +87,13 @@ PUT /integrations/qhyg/datatypes/custom/qbo-cashflow-report
     "sourceModifiedDate": ["$.Header.Time"]
 }
 ```
+
   </TabItem>
 </Tabs>
 
 :::caution Check your configuration values!
 
-Codat does not validate any of the values you enter in the configuration request. If you misspell values or don't specify the full API routes, you will receive a fetch error when trying to read the custom data type later. 
+Codat does not validate any of the values you enter in the configuration request. If you misspell values or don't specify the full API routes, you will receive a fetch error when trying to read the custom data type later.
 
 Refer to the platform's own API documentation to make sure you are using the correct endpoint, route, and field names.
 
@@ -99,13 +101,13 @@ Refer to the platform's own API documentation to make sure you are using the cor
 
 #### Update existing configuration
 
-Once you configured a custom data type, you can't change its `customDataIdentifier`. However, you can update the data type's content using the [Configure custom data type](/platform-api#/operations/configure-custom-data-type) endpoint. 
+Once you configured a custom data type, you can't change its `customDataIdentifier`. However, you can update the data type's content using the [Configure custom data type](/platform-api#/operations/configure-custom-data-type) endpoint.
 
 #### View existing configuration
 
-You can view previously created configurations for a specific platform using the following endpoint: 
+You can view previously created configurations for a specific platform using the following endpoint:
 
-* [Get custom data configuration](/platform-api#/operations/get-custom-data-type-configuration) returns the configuration of the specified custom data type for the platform you indicate in `platformKey`.
+- [Get custom data configuration](/platform-api#/operations/get-custom-data-type-configuration) returns the configuration of the specified custom data type for the platform you indicate in `platformKey`.
 
 #### Test your configuration
 
@@ -121,7 +123,7 @@ POST /companies/{companyId}/connections/{connectionId}/data/queue/custom/{custom
 
 :::info Refresh all data
 
-Requests to our [Refresh all data](/platform-api#/operations/refresh-company-data) endpoint do not trigger a sync for any of the custom datasets. 
+Requests to our [Refresh all data](/platform-api#/operations/refresh-company-data) endpoint do not trigger a sync for any of the custom datasets.
 
 :::
 
@@ -138,7 +140,7 @@ To view the read history for your custom data types, use the following endpoints
 
 ## 💡 Tips and traps
 
-- Custom data types can be used at record and line item level, but only support fetch operations. 
+- Custom data types can be used at record and line item level, but only support fetch operations.
 
 - Custom data types only support JSON responses from the integrations' APIs.
 

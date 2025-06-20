@@ -6,17 +6,16 @@ description: "Understand how to upload attachments to records in Codat's support
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Codat offers the ability to upload attachment to records in the supported accounting software. You can write an attachment for the following accounting data types: 
+Codat offers the ability to upload attachment to records in the supported accounting software. You can write an attachment for the following accounting data types:
 
-| Data type       | UploadAttachment |
-|------------------|------------------|
-| `billCreditNotes`  | &#9989;          |  
-| `bills`            | &#9989;          | 
-| `directCosts`      | &#9989;          | 
-| `directIncomes`    | &#9989;          | 
-| `invoices`         | &#9989;          | 
-| `transfers`        | &#9989;          |
-
+| Data type         | UploadAttachment |
+| ----------------- | ---------------- |
+| `billCreditNotes` | &#9989;          |
+| `bills`           | &#9989;          |
+| `directCosts`     | &#9989;          |
+| `directIncomes`   | &#9989;          |
+| `invoices`        | &#9989;          |
+| `transfers`       | &#9989;          |
 
 ## Attachment upload process
 
@@ -26,16 +25,15 @@ An attachment upload process at Codat consists of the following steps:
 
    Once completed, you will receive a write request ID. Use it to track the status of the request.
 
-3. **[Consume the relevant write webhook](#consume-the-write-webhook)**
+2. **[Consume the relevant write webhook](#consume-the-write-webhook)**
 
    Subscribe to the relevant `{dataType}.write.{successful|unsuccessful}` webhook to receive notifications of the success or failure of the write request.
 
-
 ```mermaid
 sequenceDiagram
-    participant app as Your application 
+    participant app as Your application
     participant codat as Codat
-    
+
     app ->> codat: Upload attachment
     codat -->> app: Return write ID (previously pushOperationKey)
 
@@ -54,17 +52,18 @@ In the example below, we are uploading an attachment for our `bills` data type.
 
 ```typescript
 const uploadAttachmentResponse = await sdk.bills.uploadAttachment({
-    companyId: companyId,
-    connectionId: connectionId,
-    billId: billId,
-    attachmentUpload: {
-      file: {
-        content: new TextEncoder().encode(fileContent),
-        fileName: fileName,
-      },
+  companyId: companyId,
+  connectionId: connectionId,
+  billId: billId,
+  attachmentUpload: {
+    file: {
+      content: new TextEncoder().encode(fileContent),
+      fileName: fileName,
     },
+  },
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -82,6 +81,7 @@ upload_attachment_response = sdk.bills.upload_attachment(operations.UploadBillAt
     )
 ))
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -97,6 +97,7 @@ var uploadAttachmentResponse = await skd.Bills.UploadAsync(new UploadBillAttachm
     }
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -115,6 +116,7 @@ uploadAttachmentResponse, err := sdk.Bills.UploadAttachment(ctx, operations.Uplo
     },
 })
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -136,6 +138,7 @@ UploadBillAttachmentResponse uploadAttachmentResponse = sdk.bills().uploadAttach
     .request(uploadAttachmentRequest)
     .call();
 ```
+
 </TabItem>
 
 </Tabs>
@@ -147,9 +150,9 @@ Subscribe to our data type-specific webhooks to track the outcome of a completed
 - `{dataType}.write.successful`
 - `{dataType}.write.unsuccessful`
 
-To create a webhook consumer for these event types, navigate to **Settings > Webhooks > Events > Configure consumer** in the [Codat Portal](https://app.codat.io) and click **Add endpoint**. See [Build webhook consumers to subscribe to events](/using-the-api/webhooks/create-consumer) for detailed instructions. 
+To create a webhook consumer for these event types, navigate to **Settings > Webhooks > Events > Configure consumer** in the [Codat Portal](https://app.codat.io) and click **Add endpoint**. See [Build webhook consumers to subscribe to events](/using-the-api/webhooks/create-consumer) for detailed instructions.
 
-The webhook's payload includes information about the company ID and record ID the attachment upload was attempted for. If the write operation is successful, the payload also includes the attachment ID. We provided an example webhook payload for a successful write operation uploading an attachment to a bill. 
+The webhook's payload includes information about the company ID and record ID the attachment upload was attempted for. If the write operation is successful, the payload also includes the attachment ID. We provided an example webhook payload for a successful write operation uploading an attachment to a bill.
 
 <details>
   <summary><b>Example webhook payload</b></summary>

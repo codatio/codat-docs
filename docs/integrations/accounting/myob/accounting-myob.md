@@ -8,10 +8,11 @@ You can synchronize accounting and banking data with <a className="external" hre
 :::info MYOB Business, AccountRight, and Essentials
 
 Our MYOB integration applies to users using the following products:
+
 - MYOB Business
 - MYOB AccountRight
 - MYOB Essentials
-:::
+  :::
 
 For more details about the supported data types, see [MYOB integration reference](/integrations/accounting/myob/myob-integration-reference).
 

@@ -13,9 +13,10 @@ Mutual TLS (mTLS) is available to our enterprise clients as a mutual authenticat
 
 :::info Additional resources
 For more information on mTLS and its core concepts, see:
+
 - [What is mutual authentication?](https://www.cloudflare.com/en-gb/learning/access-management/what-is-mutual-authentication/)
 - [What is a cryptographic key?](https://www.cloudflare.com/en-gb/learning/ssl/what-is-a-cryptographic-key/)
 - [What is an SSL certificate?](https://www.cloudflare.com/en-gb/learning/ssl/what-is-an-ssl-certificate/)
-:::
+  :::
 
 Codat can provision our enterprise customers with client certificates to enable mTLS communication with a client or clients. Once this has been issued and enabled on a particular client, all API requests on behalf of the configured client must include the public certificate and an `x-codat-client: GUID` HTTP request header.

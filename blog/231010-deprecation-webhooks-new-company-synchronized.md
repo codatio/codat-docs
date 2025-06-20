@@ -9,21 +9,19 @@ From October 10, 2023, notifications for the 'New company synchronized' webhook 
 
 <!--truncate-->
 
-Currently, this notification triggers after the first dataset queued when linking a company is successfully synced. 
+Currently, this notification triggers after the first dataset queued when linking a company is successfully synced.
 
-After October 10, 2023, the webhook notification will only trigger when all datasets queued as a result of linking a company are complete, and at least one of those datasets is successful. 
-
+After October 10, 2023, the webhook notification will only trigger when all datasets queued as a result of linking a company are complete, and at least one of those datasets is successful.
 
 ## Action required
 
-This is a quality-of-life improvement that means you can rely on this notification to know when a company is no longer in the process of syncing data. 
+This is a quality-of-life improvement that means you can rely on this notification to know when a company is no longer in the process of syncing data.
 
 If you have workflows that are dependent on the event of the first dataset completion, you will need to adjust these to expect the notification only after all datasets are complete.
 
-
 ## Expected impact if no action is taken
 
-This notification will be likely to arrive later than it currently does. If you have added code or workarounds that expect the webhook to be triggered when the first dataset is complete, you should remove or adjust these to align with the new behavior. 
+This notification will be likely to arrive later than it currently does. If you have added code or workarounds that expect the webhook to be triggered when the first dataset is complete, you should remove or adjust these to align with the new behavior.
 
 :::note Get ahead
 

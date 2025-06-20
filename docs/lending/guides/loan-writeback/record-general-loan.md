@@ -4,12 +4,12 @@ description: "Record the repayment of money owed to the lender for a loan in the
 sidebar_label: "Record repayments"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 The loan writeback process is the same for general lending and invoice finance. The key distinction lies in the repayment method: general lending usually involves recurring payments, while invoice finance is repaid when the SMB’s customer pays the invoice.
 
-On this page, we focus on general lending and provide additional details on automating the process for invoice finance providers. 
+On this page, we focus on general lending and provide additional details on automating the process for invoice finance providers.
 
 ## Record repayment
 
@@ -21,7 +21,7 @@ To reflect loan repayments programmatically, perform these steps every time a re
 
 3. [Create bank feed transactions](/lending/guides/loan-writeback/record-general-loan#create-bank-feed-transactions) to represent the transfer and direct cost in the lender's bank account.
 
-For example, if the borrower took out a loan of £1000 with a loan charge of 20%, the total amount due comes to £1200. With a 3-month equal instalment repayment plan, the borrower pays back £400 each month. 
+For example, if the borrower took out a loan of £1000 with a loan charge of 20%, the total amount due comes to £1200. With a 3-month equal instalment repayment plan, the borrower pays back £400 each month.
 
 This means you need to create a transfer of £320 to represent the payment, a direct cost of £80 to record the fees, and a bank transaction of £400 to reduce the liability to the lender.
 
@@ -33,14 +33,14 @@ Our example shows how to record loan repayments with monthly payments covering b
 
 ```mermaid
 sequenceDiagram
-    participant application as Your application 
+    participant application as Your application
     participant codat as Codat
-    
+
     alt repaying loan amount
         application ->> codat: Create transfer (bank account -> lender)
         codat -->> application:  transfer
     end
-    
+
     alt paying interest and/or fees
         application ->> codat: Create direct cost
         codat -->> application: direct cost
@@ -49,6 +49,7 @@ sequenceDiagram
     application ->> codat: Create bank feed transactions (deposit in lender's account)
     codat -->> application: bank feed transactions
 ```
+
 To perform these operations, you will need the following properties:
 
 - Lender's [`supplier.id`](/lending-api#/schemas/AccountingSupplier) and [`lendersBankAccountId`](/lending-api#/AccountingBankAccount)
@@ -60,7 +61,7 @@ To perform these operations, you will need the following properties:
 
 ### Create transfer
 
-Use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again, this time to record the total repayment amount. Note that you are performing a transfer *from* `borrowersBankAccount.id` *to* `lendersBankAccountId`.
+Use the [Create transfer](/lending-api#/operations/create-transfer) endpoint again, this time to record the total repayment amount. Note that you are performing a transfer _from_ `borrowersBankAccount.id` _to_ `lendersBankAccountId`.
 
 <Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
@@ -92,6 +93,7 @@ codatLending.loanWriteback.transfers.create({
     }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -121,6 +123,7 @@ transfers_create_request = operations.CreateTransferRequest(
 
 transfers_create_response = codat_lending.loan_writeback.transfers.create(transfers_create_request)
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -148,6 +151,7 @@ var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateA
     ConnectionId = connectionId,
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -176,6 +180,7 @@ transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx,
     ConnectionID: connectionID,
 })
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -209,6 +214,7 @@ CreateTransferResponse res = codatLending.loanWriteback().transfers().create()
     .request(req)
     .call();
 ```
+
 </TabItem>
 
 <TabItem value="http" label="HTTP">
@@ -293,6 +299,7 @@ codatLending.loanWriteback.directCosts.create({
     }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -338,6 +345,7 @@ direct_costs_create_request = operations.CreateDirectCostRequest(
 
 direct_costs_create_response = codat_lending.loan_writeback.direct_costs.create(direct_costs_create_request)
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -381,6 +389,7 @@ var redirectCostsCreateResponse = await codatLending.LoanWriteback.DirectCosts.C
     ConnectionId = connectionId,
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -425,6 +434,7 @@ res, err := codatLending.LoanWriteback.DirectCosts.Create(ctx, operations.Create
     ConnectionID: connectionID,
 })
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -480,6 +490,7 @@ CreateDirectCostResponse res = codatLending.loanWriteback().directCosts().create
     .request(req)
     .call();
 ```
+
 </TabItem>
 
 <TabItem value="http" label="HTTP">
@@ -521,6 +532,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 	}]
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -554,6 +566,7 @@ if (res.statusCode == 200) {
 }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -578,6 +591,7 @@ bank_transactions_create_request = operations.CreateBankTransactionsRequest(
 
 bank_transactions_create_response = codat_lending.loan_writeback.bank_transactions.create(bank_transactions_create_request)
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -600,6 +614,7 @@ var bankTransactionsCreateResponse = await codatLending.LoanWriteback.BankTransa
     ConnectionId = connectionId
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -609,7 +624,7 @@ ctx := context.Background()
 bankTransactionsCreateRequest, err := codatLending.LoanWriteback.BankTransactions.Create(ctx, operations.CreateBankTransactionsRequest{
     AccountingCreateBankTransactions: &shared.AccountingCreateBankTransactions{
         AccountID: lending.String(lendersBankAccountID),
-        Transactions: []shared.CreateBankAccountTransaction{ 
+        Transactions: []shared.CreateBankAccountTransaction{
             shared.CreateBankAccountTransaction{
                 ID: lending.String(transactionID), // Unique identifier for this bank transaction
                 Amount: types.MustNewDecimalFromString(totalRepaymentAmount),
@@ -623,6 +638,7 @@ bankTransactionsCreateRequest, err := codatLending.LoanWriteback.BankTransaction
     ConnectionID: connectionID,
 })
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -649,6 +665,7 @@ CreateBankTransactionsResponse res = codatLending.loanWriteback().bankTransactio
     .call();
 
 ```
+
 </TabItem>
 
 <TabItem value="http" label="HTTP">
@@ -670,6 +687,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
   }]
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -684,14 +702,15 @@ To enhance your repayment automation, check out the supported webhooks from [Xer
 
 :::tip Recap
 In this guide, you have learned:
-* What is loan writeback and what it's used for.
-* How to map and configure the loan writeback solution.
-* How to perform the necessary postings using Codat's endpoints.
-:::
+
+- What is loan writeback and what it's used for.
+- How to map and configure the loan writeback solution.
+- How to perform the necessary postings using Codat's endpoints.
+  :::
 
 ---
 
 ## Read next
 
-* Looking to implement loan writeback for Xero? View Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/).
-* Review other features of the [Lending](/lending/overview) solution.
+- Looking to implement loan writeback for Xero? View Xero's [own documentation](https://developer.xero.com/documentation/guides/how-to-guides/general-lending-integration-guide/).
+- Review other features of the [Lending](/lending/overview) solution.
