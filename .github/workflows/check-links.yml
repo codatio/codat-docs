@@ -53,10 +53,10 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" == "pull_request" ]; then
             # Use preview URL for PRs
-            npx linkinator ${{ steps.get-preview-url.outputs.preview_url }} --recurse --verbosity error --skip ".*github.*" --format json --timeout 10000 --delay 1000 > link-results.json
+            npx linkinator ${{ steps.get-preview-url.outputs.preview_url }} --recurse --verbosity error --skip ".*github.*|.*localhost.*" --format json --timeout 10000 --delay 1000 > link-results.json
           else
             # Use main docs site for manual runs
-            npx linkinator https://docs.codat.io --recurse --verbosity error --skip ".*github.*" --format json --timeout 10000 --delay 1000 > link-results.json
+            npx linkinator https://docs.codat.io --recurse --verbosity error --skip ".*github.*|.*localhost.*" --format json --timeout 10000 --delay 1000 > link-results.json
           fi
         continue-on-error: true  # Ensure the workflow continues even if linkinator finds broken links
       
