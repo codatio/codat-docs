@@ -16,9 +16,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,md,mdx}\"",
     "format:mdx": "prettier --write \"**/*.{md,mdx}\"",
-    "format:mdx:check": "prettier --check \"**/*.{md,mdx}\"",
-    "lint:md": "markdownlint 'blog/**/*.md' 'blog/**/*.mdx' 'docs/**/*.md' 'docs/**/*.mdx' --config .markdownlint.json",
-    "lint:md:fix": "markdownlint 'blog/**/*.md' 'blog/**/*.mdx' 'docs/**/*.md' 'docs/**/*.mdx' --config .markdownlint.json --fix"
+    "format:mdx:check": "prettier --check \"**/*.{md,mdx}\""
   },
   "dependencies": {
     "@codat/sdk-link-types": "^1.7.0",
@@ -51,8 +49,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.4.0",
     "@docusaurus/types": "^3.4.0",
-    "prettier": "^3.5.3",
-    "markdownlint-cli": "^0.37.0"
+    "prettier": "^3.5.3"
   },
   "browserslist": {
     "production": [
