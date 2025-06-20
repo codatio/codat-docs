@@ -244,7 +244,7 @@
       ],
       "get": {
         "summary": "Get enhanced profit and loss accounts",
-        "description": "The Enhanced Profit and Loss Accounts endpoint returns a list of categorized accounts that appear on a company’s Profit and Loss. It also includes a balance per the financial statement date.\n\nCodat suggests a category for each account automatically, but you can [change it](/docs/assess-categorizing-accounts-ecommerce-lending) to a more suitable one.",
+        "description": "The Enhanced Profit and Loss Accounts endpoint returns a list of categorized accounts that appear on a company’s Profit and Loss. It also includes a balance per the financial statement date.\n\nCodat suggests a category for each account automatically, but you can [change it](/docs/assess-categorizing-accounts-eCommerce-lending) to a more suitable one.",
         "tags": [
           "Reports"
         ],
@@ -900,7 +900,7 @@
       ],
       "get": {
         "summary": "Get enhanced balance sheet accounts",
-        "description": "The Enhanced Balance Sheet Accounts endpoint returns a list of categorized accounts that appear on a company’s Balance Sheet along with a balance per financial statement date.\n\nCodat suggests a category for each account automatically, but you can [change it](/docs/assess-categorizing-accounts-ecommerce-lending) to a more suitable one.",
+        "description": "The Enhanced Balance Sheet Accounts endpoint returns a list of categorized accounts that appear on a company’s Balance Sheet along with a balance per financial statement date.\n\nCodat suggests a category for each account automatically, but you can [change it](/docs/assess-categorizing-accounts-eCommerce-lending) to a more suitable one.",
         "tags": [
           "Reports"
         ],

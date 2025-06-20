@@ -65,12 +65,12 @@ You'll need to:
 
 ## Customize the Plaid Link journey (optional)
 
-Plaid allows you to customise the look, feel and content of the link site that customers see when they authorize your connection to their banking data. This is the customer journey you'll follow during testing.
+Plaid allows you to customize the look, feel and content of the link site that customers see when they authorize your connection to their banking data. This is the customer journey you'll follow during testing.
 
 1. Still on the Plaid website, from the top menu, select **Customize**.  
-   A new page is displayed with the options for the link site that you can customise in the left pane. On the right, there's a preview pane where you can see the immediate effect of any changes you've made before you publish them. See [Plaid link customization](https://plaid.com/docs/link/customization/) for descriptions of what each option does.
+   A new page is displayed with the options for the link site that you can customize in the left pane. On the right, there's a preview pane where you can see the immediate effect of any changes you've made before you publish them. See [Plaid link customization](https://plaid.com/docs/link/customization/) for descriptions of what each option does.
 2. To update an option you're interested in, select it in the left pane.  
-   The customisable elements are displayed so that you can update them. Any changes you make are immediately displayed in the preview pane.
+   The customizable elements are displayed so that you can update them. Any changes you make are immediately displayed in the preview pane.
 3. When you're happy with your changes, select **Publish changes**, and then at the top of the left pane, select **GO BACK >** to return to the main options menu.
 4. Continue until you're happy with your updates.
 
@@ -85,7 +85,7 @@ When you are ready to connect to live data, you will need to request access from
 
 ## Customizing Plaid's Link
 
-You are able to customise your Plaid link journey and utilize the customised version in the link flow powered by Codat.
+You are able to customize your Plaid link journey and utilize the customized version in the link flow powered by Codat.
 
 Log into https://dashboard.plaid.com/link
 

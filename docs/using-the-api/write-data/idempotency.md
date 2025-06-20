@@ -24,4 +24,4 @@ You can include an `Idempotency-Key` header with a unique GUID value when making
 #### Possible error codes
 
 - A request that reuses the same `Idempotency-Key` header with a different body will result in a `422 Unprocessable Content` status code.
-- A request that uses an `Idempotency-Key` matching an existing in-progress requestwill result in a `409 Conflict` status code.
+- A request that uses an `Idempotency-Key` matching an existing in-progress request will result in a `409 Conflict` status code.

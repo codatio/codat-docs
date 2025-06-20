@@ -4559,7 +4559,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                               }
                             ],
                             "information": [
@@ -9697,7 +9697,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                               }
                             ],
                             "information": [
@@ -14399,7 +14399,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                               }
                             ],
                             "information": [
@@ -14424,7 +14424,7 @@
                               },
                               {
                                 "field": "CurrencyRate",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                               }
                             ]
                           }
@@ -20232,7 +20232,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                               }
                             ],
                             "information": [
@@ -20257,7 +20257,7 @@
                               },
                               {
                                 "field": "CurrencyRate",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                               }
                             ]
                           }
@@ -28599,7 +28599,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                               }
                             ],
                             "information": [
@@ -28639,7 +28639,7 @@
                               },
                               {
                                 "field": "CurrencyRate",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                               }
                             ]
                           }
@@ -32581,7 +32581,7 @@
                                   },
                                   {
                                     "field": "JournalLines.Currency",
-                                    "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
+                                    "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                                   }
                                 ],
                                 "information": [
@@ -37154,7 +37154,7 @@
                               },
                               {
                                 "field": "DefaultCurrency",
-                                "details": "Can only be set if Multicurrency is enabled within the QuickBooks Desktop company"
+                                "details": "Can only be set if Multi-currency is enabled within the QuickBooks Desktop company"
                               }
                             ],
                             "information": [

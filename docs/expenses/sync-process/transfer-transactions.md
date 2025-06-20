@@ -82,7 +82,7 @@ In some cases, your customer may want to update an transfer transaction that was
 - To amount
 - Date
 
-### Multicurrency transfer transactions
+### Multi-currency transfer transactions
 
 Expenses validates each transfer transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about [transfers in foreign currency](/expenses/fx-management#transfers) and platform support for different expense types.
 

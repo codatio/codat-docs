@@ -5,7 +5,7 @@ draft: true
 Introduction
 Selective Invoice Financing
 
-As part of their App Partner process Xero requires invoice financers to handle the write back process to maintain the financial position for customer during the lending cycle.
+As part of their App Partner process Xero requires invoice finance providers to handle the write back process to maintain the financial position for customer during the lending cycle.
 
 This functionality needs to be built by the client into their application, giving their customers the option to enable the continuous publishing of relevant transactions to Xero.
 

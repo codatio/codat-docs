@@ -66,7 +66,7 @@ Only if all the thresholds are met or surpassed by the applicant, the app update
 
 📊 If you are interested in loan qualification models used by lenders in the industry, you can read through [Bigfoot Capital's blog](https://www.bigfootcap.com/revenue-based-financing/) on revenue-based finance or [Workweek's article](https://workweek.com/2023/03/02/unlocking-lending-innovation) on unlocking loan qualification innovation.
 
-🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-ecommerce-merchants-effectively/) to build your loan qualification process effectively. 
+🧠 See what else [Codat recommends](https://www.codat.io/blog/how-to-underwrite-eCommerce-merchants-effectively/) to build your loan qualification process effectively. 
 
 🗣️ Anything unclear in this guide? Got feedback? We're working on a whole host of new content for you, so [let us know](https://github.com/codatio/codat-docs/issues/new?assignees=&labels=&projects=&template=issue-with-codat-docs.md&title=).
 

@@ -78,7 +78,7 @@ If you used our Link or Hosted Link solutions for platform selection, this step 
 Once authorized, the merchant is presented with Codat’s white-labeled configuration flow and is prompted to configure the data synchronization:
 
 - Choose which accounts within their accounting software to write the data into
-- Link tax rates from their accounting software to those used for their ecommerce or POS data
+- Link tax rates from their accounting software to those used for their eCommerce or POS data
 - Schedule the start date, start time, and frequency of the [regular data synchronization](/sfc/sync-for-commerce-knowledge-base/synchronization-schedule)
 - Set up the default invoice status
 - Set up the data grouping period

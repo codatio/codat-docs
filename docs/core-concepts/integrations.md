@@ -51,7 +51,7 @@ You can connect a company to a single accounting source and a single bank feeds 
       <h3>Commerce</h3>
     </div>
     <p>
-      Read up-to-date ecommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard commerce data model.
+      Read up-to-date eCommerce, payment and point-of-sale data from your customers' commerce software using Codat's standard commerce data model.
     </p>
     <p>
       <a href="/integrations/commerce/overview">See our commerce integrations →</a>

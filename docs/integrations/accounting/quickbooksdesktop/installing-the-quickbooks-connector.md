@@ -132,6 +132,6 @@ The user will also need to navigate to `C:\Program Files (x86)\Common Files\Intu
 
 ### Remove the app certificate
 
-Once the user has uninstalled the web connector, they may also want to remove the application certificate. To do this, they should open QuickBooks Descktop and navigate to **Edit > Preferences > Integrated Applications > Company Preferences**. 
+Once the user has uninstalled the web connector, they may also want to remove the application certificate. To do this, they should open QuickBooks Desktop and navigate to **Edit > Preferences > Integrated Applications > Company Preferences**. 
 
 Next, they need to select your application and click **Remove**.

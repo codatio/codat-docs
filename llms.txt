@@ -1,0 +1,23 @@
+# LLMs.txt - AI Model Instructions for Codat Documentation
+
+## General Instructions
+This file provides instructions for Large Language Models (LLMs) and AI crawlers interacting with the Codat help documentation repository.
+
+The content on this site is frequently updated.
+
+## Permissions
+- **Allowed**: Reading and referencing documentation for educational and development purposes
+- **Allowed**: Using code examples and technical content for learning
+- **Allowed**: Summarizing and explaining concepts from the documentation
+
+## Restrictions
+- **Not Allowed**: Using this content for commercial AI training without explicit permission
+- **Not Allowed**: Reproducing large portions of documentation verbatim
+- **Not Allowed**: Using sensitive configuration examples or credentials
+- **Not Allowed**: Training models on integration-specific implementation details
+
+## Contact
+For questions about AI usage of this content, contact: legal@codat.io
+
+## Version
+Last updated: 2025 

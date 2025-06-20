@@ -4,7 +4,7 @@ sidebar_label: Overview
 description: "Learn about our WooCommerce integration"
 ---
 
-[WooCommerce](https://woocommerce.com/) is a customizable, open-source ecommerce software built on WordPress.
+[WooCommerce](https://woocommerce.com/) is a customizable, open-source eCommerce software built on WordPress.
 
 Use Codat's Commerce API with WooCommerce to securely connect to, retrieve, and view your customers' commerce transactions.
 

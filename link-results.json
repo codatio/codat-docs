@@ -1,0 +1,173 @@
+{
+  "links": [
+    {
+      "url": "https://codat.zendesk.com/hc/en-gb/requests/new",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/support/get-help"
+    },
+    {
+      "url": "https://www.sage.com/en-gb/sage-business-cloud/accounting/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/overview"
+    },
+    {
+      "url": "https://www.sage.com/en-gb/products/sage-200/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/overview"
+    },
+    {
+      "url": "https://www.sage.com/en-gb/sage-business-cloud/intacct/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/overview"
+    },
+    {
+      "url": "https://www.sage.com/en-gb/products/sage-50-accounts/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/overview"
+    },
+    {
+      "url": "https://www.cloudflare.com/sign-up?utm_source=email_protection",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/cdn-cgi/l/email-protection"
+    },
+    {
+      "url": "https://my.waveapps.com/register/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/wave/accounting-wave"
+    },
+    {
+      "url": "https://codat.zendesk.com/hc/en-gb/articles/360018829477-Additional-sync-settings",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/netsuite/accounting-netsuite"
+    },
+    {
+      "url": "https://developer.waveapps.com/hc/en-us/articles/360019762711",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/wave/accounting-wave"
+    },
+    {
+      "url": "https://codat-intg-link-sdk-v2-react-18-ui.azurewebsites.net/",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/auth-flow/customize/sdk-customize-code"
+    },
+    {
+      "url": "https://help.shopify.com/en/manual/apps/custom-apps",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/commerce/shopify/commerce-shopify"
+    },
+    {
+      "url": "https://help.shopify.com/en/manual/apps/app-types",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/commerce/shopify/commerce-shopify"
+    },
+    {
+      "url": "http://localhost:7278/swagger/index.html",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/lending/guides/invoice-finance/setting-up"
+    },
+    {
+      "url": "http://localhost:5069/swagger/index.html",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/lending/guides/loan-qualification/setting-up"
+    },
+    {
+      "url": "https://localhost:3000/",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/payables/guides/bill-pay/run-demo-app-locally"
+    },
+    {
+      "url": "https://www.sage.com/en-gb/products/free-trials/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/using-the-api/testing"
+    },
+    {
+      "url": "https://www.bigfootcap.com/revenue-based-financing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/lending/guides/loan-qualification/uw-decision"
+    },
+    {
+      "url": "https://workweek.com/2023/03/02/unlocking-lending-innovation",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/lending/guides/loan-qualification/uw-decision"
+    },
+    {
+      "url": "https://codat.zendesk.com/hc/en-gb/articles/9389011101341--UAT-Deprecation-Changes-to-the-app-setup-used-for-your-new-Test-account-",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/updates/tags/deprecation/page/3"
+    },
+    {
+      "url": "https://apisupport.myob.com/hc/en-us/articles/6366818637583-504-Gateway-Time-out-errors",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/myob/myob-integration-reference"
+    },
+    {
+      "url": "https://apisupport.myob.com/hc/en-us/articles/360000490416",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/myob/accounting-myob-setup"
+    },
+    {
+      "url": "https://help.shopify.com/en/manual/your-account/staff-accounts/staff-permissions",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/commerce/shopify/commerce-shopify-custom-apps"
+    },
+    {
+      "url": "https://accounts.shopify.com/signup?rid=c272bffe-3e6f-4583-b6f2-f6bd71b340e5",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/commerce/shopify/commerce-shopify-public-apps"
+    },
+    {
+      "url": "https://codat.zendesk.com/hc/en-gb",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/updates/220714-support"
+    },
+    {
+      "url": "https://sage.co.uk/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/accounting/sage200/accounting-sage200-setup"
+    },
+    {
+      "url": "https://docs.developer.amazonservices.com/en_UK/dev_guide/DG_AppListingGuide.html",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/commerce/amazon-seller-central/amazon-registration-steps"
+    },
+    {
+      "url": "https://register.izettle.com//",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/integrations/commerce/zettle/test-zettle"
+    },
+    {
+      "url": "https://status.codat.io/",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://docs.codat.io/"
+    }
+  ],
+  "passed": false
+}

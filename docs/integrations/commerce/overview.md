@@ -7,7 +7,7 @@ displayed_sidebar: integrationsCommerce
 
 import { IntegrationsList } from "@components/Integrations";
 
-Our suite of commerce integrations allow you to retrieve up-to-date ecommerce, payment, and point-of-sale data from your SMB customers' commerce software.
+Our suite of commerce integrations allow you to retrieve up-to-date eCommerce, payment, and point-of-sale data from your SMB customers' commerce software.
 
 ## Supported commerce software
 

@@ -118,7 +118,7 @@ This functionality is currently only available for QuickBooks Online and QuickBo
 
 :::
 
-### Multicurrency expense transactions
+### Multi-currency expense transactions
 
 Expenses validates each expense transaction involving foreign currency. We ensure that the combination of participating currencies will be accepted by the target accounting software as a valid expense. You can read more about [expenses in foreign currency](/expenses/fx-management) and platform support for different transaction types.
  

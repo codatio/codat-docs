@@ -177,7 +177,7 @@ After selecting option **A**, provide this answer to the follow-on question:
 
 |Feature   | Response|
 |---|------------------------------------------|
-| Multicurrency |  **Yes**   |
+| Multi-currency |  **Yes**   |
 | Sales tax - For QuickBooks companies in the United States  |  **Yes**  |
 | Sales tax - For QuickBooks companies outside of the United States |  **Yes**   |
 | None of the above | N/A  |

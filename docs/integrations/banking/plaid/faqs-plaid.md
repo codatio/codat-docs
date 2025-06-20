@@ -13,7 +13,7 @@ If you receive the "Connectivity not supported" error message when trying to con
 - The institution is associated with a country not specified in Link initialization.
 - The institution is associated with a country your Plaid account hasn't been enabled for.
 
-In practice this means that the selected Plaid institution does not support [Instant Auth](https://plaid.com/docs/auth/coverage/instant/#instant-auth) as an authentication method. Fortunately, there is an alternative to Instant Auth called [Instant Match](https://plaid.com/docs/auth/coverage/instant/#instant-match), which Codat uses as an authentification fallback.
+In practice this means that the selected Plaid institution does not support [Instant Auth](https://plaid.com/docs/auth/coverage/instant/#instant-auth) as an authentication method. Fortunately, there is an alternative to Instant Auth called [Instant Match](https://plaid.com/docs/auth/coverage/instant/#instant-match), which Codat uses as an authentication fallback.
 
 ### Banking transactions fetch error on first sync
 
