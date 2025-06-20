@@ -16,12 +16,13 @@ It is recommended that you use match results only for the date range when data f
 
 ### Reproducing the overall match percentage
 
-You may want to reproduce the overall match percentage for a specific data type, represented as the data integrity summary in our Portal and API. 
+You may want to reproduce the overall match percentage for a specific data type, represented as the data integrity summary in our Portal and API.
 
 Consider a simple example where you have just three transactions:
-  * Transaction A - Accounting, £3, no matches
-  * Transaction B - Accounting, £1, matches transaction C
-  * Transaction C - Banking, £1, matches transaction B
+
+- Transaction A - Accounting, £3, no matches
+- Transaction B - Accounting, £1, matches transaction C
+- Transaction C - Banking, £1, matches transaction B
 
 If you call the [Get data integrity summary](/lending-api#/operations/get-data-integrity-summaries) endpoint with _data type = accountTransactions_, you will get a match percentage of 25%:
 `match percentage = B/(A+B) = £1 / (£3 +£1)`
@@ -32,7 +33,7 @@ If however you call the Summaries endpoint with _data type = banking-transaction
 By contrast, on the Data Integrity page of the Portal, the match percentage displayed is match percentage by amount across accounting and banking transactions. In our example, the match percentage displayed on the Portal would be 40%:
 `match percentage = (B+C)/(A+B+C) = (£1 + £1)/(£3 +£1 + £1)`
 
-<img src="/img/old/cf7bc11-DataIntegrity1.png"/>
+<img src="/img/old/cf7bc11-DataIntegrity1.png" />
 
 You can reproduce this match percentage yourself by fetching the summaries for `accountTransactions` and `banking-transactions` in separate API calls and combining the results client-side, e.g. by taking a weighted average of the match percentages.
 
@@ -40,7 +41,7 @@ By default, the percentage on the Portal is also restricted to the overlapping d
 
 For example, if the _Get data integrity status_ response contains the following:
 
-````
+```
 "dates":{
 ..
 "minOverlappingDate":"2021-09-03T12:00:00.000Z",
@@ -50,6 +51,6 @@ For example, if the _Get data integrity status_ response contains the following:
 }
 ]
 }
-````
+```
 
 Then you would call each of the _Get data integrity summary_ endpoints with (url-escaped) `query=date>=2021-09-03T12:00:00.000Z&&date<=2021-09-17T23:59:59.999`.

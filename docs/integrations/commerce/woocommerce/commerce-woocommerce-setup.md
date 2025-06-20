@@ -12,7 +12,7 @@ You'll need to:
 - Enable the WooCommerce integration.
 - Check your sync settings.
 
-Registration with WooCommerce is not required to set up and enable the integration. 
+Registration with WooCommerce is not required to set up and enable the integration.
 
 ## Enable the WooCommerce integration
 

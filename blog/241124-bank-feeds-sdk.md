@@ -38,21 +38,23 @@ Once your user initiates the bank feeds setup process, engage our SDK to establi
 
 1. Call the [Create a company](/bank-feeds-api#/operations/create-company) endpoint to create a representation of your customer in Codat.
 2. Get an access token for this company by calling the [Get company access token](/bank-feeds-api#/operations/get-company-access-token) endpoint.
-3. Initialize the Bank Feeds SDK, passing the access token to the component. 
-  
-    The SDK will direct your customer to select their accounting software and create a data connection for that software as a result.
-4. Use the SDK's `onConnectionStarted` callback function prop to call the [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoint. 
-  
-    Once accounts have been created, the SDK will redirect your customer to authorize the data connection and map these source accounts to the relevant accounts in their accounting software.
+3. Initialize the Bank Feeds SDK, passing the access token to the component.
+
+   The SDK will direct your customer to select their accounting software and create a data connection for that software as a result.
+
+4. Use the SDK's `onConnectionStarted` callback function prop to call the [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoint.
+
+   Once accounts have been created, the SDK will redirect your customer to authorize the data connection and map these source accounts to the relevant accounts in their accounting software.
+
 5. Use the SDK's `onFinish` callback function to manage the completion of the bank feeds setup flow once the accounts are mapped.
 
-If your user authorizes your access but doesn't complete the accounts setup, we'll bring them straight back to where they left off when they return to the flow. Once they're fully set up, you can use this component to allow them to reconfigure their accounts or set up additional accounts. 
+If your user authorizes your access but doesn't complete the accounts setup, we'll bring them straight back to where they left off when they return to the flow. Once they're fully set up, you can use this component to allow them to reconfigure their accounts or set up additional accounts.
 
 We also recommend using our [Connections SDK](/auth-flow/optimize/connection-management) to allow users to reauthorize or revoke your access to their accounting software. Providing your customers with this control is mandated by integration partners.
 
 ## How to get started?
 
-You can access the SDK on [NPM](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). We recommend all clients already using our [Bank Feeds](/bank-feeds/overview) product to migrate to the Bank Feeds SDK. 
+You can access the SDK on [NPM](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). We recommend all clients already using our [Bank Feeds](/bank-feeds/overview) product to migrate to the Bank Feeds SDK.
 
 First, create a component which initializes the SDK:
 
@@ -60,12 +62,12 @@ First, create a component which initializes the SDK:
   import React, { useEffect, useState } from "react";
   import ReactDOM from "react-dom/client";
   import { CodatBankFeedsProps, initializeCodatBankFeeds } from "@codat/sdk-bank-feeds-types";
-  
+
   const CodatBankFeeds: React.FC<CodatBankFeedsProps> = (props: CodatBankFeedsProps) => {
     const [componentMount, setComponentMount] = useState<HTMLDivElement | null>(
       null
     );
-  
+
     useEffect(() => {
       const target = componentMount;
       if (target && target.children.length === 0) {
@@ -73,7 +75,7 @@ First, create a component which initializes the SDK:
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [componentMount]);
-  
+
     return (
       <div ref={setComponentMount}/>
     );

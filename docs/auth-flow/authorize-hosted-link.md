@@ -6,25 +6,25 @@ displayed_sidebar: docs
 ---
 
 <head>
-  <meta property="og:image" content="/img/link/link-banner.png"/>
+  <meta property="og:image" content="/img/link/link-banner.png" />
 </head>
 
 :::tip Codat recommends Link SDK
 
-Instead of Hosted Link, use the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow in your application. 
+Instead of Hosted Link, use the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow in your application.
 
 You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feeling of the auth flow that achieves an **89%** conversion rate on average.
 
-::: 
+:::
 
 ## Overview
 
-If you're not able to use our Link SDK, you can choose Hosted Link as your out-of-the-box authorization solution built, provided, and hosted by Codat. 
+If you're not able to use our Link SDK, you can choose Hosted Link as your out-of-the-box authorization solution built, provided, and hosted by Codat.
 
 To connect your customers' financial software with Hosted Link, you can:
 
 - Direct your customer from your existing app to the Hosted Link auth flow programmatically, or
-- Manually share the Link URL with your customer. 
+- Manually share the Link URL with your customer.
 
 ![](/img/link/link-banner.png)
 
@@ -36,7 +36,7 @@ Curious where Codat's Hosted Link flow might fit in your customer's experience? 
 
 ## Integrate Link in your app
 
-First, create a [company](../terms/company.md) to represent your SMB in Codat. We recommend doing that at the time your SMB user signs up within your app. This way, you can track their connection status from day one. 
+First, create a [company](../terms/company.md) to represent your SMB in Codat. We recommend doing that at the time your SMB user signs up within your app. This way, you can track their connection status from day one.
 
 To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body. For details on managing and deleting existing companies, review [Manage companies with our API](/using-the-api/managing-companies).
 
@@ -54,17 +54,18 @@ Review the parameters in the example response to creating a new company:
   "name": "Superapp",
   "platform": "",
   // redirect - use to redirect your customer to Hosted Link
-  "redirect": "https://link.codat.io/company/1126743b-113d-4d72-b14f-36d6742df487", 
+  "redirect": "https://link.codat.io/company/1126743b-113d-4d72-b14f-36d6742df487",
   "dataConnections": [],
   "created": "2022-05-16T14:55:21.6076495Z"
 }
 ```
+
 From the response, retain the following:
 
-   - `companyId`, because you will need it for directing your customers to Link and managing their connections;
-   - `redirect` URL value, because you will use this URL in your app to direct the customer to start their Link journey.  
+- `companyId`, because you will need it for directing your customers to Link and managing their connections;
+- `redirect` URL value, because you will use this URL in your app to direct the customer to start their Link journey.
 
-Once your customer finishes the Link flow, they will be redirected back to the URL you have set in the [Link settings](/auth-flow/customize/set-up-redirects). You can also present your customer with a confirmation screen that shows the platforms they have linked. 
+Once your customer finishes the Link flow, they will be redirected back to the URL you have set in the [Link settings](/auth-flow/customize/set-up-redirects). You can also present your customer with a confirmation screen that shows the platforms they have linked.
 
 #### Monitor the connection status
 
@@ -84,14 +85,14 @@ In this scenario, allow your user to authorize this connection by sending them d
 
 ## Use URL to initiate Link
 
-You can request additional security measures within Hosted Link. Link URLs can have a one-time password (OTP) added as a query parameter to limit the validity and number of uses of these URLs. Contact your account manager if you want to enable these measures. 
+You can request additional security measures within Hosted Link. Link URLs can have a one-time password (OTP) added as a query parameter to limit the validity and number of uses of these URLs. Contact your account manager if you want to enable these measures.
 
 :::tip Link validity
 Link URLs enhanced by OTPs behave as follows:
 
 - Your customers aren't able to use the same Link URL more than once.
 - Company-specific and connection-specific Link URLs expire after one day even if they weren't used.
-:::
+  :::
 
 #### Use the Hosted Link URL
 

@@ -14,7 +14,7 @@ Before performing any setup on your side, please fill out the questionaire below
 
 - What identity provider do you use?
 
-- Do you require federated (full SSO) sign-out, i.e. a sign-out of both the application level session and the SSO session?  If so, please specify the sign-out URL.
+- Do you require federated (full SSO) sign-out, i.e. a sign-out of both the application level session and the SSO session? If so, please specify the sign-out URL.
 
 - What environments do you require (e.g. Test & Prod, Prod only)? If you need multiple environments, the users need to be on different domains.
 
@@ -24,51 +24,51 @@ Before performing any setup on your side, please fill out the questionaire below
 
 ### Connect your Identity Provider
 
-In order to support SSO, you need to connect your Identity Provider (IdP) to Codat. Common examples of integrating IdPs include Active Directory (AD), PingFederate or OKTA. 
+In order to support SSO, you need to connect your Identity Provider (IdP) to Codat. Common examples of integrating IdPs include Active Directory (AD), PingFederate or OKTA.
 In your IdP, perform the following setup:
 
 1. Set up groups corresponding to the four Codat roles (Administrator, Analyst, Onboarding, Developer) for each Codat instance you have, and add at least one test user to each group for later testing.
 
-   Send us the group name to role mappings, including ID and mapping to our roles: 
+   Send us the group name to role mappings, including ID and mapping to our roles:
 
-    | Codat role name | Your group name | Your group ID |
-    | :- | :- | :-|
-    | Administrator |  | |
-    | Analyst |  | |
-    | Onboarding |  | |
-    | Developer |  | |
+   | Codat role name | Your group name | Your group ID |
+   | :-------------- | :-------------- | :------------ |
+   | Administrator   |                 |               |
+   | Analyst         |                 |               |
+   | Onboarding      |                 |               |
+   | Developer       |                 |               |
 
-2. Provision an SSO app registration (or equivalent) in the IdP. This should be configured to: 
+2. Provision an SSO app registration (or equivalent) in the IdP. This should be configured to:
 
-    a. Return SAML responses that include the `groups` claim. This ensures that an ID representing each AD group the user 
-    belongs to is sent to us for mapping the client/role access.
+   a. Return SAML responses that include the `groups` claim. This ensures that an ID representing each AD group the user
+   belongs to is sent to us for mapping the client/role access.
 
-    b. Set the `Reply URL (Assertion Customer Service URL)` and `Redirect URL` to 
-    `https://authentication.codat.io/login/callback?connection=[client-name]-[instance-name]-saml-connection`  
+   b. Set the `Reply URL (Assertion Customer Service URL)` and `Redirect URL` to
+   `https://authentication.codat.io/login/callback?connection=[client-name]-[instance-name]-saml-connection`
 
-    c. Include the following claims for each user in the SAML responses from the authenticating IdP:
+   c. Include the following claims for each user in the SAML responses from the authenticating IdP:
 
-    - `email`
-    - `groups` array (one ID representing each AD group the user belongs to and matches the mapping for the client/role access)
-    - `displayname` (comprised of the first and last name)
+   - `email`
+   - `groups` array (one ID representing each AD group the user belongs to and matches the mapping for the client/role access)
+   - `displayname` (comprised of the first and last name)
 
-    If claims are not named as above, please let us know the names and namespaces of the claims.
+   If claims are not named as above, please let us know the names and namespaces of the claims.
 
 3. Send us the `metadata.xml` file or, alternatively, all of the following:
 
-    - IdP sign-in URL
-    - IdP sign-out URL (if required)
-    - Signing certificate
-    - SAML claim attributes, including name and namespace (see 2d above)
+   - IdP sign-in URL
+   - IdP sign-out URL (if required)
+   - Signing certificate
+   - SAML claim attributes, including name and namespace (see 2d above)
 
 4. Once we have the above information, we can send our SAML `metadata.xml` file containing EntityId, Signing Key and Urls.
 
 Once this setup is complete, we will provide you with a unique login URL to be use for logging in.
 This should be used instead of the normal Codat Portal login page.
 
-Note: to help maintain best in class security we support SP-Initiated and not IdP-Initiated flows. Please refer to Auth0's documentation 
+Note: to help maintain best in class security we support SP-Initiated and not IdP-Initiated flows. Please refer to Auth0's documentation
 on [IdP-Initiated Risks and considerations](https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/identity-provider-initiated-single-sign-on#risks-and-considerations)
- for more information on this.
+for more information on this.
 
 ### Add a new user
 
@@ -80,9 +80,9 @@ Similarly, to remove a user, remove them from the group in your IdP.
 
 What are the SAML configuration urls?
 
-| SAML configuration | Format |
-| :- | :- |
-| Identifier (Entity ID) | 	Client-specific urn, such as <br />`urn:auth0:codat:[client-name]-[instance-name]-saml-connection`   |
-| ReplyURL (assertion consumer service) | Client-specific urn, such as <br /> `https://authentication.codat.io/login/callback?connection=[client-name]-[instance-name]-saml-connection`  | 
-| Sign-on URL | Client-specific urn, such as <br /> `https://app.codat.io/sso/signin/[client-name]-[instance-name]-saml-connection` | 
-| Logout URL | None | 
+| SAML configuration                    | Format                                                                                                                                        |
+| :------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| Identifier (Entity ID)                | Client-specific urn, such as <br />`urn:auth0:codat:[client-name]-[instance-name]-saml-connection`                                            |
+| ReplyURL (assertion consumer service) | Client-specific urn, such as <br /> `https://authentication.codat.io/login/callback?connection=[client-name]-[instance-name]-saml-connection` |
+| Sign-on URL                           | Client-specific urn, such as <br /> `https://app.codat.io/sso/signin/[client-name]-[instance-name]-saml-connection`                           |
+| Logout URL                            | None                                                                                                                                          |

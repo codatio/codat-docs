@@ -40,18 +40,21 @@ Before you can access data from customers using Exact for their accounting, you 
        Exact Online UK App Center
      </a>
      for the Exact UK integration, or
-   - <a href="https://start.exactonline.nl/docs/HRMSubTrialNew.aspx?bcaction=0&type=10&language=EN&UseSimpleWizard=1&PackageSetCode=APPCENTER" target="_blank">
+   - <a
+       href="https://start.exactonline.nl/docs/HRMSubTrialNew.aspx?bcaction=0&type=10&language=EN&UseSimpleWizard=1&PackageSetCode=APPCENTER"
+       target="_blank"
+     >
        Exact Online NL App Center
-     </a> 
+     </a>
      for the Exact NL integration
 2. Sign in to the Exact developer site at:
    - <a href="https://apps.exactonline.com/gb/" target="_blank">
        https://apps.exactonline.com/gb/
-     </a> 
+     </a>
      for the Exact UK integration
    - <a href="https://apps.exactonline.com/nl/" target="_blank">
        https://apps.exactonline.com/nl/
-     </a> 
+     </a>
      for the Exact NL integration
 3. Select **Manage my apps** from the top navigation bar.
 4. Depending on the purpose of your app, select either **Register a product app** or **Register a testing app** under the corresponding section.
@@ -122,26 +125,26 @@ To support a wide range of use cases, we recommend that you select the scopes sh
 If you experience issues with your app after enabling the recommended scopes, please contact Codat Support.
 :::
 
-| Resource         | Access level |
-| :--------------- | :----------- |
-| **Crm**          |              |
-| accounts         | Manage       |
-| **Sales**        |              |
-| orders           | Manage       |
-| invoices         | Manage       |
-| **Purchase**     |              |
-| orders           | Manage       |
-| invoices         | Manage       |
-| **Logistics**    |              |
-| items            | Manage       |
-| **Financial**    |              |
-| generalledgers   | Read (Manage for Bank Feeds)       |
-| accounting       | Read (Manage for Bank Feeds)         |
-| receivables      | Read         |
-| payables         | Read         |
-| costcenters      | Read         |
-| **Organization** |              |
-| administration   | Read         |
-| documents        | Manage       |
+| Resource         | Access level                 |
+| :--------------- | :--------------------------- |
+| **Crm**          |                              |
+| accounts         | Manage                       |
+| **Sales**        |                              |
+| orders           | Manage                       |
+| invoices         | Manage                       |
+| **Purchase**     |                              |
+| orders           | Manage                       |
+| invoices         | Manage                       |
+| **Logistics**    |                              |
+| items            | Manage                       |
+| **Financial**    |                              |
+| generalledgers   | Read (Manage for Bank Feeds) |
+| accounting       | Read (Manage for Bank Feeds) |
+| receivables      | Read                         |
+| payables         | Read                         |
+| costcenters      | Read                         |
+| **Organization** |                              |
+| administration   | Read                         |
+| documents        | Manage                       |
 
 Leave resources that are not in the preceding table set to **None**.

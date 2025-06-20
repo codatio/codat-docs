@@ -15,6 +15,6 @@ The following table highlights selected fields that are not available in data re
 
 ### Unavailable provider fields
 
-| Codat data type                      | Status                              |
-|--------------------------------------|-------------------------------------|
-| `Commerce.Payments.paymentProvider`  | Not available in the provider's API |
+| Codat data type                     | Status                              |
+| ----------------------------------- | ----------------------------------- |
+| `Commerce.Payments.paymentProvider` | Not available in the provider's API |

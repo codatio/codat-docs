@@ -7,7 +7,11 @@ image: "/img/banners/social/lending.png"
 
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
-import { accountingIntegrations, bankingIntegrations, commerceIntegrations } from "@components/Integrations/integrations";
+import {
+  accountingIntegrations,
+  bankingIntegrations,
+  commerceIntegrations,
+} from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -50,7 +54,7 @@ type LoanData {
 
 const sourceType = GenerateLoanSummarySourceType.Accounting
 
-// Request the generation of the report. This can take some time so 
+// Request the generation of the report. This can take some time so
 // make sure to poll the get endpoint to check the status of the process.
 const generateResponse = await lendingClient.liabilities.generateLoanSummary({
     companyId: companyId,
@@ -145,7 +149,6 @@ if repayment_ratio < repayment_ratio_threshold:
 
 <TabItem value="csharp" label="C#">
 
-
 ```csharp
 public record LoanData(decimal TotalDrawdowns, decimal TotalRepayments);
 
@@ -213,7 +216,7 @@ if generateSummaryResponse.StatusCode == 202 {
         CompanyID: companyID,
         SourceType: sourceType
     })
-    
+
     if(summaryResponse.StatusCode == 200){
       summary = summaryResponse.LoanData;
       break;
@@ -248,7 +251,7 @@ if generateSummaryResponse.StatusCode == 202 {
 
 ## Get started
 
-Once you have the Lending solution enabled, configure your instance to work with our liabilities feature. 
+Once you have the Lending solution enabled, configure your instance to work with our liabilities feature.
 
 #### Configure data sources
 
@@ -256,11 +259,24 @@ Follow the respective guides to set up and enable at least one accounting, banki
 
 ##### Accounting
 
-<IntegrationsList filter={['Dynamics 365 Business Central', 'Exact Online', 'FreshBooks', 'MYOB Business', 'Oracle NetSuite', 'QuickBooks Online', 'QuickBooks Desktop', 'Sage 50', 'Sage Business Cloud Accounting', 'Xero']} />
+<IntegrationsList
+  filter={[
+    "Dynamics 365 Business Central",
+    "Exact Online",
+    "FreshBooks",
+    "MYOB Business",
+    "Oracle NetSuite",
+    "QuickBooks Online",
+    "QuickBooks Desktop",
+    "Sage 50",
+    "Sage Business Cloud Accounting",
+    "Xero",
+  ]}
+/>
 
 ##### Commerce
 
-<IntegrationsList filter={['Stripe', 'Zettle']} />
+<IntegrationsList filter={["Stripe", "Zettle"]} />
 
 #### Enable data types and sync schedule
 
@@ -280,15 +296,16 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) with the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
 
-- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)  
+- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)
 
-  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
- 
-- [`DatasetDataChanged`](/using-the-api/webhooks/event-types)  
+  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again.
+
+- [`DatasetDataChanged`](/using-the-api/webhooks/event-types)
 
   This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
 ---
 
 ## Read next
+
 - [Accounts receivable](/lending/features/accounts-receivable-overview)

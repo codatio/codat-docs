@@ -1,6 +1,6 @@
 ---
 title: "Loan qualification build guide"
-description: "Lend with Codat and our Lending solution" 
+description: "Lend with Codat and our Lending solution"
 displayed_sidebar: "lending"
 hide_title: true
 hide_description: true
@@ -18,7 +18,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 
 ### Summary
 
-🎯 Codat makes lending easier by getting you trusted data with which to check a loan applicant’s finances. With our demo app, you will experience the end-to-end lending process flow with automatic decision-making supported by Codat's [Lending](/lending/overview). We will focus on the lender's perspective. 
+🎯 Codat makes lending easier by getting you trusted data with which to check a loan applicant’s finances. With our demo app, you will experience the end-to-end lending process flow with automatic decision-making supported by Codat's [Lending](/lending/overview). We will focus on the lender's perspective.
 
 ⏳ Estimated time to complete: 20-30 minutes
 
@@ -31,7 +31,7 @@ This guide is for tech-savvy backend developers who know how to use an API. No f
 - Link the test company to Codat's sandbox source of financial data,
 - Fetch that data using Codat’s Enhanced Profit and Loss and Enhanced Balance Sheet endpoints,
 - Use Codat’s webhooks to trigger the lending of a loan,
-- Produce an automated lending decision based on custom financial data points. 
+- Produce an automated lending decision based on custom financial data points.
 
 ### ❌ This guide does not cover...
 
@@ -47,15 +47,16 @@ The codebase uses Codat and its [Lending](/lending/overview) solution to make a 
 
 ### Why we use _Lending_
 
-The demo app makes use of the categorization feature of [Lending](/lending/overview). This feature analyses the full list of a company's accounts and assigns a category to each account. This solves the problem of bookkeepers giving different names to the same accounting category. 
+The demo app makes use of the categorization feature of [Lending](/lending/overview). This feature analyses the full list of a company's accounts and assigns a category to each account. This solves the problem of bookkeepers giving different names to the same accounting category.
 
 For example, one bookkeeper may name their marketing account "Facebook Ads", and another may call it "Online Marketing". Lending will categorize both accounts in the same way - as _Expense > Operating > Marketing_. This enables lenders to use a standardized taxonomy, no matter how the bookkeeper manages their accounts.
 
-This standardizes the data irrespective of its source and helps you make a comprehensive assessment of your customer's financial health, produce additional insights (e.g. calculate financial ratios), and automate decisioning based on these insights. 
+This standardizes the data irrespective of its source and helps you make a comprehensive assessment of your customer's financial health, produce additional insights (e.g. calculate financial ratios), and automate decisioning based on these insights.
 
 ---
 
 ### Read next
 
 Now that you know the focus and purpose of our demo app and its guide:
-* [Set up Codat and your local environment](/lending/guides/loan-qualification/setting-up).
+
+- [Set up Codat and your local environment](/lending/guides/loan-qualification/setting-up).

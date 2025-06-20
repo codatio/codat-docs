@@ -48,23 +48,22 @@ For example, in order to create categories to break down sales into products, se
 
 ```json
 {
-    "ContractVersion": "9.3.1",
-    "ProductCategories": [
-        {
-            "id": "prods",
-            "name": "Products"
-        },
-         {
-            "id": "serv",
-            "name": "Services"
-        },
-         {
-            "id": "cours",
-            "name": "Courses"
-        }
-    ]
+  "ContractVersion": "9.3.1",
+  "ProductCategories": [
+    {
+      "id": "prods",
+      "name": "Products"
+    },
+    {
+      "id": "serv",
+      "name": "Services"
+    },
+    {
+      "id": "cours",
+      "name": "Courses"
+    }
+  ]
 }
-
 ```
 
 :::note Category hierarchies not supported

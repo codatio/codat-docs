@@ -5,8 +5,8 @@ createdAt: "2019-02-20T09:52:29.305Z"
 updatedAt: "2022-11-09T16:56:43.148Z"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 The Codat API uses a simple, flexible query language to allow you to filter response data.
 
@@ -22,18 +22,18 @@ The below query functionality will only work when searching for company data (e.
 - The query takes the form of `propertyName=value`.
 - You can also include comparison operators, such as greater than, less than or equal to. The following table shows comparison operators that are supported for numeric, date, and string data types.
 
-| Operator 	| Name                     	| Encoded     | Number 	| String 	| Date 	|
-|----------	|--------------------------	| :-          |--------	|--------	|------	|
-| `=`        	| Equals                   	| `%3d`       | ✔      	| ✔      	| ✔    	|
-| `!=`       	| Not equals               	|  `%21%3d`   | ✔      	| ✔      	| ✔    	|
-| `~`        	| Contains                 	| `%7E`       | ❌      | ✔      	| ❌    |
-| `>`        	| Greater than             	| `%3e`       | ✔      	| ❌      | ✔    	|
-| `<`        	| Less than                	| `%3c`       | ✔      	| ❌      | ✔    	|
-| `>=`       	| Greater than or equal to 	| `%3e%3d`    | ✔      	| ❌      | ✔    	|
-| `<=`       	| Less than or equal to    	|  `%3c%3d`   | ✔      	| ❌      | ✔    	|
-| `&&`        | AND                       | `%26%26`    |  -      | -       | -     |
-| `\|\|`       | OR                       |  `%7C%7C`   | -       | -       | -     |
-| `{`, `}`    | Logical separator          | `%7B`, `%7D`| -       | -       | -     |
+| Operator | Name                     | Encoded      | Number | String | Date |
+| -------- | ------------------------ | :----------- | ------ | ------ | ---- |
+| `=`      | Equals                   | `%3d`        | ✔     | ✔     | ✔   |
+| `!=`     | Not equals               | `%21%3d`     | ✔     | ✔     | ✔   |
+| `~`      | Contains                 | `%7E`        | ❌     | ✔     | ❌   |
+| `>`      | Greater than             | `%3e`        | ✔     | ❌     | ✔   |
+| `<`      | Less than                | `%3c`        | ✔     | ❌     | ✔   |
+| `>=`     | Greater than or equal to | `%3e%3d`     | ✔     | ❌     | ✔   |
+| `<=`     | Less than or equal to    | `%3c%3d`     | ✔     | ❌     | ✔   |
+| `&&`     | AND                      | `%26%26`     | -      | -      | -    |
+| `\|\|`   | OR                       | `%7C%7C`     | -      | -      | -    |
+| `{`, `}` | Logical separator        | `%7B`, `%7D` | -      | -      | -    |
 
 - Separate multiple query clauses with ampersands (`&&`) for _AND_ queries or pipes (`||`) for _OR_ queries.
 - Access sub-properties by separating them from the property with a dot (see [Invoices to a particular customer](/using-the-api/querying#invoices-for-a-specific-customer) example below). This is only applicable to objects within our data endpoints. We do not support querying inside arrays.
@@ -52,7 +52,7 @@ The total length of your query should be under 2048 characters in order to be va
 
 :::info Querying on null fields
 
-We do not currently support querying on null fields. 
+We do not currently support querying on null fields.
 :::
 
 ## Getting all vs one item
@@ -73,6 +73,7 @@ Query: `amountDue > 0`
 ```http
 GET /companies/{companyId}/data/invoices?query=amountDue%3e0
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -93,6 +94,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
     Query = "amountDue>0",
 });
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -116,6 +118,7 @@ codatLending.accountsReceivable.invoices.list({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -138,6 +141,7 @@ res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingI
 if res.accounting_invoices is not None:
     # handle response
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -174,6 +178,7 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -189,6 +194,7 @@ Query: `currency = GBP`
 ```http
 GET /companies/{companyId}/data/invoices?query=currency%3dGBP
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -209,6 +215,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
     Query = "currency=GBP",
 });
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -232,6 +239,7 @@ codatLending.accountsReceivable.invoices.list({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -254,6 +262,7 @@ res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingI
 if res.accounting_invoices is not None:
     # handle response
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -290,6 +299,7 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -305,6 +315,7 @@ Query: `customerRef.id = 61`
 ```http
 GET /companies/{companyId}/data/invoices?query=customerRef.id%3d61
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -325,6 +336,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
     Query = "customerRef.id=61",
 });
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -348,6 +360,7 @@ codatLending.accountsReceivable.invoices.list({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -370,6 +383,7 @@ res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingI
 if res.accounting_invoices is not None:
     # handle response
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -406,6 +420,7 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -421,6 +436,7 @@ Query: `amountDue > 0 && totalAmount < 1000`
 ```http
 GET /companies/{companyId}/data/invoices?query=amountDue%3e0%26%26totalAmount%3c1000
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -441,6 +457,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
     Query = "amountDue>0&&totalAmount<1000",
 });
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -464,6 +481,7 @@ codatLending.accountsReceivable.invoices.list({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -486,6 +504,7 @@ res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingI
 if res.accounting_invoices is not None:
     # handle response
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -522,16 +541,17 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
-### Invoices that are due after a certain date 
+### Invoices that are due after a certain date
 
-e.g. "2021-01-28" (YYYY-MM-DD format) 
-  
+e.g. "2021-01-28" (YYYY-MM-DD format)
+
 Query: `dueDate > 2021-01-28`
-  
+
 <Tabs>
 
 <TabItem value="http" label="HTTP">
@@ -539,6 +559,7 @@ Query: `dueDate > 2021-01-28`
 ```http
 GET /companies/{companyId}/data/invoices?query=dueDate%3E2021-01-28
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -559,6 +580,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
     Query = "dueDate>2021-01-28",
 });
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -582,6 +604,7 @@ codatLending.accountsReceivable.invoices.list({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -604,6 +627,7 @@ res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingI
 if res.accounting_invoices is not None:
     # handle response
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -640,6 +664,7 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -657,6 +682,7 @@ Codat identifies records that have been deleted in the source accounting softwar
 ```http
 GET /companies/{companyId}/data/invoices?query=metadata.isDeleted%21%3dtrue
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -677,6 +703,7 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
     Query = "metadata.isDeleted!=true",
 });
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -700,6 +727,7 @@ codatLending.accountsReceivable.invoices.list({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -722,6 +750,7 @@ res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingI
 if res.accounting_invoices is not None:
     # handle response
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -758,16 +787,16 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
 ### Companies with "Pending" status connections
-  
+
 Query: `dataConnections.status=PendingAuth`
 
 _Note_: the page size value is obligatory for querying.
-
 
 <Tabs>
 
@@ -790,6 +819,7 @@ var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
 
 // handle response
 ```
+
 </TabItem>
 
 <TabItem value="http" label="HTTP">
@@ -797,6 +827,7 @@ var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
 ```http
 GET /companies?query=dataConnections.status=PendingAuth
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -819,6 +850,7 @@ codatPlatform.companies.list({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -840,6 +872,7 @@ res = codat_platform.companies.list(operations.ListCompaniesRequest(
 if res.companies is not None:
     # handle response
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -875,19 +908,19 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
-
 ## Queries that won't work
 
-Although you can query properties of objects, you can't query arrays.  
+Although you can query properties of objects, you can't query arrays.
 
 ✅ Objects: Invoices > `customerRef.id`
-  
+
 `GET /invoices?page=1&pageSize=100&query=customerRef.id%3Def6f54c1-eb45-4956-b8cd-1be82ad665f2`
-  
+
 ❌ Arrays: Invoices > `lineItems`
-  
+
 `GET /invoices?page=1&pageSize=100&query=lineItems.unitAmount%3D700`

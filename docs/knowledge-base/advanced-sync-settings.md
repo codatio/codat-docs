@@ -4,19 +4,19 @@ description: "Review additional settings available to configure the sync of vari
 displayed_sidebar: "docs"
 ---
 
-For most of our data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. You can apply additional sync settings to change these defaults. This helps you limit the amount of data synchronized from the source platform. 
+For most of our data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. You can apply additional sync settings to change these defaults. This helps you limit the amount of data synchronized from the source platform.
 
-These settings only work for data sources that allow delta syncs and are applied to all companies. 
+These settings only work for data sources that allow delta syncs and are applied to all companies.
 
 ## Sync settings
 
 You can configure the following advanced settings:
 
-| Sync   setting     | Property          | Description                                                                                                                                                                                                | Data types                                                            |
-|--------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| Months to   sync   | `monthsToSync`    | Determines how many months to   fetch data history for. Set to 24 months by default.                                                                                                                       | `balanceSheet`, `profitAndLoss`,   `cashFlowStatement`                |
-| Sync from   window | `syncFromWindow`  | Sets a number of months to fetch   data history for, where only data with a modified date in that timeframe   will be synced.                                                                             | All except for `balanceSheet`,   `profitAndLoss`, `cashFlowStatement` |
-| Sync   from UTC    | `syncFromUtc`     | Sets a UTC value as a start date   for data syncing, where only data with a modified date in that timeframe   will be synced. Records with a modified date before `syncFromUtc` will not   be returned.  | All except for `balanceSheet`,   `profitAndLoss`, `cashFlowStatement` |
+| Sync setting     | Property         | Description                                                                                                                                                                                       | Data types                                                          |
+| ---------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Months to sync   | `monthsToSync`   | Determines how many months to fetch data history for. Set to 24 months by default.                                                                                                                | `balanceSheet`, `profitAndLoss`, `cashFlowStatement`                |
+| Sync from window | `syncFromWindow` | Sets a number of months to fetch data history for, where only data with a modified date in that timeframe will be synced.                                                                         | All except for `balanceSheet`, `profitAndLoss`, `cashFlowStatement` |
+| Sync from UTC    | `syncFromUtc`    | Sets a UTC value as a start date for data syncing, where only data with a modified date in that timeframe will be synced. Records with a modified date before `syncFromUtc` will not be returned. | All except for `balanceSheet`, `profitAndLoss`, `cashFlowStatement` |
 
 ## Configuration
 
@@ -45,10 +45,10 @@ For example, to configure advanced settings for our `invoices` data type, send t
 
 ## 💡 Tips and traps
 
-- When using advanced sync settings, settle on a uniform approach across your data types, as we cannot guarantee consistency if different approaches are applied. 
+- When using advanced sync settings, settle on a uniform approach across your data types, as we cannot guarantee consistency if different approaches are applied.
 
 - Advanced sync settings can be applied to all data types, but we advise you do not set them for reference data, such as customers, suppliers, chart of accounts, tax rates, tracking categories, and items.
 
-- Both `syncFromWindow` and `syncFromUtc` use `sourceModifiedDate` to select records for syncing. You can [read more about modified dates](/using-the-api/modified-dates). 
+- Both `syncFromWindow` and `syncFromUtc` use `sourceModifiedDate` to select records for syncing. You can [read more about modified dates](/using-the-api/modified-dates).
 
 - When a sync setting is introduced after a successful data sync, the records fetched prior to the new sync setting will be either deleted or updated with a _Void_ or _Archived_ status.

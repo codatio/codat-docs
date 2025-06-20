@@ -8,17 +8,17 @@ description: "Learn about the additional impact of transitioning to our new serv
 
 If you are considering using Codat's new webhook management endpoints, check that your setup is compatible first. Find the scenarios applicable to your existing setup and see if you can migrate.
 
-| I am using...                                                                    | Action and impact                                                                                                                                                                                                                                                                                                |
-|----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ...email notification functionality <br/><br/> ![Static Badge](https://img.shields.io/badge/Configuration_required-yellow)                                             | - Migrate to the new webhook service <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#email-notification-functionality)                                       |
-| ...event log endpoints (e.g. `/rules/alerts`) <br/><br/> ![Static Badge](https://img.shields.io/badge/Development_work_required-yellow) | - Do not migrate until you have removed all calls to logs endpoints from your application logic <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#event-log-endpoints)                                                                                             |
-| ...`RuleId` in my application's existing logic  <br/><br/> ![Static Badge](https://img.shields.io/badge/Development_work_required-yellow)                                 | - Do not migrate until you have removed all application logic using the `RuleId` property <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#ruleid-in-existing-logic)                                                                                        |
-| ...only company-agnostic webhook functionality                                   | - Request to migrate to the new webhook service <br/>                                                                                                                                                                |
-| ...company-specific webhook functionality                                        | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#company-specific-webhooks)                                                                                 |
-| ...`X-Codat-ClientId` header to determine the source Codat instance of the event | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#source-client-header)                 |
-| ...webhook auth header via the `/profile` endpoint                               | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#webhook-auth-header) |
-| ...webhook auth header via the Portal                                            | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#webhook-auth-header) |
-| ...`Retry-After` header to control the time between retries                      | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#retry-after-header)                                                   |
+| I am using...                                                                                                                            | Action and impact                                                                                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ...email notification functionality <br/><br/> ![Static Badge](https://img.shields.io/badge/Configuration_required-yellow)               | - Migrate to the new webhook service <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#email-notification-functionality)                                               |
+| ...event log endpoints (e.g. `/rules/alerts`) <br/><br/> ![Static Badge](https://img.shields.io/badge/Development_work_required-yellow)  | - Do not migrate until you have removed all calls to logs endpoints from your application logic <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#event-log-endpoints) |
+| ...`RuleId` in my application's existing logic <br/><br/> ![Static Badge](https://img.shields.io/badge/Development_work_required-yellow) | - Do not migrate until you have removed all application logic using the `RuleId` property <br/> - Review the [critical considerations](/using-the-api/webhooks/migration-guide-advanced#ruleid-in-existing-logic)  |
+| ...only company-agnostic webhook functionality                                                                                           | - Request to migrate to the new webhook service <br/>                                                                                                                                                              |
+| ...company-specific webhook functionality                                                                                                | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#company-specific-webhooks)                                         |
+| ...`X-Codat-ClientId` header to determine the source Codat instance of the event                                                         | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#source-client-header)                                              |
+| ...webhook auth header via the `/profile` endpoint                                                                                       | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#webhook-auth-header)                                               |
+| ...webhook auth header via the Portal                                                                                                    | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#webhook-auth-header)                                               |
+| ...`Retry-After` header to control the time between retries                                                                              | - Request to migrate to the new webhook service <br/> - Review the [additional considerations](/using-the-api/webhooks/migration-guide-advanced#retry-after-header)                                                |
 
 ## Critical considerations
 
@@ -30,9 +30,9 @@ Our new service has a robust [retry policy](/using-the-api/webhooks/troubleshoot
 - `GET /rules/{ruleId}/alerts`
 - `GET /rules/alerts/{alertId}`
 
-Check out the [deprecation notice](/updates/240306-deprecation-rules-alerts) for full details of these changes. 
+Check out the [deprecation notice](/updates/240306-deprecation-rules-alerts) for full details of these changes.
 
-### Email notification functionality  
+### Email notification functionality
 
 Our new webhooks service supports sending notifications for events using our [Zapier app](https://zapier.com/apps/codat/integrations), so you can build automated workflows to send email, Slack, or other notifications. Use our webhook events as triggers and drive actions in all of the tools you use, from Google Sheets to SalesForce.
 
@@ -48,7 +48,7 @@ Check out the [deprecation notice](/updates/240320-deprecation-ruleId) for full 
 
 ## Additional considerations
 
-Depending on your setup, you may need to configure your webhook consumers in Codat further or be aware of changes to the UI. 
+Depending on your setup, you may need to configure your webhook consumers in Codat further or be aware of changes to the UI.
 
 ### IP allowlist
 
@@ -56,7 +56,7 @@ If your consumer endpoint is behind a firewall or NAT, make sure to allow messag
 
 ### Source client header
 
-If you are using multiple Codat instances and need to differentiate between them, you can filter the messages by client using a custom `X-Codat-ClientId` header. 
+If you are using multiple Codat instances and need to differentiate between them, you can filter the messages by client using a custom `X-Codat-ClientId` header.
 
 If you are already using this header in your existing setup, we will include it when migrating your rules to the new service. For more information on creating custom headers in webhook consumers, see [Custom headers](/using-the-api/webhooks/create-consumer#custom-headers).
 
@@ -68,7 +68,7 @@ If you are already using this header in your existing setup, we will include it 
 
 ### `Retry-After` header
 
-Our new service has a robust [retry policy](/using-the-api/webhooks/troubleshooting#retry-policy) that ensures we attempt to deliver an event multiple times over a 28-hour period. As a result, you no longer need to set a `Retry-After` header to control the time between retries. 
+Our new service has a robust [retry policy](/using-the-api/webhooks/troubleshooting#retry-policy) that ensures we attempt to deliver an event multiple times over a 28-hour period. As a result, you no longer need to set a `Retry-After` header to control the time between retries.
 
 ### Company-specific webhooks
 
@@ -77,6 +77,7 @@ For scalability, we limit the number of webhook consumers to 50. This means ther
 The updated webhook service now supports passing metadata about a company and filtering companies using company tags.
 
 #### Passing metadata to a webhook consumer
+
 You can now pass metadata about a company by setting tags on your companies.
 
 For example, if you previously passed metadata via the webhook consumer's path, such as:
@@ -89,11 +90,11 @@ You will now set this information when creating or updating a company:
 
 ```json
 {
-    "name": "{you company name}",
-    "tags": {
-        "region": "{regionId}",
-        "account": "{accountId}",
-    }
+  "name": "{you company name}",
+  "tags": {
+    "region": "{regionId}",
+    "account": "{accountId}"
+  }
 }
 ```
 

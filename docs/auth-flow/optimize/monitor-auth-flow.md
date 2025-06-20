@@ -4,15 +4,15 @@ sidebar_label: "Monitor auth flow"
 description: "Keep track of the customers' auth journey success rates across all integration categories"
 ---
 
-We equip you with tools to monitor your auth flow. In the [Codat Portal](https://app.codat.io/monitor/auth-flow-overview), you can see where your customers are struggling and optimize the flow where necessary. This monitoring is performed across all enabled integration categories.  
+We equip you with tools to monitor your auth flow. In the [Codat Portal](https://app.codat.io/monitor/auth-flow-overview), you can see where your customers are struggling and optimize the flow where necessary. This monitoring is performed across all enabled integration categories.
 
 ![](/img/link/0002-auth-flow-monitor.png)
 
-[Navigate](https://app.codat.io/monitor/auth-flow-overview) to **Monitor > Auth flow > Overview** to discover the overall **percentage** of your customers that have authorized the integration connections and the overall percentage of companies that uploaded a file as part of their auth process. 
+[Navigate](https://app.codat.io/monitor/auth-flow-overview) to **Monitor > Auth flow > Overview** to discover the overall **percentage** of your customers that have authorized the integration connections and the overall percentage of companies that uploaded a file as part of their auth process.
 
 ### Auth funnel
 
-Analyze the **auth funnel** to see how many customers completed their authorization journey in contrast to the quantity of those who started the Link flow and those who began the auth process. 
+Analyze the **auth funnel** to see how many customers completed their authorization journey in contrast to the quantity of those who started the Link flow and those who began the auth process.
 
 :::info Optional steps
 
@@ -26,7 +26,7 @@ If you've built your own solution, we aren't able to collect data for the **Bega
 
 ### Completion rate over time
 
-Visualize your stats of auth flow completion using the **graph**. It represents the ratio of the number of completed auth journeys to the number of started auth flows within a given week, expressed as a percentage. 
+Visualize your stats of auth flow completion using the **graph**. It represents the ratio of the number of completed auth journeys to the number of started auth flows within a given week, expressed as a percentage.
 
 :::caution Not seeing any data?
 

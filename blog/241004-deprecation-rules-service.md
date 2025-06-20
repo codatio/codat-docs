@@ -37,11 +37,11 @@ For example, if you previously passed company information via the webhook consum
 
 ```json
 {
-    "name": "{you company name}",
-    "tags": {
-        "region": "{regionId}",
-        "account": "{accountId}"
-    }
+  "name": "{you company name}",
+  "tags": {
+    "region": "{regionId}",
+    "account": "{accountId}"
+  }
 }
 ```
 

@@ -28,8 +28,8 @@ Here are the tasks involved in setting up the integration:
 
 To use our BigCommerce integration, the following OAuth scopes must be set with the `read-only` permission:
 
-| UI name                | Scope parameter                 |
-| ---------------------- | ------------------------------- |
+| UI name                | Scope parameter                   |
+| ---------------------- | --------------------------------- |
 | Orders                 | `store_v2_orders_read_only`       |
 | Order Transactions     | `store_v2_transactions_read_only` |
 | Products               | `store_v2_products_read_only`     |

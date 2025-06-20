@@ -148,7 +148,7 @@ Sample response:
       "lastSync": "2022-04-22T16:58:26.8185875Z",
       "created": "2022-04-22T16:58:17Z",
       "sourceType": "Commerce"
-    },
+    }
   ],
   "pageNumber": 1,
   "pageSize": 100,
@@ -187,6 +187,6 @@ Partial sample response:
 Both the `enabled` and `configured` parameters should be set to `true`.
 
 :::note Customizing the Sync flow
- 
+
 Don't forget to customize your [Sync configuration flow](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow).
 :::

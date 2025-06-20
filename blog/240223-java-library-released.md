@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: dcoplowe
 ---
 
-import ClientLibraries from '@components/ClientLibraries';
+import ClientLibraries from "@components/ClientLibraries";
 
 We are excited to announce the release of Java client libraries for our product suite.
 
@@ -27,7 +27,7 @@ CreateCompanyResponse res = sdk.companies().create()
   .call();
 ```
 
-## Available libraries    
+## Available libraries
 
 - [Bank Feeds API](https://github.com/codatio/client-sdk-java/tree/main/bank-feeds)
 - [Lending API](https://github.com/codatio/client-sdk-java/tree/main/lending)
@@ -37,10 +37,10 @@ CreateCompanyResponse res = sdk.companies().create()
 - [Sync for Payroll](https://github.com/codatio/client-sdk-java/tree/main/sync-for-payroll)
 - [Platform](https://github.com/codatio/client-sdk-java/tree/main/platform)
 
-
 ## Other available languages
 
 Codat offers official SDK client libraries for different programming languages, which are regularly updated for breaking and non-breaking API changes. These client libraries are generated from our [OpenAPI specification](https://github.com/codatio/oas).
 
 Read our documentation for [more information on client libraries](/get-started/libraries) and other supported languages.
-<ClientLibraries/>
+
+<ClientLibraries />

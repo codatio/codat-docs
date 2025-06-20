@@ -97,8 +97,8 @@ When writing Bills to Oracle NetSuite:
 
 You can create a Bill linked to a Purchase Order in any of the following ways:
 
-1. Add `purchaseOrderRefs ` reference into the main body of the bill and add `purchaseOrderLineRef ` to the line items. 
-2. Add just the `purchaseOrderLineRef` reference to the line items. 
+1. Add `purchaseOrderRefs ` reference into the main body of the bill and add `purchaseOrderLineRef ` to the line items.
+2. Add just the `purchaseOrderLineRef` reference to the line items.
 3. Add just the `purchaseOrderRefs` reference into the main body of the bill.
 
 Check the [Purchase Order prerequisites](/integrations/accounting/netsuite/oracle-netsuite-integration-reference#purchase-orders) before creating a Bill linked to a Purchase Order.
@@ -113,7 +113,7 @@ Codat treats NetSuite _Vendor Prepayments_ as either Bill payments or Direct cos
 
 If a transaction is voided in NetSuite, a _reversing journal_ is posted to offset the original transaction and is then linked to the original transaction. Codat treats these reversing journals as refunds.
 
-In NetSuite, portions of a Bill Credit Note can be allocated to a particular Bill. In this case, the Bill payment amount shown in Codat reflects the individual allocation. 
+In NetSuite, portions of a Bill Credit Note can be allocated to a particular Bill. In this case, the Bill payment amount shown in Codat reflects the individual allocation.
 
 When writing Bill payments to Oracle NetSuite:
 
@@ -160,9 +160,9 @@ When writing Purchase orders to Oracle NetSuite:
 
 - The `accountRef` or `itemRef` fields can only be written for a single line item. Writing the `itemRef` will override the `accountRef`. If the `accountRef` is written, you can view the reference in the Expense sub-list in the NetSuite user interface.
 
-It's possible to [create a Bill](/integrations/accounting/netsuite/oracle-netsuite-integration-reference#bills) with a link to a Purchase order. You may need to perform extra steps depending on the item type: 
+It's possible to [create a Bill](/integrations/accounting/netsuite/oracle-netsuite-integration-reference#bills) with a link to a Purchase order. You may need to perform extra steps depending on the item type:
 
-- For inventory-based items and expense lines, you need to convert the Purchase order into an Item Receipt in Netsuite, then proceed to create a Bill. 
+- For inventory-based items and expense lines, you need to convert the Purchase order into an Item Receipt in Netsuite, then proceed to create a Bill.
 - For service-based items, you can create a Bill immediately after creating the Purchase order.
 
 ## Sales orders
@@ -217,9 +217,9 @@ The following tables highlight selected fields that are not available in data re
 
 ### Unavailable Codat fields
 
-|Oracle NetSuite record and field|Codat data type|Status|
-|----|----|----|
-|`VendorCredit.customForm`,  `VendorCredit.postingPeriod`|[Bill credit notes](/accounting-api#/schemas/billcreditnotes)|Not represented in Codat's accounting data model.|
-|`Invoice.customForm`, `Invoice.postingPeriod`|[Invoices](/accounting-api#/schemas/invoices)|Not represented in Codat's accounting data model.|
-|`Vendor.subsidiary`|[Suppliers](/accounting-api#/schemas/Suppliers)|The Suppliers data type does not show whether or not a supplier company is a subsidiary.|
-|`Vendor.workCalendar`|[Suppliers](/accounting-api#/schemas/Suppliers)|Not represented in Codat's accounting data model.|
+| Oracle NetSuite record and field                        | Codat data type                                               | Status                                                                                   |
+| ------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `VendorCredit.customForm`, `VendorCredit.postingPeriod` | [Bill credit notes](/accounting-api#/schemas/billcreditnotes) | Not represented in Codat's accounting data model.                                        |
+| `Invoice.customForm`, `Invoice.postingPeriod`           | [Invoices](/accounting-api#/schemas/invoices)                 | Not represented in Codat's accounting data model.                                        |
+| `Vendor.subsidiary`                                     | [Suppliers](/accounting-api#/schemas/Suppliers)               | The Suppliers data type does not show whether or not a supplier company is a subsidiary. |
+| `Vendor.workCalendar`                                   | [Suppliers](/accounting-api#/schemas/Suppliers)               | Not represented in Codat's accounting data model.                                        |

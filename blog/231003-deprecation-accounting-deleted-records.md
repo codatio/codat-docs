@@ -1,7 +1,7 @@
 ---
 title: "2024-01-10: Changes to how deleted data in accounting software is handled"
 date: "2023-10-04"
-tags: ["Deprecation", "Accounting integrations", "Delete" ]
+tags: ["Deprecation", "Accounting integrations", "Delete"]
 authors: dcoplowe
 ---
 
@@ -14,6 +14,7 @@ When data is deleted by a user in the SMB's accounting software between two succ
 **Today, for some data types, Codat also updates the `status` property of the deleted record. **
 
 For example:
+
 - Codat retrieves a invoice from Xero with a status of `Submitted`.
 - The invoice is then manually deleted from within Xero.
 - Codat retrieves data from Xero a second time, and reconciles the fact that the invoice has been deleted by changing the status of the invoice within Codat to `void`.
@@ -32,23 +33,22 @@ Ensure that any workflows handling deleted records use the `metaData.isDeleted` 
 
 Any workflows relying on the data type's `status` property to identify and handle deleted records will cease to work as expected.
 
---- 
+---
 
 ### Impacted data types
 
-| Data type | Status (representing deleted records) |
-|-----------|---------------------------------------|
-| Bills     | Void |
-| Bill credit notes     | Void |
-| Invoices     | Void |
-| Credit notes     | Void |
-| Customers     | Archived |
-| Suppliers | Archived |
-| Items     | Archived |
-| Journals     | Archived |
-| Purchase orders     | Void |
-| Sales orders     | Void |
-| Tax rates     | Archived |
-| Tracking categories     | Archived |
-| Tracking category trees     | Archived |
-
+| Data type               | Status (representing deleted records) |
+| ----------------------- | ------------------------------------- |
+| Bills                   | Void                                  |
+| Bill credit notes       | Void                                  |
+| Invoices                | Void                                  |
+| Credit notes            | Void                                  |
+| Customers               | Archived                              |
+| Suppliers               | Archived                              |
+| Items                   | Archived                              |
+| Journals                | Archived                              |
+| Purchase orders         | Void                                  |
+| Sales orders            | Void                                  |
+| Tax rates               | Archived                              |
+| Tracking categories     | Archived                              |
+| Tracking category trees | Archived                              |

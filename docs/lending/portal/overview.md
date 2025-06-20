@@ -49,7 +49,7 @@ The Profit and Loss page is the landing page when accessing Lending. The page co
 
 Select the **Period start**, **Period length** and **Periods to compare** to achieve the views you want. For example:
 
-**If you want a monthly view of the last 12 months:**  
+**If you want a monthly view of the last 12 months:**
 
 Period start = latest month (prepopulated for you)  
 Period length = 1 (month)  
@@ -58,7 +58,7 @@ Periods to compare = 12
 **If you want to view the last 4 full quarters:**  
 Period start = choose the last month of the last quarter you want to choose, e.g. June 2022  
 Period length = 3  
-Periods to compare = 4  
+Periods to compare = 4
 
 ### Mapping to a common statement outline
 
@@ -126,12 +126,12 @@ Select the **Period start**, **Period length** and **Periods to compare** to ach
 **If you want a monthly view of the last 12 months**  
 Period start = latest month (prepopulated for you)  
 Period length = 1 (month)  
-Periods to compare = 12  
+Periods to compare = 12
 
 **If you want to view the last 4 full quarters**  
 Period start = choose the last month of the last quarter you want to choose, e.g. June 2022  
 Period length = 3  
-Periods to compare = 4  
+Periods to compare = 4
 
 ### Balance Sheet statement and graph
 
@@ -276,12 +276,12 @@ Select the **Period start**, **Period length** and **Periods to compare** to ach
 **If you want a monthly view of the last 12 months**  
 Period start = latest month (prepopulated for you)  
 Period length = 1 (month)  
-Periods to compare = 12  
+Periods to compare = 12
 
 **If you want to view the last 4 full quarters**  
 Period start = choose the last month of the last quarter you want to choose, e.g. June 2022  
 Period length = 3  
-Periods to compare = 4  
+Periods to compare = 4
 
 ### Marketing data and graph
 

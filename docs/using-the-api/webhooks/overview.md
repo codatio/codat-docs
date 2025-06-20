@@ -7,9 +7,9 @@ description: "Introduction to Codat's robust and streamlined webhook messaging s
 
 ![Webhooks at Codat](/img/updates/240306-webhooks-announcement.png)
 
-_Webhooks_ are an automated way for an app to notify you when a specific event occurs. At their core, they are a `POST` request with a payload that is sent to a unique URL of an endpoint that you determine. 
+_Webhooks_ are an automated way for an app to notify you when a specific event occurs. At their core, they are a `POST` request with a payload that is sent to a unique URL of an endpoint that you determine.
 
-We refer to the HTTP endpoints that you configure to subscribe to Codat's events as _webhook consumers_. A `2XX` (status code `200-299`) response from the consumer indicates that the webhook message was successfully received. 
+We refer to the HTTP endpoints that you configure to subscribe to Codat's events as _webhook consumers_. A `2XX` (status code `200-299`) response from the consumer indicates that the webhook message was successfully received.
 
 With our webhook service, you can leverage the following benefits:
 
@@ -18,19 +18,19 @@ With our webhook service, you can leverage the following benefits:
 - Make your solution robust with easy event replay to reprocess past events or retry failed events
 - Mock event functionality to simplify your testing and development
 
-:::note Using our legacy webhooks? 
+:::note Using our legacy webhooks?
 
 If you have been using our webhooks before March 6, 2024, we recommend migrating them to the new service.
 See how you can migrate in our [migration guide](/using-the-api/webhooks/migration-guide).
 
-You can view the old webhook service documentation here: 
+You can view the old webhook service documentation here:
 
 - [View rule types](/using-the-api/webhooks/legacy/core-rules-types)
 - [Create or update rules](/using-the-api/webhooks/legacy/core-rules-create)
 - [Listen to events](/using-the-api/webhooks/legacy/core-rules-webhooks)
 - [Webhook security](/using-the-api/webhooks/legacy/core-rules-webhooksecurity)
 - [Receive webhook events as emails](/using-the-api/webhooks/legacy/receive-webhooks-as-email)
-:::
+  :::
 
 ---
 

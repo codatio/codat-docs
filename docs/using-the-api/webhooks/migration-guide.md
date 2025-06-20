@@ -14,7 +14,7 @@ However, your setup may need to change if any of these scenarios apply to you:
 - Your application calls our webhook logs endpoints, such as `/rules/alerts`.
 - Your application's logic uses the `RuleId` parameter.
 
-Read our [advanced migration guide](/using-the-api/webhooks/migration-guide-advanced) to see what additional action you will need to take. 
+Read our [advanced migration guide](/using-the-api/webhooks/migration-guide-advanced) to see what additional action you will need to take.
 
 ## How do I migrate?
 

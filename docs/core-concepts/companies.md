@@ -13,7 +13,7 @@ When you create a company, you can specify a `name` and we will automatically ge
 
 ## If you're just getting started...
 
-You can use the Codat portal to create and manage companies, 
+You can use the Codat portal to create and manage companies,
 
 - [Add a new company](/configure/portal/companies#add-a-new-company)
 - [Manage companies via the Portal](/configure/portal/companies)
@@ -25,7 +25,7 @@ You probably want to use our API. Each of our API references (and associated SDK
 If you're just looking to leverage our company management functionality, you can also use our [Platform API](/platform-api#).
 
 - [Create a new company](/platform-api#/operations/create-company) - `POST /companies`
-- [List your existing companies](/platform-api#/operations/list-companies) - `GET /companies` 
+- [List your existing companies](/platform-api#/operations/list-companies) - `GET /companies`
 - [Update an existing company](/platform-api#/operations/update-company) - `PUT /companies/{companyId}`
 
 :::caution Forbidden characters in company names
@@ -41,6 +41,6 @@ Any forbidden characters will be removed from your company name. For example: `E
 
 - Next concept: [Connections](/core-concepts/connections)
 - `POST /companies` - [API ref](/platform-api#/operations/create-company)
-- `GET /companies`  - [API ref](/platform-api#/operations/list-companies)
+- `GET /companies` - [API ref](/platform-api#/operations/list-companies)
 - `PUT /companies/{companyId}` - [API ref](/platform-api#/operations/update-company)
 - [Platform API](/platform-api#)

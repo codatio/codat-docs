@@ -103,9 +103,6 @@ Data model: accounts
 
 POST /companies/{companyId}/connections/{connectionId}/push/accounts (link)
 
-
-
-
 0.3 Supplier
 
 In order to write a spend money transaction a supplier contact is required. You will need to select an existing supplier account if this is already in the customer's Xero account or you will need to create yourself as a supplier.
@@ -121,9 +118,6 @@ OR, Create new supplier
 POST ​/companies​/{companyId}​/connections​/{connectionId}​/push​/suppliers
 
 Data model: suppliers
-
-
-
 
 1. Loan Drawdown
 
@@ -144,8 +138,7 @@ Codat
 
 Data model: transfers
 
-POST /companies/{companyId}/connections/{connectionId}/push/transfers(link)
-2. Repayment
+POST /companies/{companyId}/connections/{connectionId}/push/transfers(link) 2. Repayment
 
 For each repayment post a Bank Transfer between the nominated ‘real’ bank account in Xero and the Lender bank account.
 
@@ -166,8 +159,7 @@ Codat
 
 Data model: transfers
 
-POST /companies/{companyId}/connections/{connectionId}/push/transfers(link)
-3. Posting interest and/or Fees
+POST /companies/{companyId}/connections/{connectionId}/push/transfers(link) 3. Posting interest and/or Fees
 
 Record Interest and/or fees in Xero by posting a ‘spend money’ Bank Transaction to the Lender bank account with the line item recorded against an expense account. The customer must be able to choose which Expense Account, or get the option to setup a new Expense Account.
 
@@ -186,8 +178,7 @@ Codat
 
 Data model: direct costs
 
-POST /companies/{companyId}/connections/{connectionId}/push/directCosts(link)
-4. Reconciliation
+POST /companies/{companyId}/connections/{connectionId}/push/directCosts(link) 4. Reconciliation
 
 There are three things that need to be reconciled:
 
@@ -204,10 +195,10 @@ To: Lender account
 
 Amount: amount of payment
 
-|         |      Drawdown       |      Repayment       |       Fee       |
-|:-------:|:-------------------:|:--------------------:|:---------------:|
-|   To    | Lender account      | Lender account       | Lender account  |
-| Amount  | Amount of drawdown  | Amount of repayment  | Amount of fee   |
+|        |      Drawdown      |      Repayment      |      Fee       |
+| :----: | :----------------: | :-----------------: | :------------: |
+|   To   |   Lender account   |   Lender account    | Lender account |
+| Amount | Amount of drawdown | Amount of repayment | Amount of fee  |
 
 ![](/img/integrations/accounting/xero/xero-general-lending-5.png)
 

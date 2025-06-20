@@ -15,37 +15,38 @@ Data types are now accessed via a dropdown menu on the Company data pages instea
 Note that the Accounting API data types are organized into a nested dropdown list as follows:
 
 - Financial statements
-  + Balance sheet
-  + Operating cash flow
-  + Profit & loss
+  - Balance sheet
+  - Operating cash flow
+  - Profit & loss
 - Earning
-  + Customers
-  + Invoices
-  + Payments
-  + Credit notes
-  + Aged debtors
-  + Direct incomes
+  - Customers
+  - Invoices
+  - Payments
+  - Credit notes
+  - Aged debtors
+  - Direct incomes
 - Spending
-  + Suppliers
-  + Purchase orders
-  + Bills
-  + Bill payments
-  + Bill credit notes
-  + Aged creditors
-  + Direct costs
+  - Suppliers
+  - Purchase orders
+  - Bills
+  - Bill payments
+  - Bill credit notes
+  - Aged creditors
+  - Direct costs
 - Accounting data
-  + Accounts
-  + Journal entries
-  + Tax rates
-  + Tracking categories
-  + Account transactions
-  + Transfers
+  - Accounts
+  - Journal entries
+  - Tax rates
+  - Tracking categories
+  - Account transactions
+  - Transfers
 - Banking data
-  + Bank accounts
-  + Bank transactions
-  + Reference data
-  + Company
-  + Items
+  - Bank accounts
+  - Bank transactions
+  - Reference data
+  - Company
+  - Items
 
 ### Action required
+
 Use the new data type dropdown menus to view company data for our Accounting API, Banking API, and Commerce API.

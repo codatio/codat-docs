@@ -46,15 +46,15 @@ The QBD connector works with QBD running in single-user or multi-user mode. In Q
 
 ## Limitations
 
-The following limitations apply when using the connector with QBD running in either single-user or multi-user mode: 
+The following limitations apply when using the connector with QBD running in either single-user or multi-user mode:
 
 - If QuickBooks Desktop is open on the SMB user's machine, the open QuickBooks company file must be the same as the company file that's configured for the connector.
 
 - Only one instance of QBD can be open on a user's machine at a time.
 
-- It's not possible to interact with QBD while the software is syncing data through the connector. This is due to QBD's own limitations and applies all connectors and syncs. 
+- It's not possible to interact with QBD while the software is syncing data through the connector. This is due to QBD's own limitations and applies all connectors and syncs.
 
-    Use our [Connections SDK](/auth-flow/optimize/connection-management) to enable your user to pause the sync when needed (see [Pause the connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#pause-the-connector)).
+  Use our [Connections SDK](/auth-flow/optimize/connection-management) to enable your user to pause the sync when needed (see [Pause the connector](/integrations/accounting/quickbooksdesktop/installing-the-quickbooks-connector#pause-the-connector)).
 
 ## Supported operating systems
 
@@ -66,15 +66,15 @@ The connector will not run on Mac OS.
 
 ## Supported environments
 
-Our QuickBooks Desktop Connector is verified to work in single-tenant environments only, where a single Windows user is logged on to the computer used to access QuickBooks Desktop. 
+Our QuickBooks Desktop Connector is verified to work in single-tenant environments only, where a single Windows user is logged on to the computer used to access QuickBooks Desktop.
 
-Due to limitations of syncing with QBD, complications can occur when attempting to sync in multi-tenant environments. For example, if your company files are hosted on a different server to the one where you run and use QBD, you may see performance impact. To avoid this, you can install the web connector on this server, but you need to install QBD there as well. 
+Due to limitations of syncing with QBD, complications can occur when attempting to sync in multi-tenant environments. For example, if your company files are hosted on a different server to the one where you run and use QBD, you may see performance impact. To avoid this, you can install the web connector on this server, but you need to install QBD there as well.
 
 You may also encounter issues in a hosted environment where multiple users log in and use QBD simultaneously, although this depends on the exact setup. This does not apply to Rightworks hosted instances.
 
 :::note Rightworks hosted instances
 
-Rightworks hosted instances already have the web connector installed and support our integration as a result.  Outside of the Rightworks solution, we cannot guarantee the behavior of the connector in multi-tenant or hosted environments.
+Rightworks hosted instances already have the web connector installed and support our integration as a result. Outside of the Rightworks solution, we cannot guarantee the behavior of the connector in multi-tenant or hosted environments.
 
 :::
 
@@ -88,10 +88,8 @@ If you have a large number of companies, or particularly large company files, yo
 
 The QuickBooks Desktop connector communicates over port 443 to URLs hosted on `https://quickbooksdesktop.codat.io` in production.
 
-If you experience problems with the connector transmitting data, please add the following URLs to your firewall allow list: 
+If you experience problems with the connector transmitting data, please add the following URLs to your firewall allow list:
 
 `https://quickbooksdesktop.codat.io/`
 
 `https://connectors.codat.io`
-
-

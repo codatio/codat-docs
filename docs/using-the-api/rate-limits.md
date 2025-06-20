@@ -17,7 +17,7 @@ Codat will return a `429` status code for all requests to the API that are recei
 
 The response will also include a `Retry-After` header that will advise your calling system when the current rate limiting will deactivate.
 
-### How rate limits are calculated 
+### How rate limits are calculated
 
 Codat calculates its rate limits based on the number of active connected companies (ACCs).
 The rate limits are as follows:
@@ -37,7 +37,7 @@ ACC, or Active Connected Company, is a company that has an active, linked, and s
 
 If you are regularly exceeding our limits, it usually means there is an overlooked issue in your application or product.
 We will get in touch with you to discuss possible improvements to reduce the number of calls.
-This will enhance the Codat experience for you and your customers. 
+This will enhance the Codat experience for you and your customers.
 
 :::tip Client rate limit reset
 
@@ -47,16 +47,17 @@ Our rate limits are calculated daily and reset at 00:00 UTC each day. You can us
 
 ### Rate limit headers
 
-Every response from our API includes a set of headers that show how your use compares to your rate limits: 
+Every response from our API includes a set of headers that show how your use compares to your rate limits:
+
 - `X-Rate-Limit-Limit` tells you the maximum number of requests for the current quota period.
 - `X-Rate-Limit-Remaining` tells you the number of remaining requests you have in the quota period.
 - `X-Rate-Limit-Reset` tells you the date when the quota will be reset.
 
-Once the limit is exceeded, all further requests will also contain the standard `Retry-After` header that informs your system when the request can be performed next. 
+Once the limit is exceeded, all further requests will also contain the standard `Retry-After` header that informs your system when the request can be performed next.
 
 ## Hard DoS-based limits
 
-Hard DoS-based limits are set to protect against bad actors and do not prevent sensible usage. Codat sets these limits at: 
+Hard DoS-based limits are set to protect against bad actors and do not prevent sensible usage. Codat sets these limits at:
 
 - 1,000 requests per minute from any IP Address.
 

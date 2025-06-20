@@ -6,7 +6,7 @@ tags:
 ---
 
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
 A data connection represents a [company's](/core-concepts/companies) connection to a data source and allows you to synchronize data (read and/or write) with that source.
 
@@ -24,21 +24,21 @@ Before you can use a data connection to read or write data, the company must gra
 
 Connections can have one of the statuses described in the following table.
 
-| Status         | Definition                                                                                                                                                                                                                                                                                                                                                                                                   |
-| :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Linked`        | The connection is linked to a data source; you can use it to read and write a company's consented data to and from the underlying provider's platform.                                                                                                                                                                                                                                                        |
-| `PendingAuth`    | The company hasn't authorized access to their financial platform (the data source). The SMB customer selected the platform in Link but did not complete the authorization flow.                                                                                                                                                                                                                              |
-| `Deauthorized`   | The connection was linked but is no longer able to access data from the underlying provider's platform.<br/>You can access any data that was already read or written using this data connection. However, you can't perform any new read or write operations until the connection is re-linked.<br/>A data connection usually becomes Deauthorized if the company revoked your access or an expiry time was reached. |
-| `Unlinked`       | The data connection was previously linked but you asked for your access to be revoked (see [Disconnect a data connection to revoke your access to a data source](/core-concepts/connections#disconnect-a-data-connection-to-revoke-your-access-to-a-data-source)).<br/>Similar to Deauthorized, you can still access any data that was already read or written using the data connection, but can't perform any new read or write operations unless the connection is re-linked.                                       |
-| No connections | The company has been created but does not have any connections to financial platforms established in any of the above statuses. |
+| Status         | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Linked`       | The connection is linked to a data source; you can use it to read and write a company's consented data to and from the underlying provider's platform.                                                                                                                                                                                                                                                                                                                           |
+| `PendingAuth`  | The company hasn't authorized access to their financial platform (the data source). The SMB customer selected the platform in Link but did not complete the authorization flow.                                                                                                                                                                                                                                                                                                  |
+| `Deauthorized` | The connection was linked but is no longer able to access data from the underlying provider's platform.<br/>You can access any data that was already read or written using this data connection. However, you can't perform any new read or write operations until the connection is re-linked.<br/>A data connection usually becomes Deauthorized if the company revoked your access or an expiry time was reached.                                                             |
+| `Unlinked`     | The data connection was previously linked but you asked for your access to be revoked (see [Disconnect a data connection to revoke your access to a data source](/core-concepts/connections#disconnect-a-data-connection-to-revoke-your-access-to-a-data-source)).<br/>Similar to Deauthorized, you can still access any data that was already read or written using the data connection, but can't perform any new read or write operations unless the connection is re-linked. |
+| No connections | The company has been created but does not have any connections to financial platforms established in any of the above statuses.                                                                                                                                                                                                                                                                                                                                                  |
 
 ## Linked data connection example
 
-Verify that a connection returns a Linked `status` using one of our [Connections](/platform-api#/operations/list-connections) endpoints. 
+Verify that a connection returns a Linked `status` using one of our [Connections](/platform-api#/operations/list-connections) endpoints.
 
 In the response, note the following fields:
 
-- `sourceId` identifies the source of information, like a bank or accounting software; 
+- `sourceId` identifies the source of information, like a bank or accounting software;
 - `integrationId` identifies the Codat integration that supports the data source.
 
 ```json title="GET /companies/{companyId}/connections"
@@ -57,7 +57,7 @@ In the response, note the following fields:
 
 ## Disconnect a data connection to revoke your access to a data source
 
-You can disconnect a data connection using the [Codat Portal](https://app.codat.io/). Navigate to **Companies**, choose the company you want to manage connections for, then select **Manage connections** and use the three-dot menu to unlink the connection. 
+You can disconnect a data connection using the [Codat Portal](https://app.codat.io/). Navigate to **Companies**, choose the company you want to manage connections for, then select **Manage connections** and use the three-dot menu to unlink the connection.
 
 This revokes your access to synchronize data with the linked company and sets the data connection's status to `Unlinked`.
 
@@ -115,6 +115,7 @@ req = operations.UnlinkConnectionRequest(
 
 res = codat_platform.connections.unlink(req)
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -142,6 +143,7 @@ codatPlatform.connections.unlink({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -181,6 +183,7 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -204,6 +207,7 @@ var res = await codatPlatform.Connections.UnlinkAsync(new UnlinkConnectionReques
     ConnectionId = "{connectionId}",
 });
 ```
+
 </TabItem>
 
 </Tabs>
@@ -233,119 +237,124 @@ Alternatively, you can send a request to the <a href="/platform-api#/operations/
 <Tabs>
   <TabItem value="curl" label="cURL">
 
-  ```bash
-  curl --request DELETE \
-        --url "https://api.codat.io/companies/{companyId}/connections/{connectionId}" \
-        --header "Authorization: {codatAuthHeader}" \
-  ```
+```bash
+curl --request DELETE \
+      --url "https://api.codat.io/companies/{companyId}/connections/{connectionId}" \
+      --header "Authorization: {codatAuthHeader}" \
+```
+
   </TabItem>
 
   <TabItem value="python" label="Python">
 
-  ```python
+```python
 
-  import codatplatform
-  from codatplatform.models import operations, shared
+import codatplatform
+from codatplatform.models import operations, shared
 
-  codat_platform = codatplatform.CodatPlatform(
-      security=shared.Security(
-          auth_header="{codatAuthHeader}",
-      ),
+codat_platform = codatplatform.CodatPlatform(
+    security=shared.Security(
+        auth_header="{codatAuthHeader}",
+    ),
+)
+
+codat_platform.connections.delete(
+  operations.DeleteConnectionRequest(
+    company_id='{companyId}',
+    connection_id='{connectionId}',
   )
+)
 
-  codat_platform.connections.delete(
-    operations.DeleteConnectionRequest(
-      company_id='{companyId}',
-      connection_id='{connectionId}',
-    )
-  )
+if res.status_code == 200:
+  print('Connection deleted successfully')
+```
 
-  if res.status_code == 200:
-    print('Connection deleted successfully')
-  ```
   </TabItem>
 
   <TabItem value="nodejs" label="TypeScript">
 
-  ```javascript
-  import { CodatPlatform } from "@codat/platform";
-  import { DeleteConnectionResponse } from "@codat/platform/dist/sdk/models/operations";
+```javascript
+import { CodatPlatform } from "@codat/platform";
+import { DeleteConnectionResponse } from "@codat/platform/dist/sdk/models/operations";
 
-  const codatPlatform = new CodatPlatform({
-    security: {
-      authHeader: "{codatAuthHeader}",
-    },
-  });
+const codatPlatform = new CodatPlatform({
+  security: {
+    authHeader: "{codatAuthHeader}",
+  },
+});
 
-  codatPlatform.connections.delete({
-    companyId: "{companyId}",
-    connectionId: "{connectionId}",
-  }).then((res: DeleteConnectionResponse) => {
-    if (res.statusCode == 200) {
-      console.log('Connection deleted successfully')
-    }
-  });
-  ```
+codatPlatform.connections.delete({
+  companyId: "{companyId}",
+  connectionId: "{connectionId}",
+}).then((res: DeleteConnectionResponse) => {
+  if (res.statusCode == 200) {
+    console.log('Connection deleted successfully')
+  }
+});
+```
+
   </TabItem>
 
   <TabItem value="go" label="Go">
 
-  ```go
-  package main
+```go
+package main
 
-  import(
-    "context"
-    "log"
-    "github.com/codatio/client-sdk-go/platform"
-    "github.com/codatio/client-sdk-go/platform/pkg/models/shared"
-    "github.com/codatio/client-sdk-go/platform/pkg/models/operations"
-  )
+import(
+  "context"
+  "log"
+  "github.com/codatio/client-sdk-go/platform"
+  "github.com/codatio/client-sdk-go/platform/pkg/models/shared"
+  "github.com/codatio/client-sdk-go/platform/pkg/models/operations"
+)
 
-  func main() {
-      codatPlatform := codatplatform.New(
-          codatplatform.WithSecurity(shared.Security{
-              AuthHeader: "{codatAuthHeader}",
-          }),
-      )
+func main() {
+    codatPlatform := codatplatform.New(
+        codatplatform.WithSecurity(shared.Security{
+            AuthHeader: "{codatAuthHeader}",
+        }),
+    )
 
-      ctx := context.Background()
-      res, err := codatPlatform.Connections.Delete(ctx, operations.DeleteConnectionRequest{
-          CompanyID: "{companyId}",
-          ConnectionID: "{connectionId}",
-      })
-      if err != nil {
-          log.Fatal(err)
-      }
+    ctx := context.Background()
+    res, err := codatPlatform.Connections.Delete(ctx, operations.DeleteConnectionRequest{
+        CompanyID: "{companyId}",
+        ConnectionID: "{connectionId}",
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
 
-      if res.StatusCode == http.StatusOK {
-          log.Print("Connection deleted successfully")
-      }
-  }
-  ```
+    if res.StatusCode == http.StatusOK {
+        log.Print("Connection deleted successfully")
+    }
+}
+```
+
   </TabItem>
 
   <TabItem value="csharp" label="C#">
 
-  ```c#
-  using CodatPlatform;
-  using CodatPlatform.Models.Shared;
-  using CodatPlatform.Models.Operations;
+```c#
+using CodatPlatform;
+using CodatPlatform.Models.Shared;
+using CodatPlatform.Models.Operations;
 
-  var codatPlatform = new CodatPlatformSDK(
-      security: new Security() {
-          AuthHeader = "{codatAuthHeader}",
-      }
-  );
+var codatPlatform = new CodatPlatformSDK(
+    security: new Security() {
+        AuthHeader = "{codatAuthHeader}",
+    }
+);
 
-  var res = await codatPlatform.Connections.DeleteAsync(new DeleteConnectionRequest() {
-      CompanyId = "{companyId}",
-      ConnectionId = "{connectionId}",
-  });
+var res = await codatPlatform.Connections.DeleteAsync(new DeleteConnectionRequest() {
+    CompanyId = "{companyId}",
+    ConnectionId = "{connectionId}",
+});
 
-  if(res.StatusCode == 200){
-    Console.WriteLine("Connection deleted successfully");
-  }
-  ```
+if(res.StatusCode == 200){
+  Console.WriteLine("Connection deleted successfully");
+}
+```
+
   </TabItem>
 
 </Tabs>

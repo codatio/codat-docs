@@ -13,4 +13,3 @@ As well as a number of UI improvements, you can now create up to 10 API keys and
 ### API keys have moved
 
 You can now find your organization's API keys and authorization headers under [Developers > API keys](https://app.codat.io/developers/api-keys).
-

@@ -16,9 +16,12 @@ banner_text: "Embedded accounting integrations for Point of Sale, Payment, and e
 // video_text: What is Sync for Commerce?
 ---
 
-import {IntegrationsList} from '@components/Integrations'
-import {integrationsFilterCommerceAcc, integrationsFilterCommerceComm} from '@components/Integrations/integrations'
-import Clients from '@components/Clients'
+import { IntegrationsList } from "@components/Integrations";
+import {
+  integrationsFilterCommerceAcc,
+  integrationsFilterCommerceComm,
+} from "@components/Integrations/integrations";
+import Clients from "@components/Clients";
 
 Accounting for sales is a major pain point for merchants. It usually involves them manually replicating data from Point of Sale (POS), Payment, and eCommerce software in their accounting software. This is often done via multiple manual bulk data downloads and data manipulation in spreadsheets and in the software.
 
@@ -31,24 +34,23 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 <Clients
   clients={[
     {
-        name: "Zettle",
-        path: "/img/clients/zettle.png",
+      name: "Zettle",
+      path: "/img/clients/zettle.png",
     },
     {
-        name: "Phorest",
-        path: "/img/clients/phorest.png",
+      name: "Phorest",
+      path: "/img/clients/phorest.png",
     },
     {
-        name: "Lightspeed",
-        path: "/img/clients/lightspeed.png",
+      name: "Lightspeed",
+      path: "/img/clients/lightspeed.png",
     },
     {
-        name: "Clover",
-        path: "/img/clients/clover.png",
+      name: "Clover",
+      path: "/img/clients/clover.png",
     },
   ]}
 />
-
 
 ## Why use Sync for Commerce?
 
@@ -65,47 +67,49 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 </li>
 
 <li className="card">
-    <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
-            className="mini-icon"/>
-        <h3>Fast, simple integration</h3>
-    </div>
-    <p>
-        We integrate with the source sales data systems (POS, Payments and eCommerce) and with accounting software.
-    </p>
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Fast, simple integration</h3>
+  </div>
+  <p>
+    We integrate with the source sales data systems (POS, Payments and
+    eCommerce) and with accounting software.
+  </p>
 </li>
 
 <li className="card">
-    <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
-            className="mini-icon"/>
-        <h3>Configurability</h3>
-    </div>
-    <p>
-        All businesses work differently. We enable your merchants and their accountants to easily configure how their sales data should reflect in their accounting software to suit their needs.
-    </p>
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Configurability</h3>
+  </div>
+  <p>
+    All businesses work differently. We enable your merchants and their
+    accountants to easily configure how their sales data should reflect in their
+    accounting software to suit their needs.
+  </p>
 </li>
 
 <li className="card">
-    <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
-            className="mini-icon"/>
-        <h3>Ongoing sales data synchronization</h3>
-    </div>
-    <p>
-        Automatic daily synchronization of data means your merchants' accounting software is always up to date with latest sales data.
-    </p>
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Ongoing sales data synchronization</h3>
+  </div>
+  <p>
+    Automatic daily synchronization of data means your merchants' accounting
+    software is always up to date with latest sales data.
+  </p>
 </li>
 
 <li className="card">
-    <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
-            className="mini-icon"/>
-        <h3>Real-world resilience</h3>
-    </div>
-    <p>
-       We’ve handled sales data for tens of thousands of merchants over many years. As a result, we evolved Sync for Commerce to handle thousands of different scenarios that occur when operating a small business.
-    </p>
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Real-world resilience</h3>
+  </div>
+  <p>
+    We’ve handled sales data for tens of thousands of merchants over many years.
+    As a result, we evolved Sync for Commerce to handle thousands of different
+    scenarios that occur when operating a small business.
+  </p>
 </li>
 
 <li className="card">
@@ -124,11 +128,11 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 
 ### Accounting systems
 
-<IntegrationsList filter={integrationsFilterCommerceAcc}/>
+<IntegrationsList filter={integrationsFilterCommerceAcc} />
 
 ### Commerce software
 
-<IntegrationsList filter={integrationsFilterCommerceComm}/>
+<IntegrationsList filter={integrationsFilterCommerceComm} />
 
 ## How does Sync for Commerce work?
 

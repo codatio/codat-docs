@@ -144,7 +144,6 @@ loans_payable = sum(transaction.amount for transaction in transactions \
 
 <TabItem value="csharp" label="C#">
 
-
 ```csharp
 public record Transaction(string Category, decimal Amount);
 
@@ -162,7 +161,7 @@ var transactions = statementResponse.EnhancedCashFlowTransactions.ReportItems.Tr
     Amount = x.Amount
   });
 
-var loansPayable = transactions.Sum(x => 
+var loansPayable = transactions.Sum(x =>
   x.category.startsWith('Liability.Current.Debt.LoansPayable'));
 ```
 
@@ -205,10 +204,9 @@ if err == nil && statementResponse.StatusCode == 200 {
 
 </Tabs>
 
-
 ## Get started
 
-Once you have the Lending solution enabled, configure your instance to work with our bank statements feature. 
+Once you have the Lending solution enabled, configure your instance to work with our bank statements feature.
 
 #### Configure data sources
 
@@ -236,15 +234,16 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) with the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
 
-- [Dataset status has changed to an error state](/using-the-api/webhooks/event-types)  
+- [Dataset status has changed to an error state](/using-the-api/webhooks/event-types)
 
-  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
- 
-- [Dataset data changed](/using-the-api/webhooks/event-types)  
+  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again.
+
+- [Dataset data changed](/using-the-api/webhooks/event-types)
 
   This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
 ---
 
 ## Read next
+
 - [Sales](/lending/features/sales-overview)

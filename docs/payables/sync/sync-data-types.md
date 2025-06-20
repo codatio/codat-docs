@@ -6,8 +6,8 @@ displayed_sidebar: payables
 image: "/img/banners/social/payables.png"
 ---
 
-import DataTypes from '@components/DataTypes'
+import DataTypes from "@components/DataTypes";
 
-<DataTypes productName="billpaysync"/>
+<DataTypes productName="billpaysync" />
 
-<br/>
+<br />

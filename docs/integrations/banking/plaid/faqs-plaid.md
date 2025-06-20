@@ -17,11 +17,11 @@ In practice this means that the selected Plaid institution does not support [Ins
 
 ### Banking transactions fetch error on first sync
 
-You may very occasionally notice fetch errors on your first attempt to sync banking transactions for companies linked to the Plaid integration with subsequent attempts completing without issue. 
+You may very occasionally notice fetch errors on your first attempt to sync banking transactions for companies linked to the Plaid integration with subsequent attempts completing without issue.
 
 When fetching transaction data from Plaid, we make an outbound call to their API to initiate a background job that collates the requested data. Once the job is complete, Plaid sends the results to Codat via a webhook. Sometimes the data preparation can take more than 15 minutes, which will trigger a timeout on our side. As a result, we will return an error for the operation. This happens when a particularly large volume of data is involved, for example, during the first sync.
 
-The subsequent requests to fetch this data will succeed because the initial job would have already progressed from the earlier request. This often happens shortly afterwards. Simply initiate another sync for the data type to resolve the issue. 
+The subsequent requests to fetch this data will succeed because the initial job would have already progressed from the earlier request. This often happens shortly afterwards. Simply initiate another sync for the data type to resolve the issue.
 
 ### "Action required with your account" error when connecting a bank account
 

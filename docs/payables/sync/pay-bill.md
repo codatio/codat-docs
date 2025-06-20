@@ -25,15 +25,15 @@ Your SMB customers may have multiple bank accounts they can use to pay for a bil
 
 ### Retrieve accounts
 
-If your SMB customer is making payments from an existing bank account, retrieve a list of their accounts and allow them to map payment methods against each one. Use the [Get payment mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-payments) endpoint to do so. 
+If your SMB customer is making payments from an existing bank account, retrieve a list of their accounts and allow them to map payment methods against each one. Use the [Get payment mapping options](/sync-for-payables-v2-api#/operations/get-mapping-options-payments) endpoint to do so.
 
 By default, this endpoint returns a list of active bank accounts. You can use [querying](/using-the-api/querying) to change that.
 
 ### Create account
 
-If the SMB customer plans to make payments from a new payment method or account that you provide, create the new account in their accounting software using our simplified [Create bank account](/sync-for-payables-v2-api#/operations/create-bank-account) endpoint. The account will contain their transactions, making the SMB's payment reconciliation workflows easier. 
+If the SMB customer plans to make payments from a new payment method or account that you provide, create the new account in their accounting software using our simplified [Create bank account](/sync-for-payables-v2-api#/operations/create-bank-account) endpoint. The account will contain their transactions, making the SMB's payment reconciliation workflows easier.
 
-## Record a payment 
+## Record a payment
 
 :::tip Partial payments
 
@@ -45,7 +45,7 @@ When an SMB pays their bill in your application, use the [Create bill payment](/
 
 :::tip Recap
 
-This concludes the bill pay process supported by our synchronous Bill Pay solution. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system. 
+This concludes the bill pay process supported by our synchronous Bill Pay solution. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system.
 
 As a result, the customer will see these bills marked as paid in their software and their accounts payable liability and supplier balances reduced.
 

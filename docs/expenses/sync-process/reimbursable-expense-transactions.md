@@ -5,7 +5,7 @@ description: Record and update reimbursable expense transactions that represent 
 ---
 
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
 ## Overview
 
@@ -17,13 +17,13 @@ Check our [supported expense types](/expenses/overview#supported-integrations) f
 
 :::
 
-With the Expenses solution, you need to create the reimbursable expense transactions first. 
+With the Expenses solution, you need to create the reimbursable expense transactions first.
 
 This will initiate the [sync](/expenses/sync-process/syncing-expenses) to reflect these in your customer's accounting software. Finally, once these transactions have been synced, you can [upload attachments](/expenses/sync-process/uploading-receipts) to associate receipts with the transaction.
 
 This process is summarized on the diagram below.
 
-``` mermaid
+```mermaid
 sequenceDiagram
   User->>+You: Approve reimbursable expense with receipt
   You-)+Codat: Post reimbursable expense transaction
@@ -33,7 +33,7 @@ sequenceDiagram
   Codat-)Accounting: Sync reimbursable expense transaction from queue
   Codat->>-You: Sync Complete webhook event
   You->>Codat: Check transactions
-  Codat-->>You: 
+  Codat-->>You:
   par Each successful reconciliation
     You->>+Codat: Post attachment
     Codat->>Accounting: Upload attachment
@@ -44,9 +44,9 @@ sequenceDiagram
 
 ## Create reimbursable expenses
 
-To create a new reimbursable expense transaction in Codat, use the [Create reimbursable expense transaction](/sync-for-expenses-api#/operations/create-reimbursable-expense-transaction) endpoint. 
+To create a new reimbursable expense transaction in Codat, use the [Create reimbursable expense transaction](/sync-for-expenses-api#/operations/create-reimbursable-expense-transaction) endpoint.
 
-In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software. 
+In the request URL, make sure that the transaction's `id` is unique as it serves as an idempotence key. Codat validates the `id` to ensure that it's unique to a company, preventing the creation of duplicate transactions in your SMB's accounting software.
 
 ```json title="Reimbursable expense request body"
 [
@@ -99,7 +99,7 @@ To mark an expense as billable, set the `invoiceTo` property to `customer`. The 
 
 :::info Compatible integrations
 
-This functionality is currently only available for QuickBooks Online and QuickBooks Desktop. 
+This functionality is currently only available for QuickBooks Online and QuickBooks Desktop.
 
 :::
 
@@ -113,19 +113,19 @@ For reimbursable expenses, the currency of the expense is the currency of the su
 
 If you need to remove an associated tax rate from a reimbursable expense, use one of the following default values that have no impact on the expense:
 
-| Platform          | Default tax rate                 |
-|-------------------|----------------------------------|
-| FreeAgent         | `taxRateRef` is not supported    |
-| Oracle NetSuite   | US subsidiaries: `-7`<br/> Canadian subsidiaries: `114`<br/> All other subsidiaries: check the `UNDEF-{country code}` tax rate|
-| QuickBooks Online | `NON`                            |
-| QuickBooks Desktop| null                             |
-| Zoho Books        | null                             |
+| Platform           | Default tax rate                                                                                                               |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| FreeAgent          | `taxRateRef` is not supported                                                                                                  |
+| Oracle NetSuite    | US subsidiaries: `-7`<br/> Canadian subsidiaries: `114`<br/> All other subsidiaries: check the `UNDEF-{country code}` tax rate |
+| QuickBooks Online  | `NON`                                                                                                                          |
+| QuickBooks Desktop | null                                                                                                                           |
+| Zoho Books         | null                                                                                                                           |
 
 ## Update reimbursable expenses
 
-In some cases, your customer may want to update a reimbursable expense transaction that was previously synced to their accounting software. Use our [Update reimbursable expense transactions](/sync-for-expenses-api#/operations/update-reimbursable-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software: 
+In some cases, your customer may want to update a reimbursable expense transaction that was previously synced to their accounting software. Use our [Update reimbursable expense transactions](/sync-for-expenses-api#/operations/update-reimbursable-expense-transaction) endpoint to edit the following parameters and reflect the change in the SMB's accounting software:
 
-- Net expense amount 
+- Net expense amount
 - Tax amount of the spend
 - Tax rate reference associated with the spend
 - Expense bank account reference
@@ -137,7 +137,7 @@ PUT  https://api.codat.io/companies/{companyId}/sync/expenses/reimburseable-expe
 ```
 
 ---
+
 ## Read next
 
 - [Sync the expenses](/expenses/sync-process/syncing-expenses) to reflect the spend in the accounting software and monitor the progress of the synchronization.
-

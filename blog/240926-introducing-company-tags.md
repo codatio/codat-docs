@@ -6,7 +6,7 @@ hide_table_of_contents: true
 authors: dcoplowe
 ---
 
-import Diff from "@components/Diff"
+import Diff from "@components/Diff";
 
 We've enhanced our `company` data model to offer more flexibility.
 You can now add metadata to a company using the `tags` object.

@@ -38,7 +38,7 @@ Create and configure an application in the FreshBooks Developer Portal.
 
    - **Application Type**: Select **Private App**.
 
-   - **Scopes**: Add the required _read_ and _write_ scopes listed in [FreshBooks application scopes](/integrations/accounting/freshbooks/accounting-freshbooks#freshbooks-application-scopes). 
+   - **Scopes**: Add the required _read_ and _write_ scopes listed in [FreshBooks application scopes](/integrations/accounting/freshbooks/accounting-freshbooks#freshbooks-application-scopes).
 
    - **Redirect URIs**: Enter `https://freshbooks.codat.io/oauth/callback` then click the check mark icon to save the URI.
 
@@ -54,11 +54,11 @@ The following table lists the recommended scopes to set for your FreshBooks appl
 
 :::caution _Read_ and _write_ scopes
 The table outlines the minimum scopes needed to allow _read_ access to the FreshBooks objects that are supported by Codat. If you want to create, update or delete data in FreshBooks, you need to select the corresponding _write_ scopes for the relevant objects.
-::: 
+:::
 
-||||
-|----|----|----|
-|user:profile:read, user:bills:read, user:bill_payments:read, user:business:read, user:bill_vendors:read, user:clients:read  user:credit_notes:read|user:estimates:read, user:expenses:read, user:journal_entries:read, user:online_payments:read, user:payments:read, user:projects:read, user:retainers:read|user:taxes:read, user:billable_items:read, user:invoices:read, user:other_income:read, user:reports:read, user:teams:read|
+|                                                                                                                                                   |                                                                                                                                                            |                                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| user:profile:read, user:bills:read, user:bill_payments:read, user:business:read, user:bill_vendors:read, user:clients:read user:credit_notes:read | user:estimates:read, user:expenses:read, user:journal_entries:read, user:online_payments:read, user:payments:read, user:projects:read, user:retainers:read | user:taxes:read, user:billable_items:read, user:invoices:read, user:other_income:read, user:reports:read, user:teams:read |
 
 ### Add your app's secure keys to the Codat Portal
 

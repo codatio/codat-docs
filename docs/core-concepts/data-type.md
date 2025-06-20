@@ -14,54 +14,33 @@ The data types you use will depend on the Codat solution you use. For reference,
 <ul className="card-container">
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/Calculator.png"
-        className="mini-icon"
-      />
+      <img src="/img/wp-icons/Calculator.png" className="mini-icon" />
       <h3>Accounting software</h3>
     </div>
-    <p>
-      For example, invoices and bills from an accounting software.
-    </p>
+    <p>For example, invoices and bills from an accounting software.</p>
   </li>
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/Bank.png"
-        className="mini-icon"
-      />
+      <img src="/img/wp-icons/Bank.png" className="mini-icon" />
       <h3>Bank accounts</h3>
     </div>
-    <p>
-      For example, bank transactions from a bank account.
-    </p> 
+    <p>For example, bank transactions from a bank account.</p>
   </li>
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/Storefront.png"
-        className="mini-icon"
-      />
+      <img src="/img/wp-icons/Storefront.png" className="mini-icon" />
       <h3>Commerce software</h3>
     </div>
-    <p>
-      For example, customers and payments from a POS system.
-    </p>
+    <p>For example, customers and payments from a POS system.</p>
   </li>
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/Frame-3805.png"
-        className="mini-icon"
-      />
+      <img src="/img/wp-icons/Frame-3805.png" className="mini-icon" />
       <h3>Bank feeds</h3>
     </div>
-    <p>
-      For example, bank feed bank accounts.
-    </p>  
+    <p>For example, bank feed bank accounts.</p>
   </li>
 </ul>
-
 
 ---
 

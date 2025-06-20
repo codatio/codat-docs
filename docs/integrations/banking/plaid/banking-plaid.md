@@ -7,8 +7,11 @@ sidebar_label: Overview
 <p>
   <a class="external" href="https://plaid.com/" target="_blank">
     Plaid
-  </a> 
-  is a third-party provider of banking services with connections to bank accounts at over 11,000 financial institutions across the US, Canada, UK, and Europe. Plaid's services are regulated in the UK by the Financial Conduct Authority (FCA). 
+  </a>
+  is a third-party provider of banking services with connections to bank
+  accounts at over 11,000 financial institutions across the US, Canada, UK, and
+  Europe. Plaid's services are regulated in the UK by the Financial Conduct
+  Authority (FCA).
 </p>
 
 Our banking integration with Plaid lets you securely connect to and retrieve your SMB customers' banking data in a standardized format.
@@ -34,12 +37,12 @@ Within our Plaid integration, we support [Instant Auth](https://plaid.com/docs/a
 
 Plaid's pricing tiers give you access to specific _products_ from your configured banking data sources. You need to have **all** of the Plaid products from the following table enabled and available for use within your Plaid account:
 
-|Codat data type|Associated Plaid product|
-|----|----|
-|[Bank accounts](/banking-api#/schemas/Account)|Auth, Identity, Institution|
-|[Bank transactions](/banking-api#/schemas/Transactions)|Transactions|
-|[Bank account balances](/banking-api#/schemas/AccountBalance)|Asset Reports|
-|[Bank Transaction Categories](/banking-api#/schemas/TransactionCategory)|N/A. These categories are provided by Codat's categorization model and do not use Plaid's categories.|
+| Codat data type                                                          | Associated Plaid product                                                                              |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| [Bank accounts](/banking-api#/schemas/Account)                           | Auth, Identity, Institution                                                                           |
+| [Bank transactions](/banking-api#/schemas/Transactions)                  | Transactions                                                                                          |
+| [Bank account balances](/banking-api#/schemas/AccountBalance)            | Asset Reports                                                                                         |
+| [Bank Transaction Categories](/banking-api#/schemas/TransactionCategory) | N/A. These categories are provided by Codat's categorization model and do not use Plaid's categories. |
 
 ## Sync Settings for Plaid
 

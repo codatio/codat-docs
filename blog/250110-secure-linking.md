@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: rachelcodat
 ---
 
-You can now send one-time Link URL to your customers to improve the reliability of data provided by them. 
+You can now send one-time Link URL to your customers to improve the reliability of data provided by them.
 
 <!--truncate-->
 
@@ -13,9 +13,9 @@ You can now send one-time Link URL to your customers to improve the reliability 
 
 To reduce the risk of Link URLs being leaked or reused, we have introduced the option to limit the validity and number of uses of these URLs. When enabled, all company-specific and connection-specific Link URLs will have a one-time password (OTP) added as a query parameter:
 
-| Link type | Without OTP | With OTP |
-|---|---|---|
-| Company-specific | `https://link.codat.io/company/{companyId}` | `https://link.codat.io/company/{companyId}?link.otp=OTP123` |
+| Link type           | Without OTP                                                                        | With OTP                                                                                      |
+| ------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Company-specific    | `https://link.codat.io/company/{companyId}`                                        | `https://link.codat.io/company/{companyId}?link.otp=OTP123`                                   |
 | Connection-specific | `https://link-api.codat.io/companies/{companyId}/connections/{connectionId}/start` | `https://link-api.codat.io/companies/{companyId}/connections/{connectionId}/start?otp=OTP123` |
 
 Additionally, you will notice the following behavior changes:
@@ -38,7 +38,7 @@ As a prerequisite to enabling one-time Link URLs, you also need to enable the [n
 
 #### If using Hosted or build-your-own Link
 
-If you are currently adding query parameters to Link URLs (for example, by appending `?link.showSandboxIntegrations=false`), confirm that your code can handle URLs that already contain query strings. 
+If you are currently adding query parameters to Link URLs (for example, by appending `?link.showSandboxIntegrations=false`), confirm that your code can handle URLs that already contain query strings.
 
 #### If using Link SDK
 

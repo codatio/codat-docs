@@ -20,17 +20,17 @@ When reading account balances from Xero, the balance and the currency always use
 
 ## Your application's user interface
 
-If you provide your SMB customers with an application, we recommend you implement a setup page that allows them to connect to Xero and manage integration settings without any assistance from your support or onboarding teams. 
+If you provide your SMB customers with an application, we recommend you implement a setup page that allows them to connect to Xero and manage integration settings without any assistance from your support or onboarding teams.
 
 Consider including the following features:
 
 - Ensure that the name of their connected business displayed in your application matches the name in the accounting software.
-- Include a button that allows them to disconnect the app from the integration. 
-- If the customer disconnects the app, alert them about it and provide an opportunity to reconnect. 
-- When off-boarding customers from your product, ensure you disconnect from their accounting software and don't access their data anymore. 
-- Inform users of any errors through error logs, messages or alerts. 
+- Include a button that allows them to disconnect the app from the integration.
+- If the customer disconnects the app, alert them about it and provide an opportunity to reconnect.
+- When off-boarding customers from your product, ensure you disconnect from their accounting software and don't access their data anymore.
+- Inform users of any errors through error logs, messages or alerts.
 
-You can also review [Xero's own advice](https://developer.xero.com/documentation/guides/how-to-guides/integration-best-practices/) and best practices. 
+You can also review [Xero's own advice](https://developer.xero.com/documentation/guides/how-to-guides/integration-best-practices/) and best practices.
 
 ## FAQs
 
@@ -50,10 +50,10 @@ The Xero API doesn't allow the creation of Direct costs (_spend money transactio
 
 To support writing negative values to Xero for these data types, our integration uses some custom logic.
 
-| When you write...                    | Codat creates...                               |
-|-------------------------------------|------------------------------------------------|
-| A negative Direct income to Xero    | A positive _spend money transaction_ in Xero   |
-| A negative Direct cost to Xero      | A positive _receive money transaction_ in Xero |
+| When you write...                | Codat creates...                               |
+| -------------------------------- | ---------------------------------------------- |
+| A negative Direct income to Xero | A positive _spend money transaction_ in Xero   |
+| A negative Direct cost to Xero   | A positive _receive money transaction_ in Xero |
 
 :::caution Objects are reversed
 
@@ -209,6 +209,7 @@ For example:
   "statusCode": 200
 }
 ```
+
 ### For certain bills and invoices, why does the sum of the line items not add up to the exact Total Amount?
 
 In Xero, it is possible for an end user to overwrite the total of an AR/AP Invoice to within 0.10 decimal places of the total of the line items. The adjustment is attributed to a rounding account, but left off from being a line item on the bill itself.

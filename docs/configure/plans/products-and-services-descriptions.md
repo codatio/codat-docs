@@ -37,7 +37,7 @@ Implementation period, covering Implementation Specialists and associated resour
 - Config UI (Sync Flow)
 - Config API
 
-<hr/>
+<hr />
 
 #### Supported integrations
 
@@ -45,7 +45,7 @@ Implementation period, covering Implementation Specialists and associated resour
 
 **Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
-<hr/>
+<hr />
 
 #### Feature definitions
 
@@ -61,7 +61,7 @@ White labelled user interface enabling a Company to configure Commerce to Accoun
 **Config API**  
 API endpoints allowing Codat Clients to configure Commerce Sync (typically via client-built Company interface).
 
-<hr/>
+<hr />
 
 This product will appear as **Sync for Commerce (v2)** on your order form.
 
@@ -74,7 +74,7 @@ This product will appear as **Sync for Commerce (v2)** on your order form.
 - Expense to accounting synchronisation
 - Config API
 
-<hr/>
+<hr />
 
 #### Supported integrations
 
@@ -82,7 +82,7 @@ This product will appear as **Sync for Commerce (v2)** on your order form.
 
 **Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
-<hr/>
+<hr />
 
 #### Feature definitions
 
@@ -92,7 +92,7 @@ Synchronisation of expense data provided by a Codat Client into accounting softw
 **Config API**  
 API endpoints allowing Codat Clients to configure Expense Sync (typically via client-built Company user interface).
 
-<hr/>
+<hr />
 
 This product will appear as **Sync for Expenses (v2)** on your order form.
 
@@ -105,7 +105,7 @@ This product will appear as **Sync for Expenses (v2)** on your order form.
 - Read accounting data
 - Write accounting data
 
-<hr/>
+<hr />
 
 #### Supported integrations
 
@@ -113,7 +113,7 @@ This product will appear as **Sync for Expenses (v2)** on your order form.
 
 **Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
-<hr/>
+<hr />
 
 #### Feature definitions
 
@@ -122,10 +122,10 @@ Read data from connected Accounting software.
 
 **Write accounting data**  
 Read data from connected Accounting software.
- 
+
 [See the documentation for a list of supported data types](/payroll/data-types)
 
-<hr/>
+<hr />
 
 This product will appear as **Sync for Payroll** on your order form.
 
@@ -140,7 +140,7 @@ This product will appear as **Sync for Payroll** on your order form.
 - Update accounting data
 - Delete accounting data
 
-<hr/>
+<hr />
 
 #### Supported integrations
 
@@ -148,7 +148,7 @@ This product will appear as **Sync for Payroll** on your order form.
 
 **Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
-<hr/>
+<hr />
 
 #### Feature definitions
 
@@ -166,7 +166,7 @@ Delete data in connected Accounting software.
 
 [See the documentation for a list of supported data types](/payables/data-types)
 
-<hr/>
+<hr />
 
 This product will appear as **Sync for Payables** on your order form.
 
@@ -180,7 +180,7 @@ This product will appear as **Sync for Payables** on your order form.
 - Config UI
 - Config API
 
-<hr/>
+<hr />
 
 #### Supported integrations
 
@@ -188,7 +188,7 @@ This product will appear as **Sync for Payables** on your order form.
 
 **Note:** A separate Add on is required to access ERP integrations and Desktop platforms.
 
-<hr/>
+<hr />
 
 #### Feature definitions
 
@@ -201,7 +201,7 @@ White labelled user interface enabling a Company to configure Bank Feeds (select
 **Config API**  
 API endpoints allowing clients to configure bank feeds (typically via client-built Company user interface)
 
-<hr/>
+<hr />
 
 This product will appear as **Bank feeds** on your order form.
 
@@ -222,7 +222,7 @@ This product will appear as **Bank feeds** on your order form.
 - Accounts payable
 - Accounting software writeback
 
-<hr/>
+<hr />
 
 #### Supported integrations
 
@@ -232,7 +232,7 @@ See our [Lending API documentation](https://docs.codat.io/lending/overview) for 
 
 Open banking provider access is subject to separate access requirements.
 
-<hr/>
+<hr />
 
 #### Feature definitions
 
@@ -246,19 +246,19 @@ Read the following data from connected Commerce software: [Supported data types]
 Read the following data from connected Open Banking provider: [Supported data types](https://docs.codat.io/lending/data-types#supported-data-types)
 
 **Bank statements**  
-Review data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information. See [full details of this feature](https://docs.codat.io/lending/features/bank-statements-overview). 
+Review data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information. See [full details of this feature](https://docs.codat.io/lending/features/bank-statements-overview).
 
 **Sales**  
-Offers data sourced from a linked company's commerce connections. Access valuable insights through aggregated metrics and a comprehensive breakdown of sales transactions from prominent eCommerce, PoS, and payment platforms.  See the [full details of this feature](https://docs.codat.io/lending/features/sales-overview).  
+Offers data sourced from a linked company's commerce connections. Access valuable insights through aggregated metrics and a comprehensive breakdown of sales transactions from prominent eCommerce, PoS, and payment platforms. See the [full details of this feature](https://docs.codat.io/lending/features/sales-overview).
 
 **Financial statements**  
-Provides a comprehensive view of a borrower's financial data, including profit and loss, balance sheet, and operating cash flow statements. Includes features previously known as "Enhanced Financial Report" and "Enhanced Cashflow Report". See the [full details of this feature](https://docs.codat.io/lending/features/financial-statements-overview). 
+Provides a comprehensive view of a borrower's financial data, including profit and loss, balance sheet, and operating cash flow statements. Includes features previously known as "Enhanced Financial Report" and "Enhanced Cashflow Report". See the [full details of this feature](https://docs.codat.io/lending/features/financial-statements-overview).
 
 **Liabilities**  
-Our machine learning models automatically identify loans from connected sources and provide you with a clear overview of a borrower's outstanding loans and their repayment history. Includes features previously known as "Enhanced Liabilities Report". See the [full details of this feature](https://docs.codat.io/lending/features/liabilities-overview) . 
+Our machine learning models automatically identify loans from connected sources and provide you with a clear overview of a borrower's outstanding loans and their repayment history. Includes features previously known as "Enhanced Liabilities Report". See the [full details of this feature](https://docs.codat.io/lending/features/liabilities-overview) .
 
 **Accounts receivable**  
-Provides a breakdown of a borrower's debtors ledger sourced from their accounting software.  Includes features previously known as "Enhanced Invoices Report". See the [full details of this feature](https://docs.codat.io/lending/features/accounts-receivable-overview).  
+Provides a breakdown of a borrower's debtors ledger sourced from their accounting software. Includes features previously known as "Enhanced Invoices Report". See the [full details of this feature](https://docs.codat.io/lending/features/accounts-receivable-overview).
 
 **Accounts payable**  
 Provides a breakdown of a borrower's creditors ledger sourced from their accounting software. See the [full details of this feature](https://docs.codat.io/lending/features/accounts-payable-overview).
@@ -266,7 +266,7 @@ Provides a breakdown of a borrower's creditors ledger sourced from their account
 **Accounting software writeback**  
 Where mandated by the Accounting software, the ability to write back data pertaining to a loan or other credit facility that has been issued.
 
-<hr/>
+<hr />
 
 This product will appear as **Lending API** on your order form.
 
@@ -274,8 +274,7 @@ This product will appear as **Lending API** on your order form.
 
 </Tabs>
 
-
-<br/>
+<br />
 
 [Product description referenced in your order form not listed above?](/configure/plans/additional-product-descriptions)
 
@@ -289,10 +288,10 @@ This product will appear as **Lending API** on your order form.
     <p>Required for access to NetSuite, Sage Intacct or Microsoft Dynamics 365</p>
   </li>
 
-   <li className="card">
-    <h3>Desktop platforms</h3>
-    <p>Required for access to QuickBooks Desktop and Sage 50 (UK & Ireland)</p>
-  </li>
+<li className="card">
+  <h3>Desktop platforms</h3>
+  <p>Required for access to QuickBooks Desktop and Sage 50 (UK & Ireland)</p>
+</li>
 
    <li className="card">
     <h3>Enterprise security</h3>
@@ -304,7 +303,6 @@ This product will appear as **Lending API** on your order form.
 	</ul>
   </li>
 </ul>
-
 
 ---
 

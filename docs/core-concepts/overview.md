@@ -13,7 +13,7 @@ flowchart LR
   C <-.->|CRUD| F(fa:fa-file Data)
   B --- F
 ```
-  
+
 - [Companies](/core-concepts/companies) - A company represents your SMB customer.
 - [Connections](/core-concepts/connections) - A connection represents authorized access to company data via an integration.
 - [Integrations](/core-concepts/integrations) - A Codat-built integration with a data provider.

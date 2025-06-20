@@ -22,18 +22,18 @@ To use the data upload functionality, you need to create a Codat [company](../..
 
 ## Upload in Portal
 
-In the [Codat Portal](https://app.codat.io), navigate to **Companies**, choose the company you want to upload the banking data for, then select **Lending > Upload banking data**. Here, you can manually upload CSV files that contain bank account details and bank transaction details from your banking provider. 
+In the [Codat Portal](https://app.codat.io), navigate to **Companies**, choose the company you want to upload the banking data for, then select **Lending > Upload banking data**. Here, you can manually upload CSV files that contain bank account details and bank transaction details from your banking provider.
 
 Download CSV templates with example data from this page and check the allowed values for each data type in our [API reference](/lending-api#/) to make sure your data is in the right format. We summarized the data requirements in the table below.
 
-| Data type    | Template                                                                              | Required fields                                                                                                                                                         | Allowed values                                                                                           |
-|--------------|--------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| Accounts     | [CSV template](https://static.codat.io/public/templates/lending/accounts-template.csv)     | `id`, `name`, `type`, `currentBalance`, `currency`, `accountIdentifierType`, `institutionId`, `institutionName`<br/><br/> An account identifier: `iban`, `bic`, or `number` | See the [Banking: Bank account](/lending-api#/schemas/BankingAccount) schema|
-| Transactions | [CSV template](https://static.codat.io/public/templates/lending/transactions-template.csv) | `id`, `accountId`, `currency`, `description`, `amount`, `postedDate`, `code`                                                                                            | See the [Banking: Transaction](/lending-api#/schemas/BankingTransaction) schema |
+| Data type    | Template                                                                                   | Required fields                                                                                                                                                             | Allowed values                                                                  |
+| ------------ | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Accounts     | [CSV template](https://static.codat.io/public/templates/lending/accounts-template.csv)     | `id`, `name`, `type`, `currentBalance`, `currency`, `accountIdentifierType`, `institutionId`, `institutionName`<br/><br/> An account identifier: `iban`, `bic`, or `number` | See the [Banking: Bank account](/lending-api#/schemas/BankingAccount) schema    |
+| Transactions | [CSV template](https://static.codat.io/public/templates/lending/transactions-template.csv) | `id`, `accountId`, `currency`, `description`, `amount`, `postedDate`, `code`                                                                                                | See the [Banking: Transaction](/lending-api#/schemas/BankingTransaction) schema |
 
-You can check the progress of the upload by navigating to **Data history > Read history** of the company. Once the upload is complete, download the [Enhanced cash flow](/lending/features/excel-download-overview#feature-components) report to view the resulting categorized bank statement in **Lending > Reports**. 
+You can check the progress of the upload by navigating to **Data history > Read history** of the company. Once the upload is complete, download the [Enhanced cash flow](/lending/features/excel-download-overview#feature-components) report to view the resulting categorized bank statement in **Lending > Reports**.
 
-To add, amend or remove records, upload a CSV file that contains the updated dataset you want recorded in Codat, and it will replace the existing dataset. For example, if you perform a monthly statement upload, each new CSV file must contain the data for all previously uploaded months as well as the new month. 
+To add, amend or remove records, upload a CSV file that contains the updated dataset you want recorded in Codat, and it will replace the existing dataset. For example, if you perform a monthly statement upload, each new CSV file must contain the data for all previously uploaded months as well as the new month.
 
 To delete the dataset in its entirety, [delete the existing data connection](/core-concepts/connections#delete-a-data-connection) first, then upload the correct file. This will automatically create a new data connection.
 
@@ -47,13 +47,13 @@ First, use the [Create a data connection](/lending-api#/operations/create-connec
 
 2. **Set upload configuration**
 
-Before creating the data, you must define its source type and account. This tells us what format to expect the data in. Use the [Set upload configuration](/lending-api#/operations/set-bank-statement-upload-configuration) endpoint to create the configuration. 
+Before creating the data, you must define its source type and account. This tells us what format to expect the data in. Use the [Set upload configuration](/lending-api#/operations/set-bank-statement-upload-configuration) endpoint to create the configuration.
 
-To upload records that align with our [Banking: Bank account](/lending-api#/schemas/BankingAccount) and [Banking: Transaction](/lending-api#/schemas/BankingTransaction) schemas, set `codat` as your source. 
+To upload records that align with our [Banking: Bank account](/lending-api#/schemas/BankingAccount) and [Banking: Transaction](/lending-api#/schemas/BankingTransaction) schemas, set `codat` as your source.
 
 :::caution Changing the configuration
 
-Each data connection can only have one configuration. To view existing configuration, use the [Get upload configuration](/lending-api#/operations/get-bank-statement-upload-configuration) endpoint. 
+Each data connection can only have one configuration. To view existing configuration, use the [Get upload configuration](/lending-api#/operations/get-bank-statement-upload-configuration) endpoint.
 
 To change it, delete the connection, set the configuration for the new `connectionId`, and reupload the data.
 
@@ -61,13 +61,13 @@ To change it, delete the connection, set the configuration for the new `connecti
 
 3. **Start the upload session**
 
-Use the [Start upload session](/lending-api#/operations/start-bank-statement-upload-session) endpoint to initiate a bank statement upload session for a given company. A session is a one-time process that lets accounts and transactions to be uploaded to Codat. 
+Use the [Start upload session](/lending-api#/operations/start-bank-statement-upload-session) endpoint to initiate a bank statement upload session for a given company. A session is a one-time process that lets accounts and transactions to be uploaded to Codat.
 
 You can only have one active session per data type at a time. Additionally, the session will time out if no data is uploaded after 90 minutes. You can complete or cancel a session using the [End upload session](/lending-api#/operations/end-bank-statement-upload-session) endpoint.
 
 4. **Upload the data**
 
-During an active session, use the [Upload data](/lending-api#/operations/upload-bank-statement-data) endpoint to upload an object that matches the [Banking: Bank account](/lending-api#/schemas/BankingAccount) schema or an array of objects that match the [Banking: Transaction](/lending-api#/schemas/BankingTransaction) schema. 
+During an active session, use the [Upload data](/lending-api#/operations/upload-bank-statement-data) endpoint to upload an object that matches the [Banking: Bank account](/lending-api#/schemas/BankingAccount) schema or an array of objects that match the [Banking: Transaction](/lending-api#/schemas/BankingTransaction) schema.
 
 :::caution Updating the records
 
@@ -88,6 +88,7 @@ We have covered the options to upload banking data from your existing provider u
 :::
 
 ---
+
 ## Read next
 
 - [Categorized bank statements](/lending/features/bank-statements-overview)

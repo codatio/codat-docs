@@ -139,14 +139,12 @@ The following table highlights selected fields that are not available in data re
 
 ### Unavailable provider fields
 
-|Codat data type and field|Status|
-|----|----|
-|`creditNotes.discountPercentage`|Not available in the provider's API.|
-
+| Codat data type and field        | Status                               |
+| -------------------------------- | ------------------------------------ |
+| `creditNotes.discountPercentage` | Not available in the provider's API. |
 
 ### Unavailable Codat fields
 
-|Sage Intacct record and field|Codat data type|Status|
-|----|----|----|
-|`otherreceipt.paymentmethod` (Required)|[Direct Incomes](/accounting-api#/directincomes)|[Payment methods](/accounting-api#/paymentmethods) is not supported for the direct incomes data type. When writing direct incomes to Sage Intacct, the `paymentmethod` is always set to `Cash`.|
-
+| Sage Intacct record and field           | Codat data type                                  | Status                                                                                                                                                                                          |
+| --------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `otherreceipt.paymentmethod` (Required) | [Direct Incomes](/accounting-api#/directincomes) | [Payment methods](/accounting-api#/paymentmethods) is not supported for the direct incomes data type. When writing direct incomes to Sage Intacct, the `paymentmethod` is always set to `Cash`. |
