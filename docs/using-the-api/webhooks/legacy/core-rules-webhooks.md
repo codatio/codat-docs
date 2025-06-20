@@ -17,7 +17,7 @@ The body of the request will include context such as the `RuleId`, the `RuleType
 
 | Response code                                                                       | Description                                                                       |
 | :---------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
-| **200** or **2xx** range status code                                                | Webhook event was received successfully.                                                  |
+| **200** or **2xx** range status code                                                | Webhook event was received successfully.                                          |
 | **300** or **3xx** range status code                                                | Redirects the event to another URL. Codat doesn't permanently cache the redirect. |
 | **408**, **420**, **429**, **460**, **502**, **503**, **504**, **522**, and **524** | Transient error or a timeout. Codat retries the webhook event.                    |
 | Any other status code, including **400**                                            | Unrecoverable, no retry is attempted.                                             |
@@ -36,7 +36,7 @@ For example:
 
 If you’re a Codat partner with a single webhook endpoint for multiple clients, you can filter webhook calls by client.
 
-The HTTP header of the standard webhook call contains an `X-Codat-ClientId` which uniquely identifies each client account. 
+The HTTP header of the standard webhook call contains an `X-Codat-ClientId` which uniquely identifies each client account.
 
 ## Webhook security
 

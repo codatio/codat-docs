@@ -11,21 +11,22 @@ This page describes the functionality of our legacy webhook offering. [Learn mor
 
 The following rules can be configured in the Codat Portal to trigger webhook events. These can be use to help your respond to changes in your companies and their data.
 
-| Rule | Type | Trigger | Additional data | 
-| :- | :- | :- | :- |
-| [Company data connection status changed](/using-the-api/webhooks/legacy/core-rules-types#company-data-connection-status-changed)  |`DataConnectionStatusChanged`| A data connection's status changes. | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
-| [New company synchronized](/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized)                |`New company synchronized`|  All datasets created during the initial sync of a company are completed. | |
-| [Data sync completed](/using-the-api/webhooks/legacy/core-rules-types#data-sync-completed)                     |`Data sync completed`| Data synchronization is successfully completed in full for a specific data type. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
-| [Dataset data changed](/using-the-api/webhooks/legacy/core-rules-types#dataset-data-changed)                    |`Dataset data changed`|  A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId` |
-| [Dataset status has changed to an error state](/using-the-api/webhooks/legacy/core-rules-types#dataset-status-has-changed-to-an-error-state) |`Data Sync Status Changed To Error`| The synchronization of a dataset fails. | `dataType`, `datasetStatus`, `datasetId` | 
-| [Push operation status has changed](/using-the-api/webhooks/legacy/core-rules-types#push-operation-status-has-changed)       |`Push Operation Status Changed()`|  A write operation's status changes. | `dataType`, `status`, `pushOperationKey` |
-| [Push operation has timed out](/using-the-api/webhooks/legacy/core-rules-types#push-operation-has-timed-out)            |`Push Operation Timed Out`| A write operation times out. |  `dataType`, `pushOperationGuid` |
-| [Account categories updated](/using-the-api/webhooks/legacy/core-rules-types#account-categories-updated)              |`Account Categories Updated`| Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields. | `modifiedDate` |
-| [Sync Connection Deleted](/using-the-api/webhooks/legacy/core-rules-types#sync-connection-deleted)                 |`Sync Connection Deleted`| A Sync for Commerce connection is deleted. <br/> **Note:** Sync for Commerce only. |  |
-| [Expenses sync completed](/using-the-api/webhooks/legacy/core-rules-types#expenses-sync-completed)                 |`Sync Completed`| An expense sync has completed. <br/> **Note:** Expenses only. |`syncId`, `syncType`|
-| [Expenses sync failed](/using-the-api/webhooks/legacy/core-rules-types#expenses-sync-failed)                 |`Sync Failed`| A failure occurred during an expense sync. <br/> **Note:** Expenses only. |`syncId`, `syncType`, `FailureStage`|
-| [Client rate limit exceeded](/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reached)                 |`Rate Limit Reached`| The number of requests to the API from a client has exceeded the current quota. |`dailyQuota`, `expiresUtc`|
-| [Client Rate Limit Reset](/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reset)                 |`Rate Limit Reset`| The client rate limit quota has reset and more requests are available. |`quotaRemaining`, `resetReason`, `dailyQuota`|
+| Rule                                                                                                                                         | Type                                | Trigger                                                                                                                                                                                                                  | Additional data                                             |
+| :------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------- |
+| [Company data connection status changed](/using-the-api/webhooks/legacy/core-rules-types#company-data-connection-status-changed)             | `DataConnectionStatusChanged`       | A data connection's status changes.                                                                                                                                                                                      | `dataConnectionId`, `platformKey`, `newStatus`, `oldStatus` |
+| [New company synchronized](/using-the-api/webhooks/legacy/core-rules-types#new-company-synchronized)                                         | `New company synchronized`          | All datasets created during the initial sync of a company are completed.                                                                                                                                                 |                                                             |
+| [Data sync completed](/using-the-api/webhooks/legacy/core-rules-types#data-sync-completed)                                                   | `Data sync completed`               | Data synchronization is successfully completed in full for a specific data type. <br/> A notification is generated for each `dataType` as the sync completes.                                                            | `dataType`, `datasetId`                                     |
+| [Dataset data changed](/using-the-api/webhooks/legacy/core-rules-types#dataset-data-changed)                                                 | `Dataset data changed`              | A dataset synchronization has completed and updated Codat's data cache through the creation of new records or a change to existing records. <br/> A notification is generated for each `dataType` as the sync completes. | `dataType`, `datasetId`                                     |
+| [Dataset status has changed to an error state](/using-the-api/webhooks/legacy/core-rules-types#dataset-status-has-changed-to-an-error-state) | `Data Sync Status Changed To Error` | The synchronization of a dataset fails.                                                                                                                                                                                  | `dataType`, `datasetStatus`, `datasetId`                    |
+| [Push operation status has changed](/using-the-api/webhooks/legacy/core-rules-types#push-operation-status-has-changed)                       | `Push Operation Status Changed()`   | A write operation's status changes.                                                                                                                                                                                      | `dataType`, `status`, `pushOperationKey`                    |
+| [Push operation has timed out](/using-the-api/webhooks/legacy/core-rules-types#push-operation-has-timed-out)                                 | `Push Operation Timed Out`          | A write operation times out.                                                                                                                                                                                             | `dataType`, `pushOperationGuid`                             |
+| [Account categories updated](/using-the-api/webhooks/legacy/core-rules-types#account-categories-updated)                                     | `Account Categories Updated`        | Anytime that Codat updates the `suggested` fields or a user updates the `confirmed` fields.                                                                                                                              | `modifiedDate`                                              |
+| [Sync Connection Deleted](/using-the-api/webhooks/legacy/core-rules-types#sync-connection-deleted)                                           | `Sync Connection Deleted`           | A Sync for Commerce connection is deleted. <br/> **Note:** Sync for Commerce only.                                                                                                                                       |                                                             |
+| [Expenses sync completed](/using-the-api/webhooks/legacy/core-rules-types#expenses-sync-completed)                                           | `Sync Completed`                    | An expense sync has completed. <br/> **Note:** Expenses only.                                                                                                                                                            | `syncId`, `syncType`                                        |
+| [Expenses sync failed](/using-the-api/webhooks/legacy/core-rules-types#expenses-sync-failed)                                                 | `Sync Failed`                       | A failure occurred during an expense sync. <br/> **Note:** Expenses only.                                                                                                                                                | `syncId`, `syncType`, `FailureStage`                        |
+| [Client rate limit exceeded](/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reached)                                      | `Rate Limit Reached`                | The number of requests to the API from a client has exceeded the current quota.                                                                                                                                          | `dailyQuota`, `expiresUtc`                                  |
+| [Client Rate Limit Reset](/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reset)                                           | `Rate Limit Reset`                  | The client rate limit quota has reset and more requests are available.                                                                                                                                                   | `quotaRemaining`, `resetReason`, `dailyQuota`               |
+
 ---
 
 ## Rules and payloads
@@ -64,7 +65,7 @@ In line with industry standard security practices, we have removed personally id
 ### New company synchronized
 
 **Type**: `New company synchronized`  
-**Trigger:** Initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.   
+**Trigger:** Initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.
 
 ```json
 {
@@ -157,7 +158,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Push operation status has changed
 
-**Type**: `Push Operation Status Changed()`   
+**Type**: `Push Operation Status Changed()`  
 **Trigger:** A write operation's status changes.  
 **Additional data:** `dataType`, `status`, `pushOperationKey`.
 
@@ -227,7 +228,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 ### Sync Connection Deleted
 
-**Type**:  `Sync Connection Deleted`   
+**Type**: `Sync Connection Deleted`  
 **Trigger:** A Sync for Commerce connection is deleted.  
 **Note:** This rule is specific to Sync for Commerce and cannot be used for other solutions.
 
@@ -315,7 +316,7 @@ Notification is sent for each `dataType` separately when the data type's individ
 
 **Type**: `Rate Limit Reset`  
 **Trigger:** The rate limit quota has reset and more requests are available. Rate limits apply to a client as a whole, so this rule cannot be filtered by company and does not include a `companyId`.  
-**Additional data:** `quotaRemaining`, `resetReason`, `dailyQuota` 
+**Additional data:** `quotaRemaining`, `resetReason`, `dailyQuota`
 
 ```json
 {

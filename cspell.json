@@ -6,18 +6,31 @@
   "ignorePaths": [
     "package-lock.json",
     "yarn.lock",
-    "node_modules/**"
+    "node_modules/**",
+    "**/README.md"
   ],
   "patterns": [
     {
       "name": "match_markdown_frontmatter",
       "pattern": "/^(-{3}|\\[+\\]{3})$(\\s|\\S)*?^\\1$/gm"
+    },
+    {
+      "name": "match_markdown_code_blocks",
+      "pattern": "/^```[\\s\\S]*?^```$/gm"
+    },
+    {
+      "name": "match_markdown_inline_code",
+      "pattern": "/`[^`]+`/g"
     }
   ],
   "languageSettings": [
     {
       "languageId": "markdown",
-      "ignoreRegExpList": ["match_markdown_frontmatter"]
+      "ignoreRegExpList": [
+        "match_markdown_frontmatter",
+        "match_markdown_code_blocks",
+        "match_markdown_inline_code"
+      ]
     }
   ],
   "words": [
@@ -28,6 +41,7 @@
     "authorization",
     "BACS",
     "BigCommerce",
+    "Capchase",
     "Chargebee",
     "Codat's",
     "Codat",
@@ -35,10 +49,12 @@
     "datasources",
     "datatype",
     "datatypes",
+    "deauthorization",
     "Deauthorized",
     "decisioning",
     "drawdowns",
     "dvcm",
+    "eCommerce",
     "endpoint",
     "endpoints",
     "fbrh",
@@ -46,24 +62,31 @@
     "FreshBooks",
     "gbol",
     "hbql",
+    "hcws",
     "iban",
     "Intacct's",
     "Intacct",
     "Intuit's",
     "Intuit",
     "jcrp",
+    "Lightspeed",
     "Maxio",
     "metadata",
     "MYOB",
     "ndsk",
     "neobanks",
     "NetSuite",
+    "olpr",
     "Pandle",
     "payables",
     "pbbf",
     "pdvj",
+    "Phorest",
     "pqsw",
+    "Presta",
+    "PrestaShop",
     "qhyg",
+    "Qualys",
     "qudb",
     "QuickBooks",
     "recategorization",
@@ -72,6 +95,7 @@
     "recategorizing",
     "Recategorizing",
     "Recurly",
+    "rvam",
     "SDK",
     "SDKs",
     "Svix",

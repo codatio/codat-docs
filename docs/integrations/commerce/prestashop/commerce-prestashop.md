@@ -10,8 +10,9 @@ unlisted: true
 <p>
   <a className="external" href="https://www.prestashop.com/en" target="_blank">
     PrestaShop
-  </a> 
-  is an open source ecommerce software written in PHP. PrestaShop enables merchants to create, configure and host an online ecommerce store.
+  </a>
+  is an open source eCommerce software written in PHP. PrestaShop enables
+  merchants to create, configure and host an online eCommerce store.
 </p>
 
 Use Codat's Commerce API with PrestaShop to securely connect to, retrieve, and view your customers’ commerce transactions.

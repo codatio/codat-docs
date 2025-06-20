@@ -54,54 +54,56 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 `GET /data/companies/{companyId}/lending/dataTypes/{dataType}/dataIntegrity/status`
 
 ### Parameters
-| Parameter | Type | Description | Required |
-|---|---|---|---|
-| **companyId** | _string_ | The ID of the company you want match results for. <br/> Submit as route parameter. | Required |
-| **datatype** | _string_ | The data type you want match results for. <br/> **Accounting source:** [bankAccounts](/accounting-api#/schemas/BankAccount), [accountTransactions](/accounting-api#/schemas/AccountTransaction). <br/> **Banking source:** [banking-accounts](/banking-api#/schemas/Account), [banking-transactions](/banking-api#/schemas/Transaction). <br/> Submit as route parameter. | Required |
+
+| Parameter     | Type     | Description                                                                                                                                                                                                                                                                                                                                                               | Required |
+| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| **companyId** | _string_ | The ID of the company you want match results for. <br/> Submit as route parameter.                                                                                                                                                                                                                                                                                        | Required |
+| **datatype**  | _string_ | The data type you want match results for. <br/> **Accounting source:** [bankAccounts](/accounting-api#/schemas/BankAccount), [accountTransactions](/accounting-api#/schemas/AccountTransaction). <br/> **Banking source:** [banking-accounts](/banking-api#/schemas/Account), [banking-transactions](/banking-api#/schemas/Transaction). <br/> Submit as route parameter. | Required |
 
 ### Data model
-| **Field** | Type | Description |
-|---|---|---|
-| **type** | _string_ | The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
-| **statusInfo** | See [Status info](#status-info) |  |
-| **connectionIds** | See [Connection ID](#connection-id) |  |
-| **amounts** | See [Amounts](#amounts) | Only returned for transactions. For accounts, there is nothing returned. |
-| **dates** | See [Dates](#dates) | Only returned for transactions. For accounts, there is nothing returned. |
+
+| **Field**         | Type                                | Description                                                                                                                                                                                                                                                              |
+| ----------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **type**          | _string_                            | The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
+| **statusInfo**    | See [Status info](#status-info)     |                                                                                                                                                                                                                                                                          |
+| **connectionIds** | See [Connection ID](#connection-id) |                                                                                                                                                                                                                                                                          |
+| **amounts**       | See [Amounts](#amounts)             | Only returned for transactions. For accounts, there is nothing returned.                                                                                                                                                                                                 |
+| **dates**         | See [Dates](#dates)                 | Only returned for transactions. For accounts, there is nothing returned.                                                                                                                                                                                                 |
 
 #### Status info
-| **Field** | Type | Description |
-|---|---|---|
-| **lastMatched** | _string_, See [Date](/platform-api#/schemas/DateTime) | The date the matching algorithm last ran against the company’s bank transactions. |
-| **currentStatus** | _string_ | One of the following: <br/> `Unknown`, <br/> `DoesNotExist` - have never attempted a match run for this company as do not have datasets required, <br/> `Error` - something went wrong upon matching, <br/> `Processing`, <br/> `Complete`  |
-| **statusMessage** | _string_ | Detailed explanation supporting the status value. |
 
+| **Field**         | Type                                                  | Description                                                                                                                                                                                                                                |
+| ----------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **lastMatched**   | _string_, See [Date](/platform-api#/schemas/DateTime) | The date the matching algorithm last ran against the company’s bank transactions.                                                                                                                                                          |
+| **currentStatus** | _string_                                              | One of the following: <br/> `Unknown`, <br/> `DoesNotExist` - have never attempted a match run for this company as do not have datasets required, <br/> `Error` - something went wrong upon matching, <br/> `Processing`, <br/> `Complete` |
+| **statusMessage** | _string_                                              | Detailed explanation supporting the status value.                                                                                                                                                                                          |
 
 #### Connection ID
-| **Field** | Type | Description |
-|---|---|---|
+
+| **Field**  | Type    | Description                                                                  |
+| ---------- | ------- | ---------------------------------------------------------------------------- |
 | **source** | _array_ | An array of _strings_. The connection IDs for the type specified in the url. |
 | **target** | _array_ | An array of _strings_. The connection IDs for the type specified in the url. |
 
-
 #### Amounts
-| **Field** | Type     | Description                        |
-|-----------|----------|------------------------------------|
-| **min**   | _number_ | Lowest value of transaction set.   |
-| **max**   | _number_ | Highest value of transaction set.  |
 
+| **Field** | Type     | Description                       |
+| --------- | -------- | --------------------------------- |
+| **min**   | _number_ | Lowest value of transaction set.  |
+| **max**   | _number_ | Highest value of transaction set. |
 
 #### Dates
-| **Field**              | Type                                         | Description                                                                      |
-|------------------------|----------------------------------------------|----------------------------------------------------------------------------------|
+
+| **Field**              | Type                                                  | Description                                                                      |
+| ---------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- |
 | **minDate**            | _string_, See [Date](/platform-api#/schemas/DateTime) | Earliest date of transaction set.                                                |
 | **maxDate**            | _string_, See [Date](/platform-api#/schemas/DateTime) | Latest date of transaction set.                                                  |
 | **minOverlappingDate** | _string_, See [Date](/platform-api#/schemas/DateTime) | Earliest date where transactions exist in both accounting and banking platforms. |
 | **maxOverlappingDate** | _string_, See [Date](/platform-api#/schemas/DateTime) | Latest date where transactions exist in both account and banking platforms.      |
 
-
 ### Sample response
 
-````
+```
 //call with dataType = 'accountTransactions'
 {
   "metadata":[
@@ -153,8 +155,7 @@ The endpoint is available in our <a href="/assess-api#/operations/get-dataIntegr
 }
 //(identically-formatted output if you call with dataType = bankAccounts except
 //it will be keyed on banking-accounts)
-````
-
+```
 
 ## Summaries
 
@@ -167,44 +168,44 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 `GET /data/companies/{companyId}/lending/dataTypes/{dataType}/dataIntegrity/summaries`
 
 ### Parameters
-| **Parameter** | Type | Description | Required |
-|---|---|---|---|
-| **companyId** | _string_ | The ID of the company you want match results for. Submit as route parameter. | Required |
-| **datatype** | _string_ | The data type you want match results for. | Required |
-| **Query** | _string_ | You can query any properties in the response, e.g. `query=date>2020-12-01`. <br/> It can also be left blank. This follows the standard [Codat query language](/using-the-api/querying). |  |
 
+| **Parameter** | Type     | Description                                                                                                                                                                             | Required |
+| ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| **companyId** | _string_ | The ID of the company you want match results for. Submit as route parameter.                                                                                                            | Required |
+| **datatype**  | _string_ | The data type you want match results for.                                                                                                                                               | Required |
+| **Query**     | _string_ | You can query any properties in the response, e.g. `query=date>2020-12-01`. <br/> It can also be left blank. This follows the standard [Codat query language](/using-the-api/querying). |          |
 
 ### Data model
 
 For transactions, the response contains summary statistics (such as match percentage) by both amount and count. For accounts, statistics based on amount are not meaningful, therefore we return only statistics based on count.
 
-| **Field** | Type | Description |  
-|---|---|---|
-| **type** | _string_ | The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
-| **byAmount** | See [By amount](#by-amount) |  |
-| **byCount** | See [By count](#by-count) |  |
-
+| **Field**    | Type                        | Description                                                                                                                                                                                                                                                              |
+| ------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **type**     | _string_                    | The data type which the data type in the URL has been matched against. For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
+| **byAmount** | See [By amount](#by-amount) |                                                                                                                                                                                                                                                                          |
+| **byCount**  | See [By count](#by-count)   |                                                                                                                                                                                                                                                                          |
 
 #### By amount
-| **Field** | Type | Description |
-|---|---|---|
-| **matchPercentage** | _number_ | The percentage of the absolute value of transactions of the type specified in the route which have a match. |
-| **unmatched ** | _number_ | The sum of the absolute value of transactions of the type specified in the route which don't have a match. |
-| **matched** | _number_ | The sum of the absolute value of transactions of the type specified in the route which have a match. |
-| **total** | _number_ | The total of unmatched and matched.  |
 
+| **Field**           | Type     | Description                                                                                                 |
+| ------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| **matchPercentage** | _number_ | The percentage of the absolute value of transactions of the type specified in the route which have a match. |
+| **unmatched **      | _number_ | The sum of the absolute value of transactions of the type specified in the route which don't have a match.  |
+| **matched**         | _number_ | The sum of the absolute value of transactions of the type specified in the route which have a match.        |
+| **total**           | _number_ | The total of unmatched and matched.                                                                         |
 
 #### By Count
-| **Field** | Type | Description |
-|---|---|---|
-| **matchPercentage** | _number_ | The percentage of the absolute value of transactions of the type specified in the route which have a match.The percentage of records of the type specified in the route which have a match. |
-| **unmatched ** | _number_ | The number of records of the type specified in the route which don't have a match. |
-| **matched** | _number_ | The number of records of the type specified in the route which do have a match. |
-| **total** | _number_ | The total of unmatched and matched.  |
 
+| **Field**           | Type     | Description                                                                                                                                                                                 |
+| ------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **matchPercentage** | _number_ | The percentage of the absolute value of transactions of the type specified in the route which have a match.The percentage of records of the type specified in the route which have a match. |
+| **unmatched **      | _number_ | The number of records of the type specified in the route which don't have a match.                                                                                                          |
+| **matched**         | _number_ | The number of records of the type specified in the route which do have a match.                                                                                                             |
+| **total**           | _number_ | The total of unmatched and matched.                                                                                                                                                         |
 
 ### Sample Response
-````
+
+```
 //Call with banking-transactions
 {
 "summaries":[
@@ -246,16 +247,17 @@ For transactions, the response contains summary statistics (such as match percen
 //(identically-formatted output if you call with dataType = bankAccounts except
 //it will be keyed on banking-accounts)
 
-````
+```
 
 ### Reproducing the overall match percentage from the Portal
 
 The match percentage you get back from our _Summaries_ endpoint is for the data type you have specified in the url.
 
 Consider a simple example where you have just three transactions:
-  * Transaction A - Accounting, £3, no matches
-  * Transaction B - Accounting, £1, matches transaction C
-  * Transaction C - Banking, £1, matches transaction B
+
+- Transaction A - Accounting, £3, no matches
+- Transaction B - Accounting, £1, matches transaction C
+- Transaction C - Banking, £1, matches transaction B
 
 If you call the _Summaries_ endpoint with _data type = accountTransactions_, you will get a match percentage of 25%:
 `match percentage = B/(A+B) = £1 / (£3 +£1)`
@@ -266,7 +268,7 @@ If however you call the Summaries endpoint with data type = banking-transactions
 By contrast, in the Data Integrity page on Portal, the match percentage displayed is match percentage by amount across accounting and banking transactions. In our example, the match percentage displayed on the Portal would be 40%:
 `match percentage = (B+C)/(A+B+C) = (£1 + £1)/(£3 +£1 + £1)`
 
-<img src="/img/old/cf7bc11-DataIntegrity1.png"/>
+<img src="/img/old/cf7bc11-DataIntegrity1.png" />
 
 You can reproduce this match percentage yourself by fetching the summaries for _accountTransactions_ and _banking-transactions_ in separate API calls, and combining the results client-side, e.g. by taking a weighted average of the match percentages.
 
@@ -274,7 +276,7 @@ Note that by default the percentage on the Portal is also restricted to the over
 
 E.g. if the Status response contains this:
 
-````
+```
 "dates":{
 ..
 "minOverlappingDate":"2021-09-03T12:00:00.000Z",
@@ -284,12 +286,11 @@ E.g. if the Status response contains this:
 }
 ]
 }
-````
+```
 
 Then you would call each of the _Summaries_ endpoints with (url-escaped) `query=date>=2021-09-03T12:00:00.000Z&&date<=2021-09-17T23:59:59.999`.
 
 ## Details
-
 
 This endpoint exposes match results record by record for a given data type, filtered based on a query string in the same way as summary results. The results are [paginated](/using-the-api/paging) and support [ordering](/using-the-api/ordering-results), following the same conventions as our other data endpoints.
 
@@ -298,62 +299,65 @@ The endpoint is available in our <a href="/assess-api#/operations/get-data-compa
 `GET /data/companies/{companyId}/lending/dataTypes/{dataType}/dataIntegrity/details`
 
 ### Parameters
-| **Parameter** | Type | Description |
-|---|---|---|
-| **companyId** | _string_ | The ID of the company you want match results for. <br/> Submit as route parameter. |
-| **dataType** | _string_ | The data type you want match results for. <br/> **Accounting source:** <br/> **[bankAccounts](/accounting-api#/schemas/BankAccount), <br/> [accountTransactions](/accounting-api#/schemas/AccountTransaction)**. <br/> **Banking source:** <br/> **[banking-accounts](/banking-api#/schemas/Account), <br/> [banking-transactions](/banking-api#/schemas/Transaction)**. <br/> Submit as route parameter. |
-| **Query** | _string_ | Can query any property in response. This follows the standard [Codat query language](/using-the-api/querying). |
-| **page** | _number_ | Submit as query parameter. Defaults to 1. |
-| **pageSize** | _number_ | Submit as query parameter. Defaults to 100. |
-| **orderBy** | _string_ | State the property name by which you would like to order the response by. <br/> Submit as query parameter. |
 
+| **Parameter** | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **companyId** | _string_ | The ID of the company you want match results for. <br/> Submit as route parameter.                                                                                                                                                                                                                                                                                                                        |
+| **dataType**  | _string_ | The data type you want match results for. <br/> **Accounting source:** <br/> **[bankAccounts](/accounting-api#/schemas/BankAccount), <br/> [accountTransactions](/accounting-api#/schemas/AccountTransaction)**. <br/> **Banking source:** <br/> **[banking-accounts](/banking-api#/schemas/Account), <br/> [banking-transactions](/banking-api#/schemas/Transaction)**. <br/> Submit as route parameter. |
+| **Query**     | _string_ | Can query any property in response. This follows the standard [Codat query language](/using-the-api/querying).                                                                                                                                                                                                                                                                                            |
+| **page**      | _number_ | Submit as query parameter. Defaults to 1.                                                                                                                                                                                                                                                                                                                                                                 |
+| **pageSize**  | _number_ | Submit as query parameter. Defaults to 100.                                                                                                                                                                                                                                                                                                                                                               |
+| **orderBy**   | _string_ | State the property name by which you would like to order the response by. <br/> Submit as query parameter.                                                                                                                                                                                                                                                                                                |
 
 ### Data model
 
 #### Response for transactions
-| **Element ** | Type  | Description |
-|---|---|---|
-| **type** | _string_ | The data type of the record.  |
-| **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.  |
-| **id** | _string_ | ID GUID of the transaction. This is unique to data integrity.|
-| **date** | _date_, See [Date](/platform-api#/schemas/DateTime) | The date of the transaction.  |
-| **description** | _string_ | The transaction description.  |
-| **amount** | _number_ | The transaction value.  |
-| **currency** | _string_ | The currency of the transaction.  |
-| **matches** | _array_, See [Transactions matches array](/lending/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below. |
+
+| **Element **     | Type                                                                                                       | Description                                                                |
+| ---------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **type**         | _string_                                                                                                   | The data type of the record.                                               |
+| **connectionId** | _string_                                                                                                   | ID GUID representing the connection of the accounting or banking platform. |
+| **id**           | _string_                                                                                                   | ID GUID of the transaction. This is unique to data integrity.              |
+| **date**         | _date_, See [Date](/platform-api#/schemas/DateTime)                                                        | The date of the transaction.                                               |
+| **description**  | _string_                                                                                                   | The transaction description.                                               |
+| **amount**       | _number_                                                                                                   | The transaction value.                                                     |
+| **currency**     | _string_                                                                                                   | The currency of the transaction.                                           |
+| **matches**      | _array_, See [Transactions matches array](/lending/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below.                                    |
 
 #### Transactions matches
+
 This outlines the transaction(s) in which the original transaction has matched with its corresponding transaction in the other platform.
 
-| **Element ** | Type  | Description |
-|---|---|---|
-| **type** | _string_ | The data type which the data type in the URL has been matched against. <br/> For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
-| **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform. |
-| **id** | _string_ | ID GUID of the transaction. This is unique to data integrity.|
-| **date** | _date_, See [Date](/platform-api#/schemas/DateTime) | The date of the transaction.  |
-| **description** | _string_ | The transaction description.  |
-| **amount** | _number_ | The transaction value.  |
-| **currency** | _string_ | The currency of the transaction.  |
-
+| **Element **     | Type                                                | Description                                                                                                                                                                                                                                                                    |
+| ---------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **type**         | _string_                                            | The data type which the data type in the URL has been matched against. <br/> For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
+| **connectionId** | _string_                                            | ID GUID representing the connection of the accounting or banking platform.                                                                                                                                                                                                     |
+| **id**           | _string_                                            | ID GUID of the transaction. This is unique to data integrity.                                                                                                                                                                                                                  |
+| **date**         | _date_, See [Date](/platform-api#/schemas/DateTime) | The date of the transaction.                                                                                                                                                                                                                                                   |
+| **description**  | _string_                                            | The transaction description.                                                                                                                                                                                                                                                   |
+| **amount**       | _number_                                            | The transaction value.                                                                                                                                                                                                                                                         |
+| **currency**     | _string_                                            | The currency of the transaction.                                                                                                                                                                                                                                               |
 
 #### Response for accounts
-| **Element ** | Type  | Description |
-|---|---|---|
-| **type** | _string_ | The data type of the record.  |
-| **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.  |
-| **id ** | _string_ | The account’s id. |
-| **accountName ** | _string_ | The name of the account.  |
-| **institution ** | _string_ | The name of the financial institution. |
-| **matches** | _array_, See [Accounts matches array](/lending/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below. |
+
+| **Element **     | Type                                                                                                   | Description                                                                |
+| ---------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| **type**         | _string_                                                                                               | The data type of the record.                                               |
+| **connectionId** | _string_                                                                                               | ID GUID representing the connection of the accounting or banking platform. |
+| **id **          | _string_                                                                                               | The account’s id.                                                          |
+| **accountName ** | _string_                                                                                               | The name of the account.                                                   |
+| **institution ** | _string_                                                                                               | The name of the financial institution.                                     |
+| **matches**      | _array_, See [Accounts matches array](/lending/data-integrity/api-data-integrity#transactions-matches) | Refer to the matches array table below.                                    |
 
 #### Accounts matches
-| **Element ** | Type  | Description |
-|---|---|---|
-| **type** | _string_ | The data type which the data type in the URL has been matched against. <br/> For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
-| **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.  |
-| **id ** | _string_ | The account’s id.  |
-| **accountName ** | _string_ | The name of the account.  |
-| **institution ** | _string_ | The name of the financial institution.  |
+
+| **Element **     | Type     | Description                                                                                                                                                                                                                                                                    |
+| ---------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **type**         | _string_ | The data type which the data type in the URL has been matched against. <br/> For example, if you've matched _accountTransactions_ and _banking-transactions_, and you call this endpoint with _accountTransactions_ in the URL, this property would be _banking-transactions_. |
+| **connectionId** | _string_ | ID GUID representing the connection of the accounting or banking platform.                                                                                                                                                                                                     |
+| **id **          | _string_ | The account’s id.                                                                                                                                                                                                                                                              |
+| **accountName ** | _string_ | The name of the account.                                                                                                                                                                                                                                                       |
+| **institution ** | _string_ | The name of the financial institution.                                                                                                                                                                                                                                         |
 
 ### Sample Response
 

@@ -8,19 +8,27 @@ import Products from "@components/Products";
 
 ## How Codat can help
 
-With Codat's array of accounting automation solutions covering [Bank Feeds](/bank-feeds/overview), [Expenses](/expenses/overview), and [Bill Pay](/payables/overview) processes, and high-quality integrations, corporate card providers, banks and neobanks, and expense management platforms can focus on shipping fully-featured products faster and growing their market share. 
+With Codat's array of accounting automation solutions covering [Bank Feeds](/bank-feeds/overview), [Expenses](/expenses/overview), and [Bill Pay](/payables/overview) processes, and high-quality integrations, corporate card providers, banks and neobanks, and expense management platforms can focus on shipping fully-featured products faster and growing their market share.
 
 <div className="video-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/CK6n1TDQNWE?si=Sv3p0178lq9VDKD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/CK6n1TDQNWE?si=Sv3p0178lq9VDKD8"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  />
 </div>
 
 ## Relevant solutions
 
-<Products mini={true} products={["Expenses", "Bill Pay", "Bank Feeds"]}/>
+<Products mini={true} products={["Expenses", "Bill Pay", "Bank Feeds"]} />
 
 ### Expenses
 
-Take expense management one step further by syncing expense transactions, receipts, and other attachments with your customers' accounting software in a simple, standard manner: 
+Take expense management one step further by syncing expense transactions, receipts, and other attachments with your customers' accounting software in a simple, standard manner:
 
 - Connect to your SMB's accounting software faster while we take care of authorization, linking, and rate limits.
 - Easily write any purchases to the SMB's accounting software and automatically categorize and tag expenses according to your SMB's bookkeeping.

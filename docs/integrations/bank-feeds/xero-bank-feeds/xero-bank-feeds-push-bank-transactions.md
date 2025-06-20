@@ -4,7 +4,7 @@ sidebar_label: Write bank transactions
 description: "Learn how to write your SMB users' bank transactions via our Xero Bank Feeds integration"
 ---
 
-When an SMB user has set up a bank feed connection, you can write bank transactions for source bank accounts to Xero. The source account must have  `connected` status, where the SMB user has completed the step of mapping and connecting the account.
+When an SMB user has set up a bank feed connection, you can write bank transactions for source bank accounts to Xero. The source account must have `connected` status, where the SMB user has completed the step of mapping and connecting the account.
 
 :::caution Auto-download not supported
 Transactions are not automatically downloaded to Xero when the user successfully connects a bank account. They must be written as described later in this article.
@@ -82,7 +82,7 @@ To write bank transactions for a `connected` source bank account, make the follo
    POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions
    ```
 
-   For the `accountId`, supply the ID of a `connected` source bank account (returned from the `GET /connectionInfo/BankFeedAccounts` request).  
+   For the `accountId`, supply the ID of a `connected` source bank account (returned from the `GET /connectionInfo/BankFeedAccounts` request).
 
    ```json title="Example request body (all fields are required)"
    {
@@ -109,11 +109,11 @@ To write bank transactions for a `connected` source bank account, make the follo
    ```
 
    The balance of the last bank transaction in the array is used to update the balance of the specified bank account.
-   
+
    :::note Positive and negative transactions
-   Credit transactions are positive and debit transactions are negative, so it's important that the sign of the transaction `amount` is consistent with the `transactionType`. A warning is returned from Codat if, for example, a $100 transaction is sent to Xero as a `Debit`. Be aware that Xero does not reverse a credit card transaction that was sent as a negative amount, and vice versa for a debit card transaction. 
+   Credit transactions are positive and debit transactions are negative, so it's important that the sign of the transaction `amount` is consistent with the `transactionType`. A warning is returned from Codat if, for example, a $100 transaction is sent to Xero as a `Debit`. Be aware that Xero does not reverse a credit card transaction that was sent as a negative amount, and vice versa for a debit card transaction.
    :::
-   
+
 2. If the data is valid, the endpoint returns a write operation with a `status` of `Pending` (202). The status changes to `Success` if the write operation completes successfully.
 
    :::info Pending status

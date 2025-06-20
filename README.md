@@ -32,7 +32,7 @@ All `.jpg`, `.jpeg`, and `.png` files are tracked.
 The docusaurus config expects certain environment variables to be defined. We've included `.env.example` - copy this and rename it to `.env`. You can enter any random string for the IDs.
 
 ```
-copy .env.example .env # on Windows 
+copy .env.example .env # on Windows
 cp .env.example .env # on Mac
 ```
 

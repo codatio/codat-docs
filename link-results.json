@@ -1,0 +1,161 @@
+{
+  "links": [
+    {
+      "url": "https://www.sage.com/en-gb/sage-business-cloud/intacct/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/overview"
+    },
+    {
+      "url": "https://www.sage.com/en-gb/products/sage-200/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/overview"
+    },
+    {
+      "url": "https://www.sage.com/en-gb/sage-business-cloud/accounting/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/overview"
+    },
+    {
+      "url": "https://www.sage.com/en-gb/products/sage-50-accounts/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/overview"
+    },
+    {
+      "url": "https://codat.zendesk.com/hc/en-gb/requests/new",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/get-started/libraries"
+    },
+    {
+      "url": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/img/old/a044a46-FreshBooks-keys.png",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/freshbooks/accounting-freshbooks"
+    },
+    {
+      "url": "https://codat.zendesk.com/hc/en-gb/articles/360018829477-Additional-sync-settings",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/netsuite/accounting-netsuite"
+    },
+    {
+      "url": "https://developer.waveapps.com/hc/en-us/articles/360019762711",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/wave/accounting-wave"
+    },
+    {
+      "url": "https://my.waveapps.com/register/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/wave/accounting-wave"
+    },
+    {
+      "url": "https://help.shopify.com/en/manual/apps/custom-apps",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/commerce/shopify/commerce-shopify"
+    },
+    {
+      "url": "https://help.shopify.com/en/manual/apps/app-types",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/commerce/shopify/commerce-shopify"
+    },
+    {
+      "url": "https://codat-intg-link-sdk-v2-react-18-ui.azurewebsites.net/",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/auth-flow/customize/sdk-customize-code"
+    },
+    {
+      "url": "https://www.bigfootcap.com/revenue-based-financing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/lending/guides/loan-qualification/uw-decision"
+    },
+    {
+      "url": "https://workweek.com/2023/03/02/unlocking-lending-innovation",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/lending/guides/loan-qualification/uw-decision"
+    },
+    {
+      "url": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/404",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/img/old/a044a46-FreshBooks-keys.png"
+    },
+    {
+      "url": "https://apisupport.myob.com/hc/en-us/articles/6366818637583-504-Gateway-Time-out-errors",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/myob/myob-integration-reference"
+    },
+    {
+      "url": "https://docs.developer.amazonservices.com/en_UK/dev_guide/DG_AppListingGuide.html",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/commerce/amazon-seller-central/amazon-registration-steps"
+    },
+    {
+      "url": "https://apisupport.myob.com/hc/en-us/articles/360000490416",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/myob/accounting-myob-setup"
+    },
+    {
+      "url": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/xero/platform-api",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/xero/xero-faq"
+    },
+    {
+      "url": "https://www.sage.com/en-gb/products/free-trials/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/using-the-api/testing"
+    },
+    {
+      "url": "https://help.shopify.com/en/manual/your-account/staff-accounts/staff-permissions",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/commerce/shopify/commerce-shopify-custom-apps"
+    },
+    {
+      "url": "https://accounts.shopify.com/signup?rid=c272bffe-3e6f-4583-b6f2-f6bd71b340e5",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/commerce/shopify/commerce-shopify-public-apps"
+    },
+    {
+      "url": "https://sage.co.uk/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/accounting/sage200/accounting-sage200-setup"
+    },
+    {
+      "url": "https://codat.zendesk.com/hc/en-gb/articles/9389011101341--UAT-Deprecation-Changes-to-the-app-setup-used-for-your-new-Test-account-",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/updates/tags/completed"
+    },
+    {
+      "url": "https://codat.zendesk.com/hc/en-gb",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/updates/220714-support"
+    },
+    {
+      "url": "https://register.izettle.com//",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://codat-docs-git-chore-lint-markdown-codat.vercel.app/integrations/commerce/zettle/test-zettle"
+    }
+  ],
+  "passed": false
+}

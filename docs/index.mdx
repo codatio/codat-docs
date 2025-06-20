@@ -12,7 +12,10 @@ tags:
   - Home
 banner_title: Build deeper connections with business customers
 banner_image: "/img/banners/accounting-json.png"
-banner_text: "Solve your small and middle-market business customers' problems with our specialized solutions based on data sharing, AI insights, and domain expertise."
+banner_text:
+  "Solve your small and middle-market business customers' problems with our
+  specialized solutions based on data sharing, AI insights, and domain
+  expertise."
 pagination_next: null
 pagination_prev: null
 ---
@@ -20,7 +23,7 @@ pagination_prev: null
 import Welcome from "@components/Welcome";
 import Usecases from "@components/Usecases";
 import Products from "@components/Products";
-import Clients from '@components/Clients'
+import Clients from "@components/Clients";
 
 <head>
   <title>
@@ -40,124 +43,142 @@ import Clients from '@components/Clients'
 
 ## Codat for business users
 
-Solutions for client-facing users, such as Relationship Managers and Sales Specialists, that deliver deeper actionable insights into business data.
+Solutions for client-facing users, such as Relationship Managers and Sales
+Specialists, that deliver deeper actionable insights into business data.
 
-<Products mini={true} verbose={false} products={["Spend Insights"]}/>
+<Products mini={true} verbose={false} products={["Spend Insights"]} />
 
-<hr/>
+<hr />
 
 ## Codat for technology teams
 
-Solutions that help financial institutions and their software developers deliver new products and experiences for small and medium-sized businesses.
+Solutions that help financial institutions and their software developers deliver
+new products and experiences for small and medium-sized businesses.
 
-<Products mini={true} verbose={false} products={["Lending", "Expenses", "Bill Pay", "Bank Feeds"]}/>
+<Products
+  mini={true}
+  verbose={false}
+  products={["Lending", "Expenses", "Bill Pay", "Bank Feeds"]}
+/>
 
-<hr/>
+<hr />
 
 ## Get started
 
 <ul className="card-container col-3">
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/Lightbulb.png"
-        className="mini-icon"
-      />
-      <h3><a href="http://docs.codat.io/core-concepts/overview" target="_blank">Core concepts</a></h3>
+      <img src="/img/wp-icons/Lightbulb.png" className="mini-icon" />
+      <h3>
+        <a href="/core-concepts/overview" target="_blank">
+          Core concepts
+        </a>
+      </h3>
     </div>
     <p>
-      Discover key concepts Codat's solutions use and see how they interconnect with each other.
+      Discover key concepts Codat's solutions use and see how they interconnect
+      with each other.
     </p>
   </li>
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/student.png"
-        className="mini-icon"
-      />
-      <h3><a href="http://docs.codat.io/guides/overview" target="_blank">Tutorials</a></h3>
+      <img src="/img/wp-icons/student.png" className="mini-icon" />
+      <h3>
+        <a href="/guides/overview" target="_blank">
+          Tutorials
+        </a>
+      </h3>
     </div>
     <p>
-      View our opinionated tutorials and build guides to fast-track your proficiency with Codat.
+      View our opinionated tutorials and build guides to fast-track your
+      proficiency with Codat.
     </p>
   </li>
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/books.png"
-        className="mini-icon"
-      />
-      <h3><a href="http://docs.codat.io/get-started/libraries" target="_blank">Client libraries</a></h3>
+      <img src="/img/wp-icons/books.png" className="mini-icon" />
+      <h3>
+        <a href="/get-started/libraries" target="_blank">
+          Client libraries
+        </a>
+      </h3>
     </div>
     <p>
-      Get your solution build started quickly with our official solution libraries in different languages.
+      Get your solution build started quickly with our official solution
+      libraries in different languages.
     </p>
   </li>
 </ul>
 
-<hr/>
+<hr />
 
 ## Most visited
 
 <ul className="card-container col-3">
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/key.png"
-        className="mini-icon"
-      />
-      <h3><a href="http://docs.codat.io/using-the-api/authentication/" target="_blank">API keys</a></h3>
+      <img src="/img/wp-icons/key.png" className="mini-icon" />
+      <h3>
+        <a href="/using-the-api/authentication/" target="_blank">
+          API keys
+        </a>
+      </h3>
     </div>
     <p>
-      See how to get your auth header or API key to authenticate with Codat's APIs.
-    </p> 
-  </li>
-  <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/webhooks-logo.png"
-        className="mini-icon"
-      />
-      <h3><a href="http://docs.codat.io/using-the-api/webhooks/overview" target="_blank">Webhook service</a></h3>
-    </div>
-    <p>
-      Get event notifications with our robust and streamlined webhook messaging solution.
+      See how to get your auth header or API key to authenticate with Codat's
+      APIs.
     </p>
   </li>
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/Coins.png"
-        className="mini-icon"
-      />
-      <h3><a href="http://docs.codat.io/integrations/accounting/overview/" target="_blank">Accounting integrations</a></h3>
+      <img src="/img/wp-icons/webhooks-logo.png" className="mini-icon" />
+      <h3>
+        <a href="/using-the-api/webhooks/overview" target="_blank">
+          Webhook service
+        </a>
+      </h3>
     </div>
     <p>
-      View configuration details for our accounting integrations.
+      Get event notifications with our robust and streamlined webhook messaging
+      solution.
     </p>
   </li>
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/puzzle-piece.png"
-        className="mini-icon"
-      />
-      <h3><a href="http://docs.codat.io/auth-flow/authorize-embedded-link" target="_blank">Auth flow SDK</a></h3>
+      <img src="/img/wp-icons/Coins.png" className="mini-icon" />
+      <h3>
+        <a href="/integrations/accounting/overview/" target="_blank">
+          Accounting integrations
+        </a>
+      </h3>
+    </div>
+    <p>View configuration details for our accounting integrations.</p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/puzzle-piece.png" className="mini-icon" />
+      <h3>
+        <a href="/auth-flow/authorize-embedded-link" target="_blank">
+          Auth flow SDK
+        </a>
+      </h3>
     </div>
     <p>
       Embed our auth flow in your application UI using our low-code component.
-    </p> 
+    </p>
   </li>
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/Stack.png"
-        className="mini-icon"
-      />
-      <h3><a href="http://docs.codat.io/using-the-api/overview" target="_blank">API reference</a></h3>
+      <img src="/img/wp-icons/Stack.png" className="mini-icon" />
+      <h3>
+        <a href="/using-the-api/overview" target="_blank">
+          API reference
+        </a>
+      </h3>
     </div>
     <p>
-      Start using the Codat API endpoints through our interactive API references.
+      Start using the Codat API endpoints through our interactive API
+      references.
     </p>
   </li>
   <li className="card">
@@ -166,67 +187,69 @@ Solutions that help financial institutions and their software developers deliver
         src="/img/wp-icons/list-magnifying-glass.png"
         className="mini-icon"
       />
-      <h3><a href="http://docs.codat.io/using-the-api/querying" target="_blank">Query data</a></h3>
+      <h3>
+        <a href="/using-the-api/querying" target="_blank">
+          Query data
+        </a>
+      </h3>
     </div>
-    <p>
-      Learn the basics and see examples of filtering Codat's response data.
-    </p>
+    <p>Learn the basics and see examples of filtering Codat's response data.</p>
   </li>
 </ul>
 
 <Clients
   clients={[
     {
-        name: "Zettle",
-        path: "/img/clients/zettle.png",
+      name: "Zettle",
+      path: "/img/clients/zettle.png",
     },
     {
-        name: "J.P. Morgan",
-        path: "/img/clients/jp-morgan.png",
+      name: "J.P. Morgan",
+      path: "/img/clients/jp-morgan.png",
     },
     {
-        name: "Capchase",
-        path: "/img/clients/capchase.png",
+      name: "Capchase",
+      path: "/img/clients/capchase.png",
     },
     {
-        name: "Virgin Money",
-        path: "/img/clients/virgin-money.png",
+      name: "Virgin Money",
+      path: "/img/clients/virgin-money.png",
     },
     {
-        name: "Capital on Tap",
-        path: "/img/clients/capital-on-tap.png",
+      name: "Capital on Tap",
+      path: "/img/clients/capital-on-tap.png",
     },
     {
-        name: "Jeeves",
-        path: "/img/clients/jeeves.png",
+      name: "Jeeves",
+      path: "/img/clients/jeeves.png",
     },
     {
-        name: "SumUp",
-        path: "/img/clients/sumup.png",
+      name: "SumUp",
+      path: "/img/clients/sumup.png",
     },
     {
-        name: "Phorest",
-        path: "/img/clients/phorest.png",
+      name: "Phorest",
+      path: "/img/clients/phorest.png",
     },
     {
-        name: "Lightspeed",
-        path: "/img/clients/lightspeed.png",
+      name: "Lightspeed",
+      path: "/img/clients/lightspeed.png",
     },
     {
-        name: "Rho",
-        path: "/img/clients/rho.png",
+      name: "Rho",
+      path: "/img/clients/rho.png",
     },
     {
-        name: "Expensify",
-        path: "/img/clients/expensify.png",
+      name: "Expensify",
+      path: "/img/clients/expensify.png",
     },
     {
-        name: "Brex",
-        path: "/img/clients/brex.png",
+      name: "Brex",
+      path: "/img/clients/brex.png",
     },
     {
-        name: "Clover",
-        path: "/img/clients/clover.png",
+      name: "Clover",
+      path: "/img/clients/clover.png",
     },
   ]}
 />

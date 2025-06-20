@@ -6,7 +6,7 @@ description: "Customize data types with additional properties not included in Co
 
 ## What is supplemental data?
 
-Codat's supported data types include standardized properties. Some data sources (e.g. Xero) may contain properties not common across other sources, and so are not covered by our out-of-the-box data model. You can use supplemental data to extend our data types to fetch or create such properties alongside our standard ones. 
+Codat's supported data types include standardized properties. Some data sources (e.g. Xero) may contain properties not common across other sources, and so are not covered by our out-of-the-box data model. You can use supplemental data to extend our data types to fetch or create such properties alongside our standard ones.
 
 :::note Supported HTTP methods
 
@@ -14,7 +14,7 @@ Supplemental data supports reading data via `GET` or creating data through `POST
 
 :::
 
-Consider our Xero integration. Xero's [Contact](https://developer.xero.com/documentation/api/accounting/contacts) schema maps to Codat's `supplier` data type. Some of its properties (like `TaxNumber`) *are* mapped, whereas others (like `BankAccountDetails`) are not. If you configure supplemental data for this Xero property, `suppliers` data from Xero could additionally include `BankAccountDetails`.
+Consider our Xero integration. Xero's [Contact](https://developer.xero.com/documentation/api/accounting/contacts) schema maps to Codat's `supplier` data type. Some of its properties (like `TaxNumber`) _are_ mapped, whereas others (like `BankAccountDetails`) are not. If you configure supplemental data for this Xero property, `suppliers` data from Xero could additionally include `BankAccountDetails`.
 
 ![A diagram demonstrating supplemental properties within the standard response of the suppliers data type](/img/use-the-api/supplemental-data.png)
 
@@ -34,7 +34,7 @@ Are you looking to fetch additional _data types_ using endpoints that are not in
 
 We are rapidly expanding coverage across integrations and data types according to client demand. We currently cover the following integrations and data types:
 
-<iframe 
+<iframe
   src="https://docs.google.com/spreadsheets/d/1ZkGe3zkWVC-8DWv3UtJOiiI42d2wAFzTFQZKDhkQeGY/pubhtml?widget=true&amp;headers=false"
   frameborder="0"
   className="googleSheets"
@@ -43,7 +43,7 @@ We are rapidly expanding coverage across integrations and data types according t
 
 ## Configure supplemental data
 
-You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [Configure supplemental data](/platform-api#/operations/configure-supplemental-data) endpoint. 
+You'll need to specify what supplemental data should be passed in the response for each integration and data type pair you require. To do so, use the [Configure supplemental data](/platform-api#/operations/configure-supplemental-data) endpoint.
 
 ```http
 PUT /integrations/{platformKey}/datatypes/{datatype}/supplementalDataConfig
@@ -55,34 +55,35 @@ Within the request body, `PlatformEndpoint` and `PlatformPropertyName` parameter
 
 ```json title="Supplemental data configuration request body"
 {
-    "supplementalDataConfig": {
-        "{ClientObjectName}": {
-            "dataSource": "/{PlatformEndpoint}",
-            "pullData": {
-                "{ClientDefinedName}":"{PlatformPropertyName}",
-                "{ClientDefinedName2}": "{PlatformPropertyName2}"
-            },
-            "pushData": {
-                "{ClientDefinedName}":"{PlatformPropertyName}",
-                "{ClientDefinedName2}": "{PlatformPropertyName2}"
-            },
-        }
+  "supplementalDataConfig": {
+    "{ClientObjectName}": {
+      "dataSource": "/{PlatformEndpoint}",
+      "pullData": {
+        "{ClientDefinedName}": "{PlatformPropertyName}",
+        "{ClientDefinedName2}": "{PlatformPropertyName2}"
+      },
+      "pushData": {
+        "{ClientDefinedName}": "{PlatformPropertyName}",
+        "{ClientDefinedName2}": "{PlatformPropertyName2}"
+      }
     }
+  }
 }
 ```
+
 You can use dot notation to retrieve nested properties from within the supplemental data object. For example, maintain the following configuration to retrieve the supplier's `Name` value from Xero's `BrandingTheme` object with two properties, `BrandingThemeID` and `Name`, along with their `BankAccountDetails`.
 
 ```json title="Supplemental data configuration with dot notation"
 {
-    "supplementalDataConfig": {
-        "yourKeyNameForXeroSuppliers": {
-            "dataSource": "/Contacts",
-            "pullData": {
-                "SupplierBankAccount": "BankAccountDetails",
-                "BrandingThemeName": "BrandingTheme.Name"
-            }
-        }
+  "supplementalDataConfig": {
+    "yourKeyNameForXeroSuppliers": {
+      "dataSource": "/Contacts",
+      "pullData": {
+        "SupplierBankAccount": "BankAccountDetails",
+        "BrandingThemeName": "BrandingTheme.Name"
+      }
     }
+  }
 }
 ```
 
@@ -105,9 +106,9 @@ Review the table below for platform schemas we use in our data types, which are 
 
 ## 💡 Tips and traps
 
-- Supplemental data is currently available only at the record level and cannot be used to interact with line-level properties. 
+- Supplemental data is currently available only at the record level and cannot be used to interact with line-level properties.
 
-- Data within the supplemental data object is not validated, manipulated, standardized, or transformed by Codat. 
+- Data within the supplemental data object is not validated, manipulated, standardized, or transformed by Codat.
 
 - Our [querying](/using-the-api/querying) functionality doesn't support supplemental data.
 

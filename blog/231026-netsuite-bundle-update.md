@@ -9,7 +9,7 @@ We have released a new version of our NetSuite bundle that supports the `M/DD/YY
 
 <!--truncate-->
 
-Previously, users may have experienced an issue when viewing attachments that use a `M/DD/YYYY h:mm tt` datetime format for their `createdDate` and `modifiedDate`. Version v1.23.0 of the bundle provides improved support by handling all possible datetime formats, so users  can view the `createdDate` and `modifiedDate` for all attachments.
+Previously, users may have experienced an issue when viewing attachments that use a `M/DD/YYYY h:mm tt` datetime format for their `createdDate` and `modifiedDate`. Version v1.23.0 of the bundle provides improved support by handling all possible datetime formats, so users can view the `createdDate` and `modifiedDate` for all attachments.
 
 ## Action required
 

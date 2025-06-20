@@ -19,4 +19,4 @@ Once you've done this, you'll be able to sign in with that new password and acce
 
 ## Expected impact if no action is taken
 
-After **February 3, 2025** users who still haven’t logged into Codat's services will need to reset their password before accessing their account. We will send an automated password reset email to the affected users on this date. 
+After **February 3, 2025** users who still haven’t logged into Codat's services will need to reset their password before accessing their account. We will send an automated password reset email to the affected users on this date.

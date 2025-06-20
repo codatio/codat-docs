@@ -7,7 +7,7 @@ displayed_sidebar: docs
 
 :::tip Codat recommends Link SDK
 
-Instead of building your own solution, use the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow in your application. 
+Instead of building your own solution, use the [Link SDK](/auth-flow/authorize-embedded-link) to fully embed our flexible, white-labeled auth flow in your application.
 
 You will benefit from our extensive experience combined with authorization best practices, providing your users with a native feeling of the auth flow and achieving an **89%** conversion rate on average.
 
@@ -17,7 +17,7 @@ If your business scenario and circumstances prevent you from using our Link SDK,
 
 ## Create a Codat company
 
-First, create a [company](../../terms/company.md) to represent your SMB in Codat. We recommend doing that at the time your SMB user signs up within your app. This way, you can track their connection status from day one. 
+First, create a [company](../../terms/company.md) to represent your SMB in Codat. We recommend doing that at the time your SMB user signs up within your app. This way, you can track their connection status from day one.
 
 To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body. If your user has previously authorized with you, use the company you previously created for them. For details on managing and deleting existing companies, review [Manage companies with our API](/using-the-api/managing-companies).
 
@@ -32,13 +32,13 @@ Optionally, you can [set up a webhook](/using-the-api/webhooks/event-types) to m
 
 ## Display a list of integrations
 
-Next, you need to provide your customer with a list of platforms they can provide you access to, including the platform name and logo. For additional guidance on best practices of integration selection, see [Platform selection](/auth-flow/optimize/platform-selection). 
+Next, you need to provide your customer with a list of platforms they can provide you access to, including the platform name and logo. For additional guidance on best practices of integration selection, see [Platform selection](/auth-flow/optimize/platform-selection).
 
 #### Retrieve all available integrations
 
-Use the [List integrations](/platform-api#/operations/list-integrations) endpoint to retrieve a list of all integrations available for the customer to connect. 
+Use the [List integrations](/platform-api#/operations/list-integrations) endpoint to retrieve a list of all integrations available for the customer to connect.
 
-We recommend using a query to filter this list. For example, use the `enabled` parameter to only return the integrations enabled via the Codat Portal. The `sourceType` parameter allows you to filter integrations by their data type - `accounting`, `banking` or `commerce`. 
+We recommend using a query to filter this list. For example, use the `enabled` parameter to only return the integrations enabled via the Codat Portal. The `sourceType` parameter allows you to filter integrations by their data type - `accounting`, `banking` or `commerce`.
 
 You need to encode the query, unless you are using our API reference, where that happens automatically. For more details on querying, see [Querying](/using-the-api/querying).
 
@@ -54,7 +54,7 @@ You need to encode the query, unless you are using our API reference, where that
 
 Call the [Get branding](/platform-api#/operations/get-integrations-branding) endpoint to retrieve branded assets for the required integrations, including logos and buttons, and use them on the integration selection page. Cache the assets instead of calling the endpoint each time a user visits the platform selection page.
 
-Add a relevant platform key as a parameter to the call, choosing from the [accounting](/integrations/accounting/overview#platform-keys), [banking](/integrations/banking/overview#platform-keys) or [commerce](/integrations/commerce/overview#platform-keys) options. The `platformKey` is  a unique key Codat uses to remove the dependency on a platform's display name.
+Add a relevant platform key as a parameter to the call, choosing from the [accounting](/integrations/accounting/overview#platform-keys), [banking](/integrations/banking/overview#platform-keys) or [commerce](/integrations/commerce/overview#platform-keys) options. The `platformKey` is a unique key Codat uses to remove the dependency on a platform's display name.
 
 :::info Branded assets provided by Codat
 
@@ -63,7 +63,7 @@ We advise using the assets provided by Codat because they meet the requirements 
 
 ## Direct user to enter credentials
 
-Next, direct your customer to enter their credentials and authorize your connection with their selected platform. 
+Next, direct your customer to enter their credentials and authorize your connection with their selected platform.
 
 To do that, create a data connection using the [Create connection](/platform-api#/operations/create-connection) endpoint. In response, you will receive a `linkUrl`.
 
@@ -76,13 +76,13 @@ Link URLs now have one-time passwords (OTP) appended to them. As a result, they 
 - Your customers aren't able to use the same Link URL more than once.
 - Company-specific and connection-specific Link URLs expire after one day even if they weren't used.
 
-Contact your account manager if you want to disable these measures. 
+Contact your account manager if you want to disable these measures.
 
 If your application already adds query parameters to Link URLs (for example, by appending `?link.showSandboxIntegrations=false`), confirm that your code can handle URLs that already contain query strings.
 
 :::
 
-Once the customer successfully authorized the data connection, redirect them back to your app. Make sure to handle all possible redirect status codes and error messages so that your users understand what has gone wrong. 
+Once the customer successfully authorized the data connection, redirect them back to your app. Make sure to handle all possible redirect status codes and error messages so that your users understand what has gone wrong.
 
 If you don't set a redirect URL, the user will be presented with our pre-built Link success page. To learn more about redirect URLs in Codat, see [Redirect URLs](/auth-flow/customize/set-up-redirects).
 
@@ -101,30 +101,30 @@ Once the initial data sync completes, inform the user accordingly and continue t
 
 ## Allow users to manage connection
 
-Going forward, your customer must have control over the data they've given you the permission to access. This is key from a regulatory perspective and builds trust between you and your customer. To build this capability, you will need these values: 
+Going forward, your customer must have control over the data they've given you the permission to access. This is key from a regulatory perspective and builds trust between you and your customer. To build this capability, you will need these values:
 
 - The `companyId` of the Codat company that represents the user
-- The `connectionId` of the connection the user wants to modify 
+- The `connectionId` of the connection the user wants to modify
 
-Use the [Get company](/platform-api#/operations/get-company) endpoint if you need to get these values from company metadata. 
+Use the [Get company](/platform-api#/operations/get-company) endpoint if you need to get these values from company metadata.
 
 #### Allow users to view existing connections
 
-Call the [List connections](/platform-api#/operations/list-connections) endpoint to get all the existing connections for a company and display them to your customer. 
+Call the [List connections](/platform-api#/operations/list-connections) endpoint to get all the existing connections for a company and display them to your customer.
 
-#### Allow users to deauthorize 
+#### Allow users to deauthorize
 
-User's consent is collected via OAuth2, which means we are able to access your customer's data on an ongoing basis. 
+User's consent is collected via OAuth2, which means we are able to access your customer's data on an ongoing basis.
 
-Therefore, your customers should be able to deauthorize an existing connection, essentially revoking your access to their platform. You will still be able to access previously synced data, but unable to perform any further syncs. 
+Therefore, your customers should be able to deauthorize an existing connection, essentially revoking your access to their platform. You will still be able to access previously synced data, but unable to perform any further syncs.
 
-Use the [Unlink connection](/platform-api#/operations/unlink-connection) endpoint to deauthorize the connection without deleting it. 
+Use the [Unlink connection](/platform-api#/operations/unlink-connection) endpoint to deauthorize the connection without deleting it.
 
 #### Allow users to delete a connection
 
-Your customer's data is also permanently stored in our central data database, unless the connection has been deleted. We do this so that the data is always accessible via our API and we don’t need to go to the platform to get it, avoiding rate limits as a result. 
+Your customer's data is also permanently stored in our central data database, unless the connection has been deleted. We do this so that the data is always accessible via our API and we don’t need to go to the platform to get it, avoiding rate limits as a result.
 
-However, your customer may want to delete a connection entirely, preventing you from synchronizing new data or viewing synced data. To do that, use the [Delete connection](/platform-api#/operations/delete-connection) endpoint. 
+However, your customer may want to delete a connection entirely, preventing you from synchronizing new data or viewing synced data. To do that, use the [Delete connection](/platform-api#/operations/delete-connection) endpoint.
 
 The end user would need to authorize a new data connection if you wish to view new data for this company.
 

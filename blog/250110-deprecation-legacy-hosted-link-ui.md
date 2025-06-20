@@ -15,7 +15,7 @@ This page has been updated to reflect the change to the default state of one-tim
 
 :::
 
-You can compare our legacy Hosted Link UI with the upgrade below: 
+You can compare our legacy Hosted Link UI with the upgrade below:
 
 ![](/img/old/e802c95-2022-11-21_20-15-14.png)
 

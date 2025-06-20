@@ -4,7 +4,10 @@ sidebar_label: Overview
 description: "Learn about our Amazon Seller Central integration"
 ---
 
-<a class="external" href="https://sellercentral.amazon.com/" target="_blank">Amazon Seller Central</a> is a platform that independent merchants use to sell their products on Amazon.
+<a class="external" href="https://sellercentral.amazon.com/" target="_blank">
+  Amazon Seller Central
+</a>
+is a platform that independent merchants use to sell their products on Amazon.
 
 Our Commerce API supports Amazon Seller Central and allows your linked customers to share their Amazon Seller Central data through Codat. You can then retrieve this data in the same standardized format as our other commerce integrations.
 

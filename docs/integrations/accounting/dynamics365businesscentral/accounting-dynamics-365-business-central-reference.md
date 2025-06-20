@@ -56,4 +56,4 @@ Codat only reads Transfers that consist of exactly two journal entry lines (each
 
 ## Paying multiple invoices or bills
 
-We do not currently support paying multiple invoices or bills, from a single payment or billPayment write operation. This means that the payloads of these objects must have a single line item. 
+We do not currently support paying multiple invoices or bills, from a single payment or billPayment write operation. This means that the payloads of these objects must have a single line item.

@@ -1,7 +1,9 @@
 ---
 title: Bill Pay overview
 sidebar_label: Bill Pay
-description: Handle your customers' most complex accounts payable workflows across all major accounting software with our fully-featured bill pay solution
+description:
+  Handle your customers' most complex accounts payable workflows across all
+  major accounting software with our fully-featured bill pay solution
 image: "/img/banners/social/payables.png"
 displayed_sidebar: payables
 hide_title: true
@@ -11,25 +13,36 @@ banner_title: Bill Pay
 banner_class: payables
 banner_icon: "/img/logos/products/logo_payables_clear.svg"
 banner_image: "/img/banners/payables.png"
-banner_text: "Handle your customers' most complex accounts payable workflows across all major accounting software with our fully-featured bill pay solution"
+banner_text:
+  "Handle your customers' most complex accounts payable workflows across all
+  major accounting software with our fully-featured bill pay solution"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Bill Pay?
 ---
 
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
-import { integrationsFilterBillPayAsync, integrationsFilterBillPaySync } from "@components/Integrations/integrations";
-import ClientLibraries from '@components/ClientLibraries'
+import {
+  integrationsFilterBillPayAsync,
+  integrationsFilterBillPaySync,
+} from "@components/Integrations/integrations";
+import ClientLibraries from "@components/ClientLibraries";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 ## What is it?
 
-**Bill Pay** is the hassle-free way to integrate your bill pay product with your customers' accounting software so you can keep their supplier information, invoices, and payments in sync. It's ideal for facilitating essential bill payment processes within your SMB's accounting software.
+**Bill Pay** is the hassle-free way to integrate your bill pay product with your
+customers' accounting software so you can keep their supplier information,
+invoices, and payments in sync. It's ideal for facilitating essential bill
+payment processes within your SMB's accounting software.
 
 ## Who is it for?
 
-We designed and built **Bill Pay** for neobanks, expense management providers, and B2B payment providers. Use this solution in your application and automate your customers' bill payments, eliminating duplication of effort, so you can enjoy increased payment volumes as a result. 
+We designed and built **Bill Pay** for neobanks, expense management providers,
+and B2B payment providers. Use this solution in your application and automate
+your customers' bill payments, eliminating duplication of effort, so you can
+enjoy increased payment volumes as a result.
 
 ## Why use it?
 
@@ -46,57 +59,65 @@ We designed and built **Bill Pay** for neobanks, expense management providers, a
 </li>
 
 <li className="card">
-    <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
-            className="mini-icon"/>
-        <h3>Get to market faster</h3>
-    </div>
-    <p>
-       Make your accounts payable solution compatible with all of the major accounting and ERP systems.
-    </p>
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Get to market faster</h3>
+  </div>
+  <p>
+    Make your accounts payable solution compatible with all of the major
+    accounting and ERP systems.
+  </p>
 </li>
 
 <li className="card">
-    <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
-            className="mini-icon"/>
-        <h3>Leverage standardized data</h3>
-    </div>
-    <p>
-        Take advantage of our standardized data model to quickly and easily sync bills and bill payments with all of the major accounting software.
-    </p>
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Leverage standardized data</h3>
+  </div>
+  <p>
+    Take advantage of our standardized data model to quickly and easily sync
+    bills and bill payments with all of the major accounting software.
+  </p>
 </li>
 
 <li className="card">
-    <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
-            className="mini-icon"/>
-        <h3>Support simple reconciliation</h3>
-    </div>
-    <p>
-      We provide a complete solution to handle the complexity of reconciling bill payments, from bulk payments to credit notes and partial payments.
-    </p>
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Support simple reconciliation</h3>
+  </div>
+  <p>
+    We provide a complete solution to handle the complexity of reconciling bill
+    payments, from bulk payments to credit notes and partial payments.
+  </p>
 </li>
 
 </ul>
 
 ## How does it work?
 
-With Bill Pay, you can build a solution that covers all the key steps of bill management and payment, catering even to the most complex scenarios. The Bill Pay process consists of three key steps:
+With Bill Pay, you can build a solution that covers all the key steps of bill
+management and payment, catering even to the most complex scenarios. The Bill
+Pay process consists of three key steps:
 
 1. **Manage reference data**
 
-    Help your customer manage reference data in preparation to paying their bills by displaying their suppliers and creating new supplier records when needed. 
+   Help your customer manage reference data in preparation to paying their bills
+   by displaying their suppliers and creating new supplier records when needed.
 
 2. **Get customer's bills**
 
-    Let your customer choose the bills they want to pay. Get a list of their existing unpaid bills and display them in your application, and enable them to create new bills. 
+   Let your customer choose the bills they want to pay. Get a list of their
+   existing unpaid bills and display them in your application, and enable them
+   to create new bills.
 
 3. **Record payments**
 
-    When your customer completes a bill payment in your app, send these details to Codat. We will reflect this transaction in your customer's accounting software and reconcile it against the original bill, marking it as paid.
+   When your customer completes a bill payment in your app, send these details
+   to Codat. We will reflect this transaction in your customer's accounting
+   software and reconcile it against the original bill, marking it as paid.
 
-We designed two versions of our solution so that you can choose the one that solves the specific needs of your accounting automation use case: 
+We designed two versions of our solution so that you can choose the one that
+solves the specific needs of your accounting automation use case:
 
 <ul className="card-container col-2">
 <li className="card">
@@ -111,14 +132,19 @@ We designed two versions of our solution so that you can choose the one that sol
 </li>
 
 <li className="card">
-    <div className="header">
-        <img src="/img/wp-icons/clock-clockwise.svg"
-            className="mini-icon"/>
-        <h3><a href="https://docs.codat.io/payables/sync/suppliers">Synchronous Bill Pay</a></h3>
-    </div>
-    <p>
-       Sync Bill Pay is designed to integrate a bill pay flow into your app as quickly as possible, focusing on simplicity and efficiency of its endpoints. This version offers real-time updates with your SMBs' accounting systems.
-    </p>
+  <div className="header">
+    <img src="/img/wp-icons/clock-clockwise.svg" className="mini-icon" />
+    <h3>
+      <a href="https://docs.codat.io/payables/sync/suppliers">
+        Synchronous Bill Pay
+      </a>
+    </h3>
+  </div>
+  <p>
+    Sync Bill Pay is designed to integrate a bill pay flow into your app as
+    quickly as possible, focusing on simplicity and efficiency of its endpoints.
+    This version offers real-time updates with your SMBs' accounting systems.
+  </p>
 </li>
 
 </ul>
@@ -143,6 +169,9 @@ We designed two versions of our solution so that you can choose the one that sol
 
 ## Build with client libraries
 
-Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify your developer journey automating accounts payable. The SDKs come in multiple languages and provide sample requests and responses for the full range of accounts payable workflows.
+Use our [comprehensive SDKs](/get-started/libraries) to kick-start and simplify
+your developer journey automating accounts payable. The SDKs come in multiple
+languages and provide sample requests and responses for the full range of
+accounts payable workflows.
 
 <ClientLibraries productName={"sync-for-payables"} />

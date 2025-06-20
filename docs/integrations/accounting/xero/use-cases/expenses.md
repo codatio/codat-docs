@@ -34,8 +34,8 @@ Bank statement lines are the bank transactions imported from your bank account 
 Transactions are created in Xero. These could be invoices, bills, expense claims or cash transactions.
 
 0. Prerequisites
-0.1 Bank accounts
-Create a holding account
+   0.1 Bank accounts
+   Create a holding account
 
 Create a new holding bank account to represent the funds processed through the expense provider.
 
@@ -106,7 +106,7 @@ GET/companies/{companyId}/data/taxRates (link)
 Note: Most platforms also support NON or null tax rates to represent exempt transactions.
 
 1. Expenses
-1.1 Spend money
+   1.1 Spend money
 
 ![](/img/integrations/accounting/xero/xero-expenses-2.png)
 
@@ -203,11 +203,11 @@ Post a transfer for every payout or top-up made from the expense provider to the
 3.1 Transfer
 Post a transfer
 
-|         |         Payout          |          Top-up         |
-|:-------:|:-----------------------:|:-----------------------:|
-|  From   | Holding bank account    | Nominated bank account  |
-|   To    | Nominated bank account  | Holding bank account    |
-| Amount  | Amount of payout        | Amount of top-up        |
+|        |         Payout         |         Top-up         |
+| :----: | :--------------------: | :--------------------: |
+|  From  |  Holding bank account  | Nominated bank account |
+|   To   | Nominated bank account |  Holding bank account  |
+| Amount |    Amount of payout    |    Amount of top-up    |
 
 Codat
 
@@ -237,7 +237,7 @@ POST /companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accoun
 Requires Bank feeds to be enabled on Xero credentials (approved via App partner process)
 
 4. Refunds
-2.2 Receive money
+   2.2 Receive money
 
 ![](/img/integrations/accounting/xero/xero-expenses-3.png)
 

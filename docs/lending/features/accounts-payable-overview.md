@@ -19,7 +19,7 @@ Common uses of our accounts payable feature include:
 
 - **Digital data collection:** get an ongoing feed of supplier invoices.
 
-- **Supplier risk analysis:** gain insights into the borrower's relationship with the supplier including a fully history of bills, payment behavior, and discounts provided on previous bills. 
+- **Supplier risk analysis:** gain insights into the borrower's relationship with the supplier including a fully history of bills, payment behavior, and discounts provided on previous bills.
 
 ## Feature components
 
@@ -42,15 +42,15 @@ For example, use the [List suppliers](/lending-api#/operations/list-accounting-s
 
 ```javascript
 const suppliersResponse = await lendingClient.accountsPayable.suppliers.list({
-    companyId: companyId,
-    query: 'status=Active'
-  });
+  companyId: companyId,
+  query: "status=Active",
+});
 
-if(suppliersResponse.statusCode != 200){
-  throw new Error("Could not get current suppliers")
+if (suppliersResponse.statusCode != 200) {
+  throw new Error("Could not get current suppliers");
 }
 
-console.log(suppliersResponse.suppliers[0].supplierName)
+console.log(suppliersResponse.suppliers[0].supplierName);
 ```
 
 </TabItem>
@@ -95,7 +95,7 @@ Console.WriteLine(suppliersResponse.Suppliers[0].SupplierName);
 
 ```go
 ctx := context.Background()
-suppliersResponse, err := lendingClient.AccountsPayable.Suppliers.List(ctx, 
+suppliersResponse, err := lendingClient.AccountsPayable.Suppliers.List(ctx,
   operations.ListAccountingSuppliersRequest{
     CompanyID: companyID,
     Query: "status=Active",
@@ -112,7 +112,7 @@ if suppliersResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending solution enabled, configure your instance to work with our accounts payable feature. 
+Once you have the Lending solution enabled, configure your instance to work with our accounts payable feature.
 
 #### Configure data sources
 
@@ -135,15 +135,16 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) with the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
 
-- [Dataset status has changed to an error state](/using-the-api/webhooks/event-types)  
+- [Dataset status has changed to an error state](/using-the-api/webhooks/event-types)
 
-  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
- 
-- [Dataset data changed](/using-the-api/webhooks/event-types)  
+  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again.
+
+- [Dataset data changed](/using-the-api/webhooks/event-types)
 
   This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
 ---
 
 ## Read next
+
 - [Company info](/lending/features/company-info-overview)

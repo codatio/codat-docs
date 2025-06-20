@@ -30,20 +30,21 @@ Your SMB customers may have multiple bank accounts they can use to pay for a bil
 <summary><b>Foreign currency payments</b></summary>
 
 To facilitate payments in a foreign currency, you can:
+
 - Convert the payment to the currency of the account.
 - Create a new account in the payment currency.
 
 Use the [Get create/update bank account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoint to view the list of the company's currently enabled currencies. It can return:
 
-- *Single value*: the account's base currency in platforms that only support the base currency
-- *Multiple values*: several currencies enabled by the SMB user in their accounting software
-- *No values*: empty array for platforms where any and all currencies can be selected
+- _Single value_: the account's base currency in platforms that only support the base currency
+- _Multiple values_: several currencies enabled by the SMB user in their accounting software
+- _No values_: empty array for platforms where any and all currencies can be selected
 
 </details>
 
 ### Retrieve accounts
 
-If your SMB customer is making payments from an existing bank account, retrieve a list of their accounts and allow them to map payment methods against each one. 
+If your SMB customer is making payments from an existing bank account, retrieve a list of their accounts and allow them to map payment methods against each one.
 
 Use the [List accounts](/sync-for-payables-api#/operations/list-accounts) endpoint and filter by `isBankAccount=true` to return a list of valid bank accounts.
 
@@ -53,9 +54,9 @@ Use the [List accounts](/sync-for-payables-api#/operations/list-accounts) endpoi
 
 ```javascript
 const accountsListResponse = await payablesClient.accounts.list({
-    companyId: companyId,
-    query: 'isBankAccount=true'
-  });
+  companyId: companyId,
+  query: "isBankAccount=true",
+});
 ```
 
 </TabItem>
@@ -93,20 +94,21 @@ accountsListResponse, err := payablesClient.Accounts.List(ctx, operations.ListAc
     Query: "isBankAccount=true"
 })
 ```
+
 </TabItem>
 
 </Tabs>
 
 ### Create account
 
-If the SMB customer plans to make payments from a new payment method or account that you provide, create the new account in their accounting software. The account will contain their transactions, making the SMB's payment reconciliation workflows easier. 
+If the SMB customer plans to make payments from a new payment method or account that you provide, create the new account in their accounting software. The account will contain their transactions, making the SMB's payment reconciliation workflows easier.
 
 You can also use the [Get create bank account model](/sync-for-payables-api#/operations/get-create-bankAccounts-model) or [Get create account model](/sync-for-payables-api#/operations/get-create-chartOfAccounts-model) endpoints first to check integration-specific requirements for account creation, or [read more](/using-the-api/push) about creating data with Codat.
 
 <details>
 <summary><b>Create account in Sage Intacct</b></summary>
 
-For Sage Intacct, use the [Create account](/sync-for-payables-api#/operations/create-account) endpoint to reflect that account in the customer's accounting software. 
+For Sage Intacct, use the [Create account](/sync-for-payables-api#/operations/create-account) endpoint to reflect that account in the customer's accounting software.
 
 <Tabs groupId="language">
 
@@ -194,6 +196,7 @@ accountCreateResponse, err := payablesClient.Accounts.Create(ctx, operations.Cre
     ConnectionID: connectionID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
@@ -213,17 +216,17 @@ Xero doesn't support the creation of credit accounts.
 
 ```javascript
 const accountCreateResponse = await payablesClient.accounts.create({
-	account: {
-		accountName: "BillPay Debit Account",
-		accountType: AccountType.Debit,
-		accountNumber: "80088008",
-		currency: "USD",
-		balance: 0,
-		availableBalance: 0,
-	},
-    companyId: companyId,
-	connectionId: connectionId
-  });
+  account: {
+    accountName: "BillPay Debit Account",
+    accountType: AccountType.Debit,
+    accountNumber: "80088008",
+    currency: "USD",
+    balance: 0,
+    availableBalance: 0,
+  },
+  companyId: companyId,
+  connectionId: connectionId,
+});
 ```
 
 </TabItem>
@@ -285,6 +288,7 @@ accountsResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAc
     ConnectionID: connectionID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
@@ -293,26 +297,26 @@ accountsResponse, err := payablesClient.Accounts.Create(ctx, operations.CreateAc
 
 #### Choosing an account type
 
-Use the following `accountType` values that correspond to the payment methods you provide. 
+Use the following `accountType` values that correspond to the payment methods you provide.
 
-| **Payment method**                                                    | **Account type** |
-|-----------------------------------------------------------------------|------------------|
-| Automated Clearing House (ACH)   or Real-Time Payments (RTP) networks | `Debit`          |
-| Cheque/check payments                                                 | `Debit`          |
-| Electronic bank transfer                                              | `Debit`          |
-| BACS (Bankers' Automated   Clearing System)                           | `Debit`          |
-| Commercial/business credit   card                                     | `Credit`         |
-| BNPL (Buy Now, Pay Later)                                             | `Credit`         |
+| **Payment method**                                                  | **Account type** |
+| ------------------------------------------------------------------- | ---------------- |
+| Automated Clearing House (ACH) or Real-Time Payments (RTP) networks | `Debit`          |
+| Cheque/check payments                                               | `Debit`          |
+| Electronic bank transfer                                            | `Debit`          |
+| BACS (Bankers' Automated Clearing System)                           | `Debit`          |
+| Commercial/business credit card                                     | `Credit`         |
+| BNPL (Buy Now, Pay Later)                                           | `Credit`         |
 
 ## Single bill payment
 
 If your SMB customer is making a payment to pay off a **single bill in full**, use the [Create bill payments](/sync-for-payables-api#/operations/create-bill-payment) endpoint and include the following properties in the request:
 
-| Property      | Details                                                                                                                                                                                                   |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `totalAmount` | **Always positive** value that indicates the amount of the bill that was   paid                                                                                                                           |
-| `lines`       | Array that contains one element with the following:   <ul><li>`amount` equal to the `totalAmount` of the payment</li><li>`links` array that must contain one element</li></ul>                            |
-| `links`       | Array that contains one element with the following: <ul><li>`type` of link, in this case a `Bill`</li><li>`id` of the bill that was paid</li><li>`amount` with value of **`-totalAmount`** to indicate the full   amount is allocated to the bill</li></ul> |
+| Property      | Details                                                                                                                                                                                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `totalAmount` | **Always positive** value that indicates the amount of the bill that was paid                                                                                                                                                                             |
+| `lines`       | Array that contains one element with the following: <ul><li>`amount` equal to the `totalAmount` of the payment</li><li>`links` array that must contain one element</li></ul>                                                                              |
+| `links`       | Array that contains one element with the following: <ul><li>`type` of link, in this case a `Bill`</li><li>`id` of the bill that was paid</li><li>`amount` with value of **`-totalAmount`** to indicate the full amount is allocated to the bill</li></ul> |
 
 In case of **partial payments**, use the same endpoint and adjust the `amount` values according to the amount of the partial payment.
 
@@ -381,6 +385,7 @@ For example, review the bill mapped from Xero in the dropdown below and see how 
   }
 }
 ```
+
 </details>
 
 <Tabs groupId="language">
@@ -391,10 +396,10 @@ For example, review the bill mapped from Xero in the dropdown below and see how 
 const billPaymentResponse = await payablesClient.billPayments.create({
   billPayment: {
     supplierRef: {
-      id: "dec56ceb-65e9-43b3-ac98-7fe09eb37e31"
+      id: "dec56ceb-65e9-43b3-ac98-7fe09eb37e31",
     },
     accountRef: {
-      id: "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4"
+      id: "bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4",
     },
     totalAmount: 135.85,
     currency: "GBP",
@@ -412,7 +417,7 @@ const billPaymentResponse = await payablesClient.billPayments.create({
           },
         ],
       },
-    ]
+    ],
   },
   companyId: companyId,
   connectionId: connectionId,
@@ -492,13 +497,14 @@ var billPaymentResponse = await payablesClient.BillPayments.CreateAsync(new() {
   ConnectionId = connectionId,
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
 
 ```go
 ctx := context.Background()
-billPaymentResponse, err := payablesClient.BillPayments.Create(ctx, 
+billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
   operations.CreateBillPaymentRequest{
     BillPayment: &shared.BillPayment{
       SupplierRef: &shared.SupplierRef{
@@ -529,6 +535,7 @@ billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
     ConnectionID: connectionID
 })
 ```
+
 </TabItem>
 
 </Tabs>
@@ -589,38 +596,38 @@ Your SMB customer may want pay multiple bills from a single supplier using one p
 
 ```json
 {
-    "supplierRef": {
-      "id": "77",
-      "supplierName": "AtoB"
-    },
-    "accountRef": {
-      "id": "122"
-    },
-    "totalAmount": 2500,
-    "currency": "USD",
-    "currencyRate": 1,
-    "date": "2023-04-17T00:00:00",
-    "lines": [
-      {
-        "amount": 2500,
-        "links": [
-          {
-            "type": "Bill",
-            "id": "302",
-            "amount": -1200,
-            "currencyRate": 1
-          },
-          {
-            "type": "Bill",
-            "id": "303",
-            "amount": -1300,
-            "currencyRate": 1
-          }
-        ]
-      }
-    ],
-    "reference": "1"
-  }
+  "supplierRef": {
+    "id": "77",
+    "supplierName": "AtoB"
+  },
+  "accountRef": {
+    "id": "122"
+  },
+  "totalAmount": 2500,
+  "currency": "USD",
+  "currencyRate": 1,
+  "date": "2023-04-17T00:00:00",
+  "lines": [
+    {
+      "amount": 2500,
+      "links": [
+        {
+          "type": "Bill",
+          "id": "302",
+          "amount": -1200,
+          "currencyRate": 1
+        },
+        {
+          "type": "Bill",
+          "id": "303",
+          "amount": -1300,
+          "currencyRate": 1
+        }
+      ]
+    }
+  ],
+  "reference": "1"
+}
 ```
 
 </TabItem>
@@ -635,37 +642,37 @@ If locations are set to mandatory in the company's NetSuite account, the `refere
 
 ```json
 {
-  "supplierRef":{
-    "id":"727",
-    "supplierName":"Vendor -.B"
+  "supplierRef": {
+    "id": "727",
+    "supplierName": "Vendor -.B"
   },
-  "totalAmount":2,
+  "totalAmount": 2,
   "accountRef": {
     "id": "854"
   },
-  "currency":"GBP",
-  "currencyRate":1,
-  "date":"2023-04-18T00:00:00",
-  "lines":[
+  "currency": "GBP",
+  "currencyRate": 1,
+  "date": "2023-04-18T00:00:00",
+  "lines": [
     {
-      "amount":2,
-      "links":[
+      "amount": 2,
+      "links": [
         {
-          "type":"Bill",
-          "id":"288274",
-          "amount":-1,
-          "currencyRate":1
+          "type": "Bill",
+          "id": "288274",
+          "amount": -1,
+          "currencyRate": 1
         },
         {
-          "type":"Bill",
-          "id":"287594",
-          "amount":-1,
-          "currencyRate":1
+          "type": "Bill",
+          "id": "287594",
+          "amount": -1,
+          "currencyRate": 1
         }
       ]
     }
   ],
-  "reference":"location-5"
+  "reference": "location-5"
 }
 ```
 
@@ -763,6 +770,7 @@ Sage Intacct uses a `paymentMethodRef`. You can retrieve the payment methods for
   ]
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -783,7 +791,7 @@ To do this with async Bill Pay, use the [Create bill payments](/sync-for-payable
 const billPaymentResponse = await payablesClient.billPayments.create({
   billPayment: {
     accountRef: {
-      id: "d96ffd74-2394-4666-81c4-eebb76e51e21"
+      id: "d96ffd74-2394-4666-81c4-eebb76e51e21",
     },
     totalAmount: 6,
     date: "2022-09-06T00:00:00",
@@ -818,7 +826,7 @@ const billPaymentResponse = await payablesClient.billPayments.create({
           },
         ],
       },
-    ]
+    ],
   },
   companyId: companyId,
   connectionId: connectionId,
@@ -926,13 +934,14 @@ var billPaymentResponse = await payablesClient.BillPayments.CreateAsync(new() {
   ConnectionId = connectionId,
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
 
 ```go
 ctx := context.Background()
-billPaymentResponse, err := payablesClient.BillPayments.Create(ctx, 
+billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
   operations.CreateBillPaymentRequest{
     BillPayment: &shared.BillPayment{
       AccountRef: &shared.AccountRef{
@@ -977,6 +986,7 @@ billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
     ConnectionID: connectionID
 })
 ```
+
 </TabItem>
 
 </Tabs>
@@ -990,19 +1000,20 @@ If your customer receives a credit note from their supplier, they can use it to 
 
 #### Create a credit note
 
-Start by creating a credit note using our [Create bill credit note](/sync-for-payables-api#/operations/create-bill-credit-note) endpoint. 
+Start by creating a credit note using our [Create bill credit note](/sync-for-payables-api#/operations/create-bill-credit-note) endpoint.
 
 <Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-const billCreditNoteCreateResponse = await payablesClient.billCreditNotes.create({
+const billCreditNoteCreateResponse =
+  await payablesClient.billCreditNotes.create({
     billCreditNote: {
       billCreditNoteNumber: "JMY-1987",
       supplierRef: {
         id: "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
-        supplierName: "Swanston Security"
+        supplierName: "Swanston Security",
       },
       withholdingTax: [],
       totalAmount: 25.44,
@@ -1025,17 +1036,17 @@ const billCreditNoteCreateResponse = await payablesClient.billCreditNotes.create
           taxAmount: 4.24,
           totalAmount: 25.44,
           accountRef: {
-            id: "f96c9458-d724-47bf-8f74-a9d5726465ce"
+            id: "f96c9458-d724-47bf-8f74-a9d5726465ce",
           },
           discountPercentage: 0,
           taxRateRef: {
             id: "INPUT2",
             name: "20% (VAT on Expenses)",
-            effectiveTaxRate: 20
+            effectiveTaxRate: 20,
           },
-          trackingCategoryRefs: []
-        }
-      ]
+          trackingCategoryRefs: [],
+        },
+      ],
     },
     companyId: companyId,
     connectionId: connectionId,
@@ -1143,6 +1154,7 @@ var billCreditNoteCreateResponse = await payablesClient.BillCreditNotes.CreateAs
   ConnectionId = connectionId
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -1195,6 +1207,7 @@ billCreditNoteCreateResponse, err := payablesClient.BillCreditNotes.Create(ctx,
   }
 )
 ```
+
 </TabItem>
 
 </Tabs>
@@ -1208,43 +1221,43 @@ billCreditNoteCreateResponse, err := payablesClient.BillCreditNotes.Create(ctx,
 
 ```json
 {
-	"billCreditNoteNumber": "JMY-1987",
-	"supplierRef": {
-		"id": "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
-		"supplierName": "Swanston Security"
-	},
-	"withholdingTax": [],
-	"totalAmount": 25.44,
-	"totalDiscount": 0,
-	"subTotal": 25.44,
-	"totalTaxAmount": 4.24,
-	"discountPercentage": 0,
-	"remainingCredit": 0,
-	"status": "Submitted",
-	"issueDate": "2023-02-09T00:00:00",
-	"currency": "GBP",
-	"currencyRate": 1,
-	"lineItems": [
-		{
-			"description": "Refund as agreed due to window break when guard absent",
-			"unitAmount": 21.2,
-			"quantity": 1,
-			"discountAmount": 0,
-			"subTotal": 21.2,
-			"taxAmount": 4.24,
-			"totalAmount": 25.44,
-			"accountRef": {
-				"id": "f96c9458-d724-47bf-8f74-a9d5726465ce"
-			},
-			"discountPercentage": 0,
-			"taxRateRef": {
-				"id": "INPUT2",
-				"name": "20% (VAT on Expenses)",
-				"effectiveTaxRate": 20
-			},
-			"trackingCategoryRefs": []
-		}
-	]
+  "billCreditNoteNumber": "JMY-1987",
+  "supplierRef": {
+    "id": "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
+    "supplierName": "Swanston Security"
+  },
+  "withholdingTax": [],
+  "totalAmount": 25.44,
+  "totalDiscount": 0,
+  "subTotal": 25.44,
+  "totalTaxAmount": 4.24,
+  "discountPercentage": 0,
+  "remainingCredit": 0,
+  "status": "Submitted",
+  "issueDate": "2023-02-09T00:00:00",
+  "currency": "GBP",
+  "currencyRate": 1,
+  "lineItems": [
+    {
+      "description": "Refund as agreed due to window break when guard absent",
+      "unitAmount": 21.2,
+      "quantity": 1,
+      "discountAmount": 0,
+      "subTotal": 21.2,
+      "taxAmount": 4.24,
+      "totalAmount": 25.44,
+      "accountRef": {
+        "id": "f96c9458-d724-47bf-8f74-a9d5726465ce"
+      },
+      "discountPercentage": 0,
+      "taxRateRef": {
+        "id": "INPUT2",
+        "name": "20% (VAT on Expenses)",
+        "effectiveTaxRate": 20
+      },
+      "trackingCategoryRefs": []
+    }
+  ]
 }
 ```
 
@@ -1347,7 +1360,6 @@ billCreditNoteCreateResponse, err := payablesClient.BillCreditNotes.Create(ctx,
     }
   ]
 }
-
 ```
 
 </TabItem>
@@ -1412,7 +1424,6 @@ billCreditNoteCreateResponse, err := payablesClient.BillCreditNotes.Create(ctx,
     }
   ]
 }
-
 ```
 
 </TabItem>
@@ -1477,18 +1488,18 @@ In some accounting software, you can combine a credit note and a partial payment
 const billPaymentResponse = await payablesClient.billPayments.create({
   billPayment: {
     supplierRef: {
-      id: "3a0d40a2-2698-4cf5-b7b2-30133c632ab6"
+      id: "3a0d40a2-2698-4cf5-b7b2-30133c632ab6",
     },
     accountRef: {
-      id: "94b02f61-f95f-4873-b5b7-651ff9707325"
+      id: "94b02f61-f95f-4873-b5b7-651ff9707325",
     },
-    totalAmount: 0.00,
+    totalAmount: 0.0,
     currency: "GBP",
     currencyRate: 1,
     date: "2023-05-09T00:00:00",
     lines: [
       {
-        amount: 45.00,
+        amount: 45.0,
         links: [
           {
             id: "59978bef-af2f-4a7e-9728-4997597c0980",
@@ -1502,7 +1513,7 @@ const billPaymentResponse = await payablesClient.billPayments.create({
           },
         ],
       },
-    ]
+    ],
   },
   companyId: companyId,
   connectionId: connectionId,
@@ -1588,13 +1599,14 @@ var billPaymentResponse = await payablesClient.BillPayments.CreateAsync(new() {
   ConnectionId = connectionId,
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
 
 ```go
 ctx := context.Background()
-billPaymentResponse, err := payablesClient.BillPayments.Create(ctx, 
+billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
   operations.CreateBillPaymentRequest{
     BillPayment: &shared.BillPayment{
       SupplierRef: &shared.SupplierRef{
@@ -1628,6 +1640,7 @@ billPaymentResponse, err := payablesClient.BillPayments.Create(ctx,
     ConnectionID: connectionID
 })
 ```
+
 </TabItem>
 
 </Tabs>
@@ -1816,9 +1829,9 @@ Credit note allocations are coming soon for MYOB.
 
 ## Delete bills and payments
 
-In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill. 
+In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill.
 
-Use the [Delete bill](/sync-for-payables-api#/operations/delete-bill) and [Delete bill payment](/sync-for-payables-api#/operations/delete-billPayment) endpoints to support these requirements, and check them in our OAS for the most up-to-date integration coverage. 
+Use the [Delete bill](/sync-for-payables-api#/operations/delete-bill) and [Delete bill payment](/sync-for-payables-api#/operations/delete-billPayment) endpoints to support these requirements, and check them in our OAS for the most up-to-date integration coverage.
 
 #### Delete bills
 
@@ -1859,6 +1872,7 @@ var res = await payablesClient.Bills.DeleteAsync(new() {
     BillId = billId,
 };);
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -1871,6 +1885,7 @@ billDeleteResponse, err := payablesClient.Bills.Delete(ctx, operations.DeleteBil
   BillID: billID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
@@ -1914,13 +1929,14 @@ var billPaymentDeleteResponse = await payablesClient.BillPayments.DeleteAsync(ne
     BillPaymentId = billPaymentId,
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
 
 ```go
 ctx := context.Background()
-billPaymentDeleteResponse, err := payablesClient.BillPayments.Delete(ctx, 
+billPaymentDeleteResponse, err := payablesClient.BillPayments.Delete(ctx,
   operations.DeleteBillPaymentRequest{
     CompanyID: companyID,
     ConnectionID: connectionID,
@@ -1928,19 +1944,15 @@ billPaymentDeleteResponse, err := payablesClient.BillPayments.Delete(ctx,
   }
 )
 ```
+
 </TabItem>
 
 </Tabs>
 
 :::tip Recap
 
-This concludes the bill pay process supported by our asynchronous Bill Pay solution. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system. 
+This concludes the bill pay process supported by our asynchronous Bill Pay solution. You have provided your customer with their suppliers, bills, and bank accounts and enabled them to choose relevant payment methods. You have reflected the bill payments in their accounting system.
 
 As a result, the customer will see these bills marked as paid in their software and their accounts payable liability and supplier balances reduced.
 
 :::
-
-
-
-
-

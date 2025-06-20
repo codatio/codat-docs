@@ -22,8 +22,48 @@ jobs:
       - name: Install linkinator
         run: npm install -g linkinator
       
+      - name: Get Vercel Preview URL
+        id: get-preview-url
+        if: github.event_name == 'pull_request'
+        run: |
+          # Wait a bit for Vercel deployment to be ready
+          sleep 30
+          
+          # Try to get the preview URL from Vercel API
+          if [ -n "${{ secrets.VERCEL_TOKEN }}" ]; then
+            # Get the latest deployment for this PR
+            DEPLOYMENT=$(curl -s -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+              "https://api.vercel.com/v6/deployments?teamId=${{ secrets.VERCEL_TEAM_ID }}&projectId=${{ secrets.VERCEL_PROJECT_ID }}&gitSource.pullRequestId=${{ github.event.pull_request.number }}" \
+              | jq -r '.deployments[0].url // empty')
+            
+            if [ -n "$DEPLOYMENT" ]; then
+              echo "preview_url=https://$DEPLOYMENT" >> $GITHUB_OUTPUT
+            else
+              # Fallback: construct the preview URL using the typical Vercel pattern
+              BRANCH_NAME=$(echo "${{ github.head_ref }}" | sed 's/[^a-zA-Z0-9]/-/g')
+              echo "preview_url=https://codat-docs-git-${BRANCH_NAME}-codat.vercel.app" >> $GITHUB_OUTPUT
+            fi
+          else
+            # Fallback: construct the preview URL using the typical Vercel pattern
+            BRANCH_NAME=$(echo "${{ github.head_ref }}" | sed 's/[^a-zA-Z0-9]/-/g')
+            echo "preview_url=https://codat-docs-git-${BRANCH_NAME}-codat.vercel.app" >> $GITHUB_OUTPUT
+          fi
+      
       - name: Run linkinator
-        run: npx linkinator https://docs.codat.io --recurse --verbosity error --skip ".*github.*" --format json --timeout 10000 > link-results.json
+        run: |
+          # Function to run linkinator with a given URL
+          run_linkinator() {
+            local url=$1
+            npx linkinator "$url" --recurse --verbosity error --skip ".*github.*|.*localhost.*" --format json --timeout 10000 --delay 1000 > link-results.json
+          }
+          
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            # Use preview URL for PRs
+            run_linkinator "${{ steps.get-preview-url.outputs.preview_url }}"
+          else
+            # Use main docs site for manual runs
+            run_linkinator "https://docs.codat.io"
+          fi
         continue-on-error: true  # Ensure the workflow continues even if linkinator finds broken links
       
       - name: Delete Previous Comments
@@ -62,7 +102,8 @@ jobs:
             
             const printList = filtered
               .map(link => `[${link.status}] ${link.url}`);
-            const output = `Link check results (filtered):\n\`\`\`\n${JSON.stringify(printList, null, 2)}\n\`\`\``;
+            const previewUrl = '${{ steps.get-preview-url.outputs.preview_url }}';
+            const output = `Link check results for preview deployment (${previewUrl}):\n\`\`\`\n${JSON.stringify(printList, null, 2)}\n\`\`\``;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,

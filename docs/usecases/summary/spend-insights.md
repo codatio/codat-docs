@@ -3,6 +3,7 @@ title: "Spend insights with Codat"
 sidebar_label: "Spend insights"
 description: "Grow commercial card volume in B2B payments by leveraging deeper spend insights in an actionable format from more clients through secure ongoing data sharing"
 ---
+
 import Products from "@components/Products";
 
 ## How Codat can help
@@ -10,12 +11,20 @@ import Products from "@components/Products";
 We help financial institutions and issuing banks of any size move more spend to card, grow their card programs over time, and increase sales conversions by leveraging our [Spend Insights](/spend-insights/overview) solution.
 
 <div className="video-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/z-UW2uY7TSo?si=b3_a_vWUo5927MAf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen/>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/z-UW2uY7TSo?si=b3_a_vWUo5927MAf"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  />
 </div>
 
 ## Relevant solutions
 
-<Products mini={true} products={["Spend Insights"]}/>
+<Products mini={true} products={["Spend Insights"]} />
 
 Access your clients' accounts payable data within minutes and gain insights on their spend and supplier activity, identifying suppliers eligible for virtual card programs to run targeted supplier outreach campaigns.
 

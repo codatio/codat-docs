@@ -4,7 +4,8 @@ date: "2024-03-26"
 tags: ["Deprecation"]
 authors: Amy-Roberts
 ---
-On **July 10, 2024**, we will remove the `Transfer in` and `Transfer out` transaction types from the Sync for Expenses [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint. 
+
+On **July 10, 2024**, we will remove the `Transfer in` and `Transfer out` transaction types from the Sync for Expenses [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint.
 
 <!--truncate-->
 

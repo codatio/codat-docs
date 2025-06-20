@@ -6,7 +6,7 @@ displayed_sidebar: commerce
 image: "/img/banners/social/commerce.png"
 ---
 
-Once you have understood and performed the initial setup of our Sync for Commerce product, you can use its advanced features to enhance your merchant's experience of syncing sales data. 
+Once you have understood and performed the initial setup of our Sync for Commerce product, you can use its advanced features to enhance your merchant's experience of syncing sales data.
 
 ## Custom redirect
 
@@ -28,13 +28,13 @@ The resulting Sync flow URL will include the redirect URL as shown in this examp
 
 ## Authorize access on behalf of your customer
 
-When setting up Sync for Commerce, Codat will deploy a connector to your API that allows us to access your merchants' data in your systems. By default, we use your API's authentication method (for example, OAuth 2.0) to request your customers to grant us access to that data. 
+When setting up Sync for Commerce, Codat will deploy a connector to your API that allows us to access your merchants' data in your systems. By default, we use your API's authentication method (for example, OAuth 2.0) to request your customers to grant us access to that data.
 
 Since the user begins their configuration journey within your system, you may deem this step unnecessary. Instead, you may choose to grant Codat access to your merchants' data on their behalf. The resulting Sync flow is represented on the diagram below.
 
-``` mermaid
+```mermaid
   sequenceDiagram
-    participant you as You 
+    participant you as You
     participant codat as Codat
     participant customer as Your customer
     you ->> codat: Get branding for the integrations
@@ -62,12 +62,13 @@ If you would like to authorize access on behalf of your customer, please discuss
 
 ### Create a company
 
-Use our [Create company](/sync-for-commerce-api#/operations/create-company) endpoint to create a record of your customer within Codat. 
+Use our [Create company](/sync-for-commerce-api#/operations/create-company) endpoint to create a record of your customer within Codat.
 
 ```http
 POST /companies
 ```
-The `name` property in the request body must be your unique customer identifier. You can also populate the customer’s name as the description. 
+
+The `name` property in the request body must be your unique customer identifier. You can also populate the customer’s name as the description.
 
 ```json
 {
@@ -75,6 +76,7 @@ The `name` property in the request body must be your unique customer identifier.
   "description": ""     // Optionally include the customer name
 }
 ```
+
 In response, we will provide a `companyId`, returned by this endpoint as `id`. Retain this because it will be required in subsequent steps.
 
 ```json
@@ -98,11 +100,11 @@ Once you have created a company to represent your customer, you need to create a
 POST /companies/{companyId}/connections
 ```
 
-The `platformKey` property in the request body is the key that identifies Codat's connector to your API, as explained in step [3. Handle the integration selection](/commerce/setup#3-handle-the-integration-selection) of our setup guide. Your Solutions Engineer can provide this value to you. 
+The `platformKey` property in the request body is the key that identifies Codat's connector to your API, as explained in step [3. Handle the integration selection](/commerce/setup#3-handle-the-integration-selection) of our setup guide. Your Solutions Engineer can provide this value to you.
 
 ```json title="Example request body"
 {
-  platformKey: "dfxm"    // Identifies the Codat connector linked to your API
+  "platformKey": "dfxm" // Identifies the Codat connector linked to your API
 }
 ```
 
@@ -131,7 +133,7 @@ Now that you created a company and a connection, you can pass the authorization 
 PUT /companies/{companyId}/connections/{connectionId}/authorization
 ```
 
-You need to confirm the request body with your Solutions Engineer as part of deploying the Codat connector to your API. 
+You need to confirm the request body with your Solutions Engineer as part of deploying the Codat connector to your API.
 
 In response, we will return an updated `connection` object, same as the one returned in the previous step:
 
@@ -149,11 +151,12 @@ In response, we will return an updated `connection` object, same as the one retu
   "sourceType": "Accounting"
 }
 ```
-Notice that the `status` has changed to `Linked`, indicating that the authorization information we received allowed Codat to connect to your customers' data. 
 
-Next, you can obtain the Sync configuration URL, as instructed in step [3. Handle the integration selection](/commerce/setup#3-handle-the-integration-selection) of our setup guide. Use the `companyId` value returned when creating the company as the `merchantIdentifier` parameter value. 
+Notice that the `status` has changed to `Linked`, indicating that the authorization information we received allowed Codat to connect to your customers' data.
 
-Now Codat will not ask your user to authenticate with your system as part of the Sync configuration UI. 
+Next, you can obtain the Sync configuration URL, as instructed in step [3. Handle the integration selection](/commerce/setup#3-handle-the-integration-selection) of our setup guide. Use the `companyId` value returned when creating the company as the `merchantIdentifier` parameter value.
+
+Now Codat will not ask your user to authenticate with your system as part of the Sync configuration UI.
 
 ### Marketplace app listing
 

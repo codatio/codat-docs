@@ -5,8 +5,8 @@ sidebar_label: "Data types"
 image: "/img/banners/social/lending.png"
 ---
 
-import DataTypes from '@components/DataTypes'
+import DataTypes from "@components/DataTypes";
 
-<DataTypes productName="lending"/>
+<DataTypes productName="lending" />
 
-<br/>
+<br />

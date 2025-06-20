@@ -67,4 +67,3 @@ Follow the steps in [Update commerce sync settings in the Codat Portal](/integra
 ## Read next
 
 [Test your Mollie integration](/integrations/commerce/mollie/commerce-mollie-test)
-

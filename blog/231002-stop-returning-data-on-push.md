@@ -5,9 +5,9 @@ tags: ["Deprecation"]
 authors: dharries
 ---
 
-import Diff from "@components/Diff"
+import Diff from "@components/Diff";
 
-On **January 10, 2024**, we will deprecate the `data` field that is currently returned in the response and `/push` endpoints when creating or updating entities. 
+On **January 10, 2024**, we will deprecate the `data` field that is currently returned in the response and `/push` endpoints when creating or updating entities.
 
 Written data will also no longer be stored within Codat, and a refresh of data will be required for Codat to reflect new or updated records.
 

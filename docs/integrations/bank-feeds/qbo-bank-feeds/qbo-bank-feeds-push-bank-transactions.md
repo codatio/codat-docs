@@ -87,16 +87,16 @@ Make the following requests to the Codat API. All write requests are asynchronou
 
 The following table details how each property in the `transactions` array is handled when writing bank transactions to QBO. For more details, see the [Bank account transactions](/accounting-api#/schemas/BankTransactions) data type.
 
-| **Property in the `transactions` array**   | **Status**                                       |
-|--------------------------------------------|--------------------------------------------------|
-| id                                         | Required                                         |
-| date                                       | Required                                         |
-| description                                | Required                                         |
-| counterparty                               | Not supported; ignored if written                 |
-| reference                                  | Not supported; ignored if written                 |
-| reconciled                                 | Not supported; ignored if written                 |
-| amount                                     | Required                                         |
-| balance                                    | Required                                         |
-| transactionType                            | Optional, either `Credit`, `Debit`, or `Unknown` |
-| modifiedDate                               | Populated automatically on write                  |
-| sourceModifiedDate                         | Populated automatically on write                  |
+| **Property in the `transactions` array** | **Status**                                       |
+| ---------------------------------------- | ------------------------------------------------ |
+| id                                       | Required                                         |
+| date                                     | Required                                         |
+| description                              | Required                                         |
+| counterparty                             | Not supported; ignored if written                |
+| reference                                | Not supported; ignored if written                |
+| reconciled                               | Not supported; ignored if written                |
+| amount                                   | Required                                         |
+| balance                                  | Required                                         |
+| transactionType                          | Optional, either `Credit`, `Debit`, or `Unknown` |
+| modifiedDate                             | Populated automatically on write                 |
+| sourceModifiedDate                       | Populated automatically on write                 |

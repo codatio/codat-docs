@@ -6,5 +6,13 @@ module.exports = {
         parser: "mdx",
       },
     },
+    {
+      files: "*.mdx",
+      options: {
+        parser: "mdx",
+        proseWrap: "always",
+        printWidth: 80,
+      },
+    },
   ],
 };

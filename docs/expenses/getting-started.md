@@ -9,7 +9,7 @@ displayed_sidebar: expenses
 import { IntegrationsList } from "@components/Integrations";
 import { integrationsFilterExpenses } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
 ## Journey overview
 
@@ -19,10 +19,10 @@ The diagram below represents the end-to-end sync process for writing expenses fr
 
 sequenceDiagram
     participant smb as SMB customer
-    participant app as Your application 
+    participant app as Your application
     participant codat as Codat
     participant acctg as Accounting software
-    
+
     smb ->> app: Logs into application
     smb ->> app: Initiates connection to accounting software
 
@@ -31,7 +31,7 @@ sequenceDiagram
     codat ->> smb: Displays auth flow
     smb ->> codat: Authorizes connection
     codat ->> acctg: Establishes connection
-    
+
     app ->> smb: Displays mapping options
     smb ->> app: Confirms mapping options
     app ->> codat: Creates company configuration
@@ -57,21 +57,22 @@ sequenceDiagram
 3. In the list of products, find _Expenses_ and click **Enable**. Then, follow the on-screen prompt.
 
 ## Configure Expenses
+
 ### Data types
 
 By default, the data types required for Expenses will be activated automatically when Expenses is enabled for your Codat instance. If you need to manage the data types, navigate to **Settings > Integrations > Data types** in the <a href="https://app.codat.io" target="_blank">Codat Portal</a>.
 
-Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Expenses with the following settings: 
+Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Expenses with the following settings:
 
-| Data type name | `dataType` | Use case | Fetch on first link? | Sync frequency |
-| :- | :- | :- | :- | :- |
-| Accounts            | `chartOfAccounts`    | Accounts used within the general ledger to record and categorize expenses.                                                                                                                             | ✅                  | Daily          |
-| Bank accounts       | `bankAccounts`       | A bank account is a primary account from which expenses will be paid.                                                                                                                           | ✅                  | Daily          |
-| Company             | `company`            | The company info contains helpful information, such as the name of the linked company and its base currency and registered addresses.                                                                         | ✅                  | Daily          |
-| Customers           | `customers`          | Customers can be used to record and associate income transactions, such as reclaiming a cashback reward.                                                                                                | ✅                  | Daily          |
-| Suppliers           | `suppliers`          | All expenses go against a single supplier representing the expense provider, preventing a company's accounting software from becoming overrun with duplicate merchants.                                     | ✅                  | Daily          |
-| Tax rates           | `taxRates`           | Tax rates enable companies to track expenses against the relevant tax code, helping them to make the expense billable or track taxes that can be reclaimed.                                | ✅                  | Daily          |
-| Tracking categories | `trackingCategories` | Tracking categories provide an additional means of categorizing and tagging an expense (e.g. locations, departments).                                            | ✅                  | Daily          |
+| Data type name      | `dataType`           | Use case                                                                                                                                                                | Fetch on first link? | Sync frequency |
+| :------------------ | :------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------- | :------------- |
+| Accounts            | `chartOfAccounts`    | Accounts used within the general ledger to record and categorize expenses.                                                                                              | ✅                   | Daily          |
+| Bank accounts       | `bankAccounts`       | A bank account is a primary account from which expenses will be paid.                                                                                                   | ✅                   | Daily          |
+| Company             | `company`            | The company info contains helpful information, such as the name of the linked company and its base currency and registered addresses.                                   | ✅                   | Daily          |
+| Customers           | `customers`          | Customers can be used to record and associate income transactions, such as reclaiming a cashback reward.                                                                | ✅                   | Daily          |
+| Suppliers           | `suppliers`          | All expenses go against a single supplier representing the expense provider, preventing a company's accounting software from becoming overrun with duplicate merchants. | ✅                   | Daily          |
+| Tax rates           | `taxRates`           | Tax rates enable companies to track expenses against the relevant tax code, helping them to make the expense billable or track taxes that can be reclaimed.             | ✅                   | Daily          |
+| Tracking categories | `trackingCategories` | Tracking categories provide an additional means of categorizing and tagging an expense (e.g. locations, departments).                                                   | ✅                   | Daily          |
 
 #### Additional data types
 
@@ -80,17 +81,18 @@ You can also choose to enable additional data types that may enhance your Expens
 <details>
   <summary>Additional data types</summary>
 
-| Data type name | `dataType` | Solution enhancement |
-| :- | :- | :- | 
-| Direct costs        | `directCosts`        | Expenses uses direct cost to represent the expense transaction within the accounting software.        |
-| Direct incomes      | `directIncomes`      | Direct incomes are used to represent any income-generating transaction type, such as cashback rewards.    |
-| Journal entries     | `journalEntries`     | Journal entries are used when an accounting software does not support a representation of direct costs. They are also used to represent transfers, such as topping up or paying down an expense card.   |
-| Transfers           | `transfers`          | A record of an expense transaction between two bank accounts, such as topping up or paying down the expense card.        |
+| Data type name  | `dataType`       | Solution enhancement                                                                                                                                                                                  |
+| :-------------- | :--------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Direct costs    | `directCosts`    | Expenses uses direct cost to represent the expense transaction within the accounting software.                                                                                                        |
+| Direct incomes  | `directIncomes`  | Direct incomes are used to represent any income-generating transaction type, such as cashback rewards.                                                                                                |
+| Journal entries | `journalEntries` | Journal entries are used when an accounting software does not support a representation of direct costs. They are also used to represent transfers, such as topping up or paying down an expense card. |
+| Transfers       | `transfers`      | A record of an expense transaction between two bank accounts, such as topping up or paying down the expense card.                                                                                     |
+
 </details>
 
 ### Manage data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the solution. 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the solution.
 
 You can also view detailed configuration instructions by clicking on the relevant tile:
 
@@ -102,9 +104,9 @@ As part of using Expenses, you will need your customers to authorize your access
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
-* [Customize Link settings](/auth-flow/customize/customize-link).
-* [Set up company branding](/auth-flow/customize/branding).
-* [Set up redirects](/auth-flow/customize/set-up-redirects).
+- [Customize Link settings](/auth-flow/customize/customize-link).
+- [Set up company branding](/auth-flow/customize/branding).
+- [Set up redirects](/auth-flow/customize/set-up-redirects).
 
 ### Webhooks
 
@@ -112,7 +114,7 @@ Codat supports a range of [event types](/using-the-api/webhooks/event-types) to 
 
 - [NewCompanySynchronized](/using-the-api/webhooks/event-types)
 
-  Use this event to track the completion of all enabled data type syncs for a newly connected company. When you receive a notification from the webhook consumer, you can proceed to the next steps of the expense management process. 
+  Use this event to track the completion of all enabled data type syncs for a newly connected company. When you receive a notification from the webhook consumer, you can proceed to the next steps of the expense management process.
 
 - [SyncFailed](/using-the-api/webhooks/event-types)
 

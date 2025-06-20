@@ -6,7 +6,7 @@ hide_table_of_contents: false
 authors: mcclowes
 ---
 
-import Diff from "@components/Diff"
+import Diff from "@components/Diff";
 
 Transparency around exactly what a user is sharing access to, for what purpose, is an essential part of your authorization flow. We've revamped how we present this information in Link and given you more controls to present this clearly to your users.
 
@@ -18,14 +18,14 @@ Transparency around exactly what a user is sharing access to, for what purpose, 
 
 We've expanded the [Link](/auth-flow/overview) consent view with new optional fields:
 
-| Field | What is it for? | Example |
-| :- | :- | :- |
-| **Purpose** | Why they are sharing access to their data and how it will be used. | Your data will be used to provide you your analysis on your spending. |
-| **Access** | The nature and duration of the access. | Your data will be retrieved monthly for the duration of this service. |
-| **Account information** | The account metadata that will be retrieved. | Company name |
-| **Platform data** | The financial data that will be retrieved. | Invoices, Suppliers |
-| **Retention** | How and for how long the data will be handled. | You control access to your data, and can disconnect access at any time via your account settings. |
-| **Communication** | Details of any communication will be set around the Codat connection. | You will be notified by email whenever access expires. |
+| Field                   | What is it for?                                                       | Example                                                                                           |
+| :---------------------- | :-------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
+| **Purpose**             | Why they are sharing access to their data and how it will be used.    | Your data will be used to provide you your analysis on your spending.                             |
+| **Access**              | The nature and duration of the access.                                | Your data will be retrieved monthly for the duration of this service.                             |
+| **Account information** | The account metadata that will be retrieved.                          | Company name                                                                                      |
+| **Platform data**       | The financial data that will be retrieved.                            | Invoices, Suppliers                                                                               |
+| **Retention**           | How and for how long the data will be handled.                        | You control access to your data, and can disconnect access at any time via your account settings. |
+| **Communication**       | Details of any communication will be set around the Codat connection. | You will be notified by email whenever access expires.                                            |
 
 ![Open view](/img/updates/consent/consent-open.png)
 
@@ -52,12 +52,12 @@ We've also given more control over the page title, subtitle, and terms and condi
 
 The following `options` `text` fields have been replaced and will require code changes in order to bump the package. A deprecation will be announced accordingly.
 
-| Deprecated field | New field |
-| :- | :- |
-| `${IntegrationSourceTypeKeys}.dataAccess.consent` | `${IntegrationSourceTypeKeys}.consents.termsAndConditions` |
-| `${IntegrationSourceTypeKeys}.dataAccess.additionalConsent.title` | `${IntegrationSourceTypeKeys}.additionalConsents.title` |
+| Deprecated field                                                     | New field                                                  |
+| :------------------------------------------------------------------- | :--------------------------------------------------------- |
+| `${IntegrationSourceTypeKeys}.dataAccess.consent`                    | `${IntegrationSourceTypeKeys}.consents.termsAndConditions` |
+| `${IntegrationSourceTypeKeys}.dataAccess.additionalConsent.title`    | `${IntegrationSourceTypeKeys}.additionalConsents.title`    |
 | `${IntegrationSourceTypeKeys}.dataAccess.additionalConsent.subtitle` | `${IntegrationSourceTypeKeys}.additionalConsents.subtitle` |
-| `${IntegrationSourceTypeKeys}.dataAccess.dataTypes` | `${IntegrationSourceTypeKeys}.dataTypes` |
+| `${IntegrationSourceTypeKeys}.dataAccess.dataTypes`                  | `${IntegrationSourceTypeKeys}.dataTypes`                   |
 
 You can see a before and after examples of the config changes below:
 
@@ -100,7 +100,7 @@ You can see a before and after examples of the config changes below:
 
 Once you have made the relevant changes above, you can update your local version below:
 
-```npm install @codat/sdk-link-types@1.10.0```
+`npm install @codat/sdk-link-types@1.10.0`
 
 ## What happens if I do nothing?
 

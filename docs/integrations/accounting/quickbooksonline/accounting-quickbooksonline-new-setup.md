@@ -16,7 +16,7 @@ Video walkthrough:
   allowfullscreen
 />
 
-<hr/>
+<hr />
 
 Before you can access data from customers who use QuickBooks Online for their accounting, you need to set up the QuickBooks Online integration.
 
@@ -149,7 +149,7 @@ Next, add your production keys to the **QuickBooks Online integration**, as desc
 
 Before you can access your app's production keys, you must complete an _App Assessment Questionnaire_. Intuit will review your answers to make sure your app meets their <a className="external" href="https://developer.intuit.com/app/developer/qbo/docs/go-live/publish-app/platform-requirements" target="_blank">publishing requirements and guidelines</a>.
 
-As a Codat client, you will be linked to a shortened version of the App Assessment Questionnaire. This happens automatically provided you have set the sandbox environment redirect URI to `https://quickbooksonlinesandbox.codat.io/oauth2/callback` according to [our instructions](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup#create-a-quickbooks-online-app-configured-for-sandbox). 
+As a Codat client, you will be linked to a shortened version of the App Assessment Questionnaire. This happens automatically provided you have set the sandbox environment redirect URI to `https://quickbooksonlinesandbox.codat.io/oauth2/callback` according to [our instructions](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup#create-a-quickbooks-online-app-configured-for-sandbox).
 
 Existing users should have received an email from Intuit with a link to the questionnaire. For recommended answers to the questions pertaining to Codat, see <a className="external" href="https://docs.codat.io/integrations/accounting/quickbooksonline/qbo-app-assessment-questionnaire" target="_blank">QBO App Assessment Questionnaire</a>.
 

@@ -5,21 +5,22 @@ tags: ["Deprecation", "Update", "Metrics"]
 authors: pzaichkina
 ---
 
-On July 10, 2023, Codat will deprecate the `GET /metrics/companies` endpoint previously used to display the status of companies on the Portal dashboard. 
+On July 10, 2023, Codat will deprecate the `GET /metrics/companies` endpoint previously used to display the status of companies on the Portal dashboard.
 
 <!--truncate-->
 
 It provided the following status metrics:
+
 - Currently linked
 - No longer linked
 - Not yet linked
-- All time linked. 
+- All time linked.
 
-The internal logic of the dashboard has changed, and the endpoint is no longer in use. After the change is implemented, any requests made to `GET /metrics/companies` will return a 404 error. 
+The internal logic of the dashboard has changed, and the endpoint is no longer in use. After the change is implemented, any requests made to `GET /metrics/companies` will return a 404 error.
 
 ## Action required​
 
-If you are using the current `GET /metrics/companies` endpoint to perform monitoring outside of the Portal dashboard, make sure to use alternative API calls instead. You can obtain data connection statuses from the `GET /companies` endpoint. 
+If you are using the current `GET /metrics/companies` endpoint to perform monitoring outside of the Portal dashboard, make sure to use alternative API calls instead. You can obtain data connection statuses from the `GET /companies` endpoint.
 
 ## Expected impact if no action is taken​
 

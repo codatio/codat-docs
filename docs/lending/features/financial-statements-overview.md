@@ -59,15 +59,15 @@ You can help improve the suggestions our model supplies by confirming them or pr
 <details>
   <summary>Recategorizing accounts in the Portal</summary>
 
-1. Navigate to **Companies**, then click the company that requires recategorization. Select **Lending** in the side menu and choose **Categorize accounts** to view the categories for each account.  
+1. Navigate to **Companies**, then click the company that requires recategorization. Select **Lending** in the side menu and choose **Categorize accounts** to view the categories for each account.
 
-  These are ordered by _impact_ by default, which is determined by the current account balance and our confidence in our automatic categorization. 
+These are ordered by _impact_ by default, which is determined by the current account balance and our confidence in our automatic categorization.
 
-  ![An image of the Lending Categorization view in the Portal](/img/lending/acct-categorization-v3-2.png)
+![An image of the Lending Categorization view in the Portal](/img/lending/acct-categorization-v3-2.png)
 
-2. To change the category of an account, select the accounts using the checkbox and click **Recategorize**. 
+2. To change the category of an account, select the accounts using the checkbox and click **Recategorize**.
 
-   Choose an appropriate category from the proposed five levels and click **Recategorize**.  This saves the newly assigned category. 
+   Choose an appropriate category from the proposed five levels and click **Recategorize**. This saves the newly assigned category.
 
 ![An image of the Lending Categorization view in the Portal with an account in process of recategorizing](/img/lending/acct-categorization-v3-3.png)
 
@@ -77,9 +77,9 @@ That's it! Financial statements will return the updated category for the account
 
 ## Supported outputs
 
-You can retrieve the data read and enriched by this feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **financial statements** [endpoints of our API](/lending-api#/operations/get-categorized-profit-and-loss-statement). 
+You can retrieve the data read and enriched by this feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **financial statements** [endpoints of our API](/lending-api#/operations/get-categorized-profit-and-loss-statement).
 
-For example, a company's gearing ratio can be calculated using data returned by the [Get categorized balance sheet statement](/lending-api#/operations/get-categorized-balance-sheet-statement) endpoint. Check out our [loan qualification demo app](https://github.com/codatio/demo-loan-qualification/tree/main#demo-loan-qualification) written in C# to learn how to calculate other ratios. 
+For example, a company's gearing ratio can be calculated using data returned by the [Get categorized balance sheet statement](/lending-api#/operations/get-categorized-balance-sheet-statement) endpoint. Check out our [loan qualification demo app](https://github.com/codatio/demo-loan-qualification/tree/main#demo-loan-qualification) written in C# to learn how to calculate other ratios.
 
 <Tabs groupId="language">
 
@@ -162,7 +162,6 @@ print(gearing_ratio)
 
 <TabItem value="csharp" label="C#">
 
-
 ```csharp
 public record Account(string Category, decimal Balance);
 
@@ -207,7 +206,7 @@ now := time.Now().UTC()
 formattedDate := now.Format("28-11-2023")
 
 ctx := context.Background()
-reportResponse, err := lendingClient.FinancialStatements.BalanceSheet.GetCategorizedAccounts(ctx, 
+reportResponse, err := lendingClient.FinancialStatements.BalanceSheet.GetCategorizedAccounts(ctx,
   operations.GetCategorizedBalanceSheetStatementRequest{
     CompanyID: companyID,
     ReportDate: formattedDate,
@@ -250,7 +249,7 @@ if err == nil && reportResponse.StatusCode == 200 {
 
 ## Get started
 
-Once you have the Lending solution enabled, configure your instance to work with our financial statements feature. 
+Once you have the Lending solution enabled, configure your instance to work with our financial statements feature.
 
 #### Configure data sources
 
@@ -273,20 +272,22 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) with the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
 
-- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)  
+- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)
 
-  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again. 
- 
-- [`DatasetDataChanged`](/using-the-api/webhooks/event-types)  
+  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again.
+
+- [`DatasetDataChanged`](/using-the-api/webhooks/event-types)
 
   This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
 
 - [`AccountCategoriesUpdated`](/using-the-api/webhooks/event-types)
 
-  This means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components. 
-  
+  This means categories associated with accounts have been updated for the [categorized profit and loss statement](https://docs.codat.io/lending-api#/operations/get-enhanced-profit-and-loss-accounts) and the [categorized balance sheet statement](https://docs.codat.io/lending-api#/operations/get-enhanced-balance-sheet-accounts) components.
+
   This update may be done automatically by Codat updating `suggested` categories, or manually by a user updating `confirmed` categories.
+
 ---
 
 ## Read next
+
 - [Liabilities](/lending/features/liabilities-overview)

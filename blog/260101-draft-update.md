@@ -5,6 +5,7 @@ tags: ["Product", "Update"]
 draft: true
 authors: mcclowes
 ---
+
 _^^ remove the draft line from the section above, replace the author name with your github username. check you are listed in authors.yaml as an author_
 
 _if the update applies to a specific integration, add the integration name to tags_
@@ -23,4 +24,4 @@ _Provide details of customers who will benefit from these updates. E.g. all Coda
 
 ## How to get started?
 
-_Let the customer know what they need to do to benefit from the changes the update describes._ 
+_Let the customer know what they need to do to benefit from the changes the update describes._

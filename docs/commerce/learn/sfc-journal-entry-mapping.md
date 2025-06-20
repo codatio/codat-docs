@@ -4,7 +4,7 @@ description: "Review the journal entry mapping for sales data and its examples"
 image: "/img/banners/social/commerce.png"
 ---
 
-With Sync for Commerce, your merchant can choose to reflect their sales data from e-commerce and point-of-sale (POS) software: 
+With Sync for Commerce, your merchant can choose to reflect their sales data from e-commerce and point-of-sale (POS) software:
 
 - as an aggregated daily **sales invoice**, or
 - as an aggregated daily **journal entry**.
@@ -13,11 +13,11 @@ Codat recommends using **journal entries** to benefit from these advantages:
 
 - **Ease of use**
 
-  Single daily journal entries are easier to manage, adjust, and reconcile than, for example, invoices, payments, and credit notes. 
+  Single daily journal entries are easier to manage, adjust, and reconcile than, for example, invoices, payments, and credit notes.
 
 - **Controlled impact on the general ledger**
 
-  A journal entry is the most granular way to impact a company's general ledger without being confined to specific account types. 
+  A journal entry is the most granular way to impact a company's general ledger without being confined to specific account types.
 
 - **Tax data made simple**
 

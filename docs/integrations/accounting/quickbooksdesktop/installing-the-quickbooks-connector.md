@@ -6,15 +6,15 @@ sidebar_label: Install the connector
 
 :::info QuickBooks Desktop installation checklist
 
- <b>Check version is supported</b>
+<b>Check version is supported</b>
 
-Your customer needs to be running a supported version of QuickBooks Desktop Pro, Enterprise or Professional. QuickBooks for Mac is not supported. 
+Your customer needs to be running a supported version of QuickBooks Desktop Pro, Enterprise or Professional. QuickBooks for Mac is not supported.
 
- <b>Check operating system requirements</b>
+<b>Check operating system requirements</b>
 
 The connector works on Windows 10, Windows 11, and Windows Server 2019, and may not work correctly on earlier versions of Windows. Your customer will need administrator permissions on your computer to complete the installation.
 
- <b>Consider antivirus and firewall</b>
+<b>Consider antivirus and firewall</b>
 
 The user's local antivirus or firewall settings may prevent the download and running of the connector. To resolve, you need to allowlist the connector.
 
@@ -34,7 +34,7 @@ To install the QuickBooks Desktop connector, the user who is connecting their co
 
 The QuickBooks Desktop connector must be run on the same computer as the QuickBooks Desktop application. Advise your client to install the connector on the computer they normally use when working with QuickBooks Desktop.
 
-Before they start the linking process, the user must open QuickBooks Desktop and log in to the company they want to link. 
+Before they start the linking process, the user must open QuickBooks Desktop and log in to the company they want to link.
 
 :::
 
@@ -81,9 +81,9 @@ They should check the details in the **Access Confirmation** dialog, and then cl
 
 ## 3. Authenticate the connector
 
-Once the user allows the connector access to the open QuickBooks Desktop company, they will see a new connection appear in the web connector. The user must then select the connection using the checkbox. 
+Once the user allows the connector access to the open QuickBooks Desktop company, they will see a new connection appear in the web connector. The user must then select the connection using the checkbox.
 
-A password pop-up appears. They should enter the copied password in the pop-up, click **OK** and confirm to save when prompted. 
+A password pop-up appears. They should enter the copied password in the pop-up, click **OK** and confirm to save when prompted.
 
 <img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-copy-enter-password.png" />
 
@@ -113,7 +113,7 @@ For example:
 
 ## Pause the connector
 
-Due to QBD's own limitations, it's not possible to use the software while it's syncing data through the connector. This applies to all connectors and syncs. 
+Due to QBD's own limitations, it's not possible to use the software while it's syncing data through the connector. This applies to all connectors and syncs.
 
 - If QBD is closed and the sync is ongoing, the user won't be able to open the software until the sync has finished.
 - If QBD has a company file open and the sync is ongoing, QBD's interface may behave unexpectedly, reducing usability during these sync periods.
@@ -124,7 +124,7 @@ To support a seamless user experience, enable your user to pause the sync when t
 
 ## Uninstall the connector
 
-If your user wants to remove the web connector and disconnect the service, they should navigate to **Windows Settings > Apps & features** from the menu and search for _Web Connector_ in the filter form. 
+If your user wants to remove the web connector and disconnect the service, they should navigate to **Windows Settings > Apps & features** from the menu and search for _Web Connector_ in the filter form.
 
 The QuickBooks web connector will then appear in the results list, and the user can click **Uninstall** to remove the connector.
 
@@ -132,6 +132,6 @@ The user will also need to navigate to `C:\Program Files (x86)\Common Files\Intu
 
 ### Remove the app certificate
 
-Once the user has uninstalled the web connector, they may also want to remove the application certificate. To do this, they should open QuickBooks Descktop and navigate to **Edit > Preferences > Integrated Applications > Company Preferences**. 
+Once the user has uninstalled the web connector, they may also want to remove the application certificate. To do this, they should open QuickBooks Desktop and navigate to **Edit > Preferences > Integrated Applications > Company Preferences**.
 
 Next, they need to select your application and click **Remove**.

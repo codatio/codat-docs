@@ -4,19 +4,18 @@ description: "Deposit the loan and reflect it in the SMB's accounting software"
 sidebar_label: "Deposit loan"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. This is known as *loan drawdown* in general lending, and an *advance* in invoice finance. You will need to: 
+Once you receive the configuration information, you are ready to deposit funds into the borrower's bank account. This is known as _loan drawdown_ in general lending, and an _advance_ in invoice finance. You will need to:
 
-1. [Create a transfer](/lending/guides/loan-writeback/deposit#create-transfer) from the lender's bank account to the borrower's bank account. 
+1. [Create a transfer](/lending/guides/loan-writeback/deposit#create-transfer) from the lender's bank account to the borrower's bank account.
 
-2. [Create a bank feed transaction](/lending/guides/loan-writeback/deposit#create-bank-feed-transaction) to represent the account transfer in the lender's bank account. 
-
+2. [Create a bank feed transaction](/lending/guides/loan-writeback/deposit#create-bank-feed-transaction) to represent the account transfer in the lender's bank account.
 
 ```mermaid
     sequenceDiagram
-        participant backend as Your application 
+        participant backend as Your application
         participant codat as Codat
 
         backend ->> codat: Create transfer (loan drawdown, lender -> bank account)
@@ -39,7 +38,7 @@ To record the transfer of money from the lender's bank account to the borrower's
 
 1. Use the [Get create transfer model](/lending-api#/operations/get-create-transfers-model) endpoint to determine the transfer request parameters.
 
-2. Call the [Create transfer](/lending-api#/operations/create-transfer) endpoint to perform the transfer of money. Note that you are performing a transfer *from* `lendersBankAccountId` *to* `borrowersBankAccount.id`.
+2. Call the [Create transfer](/lending-api#/operations/create-transfer) endpoint to perform the transfer of money. Note that you are performing a transfer _from_ `lendersBankAccountId` _to_ `borrowersBankAccount.id`.
 
 <Tabs groupId="language">
 <TabItem value="nodejs" label="TypeScript">
@@ -71,6 +70,7 @@ codatLending.loanWriteback.transfers.create({
     }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -100,6 +100,7 @@ transfers_create_request = operations.CreateTransferRequest(
 
 transfers_create_response = codat_lending.loan_writeback.transfers.create(transfers_create_request)
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -127,6 +128,7 @@ var transfersCreateResponse = await codatLending.LoanWriteback.Transfers.CreateA
     ConnectionId = connectionId,
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -155,6 +157,7 @@ transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx,
     ConnectionID: connectionID,
 })
 ```
+
 </TabItem>
 
 <TabItem value="http" label="HTTP">
@@ -189,12 +192,11 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 </Tabs>
 
-
 ### Create bank feed transaction
 
-To record the loan deposit into the lender's bank account: 
+To record the loan deposit into the lender's bank account:
 
-1. Get the [create bank account transactions model](/lending-api#/operations/get-create-bank-transactions-model) to determine the parameters required for transaction creation. 
+1. Get the [create bank account transactions model](/lending-api#/operations/get-create-bank-transactions-model) to determine the parameters required for transaction creation.
 
 2. [Create bank account transactions](/lending-api#/operations/create-bank-transactions) to deposit the amount into the lender's bank account.
 
@@ -225,6 +227,7 @@ if (res.statusCode == 200) {
 }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -249,6 +252,7 @@ bank_transactions_create_request = operations.CreateBankTransactionsRequest(
 
 bank_transactions_create_response = codat_lending.loan_writeback.bank_transactions.create(bank_transactions_create_request)
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -271,6 +275,7 @@ var bankTransactionsCreateResponse = await codatLending.LoanWriteback.BankTransa
     ConnectionId = connectionId
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -280,7 +285,7 @@ ctx := context.Background()
 bankTransactionsCreateRequest, err := codatLending.LoanWriteback.BankTransactions.Create(ctx, operations.CreateBankTransactionsRequest{
     AccountingCreateBankTransactions: &shared.AccountingCreateBankTransactions{
         AccountID: lending.String(lendersBankAccount.ID),
-        Transactions: []shared.CreateBankAccountTransaction{ 
+        Transactions: []shared.CreateBankAccountTransaction{
             shared.CreateBankAccountTransaction{
                 ID: lending.String(transactionID), // Unique identifier for this bank transaction
                 Amount: types.MustNewDecimalFromString(-depositAmount),
@@ -294,6 +299,7 @@ bankTransactionsCreateRequest, err := codatLending.LoanWriteback.BankTransaction
     ConnectionID: connectionID,
 })
 ```
+
 </TabItem>
 
 <TabItem value="http" label="HTTP">
@@ -315,6 +321,7 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
   }]
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -323,4 +330,4 @@ POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/
 
 ## Read next
 
-* [Record the repayment of a loan](/lending/guides/loan-writeback/record-general-loan).
+- [Record the repayment of a loan](/lending/guides/loan-writeback/record-general-loan).

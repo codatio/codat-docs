@@ -22,13 +22,13 @@ To finish the setup, Codat will deploy a simple connector to your API that allow
 
 ## Overview
 
-You will need to implement a simple UI within your software that presents your users with a list of source platforms they can synchronize their data with. These can be commerce software or accounting software. 
+You will need to implement a simple UI within your software that presents your users with a list of source platforms they can synchronize their data with. These can be commerce software or accounting software.
 
 This interface should be available only to authenticated users - those who are logged into your system. Once the user has selected a system to connect, you need to redirect them to Codat’s Sync configuration user interface. This initial flow is presented on the diagram below.
 
-``` mermaid
+```mermaid
   sequenceDiagram
-    participant you as You 
+    participant you as You
     participant codat as Codat
     participant customer as Your customer
     you ->> codat: Get branding for the integrations
@@ -48,32 +48,32 @@ You can view the accounting and commerce software Sync for Commerce supports in 
 
 <Tabs>
 
-  <TabItem value="acctg" label="Accounting software">  
+  <TabItem value="acctg" label="Accounting software">
 
-  Sync for Commerce currently supports the following accounting software:
+Sync for Commerce currently supports the following accounting software:
 
-  | Accounting software               | Platform key |
-  |-----------------------------------|--------------|
-  | Exact (NL)                        |  qudb        |
-  | Exact (UK)                        |  pbbf        |
-  | FreeAgent                         |  fbrh        |
-  | MYOB                              |  pdvj        |
-  | Sage Business Cloud (coming soon) |  tgff        |
-  | QuickBooks Online                 |  qhyg        |
-  | Xero                              |  gbol        |
+| Accounting software               | Platform key |
+| --------------------------------- | ------------ |
+| Exact (NL)                        | qudb         |
+| Exact (UK)                        | pbbf         |
+| FreeAgent                         | fbrh         |
+| MYOB                              | pdvj         |
+| Sage Business Cloud (coming soon) | tgff         |
+| QuickBooks Online                 | qhyg         |
+| Xero                              | gbol         |
 
   </TabItem>
 
-  <TabItem value="cmmrc" label="Commerce software">  
+  <TabItem value="cmmrc" label="Commerce software">
 
-  Sync for Commerce currently supports the following commerce software:
+Sync for Commerce currently supports the following commerce software:
 
-  | Commerce software | Platform key |
-  |--------------------|--------------|
-  | Clover             | fqly         |
-  | Lightspeed K       | ldgh         |
-  | Shopify            | fztf         |
-  | Zettle by PayPal   | ugxp         |
+| Commerce software | Platform key |
+| ----------------- | ------------ |
+| Clover            | fqly         |
+| Lightspeed K      | ldgh         |
+| Shopify           | fztf         |
+| Zettle by PayPal  | ugxp         |
 
   </TabItem>
 </Tabs>
@@ -91,14 +91,14 @@ GET /config/integrations/{platformKey}/branding
   "logo": {
     "full": {
       "image": {
-      "src": "https://static.codat.io/public/officialLogos/Full/Xero_Full.png",
-      "alt": "xero full icon"
+        "src": "https://static.codat.io/public/officialLogos/Full/Xero_Full.png",
+        "alt": "xero full icon"
       }
     },
-  "square": {
-    "image": {
-      "src": "https://static.codat.io/public/officialLogos/Full/Xero_Square.png",
-      "alt": "xero square icon"
+    "square": {
+      "image": {
+        "src": "https://static.codat.io/public/officialLogos/Full/Xero_Square.png",
+        "alt": "xero square icon"
       }
     }
   },
@@ -109,13 +109,13 @@ GET /config/integrations/{platformKey}/branding
 
 ## 2. Render the integrations
 
-Using the branding your previously obtained, display each of the relevant integrations in your UI. Make sure to exclude the integration representing the connector that Codat has deployed to your API. 
+Using the branding your previously obtained, display each of the relevant integrations in your UI. Make sure to exclude the integration representing the connector that Codat has deployed to your API.
 
-Your users will then use the UI to identify the right system they want to connect. 
+Your users will then use the UI to identify the right system they want to connect.
 
-Depending on the technology you are using, integration display code will vary. Using React, it might look something like this: 
+Depending on the technology you are using, integration display code will vary. Using React, it might look something like this:
 
-```shell 
+```shell
 <div>
    {
      integrations.map((integration, i) => (
@@ -136,28 +136,30 @@ Depending on the technology you are using, integration display code will vary. U
    }
 </div>
 ```
+
 Make sure you retain the `platformKey` of the integration your merchant selected. In the example above, the value passed to the `onClick` function that retains it.
 
 ## 3. Handle the integration selection
 
 Once the user selects the system they would like to connect, you are ready to transfer them to Codat’s Sync configuration UI. Here, your customer will authorize access to the system they have selected and configure their sales data synchronization settings.
 
-To do so, redirect your user to the Sync configuration URL. This URL is unique to each of your customers and is secured with a single-use, time-limited access code. Request this URL from our API each time you want to take the user to the configuration UI. Use our [Retrieve Sync flow URL](/sync-for-commerce-api#/operations/get-sync-flow-url) endpoint: 
+To do so, redirect your user to the Sync configuration URL. This URL is unique to each of your customers and is secured with a single-use, time-limited access code. Request this URL from our API each time you want to take the user to the configuration UI. Use our [Retrieve Sync flow URL](/sync-for-commerce-api#/operations/get-sync-flow-url) endpoint:
 
 ```http
 GET /config/sync/commerce/{commerceKey}/{accoutingKey}/start?merchantIdentifier={yourMerchantIdentifier}
 ```
+
 You will need to populate parameter values as follows:
 
 <Tabs>
-<TabItem value="acctg" label="Accounting software">  
+<TabItem value="acctg" label="Accounting software">
 
 - `commerceKey`: the `platformKey` of the commerce software selected by the user in your UI
 - `accountingKey`: refers to the Codat connector. Your Solutions Engineer will provide this to you
-  
+
 </TabItem>
 
-<TabItem value="cmmrc" label="Commerce software">  
+<TabItem value="cmmrc" label="Commerce software">
 
 - `commerceKey`: the `platformKey` of the commerce software selected by the user in your UI
 - `accountingKey`: refers to the Codat connector. Your Solutions Engineer will provide this to you
@@ -167,7 +169,6 @@ You will need to populate parameter values as follows:
 </Tabs>
  
 In response, you will receive a URL. Redirect the user to this URL to complete the hand-off to Codat.
-
 
 ```json
 {

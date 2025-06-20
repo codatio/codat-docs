@@ -69,7 +69,6 @@ You can also [build your own authorization journey](/auth-flow/build/build-your-
 
 :::
 
-
 ---
 
 ## Read next

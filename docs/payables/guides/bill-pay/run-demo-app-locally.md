@@ -19,7 +19,7 @@ Before running the demo app locally:
 - Make sure that `npm` version `16.9.0` minimum is installed on your machine.
 - Set up the QuickBooks Online Sandbox integration in the Codat Portal.
 
-###  Set up the QBO integration
+### Set up the QBO integration
 
 Start by setting up the QuickBooks Online Sandbox integration. For a detailed guide, see [Set up the QuickBooks Online integration](/integrations/accounting/quickbooksonline/accounting-quickbooksonline-new-setup).
 
@@ -31,9 +31,9 @@ We've chosen QuickBooks Online for this demo guide because it provides easy acce
 2. Create a QuickBooks Online app.
 3. Go to the app's **Development Settings**.
 4. In the **Redirect URIs** section, configure your new app with the redirect URI for the QuickBooks Online Sandbox integration: `https://quickbooksonlinesandbox.codat.io/oauth2/callback`
-   
+
    ![bill-pay_intuit-developer-redirect-uri](/img/use-cases/bill-pay/bill-pay_intuit-developer-redirect-uri.png "Intuit Developer Portal: An app configured with the redirect URI for Codat's QuickBooks Online Sandbox integration.")
-   
+
 5. Sign in to the [Codat Portal](https://app.codat.io).
 6. On the navigation bar, go to **Settings > Integrations > Accounting** to view the [Accounting integrations](https://app.codat.io/settings/integrations/accounting) page.
 7. Click **Manage** next to the **QuickBooks Online Sandbox** integration.
@@ -41,19 +41,19 @@ We've chosen QuickBooks Online for this demo guide because it provides easy acce
 9. Click **Save**.
 10. Enable the integration.
 
-###  Configure redirect URLs
+### Configure redirect URLs
 
 Next, set the redirect URL defined in the demo app as the Codat Redirect URL. This URL redirects you to the **Connection Successful** screen after you've connected the app to an accounting software in the [Hosted Link](/auth-flow/authorize-hosted-link) flow.
 
 1. Sign in to the [Codat Portal](https://app.codat.io).
 2. On the navigation bar, go to **Settings > Redirects** to view the [Redirects](https://app.codat.io/settings/redirects) page.
 3. Enter the following redirect URL in the **URL** field:
-   
+
    ```http
-   https://localhost:3000/connection-successful   
+   https://localhost:3000/connection-successful
    ```
 
-###  Run the demo app locally
+### Run the demo app locally
 
 1. Clone the demo app repository to your local machine:
 
@@ -66,14 +66,14 @@ Next, set the redirect URL defined in the demo app as the Codat Redirect URL. Th
    ```sh
    npm install
    ```
-   
+
 3. Copy the `.env.example` file in the root directory and rename it to `.env`.
 4. Edit the contents of the `.env` file as follows:
-   
+
    ```
    CODAT_AUTH_HEADER="<YOUR_AUTH_HEADER>"
    ```
-   
+
    Replace `<YOUR_AUTH_HEADER>` with your [authorization header](/using-the-api/authentication) from the Codat Portal. To find your auth header, go to **Developers > API keys**, then copy your authorization header from the relevant column.
 
 5. Run the app:

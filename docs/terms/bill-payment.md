@@ -1,6 +1,6 @@
 ---
 title: Bill payment
-hoverText: A bill payment in Codat usually represents an allocation of money within any customer accounts payable account. 
+hoverText: A bill payment in Codat usually represents an allocation of money within any customer accounts payable account.
 ---
 
 This includes, but is not strictly limited to:

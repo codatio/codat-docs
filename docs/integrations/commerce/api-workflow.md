@@ -22,7 +22,7 @@ Create a Codat company and data connection for your customer.
 1. Open the [Create a company](/platform-api#/operations/create-company) endpoint.
 2. Enter a **companyName** and **platformType** and submit your request.
    The response returned includes:
-   
+
    - The **linkUrl** which allows your customer to authorize your connection to their data.
    - The data connection **id** which allows you to sync the company's data.
 
@@ -30,32 +30,32 @@ Create a Codat company and data connection for your customer.
 
 ```json
 {
-"name": "john",
-"platformType": "woocommerce",
-"createdByUserId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  "name": "john",
+  "platformType": "woocommerce",
+  "createdByUserId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
 }
 ```
 
 ```json
 {
-"id": "fc0043b0-8c40-4c5b-b92f-f155cb720451",
-"name": "john",
-"platform": "WooCommerce",
-"redirect": "https://link-uat.codat.io/company/fc0043b0-8c40-4c5b-b92f-f155cb720451",
-"status": "PendingAuth",
-"dataConnections": [
-  {
-    "id": "f124c782-166a-4911-85c6-e5db8dd5c992",
-    "integrationId": "8cbe957a-8337-463b-9353-2186c372e083",
-    "sourceId": "1feb821a-cb05-4375-9b53-cd6367e9fb60",
-    "platformName": "WooCommerce",
-    "linkUrl": "https://link-api-uat.codat.io/companies/fc0043b0-8c40-4c5b-b92f-f155cb720451/connections/f124c782-166a-4911-85c6-e5db8dd5c992/start",
-    "status": "PendingAuth",
-    "created": "2021-05-04T15:28:09.3409951Z",
-    "sourceType": "Commerce"
-  }
-],
-"created": "2021-05-04T15:28:09.2805505Z"
+  "id": "fc0043b0-8c40-4c5b-b92f-f155cb720451",
+  "name": "john",
+  "platform": "WooCommerce",
+  "redirect": "https://link-uat.codat.io/company/fc0043b0-8c40-4c5b-b92f-f155cb720451",
+  "status": "PendingAuth",
+  "dataConnections": [
+    {
+      "id": "f124c782-166a-4911-85c6-e5db8dd5c992",
+      "integrationId": "8cbe957a-8337-463b-9353-2186c372e083",
+      "sourceId": "1feb821a-cb05-4375-9b53-cd6367e9fb60",
+      "platformName": "WooCommerce",
+      "linkUrl": "https://link-api-uat.codat.io/companies/fc0043b0-8c40-4c5b-b92f-f155cb720451/connections/f124c782-166a-4911-85c6-e5db8dd5c992/start",
+      "status": "PendingAuth",
+      "created": "2021-05-04T15:28:09.3409951Z",
+      "sourceType": "Commerce"
+    }
+  ],
+  "created": "2021-05-04T15:28:09.2805505Z"
 }
 ```
 

@@ -5,15 +5,17 @@ tags: ["Product", "Update", "Bank Feeds"]
 authors: pzaichkina
 ---
 
-We have added a connection management component to the Bank Feeds account mapping user interface. 
+We have added a connection management component to the Bank Feeds account mapping user interface.
+
 <!--truncate-->
+
 ## What's new?
 
-We have enhanced the account mapping user interface (UI) of our Bank Feeds solution with a connection management component and an updated page header. 
+We have enhanced the account mapping user interface (UI) of our Bank Feeds solution with a connection management component and an updated page header.
 
 ![](/img/updates/250401-bank-feeds-connections.png)
 
-From now on, if you are using our mapping UI, your customers automatically benefit from the ability to manage the connection to their accounting platform. This change is aligned with best practices and gives your customers control over their connections, increasing their trust in your application. 
+From now on, if you are using our mapping UI, your customers automatically benefit from the ability to manage the connection to their accounting platform. This change is aligned with best practices and gives your customers control over their connections, increasing their trust in your application.
 
 In addition, some accounting software providers mandate this functionality as part of their app certification criteria (e.g. [Xero's partner certification process](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/)). Our account mapping UI now helps you comply with such requirements in full.
 

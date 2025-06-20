@@ -13,7 +13,7 @@ Our Link settings allow you to configure the authorization process based on your
 
 #### Sandbox integrations
 
-Allow sandbox and test integrations to appear in the link flow. 
+Allow sandbox and test integrations to appear in the link flow.
 
 Some integrations split their production and sandbox data into separate environments, each with its own unique credentials, e.g. QuickBooks Online. Enabling this feature would show both _QuickBooks Online_ and _QuickBooks Online Sandbox_ in the link flow. This would also include _Codat Sandbox_ integrations.
 
@@ -56,30 +56,37 @@ This setting is only relevant for integrations that allow their users to operate
   alt="A comparison screenshot that shows the difference of the connection flow with the multi-entity setting toggled off and on. Without the setting, the screen displays a dropdown list of multiple entities found in a NetSuite account, and it's only possible to select one entity. With the setting toggled on, the screen displays a checklist of multiple entities found in a NetSuite account and all entities are selected."
 />
 
-#### Mobile support warning  
+#### Mobile support warning
+
 Let your users know that some integrations are not optimized or will not connect via mobile when accessing the connection journey on mobile.
 
 #### Secured by Codat
+
 Toggle whether the _Secured by Codat_ logo is shown on your authorization flow.
 
-#### Restart journey  
+#### Restart journey
+
 Allow your customers to restart the linking process for accounting software in case their first connection attempt fails. Enabling this setting will add a "Try again" button to the connection error page.
 
 It's possible to restart the linking process for commerce and banking platforms by default and no additional settings are required.
 
-#### Landing page  
+#### Landing page
+
 If enabled, an extra page will appear at the start of Link. The page's content is customizable, which is an excellent opportunity to explain the value of linking. You can customize the header and the body of the message.
 
-#### Left panel  
+#### Left panel
+
 Specify the messaging that appears on the left panel throughout the Link flow. This is an opportunity to clarify what the user is about to do. You can customize the header and the body of the message.
 
-#### Data access consent  
+#### Data access consent
+
 This is a mandatory field where you need to specify the message you want to display to companies when sharing data with you.
 
 Optionally, you can add a message and a URL for terms and conditions you'd like your clients to read before they share their data with you.
 
-#### Data type information  
-List the data you're going to collect for each of the integration categories (accounting, banking, or commerce). This informs the user which data types Codat will use after linking the data source. 
+#### Data type information
+
+List the data you're going to collect for each of the integration categories (accounting, banking, or commerce). This informs the user which data types Codat will use after linking the data source.
 
 :::tip Data types with Plaid
 
@@ -94,13 +101,16 @@ Once you provide your customers with a Link URL, they reach a page where they pr
 
 ## Client information
 
-#### Help and support  
+#### Help and support
+
 Customize your help and support messages that are displayed throughout the Link flow.
 
 #### Data security
+
 Provide a link to your data security policy.
 
-#### Terms and conditions content  
+#### Terms and conditions content
+
 Specify the message you'd like to display to companies if you have specific terms and conditions you'd like them to view before linking.
 
 ---

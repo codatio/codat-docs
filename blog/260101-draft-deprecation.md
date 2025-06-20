@@ -5,6 +5,7 @@ tags: ["Deprecation"]
 draft: true
 authors: mcclowes
 ---
+
 _^^ remove the draft line from the section above, replace the author name with your github username. check you are listed in authors.yaml as an author_
 
 _if the deprecation applies to a specific integration, add the integration name to tags_
@@ -23,7 +24,7 @@ _Describe the set of actions that the user needs to take to be prepared for the 
 
 ## Expected impact if no action is taken
 
-_Describe what happens if the required actions are not completed by the deprecation date._ 
+_Describe what happens if the required actions are not completed by the deprecation date._
 
 _If it is possible to enable the deprecation early by using the toggle in the Portal, keep this note in the post. If not, delete it._
 

@@ -2,10 +2,11 @@
 title: "Xero | Invoice Finance"
 draft: true
 ---
+
 Introduction
 Selective Invoice Financing
 
-As part of their App Partner process Xero requires invoice financers to handle the write back process to maintain the financial position for customer during the lending cycle.
+As part of their App Partner process Xero requires invoice finance providers to handle the write back process to maintain the financial position for customer during the lending cycle.
 
 This functionality needs to be built by the client into their application, giving their customers the option to enable the continuous publishing of relevant transactions to Xero.
 
@@ -105,9 +106,6 @@ POST ​/companies​/{companyId}​/connections​/{connectionId}​/push​/su
 
 Data model: suppliers
 
-
-
-
 1. Drawdown
 
 For each invoice drawdown post a bank transfer between Lender bank account in Xero and the nominated ‘real’ bank account in Xero.
@@ -127,8 +125,7 @@ Codat
 
 Data model: transfers
 
-POST /companies/{companyId}/connections/{connectionId}/push/transfers(link)
-2. Final Payment
+POST /companies/{companyId}/connections/{connectionId}/push/transfers(link) 2. Final Payment
 
 For each final payment post a bank transfer between the nominated ‘real’ bank account in Xero and the Lender bank account
 
@@ -147,8 +144,7 @@ Codat
 
 Data model: transfers
 
-POST /companies/{companyId}/connections/{connectionId}/push/transfers(link)
-3. Fees
+POST /companies/{companyId}/connections/{connectionId}/push/transfers(link) 3. Fees
 
 Recording fees in Xero by posting a ‘spend money’ transaction to the Lender bank account with line items recorded against expense account. The customer must be able to choose which Expense account, or get the option to setup a new Expense Account.
 
@@ -167,8 +163,7 @@ Codat
 
 Data model: direct costs 
 
-POST /companies/{companyId}/connections/{connectionId}/push/directCosts(link)
-4. Reconciliation
+POST /companies/{companyId}/connections/{connectionId}/push/directCosts(link) 4. Reconciliation
 
 There are three things that need to be reconciliated:
 

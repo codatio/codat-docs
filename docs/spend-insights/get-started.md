@@ -6,9 +6,7 @@ displayed_sidebar: spendInsights
 hide_table_of_contents: true
 ---
 
-
-
---- 
+---
 
 ## Read next
 

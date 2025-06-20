@@ -59,7 +59,7 @@ In the Codat Portal:
 
 When the Link flow is complete, your Development Store opens and your app is automatically installed into the Store.
 
-   <img src="/img/old/d2bf06b-shopify-development-store-app-installed.png" />
+<img src="/img/old/d2bf06b-shopify-development-store-app-installed.png" />
 
 6. (If using custom apps.) Complete the steps in Link; the exact steps shown depend on your Link settings. You'll need to:
 

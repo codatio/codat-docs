@@ -5,7 +5,7 @@ description: "Frequently asked questions about Codat's Expenses solution"
 displayed_sidebar: expenses
 ---
 
-import Questions, { Question } from '@components/Questions';
+import Questions, { Question } from "@components/Questions";
 
 <Questions>
 	<Question
@@ -27,27 +27,74 @@ Moving your existing integrations to Expenses lets you leverage the following be
 
 <ol>
 
-<li><b>Up-to-date mapping options</b></li>
+<li>
+  <b>Up-to-date mapping options</b>
+</li>
 
-<p>Every company has its own preference for representing an individual expense in its accounting software. With Codat, you can retrieve the account mapping and set up webhook notifications to notify you when your customer creates a new expense account or tracking category. This keeps the list of tracking categories, accounts, and tax rates used to map the expense up to date.</p>
+<p>
+  Every company has its own preference for representing an individual expense in
+  its accounting software. With Codat, you can retrieve the account mapping and
+  set up webhook notifications to notify you when your customer creates a new
+  expense account or tracking category. This keeps the list of tracking
+  categories, accounts, and tax rates used to map the expense up to date.
+</p>
 
-<li><b>Standardization of expense data</b></li>
+<li>
+  <b>Standardization of expense data</b>
+</li>
 
-<p>Expenses standardizes transaction data using an opinionated model that is based on feedback from our customers and industry expertise. This means you don’t need to make decisions on how to handle validation differences between accounting software. Simply send transactions based on what they represent and let Codat handle the mapping to their best representation in the accounting software.</p>
+<p>
+  Expenses standardizes transaction data using an opinionated model that is
+  based on feedback from our customers and industry expertise. This means you
+  don’t need to make decisions on how to handle validation differences between
+  accounting software. Simply send transactions based on what they represent and
+  let Codat handle the mapping to their best representation in the accounting
+  software.
+</p>
 
-<li><b>Multiple transaction support</b></li>
+<li>
+  <b>Multiple transaction support</b>
+</li>
 
-<p>Expenses handles the writing of multiple transactions in an array to make your interactions more efficient. You can retrieve the status of these transactions from the <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transaction">Get sync transaction</a> endpoint.</p>
+<p>
+  Expenses handles the writing of multiple transactions in an array to make your
+  interactions more efficient. You can retrieve the status of these transactions
+  from the{" "}
+  <a href="https://docs.codat.io/sync-for-expenses-api#/operations/get-sync-transaction">
+    Get sync transaction
+  </a>{" "}
+  endpoint.
+</p>
 
-<li><b>Enhanced developer experience</b></li>
+<li>
+  <b>Enhanced developer experience</b>
+</li>
 
-<p>Our detailed documentation aimed at developers and a variety of <a href="/get-started/libraries">client libraries</a> in multiple languages mean you can get up and running with Expenses quickly.</p>
+<p>
+  Our detailed documentation aimed at developers and a variety of{" "}
+  <a href="/get-started/libraries">client libraries</a> in multiple languages
+  mean you can get up and running with Expenses quickly.
+</p>
 
-<li><b>Adjacency to Codat’s solution range</b></li>
+<li>
+  <b>Adjacency to Codat’s solution range</b>
+</li>
 
-<p>You can use Expenses alongside all Codat solutions. For example, if you are issuing credit cards, Codat's <a href="https://docs.codat.io/lending/overview" target="_blank">Lending</a> solution would allow you to determine the risk associated with the company that has the same <code>companyId</code> and API key.</p>
+<p>
+  You can use Expenses alongside all Codat solutions. For example, if you are
+  issuing credit cards, Codat's{" "}
+  <a href="https://docs.codat.io/lending/overview" target="_blank">
+    Lending
+  </a>{" "}
+  solution would allow you to determine the risk associated with the company
+  that has the same <code>companyId</code> and API key.
+</p>
 
-<p>Likewise, you can use our <code>billPayments</code> data type to retrieve a list of bills from your customer's accounting software and enable them to pay these and reconcile their payments.</p>
+<p>
+  Likewise, you can use our <code>billPayments</code> data type to retrieve a
+  list of bills from your customer's accounting software and enable them to pay
+  these and reconcile their payments.
+</p>
 
 </ol>
 		`}
@@ -121,4 +168,4 @@ Each transaction Id is unique to a client's company but they aren't unique acros
 
 ## Read next
 
-* Try Expenses in our interactive [API reference](/sync-for-expenses-api#/)
+- Try Expenses in our interactive [API reference](/sync-for-expenses-api#/)

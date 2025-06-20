@@ -15,7 +15,6 @@ To use the updated request body before this date, enable the relevant feature bu
 Action required
 Update the body of any requests to the `POST /companies/{companyId}/connections` endpoint from a string value to the JSON object as specified below:
 
-
 ```JSON
 {
   "platformKey": "string",
@@ -52,7 +51,6 @@ A POST request body that is not a JSON object containing a platformKey property 
 ### Further information
 
 Legacy request body for `POST /companies/{companyId}/connections endpoint` available only for clients onboarded prior to September 1, 2022. This model is being replaced on January 10, 2023.
-
 
 New request body for `POST /companies/{companyId}/connections endpoint` available for clients onboarded from September 1, 2022. This model will be implemented for all other clients on January 10, 2023.
 
