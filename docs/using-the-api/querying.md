@@ -913,6 +913,125 @@ func main() {
 
 </Tabs>
 
+### Companies with no connections
+  
+Query: `dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked`
+
+:::Note
+- The page size value is obligatory for querying.
+- The response will exclude companies that had connections but they were deleted.
+:::
+
+<Tabs>
+
+<TabItem value="csharp" label="C#">
+
+```c
+using CodatPlatform;
+using CodatPlatform.Models.Shared;
+using CodatPlatform.Models.Operations;
+
+var sdk = new CodatPlatformSDK(
+    security: new Security() {
+        AuthHeader = "Basic BASE_64_ENCODED(API_KEY)",
+    }
+);
+
+var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
+    Query = "dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked",
+});
+
+// handle response
+```
+</TabItem>
+
+<TabItem value="http" label="HTTP">
+
+```http
+GET /companies?query=dataConnections.status=PendingAuth
+```
+</TabItem>
+
+<TabItem value="nodejs" label="TypeScript">
+
+```javascript
+import { CodatPlatform } from "@codat/platform";
+import { ListCompaniesResponse } from "@codat/platform/dist/sdk/models/operations";
+
+const codatPlatform = new CodatPlatform({
+  security: {
+    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  },
+});
+
+codatPlatform.companies.list({
+  query: "dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked",
+}).then((res: ListCompaniesResponse) => {
+  if (res.statusCode == 200) {
+    // handle response
+  }
+});
+```
+</TabItem>
+
+<TabItem value="python" label="Python">
+
+```python
+import codatplatform
+from codatplatform.models import operations, shared
+
+codat_platform = codatplatform.CodatPlatform(
+    security=shared.Security(
+        auth_header="Basic BASE_64_ENCODED(API_KEY)",
+    ),
+)
+
+res = codat_platform.companies.list(operations.ListCompaniesRequest(
+    query='dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked',
+))
+
+if res.companies is not None:
+    # handle response
+```
+</TabItem>
+
+<TabItem value="go" label="Go">
+
+```go
+package main
+
+import(
+	"context"
+	"log"
+	"github.com/codatio/client-sdk-go/platform"
+	"github.com/codatio/client-sdk-go/platform/pkg/models/shared"
+	"github.com/codatio/client-sdk-go/platform/pkg/models/operations"
+)
+
+func main() {
+    codatPlatform := codatplatform.New(
+        codatplatform.WithSecurity(shared.Security{
+            AuthHeader: "Basic BASE_64_ENCODED(API_KEY)",
+        }),
+    )
+
+    ctx := context.Background()
+    res, err := codatPlatform.Companies.List(ctx, operations.ListCompaniesRequest{
+        Query: codatplatform.String("dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked"),
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    if res.Companies != nil {
+        // handle response
+    }
+}
+```
+</TabItem>
+
+</Tabs>
+
 ## Queries that won't work
 
 Although you can query properties of objects, you can't query arrays.
