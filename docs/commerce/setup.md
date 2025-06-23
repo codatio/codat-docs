@@ -58,7 +58,7 @@ Sync for Commerce currently supports the following accounting software:
 | Exact (UK)                        | pbbf         |
 | FreeAgent                         | fbrh         |
 | MYOB                              | pdvj         |
-| Sage Business Cloud (coming soon) | tgff         |
+| Sage Accounting (coming soon) | tgff         |
 | QuickBooks Online                 | qhyg         |
 | Xero                              | gbol         |
 

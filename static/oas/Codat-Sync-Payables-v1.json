@@ -2930,7 +2930,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "results": [
                         {
@@ -3526,7 +3526,7 @@
                       "validDatatypeLinks": []
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "id": "e5889b459f544926ac5b8e6756df2ad4",
                       "nominalCode": "1560",
@@ -8110,7 +8110,7 @@
                       "required": true
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Nominal Account",
@@ -9746,7 +9746,7 @@
                       "required": true
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Bank Account",
@@ -11563,7 +11563,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "results": [
                         {
@@ -12723,7 +12723,7 @@
                       "note": "Opening Balance"
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "id": "b6c6fce9866849b0b44cac99ab7dc579",
                       "billCreditNoteNumber": "Supplier credit note",
@@ -15619,7 +15619,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Accounts Payable Credit Note",
@@ -18468,7 +18468,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "results": [
                         {
@@ -19239,7 +19239,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "id": "d953b45e156011e8b45c025132dab352",
                       "supplierRef": {
@@ -20873,7 +20873,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "BillPayment",
@@ -24550,7 +24550,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "results": [
                         {
@@ -26558,7 +26558,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "id": "15a7a15773b011e8aaa5027d54329956",
                       "reference": "19/06/2018 - 435.60",
@@ -29752,7 +29752,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Bill",
@@ -35586,7 +35586,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "results": [
                         {
@@ -36193,7 +36193,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "id": "65179671e9ef424caff8b9006cd111c8",
                       "supplierName": "5555 Abdul's Test Name",
@@ -37874,7 +37874,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Supplier",
@@ -42384,7 +42384,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "results": [
                         {
@@ -43057,7 +43057,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "id": "GB_EXEMPT",
                       "name": "Exempt 0.00%",
@@ -43497,7 +43497,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "results": [
                         {
@@ -43782,7 +43782,7 @@
                       "status": "Active"
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "subCategories": [],
                       "id": "department_0",
@@ -44142,7 +44142,7 @@
                 "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/sync-for-payables-api#/schemas/ValidDataTypeLinks).",
                 "items": {
                   "title": "Valid data type links",
-                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Business Cloud integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
+                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Accounting integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
                   "type": "object",
                   "properties": {
                     "property": {

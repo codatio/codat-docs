@@ -1502,7 +1502,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "results": [
                         {
@@ -2734,7 +2734,7 @@
                       "required": true
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Bank Account",

@@ -124,7 +124,7 @@ const integrations = [
   },
   {
     type: "category",
-    label: "Sage Business Cloud",
+    label: "Sage Accounting",
     collapsed: true,
     items: [
       {
