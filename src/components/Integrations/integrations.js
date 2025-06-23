@@ -13,7 +13,7 @@ export const integrationsFilterPayroll = [
   "QuickBooks Online",
   "Sage Intacct",
   "Xero",
-  "Sage Business Cloud Accounting",
+  "Sage Accounting",
   "Dynamics 365 Business Central",
 ];
 
@@ -48,7 +48,7 @@ export const integrationsFilterBillPayAsync = [
   "Oracle NetSuite",
   "QuickBooks Desktop",
   "QuickBooks Online",
-  //  "Sage Business Cloud Accounting",
+  //  "Sage Accounting",
   "Sage Intacct",
   "Xero",
 ];
@@ -295,7 +295,7 @@ export const integrationsAccountingFilterLending = [
   "QuickBooks Online",
   "Sage 50",
   "Sage 200 Standard",
-  "Sage Business Cloud Accounting",
+  "Sage Accounting",
   "Sage Intacct",
   "Wave",
   "Xero",
@@ -397,7 +397,7 @@ export const payrollIntegrations = [
     img: "https://static.codat.io/public/officialLogos/Square/8A156A5A-39CB-4F9D-856E-76EF9B9A9607.png",
   },
   {
-    name: "Sage Business Cloud Accounting",
+    name: "Sage Accounting",
     to: "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
     type: "accounting",
     tags: ["UK", "US", "Ireland", "Canada", "France", "Germany", "Spain"],
@@ -643,7 +643,7 @@ export const accountingIntegrations = [
     img: "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
   },
   {
-    name: "Sage Business Cloud Accounting",
+    name: "Sage Accounting",
     to: "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
     sourceType: "accounting",
     tags: ["UK", "US", "Ireland", "Canada", "France", "Germany", "Spain"],

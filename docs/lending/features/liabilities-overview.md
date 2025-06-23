@@ -269,7 +269,7 @@ Follow the respective guides to set up and enable at least one accounting, banki
     "QuickBooks Online",
     "QuickBooks Desktop",
     "Sage 50",
-    "Sage Business Cloud Accounting",
+    "Sage Accounting",
     "Xero",
   ]}
 />

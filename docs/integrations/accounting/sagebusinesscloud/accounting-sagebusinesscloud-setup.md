@@ -1,30 +1,30 @@
 ---
-title: "Set up the Sage Business Cloud Accounting integration"
-description: "Explore our API integration with Sage Business Cloud Accounting."
+title: "Set up the Sage Accounting integration"
+description: "Explore our API integration with Sage Accounting."
 sidebar_label: Setup
 ---
 
-Before you can access data from customers who use Sage Business Cloud Accounting, you need to set up the Sage Business Cloud Accounting integration in the Codat Portal. You'll need to:
+Before you can access data from customers who use Sage Accounting, you need to set up the Sage Accounting integration in the Codat Portal. You'll need to:
 
 - Register a new application on the Sage developer site and retrieve your secure keys.
 - Add your application's secure keys to the Codat Portal.
-- Enable your Sage Business Cloud Accounting integration in the Codat portal.
+- Enable your Sage Accounting integration in the Codat portal.
 
 :::note Supported versions and geographies
 
-Codat currently supports the following versions of Sage Business Cloud Accounting:
+Codat currently supports the following versions of Sage Accounting:
 
 - Version 3.1
 - Version 3.0
 
 Our integration with Sage Accounting API allows you to read data from users with accounts based in the UK, Ireland, Germany, Spain, Portugal, France, USA, Canada, and the UAE.
 
-Codat does not currently support Sage Business Cloud versions that cover Australia, New Zealand, South Africa, and the Asian market edition (Hong Kong, Singapore, and Malaysia).
+Codat does not currently support Sage Accounting versions that cover Australia, New Zealand, South Africa, and the Asian market edition (Hong Kong, Singapore, and Malaysia).
 :::
 
-:::caution Change to Sage Business Cloud Accounting setup
+:::caution Change to Sage Accounting setup
 
-If you set up your [Codat integration with Sage Business Cloud Accounting](/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud) **before** October 19, 2020, you'll notice a change to the credentials page in the Codat portal. The option **Client ID, client secret, signing secret and subscription key (API v3 - UKI)** is selected for your integration.
+If you set up your [Codat integration with Sage Accounting](/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud) **before** October 19, 2020, you'll notice a change to the credentials page in the Codat portal. The option **Client ID, client secret, signing secret and subscription key (API v3 - UKI)** is selected for your integration.
 
 **To continue to use version 3.0**, you don't need to make any changes. The integration will continue to work as normal. However, when you link new companies you must only select the UK or Ireland flags.
 
@@ -35,7 +35,7 @@ Version 3.1 also allows a customer to choose which company data file they want t
 
 ## Register your application and retrieve your secure keys
 
-To register your Sage Business Cloud Accounting application, you need to use Sage's development portal.
+To register your Sage Accounting application, you need to use Sage's development portal.
 
 1. Go to the <a className="external"  href="https://developerselfservice.sageone.com/session/new" target="_blank">Sage development portal</a> and sign in. If you don't have an account already, you can create one now. Use either your email address or a GitHub account.
 2. When you're signed in, on the welcome page, select **Create app** to register your new application.
@@ -55,11 +55,11 @@ To register your Sage Business Cloud Accounting application, you need to use Sag
 
 ## Add your application's secure keys to Codat
 
-If you currently use version 3.0 of Sage Business Cloud Accounting, you don't need to remove your existing credentials.
+If you currently use version 3.0 of Sage Accounting, you don't need to remove your existing credentials.
 
 1. In the Codat Portal, go to the <a className="external" href="https://app.codat.io/settings/integrations/accounting" target="_blank">**Accounting integrations**</a> page.
 
-2. Locate **Sage Business Cloud Accounting** and click **Set up**. The **Integration settings** page is displayed.
+2. Locate **Sage Accounting** and click **Set up**. The **Integration settings** page is displayed.
 
 3. Under **What credentials do you have?**, select **Client ID and client secret only (API v3.1 - UKI, US, CA, DE, ES, FR)**.
 
@@ -67,18 +67,18 @@ If you currently use version 3.0 of Sage Business Cloud Accounting, you don't ne
 
 5. Click **Save**. A confirmation message appears if the settings were saved successfully.
 
-6. The **Enable Sage Business Cloud Accounting** dialog is displayed. Select whether to enable the integration now or later.
+6. The **Enable Sage Accounting** dialog is displayed. Select whether to enable the integration now or later.
 
 :::note
 
 Make sure that your secure keys don't contain any spaces.
 :::
 
-## Enable the Sage Business Cloud Accounting integration
+## Enable the Sage Accounting integration
 
 1. In the Codat Portal, go to the <a className="external" href="https://app.codat.io/settings/integrations/accounting" target="blank">**Accounting integrations**</a> page.
-2. Locate **Sage Business Cloud Accounting** and click the toggle to enable the integration.
+2. Locate **Sage Accounting** and click the toggle to enable the integration.
 
 You can also click **Manage** to view the integration's settings page, and then enable the integration from there.
 
-Your Sage Business Cloud Accounting integration is now set up.
+Your Sage Accounting integration is now set up.
