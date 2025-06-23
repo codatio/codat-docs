@@ -630,7 +630,7 @@ export const accountingIntegrations = [
     img: "https://static.codat.io/public/officialLogos/Square/19EEFA32-58A8-4097-B95A-EF150BF24FA0.png",
   },
   {
-    name: "Sage 50",
+    name: "Sage 50 Accounts",
     to: "/integrations/accounting/sage50/accounting-sage50",
     sourceType: "accounting",
     tags: ["Premium", "On-premise", "UK", "Ireland"],
@@ -643,7 +643,7 @@ export const accountingIntegrations = [
     img: "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
   },
   {
-    name: "Sage Business Cloud Accounting",
+    name: "Sage Accounting",
     to: "/integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
     sourceType: "accounting",
     tags: ["UK", "US", "Ireland", "Canada", "France", "Germany", "Spain"],

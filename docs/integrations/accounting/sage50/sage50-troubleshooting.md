@@ -12,7 +12,7 @@ Start the connector by running z%LocalAppData%\Codat\Sage50Connector.exez (eithe
 
 ## Finding the license key for an installed connector
 
-If the Sage 50 Connector is not already in the foreground, open it by right-clicking on the Connector tray icon usually found in the bottom left of the screen and selecting 'Open Sage 50 Connector'.
+If the Sage 50 Accounts Connector is not already in the foreground, open it by right-clicking on the Connector tray icon usually found in the bottom left of the screen and selecting 'Open Sage 50 Accounts Connector'.
 
 Click the 'License' link.
 
@@ -26,9 +26,9 @@ The user will need to add the folder `C:\Users\<YourUsername>\AppData\Local\Coda
 
 ### Whitelisting in Avast!
 
-Some companies using Sage 50 and Avast! antivirus have reported experiencing difficulties when trying to sync data.
+Some companies using Sage 50 Accounts and Avast! antivirus have reported experiencing difficulties when trying to sync data.
 
-We have identified that Avast! sometimes blocks updates to the Sage 50 connector as it is incorrectly identifying the connector as a possible threat when updates are first released.
+We have identified that Avast! sometimes blocks updates to the Sage 50 Accounts Connector as it is incorrectly identifying the connector as a possible threat when updates are first released.
 
 We recommend white-listing the folder where the connector has been installed to prevent Avast! blocking the connector from running after an update.
 
@@ -47,7 +47,7 @@ Double-check that the folder where the connector is located is displayed in the 
 
 Some companies using our offline connectors and Webroot SecureAnywhere anti-virus have reported experiencing difficulties when trying to sync data.
 
-We have identified that Webroot SecureAnywhere sometimes blocks updates to the Sage 50 connector as it is incorrectly identifying connectors as a possible threat.
+We have identified that Webroot SecureAnywhere sometimes blocks updates to the Sage 50 Accounts Connector as it is incorrectly identifying connectors as a possible threat.
 
 We recommend white-listing the folder where the connector has been installed to prevent Webroot SecureAnywhere blocking the connector from running after an update.
 
@@ -63,14 +63,14 @@ Double-check that the folder where the connector is located is displayed in the 
 
 ## Company cannot be found
 
-Once the offline connector is installed, you should be able to select the required Sage 50 company from the dropdown list. In some cases (for example, if your data is stored in a different place), you may need to perform the following steps to locate your company.
+Once the offline connector is installed, you should be able to select the required Sage 50 Accounts company from the dropdown list. In some cases (for example, if your data is stored in a different place), you may need to perform the following steps to locate your company.
 
 1. Log into your **Sage 50** application and select the company you would like to sync data for. Navigate to **Help > About**, then find and copy the data directory information for this company.
 
-![A screenshot of the interface of Sage 50 accounting software, with the About section open for Bob's Burgers example company. Among program details, license information and contact details, data directory information is pointed out using a red box and arrow.](/img/integrations/accounting/sage-50/sage50-connector-app-about-section.png)
+![A screenshot of the interface of Sage 50 Accounts accounting software, with the About section open for Bob's Burgers example company. Among program details, license information and contact details, data directory information is pointed out using a red box and arrow.](/img/integrations/accounting/sage-50/sage50-connector-app-about-section.png)
 
 2. Return to the connector and paste the copied data directory information in the data directory field. Enter the username and password associated with that company and click the "Link company and perform sync" button.
 
-![A screenshot of the Sage 50 offline connector with the data directory, username and password fields filled in. The Link company and perform sync button is outlined with a red box.](/img/integrations/accounting/sage-50/sage50-connector-app-about-section.png)
+![A screenshot of the Sage 50 Accounts offline connector with the data directory, username and password fields filled in. The Link company and perform sync button is outlined with a red box.](/img/integrations/accounting/sage-50/sage50-connector-app-about-section.png)
 
 3. A popup with the company details will appear. If the data is correct, press the "Confirm" button to confirm. Your company will begin syncing.

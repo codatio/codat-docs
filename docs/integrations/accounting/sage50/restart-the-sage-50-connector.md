@@ -1,11 +1,11 @@
 ---
-title: "Restart the Sage 50 connector"
+title: "Restart the Sage 50 Accounts Connector"
 slug: "restart-the-sage-50-connector"
-description: "How to enable and use the restart button on a Sage 50 connector."
+description: "How to enable and use the restart button on a Sage 50 Accounts Connector."
 sidebar_label: Restart the connector
 ---
 
-In some circumstances, your users might want to restart their Sage 50 connector. For example, they might have syncs in progress that were interrupted by a technical issue.
+In some circumstances, your users might want to restart their Sage 50 Accounts Connector. For example, they might have syncs in progress that were interrupted by a technical issue.
 
 The **Restart connector** link in the connector UI is disabled by default. Codat Support can enable the link to allow your users to restart the connector, if needed.
 
@@ -21,12 +21,12 @@ Codat's Support team needs to enable the **Restart connector** link for your use
 
 To obtain the connector ID from your user, please ask them to:
 
-1. Open their Sage 50 connector.
+1. Open their Sage 50 Accounts Connector.
 2. Select the **About** link at the bottom of the connector window.
 
 <img
   src="/img/old/4bb57a8-5f001da-Restart_connector_-_About_button-no-uat.jpg"
-  alt="Sage 50 connector window showing the About link highlighted."
+  alt="Sage 50 Accounts Connector window showing the About link highlighted."
 />
 
 3. Select the **Copy** icon next to the **Connector Id**.
@@ -44,11 +44,11 @@ You can then send the connector ID to the Codat Support team by raising a ticket
 
 Instructions for customers to find and use the **Restart connector** link.
 
-1. Open the Sage 50 connector.
+1. Open the Sage 50 Accounts Connector.
 2. Select **About**.
 3. Select **Restart connector**.
 
 <img
   src="/img/old/6278100-Restart_connector_-_restart_connector_button.jpg"
-  alt="Restart connector link highlighted in the Sage 50 connector window."
+  alt="Restart connector link highlighted in the Sage 50 Accounts Connector window."
 />
