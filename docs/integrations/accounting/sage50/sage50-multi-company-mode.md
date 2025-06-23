@@ -1,13 +1,13 @@
 ---
-title: "Multi-company mode for Sage 50 (UK & Ireland)"
+title: "Multi-company mode for Sage 50 Accounts (UK & Ireland)"
 slug: "sage50-multi-company-mode"
-description: "Use our Sage 50 (UK & Ireland) connector when multi-company mode is enabled."
+description: "Use our Sage 50 Accounts (UK & Ireland) connector when multi-company mode is enabled."
 sidebar_label: Multi-company mode
 ---
 
-When multi-company mode is enabled in Sage 50, a single installed Sage 50 connector can sync with multiple Sage 50 company data files.
+When multi-company mode is enabled in Sage 50, a single installed Sage 50 Accounts Connector can sync with multiple Sage 50 Accounts company data files.
 
-_Example of the Sage 50 connector with two connected companies:_
+_Example of the Sage 50 Accounts Connector with two connected companies:_
 
 <img src="/img/old/4cc7c7e-Sage_50_Multi-company_mode_-_home_screen.png" />
 
@@ -25,12 +25,12 @@ The steps are the same for both of these options:
 1. Enter the license key
 2. Verify company data file
 3. Select company data file
-4. Enter Sage 50 credentials
+4. Enter Sage 50 Accounts credentials
 5. Verify company data
 
 Rather than a separate connector being installed, the same connector will now handle both company data file connections and syncs.
 
-Right-click on the Sage 50 Connector tray icon (usually found in the bottom-right of the screen) and select **Open Sage 50 Connector**. This will display the connector, which is now in multi-company mode:
+Right-click on the Sage 50 Accounts Connector tray icon (usually found in the bottom-right of the screen) and select **Open Sage 50 Accounts Connector**. This will display the connector, which is now in multi-company mode:
 
 <img src="/img/old/f304b80-Sage_50_Multi-company_mode_-_home_screen.png" />
 
@@ -53,7 +53,7 @@ Upon successful sync, the multi-company connector view will show the status of t
 
 # 2. Sync all companies from the tray
 
-1. Right-click on the Sage 50 Connector tray icon in the bottom-right of the screen.
+1. Right-click on the Sage 50 Accounts Connector tray icon in the bottom-right of the screen.
 2. Click **Perform data sync**.
 3. Check that all companies begin syncing.
 
