@@ -121,14 +121,14 @@ export const spendInsightsDirectIntegrations = [
     img: "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
   },
   {
-    name: "Sage 50",
+    name: "Sage 50 Accounts",
     to: "https://help.codat.io/integrations/sage-50/overview",
     sourceType: "accounting",
     tags: ["Premium", "On-premise", "UK", "Ireland"],
     img: "https://static.codat.io/public/officialLogos/Square/177D08A5-97F1-4442-80D7-D62E400A28DB.png",
   },
   {
-    name: "Sage Business Cloud Accounting",
+    name: "Sage Accounting",
     to: "https://help.codat.io/integrations/sage-bc/overview",
     sourceType: "accounting",
     tags: ["UK", "US", "Ireland", "Canada", "France", "Germany", "Spain"],
