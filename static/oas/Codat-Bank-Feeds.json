@@ -1838,7 +1838,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "results": [
                         {
@@ -3021,7 +3021,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -3070,7 +3070,7 @@
                       "required": true
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Bank Account",
@@ -7131,7 +7131,7 @@
       },
       "SourceAccountBatchErrorResponse": {
         "title": "Batch source account creation error",
-        "description": "Describes the error that occurred when trying to create the specified source account.",
+        "description": "Describes the error that occured when trying to create the specified source account.",
         "type": "object",
         "properties": {
           "sourceAccountId": {

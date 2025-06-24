@@ -2900,7 +2900,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "results": [
                         {
@@ -3496,7 +3496,7 @@
                       "validDatatypeLinks": []
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "id": "e5889b459f544926ac5b8e6756df2ad4",
                       "nominalCode": "1560",
@@ -4529,7 +4529,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -8080,7 +8080,7 @@
                       "required": true
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Nominal Account",
@@ -10188,7 +10188,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "results": [
                         {
@@ -11209,7 +11209,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "id": "b0489c4b33de11e797950a57719b2edb",
                       "postedOn": "2017-05-08T11:08:39",
@@ -11796,7 +11796,7 @@
                                   },
                                   {
                                     "field": "JournalLines.Currency",
-                                    "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
+                                    "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                                   }
                                 ],
                                 "information": [
@@ -13983,7 +13983,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "results": [
                         {
@@ -14268,7 +14268,7 @@
                       "status": "Active"
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "subCategories": [],
                       "id": "department_0",
@@ -14715,7 +14715,7 @@
                 "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/sync-for-payroll-api#/schemas/ValidDataTypeLinks).",
                 "items": {
                   "title": "Valid data type links",
-                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Accounting integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
+                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Business Cloud integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
                   "type": "object",
                   "properties": {
                     "property": {
@@ -16819,7 +16819,7 @@
       },
       "TrackingCategory": {
         "title": "Accounting: Tracking category",
-        "description": "Details of a category used for tracking transactions.\n\n> Language tip\n>\n> Parameters used to track types of spend in various parts of an organization can be called  **dimensions**, **projects**, **classes**, or **locations** in different accounting software. In Codat, we refer to these as tracking categories.\n\n## Overview\n\nTracking categories are used to monitor cost centres and control budgets that sit outside the standard chart of accounts. Customers may use tracking categories to group together and track the income and costs of specific departments, projects, locations or customers.\n\nFrom their accounting system, customers can: \n\n- Create and maintain tracking categories and tracking category types.\n- View all tracking categories that are available for use.\n- View the relationships between the categories.\n- Assign invoices, bills, credit notes, or bill credit notes to one or more categories.\n- View the categories that a transaction belongs to.\n- View all transactions in a tracking category.\n\n### Tracking categories per platform\n\nReview the platform-specific tracking categories that Codat supports, and the level they are assigned to in the source platform. \n\n<table>\n<thead>\n  <tr>\n    <th>Platform</th>\n    <th>Tracking category</th>\n    <th>Tracking level</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td><b>Dynamics 365</b></td>\n    <td>Dimensions</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>FreshBooks</b></td>\n    <td>Expense&nbsp;categories</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>MYOB</b></td>\n    <td>Categories</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=4><b>Netsuite</b></td>\n    <td>Classes</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Custom&nbsp;segments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td rowspan=2><b>QuickBooks Desktop</b></td>\n    <td>Classes</td>\n    <td>Line item or transaction level</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=2><b>QuickBooks Online</b></td>\n    <td>Classes</td>\n    <td>Line item or transaction level</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=3><b>Sage 200</b></td>\n    <td>Cost&nbsp;centers</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n      <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Analysis&nbsp;codes</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=3><b>Sage 50</b></td>\n    <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n     <td>Costcodes</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Projects</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Sage Intacct</b></td>\n    <td>Dimensions</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Xero</b></td>\n    <td>Tracking&nbsp;categories</td>\n    <td>Line item</td>\n  </tr>\n</tbody>\n</table>\n\n> **Example use case**\n>\n> Monitor the budget for your annual conference using a tracking category called 'AnnualConference2020' with the **type** set to **Costing**.\n\nIf a tracking category has a parent category, the ID of that parent category is displayed. There is also a `hasChildren` field that shows whether there are child subcategories nested beneath. ",
+        "description": "Details of a category used for tracking transactions.\n\n> Language tip\n>\n> Parameters used to track types of spend in various parts of an organization can be called  **dimensions**, **projects**, **classes**, or **locations** in different accounting software. In Codat, we refer to these as tracking categories.\n\n## Overview\n\nTracking categories are used to monitor cost centres and control budgets that sit outside the standard chart of accounts. Customers may use tracking categories to group together and track the income and costs of specific departments, projects, locations or customers.\n\nFrom their accounting system, customers can: \n\n- Create and maintain tracking categories and tracking category types.\n- View all tracking categories that are available for use.\n- View the relationships between the categories.\n- Assign invoices, bills, credit notes, or bill credit notes to one or more categories.\n- View the categories that a transaction belongs to.\n- View all transactions in a tracking category.\n\n### Tracking categories per platform\n\nReview the platform-specific tracking categories that Codat supports, and the level they are assigned to in the source platform. \n\n<table>\n<thead>\n  <tr>\n    <th>Platform</th>\n    <th>Tracking category</th>\n    <th>Tracking level</th>\n  </tr>\n</thead>\n<tbody>\n  <tr>\n    <td><b>Dynamics 365</b></td>\n    <td>Dimensions</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Freshbooks</b></td>\n    <td>Expense&nbsp;categories</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>MYOB</b></td>\n    <td>Categories</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=4><b>Netsuite</b></td>\n    <td>Classes</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Custom&nbsp;segments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td rowspan=2><b>QuickBooks Desktop</b></td>\n    <td>Classes</td>\n    <td>Line item or transaction level</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=2><b>QuickBooks Online</b></td>\n    <td>Classes</td>\n    <td>Line item or transaction level</td>\n  </tr>\n  <tr>\n    <td>Locations</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=3><b>Sage 200</b></td>\n    <td>Cost&nbsp;centers</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n      <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Analysis&nbsp;codes</td>\n    <td>Transaction</td>\n  </tr>\n  <tr>\n    <td rowspan=3><b>Sage 50</b></td>\n    <td>Departments</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n     <td>Costcodes</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td>Projects</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Sage Intacct</b></td>\n    <td>Dimensions</td>\n    <td>Line item</td>\n  </tr>\n  <tr>\n    <td><b>Xero</b></td>\n    <td>Tracking&nbsp;categories</td>\n    <td>Line item</td>\n  </tr>\n</tbody>\n</table>\n\n> **Example use case**\n>\n> Monitor the budget for your annual conference using a tracking category called 'AnnualConference2020' with the **type** set to **Costing**.\n\nIf a tracking category has a parent category, the ID of that parent category is displayed. There is also a `hasChildren` field that shows whether there are child subcategories nested beneath. ",
         "type": "object",
         "allOf": [
           {

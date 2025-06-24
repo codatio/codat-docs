@@ -3382,7 +3382,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "results": [
                         {
@@ -3978,7 +3978,7 @@
                       "validDatatypeLinks": []
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "id": "e5889b459f544926ac5b8e6756df2ad4",
                       "nominalCode": "1560",
@@ -5680,7 +5680,7 @@
                     "reference": "ref"
                   }
                 },
-                "Sage Accounting": {
+                "Sage Business Cloud Accounting": {
                   "value": {
                     "customerRef": {
                       "id": "30444c5bd4964fd787c7f8e2e5301ce1",
@@ -6242,7 +6242,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "results": [
                         {
@@ -6565,7 +6565,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "id": "154d05abe9f24c4babe0f6a741dec1b9",
                       "accountName": "Abdi Internet Bank",
@@ -13690,7 +13690,7 @@
                 "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/accounting-api#/schemas/ValidDataTypeLinks).",
                 "items": {
                   "title": "Valid data type links",
-                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Accounting integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
+                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Business Cloud integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
                   "type": "object",
                   "properties": {
                     "property": {
@@ -15428,7 +15428,7 @@
               "Paid",
               "Void"
             ],
-            "description": "Current state of the invoice:\n\n- `Draft` - Invoice hasn't been submitted to the supplier. It may be in a pending state or is scheduled for future submission, for example by email.\n- `Submitted` - Invoice is no longer a draft. It has been processed and, or, sent to the customer. In this state, it will impact the ledger. It also has no payments made against it (amountDue == totalAmount).\n- `PartiallyPaid` - The balance paid against the invoice is positive, but less than the total invoice amount (0 < amountDue < totalAmount).\n- `Paid` - Invoice is paid in full. This includes if the invoice has been credited or overpaid (amountDue == 0).\n- `Void` - An invoice can become Void when it's deleted, refunded, written off, or cancelled. A voided invoice may still be PartiallyPaid, and so all outstanding amounts on voided invoices are removed from the accounts receivable account."
+            "description": "Current state of the invoice:\n\n- `Draft` - Invoice hasn't been submitted to the supplier. It may be in a pending state or is scheduled for future submission, for example by email.\n- `Submitted` - Invoice is no longer a draft. It has been processed and, or, sent to the customer. In this state, it will impact the ledger. It also has no payments made against it, meaning `amountDue` will usually equal `totalAmount` (unless tax is witheld).\n- `PartiallyPaid` - The balance paid against the invoice is positive, but less than the total invoice amount, meaning `0 < amountDue < totalAmount`.\n- `Paid` - Invoice is paid in full. This includes if the invoice has been credited or overpaid, meaning `amountDue == 0`.\n- `Void` - An invoice can become Void when it's deleted, refunded, written off, or cancelled. A voided invoice may still be PartiallyPaid, and so all outstanding amounts on voided invoices are removed from the accounts receivable account."
           }
         }
       },
