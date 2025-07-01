@@ -25,7 +25,6 @@ sequenceDiagram
   Codat-)Accounting: Sync transfer transaction from queue
   Codat->>-You: Sync Complete webhook event
   You->>Codat: Check transactions
-  Codat-->>You:
   par Each successful reconciliation
     You->>+Codat: Post attachment
     Codat->>Accounting: Upload attachment
