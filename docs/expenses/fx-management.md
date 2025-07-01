@@ -287,7 +287,9 @@ We validate the multi-currency transactions you write to Expenses to ensure the 
 
 | Integration       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
 | ----------------- | -------- | -------- | -------- | -------- | -------- |
-| QuickBooks Online | ✔️       | ✔️       | ✔️       | ✔️       | ❌       |
+| QuickBooks Online | ✔️       | ✔️      | ✔️       | ✔️      | ❌       |
+| QuickBooks Desktop |✔️       | ❌      | ❌       |   ❌    |  ❌      |
+| Xero              | ✔️       | ✔️      | ❌       | ❌      | ❌       |
 
 ---
 
