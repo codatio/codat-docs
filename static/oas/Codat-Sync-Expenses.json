@@ -4566,7 +4566,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -8117,7 +8117,7 @@
                       "required": true
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Nominal Account",
@@ -9728,7 +9728,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -9777,7 +9777,7 @@
                       "required": true
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Bank Account",
@@ -11438,7 +11438,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "results": [
                         {
@@ -12442,7 +12442,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "id": "260f6a3f94a243738f2d5e08496a41a8",
                       "customerName": "100 test name",
@@ -13612,7 +13612,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "results": [
                         {
@@ -14219,7 +14219,7 @@
                       }
                     }
                   },
-                  "Sage Accounting": {
+                  "Sage Business Cloud Accounting": {
                     "value": {
                       "id": "65179671e9ef424caff8b9006cd111c8",
                       "supplierName": "5555 Abdul's Test Name",
@@ -14810,7 +14810,7 @@
                 "description": "The validDatatypeLinks can be used to determine whether an account can be correctly mapped to another object; for example, accounts with a `type` of `income` might only support being used on an Invoice and Direct Income. For more information, see [Valid Data Type Links](/sync-for-expenses-api#/schemas/ValidDataTypeLinks).",
                 "items": {
                   "title": "Valid data type links",
-                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Accounting integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
+                  "description": "When querying Codat's data model, some data types return `validDatatypeLinks` metadata in the JSON response. This indicates where that object can be used as a reference—a _valid link_—when creating or updating other data.\n\nFor example, `validDatatypeLinks` might indicate the following references:\n\n- Which tax rates are valid to use on the line item of a bill.\n- Which items can be used when creating an invoice. \n\nYou can use `validDatatypeLinks` to present your SMB customers with only valid choices when selecting objects from a list, for example.\n\n## `validDatatypeLinks` example\n\nThe following example uses the `Accounting.Accounts` data type. It shows that, on the linked integration, this account is valid as the account on a payment or bill payment; and as the account referenced on the line item of a direct income or direct cost. Because there is no valid link to Invoices or Bills, using this account on those data types will result in an error.\n\n```json validDatatypeLinks for an account\n{\n            \"id\": \"bd9e85e0-0478-433d-ae9f-0b3c4f04bfe4\",\n            \"nominalCode\": \"090\",\n            \"name\": \"Business Bank Account\",\n            #...\n            \"validDatatypeLinks\": [\n                {\n                    \"property\": \"Id\",\n                    \"links\": [\n                        \"Payment.AccountRef.Id\",\n                        \"BillPayment.AccountRef.Id\",\n                        \"DirectIncome.LineItems.AccountRef.Id\",\n                        \"DirectCost.LineItems.AccountRef.Id\"\n                    ]\n                }\n            ]\n        }\n```\n\n\n\n## Support for `validDatatypeLinks`\n\nCodat currently supports `validDatatypeLinks` for some data types on our Xero, QuickBooks Online, QuickBooks Desktop, Exact (NL), and Sage Business Cloud integrations. \n\nIf you'd like us to extend support to more data types or integrations, suggest or vote for this on our <a href=\"https://portal.productboard.com/codat/5-product-roadmap\">Product Roadmap</a>.",
                   "type": "object",
                   "properties": {
                     "property": {
