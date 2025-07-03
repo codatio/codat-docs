@@ -1,14 +1,13 @@
 ---
-title: "Migration Guide for Enhanced cash flow report"
-sidebar_label: "Migration Guide for Enhanced cash flow report"
-description: "Migration to Categorized Bank Statement Endpoints: Replacing Deprecated Enhanced Cash Flow APIs"
+title: "Migration Guide for Enhanced cashflow report"
+description: "Migration to Categorized Bank Statement Endpoints: Replacing Deprecated Enhanced Cashflow APIs"
 displayed_sidebar: "lending"
 image: "/img/banners/social/lending.png"
 ---
 
 :::info In this guide:
 
-- Alternatives to deprecated **Enhanced Cash Flow** report endpoints
+- Alternatives to deprecated **Enhanced Cashflow** report endpoints
 - Endpoint replacements and response changes
 - Essential workflow adjustments to ensure a smooth transition
   :::
