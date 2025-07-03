@@ -13,7 +13,9 @@ Categorized Bank Statement report includes built-in orchestration for fetching r
 This deprecation affects the following endpoints:
 
 `POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
+
 `GET  /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
+
 `GET  /data/companies/{companyId}/assess/excel/download?reportType=enhancedCashFlow`
 
 _Only requests for the `enhancedCashFlow` report type will be affected. Other report types using Assess generation endpoints are unaffected._
