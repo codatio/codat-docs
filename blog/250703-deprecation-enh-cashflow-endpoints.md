@@ -1,0 +1,40 @@
+---
+title: "2026-07-10: Enhanced Cashflow Report: Deprecation of Legacy Endpoints"
+date: "2025-07-03"
+tags: ["Deprecation", "Assess", "Enhanced Cashflow"]
+authors: ivasiutkova
+---
+
+On **July 10, 2026**, we will deprecate our legacy Enhanced Cashflow endpoints following the release of the new version of the report - Categorized Bank Statement.
+
+<!--truncate-->
+
+Categorized Bank Statement report includes built-in orchestration for fetching required data from third-party integrations and provides webhook notifications when the report is ready.
+This deprecation affects the following endpoints:
+
+`POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
+`GET  /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
+`GET  /data/companies/{companyId}/assess/excel/download?reportType=enhancedCashFlow`
+
+_Only requests for the `enhancedCashFlow` report type will be affected. Other report types using Assess generation endpoints are unaffected._
+
+Additionally, the following endpoint will also be impacted:
+
+`GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
+
+Before using this endpoint, ensure the Enhanced Cashflow report has been fully completed. For instructions, refer to our [Migration guide](https://docs.codat.io/lending/features/bank-statements-overview).
+
+## Action required
+
+To avoid disruption, update your integration to use the new Categorized Bank Statement report endpoints before July 10, 2026. Follow the steps in our [Migration guide](https://docs.codat.io/lending/features/bank-statements-overview).
+
+## Expected impact if no action is taken
+
+If your integration continues to rely on the deprecated endpoints after July 10, 2026, report generation for enhancedCashFlow will fail. 
+
+
+:::note Get ahead
+
+You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers), or read our [change policy](https://docs.codat.io/using-the-api/change-policy).
+
+:::
