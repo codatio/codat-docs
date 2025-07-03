@@ -22,11 +22,11 @@ Additionally, the following endpoint will also be impacted:
 
 `GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
 
-Before using this endpoint, ensure the Enhanced Cashflow report has been fully completed. For instructions, refer to our [Migration guide](https://docs.codat.io/lending/features/bank-statements-overview).
+Before using this endpoint, ensure the Enhanced Cashflow report has been fully completed. For instructions, refer to our [Migration guide](https://docs.codat.io/lending/features/enhanced-cash-flow-migration).
 
 ## Action required
 
-To avoid disruption, update your integration to use the new Categorized Bank Statement report endpoints before July 10, 2026. Follow the steps in our [Migration guide](https://docs.codat.io/lending/features/bank-statements-overview).
+To avoid disruption, update your integration to use the new Categorized Bank Statement report endpoints before July 10, 2026. Follow the steps in our [Migration guide](https://docs.codat.io/lending/features/enhanced-cash-flow-migration).
 
 ## Expected impact if no action is taken
 
