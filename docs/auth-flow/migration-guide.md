@@ -73,7 +73,7 @@ Link SDK is imported at runtime, so you'll always get the latest version of our 
 
 :::
 
-### Set up CORS
+### Step 1: Set up CORS
 
 [Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for access token to work. To allow your app to fetch access tokens, configure CORS settings on your Codat instance:
 
