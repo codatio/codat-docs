@@ -12,11 +12,9 @@ On **July 10, 2026**, we will deprecate our legacy Enhanced Cashflow endpoints f
 The new report management workflow includes built-in orchestration for fetching required data from third-party integrations and provides webhook notifications to inform you when the report is ready.
 This deprecation affects the following endpoints:
 
-`POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
-
-`GET  /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
-
-`GET  /data/companies/{companyId}/assess/excel/download?reportType=enhancedCashFlow`
+- `POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
+- `GET  /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
+- `GET  /data/companies/{companyId}/assess/excel/download?reportType=enhancedCashFlow`
 
 `GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
 
