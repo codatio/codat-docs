@@ -1,5 +1,5 @@
 ---
-title: "2026-07-10: Enhanced Cashflow Report: Deprecation of Legacy Endpoints"
+title: "2026-07-10: Enhanced Cashflow Report: Deprecation of legacy endpoints"
 date: "2025-07-03"
 tags: ["Deprecation", "Assess", "Enhanced Cashflow"]
 authors: ivasiutkova
