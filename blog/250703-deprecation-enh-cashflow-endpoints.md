@@ -33,8 +33,8 @@ To avoid disruption, update your integration to use the new [**Manage Reports**]
 If your integration is not updated by **July 10, 2026**, all API calls to the deprecated `enhancedCashFlow` report type will fail. This will prevent the generation of these reports and may disrupt your application's functionality.
 
 
-:::note Get ahead
+:::note Get ahead of the change
 
-You can get ahead of this change by enabling it now in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers), or read our [change policy](https://docs.codat.io/using-the-api/change-policy).
+You can get ahead of this change by enabling he new Categorized Bank Statement report in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers), or read our [change policy](https://docs.codat.io/using-the-api/change-policy).
 
 :::
