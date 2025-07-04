@@ -25,6 +25,7 @@ module.exports = [
       "auth-flow/optimize/platform-selection",
     ],
   },
+  "auth-flow/migration-guide",
   {
     type: "link",
     label: "NPM",
