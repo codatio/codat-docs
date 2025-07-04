@@ -5,7 +5,7 @@ tags: ["Deprecation", "Assess", "Enhanced Cashflow"]
 authors: ivasiutkova
 ---
 
-On **July 10, 2026**, we will deprecate our legacy Enhanced Cashflow endpoints following the release of the new version of the report - Categorized Bank Statement.
+On **July 10, 2026**, the Enhanced Cashflow report type will be deprecated from the Assess Excel endpoints. This follows the launch of its replacement, the **Categorized Bank Statement** report, available  through our report management workflow. The new workflow offers enhanced functionality and a more streamlined user experience.
 
 <!--truncate-->
 
