@@ -30,7 +30,7 @@ To avoid disruption, update your integration to use the new [**Manage Reports**]
 
 ## Expected impact if no action is taken
 
-If your integration continues to rely on the deprecated endpoints after July 10, 2026, report generation for enhancedCashFlow will fail. 
+If your integration is not updated by **July 10, 2026**, all API calls to the deprecated `enhancedCashFlow` report type will fail. This will prevent the generation of these reports and may disrupt your application's functionality.
 
 
 :::note Get ahead
