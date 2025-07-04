@@ -18,15 +18,12 @@ This deprecation affects the following endpoints:
 
 `GET  /data/companies/{companyId}/assess/excel/download?reportType=enhancedCashFlow`
 
+`GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
+
 :::note Note
 Only requests for the `enhancedCashFlow` report type will be affected. Other report types using Assess generation endpoints are unaffected.
 :::
 
-Additionally, the following endpoint will also be impacted:
-
-`GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
-
-Before using this endpoint, ensure the Enhanced Cashflow report has been fully completed. For instructions, refer to our [Migration guide](https://docs.codat.io/lending/features/enhanced-cash-flow-migration).
 
 ## Action required
 
