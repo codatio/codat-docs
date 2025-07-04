@@ -16,8 +16,7 @@ This deprecation affects the following endpoints:
 - `POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
 - `GET  /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
 - `GET  /data/companies/{companyId}/assess/excel/download?reportType=enhancedCashFlow`
-
-`GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
+- `GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
 
 :::note Note
 Only requests for the `enhancedCashFlow` report type will be affected. Other report types using Assess generation endpoints are unaffected.
