@@ -25,7 +25,7 @@ Only requests for the `enhancedCashFlow` report type will be affected. Other rep
 
 ## Action required
 
-To avoid disruption, update your integration to use the new [**Manage Reports**](/lending-api#/operations/generate-report) endpoints before July 10, 2026. For detailed, step-by-step instructions, refer to our [Migration guide](https://docs.codat.io/lending/features/enhanced-cash-flow-migration).
+To avoid disruption, update your integration to use the new [Manage Reports](/lending-api#/operations/generate-report) endpoints before July 10, 2026. For detailed, step-by-step instructions, refer to our [Migration guide](https://docs.codat.io/lending/features/enhanced-cash-flow-migration).
 
 ## Expected impact if no action is taken
 
