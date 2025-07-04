@@ -9,7 +9,7 @@ On **July 10, 2026**, we will deprecate our legacy Enhanced Cashflow endpoints f
 
 <!--truncate-->
 
-Categorized Bank Statement report includes built-in orchestration for fetching required data from third-party integrations and provides webhook notifications when the report is ready.
+The new report management workflow includes built-in orchestration for fetching required data from third-party integrations and provides webhook notifications to inform you when the report is ready.
 This deprecation affects the following endpoints:
 
 `POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
