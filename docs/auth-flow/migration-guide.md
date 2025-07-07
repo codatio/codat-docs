@@ -18,6 +18,15 @@ You need a JavaScript application to render the component. Link works with all m
 
 ## Your current implementation
 
+### User experience
+
+Your current implementation likely starts with a consent page, confirming that your SMB customers are happy to share their financial data with you before they interact with Codat.
+This often includes information on the purpose, platform data accessed, and your retention policy. 
+
+Codat's Link component optionally supports all of this and more, so make sure to review your current implementation to understand what changes you'd like to make.
+
+### Custom link workflow
+
 There are two common approaches for custom link flows, depending on your use case:
 
 - **Create a company with a platformKey:**  
@@ -30,15 +39,28 @@ There are two common approaches for custom link flows, depending on your use cas
 
 ## The Link approach
 
-The embedded Link component simplifies your flow. Instead of managing connection logic in your frontend:
+The embedded Link component replaces your custom implementation while preserving the user experience elements you've already built. Instead of managing connection logic, API calls, and UI components in your frontend:
 
 1. Your backend requests an access token from Codat’s API.
 2. You pass the access token and company name to the Link component.
 3. The user completes the connection flow in the embedded UI.
 
-This supports both single and multiple software connections.
+Link supports both of your current approaches—whether you're using the platformKey flow for single connections or the two-step approach for multiple software connections.
 
 ![Embedded Link workflow](/img/auth-flow/migration-guide/link-flow.png)
+
+### Retain your current user experience
+
+Your existing consent page, data sharing policies, and user onboarding flow don't need to change. Link is highly customizable, allowing you to:
+
+- **Preserve your consent flow:** Use custom consent pages with your existing messaging about data purpose and retention
+- **Maintain your branding:** Control colors, logos, and styling to match your application
+- **Choose your layout:** Display Link in modal or non-modal views based on your current UI patterns
+- **Control the journey:** Decide when and how users interact with the connection flow
+
+This means you can migrate to Link while keeping the user experience your customers are already familiar with.
+
+Learn how to [customize your auth flow](/auth-flow/customize/sdk-customize-code)
 
 ## Migration steps
 
