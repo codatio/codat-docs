@@ -94,7 +94,6 @@ To use Amazon Seller Central app credentials in a production environment (connec
 5. You are re-directed to another page; click **Add App Listing**.
 
 6. On the **List your App** form, complete the required sections:
-
    - **App information**
    - **Pricing**
    - **Details**

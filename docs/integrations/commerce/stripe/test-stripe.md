@@ -25,7 +25,6 @@ In the <a className="external" href="https://app.codat.io/" target="_blank">Coda
 
 1. Sign in to the <a className="external" href="https://dashboard.stripe.com/" target="_blank">Stripe Developers Dashboard</a>.
 2. Within your Stripe profile, create a new account for testing. The account will be created in test mode and can't be switched to live mode without activation.
-
    1. Select the account menu at the top left.
    2. Select **New account**.
    3. Enter a name for your testing account, then click **Create account**.

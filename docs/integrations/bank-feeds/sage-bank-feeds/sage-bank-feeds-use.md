@@ -60,7 +60,6 @@ Transactions are not automatically downloaded to Sage when the user successfully
 Make the following requests to the Codat API. All write requests are asynchronous.
 
 1. Write bank transactions to a target bank account using the <a href="/accounting-api#/operations/create-bank-transactions">Create bank transactions</a> endpoint. Note that:
-
    - You can only write bank transactions to one target account at a time.
    - Bank transactions must be written in chronological order.
    - Bank transactions can't be older than the most recent transaction available on the destination bank account.

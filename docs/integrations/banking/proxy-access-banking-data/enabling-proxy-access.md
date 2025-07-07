@@ -16,7 +16,6 @@ In the Codat Portal:
 2. Click **Manage** next to the Plaid or TrueLayer integration.
 
 3. To enable proxy access to Plaid:
-
    1. Under _Proxy access to additional Plaid data types_, set the toggle to **ON**.  
       The **Filter by products** box is displayed.
 
@@ -25,7 +24,6 @@ In the Codat Portal:
    3. Click **Save**.
 
 4. To enable proxy access to TrueLayer:
-
    1. (Optional) Under _Proxy access to additional TrueLayer data types_, set the toggle to **ON**.  
       The **Additional scopes** box is displayed.
 

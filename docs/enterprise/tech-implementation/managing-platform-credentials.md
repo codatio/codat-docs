@@ -34,7 +34,6 @@ Your organization usually needs to register with each of your preferred software
 1. Review the registration or partnership requirements for the platforms you plan to use.
 
    Codat provides the following summary guidance:
-
    - [Setting up accounting integrations](/integrations/accounting/overview#setting-up-accounting-integrations)
    - [Setting up commerce integrations](/integrations/commerce/overview#setting-up-commerce-integrations)
 
