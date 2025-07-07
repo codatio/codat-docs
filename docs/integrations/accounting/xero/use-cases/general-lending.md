@@ -32,12 +32,12 @@ The customer should be able to configure their account mapping and have the abil
 
 0. Prerequisites
 
-The user will need to configure their mapping prior to any successful write operation. We recommend a configuration page that they can access at any time. Example: 
+The user will need to configure their mapping prior to any successful write operation. We recommend a configuration page that they can access at any time. Example:
 
 ![](/img/integrations/accounting/xero/xero-general-lending-1.PNG)
 
 0.1 Bank account
-Create a bank account 
+Create a bank account
 
 Create a new bank account in Xero to act as the container of the Lender transactions.
 

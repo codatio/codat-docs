@@ -914,13 +914,14 @@ func main() {
 </Tabs>
 
 ### Companies with no connections
-  
+
 Query: `dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked`
 
 :::Note
+
 - The page size value is obligatory for querying.
 - The response will exclude companies that had connections but they were deleted.
-:::
+  :::
 
 <Tabs>
 
@@ -943,6 +944,7 @@ var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
 
 // handle response
 ```
+
 </TabItem>
 
 <TabItem value="http" label="HTTP">
@@ -950,6 +952,7 @@ var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
 ```http
 GET /companies?query=dataConnections.status=PendingAuth
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -972,6 +975,7 @@ codatPlatform.companies.list({
   }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -993,6 +997,7 @@ res = codat_platform.companies.list(operations.ListCompaniesRequest(
 if res.companies is not None:
     # handle response
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -1028,6 +1033,7 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>

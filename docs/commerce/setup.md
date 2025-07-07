@@ -52,15 +52,15 @@ You can view the accounting and commerce software Sync for Commerce supports in 
 
 Sync for Commerce currently supports the following accounting software:
 
-| Accounting software               | Platform key |
-| --------------------------------- | ------------ |
-| Exact (NL)                        | qudb         |
-| Exact (UK)                        | pbbf         |
-| FreeAgent                         | fbrh         |
-| MYOB                              | pdvj         |
+| Accounting software           | Platform key |
+| ----------------------------- | ------------ |
+| Exact (NL)                    | qudb         |
+| Exact (UK)                    | pbbf         |
+| FreeAgent                     | fbrh         |
+| MYOB                          | pdvj         |
 | Sage Accounting (coming soon) | tgff         |
-| QuickBooks Online                 | qhyg         |
-| Xero                              | gbol         |
+| QuickBooks Online             | qhyg         |
+| Xero                          | gbol         |
 
   </TabItem>
 

@@ -18,7 +18,7 @@ The customer should be able to configure their account mapping and have the abil
 
 0. Prerequisite
 
-The user will need to configure their mapping prior to any successful write operation. We recommend a configuration page that they can access at any time. Example: 
+The user will need to configure their mapping prior to any successful write operation. We recommend a configuration page that they can access at any time. Example:
 
 ![](/img/integrations/accounting/xero/xero-invoice-finance-1.PNG)
 
@@ -161,7 +161,7 @@ Account: nominated expense account
 
 Codat
 
-Data model: direct costs 
+Data model: direct costs
 
 POST /companies/{companyId}/connections/{connectionId}/push/directCosts(link) 4. Reconciliation
 

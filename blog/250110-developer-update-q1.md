@@ -76,7 +76,7 @@ We have added a new `onConnectionStarted` property to the callback functionality
 
 ![Integration Selection](/img/link/integration_selection.png)
 
-This indicates that a connection has been successfully created in a pending state, allowing you to track users reaching this point in the Link flow. 
+This indicates that a connection has been successfully created in a pending state, allowing you to track users reaching this point in the Link flow.
 
 [Read more →](/updates/241120-onconnectionstarted)
 

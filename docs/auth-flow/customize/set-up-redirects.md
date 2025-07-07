@@ -40,7 +40,7 @@ Codat supports a number of reserved query parameters for redirects. If you add r
 
 To set up a redirect with reserved query parameters, enter a base URL with the reserved parameters you want to use to build the redirect in the **Redirect URL > URL** field.
 
-To add a parameter, wrap it in curly braces. For example: 
+To add a parameter, wrap it in curly braces. For example:
 
 ```http
 https://redirect.site/{sourceType}/?flow=Codat&statuscode={statusCode}&errormessage={errorMessage}

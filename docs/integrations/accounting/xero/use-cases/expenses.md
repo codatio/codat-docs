@@ -97,7 +97,7 @@ User selects tax rate
 
 Store TaxRateRef to be used in future transactions
 
-Codat 
+Codat
 
 Data model: Tax rates
 
