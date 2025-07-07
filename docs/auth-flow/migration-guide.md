@@ -64,18 +64,18 @@ Learn how to [customize your auth flow](/auth-flow/customize/sdk-customize-code)
 
 ## Migration steps
 
-### Step 1: Remove custom link logic and UI
+### Step 1: Set up CORS
 
-- Remove your existing API calls:
-  - If you use the platformKey flow, remove the [Create company](/platform-api#/operations/create-company) calls.
-  - If you use the two-step flow, remove both [Create company](/platform-api#/operations/create-company) and [Create connection](/platform-api#/operations/create-connection) calls.
-- Remove UI elements that allow users to choose financial software.
+[Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for access tokens to work. Configure CORS settings on your Codat instance:
+
+- Use [Set CORS](/platform-api#/operations/set-cors-settings) settings to register allowed domains
+- Use [Get CORS](/platform-api#/operations/get-cors-settings) settings to view your current configuration
 
 ### Step 2: Implement access token retrieval
 
-1. Create a backend endpoint to proxy Codat’s API.
-2. In that endpoint, call `GET /accessToken` to retrieve an access token for the Link component.
-3. Return the `accessToken` in the response.
+1. Create a backend endpoint to proxy Codat's API
+2. In that endpoint, call `GET /accessToken` to retrieve an access token for the Link component
+3. Return the `accessToken` in the response
 
 ### Step 3: Embed Link component
 
@@ -89,18 +89,26 @@ Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-lin
 
 <CodeExamples />
 
+Configure Link to match your current implementation:
+
+- **Choose your layout:** Configure Link to display in modal or non-modal views to match your current UI
+- **Preserve your consent flow:** Use Link's consent options or integrate with your existing consent pages
+- **Match your branding:** Apply your color scheme, logos, and styling using Link's customization options
+
 :::note Dynamic imports
 
 Link SDK is imported at runtime, so you'll always get the latest version of our auth flow UI with no risk of staleness. To achieve this, we use ES6's [import()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import) feature (aka dynamic imports).
 
 :::
 
-### Step 1: Set up CORS
+### Step 4: Remove custom link logic and UI
 
-[Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for access token to work. To allow your app to fetch access tokens, configure CORS settings on your Codat instance:
-
-- Use [Set CORS](/platform-api#/operations/set-cors-settings) settings to register allowed domains.
-- Use [Get CORS](/platform-api#/operations/get-cors-settings) settings to view your current list.
+- Remove your existing API calls:
+  - If you use the platformKey flow, remove the [Create company](/platform-api#/operations/create-company) calls
+  - If you use the two-step flow, remove both [Create company](/platform-api#/operations/create-company) and [Create connection](/platform-api#/operations/create-connection) calls
+- Remove UI elements that Link now handles:
+  - Custom integration selection interfaces
+  - Any consent pages now managed by Link
 
 ## Read next
 
