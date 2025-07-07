@@ -178,27 +178,3 @@ There are a few Implications for your integration.
 Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operations/list-categorized-bank-statement-accounts) and [List Transactions Endpoint](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement-transactions) documentations for details.
 
 
-<details>
-  <summary><b>View response schema comparison</b></summary>
-<Tabs>
-<TabItem value="old" label="Legacy Response Schema">
-
-```json
-{
-  "testId": "test"
-}
-```
-
-</TabItem>
-
-<TabItem value="new" label="New Response Schema">
-
-```json
-{
-  "testId": "test"
-}
-```
-
-</TabItem>
-
-</Tabs>
