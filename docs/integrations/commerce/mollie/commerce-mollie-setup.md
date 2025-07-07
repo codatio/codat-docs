@@ -43,7 +43,6 @@ In the <a className="external" href="https://app.codat.io" target="_blank">Codat
 
 1. In the navigation bar, select **Settings > Integrations > Commerce**.
 2. Select the correct integration depending on whether you're testing the integration or building for production.
-
    - If you want to test the integration and read sample data, click **Set up** next to the **Mollie Test** integration.
    - If you want to build for production and read live data, click **Set up** next to the **Mollie** integration.
 

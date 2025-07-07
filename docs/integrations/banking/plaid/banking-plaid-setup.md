@@ -40,7 +40,6 @@ You'll need to:
    The **Integration settings** page for Plaid is displayed.
 
 4. Locate the secure keys that you retrieved earlier and enter the following values:
-
    - **client_id** value into **Client ID**.
    - **Sandbox** secret value into **Sandbox secret**.
    - **Development** secret value into **Development secret**.

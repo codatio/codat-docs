@@ -241,7 +241,6 @@ export const ConnectionManagement = ({
 ```
 
 3. **If you're using content security policy (CSP) headers:**
-
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Don't use a hash because this can change at any time without warning.
 
@@ -322,7 +321,6 @@ export default function Home() {
 ```
 
 3. **If you're using content security policy (CSP) headers:**
-
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
@@ -393,7 +391,6 @@ const openModal = () => {
 ```
 
 4. **If you're using content security policy (CSP) headers**:
-
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
@@ -464,7 +461,6 @@ onError(error) {
 ```
 
 4. **If you're using content security policy (CSP) headers**:
-
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
@@ -518,7 +514,6 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
 ```
 
 4. **If you're using content security policy (CSP) headers**:
-
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
@@ -584,7 +579,6 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
 ```
 
 4. **If you're using content security policy (CSP) headers**:
-
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
