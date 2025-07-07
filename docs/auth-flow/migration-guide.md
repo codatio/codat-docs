@@ -11,7 +11,7 @@ This guide helps you migrate from a custom link flow to our embedded **Link** co
 
 ## Prerequisites
 
-You need a JavaScript application to render the component. Link works with all major JavaScript frameworks—including React—and also with vanilla JavaScript. TypeScript is supported and recommended.
+You need a JavaScript application to render the Link component. Our component works with vanilla JavaScript and all major JavaScript frameworks. TypeScript is supported and recommended.
 
 :::warning Do not use Link inside an iframe. It won’t work due to [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) restrictions.
 :::
@@ -20,10 +20,10 @@ You need a JavaScript application to render the component. Link works with all m
 
 ### User experience
 
-Your current implementation likely starts with a consent page, confirming that your SMB customers are happy to share their financial data with you before they interact with Codat.
+Your current implementation likely starts with a consent page, confirming that your customers are happy to share their financial data with you before they interact with Codat.
 This often includes information on the purpose, platform data accessed, and your retention policy. 
 
-Codat's Link component optionally supports all of this and more, so make sure to review your current implementation to understand what changes you'd like to make.
+Codat's Link component optionally supports consent management and more, as part of your migration you may wish to leverage this native functionality to remove maintenance overhead in your application.
 
 ### Custom link workflow
 
@@ -33,7 +33,7 @@ There are two common approaches for custom link flows, depending on your use cas
   You pass the company name and the financial software’s `platformKey` in one API call. Best suited for users connecting to a single financial system.
 
 - **Create company and connection separately:**  
-  You create the company first, then create a connection. This supports multiple financial systems.
+  You create the company first, then create a connection. This approach is typically followed when connecting several platforms for one customer e.g. Accounting Platform and Banking.
 
 ![Custom Link workflow](/img/auth-flow/migration-guide/custom-link-flow.png)
 
@@ -58,7 +58,7 @@ Your existing consent page, data sharing policies, and user onboarding flow don'
 - **Choose your layout:** Display Link in modal or non-modal views based on your current UI patterns
 - **Control the journey:** Decide when and how users interact with the connection flow
 
-This means you can migrate to Link while keeping the user experience your customers are already familiar with.
+This means you can migrate your implementation to leverage the features of our Link product, whilst maintaining your existing customer experience and consent journey.
 
 Learn how to [customize your auth flow](/auth-flow/customize/sdk-customize-code)
 
@@ -81,7 +81,7 @@ Learn how to [customize your auth flow](/auth-flow/customize/sdk-customize-code)
 
 :::tip Install the npm package
 
-Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-link-types) so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript, so our examples are prepared with that assumption.
+Codat provides a `types` package on [npm](https://www.npmjs.com/package/@codat/sdk-link-types) that contains type definitions for our Link component primitives. We recommend using this package as it simplifies your implementation.
 
 `npm install @codat/sdk-link-types`
 
@@ -91,9 +91,9 @@ Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-lin
 
 Configure Link to match your current implementation:
 
-- **Choose your layout:** Configure Link to display in modal or non-modal views to match your current UI
-- **Preserve your consent flow:** Use Link's consent options or integrate with your existing consent pages
-- **Match your branding:** Apply your color scheme, logos, and styling using Link's customization options
+- **[Choose your layout:](/auth-flow/customize/sdk-customize-code#properties)** Configure Link to display in modal or non-modal views to match your current UI
+- **[Preserve your consent flow:](/auth-flow/optimize/privacy)** Use Link's consent options or integrate with your existing consent pages
+- **[Match your branding:](/auth-flow/customize/branding)** Apply your color scheme, logos, and styling using Link's customization options
 
 :::note Dynamic imports
 
@@ -104,7 +104,7 @@ Link SDK is imported at runtime, so you'll always get the latest version of our 
 ### Step 4: Remove custom link logic and UI
 
 - Remove your existing API calls:
-  - If you use the platformKey flow, remove the [Create company](/platform-api#/operations/create-company) calls
+  - If you use the platform key flow, remove the [Create company](/platform-api#/operations/create-company) calls
   - If you use the two-step flow, remove both [Create company](/platform-api#/operations/create-company) and [Create connection](/platform-api#/operations/create-connection) calls
 - Remove UI elements that Link now handles:
   - Custom integration selection interfaces
