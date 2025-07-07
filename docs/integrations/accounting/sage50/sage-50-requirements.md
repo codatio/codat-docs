@@ -10,7 +10,7 @@ sidebar_label: Requirements
 Codat supports the following variations of Sage 50:
 
 - Sage 50 Accounts and Sage 50 Accounts Cloud (Sage 50c)
-- Versions 26, 27, 28, 29 and 30
+- Versions 26, 27, 28, 29, 30, 31 and 32
 - Standard and Professional plans
 
 This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>. If you experience issues with the supported versions, please use our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new) to raise a ticket. If you would like to register your interest in an unsupported version, please contact your account manager.
