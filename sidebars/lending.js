@@ -13,13 +13,25 @@ module.exports = [
   },
   "lending/get-started",
   {
-    type: "link",
+    type: "category",
     label: "Bank statements",
     customProps: {
       hr: true,
       section: "Features",
     },
-    href: "/lending/features/bank-statements-overview",
+    collapsed: true,
+    items: [
+      {
+        type: "doc",
+        id: "lending/features/bank-statements-overview",
+        label: "Overview",
+      },
+      {
+        type: "doc",
+        id: "lending/features/enhanced-cash-flow-migration",
+        label: "Migration guide - Enhanced cashflow",
+      },
+    ],
   },
   "lending/features/sales-overview",
   "lending/features/financial-statements-overview",
