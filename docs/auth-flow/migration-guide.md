@@ -7,7 +7,8 @@ import CodeExamples from "./_partial-auth-flow-examples.md";
 
 ## Overview
 
-This guide helps you migrate from a custom link flow to our embedded **Link** component. The embedded Link offers a more streamlined, secure, and maintainable way to connect your customers’ financial software.
+This guide helps you migrate from a custom link flow to our embedded **Link** component.
+Link offers a native, secure, and best in class experience to connect your customers’ financial software.
 
 ## Prerequisites
 
@@ -53,10 +54,10 @@ Link supports both of your current approaches — whether you're using the platf
 
 Your existing consent page, data sharing policies, and user onboarding flow don't need to change. Link is highly customizable, allowing you to:
 
-- **Preserve your consent flow:** Use custom consent pages with your existing messaging about data purpose and retention
-- **Maintain your branding:** Control colors, logos, and styling to match your application
-- **Choose your layout:** Display Link in modal or non-modal views based on your current UI patterns
-- **Control the journey:** Decide when and how users interact with the connection flow
+- **Preserve your consent flow:** Use custom consent pages with your existing messaging about data purpose and retention.
+- **Maintain your branding:** Control colors, logos, and styling to match your application.
+- **Choose your layout:** Display Link in modal or non-modal views based on your current UI patterns.
+- **Control the journey:** Decide when and how users interact with the connection flow.
 
 This means you can migrate your implementation to leverage the features of our Link product, whilst maintaining your existing customer experience and consent journey.
 
@@ -73,9 +74,9 @@ Learn how to [customize your auth flow](/auth-flow/customize/sdk-customize-code)
 
 ### Step 2: Implement access token retrieval
 
-1. Create a backend endpoint to proxy Codat's API
-2. In that endpoint, call `GET /accessToken` to retrieve an access token for the Link component
-3. Return the `accessToken` in the response
+1. Create a backend endpoint to proxy Codat's API.
+2. In that endpoint, call `GET /accessToken` to retrieve an access token for the Link component.
+3. Return the `accessToken` in the response.
 
 ### Step 3: Embed Link component
 
@@ -91,9 +92,9 @@ Codat provides a `types` package on [npm](https://www.npmjs.com/package/@codat/s
 
 Configure Link to match your current implementation:
 
-- **[Choose your layout:](/auth-flow/customize/sdk-customize-code#properties)** Configure Link to display in modal or non-modal views to match your current UI
-- **[Preserve your consent flow:](/auth-flow/optimize/privacy)** Use Link's consent options or integrate with your existing consent pages
-- **[Match your branding:](/auth-flow/customize/branding)** Apply your color scheme, logos, and styling using Link's customization options
+- **[Choose your layout:](/auth-flow/customize/sdk-customize-code#properties)** Configure Link to display in modal or non-modal views to match your current UI.
+- **[Preserve your consent flow:](/auth-flow/optimize/privacy)** Use Link's consent options or integrate with your existing consent pages.
+- **[Match your branding:](/auth-flow/customize/branding)** Apply your color scheme, logos, and styling using Link's customization options.
 
 :::note Dynamic imports
 
@@ -104,14 +105,12 @@ Link SDK is imported at runtime, so you'll always get the latest version of our 
 ### Step 4: Remove custom link logic and UI
 
 - Remove your existing API calls:
-  - If you use the platform key flow, remove the [Create company](/platform-api#/operations/create-company) calls
-  - If you use the two-step flow, remove both [Create company](/platform-api#/operations/create-company) and [Create connection](/platform-api#/operations/create-connection) calls
+  - If you use the platform key flow, remove the [Create company](/platform-api#/operations/create-company) calls.
+  - If you use the two-step flow, remove both [Create company](/platform-api#/operations/create-company) and [Create connection](/platform-api#/operations/create-connection) calls.
 - Remove UI elements that Link now handles:
-  - Custom integration selection interfaces
-  - Any consent pages now managed by Link
+  - Custom integration selection interfaces.
+  - Any consent pages now managed by Link.
 
 ## Read next
 
 - [Customize your auth flow](/auth-flow/customize/sdk-customize-code)
-
-
