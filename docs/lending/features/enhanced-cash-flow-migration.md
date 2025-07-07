@@ -10,7 +10,7 @@ We have recently launched the **Categorized Bank Statement** report, which repla
 
 To ensure a smooth transition, we recommend migrating to the new endpoints ahead of the [upcoming deprecation](https://docs.codat.io/updates/250703-deprecation-enh-cashflow-endpoints) on **July 10, 2026**.
 
-The Categorised Bank Statement report is an **asynchronous report** meaning that you would need to generate the report first. For more information on how to enable sync scheduler for this report please contact your Account Manager or Support team.
+The Categorized Bank Statement report is asynchronous, which means it must be generated before you can retrieve data from it. If you’d like to continue using a sync scheduler for this report, please reach out to your Account Manager.
 
 :::info In this guide:
 
@@ -21,14 +21,15 @@ The Categorised Bank Statement report is an **asynchronous report** meaning that
 
 ## What you need to do
 
-Update your integration to replace the old Enhanced Cashflow endpoints with the new Categorized Bank Statement ones.
+To prepare for the deprecation, you’ll need to update your integration to use the new Categorized Bank Statement endpoints in place of the legacy Enhanced Cashflow ones.
 
-The following sections show how each part of the workflow maps to the new implementation.
+The sections below outline how each part of your existing workflow maps to the new implementation, with details on what’s changed and how to adapt.
 
-### (1) Generate a Report
+### 1. Generate a Report
 
-To generate the report asynchronously modify your application logic to call the new endpoint instead of the legacy one. This would also start the process of requesting all neccessary data for the report.
-There are changes to the response of the endpoint. Categorized Bank Statement report is generated with a simplified payload and returns a structured object including the report id, status, and timestamps.
+To generate the report asynchronously, update your application logic to call the new endpoint in place of the legacy one. This triggers the orchestration process to fetch all required data for the report.
+
+**The response format has changed**. The new Categorized Bank Statement endpoint returns a simplified, structured object that includes the report id, status, and relevant timestamps.
 
 #### Legacy Endpoint
 
@@ -40,7 +41,7 @@ There are changes to the response of the endpoint. Categorized Bank Statement re
 
 #### Response Changes
 
-The **response object will change** from the legacy format to the following:
+The **response object will change** to the following:
 
 ```json
 {
@@ -54,10 +55,11 @@ The **response object will change** from the legacy format to the following:
 
 Refer to the [Generate Report API documentation](https://docs.codat.io/lending-api#/operations/generate-report) for more details.
 
-## (2) Check Report Status
+## 2. Check Report Status
 
-In order to understand whether the report is complete update your current implementation to use the new endpoint.
-There are changes to the response of the endpoint. It now returns the full report metadata, including timestamps and the report type.
+To determine when the report is complete, update your implementation to use the new status endpoint.
+
+The response has been updated to return the full report metadata, including the report id, status, timestamps, and the report type.
 
 #### Legacy Endpoint
 
@@ -83,10 +85,11 @@ The response object is updated to:
 
 Refer to the [Get Report Status API documentation](https://docs.codat.io/lending-api#/operations/get-report-status) for details.
 
-## (3) Download the Excel Report
+## 3. Download the Excel Report
 
-In order to download the generated report migrate your application to the following endpoint.
-There are no response changes — this endpoint continues to return an Excel file with the report data.
+To download the generated report, update your application to use the new endpoint.
+
+There are no changes to the response — it continues to return an Excel file containing the report data.
 
 #### Legacy Endpoint
 
@@ -102,13 +105,13 @@ There are **no changes** to the response. The endpoint will return an Excel file
 
 Refer to the [Download Report API documentation](https://docs.codat.io/lending-api#/operations/download-categorized-bank-statement-excel) for more details.
 
-## (4) Ensure the report generation is complete before querying data
+## 4. Ensure the report generation is complete before querying data
 
-The Categorized Bank Statement endpoints for accounts and transactions require the report to be fully completed.
+The Categorized Bank Statement endpoints for accounts and transactions require the report to be fully generated before any data can be retrieved.
 
-:::warning Important Workflow Update
+:::warning Important workflow update
 
-In order to retrieve transactions data, unlike the old endpoints, the new endpoints require that a report already exists **and its status is** `Complete` before retrieving accounts or transactions.
+Unlike the legacy endpoints, the new endpoints require that a report already exists and its status is `Complete` before you can request accounts or transactions data.
 
 **Action Required**: Update your workflow to first call:
 
