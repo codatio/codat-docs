@@ -45,7 +45,7 @@ The embedded Link component replaces your custom implementation while preserving
 2. You pass the access token and company name to the Link component.
 3. The user completes the connection flow in the embedded UI.
 
-Link supports both of your current approaches—whether you're using the platformKey flow for single connections or the two-step approach for multiple software connections.
+Link supports both of your current approaches — whether you're using the platform key flow for single connections or the two-step approach for multiple software connections.
 
 ![Embedded Link workflow](/img/auth-flow/migration-guide/link-flow.png)
 
