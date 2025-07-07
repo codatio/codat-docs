@@ -201,3 +201,5 @@ Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operati
 </TabItem>
 
 </Tabs>
+
+</details>
