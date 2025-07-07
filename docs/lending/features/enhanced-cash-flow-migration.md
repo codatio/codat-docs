@@ -55,7 +55,7 @@ The **response object will change** to the following:
 
 Refer to the [Generate Report API documentation](https://docs.codat.io/lending-api#/operations/generate-report) for more details.
 
-## 2. Check Report Status
+### 2. Check Report Status
 
 To determine when the report is complete, update your implementation to use the new status endpoint.
 
@@ -85,7 +85,7 @@ The response object is updated to:
 
 Refer to the [Get Report Status API documentation](https://docs.codat.io/lending-api#/operations/get-report-status) for details.
 
-## 3. Download the Excel Report
+### 3. Download the Excel Report
 
 To download the generated report, update your application to use the new endpoint.
 
@@ -105,7 +105,7 @@ There are **no changes** to the response. The endpoint will return an Excel file
 
 Refer to the [Download Report API documentation](https://docs.codat.io/lending-api#/operations/download-categorized-bank-statement-excel) for more details.
 
-## 4. Ensure the report generation is complete before querying data
+### 4. Ensure the report generation is complete before querying data
 
 The Categorized Bank Statement endpoints for accounts and transactions require the report to be fully generated before any data can be retrieved.
 
@@ -134,9 +134,9 @@ You can check report completion in one of two ways:
    This webhook fires when the report generation is complete.
 
    For more details, see [Webhooks Overview](https://docs.codat.io/using-the-api/webhooks/overview)
-   :::
 
-## (5) Retrieve Accounts and Transactions Data
+
+### 5. Retrieve Accounts and Transactions Data
 
 Instead of a single endpoint, account and transaction data is now available via two dedicated endpoints.
 Before calling these, ensure that a report has been generated and is in the Complete state.
@@ -150,5 +150,9 @@ Before calling these, ensure that a report has been generated and is in the Comp
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/accounts`
 
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/transactions`
+
+#### Response Changes
+
+TBC
 
 Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operations/list-categorized-bank-statement-accounts) and [List Transactions Endpoint](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement-transactions) documentations for details.
