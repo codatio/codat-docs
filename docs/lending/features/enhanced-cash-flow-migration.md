@@ -176,30 +176,3 @@ There are a few Implications for your integration.
 
 
 Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operations/list-categorized-bank-statement-accounts) and [List Transactions Endpoint](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement-transactions) documentations for details.
-
-<details>
-  <summary><b>Compare webhook schemas</b></summary>
-<Tabs>
-<TabItem value="old" label="Old schema">
-
-```json
-{
-  "AlertId": "a9367074-b5c3-42c4-9be4-be129f43577e"
-}
-```
-
-</TabItem>
-
-<TabItem value="new" label="New schema">
-
-```json
-{
-  "id": "a9367074-b5c3-42c4-9be4-be129f43577e"
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-</details>
