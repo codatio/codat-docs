@@ -168,7 +168,6 @@ There are a few Implications for your integration.
 | Change                      | Legacy Enhanced Cashflow                                     | Categorized Bank Statement                                      |
 |----------------------------|---------------------------------------------------------------|------------------------------------------------------------------|
 | **Top-level shape**        | Nested object with `reportInfo`, `dataSources`, `reportItems` | Flat object with `results` array                                |
-| **Pagination**             | Not supported in response                                     | Supported via `pageNumber`, `pageSize`, `totalResults`, `_links` |
 | **Transactions**           | Nested under `reportItems.transactions`                       | Flattened under `results` array                                 |
 | **Accounts**               | Embedded in `dataSources.accounts` with full account details  | Referenced via `accountRef`; full details retrieved separately  |
 | **Metadata**               | Included in `reportInfo`                                      | Retrieved separately via status endpoint                        |
