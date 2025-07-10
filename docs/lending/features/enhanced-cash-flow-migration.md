@@ -144,7 +144,7 @@ You can check report completion in one of two ways:
 ### 5. Retrieve Accounts and Transactions Data
 
 Instead of a single endpoint, account and transaction data is now available via two dedicated endpoints.
-Before calling these, ensure that a report has been generated and is in the Complete state.
+Before calling these, ensure that a report has been generated and is in the `Complete` state.
 There are a few implications for your integration.
 * You’ll need to update your data parsing logic to extract transactions from the results array instead of navigating nested structures.
 
