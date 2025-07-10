@@ -156,7 +156,7 @@ There are a few implications for your integration.
 
 `GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
 
-#### New Endpoints
+#### New endpoints
 
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/accounts`
 
