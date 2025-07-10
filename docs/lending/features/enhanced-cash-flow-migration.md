@@ -162,7 +162,7 @@ There are a few implications for your integration.
 
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/transactions`
 
-#### Response Changes
+#### Response changes
 
 
 | Change                      | Legacy Enhanced Cashflow                                     | Categorized Bank Statement                                      |
