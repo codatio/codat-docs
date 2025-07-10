@@ -152,7 +152,7 @@ There are a few implications for your integration.
 
 * The new response follows standard REST conventions, which simplifies pagination and improves performance when working with large datasets.
 
-#### Legacy Endpoint
+#### Legacy endpoint
 
 `GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
 
