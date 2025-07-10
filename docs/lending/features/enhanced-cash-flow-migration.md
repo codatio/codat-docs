@@ -30,7 +30,7 @@ Once enabled, you can run both the legacy and new endpoints in parallel, allowin
 
 The steps below outline how each part of your existing workflow maps to the new implementation, with details on what’s changed and how to adapt.
 
-### 1. Generate a Report
+### 1. Generate a report
 
 To generate the report asynchronously, update your application logic to call the new endpoint in place of the legacy one. This triggers the orchestration process to fetch all required data for the report.
 
