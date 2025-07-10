@@ -23,7 +23,7 @@ The Categorized Bank Statement report is asynchronous, which means it must be ge
 
 To prepare for the deprecation, you’ll need to update your application to use the Categorized Bank Statement endpoints in place of the Enhanced Cashflow ones.
 
-To switch to this report we recommend "expand/contract" strategy. 
+To switch to the Categorized Bank Statement report we recommend an "expand/contract" strategy. 
 Before you start your migration enable the new report in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers).
 
 Once enabled, you can run both the legacy and new endpoints in parallel, allowing for a phased transition before the deprecation deadline.
