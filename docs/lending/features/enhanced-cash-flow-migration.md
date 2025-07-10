@@ -36,7 +36,7 @@ To generate the report asynchronously, update your application logic to call the
 
 **The response format has changed**. The new Categorized Bank Statement endpoint returns a simplified, structured object that includes the report id, status, and relevant timestamps.
 
-#### Legacy Endpoint
+#### Legacy endpoint
 
 `POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
 
