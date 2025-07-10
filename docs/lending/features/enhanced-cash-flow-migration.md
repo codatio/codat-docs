@@ -145,7 +145,7 @@ You can check report completion in one of two ways:
 
 Instead of a single endpoint, account and transaction data is now available via two dedicated endpoints.
 Before calling these, ensure that a report has been generated and is in the Complete state.
-There are a few Implications for your integration.
+There are a few implications for your integration.
 * You’ll need to update your data parsing logic to extract transactions from the results array instead of navigating nested structures.
 
 * If you previously depended on embedded account information (e.g. balances or bank codes), you'll now need to use the accounts endpoint `GET /companies/{companyId}/reports/categorizedBankStatement/latest/accounts`
