@@ -44,7 +44,7 @@ To generate the report asynchronously, update your application logic to call the
 
 `POST /companies/{companyId}/reports/categorizedBankStatement`
 
-#### Response Changes
+#### Response changes
 
 The **response object will change** to the following:
 
