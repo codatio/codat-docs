@@ -60,7 +60,7 @@ The **response object will change** to the following:
 
 Refer to the [Generate report](https://docs.codat.io/lending-api#/operations/generate-report) API reference for more details.
 
-### 2. Check Report Status
+### 2. Check report status
 
 To determine when the report is complete, update your implementation to use the new status endpoint.
 
