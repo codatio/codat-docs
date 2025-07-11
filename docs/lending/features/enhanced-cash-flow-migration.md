@@ -5,6 +5,8 @@ displayed_sidebar: "lending"
 image: "/img/banners/social/lending.png"
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 We have recently launched the **Categorized Bank Statement** report, which replaces the legacy **Enhanced Cashflow** report. The new report includes built-in orchestration for fetching required data from third-party integrations and provides webhook notifications when the report is ready. 
 
@@ -175,3 +177,32 @@ There are a few Implications for your integration.
 
 
 Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operations/list-categorized-bank-statement-accounts) and [List Transactions Endpoint](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement-transactions) documentations for details.
+
+<details>
+  <summary><b>Compare webhook schemas</b></summary>
+<Tabs>
+<TabItem value="old" label="Old schema">
+
+```json
+{
+  "AlertId": "test"
+}
+```
+
+</TabItem>
+
+<TabItem value="new" label="New schema">
+
+```json
+{
+  "id": "test"
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+text text outside of the tab
+
+</details>
