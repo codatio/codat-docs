@@ -1,30 +1,52 @@
 ---
-title: "Migration Guide for Enhanced cashflow report"
-description: "Migration to Categorized Bank Statement Endpoints: Replacing Deprecated Enhanced Cashflow APIs"
+title: "Migration guide for Enhanced Cashflow report"
+description: "Check how you can transition your existing Codat integration with Enhanced Cashflow endpoints to our new Categorized Bank Statement report endpoints"
 displayed_sidebar: "lending"
 image: "/img/banners/social/lending.png"
 ---
 
+
+We have recently launched the **Categorized Bank Statement** report, which replaces the legacy **Enhanced Cashflow** report. The new report includes built-in orchestration for fetching required data from third-party integrations and provides webhook notifications when the report is ready. 
+
+To ensure a smooth transition, we recommend migrating to the new endpoints ahead of the [upcoming deprecation](https://docs.codat.io/updates/250703-deprecation-enh-cashflow-endpoints) on **July 10, 2026**.
+
+The Categorized Bank Statement report is asynchronous, which means it must be generated before you can retrieve data from it. If you’d like to continue using a sync scheduler for this report, please reach out to your Account Manager.
+
 :::info In this guide:
 
-- Alternatives to deprecated **Enhanced Cashflow** report endpoints
-- Endpoint replacements and response changes
-- Essential workflow adjustments to ensure a smooth transition
+- Recommended steps to migrate your integration to new Categorized Bank Statement report
+- Mapping of legacy Enhanced Cashflow endpoints to new ones
+- Workflow updates required for the new report
   :::
 
-## Generate a Report
+## What you need to do
 
-#### **Old Endpoint**
+To prepare for the deprecation, you’ll need to update your application to use the Categorized Bank Statement endpoints in place of the Enhanced Cashflow ones.
+
+To switch to the Categorized Bank Statement report we recommend an "expand/contract" strategy. 
+Before you start your migration enable the new report in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers).
+
+Once enabled, you can run both the legacy and new endpoints in parallel, allowing for a phased transition before the deprecation deadline.
+
+The steps below outline how each part of your existing workflow maps to the new implementation, with details on what’s changed and how to adapt.
+
+### 1. Generate a report
+
+To generate the report asynchronously, update your application logic to call the new endpoint in place of the legacy one. This triggers the orchestration process to fetch all required data for the report.
+
+**The response format has changed**. The new Categorized Bank Statement endpoint returns a simplified, structured object that includes the report id, status, and relevant timestamps.
+
+#### Legacy endpoint
 
 `POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
 
-#### New Endpoint
+#### New endpoint
 
 `POST /companies/{companyId}/reports/categorizedBankStatement`
 
-#### Response Changes
+#### Response changes
 
-The response object will change from the old format to the following:
+The **response object will change** to the following:
 
 ```json
 {
@@ -36,19 +58,23 @@ The response object will change from the old format to the following:
 }
 ```
 
-Refer to the [Generate Report API documentation](https://docs.codat.io/lending-api#/operations/generate-report) for more details.
+Refer to the [Generate report](https://docs.codat.io/lending-api#/operations/generate-report) API reference for more details.
 
-## Check the Status of the Latest Report
+### 2. Check report status
 
-#### **Old Endpoint**
+To determine when the report is complete, update your implementation to use the new status endpoint.
+
+The response has been updated to return the full report metadata, including the report id, status, timestamps, and the report type.
+
+#### Legacy endpoint
 
 `GET /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
 
-#### New Endpoint
+#### New endpoint
 
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`
 
-#### Response Changes
+#### Response changes
 
 The response object is updated to:
 
@@ -62,55 +88,50 @@ The response object is updated to:
 }
 ```
 
-Refer to the [Get Report Status API documentation](https://docs.codat.io/lending-api#/operations/get-report-status) for details.
+Refer to the [Get report status](https://docs.codat.io/lending-api#/operations/get-report-status) API reference for details.
 
-## Download the Excel Report
+### 3. Download the Excel report
 
-#### **Old Endpoint**
+To download the generated report, update your application to use the new endpoint.
+
+There are no changes to the response — it continues to return an Excel file containing the report data.
+
+#### Legacy endpoint
 
 `GET /data/companies/{companyId}/assess/excel/download?reportType=enhancedCashFlow`
 
-#### New Endpoint
+#### New endpoint
 
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/excel`
 
-#### Response Changes
+#### Response changes
 
 There are **no changes** to the response. The endpoint will return an Excel file containing the report data as before.
 
-## Retrieve Transactions Data
+Refer to the [Download report](https://docs.codat.io/lending-api#/operations/download-categorized-bank-statement-excel) API reference for more details.
 
-#### **Old Endpoint**
+### 4. Ensure the report generation is complete before querying data
 
-`GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
+The Categorized Bank Statement endpoints for accounts and transactions require the report to be fully generated before any data can be retrieved.
 
-#### New Endpoints
+:::warning Important workflow update
 
-`GET /companies/{companyId}/reports/categorizedBankStatement/latest/accounts`
+Unlike the legacy endpoints, the new endpoints require that a report already exists and its status is `Complete` before you can request accounts or transactions data.
 
-`GET /companies/{companyId}/reports/categorizedBankStatement/latest/transactions`
+**Action Required** - Update your workflow to:
 
-Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operations/list-categorized-bank-statement-accounts) and [List Transactions Endpoint](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement-transactions) documentations for details.
-:::warning Important Workflow Update
+1. Call `POST /companies/{companyId}/reports/categorizedBankStatement`
 
-For retrieving transactions data, unlike the old endpoints, the new endpoints require that a report already exists **and its status is** `Complete` before retrieving accounts or transactions.
-
-**Action Required**: Update your workflow to first call:
-
-`POST /companies/{companyId}/reports/categorizedBankStatement`
-
-…and ensure the report status is `Complete` before making requests to the new accounts or transactions endpoints.
+2. Confirm the report status is `Complete` before calling Categorized Bank Statement accounts or transactions endpoints.
 :::
 
-:::tip How to Check for Completion
+You can check report completion in one of two ways:
 
-You can verify the report's completion in **two ways**:
-
-1. **Poll the Status Endpoint**
+1. **Poll the status endpoint**
 
    `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`
 
-2. **Listen to Webhook Event**  
+2. **Listen to webhook events**  
     Subscribe to the webhook:
 
    `reports.categorizedBankStatement.generate.successful`
@@ -118,4 +139,39 @@ You can verify the report's completion in **two ways**:
    This webhook fires when the report generation is complete.
 
    For more details, see [Webhooks Overview](https://docs.codat.io/using-the-api/webhooks/overview)
-   :::
+
+
+### 5. Retrieve accounts and transactions data
+
+Instead of a single endpoint, account and transaction data is now available via two dedicated endpoints.
+Before calling these, ensure that a report has been generated and is in the `Complete` state.
+There are a few implications for your integration.
+* You’ll need to update your data parsing logic to extract transactions from the results array instead of navigating nested structures.
+
+* If you previously depended on embedded account information (e.g. balances or bank codes), you'll now need to use the accounts endpoint `GET /companies/{companyId}/reports/categorizedBankStatement/latest/accounts`
+
+* The new response follows standard REST conventions, which simplifies pagination and improves performance when working with large datasets.
+
+#### Legacy endpoint
+
+`GET /companies/{companyId}/reports/enhancedCashFlow/transactions`
+
+#### New endpoints
+
+`GET /companies/{companyId}/reports/categorizedBankStatement/latest/accounts`
+
+`GET /companies/{companyId}/reports/categorizedBankStatement/latest/transactions`
+
+#### Response changes
+
+
+| Change                      | Legacy Enhanced Cashflow                                     | Categorized Bank Statement                                      |
+|----------------------------|---------------------------------------------------------------|------------------------------------------------------------------|
+| **Top-level shape**        | Nested object with `reportInfo`, `dataSources`, `reportItems` | Flat object with `results` array                                |
+| **Transactions**           | Nested under `reportItems.transactions`                       | Flattened under `results` array                                 |
+| **Accounts**               | Embedded in `dataSources.accounts` with full account details  | Referenced via `accountRef`; full details retrieved separately  |
+| **Metadata**               | Included in `reportInfo`                                      | Retrieved separately via status endpoint                        |
+
+
+
+Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operations/list-categorized-bank-statement-accounts) and [List Transactions Endpoint](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement-transactions) documentations for details.
