@@ -141,7 +141,7 @@ You can check report completion in one of two ways:
    For more details, see [Webhooks Overview](https://docs.codat.io/using-the-api/webhooks/overview)
 
 
-### 5. Retrieve Accounts and Transactions Data
+### 5. Retrieve accounts and transactions data
 
 Instead of a single endpoint, account and transaction data is now available via two dedicated endpoints.
 Before calling these, ensure that a report has been generated and is in the `Complete` state.
