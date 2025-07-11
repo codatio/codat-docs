@@ -74,7 +74,7 @@ The response has been updated to return the full report metadata, including the 
 
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`
 
-#### Response Changes
+#### Response changes
 
 The response object is updated to:
 
