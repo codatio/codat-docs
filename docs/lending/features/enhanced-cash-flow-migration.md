@@ -96,7 +96,7 @@ To download the generated report, update your application to use the new endpoin
 
 There are no changes to the response — it continues to return an Excel file containing the report data.
 
-#### Legacy Endpoint
+#### Legacy endpoint
 
 `GET /data/companies/{companyId}/assess/excel/download?reportType=enhancedCashFlow`
 
