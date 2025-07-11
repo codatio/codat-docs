@@ -100,7 +100,7 @@ There are no changes to the response — it continues to return an Excel file co
 
 `GET /data/companies/{companyId}/assess/excel/download?reportType=enhancedCashFlow`
 
-#### New Endpoint
+#### New endpoint
 
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/excel`
 
