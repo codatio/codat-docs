@@ -127,7 +127,7 @@ Unlike the legacy endpoints, the new endpoints require that a report already exi
 
 You can check report completion in one of two ways:
 
-1. **Poll the Status Endpoint**
+1. **Poll the status endpoint**
 
    `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`
 
