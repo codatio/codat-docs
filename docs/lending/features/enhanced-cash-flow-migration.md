@@ -104,7 +104,7 @@ There are no changes to the response — it continues to return an Excel file co
 
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/excel`
 
-#### Response Changes
+#### Response changes
 
 There are **no changes** to the response. The endpoint will return an Excel file containing the report data as before.
 
