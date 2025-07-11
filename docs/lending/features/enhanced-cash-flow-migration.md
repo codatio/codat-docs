@@ -90,7 +90,7 @@ The response object is updated to:
 
 Refer to the [Get report status](https://docs.codat.io/lending-api#/operations/get-report-status) API reference for details.
 
-### 3. Download the Excel Report
+### 3. Download the Excel report
 
 To download the generated report, update your application to use the new endpoint.
 
