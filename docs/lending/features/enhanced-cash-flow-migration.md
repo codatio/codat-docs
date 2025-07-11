@@ -88,7 +88,7 @@ The response object is updated to:
 }
 ```
 
-Refer to the [Get Report Status API documentation](https://docs.codat.io/lending-api#/operations/get-report-status) for details.
+Refer to the [Get report status](https://docs.codat.io/lending-api#/operations/get-report-status) API reference for details.
 
 ### 3. Download the Excel Report
 
