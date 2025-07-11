@@ -131,7 +131,7 @@ You can check report completion in one of two ways:
 
    `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`
 
-2. **Listen to Webhook Event**  
+2. **Listen to webhook events**  
     Subscribe to the webhook:
 
    `reports.categorizedBankStatement.generate.successful`
