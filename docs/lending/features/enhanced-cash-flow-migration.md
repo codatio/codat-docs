@@ -70,7 +70,7 @@ The response has been updated to return the full report metadata, including the 
 
 `GET /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
 
-#### New Endpoint
+#### New endpoint
 
 `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`
 
