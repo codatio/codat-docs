@@ -66,7 +66,7 @@ To determine when the report is complete, update your implementation to use the 
 
 The response has been updated to return the full report metadata, including the report id, status, timestamps, and the report type.
 
-#### Legacy Endpoint
+#### Legacy endpoint
 
 `GET /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
 
