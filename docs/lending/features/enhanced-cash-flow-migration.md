@@ -108,7 +108,7 @@ There are no changes to the response — it continues to return an Excel file co
 
 There are **no changes** to the response. The endpoint will return an Excel file containing the report data as before.
 
-Refer to the [Download Report API documentation](https://docs.codat.io/lending-api#/operations/download-categorized-bank-statement-excel) for more details.
+Refer to the [Download report](https://docs.codat.io/lending-api#/operations/download-categorized-bank-statement-excel) API reference for more details.
 
 ### 4. Ensure the report generation is complete before querying data
 
