@@ -40,7 +40,7 @@ To generate the report asynchronously, update your application logic to call the
 
 `POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
 
-#### New Endpoint
+#### New endpoint
 
 `POST /companies/{companyId}/reports/categorizedBankStatement`
 
