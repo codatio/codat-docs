@@ -253,7 +253,7 @@ There are a few implications for your integration.
 <details>
   <summary><b>Compare sample responses</b></summary>
 <Tabs>
-<TabItem value="legacy" label="Legacy schema (Accounts + Transactions)">
+<TabItem value="legacyat" label="Legacy schema (Accounts + Transactions)">
 
 ```json
 {
@@ -329,6 +329,7 @@ There are a few implications for your integration.
   ]
 }
 ```
+</TabItem>
 
 <TabItem value="newtr" label="New schema - Transactions endpoint">
 
