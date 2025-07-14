@@ -48,7 +48,7 @@ To generate the report asynchronously, update your application logic to call the
 
 #### Response changes
 
-The **response object will change** to the following:
+The **response object has changed** to the following:
 
 ```json
 {
@@ -59,6 +59,55 @@ The **response object will change** to the following:
   "updatedDate": "2024-09-27T04:43:41Z"
 }
 ```
+<details>
+  <summary><b>Compare sample responses</b></summary>
+<Tabs>
+<TabItem value="legacy" label="Legacy schema">
+
+```json
+{
+  "lastGenerated": "2023-01-25T22:36:05.125Z",
+  "inProgress": true,
+  "queued": "2023-01-25T22:36:05.125Z",
+  "success": true,
+  "errorMessage": "string",
+  "lastInvocationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "reportType": "string",
+  "fileSize": 0
+}
+```
+
+</TabItem>
+
+<TabItem value="new" label="New schema">
+
+```json
+{
+  "id": "6e9bae88-72c9-45ae-abe8-41fbf2871458",
+  "status": "InProgress",
+  "type": "categorizedBankStatement",
+  "requestedDate": "2024-09-27T04:43:41Z",
+  "updatedDate": "2024-10-01T14:41:46Z"
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+| **Old schema property** | **New schema equivalent**                                                                                     |
+|-------------------------|----------------------------------------------------------------------------------------------------------------|
+| `lastGenerated`         | ❌ Not available                                                                                               |
+| `inProgress`            | ✅ Replaced by `status` – indicates the current state of the report (`InProgress`, `Complete`, `Error`)       |
+| `queued`                | ✅ Replaced by `requestedDate` – timestamp for when the report was requested                                   |
+| `success`               | ✅ Use `status` instead                                                                                        |
+| `errorMessage`          | ✅ Remains `errorMessage`                                                                                      |
+| `lastInvocationId`      | ❌ Not available                                                                                               |
+| `reportType`            | ✅ Renamed to `type`                                                                                           |
+| `fileSize`              | ❌ Not available                                                                                               |
+
+</details>
+
 
 Refer to the [Generate report](https://docs.codat.io/lending-api#/operations/generate-report) API reference for more details.
 
