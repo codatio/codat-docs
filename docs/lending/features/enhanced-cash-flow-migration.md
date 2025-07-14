@@ -12,7 +12,9 @@ We have recently launched the **Categorized Bank Statement** report, which repla
 
 To ensure a smooth transition, we recommend migrating to the new endpoints ahead of the [upcoming deprecation](https://docs.codat.io/updates/250703-deprecation-enh-cashflow-endpoints) on **July 10, 2026**.
 
-The Categorized Bank Statement report is asynchronous, which means it must be generated before you can retrieve data from it. If you’d like to continue using a sync scheduler for this report, please reach out to your Account Manager.
+Categorized Bank Statement report is generated through an asynchronous process. This means you must explicitly request the report before you can retrieve any data, and wait until it completes.
+
+This report is not generated automatically on a predefined schedule. If you need reports to be triggered automatically on link and/or on a sync schedule, please reach out to your Account Manager.
 
 :::info In this guide:
 
@@ -204,18 +206,17 @@ Unlike the legacy endpoints, the new endpoints require that a report already exi
 2. Confirm the report status is `Complete` before calling Categorized Bank Statement accounts or transactions endpoints.
 :::
 
-You can check report completion by:
+You can determine whether the report has finished generating using one of the following methods:
 
-1. **Listenning to webhook events** - _preferred option_  
-    Subscribe to the webhook:
+1. **Preferred: Subscribe to webhook events**
 
    `reports.categorizedBankStatement.generate.successful`
 
-   This webhook fires when the report generation is complete.
+   This event is triggered when the report is generated successfully.
 
    For more details, see [Webhooks Overview](https://docs.codat.io/using-the-api/webhooks/overview)
 
-2. **Polling the status endpoint**
+2. **Alternatively: Poll the status endpoint**
 
    `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`
 
@@ -253,7 +254,7 @@ There are a few implications for your integration.
 <details>
   <summary><b>Compare sample responses</b></summary>
 <Tabs>
-<TabItem value="legacyat" label="Legacy schema (Accounts + Transactions)">
+<TabItem value="legacy" label="Legacy schema">
 
 ```json
 {
@@ -303,7 +304,7 @@ There are a few implications for your integration.
 
 </TabItem>
 
-<TabItem value="newac" label="New schema - Accounts endpoint">
+<TabItem value="newac" label="New schema - Accounts">
 
 ```json
 {
@@ -331,7 +332,7 @@ There are a few implications for your integration.
 ```
 </TabItem>
 
-<TabItem value="newtr" label="New schema - Transactions endpoint">
+<TabItem value="newtr" label="New schema - Transactions">
 
 ```json
 {
@@ -367,9 +368,7 @@ There are a few implications for your integration.
 
 </Tabs>
 
-### 🧾 Field mapping comparison
-
-| **Old schema property**                     | **New schema (Accounts endpoint)**                            | **New schema (Transactions endpoint)**                         |
+| **Old schema property**                     | **New schema - Accounts**                            | **New schema - Transactions**                         |
 |---------------------------------------------|---------------------------------------------------------------|----------------------------------------------------------------|
 | `reportInfo.pageNumber`                     | ✅ `pageNumber`                                               | ✅ `pageNumber`                                                 |
 | `reportInfo.pageSize`                       | ✅ `pageSize`                                                 | ✅ `pageSize`                                                   |
