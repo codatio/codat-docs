@@ -38,8 +38,6 @@ The steps below outline how each part of your existing workflow maps to the new 
 
 To generate the report asynchronously, update your application logic to call the new endpoint in place of the legacy one. This triggers the orchestration process to fetch all required data for the report.
 
-**The response format has changed**. The new Categorized Bank Statement endpoint returns a simplified, structured object that includes the report id, status, and relevant timestamps.
-
 #### Legacy endpoint
 
 `POST /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
@@ -50,7 +48,7 @@ To generate the report asynchronously, update your application logic to call the
 
 #### Response changes
 
-The **response object has changed**.
+**The response format has changed**. The new Categorized Bank Statement endpoint returns a simplified, structured object that includes the report id, status, and relevant timestamps.
 
 <details>
   <summary><b>Compare sample responses</b></summary>
@@ -90,7 +88,7 @@ The **response object has changed**.
 
 | **Old schema property** | **New schema equivalent**                                                                                     |
 |-------------------------|----------------------------------------------------------------------------------------------------------------|
-| `lastGenerated`         | ❌ Not available                                                                                               |
+| `lastGenerated`         | 🔁 Use `GET /companies/{companyId}/reports` endpoint instead to retrieve previously generated reports                                                                                               |
 | `inProgress`            | ✅ Replaced by `status` – indicates the current state of the report (`InProgress`, `Complete`, `Error`)       |
 | `queued`                | ✅ Replaced by `requestedDate` – timestamp for when the report was requested                                   |
 | `success`               | ✅ Use `status` instead                                                                                        |
@@ -108,8 +106,6 @@ Refer to the [Generate report](https://docs.codat.io/lending-api#/operations/gen
 
 To determine when the report is complete, update your implementation to use the new status endpoint.
 
-The response has been updated to return the full report metadata, including the report id, status, timestamps, and the report type.
-
 #### Legacy endpoint
 
 `GET /data/companies/{companyId}/assess/excel?reportType=enhancedCashFlow`
@@ -120,7 +116,7 @@ The response has been updated to return the full report metadata, including the 
 
 #### Response changes
 
-The **response object has changed**.
+The **response object has changed**. The response has been updated to return the full report metadata, including the report id, status, timestamps, and the report type.
 
 <details>
   <summary><b>Compare sample responses</b></summary>
@@ -160,7 +156,7 @@ The **response object has changed**.
 
 | **Old schema property** | **New schema equivalent**                                                                                     |
 |-------------------------|----------------------------------------------------------------------------------------------------------------|
-| `lastGenerated`         | ❌ Not available                                                                                               |
+| `lastGenerated`         | 🔁 Use `GET /companies/{companyId}/reports` endpoint instead to retrieve previously generated reports                                                                                             |
 | `inProgress`            | ✅ Replaced by `status` – indicates the current state of the report (`InProgress`, `Complete`, `Error`)       |
 | `queued`                | ✅ Replaced by `requestedDate` – timestamp for when the report was requested                                   |
 | `success`               | ✅ Use `status` instead                                                                                        |
