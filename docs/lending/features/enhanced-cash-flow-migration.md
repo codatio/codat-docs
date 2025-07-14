@@ -48,17 +48,8 @@ To generate the report asynchronously, update your application logic to call the
 
 #### Response changes
 
-The **response object has changed** to the following:
+The **response object has changed**.
 
-```json
-{
-  "id": "6e9bae88-72c9-45ae-abe8-41fbf2871458",
-  "status": "InProgress",
-  "type": "categorizedBankStatement",
-  "requestedDate": "2024-09-27T04:43:41Z",
-  "updatedDate": "2024-09-27T04:43:41Z"
-}
-```
 <details>
   <summary><b>Compare sample responses</b></summary>
 <Tabs>
@@ -127,17 +118,7 @@ The response has been updated to return the full report metadata, including the 
 
 #### Response changes
 
-The response object is updated to:
-
-```json
-{
-  "id": "6e9bae88-72c9-45ae-abe8-41fbf2871458",
-  "status": "Complete",
-  "type": "categorizedBankStatement",
-  "requestedDate": "2024-09-27T04:43:41Z",
-  "updatedDate": "2024-09-27T04:48:31Z"
-}
-```
+The **response object has changed**.
 
 <details>
   <summary><b>Compare sample responses</b></summary>
@@ -193,8 +174,6 @@ Refer to the [Get report status](https://docs.codat.io/lending-api#/operations/g
 ### 3. Download the Excel report
 
 To download the generated report, update your application to use the new endpoint.
-
-There are **no changes to the response** — it continues to return an Excel file containing the report data.
 
 #### Legacy endpoint
 
@@ -271,7 +250,144 @@ There are a few implications for your integration.
 | **Accounts**               | Embedded in `dataSources.accounts` with full account details  | Referenced via `accountRef`; full details retrieved separately  |
 | **Metadata**               | Included in `reportInfo`                                      | Retrieved separately via status endpoint                        |
 
+<details>
+  <summary><b>Compare sample responses</b></summary>
+<Tabs>
+<TabItem value="legacy" label="Legacy schema (Accounts + Transactions)">
 
+```json
+{
+  "reportInfo": {
+    "pageNumber": 1,
+    "pageSize": 100,
+    "totalResults": 2401,
+    "reportName": "Cash Flow transactions report",
+    "companyName": "Example Company",
+    "generatedDate": "2023-01-25T22:36:05.125Z"
+  },
+  "dataSources": [
+    {
+      "accounts": [
+        {
+          "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+          "accountName": "Business Current Account",
+          "accountType": "Debit",
+          "currency": "USD",
+          "currentBalance": 1000
+          ...
+        }
+      ]
+    }
+  ],
+  "reportItems": [
+    {
+      "transactions": [
+        {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "accountRef": {
+            "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+            "name": "Business Current Account"
+          },
+          "date": "2023-01-25",
+          "description": "Payment to supplier",
+          "amount": 100,
+          "currency": "USD",
+          "platformName": "Plaid"
+          ...
+        }
+      ]
+    }
+  ]
+}
+```
+
+</TabItem>
+
+<TabItem value="newac" label="New schema - Accounts endpoint">
+
+```json
+{
+  "pageNumber": 1,
+  "pageSize": 100,
+  "totalResults": 2,
+  "_links": {
+    "self": {
+      "href": "/companies/{companyId}/reports/categorizedBankStatement/latest/accounts"
+    }
+    ...
+  },
+  "results": [
+    {
+      "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+      "accountName": "Business Current Account",
+      "accountType": "Debit",
+      "currency": "USD",
+      "currentBalance": 1000
+      ...
+    }
+    ...
+  ]
+}
+```
+
+<TabItem value="newtr" label="New schema - Transactions endpoint">
+
+```json
+{
+  "pageNumber": 1,
+  "pageSize": 100,
+  "totalResults": 1,
+  "_links": {
+    "self": {
+      "href": "/companies/{companyId}/reports/categorizedBankStatement/latest/transactions"
+    }
+    ...
+  },
+  "results": [
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "accountRef": {
+        "id": "4f78a6b0-e9bb-40f2-82fd-f3a2daa1fd0a",
+        "name": "Business Current Account"
+      },
+      "date": "2023-01-25",
+      "description": "Payment to supplier",
+      "amount": 100,
+      "currency": "USD",
+      "platformName": "Plaid"
+      ...
+    }
+    ...
+  ]
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+### 🧾 Field mapping comparison
+
+| **Old schema property**                     | **New schema (Accounts endpoint)**                            | **New schema (Transactions endpoint)**                         |
+|---------------------------------------------|---------------------------------------------------------------|----------------------------------------------------------------|
+| `reportInfo.pageNumber`                     | ✅ `pageNumber`                                               | ✅ `pageNumber`                                                 |
+| `reportInfo.pageSize`                       | ✅ `pageSize`                                                 | ✅ `pageSize`                                                   |
+| `reportInfo.totalResults`                   | ✅ `totalResults`                                             | ✅ `totalResults`                                               |
+| `reportInfo.generatedDate`                  | ❌ Not available (see report status for `updatedDate`)        | ❌ Not available (see report status for `updatedDate`)          |
+| `dataSources.accounts[].id`                 | ✅ `results[].id`                                             | 🔁 Referenced via `accountRef.id`                              |
+| `dataSources.accounts[].accountName`        | ✅ `accountName`                                              | 🔁 Referenced via `accountRef.name`                            |
+| `dataSources.accounts[].accountType`        | ✅ `accountType`                                              | ❌ Not available                                                |
+| `dataSources.accounts[].currency`           | ✅ `currency`                                                 | ✅ `currency`                                                   |
+| `dataSources.accounts[].currentBalance`     | ✅ `currentBalance`                                           | ❌ Not available                                                |
+| `reportItems[].transactions[].id`           | ❌ Not available                                              | ✅ `results[].id`                                               |
+| `reportItems[].transactions[].accountRef`   | ❌ Not available                                              | ✅ `accountRef`                                                 |
+| `reportItems[].transactions[].date`         | ❌ Not available                                              | ✅ `date`                                                       |
+| `reportItems[].transactions[].description`  | ❌ Not available                                              | ✅ `description`                                                |
+| `reportItems[].transactions[].amount`       | ❌ Not available                                              | ✅ `amount`                                                     |
+| `reportItems[].transactions[].currency`     | ❌ Not available                                              | ✅ `currency`                                                   |
+| `reportItems[].transactions[].platformName` | ❌ Not available                                              | ✅ `platformName`                                               |
+
+</details>
 
 Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operations/list-categorized-bank-statement-accounts) and [List Transactions Endpoint](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement-transactions) documentations for details.
 
