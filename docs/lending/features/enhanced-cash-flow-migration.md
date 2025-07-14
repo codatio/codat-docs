@@ -138,8 +138,9 @@ The response object is updated to:
   "updatedDate": "2024-09-27T04:48:31Z"
 }
 ```
+
 <details>
-  <summary><b>Compare sample response/b></summary>
+  <summary><b>Compare sample responses</b></summary>
 <Tabs>
 <TabItem value="legacy" label="Legacy schema">
 
@@ -163,10 +164,10 @@ The response object is updated to:
 ```json
 {
   "id": "6e9bae88-72c9-45ae-abe8-41fbf2871458",
-  "status": "InProgress",
+  "status": "Complete",
   "type": "categorizedBankStatement",
   "requestedDate": "2024-09-27T04:43:41Z",
-  "updatedDate": "2024-10-01T14:41:46Z"
+  "updatedDate": "2024-09-27T04:48:31Z"
 }
 ```
 
@@ -224,13 +225,9 @@ Unlike the legacy endpoints, the new endpoints require that a report already exi
 2. Confirm the report status is `Complete` before calling Categorized Bank Statement accounts or transactions endpoints.
 :::
 
-You can check report completion in one of two ways:
+You can check report completion by:
 
-1. **Poll the status endpoint**
-
-   `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`
-
-2. **Listen to webhook events**  
+1. **Listenning to webhook events** - _preferred option_  
     Subscribe to the webhook:
 
    `reports.categorizedBankStatement.generate.successful`
@@ -239,6 +236,9 @@ You can check report completion in one of two ways:
 
    For more details, see [Webhooks Overview](https://docs.codat.io/using-the-api/webhooks/overview)
 
+2. **Polling the status endpoint**
+
+   `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`
 
 ### 5. Retrieve accounts and transactions data
 
@@ -275,31 +275,3 @@ There are a few implications for your integration.
 
 Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operations/list-categorized-bank-statement-accounts) and [List Transactions Endpoint](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement-transactions) documentations for details.
 
-<details>
-  <summary><b>Compare webhook schemas</b></summary>
-<Tabs>
-<TabItem value="old" label="Old schema">
-
-```json
-{
-  "AlertId": "test"
-}
-```
-
-</TabItem>
-
-<TabItem value="new" label="New schema">
-
-```json
-{
-  "id": "test"
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-text text outside of the tab
-
-</details>
