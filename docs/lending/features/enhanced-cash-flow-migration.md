@@ -210,11 +210,11 @@ You can determine whether the report has finished generating using one of the fo
 
 1. **Preferred: Subscribe to webhook events**
 
-   `reports.categorizedBankStatement.generate.successful`
+   [`reports.categorizedBankStatement.generate.successful`](/lending-api#/webhooks/reports.categorizedBankStatement.generate.successful/post)
 
    This event is triggered when the report is generated successfully.
 
-   For more details, see [Webhooks Overview](https://docs.codat.io/using-the-api/webhooks/overview)
+   For more details, see [Webhooks Overview](/using-the-api/webhooks/create-consumer)
 
 2. **Alternatively: Poll the status endpoint**
 
