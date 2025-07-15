@@ -29,10 +29,10 @@ A webhook consumer endpoint which is disabled after the 5 min retry, but then re
 
 ## Message Status
 
-- "Success" indicates that there was at least one attempt for that message that succeeded against it's endpoint. 
-- "Failure" indicates that all attempts were exhausted, and none of them succeeded.
-- "Attempting" indicates that at least one attempt has been sent and there are further attempts scheduled as part of the retry policy.
-- "Sending" indicates that the process of sending the webhook has begun but there have been no delivery attempts yet. 
+- **Success** indicates that there was at least one attempt for that message that succeeded against it's endpoint. 
+- **Failure** indicates that all attempts were exhausted, and none of them succeeded.
+- **Attempting** indicates that at least one attempt has been sent and there are further attempts scheduled as part of the retry policy.
+- **Sending** indicates that the process of sending the webhook has begun but there have been no delivery attempts yet. 
 
 ## Recover failed and missed messages
 
