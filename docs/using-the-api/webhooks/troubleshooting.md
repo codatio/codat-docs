@@ -67,7 +67,7 @@ Then, click the triple-dot menu on the right and choose one of the applicable op
 
 For more granular date control, you can scroll to the endpoint's message attempts, click the triple-dot options menu of a specific message, and choose **Replay > Replay all failed messages since this time**.
 
-During the recovery of mutiple messages, all messages will be sent at once with some jitter applied in order to prevent overloading the webhook consumer endpoint. If your system has rate-limiting in place, the number of messages to recover may be an important consideration to avoid further failures. Please reach out to Codat Support if unsure.
+During the recovery of mutiple messages, all messages will be sent at once with some jitter applied in order to prevent overloading the webhook consumer endpoint. If your system has rate-limiting in place, the number of messages to recover may be an important consideration to avoid further failures. [Please see our docs around rate limiting endpoints](/using-the-api/webhooks/create-consumer).
 
 ### Idempotency
 
