@@ -65,7 +65,6 @@ const getProductDataTypes = (productName) => {
   const validDataTypes = objToArr(spec.components.schemas)
     .filter((dataType) => !dataType["x-internal"])
     .map((dataType) => {
-      console.log(dataType);
       return { ...dataType, path: generatePath(dataType, productName) };
     });
 
