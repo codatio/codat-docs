@@ -34,3 +34,12 @@ You should only enable one of the banking integrations at a time. This ensures o
 
 - **Plaid** integration appears pre-selected for the user, and they are able to select the correct bank account once they continue linking to Plaid.
 - **TrueLayer** integration appears in the auth flow as a set of banks that it supports, ready for the user to choose.
+
+## Platform keys
+
+Each integration has a unique 4-character key that identifies it in our APIs. For reference, a list of all banking integration platform keys can be found below:
+
+| Platform name | Platform key |
+| ------------- | ------------ |
+| Plaid         | suuo         |
+| TrueLayer     | upvr         |
