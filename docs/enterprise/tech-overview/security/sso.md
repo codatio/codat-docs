@@ -8,7 +8,7 @@ description: "Learn about the prerequisites for setting up enterprise SSO"
 If you wish to use enterprise SSO but don't already have it enabled, please speak with your Account Manager first.
 :::
 
-Before performing any setup on your side, please fill out the questionaire below and share the answers with your Account Manager.
+Before performing any setup on your side, please fill out the questionnaire below and share the answers with your Account Manager.
 
 ### Customer questionnaire
 
