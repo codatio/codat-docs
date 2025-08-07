@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **January 10, 2026**, we will relax validation on the [Remove product](/platform-api#/operations/remove-product) endpoint to allow the final remaining product to be removed from a company.
+On **January 10, 2026**, we will relax validation on the [Remove product](/platform-api#/operations/remove-product) endpoint to allow the last remaining product to be removed from a company.
 
 <!--truncate-->
 
