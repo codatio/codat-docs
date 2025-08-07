@@ -9,7 +9,7 @@ On **January 10, 2026**, we will relax validation on the [Remove product](/platf
 
 <!--truncate-->
 
-When a company is created, a product must be assigned—unless default products are configured for the client’s instance. Until now, this requirement also applied after creation: it was not possible to remove the last product from a company.
+When a company is created, a product must be assigned unless default products are configured for the client’s instance. Until now, this requirement also applied after creation: it was not possible to remove the last product from a company.
 
 This validation will now be relaxed. Clients will be able to remove all products from a company while keeping the connection intact.
 
