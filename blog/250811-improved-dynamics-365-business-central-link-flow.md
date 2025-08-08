@@ -28,4 +28,4 @@ This update is relevant for all clients using Link to connect to **Dynamics 365 
 
 ## How to get started?
 
-The new Link flow will be **automatically enabled on 10 January 2025**, but you can enable it early by going to the [Developers section of the Portal](https://app.codat.io/developers/api-deprecations) and switching on **"Improved Dynamics 365 Business Central Link flow"**.
+The new Link flow is now automatically available to all clients. No action is required to start benefiting from the improvements.
