@@ -191,9 +191,9 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/tran
 
 </Tabs>
 
-## Monitor sync health
+## Monitor sync status
 
-Use the Expenses menu in the [Codat Portal](https://app.codat.io/) to navigate to [Sync Health](https://app.codat.io/products/sync-for-expenses) and monitor the status of your syncs, review detailed logs and error messages, and view and retry writing failed items. This helps your support team to resolve common issues with the customer's settings or actions.
+Select the [Codat Portal](https://app.codat.io/) [Sync For Expenses](https://app.codat.io/products/sync-for-expenses) menu item to monitor the status of your syncs, as well as review detailed logs and error messages. This helps your support team to resolve common issues with the customer's settings or actions.
 
 <img
   src="/img/sync-for-commerce/0006-sync-health-ui.png"
@@ -205,24 +205,6 @@ Use the Expenses menu in the [Codat Portal](https://app.codat.io/) to navigate t
 - Display the sync history for a specific period by indicating a **date range** (3).
 - Review the possible statuses of the syncs and filter the records by their **status code** (4).
 - Use the **menu** (6) to sort and amend the **sync history** (5) table as needed.
-
-#### View detailed records
-
-To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Sync Details** window and provides sync start and end times, and sync source and target platforms.
-
-It also displays client-friendly notes and error messages in case of sync failures.
-
-You can also navigate to the **Config** tab to view and download the customer's sync configuration, which helps establish root causes for any errors that ocurred.
-
-#### View push items
-
-In the same detailed record view, select the **Push items** tab to access a list of **push items**. The list contains an item for each accounting data type that was produced in the selected sync.
-
-Here, you can view each item's status, search the items by their core ID or data type, or filter them by status.
-
-#### Retry push items
-
-On the **Push items** tab, you can also retry the push items in failed status. Click the **Retry failed items** button to trigger another attempt to write the data of all failed push items into the accounting software. The button is only enabled if there are failed items to retry.
 
 #### 💡 Tips and traps
 
