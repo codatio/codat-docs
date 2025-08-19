@@ -1,6 +1,6 @@
 ---
 title: "Improved Dynamics 365 Business Central Link flow"
-date: "2025-08-18"
+date: "2025-08-19"
 tags: ["Product", "Update", "Link"]
 authors: dcoplowe
 ---
