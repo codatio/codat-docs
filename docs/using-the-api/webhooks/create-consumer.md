@@ -499,6 +499,16 @@ svix verify --secret whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw --msg-id msg_p5jXN8A
 
 </Tabs>
 
+## Endpoint Rate Limits
+
+If your application can only handle a limited number of requests in a given time period, you can protect it from becoming overloaded by setting a rate limit on a given endpoint.
+
+The rate limit is defined as a maximum number of messages per second to send to that endpoint. After the limit is reached, requests will get throttled to keep their frequency under the defined limit.
+
+Please note that the actual rate of messages can sometimes be slightly above the enforced rate limit.
+
+<img width="740" height="446" alt="webhookratelimits" src="https://github.com/user-attachments/assets/6afec3df-eae3-4815-90e0-ee17bc1ee9d7" />
+
 ## Transform webhook properties
 
 You may want to modify a webhook's properties (e.g. HTTP method, target URL, and message schema) before it is sent to your application to better fit your needs. To do so, you can now apply a transformation to the webhook following these steps:
