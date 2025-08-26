@@ -21,6 +21,7 @@
     "format:mdx:check": "prettier --check \"**/*.{md,mdx}\""
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^2.23.3",
     "@codat/sdk-link-types": "^1.7.0",
     "@docusaurus/core": "^3.4.0",
     "@docusaurus/plugin-client-redirects": "^3.4.0",
