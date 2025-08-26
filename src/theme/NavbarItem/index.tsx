@@ -1,8 +1,8 @@
 import OriginalNavbarItem from "@theme-original/NavbarItem";
 import React from "react";
-import NavbarIconLink from "./NavbarIconLink";
-import NavbarSeparator from "./NavbarSeparator";
-import NavbarCta from "./NavbarCta";
+import NavbarIconLink from "@theme/NavbarItem/NavbarIconLink";
+import NavbarSeparator from "@theme/NavbarItem/NavbarSeparator";
+import NavbarCta from "@theme/NavbarItem/NavbarCta";
 
 import { track } from "@vercel/analytics";
 import { trackEvent } from "../../utils/amplitude";
