@@ -118,7 +118,7 @@ Compel your customers to establish a digital connection with their accounting so
 
 #### Intelligent file upload
 
-Let us guide your customers through a straightforward, low-effort process to obtain and upload their supplier and bill information for insightful spend analysis and card offers.
+Let us guide your customers through a straightforward, low-effort process to obtain and upload their supplier, bill, payment and direct cost information for insightful spend analysis and card offers.
 
 <IntegrationsList integrations={spendInsightsFileUpload} />
 

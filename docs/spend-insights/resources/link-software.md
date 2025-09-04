@@ -6,10 +6,7 @@ displayed_sidebar: spendInsights
 ---
 
 import { IntegrationsList } from "@components/Integrations";
-import {
-  spendInsightsDirectIntegrations,
-  spendInsightsFileUpload,
-} from "@components/Integrations/integrations";
+import { spendInsightsDirectIntegrations } from "@components/Integrations/integrations";
 
 You can get real-time access to your customer's data and most up-to-date insights if they authorize a digital connection between Codat and their accounting software.
 
