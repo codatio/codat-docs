@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 
-import {
-  ConnectionCallbackArgs,
-  ErrorCallbackArgs,
-} from "@codat/sdk-link-types";
 import { CodatLink as Wrapper } from "@components/CodatLink";
 
 import styles from "./styles.module.scss";

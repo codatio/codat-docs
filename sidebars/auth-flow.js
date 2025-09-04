@@ -26,15 +26,11 @@ module.exports = [
     ],
   },
   "auth-flow/migration-guide",
+  "auth-flow/try-it-out",
   {
     type: "link",
     label: "NPM",
     href: "https://www.npmjs.com/package/@codat/sdk-link-types",
-  },
-  {
-    type: "link",
-    label: "Try it out",
-    href: "https://sdk-link.vercel.app/",
   },
   {
     type: "link",
