@@ -10,6 +10,21 @@
 src/components/page/reference/ReleaseNotes/release-notes.json
 /.vs
 
+# Code utilities - generated files
+code_utils/files_with_code.txt
+code_utils/temp/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+dist/
+build/
+
 
 # Misc
 .DS_Store
