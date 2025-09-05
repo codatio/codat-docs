@@ -265,7 +265,7 @@ export const spendInsightsFileUpload = [
     name: "Dynamics Great Plains",
     to: "/spend-insights/resources/link-file",
     sourceType: "accounting",
-    tags: ["Bills and Bill Payments", "Suppliers", "Direct costs"],
+    tags: ["Bills", "Suppliers", "Payments", "Direct costs"],
     img: "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png",
   },
   {
