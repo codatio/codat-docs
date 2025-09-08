@@ -1,0 +1,64 @@
+# Exclude unnecessary files from Docker build context
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.Python
+**/env/
+**/venv/
+**/.venv/
+**/pip-log.txt
+**/pip-delete-this-directory.txt
+
+# Node modules and TypeScript compilation outputs
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.npm
+**/.yarn-integrity
+**/dist/
+**/build/
+
+# .NET build outputs
+**/bin/
+**/obj/
+**/*.user
+**/*.suo
+**/*.cache
+**/packages/
+
+# Version control
+**/.git/
+**/.gitignore
+**/.gitattributes
+
+# IDE and editor files
+**/.vscode/
+**/.idea/
+**/*.swp
+**/*.swo
+*~
+
+# OS generated files
+**/.DS_Store
+**/.DS_Store?
+**/._*
+**/.Spotlight-V100
+**/.Trashes
+**/ehthumbs.db
+**/Thumbs.db
+
+# Documentation and temp files
+**/temp/incomplete/
+**/*.md
+**/*.txt
+**/output.txt
+**/link-results.json
+
+# Only include the complete code snippets and dependency files
+!temp/*/complete/
+!docker/requirements.txt
+!docker/package.json
+!docker/tsconfig.json
+!docker/CodatSnippets.csproj

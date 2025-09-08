@@ -1,0 +1,6 @@
+codat-platform
+pyright
+requests
+python-dateutil
+httpx
+pydantic
