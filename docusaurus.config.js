@@ -48,6 +48,7 @@ const config = {
     ZENDESK_KEY: process.env.ZENDESK_KEY,
     FEATURE_DEV_FLAG: process.env.FEATURE_DEV_FLAG,
     FEATURE_NEW_PRODUCTS_FLAG: process.env.FEATURE_NEW_PRODUCTS_FLAG,
+    AMPLITUDE_API_KEY: process.env.AMPLITUDE_API_KEY,
   },
 
   presets: [
