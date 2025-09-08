@@ -10,12 +10,18 @@
   },
   "dependencies": {
     "@codat/platform": "^*",
+    "@codat/accounting": "^*",
     "@codat/bank-feeds": "^*",
+    "@codat/banking": "^*",
+    "@codat/commerce": "^*",
     "@codat/lending": "^*",
+    "@codat/assess": "^*",
+    "@codat/files": "^*",
     "@codat/sync-for-commerce": "^*",
     "@codat/sync-for-expenses": "^*",
     "@codat/sync-for-payables": "^*",
     "@codat/sync-for-payroll": "^*",
+    "@codat/sdk-connections": "^*",
     "axios": "^1.0.0"
   },
   "devDependencies": {
