@@ -1,0 +1,19 @@
+# Core Codat Python SDKs
+codat-platform
+codat-bankfeeds
+codat-common
+codat-banking
+codat-commerce
+codat-assess
+codat-accounting
+codat-sync-for-expenses
+codat-sync-for-payroll
+codat-sync-for-payables
+codat-files
+
+# Development and utility packages
+pyright
+requests
+python-dateutil
+httpx
+pydantic
