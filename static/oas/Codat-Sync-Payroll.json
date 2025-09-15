@@ -16032,10 +16032,20 @@
                 "format": "decimal",
                 "description": "Amount for the journal line. Debit entries are considered positive, and credit entries are considered negative."
               },
+              "transactionAmount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "The amount in the original transaction currency."
+              },
               "currency": {
                 "type": "string",
                 "nullable": true,
                 "description": "Currency for the journal line item."
+              },
+              "transactionCurrency": {
+                "type": "string",
+                "nullable": true,
+                "description": "Currency of the original transaction."
               },
               "accountRef": {
                 "$ref": "#/components/schemas/Account/definitions/accountRef"
