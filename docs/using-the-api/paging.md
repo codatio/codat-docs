@@ -67,22 +67,25 @@ var res = await codatPlatform.Companies.ListAsync(new ListCompaniesRequest() {
 <TabItem value="python" label="Python">
 
 ```python
-import codatplatform
-from codatplatform.models import operations, shared
+from codat_platform import CodatPlatform
+from codat_platform.models import operations, shared
 
-codat_platform = codatplatform.CodatPlatform(
+codat_platform = CodatPlatform(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_platform.companies.list(operations.ListCompaniesRequest(
-    page = 5,
-    page_size = 20,
-))
+res = codat_platform.companies.list(
+    request=operations.ListCompaniesRequest(
+        page=5,
+        page_size=20,
+    )
+)
 
-if res.companies is not None:
+if res:
     # handle response
+    pass
 ```
 
 </TabItem>
@@ -90,21 +93,16 @@ if res.companies is not None:
 
 ```javascript
 import { CodatPlatform } from "@codat/platform";
-import { ListCompaniesResponse } from "@codat/platform/dist/sdk/models/operations";
 
 const codatPlatform = new CodatPlatform({
-  security: {
     authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
 });
 
 codatPlatform.companies.list({
-  page = 5,
-  pageSize = 20,
-}).then((res: ListCompaniesResponse) => {
-  if (res.statusCode == 200) {
+  "page" : 5,
+  "pageSize" : 20,
+}).then((res) => {
     // handle response
-  }
 });
 ```
 

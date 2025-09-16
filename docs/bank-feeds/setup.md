@@ -128,9 +128,7 @@ yarn add @codat/bank-feeds
 import { CodatBankFeeds } from "@codat/bank-feeds";
 
 const bankFeedsClient = new CodatBankFeeds({
-  security: {
     authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
 });
 ```
 
@@ -147,10 +145,10 @@ pip install codat-bankfeeds
 #### Initialize
 
 ```python
-import codatbankfeeds
-from codatbankfeeds.models import shared
+from codat_bankfeeds import CodatBankFeeds
+from codat_bankfeeds.models import shared
 
-bank_feeds_client = codatbankfeeds.CodatBankFeeds(
+bank_feeds_client = CodatBankFeeds(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),

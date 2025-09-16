@@ -157,7 +157,7 @@ yarn add @codat/lending
 #### Initialize
 
 ```javascript
-import { CodatBankFeeds } from "@codat/lending";
+import { CodatLending } from "@codat/lending";
 
 const lendingClient = new CodatLending({
   security: {
@@ -179,10 +179,10 @@ pip install codat-lending
 #### Initialize
 
 ```python
-import codatlending
-from codatlending.models import shared
+from codat_lending import CodatLending
+from codat_lending.models import shared
 
-lending_client = codatlending.CodatLending(
+lending_client = CodatLending(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),

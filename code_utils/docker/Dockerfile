@@ -86,9 +86,9 @@ RUN dotnet restore
 # Copy C# code snippets
 COPY temp/csharp/complete/ ./snippets/
 
-# Copy C# validation script
+# Copy C# validation script and fix line endings
 COPY docker/validate-csharp-snippets.sh ./validate-csharp-snippets.sh
-RUN chmod +x validate-csharp-snippets.sh
+RUN sed -i 's/\r$//' validate-csharp-snippets.sh && chmod +x validate-csharp-snippets.sh
 
 # ========================================
 # Final Setup and Verification

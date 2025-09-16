@@ -10,6 +10,7 @@ codat-sync-for-expenses
 codat-sync-for-payroll
 codat-sync-for-payables
 codat-files
+codat-lending
 
 # Development and utility packages
 pyright

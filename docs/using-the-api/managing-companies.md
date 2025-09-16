@@ -187,7 +187,7 @@ print(company_created_res.company.id, company_created_res.company.name)
 ```c#
 var companyCreatedRes = await platformClient.Companies.CreateAsync(new CompanyRequestBody() {
     Name = "Toft stores",
-    Tags = new Dict<string, string>(){
+    Tags = new Dictionary<string, string>(){
       ["uid"] = "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
       ["region"] = "uk"
     }
@@ -289,10 +289,12 @@ req = shared.CompanyRequestBody(
   }
 )
 
-company_updated_res = platform_client.companies.update(operations.UpdateCompanyRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    company_request_body=req)
-  )
+company_updated_res = platform_client.companies.update(
+    request=operations.UpdateCompanyRequest(
+        company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+        company_request_body=req
+    )
+)
 print(company_updated_res.company.id, company_updated_res.company.name)
 ```
 
@@ -305,7 +307,7 @@ var companyCreatedRes = await platformClient.Companies.UpdateAsync(new UpdateCom
   CompanyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
   CompanyRequestBody = new CompanyRequestBody() {
     Name = "Toft stores",
-    Tags = new Dict<string, string>(){
+    Tags = new Dictionary<string, string>(){
       ["uid"] = "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
       ["region"] = "uk"
     }
@@ -409,9 +411,11 @@ const result = await platformClient.companies.list({
 <TabItem value="python" label="Python">
 
 ```python
-res = platform_client.companies.list(operations.ListCompaniesRequest(
-    tags=f'uid={customerId}'
-))
+res = platform_client.companies.list(
+    request=operations.ListCompaniesRequest(
+        tags=f'uid={customerId}'
+    )
+)
 ```
 
 </TabItem>
