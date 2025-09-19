@@ -7,7 +7,13 @@ authors = [
 ]
 readme = "README.md"
 requires-python = ">=3.8"
-dependencies = []
+dependencies = [
+    "click>=8.1.8",
+    "docker>=7.1.0",
+]
+
+[project.scripts]
+code-util = "main:cli"
 
 [project.optional-dependencies]
 dev = [

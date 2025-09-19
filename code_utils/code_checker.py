@@ -4,10 +4,10 @@ This module builds and runs a Docker container to validate complete code snippet
 """
 
 import os
-import subprocess
 import sys
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
+import docker
 
 
 class CodeChecker:
@@ -25,69 +25,92 @@ class CodeChecker:
         """
         self.base_dir = base_dir or Path(__file__).parent
         self.docker_dir = self.base_dir / "docker"
-        self.build_script = self.docker_dir / "build.bat"
         self.container_name = "code-snippets:latest"
         
-    def _run_command(self, command: List[str], cwd: Optional[Path] = None, capture_output: bool = True) -> Tuple[int, str, str]:
-        """
-        Run a command and return the exit code, stdout, and stderr.
-        
-        Args:
-            command: Command and arguments to run
-            cwd: Working directory for the command
-            capture_output: Whether to capture output or let it stream to console
-            
-        Returns:
-            Tuple of (exit_code, stdout, stderr)
-        """
         try:
-            if capture_output:
-                result = subprocess.run(
-                    command,
-                    cwd=cwd,
-                    capture_output=True,
-                    text=True,
-                    timeout=300  # 5 minute timeout
-                )
-                return result.returncode, result.stdout, result.stderr
-            else:
-                # Stream output to console
-                result = subprocess.run(command, cwd=cwd, timeout=300)
-                return result.returncode, "", ""
-        except subprocess.TimeoutExpired:
-            return 124, "", "Command timed out after 300 seconds"
-        except Exception as e:
-            return 1, "", f"Failed to run command: {str(e)}"
+            self.docker_client = docker.from_env()
+        except docker.errors.DockerException as e:
+            raise RuntimeError(f"Failed to connect to Docker: {str(e)}. Make sure Docker is running.")
 
     def _build_docker_image(self) -> Tuple[bool, str]:
         """
-        Build the Docker image using build.bat.
+        Build the Docker image using docker-py with real-time streaming output.
         
         Returns:
             Tuple of (success, message)
         """
         print("🔨 Building Docker image...")
+        print("This container includes:")
+        print("  - Python 3.11")
+        print("  - Node.js 18.x with TypeScript")
+        print("  - .NET 8.0 SDK")
+        print("  - Complete code snippets organized by language")
+        print()
+        sys.stdout.flush()  # Ensure output is shown immediately
         
-        if not self.build_script.exists():
-            return False, f"Build script not found: {self.build_script}"
+        dockerfile_path = self.docker_dir / "Dockerfile"
+        if not dockerfile_path.exists():
+            return False, f"Dockerfile not found: {dockerfile_path}"
         
-        # Run build.bat from the docker directory
-        exit_code, stdout, stderr = self._run_command(
-            [str(self.build_script)], 
-            cwd=self.docker_dir,
-            capture_output=True
-        )
-        
-        if exit_code == 0:
+        try:
+            # Build the image with streaming output
+            # Use decode=True to get a streaming generator
+            build_logs = self.docker_client.api.build(
+                path=str(self.base_dir),
+                dockerfile="docker/Dockerfile",
+                tag=self.container_name,
+                rm=True,
+                forcerm=True,
+                decode=True  # This enables streaming
+            )
+            
+            # Stream build logs in real-time
+            image_id = None
+            for log_entry in build_logs:
+                if 'stream' in log_entry:
+                    # Print build output in real-time
+                    output = log_entry['stream'].rstrip('\n')
+                    if output:
+                        print(output)
+                        sys.stdout.flush()  # Ensure immediate output
+                        
+                elif 'aux' in log_entry and 'ID' in log_entry['aux']:
+                    # Capture the final image ID
+                    image_id = log_entry['aux']['ID']
+                    
+                elif 'error' in log_entry:
+                    error_msg = log_entry['error']
+                    print(f"ERROR: {error_msg}")
+                    sys.stdout.flush()
+                    return False, f"Docker build failed: {error_msg}"
+            
+            print()
             print("✅ Docker image built successfully!")
-            return True, "Docker build completed successfully"
-        else:
-            error_msg = f"Docker build failed with exit code {exit_code}"
-            if stderr:
-                error_msg += f"\nSTDERR: {stderr}"
-            if stdout:
-                error_msg += f"\nSTDOUT: {stdout}"
+            return True, f"Docker build completed successfully. Image ID: {image_id[:12] if image_id else 'unknown'}"
+            
+        except docker.errors.BuildError as e:
+            print()
+            print("❌ Docker build failed!")
+            error_msg = f"Docker build failed: {str(e)}"
+            
+            # Try to get detailed error information
+            if hasattr(e, 'build_log') and e.build_log:
+                print("\nBuild log details:")
+                for log_entry in e.build_log:
+                    if isinstance(log_entry, dict):
+                        if 'stream' in log_entry:
+                            print(log_entry['stream'].rstrip('\n'))
+                        elif 'error' in log_entry:
+                            print(f"ERROR: {log_entry['error']}")
+                            
             return False, error_msg
+            
+        except docker.errors.APIError as e:
+            print(f"❌ Docker API error: {str(e)}")
+            return False, f"Docker API error: {str(e)}"
+        except Exception as e:
+            print(f"❌ Unexpected error during build: {str(e)}")
+            return False, f"Unexpected error during build: {str(e)}"
 
     def _validate_python_snippets(self) -> Tuple[bool, str]:
         """
@@ -99,20 +122,46 @@ class CodeChecker:
         print("🐍 Validating Python snippets with pyright...")
         print("-" * 60)
         
-        command = [
-            "docker", "run", "--rm", self.container_name,
-            "bash", "-c", "cd python/snippets && pyright ."
-        ]
-        
-        exit_code, _, _ = self._run_command(command, capture_output=False)
-        
-        print("-" * 60)
-        if exit_code == 0:
-            print("  ✅ Python validation passed!")
-            return True, "Validation passed"
-        else:
-            print(f"  ❌ Python validation failed (exit code {exit_code})")
-            return False, f"Validation failed with exit code {exit_code}"
+        container = None
+        try:
+            # Run the container in detached mode so we can get logs
+            container = self.docker_client.containers.run(
+                self.container_name,
+                "bash -c 'cd python/snippets && pyright .'",
+                detach=True,
+                stdout=True,
+                stderr=True
+            )
+            
+            # Wait for completion and get logs
+            result = container.wait()
+            logs = container.logs(stdout=True, stderr=True).decode('utf-8')
+            
+            # Print the output
+            if logs.strip():
+                print(logs)
+            
+            print("-" * 60)
+            
+            # Check exit status
+            exit_code = result['StatusCode']
+            if exit_code == 0:
+                print("  ✅ Python validation passed!")
+                return True, "Validation passed"
+            else:
+                print(f"  ❌ Python validation failed (exit code {exit_code})")
+                return False, f"Validation failed with exit code {exit_code}"
+            
+        except Exception as e:
+            print(f"  ❌ Python validation failed with error: {str(e)}")
+            return False, f"Validation failed with error: {str(e)}"
+        finally:
+            # Clean up the container
+            if container:
+                try:
+                    container.remove()
+                except:
+                    pass  # Container might already be removed
 
     def _validate_typescript_snippets(self) -> Tuple[bool, str]:
         """
@@ -124,20 +173,46 @@ class CodeChecker:
         print("📜 Validating TypeScript snippets with tsc...")
         print("-" * 60)
         
-        command = [
-            "docker", "run", "--rm", self.container_name,
-            "bash", "-c", "cd javascript && tsc --noEmit"
-        ]
-        
-        exit_code, _, _ = self._run_command(command, capture_output=False)
-        
-        print("-" * 60)
-        if exit_code == 0:
-            print("  ✅ TypeScript validation passed!")
-            return True, "Validation passed"
-        else:
-            print(f"  ❌ TypeScript validation failed (exit code {exit_code})")
-            return False, f"Validation failed with exit code {exit_code}"
+        container = None
+        try:
+            # Run the container in detached mode so we can get logs
+            container = self.docker_client.containers.run(
+                self.container_name,
+                "bash -c 'cd javascript && tsc --noEmit'",
+                detach=True,
+                stdout=True,
+                stderr=True
+            )
+            
+            # Wait for completion and get logs
+            result = container.wait()
+            logs = container.logs(stdout=True, stderr=True).decode('utf-8')
+            
+            # Print the output
+            if logs.strip():
+                print(logs)
+            
+            print("-" * 60)
+            
+            # Check exit status
+            exit_code = result['StatusCode']
+            if exit_code == 0:
+                print("  ✅ TypeScript validation passed!")
+                return True, "Validation passed"
+            else:
+                print(f"  ❌ TypeScript validation failed (exit code {exit_code})")
+                return False, f"Validation failed with exit code {exit_code}"
+            
+        except Exception as e:
+            print(f"  ❌ TypeScript validation failed with error: {str(e)}")
+            return False, f"Validation failed with error: {str(e)}"
+        finally:
+            # Clean up the container
+            if container:
+                try:
+                    container.remove()
+                except:
+                    pass  # Container might already be removed
 
     def _validate_csharp_snippets(self) -> Tuple[bool, str]:
         """
@@ -149,20 +224,46 @@ class CodeChecker:
         print("🔷 Validating C# snippets...")
         print("-" * 60)
         
-        command = [
-            "docker", "run", "--rm", self.container_name,
-            "bash", "-c", "cd /workspace/code-snippets/csharp && ./validate-csharp-snippets.sh"
-        ]
-        
-        exit_code, _, _ = self._run_command(command, capture_output=False)
-        
-        print("-" * 60)
-        if exit_code == 0:
-            print("  ✅ C# validation passed!")
-            return True, "Validation passed"
-        else:
-            print(f"  ❌ C# validation failed (exit code {exit_code})")
-            return False, f"Validation failed with exit code {exit_code}"
+        container = None
+        try:
+            # Run the container in detached mode so we can get logs
+            container = self.docker_client.containers.run(
+                self.container_name,
+                "bash -c 'cd /workspace/code-snippets/csharp && ./validate-csharp-snippets.sh'",
+                detach=True,
+                stdout=True,
+                stderr=True
+            )
+            
+            # Wait for completion and get logs
+            result = container.wait()
+            logs = container.logs(stdout=True, stderr=True).decode('utf-8')
+            
+            # Print the output
+            if logs.strip():
+                print(logs)
+            
+            print("-" * 60)
+            
+            # Check exit status
+            exit_code = result['StatusCode']
+            if exit_code == 0:
+                print("  ✅ C# validation passed!")
+                return True, "Validation passed"
+            else:
+                print(f"  ❌ C# validation failed (exit code {exit_code})")
+                return False, f"Validation failed with exit code {exit_code}"
+            
+        except Exception as e:
+            print(f"  ❌ C# validation failed with error: {str(e)}")
+            return False, f"Validation failed with error: {str(e)}"
+        finally:
+            # Clean up the container
+            if container:
+                try:
+                    container.remove()
+                except:
+                    pass  # Container might already be removed
 
     def check_complete_snippets(self) -> Dict[str, Dict[str, any]]:
         """
