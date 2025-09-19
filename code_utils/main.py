@@ -17,15 +17,15 @@ def cli() -> None:
 @click.option('--languages', '-l', 
               multiple=True, 
               help='Programming languages to extract (can be specified multiple times)')
-@click.option('--exclude', '-x',
+@click.option('--remove', '-x',
               multiple=True,
-              help='Programming languages to exclude (can be specified multiple times)')
+              help='Programming languages to remove (can be specified multiple times)')
 def extract(languages: Tuple[str, ...], exclude: Tuple[str, ...]) -> None:
     """Extract code snippets from markdown files in the docs directory."""
     
     # Convert languages tuple to set if provided, otherwise use defaults
     target_languages = set(languages) if languages else None
-    deprecated_languages = set(exclude) if exclude else None
+    deprecated_languages = None #TO DO Implement functionality to remove languages
     
     finder = CodeFinder(target_languages=target_languages, deprecated_languages=deprecated_languages)
     finder.find_files_with_code()
