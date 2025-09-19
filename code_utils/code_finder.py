@@ -8,11 +8,14 @@ from pathlib import Path
 class CodeFinder:
 
     all_languages = {'python', 'javascript', 'csharp', 'go'}
-    target_languages = {'python', 'javascript', 'csharp' }
-    deprecated_languages = {'go'}
     
-    def __init__(self, output_file_name:str = "files_with_code.txt"):
+    def __init__(self, output_file_name: str = "files_with_code.txt", 
+                 target_languages: set = None, deprecated_languages: set = None):
         self.matching_files = []
+        
+        # Set default values for language sets
+        self.target_languages = target_languages if target_languages is not None else {'python', 'javascript', 'csharp'}
+        self.deprecated_languages = deprecated_languages if deprecated_languages is not None else {'go'}
 
         self.script_dir = Path(__file__).resolve().parent
         self.temp_dir = self.script_dir / 'temp'
@@ -55,7 +58,7 @@ class CodeFinder:
             sys.exit(1)
         
         print(f"Searching for markdown files with code snippets in: {self.docs_path}")
-        print(f"Looking for languages: {', '.join(sorted(CodeFinder.target_languages))}")
+        print(f"Looking for languages: {', '.join(sorted(self.target_languages))}")
         
         # Find all markdown files recursively using pathlib
         markdown_files = list(self.docs_path.rglob('*.md')) + list(self.docs_path.rglob('*.mdx'))
@@ -65,7 +68,7 @@ class CodeFinder:
             rel_path = file_path.relative_to(self.docs_path).as_posix()
             
             # Check if file contains target code snippets
-            if self.has_code_snippets(file_path, CodeFinder.target_languages):
+            if self.has_code_snippets(file_path, self.target_languages):
                 self.matching_files.append(rel_path)
                 print(f"Found: {rel_path}")
         
@@ -160,7 +163,7 @@ class CodeFinder:
         
         
         # Create subdirectories for each target language with complete/incomplete folders
-        for lang in CodeFinder.target_languages:
+        for lang in self.target_languages:
             lang_dir = self.temp_dir / lang
             complete_dir = lang_dir / 'complete'
             incomplete_dir = lang_dir / 'incomplete'
@@ -172,7 +175,7 @@ class CodeFinder:
         
         # Counters for summary
         total_snippets = 0
-        snippets_by_lang = {lang: {'complete': 0, 'incomplete': 0} for lang in CodeFinder.target_languages}
+        snippets_by_lang = {lang: {'complete': 0, 'incomplete': 0} for lang in self.target_languages}
         
         # Process each matching file
         for file_path in self.matching_files:
@@ -184,13 +187,13 @@ class CodeFinder:
                 
                 # Extract code blocks using regex
                 # Pattern: ```language followed by code until closing ```
-                pattern = r'```(' + '|'.join(CodeFinder.target_languages) + r')\b\n?(.*?)\n?```'
+                pattern = r'```(' + '|'.join(self.target_languages) + r')\b\n?(.*?)\n?```'
                 matches = re.findall(pattern, content, re.DOTALL | re.IGNORECASE)
                 
                 for i, (language, code_content) in enumerate(matches):
                     language = language.lower()
                     
-                    if language in CodeFinder.target_languages:
+                    if language in self.target_languages:
                         # Clean up the code content
                         code_content = code_content.strip()
                         
