@@ -117,7 +117,7 @@ If this is your first time using Slack, you will be asked to authenticate your a
 
 If you are using our webhooks service for the first time, you may not be able to test your trigger at creation. This is because Zapier tests the trigger by checking if messages exist in Codat for your chosen event type, and it will only pick up relevant events once the trigger has been set up for the first time.
 
-For example, if you're using the [NewCompanySynchronized](/using-the-api/webhooks/event-types) as a trigger, you'd have to have set up the trigger and then have a new company sync happen.
+For example, if you're using the [`read.completed.initial`](/using-the-api/webhooks/event-types) as a trigger, you'd have to have set up the trigger and then have a new company sync happen.
 
 To perform the test, build and publish your workflow first. Zapier will generate a new webhook consumer in Codat, including a description of the event type to which the trigger subscribes. Follow [our testing instructions](/using-the-api/webhooks/create-consumer#test-a-webhook-consumer) to test the Zapier webhook consumer.
 

@@ -76,9 +76,9 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 Codat supports a range of [webhook events](/using-the-api/webhooks/event-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to set up an endpoint to listen to the following event type and get the most out of Bank Feeds:
 
-- [PushOperationStatusChanged](/using-the-api/webhooks/event-types)
+- [`bankTransactions.write.successful` and `bankTransactions.write.unsuccessful`](/using-the-api/webhooks/event-types)
 
-  Use this webhook to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from this webhook, check the `status` value in the body. A `Success` status means the `transactions` array has been successfully written to the accounting software. In case of errors, resolve the issue and resend the payload.
+  Use these webhooks to track the completion of the operation to create bank transactions in the target platform. When you receive a notification from these webhooks, check if it's the `successful` or `unsuccessful` event type. The `successful` event means the `transactions` array has been successfully written to the accounting software. For `unsuccessful` events, resolve the issue and resend the payload.
 
 ## Client libraries
 
@@ -128,7 +128,7 @@ yarn add @codat/bank-feeds
 import { CodatBankFeeds } from "@codat/bank-feeds";
 
 const bankFeedsClient = new CodatBankFeeds({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 ```
 

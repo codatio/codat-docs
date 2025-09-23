@@ -65,6 +65,6 @@ This returns all invoices for a company issued by a specific customer. Instead o
 
 ## Making use of webhooks
 
-Consider [configuring a webhook consumer](/using-the-api/webhooks/create-consumer) to listen for a [DatasetDataChanged](/using-the-api/webhooks/event-types) event. This will send an event per company when new data becomes available for each data type.
+Consider [configuring a webhook consumer](/using-the-api/webhooks/create-consumer) to listen for a [`read.completed`](/using-the-api/webhooks/event-types) event. This will send an event per company when new data becomes available for each data type.
 
 This is sent in the form of a `POST` request to a webhook URL you specified. Once you receive the message, you can query our API for that specific company and data type. This means you will only call the API when data is changed, instead of periodically polling our data to check for changes and updates.
