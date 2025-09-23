@@ -17,10 +17,7 @@ def cli() -> None:
 @click.option('--languages', '-l', 
               multiple=True, 
               help='Programming languages to extract (can be specified multiple times)')
-@click.option('--remove', '-x',
-              multiple=True,
-              help='Programming languages to remove (can be specified multiple times)')
-def extract(languages: Tuple[str, ...], exclude: Tuple[str, ...]) -> None:
+def extract(languages: Tuple[str, ...]) -> None:
     """Extract code snippets from markdown files in the docs directory."""
     
     # Convert languages tuple to set if provided, otherwise use defaults
@@ -42,6 +39,27 @@ def check() -> None:
     checker = CodeChecker()
     result = checker.check_complete_snippets()
     click.echo(result)
+
+
+@cli.command()
+@click.option('--limit', '-l', 
+              default=10, 
+              type=int,
+              help='Maximum number of files to analyze per language (default: 10)')
+@click.option('--languages', '-lang',
+              multiple=True,
+              help='Programming languages to analyze (can be specified multiple times). Available: python, typescript, csharp')
+def check_incomplete(limit: int, languages: Tuple[str, ...]) -> None:
+    """
+        Check and validate incomplete code snippets. 
+        Analyzes snippets that are missing imports or have incomplete structure.
+        We will be using an LLM to do this, which is expensive so we will limit the number of files to analyze.
+    """
+    # Convert languages tuple to set if provided, otherwise use all languages
+    target_languages = set(languages) if languages else None
+    
+    checker = CodeChecker()
+    result = checker.check_incomplete_snippets(limit=limit, languages=target_languages)
 
 
 if __name__ == '__main__':
