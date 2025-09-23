@@ -33,6 +33,20 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 | [`client.rateLimit.reached`](/platform-api#/webhooks/client.rateLimit.reached/post)          | Called when the client’s request count to Codat's API surpasses the allocated quota.                                                                      |
 | [`client.rateLimit.reset`](/platform-api#/webhooks/client.rateLimit.reset/post)              | Called when the client's rate limit quota is reset, allowing additional requests to Codat's API.                                                          |
 
+:::info Data type-specific write events
+
+The `{dataType}.write.successful` and `{dataType}.write.unsuccessful` events above are template events available for specific data types. These include:
+
+**Supported data types**: bankAccounts, bankTransactions, billCreditNotes, billPayments, bills, chartOfAccounts, creditNotes, customers, directCosts, directIncomes, invoices, items, journalEntries, journals, payments, purchaseOrders, suppliers, transfers
+
+For example:
+- `bills.write.successful` - Indicates a bill has been successfully written to the accounting software
+- `invoices.write.unsuccessful` - Indicates an attempt to write an invoice was unsuccessful
+
+See the [Platform API webhook documentation](/platform-api#/webhooks) for the complete list and specific schemas for each data type.
+
+:::
+
 ### Solution-specific event types
 
 | Solution       | Event type                                                                                                                               | Event description                                                                                                               |
@@ -41,7 +55,10 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 | Bank Feeds     | [`bankFeeds.sourceAccount.disconnected`](/bank-feeds-api#/webhooks/bankFeeds.sourceAccount.disconnected/post)                            | Indicates a [bank feed source account](/bank-feeds/overview#what-is-bank-feeds-api) has changed to a status of disconnected.    |
 | Expenses       | [`expenses.sync.successful`](/sync-for-expenses-api#/webhooks/expenses.sync.successful/post)                                             | Called when an expense sync successfully completes without any errors or warnings.                                              |
 | Expenses       | [`expenses.sync.unsuccessful`](/sync-for-expenses-api#/webhooks/expenses.sync.unsuccessful/post)                                         | Called when an expense sync fails to complete successfully, resulting in at least one error or warning.                         |
-| Lending        | [`report.categorizedBankStatement.generate.successful`](/lending-api#/webhooks/report.categorizedBankStatement.generate.successful/post) | Called when a [categorized bank statement](/lending/features/bank-statements-overview) is successfully generated for a company. |
+| Lending        | [`reports.categorizedBankStatement.generate.successful`](/lending-api#/webhooks/reports.categorizedBankStatement.generate.successful/post) | Called when a [categorized bank statement](/lending/features/bank-statements-overview) is successfully generated for a company. |
+| Lending        | [`reports.categorizedBankStatement.generate.unsuccessful`](/lending-api#/webhooks/reports.categorizedBankStatement.generate.unsuccessful/post) | Called when a categorized bank statement has failed to be generated for a company. |
+| Lending        | [`reports.creditModel.generate.successful`](/lending-api#/webhooks/reports.creditModel.generate.successful/post) | Called when a credit model report is successfully generated. |
+| Lending        | [`reports.creditModel.generate.unsuccessful`](/lending-api#/webhooks/reports.creditModel.generate.unsuccessful/post) | Called when a credit model report has failed to be generated for a company. |
 | Lending        | [`AccountCategoriesUpdated`](/lending-api#/webhooks/Account-categories-updated/post)                                                     | Called when Codat AI had [categorized accounts](/lending/features/financial-statements-overview) for a company.                 |
 | Spend Insights | [`reports.spendAnalysis.generate.successful`](/spend-insights-api#/webhooks/reports.spendAnalysis.generate.successful/post)              | Called when a spend analysis report is successfully generated.                                                                  |
 | Spend Insights | [`reports.spendAnalysis.generate.unsuccessful`](/spend-insights-api#/webhooks/reports.spendAnalysis.generate.unsuccessful/post)          | Called when a spend analysis report has failed to be generated for a company.                                                   |
