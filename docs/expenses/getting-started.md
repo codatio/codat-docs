@@ -112,15 +112,15 @@ The solution lets you tailor the authorization journey to your business needs. Y
 
 Codat supports a range of [event types](/using-the-api/webhooks/event-types) to help you manage your data pipelines. In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Configure consumer** and click **Add endpoint** to set up the following webhook consumers and get the most out of Expenses:
 
-- [NewCompanySynchronized](/using-the-api/webhooks/event-types)
+- [`read.completed.initial`](/using-the-api/webhooks/event-types)
 
   Use this event to track the completion of all enabled data type syncs for a newly connected company. When you receive a notification from the webhook consumer, you can proceed to the next steps of the expense management process.
 
-- [SyncFailed](/using-the-api/webhooks/event-types)
+- [`expenses.sync.unsuccessful`](/using-the-api/webhooks/event-types)
 
   Use this event to track any failures that might occur during the sync process. When you receive a notification from the webhook consumer, you need to review the error details and reprocess the failed transactions.
 
-- [SyncCompleted](/using-the-api/webhooks/event-types)
+- [`expenses.sync.successful`](/using-the-api/webhooks/event-types)
 
   Use this event to track that the expense transactions have been synced successfully. When you receive a notification from the webhook consumer, you can proceed to the next steps of the expense management process - for example, checking the transactions or informing your SMB customer of the completion.
 

@@ -21,8 +21,8 @@ Once you have initiated the sync, you may want to check whether the sync was com
 
 We recommend you use webhooks to listen to events and track the sync status. To set up a [webhook consumer](/using-the-api/webhooks/create-consumer), navigate to **Settings > Webhooks > Configure consumer** in the [Codat Portal](https://app.codat.io/settings) and click **Add endpoint** that listens to the following events:
 
-- **Expenses sync failed** event of `SyncFailed` type is triggered if any failures occurred during the sync process.
-- **Expenses sync completed** event of `SyncCompleted` type is triggered when a sync completes.
+- **Expenses sync failed** event of [`expenses.sync.unsuccessful`](/using-the-api/webhooks/event-types) type is triggered if any failures occurred during the sync process.
+- **Expenses sync completed** event of [`expenses.sync.successful`](/using-the-api/webhooks/event-types) type is triggered when a sync completes.
 
 You can [read more](/using-the-api/webhooks/overview) about webhooks at Codat and various events we offer to monitor.
 

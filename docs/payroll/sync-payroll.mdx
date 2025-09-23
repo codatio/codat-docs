@@ -460,8 +460,9 @@ include the following information:
 
 After your request has been accepted, it will have a status of `Pending`. You
 should use the
-[PushOperationStatusChanged](../using-the-api/webhooks/event-types) event type
-to track when the status of your pushOperation changes to `Success` or `Failed`.
+[{dataType}.write.successful and {dataType}.write.unsuccessful](../using-the-api/webhooks/event-types)
+event types to track when the status of your pushOperation changes to `Success`
+or `Failed`.
 
 If you want to see a history of all pushOperations for your company, you can
 retrieve these from the
