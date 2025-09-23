@@ -77,13 +77,13 @@ Codat supports a range of [event types](/using-the-api/webhooks/event-types) you
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Webhooks > Create consumer** and click **Add endpoint** to add a new [webhook consumer endpoint](/using-the-api/webhooks/overview) and get the most out of Lending:
 
-- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)
+- [`read.completed`](/using-the-api/webhooks/event-types)
 
-  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again.
+  This means an issue occurred when syncing the specified data type, or that data synchronization has completed successfully. Check the `payload.dataTypes[].status` field to determine if the sync was successful or if you need to resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again.
 
-- [`Dataset data changed`](/using-the-api/webhooks/event-types)
+- [`read.completed`](/using-the-api/webhooks/event-types)
 
-  This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
+  This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform. Check the `payload.dataTypes[].recordsModified` field to determine if records were actually changed.
 
 - [`Account categories updated`](/using-the-api/webhooks/event-types)
 
@@ -100,7 +100,7 @@ Remember to [authenticate](/using-the-api/authentication) if you are making call
 
 To establish a connection to a data source and sync business data, your customer must grant you access. They can do so using our [Link auth flow](/auth-flow/overview) solution, which we recommend you use in your app.
 
-Once the connection is established, Codat will retrieve data for the data types you have previously set up to fetch on first link. You can listen for the `NewCompanySynchronized` [event](/using-the-api/webhooks/event-types) to get notified once these initial syncs are complete, and at least one of them is successful.
+Once the connection is established, Codat will retrieve data for the data types you have previously set up to fetch on first link. You can listen for the [`read.completed.initial`](/using-the-api/webhooks/event-types) event to get notified once these initial syncs are complete, and at least one of them is successful.
 
 <ul className="card-container col-2">
   <li className="card">

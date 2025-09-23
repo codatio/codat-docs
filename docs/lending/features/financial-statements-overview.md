@@ -272,13 +272,13 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 
 We recommend you [configure webhook consumers](/using-the-api/webhooks/create-consumer) with the following [event types](/using-the-api/webhooks/event-types) to manage your data pipelines. These webhooks send a message for each `dataType` separately.
 
-- [`DataSyncStatusChangedToError`](/using-the-api/webhooks/event-types)
+- [`read.completed`](/using-the-api/webhooks/event-types)
 
-  This means an issue occurred when syncing the specified data type. Resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again.
+  This means an issue occurred when syncing the specified data type, or that data synchronization has completed successfully. Check the `payload.dataTypes[].status` field to determine if the sync was successful or if you need to resolve the issue and [initiate the sync](/using-the-api/queueing-data-syncs#refresh-data) for this dataset again.
 
-- [`DatasetDataChanged`](/using-the-api/webhooks/event-types)
+- [`read.completed`](/using-the-api/webhooks/event-types)
 
-  This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform.
+  This means data has been updated for the specified data type. This can include new, updated or deleted data. You should then refresh the data in your platform. Check the `payload.dataTypes[].recordsModified` field to determine if records were actually changed.
 
 - [`AccountCategoriesUpdated`](/using-the-api/webhooks/event-types)
 
