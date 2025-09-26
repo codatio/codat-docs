@@ -51,13 +51,32 @@ class TestCodeFinderInit:
     def test_init_custom_config(self):
         """Test CodeFinder initialization with custom config."""
         custom_config = CodeFinderConfig(
-            python=LanguageConfig([], [], '.py'),
-            javascript=LanguageConfig([], [], '.js'),
-            csharp=LanguageConfig([], [], '.cs')
+            python=LanguageConfig(
+                import_patterns=[r'^import\s+', r'^from\s+'],
+                comment_patterns=[r'^\s*#'],
+                extension='.py'
+            ),
+            javascript=LanguageConfig(
+                import_patterns=[r'^import\s+', r'^const\s+'],
+                comment_patterns=[r'^\s*//'],
+                extension='.js'
+            ),
+            csharp=LanguageConfig(
+                import_patterns=[r'^using\s+'],
+                comment_patterns=[r'^\s*//'],
+                extension='.cs'
+            )
         )
         finder = CodeFinder(config=custom_config)
         
+        # Test configuration was applied correctly
         assert finder.config == custom_config
+        assert finder.target_languages == {'python', 'javascript', 'csharp'}
+        
+        # Test that the custom patterns are accessible
+        python_config = finder.config.get_language_config('python')
+        assert python_config.extension == '.py'
+        assert r'^import\s+' in python_config.import_patterns
 
     def test_init_custom_file_operator(self):
         """Test CodeFinder initialization with custom file operator."""
@@ -406,43 +425,3 @@ class TestCodeFinderConfiguration:
         assert finder.config.python.extension == '.py'
         assert finder.config.javascript.extension == '.js'
         assert finder.config.csharp.extension == '.cs'
-
-
-# This fixture is now mainly for the custom config test above
-@pytest.fixture
-def sample_config():
-    """Provide a sample configuration for testing."""
-    return CodeFinderConfig(
-        python=LanguageConfig(
-            import_patterns=[r'^import\s+', r'^from\s+'],
-            comment_patterns=[r'^\s*#'],
-            extension='.py'
-        ),
-        javascript=LanguageConfig(
-            import_patterns=[r'^import\s+', r'^const\s+'],
-            comment_patterns=[r'^\s*//'],
-            extension='.ts'
-        ),
-        csharp=LanguageConfig(
-            import_patterns=[r'^using\s+'],
-            comment_patterns=[r'^\s*//'],
-            extension='.cs'
-        )
-    )
-
-
-class TestCodeFinderWithCustomConfig:
-    """Test CodeFinder with custom configurations using real FileOperator."""
-    
-    def test_configuration_with_fixture(self, sample_config):
-        """Test CodeFinder initialization with custom configuration fixture."""
-        finder = CodeFinder(config=sample_config)
-        
-        # Test configuration was applied correctly
-        assert finder.config == sample_config
-        assert finder.target_languages == {'python', 'javascript', 'csharp'}
-        
-        # Test that the custom patterns are accessible
-        python_config = finder.config.get_language_config('python')
-        assert python_config.extension == '.py'
-        assert r'^import\s+' in python_config.import_patterns

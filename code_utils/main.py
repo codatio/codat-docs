@@ -14,20 +14,13 @@ def cli() -> None:
 
 @cli.command()
 @click.option('--language', '-l', 
-              type=click.Choice(['python', 'javascript', 'csharp', 'c#'], case_sensitive=False),
+              type=click.Choice(['python', 'javascript', 'csharp'], case_sensitive=False),
               help='Programming language to extract (python, javascript, csharp, or c#). If not specified, extracts all languages.')
 def extract(language: Optional[str]) -> None:
     """Extract code snippets from markdown files in the docs directory."""
     
-    # Handle language selection
-    if language is None:
-        # No language specified - run on all languages in default config
-        target_language = None
-    else:
-        # Map c# to csharp for internal consistency
-        target_language = 'csharp' if language.lower() == 'c#' else language.lower()
     
-    finder = CodeFinder(target_language=target_language)
+    finder = CodeFinder(target_language=language)
     finder.find_files_with_code()
     finder.extract_code()
     
