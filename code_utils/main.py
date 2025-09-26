@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-from typing import Tuple
-
+from typing import Optional
 import click
 from code_finder import CodeFinder
 from code_checker import CodeChecker
@@ -14,20 +13,14 @@ def cli() -> None:
 
 
 @cli.command()
-@click.option('--languages', '-l', 
-              multiple=True, 
-              help='Programming languages to extract (can be specified multiple times)')
-@click.option('--remove', '-x',
-              multiple=True,
-              help='Programming languages to remove (can be specified multiple times)')
-def extract(languages: Tuple[str, ...], exclude: Tuple[str, ...]) -> None:
+@click.option('--language', '-l', 
+              type=click.Choice(['python', 'javascript', 'csharp'], case_sensitive=False),
+              help='Programming language to extract (python, javascript, csharp, or c#). If not specified, extracts all languages.')
+def extract(language: Optional[str]) -> None:
     """Extract code snippets from markdown files in the docs directory."""
     
-    # Convert languages tuple to set if provided, otherwise use defaults
-    target_languages = set(languages) if languages else None
-    deprecated_languages = None #TO DO Implement functionality to remove languages
     
-    finder = CodeFinder(target_languages=target_languages, deprecated_languages=deprecated_languages)
+    finder = CodeFinder(target_language=language)
     finder.find_files_with_code()
     finder.extract_code()
     

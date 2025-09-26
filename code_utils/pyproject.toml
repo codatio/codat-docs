@@ -17,7 +17,8 @@ code-util = "main:cli"
 
 [project.optional-dependencies]
 dev = [
-    "pytest",
+    "pytest>=8.3.5",
+    "pyfakefs>=5.9.3",
     "black",
     "ruff",
 ]
