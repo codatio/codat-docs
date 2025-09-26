@@ -26,7 +26,7 @@ class FileOperator:
             
             # Look for code blocks that start with ``` followed by language name
             # Pattern matches: ```python, ```javascript, ```csharp
-            pattern = r'```(' + '|'.join(config.get_all_languages()) + r')\b'
+            pattern = r'```(' + '|'.join(target_languages) + r')\b'
             
             matches = re.findall(pattern, content, re.IGNORECASE)
             return len(matches) > 0
@@ -71,7 +71,7 @@ class FileOperator:
                         f.write(path + '\n')
                 
                 print(f"\nSummary:")
-                print(f"- Total markdown files processed: {len(matching_files)}")
+                print(f"- Total markdown files processed: {len(markdown_files)}")
                 print(f"- Files with target code snippets: {len(matching_files)}")
                 print(f"- Results saved to: {output_file}")
                 
