@@ -2,7 +2,7 @@
 title: "Categorized Financials now supported for Sage Intacct"
 date: "2025-09-29"
 tags: ["Product", "Update", "Lending", "Sage Intacct", "Assess"]
-authors: @ivasiutkova
+authors: ivasiutkova
 ---
 
 We have expanded our [Lending](/lending/overview) product coverage to include **Sage Intacct Categorized Financial Statements**.
