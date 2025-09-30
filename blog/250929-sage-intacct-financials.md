@@ -5,7 +5,7 @@ tags: ["Product", "Update", "Lending", "Sage Intacct", "Assess"]
 authors: @ivasiutkova
 ---
 
-We have expanded our [Lending] (/lending/overview) product coverage to include **Sage Intacct Categorized Financial Statements**.
+We have expanded our [Lending](/lending/overview) product coverage to include **Sage Intacct Categorized Financial Statements**.
 
 <!--truncate-->
 
