@@ -1,10 +1,10 @@
-# Q4 2025 and Q1 2026 Deprecations
+# Q4 2025 & Q1 2026 Deprecations
 
 To streamline our platform and enable us to focus on our key products, Codat is deprecating integrations with low or no usage as well as consolidating multiple product versions into a single variant. This will simplify our support model, create a clearer upgrade path for clients, and enable us to deliver improvements faster.
 ## Q4 2025 Deprecations
 
 
-The following integrations and products will be deprecated or sunset on **October 31, 2025**:
+The following integrations and products will be **fully deprecated and permanently removed** from the Codat platform on **October 31, 2025**:
 
 ### Integrations:
 
@@ -17,7 +17,7 @@ The following integrations and products will be deprecated or sunset on **Octobe
 
 #### Action Required
 
-If you don't use these integrations, there is **no action required** on your part. If you do use these integrations, please update your application to remove the integrations from the UI to prevent any confusion for your clients.
+If you don't use these integrations, there is no action required on your part. If you do use these integrations, please notify your clients to prevent any confusion.
 
 ### Legacy Products:
 
@@ -26,13 +26,13 @@ If you don't use these integrations, there is **no action required** on your par
 
 #### Action Required
 
-There is **no action required** on your part.
+There is no action required on your part.
 
 ---
 
 ## Q1 2026 Deprecations
 
-The following integrations and products are scheduled for deprecation in **Q1 2026**:
+The following integrations and products will be **fully deprecated and permanently removed** from the Codat platform on **January 31, 2026**:
 
 ### Integrations:
 
@@ -45,7 +45,7 @@ The following integrations and products are scheduled for deprecation in **Q1 20
 
 #### Action Required
 
-If you don't use these integrations, there is **no action required** on your part. If you do use these integrations, **please update your application to remove the integrations** from the UI to prevent any confusion for your clients.
+If you don't use these integrations, there is no action required on your part. If you do use these integrations, please notify your clients to prevent any confusion.
 
 ### Legacy Versions of Integrations:
 
@@ -53,14 +53,14 @@ If you don't use these integrations, there is **no action required** on your par
 
 #### Action Required
 
-Impacted clients will be supported through migration to the new version, and the old version will be deprecated by the end of Q1 2026. **Please keep an eye out for an email from your Account Manager**.
+Impacted clients will be supported through migration to the new version, and the old version will be removed on January 31, 2026. **Please keep an eye out for an email from your Account Manager**.
 
 ### Legacy Products:
 
-* Sync for Commerce (v1): This is a legacy product, and we will cease support for it after FY25. The v1 product will be sunset by the end of Q1 2026. 
+* Sync for Commerce (v1): This is a legacy product, and we will cease support for it from October 31, 2025. It will then be removed on January 31, 2026.
 
 #### Action Required
 
-There is **no action required** on your part.
+There is no action required on your part.
 
 
