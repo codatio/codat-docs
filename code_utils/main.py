@@ -3,7 +3,7 @@
 from typing import Optional
 import click
 from code_finder import CodeFinder
-from code_checker import CodeChecker
+from code_checker.code_checker import CodeChecker
 
 
 @click.group()
@@ -27,12 +27,13 @@ def extract(language: Optional[str]) -> None:
 
 
 @cli.command()
-def check() -> None:
-    """
-        Check and validate extracted code snippets. Will currently only check if
-        python, javascript and csharp directories are present.
-    """
-    checker = CodeChecker()
+@click.option('--language', '-l', 
+              type=click.Choice(['python', 'javascript', 'csharp'], case_sensitive=False),
+              help='Programming language to check (python, javascript, csharp).',
+              required=True)
+def check(language: str) -> None:
+    """Check and validate extracted code snippets for a specific language"""
+    checker = CodeChecker(target_language=language)
     result = checker.check_complete_snippets()
     click.echo(result)
 
