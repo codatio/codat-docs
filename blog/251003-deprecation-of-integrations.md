@@ -1,4 +1,9 @@
-# Upcoming Integration Deprecations
+---
+title: "2025-10-31: Upcoming Integration Deprecations"
+date: "2025-10-03"
+tags: ["Deprecation"]
+authors: habbajobir
+---
 
 To streamline our platform and enable us to focus on our key products, Codat is deprecating integrations with low or no usage. 
 ## Q4 2025 Deprecations
