@@ -1,4 +1,9 @@
-# Upcoming Product Deprecations
+---
+title: "2025-10-31: Legacy Product Deprecations"
+date: "2025-10-03"
+tags: ["Deprecation"]
+authors: habbajobir
+---
 
 To streamline our platform and enable us to focus on our key products, Codat is deprecating legacy products and consolidating muliple versions into a single variant. This will simplify our support model, create a clearer upgrade path for clients, and enable us to deliver improvements faster.
 ## Q4 2025 Deprecations
