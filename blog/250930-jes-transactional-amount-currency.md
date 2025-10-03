@@ -12,7 +12,7 @@ We've expanded our data model to include **transactional amount** and **transact
 ## What's new?
 
 Our data model for **journal entries** now supports both the **transactional amount** and the **transactional currency** fields.  
-This enhancement is available for the following accounting integrations:
+This enhancement is available for the following accounting and ERP software:
 
 - QuickBooks Online  
 - NetSuite  
