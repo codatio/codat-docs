@@ -7,7 +7,7 @@ authors: habbajobir
 
 To streamline our platform and enable us to focus on our key products, Codat is deprecating legacy products and consolidating multiple versions into a single variant. This will simplify our support model, create a clearer upgrade path for clients, and enable us to deliver improvements faster.
 
----
+<!--truncate-->
 
 ## Q4 2025 deprecations
 
