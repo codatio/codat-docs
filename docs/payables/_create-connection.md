@@ -36,7 +36,7 @@ connection_request = operations.CreateConnectionRequest(
 
 connection_response = payables_client.connections.create(connection_request)
 
-console.log(connection_response.connection.link_url)
+print(connection_response.connection.link_url)
 ```
 
 </TabItem>

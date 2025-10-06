@@ -11,7 +11,7 @@ import {
   spendInsightsFileUpload,
 } from "@components/Integrations/integrations";
 
-Your customer may be using a software that doesn't have a direct integration with Codat. Instead, guide your customers through a straightforward, low-effort process to obtain and upload their supplier and bill information for insightful spend analysis and card offers.
+Your customer may be using a software that doesn't have a direct integration with Codat. Instead, guide your customers through a straightforward, low-effort process to obtain and upload their supplier, bill, payment and direct cost information for insightful spend analysis and card offers.
 
 ## Connection journey
 
@@ -56,6 +56,6 @@ You can also proactively share [answers to common questions](/spend-insights/res
 
 ## Software support
 
-Codat's **Spend Insights** solution can ingest files with supplier and bill data from the software listed below to prepare the spend analysis. The file upload process is identical across these platforms.
+Codat's **Spend Insights** solution can ingest files with supplier, bill, payment and direct cost data from the software listed below to prepare the spend analysis. The file upload process is unique across these platforms, with instructions on where users can locate the required files.
 
 <IntegrationsList integrations={spendInsightsFileUpload} />

@@ -300,7 +300,7 @@ const payload = '{"test": 2432232314}';
 
 const wh = new Webhook(secret);
 // Throws on error, returns the verified content on success
-const payload = wh.verify(payload, headers);
+const payloadAfterVerification = wh.verify(payload, headers);
 ```
 
 </TabItem>

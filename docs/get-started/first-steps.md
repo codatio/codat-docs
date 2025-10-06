@@ -94,10 +94,8 @@ or
 ```javascript
 import { CodatPlatform } from "@codat/platform";
 
-const codatCommon = new CodatPlatform({
-  security: {
+const codatPlatform = new CodatPlatform({
     authHeader: "{basicAuthHeader}",
-  },
 });
 ```
 
@@ -114,14 +112,14 @@ const codatCommon = new CodatPlatform({
 ##### Authentication
 
 ```python
-  import codatplatform
-  from codatplatform.models import shared
+from codat_platform import CodatPlatform
+from codat_platform.models import shared
 
-  codat_platform = codatplatform.CodatPlatform(
+codat_platform = CodatPlatform(
     security=shared.Security(
         auth_header='{basicAuthHeader}',
     ),
-  )
+)
 ```
 
   </TabItem>
@@ -196,15 +194,12 @@ if(res.Company != null) {
   <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-  import { CreateCompanyResponse } from "@codat/platform/dist/sdk/models/operations";
 
   codatPlatform.companies.create({
     description: "Requested early access to the new financing scheme.",
     name: "Bank of Dave",
-  }).then((res: CreateCompanyResponse) => {
-    if (res.statusCode == 200) {
-      console.log(res.company.id, res.company.name)
-    }
+  }).then((res) => {
+    // handle response
   });
 ```
 
@@ -334,14 +329,12 @@ if res.statusCode == (int)HttpStatusCode.OK {
   <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-  import { GetCompanyResponse } from "@codat/common/dist/sdk/models/operations";
 
-  codatCommon.companies.get({
+
+  codatPlatform.companies.get({
     companyId: "{companyId}",
-  }).then((res: GetCompanyResponse) => {
-    if (res.statusCode == 200) {
-      console.log(res.company.redirect)
-    }
+  }).then((res) => {
+    //handle response
   });
 ```
 
@@ -354,7 +347,7 @@ if res.statusCode == (int)HttpStatusCode.OK {
     company_id='{companyId}',
   )
 
-  res = codat_common.companies.get(req)
+  res = codat_platform.companies.get(req)
 
   if res.company is not None:
     print(res.company.redirect)
@@ -492,20 +485,15 @@ or
 
 ```javascript
   import { CodatLending } from "@codat/lending";
-  import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
 
   const codatLending = new CodatLending({
-    security: {
       authHeader: "{basicAuthHeader}",
-    },
   });
 
   codatLending.accountsReceivable.invoices.list({
     companyId: "{companyId}"
-  }).then((res: ListInvoicesResponse) => {
-    if (res.statusCode == 200) {
-      console.log(res.accounting_invoices.results[0].id)
-    }
+  }).then((res) => {
+    //handle response
   });
 ```
 
@@ -522,21 +510,22 @@ or
 ##### Usage
 
 ```python
-  import codatlending
-  from codatlending.models import operations
+from codat_lending import CodatLending
+from codat_lending.models import operations, shared
 
-  codat_lending = codatlending.CodatLending(
-      security=shared.Security(
-          auth_header="{basicAuthHeader}",
-      ),
-  )
+codat_lending = CodatLending(
+    security=shared.Security(
+        auth_header="{basicAuthHeader}",
+    ),
+)
 
-  req = operations.ListInvoicesRequest(company_id='{companyId}')
+res = codat_lending.accounts_receivable.invoices.list(request={
+        "company_id": "8a210b68-6988-11ed-a1eb-0242ac120002"
+    })
 
-  res = codat_lending.accounts_receivable.invoices.list(req)
-
-  if res.invoices is not None:
-    print(res.accounting_invoices.results[0].id)
+if res:
+  # handle response
+  pass
 ```
 
   </TabItem>
