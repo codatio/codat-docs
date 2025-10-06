@@ -1,6 +1,6 @@
 ---
 title: "Improved QuickBooks Desktop Link flow"
-date: "2025-08-31"
+date: "2025-10-06"
 tags: ["Product", "Update", "Link"]
 authors: dcoplowe
 ---
@@ -11,7 +11,7 @@ We’ve updated the QuickBooks Desktop Link flow to provide clearer guidance on 
 
 ## What's new?
 
-![Screenshot showing the Connection Management SDK landing page before and after the change, with the old title 'Manage connections' replaced by the new title 'Manage connected accounts'.](/img/updates/2025-08-15-quickbooks-desktop-improved-scheduling-and-reduced-disruption.png)
+![Screenshot showing the Connection Management SDK landing page before and after the change, with the old title 'Manage connections' replaced by the new title 'Manage connected accounts'.](/img/updates/2025-10-06-quickbooks-desktop-improved-scheduling-and-reduced-disruption.png)
 
 By default, data now syncs **7pm–7am, Monday to Friday and weekends**. This schedule is designed to **allow users to continue using QuickBooks Desktop while the Intuit Web Connector is running**.
 
