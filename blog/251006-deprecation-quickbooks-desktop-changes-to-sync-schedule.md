@@ -1,6 +1,6 @@
 ---
 title: "2026-01-10: QuickBooks Desktop syncs will soon be restricted to user-defined schedules"
-date: "2025-08-15"
+date: "2025-10-06"
 tags: ["Deprecation"]
 authors: dcoplowe
 ---
