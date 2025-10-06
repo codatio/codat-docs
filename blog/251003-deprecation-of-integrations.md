@@ -35,6 +35,6 @@ The following integrations will be **fully deprecated and permanently removed** 
 | Recurly | Pandle |
 
 
-#### Action Required
+#### Action required
 
 If you don't use these integrations, there is no action required on your part. If you do use these integrations, please notify your clients to prevent any confusion.
