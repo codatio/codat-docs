@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Codat SDK code snippets environment",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "build": "tsc",
     "dev": "ts-node",
