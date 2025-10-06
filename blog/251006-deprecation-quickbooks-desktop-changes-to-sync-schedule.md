@@ -23,7 +23,7 @@ To prepare for this change:
 
 - Ensure your application logic accounts for potential delays in data availability after a new QuickBooks Desktop connection is established.
 - Notify your customers that they will have full control over when syncing occurs, including options to pause syncing or define active sync windows.
-- If you'd like to adopt this behavior early, you can enable it via the Portal under [**Developers > API deprecations**](https://app.codat.io/developers/api-deprecations) by toggling **"Improved QuickBooks Desktop Link flow."**
+- Keep an eye on our upcoming updates for the official release of configurable sync schedules.
 
 ## Expected impact if no action is taken
 
