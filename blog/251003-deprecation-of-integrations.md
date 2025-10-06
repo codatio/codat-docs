@@ -1,5 +1,5 @@
 ---
-title: "2025-10-31: Upcoming Integration Deprecations"
+title: "2025-10-31: Upcoming integration deprecations"
 date: "2025-10-03"
 tags: ["Deprecation"]
 authors: habbajobir
