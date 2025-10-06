@@ -25,7 +25,7 @@ If you don't use these integrations, there is no action required on your part. I
 
 ## Q1 2026 deprecations
 
-The following integrations will be **fully deprecated and permanently removed** from the Codat platform on **January 31, 2026**:
+The following integrations will be **fully deprecated and permanently removed** from the Codat platform on **January 10, 2026**:
 
 | Commerce Integrations | Accounting Integrations |
 | :--- | :--- |
