@@ -23,7 +23,6 @@ The following products will be **fully deprecated and permanently removed** from
 
 There is no action required on your part.
 
----
 
 ## Q1 2026 deprecations
 
