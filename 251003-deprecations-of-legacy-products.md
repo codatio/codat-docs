@@ -35,7 +35,7 @@ The following products will be **fully deprecated and permanently removed** from
 
 #### Action required
 
-Impacted clients will be supported through migration to the new version, and the old version will be removed on January 31, 2026. **Please keep an eye out for an email from your Account Manager**.
+Impacted clients will be supported through migration to the new version, and the old version will be removed on January 10, 2026. **Please keep an eye out for an email from your Account Manager**.
 
 ### Legacy products:
 
