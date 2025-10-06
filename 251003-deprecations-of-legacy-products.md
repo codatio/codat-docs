@@ -37,7 +37,7 @@ Impacted clients will be supported through migration to the new version, and the
 
 ### Legacy products:
 
-* Sync for Commerce (v1): This is a legacy product, and we will cease support for it from October 31, 2025. It will then be removed on January 31, 2026.
+* Sync for Commerce (v1): This is a legacy product, and we will cease support for it from October 31, 2025. It will then be removed on January 10, 2026.
 
 #### Action Required
 
