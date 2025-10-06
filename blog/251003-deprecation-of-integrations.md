@@ -6,7 +6,8 @@ authors: habbajobir
 ---
 
 To streamline our platform and enable us to focus on our key products, Codat is deprecating integrations with low or no usage. 
-## Q4 2025 Deprecations
+---
+## Q4 2025 deprecations
 
 The following integrations will be **fully deprecated and permanently removed** from the Codat platform on **October 31, 2025**:
 
