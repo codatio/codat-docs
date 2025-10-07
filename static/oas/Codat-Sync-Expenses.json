@@ -2395,7 +2395,7 @@
       "post": {
         "summary": "Create reimbursable expense transaction",
         "operationId": "create-reimbursable-expense-transaction",
-        "description": "Use the *Create reimbursable expense* endpoint to submit an employee expense claim in the accounting platform for a given company's connection.\r\n\r\n[Reimbursable expense requests](https://docs.codat.io/sync-for-expenses-api#/schemas/ReimbursableExpenseTransactionRequest) are reflected in the accounting software in the form of **Bills** against an employee (who exists as a supplier in the accounting platform).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |\r\n| Zoho Books            | Yes       |",
+        "description": "Use the *Create reimbursable expense* endpoint to submit an employee expense claim in the accounting platform for a given company's connection.\r\n\r\n[Reimbursable expense requests](https://docs.codat.io/sync-for-expenses-api#/schemas/ReimbursableExpenseTransactionRequest) are reflected in the accounting software in the form of **Bills** against an employee (who exists as a supplier in the accounting platform).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |\r\n| Zoho Books            | Yes       |\r\n| Sage Intacct          | Yes       |",
         "tags": [
           "Reimbursements"
         ],
