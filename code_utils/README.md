@@ -23,8 +23,8 @@ uv sync --extra dev
 # Run the code extractor
 uv run code-util extract
 
-# Run compiler checks on extracted code
-uv run code-util check
+# Run compiler checks on extracted code, (can only be done on lang at a time)
+uv run code-util check -l programming-language
 
 # Get help in the cli
 uv run code-util --help
@@ -34,14 +34,21 @@ uv run code-util --help
 ## Structure
 
 - `main.py` - Entrypoint for the CLI. 
-- `code_finder.py` - CodeFinder class
-- `code_checker.py` - CodeChecker class.
-- `docker/` - docker files are different scripts and config the container uses.
+- `code_finder/` - module for code relating to the CodeFinder class a.k.a the functionality to scan through markdown documents.
+- `code_checker/` - module for code relating to the CodeChecker class a.k.a the functionality to build containers and run commands in them.
+- `code_checker/docker/` - docker files, scripts and config that the containers use.
 - `temp/` - Generated code snippets (gitignored).
 - `files_with_code.txt` - List of files containing code (gitignored).
 
 ## Dependancies
 
-- [Click](https://click.palletsprojects.com/en/stable/) - Framework for building CLIs
+- [Click](https://click.palletsprojects.com/en/stable/) - Framework for building CLIs.
 - [Docker SDK For Python](https://docker-py.readthedocs.io/en/stable/) - Library for interacting with the Docker API. 
+- [Pytest](https://docs.pytest.org/en/stable/index.html) - Python Unit testing Framework.
+- [Pyfakefs](https://pytest-pyfakefs.readthedocs.io/en/latest/) - Python utility for faking a filesystem during testing.
+
+## Notes
+
+ - Hard coded to only deal with python, javascript(typescript) and C#
+ - Javascript container uses a private npm package. Please set PAT_TOKEN and CODAT_EMAIL env vars in order to build.
 
