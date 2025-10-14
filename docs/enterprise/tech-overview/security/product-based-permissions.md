@@ -1,4 +1,7 @@
-# Managing product-based permissions in the Codat Portal
+---
+title: "Product-based permissions"
+description: "Managing product-based permissions in the Codat Portal"
+---
 
 Product-based permissions give clients more control over which companies users can access, based on the products assigned to them.  
 
@@ -45,4 +48,5 @@ Once a product has been assigned, these users can create companies.
 
 - Changes to a company’s product assignments update automatically when users refresh the Portal.  
 - If an Administrator adds a product to a company that a user doesn’t have access to, the user can still see that the product has been assigned but won’t have access to it.  
-- When a company has multiple products assigned, users see all products they have permission to access.  
+- When a company has multiple products assigned, users see all products they have permission to access.
+

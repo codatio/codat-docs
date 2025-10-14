@@ -33,6 +33,7 @@ module.exports = [
           "enterprise/tech-overview/security/network-security",
           "enterprise/tech-overview/security/api-mTLS",
           "enterprise/tech-overview/security/sso",
+          "enterprise/tech-overview/security/product-based-permissions",
         ],
       },
     ],
