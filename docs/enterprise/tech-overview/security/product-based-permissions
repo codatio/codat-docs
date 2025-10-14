@@ -1,3 +1,9 @@
+---
+title: "Product-based permissions"
+description: "Managing product-based permissions in the Codat Portal"
+sidebar_label: "Product-based permissions"
+---
+
 # Managing product-based permissions in the Codat Portal
 
 Product-based permissions give clients more control over which companies users can access, based on the products assigned to them.  
