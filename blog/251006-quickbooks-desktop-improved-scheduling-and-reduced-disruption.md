@@ -1,6 +1,6 @@
 ---
 title: "Improved QuickBooks Desktop Link flow"
-date: "2025-10-06"
+date: "2025-10-24"
 tags: ["Product", "Update", "Link"]
 authors: dcoplowe
 ---
