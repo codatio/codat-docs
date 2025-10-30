@@ -1884,7 +1884,7 @@
                   "$ref": "#/components/schemas/Attachment/definitions/attachments"
                 },
                 "examples": {
-                  "Attachments": {
+                  "Success": {
                     "value": [
                       {
                         "id": "422f093f-e556-4bf3-91c0-93af70c3e850",
@@ -2388,7 +2388,7 @@
                     "currency": "GBP",
                     "accountType": "Debit",
                     "status": "Active",
-                    "sourceModifiedDate": "2024-02-22T14:46:43.990Z"
+                    "sourceModifiedDate": "2024-02-22T14:46:43.99Z"
                   }
                 }
               }
@@ -2577,7 +2577,7 @@
               "contentType": {
                 "type": "string",
                 "nullable": true,
-                "description": "File type of the attachment. This is represented by appending the file type to the [IETF standard file naming requirements](https://tools.ietf.org/html/rfc6838). For example, for a jpeg file the output is **image/jpeg**.\n\nSupported file types vary per platform. "
+                "description": "File type of the attachment. This is represented by appending the file type to the [IETF standard file naming requirements](https://tools.ietf.org/html/rfc6838). For example, for a jpeg file the output is **image/jpeg**.\n\nSupported file types vary per platform."
               },
               "dateCreated": {
                 "$ref": "#/components/schemas/Connection/properties/created"
@@ -2608,9 +2608,6 @@
         "definitions": {
           "attachments": {
             "title": "Attachments",
-            "description": {
-              "$ref": "#/components/schemas/Attachment/description"
-            },
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Attachment"
@@ -3030,7 +3027,7 @@
             "type": "string",
             "description": "The datetime in UTC of when the webhook event was produced by Codat.",
             "examples": [
-              "2022-10-23T11:03:35.000Z"
+              "2022-10-23T11:03:35Z"
             ]
           },
           "payload": {
@@ -3620,8 +3617,8 @@
             "title": "Date time",
             "type": "string",
             "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
+              "2022-10-23T00:00:00Z",
+              "2022-10-23"
             ],
             "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
           },

@@ -940,10 +940,41 @@
         "summary": "Refresh product data",
         "operationId": "refresh-product-data",
         "x-speakeasy-name-override": "refresh-product-data",
-        "description": "Use the **Refresh product data** endpoint to manually refresh data for a custom product for a specific company.\n\n### Tips and traps\n\n- This endpoint only supports refreshing data for **custom products** and can't be used for Codat's standard solutions. Refer to [individual solutions' documentation](https://docs.codat.io/) instead.\n- If a data sync is already in progress for a custom product, the refresh request will return a `Bad request (400)` response.\n- If a company has multiple custom products enabled, you can refresh data for each product individually.",
+        "description": "Use the **Refresh product data** endpoint to manually refresh data for a custom product for a specific company.\n\n### Tips and traps\n\n- This endpoint only supports refreshing data for **custom products** and can't be used for Codat's standard solutions. Refer to [individual solutions' documentation](https://docs.codat.io/) instead.\n- If a data sync is already in progress for a custom product, the refresh request will return a `Bad request (400)` response.\n- If a company has multiple custom products enabled, you can refresh data for each product individually.\n - Optionally include a request body with `dataTypes` to refresh only selected data types for the specified product. If omitted, the product's scheduled refresh is triggered as usual.\n - When specifying `dataTypes`, each value must be a valid data type supported by the product. Invalid values will result in a `Bad request (400)` response listing valid options.",
         "tags": [
           "Companies"
         ],
+        "requestBody": {
+          "required": false,
+          "description": "Optionally specify one or more data types to refresh for the given custom product. If omitted, the product's scheduled refresh is triggered as usual. When provided, each data type must be valid for the specified product.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dataTypes": {
+                    "type": "array",
+                    "description": "One or more data types to refresh for the product.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              "examples": {
+                "Filter specific data types": {
+                  "value": {
+                    "dataTypes": [
+                      "invoices",
+                      "payments"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
         "responses": {
           "202": {
             "description": "OK"
@@ -4136,8 +4167,8 @@
                         "platformName": "Basiq",
                         "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
                         "status": "PendingAuth",
-                        "lastSync": "2022-10-27T10:22:43.646Z",
-                        "created": "2022-10-27T09:53:29.000Z",
+                        "lastSync": "2022-10-27T10:22:43.6464237Z",
+                        "created": "2022-10-27T09:53:29Z",
                         "sourceType": "Banking"
                       }
                     }
@@ -4190,8 +4221,8 @@
                         "platformName": "Basiq",
                         "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
                         "status": "Linked",
-                        "lastSync": "2022-10-27T10:22:43.646Z",
-                        "created": "2022-10-27T09:53:29.000Z",
+                        "lastSync": "2022-10-27T10:22:43.6464237Z",
+                        "created": "2022-10-27T09:53:29Z",
                         "sourceType": "Banking"
                       }
                     }
@@ -4244,14 +4275,14 @@
                         "platformName": "Basiq",
                         "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
                         "status": "PendingAuth",
-                        "created": "2022-10-27T09:53:29.000Z",
+                        "created": "2022-10-27T09:53:29Z",
                         "sourceType": "Banking",
                         "dataConnectionErrors": [
                           {
                             "statusCode": "403",
                             "statusText": "User cancelled linking",
                             "errorMessage": "User cancelled",
-                            "erroredOnUtc": "2022-10-27T09:53:29.000Z",
+                            "erroredOnUtc": "2022-10-27T09:53:29Z",
                             "status": "Active"
                           }
                         ]
@@ -4306,8 +4337,8 @@
                         "platformName": "Basiq",
                         "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
                         "status": "Unlinked",
-                        "lastSync": "2022-10-27T10:22:43.646Z",
-                        "created": "2022-10-27T09:53:29.000Z",
+                        "lastSync": "2022-10-27T10:22:43.6464237Z",
+                        "created": "2022-10-27T09:53:29Z",
                         "sourceType": "Banking"
                       }
                     }
@@ -4339,15 +4370,15 @@
                         "platformName": "Basiq",
                         "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
                         "status": "Deauthorized",
-                        "lastSync": "2022-10-27T10:22:43.646Z",
-                        "created": "2022-10-27T09:53:29.000Z",
+                        "lastSync": "2022-10-27T10:22:43.6464237Z",
+                        "created": "2022-10-27T09:53:29Z",
                         "sourceType": "Banking",
                         "dataConnectionErrors": [
                           {
                             "statusCode": "401",
                             "statusText": "The integration de-authorized access to the connection.",
                             "errorMessage": "The integration de-authorized access to the connection.",
-                            "erroredOnUtc": "2022-12-27T09:53:29.000Z",
+                            "erroredOnUtc": "2022-12-27T09:53:29Z",
                             "status": "Active"
                           }
                         ]
@@ -4402,8 +4433,8 @@
                         "platformName": "Basiq",
                         "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
                         "status": "Linked",
-                        "lastSync": "2022-10-27T10:22:43.646Z",
-                        "created": "2022-10-27T09:53:29.000Z",
+                        "lastSync": "2022-10-27T10:22:43.6464237Z",
+                        "created": "2022-10-27T09:53:29Z",
                         "sourceType": "Banking"
                       }
                     }
@@ -4456,8 +4487,8 @@
                         "platformName": "Basiq",
                         "linkUrl": "https://link-api.codat.io/companies/0498e921-9b53-4396-a412-4f2f5983b0a2/connections/ee2eb431-c0fa-4dc9-93fa-d29781c12bcd/start",
                         "status": "Linked",
-                        "lastSync": "2022-10-27T10:22:43.646Z",
-                        "created": "2022-10-27T09:53:29.000Z",
+                        "lastSync": "2022-10-27T10:22:43.6464237Z",
+                        "created": "2022-10-27T09:53:29Z",
                         "sourceType": "Banking"
                       }
                     }
@@ -4658,7 +4689,7 @@
                   "value": {
                     "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
                     "eventType": "{dataType}.write.successful",
-                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "generatedDate": "2023-05-03T10:00:23Z",
                     "payload": {
                       "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
                       "type": "Create",
@@ -4668,8 +4699,8 @@
                         "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
                       },
                       "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
-                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "requestedOnDate": "2023-05-03T10:00:00Z",
+                      "completedOnDate": "2023-05-03T10:00:23Z",
                       "status": "Success",
                       "record": {
                         "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
@@ -4681,7 +4712,7 @@
                   "value": {
                     "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
                     "eventType": "{dataType}.write.successful",
-                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "generatedDate": "2023-05-03T10:00:23Z",
                     "payload": {
                       "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
                       "type": "UploadAttachment",
@@ -4691,8 +4722,8 @@
                         "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
                       },
                       "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
-                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "requestedOnDate": "2023-05-03T10:00:00Z",
+                      "completedOnDate": "2023-05-03T10:00:23Z",
                       "status": "Success",
                       "record": {
                         "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
@@ -4726,7 +4757,7 @@
                   "value": {
                     "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
                     "eventType": "{dataType}.write.unsuccessful",
-                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "generatedDate": "2023-05-03T10:00:23Z",
                     "payload": {
                       "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
                       "type": "Update",
@@ -4736,8 +4767,8 @@
                         "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
                       },
                       "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
-                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "requestedOnDate": "2023-05-03T10:00:00Z",
+                      "completedOnDate": "2023-05-03T10:00:23Z",
                       "status": "Failed"
                     }
                   }
@@ -4746,7 +4777,7 @@
                   "value": {
                     "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
                     "eventType": "{dataType}.write.unsuccessful",
-                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "generatedDate": "2023-05-03T10:00:23Z",
                     "payload": {
                       "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
                       "type": "Delete",
@@ -4756,8 +4787,8 @@
                         "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
                       },
                       "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
-                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "requestedOnDate": "2023-05-03T10:00:00Z",
+                      "completedOnDate": "2023-05-03T10:00:23Z",
                       "status": "TimedOut"
                     }
                   }
@@ -4766,7 +4797,7 @@
                   "value": {
                     "id": "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
                     "eventType": "{dataType}.write.unsuccessful",
-                    "generatedDate": "2023-05-03T10:00:23.000Z",
+                    "generatedDate": "2023-05-03T10:00:23Z",
                     "payload": {
                       "id": "a9367074-b5c3-42c4-9be4-be129f43577e",
                       "type": "UploadAttachment",
@@ -4776,8 +4807,8 @@
                         "description": "cust_1MtJUT2eZvKYlo2CNaw2HvEv"
                       },
                       "connectionId": "12571faf-0898-47e7-afdd-0fe9eb0a9bf5",
-                      "requestedOnDate": "2023-05-03T10:00:00.000Z",
-                      "completedOnDate": "2023-05-03T10:00:23.000Z",
+                      "requestedOnDate": "2023-05-03T10:00:00Z",
+                      "completedOnDate": "2023-05-03T10:00:23Z",
                       "status": "TimedOut",
                       "record": {
                         "id": "bil_1Nispe2eZvKYlo2Cd31jOCgZ"
@@ -6114,8 +6145,8 @@
         "title": "Date time",
         "type": "string",
         "examples": [
-          "2022-10-23T00:00:00.000Z",
-          "2022-10-23T00:00:00.000Z"
+          "2022-10-23T00:00:00Z",
+          "2022-10-23"
         ],
         "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
@@ -7154,6 +7185,7 @@
               },
               "dataTypes": {
                 "type": "array",
+                "description": "Contains all data types configured for the product or a subset of data types defined in the manual refresh call.",
                 "items": {
                   "type": "object",
                   "title": "Summary of data type reads",
