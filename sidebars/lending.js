@@ -51,7 +51,7 @@ module.exports = [
   items: [
     {
       type: "doc",
-      id: "lending/premium-products/credit-model",
+      id: "lending/premium-products/credit-model-overview",
       label: "Credit model",
     },
   ],
