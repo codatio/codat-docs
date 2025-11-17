@@ -42,7 +42,9 @@ module.exports = [
   "lending/features/excel-download-overview",
 {
   type: "link",
-  label: "Credit model",
+  label: "Premium products",
+  href: "#",
+  className: "sidebar-section",
   customProps: {
     hr: true,
     section: "Premium products",
