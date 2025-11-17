@@ -40,22 +40,15 @@ module.exports = [
   "lending/features/accounts-payable-overview",
   "lending/features/company-info-overview",
   "lending/features/excel-download-overview",
-  {
-  type: "category",
-  label: "Premium products",
+{
+  type: "link",
+  label: "Credit model",
   customProps: {
     hr: true,
     section: "Premium products",
   },
-  collapsed: true,
-  items: [
-    {
-      type: "doc",
-      id: "lending/premium-products/credit-model-overview",
-      label: "Credit model",
-    },
-  ],
-  },
+},
+"lending/premium-products/credit-model-overview",
   {
     type: "category",
     label: "Loan writeback",
