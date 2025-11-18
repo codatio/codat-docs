@@ -42,7 +42,7 @@ module.exports = [
   "lending/features/excel-download-overview",
 {
     type: "link",
-    href: "/lending/premium-products/credit-model-overvie",
+    href: "/lending/premium-products/credit-model-overview",
     label: "Credit model",
     customProps: {
       hr: true,
