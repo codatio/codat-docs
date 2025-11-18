@@ -72,6 +72,14 @@ A message will be delivered every time any of the company’s tags match the tag
 
 ![A fragment of the webhook UI that allows you to add company tags to a consumer](/img/use-the-api/webhooks-add-company-tags.png)
 
+### Endpoint rate limits
+
+If your application can only handle a limited number of requests in a given time period, set a rate limit on the consumer endpoint to protect it from overloading. The rate limit is defined as a maximum number of messages per second to send to that endpoint. 
+
+After the limit is reached, the frequency of requests will be reduced not to exceed it. The actual rate of messages can sometimes be slightly above the enforced rate limit.
+
+<img width="740" height="446" alt="webhookratelimits" src="https://github.com/user-attachments/assets/6afec3df-eae3-4815-90e0-ee17bc1ee9d7" />
+
 ## View webhook consumers
 
 In the [Codat Portal](https://app.codat.io/monitor/events), navigate to **Monitor > Webhooks > Events** to see the list of all consumer endpoints you have configured.
