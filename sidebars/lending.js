@@ -41,16 +41,14 @@ module.exports = [
   "lending/features/company-info-overview",
   "lending/features/excel-download-overview",
 {
-  type: "link",
-  label: "Premium products",
-  href: "#",
-  className: "sidebar-section",
-  customProps: {
-    hr: true,
-    section: "Premium products",
+    type: "link",
+    href: "/lending/premium-products/credit-model-overvie",
+    label: "Credit model",
+    customProps: {
+      hr: true,
+      section: "Premium products",
+    },
   },
-},
-"lending/premium-products/credit-model-overview",
   {
     type: "category",
     label: "Loan writeback",
