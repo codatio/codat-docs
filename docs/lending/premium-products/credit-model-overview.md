@@ -1,5 +1,6 @@
 ---
 title: "Credit Model overview"
+displayed_sidebar: "lending"
 sidebar_label: "Credit Model"
 description: "Access detailed assessment of financial health and creditworthiness of a business"
 image: "/img/banners/social/lending.png"
