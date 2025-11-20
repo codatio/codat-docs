@@ -50,7 +50,49 @@ The credit model contains a wide variety of features to enhance the underwriting
   style={{ height: "200px" }}
 />
 
+## Derived insights
+
+tbc
+
 ## Supported outputs
 
 You can retrieve the data read and enriched by this feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or generating a Credit Model report via [endpoints of our API](/lending-api#/operations/generate-report).
 
+## Get started
+
+Once you have the Lending solution enabled, contact your Account Manager or our support team to enable Credit Model report.
+
+#### Configure data sources
+
+Follow the respective guides to set up and enable accounting integrations that will serve as a data source for the feature:
+
+<IntegrationsList integrations={accountingIntegrations} />
+
+#### Enable data types
+
+See how to [enable data types](/core-concepts/data-type-settings#override-the-default-sync-settings) and ensure the following data types have been switched on:
+
+Accounting:
+- Company `companies`
+- Proft and loss `profitAndLoss`
+- Balance sheet `balanceSheet`
+- Bills `bills`
+- Bill payments `billPayments`
+- Invoices `invoices`
+- Payments `payments`
+- Credit notes `creditNotes`
+- Bill payments `billPayments`
+
+Banking:
+- Banking transactions `banking-transactions`
+- Banking accounts `banking-accounts`
+
+Credit Model report is an asynch report meaning it would start a new sync when the genration is started.
+
+#### Configure webhooks
+
+We recommend you subscribe to the following webhooks if you are using an API solution.
+
+* reports.creditModel.generate.successful
+
+* reports.creditModel.generate.unsuccessful
