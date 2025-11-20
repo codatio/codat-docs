@@ -73,21 +73,22 @@ Follow the respective guides to set up and enable accounting integrations that w
 See how to [enable data types](/core-concepts/data-type-settings#override-the-default-sync-settings) and ensure the following data types have been switched on:
 
 ##### Accounting:
-- Company `companies`
-- Proft and loss `profitAndLoss`
+- Company `company`
+- Profit and loss `profitAndLoss`
 - Balance sheet `balanceSheet`
 - Bills `bills`
 - Bill payments `billPayments`
+- Suppliers `suppliers`
+- Customers `customers`
 - Invoices `invoices`
 - Payments `payments`
 - Credit notes `creditNotes`
-- Bill payments `billPayments`
 
 ##### Banking:
 - Banking transactions `banking-transactions`
 - Banking accounts `banking-accounts`
 
-Credit Model report is an asynch report meaning it would start a new sync when the genration is started.
+The Credit Model report is generated asynchronously. Initiating the report will trigger a new data sync.
 
 #### Configure webhooks
 
