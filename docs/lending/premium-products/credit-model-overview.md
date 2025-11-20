@@ -1,8 +1,8 @@
 ---
-title: "Credit Model overview"
+title: "Credit model overview"
 displayed_sidebar: "lending"
 sidebar_label: "Credit Model"
-description: "Access detailed assessment of financial health and creditworthiness of a business"
+description: "Access a detailed, data-driven assessment of a business's financial health and creditworthiness"
 image: "/img/banners/social/lending.png"
 ---
 
@@ -12,7 +12,7 @@ import { accountingIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Our **Credit Model** is the easiest way to digest, visualize, and analyze a borrower’s accounting and banking data. It is designed to give the user a holistic view of a borrower’s financial health when making credit decisions or other financial evaluations.
+The **Credit Model** provides an intuitive way to interpret, visualize, and analyze a borrower’s accounting and banking data. It offers a holistic view of financial performance to support credit decisions and other financial evaluations.
 
 ## Notable features
 
@@ -20,13 +20,13 @@ The credit model contains a wide variety of features to enhance the underwriting
 
 - **Dashboard:** all-encompassing view of a borrower’s financial health.
 
-- **Credit score:** customizable credit score to align the model with the metrics most important to your analysis.
+- **Credit Score:** a customizable credit score to align the model with the metrics most important to your analysis.
 
-- **Accounting Score:** grading of a borrower’s bookkeeping.
+- **Accounting Score:** an evaluation of the quality and completeness of a business’s bookkeeping.
 
 - **Financial Summary:** automatically spread financial statements with calculated metrics and ratios.
 
-- **Bank Summary:** conversion of bank data into a cash-based profit and loss statement.
+- **Bank Summary:** bank transaction data converted into a cash-based profit and loss statement.
 
 - **Debt Summary:** breakdown of existing debt with historical and projected repayment terms.
 
