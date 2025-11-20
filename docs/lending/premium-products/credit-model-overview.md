@@ -72,7 +72,7 @@ Follow the respective guides to set up and enable accounting integrations that w
 
 See how to [enable data types](/core-concepts/data-type-settings#override-the-default-sync-settings) and ensure the following data types have been switched on:
 
-Accounting:
+##### Accounting:
 - Company `companies`
 - Proft and loss `profitAndLoss`
 - Balance sheet `balanceSheet`
@@ -83,7 +83,7 @@ Accounting:
 - Credit notes `creditNotes`
 - Bill payments `billPayments`
 
-Banking:
+##### Banking:
 - Banking transactions `banking-transactions`
 - Banking accounts `banking-accounts`
 
