@@ -93,6 +93,10 @@ Credit Model report is an asynch report meaning it would start a new sync when t
 
 We recommend you subscribe to the following webhooks if you are using an API solution.
 
-* reports.creditModel.generate.successful
+- [`reports.creditModel.generate.successful`](/webhooks/reports.creditModel.generate.successful/post)
 
-* reports.creditModel.generate.unsuccessful
+The webhook is returned when the report is successfully generated.
+
+- [`reports.creditModel.generate.unsuccessful`](/webhooks/reports.creditModel.generate.unsuccessful/post)
+
+The webhook is returned the report generation has failed.
