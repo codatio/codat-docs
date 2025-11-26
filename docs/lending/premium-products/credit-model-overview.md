@@ -42,18 +42,16 @@ The Credit Model report can be based on Accounting and/or Banking data sources.
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv5tU64V66C6QkR2L3I-iuCIN02A7ROyyZL1D6gmglwrtAHU9VwJmxwWMHtslJV5aP_oeq2--6tHm1/pubhtml?gid=390125489&single=true&amp;widget=true&amp;headers=false"
-  frameborder="0"
   className="googleSheets"
-  style={{ height: "450px" }}
+  style={{ height: "450px", border: "0" }}
 />
 
 ### Banking components supported across integrations
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=1760315404&amp;single=true&amp;widget=true&amp;headers=false"
-  frameborder="0"
   className="googleSheets"
-  style={{ height: "200px" }}
+  style={{ height: "200px", border: "0" }}
 />
 
 ## Derived insights
