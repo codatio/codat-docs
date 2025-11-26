@@ -116,4 +116,4 @@ The webhook is returned when the report is successfully generated.
 
 - [`reports.creditModel.generate.unsuccessful`](/webhooks/reports.creditModel.generate.unsuccessful/post)
 
-The webhook is returned the report generation has failed.
+The webhook is returned when the report generation has failed.
