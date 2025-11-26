@@ -58,17 +58,17 @@ The Credit Model report can be based on Accounting and/or Banking data sources.
 
 ## Derived insights
 
-- **Key Highlights:** a detailed outline of the company’s best performing and most material financial metrics
-- **Key Risks:** a detailed outline of the company’s worst performing and most material financial metrics
-- **Proforma Cash Runway:** prediction of cash runway – considering historical burn, upcoming capital injections, and future debt payments
-- **Knockout Rules:** custom alerts when certain financial metrics reach given thresholds
-- **Accounting Issues:** explanation of any poor bookkeeping practices
-- **Closed Books Indicator:** estimation of the most recent accounting period officially closed by a business
+- **Key Highlights:** a detailed outline of the company’s best performing and most material financial metrics.
+- **Key Risks:** a detailed outline of the company’s worst performing and most material financial metrics.
+- **Proforma Cash Runway:** prediction of cash runway – considering historical burn, upcoming capital injections, and future debt payments.
+- **Knockout Rules:** custom alerts when certain financial metrics reach given thresholds.
+- **Accounting Issues:** explanation of any poor bookkeeping practices.
+- **Closed Books Indicator:** estimation of the most recent accounting period officially closed by a business.
 - **Debt Repayment Schedule:** implied terms of a company’s credit cards and debt facilities, including payment, frequency, maturity, balance, and more.
-- **Accounts Receivable Aging:** automated aging schedule from unpaid customer invoices
-- **Accounts Payable Aging:** automated aging schedule from unpaid supplier bills
-- **Customer Summary:** full overview of customer repayment behavior, including percentage of on time payments, breakdown of repayment terms, and customer concentration
-- **Repayment Summary:** full overview of supplier repayment behavior, including percentage of on time payments, breakdown of repayment terms, and supplier concentration
+- **Accounts Receivable Aging:** automated aging schedule from unpaid customer invoices.
+- **Accounts Payable Aging:** automated aging schedule from unpaid supplier bills.
+- **Customer Summary:** full overview of customer repayment behavior, including percentage of on time payments, breakdown of repayment terms, and customer concentration.
+- **Repayment Summary:** full overview of supplier repayment behavior, including percentage of on time payments, breakdown of repayment terms, and supplier concentration.
 
 ## Supported outputs
 
