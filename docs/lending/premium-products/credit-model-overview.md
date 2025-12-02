@@ -96,7 +96,7 @@ In the [Codat Portal](https://app.codat.io), navigate to **Companies** and selec
 
 In the list of reports, find _Credit Model (Beta)_ and click **Generate report**. Once the report is ready to download, it will appear underneath the report name. Click **Download** to save the report to your machine. 
 
-![A snippet of the Codat Portal company detail screen with the Lending > Reports path visible and Credit Model report displayed](/img/updates/bank-feeds-bento.png)
+![A snippet of the Codat Portal company detail screen with the Lending > Reports path visible and Credit Model report displayed](/img/lending/lending-credit-model-portal.png)
 
 ## Get started
 
