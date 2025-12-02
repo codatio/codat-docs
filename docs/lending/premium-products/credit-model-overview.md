@@ -80,11 +80,23 @@ The Credit model report provides the following insights into the financial healt
 
 ## Supported outputs
 
-To retrieve the data read and enriched by this feature in an Excel format, first use the [Generate report](/lending-api#/operations/generate-report) endpoint to asynchronously generate the report. Set the `reportType` parameter to `creditModel`. Initiating the report will trigger a new data sync.
+You can generate and retrieve the data read and enriched by this feature in an Excel format using an API call or in the [Codat Portal](https://app.codat.io).
+
+#### Get report via API
+
+Use the [Generate report](/lending-api#/operations/generate-report) endpoint to asynchronously generate the report. Set the `reportType` parameter to `creditModel`. Initiating the report will trigger a new data sync.
 
 Next, call the [Download credit model Excel](/lending-api#/operations/download-credit-model-excel) endpoint to retrieve the resulting report. 
 
 You can also view individual Credit Model metrics using the [Get financial summary insights](/lending-api#/operations/get-financial-summary) endpoint. 
+
+#### Get report via Portal
+
+In the [Codat Portal](https://app.codat.io), navigate to **Companies** and select the company you want to analyze. In the side menu, click **Lending > Reports**. 
+
+In the list of reports, find _Credit Model (Beta)_ and click **Generate report**. Once the report is ready to download, it will appear underneath the report name. Click **Download** to save the report to your machine. 
+
+![A snippet of the Codat Portal company detail screen with the Lending > Reports path visible and Credit Model report displayed](/img/updates/bank-feeds-bento.png)
 
 ## Get started
 
