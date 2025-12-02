@@ -46,7 +46,7 @@ module.exports = [
     label: "Credit model",
     customProps: {
       hr: true,
-      section: "Premium products",
+      section: "Premium features",
     },
   },
   {

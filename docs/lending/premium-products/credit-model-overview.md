@@ -1,44 +1,42 @@
 ---
 title: "Credit model overview"
 displayed_sidebar: "lending"
-sidebar_label: "Credit Model"
-description: "Access a detailed, data-driven assessment of a business's financial health and creditworthiness"
-image: "/img/banners/social/lending.png"
+description: "Access a detailed data-driven assessment of a business's financial health and creditworthiness"
 ---
 
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
-import { accountingIntegrations } from "@components/Integrations/integrations";
+import { integrationsAccountingFilterCreditModel, bankingIntegrations } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-The **Credit Model** provides an intuitive way to interpret, visualize, and analyze a borrower’s accounting and banking data. It offers a holistic view of financial performance to support credit decisions and other financial evaluations.
+Lending's premium **Credit model** feature provides an intuitive way to interpret, visualize, and analyze a borrower’s accounting and banking data. It offers a holistic view of financial performance to support credit decisions and other financial evaluations.
 
-## Notable features
+## Features
 
-The Credit Model contains a wide variety of features to enhance the underwriting process:
+The Credit model contains a variety of features that enhance the underwriting process:
 
-- **Dashboard:** all-encompassing view of a borrower’s financial health.
+- **Dashboard:** an all-encompassing view of a borrower’s financial health
 
-- **Credit Score:** a customizable credit score to align the model with the metrics most important to your analysis.
+- **Credit score:** a customizable credit score that aligns the model to the metrics most important to your analysis
 
-- **Accounting Score:** an evaluation of the quality and completeness of a business’s bookkeeping.
+- **Accounting score:** an evaluation of the quality and completeness of a business’s bookkeeping
 
-- **Financial Summary:** automatically spread financial statements with calculated metrics and ratios.
+- **Financial summary:** financial statements that are automatically spread with calculated metrics and ratio
 
-- **Bank Summary:** bank transaction data converted into a cash-based profit and loss statement.
+- **Bank summary:** bank transaction data that is converted into a cash-based profit and loss statement
 
-- **Debt Summary:** breakdown of existing debt with historical and projected repayment terms.
+- **Debt summary:** a breakdown of existing debt with historical and projected repayment terms
 
-- **Customer Summary:** terms, concentration, and punctuality of a borrower’s receivables.
+- **Customer summary:** terms, concentration, and punctuality of a borrower’s receivables
 
-- **Repayment Summary:** terms, concentration, and punctuality of a borrower’s payables.
+- **Repayment summary:** terms, concentration, and punctuality of a borrower’s payables
 
 ## Feature components
 
-The Credit Model report can be based on Accounting and/or Banking data sources.
+The Credit Model report can be based on accounting data sources, banking data sources, or both.
 
-### Accounting components supported across integrations
+#### Supported integrations: accounting
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQv5tU64V66C6QkR2L3I-iuCIN02A7ROyyZL1D6gmglwrtAHU9VwJmxwWMHtslJV5aP_oeq2--6tHm1/pubhtml?gid=390125489&single=true&amp;widget=true&amp;headers=false"
@@ -46,72 +44,91 @@ The Credit Model report can be based on Accounting and/or Banking data sources.
   style={{ height: "450px", border: "0" }}
 />
 
-### Banking components supported across integrations
+#### Supported integrations: banking
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=1760315404&amp;single=true&amp;widget=true&amp;headers=false"
   className="googleSheets"
-  style={{ height: "200px", border: "0" }}
+  style={{ height: "250px", border: "0" }}
 />
 
-## Derived insights
+## Feature enrichments
 
-- **Key Highlights:** a detailed outline of the company’s best performing and most material financial metrics.
-- **Key Risks:** a detailed outline of the company’s worst performing and most material financial metrics.
-- **Proforma Cash Runway:** prediction of cash runway – considering historical burn, upcoming capital injections, and future debt payments.
-- **Knockout Rules:** custom alerts when certain financial metrics reach given thresholds.
-- **Accounting Issues:** explanation of any poor bookkeeping practices.
-- **Closed Books Indicator:** estimation of the most recent accounting period officially closed by a business.
-- **Debt Repayment Schedule:** implied terms of a company’s credit cards and debt facilities, including payment, frequency, maturity, balance, and more.
-- **Accounts Receivable Aging:** automated aging schedule from unpaid customer invoices.
-- **Accounts Payable Aging:** automated aging schedule from unpaid supplier bills.
-- **Customer Summary:** full overview of customer repayment behavior, including percentage of on time payments, breakdown of repayment terms, and customer concentration.
-- **Repayment Summary:** full overview of supplier repayment behavior, including percentage of on time payments, breakdown of repayment terms, and supplier concentration.
+The Credit model report provides the following insights into the financial health of a company:
+
+- **Key highlights:** a detailed outline of the company’s best performing and most material financial metrics
+
+- **Key risks:** a detailed outline of the company’s worst performing and most material financial metrics
+
+- **Proforma cash runway:** a prediction of a cash runway that considers historical burn, upcoming capital injections, and future debt payments
+
+- **Knockout rules:** custom alerts for when certain financial metrics reach given thresholds
+
+- **Accounting issues:** an explanation of any poor bookkeeping practices
+
+- **Closed books indicator:** an estimation of the most recent accounting period officially closed by a business
+
+- **Debt repayment schedule:** implied terms of a company’s credit cards and debt facilities, including payment, frequency, maturity, and balance
+
+- **Accounts receivable aging:** an automated aging schedule from unpaid customer invoices
+
+- **Accounts payable aging:** an automated aging schedule from unpaid supplier bills
+
+- **Customer summary:** a full overview of customer repayment behavior, including percentage of on-time payments, breakdown of repayment terms, and customer concentration
+
+- **Repayment summary:** a full overview of supplier repayment behavior, including percentage of on-time payments, breakdown of repayment terms, and supplier concentration
 
 ## Supported outputs
 
-You can retrieve the data read and enriched by this feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or generating a Credit Model report via [endpoints of our API](/lending-api#/operations/generate-report).
+To retrieve the data read and enriched by this feature in an Excel format, first use the [Generate report](/lending-api#/operations/generate-report) endpoint to asynchronously generate the report. Set the `reportType` parameter to `creditModel`. Initiating the report will trigger a new data sync.
+
+Next, call the [Download credit model Excel](/lending-api#/operations/download-credit-model-excel) endpoint to retrieve the resulting report. 
+
+You can also view individual Credit Model metrics using the [Get financial summary insights](/lending-api#/operations/get-financial-summary) endpoint. 
 
 ## Get started
 
-Once you have the Lending solution enabled, contact your Account Manager or our support team to enable Credit Model report.
+Once you have the Lending solution enabled, contact your Account Manager or our support team to enable the Credit Model report. As a premium feature, it will be billed in addition to your use of the Lending solution.
+
+Next, configure your instance to work with the Credit Model feature.
 
 #### Configure data sources
 
 Follow the respective guides to set up and enable accounting integrations that will serve as a data source for the feature:
 
-<IntegrationsList integrations={accountingIntegrations} />
+##### Accounting data sources
+
+<IntegrationsList integrations={integrationsAccountingFilterCreditModel} />
+
+##### Banking data sources
+
+<IntegrationsList integrations={bankingIntegrations} />
 
 #### Enable data types
 
 See how to [enable data types](/core-concepts/data-type-settings#override-the-default-sync-settings) and ensure the following data types have been switched on:
 
-##### Accounting:
-- Company `company`
-- Profit and loss `profitAndLoss`
-- Balance sheet `balanceSheet`
-- Bills `bills`
-- Bill payments `billPayments`
-- Suppliers `suppliers`
-- Customers `customers`
-- Invoices `invoices`
-- Payments `payments`
-- Credit notes `creditNotes`
-
-##### Banking:
-- Banking transactions `banking-transactions`
-- Banking accounts `banking-accounts`
-
-The Credit Model report is generated asynchronously. Initiating the report will trigger a new data sync.
+| **Accounting**                  | **Banking**                                 |
+|---------------------------------|---------------------------------------------|
+| Company `company`               | Banking transactions `banking-transactions` |
+| Profit and loss `profitAndLoss` | Banking accounts `banking-accounts`         |
+| Balance sheet `balanceSheet`    |                                             |
+| Bills `bills`                   |                                             |
+| Bill payments `billPayments`    |                                             |
+| Suppliers `suppliers`           |                                             |
+| Customers `customers`           |                                             |
+| Invoices `invoices`             |                                             |
+| Payments `payments`             |                                             |
+| Credit notes `creditNotes`      |                                             |
 
 #### Configure webhooks
 
-We recommend you subscribe to the following webhooks if you are using an API solution.
+We recommend you [subscribe to the following webhooks](/using-the-api/webhooks/create-consumer) if you are using an API solution:
 
-- [`reports.creditModel.generate.successful`](/webhooks/reports.creditModel.generate.successful/post)
+- [`reports.creditModel.generate.successful`](/lending-api#/webhooks/reports.creditModel.generate.successful/post)
 
-The webhook is returned when the report is successfully generated.
+  Thia webhook will notify you once the report successfully generates.
 
-- [`reports.creditModel.generate.unsuccessful`](/webhooks/reports.creditModel.generate.unsuccessful/post)
+- [`reports.creditModel.generate.unsuccessful`](/lending-api#/webhooks/reports.creditModel.generate.unsuccessful/post)
 
-The webhook is returned when the report generation has failed.
+  Thia webhook will notify you if the report generation fails.
