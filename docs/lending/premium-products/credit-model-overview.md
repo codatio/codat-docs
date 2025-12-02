@@ -98,7 +98,7 @@ Follow the respective guides to set up and enable accounting integrations that w
 
 ##### Accounting data sources
 
-<IntegrationsList integrations={integrationsAccountingFilterCreditModel} />
+<IntegrationsList filter={integrationsAccountingFilterCreditModel} />
 
 ##### Banking data sources
 
