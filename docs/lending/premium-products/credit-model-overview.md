@@ -12,6 +12,12 @@ import TabItem from "@theme/TabItem";
 
 Lending's premium **Credit model** feature provides an intuitive way to interpret, visualize, and analyze a borrower’s accounting and banking data. It offers a holistic view of financial performance to support credit decisions and other financial evaluations.
 
+:::info Premium feature
+
+Credit Model report is a premium feature of the Lending product. Contact your Account Manager if you wish to enable it.
+
+:::
+
 ## Features
 
 The Credit model contains a variety of features that enhance the underwriting process:
@@ -95,6 +101,8 @@ You can also view individual Credit Model metrics using the [Get financial summa
 In the [Codat Portal](https://app.codat.io), navigate to **Companies** and select the company you want to analyze. In the side menu, click **Lending > Reports**. 
 
 In the list of reports, find _Credit Model (Beta)_ and click **Generate report**. Once the report is ready to download, it will appear underneath the report name. Click **Download** to save the report to your machine. 
+
+The Credit Model feature must be enabled before you can access the _Credit Model (Beta)_ report in the Portal. Speak to your Account Manager to enable it.
 
 ![A snippet of the Codat Portal company detail screen with the Lending > Reports path visible and Credit Model report displayed](/img/lending/lending-credit-model-portal.png)
 
