@@ -96,13 +96,15 @@ Next, call the [Download credit model Excel](/lending-api#/operations/download-c
 
 You can also view individual Credit Model metrics using the [Get financial summary insights](/lending-api#/operations/get-financial-summary) endpoint. 
 
+The Credit Model feature must be enabled before you can generate the _Credit Model_ report and its metrics via API. Speak to your Account Manager to enable it.
+
 #### Get report via Portal
 
 In the [Codat Portal](https://app.codat.io), navigate to **Companies** and select the company you want to analyze. In the side menu, click **Lending > Reports**. 
 
 In the list of reports, find _Credit Model (Beta)_ and click **Generate report**. Once the report is ready to download, it will appear underneath the report name. Click **Download** to save the report to your machine. 
 
-The Credit Model feature must be enabled before you can access the _Credit Model (Beta)_ report in the Portal. Speak to your Account Manager to enable it.
+The Credit Model feature must be enabled before you can access the _Credit Model_ report in the Portal. Speak to your Account Manager to enable it.
 
 ![A snippet of the Codat Portal company detail screen with the Lending > Reports path visible and Credit Model report displayed](/img/lending/lending-credit-model-portal.png)
 
