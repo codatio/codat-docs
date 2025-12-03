@@ -102,7 +102,7 @@ The Credit Model feature must be enabled before you can generate the _Credit Mod
 
 In the [Codat Portal](https://app.codat.io), navigate to **Companies** and select the company you want to analyze. In the side menu, click **Lending > Reports**. 
 
-In the list of reports, find _Credit Model (Beta)_ and click **Generate report**. Once the report is ready to download, it will appear underneath the report name. Click **Download** to save the report to your machine. 
+In the list of reports, find _Credit Model_ and click **Generate report**. Once the report is ready to download, it will appear underneath the report name. Click **Download** to save the report to your machine. 
 
 The Credit Model feature must be enabled before you can access the _Credit Model_ report in the Portal. Speak to your Account Manager to enable it.
 
