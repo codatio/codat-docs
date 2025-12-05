@@ -70,6 +70,13 @@ export const spendInsightsDirectIntegrations = [
     img: "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png",
   },
   {
+    name: "Dynamics 365 Finance & Operations",
+    to: "https://help.codat.io/integrations/dynamics-fo/overview",
+    sourceType: "accounting",
+    tags: ["Premium"],
+    img: "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png",
+  },
+  {
     name: "Exact Online",
     to: "https://help.codat.io/integrations/exact/overview",
     sourceType: "accounting",
