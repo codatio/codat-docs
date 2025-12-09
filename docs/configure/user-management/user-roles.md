@@ -34,7 +34,9 @@ _Administrator_ users have full access to all the features available in the Coda
 
 | Action                                           | Onboarding | Analyst | Developer | Administrator |
 | ------------------------------------------------ | ---------- | ------- | --------- | ------------- |
-| Manage (add and delete) Companies                | ✔         | ✔      | ✔        | ✔            |
+| Add Companies                                    | ✔         | ✔      | ✔        | ✔            |
+| Edit Companies                                   | ✔         | ✔      | ✔        | ✔            |
+| Delete Companies                                 |            | ✔      | ✔        | ✔            |
 | Add connections, view their status and Link URLs | ✔         | ✔      | ✔        | ✔            |
 | Add or remove products from companies            | ✔         | ✔      | ✔        | ✔            |
 | Manage (delete and unlink) connections           |            |         | ✔        | ✔            |
