@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Dynamics 365 Finance & Operations now supported"
-date: "2025-12-05"
+date: "2025-12-12"
 tags: ["Product", "Update", "Connections", "Link"]
 authors: pmckinney
 ---
