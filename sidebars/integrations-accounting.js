@@ -18,6 +18,7 @@ const integrations = [
       "integrations/accounting/dynamics365businesscentral/accounting-dynamics-365-business-central-reference",
     ],
   },
+  "integrations/accounting/dynamics365financeoperations/overview",
   {
     type: "category",
     label: "Exact Online",
