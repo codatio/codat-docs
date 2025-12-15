@@ -14,30 +14,30 @@ Remark plugins transform **markdown content** during the parsing phase, before i
 
 ```javascript
 // index.js - Main plugin file
-const { visit } = require('unist-util-visit');
-const fs = require('fs');
-const path = require('path');
+const { visit } = require("unist-util-visit");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = function remarkCustomPlugin(options = {}) {
   // Validate and process options
   const {
     pattern = /%%(.+?)%%/g,
-    dataFile = './data/terms.json',
-    componentName = 'CustomTooltip',
+    dataFile = "./data/terms.json",
+    componentName = "CustomTooltip",
   } = options;
 
   // Load external data if needed
   let glossaryData = {};
   if (fs.existsSync(dataFile)) {
-    glossaryData = JSON.parse(fs.readFileSync(dataFile, 'utf-8'));
+    glossaryData = JSON.parse(fs.readFileSync(dataFile, "utf-8"));
   }
 
   // Return the transformer function
   return async function transformer(ast, vfile) {
-    const filePath = vfile.path || '';
+    const filePath = vfile.path || "";
 
     // Visit specific node types
-    visit(ast, 'text', (node, index, parent) => {
+    visit(ast, "text", (node, index, parent) => {
       const matches = [...node.value.matchAll(pattern)];
 
       if (matches.length === 0) return;
@@ -53,7 +53,7 @@ module.exports = function remarkCustomPlugin(options = {}) {
         // Add text before match
         if (startIndex > lastIndex) {
           newNodes.push({
-            type: 'text',
+            type: "text",
             value: node.value.slice(lastIndex, startIndex),
           });
         }
@@ -62,13 +62,13 @@ module.exports = function remarkCustomPlugin(options = {}) {
         const termData = glossaryData[termKey];
         if (termData) {
           newNodes.push({
-            type: 'jsx',
+            type: "jsx",
             value: `<${componentName} term="${termKey}" tooltip="${termData.tooltip}">${termData.display}</${componentName}>`,
           });
         } else {
           // Fallback if term not found
           newNodes.push({
-            type: 'text',
+            type: "text",
             value: fullMatch,
           });
         }
@@ -79,7 +79,7 @@ module.exports = function remarkCustomPlugin(options = {}) {
       // Add remaining text
       if (lastIndex < node.value.length) {
         newNodes.push({
-          type: 'text',
+          type: "text",
           value: node.value.slice(lastIndex),
         });
       }
@@ -89,13 +89,13 @@ module.exports = function remarkCustomPlugin(options = {}) {
     });
 
     // Visit links
-    visit(ast, 'link', (node) => {
-      if (node.url.endsWith('.md')) {
+    visit(ast, "link", (node) => {
+      if (node.url.endsWith(".md")) {
         // Transform internal markdown links
         node.data = node.data || {};
         node.data.hProperties = {
-          className: 'internal-link',
-          'data-internal': true,
+          className: "internal-link",
+          "data-internal": true,
         };
       }
     });
@@ -112,10 +112,10 @@ module.exports = function remarkCustomPlugin(options = {}) {
 module.exports = {
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          remarkPlugins: [require('./plugins/my-remark-plugin')],
+          remarkPlugins: [require("./plugins/my-remark-plugin")],
         },
       },
     ],
@@ -126,16 +126,16 @@ module.exports = {
 module.exports = {
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
           remarkPlugins: [
             [
-              require('./plugins/my-remark-plugin'),
+              require("./plugins/my-remark-plugin"),
               {
                 pattern: /\[\[(.+?)\]\]/g,
-                dataFile: './glossary.json',
-                componentName: 'GlossaryTerm',
+                dataFile: "./glossary.json",
+                componentName: "GlossaryTerm",
               },
             ],
           ],
@@ -149,10 +149,10 @@ module.exports = {
 module.exports = {
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          beforeDefaultRemarkPlugins: [require('./plugins/my-remark-plugin')],
+          beforeDefaultRemarkPlugins: [require("./plugins/my-remark-plugin")],
         },
       },
     ],
@@ -212,27 +212,27 @@ module.exports = {
 ## Using unist-util-visit
 
 ```javascript
-const { visit } = require('unist-util-visit');
+const { visit } = require("unist-util-visit");
 
 // Visit all nodes of a specific type
-visit(ast, 'link', (node) => {
+visit(ast, "link", (node) => {
   console.log(node.url);
 });
 
 // Visit multiple types
-visit(ast, ['link', 'image'], (node) => {
+visit(ast, ["link", "image"], (node) => {
   console.log(node.type, node.url);
 });
 
 // Visit with index and parent access
-visit(ast, 'text', (node, index, parent) => {
+visit(ast, "text", (node, index, parent) => {
   // Modify parent.children to replace nodes
   parent.children[index] = newNode;
 });
 
 // Visit all nodes
 visit(ast, (node) => {
-  if (node.type === 'link' && node.url.startsWith('http')) {
+  if (node.type === "link" && node.url.startsWith("http")) {
     // Process external links
   }
 });
@@ -244,16 +244,16 @@ Based on docusaurus-plugin-glossary pattern:
 
 ```javascript
 // plugins/glossary-plugin.js
-const { visit } = require('unist-util-visit');
-const fs = require('fs');
-const path = require('path');
-const yaml = require('js-yaml');
+const { visit } = require("unist-util-visit");
+const fs = require("fs");
+const path = require("path");
+const yaml = require("js-yaml");
 
 module.exports = function glossaryPlugin(options = {}) {
   const {
-    termsDir = './docs/terms',
-    docsDir = './docs',
-    glossaryFilepath = './docs/glossary.md',
+    termsDir = "./docs/terms",
+    docsDir = "./docs",
+    glossaryFilepath = "./docs/glossary.md",
   } = options;
 
   // Load all term files
@@ -262,16 +262,18 @@ module.exports = function glossaryPlugin(options = {}) {
     const termFiles = fs.readdirSync(termsDir);
 
     termFiles.forEach((file) => {
-      if (!file.endsWith('.md')) return;
+      if (!file.endsWith(".md")) return;
 
-      const content = fs.readFileSync(path.join(termsDir, file), 'utf-8');
-      const [, frontmatter, body] = content.match(/^---\n([\s\S]+?)\n---\n([\s\S]*)$/);
+      const content = fs.readFileSync(path.join(termsDir, file), "utf-8");
+      const [, frontmatter, body] = content.match(
+        /^---\n([\s\S]+?)\n---\n([\s\S]*)$/,
+      );
 
       const meta = yaml.load(frontmatter);
       terms[meta.id] = {
         title: meta.title,
         hoverText: meta.hoverText || body.slice(0, 200),
-        path: `terms/${file.replace('.md', '')}`,
+        path: `terms/${file.replace(".md", "")}`,
       };
     });
 
@@ -282,7 +284,7 @@ module.exports = function glossaryPlugin(options = {}) {
     const terms = loadTerms();
 
     // Convert [[term]] syntax to tooltipped links
-    visit(ast, 'text', (node, index, parent) => {
+    visit(ast, "text", (node, index, parent) => {
       const matches = [...node.value.matchAll(/\[\[(.+?)\]\]/g)];
 
       if (matches.length === 0) return;
@@ -302,14 +304,14 @@ module.exports = function glossaryPlugin(options = {}) {
         // Add text before match
         if (match.index > lastIndex) {
           newNodes.push({
-            type: 'text',
+            type: "text",
             value: node.value.slice(lastIndex, match.index),
           });
         }
 
         // Add glossary link with tooltip
         newNodes.push({
-          type: 'jsx',
+          type: "jsx",
           value: `<GlossaryTerm term="${termKey}" tooltip="${term.hoverText}" href="/${term.path}">${term.title}</GlossaryTerm>`,
         });
 
@@ -319,7 +321,7 @@ module.exports = function glossaryPlugin(options = {}) {
       // Remaining text
       if (lastIndex < node.value.length) {
         newNodes.push({
-          type: 'text',
+          type: "text",
           value: node.value.slice(lastIndex),
         });
       }
@@ -354,8 +356,8 @@ module.exports = function glossaryPlugin(options = {}) {
 
 ```typescript
 // index.d.ts
-import { Plugin } from 'unified';
-import { Root } from 'mdast';
+import { Plugin } from "unified";
+import { Root } from "mdast";
 
 export interface RemarkPluginOptions {
   pattern?: RegExp;
@@ -374,25 +376,25 @@ export default remarkPlugin;
 
 ```javascript
 // __tests__/plugin.test.js
-const remark = require('remark');
-const remarkMdx = require('remark-mdx');
-const glossaryPlugin = require('../index');
+const remark = require("remark");
+const remarkMdx = require("remark-mdx");
+const glossaryPlugin = require("../index");
 
-describe('Glossary Plugin', () => {
+describe("Glossary Plugin", () => {
   const processor = remark().use(remarkMdx).use(glossaryPlugin, {
-    termsDir: './__fixtures__/terms',
+    termsDir: "./__fixtures__/terms",
   });
 
-  it('transforms glossary syntax', async () => {
-    const input = 'This is a [[test-term]] example.';
+  it("transforms glossary syntax", async () => {
+    const input = "This is a [[test-term]] example.";
     const result = await processor.process(input);
 
-    expect(result.toString()).toContain('<GlossaryTerm');
-    expect(result.toString()).toContain('test-term');
+    expect(result.toString()).toContain("<GlossaryTerm");
+    expect(result.toString()).toContain("test-term");
   });
 
-  it('handles missing terms gracefully', async () => {
-    const input = 'This is a [[missing-term]] example.';
+  it("handles missing terms gracefully", async () => {
+    const input = "This is a [[missing-term]] example.";
     const result = await processor.process(input);
 
     // Should leave unmatched terms as-is or show warning
@@ -443,8 +445,8 @@ visit(ast, (node) => {
 });
 
 // Log only specific types
-visit(ast, 'link', (node) => {
-  console.log('Link:', node.url);
+visit(ast, "link", (node) => {
+  console.log("Link:", node.url);
 });
 ```
 

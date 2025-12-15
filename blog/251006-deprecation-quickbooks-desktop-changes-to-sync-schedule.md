@@ -12,6 +12,7 @@ On **January 10, 2026**, we will deprecate the current behavior where data is sy
 This change aligns with upcoming improvements to the QuickBooks Desktop Link flow, which will introduce **configurable sync schedules**. These enhancements are designed to minimize disruption by ensuring the Intuit Web Connector only runs at times defined by the customer.
 
 Under the new behavior (once available):
+
 - **Fetch on first link will no longer run immediately** after linking. It will wait until the next permitted sync window.
 - **All future syncs** will also respect the user-defined sync schedule, including any custom hours or pauses they configure.
 

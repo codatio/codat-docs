@@ -13,12 +13,12 @@ description: Use when creating Docusaurus plugins (remark, rehype, theme, conten
 // Remark plugin - transforms markdown AST
 module.exports = function remarkPlugin(options = {}) {
   return async function transformer(ast, vfile) {
-    const { visit } = require('unist-util-visit');
+    const { visit } = require("unist-util-visit");
 
-    visit(ast, 'link', (node) => {
+    visit(ast, "link", (node) => {
       // Transform nodes
       node.data = node.data || {};
-      node.data.hProperties = { className: 'custom' };
+      node.data.hProperties = { className: "custom" };
     });
 
     return ast;

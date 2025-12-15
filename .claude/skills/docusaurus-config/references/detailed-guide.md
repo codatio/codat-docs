@@ -7,8 +7,8 @@ Docusaurus configuration can be in multiple formats:
 ### TypeScript (Recommended)
 
 ```typescript
-import { Config } from '@docusaurus/types';
-import { themes as prismThemes } from 'prism-react-renderer';
+import { Config } from "@docusaurus/types";
+import { themes as prismThemes } from "prism-react-renderer";
 
 const config: Config = {
   // Configuration here
@@ -38,7 +38,7 @@ module.exports = {
 ```typescript
 export default async function createConfig(): Promise<Config> {
   // Import ESM-only packages
-  const mdxMermaid = await import('mdx-mermaid');
+  const mdxMermaid = await import("mdx-mermaid");
 
   return {
     // Configuration here
@@ -204,20 +204,24 @@ function MyComponent() {
 When modifying config, verify:
 
 1. **Required fields present**:
+
    - ✅ `title` exists
    - ✅ `url` exists and has no trailing slash
    - ✅ `baseUrl` exists and starts/ends with `/`
 
 2. **Plugins and themes**:
+
    - ✅ Use proper package names or shorthand
    - ✅ Options passed as second array element
    - ✅ No duplicate plugins
 
 3. **Custom data**:
+
    - ✅ Unknown fields in `customFields` object
    - ✅ No direct custom properties at root level
 
 4. **File format**:
+
    - ✅ Valid JS/TS syntax
    - ✅ Proper export (ESM or CommonJS)
    - ✅ TypeScript types imported if using TS
@@ -256,7 +260,7 @@ plugins: [
 
 ```typescript
 const config: Config = {
-  url: process.env.SITE_URL || 'https://localhost:3000',
+  url: process.env.SITE_URL || "https://localhost:3000",
   customFields: {
     apiEndpoint: process.env.API_ENDPOINT,
   },
@@ -269,7 +273,7 @@ Create `babel.config.js`:
 
 ```javascript
 module.exports = {
-  presets: [require.resolve('@docusaurus/babel/preset')],
+  presets: [require.resolve("@docusaurus/babel/preset")],
   plugins: [
     // Your custom Babel plugins
   ],

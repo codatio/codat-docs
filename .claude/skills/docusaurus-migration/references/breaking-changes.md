@@ -130,14 +130,14 @@ This is _really_ important
 **Old (v1)**:
 
 ```js
-const lightTheme = require('prism-react-renderer/themes/github');
-const darkTheme = require('prism-react-renderer/themes/dracula');
+const lightTheme = require("prism-react-renderer/themes/github");
+const darkTheme = require("prism-react-renderer/themes/dracula");
 ```
 
 **New (v2)**:
 
 ```js
-const { themes } = require('prism-react-renderer');
+const { themes } = require("prism-react-renderer");
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 ```
@@ -150,7 +150,7 @@ Prism React Renderer v2 includes fewer languages by default. Add required langua
 module.exports = {
   themeConfig: {
     prism: {
-      additionalLanguages: ['bash', 'diff', 'json'],
+      additionalLanguages: ["bash", "diff", "json"],
     },
   },
 };
@@ -165,7 +165,7 @@ React imports are no longer required in files using JSX:
 **Before**:
 
 ```jsx
-import React from 'react';
+import React from "react";
 
 export default function MyComponent() {
   return <div>Hello</div>;
@@ -261,14 +261,14 @@ Common fixes:
 Update Prism configuration:
 
 ```js
-const { themes } = require('prism-react-renderer');
+const { themes } = require("prism-react-renderer");
 
 module.exports = {
   themeConfig: {
     prism: {
       theme: themes.github,
       darkTheme: themes.dracula,
-      additionalLanguages: ['bash', 'diff', 'json'],
+      additionalLanguages: ["bash", "diff", "json"],
     },
   },
 };
@@ -302,7 +302,7 @@ Fix any build errors before deploying.
 Convert `docusaurus.config.js` to `docusaurus.config.mjs`:
 
 ```js
-import { themes } from 'prism-react-renderer';
+import { themes } from "prism-react-renderer";
 
 export default {
   // config
@@ -314,8 +314,8 @@ export default {
 Rename to `docusaurus.config.ts`:
 
 ```typescript
-import type { Config } from '@docusaurus/types';
-import { themes } from 'prism-react-renderer';
+import type { Config } from "@docusaurus/types";
+import { themes } from "prism-react-renderer";
 
 const config: Config = {
   // config

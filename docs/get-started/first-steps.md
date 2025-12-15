@@ -95,7 +95,7 @@ or
 import { CodatPlatform } from "@codat/platform";
 
 const codatPlatform = new CodatPlatform({
-    authHeader: "{basicAuthHeader}",
+  authHeader: "{basicAuthHeader}",
 });
 ```
 
@@ -194,11 +194,12 @@ if(res.Company != null) {
   <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-
-  codatPlatform.companies.create({
+codatPlatform.companies
+  .create({
     description: "Requested early access to the new financing scheme.",
     name: "Bank of Dave",
-  }).then((res) => {
+  })
+  .then((res) => {
     // handle response
   });
 ```
@@ -329,11 +330,11 @@ if res.statusCode == (int)HttpStatusCode.OK {
   <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
-
-
-  codatPlatform.companies.get({
+codatPlatform.companies
+  .get({
     companyId: "{companyId}",
-  }).then((res) => {
+  })
+  .then((res) => {
     //handle response
   });
 ```
@@ -484,15 +485,17 @@ or
 ##### Usage
 
 ```javascript
-  import { CodatLending } from "@codat/lending";
+import { CodatLending } from "@codat/lending";
 
-  const codatLending = new CodatLending({
-      authHeader: "{basicAuthHeader}",
-  });
+const codatLending = new CodatLending({
+  authHeader: "{basicAuthHeader}",
+});
 
-  codatLending.accountsReceivable.invoices.list({
-    companyId: "{companyId}"
-  }).then((res) => {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+  })
+  .then((res) => {
     //handle response
   });
 ```

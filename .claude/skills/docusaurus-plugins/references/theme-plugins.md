@@ -14,27 +14,27 @@ Theme plugins provide custom **themes** and allow **component swizzling** to ove
 
 ```javascript
 // plugins/theme-custom/index.js
-const path = require('path');
+const path = require("path");
 
 module.exports = function themePlugin(context, options) {
   return {
-    name: 'docusaurus-theme-custom',
+    name: "docusaurus-theme-custom",
 
     getThemePath() {
       // Return path to theme components
-      return path.resolve(__dirname, './theme');
+      return path.resolve(__dirname, "./theme");
     },
 
     getTypeScriptThemePath() {
       // Return path to TypeScript theme types
-      return path.resolve(__dirname, './theme');
+      return path.resolve(__dirname, "./theme");
     },
 
     getClientModules() {
       // Global CSS and client-side code
       return [
-        path.resolve(__dirname, './theme/global.css'),
-        path.resolve(__dirname, './theme/prism-theme.js'),
+        path.resolve(__dirname, "./theme/global.css"),
+        path.resolve(__dirname, "./theme/prism-theme.js"),
       ];
     },
   };
@@ -64,19 +64,19 @@ plugins/theme-custom/
 // docusaurus.config.js
 module.exports = {
   themes: [
-    './plugins/theme-custom',
+    "./plugins/theme-custom",
     // Or npm package
-    '@org/docusaurus-theme-custom',
+    "@org/docusaurus-theme-custom",
   ],
 
   // Or with options
   themes: [
     [
-      './plugins/theme-custom',
+      "./plugins/theme-custom",
       {
         customColors: {
-          primary: '#007bff',
-          secondary: '#6c757d',
+          primary: "#007bff",
+          secondary: "#6c757d",
         },
       },
     ],
@@ -128,10 +128,10 @@ npm run swizzle @docusaurus/theme-classic Navbar -- --typescript
 
 ```javascript
 // theme/Navbar.js
-import React from 'react';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import './Navbar.css';
+import React from "react";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import "./Navbar.css";
 
 export default function Navbar() {
   const { siteConfig } = useDocusaurusContext();
@@ -166,9 +166,9 @@ export default function Navbar() {
 
 ```javascript
 // theme/Footer.js
-import React from 'react';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import React from "react";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 export default function Footer() {
   const { siteConfig } = useDocusaurusContext();
@@ -237,12 +237,12 @@ export default function Footer() {
 
 ```javascript
 // theme/MDXComponents.js
-import React from 'react';
-import MDXComponents from '@theme-original/MDXComponents';
-import Highlight from '@site/src/components/Highlight';
-import CodeBlock from '@theme/CodeBlock';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import React from "react";
+import MDXComponents from "@theme-original/MDXComponents";
+import Highlight from "@site/src/components/Highlight";
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 // Custom components available in MDX
 export default {
@@ -253,7 +253,7 @@ export default {
 
   // Add custom components
   Highlight,
-  Callout: ({ type = 'info', children }) => (
+  Callout: ({ type = "info", children }) => (
     <div className={`callout callout-${type}`}>{children}</div>
   ),
 
@@ -277,12 +277,12 @@ export default {
 
 ```javascript
 // theme/Layout.js
-import React from 'react';
-import Head from '@docusaurus/Head';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Navbar from '@theme/Navbar';
-import Footer from '@theme/Footer';
-import './Layout.css';
+import React from "react";
+import Head from "@docusaurus/Head";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Navbar from "@theme/Navbar";
+import Footer from "@theme/Footer";
+import "./Layout.css";
 
 export default function Layout({ children, title, description }) {
   const { siteConfig } = useDocusaurusContext();
@@ -294,7 +294,10 @@ export default function Layout({ children, title, description }) {
         <title>{pageTitle}</title>
         <meta name="description" content={description || siteConfig.tagline} />
         <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={description || siteConfig.tagline} />
+        <meta
+          property="og:description"
+          content={description || siteConfig.tagline}
+        />
       </Head>
 
       <div className="layout">
@@ -311,16 +314,16 @@ export default function Layout({ children, title, description }) {
 
 ```javascript
 // theme/DocPage.js (wrapped)
-import React from 'react';
-import DocPage from '@theme-original/DocPage';
-import { useLocation } from '@docusaurus/router';
+import React from "react";
+import DocPage from "@theme-original/DocPage";
+import { useLocation } from "@docusaurus/router";
 
 export default function DocPageWrapper(props) {
   const location = useLocation();
 
   // Add custom behavior before/after original component
   React.useEffect(() => {
-    console.log('Doc page viewed:', location.pathname);
+    console.log("Doc page viewed:", location.pathname);
   }, [location]);
 
   return (
@@ -353,10 +356,10 @@ export default function DocPageWrapper(props) {
   --ifm-color-primary-lightest: #3cad6e;
 
   --ifm-code-font-size: 95%;
-  --ifm-font-family-base: 'Inter', system-ui, sans-serif;
+  --ifm-font-family-base: "Inter", system-ui, sans-serif;
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-background-color: #1b1b1d;
 }
@@ -377,57 +380,57 @@ html[data-theme='dark'] {
 // theme/prism-theme.js
 const theme = {
   plain: {
-    color: '#F8F8F2',
-    backgroundColor: '#282A36',
+    color: "#F8F8F2",
+    backgroundColor: "#282A36",
   },
   styles: [
     {
-      types: ['prolog', 'constant', 'builtin'],
+      types: ["prolog", "constant", "builtin"],
       style: {
-        color: 'rgb(189, 147, 249)',
+        color: "rgb(189, 147, 249)",
       },
     },
     {
-      types: ['inserted', 'function'],
+      types: ["inserted", "function"],
       style: {
-        color: 'rgb(80, 250, 123)',
+        color: "rgb(80, 250, 123)",
       },
     },
     {
-      types: ['deleted'],
+      types: ["deleted"],
       style: {
-        color: 'rgb(255, 85, 85)',
+        color: "rgb(255, 85, 85)",
       },
     },
     {
-      types: ['changed'],
+      types: ["changed"],
       style: {
-        color: 'rgb(255, 184, 108)',
+        color: "rgb(255, 184, 108)",
       },
     },
     {
-      types: ['punctuation', 'symbol'],
+      types: ["punctuation", "symbol"],
       style: {
-        color: 'rgb(248, 248, 242)',
+        color: "rgb(248, 248, 242)",
       },
     },
     {
-      types: ['string', 'char', 'tag', 'selector'],
+      types: ["string", "char", "tag", "selector"],
       style: {
-        color: 'rgb(255, 121, 198)',
+        color: "rgb(255, 121, 198)",
       },
     },
     {
-      types: ['keyword', 'variable'],
+      types: ["keyword", "variable"],
       style: {
-        color: 'rgb(189, 147, 249)',
-        fontStyle: 'italic',
+        color: "rgb(189, 147, 249)",
+        fontStyle: "italic",
       },
     },
     {
-      types: ['comment'],
+      types: ["comment"],
       style: {
-        color: 'rgb(98, 114, 164)',
+        color: "rgb(98, 114, 164)",
       },
     },
   ],
@@ -462,7 +465,7 @@ export default theme;
 
 ```typescript
 // index.d.ts
-import { Plugin, LoadContext } from '@docusaurus/types';
+import { Plugin, LoadContext } from "@docusaurus/types";
 
 export interface ThemeOptions {
   customColors?: {
@@ -471,7 +474,10 @@ export interface ThemeOptions {
   };
 }
 
-declare const theme: (context: LoadContext, options: ThemeOptions) => Plugin<void>;
+declare const theme: (
+  context: LoadContext,
+  options: ThemeOptions,
+) => Plugin<void>;
 
 export default theme;
 ```
@@ -492,18 +498,18 @@ export default theme;
 
 ```javascript
 // theme/ColorModeToggle.js
-import React from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
+import React from "react";
+import { useColorMode } from "@docusaurus/theme-common";
 
 export default function ColorModeToggle() {
   const { colorMode, setColorMode } = useColorMode();
 
   return (
     <button
-      onClick={() => setColorMode(colorMode === 'dark' ? 'light' : 'dark')}
+      onClick={() => setColorMode(colorMode === "dark" ? "light" : "dark")}
       aria-label="Toggle dark mode"
     >
-      {colorMode === 'dark' ? '🌞' : '🌙'}
+      {colorMode === "dark" ? "🌞" : "🌙"}
     </button>
   );
 }
@@ -513,11 +519,17 @@ export default function ColorModeToggle() {
 
 ```javascript
 // theme/SearchBar.js
-import React from 'react';
-import { DocSearch } from '@docsearch/react';
+import React from "react";
+import { DocSearch } from "@docsearch/react";
 
 export default function SearchBar() {
-  return <DocSearch appId="YOUR_APP_ID" indexName="YOUR_INDEX_NAME" apiKey="YOUR_SEARCH_API_KEY" />;
+  return (
+    <DocSearch
+      appId="YOUR_APP_ID"
+      indexName="YOUR_INDEX_NAME"
+      apiKey="YOUR_SEARCH_API_KEY"
+    />
+  );
 }
 ```
 
@@ -525,15 +537,21 @@ export default function SearchBar() {
 
 ```javascript
 // theme/NavbarItem/DocsVersionDropdown.js
-import React from 'react';
-import { useActiveVersion, useVersions } from '@docusaurus/plugin-content-docs/client';
+import React from "react";
+import {
+  useActiveVersion,
+  useVersions,
+} from "@docusaurus/plugin-content-docs/client";
 
 export default function DocsVersionDropdown() {
   const versions = useVersions();
   const activeVersion = useActiveVersion();
 
   return (
-    <select value={activeVersion.name} onChange={(e) => (window.location.href = e.target.value)}>
+    <select
+      value={activeVersion.name}
+      onChange={(e) => (window.location.href = e.target.value)}
+    >
       {versions.map((version) => (
         <option key={version.name} value={version.path}>
           {version.label}

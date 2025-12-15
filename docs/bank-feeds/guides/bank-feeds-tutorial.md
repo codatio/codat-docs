@@ -122,7 +122,7 @@ var bankFeedsClient = new CodatBankFeedsSDK(
 import { CodatBankFeeds } from "@codat/bank-feeds";
 
 const bankFeedsClient = new CodatBankFeeds({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 ```
 

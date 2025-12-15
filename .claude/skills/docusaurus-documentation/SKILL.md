@@ -14,8 +14,8 @@ When the user asks about Docusaurus features, configuration, or best practices, 
 ```typescript
 // Use WebFetch to access Docusaurus documentation
 WebFetch({
-  url: 'https://docusaurus.io/docs/[topic]',
-  prompt: 'What does this page say about [specific question]?',
+  url: "https://docusaurus.io/docs/[topic]",
+  prompt: "What does this page say about [specific question]?",
 });
 ```
 

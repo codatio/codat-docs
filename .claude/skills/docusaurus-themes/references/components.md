@@ -10,14 +10,16 @@
 **Example customization:**
 
 ```tsx
-import React from 'react';
-import Footer from '@theme-original/Footer';
+import React from "react";
+import Footer from "@theme-original/Footer";
 
 export default function FooterWrapper(props) {
   return (
     <>
       <Footer {...props} />
-      <div className="custom-footer-section">{/* Add custom footer content */}</div>
+      <div className="custom-footer-section">
+        {/* Add custom footer content */}
+      </div>
     </>
   );
 }

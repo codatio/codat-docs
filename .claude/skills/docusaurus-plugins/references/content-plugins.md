@@ -14,21 +14,21 @@ Content plugins create **custom content types** beyond the default docs and blog
 
 ```javascript
 // plugins/plugin-content-changelog/index.js
-const fs = require('fs-extra');
-const path = require('path');
-const matter = require('gray-matter');
+const fs = require("fs-extra");
+const path = require("path");
+const matter = require("gray-matter");
 
 module.exports = function contentChangelogPlugin(context, options) {
   const {
-    changelogPath = 'changelog',
-    routeBasePath = 'changelog',
-    include = ['**/*.md'],
+    changelogPath = "changelog",
+    routeBasePath = "changelog",
+    include = ["**/*.md"],
   } = options;
 
   const contentPath = path.resolve(context.siteDir, changelogPath);
 
   return {
-    name: 'docusaurus-plugin-content-changelog',
+    name: "docusaurus-plugin-content-changelog",
 
     // Load all changelog entries
     async loadContent() {
@@ -36,19 +36,19 @@ module.exports = function contentChangelogPlugin(context, options) {
       const files = await fs.readdir(contentPath);
 
       for (const file of files) {
-        if (!file.endsWith('.md')) continue;
+        if (!file.endsWith(".md")) continue;
 
         const filePath = path.join(contentPath, file);
-        const content = await fs.readFile(filePath, 'utf-8');
+        const content = await fs.readFile(filePath, "utf-8");
         const { data: frontmatter, content: body } = matter(content);
 
         entries.push({
-          id: file.replace('.md', ''),
-          slug: frontmatter.slug || file.replace('.md', ''),
+          id: file.replace(".md", ""),
+          slug: frontmatter.slug || file.replace(".md", ""),
           title: frontmatter.title,
           version: frontmatter.version,
           date: frontmatter.date,
-          type: frontmatter.type || 'feature', // feature, fix, breaking
+          type: frontmatter.type || "feature", // feature, fix, breaking
           body,
           filePath,
         });
@@ -72,13 +72,13 @@ module.exports = function contentChangelogPlugin(context, options) {
 
       // Create changelog list page
       const listDataPath = await createData(
-        'changelog-list.json',
-        JSON.stringify({ entries: content })
+        "changelog-list.json",
+        JSON.stringify({ entries: content }),
       );
 
       addRoute({
         path: `/${routeBasePath}`,
-        component: '@site/src/components/ChangelogList.js',
+        component: "@site/src/components/ChangelogList.js",
         exact: true,
         modules: {
           entries: listDataPath,
@@ -90,18 +90,18 @@ module.exports = function contentChangelogPlugin(context, options) {
         content.map(async (entry) => {
           const entryDataPath = await createData(
             `changelog-${entry.id}.json`,
-            JSON.stringify(entry)
+            JSON.stringify(entry),
           );
 
           addRoute({
             path: `/${routeBasePath}/${entry.slug}`,
-            component: '@site/src/components/ChangelogEntry.js',
+            component: "@site/src/components/ChangelogEntry.js",
             exact: true,
             modules: {
               entry: entryDataPath,
             },
           });
-        })
+        }),
       );
     },
 
@@ -109,7 +109,7 @@ module.exports = function contentChangelogPlugin(context, options) {
     async postBuild({ outDir, content }) {
       // Generate RSS feed
       const rss = generateRSSFeed(content);
-      await fs.writeFile(path.join(outDir, 'changelog.xml'), rss);
+      await fs.writeFile(path.join(outDir, "changelog.xml"), rss);
 
       // Generate JSON API
       const api = content.map((entry) => ({
@@ -119,7 +119,10 @@ module.exports = function contentChangelogPlugin(context, options) {
         date: entry.date,
         type: entry.type,
       }));
-      await fs.writeFile(path.join(outDir, 'changelog.json'), JSON.stringify(api, null, 2));
+      await fs.writeFile(
+        path.join(outDir, "changelog.json"),
+        JSON.stringify(api, null, 2),
+      );
     },
   };
 };
@@ -132,11 +135,11 @@ module.exports = function contentChangelogPlugin(context, options) {
 module.exports = {
   plugins: [
     [
-      './plugins/plugin-content-changelog',
+      "./plugins/plugin-content-changelog",
       {
-        changelogPath: 'changelog',
-        routeBasePath: 'changelog',
-        include: ['**/*.md'],
+        changelogPath: "changelog",
+        routeBasePath: "changelog",
+        include: ["**/*.md"],
       },
     ],
   ],
@@ -184,10 +187,10 @@ Major breaking changes and new features.
 
 ```javascript
 // src/components/ChangelogList.js
-import React from 'react';
-import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import clsx from 'clsx';
+import React from "react";
+import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
+import clsx from "clsx";
 
 export default function ChangelogList({ entries }) {
   return (
@@ -204,13 +207,17 @@ export default function ChangelogList({ entries }) {
                 </Link>
 
                 <div className="changelog-meta">
-                  <span className={clsx('badge', `badge-${entry.type}`)}>{entry.type}</span>
+                  <span className={clsx("badge", `badge-${entry.type}`)}>
+                    {entry.type}
+                  </span>
                   <span className="version">v{entry.version}</span>
                   <time>{new Date(entry.date).toLocaleDateString()}</time>
                 </div>
               </div>
 
-              <div className="changelog-preview">{entry.body.slice(0, 200)}...</div>
+              <div className="changelog-preview">
+                {entry.body.slice(0, 200)}...
+              </div>
             </div>
           ))}
         </div>
@@ -224,14 +231,17 @@ export default function ChangelogList({ entries }) {
 
 ```javascript
 // src/components/ChangelogEntry.js
-import React from 'react';
-import Layout from '@theme/Layout';
-import MDXContent from '@theme/MDXContent';
-import Link from '@docusaurus/Link';
+import React from "react";
+import Layout from "@theme/Layout";
+import MDXContent from "@theme/MDXContent";
+import Link from "@docusaurus/Link";
 
 export default function ChangelogEntry({ entry }) {
   return (
-    <Layout title={entry.title} description={`Release notes for version ${entry.version}`}>
+    <Layout
+      title={entry.title}
+      description={`Release notes for version ${entry.version}`}
+    >
       <div className="container margin-vert--lg">
         <Link to="/changelog" className="back-link">
           ← Back to Changelog
@@ -260,19 +270,19 @@ export default function ChangelogEntry({ entry }) {
 
 ```javascript
 // plugins/plugin-content-team/index.js
-const fs = require('fs-extra');
-const path = require('path');
-const yaml = require('js-yaml');
+const fs = require("fs-extra");
+const path = require("path");
+const yaml = require("js-yaml");
 
 module.exports = function teamPlugin(context, options) {
-  const { teamDataPath = 'data/team.yml' } = options;
+  const { teamDataPath = "data/team.yml" } = options;
 
   return {
-    name: 'docusaurus-plugin-content-team',
+    name: "docusaurus-plugin-content-team",
 
     async loadContent() {
       const dataPath = path.join(context.siteDir, teamDataPath);
-      const data = await fs.readFile(dataPath, 'utf-8');
+      const data = await fs.readFile(dataPath, "utf-8");
       const team = yaml.load(data);
 
       return team.members;
@@ -284,11 +294,11 @@ module.exports = function teamPlugin(context, options) {
       setGlobalData({ members: content });
 
       // Team list page
-      const dataPath = await createData('team.json', JSON.stringify(content));
+      const dataPath = await createData("team.json", JSON.stringify(content));
 
       addRoute({
-        path: '/team',
-        component: '@site/src/components/Team.js',
+        path: "/team",
+        component: "@site/src/components/Team.js",
         exact: true,
         modules: { members: dataPath },
       });
@@ -296,15 +306,18 @@ module.exports = function teamPlugin(context, options) {
       // Individual member pages
       await Promise.all(
         content.map(async (member) => {
-          const memberData = await createData(`team-${member.id}.json`, JSON.stringify(member));
+          const memberData = await createData(
+            `team-${member.id}.json`,
+            JSON.stringify(member),
+          );
 
           addRoute({
             path: `/team/${member.id}`,
-            component: '@site/src/components/TeamMember.js',
+            component: "@site/src/components/TeamMember.js",
             exact: true,
             modules: { member: memberData },
           });
-        })
+        }),
       );
     },
   };
@@ -315,13 +328,13 @@ module.exports = function teamPlugin(context, options) {
 
 ```javascript
 // plugins/plugin-content-api/index.js
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 
 module.exports = function apiContentPlugin(context, options) {
   const { apiUrl, apiKey } = options;
 
   return {
-    name: 'docusaurus-plugin-content-api',
+    name: "docusaurus-plugin-content-api",
 
     async loadContent() {
       // Fetch data from external API
@@ -351,19 +364,21 @@ module.exports = function apiContentPlugin(context, options) {
 
       await Promise.all(
         categories.map(async (category) => {
-          const categoryItems = content.filter((item) => item.category === category);
+          const categoryItems = content.filter(
+            (item) => item.category === category,
+          );
           const dataPath = await createData(
             `category-${category}.json`,
-            JSON.stringify(categoryItems)
+            JSON.stringify(categoryItems),
           );
 
           addRoute({
             path: `/items/${category}`,
-            component: '@site/src/components/CategoryPage.js',
+            component: "@site/src/components/CategoryPage.js",
             exact: true,
             modules: { items: dataPath },
           });
-        })
+        }),
       );
     },
   };
@@ -374,15 +389,15 @@ module.exports = function apiContentPlugin(context, options) {
 
 ```javascript
 // plugins/plugin-api-docs/index.js
-const fs = require('fs-extra');
-const path = require('path');
-const { parseTypeScript } = require('./parser');
+const fs = require("fs-extra");
+const path = require("path");
+const { parseTypeScript } = require("./parser");
 
 module.exports = function apiDocsPlugin(context, options) {
-  const { srcDir = 'src', include = ['**/*.ts'] } = options;
+  const { srcDir = "src", include = ["**/*.ts"] } = options;
 
   return {
-    name: 'docusaurus-plugin-api-docs',
+    name: "docusaurus-plugin-api-docs",
 
     async loadContent() {
       const srcPath = path.join(context.siteDir, srcDir);
@@ -392,10 +407,10 @@ module.exports = function apiDocsPlugin(context, options) {
       const apiDocs = [];
 
       for (const file of files) {
-        if (!file.endsWith('.ts')) continue;
+        if (!file.endsWith(".ts")) continue;
 
         const filePath = path.join(srcPath, file);
-        const content = await fs.readFile(filePath, 'utf-8');
+        const content = await fs.readFile(filePath, "utf-8");
 
         // Extract functions, classes, interfaces
         const parsed = parseTypeScript(content);
@@ -411,23 +426,29 @@ module.exports = function apiDocsPlugin(context, options) {
       // Create API reference pages
       await Promise.all(
         content.map(async (apiItem) => {
-          const dataPath = await createData(`api-${apiItem.name}.json`, JSON.stringify(apiItem));
+          const dataPath = await createData(
+            `api-${apiItem.name}.json`,
+            JSON.stringify(apiItem),
+          );
 
           addRoute({
             path: `/api/${apiItem.name}`,
-            component: '@site/src/components/ApiDoc.js',
+            component: "@site/src/components/ApiDoc.js",
             exact: true,
             modules: { apiItem: dataPath },
           });
-        })
+        }),
       );
 
       // Create API index page
-      const indexPath = await createData('api-index.json', JSON.stringify(content));
+      const indexPath = await createData(
+        "api-index.json",
+        JSON.stringify(content),
+      );
 
       addRoute({
-        path: '/api',
-        component: '@site/src/components/ApiIndex.js',
+        path: "/api",
+        component: "@site/src/components/ApiIndex.js",
         exact: true,
         modules: { items: indexPath },
       });
@@ -441,11 +462,13 @@ module.exports = function apiDocsPlugin(context, options) {
 ### usePluginData Hook
 
 ```javascript
-import React from 'react';
-import usePluginData from '@docusaurus/usePluginData';
+import React from "react";
+import usePluginData from "@docusaurus/usePluginData";
 
 export default function ChangelogWidget() {
-  const { entries, latestVersion } = usePluginData('docusaurus-plugin-content-changelog');
+  const { entries, latestVersion } = usePluginData(
+    "docusaurus-plugin-content-changelog",
+  );
 
   return (
     <div className="changelog-widget">
@@ -465,15 +488,15 @@ export default function ChangelogWidget() {
 ### useGlobalData Hook
 
 ```javascript
-import React from 'react';
-import useGlobalData from '@docusaurus/useGlobalData';
+import React from "react";
+import useGlobalData from "@docusaurus/useGlobalData";
 
 export default function AllPluginData() {
   const globalData = useGlobalData();
 
   // Access data from all plugins
-  const changelogData = globalData['docusaurus-plugin-content-changelog'];
-  const teamData = globalData['docusaurus-plugin-content-team'];
+  const changelogData = globalData["docusaurus-plugin-content-changelog"];
+  const teamData = globalData["docusaurus-plugin-content-team"];
 
   return (
     <div>
@@ -508,7 +531,7 @@ export default function AllPluginData() {
 
 ```typescript
 // index.d.ts
-import { Plugin, LoadContext } from '@docusaurus/types';
+import { Plugin, LoadContext } from "@docusaurus/types";
 
 export interface ChangelogEntry {
   id: string;
@@ -516,7 +539,7 @@ export interface ChangelogEntry {
   title: string;
   version: string;
   date: string;
-  type: 'feature' | 'fix' | 'breaking';
+  type: "feature" | "fix" | "breaking";
   body: string;
 }
 
@@ -531,7 +554,10 @@ export interface PluginContent {
   latestVersion: string;
 }
 
-declare const plugin: (context: LoadContext, options: PluginOptions) => Plugin<ChangelogEntry[]>;
+declare const plugin: (
+  context: LoadContext,
+  options: PluginOptions,
+) => Plugin<ChangelogEntry[]>;
 
 export default plugin;
 ```
@@ -598,7 +624,7 @@ for (const [tag, items] of tagMap) {
 
   addRoute({
     path: `/tags/${tag}`,
-    component: '@site/src/components/TagPage.js',
+    component: "@site/src/components/TagPage.js",
     modules: { items: dataPath },
   });
 }

@@ -103,15 +103,17 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 import { CodatLending } from "@codat/lending";
 
 const codatLending = new CodatLending({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "amountDue>0&&totalAmount<1000",
-}).then((res) => {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "amountDue>0&&totalAmount<1000",
+  })
+  .then((res) => {
     // handle response
-});
+  });
 ```
 
 </TabItem>
@@ -222,15 +224,17 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 import { CodatLending } from "@codat/lending";
 
 const codatLending = new CodatLending({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "currency=GBP",
-}).then((res) => {
-  // handle response
-});
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "currency=GBP",
+  })
+  .then((res) => {
+    // handle response
+  });
 ```
 
 </TabItem>
@@ -340,15 +344,17 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 import { CodatLending } from "@codat/lending";
 
 const codatLending = new CodatLending({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "customerRef.id=61",
-}).then((res) => {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "customerRef.id=61",
+  })
+  .then((res) => {
     // handle response
-});
+  });
 ```
 
 </TabItem>
@@ -458,15 +464,17 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 import { CodatLending } from "@codat/lending";
 
 const codatLending = new CodatLending({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "amountDue>0&&totalAmount<1000",
-}).then((res) => {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "amountDue>0&&totalAmount<1000",
+  })
+  .then((res) => {
     // handle response
-});
+  });
 ```
 
 </TabItem>
@@ -578,15 +586,17 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 import { CodatLending } from "@codat/lending";
 
 const codatLending = new CodatLending({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
-  query: "dueDate>2021-01-28",
-}).then((res) => {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+    query: "dueDate>2021-01-28",
+  })
+  .then((res) => {
     // handle response
-});
+  });
 ```
 
 </TabItem>
@@ -698,15 +708,17 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 import { CodatLending } from "@codat/lending";
 
 const codatLending = new CodatLending({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "metadata.isDeleted!=true",
-}).then((res) => {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "metadata.isDeleted!=true",
+  })
+  .then((res) => {
     // handle response
-});
+  });
 ```
 
 </TabItem>
@@ -819,14 +831,16 @@ GET /companies?query=dataConnections.status=PendingAuth
 import { CodatPlatform } from "@codat/platform";
 
 const codatPlatform = new CodatPlatform({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatPlatform.companies.list({
-  query: "dataConnections.status=PendingAuth",
-}).then((res) => {
+codatPlatform.companies
+  .list({
+    query: "dataConnections.status=PendingAuth",
+  })
+  .then((res) => {
     // handle response
-});
+  });
 ```
 
 </TabItem>
@@ -895,13 +909,14 @@ func main() {
 </Tabs>
 
 ### Companies with no connections
-  
+
 Query: `dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked`
 
 :::Note
+
 - The page size value is obligatory for querying.
 - The response will exclude companies that had connections but they were deleted.
-:::
+  :::
 
 <Tabs>
 
@@ -924,6 +939,7 @@ var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
 
 // handle response
 ```
+
 </TabItem>
 
 <TabItem value="http" label="HTTP">
@@ -931,6 +947,7 @@ var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
 ```http
 GET /companies?query=dataConnections.status=PendingAuth
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
@@ -939,15 +956,19 @@ GET /companies?query=dataConnections.status=PendingAuth
 import { CodatPlatform } from "@codat/platform";
 
 const codatPlatform = new CodatPlatform({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatPlatform.companies.list({
-  query: "dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked",
-}).then((res) => {
-  // handle response
-});
+codatPlatform.companies
+  .list({
+    query:
+      "dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked",
+  })
+  .then((res) => {
+    // handle response
+  });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -972,6 +993,7 @@ if res:
     # handle response
     pass
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -1007,6 +1029,7 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>

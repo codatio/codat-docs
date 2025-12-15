@@ -230,8 +230,8 @@ docusaurus-plugin-name/
 
 ```typescript
 // index.d.ts
-import { Plugin } from 'unified';
-import { Root } from 'mdast';
+import { Plugin } from "unified";
+import { Root } from "mdast";
 
 /**
  * Options for the glossary plugin
@@ -273,7 +273,11 @@ export default remarkGlossary;
 
 ```typescript
 // index.d.ts
-import { Plugin, LoadContext, OptionValidationContext } from '@docusaurus/types';
+import {
+  Plugin,
+  LoadContext,
+  OptionValidationContext,
+} from "@docusaurus/types";
 
 /**
  * Changelog entry data structure
@@ -284,7 +288,7 @@ export interface ChangelogEntry {
   title: string;
   version: string;
   date: string;
-  type: 'feature' | 'fix' | 'breaking' | 'improvement';
+  type: "feature" | "fix" | "breaking" | "improvement";
   body: string;
   filePath: string;
 }
@@ -326,7 +330,10 @@ export interface PluginContent {
   latestVersion: string;
 }
 
-declare const plugin: (context: LoadContext, options: PluginOptions) => Plugin<ChangelogEntry[]>;
+declare const plugin: (
+  context: LoadContext,
+  options: PluginOptions,
+) => Plugin<ChangelogEntry[]>;
 
 export default plugin;
 
@@ -334,7 +341,7 @@ export default plugin;
  * Validate plugin options
  */
 export function validateOptions(
-  context: OptionValidationContext<PluginOptions, PluginOptions>
+  context: OptionValidationContext<PluginOptions, PluginOptions>,
 ): PluginOptions;
 ```
 
@@ -344,9 +351,13 @@ export function validateOptions(
 
 ```javascript
 module.exports = {
-  testEnvironment: 'node',
-  testMatch: ['**/__tests__/**/*.js', '**/*.test.js'],
-  collectCoverageFrom: ['src/**/*.js', '!src/**/*.test.js', '!**/node_modules/**'],
+  testEnvironment: "node",
+  testMatch: ["**/__tests__/**/*.js", "**/*.test.js"],
+  collectCoverageFrom: [
+    "src/**/*.js",
+    "!src/**/*.test.js",
+    "!**/node_modules/**",
+  ],
   coverageThreshold: {
     global: {
       branches: 80,
@@ -356,7 +367,7 @@ module.exports = {
     },
   },
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
+    "^.+\\.jsx?$": "babel-jest",
   },
 };
 ```
@@ -372,16 +383,20 @@ module.exports = {
     node: true,
     es2020: true,
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-  parser: '@typescript-eslint/parser',
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+  ],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2020,
-    sourceType: 'module',
+    sourceType: "module",
   },
   rules: {
-    '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'no-console': 'warn',
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-console": "warn",
   },
 };
 ```
@@ -489,7 +504,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -522,8 +537,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "18.x"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: npm ci
@@ -561,10 +576,10 @@ Add to your `docusaurus.config.js`:
 module.exports = {
   plugins: [
     [
-      'docusaurus-plugin-name',
+      "docusaurus-plugin-name",
       {
         // Options
-        option1: 'value1',
+        option1: "value1",
         option2: true,
       },
     ],
