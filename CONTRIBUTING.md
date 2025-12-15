@@ -13,7 +13,7 @@ $ npm install
 $ npm start
 ```
 
-We recommend npm -v 8+ and Node.js -v 16+.
+We recommend npm v10+ and Node.js v20+.
 
 ---
 

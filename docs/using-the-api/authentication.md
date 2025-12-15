@@ -10,7 +10,7 @@ API keys are tokens used to control access to the API. Codat expects the API key
 Authorization: Basic YOUR_ENCODED_API_KEY // Replace *YOUR_ENCODED_API_KEY* with your API key, Base64 encoded
 ```
 
-When using API keys in your application, you can either store the raw API key and encode it yourself, or just store the pre-encoded authroization header we expose.
+When using API keys in your application, you can either store the raw API key and encode it yourself, or just store the pre-encoded authorization header we expose.
 
 ## Managing keys
 
