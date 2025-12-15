@@ -9,11 +9,9 @@ This update summarizes recent changes made to our OpenAPI Specifications.
 
 <!--truncate-->
 
-
 ## Codat-Lending
 
 View the full API reference: [Codat-Lending](https://docs.codat.io/lending-api#/)
-
 
 ### New Endpoints
 
@@ -39,7 +37,6 @@ View the full API reference: [Codat-Lending](https://docs.codat.io/lending-api#/
 
 ## Codat-Spend-Insights
 
-
 ### Modified Endpoints
 
 - `/companies/{companyId}/reports/{reportType}/{reportId}/status`
@@ -47,7 +44,6 @@ View the full API reference: [Codat-Lending](https://docs.codat.io/lending-api#/
 - `/companies/{companyId}/reports/{reportType}`
 
 ## Codat-Accounting
-
 
 ### Modified Endpoints
 
@@ -69,7 +65,6 @@ View the full API reference: [Codat-Lending](https://docs.codat.io/lending-api#/
 
 View the full API reference: [Codat-Bank-Feeds](https://docs.codat.io/bank-feeds-api#/)
 
-
 ### Modified Endpoints
 
 - [`/companies/{companyId}/connections/{connectionId}/options/bankAccounts`](https://docs.codat.io/bank-feeds-api#/operations/get-create-bankAccounts-model)
@@ -77,7 +72,6 @@ View the full API reference: [Codat-Bank-Feeds](https://docs.codat.io/bank-feeds
 ## Codat-Sync-Expenses
 
 View the full API reference: [Codat-Sync-Expenses](https://docs.codat.io/sync-for-expenses-api#/)
-
 
 ### Modified Endpoints
 
@@ -90,7 +84,6 @@ View the full API reference: [Codat-Sync-Expenses](https://docs.codat.io/sync-fo
 
 View the full API reference: [Codat-Sync-Payables-v1](https://docs.codat.io/sync-for-payables-api#/)
 
-
 ### Modified Endpoints
 
 - [`/companies/{companyId}/connections/{connectionId}/options/bankAccounts`](https://docs.codat.io/sync-for-payables-api#/operations/get-create-bankAccounts-model)
@@ -102,14 +95,12 @@ View the full API reference: [Codat-Sync-Payables-v1](https://docs.codat.io/sync
 
 ## Codat-Sync-Payroll
 
-
 ### Modified Endpoints
 
 - `/companies/{companyId}/connections/{connectionId}/options/journalEntries`
 - `/companies/{companyId}/connections/{connectionId}/options/chartOfAccounts`
 
 ## Codat-Bank-Feeds-v2
-
 
 ### Modified Endpoints
 

@@ -8,7 +8,7 @@ image: "/img/banners/social/lending.png"
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-We have recently launched the **Categorized Bank Statement** report, which replaces the legacy **Enhanced Cashflow** report. The new report includes built-in orchestration for fetching required data from third-party integrations and provides webhook notifications when the report is ready. 
+We have recently launched the **Categorized Bank Statement** report, which replaces the legacy **Enhanced Cashflow** report. The new report includes built-in orchestration for fetching required data from third-party integrations and provides webhook notifications when the report is ready.
 
 To ensure a smooth transition, we recommend migrating to the new endpoints ahead of the [upcoming deprecation](https://docs.codat.io/updates/250703-deprecation-enh-cashflow-endpoints) on **July 10, 2026**.
 
@@ -27,7 +27,7 @@ This report is not generated automatically on a predefined schedule. If you need
 
 To prepare for the deprecation, you’ll need to update your application to use the Categorized Bank Statement endpoints in place of the Enhanced Cashflow ones.
 
-To switch to the Categorized Bank Statement report we recommend an "expand/contract" strategy. 
+To switch to the Categorized Bank Statement report we recommend an "expand/contract" strategy.
 Before you start your migration enable the new report in the [Portal](https://app.codat.io/developers/api-deprecations). Learn how to do that [here](https://docs.codat.io/configure/portal/developers).
 
 Once enabled, you can run both the legacy and new endpoints in parallel, allowing for a phased transition before the deprecation deadline.
@@ -86,19 +86,18 @@ To generate the report asynchronously, update your application logic to call the
 
 </Tabs>
 
-| **Old schema property** | **New schema equivalent**                                                                                     |
-|-------------------------|----------------------------------------------------------------------------------------------------------------|
-| `lastGenerated`         | 🔁 Use `GET /companies/{companyId}/reports` endpoint instead to retrieve previously generated reports                                                                                               |
-| `inProgress`            | ✅ Replaced by `status` – indicates the current state of the report (`InProgress`, `Complete`, `Error`)       |
-| `queued`                | ✅ Replaced by `requestedDate` – timestamp for when the report was requested                                   |
-| `success`               | ✅ Use `status` instead                                                                                        |
-| `errorMessage`          | ✅ Remains `errorMessage`                                                                                      |
-| `lastInvocationId`      | ❌ Not available                                                                                               |
-| `reportType`            | ✅ Renamed to `type`                                                                                           |
-| `fileSize`              | ❌ Not available                                                                                               |
+| **Old schema property** | **New schema equivalent**                                                                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------- |
+| `lastGenerated`         | 🔁 Use `GET /companies/{companyId}/reports` endpoint instead to retrieve previously generated reports   |
+| `inProgress`            | ✅ Replaced by `status` – indicates the current state of the report (`InProgress`, `Complete`, `Error`) |
+| `queued`                | ✅ Replaced by `requestedDate` – timestamp for when the report was requested                            |
+| `success`               | ✅ Use `status` instead                                                                                 |
+| `errorMessage`          | ✅ Remains `errorMessage`                                                                               |
+| `lastInvocationId`      | ❌ Not available                                                                                        |
+| `reportType`            | ✅ Renamed to `type`                                                                                    |
+| `fileSize`              | ❌ Not available                                                                                        |
 
 </details>
-
 
 Refer to the [Generate report](https://docs.codat.io/lending-api#/operations/generate-report) API reference for more details.
 
@@ -154,16 +153,16 @@ The **response object has changed**. The response has been updated to return the
 
 </Tabs>
 
-| **Old schema property** | **New schema equivalent**                                                                                     |
-|-------------------------|----------------------------------------------------------------------------------------------------------------|
-| `lastGenerated`         | 🔁 Use `GET /companies/{companyId}/reports` endpoint instead to retrieve previously generated reports                                                                                             |
-| `inProgress`            | ✅ Replaced by `status` – indicates the current state of the report (`InProgress`, `Complete`, `Error`)       |
-| `queued`                | ✅ Replaced by `requestedDate` – timestamp for when the report was requested                                   |
-| `success`               | ✅ Use `status` instead                                                                                        |
-| `errorMessage`          | ✅ Remains `errorMessage`                                                                                      |
-| `lastInvocationId`      | ❌ Not available                                                                                               |
-| `reportType`            | ✅ Renamed to `type`                                                                                           |
-| `fileSize`              | ❌ Not available                                                                                               |
+| **Old schema property** | **New schema equivalent**                                                                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------- |
+| `lastGenerated`         | 🔁 Use `GET /companies/{companyId}/reports` endpoint instead to retrieve previously generated reports   |
+| `inProgress`            | ✅ Replaced by `status` – indicates the current state of the report (`InProgress`, `Complete`, `Error`) |
+| `queued`                | ✅ Replaced by `requestedDate` – timestamp for when the report was requested                            |
+| `success`               | ✅ Use `status` instead                                                                                 |
+| `errorMessage`          | ✅ Remains `errorMessage`                                                                               |
+| `lastInvocationId`      | ❌ Not available                                                                                        |
+| `reportType`            | ✅ Renamed to `type`                                                                                    |
+| `fileSize`              | ❌ Not available                                                                                        |
 
 </details>
 
@@ -200,7 +199,7 @@ Unlike the legacy endpoints, the new endpoints require that a report already exi
 1. Call `POST /companies/{companyId}/reports/categorizedBankStatement`
 
 2. Confirm the report status is `Complete` before calling Categorized Bank Statement accounts or transactions endpoints.
-:::
+   :::
 
 You can determine whether the report has finished generating using one of the following methods:
 
@@ -221,11 +220,12 @@ You can determine whether the report has finished generating using one of the fo
 Instead of a single endpoint, account and transaction data is now available via two dedicated endpoints.
 Before calling these, ensure that a report has been generated and is in the `Complete` state.
 There are a few implications for your integration.
-* You’ll need to update your data parsing logic to extract transactions from the results array instead of navigating nested structures.
 
-* If you previously depended on embedded account information (e.g. balances or bank codes), you'll now need to use the accounts endpoint `GET /companies/{companyId}/reports/categorizedBankStatement/latest/accounts`
+- You’ll need to update your data parsing logic to extract transactions from the results array instead of navigating nested structures.
 
-* The new response follows standard REST conventions, which simplifies pagination and improves performance when working with large datasets.
+- If you previously depended on embedded account information (e.g. balances or bank codes), you'll now need to use the accounts endpoint `GET /companies/{companyId}/reports/categorizedBankStatement/latest/accounts`
+
+- The new response follows standard REST conventions, which simplifies pagination and improves performance when working with large datasets.
 
 #### Legacy endpoint
 
@@ -239,13 +239,12 @@ There are a few implications for your integration.
 
 #### Response changes
 
-
-| Change                      | Legacy Enhanced Cashflow                                     | Categorized Bank Statement                                      |
-|----------------------------|---------------------------------------------------------------|------------------------------------------------------------------|
-| **Top-level shape**        | Nested object with `reportInfo`, `dataSources`, `reportItems` | Flat object with `results` array                                |
-| **Transactions**           | Nested under `reportItems.transactions`                       | Flattened under `results` array                                 |
-| **Accounts**               | Embedded in `dataSources.accounts` with full account details  | Referenced via `accountRef`; full details retrieved separately  |
-| **Metadata**               | Included in `reportInfo`                                      | Retrieved separately via status endpoint                        |
+| Change              | Legacy Enhanced Cashflow                                      | Categorized Bank Statement                                     |
+| ------------------- | ------------------------------------------------------------- | -------------------------------------------------------------- |
+| **Top-level shape** | Nested object with `reportInfo`, `dataSources`, `reportItems` | Flat object with `results` array                               |
+| **Transactions**    | Nested under `reportItems.transactions`                       | Flattened under `results` array                                |
+| **Accounts**        | Embedded in `dataSources.accounts` with full account details  | Referenced via `accountRef`; full details retrieved separately |
+| **Metadata**        | Included in `reportInfo`                                      | Retrieved separately via status endpoint                       |
 
 <details>
   <summary><b>Compare sample responses</b></summary>
@@ -326,6 +325,7 @@ There are a few implications for your integration.
   ]
 }
 ```
+
 </TabItem>
 
 <TabItem value="newtr" label="New schema - Transactions">
@@ -364,26 +364,25 @@ There are a few implications for your integration.
 
 </Tabs>
 
-| **Old schema property**                     | **New schema - Accounts**                            | **New schema - Transactions**                         |
-|---------------------------------------------|---------------------------------------------------------------|----------------------------------------------------------------|
-| `reportInfo.pageNumber`                     | ✅ `pageNumber`                                               | ✅ `pageNumber`                                                 |
-| `reportInfo.pageSize`                       | ✅ `pageSize`                                                 | ✅ `pageSize`                                                   |
-| `reportInfo.totalResults`                   | ✅ `totalResults`                                             | ✅ `totalResults`                                               |
-| `reportInfo.generatedDate`                  | ❌ Not available (see report status for `updatedDate`)        | ❌ Not available (see report status for `updatedDate`)          |
-| `dataSources.accounts[].id`                 | ✅ `results[].id`                                             | 🔁 Referenced via `accountRef.id`                              |
-| `dataSources.accounts[].accountName`        | ✅ `accountName`                                              | 🔁 Referenced via `accountRef.name`                            |
-| `dataSources.accounts[].accountType`        | ✅ `accountType`                                              | ❌ Not available                                                |
-| `dataSources.accounts[].currency`           | ✅ `currency`                                                 | ✅ `currency`                                                   |
-| `dataSources.accounts[].currentBalance`     | ✅ `currentBalance`                                           | ❌ Not available                                                |
-| `reportItems[].transactions[].id`           | ❌ Not available                                              | ✅ `results[].id`                                               |
-| `reportItems[].transactions[].accountRef`   | ❌ Not available                                              | ✅ `accountRef`                                                 |
-| `reportItems[].transactions[].date`         | ❌ Not available                                              | ✅ `date`                                                       |
-| `reportItems[].transactions[].description`  | ❌ Not available                                              | ✅ `description`                                                |
-| `reportItems[].transactions[].amount`       | ❌ Not available                                              | ✅ `amount`                                                     |
-| `reportItems[].transactions[].currency`     | ❌ Not available                                              | ✅ `currency`                                                   |
-| `reportItems[].transactions[].platformName` | ❌ Not available                                              | ✅ `platformName`                                               |
+| **Old schema property**                     | **New schema - Accounts**                              | **New schema - Transactions**                          |
+| ------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------ |
+| `reportInfo.pageNumber`                     | ✅ `pageNumber`                                        | ✅ `pageNumber`                                        |
+| `reportInfo.pageSize`                       | ✅ `pageSize`                                          | ✅ `pageSize`                                          |
+| `reportInfo.totalResults`                   | ✅ `totalResults`                                      | ✅ `totalResults`                                      |
+| `reportInfo.generatedDate`                  | ❌ Not available (see report status for `updatedDate`) | ❌ Not available (see report status for `updatedDate`) |
+| `dataSources.accounts[].id`                 | ✅ `results[].id`                                      | 🔁 Referenced via `accountRef.id`                      |
+| `dataSources.accounts[].accountName`        | ✅ `accountName`                                       | 🔁 Referenced via `accountRef.name`                    |
+| `dataSources.accounts[].accountType`        | ✅ `accountType`                                       | ❌ Not available                                       |
+| `dataSources.accounts[].currency`           | ✅ `currency`                                          | ✅ `currency`                                          |
+| `dataSources.accounts[].currentBalance`     | ✅ `currentBalance`                                    | ❌ Not available                                       |
+| `reportItems[].transactions[].id`           | ❌ Not available                                       | ✅ `results[].id`                                      |
+| `reportItems[].transactions[].accountRef`   | ❌ Not available                                       | ✅ `accountRef`                                        |
+| `reportItems[].transactions[].date`         | ❌ Not available                                       | ✅ `date`                                              |
+| `reportItems[].transactions[].description`  | ❌ Not available                                       | ✅ `description`                                       |
+| `reportItems[].transactions[].amount`       | ❌ Not available                                       | ✅ `amount`                                            |
+| `reportItems[].transactions[].currency`     | ❌ Not available                                       | ✅ `currency`                                          |
+| `reportItems[].transactions[].platformName` | ❌ Not available                                       | ✅ `platformName`                                      |
 
 </details>
 
 Refer to the [List Accounts Endpoint](https://docs.codat.io/lending-api#/operations/list-categorized-bank-statement-accounts) and [List Transactions Endpoint](https://docs.codat.io/lending-api#/operations/get-categorized-bank-statement-transactions) documentations for details.
-

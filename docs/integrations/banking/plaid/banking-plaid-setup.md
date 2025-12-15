@@ -71,6 +71,7 @@ Plaid allows you to customize the look, feel, and content of the link flow that 
 2. Create a new configuration or select an existing one by clicking the dropdown.
 
    Make a note of the **Name** you assign to the configuration and the **Countries** you select as you will need these later in Codat.
+
 3. Configure the journey to match your needs: adjust branding, institution options, and account selection options as required. For a full list of available customization options, see Plaid’s [Link customization documentation](https://plaid.com/docs/link/customization/).
 4. Click **Publish changes** to save and apply your customizations.
 5. In the Codat Portal, navigate to [**Settings > Integrations > Banking > Plaid**](https://app.codat.io/settings/integrations/banking/manage/suuo?integrationName=Plaid).
@@ -87,7 +88,7 @@ When a customer connects their bank account using Plaid, they can choose which a
 1. In the **Plaid Dashboard**, navigate to [**Platform > Link > Link customization**](https://dashboard.plaid.com/link).
 2. Select [**Account Select**](https://dashboard.plaid.com/link/account-select) in the right-hand menu.
 3. To allow your customers to choose which accounts to share, select **Enable for multiple accounts**.
-![A screenshot highlighting the 'Enable for mutiple accounts' in the Account Select view](/img/integrations/banking/plaid/plaid-account-select.png)
+   ![A screenshot highlighting the 'Enable for mutiple accounts' in the Account Select view](/img/integrations/banking/plaid/plaid-account-select.png)
 4. Click **Publish changes** to save and apply your changes.
 
 Once complete, Plaid will only share the accounts explicitly selected by your customers, and only those accounts will be passed to you via Codat.

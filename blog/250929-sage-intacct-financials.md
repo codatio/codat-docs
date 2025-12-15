@@ -21,4 +21,3 @@ This update is relevant to **all clients using or planning to use** Codat’s [L
 ## How to get started?
 
 To enable Sage Intacct, follow our guide to [setting up Sage Intacct](/integrations/accounting/sage-intacct/accounting-sage-intacct-setup) and configure your instance to work with the enhanced financial statements feature.
-
