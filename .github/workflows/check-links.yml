@@ -67,7 +67,7 @@ jobs:
         continue-on-error: true  # Ensure the workflow continues even if linkinator finds broken links
       
       - name: Delete Previous Comments
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         if: github.event_name == 'pull_request'
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -90,7 +90,7 @@ jobs:
             }
 
       - name: Filter and Post Results
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         if: github.event_name == 'pull_request'
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
