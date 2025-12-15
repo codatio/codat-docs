@@ -43,3 +43,6 @@ static/**/node_modules/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Vale - downloaded style packages (run `vale sync` to restore)
+.vale/styles/Google/
