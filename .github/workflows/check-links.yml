@@ -17,10 +17,10 @@ jobs:
     if: github.event_name != 'pull_request' || github.actor != 'codatbot' 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      
+        uses: actions/checkout@v4
+
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
       

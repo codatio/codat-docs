@@ -29,10 +29,10 @@ A webhook consumer endpoint which is disabled after the 5 min retry, but then re
 
 ## Message Status
 
-- "Success" indicates that there was at least one attempt for that message that succeeded against it's endpoint. 
+- "Success" indicates that there was at least one attempt for that message that succeeded against it's endpoint.
 - "Failure" indicates that all attempts were exhausted, and none of them succeeded.
 - "Attempting" indicates that at least one attempt has been sent and there are further attempts scheduled as part of the retry policy.
-- "Sending" indicates that the process of sending the webhook has begun but there have been no delivery attempts yet. 
+- "Sending" indicates that the process of sending the webhook has begun but there have been no delivery attempts yet.
 
 ## Recover failed and missed messages
 
@@ -41,7 +41,7 @@ Our webhooks service can recover two types of messages:
 - **Failed messages** occur when the message wasn't delivered even after all attempts to deliver the message have been exhausted. You can **recover** such messages.
 - **Missed messages** occur when the endpoint has been disabled, the endpoint didn't exist at the time of sending the message (but created afterward), or the endpoint initially configured to listen to other event types and has been updated to include additional ones. You can **replay** such messages.
 
-For each message to recover, we will attempt to send a new message, irrespetive of whether or not there are further attempts scheduled as part of the retry policy.
+For each message to recover, we will attempt to send a new message, irrespective of whether or not there are further attempts scheduled as part of the retry policy.
 
 If you want to replay or recover one or more messages in case of your app's downtime or incorrect configuration, you can do so in the [Codat Portal](https://app.codat.io/monitor/events).
 
@@ -67,11 +67,11 @@ Then, click the triple-dot menu on the right and choose one of the applicable op
 
 For more granular date control, you can scroll to the endpoint's message attempts, click the triple-dot options menu of a specific message, and choose **Replay > Replay all failed messages since this time**.
 
-During the recovery of mutiple messages, all messages will be sent at once with some jitter applied in order to prevent overloading the webhook consumer endpoint. If your system has rate-limiting in place, the number of messages to recover may be an important consideration to avoid further failures. Please reach out to Codat Support if unsure.
+During the recovery of multiple messages, all messages will be sent at once with some jitter applied in order to prevent overloading the webhook consumer endpoint. If your system has rate-limiting in place, the number of messages to recover may be an important consideration to avoid further failures. Please reach out to Codat Support if unsure.
 
 ### Idempotency
 
-Whilst the Codat system's webhook functionality aims for exactly once delivery of a message, due to the fact messages can be resent, this isn't always possible to guarantee. If idempotency is important for your system, we reccomend making use of the HTTP request's webhook-id header, which functions as an idempotency key for a given message, (i.e remains constant across all attempts to deliver that message), and can therefore be used by your system to ensure messages are not reprocessed.
+Whilst the Codat system's webhook functionality aims for exactly once delivery of a message, due to the fact messages can be resent, this isn't always possible to guarantee. If idempotency is important for your system, we recommend making use of the HTTP request's webhook-id header, which functions as an idempotency key for a given message, (i.e remains constant across all attempts to deliver that message), and can therefore be used by your system to ensure messages are not reprocessed.
 
 ## Endpoint failures
 

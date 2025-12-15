@@ -74,11 +74,16 @@ A message will be delivered every time any of the company’s tags match the tag
 
 ### Endpoint rate limits
 
-If your application can only handle a limited number of requests in a given time period, set a rate limit on the consumer endpoint to protect it from overloading. The rate limit is defined as a maximum number of messages per second to send to that endpoint. 
+If your application can only handle a limited number of requests in a given time period, set a rate limit on the consumer endpoint to protect it from overloading. The rate limit is defined as a maximum number of messages per second to send to that endpoint.
 
 After the limit is reached, the frequency of requests will be reduced not to exceed it. The actual rate of messages can sometimes be slightly above the enforced rate limit.
 
-<img width="740" height="446" alt="webhookratelimits" src="https://github.com/user-attachments/assets/6afec3df-eae3-4815-90e0-ee17bc1ee9d7" />
+<img
+  width="740"
+  height="446"
+  alt="webhookratelimits"
+  src="https://github.com/user-attachments/assets/6afec3df-eae3-4815-90e0-ee17bc1ee9d7"
+/>
 
 ## View webhook consumers
 
@@ -127,7 +132,7 @@ Follow the steps below to configure mTLS for a webhook consumer in Codat:
 2. Select the webhook consumer you want to configure mTLS for.
 3. In the detailed endpoint view, click **Advanced**, then **Configure mTLS**.
    ![A fragment of the webhook UI that directs the user to the mTLS configuration page](/img/use-the-api/webhook-advanced-mTLS.png)
-4. In the displayed text box, enter your **PEM-enconded private key** and the **X.509 certificate**, separating them by a blank line.
+4. In the displayed text box, enter your **PEM-encoded private key** and the **X.509 certificate**, separating them by a blank line.
    ![A fragment of the webhook UI that allows you to configure mTLS on your webhook consumers](/img/use-the-api/webhook-mTLS-configuration.png)
 5. Click **Save** to apply the configuration.
 

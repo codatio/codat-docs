@@ -21,8 +21,6 @@ import styles from './styles.module.css';
 import PageHeader from '@components/PageHeader'
 import Vote from './Vote';
 
-import CookieConsent from "react-cookie-consent";
-
 import useZendesk from './useZendesk';
 
 /**
@@ -84,16 +82,6 @@ export default function DocItemLayout(props) {
 
   return (
     <>
-      <CookieConsent
-        location="bottom"
-        buttonText="Accept"
-        cookieName="cookieConsent3"
-        style={{ background: "#556680" }}
-        buttonStyle={{ backgroundColor: "white", fontSize: "12px", borderRadius: "4px" }}
-      >
-        This website uses cookies to enhance your experience.
-      </CookieConsent>
-
       {
         bannerTitle
         &&

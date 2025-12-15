@@ -20,6 +20,9 @@
     "format:mdx": "prettier --write \"**/*.{md,mdx}\"",
     "format:mdx:check": "prettier --check \"**/*.{md,mdx}\"",
     "links:check": "linkinator ./build --recurse --verbosity error --skip \".*github.*|.*localhost.*\""
+    "vale:sync": "vale sync",
+    "vale": "vale docs/",
+    "vale:check": "vale --minAlertLevel=warning docs/"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.23.3",
@@ -34,6 +37,7 @@
     "@stoplight/elements": "^8.4.6",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
+    "docusaurus-plugin-cookie-consent": "^4.1.0",
     "docusaurus-plugin-image-zoom": "^2.0.0",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "docusaurus-plugin-sass": "^0.2.5",
@@ -44,7 +48,6 @@
     "prism-react-renderer": "^2.3.0",
     "process": "^0.11.10",
     "react": "^18.3.1",
-    "react-cookie-consent": "^9.0.0",
     "react-diff-viewer-continued": "^3.4.0",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",

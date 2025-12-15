@@ -111,7 +111,7 @@ yarn add @codat/sync-for-payables
 import { CodatSyncPayables } from "@codat/sync-for-payables";
 
 const payablesClient = new CodatSyncPayables({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 ```
 
