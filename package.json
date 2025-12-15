@@ -18,7 +18,10 @@
     "format:js": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "format:js:check": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
     "format:mdx": "prettier --write \"**/*.{md,mdx}\"",
-    "format:mdx:check": "prettier --check \"**/*.{md,mdx}\""
+    "format:mdx:check": "prettier --check \"**/*.{md,mdx}\"",
+    "vale:sync": "vale sync",
+    "vale": "vale docs/",
+    "vale:check": "vale --minAlertLevel=warning docs/"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^2.23.3",
