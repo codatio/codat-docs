@@ -3,50 +3,51 @@ title: "Product-based permissions"
 description: "Managing product-based permissions in the Codat Portal"
 ---
 
-Product-based permissions give clients more control over which companies users can access, based on the products assigned to them.  
+Product-based permissions give clients more control over which companies users can access, based on the products assigned to them.
 
-These permissions work alongside existing roles. Only administrators can assign product-based permissions.  
+These permissions work alongside existing roles. Only administrators can assign product-based permissions.
 
 ---
 
 ## How permissions work
 
 ### Administrator and Developer roles
-- Full access to all products  
-- Cannot edit their own product assignment, as they already have unrestricted access  
+
+- Full access to all products
+- Cannot edit their own product assignment, as they already have unrestricted access
 
 ### Analyst and Onboarding roles
-- Can’t access **Settings > Users**  
-- Can’t change user roles  
-- Can’t change product assignments  
-- Must be assigned a product before they can create or view companies  
-- From a user perspective: until a product is assigned, no companies are visible and new companies can’t be created  
 
-Once a product has been assigned, these users can create companies.  
+- Can’t access **Settings > Users**
+- Can’t change user roles
+- Can’t change product assignments
+- Must be assigned a product before they can create or view companies
+- From a user perspective: until a product is assigned, no companies are visible and new companies can’t be created
+
+Once a product has been assigned, these users can create companies.
 
 ---
 
 ## Role permissions at a glance
 
-| Role           | Access to product | Can edit user roles | Can assign products | Can access **Settings > Users** | Can create/view companies        |
-|----------------|-------------------|---------------------|---------------------|----------------------------------|----------------------------------|
-| **Administrator** | Full access       | ✔                   | ✔                   | ✔                                | ✔                                |
-| **Developer**     | Full access       | ✘                   | ✘                   | ✔                                | ✔                                |
-| **Analyst**       | Product required  | ✘                   | ✘                   | ✘                                | Only after product assigned      |
-| **Onboarding**    | Product required  | ✘                   | ✘                   | ✘                                | Only after product assigned      |
+| Role              | Access to product | Can edit user roles | Can assign products | Can access **Settings > Users** | Can create/view companies   |
+| ----------------- | ----------------- | ------------------- | ------------------- | ------------------------------- | --------------------------- |
+| **Administrator** | Full access       | ✔                  | ✔                  | ✔                              | ✔                          |
+| **Developer**     | Full access       | ✘                   | ✘                   | ✔                              | ✔                          |
+| **Analyst**       | Product required  | ✘                   | ✘                   | ✘                               | Only after product assigned |
+| **Onboarding**    | Product required  | ✘                   | ✘                   | ✘                               | Only after product assigned |
 
 ---
 
 ## Using SSO
 
-- If you’re using Enterprise SSO, ensure the correct Active Directory group is assigned to each user (**Administrator**, **Developer**, **Analyst**, or **Onboarding**).  
-- New users set up as **Analysts** or **Onboarders** must log in to the Portal via SSO before a product can be assigned.  
+- If you’re using Enterprise SSO, ensure the correct Active Directory group is assigned to each user (**Administrator**, **Developer**, **Analyst**, or **Onboarding**).
+- New users set up as **Analysts** or **Onboarders** must log in to the Portal via SSO before a product can be assigned.
 
 ---
 
 ## Notes
 
-- Changes to a company’s product assignments update automatically when users refresh the Portal.  
-- If an Administrator adds a product to a company that a user doesn’t have access to, the user can still see that the product has been assigned but won’t have access to it.  
+- Changes to a company’s product assignments update automatically when users refresh the Portal.
+- If an Administrator adds a product to a company that a user doesn’t have access to, the user can still see that the product has been assigned but won’t have access to it.
 - When a company has multiple products assigned, users see all products they have permission to access.
-

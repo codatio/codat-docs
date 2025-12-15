@@ -8,6 +8,7 @@ authors: ivasiutkova
 You can now see whether your customers’ accounting books are closed — and the date they were last closed.
 
 <!--truncate-->
+
 :::note Available as beta release
 This endpoint is part of a beta release. Please contact your account manager if you want to enable it.
 :::
@@ -28,4 +29,3 @@ All clients who need to know when their customers have officially closed their b
 
 Contact your **Account Manager** or our **support team** to enable this feature.  
 Once enabled, follow our [API documentation](/lending-api#/operations/get-closed-books-indicator) to implement the Closed Books Date Indicator in your application.
-
