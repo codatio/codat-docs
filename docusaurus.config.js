@@ -53,9 +53,13 @@ const config = {
 
   presets: [
     [
-      "classic",
+      "docusaurus-plugin-glossary/preset",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        glossary: {
+          glossaryPath: "glossary/glossary.json",
+          routePath: "/glossary",
+        },
         docs: {
           routeBasePath: "/",
           sidebarPath: "./sidebars.js",
