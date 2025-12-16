@@ -19,7 +19,7 @@
     "format:js:check": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
     "format:mdx": "prettier --write \"**/*.{md,mdx}\"",
     "format:mdx:check": "prettier --check \"**/*.{md,mdx}\"",
-    "links:check": "linkinator ./build --recurse --verbosity error --skip \".*github.*|.*localhost.*\""
+    "links:check": "linkinator ./build --recurse --verbosity error --skip \".*github.*|.*localhost.*\"",
     "vale:sync": "vale sync",
     "vale": "vale docs/",
     "vale:check": "vale --minAlertLevel=warning docs/"
