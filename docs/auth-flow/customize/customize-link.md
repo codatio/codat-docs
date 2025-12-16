@@ -76,7 +76,7 @@ If enabled, an extra page will appear at the start of Link. The page's content i
 
 #### Company logo
 
-If enabled, the company logo set in [Branding settings](/auth-flow/customize/branding) will be displayed on the landing page of the Link flow. You must have the [Landing page](/auth-flow/customize/customize-link#landing-page) setting enabled for this setting to take effect.
+Enable this setting to have the company logo set in [Branding settings](/auth-flow/customize/branding) displayed on the landing page of the Link flow. You must also have the [Landing page](/auth-flow/customize/customize-link#landing-page) setting enabled for this setting to take effect.
 
 #### Left panel
 
