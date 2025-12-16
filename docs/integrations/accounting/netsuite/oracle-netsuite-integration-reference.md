@@ -54,6 +54,7 @@ Say you have a vendor bill in NetSuite with a line item of $39.05, inclusive of 
         }
       ]
 ```
+
 ### Companies with SuiteTax enabled
 
 Codat does not currently support SuiteTax. Companies with SuiteTax enabled can connect to Codat successfully; however, tax data will not be available. This affects all Accounts Receivable and Accounts Payable use cases where tax rates or tax amounts are required.

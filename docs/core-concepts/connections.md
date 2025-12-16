@@ -124,20 +124,22 @@ req = codat_platform.connections.unlink(request={
 import { CodatPlatform } from "@codat/platform";
 
 const codatPlatform = new CodatPlatform({
-    authHeader: "",
+  authHeader: "",
 });
 
-codatPlatform.connections.unlink({
-  companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
-  connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
-  updateConnectionStatus: {
-    status: "Unlinked",
-  },
-}).then((res) => {
-  if (res) {
-    // handle response
-  }
-});
+codatPlatform.connections
+  .unlink({
+    companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+    connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+    updateConnectionStatus: {
+      status: "Unlinked",
+    },
+  })
+  .then((res) => {
+    if (res) {
+      // handle response
+    }
+  });
 ```
 
 </TabItem>
@@ -271,15 +273,17 @@ res = codat_platform.connections.delete(
 import { CodatPlatform } from "@codat/platform";
 
 const codatPlatform = new CodatPlatform({
-    authHeader: "{codatAuthHeader}",
+  authHeader: "{codatAuthHeader}",
 });
 
-codatPlatform.connections.delete({
-  companyId: "{companyId}",
-  connectionId: "{connectionId}",
-}).then((res) => {
-    console.log('Connection deleted successfully')
-});
+codatPlatform.connections
+  .delete({
+    companyId: "{companyId}",
+    connectionId: "{connectionId}",
+  })
+  .then((res) => {
+    console.log("Connection deleted successfully");
+  });
 ```
 
   </TabItem>

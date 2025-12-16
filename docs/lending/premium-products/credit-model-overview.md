@@ -6,7 +6,10 @@ description: "Access a detailed data-driven assessment of a business's financial
 
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
-import { integrationsAccountingFilterCreditModel, bankingIntegrations } from "@components/Integrations/integrations";
+import {
+  integrationsAccountingFilterCreditModel,
+  bankingIntegrations,
+} from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -92,17 +95,17 @@ You can generate and retrieve the data read and enriched by this feature in an E
 
 Use the [Generate report](/lending-api#/operations/generate-report) endpoint to asynchronously generate the report. Set the `reportType` parameter to `creditModel`. Initiating the report will trigger a new data sync.
 
-Next, call the [Download credit model Excel](/lending-api#/operations/download-credit-model-excel) endpoint to retrieve the resulting report. 
+Next, call the [Download credit model Excel](/lending-api#/operations/download-credit-model-excel) endpoint to retrieve the resulting report.
 
-You can also view individual Credit Model metrics using the [Get financial summary insights](/lending-api#/operations/get-financial-summary) endpoint. 
+You can also view individual Credit Model metrics using the [Get financial summary insights](/lending-api#/operations/get-financial-summary) endpoint.
 
 The Credit Model feature must be enabled before you can generate the _Credit Model_ report and its metrics via API. Speak to your Account Manager to enable it.
 
 #### Get report via Portal
 
-In the [Codat Portal](https://app.codat.io), navigate to **Companies** and select the company you want to analyze. In the side menu, click **Lending > Reports**. 
+In the [Codat Portal](https://app.codat.io), navigate to **Companies** and select the company you want to analyze. In the side menu, click **Lending > Reports**.
 
-In the list of reports, find _Credit Model_ and click **Generate report**. Once the report is ready to download, it will appear underneath the report name. Click **Download** to save the report to your machine. 
+In the list of reports, find _Credit Model_ and click **Generate report**. Once the report is ready to download, it will appear underneath the report name. Click **Download** to save the report to your machine.
 
 The Credit Model feature must be enabled before you can access the _Credit Model_ report in the Portal. Speak to your Account Manager to enable it.
 
@@ -131,7 +134,7 @@ Follow the respective guides to set up and enable accounting integrations that w
 See how to [enable data types](/core-concepts/data-type-settings#override-the-default-sync-settings) and ensure the following data types have been switched on:
 
 | **Accounting**                  | **Banking**                                 |
-|---------------------------------|---------------------------------------------|
+| ------------------------------- | ------------------------------------------- |
 | Company `company`               | Banking transactions `banking-transactions` |
 | Profit and loss `profitAndLoss` | Banking accounts `banking-accounts`         |
 | Balance sheet `balanceSheet`    |                                             |

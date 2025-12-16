@@ -95,15 +95,17 @@ if res:
 import { CodatPlatform } from "@codat/platform";
 
 const codatPlatform = new CodatPlatform({
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatPlatform.companies.list({
-  "page" : 5,
-  "pageSize" : 20,
-}).then((res) => {
+codatPlatform.companies
+  .list({
+    page: 5,
+    pageSize: 20,
+  })
+  .then((res) => {
     // handle response
-});
+  });
 ```
 
 </TabItem>

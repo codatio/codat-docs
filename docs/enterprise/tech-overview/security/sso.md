@@ -83,6 +83,7 @@ After a user has been added to the relevant group within your identity provider,
 #### Removing a user
 
 Preventing a user from accessing the Codat Portal can be done through:
+
 - Removal from all specified access groups in your identity provider.
 - Prevention of authentication via your identity provider.
 

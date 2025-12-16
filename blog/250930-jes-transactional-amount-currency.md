@@ -1,7 +1,18 @@
 ---
 title: "Journal Entries: Transactional amount and currency now supported"
 date: "2025-09-30"
-tags: ["Product", "Update", "Lending", "Quickbooks Online", "NetSuite", "Dynamics 365 BC", "Sage Intacct", "Sage 50", "Sage BC"]
+tags:
+  [
+    "Product",
+    "Update",
+    "Lending",
+    "Quickbooks Online",
+    "NetSuite",
+    "Dynamics 365 BC",
+    "Sage Intacct",
+    "Sage 50",
+    "Sage BC",
+  ]
 authors: ivasiutkova
 ---
 
@@ -14,12 +25,12 @@ We've expanded our data model to include **transactional amount** and **transact
 Our data model for **journal entries** now supports both the **transactional amount** and the **transactional currency** fields.  
 This enhancement is available for the following accounting and ERP software:
 
-- QuickBooks Online  
-- NetSuite  
-- Dynamics 365 Business Central  
-- Sage Intacct  
-- Sage 50  
-- Sage BC  
+- QuickBooks Online
+- NetSuite
+- Dynamics 365 Business Central
+- Sage Intacct
+- Sage 50
+- Sage BC
 
 You can now find these fields within `journalLines`:
 

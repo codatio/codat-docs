@@ -569,6 +569,7 @@ export const bankfeedsIntegrations = [
     name: "Oracle NetSuite bank feeds",
     to: "/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup",
     sourceType: "bankfeeds",
+    tags: ["Premium"],
     img: "https://static.codat.io/public/officialLogos/Square/9815B998-024D-4415-A40B-89903B2CAD6F.png",
   },
   {
@@ -835,6 +836,13 @@ export const accountingIntegrations = [
   {
     name: "Dynamics 365 Business Central",
     to: "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
+    sourceType: "accounting",
+    tags: ["Premium"],
+    img: "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png",
+  },
+  {
+    name: "Dynamics 365 Finance & Operations",
+    to: "/integrations/accounting/dynamics365financeoperations/overview",
     sourceType: "accounting",
     tags: ["Premium"],
     img: "https://static.codat.io/public/officialLogos/Square/6B579544-0E46-4F02-B343-578CE5C3C6CC.png",

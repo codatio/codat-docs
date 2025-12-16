@@ -16,6 +16,7 @@ We’ve updated the QuickBooks Desktop Link flow to provide clearer guidance on 
 By default, data now syncs **7pm–7am, Monday to Friday and weekends**. This schedule is designed to **allow users to continue using QuickBooks Desktop while the Intuit Web Connector is running**.
 
 Users can also:
+
 - **Set custom sync schedules** to suit their workflow.
 - **Pause syncing for 24 hours** when they need to temporarily minimize activity.
 
@@ -27,6 +28,6 @@ This update is relevant for clients whose customers use our QuickBooks Desktop L
 
 ## How to get started?
 
-This update will **automatically be enabled on January 10, 2026**, but you can turn it on earlier by going to [**Developers > API deprecations**](https://app.codat.io/developers/api-deprecations) in the Portal and enabling **"Improved QuickBooks Desktop Link flow"**.  
+This update will **automatically be enabled on January 10, 2026**, but you can turn it on earlier by going to [**Developers > API deprecations**](https://app.codat.io/developers/api-deprecations) in the Portal and enabling **"Improved QuickBooks Desktop Link flow"**.
 
 If your customers want to adjust their sync settings or pause syncing, they can do so directly within Link.

@@ -22,7 +22,7 @@ You need a JavaScript application to render the Link component. Our component wo
 ### User experience
 
 Your current implementation likely starts with a consent page, confirming that your customers are happy to share their financial data with you before they interact with Codat.
-This often includes information on the purpose, platform data accessed, and your retention policy. 
+This often includes information on the purpose, platform data accessed, and your retention policy.
 
 Codat's Link component optionally supports consent management and more, as part of your migration you may wish to leverage this native functionality to remove maintenance overhead in your application.
 

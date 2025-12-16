@@ -2,11 +2,13 @@
 
 A CLI tool for extracting, managing and checking code snippets from Codat documentation.
 Currently consists of two commands
-- extract:  This will find every markdown file
-in the docs directory containing a code snippet. It will then extract those snippets into files under a `temp/` directory.
+
+- extract: This will find every markdown file
+  in the docs directory containing a code snippet. It will then extract those snippets into files under a `temp/` directory.
 - check: This will copy those files into a container with all nessecary Codat SDK dependancies and perform checks that the imports and code are correct and would build.
 
 ## Development
+
 This project uses [uv](https://astral.sh/uv) for dependency management.
 
 ```bash
@@ -30,10 +32,9 @@ uv run code-util check -l programming-language
 uv run code-util --help
 ```
 
-
 ## Structure
 
-- `main.py` - Entrypoint for the CLI. 
+- `main.py` - Entrypoint for the CLI.
 - `code_finder/` - module for code relating to the CodeFinder class a.k.a the functionality to scan through markdown documents.
 - `code_checker/` - module for code relating to the CodeChecker class a.k.a the functionality to build containers and run commands in them.
 - `code_checker/docker/` - docker files, scripts and config that the containers use.
@@ -43,12 +44,11 @@ uv run code-util --help
 ## Dependancies
 
 - [Click](https://click.palletsprojects.com/en/stable/) - Framework for building CLIs.
-- [Docker SDK For Python](https://docker-py.readthedocs.io/en/stable/) - Library for interacting with the Docker API. 
+- [Docker SDK For Python](https://docker-py.readthedocs.io/en/stable/) - Library for interacting with the Docker API.
 - [Pytest](https://docs.pytest.org/en/stable/index.html) - Python Unit testing Framework.
 - [Pyfakefs](https://pytest-pyfakefs.readthedocs.io/en/latest/) - Python utility for faking a filesystem during testing.
 
 ## Notes
 
- - Hard coded to only deal with python, javascript(typescript) and C#
- - Javascript container uses a private npm package. Please set PAT_TOKEN and CODAT_EMAIL env vars in order to build.
-
+- Hard coded to only deal with python, javascript(typescript) and C#
+- Javascript container uses a private npm package. Please set PAT_TOKEN and CODAT_EMAIL env vars in order to build.

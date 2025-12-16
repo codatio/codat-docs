@@ -112,6 +112,25 @@ const config = {
     "docusaurus-plugin-image-zoom",
 
     [
+      "docusaurus-plugin-cookie-consent",
+      {
+        title: "Cookie Consent",
+        description:
+          "We use cookies to enhance your browsing experience and analyze our traffic.",
+        links: [
+          { label: "Privacy Policy", href: "https://www.codat.io/privacy-policy/" },
+        ],
+        toastMode: true,
+        googleConsentMode: {
+          enabled: true,
+          waitForUpdate: 500,
+          adsDataRedaction: true,
+          urlPassthrough: false,
+        },
+      },
+    ],
+
+    [
       "docusaurus-plugin-module-alias",
       {
         alias: {

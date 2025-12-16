@@ -1,0 +1,35 @@
+name: Check - Vale
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'blog/**'
+      - '.vale.ini'
+      - '.vale/**'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'blog/**'
+      - '.vale.ini'
+      - '.vale/**'
+
+jobs:
+  vale:
+    name: Vale linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Vale Linter
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          files: docs
+          reporter: github-pr-review
+          fail_on_error: false
+          vale_flags: "--config=.vale.ini"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

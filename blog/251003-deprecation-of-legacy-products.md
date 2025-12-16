@@ -13,25 +13,22 @@ To streamline our platform and enable us to focus on our key products, Codat is 
 
 The following products will be **fully deprecated and permanently removed** from the Codat platform on **October 31, 2025**:
 
-
 ### Legacy products:
 
-* Visualise
-* Commerce Visualise
+- Visualise
+- Commerce Visualise
 
 #### Action required
 
 There is no action required on your part.
 
-
 ## Q1 2026 deprecations
 
 The following products will be **fully deprecated and permanently removed** from the Codat platform on **January 10, 2026**:
 
-
 ### Legacy versions of integrations:
 
-* Xero Bank Feeds v1- legacy version of Xero Bank Feeds
+- Xero Bank Feeds v1- legacy version of Xero Bank Feeds
 
 #### Action required
 
@@ -39,7 +36,7 @@ Impacted clients will be supported through migration to the new version, and the
 
 ### Legacy products:
 
-* Sync for Commerce (v1): This is a legacy product, and we will cease support for it from October 31, 2025. It will then be removed on January 10, 2026.
+- Sync for Commerce (v1): This is a legacy product, and we will cease support for it from October 31, 2025. It will then be removed on January 10, 2026.
 
 #### Action required
 
