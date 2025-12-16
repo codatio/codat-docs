@@ -37,6 +37,7 @@
     "@stoplight/elements": "^8.4.6",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
+    "docusaurus-plugin-glossary": "^3.0.0",
     "docusaurus-plugin-cookie-consent": "^4.1.0",
     "docusaurus-plugin-image-zoom": "^2.0.0",
     "docusaurus-plugin-module-alias": "^0.0.2",
