@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code_utils", "code_utils", "{919EAFB1-979B-849F-F423-AA3407736781}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodatSnippets", "code_utils\docker\CodatSnippets.csproj", "{87DD0D93-BFB2-C2FE-9ED1-85E13D6D8171}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "code_checker", "code_checker", "{85EA12D3-5E78-D861-A7FB-1870CB50AF16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{60F19ED7-4D61-78C3-97D7-C49F54F2E195}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodatSnippets", "code_utils\code_checker\docker\csharp\CodatSnippets.csproj", "{60E07C66-DB7E-C900-8B60-25E275AB8AD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87DD0D93-BFB2-C2FE-9ED1-85E13D6D8171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DD0D93-BFB2-C2FE-9ED1-85E13D6D8171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DD0D93-BFB2-C2FE-9ED1-85E13D6D8171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DD0D93-BFB2-C2FE-9ED1-85E13D6D8171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E07C66-DB7E-C900-8B60-25E275AB8AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E07C66-DB7E-C900-8B60-25E275AB8AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E07C66-DB7E-C900-8B60-25E275AB8AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E07C66-DB7E-C900-8B60-25E275AB8AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87DD0D93-BFB2-C2FE-9ED1-85E13D6D8171} = {919EAFB1-979B-849F-F423-AA3407736781}
+		{85EA12D3-5E78-D861-A7FB-1870CB50AF16} = {919EAFB1-979B-849F-F423-AA3407736781}
+		{60F19ED7-4D61-78C3-97D7-C49F54F2E195} = {85EA12D3-5E78-D861-A7FB-1870CB50AF16}
+		{60E07C66-DB7E-C900-8B60-25E275AB8AD8} = {60F19ED7-4D61-78C3-97D7-C49F54F2E195}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78B0C905-BF9E-4D25-8AC4-29D6CE140AFA}
+	EndGlobalSection
+EndGlobal
