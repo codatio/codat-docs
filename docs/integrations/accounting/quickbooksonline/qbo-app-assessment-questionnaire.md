@@ -5,7 +5,7 @@ description: "Guidance on completing Intuit's app assessment process"
 
 ## Introduction
 
-All apps that intend to access QuickBooks Online production data must fill in a questionnaire as part of Intuit's app assessment process. Many of its questions require you to provide information about your organization and your app's use case.
+All apps that intend to access QuickBooks Online production data must fill in an [App assessment questionnaire](https://help.developer.intuit.com/s/article/New-app-assessment-process-FAQ) as part of Intuit's app assessment process. Many of its questions require you to provide information about your organization and your app's use case.
 
 However, some questions relate to Codat's integration with QuickBooks Online. We have provided guideline responses for such questions below. They are highlighted in **bold**.
 
@@ -27,7 +27,7 @@ There are no questions related to Codat in this section. Developers can answer a
 
 This section has several questions related to Codat. We highlighted the responses you should choose in **bold**.
 
-1. **Which of the following is true about your app? (At least one option must be checked)**
+1. **Which of the following is true about your app? (at least one option must be checked)**
 
 | Option | Response                                                                                                                          |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -49,7 +49,7 @@ After selecting option **B**, provide these answers to the follow-on questions:
 
 This question should be answered by the app's developer.
 
-3. **How does your app interact with Intuit product data?**
+3. **How does your app interact with Intuit product data? (Select all that apply)**
 
 This question should be answered by the app's developer.
 
@@ -198,7 +198,7 @@ Codat doesn't use QuickBooks Online webhooks, although we have our own [webhook 
 | **a**  | **Yes**  |
 | b      | No       |
 
-After selecting option **A**, provide these answers to the follow-on questions:
+After selecting **Yes**, provide these answers to the follow-on questions:
 
 i. **Why do you use the CDC operation?**
 
@@ -224,7 +224,7 @@ ii. **How often do you poll the CDC service?**
 
 After selecting option **E**, provide this additional information:
 
-**Adhoc on requests for new data.**
+**Ad hoc on requests for new data.**
 
 ### Error handling
 
@@ -285,3 +285,8 @@ This question should be answered by the app's developer.
 7. **Once a customer's Intuit data is in your system, do you allow it to be used by or shown to anyone other than that customer?**
 
 This question should be answered by the app's developer.
+
+## Read next
+
+- Intuit's [App assessment and compliance FAQ](https://help.developer.intuit.com/s/article/New-app-assessment-process-FAQ)
+- [App assessment questionnaire](https://help.developer.intuit.com/s/questionnaire) on Intuit Developer
