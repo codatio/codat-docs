@@ -205,12 +205,17 @@ a[class^="sidebarLogo"] {
       opacity: 0.7;
     }
   }
+
+  > span {
+    overflow: initial;
+  }
 }
 
 .menu__list-item .menu__list-item .menu__link::after {
   --icon-url: var(--ifm-menu-link-sublist-icon) !important;
 }
 
+.menu__link--sublist-caret,
 .menu__link--sublist,
 .top-level-item-single > .menu__link {
   padding-inline-start: 0;
@@ -234,6 +239,7 @@ a[class^="sidebarLogo"] {
 
     margin-inline-end: var(--dropdown-icon-gap);
     margin-block-end: 0;
+    margin-left: 0 !important;
     position: absolute;
     left: 0;
   }
@@ -250,8 +256,11 @@ a[class^="sidebarLogo"] {
   &-level-2,
   &-level-3,
   &-level-4 {
-    > .menu__list-item-collapsible > .menu__link--sublist {
-      margin-left: 0;
+    > .menu__list-item-collapsible { 
+      > .menu__link--sublist,
+      > .menu__link--sublist-caret::after {
+        margin-left: 0;
+      }
     }
   }
 }
