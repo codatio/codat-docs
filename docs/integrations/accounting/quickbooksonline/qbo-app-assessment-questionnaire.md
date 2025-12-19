@@ -11,11 +11,21 @@ However, some questions relate to Codat's integration with QuickBooks Online. We
 
 ## Questionnaire
 
-### General questions
+To access the questionnaire, navigate to **Keys and credentials** in your app's detailed view and toggle the environment to **Production**. Provide general app details in **App details**, then switch to the **Compliance** tab and click **Start questionnaire**.
+
+<img src="/img/integrations/accounting/quickbooksonline/qbo-app-details-questionnaire.png" />
+
+### App details
 
 There are no questions related to Codat in this section. Developers can answer all questions according to their own circumstances.
 
-### Lending
+### Compliance
+
+#### General questions
+
+There are no questions related to Codat in this section. Developers can answer all questions according to their own circumstances.
+
+#### Lending
 
 This section will only appear in your questionnaire if you confirmed that you are a lender earlier in the process. If you are not a lender, skip this section.
 
@@ -23,7 +33,7 @@ If you are a lender and don't see these questions in your questionnaire, go back
 
 There are no questions related to Codat in this section. Developers can answer all questions according to their own circumstances.
 
-### App information
+#### App information
 
 This section has several questions related to Codat. We highlighted the responses you should choose in **bold**.
 
@@ -73,7 +83,7 @@ After selecting option **B**, provide an estimated number of QuickBooks Online u
 
 This question should be answered by the app's developer.
 
-### Authorization and authentication
+#### Authorization and authentication
 
 This section has several questions related to Codat. We highlighted the responses you should choose in **bold**.
 
@@ -129,7 +139,7 @@ This question should be answered by the app's developer. Testing the app is a ma
 | a      | Yes      |
 | **b**  | **No**   |
 
-### API usage
+#### API usage
 
 This section has several questions related to Codat. We highlighted the responses you should choose in **bold**.
 
@@ -147,7 +157,7 @@ Codat does not integrate with the Payments or Payroll APIs.
 
 This question should be answered by the app's developer.
 
-### Accounting API
+#### Accounting API
 
 This section will appear in the questionnaire once you select _Accounting API_ in the previous set of questions.
 
@@ -226,7 +236,7 @@ After selecting option **E**, provide this additional information:
 
 **Adhoc on requests for new data.**
 
-### Error handling
+#### Error handling
 
 1. **Have you tested if your app can handle API errors, including syntax and validation errors?**
 
@@ -253,7 +263,7 @@ After selecting option **E**, provide this additional information:
 
 This question should be answered by the app's developer.
 
-### Security
+#### Security
 
 1. **Has your company ever had a security breach that required notification to customers or government agencies/authorities?**
 

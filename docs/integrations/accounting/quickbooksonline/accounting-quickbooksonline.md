@@ -19,7 +19,7 @@ See [Set up the QuickBooks Online integration](/integrations/accounting/quickboo
 
 Intuit's [App Partner Program](https://blogs.intuit.com/2025/05/15/introducing-the-intuit-app-partner-program/) supports providers of applications built on Intuit's platform with higher security standards, early access to new features, and more reliable data synchronization.
 
-If you plan to publish an app in the QuickBooks ecosystem, you must register with the partner program and fill in the [app assessment questionnnaire](https://help.developer.intuit.com/s/article/New-app-assessment-process-FAQ). We created an [App assessment questionnaire guide](/integrations/accounting/quickbooksonline/qbo-app-assessment-questionnaire) to help you answer its questions.
+If you plan to publish an app in the QuickBooks ecosystem, you must register with the partner program and fill in the app assessment questionnnaire. We created an [App assessment questionnaire guide](/integrations/accounting/quickbooksonline/qbo-app-assessment-questionnaire) to help you answer its questions.
 
 #### Tiered usage model
 
