@@ -1,0 +1,34 @@
+{
+  "python": {
+    "import_patterns": [
+      "^import\\s+",
+      "^from\\s+.+\\s+import\\s+"
+    ],
+    "comment_patterns": [
+      "^\\s*#"
+    ],
+    "extension": ".py"
+  },
+  "javascript": {
+    "import_patterns": [
+      "^import\\s+",
+      "^const\\s+.+=\\s+require\\(",
+      "^require\\("
+    ],
+    "comment_patterns": [
+      "^\\s*//",
+      "^\\s*/\\*"
+    ],
+    "extension": ".ts"
+  },
+  "csharp": {
+    "import_patterns": [
+      "^using\\s+"
+    ],
+    "comment_patterns": [
+      "^\\s*//",
+      "^\\s*/\\*"
+    ],
+    "extension": ".cs"
+  }
+}

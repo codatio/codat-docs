@@ -34,6 +34,8 @@ uv run code-util --help
 ## Structure
 
 - `main.py` - Entrypoint for the CLI. 
+- `code_defaults.json` - holds the configuration for programming languages. The behaviour of the code finder in relation to different
+    languages conventions is defined here. Can be overriden to a different file
 - `code_finder/` - module for code relating to the CodeFinder class a.k.a the functionality to scan through markdown documents.
 - `code_checker/` - module for code relating to the CodeChecker class a.k.a the functionality to build containers and run commands in them.
 - `code_checker/docker/` - docker files, scripts and config that the containers use.
@@ -49,6 +51,18 @@ uv run code-util --help
 
 ## Notes
 
- - Hard coded to only deal with python, javascript(typescript) and C#
  - Javascript container uses a private npm package. Please set PAT_TOKEN and CODAT_EMAIL env vars in order to build.
+ - If the default configs are overwritten, the config json file should follow this format: 
+ ```json
+ {
+  "language_name": {
+    "import_patterns": [
+      "regex statement for detecting imports",
+    ],
+    "comment_patterns": [
+      "regex statement for detecting comments"
+    ],
+    "extension": ".fileExstion"
+  }
+ ```
 

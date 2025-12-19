@@ -3,42 +3,68 @@ Shared pytest fixtures for code_utils tests.
 """
 
 import pytest
+import json
 from pathlib import Path
-from unittest.mock import Mock
-
-from code_utils.code_finder.codat_code_config_models import CodeFinderConfig, LanguageConfig
-from code_utils.code_finder.file_operator import FileOperator
+from unittest.mock import patch
 
 
 @pytest.fixture
-def sample_config():
-    """Provide a sample configuration for testing."""
-    return CodeFinderConfig(
-        python=LanguageConfig(
-            import_patterns=[r'^import\s+', r'^from\s+.+\s+import\s+'],
-            comment_patterns=[r'^\s*#'],
-            extension='.py'
-        ),
-        javascript=LanguageConfig(
-            import_patterns=[r'^import\s+', r'^const\s+.+=\s+require\(', r'^require\('],
-            comment_patterns=[r'^\s*//', r'^\s*/\*'],
-            extension='.ts'
-        ),
-        csharp=LanguageConfig(
-            import_patterns=[r'^using\s+'],
-            comment_patterns=[r'^\s*//', r'^\s*/\*'],
-            extension='.cs'
-        )
-    )
+def code_utils_real_project_paths():
+    """Helper function to provide real project paths for use in fake filesystem.
+    code_utils does some specific things with paths, so we need precision"""
+    from code_utils.code_finder import code_finder as cf_module
 
+    real_code_finder_path = Path(cf_module.__file__).resolve().parent
+    real_code_utils_dir = real_code_finder_path.parent
+    real_project_root = real_code_utils_dir.parent
 
-
-
-
-def get_sample_docs():
-    """Get comprehensive sample docs dictionary."""
     return {
-        'python_guide': """# Python SDK Guide
+        "code_finder_path": real_code_finder_path,
+        "code_utils_dir": real_code_utils_dir,
+        "project_root": real_project_root,
+        "docs_path": real_project_root / "docs",
+    }
+
+
+@pytest.fixture
+def code_defaults_content():
+    """Returns the JSON string content for code_defaults.json.
+    Use this fixture for the contents when you need to create a code_defaults.json file"""
+    data = {
+        "python": {
+            "import_patterns": [r"^import\s+", r"^from\s+.+\s+import\s+"],
+            "comment_patterns": [r"^\s*#"],
+            "extension": ".py",
+        },
+        "javascript": {
+            "import_patterns": [
+                r"^import\s+",
+                r"^const\s+.+=\s+require\(",
+                r"^require\(",
+            ],
+            "comment_patterns": [r"^\s*//", r"^\s*/\*"],
+            "extension": ".ts",
+        },
+        "csharp": {
+            "import_patterns": [r"^using\s+"],
+            "comment_patterns": [r"^\s*//", r"^\s*/\*"],
+            "extension": ".cs",
+        },
+    }
+    return json.dumps(data, indent=2)
+
+
+@pytest.fixture
+def sample_docs():
+    """Sample documentation content for various languages.
+    Use this fixture for the contents when you need to create markdown files
+    with language specific code snippets
+    Example:
+    def test_example(sample_docs):
+        content = sample_docs['python_guide']
+    """
+    return {
+        "python_guide": """# Python SDK Guide
 
 ## Installation
 
@@ -64,7 +90,7 @@ except Exception as e:
     print(f"Error: {e}")
 ```
 """,
-        'javascript_sdk': """# JavaScript SDK
+        "javascript_sdk": """# JavaScript SDK
 
 ## Setup
 
@@ -86,7 +112,7 @@ const fetchData = async (id) => {
 };
 ```
 """,
-        'csharp_examples': """# C# Examples
+        "csharp_examples": """# C# Examples
 
 ## Basic Usage
 
@@ -122,7 +148,7 @@ public void ProcessData()
 }
 ```
 """,
-        'mixed_examples': """# Mixed Examples
+        "mixed_examples": """# Mixed Examples
 
 ## Python
 
@@ -151,7 +177,7 @@ Console.WriteLine("C# example");
 This is just a text block, not a programming language.
 ```
 """,
-        'no_code': """# Documentation Only
+        "no_code": """# Documentation Only
 
 This file contains no code blocks.
 Just regular markdown documentation.
@@ -162,7 +188,7 @@ Just regular markdown documentation.
 - Feature 2
 - Feature 3
 """,
-        'webhook_setup': """# Webhook Setup
+        "webhook_setup": """# Webhook Setup
 
 ```python
 from flask import Flask, request
@@ -177,7 +203,7 @@ def handle_webhook():
     return 'OK'
 ```
 """,
-        'ruby_guide': """# Ruby Guide
+        "ruby_guide": """# Ruby Guide
 
 ```ruby
 class Example
@@ -191,119 +217,80 @@ end
 #!/bin/bash
 echo "Shell script"
 ```
-"""
-    }
-
-
-@pytest.fixture
-def fake_project_structure(fs):
-    """Create a realistic fake project structure using pyfakefs."""
-    # Create main project directories
-    fs.create_dir("/fake_project/code_utils/code_finder")
-    fs.create_dir("/fake_project/docs")
-    
-    # Create essential files
-    fs.create_file("/fake_project/code_utils/__init__.py")
-    fs.create_file("/fake_project/code_utils/code_finder/__init__.py")
-    fs.create_file("/fake_project/code_utils/code_finder/code_finder.py")
-    fs.create_file("/fake_project/code_utils/code_finder/file_operator.py")
-    fs.create_file("/fake_project/code_utils/code_finder/codat_code_config_models.py")
-    
-    # Create sample markdown files with code blocks
-    fs.create_file("/fake_project/docs/guide.md", contents="""
-# Python Guide
-
-Here's some Python code:
-
-```python
-import os
-import sys
-
-def hello():
-    print("Hello World")
-```
-
-And some JavaScript:
-
-```javascript
-import React from 'react';
-const greeting = () => {
-    console.log("Hello from JS");
-}
-```
-""")
-    
-    fs.create_file("/fake_project/docs/tutorial.mdx", contents="""
-# C# Tutorial
-
-```csharp
-using System;
-using System.Collections.Generic;
-
-namespace Example {
-    class Program {
-        static void Main() {
-            Console.WriteLine("Hello C#");
-        }
-    }
-}
-```
-""")
-    
-    fs.create_file("/fake_project/docs/no-code.md", contents="""
-# Documentation
-
-This file has no code blocks.
-Just regular markdown content.
-""")
-    
-    return Path("/fake_project")
-
-
-
-
-@pytest.fixture
-def sample_markdown_files():
-    """Provide sample markdown file paths for testing."""
-    return [
-        "guide.md",
-        "tutorial.mdx", 
-        "api/endpoints.md",
-        "examples/python-examples.md"
-    ]
-
-
-@pytest.fixture
-def sample_code_snippets():
-    """Provide sample code snippets for testing."""
-    return {
-        "python": """
-import requests
-import json
-
-def fetch_data():
-    response = requests.get("https://api.example.com")
-    return response.json()
 """,
-        "javascript": """
-import axios from 'axios';
-
-const fetchData = async () => {
-    const response = await axios.get('https://api.example.com');
-    return response.data;
-};
-""",
-        "csharp": """
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-
-public class DataService {
-    private readonly HttpClient _client;
-    
-    public DataService() {
-        _client = new HttpClient();
     }
-}
-"""
-    }
+
+
+@pytest.fixture
+def sample_docs_files(fs, sample_docs, code_utils_real_project_paths):
+    """Create sample documentation files in the fake filesystem."""
+    paths = code_utils_real_project_paths
+    docs_path = paths["docs_path"]
+
+    # Main docs
+    fs.create_file(
+        str(docs_path / "python-guide.md"), contents=sample_docs["python_guide"]
+    )
+    fs.create_file(
+        str(docs_path / "js-sdk.mdx"), contents=sample_docs["javascript_sdk"]
+    )
+    fs.create_file(
+        str(docs_path / "csharp-examples.md"), contents=sample_docs["csharp_examples"]
+    )
+    fs.create_file(
+        str(docs_path / "mixed-examples.md"), contents=sample_docs["mixed_examples"]
+    )
+    fs.create_file(str(docs_path / "no-code.md"), contents=sample_docs["no_code"])
+
+    # Nested directory structure
+    fs.create_dir(str(docs_path / "api" / "webhooks"))
+    fs.create_file(
+        str(docs_path / "api" / "webhooks" / "setup.md"),
+        contents=sample_docs["webhook_setup"],
+    )
+
+
+@pytest.fixture
+def make_code_finder_paths_in_fake_fs(
+    fs, code_defaults_content, code_utils_real_project_paths
+):
+    """
+    Setup basic project structure in fake filesystem.
+    Pyfakefs automatically handles Path operations.
+    """
+    paths = code_utils_real_project_paths
+
+    # Create the directory structure in the fake filesystem at the real locations
+    fs.create_file(
+        str(paths["code_utils_dir"] / "code_defaults.json"),
+        contents=code_defaults_content,
+    )
+    fs.create_dir(str(paths["code_finder_path"]))
+    fs.create_file(str(paths["code_finder_path"] / "__init__.py"), contents="")
+    fs.create_dir(str(paths["docs_path"]))
+
+    # Also create code_defaults.json in the current working directory for CodeFinderConfig
+    import os
+
+    cwd = os.getcwd()
+    fs.create_file(
+        os.path.join(cwd, "code_defaults.json"), contents=code_defaults_content
+    )
+
+    yield paths
+
+
+@pytest.fixture
+def project_paths(code_utils_real_project_paths):
+    """Provide real project paths for tests that need to create custom files."""
+    return code_utils_real_project_paths
+
+
+@pytest.fixture
+def fake_project_structure(make_code_finder_paths_in_fake_fs, sample_docs_files):
+    """
+    Create a complete realistic fake project structure.
+    Combines path mocking and sample docs for convenience.
+    """
+    # Both fixtures have already done their setup
+    yield make_code_finder_paths_in_fake_fs
