@@ -21,7 +21,7 @@ const useZendesk = () => {
     return () => {
       // Check if the widget provides a specific cleanup function and call it here
       if (window.zE) {
-        window.zE('webWidget', 'hide'); // Example cleanup call, replace with actual if different
+        window.zE('messenger', 'hide'); // Example cleanup call, replace with actual if different
       }
       document.body.removeChild(script);
       setIsLoaded(false);
