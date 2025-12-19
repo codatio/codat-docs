@@ -60,8 +60,3 @@ If you have questions about optimization, reach out to your Account Manager.
 - [QuickBooks Online integration reference](/integrations/accounting/quickbooksonline/quickbooks-online-integration-reference)
 - [Intuit App Partner Program](https://blogs.intuit.com/2025/05/15/introducing-the-intuit-app-partner-program/)
 - [App assessment questionnaire guide](/integrations/accounting/quickbooksonline/qbo-app-assessment-questionnaire)
-
-## Additional information
-
-- [QuickBooks Online FAQ](/integrations/accounting/quickbooksonline/faq-quickbooks-online)
-- [QuickBooks Online integration reference](/integrations/accounting/quickbooksonline/quickbooks-online-integration-reference)
