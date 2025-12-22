@@ -17,15 +17,6 @@ const useZendesk = () => {
     script.onload = () => setIsLoaded(true);
 
     document.body.appendChild(script);
-
-    return () => {
-      // Check if the widget provides a specific cleanup function and call it here
-      if (window.zE) {
-        window.zE('messenger', 'hide'); // Example cleanup call, replace with actual if different
-      }
-      document.body.removeChild(script);
-      setIsLoaded(false);
-    }
   }, [siteConfig.customFields.ZENDESK_KEY, siteConfig.customFields.DEVELOPMENT]);
 
   return isLoaded;
