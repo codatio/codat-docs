@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const useZendesk = () => {
   const { siteConfig } = useDocusaurusContext();
-  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (!siteConfig.customFields.ZENDESK_KEY || siteConfig.customFields.DEVELOPMENT) {
+    if (!siteConfig.customFields.ZENDESK_KEY) {
+      return;
+    }
+
+    if (window.zE || document.getElementById('ze-snippet')) {
       return;
     }
 
@@ -14,12 +17,11 @@ const useZendesk = () => {
     script.setAttribute("id", "ze-snippet");
     script.src = `https://static.zdassets.com/ekr/snippet.js?key=${siteConfig.customFields.ZENDESK_KEY}`;
     script.async = true;
-    script.onload = () => setIsLoaded(true);
 
     document.body.appendChild(script);
-  }, [siteConfig.customFields.ZENDESK_KEY, siteConfig.customFields.DEVELOPMENT]);
+  }, [siteConfig.customFields.ZENDESK_KEY]);
 
-  return isLoaded;
+  return;
 };
 
 export default useZendesk;
