@@ -44887,7 +44887,8 @@
               },
               "accountRef": {
                 "$ref": "#/components/schemas/Account/definitions/accountRef",
-                "description": "Reference to the account to which the line item is linked."
+                "description": "Reference to the account to which the line item is linked.",
+                "nullable": true
               },
               "taxRateRef": {
                 "$ref": "#/components/schemas/TaxRate/definitions/taxRateRef",
@@ -44943,11 +44944,7 @@
                 "type": "boolean",
                 "description": "The bill is a direct cost if `True`."
               }
-            },
-            "required": [
-              "unitAmount",
-              "quantity"
-            ]
+            }
           }
         }
       },
