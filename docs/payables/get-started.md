@@ -25,7 +25,7 @@ Once you decide to build with Bill Pay, you need to configure Codat accordingly.
 
 1. Open the <a href="https://app.codat.io" target="_blank">Codat Portal</a> and sign in.
 2. Click on **Settings > Organizational settings > Products**.
-3. In the list of products, find the relevant version of _Bill Pay_ (async or sync) and click **Enable**. Then, follow the on-screen prompt.
+3. In the list of products, find _Bill Pay_ and click **Enable**. Then, follow the on-screen prompt.
 
 ## Configure Bill Pay
 
@@ -33,9 +33,9 @@ Once you decide to build with Bill Pay, you need to configure Codat accordingly.
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Bill Pay and set them to `Fetch on first link`:
 
-| Data source | Bill Pay (async)                                                                                                                                                                              | Bill Pay (sync)                                                                                                                   |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Accounting  | `bankAccounts`<br/> `bills`<br/> `billCreditNotes`<br/> `billPayments`<br/> `chartOfAccounts`<br/> `company`<br/> `paymentMethods`<br/> `suppliers`<br/> `taxRates`<br/> `trackingCategories` | `bankAccounts`<br/> `bills`<br/> `billPayments`<br/> `chartOfAccounts`<br/> `company`<br/> `paymentMethods`<br/> `suppliers`<br/> |
+| Data source | Data types                                                                                               		                  |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Accounting  | `bankAccounts`<br/> `bills`<br/> `billPayments`<br/> `chartOfAccounts`<br/> `company`<br/> `paymentMethods`<br/> `suppliers`<br/> |
 
 Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) on the same screen. We recommend setting it to a daily or a monthly sync.
 
@@ -44,12 +44,6 @@ Configure the solution to refresh data when you need it by [setting a synchroniz
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the solution.
 
 You can also view detailed configuration instructions by clicking on the relevant tile:
-
-#### Integrations supported by async Bill Pay
-
-<IntegrationsList filter={integrationsFilterBillPayAsync} />
-
-#### Integrations supported by sync Bill Pay
 
 <IntegrationsList filter={integrationsFilterBillPaySync} />
 

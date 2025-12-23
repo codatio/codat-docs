@@ -116,56 +116,11 @@ Pay process consists of three key steps:
    to Codat. We will reflect this transaction in your customer's accounting
    software and reconcile it against the original bill, marking it as paid.
 
-We designed two versions of our solution so that you can choose the one that
-solves the specific needs of your accounting automation use case:
-
-<ul className="card-container col-2">
-<li className="card">
-    <div className="header">
-        <img src="/img/wp-icons/clock-countdown.svg"
-            className="mini-icon"/>
-        <h3><a href="https://docs.codat.io/payables/async/suppliers">Asynchronous Bill Pay</a></h3>
-    </div>
-    <p>
-      Bill Pay's async version handles even the most complex accounts payable workflows with ease, including scenarios that manage credit notes, refunds, partial payments, and bulk payments.
-    </p>
-</li>
-
-<li className="card">
-  <div className="header">
-    <img src="/img/wp-icons/clock-clockwise.svg" className="mini-icon" />
-    <h3>
-      <a href="https://docs.codat.io/payables/sync/suppliers">
-        Synchronous Bill Pay
-      </a>
-    </h3>
-  </div>
-  <p>
-    Sync Bill Pay is designed to integrate a bill pay flow into your app as
-    quickly as possible, focusing on simplicity and efficiency of its endpoints.
-    This version offers real-time updates with your SMBs' accounting systems.
-  </p>
-</li>
-
-</ul>
+Bill Pay is designed to integrate a bill pay flow into your app as quickly as possible, focusing on simplicity and efficiency of its endpoints and real-time updates with your SMBs' accounting systems.
 
 ## Supported integrations
 
-<Tabs>
-
-<TabItem value="async" label="Asynchronous Bill Pay">
-
-<IntegrationsList filter={integrationsFilterBillPayAsync} />
-
-</TabItem>
-
-<TabItem value="sync" label="Synchronous Bill Pay">
-
 <IntegrationsList filter={integrationsFilterBillPaySync} />
-
-</TabItem>
-
-</Tabs>
 
 ## Build with client libraries
 

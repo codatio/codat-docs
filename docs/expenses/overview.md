@@ -149,7 +149,7 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 | Oracle NetSuite    | ✔️                    | ✔️                                |                       |                         |
 | QuickBooks Desktop | ✔️                    | ✔️                                | ✔️                    | ✔️                      |
 | QuickBooks Online  | ✔️                    | ✔️                                | ✔️                    | ✔️                      |
-| Sage Intacct       | ✔️ (credit card only) |                                   |                       |                         |
+| Sage Intacct       | ✔️                    | ✔️                                |                       |                         |
 | Xero               | ✔️                    |                                   | ✔️                    | ✔️                      |
 | Zoho Books         | ✔️                    | ✔️                                |                       |                         |
 
