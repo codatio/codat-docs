@@ -13,13 +13,13 @@ As an example, let's create a QuickBooks Online (QBO) connection. In response, t
 
 ```javascript
 const connectionResponse = payablesClient.connections.create({
-    requestBody: {
-      platformKey: "qhyg",
-    },
-    companyId: companyResponse.company.id,
-  });
+  requestBody: {
+    platformKey: "qhyg",
+  },
+  companyId: companyResponse.company.id,
+});
 
-console.log(connectionResponse.connection.linkUrl)
+console.log(connectionResponse.connection.linkUrl);
 ```
 
 </TabItem>
@@ -36,7 +36,7 @@ connection_request = operations.CreateConnectionRequest(
 
 connection_response = payables_client.connections.create(connection_request)
 
-console.log(connection_response.connection.link_url)
+print(connection_response.connection.link_url)
 ```
 
 </TabItem>
@@ -69,6 +69,7 @@ connectionResponse, err := payablesClient.Connections.Create(ctx, operations.Cre
 
 fmt.Println(connectionResponse.Connection.LinkUrl)
 ```
+
 </TabItem>
 
 </Tabs>

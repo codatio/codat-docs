@@ -8,7 +8,7 @@ sidebar_label: FAQs
 
 Excerpt from QuickBooks - \*US QuickBooks Online companies created after November 10, 2017 manage sales tax calculations via an automated sales tax (AST) engine. Sales tax is determined based on the source and destination address. The source address is the company’s legal address as available in the company settings. The destination address is the shipping address provided on the sales transaction. If a shipping address is not provided, the company address is considered as the destination address. The ability to customize the source address based on location of a given transaction is not supported.
 
-## How does the Quickbooks Automated Sales Tax engine (AST) affect writing data to QBO?
+## How does the QuickBooks Automated Sales Tax engine (AST) affect writing data to QBO?
 
 At the line level of an invoice, bill, or credit note the taxable status of each line is noted as either `TAX` or `NON`. TaxCode objects in this context are referred to as pseudo tax codes.
 
@@ -50,7 +50,7 @@ You may notice validation errors when creating new accounts for QBO Fr via our A
 - Length must be between 6 and 20 characters
 - Must start with the account number from the master category list
 - Name limited to alphanumeric characters
-:::
+  :::
 
 ## Is QuickBooks Self Employed supported?
 
@@ -72,6 +72,6 @@ In Codat, QBO's "classes" and "locations" are mapped to [tracking categories](/a
 
 In QuickBooks Online, you can use free text tags to track your transactions and gain additional insights. However, QBO does not surface these tags via their API, so they are not available in Codat.
 
-## Why can't I connect to QuickBooks Online? 
+## Why can't I connect to QuickBooks Online?
 
 In QuickBooks Online, only users with `Primary Admin` or `Company Admin` roles assigned have sufficient permissions to connect an application. Check that the user completing the Codat Link flow has one of these roles assigned.

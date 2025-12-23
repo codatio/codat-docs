@@ -16,7 +16,7 @@ The report contains data based on the data types you have enabled. If a data typ
 
 The Audit Report requires an accounting integration with at least one of the following data types enabled:
 
-- Profit and Loss (enabled by default when Lending is activated for your Codat client) 
+- Profit and Loss (enabled by default when Lending is activated for your Codat client)
 - Credit Notes
 - Invoices
 - Payments

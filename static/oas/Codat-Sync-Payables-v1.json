@@ -4559,7 +4559,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -9697,7 +9697,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -14424,7 +14424,7 @@
                               },
                               {
                                 "field": "CurrencyRate",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ]
                           }
@@ -20199,7 +20199,7 @@
                                 "information": [
                                   {
                                     "field": "AccountRef.Id",
-                                    "details": "If an ID which corresponds to a bank account is provided, a 'bill payment check' will be added to Quickbooks Desktop, If an ID which corresponds to a credit card account is provided, a 'bill payment credit card' will be added Quickbooks Desktop. "
+                                    "details": "If an ID which corresponds to a bank account is provided, a 'bill payment check' will be added to QuickBooks Desktop, If an ID which corresponds to a credit card account is provided, a 'bill payment credit card' will be added QuickBooks Desktop. "
                                   }
                                 ]
                               }
@@ -20232,7 +20232,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -20257,7 +20257,7 @@
                               },
                               {
                                 "field": "CurrencyRate",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ]
                           }
@@ -28639,7 +28639,7 @@
                               },
                               {
                                 "field": "CurrencyRate",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ]
                           }
@@ -32581,7 +32581,7 @@
                                   },
                                   {
                                     "field": "JournalLines.Currency",
-                                    "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                    "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                                   }
                                 ],
                                 "information": [
@@ -44887,7 +44887,8 @@
               },
               "accountRef": {
                 "$ref": "#/components/schemas/Account/definitions/accountRef",
-                "description": "Reference to the account to which the line item is linked."
+                "description": "Reference to the account to which the line item is linked.",
+                "nullable": true
               },
               "taxRateRef": {
                 "$ref": "#/components/schemas/TaxRate/definitions/taxRateRef",
@@ -44943,11 +44944,7 @@
                 "type": "boolean",
                 "description": "The bill is a direct cost if `True`."
               }
-            },
-            "required": [
-              "unitAmount",
-              "quantity"
-            ]
+            }
           }
         }
       },
@@ -46439,8 +46436,8 @@
             "title": "Date time",
             "type": "string",
             "examples": [
-              "2022-10-23T00:00:00.000Z",
-              "2022-10-23T00:00:00.000Z"
+              "2022-10-23T00:00:00Z",
+              "2022-10-23"
             ],
             "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
           },
@@ -47082,10 +47079,20 @@
                 "format": "decimal",
                 "description": "Amount for the journal line. Debit entries are considered positive, and credit entries are considered negative."
               },
+              "transactionAmount": {
+                "type": "number",
+                "format": "decimal",
+                "description": "The amount in the original transaction currency."
+              },
               "currency": {
                 "type": "string",
                 "nullable": true,
                 "description": "Currency for the journal line item."
+              },
+              "transactionCurrency": {
+                "type": "string",
+                "nullable": true,
+                "description": "Currency of the original transaction."
               },
               "accountRef": {
                 "$ref": "#/components/schemas/Account/definitions/accountRef"

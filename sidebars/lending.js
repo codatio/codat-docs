@@ -13,13 +13,25 @@ module.exports = [
   },
   "lending/get-started",
   {
-    type: "link",
+    type: "category",
     label: "Bank statements",
     customProps: {
       hr: true,
       section: "Features",
     },
-    href: "/lending/features/bank-statements-overview",
+    collapsed: true,
+    items: [
+      {
+        type: "doc",
+        id: "lending/features/bank-statements-overview",
+        label: "Overview",
+      },
+      {
+        type: "doc",
+        id: "lending/features/enhanced-cash-flow-migration",
+        label: "Migration guide - Enhanced cashflow",
+      },
+    ],
   },
   "lending/features/sales-overview",
   "lending/features/financial-statements-overview",
@@ -28,6 +40,15 @@ module.exports = [
   "lending/features/accounts-payable-overview",
   "lending/features/company-info-overview",
   "lending/features/excel-download-overview",
+  {
+    type: "link",
+    href: "/lending/premium-products/credit-model-overview",
+    label: "Credit model",
+    customProps: {
+      hr: true,
+      section: "Premium features",
+    },
+  },
   {
     type: "category",
     label: "Loan writeback",

@@ -30,14 +30,14 @@ You can retrieve the data read by the feature by calling either the [Get company
 
 ```javascript
 const response = await lendingClient.companyInfo.getAccountingProfile({
-    companyId: companyId,
-  });
+  companyId: companyId,
+});
 
-if(response.statusCode != 200){
-  throw new Error("Could not get company's accounting profile")
+if (response.statusCode != 200) {
+  throw new Error("Could not get company's accounting profile");
 }
 
-console.log(response.accountingCompanyInfo.companyName)
+console.log(response.accountingCompanyInfo.companyName);
 ```
 
 </TabItem>
@@ -93,5 +93,7 @@ if response.StatusCode == 200 {
 </Tabs>
 
 ---
+
 ## Read next
+
 - [Excel download](/lending/features/excel-download-overview)

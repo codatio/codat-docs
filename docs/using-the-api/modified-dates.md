@@ -18,7 +18,7 @@ It tells you when the most recent version of the record was fetched from the dat
 
 Use the `modifiedDate` to identify and retrieve records that have changed since your last fetch.
 
-:::info Example: Retrieve company invoices updated since the last fetch  
+:::info Example: Retrieve company invoices updated since the last fetch
 
 Track your `lastFetchDate` in your system and use it when querying data:
 
@@ -50,7 +50,7 @@ The record may have been updated by the business, or a business process, such as
 
 Use the `sourceModifiedDate` when you want to identify records that have been updated by a business, or a business process.
 
-:::info Example: Find invoices issued over 12 months ago that were updated in the source platform in the last month  
+:::info Example: Find invoices issued over 12 months ago that were updated in the source platform in the last month
 
 ```http
 GET /companies/{companyId}/data/invoices?page=1&query=issueDate%3C{todayMinus12Months}%26%26sourceModifiedDate%3E%3D{todayMinusOneMonth}
@@ -67,15 +67,17 @@ This query retrieves invoices with issue dates that are greater than twelve mont
   - The integration platform does not provide modification date information for a given data type.
   - A record has been deleted from the source platform and Codat doesn't have a record of when the deletion occurred.
   - A record has been voided. For certain platforms that soft delete records, `isDeleted` metadata is used to identify void records.
-      - For accounting data types, you can identify if a record has been deleted between two successive syncs by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag.
+    - For accounting data types, you can identify if a record has been deleted between two successive syncs by [querying](/using-the-api/querying) on the `metadata.isDeleted!=true` flag.
 
 :::tip Recap
 You've learned:
+
 - How dates are used to keep company data up to date
 - The difference between `modifiedDate` and `sourceModifiedDate`
-:::
+  :::
 
 ---
+
 ## Read next
 
 - [Refreshing company data](/using-the-api/queueing-data-syncs)

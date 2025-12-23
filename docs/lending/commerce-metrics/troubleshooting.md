@@ -8,7 +8,7 @@ draft: true
 
 ## Required data types
 
-All data types relevant to the generation of commerce metrics are activated automatically when the Lending solution is enabled for your Codat client. In case of issues when generating the metrics, check that the following data types have not been accidentally disabled: 
+All data types relevant to the generation of commerce metrics are activated automatically when the Lending solution is enabled for your Codat client. In case of issues when generating the metrics, check that the following data types have not been accidentally disabled:
 
 - Commerce - Company Info
 - Commerce - Customers

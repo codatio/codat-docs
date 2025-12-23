@@ -9,30 +9,30 @@ Use the <a href={props.endpoint} target="_blank">Create bills</a> endpoint to cr
 
 ```javascript
 const billCreateResponse = await payablesClient.bills.create({
-    bill: {
-      supplierRef: {
-        id: supplierCreateResponse.supplier.id,
-        supplierName: supplierCreateResponse.supplier.supplierName
-      },
-      issueDate: "2023-04-23T00:00:00",
-      dueDate: "2023-10-23T00:00:00",
-      lineItems: [
-        {
-          "description": "Half day training - Microsoft Paint",
-          "unitAmount": 1000.00,
-          "quantity": 1,
-          "totalAmount": 1000.00,
-        }
-      ],
-      status: BillStatus.Open,
-      subTotal: 1000.00,
-      taxAmount: 200.00,
-      totalAmount: 1200.00,
-      amountDue: 1200.00
+  bill: {
+    supplierRef: {
+      id: supplierCreateResponse.supplier.id,
+      supplierName: supplierCreateResponse.supplier.supplierName,
     },
-    companyId: companyId,
-    connectionId: connectionId,
-  });
+    issueDate: "2023-04-23T00:00:00",
+    dueDate: "2023-10-23T00:00:00",
+    lineItems: [
+      {
+        description: "Half day training - Microsoft Paint",
+        unitAmount: 1000.0,
+        quantity: 1,
+        totalAmount: 1000.0,
+      },
+    ],
+    status: BillStatus.Open,
+    subTotal: 1000.0,
+    taxAmount: 200.0,
+    totalAmount: 1200.0,
+    amountDue: 1200.0,
+  },
+  companyId: companyId,
+  connectionId: connectionId,
+});
 ```
 
 </TabItem>
@@ -100,6 +100,7 @@ var billCreateResponse = await payablesClient.Bills.CreateAsync(new CreateBillRe
     ConnectionId = connectionId,
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -132,7 +133,7 @@ billCreateResponse, err := payablesClient.Bills.Create(ctx, operations.CreateBil
     ConnectionID: connectionID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
-

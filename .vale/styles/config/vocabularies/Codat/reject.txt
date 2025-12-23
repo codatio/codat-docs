@@ -1,0 +1,7 @@
+# Words to reject/flag
+# Add terms that should never appear in docs
+blacklist
+whitelist
+master
+slave
+sanity check

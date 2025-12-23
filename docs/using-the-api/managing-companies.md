@@ -4,14 +4,15 @@ sidebar_label: Via API
 description: "Learn about creating and managing companies, their connections, and their data via API"
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 ## Onboard your users
 
 Your users or customers are [companies](/core-concepts/companies). To access their data you'll need to onboard them.
 
 To onboard a new user or customer:
+
 1. Create a company
 2. Authorize access to sources of data
 3. Read the data
@@ -23,7 +24,7 @@ You can either onboard users:
 
 ### Create a company
 
-To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body.  The `name` parameter is mandatory to execute this request. You can also provide a `description` to store additional information about the company.
+To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body. The `name` parameter is mandatory to execute this request. You can also provide a `description` to store additional information about the company.
 
 <Tabs groupId="language">
 
@@ -39,6 +40,7 @@ platformClient.companies.create({
     }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -52,6 +54,7 @@ req = shared.CompanyRequestBody(
 company_created_res = platform_client.companies.create(req)
 print(company_created_res.company.id, company_created_res.company.name)
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -67,6 +70,7 @@ if(companyCreatedRes.Company != null) {
     logger.LogInformation('{CompanyId} {CompanyName}', company.Id, company.Name);
 }
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -87,6 +91,7 @@ if companyCreatedRes.Company != nil {
     fmt.Println("%s %s", companyCreatedRes.Company.Id, companyCreatedRes.Company.Name)
 }
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -105,6 +110,7 @@ if (companyCreatedRes.company().isPresent()) {
     // handle response
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -123,7 +129,7 @@ The name of the company helps you identify the company in the Codat Portal and d
 
 You can enrich a company profile with additional information using the `tags` object. These tags provide flexible ways to store metadata.
 
-For example, you can set foreign key associations, define operational regions, or record specific details about the financial services  a company has requested. 
+For example, you can set foreign key associations, define operational regions, or record specific details about the financial services a company has requested.
 
 Each company can have up to 10 tags that you can add using the [Create company](/platform-api#/operations/create-company) endpoint or when updating the company via the [Update company](/platform-api#/operations/update-company) endpoint.
 
@@ -156,6 +162,7 @@ platformClient.companies.create({
     }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -172,6 +179,7 @@ req = shared.CompanyRequestBody(
 company_created_res = platform_client.companies.create(req)
 print(company_created_res.company.id, company_created_res.company.name)
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -179,7 +187,7 @@ print(company_created_res.company.id, company_created_res.company.name)
 ```c#
 var companyCreatedRes = await platformClient.Companies.CreateAsync(new CompanyRequestBody() {
     Name = "Toft stores",
-    Tags = new Dict<string, string>(){
+    Tags = new Dictionary<string, string>(){
       ["uid"] = "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
       ["region"] = "uk"
     }
@@ -190,6 +198,7 @@ if(companyCreatedRes.Company != null) {
     logger.LogInformation('{CompanyId} {CompanyName}', company.Id, company.Name);
 }
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -213,6 +222,7 @@ if companyCreatedRes.Company != nil {
     fmt.Println("%s %s", companyCreatedRes.Company.Id, companyCreatedRes.Company.Name)
 }
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -236,6 +246,7 @@ if (companyCreatedRes.company().isPresent()) {
     // handle response
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -264,6 +275,7 @@ platformClient.companies.update({
     }
 });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -277,12 +289,15 @@ req = shared.CompanyRequestBody(
   }
 )
 
-company_updated_res = platform_client.companies.update(operations.UpdateCompanyRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    company_request_body=req)
-  )
+company_updated_res = platform_client.companies.update(
+    request=operations.UpdateCompanyRequest(
+        company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+        company_request_body=req
+    )
+)
 print(company_updated_res.company.id, company_updated_res.company.name)
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -292,7 +307,7 @@ var companyCreatedRes = await platformClient.Companies.UpdateAsync(new UpdateCom
   CompanyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
   CompanyRequestBody = new CompanyRequestBody() {
     Name = "Toft stores",
-    Tags = new Dict<string, string>(){
+    Tags = new Dictionary<string, string>(){
       ["uid"] = "cust_1MtJUT2eZvKYlo2CNaw2HvEv",
       ["region"] = "uk"
     }
@@ -304,6 +319,7 @@ if(companyCreatedRes.Company != null) {
     logger.LogInformation('{CompanyId} {CompanyName}', company.Id, company.Name);
 }
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -330,6 +346,7 @@ if companyUpdatedRes.Company != nil {
     fmt.Println("%s %s", companyUpdatedRes.Company.Id, companyUpdatedRes.Company.Name)
 }
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -356,6 +373,7 @@ if (companyUpdatedRes.company().isPresent()) {
     // handle response
 }
 ```
+
 </TabItem>
 
 </Tabs>
@@ -370,11 +388,11 @@ If you use include a `null` or empty `tags` object in the [Update company](/plat
 
 :::
 
-#### Filter companies by metadata 
+#### Filter companies by metadata
 
 Once you have enriched the company with additional metadata in the form of tags, you can use it for filtering. This allows you to retrieve companies based on specific criteria, such as finding a specific company by customer ID or retrieving a group of companies that the same tag.
 
-To do so, use the `tags` query parameter on the [List companies](/platform-api#/operations/list-companies) endpoint.  The `tags` query parameter uses the same query language as Codat's query parameters. See more on querying in [Query data](/using-the-api/querying).
+To do so, use the `tags` query parameter on the [List companies](/platform-api#/operations/list-companies) endpoint. The `tags` query parameter uses the same query language as Codat's query parameters. See more on querying in [Query data](/using-the-api/querying).
 
 Here is a query example that returns a specific company by a customer ID:
 
@@ -384,18 +402,22 @@ Here is a query example that returns a specific company by a customer ID:
 
 ```javascript
 const result = await platformClient.companies.list({
-    tags:`uid=${customerId}`,
-  });
+  tags: `uid=${customerId}`,
+});
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
 
 ```python
-res = platform_client.companies.list(operations.ListCompaniesRequest(
-    tags=f'uid={customerId}'
-))
+res = platform_client.companies.list(
+    request=operations.ListCompaniesRequest(
+        tags=f'uid={customerId}'
+    )
+)
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -405,6 +427,7 @@ var res = await platformClient.Companies.ListAsync(new() {
     Tags = $"uid={customerId}",
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -415,6 +438,7 @@ res, err := platformClient.Companies.List(ctx, operations.ListCompaniesRequest{
     Tags: platform.String(fmt.Sprintf("uid=%d", customerId)),
 })
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -428,10 +452,10 @@ ListCompaniesResponse res = platformClient.companies().list()
   .request(req)
   .call();
 ```
+
 </TabItem>
 
 </Tabs>
-
 
 ### Authorize access to company data
 
@@ -477,9 +501,10 @@ You can delete a company and its data using the [Delete company](/platform-api#/
 
 ```javascript
 const companyDeleteResponse = await platformClient.companies.delete({
-    companyId: companyCreatedRes.company.id,
-  }); 
+  companyId: companyCreatedRes.company.id,
+});
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
@@ -491,6 +516,7 @@ company_delete_response = platform_client.companies.delete(
   )
 )
 ```
+
 </TabItem>
 
 <TabItem value="csharp" label="C#">
@@ -500,6 +526,7 @@ var companyDeleteResponse = await platformClient.Companies.DeleteAsync(new(){
     CompanyId = companyCreatedRes.Company.Id,
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -510,16 +537,18 @@ companyDeleteResponse, err := platformClient.Companies.Delete(ctx, operations.De
     CompanyID: companyCreatedRes.Company.ID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
 
 :::tip Recap
 You've learned:
+
 - How to create a company and authorize access to their data
 - The basics of reading data
 - Manage companies
-:::
+  :::
 
 ---
 

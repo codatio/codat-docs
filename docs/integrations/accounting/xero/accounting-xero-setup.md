@@ -18,16 +18,16 @@ After completing this guide, you'll be able to use the Xero integration to conne
 ## Create a Xero app and configure the redirect URI
 
 1. Log in to the [Xero Developer portal](https://developer.xero.com/) using your Xero credentials.  
-   If you do not have a Xero Developer account, you can [create one](https://www.xero.com/uk/signup/) for free.
+   If you do not have a Xero Developer account, you can [create one](https://www.xero.com/uk/signup/developers/) for free.
 2. Select the **My Apps** tab.
-2. Click the **New app** button at the top right.
-3. Enter the following information in the **Add a new app** window:
+3. Click the **New app** button at the top right.
+4. Enter the following information in the **Add a new app** window:
    - **App name**: Enter a name for your application. This will be displayed to your users when they share their accounting data in your auth flow, so choose a name that clearly identifies your organization.
    - **Integration type**: Select **Web app**.
    - **Company or application URL**: Enter the URL for your company's website prefixed with `https://`
    - **Redirect URI**: Enter `https://xero.codat.io/oauth2/callback`
-4. Select the checkbox to agree to the Xero Developer Platform Terms & Conditions.
-5. Click **Create app**.
+5. Select the checkbox to agree to the Xero Developer Platform Terms & Conditions.
+6. Click **Create app**.
 
 Your new app is displayed on the **App details** page.
 
@@ -37,7 +37,7 @@ It's worth adding links to your privacy policy and terms and conditions at this 
 1. Select your app on the **My Apps** tab.
 2. On the **App details** page, enter links to the relevant documents in the **Privacy policy URL** and **Terms and conditions URL** fields. Links must start with `https://`.
 3. Click the **Save** button.
-:::
+   :::
 
 ## Retrieve your app's secure keys
 
@@ -74,7 +74,7 @@ Next, add the secure keys for your Xero application to the Codat Portal.
 You can also click **Manage** to view the integration's settings page, and then enable the integration from there. After this, you can start linking companies to Xero.
 
 :::caution Linking multiple Xero companies
-Access to Xero is controlled via access tokens with a 1:1 relationship between a Codat company and a Xero company. 
+Access to Xero is controlled via access tokens with a 1:1 relationship between a Codat company and a Xero company.
 
 If you manage multiple Xero companies within one Xero instance, you must use a unique login per company. Otherwise, your connections may be deauthorized without notice.
 :::

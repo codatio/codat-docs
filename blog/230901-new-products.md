@@ -4,6 +4,7 @@ date: "2023-09-04"
 tags: ["Update", "Products"]
 authors: mcclowes
 ---
+
 import Products from "@components/Products";
 
 We've changed the way we organize our APIs to make Codat easier than ever to use.
@@ -36,10 +37,10 @@ If you're just starting your journey with Codat, then you can immediately start 
 
 Our products can help you make the most of your customers' consented business data. [See more...](/products/overview)
 
-<Products mini={true} verbose={true}/>
+<Products mini={true} verbose={true} />
 
-<br/>
-<br/>
+<br />
+<br />
 
 <details>
   <summary>Looking for other product documentation?</summary>
@@ -50,5 +51,5 @@ The API documentation for the products you may be using is available below. Thes
 - [Banking API](/banking-api#/)
 - [Commerce API](/commerce-api#/)
 - [Assess API](/assess-api#/)
-    
+
 </details>

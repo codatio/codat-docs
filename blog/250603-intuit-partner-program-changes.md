@@ -5,7 +5,7 @@ tags: ["QuickBooks Online", "Update", "Intuit"]
 authors: mcclowes
 ---
 
-Intuit will be launching a [new App Partner Program](https://blogs.intuit.com/2025/05/15/introducing-the-intuit-app-partner-program/) on the 28th of July. 
+Intuit will be launching a [new App Partner Program](https://blogs.intuit.com/2025/05/15/introducing-the-intuit-app-partner-program/) on the 28th of July.
 
 <!--truncate-->
 
@@ -19,7 +19,7 @@ QuickBooks Desktop should not be effected by these changes.
 
 ### Next Steps
 
-Codat is working with Intuit to assess current volume of all Codat supported Quickbooks apps, and will be in touch directly in the coming weeks to any clients where we would recommend any integration changes. 
+Codat is working with Intuit to assess current volume of all Codat supported QuickBooks apps, and will be in touch directly in the coming weeks to any clients where we would recommend any integration changes.
 
 ### Timeline of the app partner roll out
 

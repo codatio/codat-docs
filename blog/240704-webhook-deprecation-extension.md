@@ -16,7 +16,7 @@ On **April 10, 2024** we announced three deprecations following the release of o
 - [Deprecation of RuleId in rules webhooks](/updates/240320-deprecation-ruleId)
 - [Deprecation of rule-based email notifications](/updates/240405-deprecation-rule-based-email-notifications)
 
-To ensure a smooth transition, we are extending the deprecation period to **January 10, 2025**. 
+To ensure a smooth transition, we are extending the deprecation period to **January 10, 2025**.
 
 :::tip Codat's webhook service
 Not using the new service yet? See how you can migrate in our [migration guide](/using-the-api/webhooks/migration-guide).
@@ -34,7 +34,7 @@ The following endpoints will be deprecated:
 - `GET /rules/{ruleId}/alerts`
 - `GET /rules/alerts/{alertId}`
 
-#### Action required 
+#### Action required
 
 Review and update your application logic to remove any dependencies on the deprecated endpoints. This will help prevent any disruptions to your integration with Codat.
 
@@ -42,7 +42,7 @@ Review and update your application logic to remove any dependencies on the depre
 
 If no action is taken by **January 10, 2025**, your application will fail when retrieving rules alerts programmatically. The deprecated endpoints will return `Not found` (404) status codes, preventing your application from functioning normally.
 
---- 
+---
 
 ### Deprecation of `RuleId` in rules webhooks
 
@@ -62,7 +62,7 @@ The `RuleId` property will be deprecated in the following webhook rule schemas:
 - [Client rate limit reached](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reached)
 - [Client rate limit reset](https://docs.codat.io/using-the-api/webhooks/legacy/core-rules-types#client-rate-limit-reset)
 
-#### Action required 
+#### Action required
 
 Review and update your application logic to remove any dependencies on the `RuleId`. This will help prevent any disruptions to your integration with Codat.
 
@@ -70,17 +70,17 @@ You should use `RuleType` to identify what event a given webhook corresponds wit
 
 #### Expected impact
 
-If no action is taken by **January 10, 2025**, your application will continue to receive events, but the `RuleId` will not be populated. 
+If no action is taken by **January 10, 2025**, your application will continue to receive events, but the `RuleId` will not be populated.
 
 Any application logic using the `RuleId` property will function following your unhappy path for `RuleId` logic. Depending on your implementation, this may impact your processing Codat's webhooks.
 
---- 
+---
 
 ### Deprecation of rule-based email notifications
 
 Email notifications are currently managed by our webhook rules service. After the deprecation date, this service will no longer exist. Instead, you can use our [Zapier integration](/using-the-api/webhooks/zapier-integration) to trigger automated workflows that send an email notification or a Slack message.
 
-#### Action required 
+#### Action required
 
 To continue receiving email notifications, use our [Zapier integration](/using-the-api/webhooks/zapier-integration) to create a workflow using the 'Email by Zapier' action.
 

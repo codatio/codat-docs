@@ -10,35 +10,35 @@ sidebar_label: Installing the connector
 Customers must install and run the Sage 50 connector on the same computer where Sage 50 (UK & Ireland) is installed. If in doubt, ask your customer to link their accounting data from the computer that they normally use to access Sage 50 (UK & Ireland).
 :::
 
-To install the Sage 50 connector, the user who is connecting their company data—the SMB user—must complete the following tasks:
+To install the Sage 50 Accounts Connector, the user who is connecting their company data—the SMB user—must complete the following tasks:
 
 1. [Download the connector](/integrations/accounting/sage50/installing-the-sage-50-connector#1-download-the-connector)
-2. [Launch the connector and enter their licence key](/integrations/accounting/sage50/installing-the-sage-50-connector#2-launch-the-connector-and-enter-their-licence-key)
+2. [Launch the connector and enter their license key](/integrations/accounting/sage50/installing-the-sage-50-connector#2-launch-the-connector-and-enter-their-license-key)
 3. [Verify company data file](/integrations/accounting/sage50/installing-the-sage-50-connector#3-verify-company-data-file)
 4. [Select a company data file](/integrations/accounting/sage50/installing-the-sage-50-connector#4-select-a-company-data-file)
-5. [Enter their Sage 50 credentials](/integrations/accounting/sage50/installing-the-sage-50-connector#5-enter-their-sage-50-credentials)
+5. [Enter their Sage 50 Accounts credentials](/integrations/accounting/sage50/installing-the-sage-50-connector#5-enter-their-sage-50-credentials)
 6. [Verify company data](/integrations/accounting/sage50/installing-the-sage-50-connector#6-verify-company-data)
 
 ## 1. Download the connector
 
-First, the user downloads the Sage 50 on-premise connector from a Codat Link URL.
+First, the user downloads the Sage 50 Accounts on-premise connector from a Codat Link URL.
 
-If you're using the Codat Link flow, the user can download the connector after they've selected Sage 50 as their accounting software in Link. To start the download, they click **Download Connector**:
+If you're using the Codat Link flow, the user can download the connector after they've selected Sage 50 Accounts as their accounting software in Link. To start the download, they click **Download Connector**:
 
 ![](/img/old/c15ec77-Download_connector.png "Download connector.png")
 
 Next, the user copies their license key (which is the same as their _CompanyId_ in Codat) to use in the next step.
 
-If you've built your own Link flow, the **linkUrl** field on the company's Sage 50 data connection will initiate the installer download.
+If you've built your own Link flow, the **linkUrl** field on the company's Sage 50 Accounts data connection will initiate the installer download.
 
 :::note About the connector download file
 
-The Sage 50 connector is packaged as a .exe file. To increase your clients' trust in the download, the filename is prefixed with your company name; that is, the name of the company the user is connecting their data to. For example: `YourCompanyName-sage50-connector.exe`. Symbols in the filename are replaced with dashes.
+The Sage 50 Accounts Connector is packaged as a .exe file. To increase your clients' trust in the download, the filename is prefixed with your company name; that is, the name of the company the user is connecting their data to. For example: `YourCompanyName-sage50-connector.exe`. Symbols in the filename are replaced with dashes.
 
 Additionally, the file is signed with an Extended Validation Code Signing Digital Certificate issued by GlobalSign.
 :::
 
-## 2. Launch the connector and enter their licence key
+## 2. Launch the connector and enter their license key
 
 When the connector has been downloaded and run, a screen similar to the following is displayed.
 
@@ -46,19 +46,19 @@ When the connector has been downloaded and run, a screen similar to the followin
 
 If the user's computer has anti-virus software installed, they might be asked to confirm they trust the source of the file. This confirmation is specific to each anti-virus program.
 
-The user should have been provided with a _Licence Key_ when they downloaded the Sage 50 connector. They should enter this in the **Licence Key** box and then click **Install**.
+The user should have been provided with a _License Key_ when they downloaded the Sage 50 Accounts Connector. They should enter this in the **License Key** box and then click **Install**.
 
-The user's licence key is their Codat company ID.
+The user's license key is their Codat company ID.
 
 <img src="/img/old/7955324-Connect_to_Sage_50_License_Key.png" />
 
-If the licence key is valid, the connector will be installed; this takes a few minutes to complete. The user will see an error if the licence key is not valid.
+If the license key is valid, the connector will be installed; this takes a few minutes to complete. The user will see an error if the license key is not valid.
 
 The progress bar shows the status of the installation; for example:
 
-![](/img/old/888be28-Connect_to_Sage_50_License_Key_-_starting_connector.png "Connect to Sage 50 License Key - starting connector.png")
+![](/img/old/888be28-Connect_to_Sage_50_License_Key_-_starting_connector.png "Connect to Sage 50 Accounts License Key - starting connector.png")
 
-Once the installation is complete, the user will be taken to the Sage 50 Connector's configuration screen as described in the next step.
+Once the installation is complete, the user will be taken to the Sage 50 Accounts Connector's configuration screen as described in the next step.
 
 ## 3. Verify company data file
 
@@ -66,9 +66,9 @@ The connector will start automatically once the installation is complete and dis
 
 ![](/img/old/b585819-Verify_company_data_file.png "Verify company data file.png")
 
-Before progressing to the next step, the user should open Sage 50 for the company data file they want to connect to, and check the file for errors.
+Before progressing to the next step, the user should open Sage 50 Accounts for the company data file they want to connect to, and check the file for errors.
 
-For more information on how to check the file for errors, see <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112158551&hypermediatext=null" target="_blank">Check your data is in good health</a> in the Sage 50 documentation.
+For more information on how to check the file for errors, see <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112158551&hypermediatext=null" target="_blank">Check your data is in good health</a> in the Sage 50 Accounts documentation.
 
 ## 4. Select a company data file
 

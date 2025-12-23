@@ -5,10 +5,8 @@ createdAt: "2020-08-26T13:23:10.920Z"
 updatedAt: "2022-11-25T13:10:30.057Z"
 ---
 
-
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
-
+import TabItem from "@theme/TabItem";
 
 If you're new to Codat but have already built and use an OAuth application with one of our supported integrations, you're in the right place. Codat's token migration process allows you to seamlessly migrate your customers' connections from a self-managed integration to Codat — without your customers needing to reconnect.
 
@@ -47,7 +45,6 @@ To migrate, use the PUT connections endpoint. You will need to provide the integ
 
 </Tabs>
 
-
 :::caution Syncing data post-migration
 
 After successfully updating a connection with valid credentials, you'll need to initiate a sync manually using the `POST ​/companies​/{companyId}​/data​/all` endpoint.
@@ -58,7 +55,6 @@ _Fetch on first link_ isn't supported when performing self-service token migrati
 ## Managed migrations
 
 For other platforms where we do not yet support the self service migration route, or if you have special considerations or concerns, Codat's solutions team offers a managed migration pathway.
-
 
 :::note Supported integrations
 
@@ -74,11 +70,11 @@ The migration process usually involves the following steps.
 Every migration is different, so make sure you talk to your solutions engineer or use our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new) as early as possible to discuss and plan your migration.
 :::
 
-| Step                                         | Details                                                                                                                                                                  | Responsibility                          |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------- |
-| **1. Supply migration and platform details** | Supply all the required details for the specific platform to the Codat support team. | Your company                            |
-| **2. Schedule the migration**                | Agree a time when the migration can take place. Based on your company's data, Codat's support team estimates how long the migration will take.                           | Your company and the Codat support team |
-| **3. Update your application details**       | Add Codat’s callback URL to the application registered with your platform provider.                                                                                      | Your company                            |
-| **4. Disable data syncing**                  | Disable data syncing in your existing application for all companies that you have chosen to migrate. This is to prevent tokens from becoming invalid.                    | Your company                            |
-| **5. Migrate first company**                 | Codat's support team imports the name and token for a single company and performs an end-to-end test to make sure: <br/> - No reauthorization is required.<br/> - Data syncs complete correctly. | Codat support team |
-| **6. Complete migration** | Codat's support team:<br/>- Migrates the remaining companies.<br/>- Performs end-to-end tests.<br/>- Completes a handover. | Codat support team |
+| Step                                         | Details                                                                                                                                                                                          | Responsibility                          |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------- |
+| **1. Supply migration and platform details** | Supply all the required details for the specific platform to the Codat support team.                                                                                                             | Your company                            |
+| **2. Schedule the migration**                | Agree a time when the migration can take place. Based on your company's data, Codat's support team estimates how long the migration will take.                                                   | Your company and the Codat support team |
+| **3. Update your application details**       | Add Codat’s callback URL to the application registered with your platform provider.                                                                                                              | Your company                            |
+| **4. Disable data syncing**                  | Disable data syncing in your existing application for all companies that you have chosen to migrate. This is to prevent tokens from becoming invalid.                                            | Your company                            |
+| **5. Migrate first company**                 | Codat's support team imports the name and token for a single company and performs an end-to-end test to make sure: <br/> - No reauthorization is required.<br/> - Data syncs complete correctly. | Codat support team                      |
+| **6. Complete migration**                    | Codat's support team:<br/>- Migrates the remaining companies.<br/>- Performs end-to-end tests.<br/>- Completes a handover.                                                                       | Codat support team                      |

@@ -13,7 +13,7 @@ Review the upcoming changes and deprecations we announced this quarter, get ahea
 ## Solution updates
 
 ### Updates to Codat's solution range
- 
+
 Codat’s solution range and documentation just got a major upgrade — with clearer names, smarter navigation, and a sharper focus on what matters most to you and your customers.
 
 These changes reflect our commitment to empowering both developers and client-facing teams with tailored, insight-driven tools that help businesses grow.
@@ -52,7 +52,7 @@ Setting up mTLS is quick and straightforward - see our [step-by-step guide](/usi
 
 ### Webhooks: introducing transformations
 
-We’ve introduced webhook transformations, allowing you to modify webhook properties before they are sent to your application. You can change the webhook's HTTP method, redirect it to another URL, modify the event schema, or cancel the webhook delivery. 
+We’ve introduced webhook transformations, allowing you to modify webhook properties before they are sent to your application. You can change the webhook's HTTP method, redirect it to another URL, modify the event schema, or cancel the webhook delivery.
 
 See our [step-by-step guide](/using-the-api/webhooks/create-consumer#transform-webhook-properties) to get started with transformations.
 
@@ -77,23 +77,23 @@ On **February 1, 2025**, Shopify migrated all app partners to the latest version
 ## Changes that apply from April 10, 2025
 
 ### Deprecation of Zapier app version 1.0
- 
+
 On **April 10, 2025**, we will deprecate version 1.0 of our Zapier app following the [release of version 2.0](/updates/250108-zapier-integration-v2) that supports our [latest webhook event types](/using-the-api/webhooks/event-types). To ensure the non-stop service of your workflows, update your existing Zaps to use the latest version of our app before **April 10, 2025**.
- 
+
 [Read more →](/updates/250109-deprecation-zapier-integration-v1)
 
 ### Deprecation of legacy Hosted Link UI
- 
+
 On **April 10, 2025**, we will deprecate our legacy Hosted Link user interface following the release of our [new Hosted Link UI](/updates/250110-new-hosted-link-ui). If you haven't enabled the new Hosted Link UI by **April 10, 2025**, we will automatically enable it for you, and you won't be able to return to the legacy UI.
- 
+
 [Read more →](/updates/250110-deprecation-legacy-hosted-link-ui)
 
 ## Changes planned for July 10, 2025
 
 ### NetSuite: Deprecation of foreign currency support in Journal Entries
- 
+
 From **July 10, 2025**, we will start recording NetSuite journal entries in foreign currencies in the company's base `currency` and convert the `netAmount` value.
- 
+
 If your application's logic relies on the original transaction currency, you must update it to avoid any incorrect processing.
- 
+
 [Read more →](/updates/250404-deprecation-netsuite-je-basecurrency)

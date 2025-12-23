@@ -259,6 +259,11 @@ var acc = [
     to: "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
   },
   {
+    integration: "Dynamics 365 Finance & Operations",
+    platformKey: "rqwd",
+    to: "/integrations/accounting/dynamics365financeoperations/overview",
+  },
+  {
     integration: "Exact (Netherlands)",
     platformKey: "qudb",
     to: "/integrations/accounting/exact-online/accounting-exact-online",
@@ -364,11 +369,6 @@ var bank = [
     integration: "Banking Sandbox",
     platformKey: "qhnd",
     to: "/integrations/banking/overview",
-  },
-  {
-    integration: "Basiq",
-    platformKey: "dfxm",
-    to: "/integrations/banking/basiq/banking-basiq",
   },
   {
     integration: "Plaid",

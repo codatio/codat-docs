@@ -31,7 +31,7 @@ We recommend [using the assets provided by Codat](/auth-flow/build/build-your-ow
 
 :::caution
 
-Make sure to show the full integration name to avoid confusion i.e. QuickBooks Online vs QuickBooks Desktop, Sage Business Cloud Accounting vs Sage Intacct.
+Make sure to show the full integration name to avoid confusion i.e. QuickBooks Online vs QuickBooks Desktop, Sage Accounting vs Sage Intacct.
 
 :::
 
@@ -70,7 +70,6 @@ To read more about different ways to customize Link, read [Customize your Link](
 
 You can also [build your own authorization journey](/auth-flow/build/build-your-own-authorization-journey).
 :::
-
 
 ---
 

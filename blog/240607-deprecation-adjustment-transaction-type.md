@@ -4,17 +4,18 @@ date: "2024-06-10"
 tags: ["Deprecation"]
 authors: Amy-Roberts
 ---
-On **October 10, 2024**, we will remove the `Adjustment in` and `Adjustment out` transaction types from the Sync for Expenses [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint. 
+
+On **October 10, 2024**, we will remove the `Adjustment in` and `Adjustment out` transaction types from the Sync for Expenses [Create expense transaction](/sync-for-expenses-api#/operations/create-expense-transaction) endpoint.
 
 <!--truncate-->
 
-After the change, you will need to use the [Create adjustment transaction](/sync-for-expenses-api#/operations/create-adjustment-transaction) endpoint to represent an adjustment when syncing expenses. 
+After the change, you will need to use the [Create adjustment transaction](/sync-for-expenses-api#/operations/create-adjustment-transaction) endpoint to represent an adjustment when syncing expenses.
 
-This endpoint is currently only available for our QuickBooks Desktop integration. 
+This endpoint is currently only available for our QuickBooks Desktop integration.
 
 ## Action required
 
-If you are currently using the `Adjustment in` or `Adjustment out` transaction types, you will need to create these transactions via the [Create adjustment transaction](/sync-for-expenses-api#/operations/create-adjustment-transaction) endpoint instead. 
+If you are currently using the `Adjustment in` or `Adjustment out` transaction types, you will need to create these transactions via the [Create adjustment transaction](/sync-for-expenses-api#/operations/create-adjustment-transaction) endpoint instead.
 
 To create document attachments alongside your adjustment transaction, you can continue using the [Upload attachment](/sync-for-expenses-api#/operations/upload-expense-attachment) endpoint.
 

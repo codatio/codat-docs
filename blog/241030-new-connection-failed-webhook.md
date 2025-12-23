@@ -61,7 +61,7 @@ Codat supports a wide range of event types. See [Webhook event types](/using-the
 
 ## Who is this relevant for?
 
-Any client currently using our webhooks or clients looking to improve completion rates of their connection flows through calls to action. 
+Any client currently using our webhooks or clients looking to improve completion rates of their connection flows through calls to action.
 
 ## How to get started?
 

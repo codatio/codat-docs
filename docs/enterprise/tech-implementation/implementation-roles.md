@@ -6,7 +6,7 @@ sidebar_label: "Role requirements"
 
 To ensure the successful implementation of an API that consumes external data, it is essential to clearly define a workstream structure and roles and responsibilities for each team member. This way, your organization can achieve a seamless and effective API implementation, setting your solution up for success and internal efficiencies.
 
-On this page, we provide descriptions and activities specific to each role involved in an implementation project. 
+On this page, we provide descriptions and activities specific to each role involved in an implementation project.
 
 ## Implementation project manager
 
@@ -118,7 +118,7 @@ This stakeholder's involvement is only required for lending use cases.
 
 **Required skills:** Vendor management, contract negotiation, risk management, communication, relationship management, and strategic sourcing.
 
- :::tip Business change manager
+:::tip Business change manager
 
 In addition to the above stakeholders, we strongly recommend appointing or nominating an existing stakeholder to be, a dedicated **business change manager**.
 
@@ -129,5 +129,3 @@ In addition to the above stakeholders, we strongly recommend appointing or nomin
 **Required skills:** Change management, project management, stakeholder engagement, training and development, communication, and strategic planning.
 
 :::
-                                 
-

@@ -18,7 +18,11 @@ video_text: Lending with Codat
 
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
-import { integrationsAccountingFilterLending, bankingIntegrations, commerceIntegrations } from "@components/Integrations/integrations";
+import {
+  integrationsAccountingFilterLending,
+  bankingIntegrations,
+  commerceIntegrations,
+} from "@components/Integrations/integrations";
 import ClientLibraries from "@components/ClientLibraries";
 
 ## What is it?
@@ -71,57 +75,42 @@ Our Lending solution empowers you with a host of features to help you streamline
     </p>
   </li>
 
-  <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
-      <h3>Financial statements</h3>
-    </div>
-    <p>
-      Automate financial statement and ratio analysis with a fully standardized profit and loss and balance sheet.
-    </p>
-  </li>
+<li className="card">
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Financial statements</h3>
+  </div>
+  <p>
+    Automate financial statement and ratio analysis with a fully standardized
+    profit and loss and balance sheet.
+  </p>
+</li>
 
-  <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
-      <h3>Liabilities</h3>
-    </div>
-    <p>
-      Comprehensive loan insights and credit history analysis.
-    </p>
-  </li>
+<li className="card">
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Liabilities</h3>
+  </div>
+  <p>Comprehensive loan insights and credit history analysis.</p>
+</li>
 
-  <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
-      <h3>Accounts receivable</h3>
-    </div>
-    <p>
-      Assess debtor risk in real time with accounts receivable insights.
-    </p>
-  </li>
+<li className="card">
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Accounts receivable</h3>
+  </div>
+  <p>Assess debtor risk in real time with accounts receivable insights.</p>
+</li>
 
-  <li className="card">
-    <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
-      <h3>Accounts payable</h3>
-    </div>
-    <p>
-      Enhance underwriting precision with streamlined accounts payable insights.
-    </p>
-  </li>
+<li className="card">
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Accounts payable</h3>
+  </div>
+  <p>
+    Enhance underwriting precision with streamlined accounts payable insights.
+  </p>
+</li>
 
 </ul>
 
@@ -137,7 +126,7 @@ Our Lending solution empowers you with a host of features to help you streamline
 
 #### Commerce
 
-<IntegrationsList integrations={commerceIntegrations} />  
+<IntegrationsList integrations={commerceIntegrations} />
 
 ## Build with client libraries
 
@@ -148,6 +137,7 @@ Our Lending SDK comes in multiple languages and provides all the necessary metho
 <ClientLibraries productName={"lending"} />
 
 ---
+
 ## Read next
 
-* [Get started](/lending/get-started) building with our Lending solution
+- [Get started](/lending/get-started) building with our Lending solution

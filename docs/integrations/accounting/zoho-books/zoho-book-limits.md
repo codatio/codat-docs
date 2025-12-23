@@ -8,12 +8,12 @@ To minimize the performance impact of the [rate limits](zoho-book-limits#zoho-bo
 
 The following table summarizes the fields which are excluded when reading reduced datasets from Zoho Books.
 
-| Data type read  | Fields excluded                 |
-|-------------------|---------------------------------|
-| Bills             | <p>`purchaseOrderRefs`, `lineItems`, `subTotal`, `taxAmount`, `note`</p> <p>If reading complete datasets, the following fields on bill line items are always populated as 0.00 in Codat:</p><p>`discountAmount`, `subTotal`, `taxAmount`</p>|
-| Credit Notes      | Line items                      |
-| Customers         | Address and contact information |
-| Invoices          | Line items                      |
+| Data type read | Fields excluded                                                                                                                                                                                                                              |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bills          | <p>`purchaseOrderRefs`, `lineItems`, `subTotal`, `taxAmount`, `note`</p> <p>If reading complete datasets, the following fields on bill line items are always populated as 0.00 in Codat:</p><p>`discountAmount`, `subTotal`, `taxAmount`</p> |
+| Credit Notes   | Line items                                                                                                                                                                                                                                   |
+| Customers      | Address and contact information                                                                                                                                                                                                              |
+| Invoices       | Line items                                                                                                                                                                                                                                   |
 
 To remove these restrictions and read complete datasets for the supported Zoho Books data types, please raise a ticket through our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new). **After removing the restrictions, fetching large volumes of data from the above data types can take multiple days to complete.**
 
@@ -52,7 +52,7 @@ This rate limit can affect the performance of the integration when reading data 
 
 #### Concurrent rate limit
 
-Zoho Books also limits the maximum number of API calls that can be simultaneously active for the same organization using its _concurrent rate limit_. 
+Zoho Books also limits the maximum number of API calls that can be simultaneously active for the same organization using its _concurrent rate limit_.
 
 The concurrent rate limit varies based on the plan of the organization and is noted in Zoho Books' [Concurrent Rate Limiter](https://www.zoho.com/books/api/v3/introduction/#concurrent-rate-limiter).
 

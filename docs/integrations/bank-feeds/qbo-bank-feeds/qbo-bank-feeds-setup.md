@@ -83,7 +83,7 @@ See the next procedure for details on the functionality to provide.
    }
    ```
 
-   The endpoint returns a `200` response. The body contains a `dataConnection` object in `PendingAuth` status and a `linkUrl` containing a one-time password (`otp`) that expires after one hour. 
+   The endpoint returns a `200` response. The body contains a `dataConnection` object in `PendingAuth` status and a `linkUrl` containing a one-time password (`otp`) that expires after one hour.
 
    ```json
    {
@@ -91,7 +91,7 @@ See the next procedure for details on the functionality to provide.
      "integrationId": "6b113e06-e818-45d7-977b-8e6bb3d01269",
      "sourceId": "56e6575a-3f1f-4918-b009-f7535555f0d6",
      "platformName": "QuickBooks Online Bank Feeds",
-     "linkUrl": "https://link-api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/start?otp=742271",  //  expires after 1h
+     "linkUrl": "https://link-api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/start?otp=742271", //  expires after 1h
      "status": "PendingAuth",
      "created": "2022-09-01T10:21:57.0807447Z",
      "sourceType": "BankFeed"
@@ -107,15 +107,15 @@ See the next procedure for details on the functionality to provide.
    In the request body, specify a bank account (all fields shown are required):
 
    ```json title="Example request body: add a checking account"
-     {
-       "id": "ac-001",
-       "accountName": "account-001",
-       "accountType": "checking",
-       "accountNumber": "12345670",
-       "sortCode": "12-34-56",
-       "currency": "USD",
-       "balance": 4002 // can be 0
-     }
+   {
+     "id": "ac-001",
+     "accountName": "account-001",
+     "accountType": "checking",
+     "accountNumber": "12345670",
+     "sortCode": "12-34-56",
+     "currency": "USD",
+     "balance": 4002 // can be 0
+   }
    ```
 
    The endpoint returns a `200` response and the created bank account.
@@ -124,7 +124,7 @@ See the next procedure for details on the functionality to provide.
 
    :::caution Link URL expiry
 
-   For security reasons, the `linkUrl` will expire one hour after it was generated. 
+   For security reasons, the `linkUrl` will expire one hour after it was generated.
 
    :::
 
@@ -184,17 +184,17 @@ You can add new source bank accounts to an existing company and data connection.
    Request body:
 
 ```json
-   [
-     {
-       "id": "acc-003",
-       "accountName": "account-0003",
-       "sortCode": "123456",
-       "accountType": "Debit",
-       "accountNumber": "987654",
-       "currency": "GBP",
-       "balance": 219.23,
-     }
-  ]
+[
+  {
+    "id": "acc-003",
+    "accountName": "account-0003",
+    "sortCode": "123456",
+    "accountType": "Debit",
+    "accountNumber": "987654",
+    "currency": "GBP",
+    "balance": 219.23
+  }
+]
 ```
 
 2. The original `linkURL` for the company and data connection contained an `otp` with a one hour expiration window. If this has passed, you'll need to generate a new `linkUrl`. To do this, call the [List connections](/platform-api#/operations/list-connections) endpoint to obtain a new `linkUrl` for the specified company and data connection.

@@ -1,7 +1,7 @@
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
-Call our <a href={props.listendpoint} target="_blank">List bills</a> endpoint to retrieve the full list of a company's existing bills. 
+Call our <a href={props.listendpoint} target="_blank">List bills</a> endpoint to retrieve the full list of a company's existing bills.
 
 You can also <a href={props.downloadendpoint} target="_blank">Download bill attachments</a> associated with a given bill, such as a PDF copy of the accounts payable invoice issued by the supplier.
 
@@ -11,9 +11,9 @@ You can also <a href={props.downloadendpoint} target="_blank">Download bill atta
 
 ```javascript
 const billsResponse = await payablesClient.bills.list({
-    companyId: companyId,
-    query: 'supplierRef.supplierName=acme'
-  });
+  companyId: companyId,
+  query: "supplierRef.supplierName=acme",
+});
 ```
 
 </TabItem>
@@ -51,6 +51,7 @@ billsResponse, err := payablesClient.Bills.List(ctx, operations.ListBillsRequest
     Query: "supplierRef.supplierName=acme"
 })
 ```
+
 </TabItem>
 
 </Tabs>

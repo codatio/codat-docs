@@ -56,7 +56,7 @@ Our IPs are dynamic. The set of IPs included below is correct as of Q3 2024.
 **Country**: United Kingdom of Great Britain and Northern Ireland
 
 | IP address type  | Start        | End            |
-|------------------|--------------|----------------|
+| ---------------- | ------------ | -------------- |
 | IP address range | 20.77.152.0  | 20.77.153.255  |
 | Single IP        | 51.104.28.73 |                |
 | IP address range | 51.132.44.0  | 51.132.47.255  |
@@ -64,7 +64,7 @@ Our IPs are dynamic. The set of IPs included below is correct as of Q3 2024.
 
 ## Attachments
 
-When creating attachments, QuickBooks Online requires that the multipart/form-data request used to upload the files includes a `Content-Type` header. 
+When creating attachments, QuickBooks Online requires that the multipart/form-data request used to upload the files includes a `Content-Type` header.
 
 The header must be contained within each boundary-separated part of the request body and should be a MIME type that reflects the file type being uploaded. QBO will not accept `application/octet-stream` as the header value.
 

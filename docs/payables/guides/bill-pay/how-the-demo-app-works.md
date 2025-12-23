@@ -5,7 +5,7 @@ description: "A closer look at the functionality of the bill pay demo app"
 ---
 
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
 Now you're ready to explore the functionality of the bill pay demo app in more depth. The user flow diagrams describe the demo app's functionality at a high level, while the example API calls show the exchange of data with the Codat API.
 
@@ -16,7 +16,7 @@ The company creation feature and authorization flow were built using the [Platfo
 Its main features are:
 
 - Creating a company to represent the user using the [Create company](/sync-for-payables-api#/operations/create-company) endpoint. This returns a unique company ID and Link URL.
-- Redirecting the user to their chosen accounting software via the Link URL. This opens the OAuth login window for the accounting software, where the user can authenticate and authorize access to their accounting data. 
+- Redirecting the user to their chosen accounting software via the Link URL. This opens the OAuth login window for the accounting software, where the user can authenticate and authorize access to their accounting data.
 - Creating a data connection to the accounting software using the [Create connection](/sync-for-payables-api#/operations/create-connection) endpoint.
 - When the company is successfully connected, redirecting the user to the demo app's redirect URL, as defined in the [Link settings](/auth-flow/customize/customize-link).
 
@@ -29,9 +29,9 @@ The following diagram illustrates the user flow for viewing bills in the demo ap
 ```mermaid
 sequenceDiagram
     participant user as User
-    participant backend as Demo app 
+    participant backend as Demo app
     participant codat as Codat API
-    
+
     user ->> backend: View bills
     Note over user,backend: Launch Bills Portal
     backend ->> codat: Get/list bills
@@ -39,8 +39,9 @@ sequenceDiagram
     backend ->> codat: Get/list accounts
     codat -->> backend: Accounts (banking only)
     backend ->> user: View paid/unpaid bills
-    
+
 ```
+
 :::
 
 ### Fetch bills
@@ -189,9 +190,9 @@ The following diagram illustrates the user flow for selecting and paying a bill 
 ```mermaid
 sequenceDiagram
     participant user as User
-    participant backend as Demo app 
-    participant codat as Codat API    
-              
+    participant backend as Demo app
+    participant codat as Codat API
+
     user ->> backend: Select a bill to pay
     backend ->> user: Bill payment view
     user ->> backend: Select account to assign bill payment to
@@ -206,14 +207,14 @@ sequenceDiagram
     end
     backend ->> backend: Update bill status
     backend ->> user: Bill shown as paid
-    
+
 ```
 
 :::
 
 The bill remains in a `pending` status during the polling process.
 
-When selecting an account in the **Bill Payment** dialog, the **Account name** dropdown only displays banking accounts in the same currency as the bill. The account type is determined using a query parameter for `isBankAccount=true`. 
+When selecting an account in the **Bill Payment** dialog, the **Account name** dropdown only displays banking accounts in the same currency as the bill. The account type is determined using a query parameter for `isBankAccount=true`.
 
 The bill payment will be assigned to the selected account in your sandbox QuickBooks Online company.
 
@@ -232,33 +233,35 @@ Here is an example request:
 ```http
 POST https://api.codat.io/companies/{companyId}/connections/{connectionId}/push/billPayments
 ```
+
 #### Example request body
 
 ```json
 {
-    "supplierRef": {
-        "id": "<SUPPLIER_ID>" // ID of the supplier to reconcile payment against
-    },
-    "accountRef": {
-        "id" : "<ACCOUNT_ID>" // ID of the bank account for the payment
-    },
-    "totalAmount": 2400.00,
-    "date": "<ISO_TIMESTAMP>", // date and time of payment
-    "currency": "USD",
-    "lines": [
-      {
-        "amount": 2400.00, // total amount of bill
-        "links": [
-          {
-            "type": "Bill",
-            "id": "<BILL_ID>", // separate link for each bill the bill payment should be reconciled against
-            "amount": -2400.00
-          }
-        ]
-      }
-    ]
-  }
+  "supplierRef": {
+    "id": "<SUPPLIER_ID>" // ID of the supplier to reconcile payment against
+  },
+  "accountRef": {
+    "id": "<ACCOUNT_ID>" // ID of the bank account for the payment
+  },
+  "totalAmount": 2400.0,
+  "date": "<ISO_TIMESTAMP>", // date and time of payment
+  "currency": "USD",
+  "lines": [
+    {
+      "amount": 2400.0, // total amount of bill
+      "links": [
+        {
+          "type": "Bill",
+          "id": "<BILL_ID>", // separate link for each bill the bill payment should be reconciled against
+          "amount": -2400.0
+        }
+      ]
+    }
+  ]
+}
 ```
+
 </TabItem>
 
 </Tabs>

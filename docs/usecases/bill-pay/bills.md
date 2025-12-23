@@ -22,15 +22,17 @@ GET https://api.codat.io/companies/{companyId}/data/suppliers?page=1&pageSize=10
 ```
 
 Query parameters can also be used to narrow the list of suppliers e.g.
+
 - `status=Active` returns only active suppliers
 - `defaultCurrency=USD` returns suppliers that provide goods or services in dollars
 - `supplierName=Acme` returns suppliers with a name that matches the query
 
 :::tip Supplier Balances
 Currently the accounting API does not expose supplier balances on the supplier endpoint, however you can access these by
+
 - Aggregating bills by supplier
 - Using the [Aged debtors](/accounting-api#/operations/get-aged-debtors-report) report
-:::
+  :::
 
 #### Creating a new supplier
 
@@ -61,6 +63,7 @@ GET https://api.codat.io/companies/{companyId}/data/bills?page=1&pageSize=100
 ```
 
 Query parameters can be used to filter and narrow the returned results e.g.
+
 - `supplierRef.supplierName=acme inc` returns only bills associated to the specified supplier
 - `dueDate>2023-06-01&&dueDate<2023-06-30` returns only bills due for payment between June 1st and June 30th
 - `amountDue>0` returns only outstanding bills with due amounts

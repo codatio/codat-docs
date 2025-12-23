@@ -2129,7 +2129,7 @@
           }
         },
         "operationId": "update-expense-transaction",
-        "description": "The *Update expense* endpoint updates an existing [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) in the accounting software for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) represent transactions made with a company debit or credit card. \n\n### Supported Integrations\nThe following integrations are supported for the [Payment](https://docs.codat.io/expenses/sync-process/expense-transactions#transaction-types) transaction `type` only: \n| Integration           | Supported |\n|-----------------------|-----------|\n| FreeAgent             | Yes       |\n| QuickBooks Online     | Yes       |\n| Oracle NetSuite       | Yes       |\n| Xero                  | Yes       |\n| Zoho Books            | Yes       |",
+        "description": "The *Update expense* endpoint updates an existing [expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) in the accounting software for a given company's connection. \n\n[Expense transactions](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateExpenseRequest) represent transactions made with a company debit or credit card. \n\n### Supported Integrations\nThe following integrations are supported for the [Payment](https://docs.codat.io/expenses/sync-process/expense-transactions#transaction-types) transaction `type` only: \n| Integration           | Supported |\n|-----------------------|-----------|\n| FreeAgent             | Yes       |\n| QuickBooks Desktop    | Yes       |\n| QuickBooks Online     | Yes       |\n| Oracle NetSuite       | Yes       |\n| Xero                  | Yes       |\n| Zoho Books            | Yes       |",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2194,7 +2194,7 @@
       "put": {
         "summary": "Create transfer transaction",
         "operationId": "create-transfer-transaction",
-        "description": "Use the *Create transfer* endpoint to create or update a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransactionRequest) in the accounting software for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Xero                  | Yes       |",
+        "description": "Use the *Create transfer* endpoint to create or update a [transfer transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/TransferTransactionRequest) in the accounting software for a given company's connection. \r\n\r\nTransfers record the movement of money between two bank accounts, or between a bank account and a nominal account. Use them to represent actions such as topping up a debit card account or a balance transfer to another credit card.\r\n\r\nThe `from.amount` and `to.amount` fields are in the native currency of the account.\r\n\r\n### Supported Integrations\r\n| Integration           | Create transfer  | Update transfer  |\r\n|-----------------------|------------------|------------------|\r\n| Dynamics\t\t\t\t| No\t\t\t   | No\t\t\t\t  |\r\n| FreeAgent             | Yes              | Yes              |\r\n| NetSuite              | No               | No               |\r\n| QuickBooks Desktop    | Yes              | No               |\r\n| QuickBooks Online     | Yes              | Yes              |\r\n| Sage Intacct          | No               | No               |\r\n| Xero                  | Yes              | No               |\r\n| Zoho Books            | No               | No               |",
         "tags": [
           "Transfers"
         ],
@@ -2395,7 +2395,7 @@
       "post": {
         "summary": "Create reimbursable expense transaction",
         "operationId": "create-reimbursable-expense-transaction",
-        "description": "Use the *Create reimbursable expense* endpoint to submit an employee expense claim in the accounting platform for a given company's connection.\r\n\r\n[Reimbursable expense requests](https://docs.codat.io/sync-for-expenses-api#/schemas/ReimbursableExpenseTransactionRequest) are reflected in the accounting software in the form of **Bills** against an employee (who exists as a supplier in the accounting platform).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |\r\n| Zoho Books            | Yes       |",
+        "description": "Use the *Create reimbursable expense* endpoint to submit an employee expense claim in the accounting platform for a given company's connection.\r\n\r\n[Reimbursable expense requests](https://docs.codat.io/sync-for-expenses-api#/schemas/ReimbursableExpenseTransactionRequest) are reflected in the accounting software in the form of **Bills** against an employee (who exists as a supplier in the accounting platform).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Desktop    | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |\r\n| Zoho Books            | Yes       |\r\n| Sage Intacct          | Yes       |",
         "tags": [
           "Reimbursements"
         ],
@@ -4566,7 +4566,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -9728,7 +9728,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -18338,8 +18338,8 @@
                 "title": "Date time",
                 "type": "string",
                 "examples": [
-                  "2022-10-23T00:00:00.000Z",
-                  "2022-10-23T00:00:00.000Z"
+                  "2022-10-23T00:00:00Z",
+                  "2022-10-23"
                 ],
                 "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
               }
@@ -18519,12 +18519,8 @@
         "properties": {
           "syncId": {
             "type": "string",
-            "description": "Unique identifier for the update expense sync."
-          }
-        },
-        "examples": {
-          "Example 1": {
-            "syncId": "1ad0695c-4566-4715-918c-adbb03eac81e"
+            "description": "Unique identifier for the update expense sync.",
+            "example": "1ad0695c-4566-4715-918c-adbb03eac81e"
           }
         }
       },

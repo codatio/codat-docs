@@ -5,22 +5,22 @@ sidebar_label: Manage bills
 ---
 
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
-import RetrieveBills from '../_retrieve-bills.md'
-import CreateBills from '../_create-bills.md'
-import UploadAttachment from '../_upload-attachment.md'
+import TabItem from "@theme/TabItem";
+import RetrieveBills from "../_retrieve-bills.md";
+import CreateBills from "../_create-bills.md";
+import UploadAttachment from "../_upload-attachment.md";
 
 :::tip Invoices or bills?
 
-We distinguish between invoices where the company *owes* money and those where the company *is owed* money. If the company receives an invoice and owes money as a result, we call this a **bill**.
+We distinguish between invoices where the company _owes_ money and those where the company _is owed_ money. If the company receives an invoice and owes money as a result, we call this a **bill**.
 :::
 
 ## Overview
 
-In Codat, a bill represents an *accounts payable* invoice issued to an SMB by their supplier. With asynchronous Bill Pay, you can:
+In Codat, a bill represents an _accounts payable_ invoice issued to an SMB by their supplier. With asynchronous Bill Pay, you can:
 
 - Retrieve and update your customer's existing bills.
-- Create new bills in your system and reflect them in your customer's accounting software.  
+- Create new bills in your system and reflect them in your customer's accounting software.
 
 We have highlighted this alternative sequence of steps in our detailed process diagram below.
 
@@ -31,10 +31,10 @@ We have highlighted this alternative sequence of steps in our detailed process d
 
   sequenceDiagram
       participant smb as SMB customer
-      participant app as Your application 
+      participant app as Your application
       participant codat as Codat
       participant acctg as Accounting software
-         
+
       alt Retrieve bills
         codat ->> acctg: Fetches existing bills
         acctg -->> codat: Returns existing bills
@@ -57,9 +57,13 @@ Bill endpoints of the async Bill Pay solution provide full, unfiltered bill reco
 - `supplierRef.supplierName=acme` returns bills associated with the specified supplier.
 - `dueDate>2023-06-01&&dueDate<2023-06-30` returns bills due for payment between 1 and 30 June.
 - `amountDue>0` returns outstanding bills with non-zero due amounts.
-:::
+  :::
 
-<RetrieveBills listendpoint="/sync-for-payables-api#/operations/list-suppliers" createendpoint="/sync-for-payables-api#/operations/create-supplier" downloadendpoint="/sync-for-payables-api#/operations/download-bill-attachment" />
+<RetrieveBills
+  listendpoint="/sync-for-payables-api#/operations/list-suppliers"
+  createendpoint="/sync-for-payables-api#/operations/create-supplier"
+  downloadendpoint="/sync-for-payables-api#/operations/download-bill-attachment"
+/>
 
 ## Create bill
 
@@ -67,7 +71,7 @@ Bill endpoints of the async Bill Pay solution provide full, unfiltered bill reco
 
 Bills should always correspond to a supplier that issued them. Ensure the relevant supplier exists before creating a new bill.
 
-You may also need to associate the bill's line items with a specific account or tax rate. Use the [List accounts](/sync-for-payables-api#/operations/list-accounts) or [Create account](/sync-for-payables-api#/operations/create-account) endpoints to manage available reference accounts and [List tax rates](/sync-for-payables-api#/operations/list-tax-rates) to view tax rates available to assign. 
+You may also need to associate the bill's line items with a specific account or tax rate. Use the [List accounts](/sync-for-payables-api#/operations/list-accounts) or [Create account](/sync-for-payables-api#/operations/create-account) endpoints to manage available reference accounts and [List tax rates](/sync-for-payables-api#/operations/list-tax-rates) to view tax rates available to assign.
 
 :::
 
@@ -83,31 +87,31 @@ In some cases, your SMB customer may want to update their existing bill - for ex
 
 ```javascript
 const billUpdateResponse = await payablesClient.bills.update({
-    bill: {
-      supplierRef: {
-        id: supplierCreateResponse.supplier.id,
-        supplierName: supplierCreateResponse.supplier.supplierName
-      },
-      issueDate: "2023-04-23T00:00:00",
-      dueDate: "2023-06-23T00:00:00",
-      lineItems: [
-        {
-          "description": "Half day training - Microsoft Paint",
-          "unitAmount": 1000.00,
-          "quantity": 1,
-          "totalAmount": 1000.00,
-        }
-      ],
-      status: BillStatus.Open,
-      subTotal: 1000.00,
-      taxAmount: 200.00,
-      totalAmount: 1200.00,
-      amountDue: 1200.00
+  bill: {
+    supplierRef: {
+      id: supplierCreateResponse.supplier.id,
+      supplierName: supplierCreateResponse.supplier.supplierName,
     },
-    companyId: companyId,
-    connectionId: connectionId,
-    billId: billId,
-  });
+    issueDate: "2023-04-23T00:00:00",
+    dueDate: "2023-06-23T00:00:00",
+    lineItems: [
+      {
+        description: "Half day training - Microsoft Paint",
+        unitAmount: 1000.0,
+        quantity: 1,
+        totalAmount: 1000.0,
+      },
+    ],
+    status: BillStatus.Open,
+    subTotal: 1000.0,
+    taxAmount: 200.0,
+    totalAmount: 1200.0,
+    amountDue: 1200.0,
+  },
+  companyId: companyId,
+  connectionId: connectionId,
+  billId: billId,
+});
 ```
 
 </TabItem>
@@ -177,6 +181,7 @@ var billUpdateResponse = await payablesClient.Bills.UpdateAsync(new UpdateBillRe
     BillId = billId
 });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -210,15 +215,16 @@ billUpdateResponse, err := payablesClient.Bills.Update(ctx, operations.UpdateBil
     BillID: billID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
 
 ## Delete bill
 
-In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill. 
+In certain scenarios, your SMB customer may want to delete an existing bill or a bill payment - for example, if they made a mistake or no longer want to process the bill.
 
-Use the [Delete bill](/sync-for-payables-api#/operations/delete-bill) endpoint to support these requirements, and check the OAS for the most up-to-date integration coverage. 
+Use the [Delete bill](/sync-for-payables-api#/operations/delete-bill) endpoint to support these requirements, and check the OAS for the most up-to-date integration coverage.
 
 <Tabs groupId="language">
 
@@ -257,6 +263,7 @@ var res = await payablesClient.Bills.DeleteAsync(new() {
     BillId = billId,
 };);
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -269,11 +276,15 @@ billDeleteResponse, err := payablesClient.Bills.Delete(ctx, operations.DeleteBil
   BillID: billID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
 
-<UploadAttachment endpoint="/sync-for-payables-api#/operations/upload-bill-attachments" schema="/sync-for-payables-api#/schemas/Attachment" />
+<UploadAttachment
+  endpoint="/sync-for-payables-api#/operations/upload-bill-attachments"
+  schema="/sync-for-payables-api#/schemas/Attachment"
+/>
 
 ---
 

@@ -3021,7 +3021,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multicurrency enabled."
                               }
                             ],
                             "information": [
@@ -3547,7 +3547,7 @@
                     "accountInfo": {
                       "description": "account description 1",
                       "nickname": "account 123",
-                      "accountOpenDate": "2023-05-06T00:00:00.000Z",
+                      "accountOpenDate": "2023-05-06",
                       "availableBalance": 10
                     },
                     "modifiedDate": "2024-08-02T00:00:00.000Z"
@@ -4781,7 +4781,7 @@
                         "accountNumber": "12345678",
                         "currency": "GBP",
                         "balance": 99.99,
-                        "modifiedDate": "2023-01-09T14:14:14.105Z",
+                        "modifiedDate": "2023-01-09T14:14:14.1057478Z",
                         "status": "pending"
                       }
                     }
@@ -4831,7 +4831,7 @@
                         "accountNumber": "12345678",
                         "currency": "GBP",
                         "balance": 99.99,
-                        "modifiedDate": "2023-01-09T14:14:14.105Z",
+                        "modifiedDate": "2023-01-09T14:14:14.1057478Z",
                         "status": "pending"
                       }
                     }
@@ -6367,8 +6367,8 @@
         "title": "Date time",
         "type": "string",
         "examples": [
-          "2022-10-23T00:00:00.000Z",
-          "2022-10-23T00:00:00.000Z"
+          "2022-10-23T00:00:00Z",
+          "2022-10-23"
         ],
         "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
@@ -7372,12 +7372,12 @@
             "accountInfo": {
               "description": "account description 1",
               "nickname": "account 123",
-              "accountOpenDate": "2023-05-06T00:00:00.000Z",
+              "accountOpenDate": "2023-05-06",
               "availableBalance": 10
             },
             "modifiedDate": "2024-08-02T00:00:00.000Z",
             "status": "pending",
-            "feedStartDate": "2024-05-01T00:00:00.000Z"
+            "feedStartDate": "2024-05-01"
           },
           {
             "id": "acc-002",
@@ -7393,12 +7393,12 @@
             "accountInfo": {
               "description": "account description 2",
               "nickname": "account 1290",
-              "accountOpenDate": "2023-05-23T00:00:00.000Z",
+              "accountOpenDate": "2023-05-23",
               "availableBalance": 400
             },
             "modifiedDate": "2024-08-02T00:00:00.000Z",
             "status": "pending",
-            "feedStartDate": "2024-05-01T00:00:00.000Z"
+            "feedStartDate": "2024-05-01"
           }
         ]
       },

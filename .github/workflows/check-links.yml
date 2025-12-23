@@ -1,0 +1,121 @@
+name: Check - broken links
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  workflow_dispatch:  # Allows manual triggering from the GitHub UI
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.event_name != 'pull_request' || github.actor != 'codatbot' 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install linkinator
+        run: npm install -g linkinator
+      
+      - name: Get Vercel Preview URL
+        id: get-preview-url
+        if: github.event_name == 'pull_request'
+        run: |
+          # Wait a bit for Vercel deployment to be ready
+          sleep 30
+          
+          # Try to get the preview URL from Vercel API
+          if [ -n "${{ secrets.VERCEL_TOKEN }}" ]; then
+            # Get the latest deployment for this PR
+            DEPLOYMENT=$(curl -s -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+              "https://api.vercel.com/v6/deployments?teamId=${{ secrets.VERCEL_TEAM_ID }}&projectId=${{ secrets.VERCEL_PROJECT_ID }}&gitSource.pullRequestId=${{ github.event.pull_request.number }}" \
+              | jq -r '.deployments[0].url // empty')
+            
+            if [ -n "$DEPLOYMENT" ]; then
+              echo "preview_url=https://$DEPLOYMENT" >> $GITHUB_OUTPUT
+            else
+              # Fallback: construct the preview URL using the typical Vercel pattern
+              BRANCH_NAME=$(echo "${{ github.head_ref }}" | sed 's/[^a-zA-Z0-9]/-/g')
+              echo "preview_url=https://codat-docs-git-${BRANCH_NAME}-codat.vercel.app" >> $GITHUB_OUTPUT
+            fi
+          else
+            # Fallback: construct the preview URL using the typical Vercel pattern
+            BRANCH_NAME=$(echo "${{ github.head_ref }}" | sed 's/[^a-zA-Z0-9]/-/g')
+            echo "preview_url=https://codat-docs-git-${BRANCH_NAME}-codat.vercel.app" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Run linkinator
+        run: |
+          # Function to run linkinator with a given URL
+          run_linkinator() {
+            local url=$1
+            npx linkinator "$url" --recurse --verbosity error --skip ".*github.*|.*localhost.*" --format json --timeout 10000 --delay 1000 > link-results.json
+          }
+          
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            # Use preview URL for PRs
+            run_linkinator "${{ steps.get-preview-url.outputs.preview_url }}"
+          else
+            # Use main docs site for manual runs
+            run_linkinator "https://docs.codat.io"
+          fi
+        continue-on-error: true  # Ensure the workflow continues even if linkinator finds broken links
+      
+      - name: Delete Previous Comments
+        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const issue_number = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const comments = await github.rest.issues.listComments({
+              issue_number,
+              owner,
+              repo,
+            });
+            const actionComments = comments.data.filter(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Link check results'));
+            for (const comment of actionComments) {
+              await github.rest.issues.deleteComment({
+                owner,
+                repo,
+                comment_id: comment.id,
+              });
+            }
+
+      - name: Filter and Post Results
+        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const fs = require('fs');
+            const results = JSON.parse(fs.readFileSync('link-results.json', 'utf8'));
+            const filtered = results.links
+              .filter(link => link.status !== 403 && link.status !== 500 && link.status !== 0)
+            
+            const printList = filtered
+              .map(link => `[${link.status}] ${link.url}`);
+            const previewUrl = '${{ steps.get-preview-url.outputs.preview_url }}';
+            const output = `Link check results for preview deployment (${previewUrl}):\n\`\`\`\n${JSON.stringify(printList, null, 2)}\n\`\`\``;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output,
+            });
+
+            if (filtered.length > 0) {
+              core.setFailed("There are broken links in the documentation.");
+            }

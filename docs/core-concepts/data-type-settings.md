@@ -43,7 +43,7 @@ For more information about how to synchronize datasets on demand, see [Synchroni
 
 ## Choose a synchronization frequency
 
-By default, **Sync frequency** is set to **None**. 
+By default, **Sync frequency** is set to **None**.
 
 You can change the synchronization frequency using the drop-down list next to the data type name:
 
@@ -53,7 +53,7 @@ You can change the synchronization frequency using the drop-down list next to th
 - Daily
 - Hourly (premium feature)
 
-Syncs will automatically trigger based on the last sync date. For example, if the frequency is daily (24 hours), the next sync would automatically be queued 24 hours after the last sync. 
+Syncs will automatically trigger based on the last sync date. For example, if the frequency is daily (24 hours), the next sync would automatically be queued 24 hours after the last sync.
 
 It is not possible to set a specific date or time for syncs to occur. If you need this kind of functionality, you can build custom scheduling using cron and our [Refresh data type](https://docs.codat.io/platform-api#/operations/refresh-data-type) endpoint.
 
@@ -71,7 +71,7 @@ To manually trigger your data to be synchronized:
 You can also view **Read history** and **Write history** to check the status of previous read and write data syncs.
 
 :::note Default sync history
-For most data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. These default settings can be overriden via our API using [advanced sync settings](/knowledge-base/advanced-sync-settings).
+For most data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. These default settings can be overridden via our API using [advanced sync settings](/knowledge-base/advanced-sync-settings).
 :::
 
 ---
@@ -79,4 +79,3 @@ For most data types, we retrieve all available history. For financial statement 
 ## Read next
 
 - Next concept: [Data status](/core-concepts/status)
-

@@ -14,7 +14,7 @@ Over recent months, we have extended and improved bank data handling in the Coda
 
 The following endpoints will be deprecated:
 
-```http 
+```http
 GET /companies/{companyId}/data/bankAccounts
 GET /companies/{companyId}/data/bankAccounts/{accountId}
 GET /companies/{companyId}/data/bankAccounts/{accountId}/transactions
@@ -27,10 +27,11 @@ This was previously scheduled for 2023/04/10. This has been pushed back a day as
 
 ## Action required
 
-If you are using either of the above endpoints, you will need to instead use the following endpoints:  
+If you are using either of the above endpoints, you will need to instead use the following endpoints:
+
 ```http
-GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts  
-GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}  
+GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts
+GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}
 GET /companies/{companyId}/connections/{connectionId}/data/bankAccounts/{accountId}/bankTransactions
 ```
 

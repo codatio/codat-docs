@@ -6,8 +6,8 @@ displayed_sidebar: commerce
 image: "/img/banners/social/commerce.png"
 ---
 
-import DataTypes from '@components/DataTypes'
+import DataTypes from "@components/DataTypes";
 
-<DataTypes productName="commerce"/>
+<DataTypes productName="commerce" />
 
-<br/>
+<br />

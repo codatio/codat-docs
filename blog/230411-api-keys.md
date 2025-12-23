@@ -23,7 +23,6 @@ The change impacts the following endpoints:
 This was previously scheduled for 2023/04/10. This has been pushed back a day as this fell on a public holiday in the UK.
 :::
 
-
 ## Action required
 
 Use the Codat Portal to view and generate API keys in the interim. The API keys can be managed under **Developers > API keys**.

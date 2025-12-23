@@ -14,7 +14,7 @@ Our endpoints which return multiple results are paged, e.g. [`GET /companies`](/
 A typical request will have the following properties:
 
 - `page` : This is the page number that you would like to have displayed. The default page is 1.
-- `pageSize` : You can define the number of results you would like returned per page. The default page size is 100, while the maximum page size can be set to 5000. We recommend using the default page size to ensure optimal response times. Read more on [Optimizing API Calls](/using-the-api/optimizing-api-calls). 
+- `pageSize` : You can define the number of results you would like returned per page. The default page size is 100, while the maximum page size can be set to 5000. We recommend using the default page size to ensure optimal response times. Read more on [Optimizing API Calls](/using-the-api/optimizing-api-calls).
 
 ## Response
 
@@ -38,8 +38,8 @@ Note: `totalResults` returns the number of results after applying any filter you
 
 ## Example
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 <Tabs groupId="language">
 <TabItem value="csharp" label="C#">
@@ -62,49 +62,52 @@ var res = await codatPlatform.Companies.ListAsync(new ListCompaniesRequest() {
 
 // handle response
 ```
+
 </TabItem>
 <TabItem value="python" label="Python">
 
 ```python
-import codatplatform
-from codatplatform.models import operations, shared
+from codat_platform import CodatPlatform
+from codat_platform.models import operations, shared
 
-codat_platform = codatplatform.CodatPlatform(
+codat_platform = CodatPlatform(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_platform.companies.list(operations.ListCompaniesRequest(
-    page = 5,
-    page_size = 20,
-))
+res = codat_platform.companies.list(
+    request=operations.ListCompaniesRequest(
+        page=5,
+        page_size=20,
+    )
+)
 
-if res.companies is not None:
+if res:
     # handle response
+    pass
 ```
+
 </TabItem>
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
 import { CodatPlatform } from "@codat/platform";
-import { ListCompaniesResponse } from "@codat/platform/dist/sdk/models/operations";
 
 const codatPlatform = new CodatPlatform({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatPlatform.companies.list({
-  page = 5,
-  pageSize = 20,
-}).then((res: ListCompaniesResponse) => {
-  if (res.statusCode == 200) {
+codatPlatform.companies
+  .list({
+    page: 5,
+    pageSize: 20,
+  })
+  .then((res) => {
     // handle response
-  }
-});
+  });
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -141,21 +144,16 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 <TabItem value="http" label="HTTP">
 
 ```http
 GET /companies?page=5&pageSize=20
 ```
+
 </TabItem>
 </Tabs>
-
-
-
-
-
-
-
 
 <Tabs>
 <TabItem value="http" label="HTTP">
@@ -168,14 +166,16 @@ GET /companies/{companyId}/data/invoices?page=5&pageSize=20
 <TabItem value="javascript" label="Javascript">
 
 ```javascript
-var query = new InvoicesQuery(companyId, 
-                    /* filter query */ null, 
-                    /* page number  */ 5, 
-                    /* page size    */ 20)
-                .run(codat.uat(apiKey));
+var query = new InvoicesQuery(
+  companyId,
+  /* filter query */ null,
+  /* page number  */ 5,
+  /* page size    */ 20,
+).run(codat.uat(apiKey));
 
 // Following of the pages directly from the HAL links is not yet supported by the client library.
 ```
+
 </TabItem>
 <TabItem value="csharp" label="C#">
 
@@ -188,6 +188,7 @@ request.AddHeader("Authorization", $"Basic {encodedApiKey}");
 var response = client.Execute(request);
 var info = response.Data;
 ```
+
 </TabItem>
 </Tabs>
 
@@ -213,8 +214,9 @@ var info = response.Data;
 
 :::tip Recap
 You have learned:
+
 - How to paginate with the `page` and `pageSize` parameters
-:::
+  :::
 
 ---
 

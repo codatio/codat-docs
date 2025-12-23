@@ -8,66 +8,93 @@ Throughout our documentation, you may see unfamiliar terms and accounting-specif
 <ul className="card-container col-1">
   <li className="card animation-pulse">
     <div className="header">
-      <img
-        src="/img/icons/video.svg"
-        className="mini-icon"
-      />
+      <img src="/img/icons/video.svg" className="mini-icon" />
       <h3>Back to basics: key accounting terms in plain English</h3>
-      <p><i>FreeAgent</i></p>
+      <p>
+        <i>FreeAgent</i>
+      </p>
     </div>
     <p>
-      FreeAgent's Chief Accountant, Emily Coltman FCA, gives you the plain English definitions for everyday accounting terms so you can confidently discuss your business finances.
+      FreeAgent's Chief Accountant, Emily Coltman FCA, gives you the plain
+      English definitions for everyday accounting terms so you can confidently
+      discuss your business finances.
     </p>
     <p>
-      <a href="https://www.freeagent.com/small-businesses/recordings/accounting-terms-in-plain-english/" target="_blank" rel="noreferrer">Watch video →</a>
+      <a
+        href="https://www.freeagent.com/small-businesses/recordings/accounting-terms-in-plain-english/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Watch video →
+      </a>
     </p>
   </li>
   <li className="card animation-pulse">
     <div className="header">
-      <img
-        src="/img/wp-icons/accounting-2.png"
-        className="mini-icon"
-      />
+      <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
       <h3>Accounting For Developers, Part I</h3>
-      <p><i>Modern Treasury</i></p>
+      <p>
+        <i>Modern Treasury</i>
+      </p>
     </div>
     <p>
-      In this first part of a two-part series, Modern Treasury walk through basic accounting principles for anyone building products that move and track money.
+      In this first part of a two-part series, Modern Treasury walk through
+      basic accounting principles for anyone building products that move and
+      track money.
     </p>
     <p>
-      <a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-i" target="_blank" rel="noreferrer">Read article →</a>
+      <a
+        href="https://www.moderntreasury.com/journal/accounting-for-developers-part-i"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Read article →
+      </a>
     </p>
   </li>
   <li className="card animation-pulse">
     <div className="header">
-      <img
-        src="/img/wp-icons/accounting-2.png"
-        className="mini-icon"
-      />
+      <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
       <h3>Accounting For Developers, Part II</h3>
-      <p><i>Modern Treasury</i></p>
+      <p>
+        <i>Modern Treasury</i>
+      </p>
     </div>
     <p>
-      In this second part of a two-part series, Modern Treasury build a ledger for a Venmo clone by applying the accounting principles covered in Part I.
+      In this second part of a two-part series, Modern Treasury build a ledger
+      for a Venmo clone by applying the accounting principles covered in Part I.
     </p>
     <p>
-      <a href="https://www.moderntreasury.com/journal/accounting-for-developers-part-ii" target="_blank" rel="noreferrer">Read article →</a>
+      <a
+        href="https://www.moderntreasury.com/journal/accounting-for-developers-part-ii"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Read article →
+      </a>
     </p>
   </li>
   <li className="card animation-pulse">
     <div className="header">
-      <img
-        src="/img/wp-icons/accounting-2.png"
-        className="mini-icon"
-      />
+      <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
       <h3>Accounting for Computer Scientists</h3>
-      <p><i>Martin Kleppman</i></p>
+      <p>
+        <i>Martin Kleppman</i>
+      </p>
     </div>
     <p>
-      Martin Kleppman explains basic principles of accounting using graphs, providing the background needed to understand the financial statements for a small company.
+      Martin Kleppman explains basic principles of accounting using graphs,
+      providing the background needed to understand the financial statements for
+      a small company.
     </p>
     <p>
-      <a href="https://martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html" target="_blank" rel="noreferrer">Read article →</a>
+      <a
+        href="https://martin.kleppmann.com/2011/03/07/accounting-for-computer-scientists.html"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Read article →
+      </a>
     </p>
   </li>
 </ul>

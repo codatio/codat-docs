@@ -24,8 +24,8 @@ You'll need to be an [Administrator](/configure/user-management/user-roles#admin
 4. From the **Rule type** dropdown, select the event you would like to be notified of. See [Rule types](/using-the-api/webhooks/legacy/core-rules-types) for more details of the events that trigger a webhook and the details included in the notification.
 5. In the **Company** dropdown, select the company that you would like to monitor, or select **All companies** to make all companies trigger this rule.
 6. By default, webhooks triggered by rules are shown in the Codat Portal, but you can also choose to send them by email or post them to a webhook. To do this:
-    - In the **Email addresses to notify** box, enter a comma-separated list of email addresses that should receive the notification.
-    - In the **Webhook notification URL** box enter the URL that you would like webhook details posted to. See [Rule types](/using-the-api/webhooks/legacy/core-rules-types) for more details.
+   - In the **Email addresses to notify** box, enter a comma-separated list of email addresses that should receive the notification.
+   - In the **Webhook notification URL** box enter the URL that you would like webhook details posted to. See [Rule types](/using-the-api/webhooks/legacy/core-rules-types) for more details.
 7. Select **Save changes**.
 
 ## Update an existing rule

@@ -6,7 +6,7 @@ The official [Codat](https://codat.io) documentation.
 - [Contributing Guide](./CONTRIBUTING.md)
 - [OpenAPI Spec](https://github.com/codatio/oas)
 
-![Website Deploy](https://deploy-badge.vercel.app/?url=https://vercel.com/codat/codat-docs&name=website) [![Linkinator CI](https://github.com/codatio/codat-docs/actions/workflows/linknator.yml/badge.svg)](https://github.com/codatio/codat-docs/actions/workflows/linknator.yml)
+![Website Deploy Badge](https://deploy-badge.vercel.app/?url=https://vercel.com/codat/codat-docs&name=website) [![CI Check Links Badge](https://github.com/codatio/codat-docs/actions/workflows/check-links.yml/badge.svg)](https://github.com/codatio/codat-docs/actions/workflows/check-links.yml)
 
 ---
 
@@ -32,7 +32,7 @@ All `.jpg`, `.jpeg`, and `.png` files are tracked.
 The docusaurus config expects certain environment variables to be defined. We've included `.env.example` - copy this and rename it to `.env`. You can enter any random string for the IDs.
 
 ```
-copy .env.example .env # on Windows 
+copy .env.example .env # on Windows
 cp .env.example .env # on Mac
 ```
 

@@ -28,9 +28,9 @@ We're excited to introduce our improved webhook event types. They add context to
 
 [Read more →](/updates/241004-new-webhook-event-types)
 
-### Introducing company tags 
+### Introducing company tags
 
-We've enhanced our `company` data model with a `tags` object. Tags provide a simple way to include additional information about a company. 
+We've enhanced our `company` data model with a `tags` object. Tags provide a simple way to include additional information about a company.
 
 For example, you can use tags to set a foreign key, define an operating region, or specify details about the financial services the company has requested. Each company can store up to 10 tags. This feature is available to all clients today.
 
@@ -42,7 +42,7 @@ For example, you can use tags to set a foreign key, define an operating region, 
 
 We have recently released our [updated QuickBooks Desktop connector](/updates/240227-qbd-connector). It simplifies your customer’s linking journey and provides more resilient data acquisition.
 
-As a result, we will be deprecating the legacy connector on **January 10, 2025**. Migrate your existing QBD connections to the new connector to continue syncing data with QBD after the deprecation. 
+As a result, we will be deprecating the legacy connector on **January 10, 2025**. Migrate your existing QBD connections to the new connector to continue syncing data with QBD after the deprecation.
 
 [Read more →](/updates/240802-deprecation-old-qbd-integration)
 
@@ -51,42 +51,44 @@ As a result, we will be deprecating the legacy connector on **January 10, 2025**
 On **January 10, 2025**, we will deprecate our legacy rule-based webhooks service following the release of our [new webhooks service](/updates/240306-new-webhook-service-released) and [webhook event types](/updates/241004-new-webhook-event-types).
 
 If you are using our legacy rules-based webhook service, migrate to the new webhooks service to continue receiving notifications from us.
- 
+
 [Read more →](/updates/241004-deprecation-rules-service)
 
 ### Deprecation extension for webhook changes
 
 We previously announced the following deprecations after the release of our new webhooks service:
+
 - [Deprecation of /rules/alerts endpoints](/updates/240306-deprecation-rules-alerts)
 - [Deprecation of RuleId in rules webhooks](/updates/240320-deprecation-ruleId)
 - [Deprecation of rule-based email notifications](/updates/240405-deprecation-rule-based-email-notifications)
 
 In our July developer update, we have extended the deprecation period to January 10, 2025. This deprecation is going ahead as scheduled on **January 10, 2025**.
- 
+
 [Read more →](/updates/240704-webhook-deprecation-extension)
 
 ### Deprecation of legacy webhook event types
- 
-On **January 10, 2025**, we will deprecate our legacy rule-based event types following the release of our [new webhook event types](/updates/241004-new-webhook-event-types) that provide more contextual information in the webhook payload. 
+
+On **January 10, 2025**, we will deprecate our legacy rule-based event types following the release of our [new webhook event types](/updates/241004-new-webhook-event-types) that provide more contextual information in the webhook payload.
 
 If you are using our legacy rule-based event types, change your configuration to use the new event types instead and continue receiving webhook notifications.
 
 [Read more →](/updates/241004-deprecation-legacy-webhook-event-types)
 
 ### Deprecation of company-specific webhooks
- 
+
 On **January 10, 2025**, we will deprecate company-specific webhooks delivered by our legacy rule services and replace them with [company tags](/updates/240926-introducing-company-tags).
- 
+
 To continue receiving notifications, add the required metadata to the the company schema and update your webhook consumers to filter webhooks by company tags.
 
 [Read more →](/updates/241004-deprecation-company-specific-webhooks)
 
 ### Changes to the bankFeeds.sourceAccount webhook payload
- 
+
 On **January 10, 2025**, we will update the payloads for the following event types to align with our [new webhook schema definition](/updates/241004-new-webhook-event-types):
+
 - `bankFeeds.sourceAccount.connected`
 - `bankFeeds.sourceAccount.disconnected`
 
-If you are using these webhook event types, update your corresponding webhook consumers to handle the updated schema definitions. 
+If you are using these webhook event types, update your corresponding webhook consumers to handle the updated schema definitions.
 
 [Read more →](/updates/241004-deprecation-bank-feed-source-account-event-types)

@@ -14,8 +14,9 @@ To view guidance on effective troubleshooting and issue resolution, navigate to 
 
 **Solution:**
 Review the validation logs to determine if the validation criteria apply to your use case:
-* If the criteria don't apply, you can safely ignore the warning.
-* If they do apply, update your application logic to handle this exception accordingly.
+
+- If the criteria don't apply, you can safely ignore the warning.
+- If they do apply, update your application logic to handle this exception accordingly.
 
 :::tip Validation coverage
 

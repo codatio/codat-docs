@@ -8,7 +8,7 @@ When the SMB user visits the `linkUrl`, they're directed to the QuickBooks Onlin
 
 :::caution Link URL expiry
 
-For security reasons, the `linkUrl` will expire one hour after it was generated. 
+For security reasons, the `linkUrl` will expire one hour after it was generated.
 
 :::
 
@@ -49,7 +49,7 @@ To connect their bank accounts to QBO, the SMB user performs the following steps
 8. They select a start date for the bank feed.
 
    :::caution Limitation on writing historic transactions
-   
+
    If the SMB user selects a bank feed start date older than seven days, it will be ignored. The integration only supports writing historic transactions up to seven days old.
 
    :::

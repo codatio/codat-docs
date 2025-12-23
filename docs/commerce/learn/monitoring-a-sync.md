@@ -11,9 +11,9 @@ Use the Sync Health page in the Codat Portal to monitor the status of your syncs
 In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click **Products** and select the relevant Sync product to view its Health page:
 
 - Check the **dashboard** (1) for a visual summary of sync totals.
-- Use the **search bar** (2) to narrow down the records by sync ID or company ID. 
-- Display the sync history for a specific period by indicating a **date range** (3). 
-- [Review the possible statuses](/commerce/error-documentation#status-codes) of the syncs and filter the records by their **status code** (4). 
+- Use the **search bar** (2) to narrow down the records by sync ID or company ID.
+- Display the sync history for a specific period by indicating a **date range** (3).
+- [Review the possible statuses](/commerce/error-documentation#status-codes) of the syncs and filter the records by their **status code** (4).
 - Use the **menu** (6) to sort and amend the **sync history** (5) table as needed.
 
 <img
@@ -23,11 +23,11 @@ In the <a href="https://app.codat.io/" target="_blank">Codat Portal</a>, click *
 
 ## View detailed records
 
-To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Sync Details** window and provides sync start and end times, and sync source and target platforms. 
+To view more detailed information about a record, click on an item in your **sync history**. The information appears in the **Sync Details** window and provides sync start and end times, and sync source and target platforms.
 
-It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/commerce/error-documentation#error-messages) for recommendations on how to resolve these. 
+It also displays client-friendly notes and error messages in case of sync failures. Refer to our [troubleshooting guide](/commerce/error-documentation#error-messages) for recommendations on how to resolve these.
 
-You can also navigate to the **Config** tab to view and download the customer's sync configuration, which helps establish root causes for any errors that occured. 
+You can also navigate to the **Config** tab to view and download the customer's sync configuration, which helps establish root causes for any errors that occurred.
 
 <img
   src="/img/sync-for-commerce/0007-sync-details-ui.png"
@@ -36,9 +36,9 @@ You can also navigate to the **Config** tab to view and download the customer's 
 
 ## View push items
 
-In the same detailed record view, select the **Push items** tab to access a list of **push items**. The list contains an item for each accounting data type that was produced in the selected sync (for example, an item for invoices, or credit notes). 
+In the same detailed record view, select the **Push items** tab to access a list of **push items**. The list contains an item for each accounting data type that was produced in the selected sync (for example, an item for invoices, or credit notes).
 
-Here, you can view each item's status, search the items by their core ID or data type, or filter them by status.  
+Here, you can view each item's status, search the items by their core ID or data type, or filter them by status.
 
 ## Retry push items
 
@@ -55,6 +55,6 @@ Your customers can check their own sync history and sync status in the **Sync Fl
 
 ## 💡 Tips and traps
 
-- Syncs are shown as failed if any of the included items fail to write. Therefore, if a sync contains a mix of failed and successfully written records, it will still be marked as failed. 
+- Syncs are shown as failed if any of the included items fail to write. Therefore, if a sync contains a mix of failed and successfully written records, it will still be marked as failed.
 - If a sync log record shows a "Please reconcile manually" note for an order, this is likely because an updated order does not have a matching original order in the platform. Therefore, Sync is unable to reconcile it, and this needs to be performed manually.
 - Sync history does not currently display the date range for data read from the commerce software that is used in the sync.

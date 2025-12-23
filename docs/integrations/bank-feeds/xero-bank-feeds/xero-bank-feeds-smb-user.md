@@ -13,13 +13,14 @@ After authenticating with their Xero account, the SMB user is redirected to a ge
 ![xero-bank-feeds_mapping-screen-example](/img/bank-feeds/xero-bank-feeds/xero-bank-feeds_annotated-manage-connected-accounts.png "Codat UI for connecting and mapping bank feed accounts to Xero.")
 
 The SMB user can do the following:
+
 1. Add one or more source bank accounts (the accounts you provided through the `POST /bankFeedAccounts` endpoint).
 2. Map a source bank account to an existing target bank account in Xero.
 3. Select **Create New Account** to map a source bank account to a new target bank account in Xero.
-4. Select the **Feed start date**&mdash;the date a bank feed connection should start from. 
+4. Select the **Feed start date**&mdash;the date a bank feed connection should start from.
 5. Connect the selected bank accounts to create bank feed connections.
 
-Whilse Codat doesn't validate the Feed start date, Xero's API doesn't support writing historical data older than one year. 
+While Codat doesn't validate the Feed start date, Xero's API doesn't support writing historical data older than one year.
 
 :::info Target account names
 If the user chooses the **Create New Account** option, the target bank account is created with the same name as the source bank account it's mapped to. Bank account names can be changed in Xero at any time.
@@ -30,12 +31,12 @@ Transactions are not automatically downloaded to Xero when the user successfully
 :::
 
 ## Connection management
+
 To allow your SMB users to view and manage their existing bank feed connections, you can direct them to a newly-generated `linkUrl`. When they open this URL and revisit the account mapping UI, their existing connections are displayed in the **Manage your connected accounts** panel:
 
 ![xero-bank-feeds_account-mapping-ui-manage-feed-connections](/img/bank-feeds/xero-bank-feeds/xero-bank-feeds_account-mapping-ui-manage-feed-connections.png "Codat-provided account mapping UI showing several connected accounts in the bottom panel.")
 
 To disconnect a source bank account, the SMB user hovers over the **connected** status icon and selects **Disconnect**. This immediately disables the bank feed connection. The disconnected account will display in the source bank account dropdown menu when the user next refreshes the page.
-
 
 ## Read next
 

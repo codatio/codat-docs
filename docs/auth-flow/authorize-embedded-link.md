@@ -6,31 +6,34 @@ banner_image: "/img/banners/link.png"
 ---
 
 import ReadNext from "@components/ReadNext";
-import CodeExamples from './_partial-auth-flow-examples.md';
+import CodeExamples from "./_partial-auth-flow-examples.md";
 
 ![](/img/auth-flow/embedded-link-selection.png)
 
-Our Link SDK is a pre-built JavaScript component that neatly sits in your front-end code and can be deployed in a matter of minutes. 
+Our Link SDK is a pre-built JavaScript component that neatly sits in your front-end code and can be deployed in a matter of minutes.
 
 We built it to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey. As a result, clients using the SDK note that **89%** of their users successfully complete their journeys.
 
 ```jsx live
 function AuthFlow() {
-  const onConnection = (connection) => alert(`Connection: ${connection.connectionId}`);
+  const onConnection = (connection) =>
+    alert(`Connection: ${connection.connectionId}`);
   const onFinish = () => alert("On finish callback");
 
   const config = {
     companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
     options: {
       showLandingPage: true,
-    }
-  }
+    },
+  };
 
-  return <div>
-    <p>Click the button below to start authing.</p>
+  return (
+    <div>
+      <p>Click the button below to start authing.</p>
 
-    <CodatLink {...config}/>
-  </div>
+      <CodatLink {...config} />
+    </div>
+  );
 }
 ```
 
@@ -78,11 +81,11 @@ Link SDK is imported at runtime, so you'll always get the latest version of our 
 
 ## Authorize user
 
-By default, we enforce additional security measures within our Link SDK. The SDK requires an access token to verify your customer, serving as an equivalent to a one-time password. Contact your account manager if you want to disable these measures. 
+By default, we enforce additional security measures within our Link SDK. The SDK requires an access token to verify your customer, serving as an equivalent to a one-time password. Contact your account manager if you want to disable these measures.
 
 #### Access token
 
-Once your customer authorizes within your application, use the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint to retrieve an access token for this customer's company. 
+Once your customer authorizes within your application, use the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint to retrieve an access token for this customer's company.
 
 Pass the token to the Link SDK when initializing. We use this to verify your customer and get company-specific information to display in the UI.
 
@@ -94,24 +97,24 @@ The token is only valid for one day and applies to a single company.
 
 [Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) (CORS) settings are required for access token to work. To control the domain list that your application can make token requests from, register the allowed origins using the [Set CORS settings](/platform-api#/operations/set-cors-settings) endpoint.
 
-To display the origins you previously registered for your instance, use the [Get CORS settings](/platform-api#/operations/get-cors-settings) endpoint. 
+To display the origins you previously registered for your instance, use the [Get CORS settings](/platform-api#/operations/get-cors-settings) endpoint.
 
 ## Use callback functions
 
 You can add custom logic into our SDK by using callback functions to complete an action. Use the properties below to pass the callback functions into the SDK component:
 
-| Property       | Description                                                                                                                                                                                                                                          | Arguments                                                                                                                                                                                                                                                                 |
-|----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `onConnectionStarted` | Called when the user selects their integration. A connection is successfully created in a `pending` state.                                                                                                                                    | A `connection` object containing the following properties: <ul><li>`connectionId` - unique identifier of the connection</li><li>`integrationId` - unique identifier of the integration</li><li>`sourceId` - unique identifier of the source type</li><li>`sourceType` - value indicating the information source type (`Unknown`, `Accounting`, `Banking`, `BankFeed`, `Commerce`, `Expense`, or `Other`)</li><li>`integrationKey` - 4-character value that identifies the integration software in Codat</li><li>`platformName` - name of the integration software</li></ul>                                                                                                                                                                                          |
-| `onConnection` | Called when a connection is successfully authorized and moved out of a `pending` state or files are   uploaded.                                                                                                                                    | A `connection` object containing the following properties: <ul><li>`connectionId` - unique identifier of the connection</li><li>`integrationId` - unique identifier of the integration</li><li>`sourceId` - unique identifier of the source type</li><li>`sourceType` - value indicating the information source type (`Unknown`, `Accounting`, `Banking`, `BankFeed`, `Commerce`, `Expense`, or `Other`)</li><li>`integrationKey` - 4-character value that identifies the integration software in Codat</li><li>`platformName` - name of the integration software</li></ul>                                                                                                                                                                                   |
-| `onConsent` | Called when the user consents to the terms of use of their data.             | A `text` object containing a Markdown representation of all text on the consent screen. |
-| `onFinish`     | Called when the user completes all required steps of the connection flow and clicks the   "Complete" button.<br/> We recommend unmounting the `CodatLink` component   in this callback. In the React example above, we call `setModalOpen(false)` to do this.                                                                   |                                                                                                                                                                                                                                                                            |
-| `onClose`      | Called when the user   clicks the "X" ("Close") button of the connection flow. <br/>  We recommend removing the `CodatLink` component in this callback. In the React example above, we call `setModalOpen(false)` to do this.                                                                                                  |                                                                                                                                                                                                                                                                            |
-| `onError`      | Called when an error   occurs in the connection flow, returning the error information. <br/><br/>  **Log these errors.** We also recommend   unmounting the `CodatLink` component in production if the `userRecoverable` parameter   is `false`. |  An `error` object containing the following properties: <ul><li>`correlationId` - internal identifier used to track errors within   Codat</li><li>`message` - descriptive error   response</li><li>`errorCode` - numerical code of the   error</li><li>`userRecoverable` - boolean value   indicating whether the error can be resolved by the user.</li></ul> `correlationId`, `message`, and `errorCode` are optional and may not be available in all errors. |
+| Property              | Description                                                                                                                                                                                                                                               | Arguments                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `onConnectionStarted` | Called when the user selects their integration. A connection is successfully created in a `pending` state.                                                                                                                                                | A `connection` object containing the following properties: <ul><li>`connectionId` - unique identifier of the connection</li><li>`integrationId` - unique identifier of the integration</li><li>`sourceId` - unique identifier of the source type</li><li>`sourceType` - value indicating the information source type (`Unknown`, `Accounting`, `Banking`, `BankFeed`, `Commerce`, `Expense`, or `Other`)</li><li>`integrationKey` - 4-character value that identifies the integration software in Codat</li><li>`platformName` - name of the integration software</li></ul> |
+| `onConnection`        | Called when a connection is successfully authorized and moved out of a `pending` state or files are uploaded.                                                                                                                                             | A `connection` object containing the following properties: <ul><li>`connectionId` - unique identifier of the connection</li><li>`integrationId` - unique identifier of the integration</li><li>`sourceId` - unique identifier of the source type</li><li>`sourceType` - value indicating the information source type (`Unknown`, `Accounting`, `Banking`, `BankFeed`, `Commerce`, `Expense`, or `Other`)</li><li>`integrationKey` - 4-character value that identifies the integration software in Codat</li><li>`platformName` - name of the integration software</li></ul> |
+| `onConsent`           | Called when the user consents to the terms of use of their data.                                                                                                                                                                                          | A `text` object containing a Markdown representation of all text on the consent screen.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `onFinish`            | Called when the user completes all required steps of the connection flow and clicks the "Complete" button.<br/> We recommend unmounting the `CodatLink` component in this callback. In the React example above, we call `setModalOpen(false)` to do this. |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `onClose`             | Called when the user clicks the "X" ("Close") button of the connection flow. <br/> We recommend removing the `CodatLink` component in this callback. In the React example above, we call `setModalOpen(false)` to do this.                                |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `onError`             | Called when an error occurs in the connection flow, returning the error information. <br/><br/> **Log these errors.** We also recommend unmounting the `CodatLink` component in production if the `userRecoverable` parameter is `false`.                 | An `error` object containing the following properties: <ul><li>`correlationId` - internal identifier used to track errors within Codat</li><li>`message` - descriptive error response</li><li>`errorCode` - numerical code of the error</li><li>`userRecoverable` - boolean value indicating whether the error can be resolved by the user.</li></ul> `correlationId`, `message`, and `errorCode` are optional and may not be available in all errors.                                                                                                                      |
 
 ## Customize Link
 
-You can configure Link's UI to match your company branding and reflect your company's values, and adjust Link's behavior using the [Codat Portal](https://app.codat.io/) or our SDK's advanced options. 
+You can configure Link's UI to match your company branding and reflect your company's values, and adjust Link's behavior using the [Codat Portal](https://app.codat.io/) or our SDK's advanced options.
 
 #### Configure in Portal
 
@@ -130,9 +133,12 @@ To control the redirects that happen upon flow completion, you need to build out
 
 <ReadNext
   links={[
-    [ "Manage Link settings in Portal", "/auth-flow/customize/customize-link" ],
-    [ "Manage branding settings in Portal", "/auth-flow/customize/branding" ],
-    [ "Manage UI settings in code", "/auth-flow/customize/sdk-customize-code" ],
-    [ "Use the Connections SDK in your app", "/auth-flow/optimize/connection-management" ], 
+    ["Manage Link settings in Portal", "/auth-flow/customize/customize-link"],
+    ["Manage branding settings in Portal", "/auth-flow/customize/branding"],
+    ["Manage UI settings in code", "/auth-flow/customize/sdk-customize-code"],
+    [
+      "Use the Connections SDK in your app",
+      "/auth-flow/optimize/connection-management",
+    ],
   ]}
 />

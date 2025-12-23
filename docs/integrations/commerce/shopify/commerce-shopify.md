@@ -3,21 +3,21 @@ title: "Shopify"
 description: "Learn about our Shopify integration"
 ---
 
-[Shopify](https://www.shopify.com/) is an ecommerce software that helps SMBs to sell their products online.
+[Shopify](https://www.shopify.com/) is an eCommerce software that helps SMBs to sell their products online.
 
 With Codat's Shopify integration, you can securely retrieve your SMB customers' commerce transactions, standardized to our commerce data model.
 
 ## Approaches to merchant data sharing
 
-When setting up the integration, you can take one of the following two approaches for enabling your merchants to connect and share their commerce data: 
+When setting up the integration, you can take one of the following two approaches for enabling your merchants to connect and share their commerce data:
 
 - [Custom apps](/integrations/commerce/shopify/commerce-shopify-custom-apps)
 
-    Created by merchants exclusively for their Shopify stores.
+  Created by merchants exclusively for their Shopify stores.
 
 - [Public apps](/integrations/commerce/shopify/commerce-shopify-public-apps)
 
-    Built by you and must be approved by Shopify before use. A single public app can be installed on multiple Shopify stores.
+  Built by you and must be approved by Shopify before use. A single public app can be installed on multiple Shopify stores.
 
 In general, custom apps require less initial setup, with tasks completed by the merchant. Public apps require more initial setup, with tasks completed by you, the Codat client. Choose the option that best suits your circumstances.
 

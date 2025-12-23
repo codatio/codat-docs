@@ -178,23 +178,18 @@ Depending on your frontend stack, this will vary. Using React, it might look som
 
 ```html
 <div>
-  {
-    integrations.map((integration, i) => (
-      <div
-        key={i}
-        onClick={selectIntegration(integration.key)}
-      >
-        <img
-          src={branding[integration.key].logo.full.image.src}
-          alt={branding[integration.key].logo.full.image.alt}
-        />
+  { integrations.map((integration, i) => (
+  <div key="{i}" onClick="{selectIntegration(integration.key)}">
+    <img
+      src="{branding[integration.key].logo.full.image.src}"
+      alt="{branding[integration.key].logo.full.image.alt}"
+    />
 
-        <h3>{integration.name}</h3>
+    <h3>{integration.name}</h3>
 
-        <div>Link your {integration.name} account</div>
-      </div>
-    )
-  }
+    <div>Link your {integration.name} account</div>
+  </div>
+  ) }
 </div>
 ```
 

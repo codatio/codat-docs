@@ -5,7 +5,6 @@ tags: ["Product", "Update"]
 authors: dcoplowe
 ---
 
-
 We are excited to announce the release of C# client libraries for our new product suite.
 
 <!--truncate-->
@@ -26,7 +25,7 @@ logger.LogInformation("{Id}: {Name}, company.Id, company.Name);
 
 ```
 
-## Available libraries    
+## Available libraries
 
 - [Bank Feeds API](https://github.com/codatio/client-sdk-csharp/tree/main/bank-feeds)
 - [Lending API](https://github.com/codatio/client-sdk-csharp/tree/main/lending)
@@ -35,7 +34,6 @@ logger.LogInformation("{Id}: {Name}, company.Id, company.Name);
 - [Sync for Payables](https://github.com/codatio/client-sdk-csharp/tree/main/sync-for-payables)
 - [Sync for Payroll](https://github.com/codatio/client-sdk-csharp/tree/main/sync-for-payroll)
 - [Platform](https://github.com/codatio/client-sdk-csharp/tree/main/platform)
-
 
 ## All available languages
 
@@ -46,79 +44,78 @@ Codat offers official SDK client libraries for different programming languages, 
     <div className="card-row">
       <div className="header">
         <a href="https://github.com/codatio/client-sdk-csharp">
-          <img
-            src="/img/libraries/csharp.svg"
-            className="icon usecase"
-          />
+          <img src="/img/libraries/csharp.svg" className="icon usecase" />
         </a>
       </div>
-      
+
       <div className="content">
         <h4>C#</h4>
         <p>
-          <a href="https://github.com/codatio/client-sdk-csharp">Start using →</a>
-        </p>    
+          <a href="https://github.com/codatio/client-sdk-csharp">
+            Start using →
+          </a>
+        </p>
       </div>
     </div>
+
   </li>
   <li className="card mini">
     <div className="card-row">
       <div className="header">
         <a href="https://github.com/codatio/client-sdk-typescript">
-          <img
-            src="/img/libraries/typescript.svg"
-            className="icon usecase"
-          />
+          <img src="/img/libraries/typescript.svg" className="icon usecase" />
         </a>
       </div>
-      
+
       <div className="content">
         <h4>TypeScript</h4>
         <p>
-          <a href="https://github.com/codatio/client-sdk-typescript">Start using →</a>
-        </p>    
+          <a href="https://github.com/codatio/client-sdk-typescript">
+            Start using →
+          </a>
+        </p>
       </div>
     </div>
+
   </li>
   <li className="card mini">
     <div className="card-row">
       <div className="header">
         <a href="https://github.com/codatio/client-sdk-python">
-          <img
-            src="/img/libraries/python.svg"
-            className="icon usecase"
-          />
+          <img src="/img/libraries/python.svg" className="icon usecase" />
         </a>
       </div>
-      
+
       <div className="content">
         <h4>Python</h4>
         <p>
-          <a href="https://github.com/codatio/client-sdk-python">Start using →</a>
-        </p>    
+          <a href="https://github.com/codatio/client-sdk-python">
+            Start using →
+          </a>
+        </p>
       </div>
     </div>
+
   </li>
   <li className="card mini">
     <div className="card-row">
       <div className="header">
         <a href="https://github.com/codatio/client-sdk-go">
-          <img
-            src="/img/libraries/go.svg"
-            className="icon usecase"
-          />
+          <img src="/img/libraries/go.svg" className="icon usecase" />
         </a>
       </div>
-      
+
       <div className="content">
         <h4>Go</h4>
         <p>
           <a href="https://github.com/codatio/client-sdk-go">Start using →</a>
-        </p>    
+        </p>
       </div>
     </div>
+
   </li>
 </ul>
 
 ---
+
 [Click here](/get-started/libraries) for more information on client libraries and other supported languages.

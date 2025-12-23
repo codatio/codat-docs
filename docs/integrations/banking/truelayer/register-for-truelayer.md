@@ -34,7 +34,7 @@ All Codat customers would need to sign:
 Codat’s customer agreement, which covers the customer’s relationship with Codat (TrueLayer will not see this)
 A Joint Agreement between the customer, Codat and TrueLayer for the provision of Account Information Services (AIS) by TrueLayer
 
-In addition, for any Codat customers that are (a) providing AIS to their end-users and (b) not regulated or authorised to provide AIS, they would also need to become an agent of TrueLayer by signing:
+In addition, for any Codat customers that are (a) providing AIS to their end-users and (b) not regulated or authorized to provide AIS, they would also need to become an agent of TrueLayer by signing:
 
 An AIS Agent Agreement between the customer and TrueLayer
 
@@ -42,7 +42,7 @@ An AIS Agent Agreement between the customer and TrueLayer
 
 The key factor here is whether the customer’s app or website will be displaying account information acquired through the TrueLayer’s Data API back to an end-user. For example:
 
-✅ - customer’s app or website allows the end-user to view and categorise account transactions. This may either be consolidated data or simply their bank transactions.
+✅ - customer’s app or website allows the end-user to view and categorize account transactions. This may either be consolidated data or simply their bank transactions.
 ❌ - customer’s app or website is simply acquiring bank information to assist with internal decision making (e.g. KYC or credit analysis) without displaying this information back to an end-user.
 
 TrueLayer has further information on this here.
@@ -53,7 +53,7 @@ That being said, it remains the customer’s responsibility to seek legal advice
 
 ### 3. What does it mean to be TrueLayer’s AIS agent?
 
-By becoming TrueLayer’s AIS agent, Codat’s customer does not need to become authorised or regulated to provide AIS - they can provide those services to their end-users by relying on TrueLayer’s own FCA AIS permissions
+By becoming TrueLayer’s AIS agent, Codat’s customer does not need to become authorized or regulated to provide AIS - they can provide those services to their end-users by relying on TrueLayer’s own FCA AIS permissions
 
 As an agent, Codat’s customer will be acting on behalf of TrueLayer in providing those AIS services, so TrueLayer will need to understand how those services will be delivered through the customer’s app or website. The customer will also need to disclose the fact it is acting as TrueLayer’s agent to its end-users.
 
@@ -69,6 +69,7 @@ This would depend on the route the customer takes.
 
 Data API (Non-Agent): TrueLayer will conduct a KYB check on the business entity using various data sources. We may also request a data flow diagram/screenshots of the customer's user journey.
 AIS Agent Process: KYB check on the business entity, KYC check on the fit and proper, evidence of the companies system and controls, policy documents (listed in application form) and valid PII and Cyber insurance.
+
 ### 5. Once the due diligence process has been completed, what steps / actions should Codat’s customer expect to go through as part of onboarding?
 
 TrueLayer’s legal team will prepare a Joint Agreement and, if required, the AIS Agent Agreement for signature by relevant parties. TrueLayer will require some basic corporate details, signatory details and contacts for notices from the customer to prepare the agreements for signature. TrueLayer will typically ask for signatures via Docusign.

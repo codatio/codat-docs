@@ -18,11 +18,13 @@ Action required
 Please check that your code when writing invoices complies with these rules. If not, you need to change the code to comply. The code must adhere to the following rules:
 
 TotalAmount
+
 - TotalAmount should be equal to the sum of line items minus the discount percentage plus tax.
 - TotalAmount should be equal to the sum of line items minus the total discount plus tax.
 - TotalAmount should be equal to the sum of line items minus the line discounts plus tax.
 
 SubTotal
+
 - SubTotal should be equal to the sum of line items minus the discount percentage.
 - SubTotal should be equal to the sum of line items minus the total discount.
 - SubTotal should be equal to the sum of line items minus the sum of line discounts.

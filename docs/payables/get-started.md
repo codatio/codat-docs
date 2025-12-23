@@ -9,11 +9,11 @@ import { IntegrationsList } from "@components/Integrations";
 import { integrationsFilterBillPayAsync } from "@components/Integrations/integrations";
 import { integrationsFilterBillPaySync } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
 ## Journey overview
 
-The diagram below represents the overall activity flow when using Bill Pay. You can manage bills, suppliers, and payment methods in different ways and order. 
+The diagram below represents the overall activity flow when using Bill Pay. You can manage bills, suppliers, and payment methods in different ways and order.
 
 We will take you through each of these elements so that you can build the flow that suits you and your customers best.
 
@@ -31,17 +31,17 @@ Once you decide to build with Bill Pay, you need to configure Codat accordingly.
 
 ### Data types
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Bill Pay and set them to `Fetch on first link`: 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Bill Pay and set them to `Fetch on first link`:
 
-| Data source | Bill Pay (async)                   | Bill Pay (sync)                                                                                                                                                   |
-|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------|
-| Accounting  | `bankAccounts`<br/> `bills`<br/> `billCreditNotes`<br/> `billPayments`<br/> `chartOfAccounts`<br/> `company`<br/> `paymentMethods`<br/> `suppliers`<br/> `taxRates`<br/> `trackingCategories` |`bankAccounts`<br/> `bills`<br/> `billPayments`<br/> `chartOfAccounts`<br/> `company`<br/> `paymentMethods`<br/> `suppliers`<br/> |
+| Data source | Bill Pay (async)                                                                                                                                                                              | Bill Pay (sync)                                                                                                                   |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Accounting  | `bankAccounts`<br/> `bills`<br/> `billCreditNotes`<br/> `billPayments`<br/> `chartOfAccounts`<br/> `company`<br/> `paymentMethods`<br/> `suppliers`<br/> `taxRates`<br/> `trackingCategories` | `bankAccounts`<br/> `bills`<br/> `billPayments`<br/> `chartOfAccounts`<br/> `company`<br/> `paymentMethods`<br/> `suppliers`<br/> |
 
 Configure the solution to refresh data when you need it by [setting a synchronization frequency](/core-concepts/data-type-settings#choose-a-synchronization-frequency) on the same screen. We recommend setting it to a daily or a monthly sync.
 
 ### Manage data sources
 
-In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the solution. 
+In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations** and click **Manage integrations**. Next, click **Manage** next to the specific integration you want to enable and set it up to serve as a data source for the solution.
 
 You can also view detailed configuration instructions by clicking on the relevant tile:
 
@@ -59,9 +59,9 @@ As part of using Bill Pay, you will need your customers to authorize your access
 
 The solution lets you tailor the authorization journey to your business needs. You can:
 
-* [Customize Link settings](/auth-flow/customize/customize-link).
-* [Set up company branding](/auth-flow/customize/branding).
-* [Set up redirects](/auth-flow/customize/set-up-redirects).
+- [Customize Link settings](/auth-flow/customize/customize-link).
+- [Set up company branding](/auth-flow/customize/branding).
+- [Set up redirects](/auth-flow/customize/set-up-redirects).
 
 ### Webhooks
 
@@ -71,7 +71,7 @@ We recommend listening to the following [event types](/using-the-api/webhooks/ev
 
 - `read.completed.initial`
 
-  Listen to this event to track the completion of the *initial* read of data types for a specific company. When you receive a message from this webhook, verify the payload before proceeding to the next steps of the bill pay process. 
+  Listen to this event to track the completion of the _initial_ read of data types for a specific company. When you receive a message from this webhook, verify the payload before proceeding to the next steps of the bill pay process.
 
 - `read.completed`
 
@@ -79,9 +79,9 @@ We recommend listening to the following [event types](/using-the-api/webhooks/ev
 
 - `bill.write.successful` and `bill.write.unsuccessful`
 
-  Listen to these events to track the completion of the bill pay operation in the SMB's accounting software. 
+  Listen to these events to track the completion of the bill pay operation in the SMB's accounting software.
 
-You may also want to listen to `client.rateLimit.reached` and `client.rateLimit.reset` events to track your request count to Codat's API in relation to your allocated quota. 
+You may also want to listen to `client.rateLimit.reached` and `client.rateLimit.reset` events to track your request count to Codat's API in relation to your allocated quota.
 
 ### Client libraries
 
@@ -94,11 +94,13 @@ Use our comprehensive [Bill Pay libraries](/get-started/libraries) to kick-start
 #### Install
 
 ##### NPM
+
 ```sh
 npm add @codat/sync-for-payables
 ```
 
 ##### Yarn
+
 ```sh
 yarn add @codat/sync-for-payables
 ```
@@ -109,10 +111,8 @@ yarn add @codat/sync-for-payables
 import { CodatSyncPayables } from "@codat/sync-for-payables";
 
 const payablesClient = new CodatSyncPayables({
-        security: {
-            authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-        },
-    });
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
+});
 ```
 
 </TabItem>
@@ -122,16 +122,16 @@ const payablesClient = new CodatSyncPayables({
 #### Install
 
 ```sh
-pip install codat-sync-for-payables
+pip install codat-sync-payables
 ```
 
 #### Initialize
 
 ```python
-import codatsyncpayables
-from codatsyncpayables.models import operations, shared
+from codat_sync_for_payables  import CodatSyncPayables
+from codat_sync_for_payables .models import operations, shared
 
-payables_client = codatsyncpayables.CodatSyncPayables(
+payables_client = CodatSyncPayables(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
@@ -155,11 +155,7 @@ using Codat.Sync.Payables;
 using Codat.Sync.Payables.Models.Shared;
 using Codat.Sync.Payables.Models.Operations;
 
-var payablesClient = new CodatSyncPayables(
-    security: new Security() {
-        AuthHeader = "Basic BASE_64_ENCODED(API_KEY)",
-    }
-);
+var payablesClient = new CodatSyncPayables(authHeader: "Basic BASE_64_ENCODED(API_KEY)");
 ```
 
 </TabItem>
@@ -198,13 +194,13 @@ func main() {
 
 You have enabled Bill Pay, set up the relevant integrations, configured auth flow parameters, and noted the recommended webhooks. This completes the initial setup of the solution.
 
-Next, you will create a company and its connection to build out the core infrastructure required to manage accounts payable with Codat. 
+Next, you will create a company and its connection to build out the core infrastructure required to manage accounts payable with Codat.
 
 :::
 
---- 
+---
 
 ## Read next
 
-* [Set up your SMB customer](/payables/configure-customer) for Bill Pay's solution to continue building your AP management process.
-* Check out our [client libraries](/get-started/libraries) to kickstart your Bill Pay build.
+- [Set up your SMB customer](/payables/configure-customer) for Bill Pay's solution to continue building your AP management process.
+- Check out our [client libraries](/get-started/libraries) to kickstart your Bill Pay build.

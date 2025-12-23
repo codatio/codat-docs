@@ -6,7 +6,7 @@ displayed_sidebar: bankfeeds
 ---
 
 import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem"
+import TabItem from "@theme/TabItem";
 
 ## Overview
 
@@ -22,10 +22,10 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 ## Create a company
 
-Within Bank Feeds, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software. 
+Within Bank Feeds, a company represents your SMB customer that wishes to export their transactions from your application to their accounting software.
 
 Use the [Create company](/bank-feeds-api#/operations/create-company) endpoint to represent your customer in Codat.
-Make sure to store the company ID as you will use it to establish a connection to an accounting software. 
+Make sure to store the company ID as you will use it to establish a connection to an accounting software.
 
 <Tabs groupId="language">
 
@@ -33,15 +33,15 @@ Make sure to store the company ID as you will use it to establish a connection t
 
 ```javascript
 const companyResponse = bankFeedsClient.companies.create({
-    name: companyName,
+  name: companyName,
 });
 
-if(companyResponse.statusCode == 200){
-  throw new Error("Could not create company")
+if (companyResponse.statusCode == 200) {
+  throw new Error("Could not create company");
 }
 
-const companyId = companyResponse.company.id
-console.log(companyId)
+const companyId = companyResponse.company.id;
+console.log(companyId);
 ```
 
 </TabItem>
@@ -94,23 +94,24 @@ if companyResponse.StatusCode == 200 {
   fmt.Println("%s", companyID)
 }
 ```
+
 </TabItem>
 
 </Tabs>
 
 ## Create a connection
 
-Next, use the [Create connection](/bank-feeds-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source. 
+Next, use the [Create connection](/bank-feeds-api#/operations/create-connection) endpoint to connect the company to an accounting data source via one of our integrations. This will allow you to synchronize data with that source.
 
 In the request body, specify a `platformKey` of the accounting software you're looking to connect.
 
-| Accounting software | platformKey |
-| ---  | ---  |
-| Quickbooks Online Bankfeeds | `hcws` |
-| Oracle NetSuite | `akxx` |
-| Xero | `gbol` |
-| FreeAgent | `fbrh` |
-| Sage bank feeds | `olpr` |
+| Accounting software         | platformKey |
+| --------------------------- | ----------- |
+| QuickBooks Online Bankfeeds | `hcws`      |
+| Oracle NetSuite             | `akxx`      |
+| Xero                        | `gbol`      |
+| FreeAgent                   | `fbrh`      |
+| Sage bank feeds             | `olpr`      |
 
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 
@@ -120,13 +121,13 @@ As an example, let's create a QuickBooks Online (QBO) connection. In response, t
 
 ```javascript
 const connectionResponse = bankFeedsClient.connections.create({
-    requestBody: {
-      platformKey: "hcws",
-    },
-    companyId: companyResponse.company.id,
-  });
+  requestBody: {
+    platformKey: "hcws",
+  },
+  companyId: companyResponse.company.id,
+});
 
-console.log(connectionResponse.connection.linkUrl)
+console.log(connectionResponse.connection.linkUrl);
 ```
 
 </TabItem>
@@ -176,6 +177,7 @@ connectionResponse, err := bankFeedsClient.Connections.Create(ctx, operations.Cr
 
 fmt.Println(connectionResponse.Connection.LinkUrl)
 ```
+
 </TabItem>
 
 </Tabs>
@@ -192,11 +194,11 @@ For QBO, the `linkUrl` contains a one-time password (OTP) that expires after one
 
 ```javascript
 const connectionOtpResponse = bankFeedsClient.connections.get({
-    companyId: companyResponse.company.id,
-    connectionId: connectionResponse.connection.id,
-  });
+  companyId: companyResponse.company.id,
+  connectionId: connectionResponse.connection.id,
+});
 
-console.log(connectionOtpResponse.connection.linkUrl)
+console.log(connectionOtpResponse.connection.linkUrl);
 ```
 
 </TabItem>
@@ -241,6 +243,7 @@ connectionOtpResponse, err := bankFeedsClient.Connections.Get(ctx, operations.Ge
 
 fmt.Println(connectionOtpResponse.Connection.LinkUrl)
 ```
+
 </TabItem>
 
 </Tabs>
@@ -253,7 +256,7 @@ fmt.Println(connectionOtpResponse.Connection.LinkUrl)
 
 If your customer wants to revoke their approval and sever the connection to their accounting software, use the [Unlink connection](/bank-feeds-api#/operations/unlink-connection) endpoint.
 
-You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI. 
+You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI.
 
 <Tabs groupId="language">
 
@@ -261,12 +264,12 @@ You can [learn more](/auth-flow/optimize/connection-management) about connection
 
 ```javascript
 const unlinkResponse = bankFeedsClient.connections.unlink({
-    requestBody: {
-      status: DataConnectionStatus.Unlinked
-    },
-    companyId: companyResponse.company.id,
-    connectionId: connectionResponse.connection.id,
-  });
+  requestBody: {
+    status: DataConnectionStatus.Unlinked,
+  },
+  companyId: companyResponse.company.id,
+  connectionId: connectionResponse.connection.id,
+});
 ```
 
 </TabItem>
@@ -314,21 +317,22 @@ unlinkResponse, err := bankFeedsClient.Connections.Unlink(ctx, operations.Unlink
     ConnectionID: connectionResponse.Connection.ID,
 })
 ```
+
 </TabItem>
 
 </Tabs>
 
 ## Create a source account
 
-Finally, create a source account using our [Create source account](/bank-feeds-api#/operations/create-source-account) endpoint. It represents the company's actual financial account, savings account or credit card within Codat. We categorize accounts as a credit or a debit account type for standardization. 
+Finally, create a source account using our [Create source account](/bank-feeds-api#/operations/create-source-account) endpoint. It represents the company's actual financial account, savings account or credit card within Codat. We categorize accounts as a credit or a debit account type for standardization.
 
-If you require several source bank accounts, simply use the same endpoint to create additional accounts for the existing accounting connection. 
+If you require several source bank accounts, simply use the same endpoint to create additional accounts for the existing accounting connection.
 
 As an example, let's create a debit account. If the source account passes validation, you will receive a **synchronous response** with a `200` status code indicating a successful operation.
 
 :::note UK-specific requirements
 
-For bank accounts in GBP, `sortCode` is also a required field. 
+For bank accounts in GBP, `sortCode` is also a required field.
 
 :::
 
@@ -338,17 +342,17 @@ For bank accounts in GBP, `sortCode` is also a required field.
 
 ```javascript
 const sourceAccountResponse = bankFeedsClient.sourceAccounts.create({
-    sourceAccount: {
-      id: "ac-001",
-      accountName: "Checking Account",
-      accountType: "checking",
-      accountNumber: "01120912",
-      currency: "USD",
-      balance: 4002
-    },
-    companyId: companyResponse.company.id,
-    connectionId: connectionResponse.connection.id
-  });
+  sourceAccount: {
+    id: "ac-001",
+    accountName: "Checking Account",
+    accountType: "checking",
+    accountNumber: "01120912",
+    currency: "USD",
+    balance: 4002,
+  },
+  companyId: companyResponse.company.id,
+  connectionId: connectionResponse.connection.id,
+});
 ```
 
 </TabItem>
@@ -410,6 +414,7 @@ sourceAccountResponse, err := bankFeedsClient.SourceAccounts.Create(ctx, operati
     ConnectionID: connectionResponse.Connection.ID
 })
 ```
+
 </TabItem>
 
 <TabItem value="java" label="Java">
@@ -459,11 +464,11 @@ const sourceAccountUpdateResponse = bankFeedsClient.sourceAccounts.update({
     accountType: "checking",
     accountNumber: "01120912",
     currency: "USD",
-    balance: 4002
+    balance: 4002,
   },
   accountId: sourceAccountResponse.sourceAccount.id,
   companyId: companyResponse.company.id,
-  connectionId: connectionResponse.connection.id
+  connectionId: connectionResponse.connection.id,
 });
 ```
 
@@ -530,6 +535,7 @@ res, err := bankFeedsClient.SourceAccounts.Update(ctx, operations.UpdateSourceAc
     ConnectionID: connectionResponse.Connection.ID
 })
 ```
+
 </TabItem>
 
 </Tabs>
@@ -546,7 +552,7 @@ If your customer decides to close their account, you can also remove it from Cod
 const sourceAccountDeleteResponse = bankFeedsClient.sourceAccounts.delete({
   accountId: sourceAccountResponse.sourceAccount.id,
   companyId: companyResponse.company.id,
-  connectionId: connectionResponse.connection.id
+  connectionId: connectionResponse.connection.id,
 });
 ```
 
@@ -588,13 +594,14 @@ res, err := bankFeedsClient.SourceAccounts.Delete(ctx, operations.DeleteSourceAc
     ConnectionID: connectionResponse.Connection.ID
 })
 ```
+
 </TabItem>
 
 </Tabs>
 
 :::tip Recap
 
-You have created the structure of key objects required by Codat's Bank Feeds solution: a company, its connection to an accounting data source, and a source account. 
+You have created the structure of key objects required by Codat's Bank Feeds solution: a company, its connection to an accounting data source, and a source account.
 
 Next, provide your customer with a **mapping** process interface so they can associate the source account with a target account in their accounting software.
 :::
@@ -603,5 +610,4 @@ Next, provide your customer with a **mapping** process interface so they can ass
 
 ## Read next
 
-* Enable your customer to map accounts to their accounting software via a [mapping UI](/bank-feeds/mapping/overview).
-
+- Enable your customer to map accounts to their accounting software via a [mapping UI](/bank-feeds/mapping/overview).

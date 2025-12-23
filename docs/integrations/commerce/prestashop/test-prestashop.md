@@ -15,7 +15,7 @@ When you've [set up PrestaShop](/integrations/commerce/prestashop/set-up-prestas
 Before you start to test PrestaShop, make sure that you have:
 
 - Access to a PrestaShop instance for testing purposes.
-- For instructions on the Prestashop installation and hosting process, please see the following official guides:
+- For instructions on the PrestaShop installation and hosting process, please see the following official guides:
   - <a
       href="https://www.prestashop.com/en/blog/how-to-install-prestashop"
       target="_blank"

@@ -5,13 +5,13 @@ description: "Understand how to add, modify, and delete data in Codat's integrat
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import Lottie from '@components/Lottie'
-import webhooks from '../../static/animations/webhooks.json'
+import Lottie from "@components/Lottie";
+import webhooks from "../../static/animations/webhooks.json";
 
-<Lottie animation={webhooks}/>
+<Lottie animation={webhooks} />
 
 Codat offers the ability to create, update, and delete records in the source platforms of our integrations using our standard data models.
-We support the following write operations: 
+We support the following write operations:
 
 - **Create** a new record using the `POST` method.
 - **Update** an existing record using the `PUT` method.
@@ -26,27 +26,28 @@ Codat now refers to push operations as write requests.
 ## Supported accounting data types and write types
 
 | `dataType`       | Create  | Update  | Delete  |
-|------------------|---------|---------|---------|
-| bankAccounts     | &#9989; | &#9989; | -       |  
+| ---------------- | ------- | ------- | ------- |
+| bankAccounts     | &#9989; | &#9989; | -       |
 | bankTransactions | &#9989; | -       | -       |
-| billCreditNotes  | &#9989; | &#9989; | -       |  
-| billPayments     | &#9989; | -       | &#9989; | 
-| bills            | &#9989; | &#9989; | &#9989; | 
-| chartOfAccounts  | &#9989; | -       | -       | 
-| creditNotes      | &#9989; | &#9989; | -       | 
-| customers        | &#9989; | &#9989; | -       | 
-| directCosts      | &#9989; | -       | &#9989; | 
-| directIncomes    | &#9989; | -       | -       | 
-| invoices         | &#9989; | &#9989; | &#9989; | 
-| items            | &#9989; | -       | -       | 
-| journalEntries   | &#9989; | -       | &#9989; | 
-| journals         | &#9989; | -       | -       | 
-| payments         | &#9989; | -       | -       | 
-| purchaseOrders   | &#9989; | &#9989; | -       | 
-| suppliers        | &#9989; | &#9989; | -       | 
+| billCreditNotes  | &#9989; | &#9989; | -       |
+| billPayments     | &#9989; | -       | &#9989; |
+| bills            | &#9989; | &#9989; | &#9989; |
+| chartOfAccounts  | &#9989; | -       | -       |
+| creditNotes      | &#9989; | &#9989; | -       |
+| customers        | &#9989; | &#9989; | -       |
+| directCosts      | &#9989; | -       | &#9989; |
+| directIncomes    | &#9989; | -       | -       |
+| invoices         | &#9989; | &#9989; | &#9989; |
+| items            | &#9989; | -       | -       |
+| journalEntries   | &#9989; | -       | &#9989; |
+| journals         | &#9989; | -       | -       |
+| payments         | &#9989; | -       | -       |
+| purchaseOrders   | &#9989; | &#9989; | -       |
+| suppliers        | &#9989; | &#9989; | -       |
 | transfers        | &#9989; | -       | -       |
 
 ## Process
+
 To perform a write request, follow these steps:
 
 1. **[Check the expected data model](#check-the-expected-data-model)**: For **Create** and **Update** requests, ensure you’re using the correct data model for the data type you want to write. This ensures all required properties are included. Depending on the integration, this step may be a one-time task (for static properties) or a regular check (for highly customizable integrations).
@@ -57,9 +58,9 @@ To perform a write request, follow these steps:
 
 ```mermaid
 sequenceDiagram
-    participant app as Your application 
+    participant app as Your application
     participant codat as Codat
-    
+
   opt Check expected data model
     app ->> codat: Get create/update {dataType} model
     codat -->> app: Valid data type model
@@ -83,7 +84,7 @@ Write requests are asynchronous operations and will take between a few seconds t
 This means you will receive a `Pending` status in response to your write request.
 
 A write request may be `Pending` indefinitely for integrations using offline connectors when the desktop application is unreachable.
-Manage this by setting [timeouts](/using-the-api/push#monitor-the-status-of-your-operation#timeouts). 
+Manage this by setting [timeouts](/using-the-api/push#monitor-the-status-of-your-operation#timeouts).
 
 ## Supplemental data
 
@@ -103,13 +104,14 @@ Let's use our [Get Create Account Model](/sync-for-expenses-api#/operations/get-
 ```sh
 GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/options/chartOfAccounts
 ```
-The response indicates that three properties must be populated: 
+
+The response indicates that three properties must be populated:
 
 - `nominalCode`, a string that can be up to 10 characters long
 - `name`, an unrestricted string
 - `fullyQualifiedCategory`, an enum property that accepts a string chosen from a list of options
 
-The `displayName` on the options can be used to display a more descriptive name, such as "Current assets". 
+The `displayName` on the options can be used to display a more descriptive name, such as "Current assets".
 
 <details>
   <summary><b>Partial Get create account model response</b></summary>
@@ -169,12 +171,13 @@ The `displayName` on the options can be used to display a more descriptive name,
   "required": true
 }
 ```
+
 </details>
 
 ## Make a write request
 
 :::caution Properties not in the _Get model_ response
-If you attempt to create or update a record using properties not documented in the  _Get model_ response, you may receive validation errors in response to your request.
+If you attempt to create or update a record using properties not documented in the _Get model_ response, you may receive validation errors in response to your request.
 
 In some cases, our API references include `id`, `modifiedDate`, and `sourceModifiedDate` in create or update requests.
 These properties are read-only and cannot be used in write requests.
@@ -190,46 +193,48 @@ We will create an account using a valid request, and a request that leads to a v
 
 <TabItem value="typescript" label="TypeScript">
   <Tabs>
-    <TabItem value="wo" label="Create an account">  
+    <TabItem value="wo" label="Create an account">
 
 ```typescript
 const accountCreateResponse = await expensesClient.accounts.create({
-      companyId: companyId,
-	  connectionId: connectionId,
-	  accountPrototype: {
-        nominalCode: "4200123456",
-        name: "Codat Assets Account",
-        fullyQualifiedCategory: "Asset.Current",
-	  }
-  }
-);
+  companyId: companyId,
+  connectionId: connectionId,
+  accountPrototype: {
+    nominalCode: "4200123456",
+    name: "Codat Assets Account",
+    fullyQualifiedCategory: "Asset.Current",
+  },
+});
 ```
+
     </TabItem>
 
-    <TabItem value="with" label="Create an account with an error">  
+    <TabItem value="with" label="Create an account with an error">
 
 ```typescript
 const accountCreateResponse = await expensesClient.accounts.create({
-      companyId: companyId,
-	  connectionId: connectionId,
-	  accountPrototype: {
-        nominalCode: "350045006500", // Nominal code intentionally consists of too many characters
-        name: "Excessive Length Account",
-        fullyQualifiedCategory: "Asset.Current",
-	  }
-  }
-);
+  companyId: companyId,
+  connectionId: connectionId,
+  accountPrototype: {
+    nominalCode: "350045006500", // Nominal code intentionally consists of too many characters
+    name: "Excessive Length Account",
+    fullyQualifiedCategory: "Asset.Current",
+  },
+});
 ```
+
     </TabItem>
+
   </Tabs>
 </TabItem>
 
 <TabItem value="python" label="Python">
   <Tabs>
-    <TabItem value="wo" label="Create an account">  
+    <TabItem value="wo" label="Create an account">
 
 ```python
-account_create_response = expenses_client.accounts.create(operations.CreateAccountRequest(
+account_create_response = expenses_client.accounts.create(
+    request=operations.CreateAccountRequest(
       company_id=company_id,
 	  connection_id=connection_id,
       account_prototype=shared.AccountPrototype(
@@ -240,12 +245,14 @@ account_create_response = expenses_client.accounts.create(operations.CreateAccou
   )
 )
 ```
+
     </TabItem>
 
-    <TabItem value="with" label="Create an account with an error">  
+    <TabItem value="with" label="Create an account with an error">
 
 ```python
-account_create_response = expenses_client.accounts.create(operations.CreateAccountRequest(
+account_create_response = expenses_client.accounts.create(
+    request=operations.CreateAccountRequest(
       company_id=company_id,
 	  connection_id=connection_id,
       account_prototype=shared.AccountPrototype(
@@ -256,13 +263,15 @@ account_create_response = expenses_client.accounts.create(operations.CreateAccou
   )
 )
 ```
+
     </TabItem>
+
   </Tabs>
 </TabItem>
 
 <TabItem value="csharp" label="C#">
   <Tabs>
-    <TabItem value="wo" label="Create an account">  
+    <TabItem value="wo" label="Create an account">
 
 ```c#
 var accountCreateResponse = await expensesClient.Accounts.CreateAsync(new CreateAccountRequest() {
@@ -275,9 +284,10 @@ var accountCreateResponse = await expensesClient.Accounts.CreateAsync(new Create
 	}
 });
 ```
+
     </TabItem>
 
-    <TabItem value="with" label="Create an account with an error">  
+    <TabItem value="with" label="Create an account with an error">
 
 ```c#
 var accountCreateResponse = await expensesClient.Accounts.CreateAsync(new CreateAccountRequest() {
@@ -290,13 +300,15 @@ var accountCreateResponse = await expensesClient.Accounts.CreateAsync(new Create
 	}
 });
 ```
+
     </TabItem>
+
   </Tabs>
 </TabItem>
 
 <TabItem value="go" label="Go">
   <Tabs>
-    <TabItem value="wo" label="Create an account">  
+    <TabItem value="wo" label="Create an account">
 
 ```go
 ctx := context.Background()
@@ -310,9 +322,10 @@ accountCreateResponse, err := expensesClient.Accounts.Create(ctx, operations.Cre
   }
 })
 ```
+
     </TabItem>
 
-    <TabItem value="with" label="Create an account with an error">  
+    <TabItem value="with" label="Create an account with an error">
 
 ```go
 ctx := context.Background()
@@ -326,13 +339,15 @@ accountCreateResponse, err := expensesClient.Accounts.Create(ctx, operations.Cre
   }
 })
 ```
+
     </TabItem>
+
   </Tabs>
 </TabItem>
 
 <TabItem value="java" label="Java">
   <Tabs>
-    <TabItem value="wo" label="Create an account">  
+    <TabItem value="wo" label="Create an account">
 
 ```java
 CreateAccountRequest accountCreateRequest = CreateAccountRequest.builder()
@@ -349,9 +364,10 @@ CreateAccountResponse accountCreateResponse = expensesClient.accounts().create()
   .request(accountCreateRequest)
   .call();
 ```
+
     </TabItem>
 
-    <TabItem value="with" label="Create an account with an error">  
+    <TabItem value="with" label="Create an account with an error">
 
 ```java
 CreateAccountRequest accountCreateRequest = CreateAccountRequest.builder()
@@ -368,7 +384,9 @@ CreateAccountResponse accountCreateResponse = expensesClient.accounts().create()
   .request(accountCreateRequest)
   .call();
 ```
+
     </TabItem>
+
   </Tabs>
 </TabItem>
 
@@ -378,8 +396,8 @@ This results in a corresponding response from the endpoint, which includes the f
 
 - **pushOperationKey**: a unique identifier generated by Codat to represent this single write operation that can be used to track its status
 - **dataType**: the type of data being created, in this case, `chartOfAccounts`
-- **status**: the status of the create operation, which can be `Pending`, `Failed`, `Success` or `TimedOut` 
-- **requestedOnUtc**: the datetime (in UTC) when the operation was requested 
+- **status**: the status of the create operation, which can be `Pending`, `Failed`, `Success` or `TimedOut`
+- **requestedOnUtc**: the datetime (in UTC) when the operation was requested
 - **completedOnUtc**: the datetime (in UTC) when the operation was completed, null if `Pending`
 - **validation**: a human-readable object that contains validation details, including errors, encountered during the operation
 - **changes**: an array that communicates which record has changed (`recordRef` property) and the manner in which it changed (`type` property that can be `Unknown`, `Created`, `Modified`, or `Deleted`)
@@ -387,7 +405,7 @@ This results in a corresponding response from the endpoint, which includes the f
 <details>
   <summary><b>Example responses</b></summary>
   <Tabs>
-    <TabItem value="wo" label="Account creation response">  
+    <TabItem value="wo" label="Account creation response">
 
     ```json
       {
@@ -406,10 +424,10 @@ This results in a corresponding response from the endpoint, which includes the f
         "statusCode": 200
       }
     ```
-    
+
     </TabItem>
 
-    <TabItem value="with" label="Account creation with a validation error">  
+    <TabItem value="with" label="Account creation with a validation error">
 
     ```json
       {
@@ -436,6 +454,7 @@ This results in a corresponding response from the endpoint, which includes the f
       }
     ```
     </TabItem>
+
 </Tabs>
 
 </details>
@@ -445,10 +464,9 @@ This results in a corresponding response from the endpoint, which includes the f
 Our data deletion endpoints, where available, simply require the record `id`, `companyId`, and `connectionId` to be included in the request URL.
 :::
 
-
 ## Monitor operation status
 
-Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](#consume-the-data-types-write-webhook) for this purpose. 
+Your operation will initially be in a `Pending` status. You can track an update on the final `Success` or `Failed` state to communicate the outcome of the operation to the user, or take further action in case of failures. We recommend [listening to our webhooks](#consume-the-data-types-write-webhook) for this purpose.
 
 You can also use our endpoints to monitor the status of your create, update, or delete operation. List all operations for a company using the [List push operations](/platform-api#/operations/get-company-push-history) endpoint, or get a single operation via the [Get push operation](/platform-api#/operations/get-push-operation).
 This is useful when you want to include summary information to your customers outlining the status of their write history.
@@ -471,7 +489,7 @@ Write operations can stay in a `Pending` state indefinitely. For example, this c
 
 To manage this, Codat offers a timeout feature. You can use the `timeoutInMinutes` query parameter to set how long the write operation should wait. If the operation exceeds the time limit, its status will change to `TimedOut`.
 
-This only changes the **status** of the write operation. If the operation has already moved upstream from the `Pending` stage when the timeout was reached, it may still create or change the data in the target software. 
+This only changes the **status** of the write operation. If the operation has already moved upstream from the `Pending` stage when the timeout was reached, it may still create or change the data in the target software.
 
 While `timeoutInMinutes` parameter works with any integration, we recommend using it with on-premise integrations, where operation delays are more common.
 
@@ -525,9 +543,9 @@ Once these properties are cached, use the relevant data type's `GET` request to 
 
 ```mermaid
 sequenceDiagram
-    participant app as Your application 
+    participant app as Your application
     participant codat as Codat
-    
+
     codat ->> app: {dataType}.write.successful webhook
 
     app ->> app: Cache payload.record.id
@@ -537,7 +555,7 @@ sequenceDiagram
           codat ->> app: read.completed webhook
 
           loop For each payload.record.id
-            app ->> codat: Get {dataType} by payload.record.id 
+            app ->> codat: Get {dataType} by payload.record.id
             codat -->> app: {dataType} record
           end
 

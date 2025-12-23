@@ -15,12 +15,10 @@ import Cards from "@components/Cards";
     Begin with our <a href="/core-concepts/overview">core concepts</a>, or press <code>Ctrl-K</code> to bring up the quick search bar to find the information you need.
   </Cards.Card>
 
-  <Cards.Card
-    image="/img/wp-icons/Stack.png"
-    title="API reference"
-  >
-    Jump in and start using the Codat API endpoints through our interactive <a href="/using-the-api/overview">API references</a>.
-  </Cards.Card>
+<Cards.Card image="/img/wp-icons/Stack.png" title="API reference">
+  Jump in and start using the Codat API endpoints through our interactive{" "}
+  <a href="/using-the-api/overview">API references</a>.
+</Cards.Card>
 
   <Cards.Card
     image="/img/wp-icons/Financial-Services.png"
@@ -33,35 +31,25 @@ import Cards from "@components/Cards";
 ## Beginner guides
 
 <ul className="card-container">
-    <li className="card">
+  <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/Lightbulb.png"
-        className="mini-icon"
-      />
+      <img src="/img/wp-icons/Lightbulb.png" className="mini-icon" />
       <h3>First steps guide</h3>
     </div>
-      <p>
-      A practical introduction to Codat's Portal and API.
-      </p>
-      <p>
+    <p>A practical introduction to Codat's Portal and API.</p>
+    <p>
       <a href="/get-started/first-steps">See the guide →</a>.
-      </p>
+    </p>
   </li>
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/RocketLaunch.png"
-        className="mini-icon"
-      />
+      <img src="/img/wp-icons/RocketLaunch.png" className="mini-icon" />
       <h3>Video guide: Your first 10 minutes</h3>
     </div>
-      <p>
-      From signing up to syncing data in 10 minutes.
-      </p>
-      <p>
+    <p>From signing up to syncing data in 10 minutes.</p>
+    <p>
       <a href="/get-started/first-ten-minutes">See the guide →</a>.
-      </p>
+    </p>
   </li>
 </ul>
 
@@ -114,6 +102,7 @@ import Cards from "@components/Cards";
     image="/img/logos/usecases/lending.svg"
     link="/lending/guides/loan-qualification/introduction"
   >
-    See how Codat helps check a loan applicant’s finances and automate decision-making
+    See how Codat helps check a loan applicant’s finances and automate
+    decision-making
   </Cards.MiniCard>
 </Cards>

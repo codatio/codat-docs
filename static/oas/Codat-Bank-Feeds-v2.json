@@ -1502,7 +1502,7 @@
                       }
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "results": [
                         {
@@ -2685,7 +2685,7 @@
                               },
                               {
                                 "field": "Currency",
-                                "details": "Can only be set if the Quickbooks Desktop company has Multicurrency enabled."
+                                "details": "Can only be set if the QuickBooks Desktop company has Multi-currency enabled."
                               }
                             ],
                             "information": [
@@ -2734,7 +2734,7 @@
                       "required": true
                     }
                   },
-                  "Sage Business Cloud Accounting": {
+                  "Sage Accounting": {
                     "value": {
                       "type": "Object",
                       "displayName": "Bank Account",

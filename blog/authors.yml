@@ -107,13 +107,25 @@ rachelcodat:
   image_url: https://github.com/Rachel-Codat.png
 
 StanleyCodat:
- name: Stanley Ho
- title: Product Manager
- url: https://github.com/StanleyCodat
- image_url: https://github.com/StanleyCodat.png 
+  name: Stanley Ho
+  title: Product Manager
+  url: https://github.com/StanleyCodat
+  image_url: https://github.com/StanleyCodat.png
 
 ivasiutkova:
- name: Iana Vasiutkova
- title: Senior Product Owner
- url: https://github.com/ivasiutkova
- image_url: https://github.com/ivasiutkova.png 
+  name: Iana Vasiutkova
+  title: Senior Product Owner
+  url: https://github.com/ivasiutkova
+  image_url: https://github.com/ivasiutkova.png
+
+habbajobir:
+  name: Hawi Abbajobir
+  title: Product Lead
+  url: https://github.com/habbajobir-prog
+  image_url: https://github.com/habbajobir-prog.png
+
+pmckinney:
+  name: Philip McKinney
+  title: Engineering Manager
+  url: https://github.com/pmckinney-codat
+  image_url: https://github.com/pmckinney-codat.png

@@ -11,24 +11,24 @@ import TabItem from "@theme/TabItem";
 
 #### Functionality
 
-- Read  
-- One time or ongoing Sync  
-- API  
+- Read
+- One time or ongoing Sync
+- API
 - Lending write-back
 
 #### Data sources
 
-- Accounting  
+- Accounting
 - Commerce
 - Banking
 
 #### Accounting data types
 
-- Company Info  
-- Financial Statements  
-- Accounts Receivable  
-- Accounts Payable  
-- Ref Data  
+- Company Info
+- Financial Statements
+- Accounts Receivable
+- Accounts Payable
+- Ref Data
 
 </TabItem>
 
@@ -40,14 +40,14 @@ import TabItem from "@theme/TabItem";
 
 #### Data sources
 
-- Accounting  
+- Accounting
 
 #### Accounting data types
 
-- Accounts Receivable  
-- Account Transactions  
-- Ref Data  
-- At request: *Suppliers, Bills, Bill Credit Notes*  
+- Accounts Receivable
+- Account Transactions
+- Ref Data
+- At request: _Suppliers, Bills, Bill Credit Notes_
 
 </TabItem>
 
@@ -61,7 +61,7 @@ import TabItem from "@theme/TabItem";
 
 #### Data sources
 
-- Accounting  
+- Accounting
 
 #### Data types
 
@@ -79,7 +79,7 @@ import TabItem from "@theme/TabItem";
 
 #### Data sources
 
-- Banking  
+- Banking
 
 #### Data types
 
@@ -97,13 +97,12 @@ import TabItem from "@theme/TabItem";
 
 #### Data sources
 
-- Commerce  
+- Commerce
 
 #### Data types
 
 - All
 
 </TabItem>
-
 
 </Tabs>

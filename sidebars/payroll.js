@@ -42,7 +42,7 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Sage Business Cloud",
+    label: "Sage Accounting",
     id: "integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud",
   },
   {

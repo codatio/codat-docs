@@ -45,8 +45,9 @@ GET /companies/{companyId}/data/bills?query=amountDue%3E0&orderBy=-dueDate
 
 :::tip Recap
 You have learned:
+
 - How to sort data with the `orderBy` parameter
-:::
+  :::
 
 ---
 

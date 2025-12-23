@@ -55,6 +55,7 @@ It's not possible to directly remove a bank account from QBO using the QuickBook
 We recommend you customize the appearance of the QBO Bank Feeds Link UI to increase your SMB users' confidence when they're connecting their bank accounts to QBO.
 
 You can:
+
 - Upload your organization's logo on the [Manage organization](https://app-integration.codat.io/settings/organization) page of the Codat Portal.
 - [Add a custom callout](/integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds-setup#add-a-custom-callout-to-the-link-site), in French or English, to provide your SMB users with additional guidance on connecting their accounts.
 
