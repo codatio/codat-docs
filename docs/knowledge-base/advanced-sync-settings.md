@@ -45,7 +45,7 @@ For example, to configure advanced settings for our `invoices` data type, send t
 
 ## 💡 Tips and traps
 
-- When using advanced sync settings, settle on a uniform approach across your data types, as we cannot guarantee consistency if different approaches are applied.
+- When using advanced sync settings, settle on a uniform approach across your data types (e.g. all data types request 24 months' data). Some data types share requests, and applying different approaches may cause inconsistency.
 
 - Advanced sync settings can be applied to all data types, but we advise you do not set them for reference data, such as customers, suppliers, chart of accounts, tax rates, tracking categories, and items.
 
