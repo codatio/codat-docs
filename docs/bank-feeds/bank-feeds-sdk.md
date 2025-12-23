@@ -103,6 +103,13 @@ Use the component in your solution as needed:
   />
 ```
 
+**Conditional steps**
+
+- **If you're using TypeScript**, extend your type declarations with our types by installing the types package using `npm install --save-dev @codat/sdk-bank-feeds-types`. Otherwise, delete the type-related code in the snippets.
+- **If you're using content security policy (CSP) headers**, edit these headers:
+  - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
+  - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
+
 ---
 
 ## Read next
