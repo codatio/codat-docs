@@ -8,7 +8,7 @@ description: "Learn about the prerequisites for setting up enterprise SSO"
 If you wish to use enterprise SSO but don't already have it enabled, please speak with your Account Manager first.
 :::
 
-Before performing any setup on your side, please fill out the questionaire below and share the answers with your Account Manager.
+Before performing any setup on your side, please fill out the questionnaire below and share the answers with your Account Manager.
 
 ### Customer questionnaire
 
@@ -70,11 +70,22 @@ Note: to help maintain best in class security we support SP-Initiated and not Id
 on [IdP-Initiated Risks and considerations](https://auth0.com/docs/authenticate/protocols/saml/saml-sso-integrations/identity-provider-initiated-single-sign-on#risks-and-considerations)
 for more information on this.
 
-### Add a new user
+### User management
 
-Instead of using our Users section in the Codat Portal, you need to add a new user in your IdP to one of the groups you set up above. Once this is done, they can use the login URL provided and will be added to your Codat instance.
+While using SSO, you will no longer use the `Users` page within the Codat Portal to manage user. Instead this will be done within your identity provider.
 
-Similarly, to remove a user, remove them from the group in your IdP.
+#### Add a new user
+
+The adding of a user is done through adding them to one (or many) of the groups supplied as part of setup. Note - users will assume the highest level of privilege when added to multiple groups.
+
+After a user has been added to the relevant group within your identity provider, they can use the login URL provided and will be added to your Codat instance.
+
+#### Removing a user
+
+Preventing a user from accessing the Codat Portal can be done through:
+
+- Removal from all specified access groups in your identity provider.
+- Prevention of authentication via your identity provider.
 
 ### FAQ
 

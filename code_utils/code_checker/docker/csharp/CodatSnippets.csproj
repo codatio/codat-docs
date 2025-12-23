@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Codat.Platform" Version="*" />
+    <PackageReference Include="Codat.BankFeeds" Version="*" />
+    <PackageReference Include="Codat.Lending" Version="*" />
+    <PackageReference Include="Codat.Sync.Commerce" Version="*" />
+    <PackageReference Include="Codat.Sync.Expenses" Version="*" />
+    <PackageReference Include="Codat.Sync.Payables" Version="*" />
+    <PackageReference Include="Codat.Sync.Payroll" Version="*" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

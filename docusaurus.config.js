@@ -48,13 +48,18 @@ const config = {
     ZENDESK_KEY: process.env.ZENDESK_KEY,
     FEATURE_DEV_FLAG: process.env.FEATURE_DEV_FLAG,
     FEATURE_NEW_PRODUCTS_FLAG: process.env.FEATURE_NEW_PRODUCTS_FLAG,
+    AMPLITUDE_API_KEY: process.env.AMPLITUDE_API_KEY,
   },
 
   presets: [
     [
-      "classic",
+      "docusaurus-plugin-glossary/preset",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        glossary: {
+          glossaryPath: "glossary/glossary.json",
+          routePath: "/glossary",
+        },
         docs: {
           routeBasePath: "/",
           sidebarPath: "./sidebars.js",
@@ -105,6 +110,25 @@ const config = {
     "docusaurus-plugin-sass",
     "@docusaurus/theme-live-codeblock",
     "docusaurus-plugin-image-zoom",
+
+    [
+      "docusaurus-plugin-cookie-consent",
+      {
+        title: "Cookie Consent",
+        description:
+          "We use cookies to enhance your browsing experience and analyze our traffic.",
+        links: [
+          { label: "Privacy Policy", href: "https://www.codat.io/privacy-policy/" },
+        ],
+        toastMode: true,
+        googleConsentMode: {
+          enabled: true,
+          waitForUpdate: 500,
+          adsDataRedaction: true,
+          urlPassthrough: false,
+        },
+      },
+    ],
 
     [
       "docusaurus-plugin-module-alias",

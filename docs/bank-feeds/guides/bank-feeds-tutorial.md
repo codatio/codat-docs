@@ -82,7 +82,7 @@ or
 <TabItem value="python" label="Python">
 
 ```bash
-    pip install codat-bank-feeds
+    pip install codat-bankfeeds
 ```
 
 </TabItem>
@@ -122,9 +122,7 @@ var bankFeedsClient = new CodatBankFeedsSDK(
 import { CodatBankFeeds } from "@codat/bank-feeds";
 
 const bankFeedsClient = new CodatBankFeeds({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 ```
 
@@ -133,10 +131,10 @@ const bankFeedsClient = new CodatBankFeeds({
 <TabItem value="python" label="Python">
 
 ```python
-import codatbankfeeds
-from codatbankfeeds.models import operations, shared
+from codat_bankfeeds import CodatBankFeeds
+from codat_bankfeeds.models import operations, shared
 
-bank_feeds_client = codatbankfeeds.CodatBankFeeds(
+bank_feeds_client = CodatBankFeeds(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),

@@ -87,7 +87,7 @@ upload_attachment_response = sdk.bills.upload_attachment(operations.UploadBillAt
 <TabItem value="csharp" label="C#">
 
 ```c#
-var uploadAttachmentResponse = await skd.Bills.UploadAsync(new UploadBillAttachmentRequest() {
+var uploadAttachmentResponse = await sdk.Bills.UploadAttachmentAsync(new UploadBillAttachmentRequest() {
     CompanyId = companyId,
 	ConnectionId = connectionId,
     BillId = billId,

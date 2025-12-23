@@ -7,7 +7,7 @@ import {
 import {
   DocsSidebarProvider,
   useDocRootMetadata,
-} from "@docusaurus/theme-common/internal";
+} from "@docusaurus/plugin-content-docs/client";
 import DocRootLayout from "@theme/DocRoot/Layout";
 import NotFoundContent from "@theme/NotFound/Content";
 export default function DocRoot(props) {

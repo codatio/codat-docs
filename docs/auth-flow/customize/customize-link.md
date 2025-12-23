@@ -74,6 +74,10 @@ It's possible to restart the linking process for commerce and banking platforms 
 
 If enabled, an extra page will appear at the start of Link. The page's content is customizable, which is an excellent opportunity to explain the value of linking. You can customize the header and the body of the message.
 
+#### Company logo
+
+Enable this setting to have the company logo set in [Branding settings](/auth-flow/customize/branding) displayed on the landing page of the Link flow. You must also have the [Landing page](/auth-flow/customize/customize-link#landing-page) setting enabled for this setting to take effect.
+
 #### Left panel
 
 Specify the messaging that appears on the left panel throughout the Link flow. This is an opportunity to clarify what the user is about to do. You can customize the header and the body of the message.

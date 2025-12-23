@@ -233,7 +233,8 @@ const accountCreateResponse = await expensesClient.accounts.create({
     <TabItem value="wo" label="Create an account">
 
 ```python
-account_create_response = expenses_client.accounts.create(operations.CreateAccountRequest(
+account_create_response = expenses_client.accounts.create(
+    request=operations.CreateAccountRequest(
       company_id=company_id,
 	  connection_id=connection_id,
       account_prototype=shared.AccountPrototype(
@@ -250,7 +251,8 @@ account_create_response = expenses_client.accounts.create(operations.CreateAccou
     <TabItem value="with" label="Create an account with an error">
 
 ```python
-account_create_response = expenses_client.accounts.create(operations.CreateAccountRequest(
+account_create_response = expenses_client.accounts.create(
+    request=operations.CreateAccountRequest(
       company_id=company_id,
 	  connection_id=connection_id,
       account_prototype=shared.AccountPrototype(

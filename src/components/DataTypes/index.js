@@ -106,13 +106,12 @@ const DataTypes = ({ productName, search = true }) => {
     searchValue === ""
       ? normalizedDataTypes
       : normalizedDataTypes.filter((dataType) => {
-          return (
-            dataType.title.toLowerCase().includes(searchValue.toLowerCase()) ||
-            dataType.key.toLowerCase().includes(searchValue.toLowerCase()) ||
-            dataType.description
-              .toLowerCase()
-              .includes(searchValue.toLowerCase())
-          );
+          const searchLower = searchValue.toLowerCase();
+          return [
+            dataType.title || "",
+            dataType.key || "",
+            dataType.description || "",
+          ].some((field) => field.toLowerCase().includes(searchLower));
         });
 
   return (

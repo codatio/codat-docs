@@ -111,9 +111,7 @@ yarn add @codat/sync-for-payables
 import { CodatSyncPayables } from "@codat/sync-for-payables";
 
 const payablesClient = new CodatSyncPayables({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 ```
 
@@ -124,16 +122,16 @@ const payablesClient = new CodatSyncPayables({
 #### Install
 
 ```sh
-pip install codat-sync-for-payables
+pip install codat-sync-payables
 ```
 
 #### Initialize
 
 ```python
-import codatsyncpayables
-from codatsyncpayables.models import operations, shared
+from codat_sync_for_payables  import CodatSyncPayables
+from codat_sync_for_payables .models import operations, shared
 
-payables_client = codatsyncpayables.CodatSyncPayables(
+payables_client = CodatSyncPayables(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
@@ -157,11 +155,7 @@ using Codat.Sync.Payables;
 using Codat.Sync.Payables.Models.Shared;
 using Codat.Sync.Payables.Models.Operations;
 
-var payablesClient = new CodatSyncPayables(
-    security: new Security() {
-        AuthHeader = "Basic BASE_64_ENCODED(API_KEY)",
-    }
-);
+var payablesClient = new CodatSyncPayables(authHeader: "Basic BASE_64_ENCODED(API_KEY)");
 ```
 
 </TabItem>

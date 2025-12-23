@@ -126,7 +126,7 @@
           "Manage reports"
         ],
         "summary": "Generate report",
-        "description": "> **Available as beta release**\n>\n> This endpoint is part of a beta release. Please contact your account manager if you want to enable it.\n\nUse the *Generate report* endpoint to initiate the generation of a report specified by the `reportType` parameter.\n\nThis action triggers the system to refresh and pull the necessary data from the company's data sources to ensure the report contains the most up-to-date information.",
+        "description": "Use the *Generate report* endpoint to initiate the generation of a report specified by the `reportType` parameter.\n\nThis action triggers the system to refresh and pull the necessary data from the company's data sources to ensure the report contains the most up-to-date information.",
         "operationId": "generate-report",
         "x-speakeasy-name-override": "generate-report",
         "responses": {
@@ -183,7 +183,7 @@
           "Manage reports"
         ],
         "summary": "Get report status",
-        "description": "> **Available as beta release**\n>\n> This endpoint is part of a beta release. Please contact your account manager if you want to enable it.\n\nUse the *Get report status* endpoint to return the metadata about report generation, such as its current status, date of request, and date of generation.\n\nYou can either provide the ID of a report or use `latest` as the ID value to get the most recent generated *reportName* report for the company.\n\n",
+        "description": "Use the *Get report status* endpoint to return the metadata about report generation, such as its current status, date of request, and date of generation.\n\nYou can either provide the ID of a report or use `latest` as the ID value to get the most recent generated *reportName* report for the company.\n\n",
         "operationId": "get-report-status",
         "x-speakeasy-name-override": "get-report-status",
         "responses": {
@@ -240,7 +240,7 @@
           "Manage reports"
         ],
         "summary": "List reports",
-        "description": "> **Available as beta release**\n>\n> This endpoint is part of a beta release. Please contact your account manager if you want to enable it.\n\nUse the *List reports* endpoint to return details (such as generation's current status, date of request, and date of generation) about all reports generated for a company. The query parameter can be used to filter the results.",
+        "description": "Use the *List reports* endpoint to return details (such as generation's current status, date of request, and date of generation) about all reports generated for a company. The query parameter can be used to filter the results.",
         "operationId": "list-reports",
         "x-speakeasy-name-override": "list-reports",
         "responses": {
@@ -303,7 +303,7 @@
           "Spend analysis"
         ],
         "summary": "Get supplier analysis",
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/spend-insights#/schemas/SupplierAnalysis) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/spend-insights#/schemas/SupplierAnalysis) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have an existing [spend analysis report generated](https://docs.codat.io/spend-insights-api#/operations/generate-report).",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/spend-insights-api#/schemas/SupplierAnalysis) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/spend-insights-api#/schemas/SupplierAnalysis) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have an existing [spend analysis report generated](https://docs.codat.io/spend-insights-api#/operations/generate-report).",
         "operationId": "get-supplier-analysis",
         "x-speakeasy-name-override": "get-supplier-analysis",
         "responses": {
@@ -366,7 +366,7 @@
           "Spend analysis"
         ],
         "summary": "Get payment method analysis",
-        "description": "The *List payment methods* endpoint returns a [payment method analysis](https://docs.codat.io/spend-insights#/schemas/PaymentMethodAnalysis) for a given company's spend analysis report.\n\n[Payment method analysis](https://docs.codat.io/spend-insights#/schemas/PaymentMethodAnalysis) is a breakdown of each payment method in a spend analysis report.\n\nBefore using this endpoint, you must have an existing [spend analysis report generated](https://docs.codat.io/spend-insights-api#/operations/generate-report).",
+        "description": "The *List payment methods* endpoint returns a [payment method analysis](https://docs.codat.io/spend-insights-api#/schemas/PaymentMethodAnalysis) for a given company's spend analysis report.\n\n[Payment method analysis](https://docs.codat.io/spend-insights-api#/schemas/PaymentMethodAnalysis) is a breakdown of each payment method in a spend analysis report.\n\nBefore using this endpoint, you must have an existing [spend analysis report generated](https://docs.codat.io/spend-insights-api#/operations/generate-report).",
         "operationId": "get-payment-method-analysis",
         "x-speakeasy-name-override": "get-payment-method-analysis",
         "responses": {
@@ -578,8 +578,8 @@
         "title": "Date time",
         "type": "string",
         "examples": [
-          "2022-10-23T00:00:00.000Z",
-          "2022-10-23T00:00:00.000Z"
+          "2022-10-23T00:00:00Z",
+          "2022-10-23"
         ],
         "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2020-10-08T22:40:50Z\n2021-01-01T00:00:00\n```\n\n\n\nWhen syncing data that contains `DateTime` fields from Codat, make sure you support the following cases when reading time information:\n\n- Coordinated Universal Time (UTC): `2021-11-15T06:00:00Z`\n- Unqualified local time: `2021-11-15T01:00:00`\n- UTC time offsets: `2021-11-15T01:00:00-05:00`\n\n> Time zones\n> \n> Not all dates from Codat will contain information about time zones.  \n> Where it is not available from the underlying platform, Codat will return these as times local to the business whose data has been synced."
       },
@@ -653,9 +653,9 @@
                   "type": "integer",
                   "description": "Total number of payments made with this method."
                 },
-                "latePaymentsCount": {
+                "billsPaidLateCount": {
                   "type": "integer",
-                  "description": "Number of late payments made with this method."
+                  "description": "Number of bills paid late with this method."
                 },
                 "paymentsAmount": {
                   "type": "number",
@@ -667,15 +667,15 @@
                   "format": "decimal",
                   "description": "Average payment amount using this method."
                 },
-                "latePaymentsAmount": {
+                "billsPaidLateAmount": {
                   "type": "number",
                   "format": "decimal",
-                  "description": "Total amount of late payments made with this method."
+                  "description": "Total amount of bills paid late with this method."
                 },
-                "latePaymentsPercentageByAmount": {
+                "billsPaidLatePercentageByAmount": {
                   "type": "number",
                   "format": "decimal",
-                  "description": "Percentage of late payments made with this method (by amount)."
+                  "description": "Percentage of bills paid late with this method (by amount)."
                 },
                 "averageBillPaymentTermsWeighted": {
                   "type": "number",
@@ -725,11 +725,11 @@
               "billsOutstandingAmount": 200000,
               "billsOutstandingPercentageByAmount": 5.71,
               "paymentsCount": 70,
-              "latePaymentsCount": 2,
+              "billsPaidLateCount": 2,
               "paymentsAmount": 3200000,
               "averagePaymentAmount": 45714.29,
-              "latePaymentsAmount": 50000,
-              "latePaymentsPercentageByAmount": 1.56,
+              "billsPaidLateAmount": 50000,
+              "billsPaidLatePercentageByAmount": 1.56,
               "averageBillPaymentTermsWeighted": 25,
               "averageBillSettlementPeriodWeighted": 20,
               "directCostsPercentageByCount": 50,
@@ -749,11 +749,11 @@
               "billsOutstandingAmount": 162476.41,
               "billsOutstandingPercentageByAmount": 6.22,
               "paymentsCount": 51,
-              "latePaymentsCount": 0,
+              "billsPaidLateCount": 0,
               "paymentsAmount": 2428624.39,
               "averagePaymentAmount": 47620.09,
-              "latePaymentsAmount": 0,
-              "latePaymentsPercentageByAmount": 0,
+              "billsPaidLateAmount": 0,
+              "billsPaidLatePercentageByAmount": 0,
               "averageBillPaymentTermsWeighted": 28.47,
               "averageBillSettlementPeriodWeighted": 18.45,
               "directCostsPercentageByCount": 42.55,
@@ -773,11 +773,11 @@
               "billsOutstandingAmount": 150000,
               "billsOutstandingPercentageByAmount": 12.5,
               "paymentsCount": 25,
-              "latePaymentsCount": 0,
+              "billsPaidLateCount": 0,
               "paymentsAmount": 1050000,
               "averagePaymentAmount": 42000,
-              "latePaymentsAmount": 0,
-              "latePaymentsPercentageByAmount": 0,
+              "billsPaidLateAmount": 0,
+              "billsPaidLatePercentageByAmount": 0,
               "averageBillPaymentTermsWeighted": 28,
               "averageBillSettlementPeriodWeighted": 21,
               "directCostsPercentageByCount": 20,
@@ -797,11 +797,11 @@
               "billsOutstandingAmount": 162694.89,
               "billsOutstandingPercentageByAmount": 8.73,
               "paymentsCount": 28,
-              "latePaymentsCount": 0,
+              "billsPaidLateCount": 0,
               "paymentsAmount": 1555940.3,
               "averagePaymentAmount": 55569.3,
-              "latePaymentsAmount": 0,
-              "latePaymentsPercentageByAmount": 0,
+              "billsPaidLateAmount": 0,
+              "billsPaidLatePercentageByAmount": 0,
               "averageBillPaymentTermsWeighted": 46.11,
               "averageBillSettlementPeriodWeighted": 37.96,
               "directCostsPercentageByCount": 23.4,
@@ -821,11 +821,11 @@
               "billsOutstandingAmount": 75000,
               "billsOutstandingPercentageByAmount": 15,
               "paymentsCount": 10,
-              "latePaymentsCount": 1,
+              "billsPaidLateCount": 1,
               "paymentsAmount": 425000,
               "averagePaymentAmount": 42500,
-              "latePaymentsAmount": 10000,
-              "latePaymentsPercentageByAmount": 2.35,
+              "billsPaidLateAmount": 10000,
+              "billsPaidLatePercentageByAmount": 2.35,
               "averageBillPaymentTermsWeighted": 30,
               "averageBillSettlementPeriodWeighted": 22,
               "directCostsPercentageByCount": 15,
@@ -845,11 +845,11 @@
               "billsOutstandingAmount": 17790.3,
               "billsOutstandingPercentageByAmount": 100,
               "paymentsCount": 0,
-              "latePaymentsCount": 0,
+              "billsPaidLateCount": 0,
               "paymentsAmount": 0,
               "averagePaymentAmount": 0,
-              "latePaymentsAmount": 0,
-              "latePaymentsPercentageByAmount": 0,
+              "billsPaidLateAmount": 0,
+              "billsPaidLatePercentageByAmount": 0,
               "averageBillPaymentTermsWeighted": 55.26,
               "averageBillSettlementPeriodWeighted": 0,
               "directCostsPercentageByCount": 34.04,
@@ -869,11 +869,11 @@
               "billsOutstandingAmount": 30000,
               "billsOutstandingPercentageByAmount": 12,
               "paymentsCount": 5,
-              "latePaymentsCount": 0,
+              "billsPaidLateCount": 0,
               "paymentsAmount": 220000,
               "averagePaymentAmount": 44000,
-              "latePaymentsAmount": 0,
-              "latePaymentsPercentageByAmount": 0,
+              "billsPaidLateAmount": 0,
+              "billsPaidLatePercentageByAmount": 0,
               "averageBillPaymentTermsWeighted": 35,
               "averageBillSettlementPeriodWeighted": 25,
               "directCostsPercentageByCount": 8,
@@ -1120,9 +1120,9 @@
                   "type": "integer",
                   "description": "Total number of payments made to the supplier."
                 },
-                "latePaymentsCount": {
+                "billsPaidLateCount": {
                   "type": "integer",
-                  "description": "Number of late payments made to the supplier."
+                  "description": "Number of bills to the supplier that were paid late."
                 },
                 "paymentsAmount": {
                   "type": "number",
@@ -1134,15 +1134,15 @@
                   "format": "decimal",
                   "description": "Average payment amount to the supplier."
                 },
-                "latePaymentsAmount": {
+                "billsPaidLateAmount": {
                   "type": "number",
                   "format": "decimal",
-                  "description": "Total amount of late payments."
+                  "description": "Total amount of bills that were paid late."
                 },
-                "latePaymentsPercentageByAmount": {
+                "billsPaidLatePercentageByAmount": {
                   "type": "number",
                   "format": "decimal",
-                  "description": "Percentage of late payments by amount."
+                  "description": "Percentage of bills that were paid late by amount."
                 },
                 "biggestCountPaymentMethod": {
                   "type": "string",
@@ -1276,11 +1276,11 @@
               "billsOutstandingAmount": 2500,
               "billsOutstandingPercentageByAmount": 20,
               "paymentsCount": 4,
-              "latePaymentsCount": 1,
+              "billsPaidLateCount": 1,
               "paymentsAmount": 10000.75,
               "averagePaymentAmount": 2500.19,
-              "latePaymentsAmount": 1000,
-              "latePaymentsPercentageByAmount": 10,
+              "billsPaidLateAmount": 1000,
+              "billsPaidLatePercentageByAmount": 10,
               "biggestCountPaymentMethod": "CreditCard",
               "biggestSpendPaymentMethod": "CreditCard",
               "averageBillPaymentTermsWeighted": 30.2,
@@ -1321,11 +1321,11 @@
               "billsOutstandingAmount": 0,
               "billsOutstandingPercentageByAmount": 0,
               "paymentsCount": 2,
-              "latePaymentsCount": 0,
+              "billsPaidLateCount": 0,
               "paymentsAmount": 578014.57,
               "averagePaymentAmount": 289007.29,
-              "latePaymentsAmount": 0,
-              "latePaymentsPercentageByAmount": 0,
+              "billsPaidLateAmount": 0,
+              "billsPaidLatePercentageByAmount": 0,
               "biggestCountPaymentMethod": "DebitCard",
               "biggestSpendPaymentMethod": "DebitCard",
               "averageBillPaymentTermsWeighted": 14.9,
@@ -1459,11 +1459,11 @@
                 "billsOutstandingAmount": 200000,
                 "billsOutstandingPercentageByAmount": 5.71,
                 "paymentsCount": 70,
-                "latePaymentsCount": 2,
+                "billsPaidLateCount": 2,
                 "paymentsAmount": 3200000,
                 "averagePaymentAmount": 45714.29,
-                "latePaymentsAmount": 50000,
-                "latePaymentsPercentageByAmount": 1.56,
+                "billsPaidLateAmount": 50000,
+                "billsPaidLatePercentageByAmount": 1.56,
                 "averageBillPaymentTermsWeighted": 25,
                 "averageBillSettlementPeriodWeighted": 20,
                 "directCostsPercentageByCount": 50,
@@ -1516,11 +1516,11 @@
                 "billsOutstandingAmount": 2500,
                 "billsOutstandingPercentageByAmount": 20,
                 "paymentsCount": 4,
-                "latePaymentsCount": 1,
+                "billsPaidLateCount": 1,
                 "paymentsAmount": 10000.75,
                 "averagePaymentAmount": 2500.19,
-                "latePaymentsAmount": 1000,
-                "latePaymentsPercentageByAmount": 10,
+                "billsPaidLateAmount": 1000,
+                "billsPaidLatePercentageByAmount": 10,
                 "biggestCountPaymentMethod": "CreditCard",
                 "biggestSpendPaymentMethod": "CreditCard",
                 "averageBillPaymentTermsWeighted": 30.2,

@@ -67,9 +67,9 @@ When writing bank transactions to Xero:
 - A maximum of 1000 transactions can be written at a time.
 
 :::note Writing historic transactions
-You can write bank transactions to Xero which are dated up to one year prior to the current date. Write operations that contain bank transactions dated older than one year will fail.
+The `feedStartDate` on the source bank account is determined by the **Feed start date** selected by the SMB user in the account mapping UI, but it is not enforced and should be used as a guide.
 
-The `date` of a historic transaction must be later than the `feedStartDate` on the source bank account, which is determined by the **Feed start date** selected by the SMB user in the account mapping UI.
+You can write bank transactions to Xero which are dated up to one year prior to the current date. Write operations that contain bank transactions dated older than one year will fail.
 :::
 
 ## Write bank transactions to Xero

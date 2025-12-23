@@ -96,24 +96,24 @@ curl --request PATCH \
 <TabItem value="python" label="Python">
 
 ```python
-import codatplatform
-from codatplatform.models import operations, shared
+from codat_platform import CodatPlatform
+from codat_platform.models import operations, shared
 
-codat_platform = codatplatform.CodatPlatform(
+codat_platform = CodatPlatform(
     security=shared.Security(
         auth_header='{codatAuthHeader}',
     ),
 )
 
-req = operations.UnlinkConnectionRequest(
-    update_connection=shared.UpdateConnection(
-        status=shared.DataConnectionStatus.UNLINKED,
-    ),
-    company_id='{companyId}',
-    connection_id='{connectionId}',
+req = codat_platform.connections.unlink(request={
+        "company_id": "8a210b68-6988-11ed-a1eb-0242ac120002",
+        "connection_id": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+        "update_connection_status": {
+            "status": shared.DataConnectionStatus.UNLINKED,
+        },
+    }
 )
 
-res = codat_platform.connections.unlink(req)
 ```
 
 </TabItem>
@@ -122,26 +122,24 @@ res = codat_platform.connections.unlink(req)
 
 ```javascript
 import { CodatPlatform } from "@codat/platform";
-import { UnlinkConnectionResponse } from "@codat/platform/dist/sdk/models/operations";
-import { DataConnectionStatus } from "@codat/platform/dist/sdk/models/shared";
 
 const codatPlatform = new CodatPlatform({
-  security: {
-    authHeader: "",
-  },
+  authHeader: "",
 });
 
-codatPlatform.connections.unlink({
-  updateConnection: {
-    status: DataConnectionStatus.Unlinked,
-  },
-  companyId: "{companyId}",
-  connectionId: "{connectionId}",
-}).then((res: UnlinkConnectionResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
+codatPlatform.connections
+  .unlink({
+    companyId: "8a210b68-6988-11ed-a1eb-0242ac120002",
+    connectionId: "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+    updateConnectionStatus: {
+      status: "Unlinked",
+    },
+  })
+  .then((res) => {
+    if (res) {
+      // handle response
+    }
+  });
 ```
 
 </TabItem>
@@ -249,24 +247,22 @@ curl --request DELETE \
 
 ```python
 
-import codatplatform
-from codatplatform.models import operations, shared
+from codat_platform import CodatPlatform
+from codat_platform.models import operations, shared
 
-codat_platform = codatplatform.CodatPlatform(
+codat_platform = CodatPlatform(
     security=shared.Security(
         auth_header="{codatAuthHeader}",
     ),
 )
 
-codat_platform.connections.delete(
-  operations.DeleteConnectionRequest(
-    company_id='{companyId}',
-    connection_id='{connectionId}',
-  )
+res = codat_platform.connections.delete(
+  request={
+        "company_id": "8a210b68-6988-11ed-a1eb-0242ac120002",
+        "connection_id": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
+    }
 )
 
-if res.status_code == 200:
-  print('Connection deleted successfully')
 ```
 
   </TabItem>
@@ -275,22 +271,19 @@ if res.status_code == 200:
 
 ```javascript
 import { CodatPlatform } from "@codat/platform";
-import { DeleteConnectionResponse } from "@codat/platform/dist/sdk/models/operations";
 
 const codatPlatform = new CodatPlatform({
-  security: {
-    authHeader: "{codatAuthHeader}",
-  },
+  authHeader: "{codatAuthHeader}",
 });
 
-codatPlatform.connections.delete({
-  companyId: "{companyId}",
-  connectionId: "{connectionId}",
-}).then((res: DeleteConnectionResponse) => {
-  if (res.statusCode == 200) {
-    console.log('Connection deleted successfully')
-  }
-});
+codatPlatform.connections
+  .delete({
+    companyId: "{companyId}",
+    connectionId: "{connectionId}",
+  })
+  .then((res) => {
+    console.log("Connection deleted successfully");
+  });
 ```
 
   </TabItem>

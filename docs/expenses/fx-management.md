@@ -285,9 +285,11 @@ In multi-currency scenarios, there are five possible combinations of currencies 
 
 We validate the multi-currency transactions you write to Expenses to ensure the currency combination will be accepted by the target accounting software as a valid expense.
 
-| Integration       | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
-| ----------------- | -------- | -------- | -------- | -------- | -------- |
-| QuickBooks Online | ✔️       | ✔️       | ✔️       | ✔️       | ❌       |
+| Integration        | Option 1 | Option 2 | Option 3 | Option 4 | Option 5 |
+| ------------------ | -------- | -------- | -------- | -------- | -------- |
+| QuickBooks Online  | ✔️       | ✔️       | ✔️       | ✔️       | ❌       |
+| QuickBooks Desktop | ✔️       | ❌       | ❌       | ❌       | ❌       |
+| Xero               | ✔️       | ✔️       | ❌       | ❌       | ❌       |
 
 ---
 

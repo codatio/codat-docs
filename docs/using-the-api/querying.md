@@ -101,22 +101,19 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 
 ```javascript
 import { CodatLending } from "@codat/lending";
-import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
 
 const codatLending = new CodatLending({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "amountDue>0",
-}).then((res: ListInvoicesResponse) => {
-  if (res.statusCode == 200) {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "amountDue>0&&totalAmount<1000",
+  })
+  .then((res) => {
     // handle response
-  }
-});
+  });
 ```
 
 </TabItem>
@@ -124,22 +121,25 @@ codatLending.accountsReceivable.invoices.list({
 <TabItem value="python" label="Python">
 
 ```python
-import codatlending
-from codatlending.models import operations, shared
+from codat_lending import CodatLending
+from codat_lending.models import operations, shared
 
-codat_lending = codatlending.CodatLending(
+codat_lending = CodatLending(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
-    company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
-    query='amountDue>0',
-))
+res = codat_lending.accounts_receivable.invoices.list(
+    request=operations.ListAccountingInvoicesRequest(
+        company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
+        query='amountDue>0',
+    )
+)
 
-if res.accounting_invoices is not None:
+if res:
     # handle response
+    pass
 ```
 
 </TabItem>
@@ -222,22 +222,19 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 
 ```javascript
 import { CodatLending } from "@codat/lending";
-import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
 
 const codatLending = new CodatLending({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "currency=GBP",
-}).then((res: ListInvoicesResponse) => {
-  if (res.statusCode == 200) {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "currency=GBP",
+  })
+  .then((res) => {
     // handle response
-  }
-});
+  });
 ```
 
 </TabItem>
@@ -245,22 +242,24 @@ codatLending.accountsReceivable.invoices.list({
 <TabItem value="python" label="Python">
 
 ```python
-import codatlending
-from codatlending.models import operations, shared
+from codat_lending import CodatLending
+from codat_lending.models import operations, shared
 
-codat_lending = codatlending.CodatLending(
+codat_lending = CodatLending(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+res = codat_lending.accounts_receivable.invoices.list(
+    request=operations.ListAccountingInvoicesRequest(
     company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
     query='currency=GBP',
 ))
 
-if res.accounting_invoices is not None:
+if res:
     # handle response
+    pass
 ```
 
 </TabItem>
@@ -343,22 +342,19 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 
 ```javascript
 import { CodatLending } from "@codat/lending";
-import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
 
 const codatLending = new CodatLending({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "customerRef.id=61",
-}).then((res: ListInvoicesResponse) => {
-  if (res.statusCode == 200) {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "customerRef.id=61",
+  })
+  .then((res) => {
     // handle response
-  }
-});
+  });
 ```
 
 </TabItem>
@@ -366,22 +362,24 @@ codatLending.accountsReceivable.invoices.list({
 <TabItem value="python" label="Python">
 
 ```python
-import codatlending
-from codatlending.models import operations, shared
+from codat_lending import CodatLending
+from codat_lending.models import operations, shared
 
-codat_lending = codatlending.CodatLending(
+codat_lending = CodatLending(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+res = codat_lending.accounts_receivable.invoices.list(
+    request=operations.ListAccountingInvoicesRequest(
     company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
     query='customerRef.id=61',
 ))
 
-if res.accounting_invoices is not None:
+if res:
     # handle response
+    pass
 ```
 
 </TabItem>
@@ -464,22 +462,19 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 
 ```javascript
 import { CodatLending } from "@codat/lending";
-import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
 
 const codatLending = new CodatLending({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "amountDue>0&&totalAmount<1000",
-}).then((res: ListInvoicesResponse) => {
-  if (res.statusCode == 200) {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "amountDue>0&&totalAmount<1000",
+  })
+  .then((res) => {
     // handle response
-  }
-});
+  });
 ```
 
 </TabItem>
@@ -487,22 +482,24 @@ codatLending.accountsReceivable.invoices.list({
 <TabItem value="python" label="Python">
 
 ```python
-import codatlending
-from codatlending.models import operations, shared
+from codat_lending import CodatLending
+from codat_lending.models import operations, shared
 
-codat_lending = codatlending.CodatLending(
+codat_lending = CodatLending(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+res = codat_lending.accounts_receivable.invoices.list(
+    request=operations.ListAccountingInvoicesRequest(
     company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
     query='amountDue>0&&totalAmount<1000',
 ))
 
-if res.accounting_invoices is not None:
+if res:
     # handle response
+    pass
 ```
 
 </TabItem>
@@ -587,22 +584,19 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 
 ```javascript
 import { CodatLending } from "@codat/lending";
-import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
 
 const codatLending = new CodatLending({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "dueDate>2021-01-28",
-}).then((res: ListInvoicesResponse) => {
-  if (res.statusCode == 200) {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "bae71d36-ff47-420a-b4a6-f8c9ddf41140",
+    query: "dueDate>2021-01-28",
+  })
+  .then((res) => {
     // handle response
-  }
-});
+  });
 ```
 
 </TabItem>
@@ -610,22 +604,24 @@ codatLending.accountsReceivable.invoices.list({
 <TabItem value="python" label="Python">
 
 ```python
-import codatlending
-from codatlending.models import operations, shared
+from codat_lending import CodatLending
+from codat_lending.models import operations, shared
 
-codat_lending = codatlending.CodatLending(
+codat_lending = CodatLending(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+res = codat_lending.accounts_receivable.invoices.list(
+    request=operations.ListAccountingInvoicesRequest(
     company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
     query='dueDate>2021-01-28',
 ))
 
-if res.accounting_invoices is not None:
+if res:
     # handle response
+    pass
 ```
 
 </TabItem>
@@ -710,22 +706,19 @@ var res = await codatLending.AccountsReceivable.Invoices.ListAsync(new ListAccou
 
 ```javascript
 import { CodatLending } from "@codat/lending";
-import { ListInvoicesResponse } from "@codat/lending/dist/sdk/models/operations";
 
 const codatLending = new CodatLending({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatLending.accountsReceivable.invoices.list({
-  companyId: "{companyId}",
-  query: "metadata.isDeleted!=true",
-}).then((res: ListInvoicesResponse) => {
-  if (res.statusCode == 200) {
+codatLending.accountsReceivable.invoices
+  .list({
+    companyId: "{companyId}",
+    query: "metadata.isDeleted!=true",
+  })
+  .then((res) => {
     // handle response
-  }
-});
+  });
 ```
 
 </TabItem>
@@ -733,22 +726,24 @@ codatLending.accountsReceivable.invoices.list({
 <TabItem value="python" label="Python">
 
 ```python
-import codatlending
-from codatlending.models import operations, shared
+from codat_lending import CodatLending
+from codat_lending.models import operations, shared
 
-codat_lending = codatlending.CodatLending(
+codat_lending = CodatLending(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_lending.accounts_receivable.invoices.list(operations.ListAccountingInvoicesRequest(
+res = codat_lending.accounts_receivable.invoices.list(
+    request=operations.ListAccountingInvoicesRequest(
     company_id='8a210b68-6988-11ed-a1eb-0242ac120002',
     query='metadata.isDeleted!=true',
 ))
 
-if res.accounting_invoices is not None:
+if res:
     # handle response
+    pass
 ```
 
 </TabItem>
@@ -834,21 +829,18 @@ GET /companies?query=dataConnections.status=PendingAuth
 
 ```javascript
 import { CodatPlatform } from "@codat/platform";
-import { ListCompaniesResponse } from "@codat/platform/dist/sdk/models/operations";
 
 const codatPlatform = new CodatPlatform({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatPlatform.companies.list({
-  query: "dataConnections.status=PendingAuth",
-}).then((res: ListCompaniesResponse) => {
-  if (res.statusCode == 200) {
+codatPlatform.companies
+  .list({
+    query: "dataConnections.status=PendingAuth",
+  })
+  .then((res) => {
     // handle response
-  }
-});
+  });
 ```
 
 </TabItem>
@@ -856,21 +848,24 @@ codatPlatform.companies.list({
 <TabItem value="python" label="Python">
 
 ```python
-import codatplatform
-from codatplatform.models import operations, shared
+from codat_platform import CodatPlatform
+from codat_platform.models import operations, shared
 
-codat_platform = codatplatform.CodatPlatform(
+codat_platform = CodatPlatform(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_platform.companies.list(operations.ListCompaniesRequest(
-    query='dataConnections.status=PendingAuth',
-))
+res = codat_platform.companies.list(
+    request=operations.ListCompaniesRequest(
+        query='dataConnections.status=PendingAuth',
+    )
+)
 
-if res.companies is not None:
+if res:
     # handle response
+    pass
 ```
 
 </TabItem>
@@ -914,13 +909,14 @@ func main() {
 </Tabs>
 
 ### Companies with no connections
-  
+
 Query: `dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked`
 
 :::Note
+
 - The page size value is obligatory for querying.
 - The response will exclude companies that had connections but they were deleted.
-:::
+  :::
 
 <Tabs>
 
@@ -943,6 +939,7 @@ var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
 
 // handle response
 ```
+
 </TabItem>
 
 <TabItem value="http" label="HTTP">
@@ -950,49 +947,53 @@ var res = await sdk.Companies.ListAsync(new ListCompaniesRequest() {
 ```http
 GET /companies?query=dataConnections.status=PendingAuth
 ```
+
 </TabItem>
 
 <TabItem value="nodejs" label="TypeScript">
 
 ```javascript
 import { CodatPlatform } from "@codat/platform";
-import { ListCompaniesResponse } from "@codat/platform/dist/sdk/models/operations";
 
 const codatPlatform = new CodatPlatform({
-  security: {
-    authHeader: "Basic BASE_64_ENCODED(API_KEY)",
-  },
+  authHeader: "Basic BASE_64_ENCODED(API_KEY)",
 });
 
-codatPlatform.companies.list({
-  query: "dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked",
-}).then((res: ListCompaniesResponse) => {
-  if (res.statusCode == 200) {
+codatPlatform.companies
+  .list({
+    query:
+      "dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked",
+  })
+  .then((res) => {
     // handle response
-  }
-});
+  });
 ```
+
 </TabItem>
 
 <TabItem value="python" label="Python">
 
 ```python
-import codatplatform
-from codatplatform.models import operations, shared
+from codat_platform import CodatPlatform
+from codat_platform.models import operations, shared
 
-codat_platform = codatplatform.CodatPlatform(
+codat_platform = CodatPlatform(
     security=shared.Security(
         auth_header="Basic BASE_64_ENCODED(API_KEY)",
     ),
 )
 
-res = codat_platform.companies.list(operations.ListCompaniesRequest(
-    query='dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked',
-))
+res = codat_platform.companies.list(
+    request=operations.ListCompaniesRequest(
+        query='dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked',
+    )
+)
 
-if res.companies is not None:
+if res:
     # handle response
+    pass
 ```
+
 </TabItem>
 
 <TabItem value="go" label="Go">
@@ -1028,6 +1029,7 @@ func main() {
     }
 }
 ```
+
 </TabItem>
 
 </Tabs>
