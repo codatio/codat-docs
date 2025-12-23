@@ -58,6 +58,7 @@ export const integrationsFilterBillPaySync = [
   "QuickBooks Online",
   "FreeAgent",
   "Oracle NetSuite",
+  "Sage Intacct",
   "Zoho Books",
 ];
 

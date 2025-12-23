@@ -13,8 +13,6 @@ Codat offers official SDK client libraries for different programming languages, 
 
 <ClientLibraries />
 
-Looking for a language that's not here? [Request support for a new language](https://forms.gle/jEWjV1EDhiB5KEGP9).
-
 ### Library versions
 
 Codat's client library version policy uses [semantic versioning](https://semver.org/spec/v2.0.0.html). For example, a library version 4.2.0 defines the _major_ version as 4, _minor_ as 2, and the _patch_ as 0.

@@ -54,6 +54,12 @@ Direct Incomes are mapped from the [Other Receipts](https://developer.intacct.co
 
 When writing Direct Incomes to Sage Intacct, the required `otherreceipt.payee` field is populated with the value of `directIncomes.reference`. The `otherreceipt.payee` field is not associated with a customer or contact.
 
+## Expenses
+
+Expense transactions can't be posted directly from debit accounts to Sage Intacct. Instead, all card-based expenses (this includes credit, debit, and prepaid cards) are posted using the `Credit Card Charge` object. 
+
+If debit card expenses need to be synced, the customer can set the account type to `Debit` for this object. The resulting transactions are then correctly posted to the general ledger accounts, and the account is reflected as a debit account in the Sage Intacct user interface.
+
 ## Invoices
 
 Writing negative invoices to Sage Intacct is not supported; you can write a Credit Note to achieve this functionality.
