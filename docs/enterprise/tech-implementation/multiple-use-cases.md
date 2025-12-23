@@ -17,12 +17,14 @@ This guide is aimed at enterprise clients who use Codat's solutions for multiple
     - **Standard products** that include data types defined by Codat as relevant and are available globally for all clients, such as Bank Feeds, Expenses, or Lending.
     - **Custom products** that include data types requested by the client for a bespoke solution and are only available for use by that client.
 
-You can apply **sync settings** that fit your use case best to these data types. Codat distinguishes:
+You can apply either **sync settings** that fit your use case best. Codat distinguishes either:
 
-    - **Client-level** sync settings that are managed via **Settings > Data Types** in the Codat Portal.
+    - **Client-level** sync settings that are managed via **Settings > Data Types** in the Codat Portal, or
     - **Product-level** sync settings that are maintained by Codat upon client request.
 
-Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoint and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint.
+To avoid the risk of dual syncs, you must only apply one type of sync settings.
+
+Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoint and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint. 
 
 Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use the `{productIdentifier}.read.completed` webhooks.
 
@@ -34,7 +36,7 @@ The following guidance is suitable for enterprise clients who have implemented C
 
 You can assign a product to a company at the point of creating that company. As a result, product-level sync settings will apply to the first data fetch every time the company gains a new connection in the `Linked` status.
 
-![Sync flow diagram for creating new companies with products](/img/enterprise/implementation/consent/syncflowproductsnew.png)
+![Sync flow diagram for updating existing companies with products](/img/enterprise/implementation/consent/syncflowproductsexisting.png)
 
 ### Update existing company
 
@@ -42,7 +44,7 @@ You can assign a product to an existing company that already has a connection in
 
 This scenario assumes your customer has consented to the data type requirements of the additional use case.
 
-![Sync flow diagram for updating existing companies with products](/img/enterprise/implementation/consent/syncflowproductsexisting.png)
+![Sync flow diagram for creating new companies with products](/img/enterprise/implementation/consent/syncflowproductsnew.png)
 
 To remove a product from an existing company, use the [Remove product](/platform-api#/operations/remove-product) endpoint.
 
