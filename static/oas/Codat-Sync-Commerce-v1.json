@@ -14070,14 +14070,6 @@
                   "description": "A phone number."
                 },
                 "type": {
-                  "$ref": "#/components/schemas/AccountingCompanyDataset/properties/phoneNumbers/items/definitions/phoneNumberType"
-                }
-              },
-              "required": [
-                "type"
-              ],
-              "definitions": {
-                "phoneNumberType": {
                   "description": "The type of phone number",
                   "type": "string",
                   "enum": [
@@ -14088,7 +14080,10 @@
                     "Unknown"
                   ]
                 }
-              }
+              },
+              "required": [
+                "type"
+              ]
             }
           },
           "webLinks": {
