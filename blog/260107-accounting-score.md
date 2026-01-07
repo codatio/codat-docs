@@ -38,5 +38,5 @@ This update is relevant for clients who need deeper insight into the quality of 
 
 ## How to get started?
 
-Contact your **Account Manager** or our **support team** to enable this feature.  
+Contact your **Account Manager** or our **Support Team** to enable this feature.  
 Once enabled, follow our [API documentation](/lending-api#/operations/get-financial-summary) to implement the Accounting score into your application.
