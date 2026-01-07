@@ -33,6 +33,7 @@ For details on supported data types and integrations, see the [Credit Model docu
 ## Who is this relevant for?
 
 This update is relevant for clients who require deeper insight into their customers’ accounting and banking data to support financial analysis and credit decisioning.
+
 The Credit Model Report is ideal for:
 - **SME lending** – quickly assess the creditworthiness of small and medium-sized businesses, even when traditional financial history is limited  
 - **Dynamic risk assessment** – monitor borrower health in real time or near real time, enabling more proactive risk management  
