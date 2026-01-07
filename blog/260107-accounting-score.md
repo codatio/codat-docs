@@ -20,7 +20,7 @@ The score provides a high-level assessment of the quality of a company’s accou
 - **Data completeness** – whether all required financial statements and documentation are available
 - **Data accuracy** – identification of errors or anomalies
 - **Data consistency** – consistent application of accounting principles over time
-- **Data presentation**– clarity and understandability of financial data
+- **Data presentation** – clarity and understandability of financial data
 - **Accounting practices** – alignment with GAAP standards
 
 In addition to the overall score, the API surfaces the **top three accounting issues** identified for a company, allowing lenders to quickly focus on the most impactful risks.
