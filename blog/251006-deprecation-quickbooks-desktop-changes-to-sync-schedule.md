@@ -5,9 +5,11 @@ tags: ["Deprecation"]
 authors: dcoplowe
 ---
 
-On **January 10, 2026**, we will deprecate the current behavior where data is synced immediately after a QuickBooks Desktop company is linked. Going forward, all syncs, including the initial fetch, will only run during the timeframes explicitly allowed by the customer’s sync schedule.
+On **January 10, 2026**, we will deprecate the current behavior where data is synced immediately after a QuickBooks Desktop company is linked.
 
 <!--truncate-->
+
+Going forward, all syncs, including the initial fetch, will only run during the timeframes explicitly allowed by the customer’s sync schedule.
 
 This change aligns with upcoming improvements to the QuickBooks Desktop Link flow, which will introduce **configurable sync schedules**. These enhancements are designed to minimize disruption by ensuring the Intuit Web Connector only runs at times defined by the customer.
 
