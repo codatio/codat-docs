@@ -2938,12 +2938,7 @@
                   "$ref": "#/components/schemas/Bill/definitions/trackingRef"
                 }
               }
-            },
-            "required": [
-              "quantity",
-              "unitAmount",
-              "accountRef"
-            ]
+            }
           },
           "billAccountRef": {
             "title": "Account reference",
