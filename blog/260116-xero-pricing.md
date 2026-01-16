@@ -3,6 +3,7 @@ title: "Xero: Updates to developer pricing model"
 date: "2026-01-16"
 tags: ["Xero", "Update"]
 authors: psimpson
+draft: false
 ---
 
 Xero recently announced an update to its [developer pricing model](https://developer.xero.com/pricing) with plans to introduce a tiered, usage-based pricing structure. This will take effect on 2 March 2026, alongside updates to their Developer Terms and Conditions.
