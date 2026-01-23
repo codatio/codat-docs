@@ -3961,7 +3961,7 @@
                     "transactions": [
                       {
                         "id": "716422529",
-                        "date": "2023-08-22T10:21:00Z",
+                        "date": "2023-08-22T10:21:00",
                         "description": "Repayment of Credit Card",
                         "counterparty": "Bank of Example",
                         "reference": "Ref-12345",
@@ -3972,7 +3972,7 @@
                       },
                       {
                         "id": "716422530",
-                        "date": "2023-08-22T10:22:00Z",
+                        "date": "2023-08-22T10:22:00",
                         "description": "Amazon Purchase",
                         "counterparty": "Amazon",
                         "reference": "Ref-12346",
@@ -3983,7 +3983,7 @@
                       },
                       {
                         "id": "716422531",
-                        "date": "2023-08-22T10:23:00Z",
+                        "date": "2023-08-22T10:23:00",
                         "description": "Office Supplies",
                         "counterparty": "Office Mart",
                         "reference": "Ref-12347",
@@ -4001,7 +4001,7 @@
                     "transactions": [
                       {
                         "id": "716422529",
-                        "date": "2023-08-22T10:21:00Z",
+                        "date": "2023-08-22T10:21:00",
                         "description": "Repayment of Credit Card",
                         "amount": 100,
                         "balance": 100,
@@ -4009,7 +4009,7 @@
                       },
                       {
                         "id": "716422530",
-                        "date": "2023-08-22T10:22:00Z",
+                        "date": "2023-08-22T10:22:00",
                         "description": "Amazon Purchase",
                         "amount": -100,
                         "balance": 0,
@@ -4017,7 +4017,7 @@
                       },
                       {
                         "id": "716422531",
-                        "date": "2023-08-22T10:23:00Z",
+                        "date": "2023-08-22T10:23:00",
                         "description": "Office Supplies",
                         "amount": -60,
                         "balance": -60,
@@ -4032,21 +4032,21 @@
                     "transactions": [
                       {
                         "id": "716422529",
-                        "date": "2023-08-22T10:21:00Z",
+                        "date": "2023-08-22T10:21:00",
                         "description": "Repayment of Credit Card",
                         "amount": 100,
                         "transactionType": "Credit"
                       },
                       {
                         "id": "716422530",
-                        "date": "2023-08-22T10:22:00Z",
+                        "date": "2023-08-22T10:22:00",
                         "description": "Amazon Purchase",
                         "amount": -100,
                         "transactionType": "Debit"
                       },
                       {
                         "id": "716422531",
-                        "date": "2023-08-22T10:23:00Z",
+                        "date": "2023-08-22T10:23:00",
                         "description": "Office Supplies",
                         "amount": -60,
                         "transactionType": "Debit"
@@ -4060,7 +4060,7 @@
                     "transactions": [
                       {
                         "id": "716422529",
-                        "date": "2023-08-22T10:21:00Z",
+                        "date": "2023-08-22T10:21:00",
                         "description": "Repayment of Credit Card",
                         "counterparty": "Bank of Example",
                         "reference": "Ref-12345",
@@ -4070,7 +4070,7 @@
                       },
                       {
                         "id": "716422530",
-                        "date": "2023-08-22T10:22:00Z",
+                        "date": "2023-08-22T10:22:00",
                         "description": "Amazon Purchase",
                         "counterparty": "Amazon",
                         "reference": "Ref-12346",
@@ -4080,7 +4080,7 @@
                       },
                       {
                         "id": "716422531",
-                        "date": "2023-08-22T10:23:00Z",
+                        "date": "2023-08-22T10:23:00",
                         "description": "Office Supplies",
                         "counterparty": "Office Mart",
                         "reference": "Ref-12347",
@@ -5165,7 +5165,13 @@
               "example": "716422529"
             },
             "date": {
-              "$ref": "#/components/schemas/DateTime"
+              "title": "Local date time",
+              "type": "string",
+              "examples": [
+                "2023-08-22T10:21:00",
+                "2023-08-22"
+              ],
+              "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2023-08-22T10:21:00\n2023-08-22\n```\n\nWhen pushing bank transaction data to Codat, the date is treated as a local date. This means:\n\n- The date/time is used exactly as provided, without any timezone conversion.\n- If a timezone offset is included (e.g., `2023-08-22T10:21:00-05:00`), the offset will be ignored and only the local date/time portion will be used.\n- We recommend providing dates without a timezone suffix for clarity (e.g., `2023-08-22T10:21:00` rather than `2023-08-22T10:21:00Z`)."
             },
             "description": {
               "type": "string",
