@@ -566,6 +566,10 @@ module.exports = {
       to: "/integrations/bank-feeds/sage-bank-feeds", //sage
     },
     {
+      from: "/redirects/integrations/bankfeeds/hcws",
+      to: "/integrations/bank-feeds/qbo-bank-feeds", //qbo
+    },
+    {
       from: "/docs/status-codes",
       to: "/using-the-api/errors", //sage
     },
