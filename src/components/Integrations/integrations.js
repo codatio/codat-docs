@@ -176,7 +176,7 @@ export const spendInsightsFileUpload = [
     to: "/spend-insights/resources/link-file",
     sourceType: "accounting",
     tags: ["Bills", "Suppliers", "Payments"],
-    img: "https://static.codat.io/public/officialLogos/Square/ajera.jpg",
+    img: "https://static.codat.io/public/officialLogos/Square/ajera.png",
   },
   {
     name: "Epicor",
