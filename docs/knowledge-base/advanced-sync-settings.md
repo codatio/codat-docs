@@ -4,7 +4,7 @@ description: "Review additional settings available to configure the sync of vari
 displayed_sidebar: "docs"
 ---
 
-For most of our data types, we retrieve all available history. For financial statement data types, (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. You can apply additional sync settings to change these defaults to help you limit the amount of data synchronized from the source platform.  We reccomend that you only pull data from a date range relevant to your use-case, as this will greatly reduce the change of your datasets hitting rate limit errors.
+For most of our data types, we retrieve all available history. For financial statement data types, (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. You can apply additional sync settings to change these defaults to help you limit the amount of data synchronized from the source platform.  We reccomend that you only pull data from a date range relevant to your use-case, as this is likely to greatly reduce the chance of your datasets hitting rate limit errors.
 
 Please note that these settings may not work for all data types, on all integrations. Please check with Codat Support if you are unsure
 
