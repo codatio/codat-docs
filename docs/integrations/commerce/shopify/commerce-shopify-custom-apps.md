@@ -18,24 +18,49 @@ _Shopify store connection UI_
 
 The merchant is asked to create and install a custom app in their Shopify admin account and get its API access token.
 
-The UI contains a link to the <a class="external" href="https://help.shopify.com/en/manual/apps/custom-apps" target="_blank">Custom apps</a> page in the Shopify Help Center. The merchant needs to complete the following tasks in the Help article:
+The UI contains links to the Shopify documentation for <a class="external" href="https://help.shopify.com/en/manual/apps/custom-apps" target="_blank">Custom apps</a>—specifically **Create a custom app** and **Install a custom app**. The merchant needs to complete the following steps.
 
-1. Enable custom app development from the Shopify admin
+### Create and configure the custom app
 
-2. Create and install a custom app
+1. From the Shopify admin, go to **Settings** > **Apps**.
 
-3. Create the app
+2. Click **Develop apps**.
 
-4. Select API scopes
+3. Click **Build apps in Dev Dashboard**.
 
-   The merchant must assign the following API scopes to their custom app:
+4. From the Dev Dashboard, click **Create app**.
 
-   ```
-   read_customers, read_inventory, read_orders, read_products, read_shopify_payments_disputes,
-   read_shopify_payments_payouts
-   ```
+5. In the **Start from Dev Dashboard** section, name your app and click **Create**.
 
-5. Install the app and get the API access tokens
+6. Create a version for your app:
+   - **App URL**: `https://shopify.dev/apps/default-app-home`
+   - Uncheck **Embed app in Shopify admin**
+   - In the **Access** section, enter the following app scopes:
+     ```
+     read_customers, read_inventory, read_orders, read_products,
+     read_shopify_payments_payouts, read_shopify_payments_disputes
+     ```
+   - Click **Release**
+   - (Optional) Enter a version name and version message
+   - Click **Release**
+
+### Select custom distribution and install the app
+
+7. Go to **App Home** > **Distribution** and click **Select distribution method**.
+
+8. Choose **Custom distribution** and click **Select**.
+
+9. In **Store domain**, paste your store domain and click **Generate link**.
+
+10. Copy the generated link and open it in your browser.
+
+11. Choose your store and click **Install**.
+
+### Get the API credentials
+
+12. Go to **App settings** > **Credentials** to get the Admin API access token.
+
+### Complete the connection in Codat Link
 
 Next, the merchant needs to:
 
@@ -66,7 +91,7 @@ Merchants must have the following permissions to connect their Shopify store and
 
 - The **Develop apps** permission.
 
-- Any <a class="external" href="https://help.shopify.com/en/manual/your-account/staff-accounts/staff-permissions" target="_blank">staff permissions</a> which are required by the required API scopes (see step four in the merchant connection flow above).
+- Any <a class="external" href="https://help.shopify.com/en/manual/your-account/staff-accounts/staff-permissions" target="_blank">staff permissions</a> which are required by the required API scopes (see the **Create and configure the custom app** section above).
 
 ## Configure the Shopify integration for use with custom apps
 
