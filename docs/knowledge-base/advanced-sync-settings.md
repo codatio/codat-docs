@@ -4,9 +4,9 @@ description: "Review additional settings available to configure the sync of vari
 displayed_sidebar: "docs"
 ---
 
-For most of our data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. You can apply additional sync settings to change these defaults. This helps you limit the amount of data synchronized from the source platform.
+For most of our data types, we retrieve all available history. For financial statement data types, (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. You can apply additional sync settings to change these defaults to help you limit the amount of data synchronized from the source platform.  We reccomend that you only pull data from a date range relevant to your use-case, as this will greatly reduce the change of your datasets hitting rate limit errors.
 
-These settings only work for data sources that allow delta syncs and are applied to all companies.
+Please note that these settings may not work for all data types, on all integrations. Please check with Codat Support if you are unsure
 
 ## Sync settings
 
@@ -20,13 +20,24 @@ You can configure the following advanced settings:
 
 ## Configuration
 
-Use our [Update all sync settings](/platform-api#/operations/update-profile-syncSettings) endpoint to configure advanced sync settings. These settings are configured per data type and apply to all companies. The endpoint does not provide any error messages if the settings are not supported.
+To view your Codat Client's 'global' sync settings you can call the following endpoint: 
 
-For example, to configure advanced settings for our `invoices` data type, send the following request to the endpoint:
+```http title="Get Sync Settings"
+GET /profile/syncSettings
+```
+
+To override the sync settings at a company level you can make the following request
+
+```http title="Update Company Sync Settings
+POST /companies/:companyId/syncSettings
+```
+
+
+For example, to configure advanced settings for our `invoices` data type, for a given company, send the following request to the endpoint:
 
 ```json
 {
-  "clientId": "367f7975-267b-439b-90c6-a6040ee680f3",
+  "clientId": "your-codat-client-id",
   "settings": [
     {
       "dataType": "invoices",
