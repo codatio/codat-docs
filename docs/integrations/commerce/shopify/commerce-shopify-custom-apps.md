@@ -18,7 +18,7 @@ _Shopify store connection UI_
 
 The merchant is asked to create and install a custom app in their Shopify admin account and provide the store name, client ID, and client secret from the app.
 
-The UI includes a **Find your Shopify credentials** section that guides the merchant through the process. For more detail, see the Shopify docs on <a class="external" href="https://help.shopify.com/en/manual/apps/custom-apps" target="_blank">Custom apps</a> (**Create a custom app** and **Install a custom app**) and <a class="external" href="https://shopify.dev/docs/apps/launch/distribution/select-distribution-method" target="_blank">Select a distribution method</a>. The merchant needs to complete the following steps.
+The UI includes a **Find your Shopify credentials** section that guides the merchant through the process. For more detail, see the Shopify docs on <a class="external" href="https://help.shopify.com/en/manual/apps/app-types/custom-apps" target="_blank">Custom apps</a> (**Create a custom app** and **Install a custom app**) and <a class="external" href="https://shopify.dev/docs/apps/launch/distribution/select-distribution-method" target="_blank">Select a distribution method</a>. The merchant needs to complete the following steps.
 
 ### Create and configure the custom app
 
