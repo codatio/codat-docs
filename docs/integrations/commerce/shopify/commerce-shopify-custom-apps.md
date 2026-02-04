@@ -16,32 +16,32 @@ _Shopify store connection UI_
 
 ![An image of the Shopify store connection UI](/img/integrations/commerce/shopify/7a2c893-shopify-code-connect-your-shopify-store-custom-apps.png)
 
-The merchant is asked to create and install a custom app in their Shopify admin account and get its API access token.
+The merchant is asked to create and install a custom app in their Shopify admin account and provide the store name, client ID, and client secret from the app.
 
-The UI contains links to the Shopify documentation for <a class="external" href="https://help.shopify.com/en/manual/apps/custom-apps" target="_blank">Custom apps</a>—specifically **Create a custom app** and **Install a custom app**. The merchant needs to complete the following steps.
+The UI includes a **Find your Shopify credentials** section that guides the merchant through the process. For more detail, see the Shopify docs on <a class="external" href="https://help.shopify.com/en/manual/apps/custom-apps" target="_blank">Custom apps</a> (**Create a custom app** and **Install a custom app**) and <a class="external" href="https://shopify.dev/docs/apps/launch/distribution/select-distribution-method" target="_blank">Select a distribution method</a>. The merchant needs to complete the following steps.
 
 ### Create and configure the custom app
 
-1. From the Shopify admin, go to **Settings** > **Apps**.
+1. From your Shopify admin, go to **Settings** > **Apps**.
 
 2. Click **Develop apps**.
 
 3. Click **Build apps in Dev Dashboard**.
 
-4. From the Dev Dashboard, click **Create app**.
+4. From your Dev Dashboard, click **Create app**.
 
-5. In the **Start from Dev Dashboard** section, name your app and click **Create**.
+5. In the **Start from Dev Dashboard** section, name your app, and then click **Create**.
 
 6. Create a version for your app:
    - **App URL**: `https://shopify.dev/apps/default-app-home`
    - Uncheck **Embed app in Shopify admin**
-   - In the **Access** section, enter the following app scopes:
+   - In the **Access** section, enter these app scopes:
      ```
      read_customers, read_inventory, read_orders, read_products,
      read_shopify_payments_payouts, read_shopify_payments_disputes
      ```
    - Click **Release**
-   - (Optional) Enter a version name and version message
+   - (Optional) Enter a version name and a version message
    - Click **Release**
 
 ### Select custom distribution and install the app
@@ -56,21 +56,21 @@ The UI contains links to the Shopify documentation for <a class="external" href=
 
 11. Choose your store and click **Install**.
 
-### Get the API credentials
+### Get the client ID and secret
 
-12. Go to **App settings** > **Credentials** to get the Admin API access token.
+12. Go back to the app and go to **Settings** > **Credentials** to find your client ID and secret.
 
 ### Complete the connection in Codat Link
 
 Next, the merchant needs to:
 
-1. Enter their store name in the **Shopify store name** field in the store connection UI.
+1. Enter their store name in the **Shopify store name** field (the part before `.myshopify.com`—for example, `my-store-name`).
 
-2. In Shopify, copy the **Admin API access token** for the custom app that they created.
+2. Enter the **Shopify client ID** from the app’s **Settings** > **Credentials**.
 
-3. Enter the token in the **Shopify access token** field in the store connection UI.
+3. Enter the **Shopify client secret** from the app’s **Settings** > **Credentials**.
 
-4. Click **Continue** to submit the store name and access token to Codat.
+4. Click **Continue** to submit the store name, client ID, and client secret to Codat.
 
 The Link success screen is displayed if the custom app was connected successfully.
 
@@ -91,7 +91,7 @@ Merchants must have the following permissions to connect their Shopify store and
 
 - The **Develop apps** permission.
 
-- Any <a class="external" href="https://help.shopify.com/en/manual/your-account/staff-accounts/staff-permissions" target="_blank">staff permissions</a> which are required by the required API scopes (see the **Create and configure the custom app** section above).
+- Any <a class="external" href="https://help.shopify.com/en/manual/your-account/staff-accounts/staff-permissions" target="_blank">staff permissions</a> required by the access scopes listed in **Create and configure the custom app**.
 
 ## Configure the Shopify integration for use with custom apps
 
