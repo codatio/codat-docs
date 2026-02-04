@@ -44,7 +44,7 @@ The UI includes a **Find your Shopify credentials** section that guides the merc
    - (Optional) Enter a version name and a version message
    - Click **Release**
 
-### Select custom distribution and install the app
+### Select Custom distribution and install the app
 
 7. Go to **App Home** > **Distribution** and click **Select distribution method**.
 
