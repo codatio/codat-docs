@@ -17,8 +17,8 @@ The following features in the **Assess** section of the portal will no longer be
 | **Balance sheet**                                                                                                                                  | ![Screenshot of Balance sheet screen that's being deprecated in Assess](/img/lending/balance-sheet.png)                     |
 | **Ratios** <br/><br/>**Note**: These appear at the end of the Profit and Loss and Balance Sheet tabs                                               | ![Screenshot of Ratios screen that's being deprecated in Assess](/img/lending/financial-ratios.png)                         |
 | **Marketing**                                                                                                                                      | ![Screenshot of Marketing screen that's being deprecated in Assess](/img/lending/marketing-screen-assess.png)               |
-| **Categorize accounts in Assess** <br/><br/>**Note**: We have new screens available for recategozing accounts using the latest categories.         | ![Screenshot of categorize accounts screen that's being deprecated](/img/lending/account-categorization-v2.png)             |
-| **Categorize accounts in Accounting API** <br/><br/>**Note**: We have new screens available for recategozing accounts using the latest categories. | ![Screenshot of categorize accounts screen that's being deprecated](/img/lending/accounting-api-account-categorisation.png) |
+| **Categorize accounts in Assess** <br/><br/>**Note**: We have new screens available for recategorizing accounts using the latest categories.         | ![Screenshot of categorize accounts screen that's being deprecated](/img/lending/account-categorization-v2.png)             |
+| **Categorize accounts in Accounting API** <br/><br/>**Note**: We have new screens available for recategorizing accounts using the latest categories. | ![Screenshot of categorize accounts screen that's being deprecated](/img/lending/accounting-api-account-categorisation.png) |
 
 ## Alternative options
 

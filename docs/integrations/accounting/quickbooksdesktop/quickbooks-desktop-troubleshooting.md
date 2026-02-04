@@ -65,7 +65,7 @@ Once connector is installed and configured, you can only sync data with QuickBoo
 
 - The user's machine is turned off.
 - The user has closed the web connector (including hitting the "X" in the top right of the web connector window).
-- The user has multiple instances of QuickBooks Desktop running, i.e. connected to multiple company files (this functionaility is available in Enterprise edition only).
+- The user has multiple instances of QuickBooks Desktop running, i.e. connected to multiple company files (this functionality is available in Enterprise edition only).
 
 ## QuickBooks Desktop is not opening
 

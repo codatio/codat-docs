@@ -67,7 +67,7 @@ Then, click the triple-dot menu on the right and choose one of the applicable op
 
 For more granular date control, you can scroll to the endpoint's message attempts, click the triple-dot options menu of a specific message, and choose **Replay > Replay all failed messages since this time**.
 
-During the recovery of mutiple messages, we will send all messages at once, applying some delay between messages. This is to prevent overloading the webhook consumer endpoint. If your system has rate limiting in place, consider this scenario to avoid further failures. See details of [webhook endpoint rate limiting](/using-the-api/webhooks/create-consumer#endpoint-rate-limits).
+During the recovery of multiple messages, we will send all messages at once, applying some delay between messages. This is to prevent overloading the webhook consumer endpoint. If your system has rate limiting in place, consider this scenario to avoid further failures. See details of [webhook endpoint rate limiting](/using-the-api/webhooks/create-consumer#endpoint-rate-limits).
 
 ### Idempotency
 

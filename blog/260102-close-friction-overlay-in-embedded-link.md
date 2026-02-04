@@ -5,7 +5,7 @@ tags: ["Product", "Update", "Link", "UX"]
 authors: pmckinney
 ---
 
-We've added a new exit confirmation overlay to Embedded Link. It appears when users attempt to close an in-progess connection flow, helping prevent accidental drop-offs.
+We've added a new exit confirmation overlay to Embedded Link. It appears when users attempt to close an in-progress connection flow, helping prevent accidental drop-offs.
 
 <!--truncate-->
 

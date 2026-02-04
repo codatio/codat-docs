@@ -23,7 +23,7 @@ The tiers each have different connection limits, included API egress usage, and 
 Depending on your current connection volumes and API usage, you may need to:
 - Select a tier.
 - Add a payment method in [Xero’s developer portal](http://developer.xero.com/app/manage/) (required once moving beyond Starter).
-- Monitor and optimise API usage to manage costs.
+- Monitor and optimize API usage to manage costs.
 
 ## What you should do now
 To avoid disruption and ensure you’re ready ahead of March, we recommend you:
@@ -31,4 +31,4 @@ To avoid disruption and ensure you’re ready ahead of March, we recommend you:
 - Review [Xero’s pricing and tier model](https://developer.xero.com/pricing#tier-fees-connection-limits-and-api-volume-usage).
 - Login to your [Xero developer app](http://developer.xero.com/app/manage/) and check your API usage.
 - Plan for tier selection/billing readiness ahead of March 2026.
-- Please review your datasets' [sync frequency](https://docs.codat.io/using-the-api/queueing-data-syncs#sync-frequency) in the Codat portal. It is always reccomended that you only sync data as often as is essential for your use-case. 
+- Please review your datasets' [sync frequency](https://docs.codat.io/using-the-api/queueing-data-syncs#sync-frequency) in the Codat portal. It is always recommended that you only sync data as often as is essential for your use-case. 

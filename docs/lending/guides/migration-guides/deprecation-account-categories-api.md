@@ -17,7 +17,7 @@ The following endpoints will stop working:
     PATCH /data/companies/{companyId}/connections/{connectionId}/lending/accounts/categories
     PATCH /data/companies/{companyId}/connections/{connectionId}/lending/accounts/{accountId}/categories
     GET /data/companies{companyId}/connections/{connectionId}/lending/enhancedBalanceSheet
-    GET /data/companies{companyId}/connections/{connectionId}/lending/enhancedProfitandLoss
+    GET /data/companies{companyId}/connections/{connectionId}/lending/enhancedProfitAndLoss
     GET /data/companies/{companyId}/connections/{connectionId}/lending/financialMetrics
     GET /data/companies/{companyId}/connections/{connectionId}/lending/accountingMetrics/marketing
 

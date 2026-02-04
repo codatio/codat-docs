@@ -201,7 +201,7 @@ Codat has enhanced the Spend Insights solution capability with an AI agent that 
 
 If your organization has opted to use this feature, you will see a **Lightbulb** icon next to your customer's name on the **Spend Insights** tab of the Codat Portal. Simply click on the button to be directed to Codat's Spend Insights Chat.
 
-![An image of three companies on the Spend Insights tab. A lightbulb icon is visible and highlighted next to aevery company entry.](/img/spend-insights/si-si-chat-lightbulb.png)
+![An image of three companies on the Spend Insights tab. A lightbulb icon is visible and highlighted next to every company entry.](/img/spend-insights/si-si-chat-lightbulb.png)
 
 The Spend Insights Chat provides three key interaction areas:
 
@@ -209,4 +209,4 @@ The Spend Insights Chat provides three key interaction areas:
 - Navigate previous conversations with the Spend Insights agent or start new ones via the _Conversations_ section.
 - Carry the current conversation with the agent in the _Main_ section of the screen, using prompts or writing out the questions.
 
-![An image of three companies on the Spend Insights tab. A lightbulb icon is visible and highlighted next to aevery company entry.](/img/spend-insights/si-si-chat-interface.png)
+![An image of three companies on the Spend Insights tab. A lightbulb icon is visible and highlighted next to every company entry.](/img/spend-insights/si-si-chat-interface.png)
