@@ -55,7 +55,6 @@ The steps to request this information are the same across these options:
    ![An image of the Companies tab with four companies listed as examples. A Request data button is highlighted next to a company entry called Hairosmith.](/img/spend-insights/si-manage-company-request-info.png)
 
 2. In the _Onboarding_ window, choose how you want to ask your customer for their data:
-
    - Copy the **Link URL** if you want to send a direct connection link to your customer or use the link in your own communication.
    - Copy the **Email template** if you would like support in providing additional context to your customer. You can view the template by clicking the dropdown icon.
 

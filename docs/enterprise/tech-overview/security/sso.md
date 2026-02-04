@@ -47,7 +47,6 @@ In your IdP, perform the following setup:
    `https://authentication.codat.io/login/callback?connection=[client-name]-[instance-name]-saml-connection`
 
    c. Include the following claims for each user in the SAML responses from the authenticating IdP:
-
    - `email`
    - `groups` array (one ID representing each AD group the user belongs to and matches the mapping for the client/role access)
    - `displayname` (comprised of the first and last name)
@@ -55,7 +54,6 @@ In your IdP, perform the following setup:
    If claims are not named as above, please let us know the names and namespaces of the claims.
 
 3. Send us the `metadata.xml` file or, alternatively, all of the following:
-
    - IdP sign-in URL
    - IdP sign-out URL (if required)
    - Signing certificate

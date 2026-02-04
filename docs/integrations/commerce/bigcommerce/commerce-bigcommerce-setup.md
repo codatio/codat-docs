@@ -88,7 +88,6 @@ Your SMB customer does the following:
 6. Click **API accounts > Create API account**.
 
 7. On the **Create account** page, enter the following details:
-
    - Leave the **Token type** as **V2/V3 API token**.
    - Enter the name of your organization in the **Name** box.
    - Set the [required OAuth scopes](/integrations/commerce/bigcommerce/commerce-bigcommerce-setup#required-oauth-scopes).
@@ -100,7 +99,6 @@ Your SMB customer does the following:
 8. Open the downloaded text file to view the store API account credentials.
 
 9. Copy and paste the values from the text file into the corresponding boxes on the **Your BigCommerce Credentials** page (see step three). The following values are required:
-
    - **Client ID**
    - **Client Secret**
    - **Access Token**

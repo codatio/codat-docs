@@ -41,7 +41,6 @@ Once your application has been processed, you should be sent your credentials to
 1. On the navigation bar, select **Settings > Integrations > Commerce**.
 
 2. Select the correct integration depending on whether you're configuring your app for testing or use by live clients
-
    - For testing, click **Set up** next to the **Lightspeed K Trial** integration.
    - For production, click **Set up** next to the **Lightspeed K** integration.  
      The **Integration settings** page is displayed.
@@ -49,12 +48,10 @@ Once your application has been processed, you should be sent your credentials to
 3. Under **Access to company data**, configure the permitted sync frequency for the integration. Select **Allow one-off data sync…** or **Allow continuous data sync**.
 
 4. Enter the provided Client ID for your Lightspeed K app in the **Client ID** box.
-
    - For testing, enter the **Staging Client ID** from Lightspeed.
    - For production, enter the **Production Client ID** from Lightspeed.
 
 5. Enter the application secret for your Lightspeed K app in the **Client Secret** box.
-
    - For testing, enter the **Staging Client secret** from Lightspeed.
    - For production, enter the **Production Client secret** from Lightspeed.
 

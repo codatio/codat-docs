@@ -142,16 +142,16 @@ When creating an expense transaction, allow your SMB customer to save a copy of 
 <details>
 <summary> Supported integrations by endpoint</summary>
 
-| Integration        | expense-transactions  | reimbursable-expense-transactions | transfer-transactions | adjustment-transactions |
-| ------------------ | --------------------- | --------------------------------- | --------------------- | ----------------------- |
-| Dynamics 365       | ✔️                    |                                   |                       | ✔️                      |
-| FreeAgent          | ✔️                    | ✔️                                | ✔️                    |                         |
-| Oracle NetSuite    | ✔️                    | ✔️                                |                       |                         |
-| QuickBooks Desktop | ✔️                    | ✔️                                | ✔️                    | ✔️                      |
-| QuickBooks Online  | ✔️                    | ✔️                                | ✔️                    | ✔️                      |
-| Sage Intacct       | ✔️                    | ✔️                                |                       |                         |
-| Xero               | ✔️                    |                                   | ✔️                    | ✔️                      |
-| Zoho Books         | ✔️                    | ✔️                                |                       |                         |
+| Integration        | expense-transactions | reimbursable-expense-transactions | transfer-transactions | adjustment-transactions |
+| ------------------ | -------------------- | --------------------------------- | --------------------- | ----------------------- |
+| Dynamics 365       | ✔️                   |                                   |                       | ✔️                      |
+| FreeAgent          | ✔️                   | ✔️                                | ✔️                    |                         |
+| Oracle NetSuite    | ✔️                   | ✔️                                |                       |                         |
+| QuickBooks Desktop | ✔️                   | ✔️                                | ✔️                    | ✔️                      |
+| QuickBooks Online  | ✔️                   | ✔️                                | ✔️                    | ✔️                      |
+| Sage Intacct       | ✔️                   | ✔️                                |                       |                         |
+| Xero               | ✔️                   |                                   | ✔️                    | ✔️                      |
+| Zoho Books         | ✔️                   | ✔️                                |                       |                         |
 
 </details>
 
