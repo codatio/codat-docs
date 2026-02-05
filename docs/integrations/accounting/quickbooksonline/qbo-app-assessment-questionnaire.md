@@ -17,7 +17,37 @@ To access the questionnaire, navigate to **Keys and credentials** in your app's 
 
 ### App details
 
-There are no questions related to Codat in this section. Developers can answer all questions according to their own circumstances.
+This section has several questions related to Codat. We provided detailed answers to the highlighted the responses you should choose in **bold**.
+
+1. **Review your Intuit Developer Portal Profile and verify your email**
+
+This question should be answered by the app's developer.
+
+2. **Add your app's end-user license agreement and privacy policy**
+
+This question should be answered by the app's developer.
+
+3. **Add your app's host domain, launch URL, and disconnect URL**
+
+This question should be answered by the app's developer based on the guidelines provided below.
+
+    - **Host domain**: the URL of the domain host of your website or app.
+    
+    - **Launch URL**: Initial URL for your app's authorization flow. If using [Hosted Link](/auth-flow/authorize-hosted-link), provide the generic Link URL from the [Codat Portal](https://app.codat.io).
+
+    - **Disconnect URL**: Link to the process for deauthorizing the app's access to QBO. This can be the URL of the [Unlink connection](/platform-api#/operations/unlink-connection) endpoint or a link to your website or app instead.
+
+4. **Select at least one category for your app**
+
+This question should be answered by the app's developer.
+
+5. **Tell us about any regulated industries that use your app**
+
+This question should be answered by the app's developer.
+
+6. **Tell us where your app is hosted**
+
+As Codat interacts directly with QBO, the app's developer needs to include Codat's IPs and hosting locations as well as their own. Review our [QBO integration reference](/integrations/accounting/quickbooksonline/quickbooks-online-integration-reference#qbo-app-hosting) for Codat's hosting details.
 
 ### Compliance
 
