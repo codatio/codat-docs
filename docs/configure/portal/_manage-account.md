@@ -27,7 +27,7 @@ The option to edit your name and password may be disabled in the Codat Portal. T
 
 ## Reset password
 
-To reset your password, perform these steps on the [Codat Portal sign-in screen](https://users.codat.io/):
+To reset your password, perform these steps on the [Codat Portal sign-in screen](https://app.codat.io/):
 
 1. Enter the email you use to log in to Codat and click **Continue**.
 2. Click **Forgot password?** on the _Enter Your Password_ screen.
