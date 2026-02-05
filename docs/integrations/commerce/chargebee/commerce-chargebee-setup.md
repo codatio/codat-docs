@@ -58,7 +58,6 @@ Your SMB customer performs the following steps:
 6. In the **API Keys and Webhooks** section, clicks **API Keys** to view their API key.
 
 7. On the **Your Chargebee credentials** page, they enter the following details:
-
    - Chargebee site name. This is part of the URL, for example, `https://site-name.chargebee.com`.
    - Chargebee API key.
 

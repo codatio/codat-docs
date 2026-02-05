@@ -66,7 +66,6 @@ In the Intuit Developer Portal, create and register a QuickBooks Online app and 
 4. Select the **QuickBooks Online and Payments** option.
 
 5. Provide the following information on the **Give your app a name** page:
-
    1. Enter a name for your app.
    2. Select the **com.intuit.quickbooks.accounting** scope.
    3. Click **Create app**.
@@ -127,7 +126,6 @@ For app hosting details, see <a className="external" href="https://docs.codat.io
 4. When you've completed all the requirements and your questionnaire responses have been approved by Intuit, the page updates to display the production keys for your app (the Client ID and Client Secret) on the **Keys & OAuth** page.
 
 5. Provide the following information on the **Keys & OAuth** page (accessed by selecting **Production Settings > Keys & credentials**):
-
    1. Under **Redirect URIs**, click **Add URI** to add a new row to the table.
    2. In the new row, enter the redirect URI for the QuickBooks Online (production) integration:
 

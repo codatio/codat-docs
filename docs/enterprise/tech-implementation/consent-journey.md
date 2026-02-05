@@ -158,7 +158,6 @@ Link, Codat’s authentication solution, is used at multiple stages of the custo
   We address questions most commonly asked by our clients' customers on our [Help Hub](https://help.codat.io/resources/about#how-we-access-your-data). You can share the customer-centric responses provided there directly with your clients or use them as a foundation to prepare your own.
 
   Some of the questions we hear most often include:
-
   - Will you have access to all my data?
   - Will my data be shared securely?
   - What if my accounting software isn’t listed?

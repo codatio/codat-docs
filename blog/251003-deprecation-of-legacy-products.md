@@ -5,7 +5,7 @@ tags: ["Deprecation"]
 authors: habbajobir
 ---
 
-To streamline our platform and enable us to focus on our key products, Codat is deprecating legacy products and consolidating multiple versions into a single variant. 
+To streamline our platform and enable us to focus on our key products, Codat is deprecating legacy products and consolidating multiple versions into a single variant.
 
 <!--truncate-->
 

@@ -48,7 +48,6 @@ When the app is created, you can view the app's secure credentials.
 6. Click **Create app**. Your app is created and the app page is displayed.
 7. In the side panel, click **App setup** to view the app's configuration settings.
 8. Optional: if you plan to use Codat's `commerce-customers` data type, do the following on the **App setup** page:
-
    1. In the **Protected customer data access** box, click **Request access**.
    2. Enter the details requested in the dialog, then submit your request to Shopify.
 
@@ -139,7 +138,6 @@ In the Codat Portal, add the secure credentials for your Shopify app to the inte
    The **Integration settings** page is displayed.
 
 3. Enter your app's credentials from Shopify (to find these, see [Create a Shopify public app](/integrations/commerce/shopify/commerce-shopify-public-apps#create-a-shopify-public-app)).
-
    - For **Client ID**, enter the **API key** from Shopify.
    - For **Client secret**, enter the **API secret key** from Shopify.
    - For **App Redirect URL**, enter the location of your [authentication endpoint](/integrations/commerce/shopify/commerce-shopify-public-apps#build-an-app-for-merchant-authorization).
