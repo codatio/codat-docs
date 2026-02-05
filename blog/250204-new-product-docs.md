@@ -51,7 +51,7 @@ If you are using or planning to use Codat, this update is for you - our new look
 | **Sync for Expenses**   | Codat now refers to this solution as [Expenses](/expenses/overview) with a focus on the [accounting automation](/usecases/summary/accounting-automation) use case.                 |
 | **Sync for Payables**   | Codat now refers to this solution as [Bill Pay (async)](/payables/async/suppliers) with a focus on the [accounting automation](/usecases/summary/accounting-automation) use case.  |
 | **Bill Pay kit**        | Codat now refers to this solution as [Bill Pay (sync)](/payables/sync/suppliers) with a focus on the [accounting automation](/usecases/summary/accounting-automation) use case.    |
-| **Sync for Commerce**   | This solution is no longer available for sale. If you are an existing client using Sync for Commerce, you can still access its [documentation](/commerce/overview).              |
+| **Sync for Commerce**   | This solution is no longer available for sale. If you are an existing client using Sync for Commerce, you can still access its [documentation](/commerce/overview).                |
 
 ## How to get started?
 

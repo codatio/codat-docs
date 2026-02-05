@@ -23,7 +23,6 @@ To find their API key, the SMB user does the following:
    ![Clear Book: SMB user selects API keys from Settings > Configure system in the menu bar.](/img/old/00c84fa-clear-books_select-api-key.png)
 
 3. Selects **Provide required information**, then provides the following information:
-
    1. Under **Intended API usage**, selects the second option: **I want to connect Clear Books with a piece of third-party software, exclusively for my own use**.
    2. Under **Third-party software information**, enters the name of your app or website in the first box and "Codat" in the second box.
 

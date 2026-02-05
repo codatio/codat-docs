@@ -10,12 +10,12 @@ While the Portal provides a simple way of exploring data, you'll need to use the
 
 We've packaged up Codat's functionality mainly by _solution_, with our _Platform API_ providing core functionalities used across our solution. You can explore each API and its endpoints in our API references.
 
-| Solution API                                                                                       | Description                                                                                                                      |
-| :------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| **[Bank Feeds](/bank-feeds-api)**                                                                  | Set up bank feeds from accounts in your application to supported accounting software.                                            |
-| **[Lending](/lending-api)**                                                                        | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features.                              |
-| **[Expenses](/sync-for-expenses-api)**                                                             | Streamline expense reconciliation from the corporate card and expense management systems to your customers' accounting software. |
-| **[Bill Pay](/sync-for-payables-v2-api#/)**                                                        | Make it easier for your customers to manage and pay suppliers from a single interface.                                           |
+| Solution API                                | Description                                                                                                                      |
+| :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------- |
+| **[Bank Feeds](/bank-feeds-api)**           | Set up bank feeds from accounts in your application to supported accounting software.                                            |
+| **[Lending](/lending-api)**                 | Make credit decisions backed by enhanced financials, metrics, reports, and data integrity features.                              |
+| **[Expenses](/sync-for-expenses-api)**      | Streamline expense reconciliation from the corporate card and expense management systems to your customers' accounting software. |
+| **[Bill Pay](/sync-for-payables-v2-api#/)** | Make it easier for your customers to manage and pay suppliers from a single interface.                                           |
 
 Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
 

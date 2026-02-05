@@ -33,7 +33,7 @@ Once you decide to build with Bill Pay, you need to configure Codat accordingly.
 
 In the <a href="https://app.codat.io" target="_blank">Codat Portal</a>, navigate to **Settings > Integrations > Data types**. Enable the [data types](/core-concepts/data-type-settings#override-the-default-sync-settings) required for Bill Pay and set them to `Fetch on first link`:
 
-| Data source | Data types                                                                                               		                  |
+| Data source | Data types                                                                                                                        |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Accounting  | `bankAccounts`<br/> `bills`<br/> `billPayments`<br/> `chartOfAccounts`<br/> `company`<br/> `paymentMethods`<br/> `suppliers`<br/> |
 
