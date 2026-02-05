@@ -23,7 +23,6 @@ To switch to new event types using the recommended "expand/contract" strategy, f
 1. **Update your application logic**
 
    Modify your application logic to handle the existing and the new event types at the same time:
-
    - Create a new POST endpoint specifically designed to consume the new webhook event type.
    - Create a feature toggle to control the activation of the **new** endpoint. **Enabling** the toggle should **activate** the endpoint to start processing events.
    - Create another feature toggle to control your **existing** webhook consumer. **Disabling** the toggle should **stop** the endpoint from processing the old rule types.

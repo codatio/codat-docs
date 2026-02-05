@@ -34,19 +34,19 @@ _Administrator_ users have full access to all the features available in the Coda
 
 | Action                                           | Onboarding | Analyst | Developer | Administrator |
 | ------------------------------------------------ | ---------- | ------- | --------- | ------------- |
-| Add Companies                                    | ✔         | ✔      | ✔        | ✔            |
-| Edit Companies                                   | ✔         | ✔      | ✔        | ✔            |
-| Delete Companies                                 |            | ✔      | ✔        | ✔            |
-| Add connections, view their status and Link URLs | ✔         | ✔      | ✔        | ✔            |
-| Add or remove products from companies            | ✔         | ✔      | ✔        | ✔            |
-| Manage (delete and unlink) connections           |            |         | ✔        | ✔            |
-| View contributed company data (Portal)           |            | ✔      | ✔        | ✔            |
-| View contributed company data (API)              | ✔         | ✔      | ✔        | ✔            |
-| Upload files on behalf of a company              | ✔         | ✔      | ✔        | ✔            |
-| Manage and view webhooks                         |            |         | ✔        | ✔            |
-| Configure Link                                   |            |         | ✔        | ✔            |
-| Manage integrations                              |            |         | ✔        | ✔            |
-| Manage data type settings                        |            |         | ✔        | ✔            |
-| Manage upcoming deprecations                     |            |         | ✔        | ✔            |
-| Manage other settings                            |            |         | ✔        | ✔            |
-| Add and update users                             |            |         |           | ✔            |
+| Add Companies                                    | ✔          | ✔       | ✔         | ✔             |
+| Edit Companies                                   | ✔          | ✔       | ✔         | ✔             |
+| Delete Companies                                 |            | ✔       | ✔         | ✔             |
+| Add connections, view their status and Link URLs | ✔          | ✔       | ✔         | ✔             |
+| Add or remove products from companies            | ✔          | ✔       | ✔         | ✔             |
+| Manage (delete and unlink) connections           |            |         | ✔         | ✔             |
+| View contributed company data (Portal)           |            | ✔       | ✔         | ✔             |
+| View contributed company data (API)              | ✔          | ✔       | ✔         | ✔             |
+| Upload files on behalf of a company              | ✔          | ✔       | ✔         | ✔             |
+| Manage and view webhooks                         |            |         | ✔         | ✔             |
+| Configure Link                                   |            |         | ✔         | ✔             |
+| Manage integrations                              |            |         | ✔         | ✔             |
+| Manage data type settings                        |            |         | ✔         | ✔             |
+| Manage upcoming deprecations                     |            |         | ✔         | ✔             |
+| Manage other settings                            |            |         | ✔         | ✔             |
+| Add and update users                             |            |         |           | ✔             |

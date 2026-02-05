@@ -29,7 +29,7 @@ Some integrations have more complex requirements in terms of registration and pa
 | Platform                                                                                                          | Registration complexity   | Marketplace partner program | Connection restrictions | Additional information                                                                                                                                                                                                                                                                       |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------- | --------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Microsoft Dynamics 365 Business Central](https://www.microsoft.com/en-gb/dynamics-365/products/business-central) | Medium                    | ❌                          | ❌                      | You must have a Microsoft Azure account to register.                                                                                                                                                                                                                                         |
-| [Microsoft Dynamics 365 Finance & Operations](https://www.microsoft.com/en-gb/dynamics-365/products/finance) | Medium                    | ❌                          | ❌                      | You must have a Microsoft Azure account to register. <br/> This integration is only supported by our [Spend Insights](/spend-insights/overview) solution.                                                                                                                                                                                                                                       |
+| [Microsoft Dynamics 365 Finance & Operations](https://www.microsoft.com/en-gb/dynamics-365/products/finance)      | Medium                    | ❌                          | ❌                      | You must have a Microsoft Azure account to register. <br/> This integration is only supported by our [Spend Insights](/spend-insights/overview) solution.                                                                                                                                    |
 | [Exact Online](https://www.exact.com/)                                                                            | Medium                    | ✅                          | ❌                      | You must request permission to connect companies in production.                                                                                                                                                                                                                              |
 | [FreeAgent](https://www.freeagent.com/)                                                                           | Easy                      | ✅                          | ❌                      |                                                                                                                                                                                                                                                                                              |
 | [FreshBooks](https://www.freshbooks.com/en-gb/)                                                                   | Medium                    | ✅                          | ❌                      | Scopes are now required for all apps.                                                                                                                                                                                                                                                        |
@@ -60,25 +60,25 @@ We can sometimes facilitate introductions to accounting software providers, part
 
 Each integration has a unique 4-character key that identifies it in our APIs. For reference, a list of all accounting integration platform keys can be found below:
 
-| Platform name                  | Platform key |
-| ------------------------------ | ------------ |
-| Dynamics 365 Business Central  | trji         |
-| Dynamics 365 Finance & Operations  | rqwd     |
-| Exact (Netherlands)            | qudb         |
-| Exact (UK)                     | pbbf         |
-| FreeAgent                      | fbrh         |
-| FreshBooks                     | vxvy         |
-| MYOB Business                  | pdvj         |
-| Oracle NetSuite                | akxx         |
-| QuickBooks Desktop             | pqsw         |
-| QuickBooks Online              | qhyg         |
-| QuickBooks Online Sandbox      | ndsk         |
-| Sage 200 Standard              | jcrp         |
-| Sage 50 (UK)                   | hbql         |
-| Sage Accounting                | tgff         |
-| Sage Intacct                   | knfz         |
-| Sandbox                        | mqjo         |
-| Wave                           | pbtz         |
-| Workday                        | rvam         |
-| Xero                           | gbol         |
-| Zoho Books                     | rwuv         |
+| Platform name                     | Platform key |
+| --------------------------------- | ------------ |
+| Dynamics 365 Business Central     | trji         |
+| Dynamics 365 Finance & Operations | rqwd         |
+| Exact (Netherlands)               | qudb         |
+| Exact (UK)                        | pbbf         |
+| FreeAgent                         | fbrh         |
+| FreshBooks                        | vxvy         |
+| MYOB Business                     | pdvj         |
+| Oracle NetSuite                   | akxx         |
+| QuickBooks Desktop                | pqsw         |
+| QuickBooks Online                 | qhyg         |
+| QuickBooks Online Sandbox         | ndsk         |
+| Sage 200 Standard                 | jcrp         |
+| Sage 50 (UK)                      | hbql         |
+| Sage Accounting                   | tgff         |
+| Sage Intacct                      | knfz         |
+| Sandbox                           | mqjo         |
+| Wave                              | pbtz         |
+| Workday                           | rvam         |
+| Xero                              | gbol         |
+| Zoho Books                        | rwuv         |
