@@ -58,7 +58,6 @@ MYOB will only automatically activate the first two API keys you create. All fur
 2. Locate **MYOB Business** and click **Set up**.
 
 3. Under **Integration settings**, enter the values for the **Client ID** and **Client secret** from your app in your MYOB developer account.
-
    - Enter your application key in the **Client Key** box.
    - Enter your application secret in the **Client secret** box.
 

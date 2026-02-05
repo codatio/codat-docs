@@ -25,7 +25,6 @@ Before sending Link URLs to your SMB customers, we recommend you test your integ
 4. Locate your test company, then click **Request data**.
 
 5. Open the **Link URL** and follow the steps in Link to connect to your Microsoft Dynamics 365 account.
-
    - Select **Microsoft Dynamics 365 Business Central** and then select **Continue to Dynamics 365 Business Central**.
    - Log in to your Dynamics 365 account.
    - Authorize access to your account details.
