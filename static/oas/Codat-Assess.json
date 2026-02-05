@@ -3786,6 +3786,11 @@
                     "modifiedDate": {
                       "description": "The date the bank transaction was last modified.",
                       "$ref": "#/components/schemas/EnhancedInvoicesReport/definitions/payment/properties/date"
+                    },
+                    "isRecurring": {
+                      "description": "Indicates if the transaction is classified as recurring by Codat's categorization engine.",
+                      "type": "boolean",
+                      "nullable": true
                     }
                   },
                   "definitions": {
