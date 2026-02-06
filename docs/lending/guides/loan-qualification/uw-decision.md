@@ -38,7 +38,7 @@ Its threshold is maintained as `RevenueThreshold` in `appsettings.json`. In the 
 
 </TabItem>
 
-<TabItem value="gear" label="Gearing ratio">
+<TabItem value="grat" label="Gearing ratio">
 
 The gearing ratio used in the example model is the **debt ratio**, calculated by dividing total debt by total assets. It uses the [`balanceSheet`](https://docs.codat.io/assess-api#/operations/get-enhanced-balance-sheet) endpoint and its `Asset` and `Liability.NonCurrent.LoansPayable` values. Having too much debt may indicate a higher financial risk associated with the company.
 
