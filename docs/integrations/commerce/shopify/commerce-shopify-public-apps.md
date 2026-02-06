@@ -14,7 +14,7 @@ This article explains how to set up the Shopify integration using the _public ap
 
 - [Create a Shopify app](/integrations/commerce/shopify/commerce-shopify-public-apps#create-a-public-shopify-app)
 - [Submit your app to Shopify for approval](/integrations/commerce/shopify/commerce-shopify-public-apps#submit-your-app-to-shopify-for-approval)
-- [Buid an app for merchant authorization](/integrations/commerce/shopify/commerce-shopify-public-apps#build-an-app-for-merchant-authorization)
+- [Build an app for merchant authorization](/integrations/commerce/shopify/commerce-shopify-public-apps#build-an-app-for-merchant-authorization)
 - [Add your app's credentials to the Shopify integration](/integrations/commerce/shopify/commerce-shopify-public-apps#add-your-apps-credentials-to-the-shopify-integration)
 - [Enable the Shopify integration](/integrations/commerce/shopify/commerce-shopify-public-apps#enable-the-shopify-integration)
 - [Check the commerce sync settings](/integrations/commerce/shopify/commerce-shopify-public-apps#check-the-commerce-sync-settings)

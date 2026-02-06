@@ -7,7 +7,7 @@ hide_table_of_contents: false
 Operations at Codat are performed entirely on cloud hosted platforms. As such, responsibilities vary across layers of the stack. You can see Microsoft's approach to dividing responsibility in the cloud below.
 ![Microsoft's division of responsibility in the cloud](ms-shared-responsibility.svg)
 
-## Resposibilities by party
+## Responsibilities by party
 
 The following tables articulate the responsible parties at each layer of our [platform as a service](/enterprise/tech-overview/architecture/platform-as-a-service) offering and the details of their implementation.
 

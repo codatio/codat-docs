@@ -49,7 +49,7 @@ After the **24th July 2023**, the deprecated endpoints will no longer work, the 
 
 :::caution Update: July 24, 2023
 
-**Deprecation compelted**
+**Deprecation completed**
 :::
 
 :::caution Update: July 13, 2023

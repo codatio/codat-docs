@@ -25,4 +25,4 @@ This update is relevant for our Bank Feeds clients who use our account mapping U
 
 ## How to get started?
 
-No action is required on your side. If you are currently using our account mapping UI in your application, the component is already avalaible to your customers.
+No action is required on your side. If you are currently using our account mapping UI in your application, the component is already available to your customers.
