@@ -20,7 +20,7 @@ To address this, Codat provides you with Link, our consent and authorization jou
 
 We prepared a consent journey prototype using an example business insights dashboard use case.
 
-[View the protype in full screen →](https://www.figma.com/proto/YWkKvsYgeHJskPsfuIpy7w/Codat---Generic-bank---Consent-Journey?page-id=601%3A4488&type=design&node-id=641-11421&viewport=1275%2C-2886%2C0.1&t=rrDznIIhmQ8EayyY-1&scaling=contain&starting-point-node-id=641%3A11421&mode=design)
+[View the prototype in full screen →](https://www.figma.com/proto/YWkKvsYgeHJskPsfuIpy7w/Codat---Generic-bank---Consent-Journey?page-id=601%3A4488&type=design&node-id=641-11421&viewport=1275%2C-2886%2C0.1&t=rrDznIIhmQ8EayyY-1&scaling=contain&starting-point-node-id=641%3A11421&mode=design)
 
 :::
 
@@ -47,19 +47,19 @@ Codat's Link solution covers a series of API endpoints that you can use to fully
 
 Review the key steps and endpoints involved in a build-your-own consent journey. These steps and corresponding endpoints are already considered and covered in our easy-to-use SDK.
 
-| No.                     | Action                                                          | Description                                                                                                                                                                                              |
-| :---------------------- | :-------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| No.                     | Action                                                          | Description                                                                                                                                                                                               |
+| :---------------------- | :-------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Onboarding:**         |
-| 1                       | Customer clicks on “Connect” button                             | Customer clicks on button within UI to initiate connection                                                                                                                                               |
-| 2                       | Application triggers company creation                           | Application places a call to Link's `POST Create company` endpoint to create a Codat company                                                                                                             |
-| 3                       | API responds with Company details                               | Link's API endpoint responds with unique `CompanyId` to be stored and used by the application                                                                                                            |
-| 4                       | Application triggers connection creation                        | Application places a call to Link's `POST Create connection` endpoint to create a connection                                                                                                             |
-| 5                       | API responds with Connection details                            | Link's API endpoint responds with `linkURL` to be shared with customer by the application                                                                                                                |
-| 6                       | Customer authorizes access                                      | Application directs user to the ‘linkURL’ where customer authenticates and authorizes access to data                                                                                                     |
-| 7                       | Customer is redirected to application                           | Customer's consent journey finishes on a confirmation screen of the application                                                                                                                          |
+| 1                       | Customer clicks on “Connect” button                             | Customer clicks on button within UI to initiate connection                                                                                                                                                |
+| 2                       | Application triggers company creation                           | Application places a call to Link's `POST Create company` endpoint to create a Codat company                                                                                                              |
+| 3                       | API responds with Company details                               | Link's API endpoint responds with unique `CompanyId` to be stored and used by the application                                                                                                             |
+| 4                       | Application triggers connection creation                        | Application places a call to Link's `POST Create connection` endpoint to create a connection                                                                                                              |
+| 5                       | API responds with Connection details                            | Link's API endpoint responds with `linkURL` to be shared with customer by the application                                                                                                                 |
+| 6                       | Customer authorizes access                                      | Application directs user to the ‘linkURL’ where customer authenticates and authorizes access to data                                                                                                      |
+| 7                       | Customer is redirected to application                           | Customer's consent journey finishes on a confirmation screen of the application                                                                                                                           |
 | **Ongoing management:** |
-| 8                       | Customer wants to connect an additional package at a later date | Customer clicks on button within appication to connect an additional package. Application places a call to Link's `POST Create connection` with a `companyId` to create connection and provide `linkURL` |
-| 9                       | Customer wants to disconnect an existing package                | Customer clicks on a “Disconnect” button within appication. Application places a call to Link's `DELETE Delete connection`                                                                               |
+| 8                       | Customer wants to connect an additional package at a later date | Customer clicks on button within application to connect an additional package. Application places a call to Link's `POST Create connection` with a `companyId` to create connection and provide `linkURL` |
+| 9                       | Customer wants to disconnect an existing package                | Customer clicks on a “Disconnect” button within application. Application places a call to Link's `DELETE Delete connection`                                                                               |
 
 </details>
 
@@ -135,7 +135,7 @@ Link, Codat’s authentication solution, is used at multiple stages of the custo
 
 - **How does Codat secure the connection with the underlying packages?**
 
-  Codat uses OAuth 2.0 to facilitate the consent and authentication process between Codat and each software integratoion. Our documentation contains details of our approach to [Data security](/enterprise/tech-overview/security/data-security), and our [Help Hub](https://help.codat.io/resources/about#how-we-access-your-data) contains customer-centric responses to security concerns.
+  Codat uses OAuth 2.0 to facilitate the consent and authentication process between Codat and each software integration. Our documentation contains details of our approach to [Data security](/enterprise/tech-overview/security/data-security), and our [Help Hub](https://help.codat.io/resources/about#how-we-access-your-data) contains customer-centric responses to security concerns.
 
 - **How does the user log in?**
 

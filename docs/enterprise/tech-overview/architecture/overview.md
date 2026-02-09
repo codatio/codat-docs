@@ -23,7 +23,7 @@ You can see the overview of Codat's networking flow topology on the image below.
 
 Codat uses the [Microsoft Azure](https://azure.microsoft.com/en-us/) platform for all hosting and data storage, located in the UK only. Microsoft Azure is a growing collection of integrated cloud services that developers and IT professionals use to build, deploy, and manage applications through a global network of data centres.
 
-In particular, Codat uses Azure’s [Platform as a service (PaaS)](https://azure.microsoft.com/en-gb/overview/what-is-paas/) offering. It includes hosting, networking, and storage infrastracture as well as middleware, development tools, and other resources required to support a complete web application lifecycle.
+In particular, Codat uses Azure’s [Platform as a service (PaaS)](https://azure.microsoft.com/en-gb/overview/what-is-paas/) offering. It includes hosting, networking, and storage infrastructure as well as middleware, development tools, and other resources required to support a complete web application lifecycle.
 
 This allows Codat to focus on the services we create while Microsoft manages the underlying application infrastructure and automatically patches the operating system, maintaining them to the highest standard.
 

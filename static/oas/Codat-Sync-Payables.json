@@ -1790,6 +1790,186 @@
         }
       }
     },
+    "/companies/{companyId}/connections/{connectionId}/payables/bills/{billId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "$ref": "#/components/parameters/billId"
+        }
+      ],
+      "put": {
+        "summary": "Update bill",
+        "description": "The *Update bill* endpoint updates an existing [bill](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n### Supported Integrations\n\n| Integration                   | Supported |\n|-------------------------------|-----------|\n| FreeAgent                     | Yes       |\n| QuickBooks Online             | Yes       |\n| Xero                          | Yes       |\n| Oracle NetSuite               | No        |\n| Sage Intacct                  | No        |\n| Zoho Books                    | No        |\n",
+        "operationId": "update-bill",
+        "tags": [
+          "Bills"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "description": "A unique identifier to ensure idempotent behaviour for subsequent requests.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Bill/definitions/billPrototype"
+              },
+              "examples": {
+                "Update bill": {
+                  "value": {
+                    "reference": "bill_updated_ref",
+                    "supplierRef": {
+                      "id": "1262c350-fe0f-40ec-aeff-41c95b4a45af"
+                    },
+                    "issueDate": "2023-04-23T00:00:00",
+                    "dueDate": "2023-05-23T00:00:00",
+                    "currency": "GBP",
+                    "currencyRate": 1,
+                    "lineItems": [
+                      {
+                        "description": "Updated line item - Microsoft Office training",
+                        "unitAmount": 2000,
+                        "quantity": 1,
+                        "taxAmount": 400,
+                        "totalAmount": 2400,
+                        "accountRef": {
+                          "id": "46f9461e-788b-4906-8b74-d1ea17f6dc10"
+                        },
+                        "taxRateRef": {
+                          "id": "INPUT2"
+                        }
+                      },
+                      {
+                        "description": "Desktop/network support via email & phone - updated rate",
+                        "unitAmount": 4500,
+                        "quantity": 1,
+                        "taxAmount": 900,
+                        "totalAmount": 5400,
+                        "accountRef": {
+                          "id": "f96c9458-d724-47bf-8f74-a9d5726465ce"
+                        },
+                        "taxRateRef": {
+                          "id": "INPUT2"
+                        },
+                        "trackingRefs": [
+                          {
+                            "id": "dba3d4da-f9ed-4eee-8e0b-452d11fdb1fa",
+                            "dataType": "trackingCategories"
+                          }
+                        ]
+                      }
+                    ],
+                    "status": "Open"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bill"
+                },
+                "examples": {
+                  "Updated bill": {
+                    "value": {
+                      "id": "bill-1029932",
+                      "reference": "bill_updated_ref",
+                      "supplierRef": {
+                        "id": "1262c350-fe0f-40ec-aeff-41c95b4a45af",
+                        "supplierName": "DIISR - Small Business Services"
+                      },
+                      "issueDate": "2023-04-23T00:00:00",
+                      "dueDate": "2023-05-23T00:00:00",
+                      "currency": "GBP",
+                      "lineItems": [
+                        {
+                          "description": "Updated line item - Microsoft Office training",
+                          "unitAmount": 2000,
+                          "quantity": 1,
+                          "taxAmount": 400,
+                          "totalAmount": 2400,
+                          "accountRef": {
+                            "id": "46f9461e-788b-4906-8b74-d1ea17f6dc10"
+                          },
+                          "taxRateRef": {
+                            "id": "INPUT2"
+                          }
+                        },
+                        {
+                          "description": "Desktop/network support via email & phone - updated rate",
+                          "unitAmount": 4500,
+                          "quantity": 1,
+                          "taxAmount": 900,
+                          "totalAmount": 5400,
+                          "accountRef": {
+                            "id": "f96c9458-d724-47bf-8f74-a9d5726465ce"
+                          },
+                          "taxRateRef": {
+                            "id": "INPUT2"
+                          },
+                          "trackingRefs": [
+                            {
+                              "id": "dba3d4da-f9ed-4eee-8e0b-452d11fdb1fa",
+                              "dataType": "trackingCategories"
+                            }
+                          ]
+                        }
+                      ],
+                      "status": "Open",
+                      "totalAmount": 7800,
+                      "amountDue": 7800
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "409": {
+            "$ref": "#/components/responses/Idempotency-Conflict"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/connections/{connectionId}/payables/bills/{billId}/attachments": {
       "parameters": [
         {

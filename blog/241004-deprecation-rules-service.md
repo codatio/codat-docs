@@ -33,7 +33,7 @@ If you are currently using company-specific rules with our legacy service, use c
 
 #### Company information using tags
 
-For example, if you previously passed company information via the webhook consumer's path (such as `POST /region/{regionId}/accounts/{accountId}`), you can use `tags` when creating or udating a company as follows:
+For example, if you previously passed company information via the webhook consumer's path (such as `POST /region/{regionId}/accounts/{accountId}`), you can use `tags` when creating or updating a company as follows:
 
 ```json
 {

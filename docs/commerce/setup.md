@@ -163,7 +163,7 @@ You will need to populate parameter values as follows:
 
 - `commerceKey`: the `platformKey` of the commerce software selected by the user in your UI
 - `accountingKey`: refers to the Codat connector. Your Solutions Engineer will provide this to you
-- `yourMerchantIdenfifier`: your unique identifier for your customer
+- `yourMerchantIdentifier`: your unique identifier for your customer
 
 </TabItem>
 </Tabs>
