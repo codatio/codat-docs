@@ -2,6 +2,7 @@
 title: "Loan qualification build guide"
 description: "Lend with Codat and our Lending solution"
 displayed_sidebar: "lending"
+sidebar_key: "loan-qualification-introduction"
 hide_title: true
 hide_description: true
 banner_title: Loan qualification

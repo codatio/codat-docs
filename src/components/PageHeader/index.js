@@ -1,5 +1,5 @@
-import React from "react";
 import clsx from "clsx";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import { ModalController } from "../Modal";
 
@@ -32,6 +32,9 @@ const PageHeader = ({
   videoUrl,
   videoText,
 }) => {
+  const imgUrl = useBaseUrl(img);
+  const iconUrl = useBaseUrl(icon);
+
   return (
     <div className={clsx(styles.wrapper, className)}>
       <div className={styles.header}>
@@ -44,7 +47,7 @@ const PageHeader = ({
                 className,
               )}
             >
-              <img src={icon} className="icon product" />
+              <img src={iconUrl} className="icon product" alt="" />
             </div>
           )}
           <h1>{title}</h1>
@@ -57,7 +60,7 @@ const PageHeader = ({
         {videoUrl && <BannerVideo text={videoText} url={videoUrl} />}
       </div>
 
-      <img className={styles.heroImg} src={img} />
+      <img className={styles.heroImg} src={imgUrl} alt="" />
     </div>
   );
 };

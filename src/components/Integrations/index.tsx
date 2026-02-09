@@ -1,13 +1,15 @@
-import React, { useState, Suspense } from "react";
-import BrowserOnly from "@docusaurus/BrowserOnly";
+import { useState } from "react";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import Translate, { translate } from "@docusaurus/Translate";
 import styles from "./styles.module.scss";
 import { allIntegrations } from "./integrations";
 
 const Integration = ({ integration }) => {
+  const imgUrl = useBaseUrl(integration.img);
   return (
     <div className={styles.integration}>
       <div>
-        <img src={integration.img} className={styles.logo} />
+        <img src={imgUrl} className={styles.logo} alt={`${integration.name} logo`} />
 
         <a href={integration.to}>{integration.name}</a>
       </div>
@@ -59,7 +61,9 @@ export const IntegrationsList = (props) => {
 
   return (
     <div className={styles.zeroState}>
-      No matching supported integrations found
+      <Translate id="integrations.noMatch">
+        No matching supported integrations found
+      </Translate>
     </div>
   );
 };
@@ -87,13 +91,19 @@ const Integrations = (props) => {
           value={searchValue}
           onChange={handleOnChange}
           type="text"
-          placeholder="Enter an integration name..."
+          placeholder={translate({
+            id: "integrations.searchPlaceholder",
+            message: "Enter an integration name...",
+            description: "Placeholder text for integration search input",
+          })}
         />
       )}
 
       {integrations?.length > 0 && (
         <>
-          <h2 className={styles.header}>Accounting</h2>
+          <h2 className={styles.header}>
+            <Translate id="integrations.accounting">Accounting</Translate>
+          </h2>
 
           <IntegrationsList sourceType="accounting" />
         </>
@@ -101,7 +111,9 @@ const Integrations = (props) => {
 
       {integrations?.length > 0 && (
         <>
-          <h2 className={styles.header}>Banking</h2>
+          <h2 className={styles.header}>
+            <Translate id="integrations.banking">Banking</Translate>
+          </h2>
 
           <IntegrationsList sourceType="banking" />
         </>
@@ -109,7 +121,9 @@ const Integrations = (props) => {
 
       {integrations?.length > 0 && (
         <>
-          <h2 className={styles.header}>Commerce</h2>
+          <h2 className={styles.header}>
+            <Translate id="integrations.commerce">Commerce</Translate>
+          </h2>
 
           <IntegrationsList sourceType="commerce" />
         </>
@@ -117,7 +131,9 @@ const Integrations = (props) => {
 
       {integrations?.length > 0 && (
         <>
-          <h2 className={styles.header}>Bank feeds</h2>
+          <h2 className={styles.header}>
+            <Translate id="integrations.bankFeeds">Bank feeds</Translate>
+          </h2>
 
           <IntegrationsList sourceType="bankfeeds" />
         </>

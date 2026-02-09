@@ -1,6 +1,7 @@
 ---
 title: "Invoice financing build guide"
 displayed_sidebar: "lending"
+sidebar_key: "invoice-finance-introduction"
 description: "Selective invoice financing with Codat and our Lending solution"
 hide_title: true
 hide_description: true

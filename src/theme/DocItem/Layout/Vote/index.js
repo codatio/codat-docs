@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Translate from '@docusaurus/Translate';
 
 import styles from "./styles.module.scss";
 
@@ -21,9 +22,16 @@ const isPositive = (vote) => {
 
 const VoteResponse = ({vote}) => {
   if(isPositive(vote)) {
-    return <div className={styles.feedback}>Thanks for your feedback!</div>
+    return <div className={styles.feedback}>
+      <Translate id="vote.thanks">Thanks for your feedback!</Translate>
+    </div>
   }
-  return <div className={styles.feedback}>Thanks for your feedback. <a href="https://github.com/codatio/codat-docs/issues/new" target="_blank">You can raise an issue here</a>.</div>
+  return <div className={styles.feedback}>
+    <Translate id="vote.thanksWithLink">Thanks for your feedback.</Translate>{' '}
+    <a href="https://github.com/codatio/codat-docs/issues/new" target="_blank">
+      <Translate id="vote.raiseIssue">You can raise an issue here</Translate>
+    </a>.
+  </div>
 }
 
 const Vote = (props) => {
@@ -46,8 +54,10 @@ const Vote = (props) => {
   return <>
     <hr/>
     <div className={styles.voteContainer}>
-      <div className={styles.voteHeader}>Was this page useful?</div>
-      
+      <div className={styles.voteHeader}>
+        <Translate id="vote.question">Was this page useful?</Translate>
+      </div>
+
       <div className={styles.feedbackOptions}>
         { feedbackOptions.map((option, i) => <div key={i} className={!vote || option === vote ? styles.validVote : styles.vote} onClick={() => doVote(option)}>{option}</div>) }
       </div>

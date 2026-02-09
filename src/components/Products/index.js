@@ -1,4 +1,5 @@
 import React from "react";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 
 const other = [
   {
@@ -97,6 +98,8 @@ const allProducts = [
 ];
 
 const Products = ({ mini, products, verbose }) => {
+  const { withBaseUrl } = useBaseUrlUtils();
+
   const validProducts = !products
     ? allProducts
     : products
@@ -126,7 +129,7 @@ const Products = ({ mini, products, verbose }) => {
                     href={product.link}
                     className={`icon-wrapper product animated ${product.slug}`}
                   >
-                    <img src={product.logo} className="icon product" />
+                    <img src={withBaseUrl(product.logo)} className="icon product" />
                   </a>
                 </div>
 
@@ -156,7 +159,7 @@ const Products = ({ mini, products, verbose }) => {
                 href={product.link}
                 className={`icon-wrapper product animated ${product.slug}`}
               >
-                <img src={product.logo} className="icon product" />
+                <img src={withBaseUrl(product.logo)} className="icon product" />
               </a>
             </div>
             <h3>{product.name}</h3>
