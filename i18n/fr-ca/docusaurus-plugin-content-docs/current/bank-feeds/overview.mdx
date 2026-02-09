@@ -1,0 +1,172 @@
+---
+title: "Bank Feeds"
+description:
+  "Déployez facilement un flux automatisé de relevés bancaires dans votre application pour écrire
+  les données de transactions bancaires dans le logiciel de comptabilité de vos clients"
+sidebar_label: Bank Feeds
+displayed_sidebar: bankfeeds
+image: "/img/updates/bank-feeds-bento.png"
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
+banner_title: Bank Feeds
+banner_class: bank-feeds
+banner_icon: "/img/logos/products/logo_bankfeeds_clear.svg"
+banner_image: "/img/banners/bank-feeds.png"
+banner_text:
+  "Déployez facilement un flux automatisé de relevés bancaires dans votre application pour écrire
+  les données de transactions bancaires dans le logiciel de comptabilité de vos clients"
+video_url: "https://www.youtube.com/embed/QrPiwn3DRJs"
+video_text: Qu'est-ce que Bank Feeds ?
+---
+
+import { IntegrationsList } from "@components/Integrations";
+import { bankfeedsIntegrations } from "@components/Integrations/integrations";
+import ClientLibraries from "@components/ClientLibraries";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## Qu'est-ce que Bank Feeds ?
+
+**Un [flux bancaire](../terms/bank-feed) est une connexion numérique entre une institution
+financière et un logiciel de comptabilité qui effectue un transfert automatique régulier
+de relevés bancaires dans le logiciel.**
+
+Exploitez notre solution **Bank Feeds** pour simplifier le déploiement de flux bancaires dans
+votre application. Elle crée l'infrastructure associée pour vous et automatise
+le téléchargement de relevés bancaires dans le logiciel de comptabilité utilisé par vos clients
+petites et moyennes entreprises (PME).
+
+<br />
+
+![Fonctionnalités du SDK Bank Feeds](/img/updates/bank-feeds-bento.png)
+
+## Pour qui est-ce ?
+
+Notre solution Bank Feeds facilite la tâche des banques, néobanques, émetteurs de cartes
+d'entreprise et fournisseurs de paiement pour s'assurer que les clients peuvent accéder à leurs
+données de transactions bancaires dans leur logiciel de comptabilité.
+
+En conséquence, vos clients bénéficient d'une expérience comptable plus complète et simplifiée,
+économisent du temps lors de la clôture de leurs livres et réduisent davantage les erreurs manuelles
+sans nécessiter de middleware tiers ou de téléchargements manuels de fichiers.
+
+## Pourquoi l'utiliser ?
+
+Une enquête récente a révélé que
+[71 % des partenaires Xero](https://www.xero.com/blog/2019/01/new-bank-feeds-process/)
+identifient les [flux bancaires](../terms/bank-feed) et le rapprochement des transactions bancaires comme
+leurs fonctionnalités les plus valorisées. Avec Bank Feeds, vous pouvez facilement répondre à cette demande.
+
+Profitez de notre couverture des logiciels de comptabilité les plus populaires et supprimez
+les obstacles à l'adoption de produits, augmentant la rétention des clients et améliorant leur
+expérience avec votre application.
+
+#### Avec Bank Feeds, vous pouvez :
+
+<ul className="card-container col-3">
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+      <h3>Réduire le taux de désabonnement</h3>
+    </div>
+    <p>
+      Lorsque vos services s'intègrent sans effort dans les outils et
+      processus de votre client, ils sont moins susceptibles de passer à un concurrent.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+      <h3>Améliorer la précision</h3>
+    </div>
+    <p>
+      Nous aidons vos clients à clôturer leurs livres plus rapidement et avec moins d'erreurs
+      manuelles.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+      <h3>Maintenir le solde à jour</h3>
+    </div>
+    <p>
+      Les soldes en temps quasi réel aident vos clients à gérer leurs finances plus
+      efficacement et à faire les bons choix.
+    </p>
+  </li>
+</ul>
+
+## Comment ça fonctionne ?
+
+Bank Feeds soutient votre développement à travers toutes les étapes clés de l'établissement d'un flux
+bancaire et de son utilisation pour télécharger automatiquement des relevés bancaires vers les
+logiciels de comptabilité de vos PME.
+
+![Un diagramme du flux de données dans la solution Bank Feeds](/img/bank-feeds/bankfeeds-process-flow.png)
+
+### [Configurer le client](/bank-feeds/create-account)
+
+Pour établir un [flux bancaire](../terms/bank-feed) entre une institution financière
+et un logiciel de comptabilité, vous créerez un _compte source_ dans Codat qui
+sert de réplique d'un compte financier réel, d'un compte d'épargne ou d'une carte
+de crédit. Ce compte peut ensuite être mappé à un _compte cible_ dans le logiciel
+de comptabilité de votre client.
+
+En même temps, vous créerez également des éléments d'infrastructure Codat supplémentaires,
+tels qu'une [entreprise](../terms/company) et une [connexion](../terms/connection).
+
+### [Établir un flux bancaire](/bank-feeds/mapping/overview)
+
+Ensuite, vous permettrez à votre client PME de vous laisser vous connecter à son logiciel
+de comptabilité. Il autorisera cette connexion via notre
+[flux d'authentification](/auth-flow/overview), que vous implémenterez lors du développement avec
+Bank Feeds.
+
+Ensuite, fournissez à votre utilisateur une interface utilisateur pour qu'il puisse sélectionner les comptes cibles dans cette
+plateforme. Cela indiquera à Codat où exactement établir un flux bancaire. Selon
+le logiciel de votre client, il existe
+[trois méthodes](/bank-feeds/mapping/overview) que vous pouvez utiliser pour le mappage : l'interface utilisateur
+de Codat, votre propre interface utilisateur ou l'interface utilisateur de l'intégration.
+
+:::note Exigences de la plateforme
+
+Le processus de configuration et les exigences d'enregistrement de la plateforme varient pour chaque
+intégration Bank Feeds. Pour des instructions détaillées, consultez la documentation que nous
+fournissons pour chaque intégration.
+
+:::
+
+### [Importer des transactions](/bank-feeds/pushing-transactions)
+
+Une fois que votre client PME a terminé le processus d'autorisation et de mappage des comptes,
+vous pouvez commencer le téléchargement automatique des relevés bancaires en écrivant des transactions
+dans le compte bancaire cible sur le logiciel de comptabilité.
+
+![Une vue de rapprochement simulée d'un logiciel de comptabilité lorsque Bank Feeds est utilisé](/img/bank-feeds/bankfeeds-reconciliation-view.png)
+
+## Intégrations prises en charge
+
+<br />
+
+<IntegrationsList integrations={bankfeedsIntegrations} />
+
+## Développer avec les bibliothèques client
+
+Notre [SDK Bank Feeds](/bank-feeds/create-account) à faible code vous permet de créer une
+expérience utilisateur fluide et à forte conversion, intégrée directement dans votre application
+frontend.
+
+Dans votre code backend, vous pouvez utiliser nos
+[SDK complets](/get-started/libraries) pour démarrer et simplifier votre
+parcours de développeur lors du déploiement de flux bancaires dans votre application. Les SDK sont disponibles en
+plusieurs langages et fournissent des exemples de requêtes et de réponses pour toute la gamme
+de scénarios d'automatisation de relevés bancaires.
+
+<ClientLibraries productName={"bank-feeds"} />
+
+---
+
+## Lire ensuite
+
+- [Commencer](/bank-feeds/setup) à développer avec notre solution Bank Feeds

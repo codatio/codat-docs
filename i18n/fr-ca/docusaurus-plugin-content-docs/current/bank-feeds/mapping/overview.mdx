@@ -1,0 +1,63 @@
+---
+title: "Mapper les comptes et établir un flux bancaire"
+description:
+  "Examinez et sélectionnez les options disponibles pour fournir une interface
+  de mappage de comptes à votre client PME et établir un flux bancaire"
+sidebar_label: Mapper les comptes
+displayed_sidebar: bankfeeds
+---
+
+import { IntegrationsList } from "@components/Integrations";
+import {
+  bankfeedsInternalMappingIntegrations,
+  bankfeedsIntegrations,
+} from "@components/Integrations/integrations";
+
+Une fois que vous avez créé le compte source, fournissez à votre client une
+interface utilisateur (UI) pour qu'il puisse sélectionner les comptes cibles dans son logiciel
+de comptabilité. Cela nous indiquera exactement où un flux bancaire doit être établi. Vous
+pouvez utiliser l'une des options suivantes pour fournir l'interface utilisateur de mappage :
+
+### Mapper en utilisant notre interface
+
+##### [En savoir plus →](/bank-feeds/mapping/codat-ui)
+
+Utilisez notre interface de mappage préconstruite pour lancer votre application avec un effort de développement
+minimal. Elle est conçue pour répondre à toutes les exigences tierces et prend en charge la personnalisation
+du logo et de la palette de couleurs principale.
+
+<IntegrationsList integrations={bankfeedsInternalMappingIntegrations} />
+
+---
+
+### Mapper en utilisant notre API
+
+##### [En savoir plus →](/bank-feeds/mapping/api-mapping)
+
+Pour une expérience utilisateur plus intégrée, vous pouvez créer votre propre interface en utilisant
+les points de terminaison de mappage de comptes de notre API afin que vos utilisateurs puissent mapper leurs comptes
+directement dans votre application.
+
+<IntegrationsList integrations={bankfeedsInternalMappingIntegrations} />
+
+---
+
+### Mappage spécifique à la plateforme
+
+Les intégrations listées dans cette section nécessitent que le mappage de comptes soit
+effectué dans le logiciel de comptabilité lui-même. Suivez nos guides de flux bancaires spécifiques
+aux intégrations pour en savoir plus sur leurs prérequis, fonctionnalités et
+détails d'implémentation.
+
+<IntegrationsList
+  filter={["QuickBooks Online bank feeds", "Sage bank feeds"]}
+/>
+
+---
+
+## Lire ensuite
+
+- [Interface préconstruite de Codat](/bank-feeds/mapping/codat-ui)
+- [Créer votre propre interface avec notre API](/bank-feeds/mapping/api-mapping)
+- Interfaces propres de [QuickBooks Online](/bank-feeds/integrations/qbo/mapping) et
+  [Sage](/bank-feeds/integrations/sage/mapping)

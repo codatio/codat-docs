@@ -1,0 +1,255 @@
+---
+title: Bienvenue
+hide_title: true
+hide_description: true
+sidebar_label: Qu'est-ce que Codat ?
+slug: /
+hide_table_of_contents: true
+className: index
+tags:
+  - Aperçu
+  - Codat
+  - Accueil
+banner_title: Créez des connexions plus profondes avec les clients d'affaires
+banner_image: "/img/banners/accounting-json.png"
+banner_text:
+  "Résolvez les problèmes de vos clients petites et moyennes entreprises avec nos
+  solutions spécialisées basées sur le partage de données, les informations par IA et l'expertise
+  de domaine."
+pagination_next: null
+pagination_prev: null
+---
+
+import Welcome from "@components/Welcome";
+import Usecases from "@components/Usecases";
+import Products from "@components/Products";
+import Clients from "@components/Clients";
+
+<head>
+  <title>
+    {`Codat_docs | Créez des connexions plus profondes avec les clients d'affaires`}
+  </title>
+  <meta
+    name="description"
+    content="Résolvez les problèmes de vos clients petites et moyennes entreprises avec nos solutions spécialisées basées sur le partage de données, les informations par IA et l'expertise de domaine."
+  />
+  <link rel="canonical" href="/" />
+  <link rel="alternate" href="/" hreflang="x-default" />
+  <link rel="alternate" href="/" hreflang="en" />
+  <meta property="og:url" content="https://docs.codat.io" />
+</head>
+
+<Welcome />
+
+## Codat pour les utilisateurs d'affaires
+
+Solutions pour les utilisateurs en contact avec les clients, tels que les gestionnaires de relations et les
+spécialistes des ventes, qui offrent des informations exploitables plus approfondies sur les données commerciales.
+
+<Products mini={true} verbose={false} products={["Spend Insights"]} />
+
+<hr />
+
+## Codat pour les équipes technologiques
+
+Solutions qui aident les institutions financières et leurs développeurs de logiciels à offrir
+de nouveaux produits et expériences pour les petites et moyennes entreprises.
+
+<Products
+  mini={true}
+  verbose={false}
+  products={["Lending", "Expenses", "Bill Pay", "Bank Feeds"]}
+/>
+
+<hr />
+
+## Commencer
+
+<ul className="card-container col-3">
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/Lightbulb.png" className="mini-icon" />
+      <h3>
+        <a href="/core-concepts/overview" target="_blank">
+          Concepts de base
+        </a>
+      </h3>
+    </div>
+    <p>
+      Découvrez les concepts clés qu'utilisent les solutions de Codat et voyez comment ils s'interconnectent
+      les uns avec les autres.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/student.png" className="mini-icon" />
+      <h3>
+        <a href="/guides/overview" target="_blank">
+          Tutoriels
+        </a>
+      </h3>
+    </div>
+    <p>
+      Consultez nos tutoriels et guides de construction pour accélérer votre
+      maîtrise de Codat.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/books.png" className="mini-icon" />
+      <h3>
+        <a href="/get-started/libraries" target="_blank">
+          Bibliothèques clientes
+        </a>
+      </h3>
+    </div>
+    <p>
+      Lancez rapidement la construction de votre solution avec nos bibliothèques de solution officielles
+      dans différents langages.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+## Les plus visités
+
+<ul className="card-container col-3">
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/key.png" className="mini-icon" />
+      <h3>
+        <a href="/using-the-api/authentication/" target="_blank">
+          Clés API
+        </a>
+      </h3>
+    </div>
+    <p>
+      Découvrez comment obtenir votre en-tête d'authentification ou votre clé API pour vous authentifier auprès des
+      API de Codat.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/webhooks-logo.png" className="mini-icon" />
+      <h3>
+        <a href="/using-the-api/webhooks/overview" target="_blank">
+          Service webhook
+        </a>
+      </h3>
+    </div>
+    <p>
+      Recevez des notifications d'événements avec notre solution de messagerie webhook robuste et
+      rationalisée.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/Coins.png" className="mini-icon" />
+      <h3>
+        <a href="/integrations/accounting/overview/" target="_blank">
+          Intégrations comptables
+        </a>
+      </h3>
+    </div>
+    <p>Consultez les détails de configuration de nos intégrations comptables.</p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/puzzle-piece.png" className="mini-icon" />
+      <h3>
+        <a href="/auth-flow/authorize-embedded-link" target="_blank">
+          SDK du flux d'authentification
+        </a>
+      </h3>
+    </div>
+    <p>
+      Intégrez notre flux d'authentification dans l'interface de votre application à l'aide de notre composant à faible code.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img src="/img/wp-icons/Stack.png" className="mini-icon" />
+      <h3>
+        <a href="/using-the-api/overview" target="_blank">
+          Référence API
+        </a>
+      </h3>
+    </div>
+    <p>
+      Commencez à utiliser les endpoints de l'API Codat grâce à nos références API
+      interactives.
+    </p>
+  </li>
+  <li className="card">
+    <div className="header">
+      <img
+        src="/img/wp-icons/list-magnifying-glass.png"
+        className="mini-icon"
+      />
+      <h3>
+        <a href="/using-the-api/querying" target="_blank">
+          Interroger les données
+        </a>
+      </h3>
+    </div>
+    <p>Apprenez les bases et consultez des exemples de filtrage des données de réponse de Codat.</p>
+  </li>
+</ul>
+
+<Clients
+  clients={[
+    {
+      name: "Zettle",
+      path: "/img/clients/zettle.png",
+    },
+    {
+      name: "J.P. Morgan",
+      path: "/img/clients/jp-morgan.png",
+    },
+    {
+      name: "Capchase",
+      path: "/img/clients/capchase.png",
+    },
+    {
+      name: "Virgin Money",
+      path: "/img/clients/virgin-money.png",
+    },
+    {
+      name: "Capital on Tap",
+      path: "/img/clients/capital-on-tap.png",
+    },
+    {
+      name: "Jeeves",
+      path: "/img/clients/jeeves.png",
+    },
+    {
+      name: "SumUp",
+      path: "/img/clients/sumup.png",
+    },
+    {
+      name: "Phorest",
+      path: "/img/clients/phorest.png",
+    },
+    {
+      name: "Lightspeed",
+      path: "/img/clients/lightspeed.png",
+    },
+    {
+      name: "Rho",
+      path: "/img/clients/rho.png",
+    },
+    {
+      name: "Expensify",
+      path: "/img/clients/expensify.png",
+    },
+    {
+      name: "Brex",
+      path: "/img/clients/brex.png",
+    },
+    {
+      name: "Clover",
+      path: "/img/clients/clover.png",
+    },
+  ]}
+/>

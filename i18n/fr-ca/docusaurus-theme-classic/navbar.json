@@ -1,0 +1,82 @@
+{
+  "logo.alt": {
+    "message": "Logo du site",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Docs": {
+    "message": "Documentation",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Spend Insights": {
+    "message": "Aperçu des dépenses",
+    "description": "Navbar item with label Spend Insights"
+  },
+  "item.label.Bank Feeds": {
+    "message": "Flux bancaires",
+    "description": "Navbar item with label Bank Feeds"
+  },
+  "item.label.Bill Pay": {
+    "message": "Paiement de factures",
+    "description": "Navbar item with label Bill Pay"
+  },
+  "item.label.Expenses": {
+    "message": "Dépenses",
+    "description": "Navbar item with label Expenses"
+  },
+  "item.label.Lending": {
+    "message": "Prêts",
+    "description": "Navbar item with label Lending"
+  },
+  "item.label.Platform API": {
+    "message": "API de la plateforme",
+    "description": "Navbar item with label Platform API"
+  },
+  "item.label.OpenAPI spec": {
+    "message": "Spécification OpenAPI",
+    "description": "Navbar item with label OpenAPI spec"
+  },
+  "item.label.Updates": {
+    "message": "Mises à jour",
+    "description": "Navbar item with label Updates"
+  },
+  "item.label.Community": {
+    "message": "Communauté",
+    "description": "Navbar item with label Community"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Blog": {
+    "message": "Blogue",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Support": {
+    "message": "Soutien",
+    "description": "Navbar item with label Support"
+  },
+  "item.label.Get help": {
+    "message": "Obtenir de l'aide",
+    "description": "Navbar item with label Get help"
+  },
+  "item.label.End user support": {
+    "message": "Soutien aux utilisateurs",
+    "description": "Navbar item with label End user support"
+  },
+  "item.label.API status": {
+    "message": "État de l'API",
+    "description": "Navbar item with label API status"
+  },
+  "item.label.Issue with the docs?": {
+    "message": "Problème avec la documentation?",
+    "description": "Navbar item with label Issue with the docs?"
+  },
+  "item.label.Sign in": {
+    "message": "Connexion",
+    "description": "Navbar item with label Sign in"
+  }
+}

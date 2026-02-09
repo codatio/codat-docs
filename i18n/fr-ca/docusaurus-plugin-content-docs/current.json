@@ -1,0 +1,706 @@
+{
+  "version.label": {
+    "message": "v6",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Get started": {
+    "message": "Commencer",
+    "description": "The label for category 'Get started' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Use cases": {
+    "message": "Cas d'utilisation",
+    "description": "The label for category 'Use cases' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Learn": {
+    "message": "Apprendre",
+    "description": "The label for category 'Learn' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Configure": {
+    "message": "Configurer",
+    "description": "The label for category 'Configure' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.User management": {
+    "message": "Gestion des utilisateurs",
+    "description": "The label for category 'User management' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Use our API": {
+    "message": "Utiliser notre API",
+    "description": "The label for category 'Use our API' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Manage companies": {
+    "message": "Gérer les entreprises",
+    "description": "The label for category 'Manage companies' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Get data": {
+    "message": "Obtenir des données",
+    "description": "The label for category 'Get data' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Supplemental data": {
+    "message": "Données supplémentaires",
+    "description": "The label for category 'Supplemental data' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Write data": {
+    "message": "Écrire des données",
+    "description": "The label for category 'Write data' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Webhooks": {
+    "message": "Webhooks",
+    "description": "The label for category 'Webhooks' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Migration guide": {
+    "message": "Guide de migration",
+    "description": "The label for category 'Migration guide' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Tips and guidance": {
+    "message": "Conseils et orientations",
+    "description": "The label for category 'Tips and guidance' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Change management": {
+    "message": "Gestion du changement",
+    "description": "The label for category 'Change management' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Auth flow": {
+    "message": "Flux d'authentification",
+    "description": "The label for category 'Auth flow' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Customize flow": {
+    "message": "Personnaliser le flux",
+    "description": "The label for category 'Customize flow' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Optimize flow": {
+    "message": "Optimiser le flux",
+    "description": "The label for category 'Optimize flow' in sidebar 'docs'"
+  },
+  "sidebar.docs.category.Integrations": {
+    "message": "Intégrations",
+    "description": "The label for category 'Integrations' in sidebar 'docs'"
+  },
+  "sidebar.docs.link.Platform API reference": {
+    "message": "Référence de l'API de la plateforme",
+    "description": "The label for link 'Platform API reference' in sidebar 'docs', linking to '/platform-api'"
+  },
+  "sidebar.docs.link.NPM": {
+    "message": "NPM",
+    "description": "The label for link 'NPM' in sidebar 'docs', linking to 'https://www.npmjs.com/package/@codat/sdk-link-types'"
+  },
+  "sidebar.docs.link.Try it out": {
+    "message": "Essayez-le",
+    "description": "The label for link 'Try it out' in sidebar 'docs', linking to 'https://sdk-link.vercel.app/'"
+  },
+  "sidebar.docs.link.See examples": {
+    "message": "Voir des exemples",
+    "description": "The label for link 'See examples' in sidebar 'docs', linking to 'https://github.com/codatio/sdk-link/tree/main/examples'"
+  },
+  "sidebar.docs.doc.What is Codat?": {
+    "message": "Qu'est-ce que Codat?",
+    "description": "The label for the doc item 'What is Codat?' in sidebar 'docs', linking to the doc index"
+  },
+  "sidebar.docs.doc.Tutorials": {
+    "message": "Tutoriels",
+    "description": "The label for the doc item 'Tutorials' in sidebar 'docs', linking to the doc guides/overview"
+  },
+  "sidebar.docs.doc.Bank feeds": {
+    "message": "Flux bancaires",
+    "description": "The label for the doc item 'Bank feeds' in sidebar 'docs', linking to the doc integrations/bank-feeds/overview"
+  },
+  "sidebar.bankfeeds.category.Establish bank feed": {
+    "message": "Établir un flux bancaire",
+    "description": "The label for category 'Establish bank feed' in sidebar 'bankfeeds'"
+  },
+  "sidebar.bankfeeds.category.QuickBooks Online": {
+    "message": "QuickBooks Online",
+    "description": "The label for category 'QuickBooks Online' in sidebar 'bankfeeds'"
+  },
+  "sidebar.bankfeeds.category.Sage": {
+    "message": "Sage",
+    "description": "The label for category 'Sage' in sidebar 'bankfeeds'"
+  },
+  "sidebar.bankfeeds.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'bankfeeds', linking to '/'"
+  },
+  "sidebar.bankfeeds.link.Xero": {
+    "message": "Xero",
+    "description": "The label for link 'Xero' in sidebar 'bankfeeds', linking to '/integrations/bank-feeds/xero-bank-feeds'"
+  },
+  "sidebar.bankfeeds.link.Oracle NetSuite": {
+    "message": "Oracle NetSuite",
+    "description": "The label for link 'Oracle NetSuite' in sidebar 'bankfeeds', linking to '/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup'"
+  },
+  "sidebar.bankfeeds.link.Exact Online (NL)": {
+    "message": "Exact Online (NL)",
+    "description": "The label for link 'Exact Online (NL)' in sidebar 'bankfeeds', linking to '/integrations/accounting/exact-online/accounting-exact-online'"
+  },
+  "sidebar.bankfeeds.link.FreeAgent": {
+    "message": "FreeAgent",
+    "description": "The label for link 'FreeAgent' in sidebar 'bankfeeds', linking to '/integrations/accounting/freeagent/accounting-freeagent'"
+  },
+  "sidebar.bankfeeds.link.Troubleshooting and FAQ": {
+    "message": "Dépannage et FAQ",
+    "description": "The label for link 'Troubleshooting and FAQ' in sidebar 'bankfeeds', linking to '/bank-feeds/troubleshooting'"
+  },
+  "sidebar.bankfeeds.link.Data types": {
+    "message": "Types de données",
+    "description": "The label for link 'Data types' in sidebar 'bankfeeds', linking to '/bank-feeds/data-types'"
+  },
+  "sidebar.bankfeeds.link.API reference": {
+    "message": "Référence API",
+    "description": "The label for link 'API reference' in sidebar 'bankfeeds', linking to '/bank-feeds-api'"
+  },
+  "sidebar.bankfeeds.doc.Bank Feeds": {
+    "message": "Flux bancaires",
+    "description": "The label for the doc item 'Bank Feeds' in sidebar 'bankfeeds', linking to the doc bank-feeds/overview"
+  },
+  "sidebar.bankfeeds.doc.Get started": {
+    "message": "Commencer",
+    "description": "The label for the doc item 'Get started' in sidebar 'bankfeeds', linking to the doc bank-feeds/setup"
+  },
+  "sidebar.bankfeeds.doc.Bank Feeds SDK": {
+    "message": "SDK Flux bancaires",
+    "description": "The label for the doc item 'Bank Feeds SDK' in sidebar 'bankfeeds', linking to the doc bank-feeds/bank-feeds-sdk"
+  },
+  "sidebar.bankfeeds.doc.Create account": {
+    "message": "Créer un compte",
+    "description": "The label for the doc item 'Create account' in sidebar 'bankfeeds', linking to the doc bank-feeds/create-account"
+  },
+  "sidebar.bankfeeds.doc.Write transactions": {
+    "message": "Écrire des transactions",
+    "description": "The label for the doc item 'Write transactions' in sidebar 'bankfeeds', linking to the doc bank-feeds/pushing-transactions"
+  },
+  "sidebar.commerce.category.Advanced features": {
+    "message": "Fonctionnalités avancées",
+    "description": "The label for category 'Advanced features' in sidebar 'commerce'"
+  },
+  "sidebar.commerce.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'commerce', linking to '/'"
+  },
+  "sidebar.commerce.link.Data types": {
+    "message": "Types de données",
+    "description": "The label for link 'Data types' in sidebar 'commerce', linking to '/commerce/data-types'"
+  },
+  "sidebar.commerce.link.API reference": {
+    "message": "Référence API",
+    "description": "The label for link 'API reference' in sidebar 'commerce', linking to '/sync-for-commerce-api'"
+  },
+  "sidebar.commerce.doc.Sync for Commerce": {
+    "message": "Synchronisation pour le commerce",
+    "description": "The label for the doc item 'Sync for Commerce' in sidebar 'commerce', linking to the doc commerce/overview"
+  },
+  "sidebar.commerce.doc.Product setup": {
+    "message": "Configuration du produit",
+    "description": "The label for the doc item 'Product setup' in sidebar 'commerce', linking to the doc commerce/setup"
+  },
+  "sidebar.commerce.doc.Merchant configuration": {
+    "message": "Configuration du marchand",
+    "description": "The label for the doc item 'Merchant configuration' in sidebar 'commerce', linking to the doc commerce/merchant-configuration"
+  },
+  "sidebar.commerce.doc.Data sync setup": {
+    "message": "Configuration de la synchronisation",
+    "description": "The label for the doc item 'Data sync setup' in sidebar 'commerce', linking to the doc commerce/data-synchronization"
+  },
+  "sidebar.commerce.doc.Xero": {
+    "message": "Xero",
+    "description": "The label for the doc item 'Xero' in sidebar 'commerce', linking to the doc integrations/accounting/xero/accounting-xero"
+  },
+  "sidebar.commerce.doc.MYOB Business": {
+    "message": "MYOB Business",
+    "description": "The label for the doc item 'MYOB Business' in sidebar 'commerce', linking to the doc integrations/accounting/myob/accounting-myob"
+  },
+  "sidebar.commerce.doc.FreeAgent": {
+    "message": "FreeAgent",
+    "description": "The label for the doc item 'FreeAgent' in sidebar 'commerce', linking to the doc integrations/accounting/freeagent/accounting-freeagent"
+  },
+  "sidebar.commerce.doc.Exact Online": {
+    "message": "Exact Online",
+    "description": "The label for the doc item 'Exact Online' in sidebar 'commerce', linking to the doc integrations/accounting/exact-online/accounting-exact-online"
+  },
+  "sidebar.commerce.doc.Clover": {
+    "message": "Clover",
+    "description": "The label for the doc item 'Clover' in sidebar 'commerce', linking to the doc integrations/commerce/clover/commerce-clover"
+  },
+  "sidebar.commerce.doc.Lightspeed Restaurant": {
+    "message": "Lightspeed Restaurant",
+    "description": "The label for the doc item 'Lightspeed Restaurant' in sidebar 'commerce', linking to the doc integrations/commerce/lightspeed-k/commerce-lightspeed-k"
+  },
+  "sidebar.commerce.doc.Shopify": {
+    "message": "Shopify",
+    "description": "The label for the doc item 'Shopify' in sidebar 'commerce', linking to the doc integrations/commerce/shopify/commerce-shopify"
+  },
+  "sidebar.commerce.doc.Zettle": {
+    "message": "Zettle",
+    "description": "The label for the doc item 'Zettle' in sidebar 'commerce', linking to the doc integrations/commerce/zettle/commerce-zettle"
+  },
+  "sidebar.commerce.doc.Sync schedule": {
+    "message": "Calendrier de synchronisation",
+    "description": "The label for the doc item 'Sync schedule' in sidebar 'commerce', linking to the doc commerce/synchronization-schedule"
+  },
+  "sidebar.commerce.doc.FAQs": {
+    "message": "FAQ",
+    "description": "The label for the doc item 'FAQs' in sidebar 'commerce', linking to the doc commerce/error-documentation"
+  },
+  "sidebar.commerce.doc.QuickBooks Online": {
+    "message": "QuickBooks Online",
+    "description": "The label for the doc item 'QuickBooks Online' in sidebar 'commerce', linking to the doc integrations/accounting/quickbooksonline/accounting-quickbooksonline"
+  },
+  "sidebar.lending.category.Bank statements": {
+    "message": "Relevés bancaires",
+    "description": "The label for category 'Bank statements' in sidebar 'lending'"
+  },
+  "sidebar.lending.category.Loan writeback": {
+    "message": "Réécriture de prêt",
+    "description": "The label for category 'Loan writeback' in sidebar 'lending'"
+  },
+  "sidebar.lending.category.Loan qualification": {
+    "message": "Qualification de prêt",
+    "description": "The label for category 'Loan qualification' in sidebar 'lending'"
+  },
+  "sidebar.lending.category.Invoice finance": {
+    "message": "Financement sur factures",
+    "description": "The label for category 'Invoice finance' in sidebar 'lending'"
+  },
+  "sidebar.lending.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'lending', linking to '/'"
+  },
+  "sidebar.lending.link.Lending": {
+    "message": "Prêts",
+    "description": "The label for link 'Lending' in sidebar 'lending', linking to '/lending/overview'"
+  },
+  "sidebar.lending.link.Credit model": {
+    "message": "Modèle de crédit",
+    "description": "The label for link 'Credit model' in sidebar 'lending', linking to '/lending/premium-products/credit-model-overview'"
+  },
+  "sidebar.lending.link.Data upload": {
+    "message": "Téléchargement de données",
+    "description": "The label for link 'Data upload' in sidebar 'lending', linking to '/lending/functions/data-upload'"
+  },
+  "sidebar.lending.link.API reference": {
+    "message": "Référence API",
+    "description": "The label for link 'API reference' in sidebar 'lending', linking to '/lending-api'"
+  },
+  "sidebar.lending.doc.Overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'lending', linking to the doc lending/features/bank-statements-overview"
+  },
+  "sidebar.lending.doc.Migration guide - Enhanced cashflow": {
+    "message": "Guide de migration - Flux de trésorerie amélioré",
+    "description": "The label for the doc item 'Migration guide - Enhanced cashflow' in sidebar 'lending', linking to the doc lending/features/enhanced-cash-flow-migration"
+  },
+  "sidebar.lending.doc.loan-writeback-introduction": {
+    "message": "Introduction",
+    "description": "The label for the doc item 'Introduction' in sidebar 'lending', linking to the doc lending/guides/loan-writeback/introduction"
+  },
+  "sidebar.lending.doc.invoice-finance-introduction": {
+    "message": "Introduction",
+    "description": "The label for the doc item 'Introduction' in sidebar 'lending', linking to the doc lending/guides/invoice-finance/introduction"
+  },
+  "sidebar.expenses.category.Create transactions": {
+    "message": "Créer des transactions",
+    "description": "The label for category 'Create transactions' in sidebar 'expenses'"
+  },
+  "sidebar.expenses.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'expenses', linking to '/'"
+  },
+  "sidebar.expenses.link.FAQs": {
+    "message": "FAQ",
+    "description": "The label for link 'FAQs' in sidebar 'expenses', linking to '/expenses/faq'"
+  },
+  "sidebar.expenses.link.Data types": {
+    "message": "Types de données",
+    "description": "The label for link 'Data types' in sidebar 'expenses', linking to '/expenses/data-types'"
+  },
+  "sidebar.expenses.link.API reference": {
+    "message": "Référence API",
+    "description": "The label for link 'API reference' in sidebar 'expenses', linking to '/sync-for-expenses-api#'"
+  },
+  "sidebar.expenses.doc.Expenses": {
+    "message": "Dépenses",
+    "description": "The label for the doc item 'Expenses' in sidebar 'expenses', linking to the doc expenses/overview"
+  },
+  "sidebar.expenses.doc.Get started": {
+    "message": "Commencer",
+    "description": "The label for the doc item 'Get started' in sidebar 'expenses', linking to the doc expenses/getting-started"
+  },
+  "sidebar.expenses.doc.FreeAgent": {
+    "message": "FreeAgent",
+    "description": "The label for the doc item 'FreeAgent' in sidebar 'expenses', linking to the doc integrations/accounting/freeagent/accounting-freeagent"
+  },
+  "sidebar.expenses.doc.Oracle NetSuite": {
+    "message": "Oracle NetSuite",
+    "description": "The label for the doc item 'Oracle NetSuite' in sidebar 'expenses', linking to the doc integrations/accounting/netsuite/accounting-netsuite"
+  },
+  "sidebar.expenses.doc.QuickBooks Desktop": {
+    "message": "QuickBooks Desktop",
+    "description": "The label for the doc item 'QuickBooks Desktop' in sidebar 'expenses', linking to the doc integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop"
+  },
+  "sidebar.expenses.doc.QuickBooks Online": {
+    "message": "QuickBooks Online",
+    "description": "The label for the doc item 'QuickBooks Online' in sidebar 'expenses', linking to the doc integrations/accounting/quickbooksonline/accounting-quickbooksonline"
+  },
+  "sidebar.expenses.doc.Sage Intacct": {
+    "message": "Sage Intacct",
+    "description": "The label for the doc item 'Sage Intacct' in sidebar 'expenses', linking to the doc integrations/accounting/sage-intacct/accounting-sage-intacct"
+  },
+  "sidebar.expenses.doc.Xero": {
+    "message": "Xero",
+    "description": "The label for the doc item 'Xero' in sidebar 'expenses', linking to the doc integrations/accounting/xero/accounting-xero"
+  },
+  "sidebar.expenses.doc.Zoho Books": {
+    "message": "Zoho Books",
+    "description": "The label for the doc item 'Zoho Books' in sidebar 'expenses', linking to the doc integrations/accounting/zoho-books/accounting-zoho-books"
+  },
+  "sidebar.expenses.doc.Expenses in foreign currency": {
+    "message": "Dépenses en devises étrangères",
+    "description": "The label for the doc item 'Expenses in foreign currency' in sidebar 'expenses', linking to the doc expenses/fx-management"
+  },
+  "sidebar.expenses.doc.Dynamics 365 Business Central": {
+    "message": "Dynamics 365 Business Central",
+    "description": "The label for the doc item 'Dynamics 365 Business Central' in sidebar 'expenses', linking to the doc integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral"
+  },
+  "sidebar.payroll.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'payroll', linking to '/'"
+  },
+  "sidebar.payroll.link.API reference": {
+    "message": "Référence API",
+    "description": "The label for link 'API reference' in sidebar 'payroll', linking to '/sync-for-payroll-api#/'"
+  },
+  "sidebar.payroll.doc.Sync for Payroll": {
+    "message": "Synchronisation pour la paie",
+    "description": "The label for the doc item 'Sync for Payroll' in sidebar 'payroll', linking to the doc payroll/overview"
+  },
+  "sidebar.payroll.doc.QuickBooks Online": {
+    "message": "QuickBooks Online",
+    "description": "The label for the doc item 'QuickBooks Online' in sidebar 'payroll', linking to the doc integrations/accounting/quickbooksonline/accounting-quickbooksonline"
+  },
+  "sidebar.payroll.doc.Sage Intacct": {
+    "message": "Sage Intacct",
+    "description": "The label for the doc item 'Sage Intacct' in sidebar 'payroll', linking to the doc integrations/accounting/sage-intacct/accounting-sage-intacct"
+  },
+  "sidebar.payroll.doc.Sage Accounting": {
+    "message": "Sage Accounting",
+    "description": "The label for the doc item 'Sage Accounting' in sidebar 'payroll', linking to the doc integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud"
+  },
+  "sidebar.payroll.doc.Xero": {
+    "message": "Xero",
+    "description": "The label for the doc item 'Xero' in sidebar 'payroll', linking to the doc integrations/accounting/xero/accounting-xero"
+  },
+  "sidebar.payroll.doc.Dynamics 365 Business Central": {
+    "message": "Dynamics 365 Business Central",
+    "description": "The label for the doc item 'Dynamics 365 Business Central' in sidebar 'payroll', linking to the doc integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral"
+  },
+  "sidebar.payroll.doc.Data types": {
+    "message": "Types de données",
+    "description": "The label for the doc item 'Data types' in sidebar 'payroll', linking to the doc payroll/data-types"
+  },
+  "sidebar.payroll.doc.Oracle NetSuite": {
+    "message": "Oracle NetSuite",
+    "description": "The label for the doc item 'Oracle NetSuite' in sidebar 'payroll', linking to the doc integrations/accounting/netsuite/accounting-netsuite"
+  },
+  "sidebar.payables.category.Automate bill payment": {
+    "message": "Automatiser le paiement des factures",
+    "description": "The label for category 'Automate bill payment' in sidebar 'payables'"
+  },
+  "sidebar.payables.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'payables', linking to '/'"
+  },
+  "sidebar.payables.link.API reference": {
+    "message": "Référence API",
+    "description": "The label for link 'API reference' in sidebar 'payables', linking to '/sync-for-payables-v2-api'"
+  },
+  "sidebar.payables.doc.Bill Pay": {
+    "message": "Paiement de factures",
+    "description": "The label for the doc item 'Bill Pay' in sidebar 'payables', linking to the doc payables/overview"
+  },
+  "sidebar.payables.doc.Supported data types": {
+    "message": "Types de données pris en charge",
+    "description": "The label for the doc item 'Supported data types' in sidebar 'payables', linking to the doc payables/sync/sync-data-types"
+  },
+  "sidebar.payables.doc.Introduction": {
+    "message": "Introduction",
+    "description": "The label for the doc item 'Introduction' in sidebar 'payables', linking to the doc payables/guides/bill-pay/introduction"
+  },
+  "sidebar.integrationsAccounting.category.Dynamics 365 Business Central": {
+    "message": "Dynamics 365 Business Central",
+    "description": "The label for category 'Dynamics 365 Business Central' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.Exact Online": {
+    "message": "Exact Online",
+    "description": "The label for category 'Exact Online' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.FreeAgent": {
+    "message": "FreeAgent",
+    "description": "The label for category 'FreeAgent' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.MYOB": {
+    "message": "MYOB",
+    "description": "The label for category 'MYOB' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.NetSuite": {
+    "message": "NetSuite",
+    "description": "The label for category 'NetSuite' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.QuickBooks Online": {
+    "message": "QuickBooks Online",
+    "description": "The label for category 'QuickBooks Online' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.Sage Intacct": {
+    "message": "Sage Intacct",
+    "description": "The label for category 'Sage Intacct' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.Sage 200 Standard": {
+    "message": "Sage 200 Standard",
+    "description": "The label for category 'Sage 200 Standard' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.Sage Accounting": {
+    "message": "Sage Accounting",
+    "description": "The label for category 'Sage Accounting' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.Xero": {
+    "message": "Xero",
+    "description": "The label for category 'Xero' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.Zoho Books": {
+    "message": "Zoho Books",
+    "description": "The label for category 'Zoho Books' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.QuickBooks Desktop": {
+    "message": "QuickBooks Desktop",
+    "description": "The label for category 'QuickBooks Desktop' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.category.Sage 50": {
+    "message": "Sage 50",
+    "description": "The label for category 'Sage 50' in sidebar 'integrationsAccounting'"
+  },
+  "sidebar.integrationsAccounting.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'integrationsAccounting', linking to '/'"
+  },
+  "sidebar.integrationsAccounting.link.Accounting integrations": {
+    "message": "Intégrations comptables",
+    "description": "The label for link 'Accounting integrations' in sidebar 'integrationsAccounting', linking to '/integrations/accounting/overview'"
+  },
+  "sidebar.integrationsAccounting.doc.dynamics365bc-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral"
+  },
+  "sidebar.integrationsAccounting.doc.exact-online-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/exact-online/accounting-exact-online"
+  },
+  "sidebar.integrationsAccounting.doc.freeagent-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/freeagent/accounting-freeagent"
+  },
+  "sidebar.integrationsAccounting.doc.myob-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/myob/accounting-myob"
+  },
+  "sidebar.integrationsAccounting.doc.netsuite-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/netsuite/accounting-netsuite"
+  },
+  "sidebar.integrationsAccounting.doc.quickbooks-online-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/quickbooksonline/accounting-quickbooksonline"
+  },
+  "sidebar.integrationsAccounting.doc.sage-intacct-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/sage-intacct/accounting-sage-intacct"
+  },
+  "sidebar.integrationsAccounting.doc.sage200-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/sage200/accounting-sage200"
+  },
+  "sidebar.integrationsAccounting.doc.sage-accounting-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/sagebusinesscloud/accounting-sagebusinesscloud"
+  },
+  "sidebar.integrationsAccounting.doc.xero-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/xero/accounting-xero"
+  },
+  "sidebar.integrationsAccounting.doc.zoho-books-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsAccounting', linking to the doc integrations/accounting/zoho-books/accounting-zoho-books"
+  },
+  "sidebar.integrationsBanking.category.Plaid": {
+    "message": "Plaid",
+    "description": "The label for category 'Plaid' in sidebar 'integrationsBanking'"
+  },
+  "sidebar.integrationsBanking.category.Truelayer": {
+    "message": "Truelayer",
+    "description": "The label for category 'Truelayer' in sidebar 'integrationsBanking'"
+  },
+  "sidebar.integrationsBanking.category.Proxy access": {
+    "message": "Accès par proxy",
+    "description": "The label for category 'Proxy access' in sidebar 'integrationsBanking'"
+  },
+  "sidebar.integrationsBanking.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'integrationsBanking', linking to '/'"
+  },
+  "sidebar.integrationsBanking.link.Banking integrations": {
+    "message": "Intégrations bancaires",
+    "description": "The label for link 'Banking integrations' in sidebar 'integrationsBanking', linking to '/integrations/banking/overview'"
+  },
+  "sidebar.integrationsCommerce.category.Amazon Seller Central": {
+    "message": "Amazon Seller Central",
+    "description": "The label for category 'Amazon Seller Central' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.category.BigCommerce": {
+    "message": "BigCommerce",
+    "description": "The label for category 'BigCommerce' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.category.Clover": {
+    "message": "Clover",
+    "description": "The label for category 'Clover' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.category.Lightspeed Restaurant (K series)": {
+    "message": "Lightspeed Restaurant (série K)",
+    "description": "The label for category 'Lightspeed Restaurant (K series)' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.category.Shopify": {
+    "message": "Shopify",
+    "description": "The label for category 'Shopify' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.category.Setup": {
+    "message": "Configuration",
+    "description": "The label for category 'Setup' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.category.Square": {
+    "message": "Square",
+    "description": "The label for category 'Square' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.category.Stripe": {
+    "message": "Stripe",
+    "description": "The label for category 'Stripe' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.category.WooCommerce": {
+    "message": "WooCommerce",
+    "description": "The label for category 'WooCommerce' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.category.Zettle": {
+    "message": "Zettle",
+    "description": "The label for category 'Zettle' in sidebar 'integrationsCommerce'"
+  },
+  "sidebar.integrationsCommerce.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'integrationsCommerce', linking to '/'"
+  },
+  "sidebar.integrationsCommerce.link.Commerce integrations": {
+    "message": "Intégrations commerciales",
+    "description": "The label for link 'Commerce integrations' in sidebar 'integrationsCommerce', linking to '/integrations/commerce/overview'"
+  },
+  "sidebar.integrationsCommerce.doc.clover-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsCommerce', linking to the doc integrations/commerce/clover/commerce-clover"
+  },
+  "sidebar.integrationsCommerce.doc.lightspeed-k-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsCommerce', linking to the doc integrations/commerce/lightspeed-k/commerce-lightspeed-k"
+  },
+  "sidebar.integrationsCommerce.doc.shopify-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsCommerce', linking to the doc integrations/commerce/shopify/commerce-shopify"
+  },
+  "sidebar.integrationsCommerce.doc.zettle-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsCommerce', linking to the doc integrations/commerce/zettle/commerce-zettle"
+  },
+  "sidebar.integrationsBankFeeds.category.QuickBooks Online": {
+    "message": "QuickBooks Online",
+    "description": "The label for category 'QuickBooks Online' in sidebar 'integrationsBankFeeds'"
+  },
+  "sidebar.integrationsBankFeeds.category.Sage": {
+    "message": "Sage",
+    "description": "The label for category 'Sage' in sidebar 'integrationsBankFeeds'"
+  },
+  "sidebar.integrationsBankFeeds.category.Xero": {
+    "message": "Xero",
+    "description": "The label for category 'Xero' in sidebar 'integrationsBankFeeds'"
+  },
+  "sidebar.integrationsBankFeeds.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'integrationsBankFeeds', linking to '/'"
+  },
+  "sidebar.integrationsBankFeeds.link.Exact Online (NL)": {
+    "message": "Exact Online (NL)",
+    "description": "The label for link 'Exact Online (NL)' in sidebar 'integrationsBankFeeds', linking to '/integrations/accounting/exact-online/accounting-exact-online'"
+  },
+  "sidebar.integrationsBankFeeds.link.FreeAgent": {
+    "message": "FreeAgent",
+    "description": "The label for link 'FreeAgent' in sidebar 'integrationsBankFeeds', linking to '/integrations/accounting/freeagent/accounting-freeagent'"
+  },
+  "sidebar.integrationsBankFeeds.doc.Bank feeds integrations": {
+    "message": "Intégrations de flux bancaires",
+    "description": "The label for the doc item 'Bank feeds integrations' in sidebar 'integrationsBankFeeds', linking to the doc integrations/bank-feeds/overview"
+  },
+  "sidebar.integrationsBankFeeds.doc.NetSuite": {
+    "message": "NetSuite",
+    "description": "The label for the doc item 'NetSuite' in sidebar 'integrationsBankFeeds', linking to the doc integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup"
+  },
+  "sidebar.integrationsBankFeeds.doc.qbo-bank-feeds-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsBankFeeds', linking to the doc integrations/bank-feeds/qbo-bank-feeds/qbo-bank-feeds"
+  },
+  "sidebar.integrationsBankFeeds.doc.sage-bank-feeds-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsBankFeeds', linking to the doc integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds"
+  },
+  "sidebar.integrationsBankFeeds.doc.xero-bank-feeds-overview": {
+    "message": "Aperçu",
+    "description": "The label for the doc item 'Overview' in sidebar 'integrationsBankFeeds', linking to the doc integrations/bank-feeds/xero-bank-feeds/xero-bank-feeds"
+  },
+  "sidebar.enterprise.category.Technology overview": {
+    "message": "Aperçu technologique",
+    "description": "The label for category 'Technology overview' in sidebar 'enterprise'"
+  },
+  "sidebar.enterprise.category.Architecture": {
+    "message": "Architecture",
+    "description": "The label for category 'Architecture' in sidebar 'enterprise'"
+  },
+  "sidebar.enterprise.category.Security": {
+    "message": "Sécurité",
+    "description": "The label for category 'Security' in sidebar 'enterprise'"
+  },
+  "sidebar.enterprise.category.Technical implementation": {
+    "message": "Mise en œuvre technique",
+    "description": "The label for category 'Technical implementation' in sidebar 'enterprise'"
+  },
+  "sidebar.enterprise.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'enterprise', linking to '/'"
+  },
+  "sidebar.enterprise.doc.Enterprise": {
+    "message": "Entreprise",
+    "description": "The label for the doc item 'Enterprise' in sidebar 'enterprise', linking to the doc enterprise/overview"
+  },
+  "sidebar.spendInsights.link.All Docs": {
+    "message": "Toute la documentation",
+    "description": "The label for link 'All Docs' in sidebar 'spendInsights', linking to '/'"
+  },
+  "sidebar.spendInsights.link.Spend Insights": {
+    "message": "Aperçu des dépenses",
+    "description": "The label for link 'Spend Insights' in sidebar 'spendInsights', linking to '/spend-insights/overview'"
+  },
+  "sidebar.spendInsights.link.Create account": {
+    "message": "Créer un compte",
+    "description": "The label for link 'Create account' in sidebar 'spendInsights', linking to '/spend-insights/guides/create-account'"
+  },
+  "sidebar.spendInsights.link.Questions and concerns": {
+    "message": "Questions et préoccupations",
+    "description": "The label for link 'Questions and concerns' in sidebar 'spendInsights', linking to '/spend-insights/resources/customer-faqs'"
+  },
+  "sidebar.spendInsights.link.Codat Portal": {
+    "message": "Portail Codat",
+    "description": "The label for link 'Codat Portal' in sidebar 'spendInsights', linking to 'https://app.codat.io/'"
+  },
+  "sidebar.spendInsights.link.Help Hub": {
+    "message": "Centre d'aide",
+    "description": "The label for link 'Help Hub' in sidebar 'spendInsights', linking to 'https://help.codat.io/'"
+  }
+}

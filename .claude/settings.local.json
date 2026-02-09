@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx docusaurus write-translations:*)",
+      "Bash(dir:*)",
+      "Read(//c/**)",
+      "Bash(powershell:*)",
+      "Bash(del \"c:\\\\Users\\\\PhilipMcKinney\\\\Documents\\\\Code\\\\codat-docs\\\\_setup_i18n.ps1\")"
+    ]
+  }
+}

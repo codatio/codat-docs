@@ -1,0 +1,128 @@
+---
+title: Configurer
+description: "Catégoriser et mapper les composantes de la paie"
+image: "/img/banners/social/payroll.png"
+---
+
+import Payroll from "@components/Prototypes/Payroll";
+
+Afin que vos clients puissent représenter adéquatement leurs coûts de paie
+dans leur logiciel comptable, ils devront d'abord effectuer une
+configuration initiale.
+
+Généralement, chaque entreprise voudra définir :
+
+- À partir de quel compte bancaire les paiements sont effectués
+- À quel compte de dépenses chaque composante de la paie correspond
+- Tout mappage additionnel pour des éléments comme les départements et les emplacements
+
+La PME possède un logiciel comptable
+
+Le client possède une liste de composantes de la paie, possède des départements, des emplacements,
+
+## Sélectionner le compte à partir duquel les paiements de paie seront effectués
+
+Le compte de paiement est un compte bancaire à partir duquel les paiements de paie peuvent
+être versés aux comptes bancaires des employés.
+
+Une liste des options disponibles dans le logiciel comptable de l'entreprise peut être
+récupérée à partir du point de terminaison
+[bankAccounts](/sync-for-payroll-api#/operations/list-accounts) :
+
+```http request title="Lister les comptes bancaires"
+GET https://api.codat.io/companies/{companyId}/data/accounts?query=isBankAccount%3dtrue
+```
+
+## Mapper les composantes de la paie aux comptes pertinents
+
+Chaque entreprise aura des préférences différentes quant à la façon dont elle souhaite enregistrer
+les coûts de paie de ses employés, les pensions et les taxes dans les différents comptes nominaux.
+
+Vous aurez dans votre système une liste de _composantes de la paie_ qui constituent
+les différentes parties de la paie d'une entreprise. Par exemple :
+
+```
+const payrollComponents = [
+  {
+    id: "9017ab32-5d56-41a2-b46f-40b62f7677b7",
+    name: "Performance bonuses"
+    category: "Bonuses",
+  },
+  {
+    id: "248f6da7-c9e2-48fd-b304-ca20216a5d01",
+    name: "Pensions"
+    category: "Benefits",
+  },
+  ...
+]
+```
+
+Vous devez fournir à votre client une interface flexible pour permettre aux entreprises
+de gérer les nuances de la façon dont elles souhaitent rapprocher leurs données. Le mappage peut être
+aussi complexe ou granulaire que le nécessite votre cas d'utilisation.
+
+### Obtenir les comptes
+
+Vous pouvez utiliser le
+[plan comptable](/sync-for-payroll-api#/operations/list-accounts) pour remplir
+cette interface avec le `name` représentant comment le compte est nommé dans leur
+logiciel comptable.
+
+```http request title="Lister les comptes"
+GET https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100
+```
+
+Les paramètres de requête peuvent également être utilisés pour affiner la liste des comptes que vous souhaitez
+récupérer :
+
+- `status=Active` retourne uniquement les comptes actifs
+- `type=Expense` retourne les comptes utilisés pour l'enregistrement des dépenses
+  d'entreprise
+
+### Mapper les comptes
+
+Vous devrez construire une interface qui liste toutes les composantes de la paie de votre
+système et permet à l'utilisateur de définir à quel compte de son logiciel comptable
+chaque composante correspond.
+
+Par exemple :
+
+<Payroll />
+
+## Mapper les catégories de suivi
+
+Les entreprises peuvent vouloir une catégorisation supplémentaire pour leurs dépenses de paie. Par
+exemple, elles pourraient vouloir les regrouper par département (p. ex. ventes et marketing) ou
+par emplacement.
+
+Vous aurez dans votre système une liste des éléments supplémentaires que vous souhaitez
+suivre. Par exemple :
+
+```
+const categories = [
+  {
+    id: "77187e56-fdc0-4d0e-92d4-6189392874eb",
+    name: "Department - Sales"
+  },
+  {
+    id: "248f6da7-c9e2-48fd-b304-ca20216a5d01",
+    name: "Department - Marketing"
+  },
+  {
+    id: "25664661-ad12-452c-8c2a-13ee029f7322",
+    name: "Location - US"
+  },
+  {
+    id: "2756a658-e17b-408a-b9ba-4d3ad56342bd",
+    name: "Location - UK"
+  },
+  ...
+]
+```
+
+Les [catégories de suivi](/sync-for-payroll-api#/operations/list-tracking-categories)
+peuvent être utilisées pour récupérer les départements, les emplacements et les projets de chaque entreprise.
+
+```http request title="Lister les catégories de suivi"
+GET https://api.codat.io/companies/{companyId}/data/trackingCategories?page=1&pageSize=100
+```

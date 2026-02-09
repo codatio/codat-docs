@@ -1,0 +1,139 @@
+---
+title: Aperçu de Bill Pay
+sidebar_label: Bill Pay
+description:
+  Gérez les flux de travail les plus complexes des comptes fournisseurs de vos clients
+  à travers tous les principaux logiciels comptables avec notre solution de paiement
+  de factures complète
+image: "/img/banners/social/payables.png"
+displayed_sidebar: payables
+hide_title: true
+hide_description: true
+hide_table_of_contents: true
+banner_title: Bill Pay
+banner_class: payables
+banner_icon: "/img/logos/products/logo_payables_clear.svg"
+banner_image: "/img/banners/payables.png"
+banner_text:
+  "Gérez les flux de travail les plus complexes des comptes fournisseurs de vos clients
+  à travers tous les principaux logiciels comptables avec notre solution de paiement
+  de factures complète"
+// video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
+// video_text: What is Bill Pay?
+---
+
+import Products from "@components/Products";
+import { IntegrationsList } from "@components/Integrations";
+import {
+  integrationsFilterBillPayAsync,
+  integrationsFilterBillPaySync,
+} from "@components/Integrations/integrations";
+import ClientLibraries from "@components/ClientLibraries";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+## Qu'est-ce que c'est?
+
+**Bill Pay** est la façon simple d'intégrer votre produit de paiement de factures avec
+les logiciels comptables de vos clients afin de garder leurs informations fournisseurs,
+factures et paiements synchronisés. C'est idéal pour faciliter les processus essentiels
+de paiement de factures au sein du logiciel comptable de votre PME.
+
+## À qui est-ce destiné?
+
+Nous avons conçu et construit **Bill Pay** pour les néobanques, les fournisseurs de gestion
+de dépenses et les fournisseurs de paiements B2B. Utilisez cette solution dans votre
+application et automatisez les paiements de factures de vos clients, en éliminant
+la duplication d'efforts, pour profiter d'une augmentation des volumes de paiement.
+
+## Pourquoi l'utiliser?
+
+<ul className="card-container col-2">
+<li className="card">
+    <div className="header">
+        <img src="/img/wp-icons/copy-feature-bullet.svg"
+            className="mini-icon"/>
+        <h3>Augmenter votre part de portefeuille</h3>
+    </div>
+    <p>
+      Permettez à vos clients de payer leurs factures via votre logiciel et augmentez votre part de portefeuille en conséquence.
+    </p>
+</li>
+
+<li className="card">
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Accéder au marché plus rapidement</h3>
+  </div>
+  <p>
+    Rendez votre solution de comptes fournisseurs compatible avec tous les principaux
+    systèmes comptables et ERP.
+  </p>
+</li>
+
+<li className="card">
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Exploiter les données standardisées</h3>
+  </div>
+  <p>
+    Profitez de notre modèle de données standardisé pour synchroniser rapidement et
+    facilement les factures et les paiements de factures avec tous les principaux
+    logiciels comptables.
+  </p>
+</li>
+
+<li className="card">
+  <div className="header">
+    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <h3>Simplifier le rapprochement</h3>
+  </div>
+  <p>
+    Nous fournissons une solution complète pour gérer la complexité du rapprochement
+    des paiements de factures, des paiements groupés aux avoirs et paiements partiels.
+  </p>
+</li>
+
+</ul>
+
+## Comment ça fonctionne?
+
+Avec Bill Pay, vous pouvez construire une solution qui couvre toutes les étapes clés
+de la gestion et du paiement des factures, répondant même aux scénarios les plus
+complexes. Le processus Bill Pay comprend trois étapes clés :
+
+1. **Gérer les données de référence**
+
+   Aidez votre client à gérer les données de référence en préparation du paiement
+   de ses factures en affichant ses fournisseurs et en créant de nouveaux
+   enregistrements de fournisseurs au besoin.
+
+2. **Obtenir les factures du client**
+
+   Laissez votre client choisir les factures qu'il souhaite payer. Obtenez une liste
+   de ses factures impayées existantes et affichez-les dans votre application, et
+   permettez-lui de créer de nouvelles factures.
+
+3. **Enregistrer les paiements**
+
+   Lorsque votre client complète un paiement de facture dans votre application, envoyez
+   ces détails à Codat. Nous reflèterons cette transaction dans le logiciel comptable
+   de votre client et la rapprocherons avec la facture originale, la marquant comme payée.
+
+Bill Pay est conçu pour intégrer un flux de paiement de factures dans votre application
+le plus rapidement possible, en se concentrant sur la simplicité et l'efficacité de ses
+points de terminaison et les mises à jour en temps réel avec les systèmes comptables
+de vos PME.
+
+## Intégrations prises en charge
+
+<IntegrationsList filter={integrationsFilterBillPaySync} />
+
+## Construire avec les bibliothèques clientes
+
+Utilisez nos [SDK complets](/get-started/libraries) pour démarrer et simplifier
+votre parcours de développeur dans l'automatisation des comptes fournisseurs. Les SDK
+sont disponibles en plusieurs langages et fournissent des exemples de requêtes et de
+réponses pour l'ensemble des flux de travail des comptes fournisseurs.
+
+<ClientLibraries productName={"sync-for-payables"} />
