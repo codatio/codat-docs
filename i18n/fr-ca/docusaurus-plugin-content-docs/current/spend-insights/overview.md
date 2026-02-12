@@ -3,15 +3,15 @@ title: Aperçu de Spend Insights
 sidebar_label: Spend Insights
 description: Augmentez le volume des cartes commerciales en accédant à des perspectives approfondies et exploitables sur les fournisseurs et les dépenses de vos clients
 displayed_sidebar: spendInsights
-image: "/img/banners/social/spend-insights.png"
+image: "/fr-ca/img/banners/social/spend-insights.png"
 hide_title: true
 hide_description: true
 hide_table_of_contents: false
 tags: [overview, spendinsights]
 banner_title: Spend Insights
 banner_class: supplier-enablement
-banner_icon: "/img/logos/products/logo_supplier_enablement_clear.svg"
-banner_image: "/img/banners/spend-insights.png"
+banner_icon: "/fr-ca/img/logos/products/logo_supplier_enablement_clear.svg"
+banner_image: "/fr-ca/img/banners/spend-insights.png"
 banner_text: "Augmentez le volume des cartes commerciales en accédant à des perspectives approfondies et exploitables sur les fournisseurs et les dépenses de vos clients"
 ---
 
@@ -63,7 +63,7 @@ Vos Analystes et Gestionnaires de relations peuvent facilement maintenir les dos
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>Déplacez plus de volume vers les cartes</h3>
@@ -75,7 +75,7 @@ Vos Analystes et Gestionnaires de relations peuvent facilement maintenir les dos
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Réduisez la perte de dépenses</h3>
   </div>
   <p>
@@ -86,7 +86,7 @@ Vos Analystes et Gestionnaires de relations peuvent facilement maintenir les dos
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Améliorez la conversion des ventes</h3>
   </div>
   <p>
@@ -97,7 +97,7 @@ Vos Analystes et Gestionnaires de relations peuvent facilement maintenir les dos
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Accélérez la mise en dépenses</h3>
   </div>
   <p>

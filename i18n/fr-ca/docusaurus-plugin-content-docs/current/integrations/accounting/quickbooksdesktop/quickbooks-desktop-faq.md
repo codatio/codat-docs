@@ -32,7 +32,7 @@ Lorsqu'une synchronisation de type de données est listée comme `Fetching` avec
 
 Si vous ne voyez aucune erreur de connexion remontée avec ce message, cela signifie que le Web Connector n'a pas encore répondu à la demande de synchronisation de Codat.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/read-history-fetching-waiting-for-async-response.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksdesktop/read-history-fetching-waiting-for-async-response.png" />
 
 Nous avons résumé les raisons possibles du message et les résolutions disponibles dans le tableau ci-dessous.
 

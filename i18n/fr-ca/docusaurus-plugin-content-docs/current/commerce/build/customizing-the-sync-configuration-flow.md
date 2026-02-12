@@ -28,35 +28,35 @@ Vous pouvez personnaliser chaque élément de texte dans le flux de configuratio
 1. [Titre principal](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#main-title)
 
 <img
-  src="/img/old/1e4761e-Main_title.png"
+  src="/fr-ca/img/old/1e4761e-Main_title.png"
   alt="Section du titre principal du flux de configuration de la synchronisation"
 />
 
 2. [Légendes des cases à cocher](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#checkbox-captions)
 
 <img
-  src="/img/old/bd64beb-Checkbox_items.png"
+  src="/fr-ca/img/old/bd64beb-Checkbox_items.png"
   alt="Section des cases à cocher du flux de configuration de la synchronisation"
 />
 
 3. [Texte sur les boutons **Précédent** et **Suivant**](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#buttons)
 
 <img
-  src="/img/old/e41eb47-Buttons.png"
+  src="/fr-ca/img/old/e41eb47-Buttons.png"
   alt="Section des boutons de navigation du flux de configuration de la synchronisation"
 />
 
 4. Titre de fonctionnalité, description de fonctionnalité et description de l'indicateur de champ obligatoire ([Ventes](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#sales-title-and-description), [Frais](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#fees-title-and-description), [Paiements](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#payments-title-and-description))
 
 <img
-  src="/img/old/9c0450e-Feature_title.png"
+  src="/fr-ca/img/old/9c0450e-Feature_title.png"
   alt="Section de texte de fonctionnalité du flux de configuration de la synchronisation"
 />
 
 5. Titre des catégories de fonctionnalités, description du titre des catégories de fonctionnalités et catégories de fonctionnalités ([Ventes](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#sales-feature-categories), [Frais](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#fees-feature-categories), [Paiements](/sfc/build-with-sync-for-commerce/customizing-the-sync-configuration-flow#payments-feature-categories))
 
 <img
-  src="/img/old/858fd2e-Feature_categories.png"
+  src="/fr-ca/img/old/858fd2e-Feature_categories.png"
   alt="Section de texte des catégories de fonctionnalités du flux de configuration de la synchronisation"
 />
 

@@ -12,7 +12,7 @@ Nos guides et tutoriels actuels :
     <div className="card-row">
       <div className="header">
         <a href="/guides/retool-dashboard">
-          <img src="/img/logos/usecases/lending.svg" className="icon usecase" />
+          <img src="/fr-ca/img/logos/usecases/lending.svg" className="icon usecase" />
         </a>
       </div>
 
@@ -32,7 +32,7 @@ Nos guides et tutoriels actuels :
     <div className="card-row">
       <div className="header">
         <a href="/lending/guides/invoice-finance/introduction">
-          <img src="/img/logos/usecases/lending.svg" className="icon usecase" />
+          <img src="/fr-ca/img/logos/usecases/lending.svg" className="icon usecase" />
         </a>
       </div>
 
@@ -53,7 +53,7 @@ Nos guides et tutoriels actuels :
       <div className="header">
         <a href="/payables/guides/bill-pay/introduction">
           <img
-            src="/img/logos/usecases/payments.svg"
+            src="/fr-ca/img/logos/usecases/payments.svg"
             className="icon usecase"
           />
         </a>
@@ -75,7 +75,7 @@ Nos guides et tutoriels actuels :
     <div className="card-row">
       <div className="header">
         <a href="/bank-feeds/guides/bank-feeds-tutorial">
-          <img src="/img/logos/usecases/sync.svg" className="icon usecase" />
+          <img src="/fr-ca/img/logos/usecases/sync.svg" className="icon usecase" />
         </a>
       </div>
 
@@ -97,7 +97,7 @@ Nos guides et tutoriels actuels :
     <div className="card-row">
       <div className="header">
         <a href="/lending/guides/loan-writeback/introduction">
-          <img src="/img/logos/usecases/lending.svg" className="icon usecase" />
+          <img src="/fr-ca/img/logos/usecases/lending.svg" className="icon usecase" />
         </a>
       </div>
 
@@ -119,7 +119,7 @@ Nos guides et tutoriels actuels :
     <div className="card-row">
       <div className="header">
         <a href="/lending/guides/loan-qualification/introduction">
-          <img src="/img/logos/usecases/lending.svg" className="icon usecase" />
+          <img src="/fr-ca/img/logos/usecases/lending.svg" className="icon usecase" />
         </a>
       </div>
 

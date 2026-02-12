@@ -33,7 +33,7 @@ Mollie ne fournit aucune donnée de test/sandbox facilement disponible, vous dev
 7. Retournez à la page **Your apps** et trouvez l'application que vous venez de créer.
 8. Copiez le **Client ID** et le **Client Secret** pour vos dossiers.
 
-<img src="/img/old/051e9fd-36001_Mollie_-_client_id.PNG" />
+<img src="/fr-ca/img/old/051e9fd-36001_Mollie_-_client_id.PNG" />
 
 ### Activer les intégrations
 

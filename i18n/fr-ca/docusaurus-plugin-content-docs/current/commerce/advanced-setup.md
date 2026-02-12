@@ -3,7 +3,7 @@ title: "Fonctionnalités avancées de configuration du produit"
 description: "Découvrez les fonctionnalités de configuration supplémentaires disponibles avec Sync for Commerce"
 sidebar_label: "Configuration du produit"
 displayed_sidebar: commerce
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 Une fois que vous avez compris et effectué la configuration initiale de notre produit Sync for Commerce, vous pouvez utiliser ses fonctionnalités avancées pour améliorer l'expérience de vos commerçants lors de la synchronisation des données de ventes.

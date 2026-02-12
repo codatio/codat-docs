@@ -2,7 +2,7 @@
 title: "Démarrer avec Lending"
 sidebar_label: Démarrer
 description: "Apprenez à effectuer la configuration initiale de la solution Lending"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import { IntegrationsList } from "@components/Integrations";
@@ -106,7 +106,7 @@ Une fois la connexion établie, Codat récupérera les données pour les types d
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>Souscripteurs</h3>
@@ -119,7 +119,7 @@ Une fois la connexion établie, Codat récupérera les données pour les types d
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>Développeurs</h3>

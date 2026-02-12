@@ -6,7 +6,7 @@ sidebar_key: "loan-writeback-introduction"
 hide_title: true
 hide_description: true
 banner_title: Introduction à la réécriture de prêt
-banner_image: "/img/banners/lending-cropped.png"
+banner_image: "/fr-ca/img/banners/lending-cropped.png"
 banner_text: "Simplifiez votre implémentation avec notre guide de bonnes pratiques pour la réécriture de prêt et comptabilisez correctement un prêt de manière programmatique"
 ---
 

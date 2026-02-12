@@ -196,7 +196,7 @@ GET https://api.codat.io/companies/{companyId}/sync/expenses/syncs/{syncId}/tran
 Sélectionnez l'élément de menu [Sync For Expenses](https://app.codat.io/products/sync-for-expenses) du [Portail Codat](https://app.codat.io/) pour surveiller le statut de vos synchronisations, ainsi que pour examiner les journaux détaillés et les messages d'erreur. Cela aide votre équipe de support à résoudre les problèmes courants liés aux paramètres ou aux actions du client.
 
 <img
-  src="/img/sync-for-commerce/0006-sync-health-ui.png"
+  src="/fr-ca/img/sync-for-commerce/0006-sync-health-ui.png"
   alt="Sync Health page view with numbered annotations on the key page elements: the dashboard, filters, status filter, and the main data table"
 />
 

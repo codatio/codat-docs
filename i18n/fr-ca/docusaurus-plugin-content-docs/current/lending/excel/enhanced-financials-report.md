@@ -2,7 +2,7 @@
 title: "Rapport Excel financier amélioré"
 description: "Téléchargez le rapport financier amélioré vers Excel"
 sidebar_label: "Rapport financier amélioré"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

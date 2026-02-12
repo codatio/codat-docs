@@ -1,7 +1,7 @@
 ---
 title: "Catégoriser les comptes dans le Portal"
 description: "Apprenez à visualiser et modifier les catégories automatiquement proposées pour les états de bilan améliorés et de résultats"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

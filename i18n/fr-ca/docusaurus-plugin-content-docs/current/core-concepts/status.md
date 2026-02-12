@@ -26,7 +26,7 @@ D'autres états d'erreur peuvent être résolus en mettant en file d'attente une
 Les ensembles de données peuvent également passer à l'état _NotSupported_ si l'ensemble de données que vous essayez de synchroniser n'est pas pris en charge par la plateforme liée.
 
 <img
-  src="/img/old/47eaf22-DatasetStatuses.png"
+  src="/fr-ca/img/old/47eaf22-DatasetStatuses.png"
   alt="Un diagramme des statuts possibles des ensembles de données de Queued à Complete"
 />
 

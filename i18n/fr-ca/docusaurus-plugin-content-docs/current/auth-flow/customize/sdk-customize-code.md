@@ -2,7 +2,7 @@
 title: "Personnaliser l'interface et le comportement de Link avec les propriétés du SDK"
 sidebar_label: "Gérer Link dans le code"
 description: "Exercez un contrôle programmatique avancé sur les paramètres de l'interface utilisateur du flux d'authentification Link"
-banner_image: "/img/banners/link.png"
+banner_image: "/fr-ca/img/banners/link.png"
 ---
 
 ## Aperçu

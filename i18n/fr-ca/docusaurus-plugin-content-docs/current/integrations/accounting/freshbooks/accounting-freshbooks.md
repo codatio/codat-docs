@@ -45,7 +45,7 @@ Créez et configurez une application dans le portail développeur FreshBooks.
 
 6. Sélectionnez votre nouvelle application dans la liste **All Apps**. Localisez le **Client ID** et le **Client Secret** de l'application en bas de la page.
 
-<img src="/img/old/a044a46-Freshbooks-keys.png" />
+<img src="/fr-ca/img/old/a044a46-Freshbooks-keys.png" />
 
 ### Scopes d'application FreshBooks
 

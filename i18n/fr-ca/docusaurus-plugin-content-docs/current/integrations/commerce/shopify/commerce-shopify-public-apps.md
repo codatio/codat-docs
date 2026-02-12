@@ -78,7 +78,7 @@ Dans le site Shopify Partners :
 2. Dans le panneau latéral, cliquez sur **Distribution**.
 3. Sur la page **Distribution**, cliquez sur **Choisir Shopify App Store**, puis confirmez votre sélection dans la boîte de dialogue qui apparaît.
 
-<img src="/img/old/386725f-choose-shopify-app-store.png" />
+<img src="/fr-ca/img/old/386725f-choose-shopify-app-store.png" />
 
 4. Cliquez sur **Créer une liste**.
 5. Sélectionnez votre compte partenaire Shopify à l'invite d'authentification. La page **Liste d'applications** pour votre application s'ouvre.

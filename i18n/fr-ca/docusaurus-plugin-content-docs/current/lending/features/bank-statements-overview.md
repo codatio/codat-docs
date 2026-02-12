@@ -2,7 +2,7 @@
 title: "Aperçu des relevés bancaires"
 description: "Souscrire avec des flux de trésorerie précis et en temps réel enrichis de catégories détaillées de dépenses et de revenus"
 displayed_sidebar: "lending"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import Products from "@components/Products";

@@ -2,7 +2,7 @@
 title: "Rapports Lending en Excel"
 description: "Décrit le processus requis pour générer et télécharger les rapports Lending au format Excel"
 sidebar_label: "Aperçu"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 Les endpoints de rapports Excel sont utilisés pour produire et télécharger des rapports Excel. Pour plus d'informations sur les rapports disponibles, consultez la section [types de rapports](#available-report-types).

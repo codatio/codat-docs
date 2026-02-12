@@ -2,7 +2,7 @@
 title: "FAQ sur l'intégrité des données"
 description: "Questions fréquemment posées sur l'intégrité des données"
 sidebar_label: "FAQ"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 
@@ -33,7 +33,7 @@ Si cependant vous appelez l'endpoint Résumés avec _type de données = banking-
 En revanche, sur la page Intégrité des données du portail, le pourcentage de correspondance affiché est le pourcentage de correspondance par montant à travers les transactions comptables et bancaires. Dans notre exemple, le pourcentage de correspondance affiché sur le portail serait de 40% :
 `pourcentage de correspondance = (B+C)/(A+B+C) = (1 £ + 1 £)/(3 £ +1 £ + 1 £)`
 
-<img src="/img/old/cf7bc11-DataIntegrity1.png" />
+<img src="/fr-ca/img/old/cf7bc11-DataIntegrity1.png" />
 
 Vous pouvez reproduire ce pourcentage de correspondance vous-même en récupérant les résumés pour `accountTransactions` et `banking-transactions` dans des appels API séparés et en combinant les résultats côté client, par exemple en prenant une moyenne pondérée des pourcentages de correspondance.
 

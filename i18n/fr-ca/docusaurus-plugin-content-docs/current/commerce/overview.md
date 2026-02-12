@@ -1,7 +1,7 @@
 ---
 title: "Aperçu de Sync for Commerce"
 description: "Intégrations comptables embarquées pour les logiciels de point de vente et de commerce électronique"
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 sidebar_label: Sync for Commerce
 displayed_sidebar: commerce
 hide_title: true
@@ -9,8 +9,8 @@ hide_description: true
 hide_table_of_contents: true
 banner_title: Sync for Commerce
 banner_class: commerce
-banner_icon: "/img/logos/products/logo_sfc_clear.svg"
-banner_image: "/img/banners/sfc-charts.png"
+banner_icon: "/fr-ca/img/logos/products/logo_sfc_clear.svg"
+banner_image: "/fr-ca/img/banners/sfc-charts.png"
 banner_text: "Intégrations comptables embarquées pour les logiciels de point de vente, de paiement et de commerce électronique"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: Qu'est-ce que Sync for Commerce ?
@@ -35,19 +35,19 @@ Nous faisons tout le travail difficile, en nous intégrant aux systèmes des com
   clients={[
     {
       name: "Zettle",
-      path: "/img/clients/zettle.png",
+      path: "/fr-ca/img/clients/zettle.png",
     },
     {
       name: "Phorest",
-      path: "/img/clients/phorest.png",
+      path: "/fr-ca/img/clients/phorest.png",
     },
     {
       name: "Lightspeed",
-      path: "/img/clients/lightspeed.png",
+      path: "/fr-ca/img/clients/lightspeed.png",
     },
     {
       name: "Clover",
-      path: "/img/clients/clover.png",
+      path: "/fr-ca/img/clients/clover.png",
     },
   ]}
 />
@@ -57,7 +57,7 @@ Nous faisons tout le travail difficile, en nous intégrant aux systèmes des com
 <ul className="card-container col-2">
 <li className="card">
     <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
+        <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
             className="mini-icon"/>
         <h3>Expertise en commerce et comptabilité</h3>
     </div>
@@ -68,7 +68,7 @@ Nous faisons tout le travail difficile, en nous intégrant aux systèmes des com
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Intégration rapide et simple</h3>
   </div>
   <p>
@@ -79,7 +79,7 @@ Nous faisons tout le travail difficile, en nous intégrant aux systèmes des com
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Configurabilité</h3>
   </div>
   <p>
@@ -91,7 +91,7 @@ Nous faisons tout le travail difficile, en nous intégrant aux systèmes des com
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Synchronisation continue des données de ventes</h3>
   </div>
   <p>
@@ -102,7 +102,7 @@ Nous faisons tout le travail difficile, en nous intégrant aux systèmes des com
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Résilience dans le monde réel</h3>
   </div>
   <p>
@@ -114,7 +114,7 @@ Nous faisons tout le travail difficile, en nous intégrant aux systèmes des com
 
 <li className="card">
     <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
+        <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
             className="mini-icon"/>
         <h3>Observabilité</h3>
     </div>

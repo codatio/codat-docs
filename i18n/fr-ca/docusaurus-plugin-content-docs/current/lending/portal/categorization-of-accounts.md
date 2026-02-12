@@ -1,7 +1,7 @@
 ---
 title: "Catégorisation des comptes (ancienne version)"
 description: "La catégorisation des comptes standardise les états financiers utilisés pour produire des informations sur la santé financière de vos clients"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

@@ -47,7 +47,7 @@ Testez le processus d'autorisation que vos clients verront lorsqu'ils connectero
 
 8. Sélectionner **Square Sandbox** comme logiciel commerce auquel se connecter.
 
-<img src="/img/old/5b21f24-link-site-select-square-sandbox.png" />
+<img src="/fr-ca/img/old/5b21f24-link-site-select-square-sandbox.png" />
 
 9. Autoriser l'accès aux types de données listés.
 

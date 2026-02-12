@@ -14,7 +14,7 @@ Vous pouvez connecter une entreprise à une seule source comptable et une seule 
 <ul className="card-container">
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Calculator.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/Calculator.png" className="mini-icon" />
       <h3>Comptabilité</h3>
     </div>
     <p>
@@ -30,7 +30,7 @@ Vous pouvez connecter une entreprise à une seule source comptable et une seule 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Bank.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/Bank.png" className="mini-icon" />
       <h3>Bancaire</h3>
     </div>
     <p>
@@ -45,7 +45,7 @@ Vous pouvez connecter une entreprise à une seule source comptable et une seule 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Storefront.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/Storefront.png" className="mini-icon" />
       <h3>Commerce</h3>
     </div>
     <p>
@@ -61,7 +61,7 @@ Vous pouvez connecter une entreprise à une seule source comptable et une seule 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Frame-3805.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/Frame-3805.png" className="mini-icon" />
       <h3>Flux bancaires</h3>
     </div>
     <p>
@@ -77,7 +77,7 @@ Vous pouvez connecter une entreprise à une seule source comptable et une seule 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Files.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/Files.png" className="mini-icon" />
       <h3>Téléversement de fichiers</h3>
     </div>
     <p>

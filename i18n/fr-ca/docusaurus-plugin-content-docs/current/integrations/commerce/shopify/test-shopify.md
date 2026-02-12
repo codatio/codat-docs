@@ -29,7 +29,7 @@ Gardez la page **Entreprises** ouverte dans votre navigateur.
 
    Assurez-vous que la case **Créer une boutique avec transfert désactivé pour utiliser un aperçu développeur** est cochée, puis choisissez **Shopify Markets** dans la liste déroulante :
 
-   <img src="/img/old/e6d56b7-Screenshot_2022-09-21_170904.png" />
+   <img src="/fr-ca/img/old/e6d56b7-Screenshot_2022-09-21_170904.png" />
 
 5. Cliquez sur **Enregistrer**.
 
@@ -59,7 +59,7 @@ Dans le portail Codat :
 
 Lorsque le flux Link est terminé, votre boutique de développement s'ouvre et votre application est automatiquement installée dans la boutique.
 
-<img src="/img/old/d2bf06b-shopify-development-store-app-installed.png" />
+<img src="/fr-ca/img/old/d2bf06b-shopify-development-store-app-installed.png" />
 
 6. (Si vous utilisez des applications personnalisées.) Complétez les étapes dans Link ; les étapes exactes affichées dépendent de vos paramètres Link. Vous devrez :
    1. Sur l'écran **Connectez votre boutique Shopify**, entrez le nom de votre boutique de développement et votre jeton d'accès API, puis cliquez sur **Continuer**.

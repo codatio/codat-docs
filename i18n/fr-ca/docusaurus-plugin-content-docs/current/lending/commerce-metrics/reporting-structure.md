@@ -2,7 +2,7 @@
 title: "Structure de rapport des métriques"
 sidebar_label: "Structure de rapport"
 description: "Examinez la structure de données dans laquelle les rapports de métriques de commerce sont organisés"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

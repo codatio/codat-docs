@@ -25,7 +25,7 @@ Vous pouvez ajouter des adresses courriel lors de la création d'une nouvelle r�
 3. Enregistrez vos modifications.
 
 <img
-  src="/img/old/e311872-2022-11-16_14-49-03.png"
+  src="/fr-ca/img/old/e311872-2022-11-16_14-49-03.png"
   alt="Fenêtre modale de création de nouvelle règle dans le portail Codat"
 />
 

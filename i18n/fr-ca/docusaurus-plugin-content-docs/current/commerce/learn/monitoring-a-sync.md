@@ -1,7 +1,7 @@
 ---
 title: "Surveiller une synchronisation"
 description: "Apprenez comment surveiller la progression d'une synchronisation, consulter les journaux détaillés et réessayer les éléments échoués"
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 Utilisez la page Santé de la synchronisation dans le portail Codat pour surveiller l'état de vos synchronisations, consulter les journaux détaillés et les messages d'erreur, et afficher et réessayer l'écriture des éléments échoués. Cela aide votre équipe de support à résoudre les problèmes courants liés aux paramètres ou aux actions du client.
@@ -17,7 +17,7 @@ Dans le <a href="https://app.codat.io/" target="_blank">portail Codat</a>, cliqu
 - Utilisez le **menu** (6) pour trier et modifier le tableau **historique de synchronisation** (5) selon vos besoins.
 
 <img
-  src="/img/sync-for-commerce/0006-sync-health-ui.png"
+  src="/fr-ca/img/sync-for-commerce/0006-sync-health-ui.png"
   alt="Vue de la page Santé de la synchronisation avec des annotations numérotées sur les éléments clés de la page : le tableau de bord, les filtres, le filtre de statut et le tableau de données principal"
 />
 
@@ -30,7 +30,7 @@ Elle affiche également des notes conviviales pour le client et des messages d'e
 Vous pouvez également naviguer vers l'onglet **Config** pour afficher et télécharger la configuration de synchronisation du client, ce qui aide à établir les causes profondes de toute erreur survenue.
 
 <img
-  src="/img/sync-for-commerce/0007-sync-details-ui.png"
+  src="/fr-ca/img/sync-for-commerce/0007-sync-details-ui.png"
   alt="Vue détaillée d'une entrée de journal de synchronisation avec les onglets Résumé, Config et Push Items"
 />
 
@@ -45,7 +45,7 @@ Ici, vous pouvez afficher le statut de chaque élément, rechercher les élémen
 Sur l'onglet **Push items**, vous pouvez également réessayer les éléments push en statut échoué. Cliquez sur le bouton **Retry failed items** pour déclencher une nouvelle tentative d'écriture des données de tous les éléments push échoués. Le bouton n'est activé que s'il y a des éléments échoués à réessayer.
 
 <img
-  src="/img/sync-for-commerce/0009-sync-push-items-ui.png"
+  src="/fr-ca/img/sync-for-commerce/0009-sync-push-items-ui.png"
   alt="Vue détaillée de l'onglet Push Items avec deux synchronisations échouées"
 />
 

@@ -25,14 +25,14 @@ Pour obtenir l'identifiant du connecteur de votre utilisateur, veuillez lui dema
 2. Sélectionner le lien **À propos** en bas de la fenêtre du connecteur.
 
 <img
-  src="/img/old/4bb57a8-5f001da-Restart_connector_-_About_button-no-uat.jpg"
+  src="/fr-ca/img/old/4bb57a8-5f001da-Restart_connector_-_About_button-no-uat.jpg"
   alt="Fenêtre du connecteur Sage 50 Accounts montrant le lien À propos mis en évidence."
 />
 
 3. Sélectionner l'icône **Copier** à côté de l'**identifiant du connecteur**.
 
 <img
-  src="/img/old/5caa5e0-Restart_connector_-_Copy_button.jpg"
+  src="/fr-ca/img/old/5caa5e0-Restart_connector_-_Copy_button.jpg"
   alt="Icône Copier mise en évidence à côté de l'identifiant du connecteur de l'utilisateur."
 />
 
@@ -49,6 +49,6 @@ Instructions pour les clients pour trouver et utiliser le lien **Redémarrer le 
 3. Sélectionnez **Redémarrer le connecteur**.
 
 <img
-  src="/img/old/6278100-Restart_connector_-_restart_connector_button.jpg"
+  src="/fr-ca/img/old/6278100-Restart_connector_-_restart_connector_button.jpg"
   alt="Lien Redémarrer le connecteur mis en évidence dans la fenêtre du connecteur Sage 50 Accounts."
 />

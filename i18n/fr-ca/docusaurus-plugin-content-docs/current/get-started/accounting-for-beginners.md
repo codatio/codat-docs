@@ -8,7 +8,7 @@ Tout au long de notre documentation, vous pourriez voir des termes inconnus et d
 <ul className="card-container col-1">
   <li className="card animation-pulse">
     <div className="header">
-      <img src="/img/icons/video.svg" className="mini-icon" />
+      <img src="/fr-ca/img/icons/video.svg" className="mini-icon" />
       <h3>Retour aux bases : termes comptables clés en langage clair</h3>
       <p>
         <i>FreeAgent</i>
@@ -31,7 +31,7 @@ Tout au long de notre documentation, vous pourriez voir des termes inconnus et d
   </li>
   <li className="card animation-pulse">
     <div className="header">
-      <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/accounting-2.png" className="mini-icon" />
       <h3>Comptabilité pour développeurs, Partie I</h3>
       <p>
         <i>Modern Treasury</i>
@@ -54,7 +54,7 @@ Tout au long de notre documentation, vous pourriez voir des termes inconnus et d
   </li>
   <li className="card animation-pulse">
     <div className="header">
-      <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/accounting-2.png" className="mini-icon" />
       <h3>Comptabilité pour développeurs, Partie II</h3>
       <p>
         <i>Modern Treasury</i>
@@ -76,7 +76,7 @@ Tout au long de notre documentation, vous pourriez voir des termes inconnus et d
   </li>
   <li className="card animation-pulse">
     <div className="header">
-      <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/accounting-2.png" className="mini-icon" />
       <h3>Comptabilité pour informaticiens</h3>
       <p>
         <i>Martin Kleppman</i>

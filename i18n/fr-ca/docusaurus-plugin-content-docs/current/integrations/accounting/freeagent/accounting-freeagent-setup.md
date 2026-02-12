@@ -29,13 +29,13 @@ Créez une application dans FreeAgent, puis récupérez les identifiants d'appli
 
    Vous n'avez pas besoin de cocher la case **Enable Accountancy Practice API**.
 
-<img src="/img/old/948044e-FreeAgent_-_app_creation.PNG" />
+<img src="/fr-ca/img/old/948044e-FreeAgent_-_app_creation.PNG" />
 
 5. Sélectionnez **Create App**.
 
    L'**OAuth identifier** et l'**OAuth secret** pour cette application s'affichent. Copiez ces identifiants pour les utiliser dans la procédure suivante.
 
-<img src="/img/old/d71284b-FreeAgent_-_app_credentials.PNG" />
+<img src="/fr-ca/img/old/d71284b-FreeAgent_-_app_credentials.PNG" />
 
 ## Ajouter les clés sécurisées de votre application au portail Codat
 

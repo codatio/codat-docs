@@ -158,7 +158,7 @@ Le **Payee** dans Xero est lu dans Codat comme le `counterparty` de la transacti
 
 Par exemple, la **ligne de relevé** ci-dessous résultera en une ligne de relevé bancaire avec un `counterparty` de `Payee 3` et une `description` avec la valeur : `Description 3 Reference 3 3`.
 
-<img src="/img/old/d1325a1-xero-bank-statement-46713.png" />
+<img src="/fr-ca/img/old/d1325a1-xero-bank-statement-46713.png" />
 
 ### Puis-je écrire des paiements par lots dans Xero ?
 

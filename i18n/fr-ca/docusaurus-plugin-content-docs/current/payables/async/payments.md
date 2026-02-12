@@ -2,7 +2,7 @@
 title: Enregistrer et rapprocher les paiements de factures fournisseurs
 sidebar_label: Payer les factures
 description: "Enregistrer et rapprocher les paiements de factures fournisseurs dans le logiciel comptable de la PME"
-image: "/img/banners/social/payables.png"
+image: "/fr-ca/img/banners/social/payables.png"
 ---
 
 import Tabs from "@theme/Tabs";

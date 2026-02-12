@@ -2,7 +2,7 @@
 title: "Rapport Excel de factures amélioré"
 description: "Téléchargez le rapport de factures amélioré vers Excel"
 sidebar_label: "Rapport de factures amélioré"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

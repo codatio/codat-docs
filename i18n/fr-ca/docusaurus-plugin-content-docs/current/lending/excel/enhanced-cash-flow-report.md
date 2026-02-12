@@ -2,7 +2,7 @@
 title: "Rapport Excel de flux de trésorerie amélioré"
 description: "Téléchargez le rapport de flux de trésorerie amélioré vers Excel"
 sidebar_label: "Rapport de flux de trésorerie amélioré"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

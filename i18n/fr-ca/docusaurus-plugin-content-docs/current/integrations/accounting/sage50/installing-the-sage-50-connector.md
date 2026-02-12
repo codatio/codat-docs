@@ -42,7 +42,7 @@ De plus, le fichier est signé avec un certificat numérique de signature de cod
 
 Lorsque le connecteur a été téléchargé et exécuté, un écran similaire au suivant s'affiche.
 
-<img src="/img/old/1b40e3b-Connect_to_Sage_50.png" />
+<img src="/fr-ca/img/old/1b40e3b-Connect_to_Sage_50.png" />
 
 Si l'ordinateur de l'utilisateur a un logiciel antivirus installé, il pourrait être invité à confirmer qu'il fait confiance à la source du fichier. Cette confirmation est spécifique à chaque programme antivirus.
 
@@ -50,7 +50,7 @@ L'utilisateur devrait avoir reçu une _clé de licence_ lorsqu'il a télécharg�
 
 La clé de licence de l'utilisateur est son identifiant d'entreprise Codat.
 
-<img src="/img/old/7955324-Connect_to_Sage_50_License_Key.png" />
+<img src="/fr-ca/img/old/7955324-Connect_to_Sage_50_License_Key.png" />
 
 Si la clé de licence est valide, le connecteur sera installé ; cela prend quelques minutes. L'utilisateur verra une erreur si la clé de licence n'est pas valide.
 

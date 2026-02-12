@@ -6,7 +6,7 @@ description: "Comprenez comment ajouter, modifier et supprimer des données dans
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 import Lottie from "@components/Lottie";
-import webhooks from "../../static/animations/webhooks.json";
+import webhooks from "@site/static/animations/webhooks.json";
 
 <Lottie animation={webhooks} />
 

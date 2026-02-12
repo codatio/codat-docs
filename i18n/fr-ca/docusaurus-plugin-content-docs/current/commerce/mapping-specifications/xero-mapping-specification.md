@@ -2,7 +2,7 @@
 title: "Spécification de mappage Xero"
 sidebar_label: Xero
 description: "Directives pour la configuration du mappage de données d'un logiciel de commerce vers Xero."
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 ## Aperçu
@@ -131,7 +131,7 @@ Les comptes de paiement contiennent de l'argent. Cela contraste avec tous les co
 Codat prend en charge soit les comptes bancaires soit les comptes courants pour les **Paiements**. Ils doivent être d'un type nominal **Actif** ou **Passif** et avoir un paramètre **Activer les paiements vers ce compte** activé :
 
 <img
-  src="/img/old/5695d53-payments-setting.png"
+  src="/fr-ca/img/old/5695d53-payments-setting.png"
   alt="Écran de paramètres de compte dans Xero"
 />
 

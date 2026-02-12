@@ -2,7 +2,7 @@
 title: "Aperçu des comptes clients"
 sidebar_label: "Comptes clients"
 description: "Évaluer le risque débiteur en temps réel avec les informations sur les comptes clients"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import Products from "@components/Products";

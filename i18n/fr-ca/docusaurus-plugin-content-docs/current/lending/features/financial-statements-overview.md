@@ -2,7 +2,7 @@
 title: "Aperçu des états financiers"
 sidebar_label: "États financiers"
 description: "Automatisez le calcul des états financiers et des ratios avec un état de résultat et un bilan entièrement standardisés"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import Products from "@components/Products";

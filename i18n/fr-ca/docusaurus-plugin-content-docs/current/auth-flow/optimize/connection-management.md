@@ -2,7 +2,7 @@
 title: "Permettre aux clients de gérer leurs données avec le SDK Connections"
 sidebar_label: "Gestion des connexions"
 description: "Donnez à vos clients le contrôle de leurs connexions de données avec notre composant intégrable préconçu"
-banner_image: "/img/banners/connections.png"
+banner_image: "/fr-ca/img/banners/connections.png"
 ---
 
 import Tabs from "@theme/Tabs";

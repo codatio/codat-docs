@@ -1,7 +1,7 @@
 ---
 title: "Initier une synchronisation"
 description: "Apprenez comment déclencher manuellement une synchronisation pour une plage de dates spécifiée"
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 Vous pourriez avoir besoin d'effectuer une synchronisation Commerce manuelle pour une entreprise à partir de la date de sa dernière synchronisation réussie jusqu'à une date spécifiée. Pour ce faire, effectuez un appel au endpoint Latest Sync :

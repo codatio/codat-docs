@@ -2,7 +2,7 @@
 title: "Aperçu"
 description: "Explorez les logiciels comptables auxquels vous pouvez vous connecter via notre API."
 sidebar_label: Comptabilité
-image: "/img/old/2b27c1b-info_banner.png"
+image: "/fr-ca/img/old/2b27c1b-info_banner.png"
 displayed_sidebar: integrationsAccounting
 ---
 

@@ -912,11 +912,12 @@ func main() {
 
 Requête : `dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dataConnections.status!=Deauthorized&&dataConnections.status!=Unlinked`
 
-:::Note
+:::note
 
 - La valeur de taille de page est obligatoire pour les requêtes.
 - La réponse exclura les entreprises qui avaient des connexions mais celles-ci ont été supprimées.
-  :::
+
+:::
 
 <Tabs>
 

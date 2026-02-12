@@ -21,7 +21,7 @@ De nombreuses PME s'appuient encore sur des fonctions manuelles de comptes fourn
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>API standardisée</h3>
@@ -33,7 +33,7 @@ De nombreuses PME s'appuient encore sur des fonctions manuelles de comptes fourn
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Économise du temps</h3>
   </div>
   <p>
@@ -46,7 +46,7 @@ De nombreuses PME s'appuient encore sur des fonctions manuelles de comptes fourn
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>Augmente la rétention</h3>

@@ -3,7 +3,7 @@ title: "Dépannage et FAQ"
 description: "Erreurs courantes que vous pourriez rencontrer et questions fréquemment posées"
 sidebar_label: "Dépannage et FAQ"
 displayed_sidebar: commerce
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 ### Codes de statut

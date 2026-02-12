@@ -2,7 +2,7 @@
 title: "Synchronisation des données"
 description: "Comprendre les principes des synchronisations de données quotidiennes et de la gestion des erreurs dans Sync for Commerce"
 displayed_sidebar: commerce
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 ## Mécanisme de synchronisation des données

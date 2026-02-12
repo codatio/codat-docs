@@ -6,7 +6,7 @@ sidebar_key: "loan-qualification-introduction"
 hide_title: true
 hide_description: true
 banner_title: Qualification de prêt
-banner_image: "/img/banners/risk-cropped.png"
+banner_image: "/fr-ca/img/banners/risk-cropped.png"
 banner_text: "Facilitez le prêt grâce à des vérifications en temps réel des finances d'un demandeur et à une prise de décision automatisée"
 sidebar_label: "Introduction"
 ---

@@ -2,7 +2,7 @@
 title: "Dépannage"
 description: "Résoudre les erreurs courantes"
 displayed_sidebar: lending
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 ## Codes d'erreur de Lending

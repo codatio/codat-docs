@@ -2,7 +2,7 @@
 title: "Personnaliser les paramètres de Link dans le portail"
 sidebar_label: Paramètres de Link dans le portail
 description: "Paramètres disponibles pour adapter Link aux besoins de votre parcours d'autorisation"
-banner_image: "/img/banners/link.png"
+banner_image: "/fr-ca/img/banners/link.png"
 ---
 
 ## Aperçu
@@ -52,7 +52,7 @@ Utilisez ce paramètre pour permettre à vos clients d'autoriser l'accès à plu
 Ce paramètre n'est pertinent que pour les intégrations qui permettent à leurs utilisateurs d'exploiter plusieurs filiales dans le même compte. La capture d'écran ci-dessous illustre la différence dans le flux de connexion pour les intégrations multi-entités avec le paramètre désactivé (gauche) et activé (droite).
 
 <img
-  src="/img/auth-flow/multi-entity-setting-off-on.png"
+  src="/fr-ca/img/auth-flow/multi-entity-setting-off-on.png"
   alt="Une capture d'écran comparative qui montre la différence du flux de connexion avec le paramètre multi-entité désactivé et activé. Sans le paramètre, l'écran affiche une liste déroulante de plusieurs entités trouvées dans un compte NetSuite, et il n'est possible de sélectionner qu'une seule entité. Avec le paramètre activé, l'écran affiche une liste de contrôle de plusieurs entités trouvées dans un compte NetSuite et toutes les entités sont sélectionnées."
 />
 

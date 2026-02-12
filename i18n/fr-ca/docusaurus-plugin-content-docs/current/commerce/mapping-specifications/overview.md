@@ -2,7 +2,7 @@
 title: "Spécifications de mappage"
 sidebar_label: Aperçu
 description: "Guides pour la configuration du mappage de données d'un logiciel de commerce vers les logiciels de comptabilité pris en charge (Xero, QuickBooks online)"
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 Cette section fournit des directives pour la configuration du mappage de données d'un logiciel de commerce vers les logiciels de comptabilité pris en charge (Xero, QuickBooks online).

@@ -6,7 +6,7 @@ description: "Financement sélectif de factures avec Codat et notre solution Len
 hide_title: true
 hide_description: true
 banner_title: Guide de développement de financement de factures
-banner_image: "/img/banners/lending-cropped.png"
+banner_image: "/fr-ca/img/banners/lending-cropped.png"
 banner_text: "Financement sélectif de factures avec Codat et notre solution Lending"
 ---
 

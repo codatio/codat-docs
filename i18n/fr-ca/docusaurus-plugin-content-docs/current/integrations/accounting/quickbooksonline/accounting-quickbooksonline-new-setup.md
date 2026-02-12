@@ -108,7 +108,7 @@ Dans le <a className="external" href="https://developer.intuit.com/" target="_bl
 
 2. Ensuite, vous devez fournir toutes les informations demandées dans la liste de contrôle **Add details about your app** :
 
-<img src="/img/old/904ecc7-qbo-production-keys-app-assessment-questionnaire-link.png" />
+<img src="/fr-ca/img/old/904ecc7-qbo-production-keys-app-assessment-questionnaire-link.png" />
 
 :::note Aide avec la liste de contrôle des détails de l'application
 

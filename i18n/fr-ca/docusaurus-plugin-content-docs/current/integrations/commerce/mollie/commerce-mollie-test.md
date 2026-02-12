@@ -46,7 +46,7 @@ Testez le processus d'authentification que vos clients utiliseront lorsqu'ils co
    Vous devrez :
 
 6. Sélectionner **Mollie Test** comme logiciel commerce à connecter.
-   <img src="/img/old/19b0bff-36001_Mollie_-_selection.PNG" />
+   <img src="/fr-ca/img/old/19b0bff-36001_Mollie_-_selection.PNG" />
 7. Vous connecter à votre compte marchand Mollie si vous y êtes invité.
 8. Autoriser l'accès aux types de données Mollie demandés.
 9. La page **Connection Successful** dans Link s'affiche avec le message : « You have connected Mollie Test. »
@@ -56,7 +56,7 @@ Testez le processus d'authentification que vos clients utiliseront lorsqu'ils co
 
 Assurez-vous que les données commerce de test de Mollie sont lues avec succès dans Codat. Vous pouvez vérifier quelles données de test vous avez créées en activant le bouton bascule Test Mode dans le tableau de bord Mollie.
 
-<img src="/img/old/762109c-36001_Mollie_-_test_toggle.PNG" />
+<img src="/fr-ca/img/old/762109c-36001_Mollie_-_test_toggle.PNG" />
 
 Dans le <a href="https://app.codat.io" target="_blank">portail Codat</a> :
 

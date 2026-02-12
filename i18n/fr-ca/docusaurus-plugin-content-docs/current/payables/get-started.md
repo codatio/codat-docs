@@ -2,7 +2,7 @@
 title: "Commencer avec la solution Bill Pay"
 sidebar_label: Configurer la solution
 description: "Voir les étapes clés requises pour effectuer la configuration initiale de la solution Bill Pay"
-image: "/img/banners/social/payables.png"
+image: "/fr-ca/img/banners/social/payables.png"
 ---
 
 import { IntegrationsList } from "@components/Integrations";

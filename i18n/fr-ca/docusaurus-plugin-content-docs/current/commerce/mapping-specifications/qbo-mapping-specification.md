@@ -2,7 +2,7 @@
 title: "Spécification de mappage QuickBooks Online"
 sidebar_label: QuickBooks Online
 description: "Directives pour la configuration du mappage de données d'un logiciel de commerce vers QuickBooks Online (QBO)"
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 :::note Prise en charge de la taxe de vente automatique
@@ -117,7 +117,7 @@ Les comptes de paiement contiennent de l'argent. Cela contraste avec tous les co
 Codat prend en charge soit les comptes bancaires soit les comptes courants pour les comptes de paiement. Ils doivent être d'un type nominal QBO **Caisse en banque et en main** (**Actif**).
 
 <img
-  src="/img/old/d91d4ee-cash_at_bank.png"
+  src="/fr-ca/img/old/d91d4ee-cash_at_bank.png"
   alt="Écran de paramètres de compte pour les comptes de paiement dans QBO"
 />
 

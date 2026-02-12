@@ -6,7 +6,7 @@ displayed_sidebar: docs
 ---
 
 <head>
-  <meta property="og:image" content="/img/link/link-banner.png" />
+  <meta property="og:image" content="/fr-ca/img/link/link-banner.png" />
 </head>
 
 :::tip Codat recommande Link SDK
@@ -108,7 +108,7 @@ Pour initier le flux, suivez ces étapes :
 Si un utilisateur a déjà une connexion d'intégration qui n'a pas été autorisée et qui n'est pas dans un état actif, cliquez sur le nom de l'intégration et copiez l'URL de la section **Connexions** au lieu de l'URL Link. Partagez ce lien avec l'utilisateur pour lui permettre d'autoriser la connexion spécifique.
 
 <img
-  src="/img/old/4c41ef0-manage.png"
+  src="/fr-ca/img/old/4c41ef0-manage.png"
   alt="Modal d'URL de connexion pour gérer une connexion existante"
 />
 

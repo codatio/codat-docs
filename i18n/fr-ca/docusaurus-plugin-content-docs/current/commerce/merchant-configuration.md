@@ -2,7 +2,7 @@
 title: "Configuration du commerçant"
 description: "Permettre aux commerçants de connecter leurs systèmes et de spécifier comment ils souhaitent que leurs données de ventes soient synchronisées dans leur logiciel de comptabilité"
 displayed_sidebar: commerce
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 import Tabs from "@theme/Tabs";

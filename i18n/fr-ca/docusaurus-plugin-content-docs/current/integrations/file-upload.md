@@ -29,7 +29,7 @@ Pour permettre à vos clients PME de téléverser leurs documents commerciaux, v
 Une fois activée, une option pour téléverser des fichiers apparaîtra sur l'écran de sélection de plateforme pertinent. L'intégration **Téléversement de documents commerciaux** apparaît comme une section distincte dans votre [flux Link](/auth-flow/overview).
 
 <img
-  src="/img/old/b5ae456-file_uploads_selected.png"
+  src="/fr-ca/img/old/b5ae456-file_uploads_selected.png"
   alt="Vue de sélection de plateforme Link avec téléversement de fichiers comptables et commerciaux activé"
 />
 

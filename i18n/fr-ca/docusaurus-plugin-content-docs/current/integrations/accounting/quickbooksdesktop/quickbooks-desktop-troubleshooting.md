@@ -53,7 +53,7 @@ Pour que le connecteur se lie au fichier de données QuickBooks desktop, l'utili
 
 L'utilisateur doit sélectionner **Yes, always; allow access even if QuickBooks is not running** pour permettre au connecteur de fonctionner.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-app-certificate.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksdesktop/qbd-flow-app-certificate.png" />
 
 Pour revenir aux paramètres du certificat dans QuickBooks, accédez à **Edit > Preferences > Integrated Applications > Company Preferences**. Vous devrez ensuite sélectionner l'application nommée 'QuickBooks Connector' et cliquer sur **Remove**.
 

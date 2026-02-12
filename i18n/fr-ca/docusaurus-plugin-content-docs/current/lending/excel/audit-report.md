@@ -2,7 +2,7 @@
 title: "Rapport d'audit"
 description: "Identifiez les irrégularités comptables avec le rapport d'audit de Codat"
 sidebar_label: "Rapport d'audit"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

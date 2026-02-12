@@ -12,7 +12,7 @@ Clear Books fournit un logiciel de comptabilité en ligne pour les petites entre
 
 Aucune inscription d'application n'est requise pour que l'intégration Clear Books fonctionne. Lors de la liaison de leurs données, l'utilisateur PME est invité à saisir sa clé API comme indiqué :
 
-<img src="/img/old/0c9d3d9-Clear_Books_Link.png" />
+<img src="/fr-ca/img/old/0c9d3d9-Clear_Books_Link.png" />
 
 Pour trouver sa clé API, l'utilisateur PME effectue les étapes suivantes :
 
@@ -29,7 +29,7 @@ Pour trouver sa clé API, l'utilisateur PME effectue les étapes suivantes :
 Sa clé API est maintenant disponible pour être copiée depuis la page **API keys** (sous **SOAP API**).
 
 <img
-  src="/img/old/c176f58-clear-books_api-keys-page-highlighted.png"
+  src="/fr-ca/img/old/c176f58-clear-books_api-keys-page-highlighted.png"
   alt="Clear Books : Page API keys avec la clé API de l'utilisateur PME mise en évidence sous 'SOAP API'."
 />
 

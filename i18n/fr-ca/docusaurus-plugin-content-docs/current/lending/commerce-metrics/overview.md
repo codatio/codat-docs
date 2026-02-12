@@ -2,7 +2,7 @@
 title: "Métriques de commerce"
 sidebar_label: Aperçu
 description: "Décrit les métriques et les formules utilisées pour les calculer par les endpoints de métriques de commerce"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

@@ -3,14 +3,14 @@ title: "Aperçu de Lending"
 sidebar_label: Lending
 description: "Découvrez les fonctionnalités qui composent la solution Lending"
 displayed_sidebar: lending
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
 banner_title: Lending
 banner_class: lending
-banner_icon: "/img/logos/products/logo_assess_clear.svg"
-banner_image: "/img/banners/assess.png"
+banner_icon: "/fr-ca/img/logos/products/logo_assess_clear.svg"
+banner_image: "/fr-ca/img/banners/assess.png"
 banner_text: "Notre solution Lending vous aide à prendre des décisions de crédit plus judicieuses pour les petites entreprises en vous permettant de lire les dernières données de vos clients provenant des logiciels de comptabilité, de services bancaires et de commerce qu'ils utilisent déjà. Elle comprend également des fonctionnalités pour aider les fournisseurs à vérifier l'exactitude des données et à les traiter plus efficacement."
 video_url: "https://www.youtube.com/embed/UgtbRe-j0Jo?si=KMRaVzgKCnW7E7tr"
 video_text: Lending avec Codat
@@ -52,7 +52,7 @@ Notre solution Lending vous offre un ensemble de fonctionnalités pour vous aide
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>Relevés bancaires</h3>
@@ -65,7 +65,7 @@ Notre solution Lending vous offre un ensemble de fonctionnalités pour vous aide
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>Ventes</h3>
@@ -77,7 +77,7 @@ Notre solution Lending vous offre un ensemble de fonctionnalités pour vous aide
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>États financiers</h3>
   </div>
   <p>
@@ -88,7 +88,7 @@ Notre solution Lending vous offre un ensemble de fonctionnalités pour vous aide
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Passifs</h3>
   </div>
   <p>Informations complètes sur les prêts et analyse de l'historique de crédit.</p>
@@ -96,7 +96,7 @@ Notre solution Lending vous offre un ensemble de fonctionnalités pour vous aide
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Comptes clients</h3>
   </div>
   <p>Évaluez le risque débiteur en temps réel avec les informations sur les comptes clients.</p>
@@ -104,7 +104,7 @@ Notre solution Lending vous offre un ensemble de fonctionnalités pour vous aide
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Comptes fournisseurs</h3>
   </div>
   <p>

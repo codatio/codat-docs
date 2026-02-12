@@ -2,7 +2,7 @@
 title: "Aperçu du téléchargement Excel"
 sidebar_label: "Téléchargement Excel"
 description: "Téléchargez les rapports Lending vers Excel"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import Tabs from "@theme/Tabs";

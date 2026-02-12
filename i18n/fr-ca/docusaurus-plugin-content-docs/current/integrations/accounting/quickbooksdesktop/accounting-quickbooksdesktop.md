@@ -24,7 +24,7 @@ Notre connecteur offre une intégration transparente et complète à QuickBooks 
 <ul className="card-container col-2">
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
       <h3>S'exécute en arrière-plan</h3>
     </div>
     <p>
@@ -33,7 +33,7 @@ Notre connecteur offre une intégration transparente et complète à QuickBooks 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
       <h3>Redémarre et met à jour automatiquement</h3>
     </div>
     <p>
@@ -42,7 +42,7 @@ Notre connecteur offre une intégration transparente et complète à QuickBooks 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
       <h3>Synchronisations automatiques et manuelles</h3>
     </div>
     <p>
@@ -51,7 +51,7 @@ Notre connecteur offre une intégration transparente et complète à QuickBooks 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
       <h3>Interface utilisateur intuitive</h3>
     </div>
     <p>

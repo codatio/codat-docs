@@ -3,7 +3,7 @@ title: "Aperçu des informations sur l'entreprise"
 sidebar_label: "Informations sur l'entreprise"
 description: "Identifier l'entreprise que vous souscrivez"
 displayed_sidebar: "lending"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import Tabs from "@theme/Tabs";

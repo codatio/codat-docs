@@ -14,28 +14,28 @@ Les types de données que vous utilisez dépendront de la solution Codat que vou
 <ul className="card-container">
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Calculator.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/Calculator.png" className="mini-icon" />
       <h3>Logiciels de comptabilité</h3>
     </div>
     <p>Par exemple, les factures et les factures fournisseurs d'un logiciel de comptabilité.</p>
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Bank.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/Bank.png" className="mini-icon" />
       <h3>Comptes bancaires</h3>
     </div>
     <p>Par exemple, les transactions bancaires d'un compte bancaire.</p>
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Storefront.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/Storefront.png" className="mini-icon" />
       <h3>Logiciels de commerce</h3>
     </div>
     <p>Par exemple, les clients et les paiements d'un système de point de vente.</p>
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Frame-3805.png" className="mini-icon" />
+      <img src="/fr-ca/img/wp-icons/Frame-3805.png" className="mini-icon" />
       <h3>Flux bancaires</h3>
     </div>
     <p>Par exemple, les comptes bancaires de flux bancaires.</p>

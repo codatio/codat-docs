@@ -1,7 +1,7 @@
 ---
 title: "Dans le Portal"
 description: "Affiche les pourcentages d'intégrité des données et décrit les enregistrements qui ont été appariés et ceux qui ne l'ont pas été"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

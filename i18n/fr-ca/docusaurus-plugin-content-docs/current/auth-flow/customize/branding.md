@@ -2,7 +2,7 @@
 title: "Configurez la marque de votre entreprise dans le portail"
 sidebar_label: Marque dans le portail
 description: "Façons de modifier l'interface de Link pour correspondre à la marque de votre entreprise"
-banner_image: "/img/banners/link.png"
+banner_image: "/fr-ca/img/banners/link.png"
 ---
 
 ## Aperçu
@@ -40,7 +40,7 @@ Exigences pour l'icône :
 Vous pouvez définir la couleur primaire de votre marque pour définir la couleur des boutons et d'autres éléments dans le flux Link. Nous recommandons d'utiliser une couleur primaire foncée, car les couleurs claires peuvent causer des problèmes d'accessibilité.
 
 <img
-  src="/img/old/1cef143-branding.PNG"
+  src="/fr-ca/img/old/1cef143-branding.PNG"
   alt="Écran des paramètres de marque avec le nom de l'entreprise, le logo, l'icône et le sélecteur de couleur affichés"
 />
 

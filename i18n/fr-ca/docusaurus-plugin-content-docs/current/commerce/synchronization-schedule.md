@@ -1,7 +1,7 @@
 ---
 title: "Calendrier de synchronisation"
 description: "Obtenez une meilleure compréhension du fonctionnement de notre planificateur Sync avec les paramètres fournis via le flux Sync."
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 ## Configuration du calendrier de synchronisation

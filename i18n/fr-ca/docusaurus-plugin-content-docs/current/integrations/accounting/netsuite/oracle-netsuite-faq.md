@@ -23,7 +23,7 @@ NetSuite OneWorld prend en charge les organisations mondiales à filiales multip
 
 **Voici un exemple de hiérarchie dans NetSuite :**
 
-<img src="/img/old/4a3f5ef-image-20210611-134647.png" />
+<img src="/fr-ca/img/old/4a3f5ef-image-20210611-134647.png" />
 
 Cette même hiérarchie serait 5 entreprises différentes sur la plateforme Codat.
 Company 1: Codat Limited

@@ -1,7 +1,7 @@
 ---
 title: "Ventes avec catégories de produits"
 description: "Examiner la fonctionnalité de mappage des catégories de produits, sa configuration et sa maintenance"
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 :::caution Activation de la fonctionnalité
@@ -18,7 +18,7 @@ Cette fonctionnalité est disponible pour catégoriser les données de ventes et
 Avant que le commutateur de fonctionnalité ne soit activé, l'interface utilisateur du flux de synchronisation affiche une catégorie Ventes, ainsi que Remboursement, Taxes et Pourboires. Ce sont les catégories de mappage standard disponibles de Sync for Commerce.
 
 <img
-  src="/img/old/983ceb0-34c49797-e20b-43b1-9047-578a81dceb78.png"
+  src="/fr-ca/img/old/983ceb0-34c49797-e20b-43b1-9047-578a81dceb78.png"
   alt="Flux de synchronisation avec catégories de ventes standard"
 />
 
@@ -27,14 +27,14 @@ Une fois que vous activez la fonctionnalité, une page de mappage de catégorie 
 Dans cet exemple, nous décomposons les ventes en cours, produits et services.
 
 <img
-  src="/img/old/7c4f5c0-c68df5c3-4a6f-4cfa-9ca0-b3473fb2a318.png"
+  src="/fr-ca/img/old/7c4f5c0-c68df5c3-4a6f-4cfa-9ca0-b3473fb2a318.png"
   alt="Flux de synchronisation avec catégories de produits supplémentaires"
 />
 
 La page de mappage de compte pour les catégories standard est disponible sur la page suivante du flux de synchronisation. Elle n'a plus de mappage "Ventes", remplacé par "Autres ventes" sur l'écran précédent. La même catégorisation est également disponible dans les paramètres du flux de synchronisation.
 
 <img
-  src="/img/old/f774a48-7eb40aee-9370-4222-8300-1f33a6210c73.png"
+  src="/fr-ca/img/old/f774a48-7eb40aee-9370-4222-8300-1f33a6210c73.png"
   alt="Catégories standard avec catégorisation des ventes activée"
 />
 

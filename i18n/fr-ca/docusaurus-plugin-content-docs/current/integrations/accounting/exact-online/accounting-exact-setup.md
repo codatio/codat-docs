@@ -63,7 +63,7 @@ Avant de pouvoir accéder aux données des clients utilisant Exact pour leur com
    - L'**Redirect URL** doit être comme suit, pour les applications de production et de test : `https://exact.codat.io/oauth/callback`
 6. Acceptez les termes et conditions, puis cliquez sur **Register**.
 
-<img src="/img/old/0e788f0-exact-app-details-dialog.png" />
+<img src="/fr-ca/img/old/0e788f0-exact-app-details-dialog.png" />
 
 La page **Manage my apps** s'affiche. Dans l'onglet **Develop your app**, vous verrez le **Client ID** et le **Client secret** de votre application. Pour retrouver cette page, allez dans **Manage my apps**, puis sélectionnez l'application que vous avez créée.
 

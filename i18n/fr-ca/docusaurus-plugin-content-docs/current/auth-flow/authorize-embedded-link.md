@@ -2,7 +2,7 @@
 title: "Commencer avec le SDK Link"
 sidebar_label: Commencer
 description: "Intégrez notre flux d'authentification dans l'interface de votre application à l'aide de notre composant à faible code"
-banner_image: "/img/banners/link.png"
+banner_image: "/fr-ca/img/banners/link.png"
 ---
 
 import ReadNext from "@components/ReadNext";

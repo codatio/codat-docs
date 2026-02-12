@@ -2,7 +2,7 @@
 title: "Intégrité des données"
 description: "Découvrez la fonctionnalité qui fait correspondre les données comptables modifiables avec les données bancaires immuables pour augmenter la confiance dans les données financières"
 sidebar_label: "Aperçu"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

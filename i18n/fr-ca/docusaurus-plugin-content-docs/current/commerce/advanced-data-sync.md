@@ -3,7 +3,7 @@ title: "Fonctionnalités avancées de synchronisation des données"
 sidebar_label: "Synchronisation des données"
 description: "Découvrez les options de synchronisation de données supplémentaires disponibles avec Sync for Commerce"
 displayed_sidebar: commerce
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 La synchronisation des données est un processus quotidien automatisé. Un commerçant peut voir le statut des récentes opérations de synchronisation dans l'interface utilisateur de configuration Sync, et votre équipe de support peut le vérifier sur la page Santé de la synchronisation de notre [Portail](https://app.codat.io/).

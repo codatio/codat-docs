@@ -2,7 +2,7 @@
 title: "Configuration du produit"
 description: "Apprenez comment effectuer la configuration initiale pour le produit Sync for Commerce"
 displayed_sidebar: commerce
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 import Tabs from "@theme/Tabs";

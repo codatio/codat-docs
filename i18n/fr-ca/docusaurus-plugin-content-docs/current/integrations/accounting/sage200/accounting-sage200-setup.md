@@ -65,7 +65,7 @@ Abonnez-vous à l'API Sage pour Sage 200 Unlimited.
 3. Fermez la boîte de dialogue pour retourner aux détails de votre profil.
 4. Dans la section **Vos abonnements**, sélectionnez à nouveau **Afficher** et copiez la valeur de la **Clé primaire**. C'est la _clé d'abonnement_ dont vous avez également besoin pour configurer votre intégration Codat.
 
-<img src="/img/old/4815330-sage_keyss2.png" />
+<img src="/fr-ca/img/old/4815330-sage_keyss2.png" />
 
 ## Ajouter vos clés sécurisées au Portail Codat
 

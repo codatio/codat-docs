@@ -1,7 +1,7 @@
 ---
 title: "Ventes en écritures de journal"
 description: "Examiner le mappage des écritures de journal pour les données de ventes et ses exemples"
-image: "/img/banners/social/commerce.png"
+image: "/fr-ca/img/banners/social/commerce.png"
 ---
 
 Avec Sync for Commerce, votre commerçant peut choisir de refléter ses données de ventes provenant du logiciel de commerce électronique et de point de vente (PDV) :
@@ -28,7 +28,7 @@ Codat recommande d'utiliser les **écritures de journal** pour bénéficier de c
 Votre commerçant peut choisir le type de synchronisation qu'il préfère lors de la configuration de son entreprise pour la première fois dans le flux de synchronisation. Notez que la sélection ne peut pas être modifiée après la configuration initiale.
 
 <img
-  src="/img/sync-for-commerce/2023-01-24_16-34-28.png"
+  src="/fr-ca/img/sync-for-commerce/2023-01-24_16-34-28.png"
   alt="Une image du flux de synchronisation Choisir le type de synchronisation dans le flux de synchronisation"
 />
 
@@ -96,6 +96,6 @@ La fonctionnalité de catégorisation fiscale est disponible pour chaque commer�
 Avec cette fonctionnalité, le commerçant peut mapper plusieurs taux de taxe de leur solution de commerce aux comptes fiscaux pertinents dans leur système comptable. Elle ajoute un écran supplémentaire au flux de synchronisation, où le mappage a lieu. Cela crée des lignes de journal séparées pour l'écriture de journal quotidienne.
 
 <img
-  src="/img/old/b85cf3a-2023-01-13_08-29-50.png"
+  src="/fr-ca/img/old/b85cf3a-2023-01-13_08-29-50.png"
   alt="Interface utilisateur du flux de synchronisation affichant l'étape de mappage fiscal avec trois catégories de taxe de vente avec différents mappages"
 />

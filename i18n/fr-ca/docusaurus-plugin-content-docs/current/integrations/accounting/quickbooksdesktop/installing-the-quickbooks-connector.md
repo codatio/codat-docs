@@ -52,7 +52,7 @@ Nous regroupons le web connector d'Intuit avec notre outil d'exécution automati
 
 **Des privilèges d'administrateur (droits d'admin) sont requis pour exécuter le connecteur.** Lorsque vous ajoutez une nouvelle entreprise, un utilisateur avec des droits d'admin doit exécuter l'installateur, qui affichera la boîte de dialogue suivante :
 
-<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-download-connector.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksdesktop/qbd-flow-download-connector.png" />
 
 Lorsque votre utilisateur exécute le `QuickBooksDesktopConnector.exe`, il lancera l'"Assistant QBWebConnector - InstallShield" pour le guider à travers les étapes d'installation. Il s'agira d'une nouvelle installation ou d'une mise à jour vers la dernière version si le web connector est déjà présent sur la machine.
 
@@ -73,11 +73,11 @@ Les options peuvent varier selon les versions de QuickBooks, mais sont similaire
 
 L'utilisateur doit sélectionner **Yes, always; allow access even if QuickBooks is not running** pour permettre au connecteur de fonctionner.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-app-certificate.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksdesktop/qbd-flow-app-certificate.png" />
 
 Il doit vérifier les détails dans la boîte de dialogue **Access Confirmation**, puis cliquer sur **Done**.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-access-confirmation.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksdesktop/qbd-flow-access-confirmation.png" />
 
 ## 3. Authentifier le connecteur
 
@@ -85,11 +85,11 @@ Une fois que l'utilisateur autorise l'accès du connecteur à l'entreprise Quick
 
 Une fenêtre contextuelle de mot de passe apparaît. Il doit saisir le mot de passe copié dans la fenêtre contextuelle, cliquer sur **OK** et confirmer pour enregistrer lorsqu'on le lui demande.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-copy-enter-password.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksdesktop/qbd-flow-copy-enter-password.png" />
 
 Ensuite, l'utilisateur doit cliquer sur **Update Selected**.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-update-selected.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksdesktop/qbd-flow-update-selected.png" />
 
 ## 4. Attendre que le connecteur termine la première liaison
 
@@ -109,7 +109,7 @@ Le web connector QuickBooks Desktop est installé dans Program Files.
 
 Par exemple :
 
-<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-file-location.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksdesktop/qbd-flow-file-location.png" />
 
 ## Mettre en pause le connecteur
 
@@ -120,7 +120,7 @@ En raison des propres limitations de QBD, il n'est pas possible d'utiliser le lo
 
 Pour prendre en charge une expérience utilisateur transparente, permettez à votre utilisateur de mettre en pause la synchronisation lorsqu'il a besoin d'accéder à QBD. Vous pouvez facilement le faire avec notre [SDK Connections](/auth-flow/optimize/connection-management). Ce composant intégrable permet à vos utilisateurs de mettre en pause les synchronisations en cours ou futures pendant une période définie ainsi que de gérer leurs connexions de données. La fonctionnalité de pause n'est requise que pour les connexions QBD.
 
-<img src="/img/integrations/accounting/quickbooksdesktop/qbd_pause_options.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksdesktop/qbd_pause_options.png" />
 
 ## Désinstaller le connecteur
 

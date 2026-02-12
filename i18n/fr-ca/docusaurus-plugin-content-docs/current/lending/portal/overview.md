@@ -1,7 +1,7 @@
 ---
 title: "Lending dans le Portal"
 description: "Le produit sans code de Codat qui fournit des informations sur les données d'une entreprise pour aider à prendre des décisions de prêt éclairées"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

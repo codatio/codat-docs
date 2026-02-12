@@ -17,7 +17,7 @@ Les Bill Payments et Vendor Prepayment Applications (lorsqu'ils sont appliqués 
 
 Si vous spécifiez un `billPaymentId` qui correspond à un Bill Credit dans NetSuite, l'objet Bill Credit lui-même n'est pas supprimé. Le Bill Credit est mis à jour de sorte qu'il ne s'applique plus à aucune facture fournisseur et est affiché comme _Unapplied_. Par exemple :
 
-<img src="/img/old/5bc9146-netsuite-bill-credit-unapplied.jpg" />
+<img src="/fr-ca/img/old/5bc9146-netsuite-bill-credit-unapplied.jpg" />
 
 Si vous spécifiez un `billPaymentId` qui correspond à un Deposit dans NetSuite, seules les lignes de dépôt qui affectent les comptes fournisseurs sont supprimées. Ces lignes sont affichées dans les onglets **Other Deposits** et **Cash Back** sur le Deposit :
 

@@ -2,7 +2,7 @@
 title: "Aperçu des comptes créditeurs"
 sidebar_label: "Comptes créditeurs"
 description: "Obtenez une vue détaillée et en temps réel des factures fournisseurs de vos clients pour évaluer le risque créancier"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import Products from "@components/Products";

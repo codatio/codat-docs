@@ -2,12 +2,12 @@
 title: "Rapprochement des transactions bancaires avec QBO Bank Feeds"
 description: "Tutoriel basé sur des exemples de rapprochement des transactions bancaires avec QuickBooks Online en utilisant les Bank Feeds de Codat"
 displayed_sidebar: "bankfeeds"
-image: "/img/banners/social/bankfeeds.png"
+image: "/fr-ca/img/banners/social/bankfeeds.png"
 hide_title: true
 hide_description: true
 sidebar_label: "Créer un flux bancaire vers QBO"
 banner_title: Bank Feeds pour le rapprochement des transactions bancaires dans QBO
-banner_image: "/img/banners/bank-feeds.png"
+banner_image: "/fr-ca/img/banners/bank-feeds.png"
 banner_text: "Tutoriel basé sur des exemples de rapprochement des transactions bancaires avec QuickBooks Online en utilisant la solution Bank Feeds de Codat"
 ---
 

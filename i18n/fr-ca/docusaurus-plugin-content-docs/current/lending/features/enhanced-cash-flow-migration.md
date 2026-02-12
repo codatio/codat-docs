@@ -2,7 +2,7 @@
 title: "Guide de migration pour le rapport Enhanced Cashflow"
 description: "Découvrez comment vous pouvez faire la transition de votre intégration Codat existante avec les endpoints Enhanced Cashflow vers nos nouveaux endpoints de rapport Categorized Bank Statement"
 displayed_sidebar: "lending"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import Tabs from "@theme/Tabs";

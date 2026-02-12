@@ -3,7 +3,7 @@ title: "Dépannage et FAQ"
 sidebar_label: Résoudre les problèmes
 description: "Questions fréquemment posées et conseils de dépannage pour la solution Bank Feeds"
 displayed_sidebar: bankfeeds
-image: "/img/banners/social/bankfeeds.png"
+image: "/fr-ca/img/banners/social/bankfeeds.png"
 ---
 
 ### Comment les types de comptes de Codat correspondent-ils à Open Banking ?

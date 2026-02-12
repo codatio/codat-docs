@@ -2,7 +2,7 @@
 title: "Dépannage des métriques de commerce"
 sidebar_label: Dépannage
 description: "Résolvez rapidement les problèmes courants liés à la génération de métriques de commerce"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 draft: true
 ---
 

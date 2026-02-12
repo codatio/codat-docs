@@ -2,7 +2,7 @@
 title: "Aperçu des ventes"
 sidebar_label: "Ventes"
 description: "Évaluez avec des données en temps réel provenant des plateformes de paiement et de commerce des PME"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import Products from "@components/Products";

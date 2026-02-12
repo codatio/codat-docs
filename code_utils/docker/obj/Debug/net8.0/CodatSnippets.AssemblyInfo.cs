@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CodatSnippets")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48001c0be1ecd7214652b7c1ff7cbcf113787148")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d07cebe128d74c852f7dd2a5d87d76939d89e39b")]
 [assembly: System.Reflection.AssemblyProductAttribute("CodatSnippets")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CodatSnippets")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,15 +3,15 @@ title: Aperçu d'Expenses
 sidebar_label: Expenses
 description: Écrire des dépenses catégorisées et des pièces jointes vers tous les principaux logiciels de comptabilité, en gérant les complexités du rapprochement des dépenses
 displayed_sidebar: expenses
-image: "/img/sync-for-expenses/sfe-banner.png"
+image: "/fr-ca/img/sync-for-expenses/sfe-banner.png"
 hide_title: true
 hide_description: true
 hide_table_of_contents: true
 tags: [overview, syncforexpense]
 banner_title: Expenses
 banner_class: expenses
-banner_icon: "/img/logos/products/logo_expenses_clear.svg"
-banner_image: "/img/banners/bank-feeds.png"
+banner_icon: "/fr-ca/img/logos/products/logo_expenses_clear.svg"
+banner_image: "/fr-ca/img/banners/bank-feeds.png"
 banner_text: "Écrire des dépenses catégorisées et des pièces jointes vers tous les principaux logiciels de comptabilité, en gérant les complexités du rapprochement des dépenses"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Expenses?
@@ -40,7 +40,7 @@ Avec Expenses, les fournisseurs de cartes d'entreprise, les fournisseurs de gest
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>Augmenter la part de portefeuille</h3>
@@ -52,7 +52,7 @@ Avec Expenses, les fournisseurs de cartes d'entreprise, les fournisseurs de gest
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Aller sur le marché rapidement</h3>
   </div>
   <p>
@@ -63,7 +63,7 @@ Avec Expenses, les fournisseurs de cartes d'entreprise, les fournisseurs de gest
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Libérer les ressources de développement</h3>
   </div>
   <p>
@@ -74,7 +74,7 @@ Avec Expenses, les fournisseurs de cartes d'entreprise, les fournisseurs de gest
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Obtenir des données standardisées</h3>
   </div>
   <p>
@@ -85,7 +85,7 @@ Avec Expenses, les fournisseurs de cartes d'entreprise, les fournisseurs de gest
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Capturer les reçus</h3>
   </div>
   <p>
@@ -96,7 +96,7 @@ Avec Expenses, les fournisseurs de cartes d'entreprise, les fournisseurs de gest
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Synchronisation bidirectionnelle</h3>
   </div>
   <p>

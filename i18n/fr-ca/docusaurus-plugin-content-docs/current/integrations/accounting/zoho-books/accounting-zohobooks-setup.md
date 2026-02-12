@@ -51,7 +51,7 @@ Pour enregistrer votre application Zoho Books.
    - Copiez le **Client ID** et le **Client Secret** dans un document Word ou similaire.
 6. Sélectionnez l'onglet **Paramètres** et activez l'une des régions répertoriées où se trouvent vos clients.
 
-<img src="/img/old/da47829-Zoho_Books_Settings.png" />
+<img src="/fr-ca/img/old/da47829-Zoho_Books_Settings.png" />
 
 7. Cochez la case **Utiliser les mêmes identifiants OAuth pour tous les centres de données**.
    Vos paramètres sont enregistrés automatiquement et un message de confirmation s'affiche.

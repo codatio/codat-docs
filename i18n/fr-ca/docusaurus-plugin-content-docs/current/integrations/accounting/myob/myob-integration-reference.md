@@ -64,7 +64,7 @@ Elles doivent être stockées en ligne. Bien que MYOB AccountRight Live donne l'
 
 Lorsqu'un fichier de données d'entreprise est correctement stocké en ligne (pour permettre la liaison avec l'intégration Codat), le fichier doit être visible lors de la sélection de 'Online' dans le menu 'Open' dans MYOB AccountRight.
 
-<img src="/img/old/9c4e75a-AR_Live_Cloud_docs.PNG" />
+<img src="/fr-ca/img/old/9c4e75a-AR_Live_Cloud_docs.PNG" />
 
 ### L'intégration prend-elle en charge plusieurs fichiers de données d'entreprise pour la même connexion liée?
 

@@ -13,7 +13,7 @@ Cependant, certaines questions concernent l'intégration de Codat avec QuickBook
 
 Pour accéder au questionnaire, accédez à **Keys and credentials** dans la vue détaillée de votre application et basculez l'environnement vers **Production**. Fournissez les détails généraux de l'application dans **App details**, puis passez à l'onglet **Compliance** et cliquez sur **Start questionnaire**.
 
-<img src="/img/integrations/accounting/quickbooksonline/qbo-app-details-questionnaire.png" />
+<img src="/fr-ca/img/integrations/accounting/quickbooksonline/qbo-app-details-questionnaire.png" />
 
 ### Détails de l'application
 

@@ -17,7 +17,7 @@ Deux intégrations Square sont disponibles dans le portail Codat :
 
 Vous définissez l'environnement pour chaque application à l'aide des boutons **Sandbox** et **Production** dans les paramètres de configuration d'une application. Ces boutons sont situés en haut de chaque page dans les paramètres d'une application :
 
-<img src="/img/old/77b4e8a-square-sandbox-test-app.png" />
+<img src="/fr-ca/img/old/77b4e8a-square-sandbox-test-app.png" />
 
 Les identifiants d'une application sont différents selon que le Square Sandbox ou la production est activé pour l'application. Pour activer l'accès complet à la production pour une application, vous devez d'abord activer votre compte Square.
 

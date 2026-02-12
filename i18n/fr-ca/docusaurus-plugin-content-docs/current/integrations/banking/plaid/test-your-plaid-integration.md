@@ -60,7 +60,7 @@ Lorsque vous passerez à un environnement de production, vous fournirez une URL 
 
 1. Copiez la valeur **linkUrl** dans votre navigateur, ce qui vous amène au sandbox de Plaid.
 
-<img src="/img/old/e6adfea-Plaid_landing_page.png" />
+<img src="/fr-ca/img/old/e6adfea-Plaid_landing_page.png" />
 
 Un message au bas de l'écran confirme que vous êtes en mode sandbox.
 

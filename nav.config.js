@@ -104,6 +104,10 @@ module.exports = {
       className: "navbar__link--support",
     },
     {
+      type: "localeDropdown",
+      position: "right",
+    },
+    {
       href: "https://app.codat.io/",
       label: "Sign in",
       className: "navbarButton secondary",

@@ -3,7 +3,7 @@ title: "Configurer les URL de redirection dans le portail"
 sidebar_label: Redirections
 description: "Complétez le parcours d'autorisation de votre client avec un emplacement de redirection"
 displayed_sidebar: docs
-banner_image: "/img/banners/link.png"
+banner_image: "/fr-ca/img/banners/link.png"
 ---
 
 ## Aperçu

@@ -1,7 +1,7 @@
 ---
 title: "Flux d'autorisation"
 description: "Obtenez l'accès aux données de vos clients PME avec Link SDK"
-banner_image: "/img/banners/link.png"
+banner_image: "/fr-ca/img/banners/link.png"
 ---
 
 L'autorisation est une partie clé de toute solution construite avec Codat. Chacun de vos clients PME doit autoriser l'accès à ses données avant que vous puissiez utiliser ces données. Un flux d'autorisation fluide et rassurant est essentiel pour recevoir l'autorisation de vos clients PME.
@@ -38,7 +38,7 @@ Améliorez la fonctionnalité du flux d'autorisation et donnez à vos clients la
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>Transparence</h3>
@@ -50,7 +50,7 @@ Améliorez la fonctionnalité du flux d'autorisation et donnez à vos clients la
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <img src="/fr-ca/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
     <h3>Consentement</h3>
   </div>
   <p>
@@ -62,7 +62,7 @@ Améliorez la fonctionnalité du flux d'autorisation et donnez à vos clients la
   <li className="card">
     <div className="header">
       <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
+        src="/fr-ca/img/wp-icons/copy-feature-bullet.svg"
         className="mini-icon"
       />
       <h3>Contrôle</h3>

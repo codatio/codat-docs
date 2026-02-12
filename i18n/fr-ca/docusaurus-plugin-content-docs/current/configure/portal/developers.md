@@ -18,7 +18,7 @@ Pour chaque dépréciation à venir, nous fournissons une brève description et 
 Nous lions également chaque dépréciation à son entrée respective dans [Mises à jour importantes](/updates), où vous pouvez trouver plus de détails sur le changement.
 
 <img
-  src="/img/old/3851067-deprecation.PNG"
+  src="/fr-ca/img/old/3851067-deprecation.PNG"
   alt="Capture d'écran d'une entrée de dépréciation détaillée"
 />
 

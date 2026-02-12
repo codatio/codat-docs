@@ -164,7 +164,7 @@ Entrez le nom que vous souhaitez donner à l'entité qui représente votre clien
 Copiez cette URL pour l'utiliser à l'étape suivante. Notez que cette URL peut être consultée à nouveau à tout moment dans le futur.
 
 <img
-  src="/img/old/5ab4ca8-2022-11-21_16-26-23.png"
+  src="/fr-ca/img/old/5ab4ca8-2022-11-21_16-26-23.png"
   alt="Modal de succès de création de nouvelle entreprise avec le nom de l'entreprise et l'URL Link affichés"
 />
 
@@ -284,7 +284,7 @@ Si vous devez visualiser l'URL à nouveau, accédez à **Entreprises** dans le <
 Cela ouvre le flux d'autorisation de Codat construit à l'aide de notre <a href="/auth-flow/overview" target="_blank">fonctionnalité</a> Link.
 
 <img
-  src="/img/old/cdeee57-2022-11-21_20-09-48.png"
+  src="/fr-ca/img/old/cdeee57-2022-11-21_20-09-48.png"
   alt="URL Link dans le modal Demander des données"
 />
 
@@ -293,7 +293,7 @@ Suivez le flux et sélectionnez **Codat Sandbox** comme source de vos données c
 Lorsque toutes les connexions Sandbox sont terminées, vous verrez un message de confirmation. Vous pouvez maintenant fermer l'onglet. Pendant ce temps, Codat lit les données Sandbox via la connexion établie.
 
 <img
-  src="/img/old/e802c95-2022-11-21_20-15-14.png"
+  src="/fr-ca/img/old/e802c95-2022-11-21_20-15-14.png"
   alt="Étape du flux Link se connectant au Sandbox Codat pour les données comptables. L'intégration Sandbox est sélectionnée"
 />
 
@@ -406,7 +406,7 @@ Vous êtes maintenant prêt à examiner les données financières de l'entrepris
 Retournez à la page **Entreprises** dans le <a href="https://app.codat.io/companies" target="_blank">portail Codat</a>. Vous verrez votre entreprise nouvellement créée, ainsi que les connexions aux Sandboxes comptables, commerciaux et bancaires qui ont été connectés à l'étape précédente.
 
 <img
-  src="/img/old/671c3bb-2022-11-22_16-04-26.png"
+  src="/fr-ca/img/old/671c3bb-2022-11-22_16-04-26.png"
   alt="L'exemple d'entreprise créée est visible dans la liste des entreprises avec ses connexions au sandbox"
 />
 
@@ -415,14 +415,14 @@ Maintenant, cliquez sur le nom de l'entreprise et utilisez le menu latéral pour
 Ici, nous examinons les données de factures du client PME lues depuis le Sandbox comptable. Ces données aident aux prévisions commerciales et à la gestion des flux de trésorerie basées sur les changements de ventes au fil du temps, les délais de paiement moyens et les montants liés aux factures.
 
 <img
-  src="/img/old/32f7dff-2022-11-22_16-22-17.png"
+  src="/fr-ca/img/old/32f7dff-2022-11-22_16-22-17.png"
   alt="Vue du type de données Factures de l'API comptable de Codat"
 />
 
 Les développeurs peuvent également utiliser le portail pour examiner comment Codat a interrogé un type de données spécifique et les résultats qu'il a reçus au bas de chaque page de type de données.
 
 <img
-  src="/img/old/bf495eb-2022-11-22_16-28-50.png"
+  src="/fr-ca/img/old/bf495eb-2022-11-22_16-28-50.png"
   alt="Vue du type de données Factures de l'API comptable de Codat"
 />
 

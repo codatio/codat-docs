@@ -2,7 +2,7 @@
 title: "Aperçu des passifs"
 sidebar_label: "Passifs"
 description: "Aperçu complet des prêts et analyse de l'historique de crédit"
-image: "/img/banners/social/lending.png"
+image: "/fr-ca/img/banners/social/lending.png"
 ---
 
 import Products from "@components/Products";
