@@ -24,7 +24,7 @@ You can apply either **sync settings** that fit your use case best. Codat distin
 
 To avoid the risk of dual syncs, you must only apply one type of sync settings.
 
-Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoint and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint. 
+Products are represented by an additional `products` property on calls to the [Create company](/platform-api#/operations/create-company) endpoint and can be added to an existing company using the [Add product](/platform-api#/operations/add-product) endpoint.
 
 Codat's [webhook service](/using-the-api/webhooks/overview) provides a range of event types for standard products. To be notified about data read events for custom products, use the `{productIdentifier}.read.completed` webhooks.
 

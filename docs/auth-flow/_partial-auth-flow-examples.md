@@ -73,11 +73,9 @@ function App() {
 ```
 
 3. **Conditional steps**
-
    - **If you're using TypeScript**, extend your type declarations with our types by installing the types package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
    - **If you're using content security policy (CSP) headers**, edit these headers:
-
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
      - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
@@ -164,11 +162,9 @@ export default function Home() {
 ```
 
 3. **Conditional steps**
-
    - **If you're using TypeScript**, extend your type declarations with our types by installing the types package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type related code in the snippets.
 
    - **If you're using content security policy (CSP) headers**, edit these headers:
-
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
      - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
@@ -248,7 +244,6 @@ const openModal = () => {
 ```
 
 5. **Conditional steps**
-
    - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
@@ -328,7 +323,6 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
 ```
 
 4. **Conditional steps**
-
    - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
@@ -395,7 +389,6 @@ For an example of the component in action, [see our demo app](https://github.com
 ```
 
 4. **Conditional steps**
-
    - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
@@ -462,7 +455,6 @@ For an example of the component in action, [see our demo app](https://github.com
 ```
 
 4. **Conditional steps**
-
    - **If you're using TypeScript**, extend your type declarations with our types. Download the <a href="https://github.com/codatio/sdk-link/blob/main/snippets/types.d.ts" target="_blank"> `types.d.ts`</a> file, then copy and paste its contents into a new or existing `.d.ts` file.
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).

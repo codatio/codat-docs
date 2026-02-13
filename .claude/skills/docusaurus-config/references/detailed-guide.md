@@ -204,24 +204,20 @@ function MyComponent() {
 When modifying config, verify:
 
 1. **Required fields present**:
-
    - ✅ `title` exists
    - ✅ `url` exists and has no trailing slash
    - ✅ `baseUrl` exists and starts/ends with `/`
 
 2. **Plugins and themes**:
-
    - ✅ Use proper package names or shorthand
    - ✅ Options passed as second array element
    - ✅ No duplicate plugins
 
 3. **Custom data**:
-
    - ✅ Unknown fields in `customFields` object
    - ✅ No direct custom properties at root level
 
 4. **File format**:
-
    - ✅ Valid JS/TS syntax
    - ✅ Proper export (ESM or CommonJS)
    - ✅ TypeScript types imported if using TS

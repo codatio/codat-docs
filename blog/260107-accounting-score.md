@@ -26,7 +26,7 @@ The **Accounting Score** metrics are now available via API as part of Codat’s 
 In addition to the overall score, the API identifies the **top three accounting issues** for a company, allowing lenders to quickly focus on the most impactful risks. This helps lenders:
 
 - Understand the reliability of borrower data earlier in the underwriting process.
-- Reduce manual review by highlighting the key accounting concerns upfront. 
+- Reduce manual review by highlighting the key accounting concerns upfront.
 - Make more confident, efficient credit risk decisions.
 
 The Accounting Score is available across all accounting integrations supported by the [Lending](/lending/overview) solution.

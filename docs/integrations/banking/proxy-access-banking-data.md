@@ -50,4 +50,4 @@ standing_orders
 To learn more about these data types, please refer to our partner documentation:
 
 - [API Reference](https://plaid.com/docs/api/) in the Plaid documentation.
-- [Overview](https://docs.truelayer.com/docs/account-data-overview) of the TrueLayer Data API.
+- [Data API basics](https://docs.truelayer.com/docs/data-api-basics) in the TrueLayer documentation.

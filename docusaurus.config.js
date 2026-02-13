@@ -118,7 +118,10 @@ const config = {
         description:
           "We use cookies to enhance your browsing experience and analyze our traffic.",
         links: [
-          { label: "Privacy Policy", href: "https://www.codat.io/privacy-policy/" },
+          {
+            label: "Privacy Policy",
+            href: "https://www.codat.io/privacy-policy/",
+          },
         ],
         toastMode: true,
         googleConsentMode: {

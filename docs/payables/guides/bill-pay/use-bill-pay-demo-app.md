@@ -78,14 +78,12 @@ In Codat, create and update operations are asynchronous, which means that writin
 2. From the **API Docs & Tools** tab, open the sandbox company you connected to the demo app.
 3. In the sidebar, select **Get paid & pay**.
 4. Check the status of the bill you paid in the demo app:
-
    1. Select **Bills > Paid**.
    2. Select the bill and check the payment status is **Paid**.
 
    ![bill-pay_bill-status-paid](/img/use-cases/bill-pay/bill-pay_qbo-sandbox-company-bill-status-of-paid.png "A bill in QBO with a status of PAID.")
 
 5. Check which bank account the payment was reconciled to:
-
    1. Go back to **Bills > Paid**.
    2. In the **Action** column, select **Show payments** to reveal the payment row.
    3. Click **View details** to open the bill payment that corresponds to the bill.

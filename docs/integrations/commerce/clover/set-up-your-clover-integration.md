@@ -17,7 +17,6 @@ Before you can access commerce data from customers using Clover, you need to set
 - If you already have a Clover developer account, have your account details to hand.
 
 - If you don't, sign up to the Clover developer portal before you start to create your application. Note that Clover's market currently covers many geographic regions and each is assigned a different domain. Create your developer portal by choosing your geographic area first:
-
   - [US and Canada](https://www.clover.com)
   - [UK and Republic of Ireland/Europe](https://www.eu.clover.com)
 
@@ -28,7 +27,6 @@ Before you can access commerce data from customers using Clover, you need to set
 1. Go to the Clover developer portal and log in to your account.
 2. Select **Create App** to create an app and get API credentials.
 3. Fill in the required details for your app:
-
    - Under **Requested Permissions**, tick "Read" for Customers, Inventory, Merchant, Orders, and Payments.
    - Set the** App type** to Web.
    - Under **REST Configuration** enter `https://clover.codat.io/oauth/callback`
@@ -42,7 +40,6 @@ You'll be taken to your API credentials page with App ID and secret generated. K
 3. Find **Clover**, then select **Set up** to view the **Integration settings** page.
 4. Choose what [type of access to company data](/core-concepts/data-type-settings) you wish to have for this integration: one-off or continuous.
 5. From the **API keys** page on the Clover developer portal, copy and paste:
-
    - **App ID** value into **Client Id**
    - **App secret** value into **Client Secret**.
 

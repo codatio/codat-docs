@@ -68,7 +68,6 @@ To access your live credentials in Stripe, you must have [added your business de
 1. Go to the <a href="https://dashboard.stripe.com/settings/connect" target="_blank">Connect settings</a> page.
 
 2. Use the **Test mode** switch at the top right to switch between live mode or test mode.
-
    - Enable _test mode_ if you're setting up the Stripe Test integration.
    - Enable _live mode_ if you're setting up the Stripe integration.
 
@@ -85,7 +84,6 @@ To access your live credentials in Stripe, you must have [added your business de
    ```
 
 7. Copy your client ID from the **Integration** section and paste it to a text file or similar.
-
    - In test mode, copy the **Test mode client ID**.
    - In live mode, copy the **Live mode client ID**.
 
@@ -108,7 +106,6 @@ In the <a className="external" href="https://app.codat.io/" target="_blank">Coda
    The **Integration settings** page is displayed.
 
 3. In the **Client ID** box, enter your client ID for your Stripe Connect platform.
-
    - For the **Stripe Test** integration, enter the **Test mode client ID**.
    - For the **Stripe** integration, enter the **Live mode client ID**.
 
