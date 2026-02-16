@@ -26,6 +26,8 @@ jobs:
       
       - name: Install linkinator
         run: npm install -g linkinator
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       
       - name: Get Vercel Preview URL
         id: get-preview-url
