@@ -1904,7 +1904,7 @@
         "type": "object",
         "properties": {
           "companyId": {
-            "$ref": "#/components/parameters/companyId"
+            "$ref": "#/components/parameters/companyId/schema"
           },
           "accountingSoftwareCompanyName": {
             "type": "string",
