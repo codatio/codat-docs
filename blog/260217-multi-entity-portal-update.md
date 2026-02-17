@@ -11,7 +11,9 @@ We are making it easier to identify and navigate multi-entity companies in the C
 
 ## What's new?
 
-On **February 25, 2026**, we are changing how multi-entity companies are displayed in the [Codat Portal](https://app.codat.io). The new hierarchical company table structure makes it easier to identify, navigate, and manage complex entities. 
+On **February 25, 2026**, we are changing how multi-entity companies are displayed in the [Codat Portal](https://app.codat.io). The new hierarchical company table structure makes it easier to identify, navigate, and manage complex entities.
+
+![Improved Company table interface](/img/updates/260217-company-table.gif)
 
 We are introducing the following improvements:
 
@@ -29,8 +31,6 @@ We are introducing the following improvements:
     - **Partial:** The parent company has subsidiaries that are disconnected.
 
 These improvements apply to all Portal views that use the company structure, such as **Companies** and **Spend Insights**.
-
-![Improved Company table interface](/img/updates/260217-company-table.gif)
 
 ## Who is this relevant for?
 

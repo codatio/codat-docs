@@ -11,9 +11,9 @@ From **February 25, 2026**, you will be able to generate updated reports directl
 
 ## What's new?
 
-We are enhancing the Spend Insights tab of the [Codat Portal](https://app.codat.io) sothat you can manage, refresh, and export reports faster and at scale. 
+We are enhancing the Spend Insights tab of the [Codat Portal](https://app.codat.io) so that you can manage, refresh, and export reports faster and at scale. 
 
-From **February 25, 2026**, you will be able to generate updated reports directly from the Spend Insights tab by following these steps:
+From **February 25, 2026**, you will be able to generate updated reports directly from the [Spend Insights](https://app.codat.io/spend-insights) tab by following these steps:
 
 1. Navigate to the **Spend Insights** tab in the [Codat Portal](https://app.codat.io).
 
