@@ -20,6 +20,7 @@ We are introducing the following improvements:
 - Parent–child hierarchy view enables users to quickly identify the parent company and expand the view to see its subsidiaries. 
 - Enhanced search functionality allows users to search by the parent or child company name. 
 - New triple-dot menu contains company management options, such as editing and deletion.
+- Connected software list is displayed when hovering over a company's connection status.
 - Parent deletion confirmation ensures it's no longer possible to accidentally delete a parent company.
 - New set of connection statuses helps determine a company's state at a glance:
     
