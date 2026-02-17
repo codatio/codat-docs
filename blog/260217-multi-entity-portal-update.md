@@ -2,7 +2,7 @@
 title: "Multi-entity views in Codat Portal"
 date: "2026-02-17"
 tags: ["Product", "Update"]
-authors: pmckinney
+authors: pzaichkina
 ---
 
 We are making it easier to identify and navigate multi-entity companies in the Codat Portal.

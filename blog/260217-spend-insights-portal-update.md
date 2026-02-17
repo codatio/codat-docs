@@ -2,7 +2,7 @@
 title: "Spend Insights: real-time report updates"
 date: "2026-02-17"
 tags: ["Product", "Update", "Spend Insights"]
-authors: pmckinney
+authors: pzaichkina
 ---
 
 From **February 25, 2026**, you will be able to generate updated reports directly from the Spend Insights tab of the Portal.
