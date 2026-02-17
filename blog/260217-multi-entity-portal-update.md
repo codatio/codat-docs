@@ -27,8 +27,8 @@ We are introducing the following improvements:
     - **No connections:** The company hasn't yet attempted to connect their financial software.
     - **Linked:** The company has successfully connected their financial software.
     - **Pending:** The company has started, but not completed connecting their financial software.
-    - **Deauthorized:** Access to this company was deauthorized and needs to be reconnected.
-    - **Unlinked:** The company has unlinked and stopped data sharing.
+    - **Deauthorized:** The company has revoked your access, or the access expired. The company needs to be reconnected.
+    - **Unlinked:** You have unlinked this company's connection, and data sharing stopped as a result.
     - **Partial:** The parent company has subsidiaries that are disconnected.
 
 These improvements apply to all Portal views that use the company structure, such as **Companies** and **Spend Insights**.
