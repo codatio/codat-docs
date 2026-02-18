@@ -32,7 +32,7 @@ This question should be answered by the app's developer.
 This question should be answered by the app's developer based on the guidelines provided below.
 
     - **Host domain**: the URL of the domain host of your website or app.
-    
+
     - **Launch URL**: Initial URL for your app's authorization flow. If using [Hosted Link](/auth-flow/authorize-hosted-link), provide the generic Link URL from the [Codat Portal](https://app.codat.io).
 
     - **Disconnect URL**: Link to the process for deauthorizing the app's access to QBO. This can be the URL of the [Unlink connection](/platform-api#/operations/unlink-connection) endpoint or a link to your website or app instead.

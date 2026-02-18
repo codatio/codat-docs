@@ -13,6 +13,34 @@ We've expanded the branding options available for Link, making it easier than ev
 
 We've added several new branding settings that give you greater control over how [Link](/auth-flow/overview) looks and feels to your customers. These updates are designed to help you create a seamless, trusted connection experience that reinforces your brand at every step.
 
+<div
+  style={{
+    display: "flex",
+    gap: "1rem",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  }}
+>
+  <div style={{ textAlign: "center", flex: "1", minWidth: "280px" }}>
+    <img
+      src="/img/auth-flow/unbranded-link.png"
+      alt="Link without any branding applied"
+    />
+    <p>
+      <em>Without branding</em>
+    </p>
+  </div>
+  <div style={{ textAlign: "center", flex: "1", minWidth: "280px" }}>
+    <img
+      src="/img/auth-flow/branded-link.png"
+      alt="Link branded using company logo, color scheme and hero image"
+    />
+    <p>
+      <em>With branding</em>
+    </p>
+  </div>
+</div>
+
 ### Company logo on landing page
 
 Display your **company logo** prominently on the first screen your customers see when they connect their data. The logo is pulled from your existing [Branding settings](/auth-flow/customize/branding) and can be toggled in **[Settings > Auth flow > Link > Onboarding](https://app.codat.io/settings/link-settings/onboarding)** alongside the [Landing page](/auth-flow/customize/customize-link#landing-page) setting.
@@ -28,11 +56,6 @@ A new **secondary color** setting lets you define the color of the navigation ba
 ### Hero image
 
 You can now upload a **hero image** that appears as a background in Link, behind the main content area. This lets you set the visual tone of the authorization experience from the moment your customers land on the page. Configure this in **[Settings > Auth flow > Branding](https://app.codat.io/settings/branding)**.
-
-<img
-  src="/img/auth-flow/branded-link.png"
-  alt="Link branded using company logo, color scheme and hero image"
-/>
 
 ### Why does this matter?
 
@@ -52,3 +75,13 @@ These branding options are available now. To configure them:
 2. Set your **company logo**, **secondary color**, and **hero image** in **[Settings > Auth flow > Branding](https://app.codat.io/settings/branding)**.
 
 For more details, see our documentation on [Branding settings](/auth-flow/customize/branding) and [Link settings](/auth-flow/customize/customize-link).
+
+<div style={{ textAlign: "center" }}>
+  <img
+    src="/img/auth-flow/branding.png"
+    alt="Branding settings screen with company name, logo, icon, hero image and color picker displayed"
+  />
+  <p>
+    <em>Branding settings in the Codat Portal</em>
+  </p>
+</div>

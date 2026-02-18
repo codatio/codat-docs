@@ -4,9 +4,9 @@ description: "Review additional settings available to configure the sync of vari
 displayed_sidebar: "docs"
 ---
 
-For most of our data types, we retrieve all available history. For financial statement data types, (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. 
+For most of our data types, we retrieve all available history. For financial statement data types, (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history.
 
-You can apply additional sync settings to change these defaults. This helps you to limit the amount of data synchronized from the source platform.  We recommend that you only pull data from a date range relevant to your use case to reduce the chance of encountering rate limit errors.
+You can apply additional sync settings to change these defaults. This helps you to limit the amount of data synchronized from the source platform. We recommend that you only pull data from a date range relevant to your use case to reduce the chance of encountering rate limit errors.
 
 :::caution Limited coverage
 

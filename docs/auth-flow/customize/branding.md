@@ -9,6 +9,34 @@ banner_image: "/img/banners/link.png"
 
 Link is a white-labelled solution that can be matched to your company's branding. Go to **[Settings > Auth flow > Branding](https://app.codat.io/settings/branding)** in the [Codat Portal](https://app.codat.io) to tailor Link for a fully custom-branded experience.
 
+<div
+  style={{
+    display: "flex",
+    gap: "1rem",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  }}
+>
+  <div style={{ textAlign: "center", flex: "1", minWidth: "280px" }}>
+    <img
+      src="/img/auth-flow/unbranded-link.png"
+      alt="Link without any branding applied"
+    />
+    <p>
+      <em>Without branding</em>
+    </p>
+  </div>
+  <div style={{ textAlign: "center", flex: "1", minWidth: "280px" }}>
+    <img
+      src="/img/auth-flow/branded-link.png"
+      alt="Link branded using company logo, color scheme and hero image"
+    />
+    <p>
+      <em>With branding</em>
+    </p>
+  </div>
+</div>
+
 The branding settings page autosaves when changes are made. You can adjust the following UI elements:
 
 ### Company name
@@ -53,15 +81,15 @@ You can set your brand's primary color to define the color of buttons and other 
 
 You can set your brand's secondary color, which is used for the navigation bar in Link. The navigation bar can be enabled in [Link settings](/auth-flow/customize/customize-link#navigation-bar).
 
-<img
-  src="/img/auth-flow/branding.png"
-  alt="Branding settings screen with company name, logo, icon, hero image and color picker displayed"
-/>
-
-<img
-  src="/img/auth-flow/branded-link.png"
-  alt="Link branded using company logo, color scheme and hero image"
-/>
+<div style={{ textAlign: "center" }}>
+  <img
+    src="/img/auth-flow/branding.png"
+    alt="Branding settings screen with company name, logo, icon, hero image and color picker displayed"
+  />
+  <p>
+    <em>Branding settings in the Codat Portal</em>
+  </p>
+</div>
 
 ---
 
