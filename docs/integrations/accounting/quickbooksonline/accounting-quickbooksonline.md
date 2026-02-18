@@ -26,7 +26,7 @@ If you plan to publish an app in the QuickBooks ecosystem, you must register wit
 The Intuit App Partner Program operates a tiered usage model. Under this model, Intuit classifies API calls into two categories:
 
 - Core API calls - free and unlimited routine tasks, such as creating or updating invoices, bills, and customers
-- CorePlus API calls - data-heavy tasks, such as running reports or retrieving deep historical data 
+- CorePlus API calls - data-heavy tasks, such as running reports or retrieving deep historical data
 
 The [API classification for the Intuit App Partner Program](https://help.developer.intuit.com/s/article/API-classification-for-the-Intuit-App-Partner-Program) article explains how API calls are classified into Core and CorePlus.
 
@@ -41,7 +41,7 @@ Each tier is allocated a monthly limit of CorePlus API calls, and exceeding this
 To avoid unexpected costs, track your app's usage of API calls following these steps:
 
 1. Log in to the [Intuit Developer Portal](https://developer.intuit.com/dashboard?tab=apps).
-2. Navigate to the _App dashboard_ and select the app you want to review. 
+2. Navigate to the _App dashboard_ and select the app you want to review.
 3. In the left-hand menu, click **Analytics**.
 4. In _Analytics_, toggle the environment to **Production**. You will see a chart detailing your Core and CorePlus usage.
 

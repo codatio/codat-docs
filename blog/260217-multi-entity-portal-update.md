@@ -17,19 +17,18 @@ On **February 25, 2026**, we are changing how multi-entity companies are display
 
 We are introducing the following improvements:
 
-- Parent–child hierarchy view enables users to quickly identify the parent company and expand the view to see its subsidiaries. 
-- Enhanced search functionality allows users to search by the parent or child company name. 
+- Parent–child hierarchy view enables users to quickly identify the parent company and expand the view to see its subsidiaries.
+- Enhanced search functionality allows users to search by the parent or child company name.
 - New triple-dot menu contains company management options, such as editing and deletion.
 - Connected software list is displayed when hovering over a company's connection status.
 - Parent deletion confirmation ensures it's no longer possible to accidentally delete a parent company.
 - New set of connection statuses helps determine a company's state at a glance:
-    
-    - **No connections:** The company hasn't yet attempted to connect their financial software.
-    - **Linked:** The company has successfully connected their financial software.
-    - **Pending:** The company has started, but not completed connecting their financial software.
-    - **Deauthorized:** The company has revoked your access, or the access expired. The company needs to be reconnected.
-    - **Unlinked:** You have unlinked this company's connection, and data sharing stopped as a result.
-    - **Partial:** The parent company has subsidiaries that are disconnected.
+  - **No connections:** The company hasn't yet attempted to connect their financial software.
+  - **Linked:** The company has successfully connected their financial software.
+  - **Pending:** The company has started, but not completed connecting their financial software.
+  - **Deauthorized:** The company has revoked your access, or the access expired. The company needs to be reconnected.
+  - **Unlinked:** You have unlinked this company's connection, and data sharing stopped as a result.
+  - **Partial:** The parent company has subsidiaries that are disconnected.
 
 These improvements apply to all Portal views that use the company structure, such as **Companies** and **Spend Insights**.
 
