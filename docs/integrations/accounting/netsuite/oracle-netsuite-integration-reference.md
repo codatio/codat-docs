@@ -202,6 +202,10 @@ When making a deposit in NetSuite, users can enter payments on the **Deposits** 
 - The `depositedRecordRefs` array in the Transfer must specify either `payments`, `directIncomes`, or `journalEntries`.
 - All transactions in the `depositedRecordRefs` array must share the same currency.
 
+## Payments and Credit Note Allocation 
+
+Codat does not support paying the __full__ value of an Invoice with a Credit Note, for NetSuite connected companies. Push operations which attempt to allocate funds from a Credit Note, paying off the entire value of an Invoice will fail with an error message from the NetSuite system: *"...Value 0.0 outside of valid min/max range for field payment..."*
+
 ## Field coverage for supported data types
 
 Codat's data model supports a wide range of fields within each data type.
