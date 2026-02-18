@@ -35,13 +35,32 @@ Icon requirements:
 - Files should not exceed 500KB.
 - Recommended dimensions: 32px x 32px.
 
+### Hero image
+
+This image is displayed as a background in Link, appearing behind the main content area.
+
+Hero image requirements:
+
+- Use PNG, JPG, or JPEG file formats.
+- Files should not exceed 10MB.
+- Recommended dimensions: 1920px x 1080px.
+
 ### Primary color
 
 You can set your brand's primary color to define the color of buttons and other elements within the Link Flow. We recommend using a dark primary color, because light colors may cause accessibility issues.
 
+### Secondary color
+
+You can set your brand's secondary color, which is used for the navigation bar in Link. The navigation bar can be enabled in [Link settings](/auth-flow/customize/customize-link#navigation-bar).
+
 <img
-  src="/img/old/1cef143-branding.PNG"
-  alt="Branding settings screen with company name, logo, icon, and color picker displayed"
+  src="/img/auth-flow/branding.png"
+  alt="Branding settings screen with company name, logo, icon, hero image and color picker displayed"
+/>
+
+<img
+  src="/img/auth-flow/branded-link.png"
+  alt="Link branded using company logo, color scheme and hero image"
 />
 
 ---
