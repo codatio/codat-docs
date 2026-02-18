@@ -7,7 +7,7 @@ banner_image: "/img/banners/link.png"
 
 ## Overview
 
-Link is a white-labelled solution that can be matched to your company's branding. Go to **[Settings > Auth flow > Branding](https://app.codat.io/settings/branding)** in the [Codat Portal](https://app.codat.io) to tailor Link for a fully custom-branded experience.
+Link is a white-labelled solution that can be matched to your company's branding. Go to **[Settings > Auth flow > Branding](https://app.codat.io/settings/branding)** in the [Codat Portal](https://app.codat.io) to tailor Link for a fully custom-branded experience. The branding settings page autosaves when changes are made.
 
 <div
   style={{
@@ -36,8 +36,6 @@ Link is a white-labelled solution that can be matched to your company's branding
     </p>
   </div>
 </div>
-
-The branding settings page autosaves when changes are made. You can adjust the following UI elements:
 
 ### Company name
 
