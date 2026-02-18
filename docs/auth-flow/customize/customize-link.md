@@ -66,7 +66,7 @@ Toggle whether the _Secured by Codat_ logo is shown on your authorization flow.
 
 #### Navigation bar
 
-Toggle whether a navigation bar is displayed at the top of the Link flow. The bar color uses your secondary brand color set in [Branding settings](/auth-flow/customize/branding#secondary-color).
+Toggle whether a navigation bar is displayed at the top of the Link flow. The bar color uses the secondary brand color you set in [Branding settings](/auth-flow/customize/branding#secondary-color).
 
 #### Landing page
 
