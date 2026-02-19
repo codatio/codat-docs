@@ -39,12 +39,13 @@ For integration-specific rules and errors, review the [Software requirements](/p
 
 ---
 
+### Example payloads
+
 <Tabs groupId="software">
 
 <TabItem value="gen" label="Request structure">
 
 ```json
-
 PUT /companies/{companyId}/connections/{dataConnectionId}/payables/bills/{billId}
 
 {
@@ -67,7 +68,6 @@ PUT /companies/{companyId}/connections/{dataConnectionId}/payables/bills/{billId
     }
   ]
 }
-
 ```
 
 </TabItem>
