@@ -25,8 +25,15 @@ In some cases, your SMB customer may want to update their existing bill: for exa
 Use our [Update bill](docs.codat.io/sync-for-payables-v2-api#/operations/update-bill) endpoint to perform this operation. The following rules apply: 
 
 - You can only update the bills in `Open` status, and updates to bills in any other states will be rejected.
-- You can change the `reference`, `supplierRef.id`, `issueDate`, `dueDate`, `currency`, `currencyRate`, and `lineItems[]` values.
 - During the update, all existing bill line items will removed and replaced with new line items.
+- You can change the following values:
+    - `reference`
+    - `supplierRef.id`
+    - `issueDate`
+    - `dueDate`
+    - `currency`
+    - `currencyRate`
+    - `lineItems[]`
 
 For integration-specific rules and errors, review the [Software requirements](/payables/sync/pay-bill#software-requirements) section.
 
