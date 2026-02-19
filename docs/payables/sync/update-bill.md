@@ -22,7 +22,7 @@ This action is currently only supported for FreeAgent, QuickBooks Online, and Xe
 
 In some cases, your SMB customer may want to update their existing bill: for example, to change a tax rate, change a nominal code for a line item, or associate it to a different supplier. 
 
-Use our [Update bill](docs.codat.io/sync-for-payables-v2-api#/operations/update-bill) endpoint to perform this operation. The following rules apply: 
+Use our [Update bill](/sync-for-payables-v2-api#/operations/update-bill) endpoint to perform this operation. The following rules apply: 
 
 - You can only update the bills in `Open` status, and updates to bills in any other states will be rejected.
 - During the update, all existing bill line items will removed and replaced with new line items.
