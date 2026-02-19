@@ -12,7 +12,7 @@ import TabItem from "@theme/TabItem";
 We distinguish between invoices where the company _owes_ money and those where the company _is owed_ money. If the company receives an invoice and owes money as a result, we call this a **bill**.
 :::
 
-## Update bill
+## Update a bill
 
 :::info Software coverage
 
@@ -29,6 +29,8 @@ Use our [Update bill](docs.codat.io/sync-for-payables-v2-api#/operations/update-
 - During the update, all existing bill line items will removed and replaced with new line items.
 
 For integration-specific rules and errors, review the [Software requirements](/payables/sync/pay-bill#software-requirements) section.
+
+---
 
 <Tabs groupId="software">
 
@@ -63,9 +65,7 @@ PUT /companies/{companyId}/connections/{dataConnectionId}/payables/bills/{billId
 
 </TabItem>
 
-<TabItem value="fa" label="FreeAgent line item">
-
-#### Example FreeAgent line item update payload
+<TabItem value="fa" label="FreeAgent example">
 
 ```json
 {
@@ -80,9 +80,7 @@ PUT /companies/{companyId}/connections/{dataConnectionId}/payables/bills/{billId
 
 </TabItem>
 
-<TabItem value="qbo" label="QBO line item">
-
-#### Example QBO line item update payload 
+<TabItem value="qbo" label="QBO example">
 
 ```json
 {
@@ -95,9 +93,7 @@ PUT /companies/{companyId}/connections/{dataConnectionId}/payables/bills/{billId
 ```
 </TabItem>
 
-<TabItem value="xero" label="Xero line item">
-
-#### Example Xero line item update payload
+<TabItem value="xero" label="Xero example">
 
 ```json
 {
@@ -128,24 +124,24 @@ We have summarized the key differences between the integrations that support upd
 
 ### Validation errors
 
-You may encounter a validation error when sending a request to update a bill. In the sections below, we've included general and software-specific errors to help resolve these. 
+You may encounter a validation error when sending a request to update a bill. In the sections below, we`ve included general and software-specific errors to help resolve these. 
 
 #### General validation errors
 
 | Validation                  | Error message                                           |
 |-----------------------------|---------------------------------------------------------|
-| Missing `supplierRef`       | 'Supplier Ref' must not be empty.                       |
-| Missing `supplierRef.id`    | 'Supplier Ref Id' must not be empty.                    |
-| Missing `issueDate`         | 'Issue Date' must not be empty.                         |
-| Missing `dueDate`           | 'Due Date' must not be empty.                           |
-| Missing currency            | 'Currency' must not be empty.                           |
-| Invalid currency            | 'Currency Length' must be equal to '3'.                 |
-| Currency rate `<=0`         | 'Currency Rate' must be greater than '0'.               |
-| Missing status              | 'Status' must not be empty.                             |
-| Invalid status              | 'Status' must be equal to 'Open'.                       |
-| Missing or empty line items | 'Line Items' must not be empty.                         |
-| Negative line items total   | Sum of `LineItems` must be greater than or equal to '0'.  |
-| Reference too long          | 'Reference Length' must be less than or equal to '255'. |
+| Missing `supplierRef`       | `Supplier Ref` must not be empty.                       |
+| Missing `supplierRef.id`    | `Supplier Ref Id` must not be empty.                    |
+| Missing `issueDate`         | `Issue Date` must not be empty.                         |
+| Missing `dueDate`           | `Due Date` must not be empty.                           |
+| Missing currency            | `Currency` must not be empty.                           |
+| Invalid currency            | `Currency Length` must be equal to `3`.                 |
+| Currency rate `<=0`         | `Currency Rate` must be greater than `0`.               |
+| Missing status              | `Status` must not be empty.                             |
+| Invalid status              | `Status` must be equal to `Open`.                       |
+| Missing or empty line items | `Line Items` must not be empty.                         |
+| Negative line items total   | Sum of `LineItems` must be greater than or equal to `0`.  |
+| Reference too long          | `Reference Length` must be less than or equal to `255`. |
 | Bill not found              | 404 Not Found                                           |
 
 #### Software-specific errors
@@ -154,10 +150,10 @@ You may encounter a validation error when sending a request to update a bill. In
 
 <TabItem value="fa" label="FreeAgent">
 
-| Issue                | Error Message                                 |
+| Issue                | Error message                                 |
 |----------------------|-----------------------------------------------|
-| Invalid account code | 'Account Ref' was not found in FreeAgent.     |
-| Invalid supplier ID  | 'Supplier Ref Id' was not found in FreeAgent. |
+| Invalid account code | `Account Ref` was not found in FreeAgent.     |
+| Invalid supplier ID  | `Supplier Ref Id` was not found in FreeAgent. |
 
 </TabItem>
 
@@ -165,18 +161,18 @@ You may encounter a validation error when sending a request to update a bill. In
 
 | Issue                                  | Error message                                                              |
 |----------------------------------------|----------------------------------------------------------------------------|
-| Bill currency doesn't match supplier   | Ensure that the currency of the bill matches the currency of the supplier. |
-| Supplier doesn't support bill currency | The chosen `supplierId` doesn't handle the bills currency.                 |
+| Bill currency doesn`t match supplier   | Ensure that the currency of the bill matches the currency of the supplier. |
+| Supplier doesn`t support bill currency | The chosen `supplierId` doesn`t handle the bills currency.                 |
 
 </TabItem>
 
 <TabItem value="xero" label="Xero">
 
-| Issue                | Error Message                             |
+| Issue                | Error message                             |
 |----------------------|-------------------------------------------|
-| Invalid account GUID | 'Account Ref' was not found in Xero.      |
-| Invalid supplier ID  | 'SupplierRef Id' was not found in Xero.   |
-| Currency not enabled | No currency exists for code 'currency'. |
+| Invalid account GUID | `Account Ref` was not found in Xero.      |
+| Invalid supplier ID  | `SupplierRef Id` was not found in Xero.   |
+| Currency not enabled | No currency exists for code `currency`. |
 
 </TabItem>
 
