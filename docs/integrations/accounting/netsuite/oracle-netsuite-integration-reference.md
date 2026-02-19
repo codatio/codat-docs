@@ -183,7 +183,7 @@ When writing Suppliers to Oracle NetSuite:
 
 ## Transfers
 
-### Reading Transfers
+### Reading transfers
 
 Transfers are mapped from the <a  class="external" href="https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N1547981.html" target="_blank">transfers</a> and <a  class="external" href="https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N1542225.html" target="_blank">deposits</a> objects in NetSuite.
 
@@ -193,7 +193,7 @@ The Transfers data type doesn't support multiple lines.
 
 When reading NetSuite deposits as Transfers, only top-level tracking categories are read (the tracking categories associated with the _to_ account in NetSuite). Codat's accounting data model does not support Tracking categories at the line item level.
 
-### Writing Transfers
+### Writing transfers
 
 Writing Transfers is only supported for NetSuite deposits, not NetSuite transfers.
 
@@ -201,6 +201,10 @@ When making a deposit in NetSuite, users can enter payments on the **Deposits** 
 
 - The `depositedRecordRefs` array in the Transfer must specify either `payments`, `directIncomes`, or `journalEntries`.
 - All transactions in the `depositedRecordRefs` array must share the same currency.
+
+## Payments and credit note allocation 
+
+It's not possible to pay the full value of a NetSuite Invoice with a Credit Note using Codat. If you try to pay the entire value of an Invoice using a Credit Note, the write operation will fail and NetSuite will return the following error message: `...Value 0.0 outside of valid min/max range for field payment...`
 
 ## Field coverage for supported data types
 
