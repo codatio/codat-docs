@@ -140,11 +140,11 @@ You may encounter a validation error when sending a request to update a bill. In
 | Missing `dueDate`           | 'Due Date' must not be empty.                           |
 | Missing currency            | 'Currency' must not be empty.                           |
 | Invalid currency            | 'Currency Length' must be equal to '3'.                 |
-| Currency rate </= 0          | 'Currency Rate' must be greater than '0'.               |
+| Currency rate `<= 0`          | 'Currency Rate' must be greater than '0'.               |
 | Missing status              | 'Status' must not be empty.                             |
 | Invalid status              | 'Status' must be equal to 'Open'.                       |
 | Missing or empty line items | 'Line Items' must not be empty.                         |
-| Negative line items total   | sum of LineItems must be greater than or equal to '0'.  |
+| Negative line items total   | Sum of `LineItems` must be greater than or equal to '0'.  |
 | Reference too long          | 'Reference Length' must be less than or equal to '255'. |
 | Bill not found              | 404 Not Found                                           |
 
