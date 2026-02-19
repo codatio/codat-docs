@@ -30,6 +30,7 @@ module.exports = [
   },
   "payables/sync/bills",
   "payables/sync/pay-bill",
+  "payables/sync/update-bill",
   {
     type: "doc",
     id: "payables/sync/sync-data-types",
