@@ -35,7 +35,7 @@ Use our [Update bill](/sync-for-payables-v2-api#/operations/update-bill) endpoin
     - `currencyRate`
     - `lineItems[]`
 
-For integration-specific rules and errors, review the [Software requirements](/payables/sync/pay-bill#software-requirements) section.
+For integration-specific rules and errors, review the [Software requirements](/payables/sync/update-bill#software-requirements) section.
 
 ---
 
