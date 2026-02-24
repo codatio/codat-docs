@@ -24,12 +24,17 @@ You may see one of the following statuses next to the company name:
 | **Available**           | Codat successfully generated the spend report for this customer, and it's ready to download. |
 | **Generating**          | Codat is currently generating the spend report for this customer. Check back later.          |
 | **Unavailable**         | Codat hasn't yet received data from this customer. Onboard the customer first.              |
+| **Failed**         | Codat couldn't generate the report. Contact support to resolve the error.              |
 
 ![An image of the Portal user interface on the Spend Insights tab with four companies listed and their statuses highlighted.](/img/spend-insights/si-spend-report-statuses.png)
 
 ## Update report
 
-You can refresh the data in the Spend Insights report as often as you need, ensuring you are always working with the most up-to-date financial information of your customers. To generate an updated report, follow these steps:
+If your customer shared their data with you via [Data streaming](/spend-insights/resources/link-software), you can refresh the data in the Spend Insights report as often as you need. This ensures you are always working with the most up-to-date financial information of your customers. 
+
+On-demand report update isn't possible if your customer used [Intelligent Upload](/spend-insights/resources/link-file) to share their financial data.
+
+To generate an updated report, follow these steps:
 
 1. Navigate to the **Spend Insights** tab in the [Codat Portal](https://app.codat.io).
 
