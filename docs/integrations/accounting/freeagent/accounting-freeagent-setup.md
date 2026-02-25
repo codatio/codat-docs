@@ -44,7 +44,6 @@ Create an application in FreeAgent and then retrieve the secure application cred
 2. Locate **FreeAgent** and click **Set up**.
 
 3. Under **Integration settings**, enter the values for the **Client ID** and **Client secret** from the FreeAgent developer site.
-
    - In the **Client ID** box, enter the **OAuth identifier** for your FreeAgent app.
    - In the **Client Secret** box, enter the **OAuth secret** for your FreeAgent app.
 

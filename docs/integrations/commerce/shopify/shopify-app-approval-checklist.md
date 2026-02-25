@@ -27,7 +27,7 @@ Requirements
    Contains setup instructions if required
    Avoid pop ups
 3. Functionality and quality
-   A user interface is required, inluding buttons, controls and any setup instructions
+   A user interface is required, including buttons, controls and any setup instructions
    If any charges then it uses the Shopify Billing API
    Testing credentials included
    Able to be tested and working

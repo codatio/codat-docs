@@ -33,7 +33,6 @@ Build your account mapping process to use the Codat API as follows:
 2. [Configure a webhook consumer](/using-the-api/webhooks/create-consumer) to listen for the [DatasetDataChanged](/using-the-api/webhooks/event-types) event that indicates changes in the underlying data for the `chartOfAccounts` data type. You will receive a notification when the data sync completes successfully.
 
 3. Once notified by the webhook, call our [List accounts](/accounting-api#/operations/list-accounts) endpoint and use the response to display `account.name` and `account.id` in a dropdown box for your customer to choose the correct mapping. You can also query the response to simplify the mapping experience for your customer:
-
    - Display only active accounts of relevant account type needed for your mapping page, such as `type=income` and `status=active`.
 
    ```

@@ -64,15 +64,17 @@ Let your users know that some integrations are not optimized or will not connect
 
 Toggle whether the _Secured by Codat_ logo is shown on your authorization flow.
 
-#### Restart journey
+#### Navigation bar
 
-Allow your customers to restart the linking process for accounting software in case their first connection attempt fails. Enabling this setting will add a "Try again" button to the connection error page.
-
-It's possible to restart the linking process for commerce and banking platforms by default and no additional settings are required.
+Toggle whether a navigation bar is displayed at the top of the Link flow. The bar color uses the secondary brand color you set in [Branding settings](/auth-flow/customize/branding#secondary-color).
 
 #### Landing page
 
 If enabled, an extra page will appear at the start of Link. The page's content is customizable, which is an excellent opportunity to explain the value of linking. You can customize the header and the body of the message.
+
+#### Company logo
+
+Enable this setting to have the company logo set in [Branding settings](/auth-flow/customize/branding) displayed on the landing page of the Link flow. You must also have the [Landing page](/auth-flow/customize/customize-link#landing-page) setting enabled for this setting to take effect.
 
 #### Left panel
 

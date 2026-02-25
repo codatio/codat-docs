@@ -61,17 +61,17 @@ In the companies view, you can see the following information for every company:
 
 - Company name
 - Company ID
-- Name of the Portal user that created the company
 - Date and time of the company creation
 - Date and time of the last read of data
 - Data connections and their [statuses](/configure/portal/companies#data-connection-statuses)
+- Associated products
 
 #### Data connection statuses
 
 - _Green_ indicates the connection is linked, and data can be refreshed from the connection
 - _Red_ indicates the connection has an error, or has become de-authorized (your customer will need to re-authorize the connection)
 - _Purple_ indicates the connection has been created but has not yet been authorized
-- _Grey_ indicates the connection has been un-linked (your customer will need to re-authorize the connection)
+- _Grey_ indicates the connection has been unlinked (your customer will need to reauthorize the connection)
 
 Clicking on a data connection allows you to manage the connection and see any linking errors.
 

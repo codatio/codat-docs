@@ -32,8 +32,8 @@ Once a product has been assigned, these users can create companies.
 
 | Role              | Access to product | Can edit user roles | Can assign products | Can access **Settings > Users** | Can create/view companies   |
 | ----------------- | ----------------- | ------------------- | ------------------- | ------------------------------- | --------------------------- |
-| **Administrator** | Full access       | ✔                  | ✔                  | ✔                              | ✔                          |
-| **Developer**     | Full access       | ✘                   | ✘                   | ✔                              | ✔                          |
+| **Administrator** | Full access       | ✔                   | ✔                   | ✔                               | ✔                           |
+| **Developer**     | Full access       | ✘                   | ✘                   | ✔                               | ✔                           |
 | **Analyst**       | Product required  | ✘                   | ✘                   | ✘                               | Only after product assigned |
 | **Onboarding**    | Product required  | ✘                   | ✘                   | ✘                               | Only after product assigned |
 

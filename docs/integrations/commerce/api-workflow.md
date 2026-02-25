@@ -22,7 +22,6 @@ Create a Codat company and data connection for your customer.
 1. Open the [Create a company](/platform-api#/operations/create-company) endpoint.
 2. Enter a **companyName** and **platformType** and submit your request.
    The response returned includes:
-
    - The **linkUrl** which allows your customer to authorize your connection to their data.
    - The data connection **id** which allows you to sync the company's data.
 

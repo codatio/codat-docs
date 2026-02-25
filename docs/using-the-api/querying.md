@@ -24,13 +24,13 @@ The below query functionality will only work when searching for company data (e.
 
 | Operator | Name                     | Encoded      | Number | String | Date |
 | -------- | ------------------------ | :----------- | ------ | ------ | ---- |
-| `=`      | Equals                   | `%3d`        | ✔     | ✔     | ✔   |
-| `!=`     | Not equals               | `%21%3d`     | ✔     | ✔     | ✔   |
-| `~`      | Contains                 | `%7E`        | ❌     | ✔     | ❌   |
-| `>`      | Greater than             | `%3e`        | ✔     | ❌     | ✔   |
-| `<`      | Less than                | `%3c`        | ✔     | ❌     | ✔   |
-| `>=`     | Greater than or equal to | `%3e%3d`     | ✔     | ❌     | ✔   |
-| `<=`     | Less than or equal to    | `%3c%3d`     | ✔     | ❌     | ✔   |
+| `=`      | Equals                   | `%3d`        | ✔      | ✔      | ✔    |
+| `!=`     | Not equals               | `%21%3d`     | ✔      | ✔      | ✔    |
+| `~`      | Contains                 | `%7E`        | ❌     | ✔      | ❌   |
+| `>`      | Greater than             | `%3e`        | ✔      | ❌     | ✔    |
+| `<`      | Less than                | `%3c`        | ✔      | ❌     | ✔    |
+| `>=`     | Greater than or equal to | `%3e%3d`     | ✔      | ❌     | ✔    |
+| `<=`     | Less than or equal to    | `%3c%3d`     | ✔      | ❌     | ✔    |
 | `&&`     | AND                      | `%26%26`     | -      | -      | -    |
 | `\|\|`   | OR                       | `%7C%7C`     | -      | -      | -    |
 | `{`, `}` | Logical separator        | `%7B`, `%7D` | -      | -      | -    |

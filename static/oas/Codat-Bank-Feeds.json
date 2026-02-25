@@ -111,20 +111,12 @@
       "description": "Create new and manage existing data connections for a company."
     },
     {
-      "name": "Configuration",
-      "description": "Configure bank feeds for a company."
-    },
-    {
       "name": "Bank accounts",
       "description": "Access bank accounts in an SMBs accounting software."
     },
     {
       "name": "Source accounts",
       "description": "Provide and manage lists of source bank accounts."
-    },
-    {
-      "name": "Sync",
-      "description": "Monitor the status of data syncs."
     },
     {
       "name": "Account mapping",
@@ -1262,161 +1254,6 @@
           },
           "description": ""
         }
-      }
-    },
-    "/companies/{companyId}/sync/banking/config": {
-      "parameters": [
-        {
-          "$ref": "#/components/parameters/companyId"
-        }
-      ],
-      "get": {
-        "summary": "Get configuration",
-        "operationId": "get-configuration",
-        "x-internal": true,
-        "tags": [
-          "Configuration"
-        ],
-        "description": "﻿The *Get configuration* endpoint returns the current configuration for a given company ID.",
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Configuration"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      },
-      "post": {
-        "summary": "Set configuration",
-        "operationId": "set-configuration",
-        "x-speakeasy-name-override": "set",
-        "x-internal": true,
-        "tags": [
-          "Configuration"
-        ],
-        "description": "﻿Use *Set configuration* endpoint to configure a given company ID.",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Configuration"
-              },
-              "examples": {}
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Configuration"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        }
-      }
-    },
-    "/companies/{companyId}/sync/banking/syncs/lastSuccessful/status": {
-      "get": {
-        "tags": [
-          "Sync"
-        ],
-        "description": "Use the _Get last successful sync_ endpoint to obtain the status information for the company's [most recent successful sync](https://docs.codat.io/bank-feeds-api#/schemas/CompanySyncStatus). ",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/companyId"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CompanySyncStatus"
-                },
-                "examples": {}
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "402": {
-            "$ref": "#/components/responses/Payment-Required"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
-          "404": {
-            "$ref": "#/components/responses/Not-Found"
-          },
-          "429": {
-            "$ref": "#/components/responses/Too-Many-Requests"
-          },
-          "500": {
-            "$ref": "#/components/responses/Internal-Server-Error"
-          },
-          "503": {
-            "$ref": "#/components/responses/Service-Unavailable"
-          }
-        },
-        "summary": "Get last successful sync",
-        "operationId": "get-last-successful",
-        "x-speakeasy-name-override": "get-last-successful-sync",
-        "x-internal": true
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/bankAccounts": {
@@ -3295,7 +3132,7 @@
           }
         },
         "operationId": "get-create-bankAccounts-model",
-        "description": "The *Get create/update bank account model* endpoint returns the expected data for the request payload when creating and updating a [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company and integration.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n"
+        "description": "The *Get create/update bank account model* endpoint returns the expected data for the request payload when creating and updating a [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company and integration.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behavior**\r\n\r\nSee the *response examples* for integration-specific indicative models.\r\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bankAccounts": {
@@ -3365,7 +3202,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behaviour**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/bank-feeds-api#/operations/get-create-update-bankAccounts-model).",
+        "description": "The *Create bank account* endpoint creates a new [bank account](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) for a given company's connection.\r\n\r\n[Bank accounts](https://docs.codat.io/bank-feeds-api#/schemas/BankAccount) are financial accounts maintained by a bank or other financial institution.\r\n\r\n**Integration-specific behavior**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update bank account model](https://docs.codat.io/bank-feeds-api#/operations/get-create-update-bankAccounts-model).",
         "operationId": "create-bank-account"
       }
     },
@@ -3967,7 +3804,7 @@
           "Account mapping"
         ],
         "summary": "Create bank feed account mapping",
-        "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting software (target account).\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end user's account in the underlying software).\n\nTo find valid target account options, first call the [List bank feed account mappings](https://docs.codat.io//bank-feeds-api#/operations/get-bank-account-mapping) endpoint.\n\n> **For custom builds only**\n>\n> Only use this endpoint if you are building your own account management UI.\n\n#### Account mapping variability\n\nThe method of mapping the source account to the target account varies depending on the accounting software your company uses.\n\n#### Mapping options:\n\n1. **API Mapping**: Integrate the mapping journey directly into your application for a seamless user experience.\n2. **Codat UI Mapping**: If you prefer a quicker setup, you can utilize Codat's provided user interface for mapping.\n3. **Accounting Platform Mapping**: For some accounting software, the mapping process must be conducted within the software itself.\n\n### Integration-specific behaviour\n\n| Bank Feed Integration | API Mapping | Codat UI Mapping | Accounting Platform Mapping |\n| --------------------- | ----------- | ---------------- | --------------------------- |\n| Xero                  | ✅          | ✅               |                             |\n| FreeAgent             | ✅          | ✅               |                             |\n| Oracle NetSuite       | ✅          | ✅               |                             |\n| Exact Online (NL)     | ✅          | ✅               |                             |\n| QuickBooks Online     |             |                  | ✅                          |\n| Sage                  |             |                  | ✅                          |",
+        "description": "﻿The *Create bank account mapping* endpoint creates a new mapping between a source bank account and a potential account in the accounting software (target account).\n\nA bank feed account mapping is a specified link between the source account (provided by the Codat user) and the target account (the end user's account in the underlying software).\n\nTo find valid target account options, first call the [List bank feed account mappings](https://docs.codat.io//bank-feeds-api#/operations/get-bank-account-mapping) endpoint.\n\n> **For custom builds only**\n>\n> Only use this endpoint if you are building your own account management UI.\n\n#### Account mapping variability\n\nThe method of mapping the source account to the target account varies depending on the accounting software your company uses.\n\n#### Mapping options:\n\n1. **API Mapping**: Integrate the mapping journey directly into your application for a seamless user experience.\n2. **Codat UI Mapping**: If you prefer a quicker setup, you can utilize Codat's provided user interface for mapping.\n3. **Accounting Platform Mapping**: For some accounting software, the mapping process must be conducted within the software itself.\n\n### Integration-specific behavior\n\n| Bank Feed Integration | API Mapping | Codat UI Mapping | Accounting Platform Mapping |\n| --------------------- | ----------- | ---------------- | --------------------------- |\n| Xero                  | ✅          | ✅               |                             |\n| FreeAgent             | ✅          | ✅               |                             |\n| Oracle NetSuite       | ✅          | ✅               |                             |\n| Exact Online (NL)     | ✅          | ✅               |                             |\n| QuickBooks Online     |             |                  | ✅                          |\n| Sage                  |             |                  | ✅                          |",
         "operationId": "create-bank-account-mapping",
         "requestBody": {
           "content": {
@@ -4086,7 +3923,7 @@
           "Transactions"
         ],
         "summary": "Create bank transactions",
-        "description": "﻿The *Create bank transactions* endpoint creates new [bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nThe required properties may vary based on the integration. For detailed requirements specific to each accounting software, refer to the API reference examples.\nAlternatively, you can view the [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bank-transactions-model) for more information.",
+        "description": "﻿The *Create bank transactions* endpoint creates new [bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company's connection.\n\n[Bank transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of monetary amounts that have moved in and out of an SMB's bank account.\n\n**Integration-specific behavior**\n\nThe required properties may vary based on the integration. For detailed requirements specific to each accounting software, refer to the API reference examples.\nAlternatively, you can view the [Get create bank transaction model](https://docs.codat.io/bank-feeds-api#/operations/get-create-bank-transactions-model) for more information.",
         "operationId": "create-bank-transactions",
         "parameters": [
           {
@@ -4124,7 +3961,7 @@
                     "transactions": [
                       {
                         "id": "716422529",
-                        "date": "2023-08-22T10:21:00Z",
+                        "date": "2023-08-22T10:21:00",
                         "description": "Repayment of Credit Card",
                         "counterparty": "Bank of Example",
                         "reference": "Ref-12345",
@@ -4135,7 +3972,7 @@
                       },
                       {
                         "id": "716422530",
-                        "date": "2023-08-22T10:22:00Z",
+                        "date": "2023-08-22T10:22:00",
                         "description": "Amazon Purchase",
                         "counterparty": "Amazon",
                         "reference": "Ref-12346",
@@ -4146,7 +3983,7 @@
                       },
                       {
                         "id": "716422531",
-                        "date": "2023-08-22T10:23:00Z",
+                        "date": "2023-08-22T10:23:00",
                         "description": "Office Supplies",
                         "counterparty": "Office Mart",
                         "reference": "Ref-12347",
@@ -4164,7 +4001,7 @@
                     "transactions": [
                       {
                         "id": "716422529",
-                        "date": "2023-08-22T10:21:00Z",
+                        "date": "2023-08-22T10:21:00",
                         "description": "Repayment of Credit Card",
                         "amount": 100,
                         "balance": 100,
@@ -4172,7 +4009,7 @@
                       },
                       {
                         "id": "716422530",
-                        "date": "2023-08-22T10:22:00Z",
+                        "date": "2023-08-22T10:22:00",
                         "description": "Amazon Purchase",
                         "amount": -100,
                         "balance": 0,
@@ -4180,7 +4017,7 @@
                       },
                       {
                         "id": "716422531",
-                        "date": "2023-08-22T10:23:00Z",
+                        "date": "2023-08-22T10:23:00",
                         "description": "Office Supplies",
                         "amount": -60,
                         "balance": -60,
@@ -4195,21 +4032,21 @@
                     "transactions": [
                       {
                         "id": "716422529",
-                        "date": "2023-08-22T10:21:00Z",
+                        "date": "2023-08-22T10:21:00",
                         "description": "Repayment of Credit Card",
                         "amount": 100,
                         "transactionType": "Credit"
                       },
                       {
                         "id": "716422530",
-                        "date": "2023-08-22T10:22:00Z",
+                        "date": "2023-08-22T10:22:00",
                         "description": "Amazon Purchase",
                         "amount": -100,
                         "transactionType": "Debit"
                       },
                       {
                         "id": "716422531",
-                        "date": "2023-08-22T10:23:00Z",
+                        "date": "2023-08-22T10:23:00",
                         "description": "Office Supplies",
                         "amount": -60,
                         "transactionType": "Debit"
@@ -4223,7 +4060,7 @@
                     "transactions": [
                       {
                         "id": "716422529",
-                        "date": "2023-08-22T10:21:00Z",
+                        "date": "2023-08-22T10:21:00",
                         "description": "Repayment of Credit Card",
                         "counterparty": "Bank of Example",
                         "reference": "Ref-12345",
@@ -4233,7 +4070,7 @@
                       },
                       {
                         "id": "716422530",
-                        "date": "2023-08-22T10:22:00Z",
+                        "date": "2023-08-22T10:22:00",
                         "description": "Amazon Purchase",
                         "counterparty": "Amazon",
                         "reference": "Ref-12346",
@@ -4243,7 +4080,7 @@
                       },
                       {
                         "id": "716422531",
-                        "date": "2023-08-22T10:23:00Z",
+                        "date": "2023-08-22T10:23:00",
                         "description": "Office Supplies",
                         "counterparty": "Office Mart",
                         "reference": "Ref-12347",
@@ -4302,7 +4139,7 @@
           "Transactions"
         ],
         "summary": "Get create bank transactions model",
-        "description": "The *Get create bank account transactions model* endpoint returns the expected data for the request payload when creating [bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company and integration.\n\n[Bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of money that has moved in and out of an SMB's bank account.\n\n**Integration-specific behaviour**\n\nSee the *response examples* for integration-specific indicative models.",
+        "description": "The *Get create bank account transactions model* endpoint returns the expected data for the request payload when creating [bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) for a given company and integration.\n\n[Bank account transactions](https://docs.codat.io/bank-feeds-api#/schemas/BankTransactions) are records of money that has moved in and out of an SMB's bank account.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.",
         "operationId": "get-create-bank-transactions-model",
         "parameters": [
           {
@@ -5328,7 +5165,13 @@
               "example": "716422529"
             },
             "date": {
-              "$ref": "#/components/schemas/DateTime"
+              "title": "Local date time",
+              "type": "string",
+              "examples": [
+                "2023-08-22T10:21:00",
+                "2023-08-22"
+              ],
+              "description": "In Codat's data model, dates and times are represented using the <a class=\"external\" href=\"https://en.wikipedia.org/wiki/ISO_8601\" target=\"_blank\">ISO 8601 standard</a>. Date and time fields are formatted as strings; for example:\n\n```\n2023-08-22T10:21:00\n2023-08-22\n```\n\nWhen pushing bank transaction data to Codat, the date is treated as a local date. This means:\n\n- The date/time is used exactly as provided, without any timezone conversion.\n- If a timezone offset is included (e.g., `2023-08-22T10:21:00-05:00`), the offset will be ignored and only the local date/time portion will be used.\n- We recommend providing dates without a timezone suffix for clarity (e.g., `2023-08-22T10:21:00` rather than `2023-08-22T10:21:00Z`)."
             },
             "description": {
               "type": "string",
@@ -5810,84 +5653,6 @@
           "name"
         ]
       },
-      "CompanySyncStatus": {
-        "title": "Company sync status",
-        "type": "object",
-        "additionalProperties": false,
-        "x-examples": {
-          "Success Data Pushed": {
-            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
-            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
-            "syncStatusCode": 2000,
-            "syncStatus": "Complete",
-            "errorMessage": "",
-            "syncExceptionMessage": "",
-            "syncUtc": "2023-01-24T14:15:22Z",
-            "dataPushed": true
-          },
-          "Success No Data Pushed": {
-            "companyId": "20803807-4e9a-4cb7-b67b-9f889a3916e1",
-            "syncId": "aa4c9dfd-e945-4424-9628-9e724f14c267",
-            "syncStatusCode": 2040,
-            "syncStatus": "Complete",
-            "errorMessage": "",
-            "syncExceptionMessage": "",
-            "syncUtc": "2023-01-24T14:15:22Z",
-            "dataPushed": false
-          }
-        },
-        "properties": {
-          "companyId": {
-            "type": "string",
-            "description": "Unique identifier for your SMB in Codat.",
-            "example": "d4d73051-ed31-42b6-99f6-d288cd940992",
-            "nullable": true
-          },
-          "syncId": {
-            "type": "string",
-            "description": "Unique identifier of the sync.",
-            "example": "a6a22aff-a43a-411d-a910-2dae73217cce",
-            "nullable": true
-          },
-          "syncStatusCode": {
-            "type": "integer",
-            "format": "int32",
-            "description": "Status code of the sync.",
-            "example": 2000
-          },
-          "syncStatus": {
-            "type": "string",
-            "description": "Text status of the sync.",
-            "examples": [
-              "Complete",
-              "PushError",
-              "Started",
-              "NotStarted",
-              "Pushing"
-            ],
-            "nullable": true
-          },
-          "errorMessage": {
-            "type": "string",
-            "description": "Error message of the sync.",
-            "nullable": true
-          },
-          "syncExceptionMessage": {
-            "type": "string",
-            "description": "Exception message of the sync.",
-            "nullable": true
-          },
-          "syncUtc": {
-            "$ref": "#/components/schemas/DateTime",
-            "description": "Datetime of the sync.",
-            "nullable": true
-          },
-          "dataPushed": {
-            "type": "boolean",
-            "description": "Boolean of whether the sync resulted in data being pushed."
-          }
-        }
-      },
       "CompanyUpdateRequest": {
         "title": "Update company request",
         "x-internal": true,
@@ -5905,187 +5670,6 @@
           },
           "tags": {
             "$ref": "#/components/schemas/Company/definitions/companyDetails/properties/tags"
-          }
-        }
-      },
-      "Configuration": {
-        "title": "Configuration",
-        "type": "object",
-        "x-internal": true,
-        "properties": {
-          "companyId": {
-            "$ref": "#/components/parameters/companyId/schema"
-          },
-          "accountingSoftwareCompanyName": {
-            "type": "string",
-            "description": "The company name defined in the accounting software."
-          },
-          "enabled": {
-            "type": "boolean",
-            "description": "Enabled or disable bank feeds."
-          },
-          "configured": {
-            "type": "boolean",
-            "description": "True if the company has been configured."
-          },
-          "schedule": {
-            "$ref": "#/components/schemas/Configuration/definitions/configurationSchedule"
-          },
-          "configuration": {
-            "$ref": "#/components/schemas/Configuration/definitions/syncConfiguration"
-          }
-        },
-        "definitions": {
-          "configurationSchedule": {
-            "title": "Configuration schedule",
-            "type": "object",
-            "properties": {
-              "selectedFrequency": {
-                "type": "string",
-                "description": "The sync frequency."
-              },
-              "frequencyOptions": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "The available sync frequencies."
-              },
-              "startDate": {
-                "type": "string",
-                "description": "The datetime in UTC you want to start syncing from."
-              },
-              "syncHourUtc": {
-                "type": "integer",
-                "description": "The hour in which the sync is initiated."
-              },
-              "timeZoneIanaId": {
-                "type": "string",
-                "description": "The [IANA](https://www.iana.org/time-zones) time zone ID."
-              }
-            }
-          },
-          "syncConfiguration": {
-            "title": "Sync configuration",
-            "type": "object",
-            "properties": {
-              "syncAsBankFeeds": {
-                "$ref": "#/components/schemas/Configuration/definitions/syncAsBankFeeds"
-              },
-              "syncAsExpenses": {
-                "$ref": "#/components/schemas/Configuration/definitions/syncAsExpenses"
-              }
-            }
-          },
-          "syncAsBankFeeds": {
-            "title": "Sync as bank feed",
-            "type": "object",
-            "properties": {
-              "enableSync": {
-                "type": "boolean",
-                "description": "True if bank feeds sync is enabled."
-              },
-              "selectedBankAccountId": {
-                "type": "string",
-                "description": "The bank account ID being synced."
-              },
-              "bankAccountOptions": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Configuration/definitions/bankAccountOption"
-                }
-              }
-            }
-          },
-          "syncAsExpenses": {
-            "title": "Sync as expenses",
-            "type": "object",
-            "properties": {
-              "enableSync": {
-                "type": "boolean",
-                "description": "True if expense sync is enabled."
-              },
-              "supplier": {
-                "$ref": "#/components/schemas/Configuration/definitions/configurationSupplier"
-              },
-              "customer": {
-                "$ref": "#/components/schemas/Configuration/definitions/configurationCustomer"
-              },
-              "selectedBankAccountId": {
-                "type": "string",
-                "description": "The bank account ID being synced."
-              },
-              "bankAccountOptions": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Configuration/definitions/bankAccountOption"
-                }
-              }
-            }
-          },
-          "bankAccountOption": {
-            "title": "Bank account option",
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Unique identifier for the bank account."
-              },
-              "name": {
-                "type": "string",
-                "description": "Name of bank account."
-              },
-              "accountType": {
-                "type": "string",
-                "description": "The type of account."
-              }
-            }
-          },
-          "configurationSupplier": {
-            "title": "Supplier configuration",
-            "type": "object",
-            "properties": {
-              "selectedSupplierId": {
-                "type": "string",
-                "description": "Unique identifier for the supplier."
-              },
-              "supplierOptions": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Configuration/definitions/configurationContactRef"
-                }
-              }
-            }
-          },
-          "configurationCustomer": {
-            "title": "Customer configuration",
-            "type": "object",
-            "properties": {
-              "selectedCustomerId": {
-                "type": "string",
-                "description": "Unique identifier for the customer."
-              },
-              "customerOptions": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Configuration/definitions/configurationContactRef"
-                }
-              }
-            }
-          },
-          "configurationContactRef": {
-            "title": "Supplier/customer reference",
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string",
-                "description": "Unique identifier for the supplier/customer."
-              },
-              "name": {
-                "type": "string",
-                "description": "The supplier/customer's name."
-              }
-            }
           }
         }
       },

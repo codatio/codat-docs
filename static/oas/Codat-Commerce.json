@@ -9137,14 +9137,6 @@
             "description": "A phone number."
           },
           "type": {
-            "$ref": "#/components/schemas/PhoneNumber/definitions/phoneNumberType"
-          }
-        },
-        "required": [
-          "type"
-        ],
-        "definitions": {
-          "phoneNumberType": {
             "description": "The type of phone number",
             "type": "string",
             "enum": [
@@ -9155,7 +9147,10 @@
               "Unknown"
             ]
           }
-        }
+        },
+        "required": [
+          "type"
+        ]
       },
       "Product": {
         "title": "Commerce: Product",

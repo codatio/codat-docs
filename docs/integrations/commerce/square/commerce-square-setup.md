@@ -61,7 +61,6 @@ In the <a className="external" href="https://app.codat.io" target="_blank">Codat
 1. On the navigation bar, select **Settings > Integrations > Commerce**.
 
 2. Select the correct integration depending on whether you're configuring your app in the Square Sandbox or production.
-
    - For sandbox, click **Set up** next to the **Square Sandbox** integration.
    - For production, click **Set up** next to the **Square** integration.
      The **Integration settings** page is displayed.
@@ -69,12 +68,10 @@ In the <a className="external" href="https://app.codat.io" target="_blank">Codat
 3. Under **Access to company data**, configure the permitted sync frequency for the integration. Select **Allow one-off data sync…** or **Allow continuous data sync**.
 
 4. Enter the application ID for your Square app in the **Application ID** box.
-
    - For sandbox, enter the **Sandbox Application ID** from Square.
    - For production, enter the **Production Application ID** from Square.
 
 5. Enter the application secret for your Square app in the **Application Secret** box.
-
    - For sandbox, enter the **Sandbox Application secret** from Square.
    - For production, enter the **Production Application secret** from Square.
 

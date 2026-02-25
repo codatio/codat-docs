@@ -29,10 +29,10 @@ A webhook consumer endpoint which is disabled after the 5 min retry, but then re
 
 ## Message Status
 
-- "Success" indicates that there was at least one attempt for that message that succeeded against it's endpoint.
-- "Failure" indicates that all attempts were exhausted, and none of them succeeded.
-- "Attempting" indicates that at least one attempt has been sent and there are further attempts scheduled as part of the retry policy.
-- "Sending" indicates that the process of sending the webhook has begun but there have been no delivery attempts yet.
+- **Success** indicates that there was at least one attempt for that message that succeeded against it's endpoint.
+- **Failure** indicates that all attempts were exhausted, and none of them succeeded.
+- **Attempting** indicates that at least one attempt has been sent and there are further attempts scheduled as part of the retry policy.
+- **Sending** indicates that the process of sending the webhook has begun but there have been no delivery attempts yet.
 
 ## Recover failed and missed messages
 
@@ -67,7 +67,7 @@ Then, click the triple-dot menu on the right and choose one of the applicable op
 
 For more granular date control, you can scroll to the endpoint's message attempts, click the triple-dot options menu of a specific message, and choose **Replay > Replay all failed messages since this time**.
 
-During the recovery of multiple messages, all messages will be sent at once with some jitter applied in order to prevent overloading the webhook consumer endpoint. If your system has rate-limiting in place, the number of messages to recover may be an important consideration to avoid further failures. Please reach out to Codat Support if unsure.
+During the recovery of multiple messages, we will send all messages at once, applying some delay between messages. This is to prevent overloading the webhook consumer endpoint. If your system has rate limiting in place, consider this scenario to avoid further failures. See details of [webhook endpoint rate limiting](/using-the-api/webhooks/create-consumer#endpoint-rate-limits).
 
 ### Idempotency
 

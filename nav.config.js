@@ -31,12 +31,8 @@ module.exports = {
           hr: true,
         },
         {
-          href: "/sync-for-payables-api",
-          label: "Bill Pay (async)",
-        },
-        {
           href: "/sync-for-payables-v2-api",
-          label: "Bill Pay (sync)",
+          label: "Bill Pay",
         },
         {
           href: "/sync-for-expenses-api",

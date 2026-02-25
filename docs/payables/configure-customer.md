@@ -44,7 +44,7 @@ Remember to [authenticate](/using-the-api/authentication) when making calls to o
 
 ## Create a company
 
-Within Bill Pay, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company (async)](/sync-for-payables-api#/operations/create-company) or [Create company (sync)](/sync-for-payables-v2-api#/operations/create-company) endpoints.
+Within Bill Pay, a company represents your SMB customer that pays and manages their bills using your application. To create it, use our [Create company](/sync-for-payables-v2-api#/operations/create-company) endpoints.
 
 The endpoints return the company schema containing the ID that you will use to establish a connection to an accounting software.
 
@@ -122,7 +122,7 @@ if companyResponse.StatusCode == 200 {
 
 ## Create a connection
 
-Next, use the [Create connection (async)](/sync-for-payables-api#/operations/create-connection) or [Create connection (sync)](/sync-for-payables-v2-api#/operations/create-connection) endpoints to connect the company to an accounting data source via one of our integrations.
+Next, use the [Create connection](/sync-for-payables-v2-api#/operations/create-connection) endpoints to connect the company to an accounting data source via one of our integrations.
 
 This will allow you to synchronize data with that source, fetching or creating suppliers, bills, and payment methods. In the request body, specify a `platformKey` of the accounting software you're looking to connect.
 
@@ -225,7 +225,7 @@ fmt.Println(connectionResponse.Connection.LinkUrl)
 
 ## Deauthorize a connection
 
-If your customer wants to revoke their approval and sever the connection to their accounting software, use the [Unlink connection (async)](/sync-for-payables-api#/operations/Unlink-connection) or [Unlink connection (sync)](/sync-for-payables-v2-api#/operations/Unlink-connection) endpoints.
+If your customer wants to revoke their approval and sever the connection to their accounting software, use the [Unlink connection](/sync-for-payables-v2-api#/operations/Unlink-connection) endpoints.
 
 You can [learn more](/auth-flow/optimize/connection-management) about connection management best practices and see how you can provide this functionality in your app's UI.
 

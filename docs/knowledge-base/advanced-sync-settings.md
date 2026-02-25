@@ -4,9 +4,15 @@ description: "Review additional settings available to configure the sync of vari
 displayed_sidebar: "docs"
 ---
 
-For most of our data types, we retrieve all available history. For financial statement data types (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history. You can apply additional sync settings to change these defaults. This helps you limit the amount of data synchronized from the source platform.
+For most of our data types, we retrieve all available history. For financial statement data types, (`balanceSheet`, `profitAndLoss`, `cashFlowStatement`), we retrieve 24 months of history.
 
-These settings only work for data sources that allow delta syncs and are applied to all companies.
+You can apply additional sync settings to change these defaults. This helps you to limit the amount of data synchronized from the source platform. We recommend that you only pull data from a date range relevant to your use case to reduce the chance of encountering rate limit errors.
+
+:::caution Limited coverage
+
+Changing advanced sync settings may not work for some data types and integration combinations. Check with Codat Support to confirm coverage.
+
+:::
 
 ## Sync settings
 
@@ -20,13 +26,19 @@ You can configure the following advanced settings:
 
 ## Configuration
 
-Use our [Update all sync settings](/platform-api#/operations/update-profile-syncSettings) endpoint to configure advanced sync settings. These settings are configured per data type and apply to all companies. The endpoint does not provide any error messages if the settings are not supported.
+Use the [Get sync settings](/platform-api#/operations/get-profile-syncSettings) endpoint to view the current global sync settings for your Codat client or the [Get company sync settings](/platform-api#/operations/get-company-syncSettings) endpoint for company-specific sync settings.
 
-For example, to configure advanced settings for our `invoices` data type, send the following request to the endpoint:
+To override client-level sync settings at a company level, use the [Set company sync settings](/platform-api#/operations/set-company-syncSettings) endpoint:
+
+```http title="Update company sync settings"
+POST /companies/{companyId}/syncSettings
+```
+
+For example, to configure company-specific settings for the `invoices` data type, send the following request to the endpoint:
 
 ```json
 {
-  "clientId": "367f7975-267b-439b-90c6-a6040ee680f3",
+  "companyId": "your-codat-company-id",
   "settings": [
     {
       "dataType": "invoices",
@@ -35,7 +47,7 @@ For example, to configure advanced settings for our `invoices` data type, send t
       "syncOrder": 0,
       "syncFromUtc": "2020-01-01T12:00:00.000Z",
       "syncFromWindow": 24,
-      "monthsToSync": 0,
+      "monthsToSync": 24,
       "isLocked": true
     }
   ],
@@ -45,10 +57,10 @@ For example, to configure advanced settings for our `invoices` data type, send t
 
 ## 💡 Tips and traps
 
-- When using advanced sync settings, settle on a uniform approach across your data types, as we cannot guarantee consistency if different approaches are applied.
+- When using advanced sync settings, settle on a uniform approach across your data types (e.g. all data types request 24 months' data). Some data types share requests, and applying different approaches may cause inconsistency.
 
-- Advanced sync settings can be applied to all data types, but we advise you do not set them for reference data, such as customers, suppliers, chart of accounts, tax rates, tracking categories, and items.
+- Advanced sync settings can be applied to all data types, but we advise you don't set them for reference data, such as customers, suppliers, chart of accounts, tax rates, tracking categories, and items.
 
-- Both `syncFromWindow` and `syncFromUtc` use `sourceModifiedDate` to select records for syncing. You can [read more about modified dates](/using-the-api/modified-dates).
+- Both `syncFromWindow` and `syncFromUtc` use `sourceModifiedDate` to select records for syncing. You can read more about [modified dates at Codat](/using-the-api/modified-dates).
 
 - When a sync setting is introduced after a successful data sync, the records fetched prior to the new sync setting will be either deleted or updated with a _Void_ or _Archived_ status.
