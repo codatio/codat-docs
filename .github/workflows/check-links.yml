@@ -5,6 +5,11 @@ on:
     types: [opened, reopened, synchronize]
   workflow_dispatch:  # Allows manual triggering from the GitHub UI
 
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   link-check:
     runs-on: ubuntu-latest
@@ -12,7 +17,7 @@ jobs:
     if: github.event_name != 'pull_request' || github.actor != 'codatbot' 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
@@ -21,6 +26,8 @@ jobs:
       
       - name: Install linkinator
         run: npm install -g linkinator
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       
       - name: Get Vercel Preview URL
         id: get-preview-url

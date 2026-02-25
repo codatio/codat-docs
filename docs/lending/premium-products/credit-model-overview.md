@@ -152,8 +152,8 @@ We recommend you [subscribe to the following webhooks](/using-the-api/webhooks/c
 
 - [`reports.creditModel.generate.successful`](/lending-api#/webhooks/reports.creditModel.generate.successful/post)
 
-  Thia webhook will notify you once the report successfully generates.
+  This webhook will notify you once the report successfully generates.
 
 - [`reports.creditModel.generate.unsuccessful`](/lending-api#/webhooks/reports.creditModel.generate.unsuccessful/post)
 
-  Thia webhook will notify you if the report generation fails.
+  This webhook will notify you if the report generation fails.

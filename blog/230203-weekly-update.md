@@ -5,7 +5,7 @@ tags: ["Product", "Update"]
 authors: mcclowes
 ---
 
-A new product for easy syncing with bookkeeping software and ERPs, and other qualithy of life improvements.
+A new product for easy syncing with bookkeeping software and ERPs, and other quality of life improvements.
 
 <!--truncate-->
 

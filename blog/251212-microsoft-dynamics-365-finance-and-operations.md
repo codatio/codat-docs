@@ -31,4 +31,4 @@ This integration is currently in a **limited release phase**. To gain access, co
 
 ## How to get started?
 
-Once the integration is enabled, your clients can immediately start sharing their Dynamics 365 F&O data with you. Visit our [Help Hub](https://help.codat.io/integrations/dynamics-fo) for step-by-step connection instructions you can provide to your clients. Alternatively, you can [read more](/integrations/accounting/dynamics365financeoperations/overview) about our Microsoft Dynamics 365 Finance & Operations integration.
+Once the integration is enabled, your clients can immediately start sharing their Dynamics 365 F&O data with you. Visit our [Help Hub](https://help.codat.io/integrations/dynamics-fo/overview) for step-by-step connection instructions you can provide to your clients. Alternatively, you can [read more](/integrations/accounting/dynamics365financeoperations/overview) about our Microsoft Dynamics 365 Finance & Operations integration.

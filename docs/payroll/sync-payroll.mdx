@@ -40,7 +40,7 @@ sequenceDiagram
         codat -->> app: Valid data type model
     end
 
-    app ->> codat: Creat journalEntry to represent payroll
+    app ->> codat: Create journalEntry to represent payroll
     codat -->> app: pushOperation key
 
     codat -->> app: pushOperation status webhook

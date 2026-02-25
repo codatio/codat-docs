@@ -1,6 +1,6 @@
 ---
 title: "Review spend analysis and insights"
-sidebar_label: Get spend insights
+sidebar_label: Review insights
 description: "Learn how to review the spend and supplier information from your customer and associated insights"
 ---
 
@@ -15,33 +15,58 @@ In this guide, we will cover how you can view the insights generated from your c
 
 ## Check data status
 
-Once you onboard the customer, check that their insights reports are ready. In the Codat Portal, navigate to the **Spend Insights** tab and locate the customer's company.
+Once you onboard the customer, their initial Spend Insights report generates immediately. In the Codat Portal, navigate to the **Spend Insights** tab, locate the customer's company, and check that the report is ready. 
 
 You may see one of the following statuses next to the company name:
 
-| **Status**              | **Action**                                                                                   |
+| **Report status**              | **Action**                                                                                   |
 | ----------------------- | -------------------------------------------------------------------------------------------- |
 | **Available**           | Codat successfully generated the spend report for this customer, and it's ready to download. |
 | **Generating**          | Codat is currently generating the spend report for this customer. Check back later.          |
-| **Unavailable**         | Report wasn't generated due to an error. Contact support to resolve the issue.               |
-| **Request information** | Codat hasn't yet received data from this customer. Onboard the customer first.               |
+| **Unavailable**         | Codat hasn't yet received data from this customer. Onboard the customer first.              |
+| **Failed**         | Codat couldn't generate the report. Contact support to resolve the error.              |
 
 ![An image of the Portal user interface on the Spend Insights tab with four companies listed and their statuses highlighted.](/img/spend-insights/si-spend-report-statuses.png)
 
-## Download reports
+## Update report
 
-To download the available reports, click the **Download** button next to the company name. In the dropdown, choose the type of report you wish to download and click the corresponding line. This downloads of the Excel reports to your default download folder.
+If your customer shared their data with you via [Data streaming](/spend-insights/resources/link-software), you can refresh the data in the Spend Insights report as often as you need. This ensures you are always working with the most up-to-date financial information of your customers. 
 
-Codat offers the following report options:
+On-demand report update isn't possible if your customer used [Intelligent Upload](/spend-insights/resources/link-file) to share their financial data.
 
-- **Spend summary** provides a one-page summary view of top supplier opportunities for the customer.
-- **Spend analysis** covers the summary and details of the customer's spend and suppliers in an Excel format.
+To generate an updated report, follow these steps:
+
+1. Navigate to the **Spend Insights** tab in the [Codat Portal](https://app.codat.io).
+
+2. Search or scroll to locate the company you require reports for.
+
+3. Click the **Download** icon on the company line to view the dropdown menu.
+
+4. Click **Update reports** in the dropdown menu.
+
+5. Track the progress by checking the _Report Status_ column. 
+
+Once updated, the status will change from _Generating_ to _Available_, and you can go ahead and download the resulting report.
+
+![An image of the Portal user interface on the Spend Insights tab with the Update Reports button visible and highlighted.](/img/spend-insights/si-update-reports.png)
+
+## Download report
+
+When you are ready to download a company's Spend Insights report, you can do so from the Spend Insights tab. 
+
+1. Search or scroll to locate the company you require reports for.
+
+2. Click the **Download** icon again, then click the _Spend Analysis_ line item.
+
+This initiates the download and saves the Excel report to your default download folder.
 
 ![An image of the Portal user interface with the download dropdown displayed and download button highlighted for an example company](/img/spend-insights/si-reports-download.png)
 
-## Spend analysis report
+## Spend Analysis report
 
-This Excel report offers a detailed look into your customer's spend data, providing an overview of their spending and suppliers by payment method and detailed supplier analysis. It also contains the source bills, bill payments, and direct costs that inform the report.
+Codat's **Spend Analysis** covers the summary and details of the customer's spend and suppliers in an Excel format.
+
+It offers a detailed look into your customer's spend data, providing an overview of their spending and suppliers by payment method and detailed supplier analysis. It also contains the source bills, bill payments, and direct costs that inform the report.
 
 ### Customer tab
 
@@ -194,19 +219,3 @@ The final section of this tab provides administrative details of each supplier, 
 ### Other tabs
 
 The **Bills**, **Bill Payments**, and **Direct Costs** tabs contain the source spend data that Codat used to generate the report.
-
-## Spend Insights Chat
-
-Codat has enhanced the Spend Insights solution capability with an AI agent that will use the spend data provided by your customer to respond to the queries asked in natural language. It can help you create spend summaries, prepare collateral, and draft communication materials for your customers.
-
-If your organization has opted to use this feature, you will see a **Lightbulb** icon next to your customer's name on the **Spend Insights** tab of the Codat Portal. Simply click on the button to be directed to Codat's Spend Insights Chat.
-
-![An image of three companies on the Spend Insights tab. A lightbulb icon is visible and highlighted next to aevery company entry.](/img/spend-insights/si-si-chat-lightbulb.png)
-
-The Spend Insights Chat provides three key interaction areas:
-
-- Use the _Spend Analysis report_ section to download the Excel file generated by Spend Insights or access the overview of the company's data.
-- Navigate previous conversations with the Spend Insights agent or start new ones via the _Conversations_ section.
-- Carry the current conversation with the agent in the _Main_ section of the screen, using prompts or writing out the questions.
-
-![An image of three companies on the Spend Insights tab. A lightbulb icon is visible and highlighted next to aevery company entry.](/img/spend-insights/si-si-chat-interface.png)

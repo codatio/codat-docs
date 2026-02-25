@@ -49,7 +49,7 @@ const products = {
     path: "/sync-for-payables-api",
   },
   billpaysync: {
-    name: "Bill Pay (sync)",
+    name: "Bill Pay",
     spec: BillPaySync,
     path: "/sync-for-payables-v2-api",
   },

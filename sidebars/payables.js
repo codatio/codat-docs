@@ -22,37 +22,15 @@ module.exports = [
   "payables/configure-customer",
   {
     type: "doc",
-    id: "payables/async/suppliers",
-    customProps: {
-      hr: true,
-      section: "Asynchronous solution",
-    },
-  },
-  "payables/async/bills",
-  "payables/async/payments",
-  {
-    type: "doc",
-    id: "payables/async/async-data-types",
-    label: "Supported data types",
-    customProps: {
-      hr: true,
-    },
-  },
-  {
-    type: "link",
-    href: "/sync-for-payables-api",
-    label: "API reference",
-  },
-  {
-    type: "doc",
     id: "payables/sync/suppliers",
     customProps: {
       hr: true,
-      section: "Synchronous solution",
+      section: "Build your solution",
     },
   },
   "payables/sync/bills",
   "payables/sync/pay-bill",
+  "payables/sync/update-bill",
   {
     type: "doc",
     id: "payables/sync/sync-data-types",

@@ -5,7 +5,7 @@ const URL = "/oas/Codat-Sync-Payables.json"
 
 const PayablesApi = () => {
   return (
-    <Api url={URL} title="Bill Pay (sync) API reference"/>
+    <Api url={URL} title="Bill Pay API reference"/>
   );
 }
 

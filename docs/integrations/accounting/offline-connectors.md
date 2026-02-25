@@ -22,7 +22,6 @@ On-premise connector configuration is set in the Codat Portal at the integration
 2. In the navigation bar, select **Settings > Integrations > Accounting**.
 3. Find either the **QuickBooks Desktop** or **Sage 50 (UK & Ireland)** integrations and then select **Set up**.
 4. Choose one of the following options:
-
    - **Do not install / one-time sync**
    - **Install on the customer's machine**
 

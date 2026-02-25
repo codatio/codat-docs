@@ -13,7 +13,6 @@ In the Codat Portal:
 
 1. In the navigation bar, click **Settings > Data types**.
 2. Find the following data types and set the **Fetch on first link** toggle to **On**:
-
    - **Commerce - Company Info**
    - **Commerce - Orders**
    - **Commerce - Products**

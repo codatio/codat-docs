@@ -259,6 +259,11 @@ var acc = [
     to: "/integrations/accounting/dynamics365businesscentral/accounting-dynamics365businesscentral",
   },
   {
+    integration: "Dynamics 365 Finance & Operations",
+    platformKey: "rqwd",
+    to: "/integrations/accounting/dynamics365financeoperations/overview",
+  },
+  {
     integration: "Exact (Netherlands)",
     platformKey: "qudb",
     to: "/integrations/accounting/exact-online/accounting-exact-online",
@@ -559,6 +564,10 @@ module.exports = {
     {
       from: "/redirects/integrations/bankfeeds/olpr",
       to: "/integrations/bank-feeds/sage-bank-feeds", //sage
+    },
+    {
+      from: "/redirects/integrations/bankfeeds/hcws",
+      to: "/integrations/bank-feeds/qbo-bank-feeds", //qbo
     },
     {
       from: "/docs/status-codes",

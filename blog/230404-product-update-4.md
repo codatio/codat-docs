@@ -32,7 +32,7 @@ We've improved our data type coverage for a number of integrations.
 
 ## Deprecations
 
-Don't forget about these immenent deprecations:
+Don't forget about these imminent deprecations:
 
 - [https://docs.codat.io/updates/230411-api-keys](https://docs.codat.io/updates/230411-api-keys)
 - [https://docs.codat.io/updates/230411-deletion-of-data](https://docs.codat.io/updates/230411-deletion-of-data)

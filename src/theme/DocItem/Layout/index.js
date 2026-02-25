@@ -3,7 +3,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 import {useWindowSize} from '@docusaurus/theme-common';
-import {useDoc} from '@docusaurus/theme-common/internal';
+import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import DocItemPaginator from '@theme/DocItem/Paginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
@@ -12,7 +12,7 @@ import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
 import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocItemContent from '@theme/DocItem/Content';
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
-import Unlisted from '@theme/Unlisted';
+import ContentVisibility from '@theme/ContentVisibility';
 
 import TOC from '@theme/TOC';
 
@@ -20,8 +20,6 @@ import styles from './styles.module.css';
 
 import PageHeader from '@components/PageHeader'
 import Vote from './Vote';
-
-import CookieConsent from "react-cookie-consent";
 
 import useZendesk from './useZendesk';
 
@@ -84,16 +82,6 @@ export default function DocItemLayout(props) {
 
   return (
     <>
-      <CookieConsent
-        location="bottom"
-        buttonText="Accept"
-        cookieName="cookieConsent3"
-        style={{ background: "#556680" }}
-        buttonStyle={{ backgroundColor: "white", fontSize: "12px", borderRadius: "4px" }}
-      >
-        This website uses cookies to enhance your experience.
-      </CookieConsent>
-
       {
         bannerTitle
         &&
@@ -114,7 +102,7 @@ export default function DocItemLayout(props) {
             [styles.docItemCol]: !hideTableOfContents,
           })}
         >
-          {metadata.unlisted && <Unlisted />}
+          <ContentVisibility metadata={metadata} />
           <DocVersionBanner />
           <div className={styles.docItemContainer}>
             <article>

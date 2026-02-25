@@ -18,7 +18,7 @@ When writing Direct costs, the currency of the created object will be the same a
 
 You should be aware of the following behavior when writing Direct costs with tax:
 
-- If `lineItems.taxAmount` is specified, and the account is taxable, the default tax rate for the account is ignored and overidden by this amount.
+- If `lineItems.taxAmount` is specified, and the account is taxable, the default tax rate for the account is ignored and overridden by this amount.
 - If `lineItems.taxAmount` is not specified, the default tax rate for the account in FreeAgent is applied (this is set on account creation)
 - To write a zero tax amount, set `lineItems.taxAmount` to `0`.
 
