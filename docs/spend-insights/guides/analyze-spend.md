@@ -56,9 +56,9 @@ When you are ready to download a company's Spend Insights report, you can do so 
 
 1. Search or scroll to locate the company you require reports for.
 
-2. Click the **Download** icon again, then click on the _Spend Analysis_ line item.
+2. Click the **Download** icon again, then click the _Spend Analysis_ line item.
 
-This will initiate the download and save the Excel report to your default download folder.
+This initiates the download and saves the Excel report to your default download folder.
 
 ![An image of the Portal user interface with the download dropdown displayed and download button highlighted for an example company](/img/spend-insights/si-reports-download.png)
 
