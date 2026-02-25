@@ -26,6 +26,9 @@ You can either onboard users:
 
 To create a new company, use the [Create company](/platform-api#/operations/create-company) endpoint and provide a name for the company in the request body. The `name` parameter is mandatory to execute this request. You can also provide a `description` to store additional information about the company.
 
+If you need to represent a complex multi-entity company structure, use the `referenceParentCompany` and `referenceSubsidiaryCompanies[]` parameters to build out the required hierarchy.
+
+
 <Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">
