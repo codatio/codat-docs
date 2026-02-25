@@ -23,7 +23,6 @@ To switch to new event types using the recommended "expand/contract" strategy, f
 1. **Update your application logic**
 
    Modify your application logic to handle the existing and the new event types at the same time:
-
    - Create a new POST endpoint specifically designed to consume the new webhook event type.
    - Create a feature toggle to control the activation of the **new** endpoint. **Enabling** the toggle should **activate** the endpoint to start processing events.
    - Create another feature toggle to control your **existing** webhook consumer. **Disabling** the toggle should **stop** the endpoint from processing the old rule types.
@@ -587,7 +586,7 @@ When adopting the new schema, ensure that you handle all elements in the `dataTy
 
 Called when initial syncs are complete for all data types queued for a newly connected company, and at least one of those syncs is successful.
 
-The replacement `read.completed.initial` webhook is called the first time the data type is stored in Codat's cache and uses the same payload as the `read.completed` webhook.
+The replacement `read.completed.initial` webhook is called when data is successfully read after each time a connection is authorized. Uses the same payload as the `read.completed` webhook.
 
 :::tip Adopting the new schema
 When adopting the new schema, ensure that you handle all elements in the `dataTypes` array to maintain future compatibility.

@@ -33,7 +33,6 @@ Create and configure an application in the FreshBooks Developer Portal.
 3. Click **Create New App**.
 
 4. Enter the following information into the boxes on the **Create Application** page:
-
    - **Application Name**: Enter a name for your application. This is displayed to your users when they authorize your access to their accounting data, so choose a name that clearly identifies your organization.
 
    - **Application Type**: Select **Private App**.
@@ -46,7 +45,7 @@ Create and configure an application in the FreshBooks Developer Portal.
 
 6. Select your new app from the **All Apps** list. Locate the app's **Client ID** and **Client Secret** at the bottom of the page.
 
-<img src="/img/old/a044a46-FreshBooks-keys.png" />
+<img src="/img/old/a044a46-Freshbooks-keys.png" />
 
 ### FreshBooks application scopes
 

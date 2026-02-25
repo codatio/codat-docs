@@ -78,7 +78,7 @@ The example journal entry covers a refund issued as a credit note. This includes
 
 ### Daily aggregated sales journal entry
 
-The example journal entry covers payment processing fees and payment fees refunds, including orders total of £1000, tax total of £200, gratuities/tips of £50, payment processing fee of £60, and payment processsing refund of £30.
+The example journal entry covers payment processing fees and payment fees refunds, including orders total of £1000, tax total of £200, gratuities/tips of £50, payment processing fee of £60, and payment processing refund of £30.
 
 | Account              | Account type        | Debits | Credits |
 | :------------------- | :------------------ | :----- | :------ |

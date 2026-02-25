@@ -26,7 +26,7 @@ For more information, see [Extension installation process](/integrations/account
 
 ## Prerequisites
 
-A Dynamics 365 Business Central license is required to use our integration. At a minimum, you'll need a Dynamics 365 Business Central Essentials license. <p>For more information, see the Business Central <a href="https://dynamics.microsoft.com/en-us/business-central/pricing/" taret="_blank">pricing page</a> for your region.</p>
+A Dynamics 365 Business Central license is required to use our integration. At a minimum, you'll need a Dynamics 365 Business Central Essentials license. <p>For more information, see the Business Central <a href="https://dynamics.microsoft.com/en-us/business-central/pricing/" target="_blank">pricing page</a> for your region.</p>
 
 We also assume that your organization already has its Microsoft account configured, and the domain name in your account email has been [DNS-verified](https://learn.microsoft.com/en-us/azure/active-directory/enterprise-users/domains-admin-takeover#internal-admin-takeover). If you are creating an account for the very first time, you may need to [create a tenant for your organization](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/create-new-tenant#create-a-new-tenant-for-your-organization) and [verify the domain](https://learn.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain).
 
@@ -35,7 +35,6 @@ We also assume that your organization already has its Microsoft account configur
 Register your Business Central application on the Microsoft Azure portal.
 
 1. Sign in to the <a className="external" href="https://portal.azure.com" target="_blank">Microsoft Azure portal</a>.
-
    - If you already have a Dynamics 365 Business Central account, use those account details to sign in. If not, you can <a className="external" href="https://signup.microsoft.com/signup?sku=6a4a1628-9b9a-424d-bed5-4118f0ede3fd&ru=https%3A%2F%2Fbusinesscentral.dynamics.com" target="_blank">create an account</a>.
 
    - To gain access to any Azure configuration that your company has already set up—for example, for user authentication—enter your company email when you sign up.
@@ -57,7 +56,6 @@ Register your Business Central application on the Microsoft Azure portal.
    ![Image](/img/old/7484936-d365-App_registrations.png)
 
 5. Enter the following details:
-
    - **Name**: Enter a short name for your application. Your customers will see this name when they authorize your connection to their accounting system.
 
    - **Supported account types**: Select **Accounts in any organizational directory (Any Microsoft Entra ID directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**. This allows Codat to access data in Dynamics 365 Business Central.
@@ -83,7 +81,6 @@ In the Azure Portal:
 2. Under **Client secrets**, click **New client secret**.
 
 3. In the **Add a client secret** dialog, update the following information:
-
    - **Description**: Enter a short description for your client secret to make it easier to find.
    - **Expires**: Select the most appropriate option that complies with your company's security policy.
 
@@ -104,7 +101,6 @@ Now update the access permissions for your application. These control the data t
 3. In the **Request API permissions** pane, scroll down and select **Dynamics 365 Business Central**.
 
 4. Select **Delegated permissions** and also select the first two listed permissions:
-
    - **user_impersonation**
    - **Financials.ReadWrite.All**
 

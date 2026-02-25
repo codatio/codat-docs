@@ -18,7 +18,7 @@ After completing this guide, you'll be able to use the Xero integration to conne
 ## Create a Xero app and configure the redirect URI
 
 1. Log in to the [Xero Developer portal](https://developer.xero.com/) using your Xero credentials.  
-   If you do not have a Xero Developer account, you can [create one](https://www.xero.com/uk/signup/) for free.
+   If you do not have a Xero Developer account, you can [create one](https://www.xero.com/uk/signup/developers/) for free.
 2. Select the **My Apps** tab.
 3. Click the **New app** button at the top right.
 4. Enter the following information in the **Add a new app** window:

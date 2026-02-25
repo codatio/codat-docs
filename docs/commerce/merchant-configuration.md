@@ -42,7 +42,7 @@ You can implement your own UI to capture a merchant's desired sync configuration
 
 Customization options available for the configuration UI include:
 
-- Branding, including your company name, logo, icon and brand colours
+- Branding, including your company name, logo, icon and brand colors
 - Text content of the Sync configuration UI
 
 :::tip Further UI customization

@@ -1,0 +1,57 @@
+{
+  "description": "Codat terminology and key concepts",
+  "terms": [
+    {
+      "term": "API",
+      "abbreviation": "Application Programming Interface",
+      "definition": "A set of rules and protocols that allows different software applications to communicate with each other. Codat provides APIs for accessing financial data from accounting, banking, and commerce platforms.",
+      "relatedTerms": ["REST", "Webhook"]
+    },
+    {
+      "term": "Connection",
+      "definition": "A link between a Codat company and a data source (like an accounting platform). Each connection represents authorized access to pull or push data from that platform.",
+      "relatedTerms": ["Company", "Data source"]
+    },
+    {
+      "term": "Company",
+      "definition": "In Codat, a company represents your customer's business entity. Companies can have multiple connections to different data sources.",
+      "relatedTerms": ["Connection"]
+    },
+    {
+      "term": "Data source",
+      "definition": "An external platform (such as QuickBooks, Xero, or a bank) that Codat integrates with to pull or push financial data.",
+      "relatedTerms": ["Connection", "Integration"]
+    },
+    {
+      "term": "Webhook",
+      "definition": "An automated notification sent from Codat to your application when specific events occur, such as when data syncs complete or connections change status.",
+      "relatedTerms": ["API"]
+    },
+    {
+      "term": "Sync",
+      "definition": "The process of fetching the latest data from a connected data source. Syncs can be triggered manually or run automatically on a schedule.",
+      "relatedTerms": ["Connection", "Data source"]
+    },
+    {
+      "term": "SMB",
+      "abbreviation": "Small and Medium-sized Business",
+      "definition": "The primary customer segment that Codat helps businesses serve, typically companies with annual revenues under $500 million."
+    },
+    {
+      "term": "Bank Feeds",
+      "definition": "A Codat product that enables automatic synchronization of bank transaction data into a company's accounting software.",
+      "relatedTerms": ["Sync"]
+    },
+    {
+      "term": "Link",
+      "definition": "The authorization flow that allows end users to connect their accounting, banking, or commerce platforms to your application via Codat.",
+      "relatedTerms": ["Connection", "Company"]
+    },
+    {
+      "term": "REST",
+      "abbreviation": "Representational State Transfer",
+      "definition": "An architectural style for designing networked applications. Codat's APIs follow REST principles, using standard HTTP methods.",
+      "relatedTerms": ["API"]
+    }
+  ]
+}
