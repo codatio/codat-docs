@@ -118,6 +118,8 @@ if accessTokenReq.StatusCode == 200 {
 }
 ```
 
+</TabItem>
+
 </Tabs>
 
 Pass the token to the Connections component so that we can get the company-specific information and display it in the UI. We summarized this process on the diagram:
