@@ -41,7 +41,7 @@ module.exports = {
         id: "get-started/overview",
       },
       items: [
-        "get-started/first-steps",
+        //"get-started/first-steps",
         //"get-started/first-ten-minutes",
         "get-started/libraries",
         "get-started/developer-resources",
