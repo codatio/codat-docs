@@ -119,28 +119,6 @@ uploadAttachmentResponse, err := sdk.Bills.UploadAttachment(ctx, operations.Uplo
 
 </TabItem>
 
-<TabItem value="java" label="Java">
-
-```java
-UploadBillAttachmentRequest uploadAttachmentRequest = UploadBillAttachmentRequest.builder()
-    .companyId(companyId)
-    .connectionId(connectionId)
-    .billId(billId)
-    .attachmentUpload(AttachmentUpload.builder()
-        .file(CodatFile.builder()
-                .content(fileContent.getBytes())
-                .fileName(fileName)
-                .build())
-        .build())
-    .build();
-
-UploadBillAttachmentResponse uploadAttachmentResponse = sdk.bills().uploadAttachment()
-    .request(uploadAttachmentRequest)
-    .call();
-```
-
-</TabItem>
-
 </Tabs>
 
 ### Consume the write webhook

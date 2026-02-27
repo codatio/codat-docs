@@ -183,40 +183,6 @@ transfersCreateResponse, err := codatLending.LoanWriteback.Transfers.Create(ctx,
 
 </TabItem>
 
-<TabItem value="java" label="Java">
-
-```java
-CreateTransferRequest req = CreateTransferRequest.builder()
-    .companyId(companyId)
-    .connectionId(connectionId)
-    .accountingTransfer(AccountingTransfer.builder()
-        .date(repaymentDate)
-        .from(TransferAccount.builder()
-            .accountRef(AccountRef.builder()
-                .id(borrowersBankAccount.id)
-                .build()
-            )
-            .amount(totalRepaymentAmount)
-            .currency(borrowersBankAccount.currency)
-            .build())
-        .to(TransferAccount.builder()
-            .accountRef(AccountRef.builder()
-                .id(lendersBankAccountId)
-                .build()
-            )
-            .amount(totalRepaymentAmount)
-            .currency(borrowersBankAccount.currency)
-            .build())
-        .build())
-    .build();
-
-CreateTransferResponse res = codatLending.loanWriteback().transfers().create()
-    .request(req)
-    .call();
-```
-
-</TabItem>
-
 <TabItem value="http" label="HTTP">
 
 ```http
@@ -437,62 +403,6 @@ res, err := codatLending.LoanWriteback.DirectCosts.Create(ctx, operations.Create
 
 </TabItem>
 
-<TabItem value="java" label="Java">
-
-```java
-CreateDirectCostRequest req = CreateDirectCostRequest.builder()
-    .companyId(companyId)
-    .connectionId(connectionId)
-    .directCostPrototype(DirectCostPrototype.builder()
-        contactRef(ContactRef.builder()
-            .dataType("suppliers")
-            .id(supplier.Id)
-            .build()
-        )
-        .currency(borrowersBankAccount.currency)
-        .issueDate(repaymentDate)
-        .lineItems(List.of(
-            DirectCostLineItem.builder()
-                .accountRef(AccountRef.builder()
-                    .id(expenseAccount.Id)
-                    .build()
-                )
-                .description("Fees and/or interest")
-                .quantity(new BigDecimal("1"))
-
-                .taxAmount(new BigDecimal("0"))
-                .unitAmount(new BigDecimal(interestAndFeesAmount))
-                .build()
-            )
-        )
-        .paymentAllocations(List.of(
-            AccountingPaymentAllocation.builder()
-                .allocation(Allocation.builder()
-                    .totalAmount(new BigDecimal(interestAndFeesAmount))
-                    .build()
-                )
-                .payment(PaymentAllocationPayment.builder()
-                    .accountRef(AccountRef.builder()
-                        .id(expenseAccount.Id)
-                        .build()
-                    )
-                    .build()
-                )
-                .build()
-            )
-        )
-        .taxAmount(new BigDecimal("0"))
-        .totalAmount(new BigDecimal(interestAndFeesAmount))
-        .build())
-    .build();
-
-CreateDirectCostResponse res = codatLending.loanWriteback().directCosts().create()
-    .request(req)
-    .call();
-```
-
-</TabItem>
-
 <TabItem value="http" label="HTTP">
 
 ```http
@@ -637,33 +547,6 @@ bankTransactionsCreateRequest, err := codatLending.LoanWriteback.BankTransaction
     CompanyID: companyID,
     ConnectionID: connectionID,
 })
-```
-
-</TabItem>
-
-<TabItem value="java" label="Java">
-
-```java
-CreateBankTransactionsRequest req = CreateBankTransactionsRequest.builder()
-    .companyId(companyId)
-    .connectionId(connectionId)
-    .accountId(lendersBankAccountId)
-    .accountingCreateBankTransactions(AccountingCreateBankTransactions.builder()
-        .accountId(lendersBankAccountId)
-        .transactions(List.of(
-            CreateBankAccountTransaction.builder()
-                .id(transactionID) // Unique identifier for this bank transaction
-                .amount(new BigDecimal(totalRepaymentAmount))
-                .date(repaymentDate)
-                .description(description) // Include a reference to the direct cost, the loan and you, the lender
-                .build()))
-        .build())
-    .build();
-
-CreateBankTransactionsResponse res = codatLending.loanWriteback().bankTransactions().create()
-    .request(req)
-    .call();
-
 ```
 
 </TabItem>

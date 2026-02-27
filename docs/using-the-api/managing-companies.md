@@ -97,25 +97,6 @@ if companyCreatedRes.Company != nil {
 
 </TabItem>
 
-<TabItem value="java" label="Java">
-
-```go
-CompanyRequestBody req = CompanyRequestBody.builder()
-    .name("Toft stores")
-    .description("Need a loan for refurb.")
-    .build();
-
-CreateCompanyResponse companyCreatedRes = platformClient.companies().create()
-    .request(req)
-    .call();
-
-if (companyCreatedRes.company().isPresent()) {
-    // handle response
-}
-```
-
-</TabItem>
-
 </Tabs>
 
 :::caution Retain the company ID
@@ -228,30 +209,6 @@ if companyCreatedRes.Company != nil {
 
 </TabItem>
 
-<TabItem value="java" label="Java">
-
-```java
-CompanyRequestBody req = CompanyRequestBody.builder()
-    .name("Toft stores")
-    .tags(
-      java.util.Map.ofEntries(
-        entry("uid", "cust_1MtJUT2eZvKYlo2CNaw2HvEv"),
-        entry("region", "uk")
-      )
-    )
-    .build();
-
-CreateCompanyResponse companyCreatedRes = platformClient.companies().create()
-    .request(req)
-    .call();
-
-if (companyCreatedRes.company().isPresent()) {
-    // handle response
-}
-```
-
-</TabItem>
-
 </Tabs>
 
 </TabItem>
@@ -352,33 +309,6 @@ if companyUpdatedRes.Company != nil {
 
 </TabItem>
 
-<TabItem value="java" label="Java">
-
-```java
-UpdateCompanyRequest req = UpdateCompanyRequest.builder()
-    .companyId("8a210b68-6988-11ed-a1eb-0242ac120002")
-    .companyRequestBody(CompanyRequestBody.builder()
-        .name("Bank of Dave")
-        .tags(
-            java.util.Map.ofEntries(
-              entry("uid", "cust_1MtJUT2eZvKYlo2CNaw2HvEv"),
-              entry("region", "uk")
-            )
-        ).build()
-    )
-    .build();
-
-UpdateCompanyResponse companyUpdatedRes = platformClient.companies().update()
-    .request(req)
-    .call();
-
-if (companyUpdatedRes.company().isPresent()) {
-    // handle response
-}
-```
-
-</TabItem>
-
 </Tabs>
 
 </TabItem>
@@ -440,20 +370,6 @@ ctx := context.Background()
 res, err := platformClient.Companies.List(ctx, operations.ListCompaniesRequest{
     Tags: platform.String(fmt.Sprintf("uid=%d", customerId)),
 })
-```
-
-</TabItem>
-
-<TabItem value="java" label="Java">
-
-```java
-ListCompaniesRequest req = ListCompaniesRequest.builder()
-  .tags(String.format("uid=%d", customerId))
-  .build();
-
-ListCompaniesResponse res = platformClient.companies().list()
-  .request(req)
-  .call();
 ```
 
 </TabItem>

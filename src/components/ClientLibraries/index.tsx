@@ -35,13 +35,6 @@ const languages = [
     packageLocation: "https://pkg.go.dev/github.com/codatio/client-sdk-go/",
     alt: "Go version",
   },
-  {
-    name: "java",
-    namePretty: "Java",
-    icon: "/img/libraries/java.svg",
-    packageLocation: "https://central.sonatype.com/artifact/io.codat/",
-    alt: "Java version",
-  },
 ];
 
 const capitalizeFirstCharacter = (name: string) =>
@@ -74,8 +67,6 @@ const getPackageName = (productName, language) => {
       return getCSharpPackageName(productName);
     case "go":
       return productName;
-    case "java":
-      return productName;
     default:
       throw new Error(
         "Unable to determine package name of " + productName + "in " + language,
@@ -89,12 +80,6 @@ const getShieldUrl = (productName, language) => {
       return (
         "https://pkg.go.dev/badge/github.com/codatio/client-sdk-go/" +
         productName
-      );
-    case "java":
-      return (
-        "https://img.shields.io/maven-central/v/io.codat/" +
-        productName +
-        "?label=maven-central%20(java)"
       );
     default:
       return (

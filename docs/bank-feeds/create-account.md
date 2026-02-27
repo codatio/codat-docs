@@ -417,29 +417,6 @@ sourceAccountResponse, err := bankFeedsClient.SourceAccounts.Create(ctx, operati
 
 </TabItem>
 
-<TabItem value="java" label="Java">
-
-```java
-CreateSourceAccountRequest req = CreateSourceAccountRequest.builder()
-    .requestBody(CreateSourceAccountRequestBody.of(SourceAccountV2.builder()
-        .id("ac-001")
-        .accountName("Checking Account")
-        .accountType(AccountType.LOAN)
-        .accountNumber("01120912")
-        .currency("USD")
-        .balance(new BigDecimal("4002"))
-        .build()))
-    .companyId(companyId)
-    .connectionId(connectionId)
-    .build();
-
-CreateSourceAccountResponse res = bankFeedsClient.sourceAccounts().create()
-    .request(req)
-    .call();
-```
-
-</TabItem>
-
 </Tabs>
 
 Once the source account is successfully created, guide your customer through the **mapping process** to associate it with a corresponding target account in their accounting software. The account will stay in a `pending` status until that happens, and it must change to `linked` before you can successfully transmit any bank transactions.
