@@ -186,30 +186,6 @@ go get github.com/svix/svix-webhooks/go
 
 </TabItem>
 
-<TabItem value="java" label="Java">
-
-#### Gradle
-
-Add this dependency to your project's build file:
-
-```sh
-implementation "com.svix:svix:0.x.y"
-```
-
-#### Maven
-
-Add this dependency to your project's POM:
-
-```xml
-<dependency>
-  <groupId>com.svix</groupId>
-  <artifactId>svix</artifactId>
-  <version>0.x.y</version>
-</dependency>
-```
-
-</TabItem>
-
 <TabItem value="rust" label="Rust">
 
 ```sh
@@ -381,30 +357,6 @@ payload := []byte(`{"test": 2432232314}`)
 wh, err := svix.NewWebhook(secret)
 err := wh.Verify(payload, headers)
 // returns nil on success, error otherwise
-```
-
-</TabItem>
-
-<TabItem value="java" label="Java">
-
-```java
-import com.svix.Webhook;
-
-String secret = "whsec_MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw";
-
-// These were all sent from the server
-HashMap<String, List<String>> headerMap = new HashMap<String, List<String>>();
-headerMap.put("webhook-id", Arrays.asList("msg_p5jXN8AQM9LWM0D4loKWxJek"));
-headerMap.put("webhook-timestamp", Arrays.asList("1614265330"));
-headerMap.put("webhook-signature", Arrays.asList("v1,g0hM9SsE+OTPJTGt/tmIKtSyZlE3uFJELVlNIOLJ1OE="));
-HttpHeaders headers = HttpHeaders.of(headerMap, BiPredicate<String, String>)
-
-String payload = "{\"test\": 2432232314}";
-
-Webhook webhook = new Webhook(secret);
-
-webhook.verify(payload, headers)
-// throws WebhookVerificationError exception on failure.
 ```
 
 </TabItem>

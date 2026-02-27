@@ -118,27 +118,6 @@ if accessTokenReq.StatusCode == 200 {
 }
 ```
 
-</TabItem>
-
-<TabItem value="java" label="Java">
-
-```java
-GetConnectionManagementAccessTokenRequest accessTokenReq = GetConnectionManagementAccessTokenRequest.builder()
-  .companyId(companyId)
-  .build();
-
-GetConnectionManagementAccessTokenResponse accessTokenRes = platformClient.connectionManagement().getAccessToken()
-  .request(accessTokenReq)
-  .call();
-
-if (accessTokenRes.connectionManagementAccessToken().isPresent()) {
-  accessToken = companyResponse.connectionManagementAccessToken().get().accessToken;
-  System.out.println(accessToken);
-}
-```
-
-</TabItem>
-
 </Tabs>
 
 Pass the token to the Connections component so that we can get the company-specific information and display it in the UI. We summarized this process on the diagram:

@@ -345,51 +345,6 @@ accountCreateResponse, err := expensesClient.Accounts.Create(ctx, operations.Cre
   </Tabs>
 </TabItem>
 
-<TabItem value="java" label="Java">
-  <Tabs>
-    <TabItem value="wo" label="Create an account">
-
-```java
-CreateAccountRequest accountCreateRequest = CreateAccountRequest.builder()
-  .companyId(companyId)
-  .connectionId(connectionId)
-  .accountPrototype(AccountPrototype.builder()
-      .nominalCode("4200123456")
-      .name("Codat Assets Account")
-      .fullyQualifiedCategory("Asset.Current")
-      .build())
-  .build();
-
-CreateAccountResponse accountCreateResponse = expensesClient.accounts().create()
-  .request(accountCreateRequest)
-  .call();
-```
-
-    </TabItem>
-
-    <TabItem value="with" label="Create an account with an error">
-
-```java
-CreateAccountRequest accountCreateRequest = CreateAccountRequest.builder()
-  .companyId(companyId)
-  .connectionId(connectionId)
-  .accountPrototype(AccountPrototype.builder()
-      .nominalCode("350045006500") // Nominal code intentionally consists of too many characters
-      .name("Excessive Length Account")
-      .fullyQualifiedCategory("Asset.Current")
-      .build())
-  .build();
-
-CreateAccountResponse accountCreateResponse = expensesClient.accounts().create()
-  .request(accountCreateRequest)
-  .call();
-```
-
-    </TabItem>
-
-  </Tabs>
-</TabItem>
-
 </Tabs>
 
 This results in a corresponding response from the endpoint, which includes the following details:

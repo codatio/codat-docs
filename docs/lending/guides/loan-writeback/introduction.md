@@ -22,7 +22,7 @@ This solution covers the loan writeback procedure for both general lending, such
 
 Deploy your loan writeback solution quicker by using our Lending SDK to integrate directly with our API. The loan writeback namespace includes all the methods you need to develop your loan writeback solution.
 
-Check out our SDKs for [TypeScript](https://github.com/codatio/client-sdk-typescript/tree/main/lending#loanwriteback), [Python](https://github.com/codatio/client-sdk-python/tree/main/lending#loan_writeback), [C#](https://github.com/codatio/client-sdk-csharp/tree/main/lending#loanwriteback), [Go](https://github.com/codatio/client-sdk-go/tree/main/lending#loanwriteback), and [Java](https://github.com/codatio/client-sdk-java/tree/main/lending#loanwriteback).
+Check out our SDKs for [TypeScript](https://github.com/codatio/client-sdk-typescript/tree/main/lending#loanwriteback), [Python](https://github.com/codatio/client-sdk-python/tree/main/lending#loan_writeback), [C#](https://github.com/codatio/client-sdk-csharp/tree/main/lending#loanwriteback), and [Go](https://github.com/codatio/client-sdk-go/tree/main/lending#loanwriteback).
 
 :::
 
