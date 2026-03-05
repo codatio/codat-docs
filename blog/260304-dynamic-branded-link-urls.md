@@ -20,7 +20,9 @@ link.codat.io/platypus-payments/company/{companyId}
 Previously, [Hosted Link](/auth-flow/authorize-hosted-link) clients who wanted a custom Link URL, had to ask us for a manual code change. Our new approach generates branded URLs dynamically based on your client name, so every client benefits from a professional, branded experience from day one.
 
 :::tip Existing URLs are unaffected
-All existing Hosted Link URLs will continue to work exactly as before. Any current workflows or methods of generating Link URLs are unaffected by this change.
+All existing Hosted Link URLs won't change and will continue to work exactly as before. 
+
+Any current workflows or methods of generating Link URLs (such as via API or using the **Invite company** button) are unaffected by this change and won't have a custom URL.
 :::
 
 ### Why does this matter?
