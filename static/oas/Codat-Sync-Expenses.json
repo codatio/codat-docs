@@ -13897,7 +13897,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n    ",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-all-data-types).\n\n### Supported Integrations\n\n| Integration                   | Supported |\n|-------------------------------|-----------|\n| Dynamics 365 Business Central | Yes       |\n| FreeAgent                     | Yes       |\n| Oracle NetSuite               | Yes       |\n| QuickBooks Desktop            | Yes       |\n| QuickBooks Online             | Yes       |\n| Sage Intacct                  | Yes       |\n| Xero                          | Yes       |\n| Zoho Books                    | Yes       |\n",
         "operationId": "list-suppliers"
       }
     },
@@ -14332,7 +14332,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get supplier* endpoint returns a single supplier for a given supplierId.\n\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-company-data).\n",
+        "description": "The *Get supplier* endpoint returns a single supplier for a given supplierId.\n\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-expenses-api#/operations/refresh-all-data-types).\n\n### Supported Integrations\n\n| Integration                   | Supported |\n|-------------------------------|-----------|\n| Dynamics 365 Business Central | Yes       |\n| FreeAgent                     | Yes       |\n| Oracle NetSuite               | Yes       |\n| QuickBooks Desktop            | Yes       |\n| QuickBooks Online             | Yes       |\n| Sage Intacct                  | Yes       |\n| Xero                          | Yes       |\n| Zoho Books                    | Yes       |\n",
         "operationId": "get-supplier"
       }
     },
@@ -14414,7 +14414,7 @@
           }
         },
         "summary": "Create supplier",
-        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behavior**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-update-suppliers-model).\r\n",
+        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-update-suppliers-model).\n\n### Supported Integrations\n\n| Integration                   | Supported |\n|-------------------------------|-----------|\n| Dynamics 365 Business Central | Yes       |\n| FreeAgent                     | Yes       |\n| Oracle NetSuite               | Yes       |\n| QuickBooks Desktop            | Yes       |\n| QuickBooks Online             | Yes       |\n| Sage Intacct                  | Yes       |\n| Xero                          | Yes       |\n| Zoho Books                    | Yes       |\n",
         "operationId": "create-supplier"
       }
     },
@@ -14492,7 +14492,7 @@
           }
         },
         "summary": "Update supplier",
-        "description": "The *Update supplier* endpoint updates an existing [supplier](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n**Integration-specific behavior**\r\n\r\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-update-suppliers-model).",
+        "description": "The *Update supplier* endpoint updates an existing [supplier](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-expenses-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-expenses-api#/operations/get-create-update-suppliers-model).\n\n### Supported Integrations\n\n| Integration       | Supported |\n|-------------------|-----------|\n| FreeAgent         | Yes       |\n| QuickBooks Online | Yes       |\n| Xero              | Yes       |\n",
         "operationId": "update-supplier"
       }
     }
