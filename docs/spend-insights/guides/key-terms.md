@@ -21,11 +21,6 @@ Codat calls the accounting software or ERP system that contains your customer's 
 
 ```mermaid
 
----
-config:
-  theme: default
-  look: neo
----
 flowchart LR
     A(["Company"])
     B@{ shape: bow-rect, label: "Data source"}
