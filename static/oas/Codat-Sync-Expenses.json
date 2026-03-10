@@ -2507,7 +2507,7 @@
       "put": {
         "summary": "Update reimbursable expense transaction",
         "operationId": "update-reimbursable-expense-transaction",
-        "description": "The *Update reimbursable expense* endpoint updates an existing employee expense claim in the accounting platform for a given company's connection. \r\n\r\nUpdating an existing [reimbursable expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateReimbursableExpenseTransactionRequest) will update the existing **bill** against an employee (who exists as a supplier in the accounting software).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |\r\n| Sage Intacct          | Yes       |\r\n| Zoho Books            | Yes       |",
+        "description": "The *Update reimbursable expense* endpoint updates an existing employee expense claim in the accounting platform for a given company's connection. \r\n\r\nUpdating an existing [reimbursable expense transaction](https://docs.codat.io/sync-for-expenses-api#/schemas/UpdateReimbursableExpenseTransactionRequest) will update the existing **bill** against an employee (who exists as a supplier in the accounting software).\r\n\r\n### Supported Integrations\r\n| Integration           | Supported |\r\n|-----------------------|-----------|\r\n| FreeAgent             | Yes       |\r\n| QuickBooks Online     | Yes       |\r\n| Oracle NetSuite       | Yes       |\r\n| Zoho Books            | Yes       |\r\n\r\n",
         "tags": [
           "Reimbursements"
         ],
