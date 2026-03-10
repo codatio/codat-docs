@@ -18,8 +18,9 @@ module.exports = [
       hr: true,
       section: "Codat user guides",
     },
-    href: "/spend-insights/guides/create-account",
+    href: "/spend-insights/guides/key-terms",
   },
+  "/spend-insights/guides/create-account",
   "spend-insights/guides/onboard-customer",
   "spend-insights/guides/analyze-spend",
   {
