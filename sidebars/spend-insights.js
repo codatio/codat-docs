@@ -13,7 +13,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Create account",
+    label: "Key terms",
     customProps: {
       hr: true,
       section: "Codat user guides",
