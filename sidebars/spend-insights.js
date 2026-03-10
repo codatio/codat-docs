@@ -20,7 +20,7 @@ module.exports = [
     },
     href: "/spend-insights/guides/key-terms",
   },
-  "/spend-insights/guides/create-account",
+  "spend-insights/guides/create-account",
   "spend-insights/guides/onboard-customer",
   "spend-insights/guides/analyze-spend",
   {
