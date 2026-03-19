@@ -14,11 +14,11 @@ Building and launching a best-in-class bank feeds solution has never been easier
 
 ## What's new?
 
-Our new [Bank Feeds SDK](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types) brings together all the complex pieces to create a simple Bank Feeds setup experience.
+Our new [Bank Feeds SDK](https://www.npmjs.com/package/@codat/sdk-link-types) brings together all the complex pieces to create a simple Bank Feeds setup experience.
 
 It leverages our [Link SDK](/auth-flow/authorize-embedded-link) to allow your users to quickly and securely share access to their accounting software. It also enables them to set up the mapping between your accounts and the accounts in their software in one seamless flow.
 
-All of this is included in a single [low-code JavaScript component](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). Our rich configuration properties allow your application to interact with the SDK and customize text and branding in a way that creates a trusted, compelling experience.
+All of this is included in a single [low-code JavaScript component](https://www.npmjs.com/package/@codat/sdk-link-types). Our rich configuration properties allow your application to interact with the SDK and customize text and branding in a way that creates a trusted, compelling experience.
 
 This is supported by easier creation of many source accounts at once via our new batch [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoint.
 
@@ -54,14 +54,14 @@ We also recommend using our [Connections SDK](/auth-flow/optimize/connection-man
 
 ## How to get started?
 
-You can access the SDK on [NPM](https://www.npmjs.com/package/@codat/sdk-bank-feeds-types). We recommend all clients already using our [Bank Feeds](/bank-feeds/overview) product to migrate to the Bank Feeds SDK.
+You can access the SDK on [NPM](https://www.npmjs.com/package/@codat/sdk-link-types). We recommend all clients already using our [Bank Feeds](/bank-feeds/overview) product to migrate to the Bank Feeds SDK.
 
 First, create a component which initializes the SDK:
 
 ```react
   import React, { useEffect, useState } from "react";
   import ReactDOM from "react-dom/client";
-  import { CodatBankFeedsProps, initializeCodatBankFeeds } from "@codat/sdk-bank-feeds-types";
+  import { CodatBankFeedsProps, initCodatBankFeeds } from "@codat/sdk-link-types/bank-feeds";
 
   const CodatBankFeeds: React.FC<CodatBankFeedsProps> = (props: CodatBankFeedsProps) => {
     const [componentMount, setComponentMount] = useState<HTMLDivElement | null>(
@@ -71,7 +71,7 @@ First, create a component which initializes the SDK:
     useEffect(() => {
       const target = componentMount;
       if (target && target.children.length === 0) {
-        initializeCodatBankFeeds(target, props);
+        initCodatBankFeeds(target, props);
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [componentMount]);
