@@ -91,13 +91,30 @@ Next, the user should click **Update Selected**.
 
 <img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-update-selected.png" />
 
-## 4. Wait for the connector to complete first link
+## 4. Optional: set up a sync schedule
+
+When issues occur in Codat’s QuickBooks Desktop integration, it's usually because the QuickBooks Desktop program is in use at the same time as the Intuit Web Connector is actively syncing data with Codat. This optional screen allows your end users to schedule syncs to run outside of their business hours, avoiding the conflict.
+
+Your users can configure the following options: 
+- **Sync window**: the hours during which Codat will attempt to sync data.
+- **Days**: determines hether the schedule applies to weekdays only, or every day.
+- **Time zone**: the end user's local time zone.
+
+<img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-sync-schedule.png" />
+
+If the user doesn't customize their schedule, Codat detects their time zone from their browser settings and sets their sync window to 19:00 - 07:00 on weekdays.
+
+If you want to enable QuickBooks Desktop scheduling, reach out to your account manager or support.
+
+## 5. Wait for the connector to complete first link
 
 Once the password is saved, access to QuickBooks will be granted and the connector will process the datasets you have chosen to _fetch on first link_ (see [Data Sync Settings](/core-concepts/data-type-settings)).
 
 If you have chosen to have your connectors perform a one-time synchronization, your company connection status will change to _deauthorized_ after the initial sync.
 
 If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or write operations you have queued using the Codat Portal or API. The connector will also start automatically when the system reboots.
+
+If you are using sync scheduling, data may not be pulled immediately, as the linking action may be taking place outside of the required schedule. 
 
 ## Installation path
 
