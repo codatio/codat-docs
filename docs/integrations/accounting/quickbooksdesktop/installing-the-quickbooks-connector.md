@@ -91,20 +91,20 @@ Next, the user should click **Update Selected**.
 
 <img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-update-selected.png" />
 
-## 4. Optionally, set up a sync schedule
+## 4. Optional: set up a sync schedule
 
-One of the main causes of issues with Codat’s QuickBooks Desktop integration is simultaneous usage of the QuickBooks Desktop program, whilst the Intuit Web Connector is actively syncing data with Codat. This optional screen allows your end-users to schedule syncs to run outside of their business hours.
+When issues occur in Codat’s QuickBooks Desktop integration, it's usually because the QuickBooks Desktop program is in use at the same time as the Intuit Web Connector is actively syncing data with Codat. This optional screen allows your end users to schedule syncs to run outside of their business hours, avoiding the conflict.
+
+Your users can configure the following options: 
+- **Sync window**: the hours during which Codat will attempt to sync data.
+- **Days**: determines hether the schedule applies to weekdays only, or every day.
+- **Time zone**: the end user's local time zone.
 
 <img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-sync-schedule.png" />
 
-The configurable options are: 
-- Sync window. The hours during which Codat will attempt to sync data (e.g. 7:00 PM to 7:00 AM).
-- Days. Whether the schedule applies to weekdays only, or every day.
-- Time zone. The end-user's local time zone.
+If the user doesn't customize their schedule, Codat detects their time zone from their browser settings and sets their sync window to 19:00 - 07:00 on weekdays.
 
-If your end does not customize their schedule, the Time Zone is automatically detected from their browser and the Sync Window will be 19:00 - 07:00 on Weekdays.
-
-If you wish to enable QuickBooks Desktop Scheduling, please reach out to the support team: support@codat.io, who will be able to assist.
+If you want to enable QuickBooks Desktop scheduling, reach out to your account manager or support.
 
 ## 5. Wait for the connector to complete first link
 
