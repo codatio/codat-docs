@@ -2294,7 +2294,7 @@
           "Suppliers"
         ],
         "summary": "List suppliers",
-        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBy default, this endpoint returns a list of active and archived suppliers. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that. \n\nFor example, to retrieve only active suppliers (i.e. `status=Active`) or suppliers created within the specified number of days (e.g. `sourceModifiedDate>2023-12-15T00:00:00.000Z`), query the endpoint as follows: `/payables/suppliers?query=sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Active`.For example, to retrieve active suppliers modified after a particular date use `query=sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Active`.",
+        "description": "The *List suppliers* endpoint returns a list of [suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBy default, this endpoint returns a list of active and archived suppliers. You can use [querying](https://docs.codat.io/using-the-api/querying) to change that. \n\nFor example, to retrieve only active suppliers (i.e. `status=Active`) or suppliers created within the specified number of days (e.g. `sourceModifiedDate>2023-12-15T00:00:00.000Z`), query the endpoint as follows: `/payables/suppliers?query=sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Active`.For example, to retrieve active suppliers modified after a particular date use `query=sourceModifiedDate>2023-12-15T00:00:00.000Z&&status=Active`.\n\n### Supported Integrations\n\n| Integration                   | Supported |\n|-------------------------------|-----------|\n| FreeAgent                     | Yes       |\n| QuickBooks Online             | Yes       |\n| Xero                          | Yes       |\n| Oracle NetSuite               | Yes       |\n| Sage Intacct                  | Yes       |\n| Zoho Books                    | Yes       |",
         "operationId": "list-suppliers",
         "parameters": [
           {
@@ -2353,7 +2353,7 @@
                               "city": "Bakersfield",
                               "region": "California",
                               "country": "USA",
-                              "postalcode": "93308"
+                              "postalCode": "93308"
                             }
                           ],
                           "status": "Active",
@@ -2421,7 +2421,7 @@
           "Suppliers"
         ],
         "summary": "Create supplier",
-        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n",
+        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\r\n\r\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\r\n\r\n### Supported Integrations\r\n\r\n| Integration                   | Supported |\r\n|-------------------------------|-----------|\r\n| FreeAgent                     | Yes       |\r\n| QuickBooks Online             | Yes       |\r\n| Xero                          | Yes       |\r\n| Oracle NetSuite               | Yes       |\r\n| Sage Intacct                  | Yes       |\r\n| Zoho Books                    | Yes       |\r\n",
         "operationId": "create-supplier",
         "parameters": [
           {
@@ -2442,9 +2442,9 @@
               "examples": {
                 "Suppliers": {
                   "value": {
-                    "supplierName": "Greggs",
-                    "contactName": "Greg Greggs",
-                    "emailAddress": "greg@greggs.com",
+                    "supplierName": "Northridge Office Supplies",
+                    "contactName": "Sarah Johnson",
+                    "emailAddress": "sarah.johnson@northridgesupplies.co.uk",
                     "phone": "+44 (0)1223 322410",
                     "addresses": [
                       {
@@ -2453,7 +2453,7 @@
                         "line2": "2 Dennis Avenue",
                         "city": "London",
                         "region": "Camden",
-                        "country": "GBR",
+                        "country": "GB",
                         "postalCode": "EC1N 7TE"
                       }
                     ],
@@ -2477,23 +2477,152 @@
                   "Suppliers": {
                     "value": {
                       "id": "sup-10933920",
-                      "supplierName": "Greggs",
-                      "contactName": "Greg Greggs",
-                      "emailAddress": "greg@greggs.com",
+                      "supplierName": "Northridge Office Supplies",
+                      "contactName": "Sarah Johnson",
+                      "emailAddress": "sarah.johnson@northridgesupplies.co.uk",
                       "phone": "+44 (0)1223 322410",
-                      "address": [
+                      "addresses": [
                         {
                           "type": "Billing",
                           "line1": "Flat 1",
                           "line2": "2 Dennis Avenue",
                           "city": "London",
                           "region": "Camden",
-                          "country": "GBR",
+                          "country": "GB",
                           "postalCode": "EC1N 7TE"
                         }
                       ],
                       "status": "Active",
-                      "defaultCurrency": "GBP"
+                      "balance": 0,
+                      "defaultCurrency": "GBP",
+                      "sourceModifiedDate": "2026-03-18T10:30:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/connections/{connectionId}/payables/suppliers/{supplierId}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        },
+        {
+          "name": "supplierId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "examples": [
+              "13d946f0-c5d5-42bc-b092-97ece17923ab",
+              "9wg4lep4ush5cxs79pl8sozmsndbaukll3ind4g7buqbm1h2",
+              7110701885,
+              "EILBDVJVNUAGVKRQ"
+            ]
+          },
+          "description": "Unique identifier for a supplier."
+        }
+      ],
+      "put": {
+        "tags": [
+          "Suppliers"
+        ],
+        "summary": "Update supplier",
+        "description": "The *Update supplier* endpoint updates an existing [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nThis is a full-replace PUT endpoint. Any fields not included in the request body will be cleared on the supplier record.\n\n### Supported Integrations\n\n| Integration                   | Supported |\n|-------------------------------|-----------|\n| FreeAgent                     | Yes       |\n| QuickBooks Online             | Yes       |\n| Xero                          | Yes       |\n| Oracle NetSuite               | No        |\n| Sage Intacct                  | No        |\n| Zoho Books                    | No        |\n\n### Platform-specific behavior\n\n- **Xero**: Archived suppliers cannot be updated (returns `400`). Suppliers must be unarchived manually in the Xero UI before updating.\n- **QuickBooks Online**: Currency can only be set when creating a supplier, and cannot be changed via update.\n",
+        "operationId": "update-supplier",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Supplier/definitions/supplierPrototype"
+              },
+              "examples": {
+                "Update supplier": {
+                  "value": {
+                    "supplierName": "Northridge Office Supplies",
+                    "contactName": "Sarah Johnson",
+                    "emailAddress": "sarah.johnson@northridgesupplies.co.uk",
+                    "phone": "+44 (0)1223 322410",
+                    "addresses": [
+                      {
+                        "type": "Billing",
+                        "line1": "Flat 1",
+                        "line2": "2 Dennis Avenue",
+                        "city": "London",
+                        "region": "Camden",
+                        "country": "GB",
+                        "postalCode": "EC1N 7TE"
+                      }
+                    ],
+                    "status": "Active",
+                    "defaultCurrency": "GBP"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Supplier"
+                },
+                "examples": {
+                  "Updated supplier": {
+                    "value": {
+                      "id": "sup-10933920",
+                      "supplierName": "Northridge Office Supplies",
+                      "contactName": "Sarah Johnson",
+                      "emailAddress": "sarah.johnson@northridgesupplies.co.uk",
+                      "phone": "+44 (0)1223 322410",
+                      "addresses": [
+                        {
+                          "type": "Billing",
+                          "line1": "Flat 1",
+                          "line2": "2 Dennis Avenue",
+                          "city": "London",
+                          "region": "Camden",
+                          "country": "GB",
+                          "postalCode": "EC1N 7TE"
+                        }
+                      ],
+                      "status": "Active",
+                      "balance": 0,
+                      "defaultCurrency": "GBP",
+                      "sourceModifiedDate": "2026-03-18T10:30:00Z"
                     }
                   }
                 }
@@ -2560,15 +2689,12 @@
               "examples": {
                 "Bank account example": {
                   "value": {
-                    "id": "fb623ab2-f6ff-4b22-b7d3-b7cc2a4aa0ea",
                     "nominalCode": "22",
                     "name": "Plutus - Payables - Bank Account 12",
                     "accountNumber": "0120 0440",
                     "sortCode": "50-50-50",
                     "currency": "GBP",
-                    "accountType": "Debit",
-                    "status": "Active",
-                    "sourceModifiedDate": "2024-02-22T14:46:43.99Z"
+                    "accountType": "Debit"
                   }
                 }
               }
@@ -2583,7 +2709,21 @@
                 "schema": {
                   "$ref": "#/components/schemas/BankAccount"
                 },
-                "examples": {}
+                "examples": {
+                  "Created bank account": {
+                    "value": {
+                      "id": "fb623ab2-f6ff-4b22-b7d3-b7cc2a4aa0ea",
+                      "nominalCode": "22",
+                      "name": "Plutus - Payables - Bank Account 12",
+                      "accountNumber": "0120 0440",
+                      "sortCode": "50-50-50",
+                      "currency": "GBP",
+                      "accountType": "Debit",
+                      "status": "Active",
+                      "sourceModifiedDate": "2024-02-22T14:46:43.99Z"
+                    }
+                  }
+                }
               }
             }
           },
@@ -2718,7 +2858,7 @@
           "country": {
             "type": "string",
             "nullable": true,
-            "description": "Country of the customer's address. For NetSuite, use the 2-digit [ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) country code."
+            "description": "Country of the address. We recommend using the 2-digit ISO 3166 country code (e.g. `GB`, `US`, `FR`) as this is accepted by all supported platforms."
           },
           "postalCode": {
             "type": "string",
@@ -4745,26 +4885,26 @@
         },
         "examples": [
           {
-            "id": "C520FFD4-F6F6-4FC2-A6D2-5D7088B2B14F",
-            "supplierName": "Kelly's Industrial Supplies",
-            "contactName": "Kelly Ipsum",
-            "emailAddress": "sales@kellysupplies.com",
-            "phone": "07999 999999",
+            "id": "sup-10933920",
+            "supplierName": "Northridge Office Supplies",
+            "contactName": "Sarah Johnson",
+            "emailAddress": "sarah.johnson@northridgesupplies.co.uk",
+            "phone": "+44 (0)1223 322410",
             "addresses": [
               {
                 "type": "Billing",
-                "line1": "Unit 51",
-                "line2": "Bakersfield Industrial Estate",
-                "city": "Bakersfield",
-                "region": "California",
-                "country": "USA",
-                "postalcode": "93308"
+                "line1": "Flat 1",
+                "line2": "2 Dennis Avenue",
+                "city": "London",
+                "region": "Camden",
+                "country": "GB",
+                "postalCode": "EC1N 7TE"
               }
             ],
             "status": "Active",
-            "amount": 100,
+            "balance": 0,
             "defaultCurrency": "GBP",
-            "sourceModifiedDate": "2022-10-23T00:00:00Z"
+            "sourceModifiedDate": "2026-03-18T10:30:00Z"
           }
         ]
       }
