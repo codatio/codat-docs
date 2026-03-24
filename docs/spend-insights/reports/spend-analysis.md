@@ -376,8 +376,8 @@ Codat infers payment methods from the customer's accounting data using the follo
 |----------|---------------------------|------------------------------------------------------------------------------|
 | 1        | ERP payment method field  | If populated, used directly and mapped to a standard category.               |
 | 2        | Account name              | Scanned for keywords (e.g. "credit card", "Amex", "bank transfer", "check"). |
-| 3        | Payment note or reference | Free-text field scanned for keywords.                                        |
-| 4        | Default                   | If no match found, classified as _Unknown_.                                  |
+| 3        | Payment note or reference | Freetext field scanned for keywords.                                        |
+| 4        | Default value             | If no match found, classified as _Unknown_.                                  |
 
 <ReadNext
   links={[
