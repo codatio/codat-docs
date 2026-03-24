@@ -11,18 +11,30 @@ module.exports = [
     href: "/spend-insights/overview",
     className: "header top-level-item products product spend-insights",
   },
+  "spend-insights/guides/key-terms",
   {
     type: "link",
     label: "Key terms",
     customProps: {
       hr: true,
-      section: "Codat user guides",
+      section: "User guides",
     },
     href: "/spend-insights/guides/key-terms",
   },
   "spend-insights/guides/create-account",
   "spend-insights/guides/onboard-customer",
-  "spend-insights/guides/analyze-spend",
+  "spend-insights/guides/get-report",
+  {
+    type: "link",
+    label: "Spend Summary",
+    customProps: {
+      hr: true,
+      section: "Report reference",
+    },
+    href: "/spend-insights/reports/spend-summary",
+  },
+  "spend-insights/reports/spend-analysis",
+  "spend-insights/reports/ongoing-insights",  
   {
     type: "link",
     label: "Questions and concerns",
@@ -44,7 +56,7 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Help Hub",
+    label: "ERP Resource Hub",
     customProps: {
       hr: true,
     },
