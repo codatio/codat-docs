@@ -153,9 +153,9 @@ To display the origins you previously registered for your instance, use the [Get
 
 :::tip Install the npm package
 
-Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-connections) so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript.
+Take advantage of our [npm package](https://www.npmjs.com/package/@codat/sdk-link-types) so you don't have to manually import and maintain type definitions. You will benefit from it the most if you are using Typescript.
 
-`$ npm i -S @codat/sdk-connections`
+`$ npm i -S @codat/sdk-link-types`
 
 :::
 
@@ -180,7 +180,7 @@ You can copy and paste the example <a href="https://github.com/codatio/sdk-conne
 import {
   DisconnectCallbackArgs,
   ErrorCallbackArgs,
-} from "@codat/sdk-connections";
+} from "@codat/sdk-link-types/connections";
 
 import { CodatConnections } from "./components/CodatConnections";
 import { useState } from "react";
@@ -225,7 +225,7 @@ export const ConnectionManagement = ({
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Don't use a hash because this can change at any time without warning.
 
-4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
 </TabItem>
 
@@ -263,7 +263,7 @@ import {
   DisconnectCallbackArgs,
   ErrorCallbackArgs,
   ReconnectCallbackArgs,
-} from "@codat/sdk-connections";
+} from "@codat/sdk-link-types/connections";
 
 import { CodatConnections } from "./components/CodatConnections";
 import Image from "next/image";
@@ -305,7 +305,7 @@ export default function Home() {
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
-4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
 </TabItem>
 
@@ -375,7 +375,7 @@ const openModal = () => {
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
-5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
 </TabItem>
 
@@ -445,7 +445,7 @@ onError(error) {
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
-5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
 </TabItem>
 
@@ -498,7 +498,7 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
-5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
 </TabItem>
 
@@ -563,7 +563,7 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
    - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
 
-5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-connections`. Otherwise, delete the type-related code in the snippets.
+5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
 </TabItem>
 

@@ -22,7 +22,7 @@
     "@codat/sync-for-expenses": "^*",
     "@codat/sync-for-payables": "^*",
     "@codat/sync-for-payroll": "^*",
-    "@codat/sdk-connections": "^*",
+    "@codat/sdk-link-types": "^*",
     "axios": "^1.0.0"
   },
   "devDependencies": {

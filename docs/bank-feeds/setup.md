@@ -89,13 +89,13 @@ Our low-code [Bank Feeds SDK](/bank-feeds/create-account) lets you build a seaml
 ##### NPM
 
 ```sh
-npm add @codat/sdk-bank-feeds-types
+npm add @codat/sdk-link-types/bank-feeds
 ```
 
 ##### Yarn
 
 ```sh
-yarn add @codat/sdk-bank-feeds-types
+yarn add @codat/sdk-link-types/bank-feeds
 ```
 
 [Read more...](/bank-feeds/bank-feeds-sdk)
