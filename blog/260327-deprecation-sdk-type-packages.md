@@ -1,5 +1,5 @@
 ---
-title: "Deprecation of `@codat/sdk-bank-feeds-types` and `@codat/sdk-connections` packages"
+title: "Deprecation of @codat/sdk-bank-feeds-types and @codat/sdk-connections packages"
 date: "2026-03-27"
 tags: ["Deprecation"]
 authors: tom-binnington-codat
@@ -40,4 +40,4 @@ If you need to bump the package version or want to move to using `@codat/sdk-lin
 
 ## Expected impact if no action is taken
 
-Your existing code will continue to work as the deprecated packages now re-export from `@codat/sdk-link-types`. However, the old packages won't receive updates and will eventually be removed. You may also miss feature enhancements that will be published under `@codat/sdk-link-types`. You will see deprecation warnings in your IDE for the old init functions.
+Your existing code will continue to work as the deprecated packages now re-export from `@codat/sdk-link-types`. However, the old packages won't receive updates and will eventually be removed. As a result, you may miss feature enhancements that will be published under `@codat/sdk-link-types`. You will also see deprecation warnings in your IDE for the old init functions.
