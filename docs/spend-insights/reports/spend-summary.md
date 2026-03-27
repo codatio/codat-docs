@@ -35,7 +35,7 @@ This is the headline metric of the report. It expresses the total estimated annu
 
 This is the estimated annual cashback your customer could earn by moving eligible supplier payments to a virtual card programme. To calculate it, we apply a tiered rate to the total cardable spend. 
 
-**Cardable spend** is the total amount of bills and expenses for suppliers who are currently paying by a non-card method and are eligible for card conversion.
+**Cardable spend** is the total amount of bills and direct costs for suppliers who are currently paying by a non-card method and are eligible for card conversion.
 
 :::note Tiered cashback rate
 Cashback rates can be configured based on your organization's requirements. Codat applies the following cashback rates by default:
@@ -49,7 +49,7 @@ Cashback rates can be configured based on your organization's requirements. Coda
 
 Time saved, also known as payment processing savings, is the estimated annual saving in full-time employee (FTE) time from moving supplier payments to card, expressed as a dollar value.
 
-To calculate the metric, we multiply the number of cardable payments by 3 minutes per payment. We then convert this to hours and monetize at $40 per hour. **Cardable payments** is the total count of bill payments and expense transactions for suppliers eligible for card conversion.
+To calculate the metric, we multiply the number of cardable payments by 3 minutes per payment. We then convert this to hours and monetize at $40 per hour. **Cardable payments** is the total count of bill payments and direct cost transactions for suppliers eligible for card conversion.
 
 ## Top supplier opportunities
 
@@ -58,7 +58,7 @@ This prioritized table includes your customer's top 3 suppliers ranked by annual
 | Column | Description |
 |---|---|
 | **Supplier name** | The supplier's name as recorded in your customer's accounting system. |
-| **Annual spend** | Total bills amount and expenses amount for this supplier over the reporting period. |
+| **Annual spend** | Total bills amount and direct costs amount for this supplier over the reporting period. |
 | **Settlement terms (days)** | The agreed payment terms for this supplier. |
 | **Current payment method** | The method most commonly used to pay this supplier. |
 
@@ -71,6 +71,10 @@ This prioritized table includes your customer's top 3 suppliers ranked by annual
     [
       "Ongoing Insights report reference",
       "/spend-insights/reports/ongoing-insights",
+    ],
+    [
+      "Vendor match report reference",
+      "/spend-insights/reports/vendor-match",
     ],
   ]}
 />

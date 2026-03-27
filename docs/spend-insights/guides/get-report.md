@@ -74,14 +74,18 @@ Codat offers three report types with a different level of detail that serve a di
 | **[Spend Summary](/spend-insights/reports/spend-summary)** | PowerPoint | A one-page customer-ready snapshot of top supplier opportunities and key metrics, such as cashback potential and time saved. | Sales enablement, quick value demonstration, client-facing conversations |
 | **[Spend Analysis](/spend-insights/reports/spend-analysis)** | Excel | A detailed breakdown of your customer's accounts payable data, payment methods, supplier spend, and settlement terms. | Deep spend analysis, identification of cardable suppliers, input for supplier onboarding campaigns |
 | **[Ongoing Insights](/spend-insights/reports/ongoing-insights)** | Excel | An automated quarterly report that compares the latest spend data to previous periods and highlights new suppliers, trends, and payment method changes. | Continuous monitoring of opportunitites, supplier onboarding prioritization |
+| **[Mastercard Match](/spend-insights/reports/vendor-match)**  | Excel | Supplier data formatted for Mastercard's supplier matching platform. |  Supplier enablement using third party tools.|
+| **[PayTech](/spend-insights/reports/vendor-match)** | Excel | Supplier data formatted for PayTech's supplier matching processes. | Supplier enablement using third party tools.|
+| **[Visa Vendor Match](/spend-insights/reports/vendor-match)** | Excel | Supplier data formatted for Visa's supplier matching processes. | Supplier enablement using third party tools.|
+| **[Wex](/spend-insights/reports/vendor-match)** | Excel | Supplier data formatted for Wex's supplier matching processes. | Supplier enablement using third party tools.|
 
 :::tip Missing reports?
 
-If you don't see all three reports in the download list, this may be because:
+If you don't see all reports in the download list, this may be because:
 
 - The report hasn't been generated yet. Select **Update reports** from the download dropdown to trigger a refresh.
-- The report type is disabled for your account. Reach out to your account manager to enable it.
-- The **Ongoing Insights** report is generated quarterly. If a quarter hasn't passed yet, the report won't appear in the list.
+- The report type is disabled for your organization. Reach out to your account manager to enable it.
+- The **Ongoing Insights** company report is generated quarterly. If a quarter hasn't passed since the initial data sharing, the report won't appear in the list.
 
 :::
 
@@ -98,6 +102,10 @@ If you don't see all three reports in the download list, this may be because:
     [
       "Ongoing Insights report reference",
       "/spend-insights/reports/ongoing-insights",
+    ],
+    [
+      "Vendor match report reference",
+      "/spend-insights/reports/vendor-match",
     ],
   ]}
 />

@@ -70,8 +70,8 @@ The **Summary** tab provides a high-level snapshot of new supplier activity and 
 | **Bills amount (new suppliers only)**            | Total value of bills raised by new suppliers in the latest quarter.                                                                                                                                                                           | Quantifies the financial importance of new supplier relationships. High amounts make these suppliers priority candidates for card enablement.                                              |
 | **# of Payments (new suppliers only)**          | Total number of payments made to new suppliers in the latest quarter.                                                                                                                                                                         | Compare with bills count to understand payment patterns.            |
 | **Payments amount (new suppliers only)**         | Total value of payments made to new suppliers in the latest quarter.                                                                                                                                                                          | Cross-reference with bills amount to check for patterns. A significant gap may indicate outstanding balances with new suppliers.                                                           |
-| **# of Direct costs (new suppliers only)**      | Total number of expense transactions associated with new suppliers in the latest quarter.                                                                                                                                                 | A high count relative to bill count suggests new suppliers are being paid outside of the formal supplier process.                                                                      |
-| **Direct costs amount (new suppliers only)**     | Total value of expenses associated with new suppliers in the latest quarter.                                                                                                                                                              | Add to bills amount for a complete picture of total spend with new suppliers.                                                                                         |
+| **# of Direct costs (new suppliers only)**      | Total number of direct costs associated with new suppliers in the latest quarter.                                                                                                                                                 | A high count relative to bill count suggests new suppliers are being paid outside of the formal supplier process.                                                                      |
+| **Direct costs amount (new suppliers only)**     | Total value of direct costs associated with new suppliers in the latest quarter.                                                                                                                                                              | Add to bills amount for a complete picture of total spend with new suppliers.                                                                                         |
 | **Average settlement days** | The average number of days between bill issue date and payment date for new suppliers, calculated across all bills and weighted so that higher-value bills have more influence on the result.   | Use as a baseline for how quickly new suppliers are being paid. Compare with the prior period average to spot trends.                                                       |
 | **Change in average settlement days**       | The difference in average settlement days between new suppliers in the latest quarter and suppliers from the prior period.<br/><br/> A positive value means new suppliers are taking longer to settle, and a negative value means they are settling faster. | A significant positive change may indicate new suppliers have longer payment cycles or that payment processes are slowing. |
 
@@ -90,7 +90,7 @@ Each row represents an inferred payment method. See [Payment method determinatio
 
 ## New Suppliers tab
 
-The **New Suppliers** tab provides a full supplier-level breakdown for every supplier identified as new in the latest quarter. The columns in this tab match those in the _Supplier Analysis_ tab of the **Spend Analysis** report, covering bills, payments, payment terms, settlement period, expenses, payment method, and supplier details.
+The **New Suppliers** tab provides a full supplier-level breakdown for every supplier identified as new in the latest quarter. The columns in this tab match those in the _Supplier Analysis_ tab of the **Spend Analysis** report, covering bills, payments, payment terms, settlement period, direct costs, payment method, and supplier details.
 
 For column definitions, see the [Spend Analysis report reference](/spend-insights/reports/spend-analysis#supplier-analysis-tab).
 
@@ -103,6 +103,10 @@ For column definitions, see the [Spend Analysis report reference](/spend-insight
     [
       "Spend Analysis report reference",
       "/spend-insights/reports/spend-analysis",
+    ],
+    [
+      "Vendor match report reference",
+      "/spend-insights/reports/vendor-match",
     ],
   ]}
 />

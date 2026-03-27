@@ -34,7 +34,8 @@ module.exports = [
     href: "/spend-insights/reports/spend-summary",
   },
   "spend-insights/reports/spend-analysis",
-  "spend-insights/reports/ongoing-insights",  
+  "spend-insights/reports/ongoing-insights",
+  "spend-insights/reports/vendor-match",
   {
     type: "link",
     label: "Questions and concerns",

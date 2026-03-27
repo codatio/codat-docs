@@ -17,7 +17,7 @@ The report proivides a structured breakdown of your customer's overall spend, pa
 
 - **Bills** — the full list of documents issued by your customer's suppliers as requests for payments
 - **Payments** — the full list of payments made by your customer against those bills
-- **Expenses** — the full list of spend transactions not associated with bills (e.g. online purchases, debit card payments)
+- **Direct costs** — the full list of spend transactions not associated with bills (e.g. online purchases, debit card payments)
 - **Suppliers** — the full list of persons and companies that provide goods and services to your customer and their master data (names, contacts, addresses)
 - **Accounts and payment methods** — the full details of how payments were made and what general ledger accounts have been used
 
@@ -39,7 +39,7 @@ The report contains the following tabs:
 | **Supplier Analysis** | Spend breakdown by supplier                            |
 | **Bills**             | Source bill records used to generate the report        |
 | **Bill Payments**     | Source payment records used to generate the report     |
-| **Direct Costs**      | Source expense records used to generate the report |
+| **Direct Costs**      | Source direct cost records used to generate the report |
 
 ## Customer tab
 
@@ -67,12 +67,12 @@ The **Entity Spend Breakdown** tab is only present in reports for customers with
 | **Company ID**          | The unique Codat identifier for the child entity.                           | Use to link this row back to the corresponding entity in the Codat Portal.                                                               |
 | **Company name**        | The name of the child entity as recorded in Codat.                           | Use to identify which part of the customer's business this row represents.                                                               |
 | **Bills amount**        | Total value of all bills for this entity within the reporting period.        | Use to compare billed spend across entities and identify which parts of the business drive the most supplier activity.                         |
-| **Direct costs amount** | Total value of all expenses for this entity within the reporting period. | Use to identify entities with significant expenses that may be eligible for card conversion.                                         |
-| **Total spend**         | Combined bills and expenses amount for this entity.                      | The key figure for comparing overall spend across entities that helps prioritize which entities to focus card enablement efforts on. |
+| **Direct costs amount** | Total value of all direct costs for this entity within the reporting period. | Use to identify entities with significant direct costs that may be eligible for card conversion.                                         |
+| **Total spend**         | Combined bills and direct costs amount for this entity.                      | The key figure for comparing overall spend across entities that helps prioritize which entities to focus card enablement efforts on. |
 
 ## Spend Analysis tab
 
-The **Spend Analysis** tab breaks down your customer's spend by **inferred payment method** (see [Payment method determination](/spend-insights/reports/spend-analysis#payment-method-determination)) and looks at the quantities and amounts of suppliers, bills, payments, and expenses associated with these payment methods. 
+The **Spend Analysis** tab breaks down your customer's spend by **inferred payment method** (see [Payment method determination](/spend-insights/reports/spend-analysis#payment-method-determination)) and looks at the quantities and amounts of suppliers, bills, payments, and direct costs associated with these payment methods. 
 
 Each row in the tab represents a payment method (Credit Card, Debit Card, Bank Transfer, Cash, Check, Unknown, or Other) grouped into three categories: _Card_, _Non-Card_, and _Unknown_. Use this tab to:
 
@@ -89,7 +89,7 @@ Each row in the tab represents a payment method (Credit Card, Debit Card, Bank T
 | **% of all suppliers**                | Share of total suppliers using this payment method.                                                                                                        | Use alongside _# of suppliers_ because percentage alone can be misleading with small supplier numbers.                                                                                                                                                     |
 | **% of all bills (by #)**             | Share of total bill count attributed to this payment method.                                                                                               | Compare with _% of all bills (by amount)_. A significant difference means this method handles many small transactions or a few large ones.                                                                                                     |
 | **% of all bills (by amount)**        | Share of total bill value attributed to this payment method.                                                                                               | The primary measure of spend share by payment method. Use to quantify how much of total supplier spend is on non-card methods.                                                                                                                      |
-| **Total spend**                       | Combined bills and expenses amount for this payment method.                                                                                            | Compare _Card_ with _Non-Card_ rows to quantify the total card migration opportunity, including spend not captured as bills.                                                                                                                       |
+| **Total spend**                       | Combined bills and direct costs amount for this payment method.                                                                                            | Compare _Card_ with _Non-Card_ rows to quantify the total card migration opportunity, including spend not captured as bills.                                                                                                                       |
 | **# of bills**                        | Count of all bills in this payment method group within the reporting period.                                                                               | A high count with low total spend may indicate many small transactions and could be good candidates for card consolidation.                                                                                                                              |
 | **# of bills outstanding**            | Count of unpaid bills in this group.                                                                                                                       | Use with _Bills outstanding amount_ and _% bills outstanding_ to assess unpaid supplier exposure by payment method.                                                                                                                                      |
 | **Bills amount**                      | Total value of all bills in this group.                                                                                                                    | The base figure for outstanding and late payment percentage calculations in this row.                                                                                                                                                         |
@@ -103,14 +103,14 @@ Each row in the tab represents a payment method (Credit Card, Debit Card, Bank T
 | **Average payment amount**            | Total payments value divided by number of payments in this group.                                                                                          | Smaller average payments are typically better virtual card candidates than large single payments.                                                                                                                              |
 | **Average payment terms**             | The average number of days between bill issue date and bill due date across all bills in this group. <br/><br/>Calculated across all bills and weighted so that higher-value bills have more influence on the result.   | Compare with _Average settlement period_. Terms greater than settlement means the customer repays early, and settlement greater than terms means customer repays late.                                              |
 | **Average settlement period**         |The averae number of days between bill issue date and actual payment date across all bills in this group. <br/><br/>Calculated across all bills and weighted so that higher-value bills have more influence on the result. | Compare directly with _Average payment terms_ to identify which payment methods have the worst payment timing.                                                                                         |
-| **% of all direct costs (by #)**      | Share of total expense transaction count attributed to this payment method.                                                                            | Shows whether expense transactions are concentrated in particular payment methods.                                                                                                                                                        |
-| **% of all direct costs (by amount)** | Share of total expense value attributed to this payment method.                                                                                        | Use to identify payment methods where significant spend is occurring outside of Accounts Payable.                                                                                                                                                                  |
-| **# of direct costs**                 | Count of expense transactions in this group.                                                                                                           | High expense counts on non-card methods indicate ad hoc spend that isn't reflected in Accounts Payable.                                                                                                                      |
-| **Direct costs amount**               | Total value of expenses in this group.                                                                                                                 | Compare with bills amount to understand the full spend picture for this payment method, including spend that isn't reflected in Accounts Payable.                                                                                                     |
+| **% of all direct costs (by #)**      | Share of total direct cost count attributed to this payment method.                                                                            | Shows whether direct cost transactions are concentrated in particular payment methods.                                                                                                                                                        |
+| **% of all direct costs (by amount)** | Share of total direct cost value attributed to this payment method.                                                                                        | Use to identify payment methods where significant spend is occurring outside of Accounts Payable.                                                                                                                                                                  |
+| **# of direct costs**                 | Count of direct cost transactions in this group.                                                                                                           | High direct cost counts on non-card methods indicate ad hoc spend that isn't reflected in Accounts Payable.                                                                                                                      |
+| **Direct costs amount**               | Total value of direct costs in this group.                                                                                                                 | Compare with bills amount to understand the full spend picture for this payment method, including spend that isn't reflected in Accounts Payable.                                                                                                     |
 
 ## Supplier Analysis tab
 
-The Supplier Analysis tab contains one row per supplier. It is divided into color-coded sections covering supplier details, bills, payments, terms, and expenses.
+The Supplier Analysis tab contains one row per supplier. It is divided into color-coded sections covering supplier details, bills, payments, terms, and direct costs.
 
 ### Suppliers
 
@@ -157,7 +157,7 @@ Total spend gives you a single figure that represents the full extent of your cu
 
 | Column      | Description                                                           | What it tells you                                                                                                                   |
 |-------------|-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| **Total spend** | The total of bill amounts and expense amounts for the supplier in base currency. | The key figure for ranking suppliers by size. Start with the highest total spend suppliers for the greatest card enablement impact. |
+| **Total spend** | The total of bill amounts and direct cost amounts for the supplier in base currency. | The key figure for ranking suppliers by size. Start with the highest total spend suppliers for the greatest card enablement impact. |
 
 ### Bills
 
@@ -294,7 +294,7 @@ In this example, our customer pays most of their displayed suppliers a few days 
 
 ### Direct costs
 
-This section covers the customer's expenses (also known as direct costs) associated with the suppliers. Expenses are money that leave the business without impacting Accounts Payable, such as online purchases and out-of-pocket expenses.
+This section covers the customer's direct costs associated with the suppliers. Direct costs are money that leave the business without impacting Accounts Payable, such as online purchases and out-of-pocket expenses.
 
 <Tabs>
 
@@ -303,16 +303,16 @@ This section covers the customer's expenses (also known as direct costs) associa
 | Column                  | Description                                                                         | What it tells you                                                                                                                               |
 |-------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | **# of direct costs**       | Total count of positive ad hoc payments to the supplier in the reporting period. | A high count relative to bill count may indicate frequent ad hoc purchases outside the formal purchasing process.  |
-| **Direct costs amount**     | The total amount of all expenses for the supplier in base currency.                  | Significant expenses not captured as bills may represent an untapped card conversion opportunity. |
-| **Most recent direct cost** | The date when the latest expense was incurred for the supplier.                                | Use to confirm the supplier relationship is still active.                                                                                       |
+| **Direct costs amount**     | The total amount of all direct costs for the supplier in base currency.                  | Significant direct costs not captured as bills may represent an untapped card conversion opportunity. |
+| **Most recent direct cost** | The date when the latest direct cost was incurred for the supplier.                                | Use to confirm the supplier relationship is still active.                                                                                       |
 
 </TabItem>
 
 <TabItem value="insights" label="Recommended use">
 
-- **Card conversion**: suppliers with high expense totals may already accept card payments but aren't invoicing through the Accounts Payable process. This makes them strong candidates for virtual card outreach.
+- **Card conversion**: suppliers with high direct cost totals may already accept card payments but aren't invoicing through the Accounts Payable process. This makes them strong candidates for virtual card outreach.
 - **Process gaps**: tracking spend not captured in Accounts Payable is useful for compliance, rebate optimization, or spend policy enforcement.
-- **Audit and reconciliation**: tracking of all supplier-related outflows, including expenses, ensures completeness of the spend analysis.
+- **Audit and reconciliation**: tracking of all supplier-related outflows, including direct costs, ensures completeness of the spend analysis.
 
 </TabItem>
 
@@ -320,7 +320,7 @@ This section covers the customer's expenses (also known as direct costs) associa
 
 ![A section of the Supplier Analysis tab from the Excel report that displays the columns related to direct costs.](/img/spend-insights/si-spend-analysis-report-costs.png)
 
-In our example, the customer has had 12 instances of expenses associated with _Pliant Vendor_ totalling $2727.85. The most recent occurrence, however, was in 2023. This suggests that the relationship with the supplier may no longer be active, or that all spend with this supplier goes through Accounts Payable. 
+In our example, the customer has had 12 instances of direct costs associated with _Pliant Vendor_ totalling $2727.85. The most recent occurrence, however, was in 2023. This suggests that the relationship with the supplier may no longer be active, or that all spend with this supplier goes through Accounts Payable. 
 
 Considering the most common payment method for this supplier is listed as _BankTransfer_, it's a good idea to check whether the supplier raised any bills, as these may be eligible for a card program.
 
@@ -388,6 +388,10 @@ Codat infers payment methods from the customer's accounting data using the follo
     [
       "Ongoing Insights report reference",
       "/spend-insights/reports/ongoing-insights",
+    ],
+    [
+      "Vendor match report reference",
+      "/spend-insights/reports/vendor-match",
     ],
   ]}
 />
