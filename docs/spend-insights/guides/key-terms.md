@@ -73,7 +73,7 @@ Total expenditure, total expenses, total purchases
 
 :::
 
-**Total spend** is the total amount of money paid by a business (your SMB customer) to its suppliers over a given period. This includes [bills](/spend-insights/guides/key-terms#bill) paid through accounts payable and [expenses](/spend-insights/guides/key-terms#expense) paid immediately at the point of purchase.
+**Total spend** is the total amount of money paid by a business (your SMB customer) to its suppliers over a given period. This includes [bills](/spend-insights/guides/key-terms#bill) paid through accounts payable and [expenses](/spend-insights/guides/key-terms#direct-cost) paid immediately at the point of purchase.
 
 ### Payment terms
 
