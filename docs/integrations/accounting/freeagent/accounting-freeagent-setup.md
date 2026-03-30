@@ -29,13 +29,13 @@ Create an application in FreeAgent and then retrieve the secure application cred
 
    You don't need to select the **Enable Accountancy Practice API** box.
 
-<img src="/img/old/948044e-FreeAgent_-_app_creation.PNG" />
+<img src="/img/old/948044e-FreeAgent_-_app_creation.png" />
 
 5. Select **Create App**.
 
    The **OAuth identifier** and **OAuth secret** for this app are displayed. Copy these credentials to use in the next procedure.
 
-<img src="/img/old/d71284b-FreeAgent_-_app_credentials.PNG" />
+<img src="/img/old/d71284b-FreeAgent_-_app_credentials.png" />
 
 ## Add your app's secure keys to the Codat Portal
 
@@ -51,7 +51,7 @@ Create an application in FreeAgent and then retrieve the secure application cred
 
 5. In the **Enable FreeAgent** dialog, select whether to enable the integration now or later.
 
-:::note
+:::note Secure keys
 
 Make sure that your secure keys don't contain any spaces.
 :::
