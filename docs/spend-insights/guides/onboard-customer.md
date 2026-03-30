@@ -4,13 +4,15 @@ sidebar_label: "Onboard customer"
 description: "Learn how to onboard and manage companies that represent your customers"
 ---
 
+import ReadNext from "@components/ReadNext";
+
 Our [Codat Portal](https://app.codat.io/) is your one-stop shop to view the customers and relationships you are responsible for. Here, your organization's clients are represented as companies.
 
 In this guide, we will cover the ways you can create new customers, manage existing ones, and request financial data from them.
 
 ## Create customer
 
-Navigate to the _Companies_ tab in the Codat Portal to start the creation of a new company that represents your customer.
+Navigate to the _Companies_ tab in the [Codat Portal](https://app.codat.io/companies) to start the creation of a new company that represents your customer.
 
 1. Click the **Create company** button. This will open a _Create a company_ window.
 
@@ -18,9 +20,11 @@ Navigate to the _Companies_ tab in the Codat Portal to start the creation of a n
 
 2. In the _Create a company_ window, enter your customer's company name in the **Company name** field. You can add an optional description in the **Description** field and disregard **Company tags**.
 
-   :::caution Adding products
+   :::caution Extra fields
 
    You may see the **Add products** dropdown when creating a company from the _Companies_ tab. Select **Spend Insights** and continue with company creation.
+
+   You may also see the **Subscriptions** email selection dropdown. It's used by our Ongoing Insights report. See [Ongoing Insights](/spend-insights/reports/ongoing-insights) report reference and reach out to your account manager to enable it.
 
    :::
 
@@ -35,7 +39,7 @@ Navigate to the _Companies_ tab in the Codat Portal to start the creation of a n
 You have successfully created your customer as a company in Codat. Next, you can:
 
 - Click **Create another company** to add more customers to Codat.
-- Use the **Link URL** or **Email template** to onboard your customer. We explain these options in more detail in our [Onboard customer](/spend-insights/guides/onboard-customer#onboard-customer) guide.
+- Use the **Link URL** or **Email template** to onboard your customer. We explain these options in more detail in our [Onboard customer](/spend-insights/guides/onboard-customer#onboard-customer) section.
 - [Manage the details](/spend-insights/guides/onboard-customer#manage-customers) of the customers you created.
 - Close the _Create a company_ window and navigate to the _Spend Insights_ tab.
 
@@ -83,24 +87,38 @@ You can support your customer on this journey using the following guides:
 
 ## Manage customers
 
-You can view all existing customers in the _Spend Insights_ tab or the _Companies_ tab. If your customer's company has multiple subsidiaries, you can expand the parent company to view its children by clicking on the dropdown icon.
+#### View customers
+
+You can view all existing customers in the _Spend Insights_ tab or the _Companies_ tab. If your customer's company has multiple subsidiaries, you can expand the parent company to view its children by clicking on the arrow next to company name.
 
 ![An image of the Companies tab with a parent company called Abra Kedabra and its subsidiaries highlighted.](/img/spend-insights/companies-multi-entity.png)
 
-To edit or delete your existing customers, navigate to the _Companies_ tab. Click on the triple-dot menu to view the editing options dropdown. From there, you can click **Edit** to change company details or **Delete** to delete it.
+#### Edit and delete customers
+
+To edit or delete your existing customers, navigate to the _Companies_ tab. Click on the triple-dot menu to view the editing options dropdown. 
+
+From there, you can click **Edit** to change company details or **Delete** to delete it. To view the company's Link URL, email template, and existing connections, click **Link** in the same dropdown.
 
 :::caution Deleting a company
 
-If you delete a company, this will also delete the data you previously received from it. As a result, you will no longer be able to access this company's reports in the Portal. This operation is not reversible.
+If you delete a company, this will also delete the data you previously received from it. As a result, you won't be able to access this company's reports in the Portal. This operation is not reversible.
 
-If the company you are deleting is a parent company, you will see a pop-up window requesting manual confirmation to delete the company and its subsidiaries.
-
+If the company you are deleting is a parent company, this will also delete its subsidiaries. You will be asked to confirm this operation.
 :::
 
 ![An image of the Companies tab with four companies listed as examples. A pencil icon and a trash icon are visible and highlighted next to a company entry called Hairosmith.](/img/spend-insights/si-manage-company.png)
 
 :::tip Review spend insights
 
-Once your customer shares their financial information with you, you can [review spend analysis and insights](/spend-insights/guides/analyze-spend) Codat prepared based on this data.
+Once your customer shares their financial information with you, you can [get Spend Insights reports](/spend-insights/guides/get-report) Codat prepared based on this data.
 
 :::
+
+<ReadNext
+  links={[
+    [
+      "Generate and download Spend Insights reports",
+      "/spend-insights/guides/get-report",
+    ],
+  ]}
+/>

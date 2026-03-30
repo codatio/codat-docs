@@ -370,3 +370,62 @@ hr {
 .react-diff-42iver-word-diff {
   padding: 0 !important;
 }
+
+/* =====================
+  TABS — pill style
+   ===================== */
+
+  ul.tabs {
+    background: transparent !important;
+    border-bottom: none !important;
+    padding: 4px 0 !important;
+    gap: 4px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  
+  ul.tabs .tabs__item {
+    border-radius: 20px !important;
+    padding: 5px 14px !important;
+    font-size: 0.8125rem !important;
+    font-weight: 500 !important;
+    color: #4b5563 !important;
+    background-color: #f3f4f6 !important;
+    border: 1px solid #e5e7eb !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+  
+  ul.tabs .tabs__item:hover:not(.tabs__item--active) {
+    background-color: #ede9fe !important;
+    color: #482deb !important;
+    border-color: #c4b5fd !important;
+  }
+  
+  ul.tabs .tabs__item--active {
+    background-color: #482deb !important;
+    color: #ffffff !important;
+    border-color: #482deb !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Dark mode */
+  [data-theme='dark'] ul.tabs .tabs__item {
+    color: #9ca3af !important;
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+  }
+  
+  [data-theme='dark'] ul.tabs .tabs__item:hover:not(.tabs__item--active) {
+    background-color: #2e1f6b !important;
+    color: #a78bfa !important;
+    border-color: #5b3fd6 !important;
+  }
+  
+  [data-theme='dark'] ul.tabs .tabs__item--active {
+    background-color: #482deb !important;
+    color: #ffffff !important;
+    border-color: #482deb !important;
+  }
