@@ -53,17 +53,17 @@ Vendor payment, bill payment
 
 A **payment** is a record of money transferred from a business (your SMB customer) to a supplier in full or partial settlement of one or more bills. It is allocated against an accounts payable account.
 
-### Direct cost
+### Expense
 
 :::tip Also known as
 
-Expense, overhead, product costs, spend, spend transaction, payment
+Direct cost, overhead, product costs, spend, spend transaction, payment
 
 :::
 
-A **direct cost** is a record of money spent by a business (your SMB customer) and paid immediately at the point of purchase, or a refund associated with such transaction. 
+An **expense** is a record of money spent by a business (your SMB customer) and paid immediately at the point of purchase, or a refund associated with such transaction. 
 
-Common examples include credit and debit card payments and online purchases. Unlike bills, direct costs don't impact accounts payable.
+Common examples include credit and debit card payments and online purchases. Unlike bills, expenses don't impact accounts payable.
 
 ### Total spend
 
@@ -73,7 +73,7 @@ Total expenditure, total expenses, total purchases
 
 :::
 
-**Total spend** is the total amount of money paid by a business (your SMB customer) to its suppliers over a given period. This includes [bills](/spend-insights/guides/key-terms#bill) paid through accounts payable and [direct costs](/spend-insights/guides/key-terms#direct-cost) paid immediately at the point of purchase.
+**Total spend** is the total amount of money paid by a business (your SMB customer) to its suppliers over a given period. This includes [bills](/spend-insights/guides/key-terms#bill) paid through accounts payable and [expenses](/spend-insights/guides/key-terms#direct-cost) paid immediately at the point of purchase.
 
 ### Payment terms
 
@@ -87,4 +87,4 @@ The **settlement period** is the length of time between the issue of a bill by t
 
 ### Payment method
 
-A **payment method** is the means by which a business (your SMB customer) pays money to a supplier, either to settle a bill or at the point of incurring a direct cost.
+A **payment method** is the means by which a business (your SMB customer) pays money to a supplier, either to settle a bill or at the point of incurring an expense.

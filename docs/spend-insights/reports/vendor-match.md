@@ -53,8 +53,8 @@ The columns included in each report can be configured to meet your organization'
 
 | Column                                    | Description                                                                            |
 |-------------------------------------------|----------------------------------------------------------------------------------------|
-| **Bill payments and direct costs amount** | Combined total of direct costs and bill payments for this supplier.                    |
-| **Bill payments and direct costs count**  | Combined transaction count of direct costs and bill payments for this supplier.        |
+| **Bill payments and direct costs amount** | Combined total of expenses and bill payments for this supplier.                    |
+| **Bill payments and direct costs count**  | Combined transaction count of expenses and bill payments for this supplier.        |
 | **Purchase order count**                  | Purchase order count for this supplier. Report is generated with this field empty to comply with the platform's format requirements. |
 | **Supplier ID**                           | The supplier's unique identifier in the customer's accounting system.                  |
 
@@ -66,7 +66,7 @@ The columns included in each report can be configured to meet your organization'
 | **Country code**     | Two-letter ISO country code (Alpha-2), as required by Visa.          |
 | **Vendor ID**        | Platform-specific supplier identifier used by Visa.                  |
 | **Number of checks** | 12-month transaction count, aggregated to Visa's specification.      |
-| **Total spend**      | Combined total of bills, direct costs, and bill payments for the supplier. |
+| **Total spend**      | Combined total of bills, expenses, and bill payments for the supplier. |
 
 #### Wex Vendor
 
@@ -74,7 +74,7 @@ The columns included in each report can be configured to meet your organization'
 |-----------------------------|--------------------------------------------------------------------------------|
 | **Phone extension**, **Supplier contact name**, **Contact first name**, **Contact last name**, **Email address 2**           |Additional supplier address and contact information.  |
 | **Supplier account number** | The supplier's account number as recorded in the customer's accounting system. |
-| **Number of transactions**  | Combined count of bills and direct costs for this supplier.                    |
+| **Number of transactions**  | Combined count of bills and expenses for this supplier.                    |
 
 #### PayTech
 
