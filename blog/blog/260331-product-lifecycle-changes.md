@@ -1,6 +1,6 @@
 ---
 title: "2026-05-01: Upcoming product lifecycle changes"
-date: "2026-03-31"
+date: "2026-03-30"
 tags: ["Deprecation"]
 authors: habbajobir
 ---
