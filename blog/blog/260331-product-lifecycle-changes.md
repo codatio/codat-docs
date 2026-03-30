@@ -23,12 +23,12 @@ On **May 1st, 2026**, we will move some legacy product versions into **maintenan
 
 We use the following lifecycle states across our products:
 
-- **Active Product:** Actively sold and maintained. These products receive new features, bug fixes, and ongoing improvements.
+- **Active product:** Actively sold and maintained. These products receive new features, bug fixes, and ongoing improvements.
 - **Maintenance:** No longer sold. These products receive no new features and no planned bug fixes or maintenance work. Customers may experience degradation over time as dependencies, platforms, or integrations evolve.
 - **Deprecated:** No longer sold or maintained and scheduled for removal after a defined notice period.
 - **Retired:** Access has been removed and the product is no longer available.
 
-## Affected products
+### Affected products
 
 The following product versions will enter their maintenance period of 12 months on **May 1st, 2026**:
 
@@ -40,11 +40,11 @@ The following product versions will enter their maintenance period of 12 months 
 
 During the maintenance period, these versions will continue to operate, but we won't provide bug fixes, performance improvements, or compatibility updates.
 
-### Action required
+## Action required
 
-To continue benefiting from Bill Pay and Expenses functionality in an actively supported product, start your migration to the new versions as soon as possible. We'll send reminders every three months.
+To continue benefiting from [Bill Pay](/payables/overview) and [Expenses](/expenses/overview) functionality in an actively supported product, start your migration to the new versions as soon as possible. We'll send reminders every three months.
 
-### Expected impact if no action is taken
+## Expected impact if no action is taken
 
 From **May 1st, 2027**, at the end of the 12-month maintenance period:
 
@@ -52,6 +52,6 @@ From **May 1st, 2027**, at the end of the 12-month maintenance period:
 - All API access to the products will be disabled.
 - Requests to retired versions will no longer be supported.
 
-### Get help
+## Get help
 
 If you have questions about these changes or would like support with planning your migration, reach out to your Account Manager or [Codat Support](https://codat.zendesk.com/hc/en-gb).
