@@ -255,7 +255,7 @@ Once you have the Lending solution enabled, configure your instance to work with
 
 Follow the respective guides to set up and enable accounting integrations that will serve as a data source for the feature:
 
-<IntegrationsList integrations={integrationsAccountingFilterLending} />
+<IntegrationsList filter={integrationsAccountingFilterLending} />
 
 #### Enable data types and sync schedule
 

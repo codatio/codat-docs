@@ -187,7 +187,7 @@ Follow the respective guides to set up and enable at least one accounting and on
 
 ##### Accounting
 
-<IntegrationsList integrations={integrationsAccountingFilterLending} />
+<IntegrationsList filter={integrationsAccountingFilterLending} />
 
 ##### Banking
 
