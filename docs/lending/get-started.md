@@ -7,7 +7,7 @@ image: "/img/banners/social/lending.png"
 
 import { IntegrationsList } from "@components/Integrations";
 import {
-  accountingIntegrations,
+  integrationsAccountingFilterLending,
   bankingIntegrations,
   commerceIntegrations,
 } from "@components/Integrations/integrations";
@@ -37,7 +37,7 @@ Data source coverage varies by feature, so be sure to review the coverage for th
 
 #### Accounting
 
-<IntegrationsList integrations={accountingIntegrations} />
+<IntegrationsList filter={integrationsAccountingFilterLending} />
 
 #### Banking
 
