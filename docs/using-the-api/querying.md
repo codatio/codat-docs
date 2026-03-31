@@ -916,7 +916,7 @@ Query: `dataConnections.status!=PendingAuth&&dataConnections.status!=Linked&&dat
 
 - The page size value is obligatory for querying.
 - The response will exclude companies that had connections but they were deleted.
-  :::
+:::
 
 <Tabs>
 

@@ -10,7 +10,7 @@ description: "Record and reconcile bill payments in the SMB's accounting softwar
 Finally, your SMB customer will make a payment from your application, which you should then record and reconcile back to the SMB's accounting software. A **bill payment** represents an allocation of money within any of your customer's accounts payable (AP) accounts.
 
 :::tip Bill type coverage
-Our **sync Bill Pay** solution focuses on providing a fast implementation experience and streamlined recording of payments. As a result, it supports payments of **single bills only**.
+Our **Bill Pay** solution focuses on providing a fast implementation experience and streamlined recording of payments. As a result, it supports payments of **single bills only**.
 :::
 
 ## Manage payment accounts
@@ -37,7 +37,7 @@ If the SMB customer plans to make payments from a new payment method or account 
 
 :::tip Partial payments
 
-Our sync Bill Pay solution supports payments where a singe bill is paid **in full**. To record a partial payment, use the same endpoint and adjust the values to reflect the amount of the partial payment.
+Our Bill Pay solution supports payments where a singe bill is paid **in full**. To record a partial payment, use the same endpoint and adjust the values to reflect the amount of the partial payment.
 
 :::
 

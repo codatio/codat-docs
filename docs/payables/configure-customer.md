@@ -126,33 +126,12 @@ Next, use the [Create connection](/sync-for-payables-v2-api#/operations/create-c
 
 This will allow you to synchronize data with that source, fetching or creating suppliers, bills, and payment methods. In the request body, specify a `platformKey` of the accounting software you're looking to connect.
 
-<Tabs>
-
-<TabItem value="async" label="Async Bill Pay">
-
-| Accounting software | platformKey |
-| ------------------- | ----------- |
-| MYOB Business       | `pdvj`      |
-| Oracle NetSuite     | `akxx`      |
-| QuickBooks Online   | `qhyg`      |
-| QuickBooks Desktop  | `pqsw`      |
-| Sage Intacct        | `knfz`      |
-| Xero                | `gbol`      |
-
-</TabItem>
-
-<TabItem value="sync" label="Sync Bill Pay">
-
 | Accounting software | platformKey |
 | ------------------- | ----------- |
 | FreeAgent           | `fbrh`      |
 | Oracle NetSuite     | `akxx`      |
 | QuickBooks Online   | `qhyg`      |
 | Xero                | `gbol`      |
-
-</TabItem>
-
-</Tabs>
 
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 

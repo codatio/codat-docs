@@ -1,6 +1,6 @@
 ---
 title: Manage bills
-description: "View and create bills using Codat's sync Bill Pay solution"
+description: "View and create bills using Codat's Bill Pay solution"
 sidebar_label: Create a bill
 ---
 
@@ -17,10 +17,11 @@ We distinguish between invoices where the company _owes_ money and those where t
 
 ## Overview
 
-In Codat, a bill represents an _accounts payable_ invoice issued to an SMB by their supplier. With synchronous Bill Pay, you can:
+In Codat, a bill represents an _accounts payable_ invoice issued to an SMB by their supplier. With Bill Pay, you can:
 
 - Retrieve your customer's existing bills.
 - Create new bills in your system and reflect them in your customer's accounting software.
+- Update existing bills and reflect the changes in your customer's accounting software.
 
 We have highlighted this alternative sequence of steps in our detailed process diagram below.
 
@@ -43,6 +44,9 @@ We have highlighted this alternative sequence of steps in our detailed process d
       else Create bill
         app ->> codat: Creates bill
         codat ->> acctg: Creates bill
+      else Update bill
+        app ->> codat: Updates bill
+        codat ->> acctg: Updates bill
       end
 ```
 
@@ -52,7 +56,7 @@ We have highlighted this alternative sequence of steps in our detailed process d
 
 :::tip Filter the bill list
 
-Bill endpoints of the sync Bill Pay solution only return **open** or **partially paid** bills from the accounting platform. You can use [query parameters](/using-the-api/querying) to change the scope of results.
+Bill endpoints of the Bill Pay solution only return **open** or **partially paid** bills from the accounting platform. You can use [query parameters](/using-the-api/querying) to change the scope of results.
 :::
 
 <RetrieveBills
