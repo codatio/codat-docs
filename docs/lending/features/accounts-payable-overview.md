@@ -7,7 +7,7 @@ image: "/img/banners/social/lending.png"
 
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
-import { accountingIntegrations } from "@components/Integrations/integrations";
+import { integrationsAccountingFilterLending } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -118,7 +118,7 @@ Once you have the Lending solution enabled, configure your instance to work with
 
 Follow the respective guides to set up and enable accounting integrations that will serve as a data source for the feature:
 
-<IntegrationsList integrations={accountingIntegrations} />
+<IntegrationsList filter={integrationsAccountingFilterLending} />
 
 #### Enable data types and sync schedule
 

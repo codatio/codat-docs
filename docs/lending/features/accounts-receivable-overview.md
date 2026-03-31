@@ -8,7 +8,7 @@ image: "/img/banners/social/lending.png"
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
 import {
-  accountingIntegrations,
+  integrationsAccountingFilterLending,
   bankingIntegrations,
 } from "@components/Integrations/integrations";
 import Tabs from "@theme/Tabs";
@@ -187,7 +187,7 @@ Follow the respective guides to set up and enable at least one accounting and on
 
 ##### Accounting
 
-<IntegrationsList integrations={accountingIntegrations} />
+<IntegrationsList filter={integrationsAccountingFilterLending} />
 
 ##### Banking
 
