@@ -38,3 +38,7 @@ As part of the Regulatory Technical Standards required by some institutions in O
 This means that depending on the bank, clients may only be allowed to access as much transactional data allowed by the bank for a period of 5 minutes after the initial authentication by the end-user. After this period, banks who enforce SCA will only return 90 days of transaction data.
 
 In layman terms, Codat will retrieve as much data as possible following authentication by your end-user. However, regulatory standards may limit the amount of data initially retrieved to 90 days.
+
+## Why can my customers no longer connect their Santander Corporate account(s)? 
+
+As of March 2026, Santander have upgraded to V4 of the Open Banking standards. As a result of thi, TrueLayer will now no longer support Santander Corporate. You can read their developer update [HERE](https://support.truelayer.com/hc/en-us/articles/43554236309905-Migration-of-all-Santander-endpoints-to-V4-of-Open-Banking-Spec). End Users who had previously connected Santander Corporate accounts to Codat, via TrueLayer, will no longer be able to relink these accounts. Please see TrueLayer's guide to requesting new banking providers [HERE](https://support.truelayer.com/hc/en-us/articles/4522101928593-How-do-I-request-banking-providers-to-be-added-to-TrueLayer-s-network).
