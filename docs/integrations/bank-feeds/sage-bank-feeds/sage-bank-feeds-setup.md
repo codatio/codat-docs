@@ -48,6 +48,7 @@ To add a call-to-action-link:
 4. Enter the link URL in the **Call-to-action URL** box.
 5. Click **Save**.
 
+
 ## Optional: Add your organization's logo
 
 You can customize the appearance of the default Codat authentication site by adding your organization's logo. It will appear to the left of the Sage logo.
@@ -133,6 +134,16 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
 
 Next, make the data connection ID from step two (above) available to the SMB user by, for example, surfacing the ID in your application. They'll need to enter this ID when connecting a bank account to Sage, as described in the next procedure.
 
+## Surface the one-time password (OTP) to the user
+
+In order to authenticate the connection, your user needs to enter a one-time password in their Sage product. Call the OTP endpoint to retrieve the OTP, then display it to the user in your application. 
+
+Let the user know they need to enter it when connecting a source bank account.
+
+```
+GET https://api.codat.io/companies/{{companyId}}/connections/{{dataConnectionId}}/bankFeeds/otp
+```
+
 ## SMB user flow: Connect a source bank account to Sage
 
 To connect a source bank account to a target bank account in Sage, your SMB user uses the **Connect Bank** functionality in a supported Sage product. The exact steps depend on which Sage product they're using.
@@ -146,19 +157,18 @@ Alternatively, you can [authenticate users through your own web app](/integratio
 
 2. They click **Connect Bank** on the account and then select your institution from the list of banks and other financial institutions.
 
-3. The default Codat authentication site is loaded in a new browser tab:
+3. They enter their data connection ID in the **Connection ID** feld and the one-time password in the **One-time password** field, then click **Submit**:
 
-![Default Codat authentication UI - Connect your bank account to Sage](/img/old/bc09b4a-sage-bank-feeds_default-auth-UI-revised-wording.png)
+![Default Codat authentication UI - Connect your bank account to Sage](/img/integrations/bank-feeds/new_sage_UI_with_connectionID_and_OTP_field.png)
 
-4. They enter their data connection ID in the **Connection ID** box, then click **Submit**.
+4. If the SMB user successfully authenticated with Codat, the flow displays a list of available source bank accounts created using the [Create single source account](/bank-feeds-api#/operations/create-source-account) or [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoints.
+    For example:
 
-5. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `POST / bankFeedAccounts` endpoint) is displayed. For example:
+    ![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
 
-![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
+7. The SMB user selects the bank account they want to connect, then clicks **OK**.
 
-6. The SMB user selects the bank account they want to connect, then clicks **OK**.
-
-7. The SMB user is redirected to the Sage product from which they started the connection flow.
+8. The SMB user is redirected to the Sage product from which they started the connection flow.
 
 You can now use the [GET /bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) endpoint to retrieve the source bank accounts. The `status` property of a source bank account must have changed to `connected` before you can begin to write bank transactions from the account.
 
