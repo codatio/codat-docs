@@ -48,6 +48,7 @@ To add a call-to-action-link:
 4. Enter the link URL in the **Call-to-action URL** box.
 5. Click **Save**.
 
+
 ## Optional: Add your organization's logo
 
 You can customize the appearance of the default Codat authentication site by adding your organization's logo. It will appear to the left of the Sage logo.
@@ -133,6 +134,15 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
 
 Next, make the data connection ID from step two (above) available to the SMB user by, for example, surfacing the ID in your application. They'll need to enter this ID when connecting a bank account to Sage, as described in the next procedure.
 
+## Surface the One-Time Password (OTP) to the user
+
+In order to authenticate the connection, your user will be asked to submit a One-Time Password.
+To retrieve the One-Time Password, you must call our OTP endpoint.
+ ```
+GET https://api.codat.io/companies/{{companyId}}/connections/{{dataConnectionId}}/bankFeeds/otp
+ ```
+Surface the OTP in your application in a place where your user can retrieve it later as part of the connection flow.  
+
 ## SMB user flow: Connect a source bank account to Sage
 
 To connect a source bank account to a target bank account in Sage, your SMB user uses the **Connect Bank** functionality in a supported Sage product. The exact steps depend on which Sage product they're using.
@@ -146,9 +156,9 @@ Alternatively, you can [authenticate users through your own web app](/integratio
 
 2. They click **Connect Bank** on the account and then select your institution from the list of banks and other financial institutions.
 
-3. The default Codat authentication site is loaded in a new browser tab:
+3. They enter their data connection ID in the **Connection ID** box and the one-time password in the **One-time password** box, then click **Submit**:
 
-![Default Codat authentication UI - Connect your bank account to Sage](/img/old/bc09b4a-sage-bank-feeds_default-auth-UI-revised-wording.png)
+![Default Codat authentication UI - Connect your bank account to Sage](/img/integrations/bank-feeds/new_sage_UI_with_connectionID_and_OTP_field.png)
 
 4. They enter their data connection ID in the **Connection ID** box, then click **Submit**.
 
