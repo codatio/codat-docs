@@ -157,17 +157,18 @@ Alternatively, you can [authenticate users through your own web app](/integratio
 
 2. They click **Connect Bank** on the account and then select your institution from the list of banks and other financial institutions.
 
-3. They enter their data connection ID in the **Connection ID** box and the one-time password in the **One-time password** box, then click **Submit**:
+3. They enter their data connection ID in the **Connection ID** feld and the one-time password in the **One-time password** field, then click **Submit**:
 
 ![Default Codat authentication UI - Connect your bank account to Sage](/img/integrations/bank-feeds/new_sage_UI_with_connectionID_and_OTP_field.png)
 
-4. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `POST / bankFeedAccounts` endpoint) is displayed. For example:
+4. If the SMB user successfully authenticated with Codat, the flow displays a list of available source bank accounts created using the [Create single source account](/bank-feeds-api#/operations/create-source-account) or [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoints.
+    For example:
 
-![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
+    ![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
 
-5. The SMB user selects the bank account they want to connect, then clicks **OK**.
+7. The SMB user selects the bank account they want to connect, then clicks **OK**.
 
-6. The SMB user is redirected to the Sage product from which they started the connection flow.
+8. The SMB user is redirected to the Sage product from which they started the connection flow.
 
 You can now use the [GET /bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) endpoint to retrieve the source bank accounts. The `status` property of a source bank account must have changed to `connected` before you can begin to write bank transactions from the account.
 
