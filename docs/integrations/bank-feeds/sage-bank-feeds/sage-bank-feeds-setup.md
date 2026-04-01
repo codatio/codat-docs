@@ -134,14 +134,15 @@ To upload a logo, go to the <a className="external" href="https://app.codat.io/s
 
 Next, make the data connection ID from step two (above) available to the SMB user by, for example, surfacing the ID in your application. They'll need to enter this ID when connecting a bank account to Sage, as described in the next procedure.
 
-## Surface the One-Time Password (OTP) to the user
+## Surface the one-time password (OTP) to the user
 
-In order to authenticate the connection, your user will be asked to submit a One-Time Password.
-To retrieve the One-Time Password, you must call our OTP endpoint.
- ```
+In order to authenticate the connection, your user needs to enter a one-time password in their Sage product. Call the OTP endpoint to retrieve the OTP, then display it to the user in your application. 
+
+Let the user know they need to enter it when connecting a source bank account.
+
+```
 GET https://api.codat.io/companies/{{companyId}}/connections/{{dataConnectionId}}/bankFeeds/otp
- ```
-Surface the OTP in your application in a place where your user can retrieve it later as part of the connection flow.  
+```
 
 ## SMB user flow: Connect a source bank account to Sage
 
