@@ -28,9 +28,9 @@ All Go modules published under `github.com/codatio/client-sdk-go` will no longer
 After **May 7, 2026**:
 
 - We will **stop publishing new versions** of these modules.
-- We will **not** address bugs, security updates, or compatibility issues.
+- We **won't** address bugs, security updates, or compatibility issues.
 - The [GitHub repository](https://github.com/codatio/client-sdk-go) will be **archived** (read-only).
-- Existing tagged versions will **remain available** via the Go module proxy — your current builds will not break.
+- Existing tagged versions will **remain available** via the Go module proxy and your current builds will continue to work.
 
 ## Alternatives
 
@@ -43,7 +43,9 @@ Codat's APIs remain fully available to Go applications. If you are currently usi
 
 If you don't use the Go SDK, no action is required on your part.
 
-If you do use the Go SDK, plan to migrate to direct API calls or a supported SDK before **May 7, 2026**. If you have questions or need assistance, please reach out to your dedicated Codat representative or contact our [support team](mailto:support@codat.io).
+If you use the Go SDK, migrate to direct API calls or a supported SDK before **May 7, 2026**. 
+
+If you have questions or need assistance, reach out to your dedicated Codat representative or contact our [support team](mailto:support@codat.io).
 
 ## Expected impact if no action is taken
 
