@@ -160,15 +160,13 @@ Alternatively, you can [authenticate users through your own web app](/integratio
 
 ![Default Codat authentication UI - Connect your bank account to Sage](/img/integrations/bank-feeds/new_sage_UI_with_connectionID_and_OTP_field.png)
 
-4. They enter their data connection ID in the **Connection ID** box, then click **Submit**.
-
-5. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `POST / bankFeedAccounts` endpoint) is displayed. For example:
+4. If the SMB user was authenticated with Codat successfully, a dialog listing the available source bank accounts (created using the `POST / bankFeedAccounts` endpoint) is displayed. For example:
 
 ![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
 
-6. The SMB user selects the bank account they want to connect, then clicks **OK**.
+5. The SMB user selects the bank account they want to connect, then clicks **OK**.
 
-7. The SMB user is redirected to the Sage product from which they started the connection flow.
+6. The SMB user is redirected to the Sage product from which they started the connection flow.
 
 You can now use the [GET /bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) endpoint to retrieve the source bank accounts. The `status` property of a source bank account must have changed to `connected` before you can begin to write bank transactions from the account.
 
