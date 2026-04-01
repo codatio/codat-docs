@@ -703,7 +703,11 @@ module.exports = {
       to: "/spend-insights/overview",
       from: "/supplier-enablement/overview",
     },
-
+    {
+      to: "/spend-insights/reports/spend-analysis",
+      from: "/spend-insights/guides/analyze-spend",
+    },
+    
     // assess
 
     {
