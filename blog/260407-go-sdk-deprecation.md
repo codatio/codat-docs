@@ -1,4 +1,3 @@
-
 ---
 title: "2026-05-07: Deprecation of Go client SDK"
 date: "2026-04-07"
@@ -26,7 +25,7 @@ All Go modules published under `github.com/codatio/client-sdk-go` will no longer
 | **Sync for Payables** | `github.com/codatio/client-sdk-go/sync-for-payables` |
 | **Sync for Payroll** | `github.com/codatio/client-sdk-go/sync-for-payroll` |
 
-After the deprecation date:
+After **May 7, 2026**:
 
 - We will **stop publishing new versions** of these modules.
 - We will **not** address bugs, security updates, or compatibility issues.
@@ -45,3 +44,7 @@ Codat's APIs remain fully available to Go applications. If you are currently usi
 If you don't use the Go SDK, no action is required on your part.
 
 If you do use the Go SDK, plan to migrate to direct API calls or a supported SDK before **May 7, 2026**. If you have questions or need assistance, please reach out to your dedicated Codat representative or contact our [support team](mailto:support@codat.io).
+
+## Expected impact if no action is taken
+
+Your existing builds will continue to work since published versions remain available via the Go module proxy. However, you will no longer receive bug fixes, security patches, or compatibility updates for these modules, and the SDK will fall increasingly out of date with Codat's APIs over time.
