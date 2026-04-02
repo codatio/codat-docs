@@ -1,6 +1,6 @@
 ---
 title: "2026-05-07: Deprecation of Go client SDK"
-date: "2026-04-07"
+date: "2026-04-01"
 tags: ["Deprecation"]
 authors: vpellcodat
 ---
