@@ -81,13 +81,13 @@ The `options` prop is optional and accepts an object containing the following op
 
 | Property                   | Description                                                                                                                                                           |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `nonModal`                 | Determines whether Link is initialized with non-modal styling (no border and no close button).                                                                        |
-| `showLandingPage`          | Determines whether an extra landing page is displayed to the user at the start of Link.                                                                               |
-| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data are displayed for selection.                                                                             |
+| `nonModal`                 | Determines whether Link uses non-modal styling, removing the border and close button.                                                                                 |
+| `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                          |
+| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                    |
 | `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                 |
-| `sourceTypes`              | Controls the data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for.                                      |
-| `text`                     | Contains options that control what text is displayed to the user. Markdown is supported.                                                                              |
-| `enableAdditionalConsent`  | Determines whether an additional consent journey for further use cases is displayed to the user.                                                                      |
+| `sourceTypes`              | Controls the data source types the user can connect or upload files for: Accounting, Commerce, Banking, and Business Documents.                                       |
+| `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                             |
+| `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                 |
 | `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                            |
 | `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below. |
 
@@ -219,7 +219,7 @@ You may want to enable your customers to authorize access to multiple companies 
 
 To provide your customers with this option, set the `enableMultiEntityLinking` option to `true`. This will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support. By default, this option is set to `false`.
 
-## CSP nonce
+## CSP Nonce
 
 If your app sets [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers, you can pass a `nonce` through the `options` prop so that every `<style>` tag the SDK injects carries that nonce. This lets you use a strict `style-src` directive instead of `'unsafe-inline'`.
 
