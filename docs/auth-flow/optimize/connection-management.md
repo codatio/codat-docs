@@ -600,7 +600,7 @@ The `options` prop is optional and accepts an object containing the following op
 
 | Property | Description                                                                                                                                                                                            |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `text`   | Contains options that control what text is displayed to the user.                                                                                                                                      |
+| `text`   | Contains options that control what text the user sees.                                                                                                                                      |
 | `nonce`  | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce). |
 
 The object is applied as the SDK component is mounted and doesn't support reloading. Make sure to modify the options before mounting the component.

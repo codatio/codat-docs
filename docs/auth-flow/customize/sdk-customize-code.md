@@ -266,7 +266,7 @@ Content-Security-Policy:
 If you currently allow `style-src 'unsafe-inline'` for the SDK, follow these steps to move to nonce-based CSP:
 
 1. Configure your server to generate a cryptographically random nonce for each request.
-2. Expose the nonce to the frontend (for example, via a `<meta>` tag or a server-rendered variable).
+2. Expose the nonce to the frontend, for example via a `<meta>` tag or a server-rendered variable.
 3. Pass the nonce to the SDK through `options.nonce`.
 4. Update your CSP header: replace `style-src 'unsafe-inline'` with `style-src 'nonce-<value>'`.
 5. Verify that the SDK renders correctly and no CSP violations appear in the browser console.
@@ -277,7 +277,7 @@ Omitting the `nonce` option continues to work exactly as before. Consumers who d
 
 ### Mount-time behavior
 
-The SDK reads the `nonce` value once when the component mounts. If your app rotates nonces (for example, on single-page app navigation), you must unmount and remount the SDK component with the new nonce value.
+The SDK reads the `nonce` value once when the component mounts. If your app rotates nonces — for example, on single-page app navigation — you must unmount and remount the SDK component with the new nonce value.
 
 ---
 
