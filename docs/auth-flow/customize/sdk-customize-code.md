@@ -219,7 +219,7 @@ You may want to enable your customers to authorize access to multiple companies 
 
 To provide your customers with this option, set the `enableMultiEntityLinking` option to `true`. This will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support. By default, this option is set to `false`.
 
-## CSP Nonce
+## CSP nonce
 
 If your app sets [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers, you can pass a `nonce` through the `options` prop so that every `<style>` tag the SDK injects carries that nonce. This lets you use a strict `style-src` directive instead of `'unsafe-inline'`.
 
@@ -277,7 +277,7 @@ Omitting the `nonce` option continues to work exactly as before. Consumers who d
 
 ### Mount-time behavior
 
-The SDK reads the `nonce` value once when the component mounts. If your app rotates nonces — for example, on single-page app navigation — you must unmount and remount the SDK component with the new nonce value.
+The SDK reads the `nonce` value once when the component mounts. If your app rotates nonces—for example, on single-page app navigation—you must unmount and remount the SDK component with the new nonce value.
 
 ---
 
