@@ -79,16 +79,16 @@ As the `options` object overrides the Link settings set in the Portal, this may 
 
 The `options` prop is optional and accepts an object containing the following optional properties:
 
-| Property                   | Description                                                                                                                                                           |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `nonModal`                 | Determines whether Link uses non-modal styling, removing the border and close button.                                                                                 |
-| `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                          |
-| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                    |
-| `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                 |
-| `sourceTypes`              | Controls the data source types the user can connect or upload files for: Accounting, Commerce, Banking, and Business Documents.                                       |
-| `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                             |
-| `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                 |
-| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                            |
+| Property                   | Description                                                                                                                                                          |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nonModal`                 | Determines whether Link uses non-modal styling, removing the border and close button.                                                                                |
+| `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                         |
+| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                   |
+| `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                |
+| `sourceTypes`              | Controls the data source types the user can connect or upload files for: Accounting, Commerce, Banking, and Business Documents.                                      |
+| `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                            |
+| `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                |
+| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                           |
 | `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below. |
 
 The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
