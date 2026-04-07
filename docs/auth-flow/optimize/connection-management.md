@@ -223,7 +223,8 @@ export const ConnectionManagement = ({
 
 3. **If you're using content security policy (CSP) headers:**
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - Add `unsafe-inline` to `style-src`. Don't use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
+   - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -303,7 +304,8 @@ export default function Home() {
 
 3. **If you're using content security policy (CSP) headers:**
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
+   - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -373,7 +375,8 @@ const openModal = () => {
 
 4. **If you're using content security policy (CSP) headers**:
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
+   - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -443,7 +446,8 @@ onError(error) {
 
 4. **If you're using content security policy (CSP) headers**:
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
+   - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -496,7 +500,8 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
 
 4. **If you're using content security policy (CSP) headers**:
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
+   - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -561,7 +566,8 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
 
 4. **If you're using content security policy (CSP) headers**:
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
+   - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -585,15 +591,17 @@ onReconnect: (args: {connectionId: string}) => void = () => {};
 onDisconnect: (args: {connectionId: string}) => void = () => {};
   options={{
       text: {...},
+      nonce: "server-generated-nonce-value",
   }}
 />
 ```
 
 The `options` prop is optional and accepts an object containing the following optional properties:
 
-| Property | Description                                                       |
-| -------- | ----------------------------------------------------------------- |
-| `text`   | Contains options that control what text is displayed to the user. |
+| Property | Description                                                                                                                                                                                            |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `text`   | Contains options that control what text is displayed to the user.                                                                                                                                      |
+| `nonce`  | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles are not blocked by a strict Content Security Policy. See [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce). |
 
 The object is applied as the SDK component is mounted and doesn't support reloading. Make sure to modify the options before mounting the component.
 

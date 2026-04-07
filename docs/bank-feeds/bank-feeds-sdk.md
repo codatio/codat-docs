@@ -99,7 +99,7 @@ Use the component in your solution as needed:
     onConnection={() => alert("onConnection")}
     onConnectionStarted={() => alert("onConnectionStarted")}
     onFinish={() => alert("onFinish")}
-    options={{}}
+    options={{ nonce: "server-generated-nonce-value" }}
   />
 ```
 
@@ -108,7 +108,8 @@ Use the component in your solution as needed:
 - **If you're using TypeScript**, extend your type declarations with our types by installing the types package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 - **If you're using content security policy (CSP) headers**, edit these headers:
   - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
-  - Add `unsafe-inline` to `style-src`. Do _not_ use a hash because this can change at any time without warning.
+  - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
+  - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 ---
 
