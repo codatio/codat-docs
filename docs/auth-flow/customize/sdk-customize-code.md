@@ -89,7 +89,7 @@ The `options` prop is optional and accepts an object containing the following op
 | `text`                     | Contains options that control what text is displayed to the user. Markdown is supported.                                                                              |
 | `enableAdditionalConsent`  | Determines whether an additional consent journey for further use cases is displayed to the user.                                                                      |
 | `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                            |
-| `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles are not blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below. |
+| `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below. |
 
 The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
 
@@ -221,7 +221,7 @@ To provide your customers with this option, set the `enableMultiEntityLinking` o
 
 ## CSP nonce
 
-If your application sets [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers, you can pass a `nonce` through the `options` prop so that every `<style>` tag the SDK injects carries that nonce. This lets you use a strict `style-src` directive instead of `'unsafe-inline'`.
+If your app sets [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers, you can pass a `nonce` through the `options` prop so that every `<style>` tag the SDK injects carries that nonce. This lets you use a strict `style-src` directive instead of `'unsafe-inline'`.
 
 ### Usage example
 
@@ -266,18 +266,18 @@ Content-Security-Policy:
 If you currently allow `style-src 'unsafe-inline'` for the SDK, follow these steps to move to nonce-based CSP:
 
 1. Configure your server to generate a cryptographically random nonce for each request.
-2. Expose the nonce to the frontend (e.g. via a `<meta>` tag or a server-rendered variable).
+2. Expose the nonce to the frontend (for example, via a `<meta>` tag or a server-rendered variable).
 3. Pass the nonce to the SDK through `options.nonce`.
 4. Update your CSP header: replace `style-src 'unsafe-inline'` with `style-src 'nonce-<value>'`.
 5. Verify that the SDK renders correctly and no CSP violations appear in the browser console.
 
 ### Backwards compatibility
 
-Omitting the `nonce` option continues to work exactly as before. Consumers who do not set CSP headers, or who are happy with `'unsafe-inline'`, do not need to change anything. This is not a breaking change.
+Omitting the `nonce` option continues to work exactly as before. Consumers who don't set CSP headers, or who are happy with `'unsafe-inline'`, don't need to change anything. This isn't a breaking change.
 
 ### Mount-time behavior
 
-The `nonce` value is read once when the SDK component mounts. If your application rotates nonces (for example, on single-page app navigation), you must unmount and remount the SDK component with the new nonce value.
+The SDK reads the `nonce` value once when the component mounts. If your app rotates nonces (for example, on single-page app navigation), you must unmount and remount the SDK component with the new nonce value.
 
 ---
 

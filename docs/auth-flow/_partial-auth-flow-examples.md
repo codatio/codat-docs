@@ -78,7 +78,7 @@ function App() {
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
      - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-     - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
+     - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 </TabItem>
 
@@ -168,7 +168,7 @@ export default function Home() {
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
      - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-     - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
+     - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 </TabItem>
 
@@ -250,7 +250,7 @@ const openModal = () => {
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
      - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-     - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
+     - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 </TabItem>
 
@@ -330,7 +330,7 @@ In the example below, we use webpack's [magic comments](https://webpack.js.org/a
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
      - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-     - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
+     - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 </TabItem>
 
@@ -397,7 +397,7 @@ For an example of the component in action, [see our demo app](https://github.com
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
      - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-     - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
+     - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 </TabItem>
 
@@ -464,7 +464,7 @@ For an example of the component in action, [see our demo app](https://github.com
    - **If you're using content security policy (CSP) headers**, edit these headers:
      - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
      - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-     - Alternatively, add `'unsafe-inline'` to `style-src` if you are not using nonces. Do _not_ use a hash because this can change at any time without warning.
+     - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 </TabItem>
 
