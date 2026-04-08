@@ -3917,6 +3917,61 @@
         }
       }
     },
+    "/companies/{companyId}/connections/{connectionId}/bankFeeds/otp": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "$ref": "#/components/parameters/connectionId"
+        }
+      ],
+      "post": {
+        "tags": [
+          "Source accounts"
+        ],
+        "summary": "Generate one-time password",
+        "description": "The *Generate OTP* endpoint generates a one-time password (OTP) for a bank feed connection. The OTP is returned along with an expiry time, after which it will no longer be valid.\n\n> **For Sage only**\n>\n> Only call this endpoint for connections to Sage. Calling it for other integrations will return an error.\n",
+        "operationId": "generate-otp",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerateOtpResponse"
+                },
+                "examples": {}
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/connections/{connectionId}/push/bankAccounts/{accountId}/bankTransactions": {
       "post": {
         "tags": [
@@ -6034,6 +6089,32 @@
             }
           }
         }
+      },
+      "GenerateOtpResponse": {
+        "title": "OTP response",
+        "type": "object",
+        "description": "Response containing a one-time password and its expiry time.",
+        "additionalProperties": false,
+        "properties": {
+          "otp": {
+            "type": "string",
+            "description": "The one-time password."
+          },
+          "expiry": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The expiry date and time of the OTP in UTC."
+          }
+        },
+        "required": [
+          "otp",
+          "expiry"
+        ],
+        "examples": [
+          {
+            "otp": "GT40U4",
+            "expiry": "2026-04-08T10:30:00Z"
+          }
+        ]
       },
       "PullOperation": {
         "title": "Pull operation",
