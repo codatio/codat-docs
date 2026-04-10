@@ -141,7 +141,7 @@ In order to authenticate the connection, your user needs to enter a one-time pas
 Let the user know they need to enter it when connecting a source bank account.
 
 ```
-GET https://api.codat.io/companies/{{companyId}}/connections/{{dataConnectionId}}/bankFeeds/otp
+POST https://api.codat.io/companies/{{companyId}}/connections/{{dataConnectionId}}/bankFeeds/otp
 ```
 
 ## SMB user flow: Connect a source bank account to Sage
