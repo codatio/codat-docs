@@ -1,7 +1,7 @@
 ---
 title: "Link: encourage connecting more banking accounts"
-date: "2026-04-24"
-tags: ["Product", "Update"]
+date: "2026-04-15"
+tags: ["Product", "Update", "Link"]
 hide_table_of_contents: false
 authors: pmckinney
 ---
