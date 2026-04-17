@@ -1,8 +1,8 @@
 .wrapper {
-  --color-gradient-1: #442ee2;
-  --color-gradient-2: #110655;
+  --color-gradient-1: #21524F;
+  --color-gradient-2: #18103A;
 
-  background-color: var(--color-codat-primary);
+  background-color: var(--color-gradient-2);
   background-image: linear-gradient(270deg, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%);
   overflow: hidden;
   display: flex;
@@ -18,10 +18,21 @@
 
   h1,
   p {
-    color: white;
+    color: #ECEDE5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: normal;
   }
 
   p {
+    font-family: var(--heading-font);
+    font-size: 18px;
     line-height: 1.7em;
   }
 

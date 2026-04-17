@@ -1,27 +1,27 @@
 /* Lists */
 
-article .markdown > ol {
+article .markdown ol {
   list-style: none;
   padding: 0em !important;
   margin: 2em 0 !important;
 }
 
-article .markdown > ol:not([start]) {
+article .markdown ol:not([start]) {
   counter-reset: li-counter;
 }
 
-article .markdown > ol > li {
+article .markdown ol > li {
   counter-increment: li-counter;
   margin-bottom: 1.5em !important;
   position: relative;
   margin-left: 3em;
 }
 
-article .markdown > ol > li::before {
+article .markdown ol > li::before {
   content: counter(li-counter);
-  color: var(--ifm-color-base);
-  background-color: var(--token-secondary-bg-c-alt);
-  font-weight: bold;
+  color: #18103A;
+  background-color: #E0E9D1;
+  font-weight: 500;
   border-radius: 50%;
   margin-right: 0.5em;
   font-family: monospace;
@@ -36,10 +36,21 @@ article .markdown > ol > li::before {
   text-wrap: nowrap;
 }
 
-article .markdown > ol ul,
-article .markdown > ul ul,
-article .markdown > ol ol,
-article .markdown > ul ol {
+html[data-theme="dark"] article .markdown ol > li::before {
+  color: #E0E9D1;
+  background-color: transparent;
+  border: 1.5px solid #E0E9D1;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+article .markdown ol ul,
+article .markdown ul ul,
+article .markdown ol ol,
+article .markdown ul ol {
   margin-top: 0.5em !important;
 }
 

@@ -5,22 +5,32 @@
 
   --code-block-line-height: 1.5;
 
-  --ifm-pre-color: var(--color-interface-core);
-  --ifm-code-background: var(--c-indigo-10);
+  --ifm-pre-color: #18103A;
+  --ifm-code-background: #18103A;
 }
 
 html[data-theme="light"] {
-  --code-block-bg-c: var(--color-interface-10);
+  --code-block-bg-c: rgba(224, 233, 209, 0.4);
+  --ifm-pre-background: rgba(224, 233, 209, 0.4);
+  --inline-code-bg-c: rgba(224, 233, 209, 0.5);
+  --inline-code-color: #18103A;
   --color-string: var(--color-warning-dark);
 }
 
 html[data-theme="dark"] {
-  --code-block-bg-c: var(--token-secondary-bg-c);
+  --inline-code-bg-c: rgba(224, 233, 209, 0.12);
+  --inline-code-color: #ECEDE5;
+  --code-block-bg-c: #18103A;
+  --ifm-pre-background: #18103A;
   --color-string: var(--color-warning-20);
 }
 
 .token-line {
   color: var(--ifm-pre-color) !important;
+}
+
+html[data-theme="dark"] .token-line {
+  color: #ECEDE5 !important;
 }
 
 .token.string {
@@ -30,10 +40,10 @@ html[data-theme="dark"] {
 :not(pre) > code {
   position: relative;
   margin-block-start: -0.125rem;
-  background-color: inherit;
   vertical-align: baseline;
 
-  background-color: var(--code-block-bg-c);
+  background-color: var(--inline-code-bg-c);
+  color: var(--inline-code-color);
   padding-block-start: 0.25rem;
   padding-block-end: 0.25rem;
 
@@ -65,11 +75,23 @@ html[data-theme="dark"] {
 #__docusaurus {
   [class*="codeBlockContainer_"] {
     box-shadow: none;
-    border: 2px solid var(--token-secondary-bg-c-alt);
+    border: 1px solid rgba(236, 237, 229, 0.2);
     overflow: hidden;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    pre {
+      background-color: #18103A !important;
+    }
+
+    html[data-theme="light"] & {
+      border-color: #D1E100;
+
+      pre {
+        background-color: rgba(224, 233, 209, 0.4) !important;
+      }
     }
   }
 }
@@ -119,12 +141,12 @@ pre[class*="language-"] {
   white-space: normal;
 }
 
-/* Tomorrow Comment */
+/* Syntax tokens — tuned for Bedrock background */
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #8c9296;
+  color: rgba(236, 237, 229, 0.45);
 }
 
 .token.punctuation {
@@ -136,13 +158,13 @@ pre[class*="language-"] {
 }
 
 .token.tag {
-  color: #91c5ff;
+  color: #B2D4C7;
 }
 
 .token.tag.punctuation,
 .token.tag.class-name,
 .token.tag.punctuation + .token.tag:not(.attr-value):not([class*="language-"]) {
-  color: #2b90ff;
+  color: #7ebfae;
 }
 
 .token.property,
@@ -151,7 +173,7 @@ pre[class*="language-"] {
 .token.number,
 .token.constant,
 .token.symbol {
-  color: #8454ff;
+  color: #8AAFD4;
 }
 
 .token.selector,
@@ -159,7 +181,7 @@ pre[class*="language-"] {
 .token.function,
 .token.builtin,
 .token.inserted {
-  color: #ff6810;
+  color: #ffaa6e;
 }
 
 .token.operator,
@@ -174,7 +196,7 @@ pre[class*="language-"] {
 }
 
 .token.atrule {
-  color: #ffbb01;
+  color: #D1E100;
 }
 
 .token.regex,

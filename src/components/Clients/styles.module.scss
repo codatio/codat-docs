@@ -14,7 +14,11 @@
 }
 
 .header {
-  color: #777;
+  color: rgba(24, 16, 58, 0.5);
+}
+
+html[data-theme="dark"] .header {
+  color: rgba(236, 237, 229, 0.5);
 }
 
 .clientsList {

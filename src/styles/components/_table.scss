@@ -1,9 +1,8 @@
 html[data-theme="light"] {
-  --ifm-table-border-color: var(--c-indigo-30);
-  --ifm-table-border-color: #ededed;
-  --ifm-table-header-color: var(--color-interface-10);
-
-  --table-stripe: var(--color-interface-10);
+  --ifm-table-border-color: #E0E9D1;
+  --ifm-table-header-color: #E0E9D1;
+  --ifm-table-background: #ECEDE5;
+  --table-stripe: #F4F5F0;
 }
 
 html[data-theme="dark"] {
@@ -44,11 +43,18 @@ table {
 
 th {
   text-align: start;
+  font-family: var(--heading-font);
+  font-weight: 200;
 }
 
 th,
 td {
   line-height: 1.6;
+}
+
+td {
+  font-size: 16px;
+  font-weight: 300;
 }
 
 thead th:empty {
