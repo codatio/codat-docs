@@ -19,9 +19,9 @@ You must update your user journey to surface the verification code during authen
 
 ## Action required
 
-Clients using [Sage Bank Feeds](/integrations/bank-feeds/sage-bank-feeds/) must update their application to include the new OTP generation step before **July 10, 2026**. See how to [Surface the one-time password (OTP) to the user](/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup#surface-the-one-time-password-otp-to-the-user) for implementation instructions. To test this change in your test environment, please ask [Codat Support](support@codat.io) to enable the feature for you.
+Clients using [Sage Bank Feeds](/integrations/bank-feeds/sage-bank-feeds/) must update their application to include the new OTP generation step before **July 10, 2026**. See how to [Surface the one-time password (OTP) to the user](/integrations/bank-feeds/sage-bank-feeds/sage-bank-feeds-setup#surface-the-one-time-password-otp-to-the-user) for implementation instructions. To test this change in your test environment, please ask [Codat Support](mailto:support@codat.io) to enable the feature for you.
 
-You may also want to update your internal and client-facing documentation in line with this change. Contact [Codat Support](support@codat.io) if you’d like any additional help with this update.
+You may also want to update your internal and client-facing documentation in line with this change. Contact [Codat Support](mailto:support@codat.io) if you’d like any additional help with this update.
 
 ## Expected impact if no action is taken
 

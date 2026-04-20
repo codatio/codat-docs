@@ -22,6 +22,6 @@ You'll see our new brand across every part of Codat: the website, the Portal, ou
 
 ## What's not changing
 
-Rest assured, the connections, integrations, and APIs your teams rely on are unaffected. Data flows, authentication flows, and existing implementations continue to work exactly as they did yesterday. If you ever have questions about continuity or compatibility, our [Support team](support@codat.io) is here for you. 
+Rest assured, the connections, integrations, and APIs your teams rely on are unaffected. Data flows, authentication flows, and existing implementations continue to work exactly as they did yesterday. If you ever have questions about continuity or compatibility, our [Support team](mailto:support@codat.io) is here for you. 
 
 Welcome to the new Codat.

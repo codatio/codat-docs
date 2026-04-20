@@ -25,4 +25,4 @@ If you have the [Secured by Codat](/auth-flow/customize/customize-link#secured-b
 ## Who is this relevant for?
 
 These changes are already live for all our clients, reflecting our commitment to our new visual identity, and don’t require any action on your part. 
-If you have any questions about the visual changes, get in touch with our [Support team](support@codat.io).
+If you have any questions about the visual changes, get in touch with our [Support team](mailto:support@codat.io).
