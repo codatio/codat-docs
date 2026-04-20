@@ -22,9 +22,9 @@ require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Codat_docs",
+  title: "Codat Docs",
   tagline:
-    "We make accessing consented business data from your customers' banking, accounting, and commerce software easy. Build once to our API to aggregate data, underwrite credit risk, and automate accounting for your SMB customers.",
+    "Banking on better data: the advisory intelligence solution purpose-built for modern commercial banking.",
 
   url: "https://docs.codat.io",
   baseUrl: `${BASE_URL}/`,

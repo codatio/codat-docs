@@ -17,7 +17,7 @@ banner_text: "Gain additional insight into the technology suite and implementati
 ---
 
 <head>
-  <title>{`Codat_docs | Enterprise at Codat`}</title>
+  <title>{`Codat Docs | Enterprise at Codat`}</title>
   <meta
     name="description"
     content="Gain additional insight into the technology suite and implementation process behind Codat's specialized solutions based on data sharing, AI insights, and domain expertise"
