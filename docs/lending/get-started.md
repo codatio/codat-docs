@@ -105,10 +105,7 @@ Once the connection is established, Codat will retrieve data for the data types 
 <ul className="card-container col-2">
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
+      <FeatureBullet />
       <h3>Underwriters</h3>
     </div>
     <p>
@@ -118,10 +115,7 @@ Once the connection is established, Codat will retrieve data for the data types 
   
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
+      <FeatureBullet />
       <h3>Developers</h3>
     </div>
     <p>

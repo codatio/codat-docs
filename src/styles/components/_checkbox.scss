@@ -4,14 +4,14 @@
     align-items: center;
 
     input[type=checkbox] {
-      --active: #275EFE;
-      --active-inner: #fff;
-      --focus: 2px rgba(39, 94, 254, .3);
-      --border: #BBC1E1;
-      --border-hover: #275EFE;
-      --background: #fff;
-      --disabled: #F6F8FF;
-      --disabled-inner: #E1E6F9;
+      --active: #18103A;
+      --active-inner: #ECEDE5;
+      --focus: 2px rgba(24, 16, 58, .3);
+      --border: rgba(24, 16, 58, 0.3);
+      --border-hover: #18103A;
+      --background: #ECEDE5;
+      --disabled: rgba(236, 237, 229, 0.5);
+      --disabled-inner: rgba(24, 16, 58, 0.2);
 
       -webkit-appearance: none;
       -moz-appearance: none;

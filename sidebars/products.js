@@ -6,7 +6,7 @@ module.exports = [
     id: "spend-insights/overview",
     customProps: {
       hr: true,
-      section: "Banking intelligence",
+      section: "CODAT INSIGHTS",
     },
   },
   {
@@ -14,16 +14,13 @@ module.exports = [
     className: "top-level-item top-level-item-single products product lending",
     id: "lending/overview",
     customProps: {
-      section: "Business lending",
+      section: "CODAT CONNECT",
     },
   },
   {
     type: "doc",
     className: "top-level-item top-level-item-single products product bankfeed",
     id: "bank-feeds/overview",
-    customProps: {
-      section: "Accounting automation",
-    },
   },
   {
     type: "doc",

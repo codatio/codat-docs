@@ -1,13 +1,18 @@
 /* Scrollbar */
 
 :root {
-  --scrollbar-track-color: #eef0f2;
-  --scrollbar-thumb-color: #bec2c9;
+  --scrollbar-track-color: #ECEDE5;
+  --scrollbar-thumb-color: rgba(24, 16, 58, 0.3);
+}
+
+html[data-theme="dark"] {
+  --scrollbar-track-color: #18103A;
+  --scrollbar-thumb-color: rgba(236, 237, 229, 0.3);
 }
 
 ::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
+  height: 4px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-thumb {

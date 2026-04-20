@@ -10,6 +10,17 @@ import MDXLi from "@theme/MDXComponents/Li";
 import MDXImg from "@theme/MDXComponents/Img";
 import Admonition from "@theme/Admonition";
 import Mermaid from "@theme/Mermaid";
+import FeatureBullet from "@components/FeatureBullet";
+import MagnifyingIcon from "@components/MagnifyingIcon";
+import EyeIcon from "@components/EyeIcon";
+import PeopleIcon from "@components/PeopleIcon";
+import RelationshipsIcon from "@components/RelationshipsIcon";
+import FolderLockIcon from "@components/FolderLockIcon";
+import ShieldLockIcon from "@components/ShieldLockIcon";
+import FilesGearIcon from "@components/FilesGearIcon";
+import GearFinanceDownIcon from "@components/GearFinanceDownIcon";
+import PeopleTickIcon from "@components/PeopleTickIcon";
+import UserBoxesIcon from "@components/UserBoxesIcon";
 const MDXComponents = {
   Head,
   details: MDXDetails, // For MD mode support, see https://github.com/facebook/docusaurus/issues/9092#issuecomment-1602902274
@@ -28,6 +39,17 @@ const MDXComponents = {
   h6: (props) => <MDXHeading as="h6" {...props} />,
   admonition: Admonition,
   mermaid: Mermaid,
+  FeatureBullet,
+  MagnifyingIcon,
+  EyeIcon,
+  PeopleIcon,
+  RelationshipsIcon,
+  FolderLockIcon,
+  ShieldLockIcon,
+  FilesGearIcon,
+  GearFinanceDownIcon,
+  PeopleTickIcon,
+  UserBoxesIcon,
   table: ({ children, ...props }) => {
     const tableHeadings = children[0]?.props.children?.props.children;
 

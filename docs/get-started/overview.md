@@ -4,24 +4,27 @@ description: "Take your first steps through the information and support availabl
 ---
 
 import Cards from "@components/Cards";
+import FilesGearIcon from "@components/FilesGearIcon";
+import ShieldLockIcon from "@components/ShieldLockIcon";
+import GearFinanceDownIcon from "@components/GearFinanceDownIcon";
 
 ## Reference content
 
 <Cards>
   <Cards.Card
     title="Documentation"
-    image="/img/wp-icons/accounting-2.png"
+    icon={GearFinanceDownIcon}
   >
     Begin with our <a href="/core-concepts/overview">core concepts</a>, or press <code>Ctrl-K</code> to bring up the quick search bar to find the information you need.
   </Cards.Card>
 
-<Cards.Card image="/img/wp-icons/Stack.png" title="API reference">
+<Cards.Card icon={FilesGearIcon} title="API reference">
   Jump in and start using the Codat API endpoints through our interactive{" "}
   <a href="/using-the-api/overview">API references</a>.
 </Cards.Card>
 
   <Cards.Card
-    image="/img/wp-icons/Financial-Services.png"
+    icon={ShieldLockIcon}
     title="Libraries"
   >
     Use our <a href="/get-started/libraries">client library SDKs</a> to get building quickly.
@@ -33,7 +36,7 @@ import Cards from "@components/Cards";
 <ul className="card-container">
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Lightbulb.png" className="mini-icon" />
+      <EyeIcon />
       <h3>First steps guide</h3>
     </div>
     <p>A practical introduction to Codat's Portal and API.</p>
@@ -43,7 +46,7 @@ import Cards from "@components/Cards";
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/RocketLaunch.png" className="mini-icon" />
+      <FeatureBullet />
       <h3>Video guide: Your first 10 minutes</h3>
     </div>
     <p>From signing up to syncing data in 10 minutes.</p>

@@ -29,17 +29,25 @@ ul.card-container {
 
   &.col-3 {
     grid-template-columns: repeat(3, 1fr);
-    
+
     p {
       font-size: 0.95em;
+    }
+
+    .card .header h3 {
+      font-size: 18px;
     }
   }
 
   &.col-2 {
     grid-template-columns: repeat(2, 1fr);
-    
+
     p {
       font-size: 0.98em;
+    }
+
+    .card .header h3 {
+      font-size: 18px;
     }
   }
 
@@ -65,12 +73,12 @@ ul.card-container {
 
 html[data-theme="light"] {
   .card {
-    background-color: var(--token-primary-bg-c);
-    border: 2px solid var(--token-secondary-bg-c-alt);
+    background-color: rgba(224, 233, 209, 0.4);
+    border: 1px solid rgba(100, 130, 167, 0.3);
 
     &.dark {
-      background-color: #15095D;
-      color: white;
+      background-color: #18103A;
+      color: #ECEDE5;
 
       img {
         fill: white;
@@ -78,7 +86,7 @@ html[data-theme="light"] {
       }
 
       a {
-        color: white;
+        color: #ECEDE5;
       }
     }
   }
@@ -86,8 +94,8 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   .card {
-    background-color: var(--token-secondary-bg-c);
-    border: 2px solid var(--token-secondary-bg-c-alt);
+    background-color: rgba(236, 237, 229, 0.05);
+    border: 1px solid rgba(236, 237, 229, 0.15);
   }
 }
 
@@ -134,9 +142,12 @@ html[data-theme="dark"] {
 
     h3 {
       font-size: 16px;
+      font-family: var(--heading-font);
+      font-weight: 200;
     }
 
-    img + h3 {
+    img + h3,
+    svg + h3 {
       margin: 0.5em;
     }
   }

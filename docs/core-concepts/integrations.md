@@ -14,7 +14,7 @@ You can connect a company to a single accounting source and a single bank feeds 
 <ul className="card-container">
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Calculator.png" className="mini-icon" />
+      <GearFinanceDownIcon />
       <h3>Accounting</h3>
     </div>
     <p>
@@ -30,7 +30,7 @@ You can connect a company to a single accounting source and a single bank feeds 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Bank.png" className="mini-icon" />
+      <FeatureBullet />
       <h3>Banking</h3>
     </div>
     <p>
@@ -45,7 +45,7 @@ You can connect a company to a single accounting source and a single bank feeds 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Storefront.png" className="mini-icon" />
+      <FeatureBullet />
       <h3>Commerce</h3>
     </div>
     <p>
@@ -60,7 +60,7 @@ You can connect a company to a single accounting source and a single bank feeds 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Frame-3805.png" className="mini-icon" />
+      <FeatureBullet />
       <h3>Bank feeds</h3>
     </div>
     <p>
@@ -75,7 +75,7 @@ You can connect a company to a single accounting source and a single bank feeds 
   </li>
   <li className="card">
     <div className="header">
-      <img src="/img/wp-icons/Files.png" className="mini-icon" />
+      <FeatureBullet />
       <h3>File upload</h3>
     </div>
     <p>

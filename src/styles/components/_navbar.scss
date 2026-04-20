@@ -1,6 +1,6 @@
 html[data-theme="light"] {
   --navbar-link-c: var(--ifm-font-color-base);
-  --navbar-separator-bg-c: var(--c-indigo-40);
+  --navbar-separator-bg-c: rgba(24, 16, 58, 0.3);
 
   --ifm-dropdown-background-color: var(--token-primary-bg-c);
   --ifm-navbar-link-color: var(--color-codat-primary);
@@ -13,7 +13,7 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   --navbar-link-c: var(--ifm-font-color-base);
-  --navbar-separator-bg-c: var(--c-carbon-80);
+  --navbar-separator-bg-c: rgba(236, 237, 229, 0.3);
 
   --button-border: var(--ifm-color-primary);
   --button-text: white;
@@ -56,8 +56,8 @@ html[data-theme="dark"] {
         display: flex;
         align-items: center;
         padding: 0.375rem 0.625rem;
-        background: linear-gradient(90deg, #495fff 0%, #18c6ff 114.68%);
-        color: #fff;
+        background: #D1E100;
+        color: #18103A;
         border-radius: 200px;
         white-space: nowrap;
         font-weight: 600;
@@ -173,10 +173,18 @@ html[data-theme="dark"] {
         }
 
         &--active {
-          color: var(--ifm-link-color);
+          color: #6482A7;
 
           &::after {
-            background: var(--ifm-link-color);
+            background: #6482A7;
+          }
+
+          html[data-theme="dark"] & {
+            color: #B2D4C7;
+
+            &::after {
+              background: #B2D4C7;
+            }
           }
         }
       }
@@ -190,6 +198,15 @@ html[data-theme="dark"] {
         align-self: stretch;
         display: flex;
         cursor: pointer;
+
+        .navbar__link--active,
+        &.dropdown--show > .navbar__link {
+          color: #6482A7;
+
+          html[data-theme="dark"] & {
+            color: #B2D4C7;
+          }
+        }
 
         .navbar__link {
           display: flex;
@@ -215,6 +232,20 @@ html[data-theme="dark"] {
 
           > hr {
             margin: 0.25em !important;
+          }
+
+          .dropdown__section-title {
+            list-style: none;
+            padding: 0.75em 1em 0.25em;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: rgba(24, 16, 58, 0.4);
+            pointer-events: none;
+
+            html[data-theme="dark"] & {
+              color: rgba(236, 237, 229, 0.4);
+            }
           }
 
           .dropdown__link {
@@ -300,6 +331,12 @@ html[data-theme="dark"] {
   &.primary {
     background: var(--button-primary-bg) !important;
     color: white !important;
+  }
+
+  &.secondary {
+    background: #D1E100 !important;
+    border-color: #D1E100 !important;
+    color: #18103A !important;
   }
 
   svg {

@@ -50,9 +50,18 @@ const Content = React.forwardRef(({ setContent, content, url, theme }, ref) => {
 const Tooltip = (props) => {
   const { children, pathName } = props;
   const [content, setContent] = useState();
+  const [isInsideLink, setIsInsideLink] = useState(false);
+  const ref = React.useRef(null);
 
   const cleanSourcePath = pathName.replace(/\/$/, "");
   const cleanLinkPath = pathName.replace(/\/docs/, "");
+
+  useEffect(() => {
+    if (ref.current) {
+      const parent = ref.current.closest("a");
+      setIsInsideLink(!!parent);
+    }
+  }, []);
 
   return (
     <BrowserOnly
@@ -70,9 +79,11 @@ const Tooltip = (props) => {
             />
           }
         >
-          <a style={link} href={cleanLinkPath}>
-            {children}
-          </a>
+          {isInsideLink ? (
+            <span style={link} ref={ref}>{children}</span>
+          ) : (
+            <a style={link} href={cleanLinkPath} ref={ref}>{children}</a>
+          )}
         </RcTooltip>
       )}
     </BrowserOnly>
