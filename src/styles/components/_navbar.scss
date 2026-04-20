@@ -217,6 +217,20 @@ html[data-theme="dark"] {
             margin: 0.25em !important;
           }
 
+          .dropdown__section-title {
+            list-style: none;
+            padding: 0.75em 1em 0.25em;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: rgba(24, 16, 58, 0.4);
+            pointer-events: none;
+
+            html[data-theme="dark"] & {
+              color: rgba(236, 237, 229, 0.4);
+            }
+          }
+
           .dropdown__link {
             padding: 0.5em 1em;
 

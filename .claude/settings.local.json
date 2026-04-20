@@ -1,7 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.codat.io)"
+      "WebFetch(domain:www.codat.io)",
+      "Bash(xargs grep:*)",
+      "Bash(sed -i 's/#B2D4C7/#18103A/g' expand-icon.svg)",
+      "Bash(sed 's/#18103A/#ECEDE5/g' expand-icon.svg)",
+      "Bash(sed -i 's/#B2D4C7/#18103A/g' core-concepts.svg)",
+      "Bash(sed 's/#18103A/#ECEDE5/g' core-concepts.svg)",
+      "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*copy-feature-bullet\\\\.svg[^>]*/?>|<FeatureBullet />|g' docs/commerce/overview.md docs/bank-feeds/overview.mdx docs/auth-flow/overview.md docs/payables/overview.mdx docs/lending/overview.md docs/expenses/overview.md docs/usecases/bill-pay/overview.md docs/lending/get-started.md docs/spend-insights/overview.md docs/integrations/accounting/quickbooksdesktop/accounting-quickbooksdesktop.md)",
+      "Bash(ls static/img/wp-icons/*.svg)",
+      "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*user-list\\\\.png[^>]*/?>|<RelationshipsIcon />|g' docs/enterprise/overview.md)",
+      "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*key\\\\.png[^>]*/?>|<FolderLockIcon />|g' docs/index.mdx)",
+      "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*wp-icons/[^\"]+\\\\.png[^>]*/?>|<FeatureBullet />|g' docs/core-concepts/data-type.md docs/core-concepts/integrations.md docs/enterprise/overview.md docs/get-started/overview.md docs/support/get-help.mdx)",
+      "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*wp-icons/[^\"]+\\\\.png[^>]*/?>|<FeatureBullet />|g' src/pages/support/index.tsx)"
     ]
   }
 }

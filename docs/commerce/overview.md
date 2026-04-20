@@ -9,7 +9,6 @@ hide_description: true
 hide_table_of_contents: true
 banner_title: Sync for Commerce
 banner_class: commerce
-banner_icon: "/img/logos/products/logo_sfc_clear.svg"
 banner_image: "/img/banners/sfc-charts.png"
 banner_text: "Embedded accounting integrations for Point of Sale, Payment, and eCommerce software"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
@@ -57,8 +56,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 <ul className="card-container col-2">
 <li className="card">
     <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
-            className="mini-icon"/>
+        <FeatureBullet />
         <h3>Commerce and accounting expertise</h3>
     </div>
     <p>
@@ -68,7 +66,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Fast, simple integration</h3>
   </div>
   <p>
@@ -79,7 +77,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Configurability</h3>
   </div>
   <p>
@@ -91,7 +89,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Ongoing sales data synchronization</h3>
   </div>
   <p>
@@ -102,7 +100,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Real-world resilience</h3>
   </div>
   <p>
@@ -114,8 +112,7 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
 
 <li className="card">
     <div className="header">
-        <img src="/img/wp-icons/copy-feature-bullet.svg"
-            className="mini-icon"/>
+        <FeatureBullet />
         <h3>Observability</h3>
     </div>
     <p>

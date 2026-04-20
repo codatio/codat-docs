@@ -1,0 +1,10 @@
+.featureBullet {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #21524F; // Emerald
+
+  html[data-theme="dark"] & {
+    color: #D1E100; // Citron
+  }
+}

@@ -146,7 +146,8 @@ html[data-theme="dark"] {
       font-weight: 200;
     }
 
-    img + h3 {
+    img + h3,
+    svg + h3 {
       margin: 0.5em;
     }
   }

@@ -1,5 +1,11 @@
 /* Lists */
 
+article .markdown ul li,
+article .markdown ol li {
+  font-weight: 300;
+  color: var(--ifm-font-color-base);
+}
+
 article .markdown ol {
   list-style: none;
   padding: 0em !important;

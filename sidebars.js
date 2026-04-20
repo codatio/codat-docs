@@ -52,12 +52,6 @@ module.exports = {
       ],
     },
     {
-      type: "doc",
-      label: "Tutorials",
-      className: "top-level-item top-level-item-single tutorials",
-      id: "guides/overview",
-    },
-    {
       type: "category",
       label: "Use cases",
       collapsed: true,

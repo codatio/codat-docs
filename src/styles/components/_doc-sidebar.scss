@@ -91,8 +91,8 @@ a[class^="sidebarLogo"] {
 .menu {
   hr {
     margin: 1em 0 !important;
-    opacity: 0.5;
-    border-top-width: 2px;
+    height: 1px !important;
+    border: 0 !important;
   }
 }
 
@@ -439,11 +439,7 @@ html[data-theme="light"] {
     }
 
     &.config {
-      --icon-url: url("/img/sidebar/gear-fine.svg");
-    }
-
-    &.data {
-      --icon-url: url("/img/sidebar/data-model.svg");
+      --icon-url: url("/img/sidebar/configure.svg");
     }
 
     &.integrations {
@@ -451,57 +447,32 @@ html[data-theme="light"] {
     }
 
     &.usecases {
-      --icon-url: url("/img/sidebar/usecase.svg");
-    }
-
-    &.tutorials {
-      --icon-url: url("/img/sidebar/other-guides.svg");
+      --icon-url: url("/img/sidebar/use-cases.svg");
     }
 
     &.product {
       --icon-url: url("/img/sidebar/products.svg");
     }
 
-    &.product.accounting {
-      --icon-url: url("/img/sidebar/coins.svg");
-    }
-
     &.product.assess,
     &.product.lending {
-      --icon-url: url("/img/sidebar/icon_lending.svg");
-    }
-
-    &.product.banking {
-      --icon-url: url("/img/sidebar/bank.svg");
+      --icon-url: url("/img/sidebar/logo-lending.svg");
     }
 
     &.product.bankfeed {
-      --icon-url: url("/img/sidebar/bank.svg");
-      //--icon-url: url("/img/sidebar/icon_bankfeeds.svg");
-    }
-
-    &.product.commerce {
-      --icon-url: url("/img/sidebar/cart.svg");
+      --icon-url: url("/img/sidebar/logo-bank-feeds.svg");
     }
 
     &.product.sfe {
-      --icon-url: url("/img/sidebar/icon_expenses.svg");
-    }
-
-    &.product.sfc {
-      --icon-url: url("/img/sidebar/icon_commerce.svg");
+      --icon-url: url("/img/sidebar/logo-expenses.svg");
     }
 
     &.product.sfpayables {
-      --icon-url: url("/img/sidebar/icon_payables.svg");
-    }
-
-    &.product.sfpayroll {
-      --icon-url: url("/img/sidebar/icon_payroll.svg");
+      --icon-url: url("/img/sidebar/logo-bill-pay.svg");
     }
 
     &.product.spend-insights {
-      --icon-url: url("/img/sidebar/icon_supplier_enablement.svg");
+      --icon-url: url("/img/sidebar/logo_spend_insights.svg");
     }
   }
 }
@@ -517,19 +488,15 @@ html[data-theme="dark"] {
     }
 
     &.config {
-      --icon-url: url("/img/sidebar-dark/gear-fine.svg");
+      --icon-url: url("/img/sidebar-dark/configure.svg");
     }
 
     &.api {
       --icon-url: url("/img/sidebar-dark/api.svg");
     }
-    
+
     &.auth {
       --icon-url: url("/img/sidebar-dark/auth-flow.svg");
-    }
-
-    &.data {
-      --icon-url: url("/img/sidebar-dark/data-model.svg");
     }
 
     &.integrations {
@@ -537,53 +504,28 @@ html[data-theme="dark"] {
     }
 
     &.usecases {
-      --icon-url: url("/img/sidebar-dark/usecase.svg");
-    }
-
-    &.tutorials {
-      --icon-url: url("/img/sidebar-dark/other-guides.svg");
-    }
-
-    &.product.accounting  {
-      --icon-url: url("/img/sidebar-dark/coins_light.svg");
+      --icon-url: url("/img/sidebar-dark/use-cases.svg");
     }
 
     &.product.assess,
-    &.product.lending  {
-      --icon-url: url("/img/sidebar-dark/icon_lending_light.svg");
+    &.product.lending {
+      --icon-url: url("/img/sidebar-dark/logo-lending_light.svg");
     }
 
-    &.product.banking  {
-      --icon-url: url("/img/sidebar-dark/bank_light.svg");
-    }
-
-    &.product.bankfeed  {
-      //--icon-url: url("/img/sidebar-dark/icon_bankfeeds_light.svg");
-      --icon-url: url("/img/sidebar-dark/bank_light.svg");
-    }
-
-    &.product.commerce {
-      --icon-url: url("/img/sidebar-dark/cart_light.svg");
+    &.product.bankfeed {
+      --icon-url: url("/img/sidebar-dark/logo-bank-feeds_light.svg");
     }
 
     &.product.sfe {
-      --icon-url: url("/img/sidebar-dark/icon_expenses_light.svg");
-    }
-
-    &.product.sfc {
-      --icon-url: url("/img/sidebar-dark/icon_commerce_light.svg");
+      --icon-url: url("/img/sidebar-dark/logo-expenses_light.svg");
     }
 
     &.product.sfpayables {
-      --icon-url: url("/img/sidebar-dark/icon_payables_light.svg");
-    }
-
-    &.product.sfpayroll {
-      --icon-url: url("/img/sidebar-dark/icon_payroll_light.svg");
+      --icon-url: url("/img/sidebar-dark/logo-bill-pay_light.svg");
     }
 
     &.product.spend-insights {
-      --icon-url: url("/img/sidebar-dark/icon_supplier_enablement_light.svg");
+      --icon-url: url("/img/sidebar-dark/logo_spend_insights_light.svg");
     }
   }
 }

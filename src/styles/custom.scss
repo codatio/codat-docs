@@ -158,6 +158,7 @@ html[data-theme="light"] {
   --ifm-font-color-base: var(--color-black);
   //--ifm-font-color-base: var(--color-primary);
   --markdown-text-intro-c: var(--color-primary);
+  --ifm-hr-background-color: rgba(24, 16, 58, 0.3);
 }
 
 html[data-theme="dark"] {
@@ -209,6 +210,7 @@ html[data-theme="dark"] {
   --ifm-dropdown-background-color: var(--token-primary-bg-c);
 
   --ifm-menu-link-sublist-icon-filter: invert(100%);
+  --ifm-hr-background-color: rgba(236, 237, 229, 0.3);
 }
 
 html {
@@ -312,8 +314,9 @@ img {
 // }
 
 hr {
-  border-bottom: 0;
-  border-top: 1px solid var(--ifm-hr-background-color);
+  border: 0;
+  height: 1px;
+  background-color: var(--ifm-hr-background-color);
   margin: 3em 0 !important;
 }
 

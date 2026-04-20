@@ -2,14 +2,14 @@ html[data-theme="light"] {
   --markdown-toc-title-c: var(--c-indigo-60);
   --markdown-toc-list-item-c: var(--c-indigo-70);
   --markdown-text-intro-c: var(--c-carbon-80);
-  --markdown-bold-c: var(--c-carbon-100);
+  --markdown-bold-c: #18103A;
 }
 
 html[data-theme="dark"] {
-  --markdown-toc-title-c: #fff;
-  --markdown-toc-list-item-c: #fff;
+  --markdown-toc-title-c: #ECEDE5;
+  --markdown-toc-list-item-c: #ECEDE5;
   --markdown-text-intro-c: var(--c-indigo-40);
-  --markdown-bold-c: #fff;
+  --markdown-bold-c: #ECEDE5;
 }
 
 .markdown {
@@ -28,7 +28,7 @@ html[data-theme="dark"] {
 
   strong,
   b {
-    font-weight: 600;
+    font-weight: 500;
     color: var(--markdown-bold-c);
   }
 
