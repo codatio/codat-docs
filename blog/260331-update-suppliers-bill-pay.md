@@ -23,4 +23,4 @@ This update is relevant for all clients using Codat's Bill Pay solution who want
 
 ## How to get started?
 
-You can start using the endpoint right now. Check out the [Update suppliers](/sync-for-payables-v2-api#/operations/update-supplier) endpoint in our API reference, or explore Bill Pay's [Update supplier](/payables/sync/update-supplier) documentation for a full walkthrough.s
+You can start using the endpoint right now. Check out the [Update suppliers](/sync-for-payables-v2-api#/operations/update-supplier) endpoint in our API reference, or explore Bill Pay's [Update supplier](/payables/sync/suppliers#update-supplier) documentation for a full walkthrough.
