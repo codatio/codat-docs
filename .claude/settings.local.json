@@ -12,7 +12,11 @@
       "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*user-list\\\\.png[^>]*/?>|<RelationshipsIcon />|g' docs/enterprise/overview.md)",
       "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*key\\\\.png[^>]*/?>|<FolderLockIcon />|g' docs/index.mdx)",
       "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*wp-icons/[^\"]+\\\\.png[^>]*/?>|<FeatureBullet />|g' docs/core-concepts/data-type.md docs/core-concepts/integrations.md docs/enterprise/overview.md docs/get-started/overview.md docs/support/get-help.mdx)",
-      "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*wp-icons/[^\"]+\\\\.png[^>]*/?>|<FeatureBullet />|g' src/pages/support/index.tsx)"
+      "Bash(perl -0777 -i -pe 's|<img\\\\s[^>]*wp-icons/[^\"]+\\\\.png[^>]*/?>|<FeatureBullet />|g' src/pages/support/index.tsx)",
+      "Bash(python3 -c ':*)",
+      "Bash(identify static/img/clients/rho.png)",
+      "Bash(xargs head:*)",
+      "Bash(xargs cat:*)"
     ]
   }
 }

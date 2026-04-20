@@ -20,8 +20,8 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --inline-code-bg-c: rgba(224, 233, 209, 0.12);
   --inline-code-color: #ECEDE5;
-  --code-block-bg-c: #18103A;
-  --ifm-pre-background: #18103A;
+  --code-block-bg-c: rgba(24, 16, 58, 0.6);
+  --ifm-pre-background: rgba(24, 16, 58, 0.6);
   --color-string: var(--color-warning-20);
 }
 
@@ -83,7 +83,7 @@ html[data-theme="dark"] .token-line {
     }
 
     pre {
-      background-color: #18103A !important;
+      background-color: rgba(24, 16, 58, 0.6) !important;
     }
 
     html[data-theme="light"] & {
