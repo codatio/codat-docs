@@ -10,7 +10,8 @@ hide_table_of_contents: true
 tags: [overview, syncforexpense]
 banner_title: Expenses
 banner_class: expenses
-banner_icon: "/img/logos/products/logo_expenses_clear.svg"
+banner_icon: "/img/logos/products/logo-expenses_clear.svg"
+banner_icon_dark: "/img/logos/products/logo-expenses_dark.svg"
 banner_image: "/img/banners/bank-feeds.png"
 banner_text: "Write categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
@@ -39,10 +40,7 @@ With Expenses, corporate card providers, expense management providers, and neoba
 <ul className="card-container col-2">
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
+      <FeatureBullet />
       <h3>Increase share of wallet</h3>
     </div>
     <p>
@@ -52,7 +50,7 @@ With Expenses, corporate card providers, expense management providers, and neoba
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Go to market quickly</h3>
   </div>
   <p>
@@ -63,7 +61,7 @@ With Expenses, corporate card providers, expense management providers, and neoba
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Free up development resources</h3>
   </div>
   <p>
@@ -74,7 +72,7 @@ With Expenses, corporate card providers, expense management providers, and neoba
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Get standardized data</h3>
   </div>
   <p>
@@ -85,7 +83,7 @@ With Expenses, corporate card providers, expense management providers, and neoba
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Capture receipts</h3>
   </div>
   <p>
@@ -96,7 +94,7 @@ With Expenses, corporate card providers, expense management providers, and neoba
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Two-way sync</h3>
   </div>
   <p>

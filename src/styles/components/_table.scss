@@ -1,15 +1,19 @@
 html[data-theme="light"] {
-  --ifm-table-border-color: var(--c-indigo-30);
-  --ifm-table-border-color: #ededed;
-  --ifm-table-header-color: var(--color-interface-10);
-
-  --table-stripe: var(--color-interface-10);
+  --ifm-table-border-color: #E0E9D1;
+  --ifm-table-header-color: #E0E9D1;
+  --ifm-table-background: #ECEDE5;
+  --table-stripe: #F4F5F0;
 }
 
 html[data-theme="dark"] {
-  --ifm-table-border-color: var(--c-gray-90);
+  --ifm-table-border-color: #B2D4C7;
+  --ifm-table-header-color: rgba(178, 212, 199, 0.2);
+  --ifm-table-background: #18103A;
+  --table-stripe: #21524F;
 
-  --table-stripe: var(--token-secondary-bg-c);
+  .markdown .table-wrapper table {
+    border-color: #B2D4C7;
+  }
 }
 
 :root {
@@ -44,11 +48,22 @@ table {
 
 th {
   text-align: start;
+  font-family: var(--heading-font);
+  font-weight: 200;
 }
 
 th,
 td {
   line-height: 1.6;
+}
+
+td {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+td:first-child {
+  font-family: var(--heading-font);
 }
 
 thead th:empty {
@@ -101,37 +116,36 @@ thead th:empty {
     width: auto !important;
 
     table {
-      border: 1px solid var(--ifm-table-border-color);
+      border: 2px solid #E0E9D1;
       border-radius: 8px;
       overflow: hidden;
-      border-collapse: collapse;
-      //border: none !important;
+      border-collapse: separate;
+      border-spacing: 0;
+      box-shadow: none;
+
+      tr, th, td {
+        border: none !important;
+      }
 
       thead tr {
         background-color: var(--ifm-table-header-color);
+        border-width: 0 !important;
       }
 
       thead tr th {
         padding: 1em 13px;
-        border-top: none;
+        border-bottom: 1px solid var(--ifm-table-border-color) !important;
       }
 
-      thead tr {
-        border-left: none;
-        border-right: none;
-      }
-
-      thead tr th,
       tbody tr td {
-        border-left: none;
-        border-right: none;
+        border-bottom: 1px solid var(--ifm-table-border-color) !important;
+      }
+
+      tbody tr:last-child td {
+        border-bottom: none !important;
       }
 
       tbody tr {
-        td:last-child {
-          border-bottom: none;
-        }
-
         &:nth-child(even) {
           background-color: var(--table-stripe);
         }

@@ -68,6 +68,7 @@ export default function DocItemLayout(props) {
     banner_image: bannerImg,
     banner_text: bannerText,
     banner_icon: bannerIcon,
+    banner_icon_dark: bannerIconDark,
     banner_class: bannerClass,
     video_url: videoUrl,
     video_text: videoText,
@@ -91,6 +92,7 @@ export default function DocItemLayout(props) {
           img={bannerImg}
           text={bannerText}
           icon={bannerIcon}
+          iconDark={bannerIconDark}
           videoUrl={videoUrl}
           videoText={videoText}
         />

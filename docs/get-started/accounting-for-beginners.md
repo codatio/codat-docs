@@ -31,7 +31,7 @@ Throughout our documentation, you may see unfamiliar terms and accounting-specif
   </li>
   <li className="card animation-pulse">
     <div className="header">
-      <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
+      <GearFinanceDownIcon />
       <h3>Accounting For Developers, Part I</h3>
       <p>
         <i>Modern Treasury</i>
@@ -54,7 +54,7 @@ Throughout our documentation, you may see unfamiliar terms and accounting-specif
   </li>
   <li className="card animation-pulse">
     <div className="header">
-      <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
+      <GearFinanceDownIcon />
       <h3>Accounting For Developers, Part II</h3>
       <p>
         <i>Modern Treasury</i>
@@ -76,7 +76,7 @@ Throughout our documentation, you may see unfamiliar terms and accounting-specif
   </li>
   <li className="card animation-pulse">
     <div className="header">
-      <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
+      <GearFinanceDownIcon />
       <h3>Accounting for Computer Scientists</h3>
       <p>
         <i>Martin Kleppman</i>

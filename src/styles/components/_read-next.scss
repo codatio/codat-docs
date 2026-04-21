@@ -9,7 +9,11 @@
 	list-style-type: none;
 
 	li {
-		border: 2px solid var(--token-secondary-bg-c-alt);
+		border: 2px solid rgba(100, 130, 167, 0.3);
+
+		html[data-theme="dark"] & {
+			border-color: rgba(178, 212, 199, 0.4);
+		}
 		background: var(--token-primary-bg-c);
 		padding: 0.5em 1em;
 		border-radius: 4px;

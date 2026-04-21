@@ -58,7 +58,7 @@ Supplier endpoints of the Bill Pay solution return only **active** suppliers fro
 
 ## Update supplier
 
-If your customer's existing supplier changes address or business name, you can reflect this change in their accounting software using the [Update supplier](sync-for-payables-v2-api#/operations/update-supplier) endpoint.
+If your customer's existing supplier changes address or business name, you can reflect this change in their accounting software using the [Update supplier](/sync-for-payables-v2-api#/operations/update-supplier) endpoint.
 
 Include all fields in the request, even if their values haven't changed. If you leave a field out, its value will be **deleted** from the supplier record.
 

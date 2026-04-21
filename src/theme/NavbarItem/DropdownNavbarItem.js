@@ -85,6 +85,7 @@ function DropdownNavbarItemDesktop({
           return (
             <React.Fragment key={i}>
               {hr === true && <hr />}
+              {typeof hr === 'string' && <li className="dropdown__section-title">{hr}</li>}
               <NavbarItem
                 isDropdownItem
                 onKeyDown={(e) => {

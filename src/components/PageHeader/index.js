@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import { useColorMode } from "@docusaurus/theme-common";
 
 import { ModalController } from "../Modal";
 
@@ -29,14 +30,18 @@ const PageHeader = ({
   img,
   children,
   icon,
+  iconDark,
   videoUrl,
   videoText,
 }) => {
+  const { colorMode } = useColorMode();
+  const resolvedIcon = iconDark && colorMode === "dark" ? iconDark : icon;
+
   return (
     <div className={clsx(styles.wrapper, className)}>
       <div className={styles.header}>
         <div className={styles.title}>
-          {icon && (
+          {resolvedIcon && (
             <div
               className={clsx(
                 "icon-wrapper product animated",
@@ -44,7 +49,7 @@ const PageHeader = ({
                 className,
               )}
             >
-              <img src={icon} className="icon product" />
+              <img src={resolvedIcon} className="icon product" />
             </div>
           )}
           <h1>{title}</h1>
@@ -57,7 +62,6 @@ const PageHeader = ({
         {videoUrl && <BannerVideo text={videoText} url={videoUrl} />}
       </div>
 
-      <img className={styles.heroImg} src={img} />
     </div>
   );
 };

@@ -9,7 +9,8 @@ hide_description: true
 hide_table_of_contents: true
 banner_title: Lending
 banner_class: lending
-banner_icon: "/img/logos/products/logo_assess_clear.svg"
+banner_icon: "/img/logos/products/logo-lending_clear.svg"
+banner_icon_dark: "/img/logos/products/logo-lending_dark.svg"
 banner_image: "/img/banners/assess.png"
 banner_text: "Our Lending solution helps you make smarter credit decisions on small businesses by enabling you to read your customers' latest data from accounting, banking, and commerce software they are already using. It also includes features to help providers verify the accuracy of data and process it more efficiently."
 video_url: "https://www.youtube.com/embed/UgtbRe-j0Jo?si=KMRaVzgKCnW7E7tr"
@@ -51,10 +52,7 @@ Our Lending solution empowers you with a host of features to help you streamline
 <ul className="card-container col-3">
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
+      <FeatureBullet />
       <h3>Bank statements</h3>
     </div>
     <p>
@@ -64,10 +62,7 @@ Our Lending solution empowers you with a host of features to help you streamline
   
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
+      <FeatureBullet />
       <h3>Sales</h3>
     </div>
     <p>
@@ -77,7 +72,7 @@ Our Lending solution empowers you with a host of features to help you streamline
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Financial statements</h3>
   </div>
   <p>
@@ -88,7 +83,7 @@ Our Lending solution empowers you with a host of features to help you streamline
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Liabilities</h3>
   </div>
   <p>Comprehensive loan insights and credit history analysis.</p>
@@ -96,7 +91,7 @@ Our Lending solution empowers you with a host of features to help you streamline
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Accounts receivable</h3>
   </div>
   <p>Assess debtor risk in real time with accounts receivable insights.</p>
@@ -104,7 +99,7 @@ Our Lending solution empowers you with a host of features to help you streamline
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Accounts payable</h3>
   </div>
   <p>

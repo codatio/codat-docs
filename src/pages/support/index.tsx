@@ -1,4 +1,6 @@
 import React from "react";
+import GearFinanceDownIcon from "@components/GearFinanceDownIcon";
+import FeatureBullet from "@components/FeatureBullet";
 import Layout from "@theme/Layout";
 import Navbar from "@theme/Navbar";
 import Logo from "@theme/Logo";
@@ -17,7 +19,7 @@ const RaiseSupportTicket = () => {
         <ul className="card-container">
           <li className="card animation-pulse">
             <div className="header">
-              <img src="/img/wp-icons/accounting-2.png" className="mini-icon" />
+              <GearFinanceDownIcon />
               <h3>Get technical support</h3>
             </div>
             <p>
@@ -27,7 +29,7 @@ const RaiseSupportTicket = () => {
           </li>
           <li className="card">
             <div className="header">
-              <img src="/img/wp-icons/Stack.png" className="mini-icon" />
+              <FeatureBullet />
               <h3>Request a feature</h3>
             </div>
             <p>
@@ -43,7 +45,7 @@ const RaiseSupportTicket = () => {
           </li>
           <li className="card">
             <div className="header">
-              <img src="/img/wp-icons/CreditCard.png" className="mini-icon" />
+              <FeatureBullet />
               <h3>Billing inquiry</h3>
             </div>
             <p>

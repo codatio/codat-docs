@@ -3,11 +3,11 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 const Client = (props) => {
-  const { path, name } = props;
+  const { path, name, scale } = props;
 
   return (
     <div className={styles.client}>
-      <img src={path} alt={`${name} logo`} />
+      <img src={path} alt={`${name} logo`} style={scale ? { maxWidth: `${scale * 100}%`, maxHeight: `${scale * 100}%` } : undefined} />
     </div>
   );
 };

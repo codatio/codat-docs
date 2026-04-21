@@ -14,20 +14,21 @@
 }
 
 .integration {
-  border: 1px solid #eee;
-  border-radius: 4px;
-  padding: 0.5em;
-
   display: flex;
   flex-direction: column;
   margin: 0 !important;
 
-  background-color: var(--token-primary-bg-c);
-  border: 2px solid var(--token-secondary-bg-c-alt);
+  background-color: rgba(224, 233, 209, 0.4);
+  border: 1px solid rgba(100, 130, 167, 0.3);
   box-shadow: none;
   padding: 1em;
   border-radius: 8px;
   font-size: 0.9em !important;
+
+  html[data-theme="dark"] & {
+    background-color: rgba(236, 237, 229, 0.05);
+    border-color: rgba(236, 237, 229, 0.15);
+  }
 
   > div:first-child {
     display: flex;
@@ -51,13 +52,18 @@
 }
 
 .search {
-  background-color: var(--token-primary-bg-c);
-  border: 2px solid var(--token-secondary-bg-c-alt);
+  background-color: rgba(224, 233, 209, 0.4);
+  border: 1px solid rgba(100, 130, 167, 0.3);
   box-shadow: none;
   padding: 1.5em;
   border-radius: 8px;
   font-size: 0.9em !important;
   width: 100%;
+
+  html[data-theme="dark"] & {
+    background-color: rgba(236, 237, 229, 0.05);
+    border-color: rgba(236, 237, 229, 0.15);
+  }
 }
 
 .header {

@@ -10,7 +10,8 @@ hide_table_of_contents: false
 tags: [overview, spendinsights]
 banner_title: Spend Insights
 banner_class: supplier-enablement
-banner_icon: "/img/logos/products/logo_supplier_enablement_clear.svg"
+banner_icon: "/img/logos/products/logo_spend_insights_clear.svg"
+banner_icon_dark: "/img/logos/products/logo_spend_insights_dark.svg"
 banner_image: "/img/banners/spend-insights.png"
 banner_text: "Grow commercial card volume by accessing deeper actionable vendor and spend insights from your customers"
 ---
@@ -62,10 +63,7 @@ Your Analysts and Relationship Managers can easily keep records up to date with 
 <ul className="card-container col-2">
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
+      <FeatureBullet />
       <h3>Move more volume to card</h3>
     </div>
     <p>
@@ -75,7 +73,7 @@ Your Analysts and Relationship Managers can easily keep records up to date with 
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Reduce spend churn</h3>
   </div>
   <p>
@@ -86,7 +84,7 @@ Your Analysts and Relationship Managers can easily keep records up to date with 
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Improve sales conversion</h3>
   </div>
   <p>
@@ -97,7 +95,7 @@ Your Analysts and Relationship Managers can easily keep records up to date with 
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Increase speed-to-spend</h3>
   </div>
   <p>

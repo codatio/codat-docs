@@ -1,4 +1,5 @@
 import React from "react";
+import { useColorMode } from "@docusaurus/theme-common";
 
 const other = [
   {
@@ -50,7 +51,8 @@ const other = [
 
 const allProducts = [
   {
-    logo: "/img/logos/products/logo_bankfeeds_clear.svg",
+    logo: "/img/logos/products/logo-bank-feeds.svg",
+    logoDark: "/img/logos/products/logo-bank-feeds_dark.svg",
     slug: "bank-feeds",
     name: "Bank Feeds",
     description:
@@ -59,7 +61,8 @@ const allProducts = [
     linkText: "Build your first bank feed →",
   },
   {
-    logo: "/img/logos/products/logo_lending_clear.svg",
+    logo: "/img/logos/products/logo-lending.svg",
+    logoDark: "/img/logos/products/logo-lending_dark.svg",
     slug: "lending",
     name: "Lending",
     description:
@@ -68,7 +71,8 @@ const allProducts = [
     linkText: "Start assessing your customers →",
   },
   {
-    logo: "/img/logos/products/logo_supplier_enablement_clear.svg",
+    logo: "/img/logos/products/logo_spend_insights.svg",
+    logoDark: "/img/logos/products/logo_spend_insights_dark.svg",
     slug: "spend-insights",
     name: "Spend Insights",
     description:
@@ -77,7 +81,8 @@ const allProducts = [
     linkText: "Manage supplier relationship →",
   },
   {
-    logo: "/img/logos/products/logo_expenses_clear.svg",
+    logo: "/img/logos/products/logo-expenses.svg",
+    logoDark: "/img/logos/products/logo-expenses_dark.svg",
     slug: "expenses",
     name: "Expenses",
     description:
@@ -86,7 +91,8 @@ const allProducts = [
     linkText: "Sync expenses data →",
   },
   {
-    logo: "/img/logos/products/logo_payables_clear.svg",
+    logo: "/img/logos/products/logo-bill-pay.svg",
+    logoDark: "/img/logos/products/logo-bill-pay_dark.svg",
     slug: "payables",
     name: "Bill Pay",
     description:
@@ -97,6 +103,7 @@ const allProducts = [
 ];
 
 const Products = ({ mini, products, verbose }) => {
+  const { colorMode } = useColorMode();
   const validProducts = !products
     ? allProducts
     : products
@@ -126,7 +133,7 @@ const Products = ({ mini, products, verbose }) => {
                     href={product.link}
                     className={`icon-wrapper product animated ${product.slug}`}
                   >
-                    <img src={product.logo} className="icon product" />
+                    <img src={colorMode === "dark" && product.logoDark ? product.logoDark : product.logo} className="icon product" />
                   </a>
                 </div>
 
@@ -156,7 +163,7 @@ const Products = ({ mini, products, verbose }) => {
                 href={product.link}
                 className={`icon-wrapper product animated ${product.slug}`}
               >
-                <img src={product.logo} className="icon product" />
+                <img src={colorMode === "dark" && product.logoDark ? product.logoDark : product.logo} className="icon product" />
               </a>
             </div>
             <h3>{product.name}</h3>

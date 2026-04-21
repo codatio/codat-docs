@@ -1,10 +1,10 @@
 const Card = (props) => {
-  const { image, title, children, className } = props;
+  const { image, icon: Icon, title, children, className } = props;
 
   return (
     <li className={`card ${className}`}>
       <div className="header">
-        <img src={image} className="mini-icon" />
+        {Icon ? <Icon /> : <img src={image} className="mini-icon" />}
 
         <h3>{title}</h3>
       </div>
