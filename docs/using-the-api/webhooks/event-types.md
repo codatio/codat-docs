@@ -47,6 +47,8 @@ See our migration guide to [switch to new event types](/using-the-api/webhooks/m
 | Lending        | [`reports.creditModel.generate.unsuccessful`](/lending-api#/webhooks/reports.creditModel.generate.unsuccessful/post)                     | Called when the [Credit Model report](/lending/premium-products/credit-model-overview) fails to generate for a company.         |
 | Spend Insights | [`reports.spendAnalysis.generate.successful`](/spend-insights-api#/webhooks/reports.spendAnalysis.generate.successful/post)              | Called when a spend analysis report is successfully generated.                                                                  |
 | Spend Insights | [`reports.spendAnalysis.generate.unsuccessful`](/spend-insights-api#/webhooks/reports.spendAnalysis.generate.unsuccessful/post)          | Called when a spend analysis report has failed to be generated for a company.                                                   |
+| Spend Insights | [`reports.fxInsights.generate.successful`](/spend-insights-api#/webhooks/reports.fxInsights.generate.successful/post)                    | Called when an FX Insights report is successfully generated for a company.                                                      |
+| Spend Insights | [`reports.fxInsights.generate.unsuccessful`](/spend-insights-api#/webhooks/reports.fxInsights.generate.unsuccessful/post)                | Called when an FX Insights report has failed to be generated for a company.                                                     |
 
 ---
 
