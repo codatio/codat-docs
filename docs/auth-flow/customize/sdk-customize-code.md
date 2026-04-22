@@ -273,7 +273,7 @@ If you currently allow `style-src 'unsafe-inline'` for the SDK, follow these ste
 
 ### Backwards compatibility
 
-Omitting the `nonce` option continues to work exactly as before. Consumers who don't set CSP headers, or who are happy with `'unsafe-inline'`, don't need to change anything. This isn't a breaking change.
+Omitting the `nonce` option continues to work exactly as before. Consumers who don't set CSP headers, or who are happy with `'unsafe-inline'`, don't need to change anything.
 
 ### Mount-time behavior
 
