@@ -88,7 +88,7 @@ Create a component which initializes the SDK:
   };
 ```
 
-Use the component in your solution as needed. If you use CSP nonces, read the nonce from a server-rendered source (for example a `<meta name="csp-nonce">` tag) and pass it through `options.nonce` — see [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) for the full pattern.
+Use the component in your solution as needed. If you use CSP nonces, read the nonce from a server-rendered source (for example a `<meta name="csp-nonce">` tag) and pass it through `options.nonce`. See [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) for the full pattern.
 
 ```react
   const nonce = document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ?? undefined;
