@@ -579,7 +579,11 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
 
 The component **doesn't support** the [branding](/auth-flow/customize/branding) and [customization](/auth-flow/customize/customize-link) settings that you can apply to our [Link auth journey](/auth-flow/authorize-embedded-link) in the [Codat Portal](https://app.codat.io/settings). However, you can use the SDK's `options` property to change some of these settings.
 
+If you use CSP nonces, read the nonce from a server-rendered source (for example a `<meta name="csp-nonce">` tag) and pass it through `options.nonce` — see [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) for the full pattern.
+
 ```js
+const nonce = document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ?? undefined;
+
 <CodatConnections
   accessToken={accessToken}
  onClose: () => void = () => {};
@@ -591,7 +595,7 @@ onReconnect: (args: {connectionId: string}) => void = () => {};
 onDisconnect: (args: {connectionId: string}) => void = () => {};
   options={{
       text: {...},
-      nonce: "server-generated-nonce-value",
+      nonce,
   }}
 />
 ```

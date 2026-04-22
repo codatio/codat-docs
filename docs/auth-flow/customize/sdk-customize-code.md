@@ -85,7 +85,7 @@ The `options` prop is optional and accepts an object containing the following op
 | `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                         |
 | `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                   |
 | `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                |
-| `sourceTypes`              | Controls the data source types the user can connect or upload files for: Accounting, Commerce, Banking, and Business Documents.                                      |
+| `sourceTypes`              | Controls which data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for.                                   |
 | `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                            |
 | `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                |
 | `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                           |
@@ -229,7 +229,7 @@ Your server should generate a unique nonce for every request and expose it to th
 
 ```html
 <!-- Rendered by the server on each request -->
-<meta name="csp-nonce" content="abc123servervalue" />
+<meta name="csp-nonce" content="r4nd0mB4se64Val==" />
 ```
 
 Read the nonce in your frontend code and pass it to the SDK:
@@ -255,7 +255,7 @@ Then set your CSP header to allow styles carrying that nonce:
 Content-Security-Policy:
   default-src 'self' *.codat.io;
   script-src  'self' *.codat.io;
-  style-src   'self' 'nonce-abc123servervalue' *.codat.io;
+  style-src   'self' 'nonce-r4nd0mB4se64Val==' *.codat.io;
   font-src    'self' *.codat.io;
   connect-src 'self' *.codat.io;
   img-src     'self' *.codat.io;

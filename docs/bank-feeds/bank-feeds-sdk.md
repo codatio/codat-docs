@@ -88,9 +88,11 @@ Create a component which initializes the SDK:
   };
 ```
 
-Use the component in your solution as needed:
+Use the component in your solution as needed. If you use CSP nonces, read the nonce from a server-rendered source (for example a `<meta name="csp-nonce">` tag) and pass it through `options.nonce` — see [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) for the full pattern.
 
 ```react
+  const nonce = document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ?? undefined;
+
    <CodatBankFeeds
     accessToken="ACCESS_TOKEN"
     companyId="COMPANY_ID"
@@ -99,7 +101,7 @@ Use the component in your solution as needed:
     onConnection={() => alert("onConnection")}
     onConnectionStarted={() => alert("onConnectionStarted")}
     onFinish={() => alert("onFinish")}
-    options={{ nonce: "server-generated-nonce-value" }}
+    options={{ nonce }}
   />
 ```
 
