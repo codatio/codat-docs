@@ -5,7 +5,7 @@ createdAt: "2019-02-20T11:14:06.974Z"
 updatedAt: "2022-10-04T14:21:33.026Z"
 ---
 
-There are five levels of users on the Codat system which have access to different functionality of the Codat system.
+There are five levels of users on the Codat system which have access to different features of the Codat system.
 
 - Onboarding
 - Advisor
