@@ -30,7 +30,7 @@ function AuthFlow() {
       //text: {...},
       enableAdditionalConsent: true,
       enableMultiEntityLinking: true,
-      //nonce: "server-generated-nonce-value",
+      //nonce: "r4nd0mB4se64Val==",
     },
   };
 
@@ -72,7 +72,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
     text: {...},
     enableAdditionalConsent: true,
     enableMultiEntityLinking: true,
-    nonce: "server-generated-nonce-value",
+    nonce: "r4nd0mB4se64Val==",
   }}
 />
 ```
