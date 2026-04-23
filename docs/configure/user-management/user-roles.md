@@ -21,7 +21,7 @@ _Onboarding_ users have the ability to add companies to the Codat portal and lin
 
 _Advisor_ users have access to product insights and reporting to support client decision-making. They have similar permissions to _Onboarding_ users but can also view uploaded financial data.
 
-_Advisors_ cannot delete companies, add or remove products from companies, manage connections or integrations, or change any portal settings. This read-focused profile makes the role suitable for client-facing and internal stakeholders — such as relationship or treasury advisors — who need visibility into data and insights without destructive permissions.
+_Advisors_ can't delete companies, add or remove products from companies, manage connections or integrations, or change any portal settings. This read-focused profile makes the role suitable for client-facing and internal stakeholders—such as relationship or treasury advisors—who need visibility into data and insights without destructive permissions.
 
 ## Analyst
 
