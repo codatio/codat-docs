@@ -41,15 +41,15 @@ Use the vendor match reports to accelerate supplier enablement across card netwo
 
 All four reports share the same set of columns, built using your customer's supplier and spend data. This is the same data used to generate our [Spend Analysis](/spend-insights/reports/spend-analysis) report. 
 
-Each report also includes additional platform-specific columns or applies specific formatting to match the requirements of each card network and payment platform.
+Each report also includes additional platform-specific columns or enhanced functionality, or applies specific formatting to match the requirements of each card network and payment platform.
 
 :::tip Column customization
 The columns included in each report can be configured to meet your organization's specific requirements. Contact your account manager to request changes.
 :::
 
-### Additional columns
+### Mastercard Match
 
-#### Mastercard Match
+This report includes the following additional columns required by the third party platform:
 
 | Column                                    | Description                                                                            |
 |-------------------------------------------|----------------------------------------------------------------------------------------|
@@ -58,7 +58,9 @@ The columns included in each report can be configured to meet your organization'
 | **Purchase order count**                  | Purchase order count for this supplier. Report is generated with this field empty to comply with the platform's format requirements. |
 | **Supplier ID**                           | The supplier's unique identifier in the customer's accounting system.                  |
 
-#### Visa Vendor Match
+### Visa Vendor Match
+
+This report includes the following additional columns required by the third party platform:
 
 | Column               | Description                                                          |
 |----------------------|----------------------------------------------------------------------|
@@ -68,7 +70,9 @@ The columns included in each report can be configured to meet your organization'
 | **Number of checks** | 12-month transaction count, aggregated to Visa's specification.      |
 | **Total spend**      | Combined total of bills, expenses, and bill payments for the supplier. |
 
-#### Wex Vendor
+### Wex Vendor
+
+This report includes the following additional columns required by the third party platform:
 
 | Column                      | Description                                                                    |
 |-----------------------------|--------------------------------------------------------------------------------|
@@ -76,7 +80,15 @@ The columns included in each report can be configured to meet your organization'
 | **Supplier account number** | The supplier's account number as recorded in the customer's accounting system. |
 | **Number of transactions**  | Combined count of bills and expenses for this supplier.                    |
 
-#### PayTech
+:::tip Additional analysis columns
+
+It's possible to further extend the Wex Vendor report with additional columns. Speak to your account manager or our [Support team](mailto:support@copdat.io) to learn more.
+
+:::
+
+### PayTech
+
+This report includes the following additional columns required by the third party platform:
 
 | Column        | Description                                            |
 |---------------|--------------------------------------------------------|
