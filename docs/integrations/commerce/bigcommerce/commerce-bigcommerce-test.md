@@ -23,7 +23,7 @@ In the <a className="external" href="https://app.codat.io" target="_blank">Codat
 
 You must be a BigCommerce Technology Partner to create a sandbox store.
 
-1. Follow the steps in <a className="external" href="https://developer.bigcommerce.com/docs/ZG9jOjM4MzMyNTE-create-a-sandbox-store" target="_blank">Create a Sandbox Store</a> in the BigCommerce Dev Center.
+1. Follow the steps in <a className="external" href="https://docs.bigcommerce.com/developer/docs/overview/sandboxes#creating-a-sandbox-store" target="_blank">Create a Sandbox Store</a> in the BigCommerce Dev Center.
 1. Sign in to your BigCommerce dashboard.
 1. From your dashboard, add some sample orders and customers to your store (sample products are created for you).
 
