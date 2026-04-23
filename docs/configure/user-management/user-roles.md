@@ -35,7 +35,7 @@ _Developers_ are also able to configure your authorization flow, organization, a
 
 ## Administrator
 
-_Administrator_ users have full access to all the features available in the Codat portal. They are the only users who are able to add, edit and remove other users from your account. This includes all levels of users, so any _Administrator_ can remove other _Administrator_, _Developer_, _Analyst_, _Onboarding_ and _Advisor_ users.
+_Administrator_ users have full access to all the features available in the Codat portal. They're the only users who are able to add, edit, and remove other users from your account. This includes all levels of users, so any _Administrator_ can remove other _Administrator_, _Developer_, _Analyst_, _Onboarding_ and _Advisor_ users.
 
 ### User roles summary
 
