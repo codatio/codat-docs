@@ -32,7 +32,7 @@ Apart from the immediate benefits of saving time on every sign-in and having one
 
 :::note Enterprise SSO support
 
-The Codat Portal does not currently support Enterprise SSO using SAML.
+The Codat Portal doesn't support Enterprise SSO using SAML.
 
 :::
 

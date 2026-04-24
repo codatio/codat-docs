@@ -13,9 +13,15 @@ There are five levels of users on the Codat system which have access to differen
 - Developer
 - Administrator
 
+:::tip Roles with enterprise SSO
+
+If you are using enterprise SSO to manage users and logins, you need to set up groups corresponding to the Codat roles first. See more at [Enterprise SSO](/enterprise/tech-overview/security/sso) or get in touch with us for support.
+
+:::
+
 ## Onboarding
 
-_Onboarding_ users have the ability to add companies to the Codat portal and link these companies with financial information sources. They have the ability to view when data sets have been linked but are unable to view the uploaded information.
+_Onboarding_ users have the ability to add companies to the Codat Portal and link these companies with financial information sources. They have the ability to view when data sets have been linked but are unable to view the uploaded information.
 
 ## Advisor
 
@@ -25,7 +31,7 @@ _Advisors_ can't delete companies, add or remove products from companies, manage
 
 ## Analyst
 
-_Analyst_ users have all the abilities of the _Onboarding_ users (adding and linking companies) as well as the ability to view the financial data that is uploaded, view webhook consumers that have been configured, and resolve raised events in the portal.
+_Analyst_ users have all the abilities of the _Onboarding_ users (adding and linking companies) as well as the ability to view the financial data that is uploaded, view webhook consumers that have been configured, and resolve raised events in the Portal.
 
 ## Developer
 
@@ -37,7 +43,7 @@ _Developers_ are also able to configure your authorization flow, organization, a
 
 _Administrator_ users have full access to all the features available in the Codat Portal. They're the only users who are able to add, edit, and remove other users from your account. This includes all levels of users, so any _Administrator_ can remove other _Administrator_, _Developer_, _Analyst_, _Onboarding_ and _Advisor_ users.
 
-### User roles summary
+## User roles summary
 
 | Action                                                                 | Onboarding | Advisor | Analyst | Developer | Administrator |
 | ---------------------------------------------------------------------- | ---------- | ------- | ------- | --------- | ------------- |
