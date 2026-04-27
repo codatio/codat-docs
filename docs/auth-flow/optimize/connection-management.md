@@ -223,8 +223,8 @@ export const ConnectionManagement = ({
 
 3. **If you're using content security policy (CSP) headers:**
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-   - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `nonce-<value>` to `style-src`.
+   - Alternatively, add `unsafe-inline` to `style-src` if you aren't using nonces. Don't use a hash because this can change at any time without warning.
 
 4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -304,8 +304,8 @@ export default function Home() {
 
 3. **If you're using content security policy (CSP) headers:**
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-   - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `nonce-<value>` to `style-src`.
+   - Alternatively, add `unsafe-inline` to `style-src` if you aren't using nonces. Don't use a hash because this can change at any time without warning.
 
 4. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -375,8 +375,8 @@ const openModal = () => {
 
 4. **If you're using content security policy (CSP) headers**:
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-   - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `nonce-<value>` to `style-src`.
+   - Alternatively, add `unsafe-inline` to `style-src` if you aren't using nonces. Don't use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -446,8 +446,8 @@ onError(error) {
 
 4. **If you're using content security policy (CSP) headers**:
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-   - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `nonce-<value>` to `style-src`.
+   - Alternatively, add `unsafe-inline` to `style-src` if you aren't using nonces. Don't use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -500,8 +500,8 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
 
 4. **If you're using content security policy (CSP) headers**:
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-   - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `nonce-<value>` to `style-src`.
+   - Alternatively, add `unsafe-inline` to `style-src` if you aren't using nonces. Don't use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -566,8 +566,8 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
 
 4. **If you're using content security policy (CSP) headers**:
    - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src, style-src, font-src, connect-src, img-src`).
-   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-   - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
+   - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `nonce-<value>` to `style-src`.
+   - Alternatively, add `unsafe-inline` to `style-src` if you aren't using nonces. Don't use a hash because this can change at any time without warning.
 
 5. **If you are using TypeScript**, extend your type declarations with our types by installing the package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 
@@ -579,7 +579,7 @@ We suggest wrapping the `CodatConnections` component in a modal so that you can 
 
 The component **doesn't support** the [branding](/auth-flow/customize/branding) and [customization](/auth-flow/customize/customize-link) settings that you can apply to our [Link auth journey](/auth-flow/authorize-embedded-link) in the [Codat Portal](https://app.codat.io/settings). However, you can use the SDK's `options` property to change some of these settings.
 
-If you use CSP nonces, read the nonce from a server-rendered source (for example a `<meta name="csp-nonce">` tag) and pass it through `options.nonce. See [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) for the full pattern.
+If you use CSP nonces, read the nonce from a server-rendered source (for example, a `<meta name="csp-nonce">` tag) and pass it through `options.nonce`. See [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) for the full pattern.
 
 ```js
 const nonce = document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ?? undefined;
@@ -616,17 +616,6 @@ Use the `text` property to control some of the text displayed within the Connect
 | Option                                                                                                                        | Type and description                                                                                                                                                                                                                                                                    |
 | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `accounting.connectionDetails.dataTypes`<br/>`banking.connectionDetails.dataTypes`<br/>`commerce.connectionDetails.dataTypes` | `array[string]` _(accepts Markdown)_ <br/><br/>List of requested data types displayed before disconnecting or reconnecting an accounting, banking or commerce software. <br/><br/> If this is not set, the UI will not display a list of data types when disconnecting or reconnecting. |
-
-## Changelog
-
-:::tip Change management
-
-As with all Codat solutions, this SDK is subject to [our change management policy](/using-the-api/change-policy). We will give appropriate notice for changes to it and any associated APIs. We have rigorous testing and security measures in place to ensure you can import our SDK with confidence.
-:::
-
-#### April 2024
-
-- Initial release of the SDK.
 
 ---
 
