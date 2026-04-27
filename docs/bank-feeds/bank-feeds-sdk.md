@@ -88,7 +88,7 @@ Create a component which initializes the SDK:
   };
 ```
 
-Use the component in your solution as needed. If you use CSP nonces, read the nonce from a server-rendered source (for example a `<meta name="csp-nonce">` tag) and pass it through `options.nonce`. See [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) for the full pattern.
+Use the component in your solution as needed. If you use content security policy (CSP) nonces, read the nonce from a server-rendered source (for example, a `<meta name="csp-nonce">` tag) and pass it through `options.nonce`. See [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) for the full pattern.
 
 ```react
   const nonce = document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ?? undefined;
@@ -110,8 +110,8 @@ Use the component in your solution as needed. If you use CSP nonces, read the no
 - **If you're using TypeScript**, extend your type declarations with our types by installing the types package using `npm install --save-dev @codat/sdk-link-types`. Otherwise, delete the type-related code in the snippets.
 - **If you're using content security policy (CSP) headers**, edit these headers:
   - Allowlist Codat by adding `*.codat.io` to `default-src` (or each of `script-src`, `style-src`, `font-src`, `connect-src`, `img-src`).
-  - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `'nonce-<value>'` to `style-src`.
-  - Alternatively, add `'unsafe-inline'` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
+  - **Recommended:** pass a [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) via `options.nonce` and add `nonce-<value>` to `style-src`.
+  - Alternatively, add `unsafe-inline` to `style-src` if you aren't using nonces. Do _not_ use a hash because this can change at any time without warning.
 
 ---
 
