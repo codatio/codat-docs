@@ -19,6 +19,16 @@ When a company agrees to share access to their financial data, we establish a li
 
 Codat calls the accounting software or ERP system that contains your customer's financial data a **data source**. Spend Insights reads the data from the data source to provide you with detailed and actionable supplier spend analysis. We use a [connection](/spend-insights/guides/key-terms#connection) to read that data. 
 
+```mermaid
+
+flowchart LR
+    A(["Company"])
+    B@{ shape: bow-rect, label: "Data source"}
+    A --- |Connection| B
+    B -->|Financial data| A
+
+```
+
 ### Supplier
 
 :::tip Also known as
