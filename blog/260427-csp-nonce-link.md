@@ -5,11 +5,13 @@ tags: ["Product", "Update", "Link"]
 authors: brettdorrans
 ---
 
-You can now pass a Content Security Policy (CSP) nonce to our Link, Connections, and Bank Feeds SDKs, making it simpler to embed them in apps that enforce strict browser security policies.
+You can now pass a Content Security Policy (CSP) nonce to our Link, Connections, and Bank Feeds SDKs.
 
 <!--truncate-->
 
 ## What's new?
+
+We've made it simpler to embed our SDKs in apps that enforce strict browser security policies.
 
 Our Link SDK now accept a `nonce` option that it applies to every `<style>` tag it injects into your page. This means your app can use a strict CSP `style-src` directive instead of allowing `unsafe-inline`, which previously was required to render the SDK's styles. This option is also available in the Connections and Bank Feeds SDKs, so a single nonce-based CSP can cover all three.
 
