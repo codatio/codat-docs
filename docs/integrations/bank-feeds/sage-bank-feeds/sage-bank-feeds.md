@@ -30,7 +30,7 @@ They are redirected to a Codat UI to enter their data connection ID to authentic
 
 ## Supported Sage products
 
-Our integration supports writing bank feeds to several Sage products, including Sage Accounting, Sage Intacct, and Sage 50. For a complete list, see the [supported regions and products](https://developer.sage.com/banking-service/provider-api/banking-service/supported-regions-products/).
+Our integration supports writing bank feeds to several Sage products, including Sage Accounting, Sage Intacct, and Sage 50. For a complete list, see the [supported regions and products](https://developer.sage.com/banking-service/docs/v1.0.0/guides/banking-service/supported-regions-and-products?highlight=Banking%20Service%20operates%20across%20two%20regional%20clusters.%20You).
 
 ---
 
