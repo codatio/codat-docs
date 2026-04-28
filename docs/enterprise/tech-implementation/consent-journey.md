@@ -40,7 +40,7 @@ Our SDK is a pre-built JavaScript component that neatly sits in your front-end c
 
 Codat's Link solution covers a series of API endpoints that you can use to fully embed the authentication journey within your digital application. These API endpoints can be called to create a customer within Codat’s instance and set up the connection to the applicable integrations. With this option, your organization is fully responsible for building and owning the authorization user interface.
 
-[Review build-your-own requirements →](/auth-flow//auth-flow/build/build-your-own-authorization-journey)
+[Review build-your-own requirements →](/auth-flow/build/build-your-own-authorization-journey)
 
 <details>
 <summary>Build-your-own steps and endpoints</summary>
