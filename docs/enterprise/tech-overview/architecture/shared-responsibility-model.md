@@ -9,7 +9,7 @@ Operations at Codat are performed entirely on cloud hosted platforms. As such, r
 
 ## Responsibilities by party
 
-The following tables articulate the responsible parties at each layer of our [platform as a service](/enterprise/tech-overview/architecture/platform-as-a-service) offering and the details of their implementation.
+The following tables articulate the responsible parties at each layer of our [Platform as a service (PaaS)](https://azure.microsoft.com/en-gb/overview/what-is-paas/) offering and the details of their implementation.
 
 ### Codat's scope
 
