@@ -170,7 +170,7 @@ Alternatively, you can [authenticate users through your own web app](/integratio
 
 8. The SMB user is redirected to the Sage product from which they started the connection flow.
 
-9. On some Sage supported products, the SMB user may need to click Confirm on the account's Banking Cloud tab to change the status from `Pending Confirmation` to `Pending`.
+9. On some Sage supported products, the SMB user may need to click **Confirm** on the account's Banking Cloud tab to change the status from `Pending Confirmation` to `Pending`.
 
 You can now use the [GET /bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) endpoint to retrieve the source bank accounts. The `status` property of a source bank account must have changed to `connected` before you can begin to write bank transactions from the account.
 
