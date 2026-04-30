@@ -8,12 +8,41 @@
 
 /* -------- custom -------- */
 
-html[data-theme="dark"] .token.property,
-html[data-theme="dark"] .token.plain,
-html[data-theme="dark"] .token.string,
-html[data-theme="dark"] .token.number,
-html[data-theme="dark"] .token.punctuation {
-  color: white !important;
+/* ── Code block background/text colours ── */
+html[data-theme="light"] {
+  --color-code: #F0F3F6;
+  --color-on-code: #18103A;
+}
+html[data-theme="dark"] {
+  --color-code: #2a1f55;
+  --color-on-code: #ECEDE5;
+}
+
+/* ── Code block container: border + corner radius matching regular docs ── */
+.sl-code-group,
+.sl-code-viewer {
+  border: 1px solid rgba(236, 237, 229, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+
+  html[data-theme="light"] & {
+    border-color: #B2D4C7;
+  }
+}
+
+/* ── Code block language tab / title bar ── */
+.sl-code-group [role="tablist"],
+.sl-code-group__tabs {
+  background-color: #6482A7 !important;
+  color: #ECEDE5 !important;
+  border-bottom-color: #6482A7 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.06em !important;
+
+  html[data-theme="dark"] & {
+    background-color: rgba(100, 130, 167, 0.25) !important;
+    border-bottom-color: rgba(100, 130, 167, 0.4) !important;
+  }
 }
 
 .sl-bg-canvas-100 {

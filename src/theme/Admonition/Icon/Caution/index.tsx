@@ -2,10 +2,11 @@ import React, {type ReactNode} from 'react';
 
 export default function AdmonitionIconCaution(props: React.SVGProps<SVGSVGElement>): ReactNode {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
-      <path d="M12 9v4" />
-      <path d="M12 17h.01" />
+    <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={16} {...props}>
+      <rect width="256" height="256" fill="none" stroke="none"/>
+      <circle cx="128" cy="128" r="96" strokeMiterlimit={10}/>
+      <line x1="128" y1="136" x2="128" y2="80"/>
+      <circle cx="128" cy="172" r="12"/>
     </svg>
   );
 }
