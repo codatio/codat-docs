@@ -10,11 +10,12 @@
 
 	li {
 		border: 2px solid rgba(100, 130, 167, 0.3);
+		background: rgba(24, 16, 58, 0.05);
 
 		html[data-theme="dark"] & {
 			border-color: rgba(178, 212, 199, 0.4);
+			background: rgba(236, 237, 229, 0.05);
 		}
-		background: var(--token-primary-bg-c);
 		padding: 0.5em 1em;
 		border-radius: 4px;
 

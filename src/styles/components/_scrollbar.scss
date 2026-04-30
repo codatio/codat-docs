@@ -1,7 +1,7 @@
 /* Scrollbar */
 
 :root {
-  --scrollbar-track-color: #ECEDE5;
+  --scrollbar-track-color: var(--token-primary-bg-c);
   --scrollbar-thumb-color: rgba(24, 16, 58, 0.3);
 }
 

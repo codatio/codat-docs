@@ -55,6 +55,7 @@
   // ------------- Colors
 
   --color-black:              #18103A;
+  --color-text:               #18103A;
 
   --color-interface-core:     #556680;
   --color-interface-dark:     #556680;
@@ -131,7 +132,8 @@
 }
 
 html[data-theme="light"] {
-  --token-primary-bg-c: #ECEDE5;
+  --token-primary-bg-c: #F7F8F5;
+  --color-text: #18103A;
   --token-secondary-bg-c: var(--color-interface-5);
   --token-secondary-bg-c-alt: var(--color-interface-10);
   --token-secondary-bg-c-alt-dark: var(--color-interface-20);
@@ -162,6 +164,8 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
+  --color-text: #ECEDE5;
+
   //https://colorffy.com/dark-theme-generator?colors=482deb-d0d0d
   /** Dark theme primary colors */
   --color-primary-a0: #482deb;
@@ -266,6 +270,13 @@ article {
   }
 }
 
+article details a,
+article .details a {
+  color: var(--ifm-color-link) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--ifm-color-link) !important;
+}
+
 body {
   width: 100%;
   height: 100%;
@@ -348,11 +359,32 @@ hr {
   margin: 1rem 0 0;
 }
 
+details,
 .details {
   summary {
     &:before {
       margin-top: 2px;
     }
+  }
+}
+
+html[data-theme="light"] {
+  details,
+  .details {
+    background-color: rgba(24, 16, 58, 0.05);
+    border: 1px solid #B2D4C7;
+    border-radius: 4px;
+    --docusaurus-details-decoration-color: #B2D4C7;
+  }
+}
+
+html[data-theme="dark"] {
+  details,
+  .details {
+    background-color: rgba(236, 237, 229, 0.05);
+    border: 1px solid #D1E100;
+    border-radius: 4px;
+    --docusaurus-details-decoration-color: #D1E100;
   }
 }
 
@@ -401,11 +433,12 @@ hr {
   ul.tabs .tabs__item {
     border-radius: 20px !important;
     padding: 5px 14px !important;
+    font-family: var(--sans-serif) !important;
     font-size: 0.8125rem !important;
     font-weight: 500 !important;
     color: rgba(24, 16, 58, 0.6) !important;
-    background-color: #E0E9D1 !important;
-    border: 1px solid #E0E9D1 !important;
+    background-color: rgba(178, 212, 199, 0.15) !important;
+    border: 1px solid #B2D4C7 !important;
     cursor: pointer !important;
     transition: all 0.15s ease !important;
     line-height: 1.4 !important;
@@ -414,15 +447,15 @@ hr {
   }
 
   ul.tabs .tabs__item:hover:not(.tabs__item--active) {
-    background-color: #eaf0df !important;
+    background-color: rgba(178, 212, 199, 0.2) !important;
     color: #18103A !important;
-    border-color: #D1E100 !important;
+    border-color: #B2D4C7 !important;
   }
 
   ul.tabs .tabs__item--active {
-    background-color: #D1E100 !important;
+    background-color: #B2D4C7 !important;
     color: #18103A !important;
-    border-color: #D1E100 !important;
+    border-color: #B2D4C7 !important;
     font-weight: 600 !important;
   }
 

@@ -9,6 +9,10 @@ html[data-theme="light"] {
   --button-border: var(--ifm-color-primary);
   --button-text: var(--ifm-color-primary);
   --button-primary-bg: var(--ifm-color-primary);
+
+  .navbar {
+    background-color: var(--token-primary-bg-c);
+  }
 }
 
 html[data-theme="dark"] {

@@ -12,7 +12,7 @@ banner_title: Expenses
 banner_class: expenses
 banner_icon: "/img/logos/products/logo-expenses_clear.svg"
 banner_icon_dark: "/img/logos/products/logo-expenses_dark.svg"
-banner_image: "/img/banners/bank-feeds.png"
+banner_image: "/img/banners/expenses.png"
 banner_text: "Write categorized expenses and attachments to all major accounting software, handling the complexities of expense reconciliation"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Expenses?
