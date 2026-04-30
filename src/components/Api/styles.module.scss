@@ -1,5 +1,5 @@
 .apiNav {
-  --color-canvas-100: var(--token-secondary-bg-c);
+  --color-canvas-100: var(--token-primary-bg-c);
 
   display: flex;
   align-items: center;
@@ -7,7 +7,7 @@
 
   > a:first-child {
     min-width: 300px;
-    background: var(--token-secondary-bg-c);
+    background: var(--token-primary-bg-c);
     height: var(--ifm-navbar-height);
     align-items: center;
     display: flex;

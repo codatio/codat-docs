@@ -5,8 +5,12 @@
 blockquote.sl-callout {
   padding: 0 !important;
   border-radius: 4px;
-  border: 1px solid var(--token-secondary-bg-c-alt);
+  border: 1px solid rgba(178, 212, 199, 0.2);
   background: none;
+
+  html[data-theme="light"] & {
+    border-color: #B2D4C7;
+  }
 }
 
 blockquote.sl-callout > div {
@@ -28,8 +32,12 @@ blockquote.sl-callout > div svg {
 
 .sl-panel {
   border-radius: 4px;
-  border: 1px solid var(--token-secondary-bg-c-alt);
+  border: 1px solid rgba(178, 212, 199, 0.2);
   overflow: hidden;
+
+  html[data-theme="light"] & {
+    border-color: #B2D4C7;
+  }
 }
 
 .sl-panel .sl-panel__content-wrapper .sl-panel__content > *:last-child {
