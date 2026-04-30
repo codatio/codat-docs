@@ -7,7 +7,7 @@
 import { themes as prismThemes } from "prism-react-renderer";
 
 const codatDarkTheme = {
-  plain: { color: "#ECEDE5", backgroundColor: "#18103A" },
+  plain: { color: "#ECEDE5", backgroundColor: "#2a1f55" },
   styles: [
     { types: ["comment", "prolog", "doctype", "cdata"],        style: { color: "rgba(236,237,229,0.4)", fontStyle: "italic" } },
     { types: ["punctuation"],                                   style: { color: "rgba(236,237,229,0.6)" } },
@@ -26,9 +26,25 @@ const codatDarkTheme = {
   ],
 };
 
+// Light-mode vampire: dark saturated hues readable on #F0F3F6
 const codatLightTheme = {
-  plain: { color: "#ECEDE5", backgroundColor: "#18103A" },
-  styles: codatDarkTheme.styles,
+  plain: { color: "#18103A", backgroundColor: "#F0F3F6" },
+  styles: [
+    { types: ["comment", "prolog", "doctype", "cdata"],        style: { color: "#6272a4", fontStyle: "italic" } },
+    { types: ["punctuation"],                                   style: { color: "rgba(24,16,58,0.5)" } },
+    { types: ["tag"],                                           style: { color: "#1a6b5e" } },
+    { types: ["keyword", "important"],                          style: { color: "#c2185b", fontStyle: "italic" } },
+    { types: ["string", "attr-value", "char", "inserted"],      style: { color: "#b45309" } },
+    { types: ["number", "boolean", "constant", "symbol", "property"], style: { color: "#7c3aed" } },
+    { types: ["function", "builtin", "atrule"],                 style: { color: "#15803d" } },
+    { types: ["variable", "attr-name"],                         style: { color: "#1d4ed8" } },
+    { types: ["operator", "entity", "url"],                     style: { color: "#0369a1" } },
+    { types: ["selector"],                                      style: { color: "#b45309" } },
+    { types: ["regex"],                                         style: { color: "#c2185b" } },
+    { types: ["deleted"],                                       style: { color: "#b91c1c" } },
+    { types: ["bold"],                                          style: { fontWeight: "bold" } },
+    { types: ["italic"],                                        style: { fontStyle: "italic" } },
+  ],
 };
 
 import { ProvidePlugin } from "webpack";
@@ -343,7 +359,7 @@ const config = {
       prism: {
         theme: codatLightTheme,
         darkTheme: codatDarkTheme,
-        additionalLanguages: ["bash", "diff", "json"],
+        additionalLanguages: ["bash", "diff", "json", "http", "csharp"],
       },
 
       liveCodeBlock: {

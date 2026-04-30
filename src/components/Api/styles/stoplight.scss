@@ -8,27 +8,282 @@
 
 /* -------- custom -------- */
 
-html[data-theme="dark"] .token.property,
-html[data-theme="dark"] .token.plain,
-html[data-theme="dark"] .token.string,
-html[data-theme="dark"] .token.number,
-html[data-theme="dark"] .token.punctuation {
-  color: white !important;
+/* ════════════════════════════════════════════════════════════════
+   PALETTE REMAPPING
+   Override Stoplight's CSS variables to use the Codat brand palette
+   ════════════════════════════════════════════════════════════════ */
+
+html[data-theme="light"] {
+  /* Canvas scale — all flat levels match main docs (#F7F8F5) */
+  --color-canvas:         #F7F8F5;
+  --color-canvas-pure:    #F7F8F5;
+  --color-canvas-tint:    rgba(178, 212, 199, 0.12);   /* Mint tint for rows */
+  --color-canvas-50:      #F0F3F6;
+  --color-canvas-100:     #F7F8F5;   /* sidebar, panels at page level */
+  --color-canvas-200:     #eaeff4;
+  --color-canvas-300:     #dde5ee;
+  --color-canvas-400:     #d2dce9;
+  --color-canvas-500:     #c7d3e4;
+  --color-canvas-dialog:  #ffffff;
+  /* Text */
+  --color-text-heading:   #18103A;
+  --color-text:           #18103A;
+  --color-text-paragraph: rgba(24, 16, 58, 0.9);
+  --color-text-muted:     rgba(24, 16, 58, 0.6);
+  --color-text-light:     rgba(24, 16, 58, 0.45);
+  /* Borders */
+  --color-border-dark:    rgba(178, 212, 199, 0.8);
+  --color-border:         rgba(178, 212, 199, 0.6);
+  --color-border-light:   rgba(178, 212, 199, 0.35);
+  --color-border-input:   rgba(100, 130, 167, 0.5);
+  /* Code blocks */
+  --color-code:           #F0F3F6;
+  --color-on-code:        #18103A;
+  /* Fonts */
+  --font-prose:           var(--sans-serif, Inter, sans-serif);
+  --font-ui:              var(--sans-serif, Inter, sans-serif);
 }
 
+html[data-theme="dark"] {
+  /* Canvas scale — flat levels all match main docs (#18103A Bedrock) */
+  --color-canvas:         #18103A;
+  --color-canvas-pure:    #18103A;
+  --color-canvas-tint:    rgba(42, 31, 85, 0.4);
+  --color-canvas-50:      #2a1f55;   /* raised: panels, code blocks */
+  --color-canvas-100:     #18103A;   /* sidebar + panels at page level */
+  --color-canvas-200:     #1a1040;
+  --color-canvas-300:     #18103A;
+  --color-canvas-400:     #160e36;
+  --color-canvas-500:     #140c32;
+  --color-canvas-dialog:  #2a1f55;
+  /* Text */
+  --color-text-heading:   #ECEDE5;
+  --color-text:           #ECEDE5;
+  --color-text-paragraph: rgba(236, 237, 229, 0.9);
+  --color-text-muted:     rgba(236, 237, 229, 0.6);
+  --color-text-light:     rgba(236, 237, 229, 0.45);
+  /* Borders */
+  --color-border-dark:    rgba(178, 212, 199, 0.3);
+  --color-border:         rgba(178, 212, 199, 0.2);
+  --color-border-light:   rgba(178, 212, 199, 0.1);
+  --color-border-input:   rgba(178, 212, 199, 0.3);
+  /* Code blocks */
+  --color-code:           #2a1f55;
+  --color-on-code:        #ECEDE5;
+  /* Fonts */
+  --font-prose:           var(--sans-serif, Inter, sans-serif);
+  --font-ui:              var(--sans-serif, Inter, sans-serif);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   TYPOGRAPHY
+   Heading font matching regular docs (Lexend)
+   ════════════════════════════════════════════════════════════════ */
+
+.sl-elements h1,
+.sl-elements h2,
+.sl-elements h3,
+.sl-elements h4,
+.sl-prose h1,
+.sl-prose h2,
+.sl-prose h3,
+.sl-prose h4 {
+  font-family: var(--heading-font, Lexend, sans-serif);
+  color: var(--color-text-heading);
+  letter-spacing: 0.02em;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   CODE BLOCKS
+   Border comes from --color-border on the outer wrapper's
+   .sl-border utility class — no explicit border here so there
+   is only ever one border line.
+   ════════════════════════════════════════════════════════════════ */
+
+/* Corner radius + clip only — border is handled by --color-border */
+.sl-code-group,
+.sl-code-viewer {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* When a code block sits inside a panel the panel's border is
+   the outer edge — suppress any inner border the code block
+   might pick up from a .sl-border utility class */
+.sl-panel .sl-code-group,
+.sl-panel .sl-code-viewer {
+  border: none !important;
+  border-radius: 0;
+}
+
+/* Language tab / title bar */
+.sl-code-group [role="tablist"],
+.sl-code-group__tabs {
+  background-color: #6482A7 !important;
+  color: #ECEDE5 !important;
+  border-bottom-color: #6482A7 !important;
+  font-family: var(--sans-serif, Inter, sans-serif) !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.06em !important;
+
+  html[data-theme="dark"] & {
+    background-color: rgba(100, 130, 167, 0.25) !important;
+    border-bottom-color: rgba(100, 130, 167, 0.4) !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   .sl-inverted REMAPPING
+   Stoplight wraps the Try-It panel in .sl-inverted.
+   Light mode: map to the same light Codat palette (readable).
+   Dark mode:  map to Bedrock dark palette.
+   ════════════════════════════════════════════════════════════════ */
+
+/* Light mode — inverted panels use Light Gravity (#F0F3F6) throughout */
+html[data-theme="light"] .sl-inverted,
+html[data-theme="light"] .sl-inverted .sl-inverted .sl-inverted {
+  --color-canvas:         #F0F3F6;
+  --color-canvas-pure:    #F0F3F6;
+  --color-canvas-tint:    rgba(100, 130, 167, 0.08);
+  --color-canvas-50:      #F0F3F6;
+  --color-canvas-100:     #F0F3F6;
+  --color-canvas-200:     #e4eaf0;
+  --color-canvas-dialog:  #F0F3F6;
+  --color-text-heading:   #18103A;
+  --color-text:           #18103A;
+  --color-text-paragraph: rgba(24, 16, 58, 0.9);
+  --color-text-muted:     rgba(24, 16, 58, 0.55);
+  --color-text-light:     rgba(24, 16, 58, 0.4);
+  --color-border:         rgba(178, 212, 199, 0.6);
+  --color-border-input:   rgba(100, 130, 167, 0.5);
+  --color-code:           #F0F3F6;
+  --color-on-code:        #18103A;
+}
+
+/* Dark mode — inverted panels use Bedrock */
+html[data-theme="dark"] .sl-inverted,
+html[data-theme="dark"] .sl-inverted .sl-inverted {
+  --color-canvas:         #18103A;
+  --color-canvas-pure:    #18103A;
+  --color-canvas-tint:    rgba(42, 31, 85, 0.4);
+  --color-canvas-50:      #2a1f55;
+  --color-canvas-100:     #18103A;
+  --color-canvas-200:     #1e1448;
+  --color-canvas-dialog:  #2a1f55;
+  --color-text-heading:   #ECEDE5;
+  --color-text:           #ECEDE5;
+  --color-text-paragraph: rgba(236, 237, 229, 0.9);
+  --color-text-muted:     rgba(236, 237, 229, 0.55);
+  --color-text-light:     rgba(236, 237, 229, 0.4);
+  --color-border:         rgba(178, 212, 199, 0.2);
+  --color-border-input:   rgba(178, 212, 199, 0.3);
+  --color-code:           #2a1f55;
+  --color-on-code:        #ECEDE5;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   PANELS — auth, parameters, request body, responses
+   Direct colour overrides (bypasses .sl-inverted inline styles)
+   ════════════════════════════════════════════════════════════════ */
+
+/* Panel container */
+html[data-theme="dark"] .sl-panel {
+  background-color: #2a1f55 !important;
+  border: 1px solid rgba(178, 212, 199, 0.2) !important;
+  border-radius: 4px !important;
+  color: #ECEDE5 !important;
+}
+
+html[data-theme="light"] .sl-panel {
+  background-color: #F0F3F6 !important;
+  border: 1px solid #B2D4C7 !important;
+  border-radius: 4px !important;
+  color: #18103A !important;
+}
+
+/* Panel toggle header (the clickable title bar) */
+html[data-theme="dark"] .sl-panel__titlebar,
+html[data-theme="dark"] .sl-panel > [role="button"]:first-child,
+html[data-theme="dark"] .sl-panel > .sl-button:first-child,
+html[data-theme="dark"] .sl-panel > div > [role="button"]:first-child {
+  background-color: rgba(100, 130, 167, 0.2) !important;
+  border-bottom: 1px solid rgba(178, 212, 199, 0.2) !important;
+  color: #ECEDE5 !important;
+  font-family: var(--sans-serif, Inter, sans-serif) !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.03em !important;
+}
+
+html[data-theme="light"] .sl-panel__titlebar,
+html[data-theme="light"] .sl-panel > [role="button"]:first-child,
+html[data-theme="light"] .sl-panel > .sl-button:first-child,
+html[data-theme="light"] .sl-panel > div > [role="button"]:first-child {
+  background-color: rgba(100, 130, 167, 0.12) !important;
+  border-bottom: 1px solid #B2D4C7 !important;
+  color: #18103A !important;
+  font-family: var(--sans-serif, Inter, sans-serif) !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.03em !important;
+}
+
+/* Row dividers inside panels */
+.sl-panel .sl-border-t { border-top-color:    rgba(178, 212, 199, 0.15) !important; }
+.sl-panel .sl-border-b { border-bottom-color: rgba(178, 212, 199, 0.15) !important; }
+
+/* Text inside panels */
+html[data-theme="dark"] .sl-panel .sl-text-muted,
+html[data-theme="dark"] .sl-panel .sl-text-base {
+  color: rgba(236, 237, 229, 0.65) !important;
+}
+
+html[data-theme="light"] .sl-panel .sl-text-muted,
+html[data-theme="light"] .sl-panel .sl-text-base {
+  color: rgba(24, 16, 58, 0.65) !important;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   JSON SCHEMA VIEWER & PARAMETER GRID
+   ════════════════════════════════════════════════════════════════ */
+
+.JsonSchemaViewer {
+  border: 1px solid rgba(178, 212, 199, 0.2);
+  border-radius: 4px;
+  padding: 0.75em 1.5em;
+  margin-top: 1em;
+  background-color: #2a1f55;
+  color: #ECEDE5;
+
+  html[data-theme="light"] & {
+    border-color: #B2D4C7;
+    background-color: #F0F3F6;
+    color: #18103A;
+  }
+
+  > .sl-prose.sl-markdown-viewer {
+    margin-bottom: 1em;
+  }
+}
+
+.ParameterGrid {
+  background-color: transparent;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   MISC — keep existing overrides, updated to brand borders
+   ════════════════════════════════════════════════════════════════ */
+
 .sl-bg-canvas-100 {
-  --color-canvas-100: var(--token-secondary-bg-c);
   color: var(--font-ui);
 }
 
 /* Hide v1.0 badge on API page */
 #mosaic-provider-react-aria-0-1 > div > div > div > div.sl-overflow-y-auto.sl-flex-1.sl-w-full.sl-px-24.sl-bg-canvas > div > div > div.sl-relative.sl-mb-5 > span {
-  display: none !important; 
+  display: none !important;
 }
 
 /* Hide API overview content */
 #mosaic-provider-react-aria-0-1 > div > div > div > div.sl-overflow-y-auto.sl-flex-1.sl-w-full.sl-px-24.sl-bg-canvas > div > div > div.sl-stack.sl-stack--vertical.sl-stack--6.sl-flex.sl-flex-col.sl-items-stretch {
-  display: none !important; 
+  display: none !important;
 }
 
 .svg-inline--fa.fa-bullseye.sl-icon {
@@ -60,23 +315,16 @@ button.sl-bg-primary {
   color: var(--font-ui) !important;
 }
 
-.JsonSchemaViewer {
-  border: 1px solid var(--token-secondary-bg-c-alt);
-  border-radius: 4px;
-  padding: 0.75em 1.5em;
-  margin-top: 1em;
-
-  > .sl-prose.sl-markdown-viewer {
-    margin-bottom: 1em;
-  }
-}
-
 .sl-max-w-full.sl-break-all.sl-px-1.sl-bg-canvas-tint.sl-text-muted.sl-rounded.sl-border {
   padding: 3px 5px;
 }
 
 .sl-product-image {
-  border: 1px solid var(--token-secondary-bg-c-alt);
+  border: 1px solid rgba(178, 212, 199, 0.2);
+
+  html[data-theme="light"] & {
+    border-color: #B2D4C7;
+  }
 }
 
 .sl-elements-api > .sl-px-24 {
@@ -100,12 +348,74 @@ button.sl-bg-primary {
     background: none !important;
 
     > div {
-      border: 1px solid var(--token-secondary-bg-c-alt) !important;
+      border: 1px solid rgba(178, 212, 199, 0.2) !important;
+
+      html[data-theme="light"] & {
+        border-color: #B2D4C7 !important;
+      }
     }
   }
 
-  table thead {
-    background-color: var(--color-canvas-tint);
+  table {
+    border: 1px solid #B2D4C7;
+    border-radius: 8px;
+    overflow: hidden;
+    border-collapse: separate !important;
+    border-spacing: 0;
+    width: 100%;
+
+    tr, th, td { border: none !important; }
+
+    thead tr {
+      background-color: rgba(178, 212, 199, 0.08);
+      border-width: 0 !important;
+
+      html[data-theme="light"] & {
+        background-color: #ECEDE5;
+      }
+    }
+
+    thead tr th {
+      padding: 1em 13px;
+      border-bottom: 1px solid rgba(178, 212, 199, 0.2) !important;
+      font-family: var(--heading-font, Lexend, sans-serif);
+      font-size: 1rem !important;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-align: start;
+      color: var(--color-text) !important;
+
+      html[data-theme="light"] & {
+        border-bottom-color: #B2D4C7 !important;
+      }
+    }
+
+    tbody tr td {
+      border-bottom: 1px solid rgba(178, 212, 199, 0.2) !important;
+      line-height: 1.6;
+      color: var(--color-text) !important;
+      vertical-align: top;
+
+      html[data-theme="light"] & {
+        border-bottom-color: #B2D4C7 !important;
+      }
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    tbody tr:empty,
+    tbody tr:last-child:has(td:empty),
+    tfoot { display: none; }
+
+    tbody tr:nth-child(even) {
+      background-color: rgba(178, 212, 199, 0.08);
+
+      html[data-theme="light"] & {
+        background-color: #ECEDE5;
+      }
+    }
   }
 }
 
