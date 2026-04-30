@@ -1,181 +1,144 @@
+// Admonition type → Docusaurus class mapping:
+//   note     → .alert--secondary
+//   tip      → .alert--success
+//   info     → .alert--info
+//   caution  → .alert--warning
+//   danger   → .alert--danger
+//   warning  → .alert--warning (separate type, own icon)
+
+// Brand colour tokens used here:
+//   Gravity  #6482A7  (note)
+//   Mint     #B2D4C7  (info accent)
+//   Emerald  #21524F  (info/tip)
+//   Citron   #D1E100  (caution bg tint)
+//   warning  #754300  (caution/warning text)
+//   error    #750024  (danger)
+
 html[data-theme="light"] {
-  --admonition-note-c-bg: var(--c-yellow-10);
-  --admonition-info-c-bg: var(--c-blue-0);
-  --admonition-tip-c-bg: var(--c-green-10);
-  --admonition-caution-c-bg: var(--c-orange-10);
-  --admonition-danger-c-bg: var(--c-red-0);
+  --admonition-note-c:     #6482A7;
+  --admonition-note-bg:    color-mix(in srgb, #6482A7 8%, white);
+  --admonition-note-border: color-mix(in srgb, #6482A7 35%, transparent);
 
-  --admonition-code-note-c-bg: var(--c-yellow-30);
-  --admonition-code-info-c-bg: var(--c-blue-10);
-  --admonition-code-tip-c-bg: var(--c-green-20);
-  --admonition-code-caution-c-bg: var(--c-orange-20);
-  --admonition-code-danger-c-bg: var(--c-red-10);
+  --admonition-info-c:     #21524F;
+  --admonition-info-bg:    color-mix(in srgb, #B2D4C7 35%, white);
+  --admonition-info-border: #B2D4C7;
 
-  --ifm-alert-background-color: var(--color-interface-5);
-  --ifm-color-secondary-contrast-background: var(--ifm-alert-background-color);
+  --admonition-tip-c:      #21524F;
+  --admonition-tip-bg:     color-mix(in srgb, #21524F 8%, white);
+  --admonition-tip-border: color-mix(in srgb, #21524F 30%, transparent);
+
+  --admonition-caution-c:      #754300;
+  --admonition-caution-bg:     color-mix(in srgb, #D1E100 22%, white);
+  --admonition-caution-border: color-mix(in srgb, #D1E100 70%, transparent);
+
+  --admonition-warning-c:      #754300;
+  --admonition-warning-bg:     color-mix(in srgb, #754300 8%, white);
+  --admonition-warning-border: color-mix(in srgb, #754300 30%, transparent);
+
+  --admonition-danger-c:      #750024;
+  --admonition-danger-bg:     color-mix(in srgb, #750024 8%, white);
+  --admonition-danger-border: color-mix(in srgb, #750024 30%, transparent);
 }
 
 html[data-theme="dark"] {
-  --admonition-note-c-bg: #241800;
-  --admonition-info-c-bg: #000d24;
-  --admonition-tip-c-bg: #00240a;
-  --admonition-caution-c-bg: #240b00;
-  --admonition-danger-c-bg: #240002;
+  --admonition-note-c:     #93a9c8;
+  --admonition-note-bg:    color-mix(in srgb, #6482A7 12%, #18103A);
+  --admonition-note-border: color-mix(in srgb, #6482A7 40%, transparent);
 
-  --admonition-code-note-c-bg: #3d2900;
-  --admonition-code-info-c-bg: #00163d;
-  --admonition-code-tip-c-bg: #003d11;
-  --admonition-code-caution-c-bg: #3d1200;
-  --admonition-code-danger-c-bg: #3d0003;
+  --admonition-info-c:     #B2D4C7;
+  --admonition-info-bg:    color-mix(in srgb, #B2D4C7 10%, #18103A);
+  --admonition-info-border: color-mix(in srgb, #B2D4C7 40%, transparent);
+
+  --admonition-tip-c:      #B2D4C7;
+  --admonition-tip-bg:     color-mix(in srgb, #21524F 20%, #18103A);
+  --admonition-tip-border: color-mix(in srgb, #21524F 50%, transparent);
+
+  --admonition-caution-c:      #c9b400;
+  --admonition-caution-bg:     color-mix(in srgb, #D1E100 10%, #18103A);
+  --admonition-caution-border: color-mix(in srgb, #D1E100 35%, transparent);
+
+  --admonition-warning-c:      #c47a30;
+  --admonition-warning-bg:     color-mix(in srgb, #754300 15%, #18103A);
+  --admonition-warning-border: color-mix(in srgb, #754300 45%, transparent);
+
+  --admonition-danger-c:      #e05070;
+  --admonition-danger-bg:     color-mix(in srgb, #750024 15%, #18103A);
+  --admonition-danger-border: color-mix(in srgb, #750024 45%, transparent);
 }
 
-:root {
-  --admonition-bar-note-c-bg: var(--c-yellow-80);
-  --admonition-bar-info-c-bg: var(--c-blue-80);
-  --admonition-bar-tip-c-bg: var(--c-green-80);
-  --admonition-bar-caution-c-bg: var(--c-orange-80);
-  --admonition-bar-danger-c-bg: var(--c-red-60);
-
-  --admonition-link-note-c: var(--c-yellow-90);
-  --admonition-link-info-c: var(--c-blue-90);
-  --admonition-link-tip-c: var(--c-green-90);
-  --admonition-link-caution-c: var(--c-orange-90);
-  --admonition-link-danger-c: var(--c-red-90);
-}
-
-// /* Callouts */
 .theme-admonition.alert {
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
   margin: 2em 0;
+  color: var(--ifm-font-color-base);
 
+  &:first-child { margin-top: 0; }
+  &:last-child  { margin-bottom: 0; }
+
+  // Undo Docusaurus default ALL-CAPS heading
   > div:first-child {
     text-transform: initial !important;
   }
 
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
+  // Icon sizing — matches the default heading font size
+  [class*="admonitionIcon"] svg {
+    width: 1.1em;
+    height: 1.1em;
   }
 }
 
-//.alert summary::before {
-//  top: 3px !important;
-//}
+// note (.alert--secondary)
+.alert--secondary {
+  --ifm-alert-background-color: var(--admonition-note-bg);
+  border-color: var(--admonition-note-border);
 
-//   --ifm-alert-background-color: var(--color-interface-dark) !important;
-//   --admonition-bar-c-bg: var(--color-interface-dark) !important;
-//   --admonition-code-c-bg: var(--color-interface-20) !important;
-//   --admonition-link-c: var(--color-interface-5) !important;
+  [class*="admonitionHeading"],
+  [class*="admonitionIcon"] {
+    color: var(--admonition-note-c);
+  }
+}
 
-//   background: var(--ifm-alert-background-color);
-//   color: var(--admonition-bar-c-bg);
-//   color: var(--admonition-code-c-bg);
-//   color: var(--admonition-link-c);
+// info (.alert--info)
+.alert--info {
+  --ifm-alert-background-color: var(--admonition-info-bg);
+  border-color: var(--admonition-info-border);
 
-//   & a {
-//     color: var(--color-link-primary) !important;
-//   }
+  [class*="admonitionHeading"],
+  [class*="admonitionIcon"] {
+    color: var(--admonition-info-c);
+  }
+}
 
-//   &.note {
-//     --ifm-alert-background-color: var(--color-interface-dark) !important;
-//     --admonition-bar-c-bg: var(--color-interface-dark) !important;
-//     --admonition-code-c-bg: var(--color-interface-20) !important;
-//     --admonition-link-c: var(--color-interface-5) !important;
-//   }
+// tip (.alert--success)
+.alert--success {
+  --ifm-alert-background-color: var(--admonition-tip-bg);
+  border-color: var(--admonition-tip-border);
 
-//   &.info {
-//     --ifm-alert-background-color: var(--color-neutral-dark) !important;
-//     --admonition-bar-c-bg: var(--color-neutral-dark) !important;
-//     --admonition-code-c-bg: var(--color-neutral-20) !important;
-//     --admonition-link-c: var(--color-neutral-10) !important;
-//   }
+  [class*="admonitionHeading"],
+  [class*="admonitionIcon"] {
+    color: var(--admonition-tip-c);
+  }
+}
 
-//   &.tip {
-//     --ifm-alert-background-color: var(--color-positive-dark) !important;
-//     --admonition-bar-c-bg: var(--color-positive-dark) !important;
-//     --admonition-code-c-bg: var(--color-positive-20) !important;
-//     --admonition-link-c: var(--color-positive-10) !important;
-//   }
+// caution + warning both map to .alert--warning, both use the triangle icon
+.alert--warning {
+  --ifm-alert-background-color: var(--admonition-caution-bg);
+  border-color: var(--admonition-caution-border);
 
-//   &.caution {
-//     --ifm-alert-background-color: var(--color-warning-dark) !important;
-//     --admonition-bar-c-bg: var(--color-warning-dark) !important;
-//     --admonition-code-c-bg: var(--color-warning-20) !important;
-//     --admonition-link-c: var(--color-warning-10) !important;
-//   }
+  [class*="admonitionHeading"],
+  [class*="admonitionIcon"] {
+    color: var(--admonition-caution-c);
+  }
+}
 
-//   &.danger {
-//     --ifm-alert-background-color: var(--color-error-dark) !important;
-//     --admonition-bar-c-bg: var(--color-error-dark) !important;
-//     --admonition-code-c-bg: var(--color-error-20) !important;
-//     --admonition-link-c: var(--color-error-10) !important;
-//   }
+// danger (.alert--danger)
+.alert--danger {
+  --ifm-alert-background-color: var(--admonition-danger-bg);
+  border-color: var(--admonition-danger-border);
 
-//   .callout.callout .callout-heading > * {
-//     color: #4c555a;
-//   }
-
-//   .callout.callout h3.callout-heading.empty span.callout-icon {
-//    line-height: 0.5;
-//   }
-
-//   blockquote.callout blockquote {
-//    padding: 1em !important;
-//   }
-// }
-
-// .theme-admonition {
-//   position: relative;
-//   border: none;
-
-//   --ifm-alert-color: var(--color-codat-primary);
-//   --ifm-alert-padding-horizontal: 2rem;
-//   --ifm-alert-padding-vertical: 1.5rem;
-
-//   .admonition-heading h5 {
-//     text-transform: unset;
-
-//     &:first-letter {
-//       text-transform: uppercase;
-//     }
-//   }
-
-//   .admonition-content {
-//     p {
-//       a {
-//         color: var(--admonition-link-c);
-//         text-decoration: underline;
-//       }
-
-//       code {
-//         background: var(--admonition-code-c-bg);
-//       }
-//     }
-//   }
-
-//   &-icon {
-//     display: none;
-//   }
-
-//   &-heading {
-//     font-size: 1rem;
-//     line-height: 1.6;
-//   }
-
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     z-index: 2;
-//     left: 0;
-//     top: 0;
-//     bottom: 0;
-//     width: 5px;
-//     background: var(--admonition-bar-c-bg);
-//     border-radius: 4px 0 0 4px;
-//   }
-// }
+  [class*="admonitionHeading"],
+  [class*="admonitionIcon"] {
+    color: var(--admonition-danger-c);
+  }
+}

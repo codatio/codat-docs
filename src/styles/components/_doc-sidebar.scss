@@ -26,11 +26,11 @@ html[data-theme="light"] {
   --sidebar-category-c: #18103A;
   --sidebar-border-c: var(--c-gray-0);
 
-  --ifm-menu-color-background-active: var(--c-blue-0);
+  --ifm-menu-color-background-active: rgba(24, 16, 58, 0.08);
   --ifm-menu-color: #18103A;
   --ifm-menu-color-active: #6482A7;
 
-  --sidebar-background: var(--color-interface-5);
+  --sidebar-background: var(--token-primary-bg-c);
 }
 
 html[data-theme="dark"] {

@@ -62,6 +62,7 @@ const PageHeader = ({
         {videoUrl && <BannerVideo text={videoText} url={videoUrl} />}
       </div>
 
+      {img && <img src={img} className={styles.heroImg} alt="" />}
     </div>
   );
 };

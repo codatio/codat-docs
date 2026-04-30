@@ -125,6 +125,11 @@ html[data-theme="dark"] {
   // intro paragraphs
   > header + p {
     font-size: 1.25rem;
+    color: rgba(24, 16, 58, 0.75);
+
+    html[data-theme="dark"] & {
+      color: rgba(236, 237, 229, 0.75);
+    }
 
     > strong,
     > b {

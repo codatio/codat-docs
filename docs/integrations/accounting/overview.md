@@ -2,13 +2,13 @@
 title: "Overview"
 description: "Explore the accounting software you can connect to through our API."
 sidebar_label: Accounting
-image: "/img/old/2b27c1b-info_banner.png"
+image: "/img/banners/accounting-integrations.png"
 displayed_sidebar: integrationsAccounting
 ---
 
 import { IntegrationsList } from "@components/Integrations";
 
-![](/img/old/2b27c1b-info_banner.png "info_banner.png")
+![](/img/banners/accounting-integrations.png)
 
 Codat’s accounting integrations allow you to read up-to-date accounting data from your customers' accounting software as well as write data to their software.
 

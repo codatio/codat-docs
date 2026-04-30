@@ -6,6 +6,31 @@
 
 import { themes as prismThemes } from "prism-react-renderer";
 
+const codatDarkTheme = {
+  plain: { color: "#ECEDE5", backgroundColor: "#18103A" },
+  styles: [
+    { types: ["comment", "prolog", "doctype", "cdata"],        style: { color: "rgba(236,237,229,0.4)", fontStyle: "italic" } },
+    { types: ["punctuation"],                                   style: { color: "rgba(236,237,229,0.6)" } },
+    { types: ["tag"],                                           style: { color: "#B2D4C7" } },
+    { types: ["keyword", "important"],                          style: { color: "#f07178", fontStyle: "italic" } },
+    { types: ["string", "attr-value", "char", "inserted"],      style: { color: "#ffcb6b" } },
+    { types: ["number", "boolean", "constant", "symbol", "property"], style: { color: "#82aaff" } },
+    { types: ["function", "builtin", "atrule"],                 style: { color: "#c3e88d" } },
+    { types: ["variable", "attr-name"],                         style: { color: "#a9c4e8" } },
+    { types: ["operator", "entity", "url"],                     style: { color: "#89ddff" } },
+    { types: ["selector"],                                      style: { color: "#ffcb6b" } },
+    { types: ["regex"],                                         style: { color: "#f07178" } },
+    { types: ["deleted"],                                       style: { color: "#ff5370" } },
+    { types: ["bold"],                                          style: { fontWeight: "bold" } },
+    { types: ["italic"],                                        style: { fontStyle: "italic" } },
+  ],
+};
+
+const codatLightTheme = {
+  plain: { color: "#ECEDE5", backgroundColor: "#18103A" },
+  styles: codatDarkTheme.styles,
+};
+
 import { ProvidePlugin } from "webpack";
 
 import path from "path";
@@ -316,8 +341,8 @@ const config = {
       },
 
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: codatLightTheme,
+        darkTheme: codatDarkTheme,
         additionalLanguages: ["bash", "diff", "json"],
       },
 

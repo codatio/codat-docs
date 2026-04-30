@@ -1,15 +1,15 @@
 html[data-theme="light"] {
-  --ifm-table-border-color: #E0E9D1;
-  --ifm-table-header-color: #E0E9D1;
-  --ifm-table-background: #ECEDE5;
-  --table-stripe: #F4F5F0;
+  --ifm-table-border-color: #B2D4C7;
+  --ifm-table-header-color: #ECEDE5;
+  --ifm-table-background: #F7F8F5;
+  --table-stripe: #ECEDE5;
 }
 
 html[data-theme="dark"] {
   --ifm-table-border-color: #B2D4C7;
-  --ifm-table-header-color: rgba(178, 212, 199, 0.2);
+  --ifm-table-header-color: rgba(178, 212, 199, 0.15);
   --ifm-table-background: #18103A;
-  --table-stripe: #21524F;
+  --table-stripe: rgba(178, 212, 199, 0.15);
 
   .markdown .table-wrapper table {
     border-color: #B2D4C7;
@@ -50,6 +50,7 @@ th {
   text-align: start;
   font-family: var(--heading-font);
   font-weight: 200;
+  letter-spacing: 0.04em;
 }
 
 th,
@@ -60,6 +61,16 @@ td {
 td {
   font-size: 16px;
   font-weight: 300;
+}
+
+html[data-theme="light"] table th,
+html[data-theme="light"] table td {
+  color: #18103A !important;
+}
+
+html[data-theme="dark"] table th,
+html[data-theme="dark"] table td {
+  color: #ECEDE5 !important;
 }
 
 td:first-child {
@@ -116,7 +127,7 @@ thead th:empty {
     width: auto !important;
 
     table {
-      border: 2px solid #E0E9D1;
+      border: 1px solid #B2D4C7;
       border-radius: 8px;
       overflow: hidden;
       border-collapse: separate;
