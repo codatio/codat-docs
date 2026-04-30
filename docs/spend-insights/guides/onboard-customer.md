@@ -89,7 +89,7 @@ You can support your customer on this journey using the following guides:
 
 #### View customers
 
-You can view all existing customers in the _Spend Insights_ tab or the _Companies_ tab. If your customer's company has multiple subsidiaries, you can expand the parent company to view its children by clicking on the arrow next to company name.
+You can view all existing customers in the _Spend Insights_ tab or the _Companies_ tab. If your customer's company has multiple subsidiaries, you can expand the parent company to view its children by clicking on the arrow next to company name. You can also open the parent company and select **Subsidiaries** in the sidebar to manage its child companies with the full Companies-table controls.
 
 ![An image of the Companies tab with a parent company called Abra Kedabra and its subsidiaries highlighted.](/img/spend-insights/companies-multi-entity.png)
 
