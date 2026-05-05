@@ -31,7 +31,7 @@ Create an application in Square, enable sandbox or production, and then retrieve
 
 1. Visit <a className="external" href="https://developer.squareup.com/" target="_blank">Square Developer</a> and sign in to your Square account.
 
-2. Click **Account > Developer Dashboard** to view the **Applications** page.
+2. Click **Account > Developer Console** to view the **Applications** page.
 
 3. Click **Create your first application** or the plus symbol.
 
