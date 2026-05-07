@@ -36,15 +36,12 @@ The `nonce` option is available immediately. To start using it, follow these ste
 1. Configure your server to generate a unique cryptographically random nonce for each request.
 2. Expose the nonce to the browser (for example, using a `<meta>` tag).
 3. Pass the value to the SDK through `options.nonce`:
-    ```jsx
-    <CodatLink
-      companyId={companyId}
-      options={{ nonce }}
-    />
-    ```
-5. Update your CSP header to swap `style-src 'unsafe-inline'` for `style-src 'nonce-<value>'`.
-    ```
-    style-src 'self' 'nonce-r4nd0mB4se64Val==' *.codat.io;
-    ```
+   ```jsx
+   <CodatLink companyId={companyId} options={{ nonce }} />
+   ```
+4. Update your CSP header to swap `style-src 'unsafe-inline'` for `style-src 'nonce-<value>'`.
+   ```
+   style-src 'self' 'nonce-r4nd0mB4se64Val==' *.codat.io;
+   ```
 
 The full migration guide and detailed configuration steps are available in [CSP nonce](/auth-flow/customize/sdk-customize-code#csp-nonce) in our SDK documentation.

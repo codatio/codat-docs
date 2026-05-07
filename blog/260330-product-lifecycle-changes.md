@@ -32,11 +32,11 @@ We use the following lifecycle states across our products:
 
 The following product versions will enter their maintenance period of 12 months on **May 1st, 2026**:
 
-| Product | Lifecycle status | Migration path |
-| :--- | :--- | :--- |
-| Sync for Payables v1 | Maintenance | Migrate to [Bill Pay](/payables/overview) |
-| Sync for Expenses v1 | Maintenance | Migrate to [Expenses](/expenses/overview) |
-| Sync for Payroll | Maintenance | Wind down usage, no direct replacement |
+| Product              | Lifecycle status | Migration path                            |
+| :------------------- | :--------------- | :---------------------------------------- |
+| Sync for Payables v1 | Maintenance      | Migrate to [Bill Pay](/payables/overview) |
+| Sync for Expenses v1 | Maintenance      | Migrate to [Expenses](/expenses/overview) |
+| Sync for Payroll     | Maintenance      | Wind down usage, no direct replacement    |
 
 During the maintenance period, these versions will continue to operate, but we won't provide bug fixes, performance improvements, or compatibility updates.
 

@@ -260,6 +260,7 @@ Content-Security-Policy:
   connect-src 'self' *.codat.io;
   img-src     'self' *.codat.io;
 ```
+
 #### Backwards compatibility
 
 Omitting the `nonce` option continues to work exactly as before. Consumers who don't set CSP headers or who are happy with `unsafe-inline` don't need to change anything.

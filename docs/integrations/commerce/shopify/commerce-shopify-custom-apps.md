@@ -41,7 +41,7 @@ The UI includes a **Find your Shopify credentials** section that guides the merc
      read_shopify_payments_payouts, read_shopify_payments_disputes
      ```
      :::tip Scopes for historical orders
-     By default, `read_orders` retrieves orders up to 60 days before the linking date. To access historical orders older than 60 days, the merchant must also enable the     `read_all_orders` scope in the Access section. In that case, your merchants' app scopes should look like this:
+     By default, `read_orders` retrieves orders up to 60 days before the linking date. To access historical orders older than 60 days, the merchant must also enable the `read_all_orders` scope in the Access section. In that case, your merchants' app scopes should look like this:
      ```
      read_customers, read_inventory, read_orders, read_all_orders, read_products,
      read_shopify_payments_payouts, read_shopify_payments_disputes

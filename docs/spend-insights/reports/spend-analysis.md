@@ -13,7 +13,7 @@ Codat's **Spend Analysis** report is a detailed Excel file generated from your c
 
 ## Source data
 
-The report proivides a structured breakdown of your customer's overall spend, payment methods, and supplier-level activity. This gives you the insights you need to identify card conversion opportunities, run supplier outreach campaigns, and monitor spend on an ongoing basis. It uses the following financial data to surface these insights:
+The report provides a structured breakdown of your customer's overall spend, payment methods, and supplier-level activity. This gives you the insights you need to identify card conversion opportunities, run supplier outreach campaigns, and monitor spend on an ongoing basis. It uses the following financial data to surface these insights:
 
 - **Bills** — the full list of documents issued by your customer's suppliers as requests for payments
 - **Payments** — the full list of payments made by your customer against those bills
@@ -31,15 +31,15 @@ If your customer's data contains transactions in multiple currencies, all amount
 
 The report contains the following tabs:
 
-| Tab                   | Contents                                               |
-|-----------------------|--------------------------------------------------------|
-| **Customer**          | Company details and report parameters                  |
-|**Entity Spend Breakdown** |Spend summary per entity for multi-entity customers |
-| **Spend Analysis**    | Spend breakdown by payment method                      |
-| **Supplier Analysis** | Spend breakdown by supplier                            |
-| **Bills**             | Source bill records used to generate the report        |
-| **Bill Payments**     | Source payment records used to generate the report     |
-| **Expenses**      | Source expense records used to generate the report |
+| Tab                        | Contents                                            |
+| -------------------------- | --------------------------------------------------- |
+| **Customer**               | Company details and report parameters               |
+| **Entity Spend Breakdown** | Spend summary per entity for multi-entity customers |
+| **Spend Analysis**         | Spend breakdown by payment method                   |
+| **Supplier Analysis**      | Spend breakdown by supplier                         |
+| **Bills**                  | Source bill records used to generate the report     |
+| **Bill Payments**          | Source payment records used to generate the report  |
+| **Expenses**               | Source expense records used to generate the report  |
 
 ## Customer tab
 
@@ -47,32 +47,32 @@ The **Customer** tab provides an at-a-glance view of the company you're reviewin
 
 This tab includes:
 
-| Detail                                                                                                                | Description                                                                               | What it tells you                                                                                                                   |
-|-----------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| Company name, Registration #, Tax #, Phone, Addresses, Web links                                                   | Administrative details of the customer entity.                                            | Use to identify and verify the customer for compliance purposes.                                       |
-| Start date, End date, Months reviewed                                                                             | The date range covered by the report.                                                     | Source data used in the report is selected based on these dates. <br/> Codat sets these values based on your organization's requirements.                                  |
-| Excludes suppliers with annual spend below                                                                     | The minimum annual spend threshold that is applied when selecting suppliers for the report. | Suppliers with lower spend are filtered out to focus on meaningful relationships. <br/> Codat sets these values based on your organization's requirements.|
-| Suppliers count, # of bills, Bills amount, # of payments, Payments amount, # of Expenses, Expenses amount | High-level volume and value totals across all suppliers in the report.                    | Use these summary values for quick checks on data quality, calculating your own metrics, or initial conversations with your customers.                 |
+| Detail                                                                                                    | Description                                                                                 | What it tells you                                                                                                                                          |
+| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Company name, Registration #, Tax #, Phone, Addresses, Web links                                          | Administrative details of the customer entity.                                              | Use to identify and verify the customer for compliance purposes.                                                                                           |
+| Start date, End date, Months reviewed                                                                     | The date range covered by the report.                                                       | Source data used in the report is selected based on these dates. <br/> Codat sets these values based on your organization's requirements.                  |
+| Excludes suppliers with annual spend below                                                                | The minimum annual spend threshold that is applied when selecting suppliers for the report. | Suppliers with lower spend are filtered out to focus on meaningful relationships. <br/> Codat sets these values based on your organization's requirements. |
+| Suppliers count, # of bills, Bills amount, # of payments, Payments amount, # of Expenses, Expenses amount | High-level volume and value totals across all suppliers in the report.                      | Use these summary values for quick checks on data quality, calculating your own metrics, or initial conversations with your customers.                     |
 
 ## Entity Spend Breakdown tab
 
-The **Entity Spend Breakdown** tab is only present in reports for customers with a multi-entity organizational structure. It provides a summary of spend per child entity, enabling you to quickly compare supplier activity across subsidiaries or business units. Use this tab to: 
+The **Entity Spend Breakdown** tab is only present in reports for customers with a multi-entity organizational structure. It provides a summary of spend per child entity, enabling you to quickly compare supplier activity across subsidiaries or business units. Use this tab to:
 
 - Identify high and low spend entities to prioritize targeted campaigns.
 - Understand how spend is distributed across the group and support consolidated reporting.
 - Review entity-level totals to estimate the card conversion opportunity per subsidiary.
 
-| Column              | Description                                                                  | What it tells you                                                                                                                        |
-|-------------------------|------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| **Company ID**          | The unique Codat identifier for the child entity.                           | Use to link this row back to the corresponding entity in the Codat Portal.                                                               |
-| **Company name**        | The name of the child entity as recorded in Codat.                           | Use to identify which part of the customer's business this row represents.                                                               |
-| **Bills amount**        | Total value of all bills for this entity within the reporting period.        | Use to compare billed spend across entities and identify which parts of the business drive the most supplier activity.                         |
+| Column              | Description                                                              | What it tells you                                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Company ID**      | The unique Codat identifier for the child entity.                        | Use to link this row back to the corresponding entity in the Codat Portal.                                                           |
+| **Company name**    | The name of the child entity as recorded in Codat.                       | Use to identify which part of the customer's business this row represents.                                                           |
+| **Bills amount**    | Total value of all bills for this entity within the reporting period.    | Use to compare billed spend across entities and identify which parts of the business drive the most supplier activity.               |
 | **Expenses amount** | Total value of all expenses for this entity within the reporting period. | Use to identify entities with significant expenses that may be eligible for card conversion.                                         |
-| **Total spend**         | Combined bills and expenses amount for this entity.                      | The key figure for comparing overall spend across entities that helps prioritize which entities to focus card enablement efforts on. |
+| **Total spend**     | Combined bills and expenses amount for this entity.                      | The key figure for comparing overall spend across entities that helps prioritize which entities to focus card enablement efforts on. |
 
 ## Spend Analysis tab
 
-The **Spend Analysis** tab breaks down your customer's spend by **inferred payment method** (see [Payment method determination](/spend-insights/reports/spend-analysis#payment-method-determination)) and looks at the quantities and amounts of suppliers, bills, payments, and expenses associated with these payment methods. 
+The **Spend Analysis** tab breaks down your customer's spend by **inferred payment method** (see [Payment method determination](/spend-insights/reports/spend-analysis#payment-method-determination)) and looks at the quantities and amounts of suppliers, bills, payments, and expenses associated with these payment methods.
 
 Each row in the tab represents a payment method (Credit Card, Debit Card, Bank Transfer, Cash, Check, Unknown, or Other) grouped into three categories: _Card_, _Non-Card_, and _Unknown_. Use this tab to:
 
@@ -82,31 +82,31 @@ Each row in the tab represents a payment method (Credit Card, Debit Card, Bank T
 
 ### Definitions
 
-| Column                           | Description                                                                                                                                                | What it tells you                                                                                                                                                                                                                             |
-|---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Payment method**                    | The inferred payment method grouping this row (e.g. Credit Card, Check, Bank Transfer).                                                                    | Use to identify which payment methods are most prevalent in your customer's supplier spend and where the card conversion opportunity lies.                                                                                                                       |
-| **# of suppliers**                    | Count of suppliers whose most common payment method is this type.                                                                                          | Compare across rows to understand how supplier relationships are distributed by payment method.                                                                                                                                               |
-| **% of all suppliers**                | Share of total suppliers using this payment method.                                                                                                        | Use alongside _# of suppliers_ because percentage alone can be misleading with small supplier numbers.                                                                                                                                                     |
-| **% of all bills (by #)**             | Share of total bill count attributed to this payment method.                                                                                               | Compare with _% of all bills (by amount)_. A significant difference means this method handles many small transactions or a few large ones.                                                                                                     |
-| **% of all bills (by amount)**        | Share of total bill value attributed to this payment method.                                                                                               | The primary measure of spend share by payment method. Use to quantify how much of total supplier spend is on non-card methods.                                                                                                                      |
-| **Total spend**                       | Combined bills and expenses amount for this payment method.                                                                                            | Compare _Card_ with _Non-Card_ rows to quantify the total card migration opportunity, including spend not captured as bills.                                                                                                                       |
-| **# of bills**                        | Count of all bills in this payment method group within the reporting period.                                                                               | A high count with low total spend may indicate many small transactions and could be good candidates for card consolidation.                                                                                                                              |
-| **# of bills outstanding**            | Count of unpaid bills in this group.                                                                                                                       | Use with _Bills outstanding amount_ and _% bills outstanding_ to assess unpaid supplier exposure by payment method.                                                                                                                                      |
-| **Bills amount**                      | Total value of all bills in this group.                                                                                                                    | The base figure for outstanding and late payment percentage calculations in this row.                                                                                                                                                         |
-| **Bills outstanding amount**          | Total value of unpaid bills in this group.                                                                                                                 | Quantifies supplier exposure by payment method. For example, high outstanding amounts on non-card methods may indicate cash flow or process issues.                                                                                                             |
-| **% bills outstanding (by amount)**   | Outstanding bill value as a percentage of total bill value for this group.                                                                                 | Use with _# of bills outstanding_, _Average payment terms_, and _Average settlement period_ to understand why bills are outstanding.                                                                                                                |
-| **# of bills paid late**              | Count of bills in this group paid after their due date.                                                                                                    | Indicates payment reliability by method. High late counts on check or bank transfer act as a strong argument for card migration.                                                                                                                   |
-| **Bills paid late amount**            | Total value of bills in this group paid after their due date.                                                                                              | Use with _% bills paid late_ to assess whether lateness is concentrated in high or low-value bills.                                                                                                                                          |
-| **% bills paid late (by amount)**     | Late bill value as a percentage of total bill value for this group.                                                                                        | Compare with _Average payment terms_ and _Average settlement period_. If settlement period consistently exceeds terms, this percentage will be high. Together these three columns build the case for card programs that extend effective payment terms. |
-| **# of payments**                     | Count of payment transactions across all suppliers in this group.                                                                                          | Use to understand transaction volume by payment method.                                                                                                                                                                          |
-| **Payments amount**                   | Total value of all payments made in this group.                                                                                                            | Cross-reference with _Bills amount_ to check alignment across the reporting period.                                                                                                                                                             |
-| **Average payment amount**            | Total payments value divided by number of payments in this group.                                                                                          | Smaller average payments are typically better virtual card candidates than large single payments.                                                                                                                              |
-| **Average payment terms**             | The average number of days between bill issue date and bill due date across all bills in this group. <br/><br/>Calculated across all bills and weighted so that higher-value bills have more influence on the result.   | Compare with _Average settlement period_. Terms greater than settlement means the customer repays early, and settlement greater than terms means customer repays late.                                              |
-| **Average settlement period**         |The averae number of days between bill issue date and actual payment date across all bills in this group. <br/><br/>Calculated across all bills and weighted so that higher-value bills have more influence on the result. | Compare directly with _Average payment terms_ to identify which payment methods have the worst payment timing.                                                                                         |
-| **% of all Expenses (by #)**      | Share of total expense transaction count attributed to this payment method.                                                                            | Shows whether expense transactions are concentrated in particular payment methods.                                                                                                                                                        |
-| **% of all Expenses (by amount)** | Share of total expense value attributed to this payment method.                                                                                        | Use to identify payment methods where significant spend is occurring outside of Accounts Payable.                                                                                                                                                                  |
-| **# of Expenses**                 | Count of expense transactions in this group.                                                                                                           | High expense counts on non-card methods indicate ad hoc spend that isn't reflected in Accounts Payable.                                                                                                                      |
-| **Expenses amount**               | Total value of expenses in this group.                                                                                                                 | Compare with bills amount to understand the full spend picture for this payment method, including spend that isn't reflected in Accounts Payable.                                                                                                     |
+| Column                              | Description                                                                                                                                                                                                                 | What it tells you                                                                                                                                                                                                                                       |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Payment method**                  | The inferred payment method grouping this row (e.g. Credit Card, Check, Bank Transfer).                                                                                                                                     | Use to identify which payment methods are most prevalent in your customer's supplier spend and where the card conversion opportunity lies.                                                                                                              |
+| **# of suppliers**                  | Count of suppliers whose most common payment method is this type.                                                                                                                                                           | Compare across rows to understand how supplier relationships are distributed by payment method.                                                                                                                                                         |
+| **% of all suppliers**              | Share of total suppliers using this payment method.                                                                                                                                                                         | Use alongside _# of suppliers_ because percentage alone can be misleading with small supplier numbers.                                                                                                                                                  |
+| **% of all bills (by #)**           | Share of total bill count attributed to this payment method.                                                                                                                                                                | Compare with _% of all bills (by amount)_. A significant difference means this method handles many small transactions or a few large ones.                                                                                                              |
+| **% of all bills (by amount)**      | Share of total bill value attributed to this payment method.                                                                                                                                                                | The primary measure of spend share by payment method. Use to quantify how much of total supplier spend is on non-card methods.                                                                                                                          |
+| **Total spend**                     | Combined bills and expenses amount for this payment method.                                                                                                                                                                 | Compare _Card_ with _Non-Card_ rows to quantify the total card migration opportunity, including spend not captured as bills.                                                                                                                            |
+| **# of bills**                      | Count of all bills in this payment method group within the reporting period.                                                                                                                                                | A high count with low total spend may indicate many small transactions and could be good candidates for card consolidation.                                                                                                                             |
+| **# of bills outstanding**          | Count of unpaid bills in this group.                                                                                                                                                                                        | Use with _Bills outstanding amount_ and _% bills outstanding_ to assess unpaid supplier exposure by payment method.                                                                                                                                     |
+| **Bills amount**                    | Total value of all bills in this group.                                                                                                                                                                                     | The base figure for outstanding and late payment percentage calculations in this row.                                                                                                                                                                   |
+| **Bills outstanding amount**        | Total value of unpaid bills in this group.                                                                                                                                                                                  | Quantifies supplier exposure by payment method. For example, high outstanding amounts on non-card methods may indicate cash flow or process issues.                                                                                                     |
+| **% bills outstanding (by amount)** | Outstanding bill value as a percentage of total bill value for this group.                                                                                                                                                  | Use with _# of bills outstanding_, _Average payment terms_, and _Average settlement period_ to understand why bills are outstanding.                                                                                                                    |
+| **# of bills paid late**            | Count of bills in this group paid after their due date.                                                                                                                                                                     | Indicates payment reliability by method. High late counts on check or bank transfer act as a strong argument for card migration.                                                                                                                        |
+| **Bills paid late amount**          | Total value of bills in this group paid after their due date.                                                                                                                                                               | Use with _% bills paid late_ to assess whether lateness is concentrated in high or low-value bills.                                                                                                                                                     |
+| **% bills paid late (by amount)**   | Late bill value as a percentage of total bill value for this group.                                                                                                                                                         | Compare with _Average payment terms_ and _Average settlement period_. If settlement period consistently exceeds terms, this percentage will be high. Together these three columns build the case for card programs that extend effective payment terms. |
+| **# of payments**                   | Count of payment transactions across all suppliers in this group.                                                                                                                                                           | Use to understand transaction volume by payment method.                                                                                                                                                                                                 |
+| **Payments amount**                 | Total value of all payments made in this group.                                                                                                                                                                             | Cross-reference with _Bills amount_ to check alignment across the reporting period.                                                                                                                                                                     |
+| **Average payment amount**          | Total payments value divided by number of payments in this group.                                                                                                                                                           | Smaller average payments are typically better virtual card candidates than large single payments.                                                                                                                                                       |
+| **Average payment terms**           | The average number of days between bill issue date and bill due date across all bills in this group. <br/><br/>Calculated across all bills and weighted so that higher-value bills have more influence on the result.       | Compare with _Average settlement period_. Terms greater than settlement means the customer repays early, and settlement greater than terms means customer repays late.                                                                                  |
+| **Average settlement period**       | The average number of days between bill issue date and actual payment date across all bills in this group. <br/><br/>Calculated across all bills and weighted so that higher-value bills have more influence on the result. | Compare directly with _Average payment terms_ to identify which payment methods have the worst payment timing.                                                                                                                                          |
+| **% of all Expenses (by #)**        | Share of total expense transaction count attributed to this payment method.                                                                                                                                                 | Shows whether expense transactions are concentrated in particular payment methods.                                                                                                                                                                      |
+| **% of all Expenses (by amount)**   | Share of total expense value attributed to this payment method.                                                                                                                                                             | Use to identify payment methods where significant spend is occurring outside of Accounts Payable.                                                                                                                                                       |
+| **# of Expenses**                   | Count of expense transactions in this group.                                                                                                                                                                                | High expense counts on non-card methods indicate ad hoc spend that isn't reflected in Accounts Payable.                                                                                                                                                 |
+| **Expenses amount**                 | Total value of expenses in this group.                                                                                                                                                                                      | Compare with bills amount to understand the full spend picture for this payment method, including spend that isn't reflected in Accounts Payable.                                                                                                       |
 
 ## Supplier Analysis tab
 
@@ -120,14 +120,14 @@ This section covers the supplier's name, the most common method used to pay them
 
 <TabItem value="columns" label="Definitions">
 
-| Column                                | Description                                                             | What it tells you                                                                                                                                                                                                                                                                                           |
-|---------------------------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Supplier name**                        | The supplier's name as recorded in the customer's accounting system. | Naming variations across suppliers may reflect data quality issues that you can choose to flag to your customer.  |
-| **Most common payment method (ERP)**      | The most frequent payment method as recorded in the ERP's payment method field. Only includes transactions where this field is populated. <br/><br/>Frequency is determined by highest count, then by highest amount. <br/><br/> If no payments are recorded or all transactions lack a recorded payment method, the value is set to _Unknown_.| Shows how the customer's own accounting system classifies payments. <br/><br/> Use this column to identify suppliers not yet using card. <br/><br/> If the value is blank or inconsistent, the _Most common payment method (Inferred)_ column provides a fuller picture. |
-|**Most Common Payment Method Category (Inferred)**|The category of the most frequent method used to pay this supplier, based on the **Most common payment method (Inferred)** column. <br/><br/> Each payment method is mapped to a category: **Card** (CreditCard, DebitCard methods), **Non-Card** (BankTransfer, Cash, Check), and **Unknown** (Unknown, Other). | Use to assess suppliers for card enablement campaigns, opportunity sizing, and payment optimization by quickly identifying their payment methods.|
-| **Most common payment method (Inferred)** | The most frequent payment method used to pay this supplier, as determined by Codat across all transactions. If it's not possible to infer the payment method, the value is set to _Unknown_.  <br/><br/> See [Payment method determination](/spend-insights/reports/spend-analysis#payment-method-determination). <br/><br/>Frequency is determined by highest count, then by highest amount.   |   The most complete view of how a supplier is paid, including transactions where the payment method field isn't populated in the ERP. <br/><br/> Use this to identify non-card suppliers nand prioritize them for targeted outreach.|
-| **Has Accepted Credit Card (Last 12 months)** | A _Yes/No_ flag that indicates whether this supplier has accepted at least one credit card payment in the last 12 months. | Indicates credit card acceptance even when card isn't the most common payment method for this supplier. |
-| **Imported date**                         | The date this supplier first appeared in the Spend Analysis file.       | Helps spot newly added suppliers and track supplier churn. <br/> Filter by this date when comparing reports over time to focus on what's changed.|
+| Column                                             | Description                                                                                                                                                                                                                                                                                                                                                                                  | What it tells you                                                                                                                                                                                                                                                        |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Supplier name**                                  | The supplier's name as recorded in the customer's accounting system.                                                                                                                                                                                                                                                                                                                         | Naming variations across suppliers may reflect data quality issues that you can choose to flag to your customer.                                                                                                                                                         |
+| **Most common payment method (ERP)**               | The most frequent payment method as recorded in the ERP's payment method field. Only includes transactions where this field is populated. <br/><br/>Frequency is determined by highest count, then by highest amount. <br/><br/> If no payments are recorded or all transactions lack a recorded payment method, the value is set to _Unknown_.                                              | Shows how the customer's own accounting system classifies payments. <br/><br/> Use this column to identify suppliers not yet using card. <br/><br/> If the value is blank or inconsistent, the _Most common payment method (Inferred)_ column provides a fuller picture. |
+| **Most Common Payment Method Category (Inferred)** | The category of the most frequent method used to pay this supplier, based on the **Most common payment method (Inferred)** column. <br/><br/> Each payment method is mapped to a category: **Card** (CreditCard, DebitCard methods), **Non-Card** (BankTransfer, Cash, Check), and **Unknown** (Unknown, Other).                                                                             | Use to assess suppliers for card enablement campaigns, opportunity sizing, and payment optimization by quickly identifying their payment methods.                                                                                                                        |
+| **Most common payment method (Inferred)**          | The most frequent payment method used to pay this supplier, as determined by Codat across all transactions. If it's not possible to infer the payment method, the value is set to _Unknown_. <br/><br/> See [Payment method determination](/spend-insights/reports/spend-analysis#payment-method-determination). <br/><br/>Frequency is determined by highest count, then by highest amount. | The most complete view of how a supplier is paid, including transactions where the payment method field isn't populated in the ERP. <br/><br/> Use this to identify non-card suppliers nand prioritize them for targeted outreach.                                       |
+| **Has Accepted Credit Card (Last 12 months)**      | A _Yes/No_ flag that indicates whether this supplier has accepted at least one credit card payment in the last 12 months.                                                                                                                                                                                                                                                                    | Indicates credit card acceptance even when card isn't the most common payment method for this supplier.                                                                                                                                                                  |
+| **Imported date**                                  | The date this supplier first appeared in the Spend Analysis file.                                                                                                                                                                                                                                                                                                                            | Helps spot newly added suppliers and track supplier churn. <br/> Filter by this date when comparing reports over time to focus on what's changed.                                                                                                                        |
 
 </TabItem>
 
@@ -156,29 +156,29 @@ If you download a spend analysis file a month later, you will be able to identif
 
 Total spend gives you a single figure that represents the full extent of your customer's financial relationship with their suppliers.
 
-| Column      | Description                                                           | What it tells you                                                                                                                   |
-|-------------|-----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| Column          | Description                                                                      | What it tells you                                                                                                                   |
+| --------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | **Total spend** | The total of bill amounts and expense amounts for the supplier in base currency. | The key figure for ranking suppliers by size. Start with the highest total spend suppliers for the greatest card enablement impact. |
 
 ### Bills
 
-This section covers the requests for payment raised by the supplier to your customer, highlighting the amounts and quantities still oustanding.
+This section covers the requests for payment raised by the supplier to your customer, highlighting the amounts and quantities still outstanding.
 
 <Tabs>
 
 <TabItem value="columns" label="Definitions">
 
-| Column                             | Description                                                                    | What it tells you                                                                                          |
-|------------------------------------|--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| **# of bills**                         | Count of all bills raised by a supplier in the reporting period, excluding voided or cancelled records.| Reflects the transaction frequency with the supplier. <br/> A high bill count with a low total amount may indicate many small purchases and benefit from card consolidation. |
-| **# of bills outstanding**            | The number of bills that have not yet been paid where the amount due is greater than zero.                               | A high number of outstanding bills in relation to total bill count may indicate cash flow constraints or delays in the payment processes.                               |
-| **Bills amount**                       | The total value of all bills raised by a specific supplier listed in base currency.                          | The primary measure of spend with a supplier. Higher spend may mean greater cashback potential. <br/> Use it to rank suppliers for card enablement.                                              |
-| **Bills outstanding amount**           | The total value of of remaining due amount across all unpaid bills in base currency. | Helps you understand how much your customer currently owes their suppliers. <br/> High outstanding amounts in relation to total spend may indicate payment delays worth exploring.  |
-| **% of bills outstanding (by amount)** | The outstanding bills amount represented as a percentage of the total billed amount.      | Acts as a metric of payment completion. A high percentage suggests a backlog of unpaid bills, which may be useful when discussing working capital and payment terms.   |
-| **# of bills paid late**               | The number of bills from a supplier where the actual payment date is after the bill due date.| Frequent late payments suggest process inefficiency, cash flow constrains, or issues in the supplier relationship. <br/> Use this as an opportunity to introduce card payments for more predictable bill settlement. |
-| **Bills paid late amount**             | The total of bill amounts in base currency where payment date is later than due date.   | Large amounts may signal significant exposure to late fees, damaged supplier trust, or operational bottlenecks.  |
-| **% bills paid late (by amount)**      | The value of bills paid late represented as a percentage of total billed amount. |   Demonstrates late payment exposure regardless of the absolute spend with a supplier. High percentages point to suppliers most affected by late payments.         |
-| **Most recent bill**                   | The latest bill issue date for a supplier in the reporting period.                     | A very old bill date may indicate the supplier is no longer used, and should be excluded from card outreach.              |
+| Column                                 | Description                                                                                             | What it tells you                                                                                                                                                                                                    |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **# of bills**                         | Count of all bills raised by a supplier in the reporting period, excluding voided or cancelled records. | Reflects the transaction frequency with the supplier. <br/> A high bill count with a low total amount may indicate many small purchases and benefit from card consolidation.                                         |
+| **# of bills outstanding**             | The number of bills that have not yet been paid where the amount due is greater than zero.              | A high number of outstanding bills in relation to total bill count may indicate cash flow constraints or delays in the payment processes.                                                                            |
+| **Bills amount**                       | The total value of all bills raised by a specific supplier listed in base currency.                     | The primary measure of spend with a supplier. Higher spend may mean greater cashback potential. <br/> Use it to rank suppliers for card enablement.                                                                  |
+| **Bills outstanding amount**           | The total value of of remaining due amount across all unpaid bills in base currency.                    | Helps you understand how much your customer currently owes their suppliers. <br/> High outstanding amounts in relation to total spend may indicate payment delays worth exploring.                                   |
+| **% of bills outstanding (by amount)** | The outstanding bills amount represented as a percentage of the total billed amount.                    | Acts as a metric of payment completion. A high percentage suggests a backlog of unpaid bills, which may be useful when discussing working capital and payment terms.                                                 |
+| **# of bills paid late**               | The number of bills from a supplier where the actual payment date is after the bill due date.           | Frequent late payments suggest process inefficiency, cash flow constrains, or issues in the supplier relationship. <br/> Use this as an opportunity to introduce card payments for more predictable bill settlement. |
+| **Bills paid late amount**             | The total of bill amounts in base currency where payment date is later than due date.                   | Large amounts may signal significant exposure to late fees, damaged supplier trust, or operational bottlenecks.                                                                                                      |
+| **% bills paid late (by amount)**      | The value of bills paid late represented as a percentage of total billed amount.                        | Demonstrates late payment exposure regardless of the absolute spend with a supplier. High percentages point to suppliers most affected by late payments.                                                             |
+| **Most recent bill**                   | The latest bill issue date for a supplier in the reporting period.                                      | A very old bill date may indicate the supplier is no longer used, and should be excluded from card outreach.                                                                                                         |
 
 </TabItem>
 
@@ -196,10 +196,9 @@ This section covers the requests for payment raised by the supplier to your cust
 
 ![A section of the Supplier Analysis tab from the Excel report that displays the columns related to bills.](/img/spend-insights/si-spend-analysis-report-bills-1.png)
 
-
 ![A section of the Supplier Analysis tab from the Excel report that displays the columns related to bills.](/img/spend-insights/si-spend-analysis-report-bills-2.png)
 
-Let's look at the third row in the above example that relates to the _Fay - West_ supplier. This supplier has raised a total of 3 bills, 1 of which is not yet paid. The total amount of these 3 bills comes to $32,730.83, with the majority of that total ($32,607.83) still requiring payment. In percentage terms, an incredible 99.6% of the total amount still needs to be paid to the supplier. _Fay - West_ raised their most recent bill on August 1, 2024. 
+Let's look at the third row in the above example that relates to the _Fay - West_ supplier. This supplier has raised a total of 3 bills, 1 of which is not yet paid. The total amount of these 3 bills comes to $32,730.83, with the majority of that total ($32,607.83) still requiring payment. In percentage terms, an incredible 99.6% of the total amount still needs to be paid to the supplier. _Fay - West_ raised their most recent bill on August 1, 2024.
 
 This likely indicates a poor working relationship with the supplier and may have resulted in litigation, debt collections, or issues with supply. While it may not be possible to repair trust with this supplier, these records act as evidence that the customer's bill settlement process will benefit from card payments.
 
@@ -215,11 +214,11 @@ This section goes into the details of payments your customer has made to their s
 
 <TabItem value="columns" label="Definitions">
 
-| Column                 | Description                                               | What it tells you                                                                                                                                                                                                        |
-|------------------------|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **# of payments**          | Count of all payment records linked to the supplier's bills in the reporting period.      | Compare with the total of bills to understand payment patterns. <br/> For example, a much higher payment count than bill count may indicate partial payments or split settlements.                                                                 |
-| **Payments amount**        | The total value of all payments made to the supplier in base currency.    | Cross-reference with _Bills amount_. A significant gap between the _Bills amount_ and _Payments amount_ may indicate outstanding balances or timing differences across the reporting period.                            |
-| **Average payment amount** | The average size of individual payments to the supplier, calculated as the total value of payments divided by the number of payments. | Large average payments may indicate a strategic supplier worth prioritizing for card enablement. <br/> Small payments may indicate low-value transactional spend. |
+| Column                     | Description                                                                                                                           | What it tells you                                                                                                                                                                            |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **# of payments**          | Count of all payment records linked to the supplier's bills in the reporting period.                                                  | Compare with the total of bills to understand payment patterns. <br/> For example, a much higher payment count than bill count may indicate partial payments or split settlements.           |
+| **Payments amount**        | The total value of all payments made to the supplier in base currency.                                                                | Cross-reference with _Bills amount_. A significant gap between the _Bills amount_ and _Payments amount_ may indicate outstanding balances or timing differences across the reporting period. |
+| **Average payment amount** | The average size of individual payments to the supplier, calculated as the total value of payments divided by the number of payments. | Large average payments may indicate a strategic supplier worth prioritizing for card enablement. <br/> Small payments may indicate low-value transactional spend.                            |
 
 </TabItem>
 
@@ -236,7 +235,7 @@ This section goes into the details of payments your customer has made to their s
 
 ![A section of the Supplier Analysis tab from the Excel report that displays the columns related to payments.](/img/spend-insights/si-spend-analysis-report-payments.png)
 
-Having a look at suppliers with a higher number of payments, we can see that their average payment amounts are moderately high. This may indicate strategic suppliers and may be worth prioritizing for card enablement. 
+Having a look at suppliers with a higher number of payments, we can see that their average payment amounts are moderately high. This may indicate strategic suppliers and may be worth prioritizing for card enablement.
 
 </TabItem>
 
@@ -250,11 +249,11 @@ This section compares the agreed payment terms with the actual time taken to set
 
 <TabItem value="columns" label="Definitions">
 
-| Column                    | Description                                                                                                                                                              | What it tells you                                                                                                                                                                                                                                                         |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Average payment terms**     | The average contractual payment window for the supplier, calculated across all bills and weighted so that higher-value bills have more influence on the result. | It's the most robust measure for contractual terms and should be used for weighted analysis.|
+| Column                        | Description                                                                                                                                                                                      | What it tells you                                                                                          |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| **Average payment terms**     | The average contractual payment window for the supplier, calculated across all bills and weighted so that higher-value bills have more influence on the result.                                  | It's the most robust measure for contractual terms and should be used for weighted analysis.               |
 | **Common payment terms days** | The most frequently occurring payment term in days for the supplier.<br/><br/>Where multiple payment terms are common, frequency is by highest associated bill amount, then by lowest term days. | Use as a quick reference for the standard contractual term most commonly seen on bills from this supplier. |
-| **Average settlement period** | The average number of days between bill issue date and payment date, calculated across all bills and weighted so that higher-value bills have more influence on the result. | Compare directly with average payment terms to see if your customer is paying early, on time, or late.            |
+| **Average settlement period** | The average number of days between bill issue date and payment date, calculated across all bills and weighted so that higher-value bills have more influence on the result.                      | Compare directly with average payment terms to see if your customer is paying early, on time, or late.     |
 
 </TabItem>
 
@@ -264,22 +263,23 @@ This section compares the agreed payment terms with the actual time taken to set
 
 - Compare _Average payment terms_ with _Average settlement period_ to assess whether your customer is paying their supplier early, on time, or late. If the average settlement period is greater than the average payment terms, payments are typically late.
 
-    Consistent early or late payments present an opportunity to renegotiate discounts or reset payment timing. See the following examples:
+  Consistent early or late payments present an opportunity to renegotiate discounts or reset payment timing. See the following examples:
 
-    :::info Example 1
-    Average payment terms - 30 days, average settlement period - 54 days.
+  :::info Example 1
+  Average payment terms - 30 days, average settlement period - 54 days.
 
-    The customer is paying their supplier 14 days late on average. Moving the payments to this supplier to a virtual card program could provide the supplier with more predictable cash flow, and allow the customer to earn card rebates on the spend.
-    :::
+  The customer is paying their supplier 14 days late on average. Moving the payments to this supplier to a virtual card program could provide the supplier with more predictable cash flow, and allow the customer to earn card rebates on the spend.
+  :::
 
-    :::info Example 2
-    Average payment terms - 30 days, average settlement period - 10 days.
+  :::info Example 2
+  Average payment terms - 30 days, average settlement period - 10 days.
 
-    The customer is paying their supplier 20 days early using checks. This presents two possible solutions:
-    
-        - Moving the payments to card without changing payment timing allows the customer to earn rebates on the spend. It also ensures the supplier receives a more reliable digital payment. 
+  The customer is paying their supplier 20 days early using checks. This presents two possible solutions:
+
+        - Moving the payments to card without changing payment timing allows the customer to earn rebates on the spend. It also ensures the supplier receives a more reliable digital payment.
         - Moving the spend to card and adjusting the payment timing to the agreed payment terms of 30 days. The customer then retains their cash for an additional 20 days, improving their working capital and liquidity, while the supplier receives a more reliable digital payment.
-    :::
+
+  :::
 
 </TabItem>
 
@@ -287,7 +287,7 @@ This section compares the agreed payment terms with the actual time taken to set
 
 ![A section of the Supplier Analysis tab from the Excel report that displays the columns related to payment terms and settlements.](/img/spend-insights/si-spend-analysis-report-averages.png)
 
-In this example, our customer pays most of their displayed suppliers a few days earlier than the agreed payment terms. _Yundt Group_ is the outlier, having to wait 64 days on average for payment with the agreed terms of 60 days. With payments to this supplier being consistently late, this presents an opportunity to discuss moving these payments to card. 
+In this example, our customer pays most of their displayed suppliers a few days earlier than the agreed payment terms. _Yundt Group_ is the outlier, having to wait 64 days on average for payment with the agreed terms of 60 days. With payments to this supplier being consistently late, this presents an opportunity to discuss moving these payments to card.
 
 </TabItem>
 
@@ -301,11 +301,11 @@ This section covers the customer's expenses (also known as direct costs) associa
 
 <TabItem value="columns" label="Definitions">
 
-| Column                  | Description                                                                         | What it tells you                                                                                                                               |
-|-------------------------|-------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| **# of Expenses**       | Total count of positive ad hoc payments to the supplier in the reporting period. | A high count relative to bill count may indicate frequent ad hoc purchases outside the formal purchasing process.  |
-| **Expenses amount**     | The total amount of all expenses for the supplier in base currency.                  | Significant expenses not captured as bills may represent an untapped card conversion opportunity. |
-| **Most recent direct cost** | The date when the latest expense was incurred for the supplier.                                | Use to confirm the supplier relationship is still active.                                                                                       |
+| Column                      | Description                                                                      | What it tells you                                                                                                 |
+| --------------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| **# of Expenses**           | Total count of positive ad hoc payments to the supplier in the reporting period. | A high count relative to bill count may indicate frequent ad hoc purchases outside the formal purchasing process. |
+| **Expenses amount**         | The total amount of all expenses for the supplier in base currency.              | Significant expenses not captured as bills may represent an untapped card conversion opportunity.                 |
+| **Most recent direct cost** | The date when the latest expense was incurred for the supplier.                  | Use to confirm the supplier relationship is still active.                                                         |
 
 </TabItem>
 
@@ -329,14 +329,14 @@ In our example, the customer has had 3 instances of expenses associated with _Be
 
 ### Supplier details
 
-The final section of this tab provides administrative details of each supplier, such as their ID in the customer's accounting software, their contact details, and tax information. This detail is pulled directly from the customer's accounting software and not manipulated. 
+The final section of this tab provides administrative details of each supplier, such as their ID in the customer's accounting software, their contact details, and tax information. This detail is pulled directly from the customer's accounting software and not manipulated.
 
 :::tip Supplier ID
 
 The _Supplier ID_ is an system-generated number assigned to a supplier record automatically when the record is first created in the customer's accounting software.
 :::
 
-You can use supplier details as follows: 
+You can use supplier details as follows:
 
 - Supplier contact details are ready to use for card enablement campaigns, KYC, or onboarding communications without needing to look up information elsewhere.
 - Filter or group suppliers by region or tax status for targeted enablement or negotiation strategies.
@@ -347,11 +347,11 @@ You can use supplier details as follows:
 
 The **Bills**, **Bill Payments**, and **Expenses** tabs contain the raw transaction records pulled from the customer's accounting software and used to generate the report. You can use these to verify individual transactions, reconcile payments to bills, or trace summary figures back to source data.
 
-| Tab           | Key columns                                                                            | Usage                                               |
-|---------------|----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| Tab               | Key columns                                                                            | Usage                                                                                           |
+| ----------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | **Bills**         | Id, Supplier Id/Name, Total Amt, Issue Date, Company Id/Name                           | Auditing billed amounts, outstanding balances, and bill aging                                   |
 | **Bill Payments** | Id, Supplier Id/Name, Date, Currency, Currency Rate, Total Amt, Note                   | Reconciling payments to bills, analyzing payment timing, and validating settlement calculations |
-| **Expenses**  | Id, Contact Name/Id, Reference, Payment Account, Issue Date, Currency, Total Amt, Note | Tracing supplier spend not captured via bills                                                   |
+| **Expenses**      | Id, Contact Name/Id, Reference, Payment Account, Issue Date, Currency, Total Amt, Note | Tracing supplier spend not captured via bills                                                   |
 
 :::note Multi-entity organizations
 
@@ -372,25 +372,19 @@ They are determined independently either pulling the payment method value record
 Codat infers payment methods from the customer's accounting data using the following rules in order of priority:
 
 | Priority | Source                    | How it's used                                                                |
-|----------|---------------------------|------------------------------------------------------------------------------|
+| -------- | ------------------------- | ---------------------------------------------------------------------------- |
 | 1        | ERP payment method field  | If populated, used directly and mapped to a standard category.               |
 | 2        | Account name              | Scanned for keywords (e.g. "credit card", "Amex", "bank transfer", "check"). |
-| 3        | Payment note or reference | Freetext field scanned for keywords.                                        |
+| 3        | Payment note or reference | Freetext field scanned for keywords.                                         |
 | 4        | Default value             | If no match found, classified as _Unknown_.                                  |
 
 <ReadNext
   links={[
-    [
-      "Spend Summary report reference",
-      "/spend-insights/reports/spend-summary",
-    ],
+    ["Spend Summary report reference", "/spend-insights/reports/spend-summary"],
     [
       "Ongoing Insights report reference",
       "/spend-insights/reports/ongoing-insights",
     ],
-    [
-      "Vendor match report reference",
-      "/spend-insights/reports/vendor-match",
-    ],
+    ["Vendor match report reference", "/spend-insights/reports/vendor-match"],
   ]}
 />

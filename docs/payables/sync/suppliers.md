@@ -74,27 +74,27 @@ Each accounting software has some limitations when updating suppliers. We've sum
 
 #### Xero
 
-| Limitation             | Description                                                                                                                                      |
-|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| Limitation             | Description                                                                                                                                                                                  |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
 | **Supplier name**      | It's not possible to clear the supplier name. Sending a `null` or `""` value for `supplierName`, or `null` value for both `supplierName` and `contactName` keeps the existing supplier name. |
-| **Duplicate names**    | Supplier names must be unique. Updating a name to match an existing supplier returns a `400` response.                                                        |
-| **Archived suppliers** | It's not possible to update archived suppliers via the Xero API. To unarchive, do it manually in Xero.|                                                 |
+| **Duplicate names**    | Supplier names must be unique. Updating a name to match an existing supplier returns a `400` response.                                                                                       |
+| **Archived suppliers** | It's not possible to update archived suppliers via the Xero API. To unarchive, do it manually in Xero.                                                                                       |     |
 
 #### QuickBooks Online
 
-| Limitation             | Description                                                                                                                                               |
-|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Supplier name**      | If `supplierName` is `null` in the request, QBO uses the value in `contactName` instead. If both fields are `null`, QBO returns a `400` response.|
-| **Default currency**   | It's not possible to update the supplier's currency. Sending a `defaultCurrency` in the request that differs from the current value results in a `400` response. Send a `null` value to leave it unchanged.                      |
-| **Archived suppliers** | All changes to archived suppliers are ignored. Include `"status": "Active"` in the update request to reactivate an archived supplier and apply the changes.|
+| Limitation             | Description                                                                                                                                                                                                 |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Supplier name**      | If `supplierName` is `null` in the request, QBO uses the value in `contactName` instead. If both fields are `null`, QBO returns a `400` response.                                                           |
+| **Default currency**   | It's not possible to update the supplier's currency. Sending a `defaultCurrency` in the request that differs from the current value results in a `400` response. Send a `null` value to leave it unchanged. |
+| **Archived suppliers** | All changes to archived suppliers are ignored. Include `"status": "Active"` in the update request to reactivate an archived supplier and apply the changes.                                                 |
 
 #### FreeAgent
 
-| Limitation           | Description                                                                                                                        |
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| **Supplier name**    | If `supplierName` is `null` in the request, FreeAgent uses the value in `contactName` instead (the value must contain a space). If both fields are `null`, FreeAgent returns a `400` response.         |
-| **Country**          | It's not possible to clear the supplier's country. Sending a `null` value or excluding the field from the request sets the value to the company's default country.                    |
-| **Default currency** | FreeAgent doesn't support currency at supplier level. Any value sent in the request is ignored, and the response returns the company's base currency. |
+| Limitation           | Description                                                                                                                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Supplier name**    | If `supplierName` is `null` in the request, FreeAgent uses the value in `contactName` instead (the value must contain a space). If both fields are `null`, FreeAgent returns a `400` response. |
+| **Country**          | It's not possible to clear the supplier's country. Sending a `null` value or excluding the field from the request sets the value to the company's default country.                             |
+| **Default currency** | FreeAgent doesn't support currency at supplier level. Any value sent in the request is ignored, and the response returns the company's base currency.                                          |
 
 :::tip Recap
 
