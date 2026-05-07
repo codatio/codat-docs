@@ -1,6 +1,6 @@
 ---
 title: "Always-visible search on Companies and Subsidiaries pages in Codat Portal"
-date: "2026-05-06"
+date: "2026-05-07"
 tags: ["Product", "Update", "Portal"]
 authors: pmckinney
 ---
