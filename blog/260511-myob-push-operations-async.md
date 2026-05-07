@@ -5,7 +5,7 @@ tags: ["Deprecation", "MYOB"]
 authors: annasavinovacodat
 ---
 
-On **May 11, 2026**, MYOB push operations will move from synchronous to asynchronous, aligning MYOB with the behaviour of every other Codat integration.
+On **May 11, 2026**, MYOB push operations will move from synchronous to asynchronous, aligning MYOB with the behavior of every other Codat integration.
 
 <!--truncate-->
 
