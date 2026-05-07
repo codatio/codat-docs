@@ -28,7 +28,6 @@ To create a new company, use the [Create company](/platform-api#/operations/crea
 
 If you need to represent a complex multi-entity company structure, use the `referenceParentCompany` and `referenceSubsidiaryCompanies[]` parameters to build out the required hierarchy.
 
-
 <Tabs groupId="language">
 
 <TabItem value="nodejs" label="TypeScript">

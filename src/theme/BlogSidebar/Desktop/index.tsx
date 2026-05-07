@@ -59,7 +59,9 @@ export default function BlogSidebarDesktop({ sidebar }: Props): JSX.Element {
               ))
             : "No deprecations"}
         </ul>
-        <a href="/updates/tags/deprecation" className={styles.sidebarItemList}>See all...</a>
+        <a href="/updates/tags/deprecation" className={styles.sidebarItemList}>
+          See all...
+        </a>
 
         <br />
         <hr />

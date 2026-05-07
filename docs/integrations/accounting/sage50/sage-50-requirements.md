@@ -13,12 +13,11 @@ Codat supports the following variations of Sage 50:
 - Standard and Professional plans
 - Three most recent versions of the software
 
-
 This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>. If you experience issues with the supported versions, please use our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new) to raise a ticket. If you would like to register your interest in an unsupported version, please contact your account manager.
 
 ## Unsupported versions
 
-The Codat Sage 50 Accounts Connector isn't compatible with Sage Canada and all other non-UKI (UK & Ireland) versions of Sage 50. 
+The Codat Sage 50 Accounts Connector isn't compatible with Sage Canada and all other non-UKI (UK & Ireland) versions of Sage 50.
 
 The following UKI versions are also not supported:
 
