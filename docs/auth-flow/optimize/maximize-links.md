@@ -39,7 +39,7 @@ Maximising the number of companies who choose to link their data to maximise the
 
 User journey considerations
 
-Embedding the link flow into your own application journey has enabled more links than manual approaches across Codats clients to date. Bearing this in mind, guidelines for Codat Portal and for API implementation are below.
+Embedding the link flow into your own application journey has enabled more links than manual approaches across Codat's clients to date. Bearing this in mind, guidelines for Codat Portal and for API implementation are below.
 
 API
 
