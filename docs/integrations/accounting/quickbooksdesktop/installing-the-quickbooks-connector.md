@@ -98,7 +98,7 @@ When issues occur in Codat’s QuickBooks Desktop integration, it's usually beca
 Your users can configure the following options:
 
 - **Sync window**: the hours during which Codat will attempt to sync data.
-- **Days**: determines hether the schedule applies to weekdays only, or every day.
+- **Days**: determines whether the schedule applies to weekdays only, or every day.
 - **Time zone**: the end user's local time zone.
 
 <img src="/img/integrations/accounting/quickbooksdesktop/qbd-flow-sync-schedule.png" />

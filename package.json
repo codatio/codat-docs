@@ -84,6 +84,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "prettier --write",
-    "*.{md,mdx}": "prettier --write"
+    "*.{md,mdx}": [
+      "prettier --write",
+      "cspell --no-must-find-files --config cspell.json"
+    ]
   }
 }
