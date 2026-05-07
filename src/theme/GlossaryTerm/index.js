@@ -1,11 +1,22 @@
-import React, { useMemo, useState, useRef, useEffect, useCallback } from 'react';
-import { usePluginData } from '@docusaurus/useGlobalData';
-import styles from './styles.module.css';
+import React, {
+  useMemo,
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+} from "react";
+import { usePluginData } from "@docusaurus/useGlobalData";
+import styles from "./styles.module.css";
 
-export default function GlossaryTerm({ term, definition, routePath = '/glossary', children }) {
+export default function GlossaryTerm({
+  term,
+  definition,
+  routePath = "/glossary",
+  children,
+}) {
   const [showTooltip, setShowTooltip] = useState(false);
   const [tooltipStyle, setTooltipStyle] = useState(null);
-  const [placement, setPlacement] = useState('top');
+  const [placement, setPlacement] = useState("top");
   const [isInsideLink, setIsInsideLink] = useState(false);
   const wrapperRef = useRef(null);
   const tooltipRef = useRef(null);
@@ -13,7 +24,7 @@ export default function GlossaryTerm({ term, definition, routePath = '/glossary'
   // Check if this term is rendered inside an existing <a> tag
   useEffect(() => {
     if (wrapperRef.current) {
-      const parentLink = wrapperRef.current.parentElement?.closest('a');
+      const parentLink = wrapperRef.current.parentElement?.closest("a");
       setIsInsideLink(!!parentLink);
     }
   }, []);
@@ -29,11 +40,12 @@ export default function GlossaryTerm({ term, definition, routePath = '/glossary'
     const preferredGap = 8;
 
     const hasSpaceAbove = wrapperRect.top >= tooltipRect.height + preferredGap;
-    const hasSpaceBelow = viewportHeight - wrapperRect.bottom >= tooltipRect.height + preferredGap;
-    const nextPlacement = hasSpaceAbove || !hasSpaceBelow ? 'top' : 'bottom';
+    const hasSpaceBelow =
+      viewportHeight - wrapperRect.bottom >= tooltipRect.height + preferredGap;
+    const nextPlacement = hasSpaceAbove || !hasSpaceBelow ? "top" : "bottom";
 
     let top;
-    if (nextPlacement === 'top') {
+    if (nextPlacement === "top") {
       top = wrapperRect.top - tooltipRect.height - preferredGap;
     } else {
       top = wrapperRect.bottom + preferredGap;
@@ -43,7 +55,7 @@ export default function GlossaryTerm({ term, definition, routePath = '/glossary'
     let left = wrapperRect.left + wrapperRect.width / 2 - tooltipRect.width / 2;
     left = Math.max(
       horizontalMargin,
-      Math.min(left, viewportWidth - tooltipRect.width - horizontalMargin)
+      Math.min(left, viewportWidth - tooltipRect.width - horizontalMargin),
     );
 
     setPlacement(nextPlacement);
@@ -62,43 +74,46 @@ export default function GlossaryTerm({ term, definition, routePath = '/glossary'
 
     const onScroll = () => updatePosition();
     const onResize = () => updatePosition();
-    window.addEventListener('scroll', onScroll, true);
-    window.addEventListener('resize', onResize);
+    window.addEventListener("scroll", onScroll, true);
+    window.addEventListener("resize", onResize);
     return () => {
       cancelAnimationFrame(rafId1);
       if (rafId2) cancelAnimationFrame(rafId2);
-      window.removeEventListener('scroll', onScroll, true);
-      window.removeEventListener('resize', onResize);
+      window.removeEventListener("scroll", onScroll, true);
+      window.removeEventListener("resize", onResize);
     };
   }, [showTooltip, updatePosition]);
 
-  const pluginData = usePluginData('docusaurus-plugin-glossary');
+  const pluginData = usePluginData("docusaurus-plugin-glossary");
   const effectiveDefinition = useMemo(() => {
-    if (definition && typeof definition === 'string' && definition.length > 0) {
+    if (definition && typeof definition === "string" && definition.length > 0) {
       return definition;
     }
     const terms = (pluginData && pluginData.terms) || [];
     const found = terms.find(
-      t => typeof t.term === 'string' && t.term.toLowerCase() === String(term).toLowerCase()
+      (t) =>
+        typeof t.term === "string" &&
+        t.term.toLowerCase() === String(term).toLowerCase(),
     );
     return found && found.definition ? found.definition : undefined;
   }, [definition, pluginData, term]);
 
   const effectiveRoutePath = useMemo(() => {
-    if (routePath && typeof routePath === 'string' && routePath.length > 0) return routePath;
-    return (pluginData && pluginData.routePath) || '/glossary';
+    if (routePath && typeof routePath === "string" && routePath.length > 0)
+      return routePath;
+    return (pluginData && pluginData.routePath) || "/glossary";
   }, [pluginData, routePath]);
 
   const displayText = children || term;
-  const termId = term.toLowerCase().replace(/\s+/g, '-');
+  const termId = term.toLowerCase().replace(/\s+/g, "-");
 
   const tooltipContent = effectiveDefinition && (
     <span
       ref={tooltipRef}
       id={`tooltip-${termId}`}
       className={
-        `${styles.tooltip} ${showTooltip ? styles.tooltipVisible : ''} ` +
-        `${placement === 'top' ? styles.tooltipTop : styles.tooltipBottom} ` +
+        `${styles.tooltip} ${showTooltip ? styles.tooltipVisible : ""} ` +
+        `${placement === "top" ? styles.tooltipTop : styles.tooltipBottom} ` +
         `${styles.tooltipFloating}`
       }
       role="tooltip"

@@ -5,7 +5,7 @@ description: "Understand the key terms used in Spend Insights and the concepts t
 displayed_sidebar: spendInsights
 ---
 
-This page provides the definitions and relationships between the key terms and data concepts that Spend Insights uses to analyze your customers' spend. We recommend you review these before using the Spend Insights solution to ensure you're making the most of its capabilities. 
+This page provides the definitions and relationships between the key terms and data concepts that Spend Insights uses to analyze your customers' spend. We recommend you review these before using the Spend Insights solution to ensure you're making the most of its capabilities.
 
 ### Company
 
@@ -17,7 +17,7 @@ When a company agrees to share access to their financial data, we establish a li
 
 ### Data source
 
-Codat calls the accounting software or ERP system that contains your customer's financial data a **data source**. Spend Insights reads the data from the data source to provide you with detailed and actionable supplier spend analysis. We use a [connection](/spend-insights/guides/key-terms#connection) to read that data. 
+Codat calls the accounting software or ERP system that contains your customer's financial data a **data source**. Spend Insights reads the data from the data source to provide you with detailed and actionable supplier spend analysis. We use a [connection](/spend-insights/guides/key-terms#connection) to read that data.
 
 ### Supplier
 
@@ -61,7 +61,7 @@ Direct cost, overhead, product costs, spend, spend transaction, payment
 
 :::
 
-An **expense** is a record of money spent by a business (your SMB customer) and paid immediately at the point of purchase, or a refund associated with such transaction. 
+An **expense** is a record of money spent by a business (your SMB customer) and paid immediately at the point of purchase, or a refund associated with such transaction.
 
 Common examples include credit and debit card payments and online purchases. Unlike bills, expenses don't impact accounts payable.
 
@@ -77,7 +77,7 @@ Total expenditure, total expenses, total purchases
 
 ### Payment terms
 
-**Payment terms** are the conditions agreed between a supplier and a business (your SMB customer) that determine when a bill must be paid. 
+**Payment terms** are the conditions agreed between a supplier and a business (your SMB customer) that determine when a bill must be paid.
 
 They are typically expressed as a number of days from the date of the bill.
 

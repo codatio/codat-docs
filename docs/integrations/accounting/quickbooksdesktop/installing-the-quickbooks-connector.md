@@ -95,7 +95,8 @@ Next, the user should click **Update Selected**.
 
 When issues occur in Codat’s QuickBooks Desktop integration, it's usually because the QuickBooks Desktop program is in use at the same time as the Intuit Web Connector is actively syncing data with Codat. This optional screen allows your end users to schedule syncs to run outside of their business hours, avoiding the conflict.
 
-Your users can configure the following options: 
+Your users can configure the following options:
+
 - **Sync window**: the hours during which Codat will attempt to sync data.
 - **Days**: determines hether the schedule applies to weekdays only, or every day.
 - **Time zone**: the end user's local time zone.
@@ -114,7 +115,7 @@ If you have chosen to have your connectors perform a one-time synchronization, y
 
 If you have chosen to install your connectors for ongoing synchronizations, the connector will periodically process any dataset syncs or write operations you have queued using the Codat Portal or API. The connector will also start automatically when the system reboots.
 
-If you are using sync scheduling, data may not be pulled immediately, as the linking action may be taking place outside of the required schedule. 
+If you are using sync scheduling, data may not be pulled immediately, as the linking action may be taking place outside of the required schedule.
 
 ## Installation path
 

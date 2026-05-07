@@ -11,7 +11,7 @@ We've added a new _Advisor_ user role to the Codat Portal.
 
 ## What's new?
 
-The [Codat Portal](https://app.codat.io) now has a new _Advisor_ role. Advisors can add and link companies, view company data, and view webhook consumers, but can't delete companies or change settings. This reduces operational risk and opens up access to insights to more people in your organization. 
+The [Codat Portal](https://app.codat.io) now has a new _Advisor_ role. Advisors can add and link companies, view company data, and view webhook consumers, but can't delete companies or change settings. This reduces operational risk and opens up access to insights to more people in your organization.
 
 You can review the detailed permissions breakdown in the [User roles summary](/configure/user-management/user-roles#user-roles-summary).
 

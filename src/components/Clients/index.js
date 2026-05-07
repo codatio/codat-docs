@@ -7,7 +7,15 @@ const Client = (props) => {
 
   return (
     <div className={styles.client}>
-      <img src={path} alt={`${name} logo`} style={scale ? { maxWidth: `${scale * 100}%`, maxHeight: `${scale * 100}%` } : undefined} />
+      <img
+        src={path}
+        alt={`${name} logo`}
+        style={
+          scale
+            ? { maxWidth: `${scale * 100}%`, maxHeight: `${scale * 100}%` }
+            : undefined
+        }
+      />
     </div>
   );
 };
