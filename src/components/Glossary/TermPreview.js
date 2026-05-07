@@ -80,9 +80,13 @@ const Tooltip = (props) => {
           }
         >
           {isInsideLink ? (
-            <span style={link} ref={ref}>{children}</span>
+            <span style={link} ref={ref}>
+              {children}
+            </span>
           ) : (
-            <a style={link} href={cleanLinkPath} ref={ref}>{children}</a>
+            <a style={link} href={cleanLinkPath} ref={ref}>
+              {children}
+            </a>
           )}
         </RcTooltip>
       )}

@@ -95,7 +95,7 @@ You can view all existing customers in the _Spend Insights_ tab or the _Companie
 
 #### Edit and delete customers
 
-To edit or delete your existing customers, navigate to the _Companies_ tab. Click on the triple-dot menu to view the editing options dropdown. 
+To edit or delete your existing customers, navigate to the _Companies_ tab. Click on the triple-dot menu to view the editing options dropdown.
 
 From there, you can click **Edit** to change company details or **Delete** to delete it. To view the company's Link URL, email template, and existing connections, click **Link** in the same dropdown.
 

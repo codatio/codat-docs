@@ -15,15 +15,15 @@ To focus our efforts on the SDKs where we can deliver the most value, we are dep
 
 All Go modules published under `github.com/codatio/client-sdk-go` will no longer be maintained:
 
-| Product | Module |
-| --- | --- |
-| **Platform** | `github.com/codatio/client-sdk-go/platform` |
-| **Bank Feeds** | `github.com/codatio/client-sdk-go/bank-feeds` |
-| **Lending** | `github.com/codatio/client-sdk-go/lending` |
+| Product               | Module                                               |
+| --------------------- | ---------------------------------------------------- |
+| **Platform**          | `github.com/codatio/client-sdk-go/platform`          |
+| **Bank Feeds**        | `github.com/codatio/client-sdk-go/bank-feeds`        |
+| **Lending**           | `github.com/codatio/client-sdk-go/lending`           |
 | **Sync for Commerce** | `github.com/codatio/client-sdk-go/sync-for-commerce` |
 | **Sync for Expenses** | `github.com/codatio/client-sdk-go/sync-for-expenses` |
 | **Sync for Payables** | `github.com/codatio/client-sdk-go/sync-for-payables` |
-| **Sync for Payroll** | `github.com/codatio/client-sdk-go/sync-for-payroll` |
+| **Sync for Payroll**  | `github.com/codatio/client-sdk-go/sync-for-payroll`  |
 
 After **May 7, 2026**:
 
@@ -43,7 +43,7 @@ Codat's APIs remain fully available to Go applications. If you are currently usi
 
 If you don't use the Go SDK, no action is required on your part.
 
-If you use the Go SDK, migrate to direct API calls or a supported SDK before **May 7, 2026**. 
+If you use the Go SDK, migrate to direct API calls or a supported SDK before **May 7, 2026**.
 
 If you have questions or need assistance, reach out to your dedicated Codat representative or contact our [support team](mailto:support@codat.io).
 

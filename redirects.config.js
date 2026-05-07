@@ -707,7 +707,7 @@ module.exports = {
       to: "/spend-insights/reports/spend-analysis",
       from: "/spend-insights/guides/analyze-spend",
     },
-    
+
     // assess
 
     {
