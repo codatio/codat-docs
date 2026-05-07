@@ -26,7 +26,7 @@ const cruds = ["get", "post", "put", "patch", "delete"];
 // },
 
 const generatePath = (prefix, id) => {
-  const path = `${prefix}/#/operations/${id}`;
+  const path = `${prefix}/operations/${id}`;
 
   return {
     path,
