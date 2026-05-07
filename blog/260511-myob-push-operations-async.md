@@ -23,8 +23,8 @@ The change only affects how you confirm the outcome of a push. Pushes themselves
 
 To track the final status of a push operation to MYOB, use one of the following:
 
-- **Push webhooks** (recommended) — subscribe to the `{dataType}.write.successful` and `{dataType}.write.unsuccessful` events. See [Consume the data types write webhook](/using-the-api/webhooks/event-types).
-- **Status endpoints** — poll the [Get push operation](/platform-api#/operations/get-push-operation) endpoint using the `pushOperationKey` returned in the initial response.
+- **Push webhooks** (recommended) — subscribe to the `{dataType}.write.successful` and `{dataType}.write.unsuccessful` events. See [Consume the data types write webhook](/using-the-api/push#consume-the-data-types-write-webhook).
+- **Status endpoints** — poll the [Get push operation](/using-the-api/push#monitor-operation-status) endpoint using the `pushOperationKey` returned in the initial response.
 
 If you already push to other Codat integrations, you'll likely already have this in place.
 
