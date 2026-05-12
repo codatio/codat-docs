@@ -82,3 +82,4 @@ Click on a company to access information pertaining to it:
 - A brief **Summary** that includes the company's revenue, operating profit, and equity, as well as an activity log.
 - The **Manage connections** menu that lets you copy the LInk URL and unlink or delete an existing connection.
 - Company's **Data** and **Data history**, including the [history of dataset reads and their statuses](/core-concepts/status), and uploaded files.
+- For parent companies, a **Subsidiaries** menu that lists all child companies with the same search, sort, filter, and edit, delete, and link actions available on the top-level Companies page.
