@@ -143,7 +143,7 @@ This section covers the supplier's name, the most common method used to pay them
 
 ![A section of the Supplier Analysis tab from the Excel report that displays the supplier name, most common payment method, and imported date columns.](/img/spend-insights/si-spend-analysis-report-suppliers.png)
 
-In the above example, the supplier _Adams Group_ is most commonly paid by a bank transfer and first appeared in the file on September 01, 2025.
+In the above example, the supplier _Adams - Hettinger_ is most commonly paid by a bank transfer and first appeared in the file on March 02, 2026.
 
 If you download a spend analysis file a month later, you will be able to identify new suppliers by using the imported date.
 
