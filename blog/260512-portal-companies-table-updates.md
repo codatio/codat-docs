@@ -28,7 +28,7 @@ A dedicated **Platforms** column now sits between the **Connection** and **Creat
 
 Platform pills, the **+N** chip, and the connection status will become clickable. Selecting any of them opens a connections panel for that company — without leaving the table.
 
-![Connections panel opened from the Platforms column](/img/updates/260513-portal-connections-modal.png)
+![Connections panel opened from the Platforms column](/img/updates/260513-portal-connections-modal.gif)
 
 - Every connection for the company is listed with its logo, platform name, connection ID, source type, and live status pill.
 - When one or more connections have errors, an info-style alert appears above the list showing a count of affected connections and a quick link to manage them.
@@ -49,8 +49,6 @@ A new **Columns** dropdown will let you choose which columns appear on the Compa
 ### Sortable on every column
 
 You can now click any sortable column header to sort the table by that column, with a visual indicator showing the active column and direction. This applies on both the Companies and Subsidiaries pages.
-
-![Sorting on the Companies table](/img/updates/260513-portal-sorting.png)
 
 ### Last data sync column rename
 
