@@ -13,11 +13,11 @@ We are rolling out a series of improvements to the Companies table in the Codat 
 
 Throughout **May 2026**, we are shipping a set of updates to the Companies table in the [Codat Portal](https://app.codat.io). Some are already live; others are rolling out over the coming weeks.
 
-![Companies table improvements](/img/updates/260512-portal-platforms-column.png)
-
 ### Platforms column
 
 A dedicated **Platforms** column now sits between the **Connection** and **Created** columns on the Companies table, restoring the at-a-glance view of which integrations each company has connected.
+
+![Companies table improvements](/img/updates/260512-portal-platforms-column.png)
 
 - Pill colours reflect the connection state for each platform: **green** for linked, **amber** for deauthorized, **grey** for unlinked, and **neutral** for pending authorization.
 - When a company has more platforms than fit in the column, a **+N** chip indicates how many additional integrations are connected.
