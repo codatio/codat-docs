@@ -46,10 +46,6 @@ A new **Columns** dropdown will let you choose which columns appear on the Compa
 - The same dropdown will appear on the **Subsidiaries** page, with your selection shared between the two views so your preference follows you.
 - **Company name** and **Connection status** stay locked on and are not listed in the dropdown.
 
-### Sortable on every column
-
-You can now click any sortable column header to sort the table by that column, with a visual indicator showing the active column and direction. This applies on both the Companies and Subsidiaries pages.
-
 ### Last data sync column rename
 
 The previous **Last Updated** column has been renamed to **Last data sync** to more accurately describe the value: the timestamp of the most recent successful data exchange across all of a company's connections.
