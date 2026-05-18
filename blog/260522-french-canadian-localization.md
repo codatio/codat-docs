@@ -2,7 +2,7 @@
 title: "Codat now speaks Québécois: French Canadian (fr-CA) localization"
 date: "2026-05-22"
 tags: ["Product", "Update", "Link", "Portal"]
-authors: codat-bot
+authors: avanjani
 ---
 
 We're rolling out Quebec French (fr-CA) localization across the client-facing surfaces that financial institutions and their SMB clients use every day.
