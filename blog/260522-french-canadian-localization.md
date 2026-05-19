@@ -28,6 +28,10 @@ Full fr-CA translation of the SMB-facing connect flow, including:
 - Error states
 - In-modal language toggle (top-right, globe icon and locale code)
 
+![Link platform selection in fr-CA, with the locale toggle visible](/img/updates/260522-fr-ca-link-select.png)
+
+![Link OAuth consent screen in fr-CA](/img/updates/260522-fr-ca-link-consent.png)
+
 Supported integrations in this release:
 
 - QuickBooks Online
@@ -44,6 +48,8 @@ Supported integrations in this release:
 ### Portal UI
 
 The Spend Insights, Companies, and Create Company surfaces are translated end-to-end, with locale-aware date and number formatting. The most-used advisor pages are now available in French.
+
+![Spend Insights in the Codat Portal rendered in fr-CA](/img/updates/260522-fr-ca-portal.png)
 
 ### Spend Reports
 
