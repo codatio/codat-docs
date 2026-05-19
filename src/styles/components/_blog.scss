@@ -8,6 +8,7 @@
     h2 {
       a {
         text-decoration: none;
+        font-family: var(--heading-font), "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", emoji;
       }
     }
   }
@@ -31,6 +32,7 @@
 
       h1 {
         font-size: var(--ifm-h1-font-size) !important;
+        font-family: var(--heading-font), "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", emoji;
       }
 
       h2 {
