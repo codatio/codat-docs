@@ -1,5 +1,5 @@
 ---
-title: "Codat now speaks French 🇨🇦"
+title: "Codat now speaks Canadian French"
 date: "2026-05-22"
 tags: ["Product", "Update", "Link", "Portal"]
 authors: avanjani
