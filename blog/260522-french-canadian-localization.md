@@ -1,5 +1,5 @@
 ---
-title: "Codat now speaks Québécois: French Canadian (fr-CA) localization"
+title: "Codat now speaks French 🇨🇦"
 date: "2026-05-22"
 tags: ["Product", "Update", "Link", "Portal"]
 authors: avanjani
