@@ -1,6 +1,7 @@
-# Xero scopes by use case
-
-Detailed guidance on the new granular access scopes required for the Xero partnership certification
+---
+title: "Xero scopes by use case"
+description: "Detailed guidance on the new granular access scopes required for the Xero partnership certification"
+---
 
 [Checkpoint 7: Scopes](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations), part of the Xero App Partner certification program, requires that apps have the minimal access to data as required by their use case.
 
@@ -15,9 +16,9 @@ We have mapped out the Xero scopes that apply to each specific Codat use case in
 
 Xero is replacing its broad OAuth 2.0 scopes — most notably `accounting.transactions` — with a set of more granular scopes, so your app requests only the data it needs.
 
-If you create a new Xero app on or after **2 March 2026**, you must use the new granular scopes from day one. If your app already exists, you can begin requesting the granular scopes from **April 2026**, and you must complete your migration by **September 2027**.
+If you create a new Xero app on or after **March 2, 2026**, you must use the new granular scopes from day one. If your app already exists, you can begin requesting the granular scopes from **April 2026**, and you must complete your migration by **September 2027**.
 
-Granular scopes are not applied to existing tokens automatically. Because your app is requesting a different set of permissions, each customer connection requires fresh, explicit consent, and you'll need customers to reauthenticate with the granular apps.
+Granular scopes aren't applied to existing tokens automatically. Because your app is requesting a different set of permissions, each customer connection requires fresh, explicit consent, and you'll need customers to reauthenticate with the granular apps.
 
 For full details, see Xero's [Granular Scopes FAQs](https://developer.xero.com/faq/granular-scopes) and the announcement post, [Upcoming changes to Xero accounting API scopes](https://devblog.xero.com/upcoming-changes-to-xero-accounting-api-scopes-705c5a9621a0).
 
