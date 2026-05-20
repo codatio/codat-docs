@@ -22,7 +22,7 @@ We are introducing the following improvements:
 - Focusing the empty search input opens a popover that lists exactly which fields you can search by: **Company ID**, **Company name**, **Connection ID**, **Connected platform**, and **User who created it**.
 - An updated placeholder ("Search company, platform, ID...") makes the supported search terms clearer at a glance.
 
-These improvements apply to the Companies and Subsidiaries pages and build on the [multi-entity company table](/blog/multi-entity-portal-update) we shipped earlier this year.
+These improvements apply to the Companies and Subsidiaries pages and build on the [multi-entity company table](/updates/260217-multi-entity-portal-update) we shipped earlier this year.
 
 ## Who is this relevant for?
 
