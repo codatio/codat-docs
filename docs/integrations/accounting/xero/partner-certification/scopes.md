@@ -3,7 +3,7 @@ title: "Xero scopes by use case"
 description: "Detailed guidance on the new granular access scopes required for the Xero partnership certification"
 ---
 
-[Checkpoint 7: Scopes](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations), part of the Xero App Partner certification program, requires that apps have the minimal access to data as required by their use case.
+[Checkpoint 5: Scopes](https://developer.xero.com/documentation/xero-app-store/app-partner-guides/certification-checkpoints/#required-for-all-integrations), part of the Xero App Partner certification program, requires that apps have the minimal access to data as required by their use case.
 
 To comply, you must define the access scopes you need for your intended use case. During the app review, Xero will ask you to justify your use of scopes and explain why you are accessing the related data.
 
