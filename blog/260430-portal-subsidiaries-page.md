@@ -21,7 +21,7 @@ We are introducing the following improvements:
 - Dedicated subsidiaries table reuses the familiar Companies table, including search, sort, connection-status filter, and infinite scroll.
 - Edit, delete, and link actions are available directly from each subsidiary row, matching the behavior on the top-level Companies page.
 
-These improvements apply to all parent companies in the Portal and complement the [hierarchical company table](/blog/multi-entity-portal-update) we shipped earlier this year.
+These improvements apply to all parent companies in the Portal and complement the [hierarchical company table](/updates/260217-multi-entity-portal-update) we shipped earlier this year.
 
 ## Who is this relevant for?
 
