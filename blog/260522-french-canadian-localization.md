@@ -33,6 +33,7 @@ Full Canadian French translation of the commercial business-facing connect flow,
     justifyContent: "center",
     alignItems: "center",
     flexWrap: "wrap",
+    marginBottom: "2rem",
   }}
 >
   <div
