@@ -1,7 +1,7 @@
 ---
 title: "Codat now speaks French"
 date: "2026-05-22"
-tags: ["Product", "Update", "Link", "Portal"]
+tags: ["Product", "Update", "Link", "Portal", "Spend Reports", "Help Docs"]
 authors: avanjani
 ---
 
