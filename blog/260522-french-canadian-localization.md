@@ -1,5 +1,5 @@
 ---
-title: "Codat now speaks Canadian French"
+title: "Codat now speaks French"
 date: "2026-05-22"
 tags: ["Product", "Update", "Link", "Portal"]
 authors: avanjani
@@ -31,19 +31,46 @@ Full Canadian French translation of the commercial business-facing connect flow,
     display: "flex",
     gap: "1rem",
     justifyContent: "center",
+    alignItems: "center",
     flexWrap: "wrap",
   }}
 >
-  <div style={{ flex: "1", minWidth: "280px" }}>
+  <div
+    style={{
+      flex: "1",
+      minWidth: "280px",
+      display: "flex",
+      justifyContent: "center",
+    }}
+  >
     <img
       src="/img/updates/260522-fr-ca-link-select.png"
       alt="Link platform selection in Canadian French, with the locale toggle visible"
+      style={{
+        maxHeight: "520px",
+        width: "auto",
+        height: "auto",
+        objectFit: "contain",
+      }}
     />
   </div>
-  <div style={{ flex: "1", minWidth: "280px" }}>
+  <div
+    style={{
+      flex: "1",
+      minWidth: "280px",
+      display: "flex",
+      justifyContent: "center",
+    }}
+  >
     <img
       src="/img/updates/260522-fr-ca-link-consent.png"
       alt="Link OAuth consent screen in Canadian French"
+      style={{
+        maxHeight: "520px",
+        width: "auto",
+        height: "auto",
+        objectFit: "contain",
+      }}
     />
   </div>
 </div>
