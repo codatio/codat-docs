@@ -1,7 +1,7 @@
 ---
 title: "Codat now speaks French"
 date: "2026-05-22"
-tags: ["Product", "Update", "Link", "Portal", "Spend Reports", "Help Docs"]
+tags: ["Product", "Update", "Link", "Portal", "Spend Reports", "Help Hub"]
 authors: avanjani
 ---
 
@@ -15,7 +15,7 @@ On **May 22, 2026**, we are shipping a first-class Canadian French experience ac
 
 ## What's included
 
-This release covers surfaces across Link, Portal, Spend Reports and Help Docs. Canadian French is gated by a language toggle and the client's Link configuration — existing English-only deployments see no change.
+This release covers surfaces across Link, Portal, Spend Reports and Help Hub. Canadian French is gated by a language toggle and the client's Link configuration — existing English-only deployments see no change.
 
 ### Link journey
 
