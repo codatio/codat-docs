@@ -11,11 +11,11 @@ We're rolling out Canadian French (fr-CA) localization across the client-facing 
 
 ## What's new?
 
-On **May 22, 2026**, we are shipping a first-class Canadian French experience across Link, the Codat Portal, customer-facing reports, and payment method inference. This enables our clients operating in Canada to serve French-speaking Quebec commercial businesses in line with the Charter of the French Language (Bill 96), and lays the groundwork for any future language we ship.
+On **May 22, 2026**, we are shipping a first-class Canadian French experience across Link, the Codat Portal, Spend Reports, and payment method inference. This enables our clients operating in Canada to serve French-speaking Quebec commercial businesses in line with the Charter of the French Language (Bill 96), and lays the groundwork for any future language we ship.
 
 ## What's included
 
-This release covers four client-facing surfaces. Canadian French is gated by a language toggle and the client's Link configuration — existing English-only deployments see no change.
+This release covers surfaces across Link, Portal, Spend Reports and Help Docs. Canadian French is gated by a language toggle and the client's Link configuration — existing English-only deployments see no change.
 
 ### Link journey
 
@@ -26,9 +26,27 @@ Full Canadian French translation of the commercial business-facing connect flow,
 - Error states
 - In-modal language toggle (top-right, globe icon and locale code)
 
-![Link platform selection in Canadian French, with the locale toggle visible](/img/updates/260522-fr-ca-link-select.png)
-
-![Link OAuth consent screen in Canadian French](/img/updates/260522-fr-ca-link-consent.png)
+<div
+  style={{
+    display: "flex",
+    gap: "1rem",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  }}
+>
+  <div style={{ flex: "1", minWidth: "280px" }}>
+    <img
+      src="/img/updates/260522-fr-ca-link-select.png"
+      alt="Link platform selection in Canadian French, with the locale toggle visible"
+    />
+  </div>
+  <div style={{ flex: "1", minWidth: "280px" }}>
+    <img
+      src="/img/updates/260522-fr-ca-link-consent.png"
+      alt="Link OAuth consent screen in Canadian French"
+    />
+  </div>
+</div>
 
 Supported integrations in this release:
 
@@ -61,7 +79,6 @@ Payment method mapping inference now handles Canadian French source data, so ERP
 
 - **Compliance, not just translation.** Bill 96 requires that French experiences be available with comparable quality to English across customer-facing digital products. This release meets the customer-facing bar.
 - **Ready for Canadian FIs.** Any client with Quebec operations now has a Canadian French-ready stack to launch against — no per-client translation effort.
-- **Foundation for multilingual.** The localization infrastructure built here — string catalogs, locale toggle, and the client review workflow — is the platform for any future language we ship.
 
 ## Who is this relevant for?
 
