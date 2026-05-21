@@ -96,7 +96,7 @@ The Spend Insights, Companies, and Create Company surfaces are translated end-to
 
 ### Spend Reports
 
-Customer-facing Spend Reports are localized — field names, labels, section headers, and static copy all render in Canadian French when the report is generated for a French locale client. The underlying data remains language-independent, and CSV exports stay locale-neutral for downstream pipelines.
+Spend Reports are localized — field names, labels, section headers, and static copy all render in Canadian French when the report is generated for a French locale client. The underlying data remains language-independent, and CSV exports stay locale-neutral for downstream pipelines.
 
 ### Payment method inference
 
