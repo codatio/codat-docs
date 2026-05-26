@@ -20,10 +20,7 @@ Many SMBs still rely on manual AP functions to run their business. One study sho
 <ul className="card-container col-3">
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
+      <FeatureBullet />
       <h3>Standardised API</h3>
     </div>
     <p>
@@ -33,7 +30,7 @@ Many SMBs still rely on manual AP functions to run their business. One study sho
 
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/copy-feature-bullet.svg" className="mini-icon" />
+    <FeatureBullet />
     <h3>Saves time</h3>
   </div>
   <p>
@@ -45,10 +42,7 @@ Many SMBs still rely on manual AP functions to run their business. One study sho
 
   <li className="card">
     <div className="header">
-      <img
-        src="/img/wp-icons/copy-feature-bullet.svg"
-        className="mini-icon"
-      />
+      <FeatureBullet />
       <h3>Increase Retention</h3>
     </div>
     <p>

@@ -5,17 +5,17 @@ tags: ["Product", "Update", "Bill Pay"]
 authors: pzaichkina
 ---
 
-You can now update existing bills directly through our Bill Pay solution. 
+You can now update existing bills directly through our Bill Pay solution.
 
 <!--truncate-->
 
 ## What's new?
 
-We've expanded our [Bill Pay](/payables/overview) solution with the new [Update bills](/sync-for-payables-v2-api#/operations/update-bill) endpoint. 
+We've expanded our [Bill Pay](/payables/overview) solution with the new [Update bills](/sync-for-payables-v2-api#/operations/update-bill) endpoint.
 
 No more deleting and recreating bills just to fix a typo or a changed line item. With this update, your customers can edit bills in their accounting software, and we will automatically sync these changes to your platform, keeping the records accurate and up-to-date.
 
-The endpoint currently supports our FreeAgent, QuickBooks Online, and Xero integrations. 
+The endpoint currently supports our FreeAgent, QuickBooks Online, and Xero integrations.
 
 ## Who is this relevant for?
 

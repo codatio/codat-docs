@@ -55,7 +55,7 @@ If you want to replay a single event (i.e. resend a single message), click on th
 
 Next, click the triple-dot menu next to the message and click **Resend**. This will send the same message to your endpoint again.
 
-![A fragment of the UI that displays a Resend button next to a failed attempt](https://docs.svix.com/assets/images/resend-single-a4fb6e65f27f27e5700becb523135c2f.png)
+![A fragment of the UI that displays a Resend button next to a failed attempt](/img/use-the-api/0055-resend-single-message.png)
 
 ### Multiple messages
 

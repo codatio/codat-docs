@@ -22,7 +22,8 @@
     "links:check": "linkinator ./build --recurse --verbosity error --skip \".*github.*|.*localhost.*\"",
     "vale:sync": "vale sync",
     "vale": "vale docs/",
-    "vale:check": "vale --minAlertLevel=warning docs/"
+    "vale:check": "vale --minAlertLevel=warning docs/",
+    "prepare": "husky"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "2.32.2",
@@ -58,7 +59,9 @@
     "@docusaurus/module-type-aliases": "3.9.2",
     "@docusaurus/types": "3.9.2",
     "cspell": "8.19.4",
+    "husky": "9.1.7",
     "linkinator": "7.5.1",
+    "lint-staged": "16.4.0",
     "prettier": "3.7.4"
   },
   "browserslist": {
@@ -78,5 +81,12 @@
   },
   "overrides": {
     "lodash-es": "4.17.23"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "prettier --write",
+    "*.{md,mdx}": [
+      "prettier --write",
+      "cspell --no-must-find-files --config cspell.json"
+    ]
   }
 }

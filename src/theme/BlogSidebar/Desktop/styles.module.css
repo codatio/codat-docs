@@ -37,7 +37,14 @@
 
 .sidebarItemTitle {
   font-size: var(--ifm-h3-font-size);
-  font-weight: var(--ifm-font-weight-bold);
+  font-weight: var(--ifm-font-weight-light);
+  font-family: var(--heading-font);
+  color: #18103A;
+  letter-spacing: 0.04em;
+}
+
+html[data-theme="dark"] .sidebarItemTitle {
+  color: #ECEDE5;
 }
 
 .sidebarItemList {
@@ -58,7 +65,11 @@
 }
 
 .sidebarItemLinkActive {
-  color: var(--ifm-color-primary) !important;
+  color: #6482A7 !important;
+}
+
+html[data-theme="dark"] .sidebarItemLinkActive {
+  color: #B2D4C7 !important;
 }
 
 @media (max-width: 996px) {

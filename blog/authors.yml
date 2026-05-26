@@ -148,8 +148,26 @@ tom-binnington-codat:
   url: https://github.com/tom-binnington-codat
   image_url: https://github.com/tom-binnington-codat.png
 
+brettdorrans:
+  name: Brett Dorrans
+  title: Staff Frontend Engineer
+  url: https://github.com/brettdorrans
+  image_url: https://github.com/brettdorrans.png
+
 a-diarra:
   name: Aïcha Diarra
   title: Head of Support
   url: https://github.com/a-diarra
   image_url: https://github.com/a-diarra.png
+
+annasavinovacodat:
+  name: Anna Savinova
+  title: Technical Lead
+  url: https://github.com/annasavinovacodat
+  image_url: https://github.com/annasavinovacodat.png
+
+avanjani:
+  name: Amit Vanjani
+  title: Principal Product Manager
+  url: https://github.com/avanjani-codat
+  image_url: https://github.com/avanjani-codat.png

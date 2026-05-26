@@ -38,7 +38,7 @@ Access your clients' accounts payable data within minutes and gain insights on t
 
 - Ongoing monitoring and data refresh with a single click or on an automatic schedule, providing ongoing proactive service excellence to your clients.
 
-![Decorative image of schematic graphs, charts, and amounts that represent insights into spend Codat's solution provides](/img/use-cases/summary-pages/spend-insights.png)
+![Decorative image of schematic graphs, charts, and amounts that represent insights into spend Codat's solution provides](/img/banners/spend-insights-use-case.png)
 
 ---
 

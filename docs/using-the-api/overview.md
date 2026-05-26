@@ -24,11 +24,13 @@ Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
   
   We've recently <a href="/updates/230901-new-products">reorganized our solutions</a>. You can find the OpenAPI specifications you may have been using before here:
 
-  <li><a href="/sync-for-commerce-v1-api">Sync for Commerce API v1</a></li>
-  <li><a href="/sync-for-expenses-v1-api">Sync for Expenses API v1</a></li>
-  <li><a href="/accounting-api">Accounting API</a></li>
-  <li><a href="/banking-api">Banking API</a></li>
-  <li><a href="/commerce-api">Commerce API</a></li>
+  <ul>
+    <li><a href="/sync-for-commerce-v1-api">Sync for Commerce API v1</a></li>
+    <li><a href="/sync-for-expenses-v1-api">Sync for Expenses API v1</a></li>
+    <li><a href="/accounting-api">Accounting API</a></li>
+    <li><a href="/banking-api">Banking API</a></li>
+    <li><a href="/commerce-api">Commerce API</a></li>
+  </ul>
 </details>
 
 ### Utilities

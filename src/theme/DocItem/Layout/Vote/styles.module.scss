@@ -4,9 +4,14 @@
 }
 
 .voteHeader {
-  font-weight: bold;
+  font-weight: 400;
+  color: #18103A;
   margin-bottom: 1em;
   opacity: 0.75;
+}
+
+html[data-theme="dark"] .voteHeader {
+  color: #ECEDE5;
 }
 
 .feedbackOptions {

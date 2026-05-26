@@ -48,7 +48,6 @@ To add a call-to-action-link:
 4. Enter the link URL in the **Call-to-action URL** box.
 5. Click **Save**.
 
-
 ## Optional: Add your organization's logo
 
 You can customize the appearance of the default Codat authentication site by adding your organization's logo. It will appear to the left of the Sage logo.
@@ -136,12 +135,12 @@ Next, make the data connection ID from step two (above) available to the SMB use
 
 ## Surface the one-time password (OTP) to the user
 
-In order to authenticate the connection, your user needs to enter a one-time password in their Sage product. Call the OTP endpoint to retrieve the OTP, then display it to the user in your application. 
+In order to authenticate the connection, your user needs to enter a one-time password in their Sage product. Call the OTP endpoint to retrieve the OTP, then display it to the user in your application.
 
 Let the user know they need to enter it when connecting a source bank account.
 
 ```
-GET https://api.codat.io/companies/{{companyId}}/connections/{{dataConnectionId}}/bankFeeds/otp
+POST https://api.codat.io/companies/{{companyId}}/connections/{{dataConnectionId}}/bankFeeds/otp
 ```
 
 ## SMB user flow: Connect a source bank account to Sage
@@ -162,13 +161,15 @@ Alternatively, you can [authenticate users through your own web app](/integratio
 ![Default Codat authentication UI - Connect your bank account to Sage](/img/integrations/bank-feeds/new_sage_UI_with_connectionID_and_OTP_field.png)
 
 4. If the SMB user successfully authenticated with Codat, the flow displays a list of available source bank accounts created using the [Create single source account](/bank-feeds-api#/operations/create-source-account) or [Create source accounts](/bank-feeds-api#/operations/create-batch-source-account) endpoints.
-    For example:
+   For example:
 
-    ![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
+   ![Sage account selection](/img/old/7ef73f0-sbs-select-source-bank-account-multiple.png "Redirect to account selection page. Select the bank account that you want to use")
 
-7. The SMB user selects the bank account they want to connect, then clicks **OK**.
+5. The SMB user selects the bank account they want to connect, then clicks **OK**.
 
-8. The SMB user is redirected to the Sage product from which they started the connection flow.
+6. The SMB user is redirected to the Sage product from which they started the connection flow.
+
+7. On some Sage supported products, the SMB user may need to click **Confirm** on the account's Banking Cloud tab to change the status from `Pending Confirmation` to `Pending`.
 
 You can now use the [GET /bankFeedAccounts](/bank-feeds-api#/operations/get-bank-feeds) endpoint to retrieve the source bank accounts. The `status` property of a source bank account must have changed to `connected` before you can begin to write bank transactions from the account.
 

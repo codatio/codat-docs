@@ -6,8 +6,7 @@ module.exports = {
     srcDark: `/logos/codat-docs-light.png`,
     href: "/",
     target: "_self",
-    width: 170,
-    height: 28,
+    width: 120,
   },
   items: [
     {

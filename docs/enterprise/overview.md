@@ -17,7 +17,7 @@ banner_text: "Gain additional insight into the technology suite and implementati
 ---
 
 <head>
-  <title>{`Codat_docs | Enterprise at Codat`}</title>
+  <title>{`Codat Docs | Enterprise at Codat`}</title>
   <meta
     name="description"
     content="Gain additional insight into the technology suite and implementation process behind Codat's specialized solutions based on data sharing, AI insights, and domain expertise"
@@ -34,7 +34,7 @@ banner_text: "Gain additional insight into the technology suite and implementati
 
 <li className="card animation-pulse">
   <div className="header">
-    <img src="/img/wp-icons/Graph-1.png" className="mini-icon" />
+    <FeatureBullet />
     <h3>
       <a
         href="https://docs.codat.io/enterprise/tech-overview/architecture/overview"
@@ -51,7 +51,7 @@ banner_text: "Gain additional insight into the technology suite and implementati
 </li>
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/user-list.png" className="mini-icon" />
+    <RelationshipsIcon />
     <h3>
       <a
         href="https://docs.codat.io/enterprise/tech-implementation/implementation-roles"
@@ -68,7 +68,7 @@ banner_text: "Gain additional insight into the technology suite and implementati
 </li>
 <li className="card">
   <div className="header">
-    <img src="/img/wp-icons/Stack.png" className="mini-icon" />
+    <FeatureBullet />
     <h3>
       <a href="https://docs.codat.io/using-the-api/overview" target="_blank">
         API reference

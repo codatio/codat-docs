@@ -33,7 +33,7 @@ This is the headline metric of the report. It expresses the total estimated annu
 
 ### Cashback value
 
-This is the estimated annual cashback your customer could earn by moving eligible supplier payments to a virtual card programme. To calculate it, we apply a tiered rate to the total cardable spend. 
+This is the estimated annual cashback your customer could earn by moving eligible supplier payments to a virtual card programme. To calculate it, we apply a tiered rate to the total cardable spend.
 
 **Cardable spend** is the total amount of bills and expenses for suppliers who are currently paying by a non-card method and are eligible for card conversion.
 
@@ -55,12 +55,12 @@ To calculate the metric, we multiply the number of cardable payments by 3 minute
 
 This prioritized table includes your customer's top 3 suppliers ranked by annual spend, identifying the best candidates for card conversion. The table excludes suppliers whose dominant payment method is credit card.
 
-| Column | Description |
-|---|---|
-| **Supplier name** | The supplier's name as recorded in your customer's accounting system. |
-| **Annual spend** | Total bills amount and expense amount for this supplier over the reporting period. |
-| **Settlement terms (days)** | The agreed payment terms for this supplier. |
-| **Current payment method** | The method most commonly used to pay this supplier. |
+| Column                      | Description                                                                        |
+| --------------------------- | ---------------------------------------------------------------------------------- |
+| **Supplier name**           | The supplier's name as recorded in your customer's accounting system.              |
+| **Annual spend**            | Total bills amount and expense amount for this supplier over the reporting period. |
+| **Settlement terms (days)** | The agreed payment terms for this supplier.                                        |
+| **Current payment method**  | The method most commonly used to pay this supplier.                                |
 
 <ReadNext
   links={[
@@ -72,9 +72,6 @@ This prioritized table includes your customer's top 3 suppliers ranked by annual
       "Ongoing Insights report reference",
       "/spend-insights/reports/ongoing-insights",
     ],
-    [
-      "Vendor match report reference",
-      "/spend-insights/reports/vendor-match",
-    ],
+    ["Vendor match report reference", "/spend-insights/reports/vendor-match"],
   ]}
 />
