@@ -51,7 +51,7 @@ This tab includes:
 | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Company name, Registration #, Tax #, Phone, Addresses, Web links                                          | Administrative details of the customer entity.                                              | Use to identify and verify the customer for compliance purposes.                                                                                           |
 | Start date, End date, Months reviewed                                                                     | The date range covered by the report.                                                       | Source data used in the report is selected based on these dates. <br/> Codat sets these values based on your organization's requirements.                  |
-| Excludes suppliers with annual spend below                                                                | The minimum annual spend threshold that is applied when selecting suppliers for the report. | Suppliers with lower spend are filtered out to focus on meaningful relationships. <br/> Codat sets these values based on your organization's requirements. |
+| Excludes suppliers with annual spend below                                                                | The minimum annualized spend threshold applied when selecting suppliers for the **Supplier Analysis** tab. The **Spend Analysis** tab totals are calculated across all suppliers and are not affected by this threshold. | Suppliers with annualized spend below this value are excluded from the Supplier Analysis tab to focus on meaningful relationships. As a result, Spend Analysis _Overall_ totals can exceed the sum of Supplier Analysis rows when the threshold is non-zero. <br/> Codat sets these values based on your organization's requirements. |
 | Suppliers count, # of bills, Bills amount, # of payments, Payments amount, # of Expenses, Expenses amount | High-level volume and value totals across all suppliers in the report.                      | Use these summary values for quick checks on data quality, calculating your own metrics, or initial conversations with your customers.                     |
 
 ## Entity Spend Breakdown tab
@@ -79,6 +79,10 @@ Each row in the tab represents a payment method (Credit Card, Debit Card, Bank T
 - **Size the card conversion opportunity.** Spend on non-card methods represents the opportunity size for virtual card migration.
 - **Identify payment patterns at a glance.** Methods like check often have longer settlement times and higher processing costs, and you can easily spot their prevalence.
 - **Benchmark payment behavior.** Compare the distribution across payment methods over time to track the impact of card enablement efforts.
+
+:::note Scope of Spend Analysis totals
+The **Spend Analysis** tab aggregates bills, payments, and expenses across **all** suppliers in the reporting period. It is **not** filtered by the _Excludes suppliers with annual spend below_ threshold shown on the Customer tab — that filter only applies to the **Supplier Analysis** tab. When the threshold is non-zero, the Spend Analysis _Overall_ totals will be higher than the sum of the Supplier Analysis supplier rows.
+:::
 
 ### Definitions
 
