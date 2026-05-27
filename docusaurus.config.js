@@ -98,6 +98,8 @@ const config = {
   organizationName: "codat",
   projectName: "codat-docs",
 
+  scripts: [{ src: "https://status.codat.io/embed/script.js", async: true }],
+
   //onBrokenLinks: 'throw',
   onBrokenLinks: "warn",
   //onBrokenMarkdownLinks: 'warn',
