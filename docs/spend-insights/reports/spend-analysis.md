@@ -47,12 +47,12 @@ The **Customer** tab provides an at-a-glance view of the company you're reviewin
 
 This tab includes:
 
-| Detail                                                                                                    | Description                                                                                 | What it tells you                                                                                                                                          |
-| --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Company name, Registration #, Tax #, Phone, Addresses, Web links                                          | Administrative details of the customer entity.                                              | Use to identify and verify the customer for compliance purposes.                                                                                           |
-| Start date, End date, Months reviewed                                                                     | The date range covered by the report.                                                       | Source data used in the report is selected based on these dates. <br/> Codat sets these values based on your organization's requirements.                  |
-| Excludes suppliers with annual spend below                                                                | The minimum annual spend threshold that is applied when selecting suppliers for the report. | Suppliers with lower spend are filtered out to focus on meaningful relationships. <br/> Codat sets these values based on your organization's requirements. |
-| Suppliers count, # of bills, Bills amount, # of payments, Payments amount, # of Expenses, Expenses amount | High-level volume and value totals across all suppliers in the report.                      | Use these summary values for quick checks on data quality, calculating your own metrics, or initial conversations with your customers.                     |
+| Detail                                                                                                    | Description                                                                      | What it tells you                                                                                                                         |
+| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Company name, Registration #, Tax #, Phone, Addresses, Web links                                          | Administrative details of the customer entity.                                   | Use to identify and verify the customer for compliance purposes.                                                                          |
+| Start date, End date, Months reviewed                                                                     | The date range covered by the report.                                            | Source data used in the report is selected based on these dates. <br/> Codat sets these values based on your organization's requirements. |
+| Excludes suppliers with annual spend below                                                                | The minimum supplier spend threshold; applies to the Supplier Analysis tab only. | The Supplier Analysis tab omits suppliers below this threshold. <br/> Codat sets these values based on your organization's requirements.  |
+| Suppliers count, # of bills, Bills amount, # of payments, Payments amount, # of Expenses, Expenses amount | High-level volume and value totals across all suppliers in the report.           | Use these summary values for quick checks on data quality, calculating your own metrics, or initial conversations with your customers.    |
 
 ## Entity Spend Breakdown tab
 
@@ -79,6 +79,10 @@ Each row in the tab represents a payment method (Credit Card, Debit Card, Bank T
 - **Size the card conversion opportunity.** Spend on non-card methods represents the opportunity size for virtual card migration.
 - **Identify payment patterns at a glance.** Methods like check often have longer settlement times and higher processing costs, and you can easily spot their prevalence.
 - **Benchmark payment behavior.** Compare the distribution across payment methods over time to track the impact of card enablement efforts.
+
+:::note Scope of Spend Analysis totals
+The **Spend Analysis** tab aggregates bills, payments, and expenses across **all** suppliers in the reporting period. The _Excludes suppliers with annual spend below_ threshold on the Customer tab applies only to the **Supplier Analysis** tab. When that threshold is above zero, the Spend Analysis _Overall_ totals exceed the sum of the Supplier Analysis supplier rows.
+:::
 
 ### Definitions
 
