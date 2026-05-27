@@ -71,8 +71,8 @@ During the recovery of multiple messages, we will send all messages at once, app
 
 ### Idempotency
 
-Codat's webhook service uses an at-least-once delivery model. This means every message is guaranteed to be delivered, but under certain conditions — such as high load or network instability — the same message may be delivered more than once.
-We recommend building your webhook handler to be idempotent. To do this, use the webhook-id header included in every HTTP request. This value stays the same across all delivery attempts for a given message, so you can use it to detect and discard duplicates before processing.
+Codat's webhook service uses an at-least-once delivery model. Every message is guaranteed to be delivered, but conditions such as high load or network instability can cause the same message to be delivered more than once.
+To handle duplicates safely, make your webhook handler idempotent. Every HTTP request includes a `webhook-id` header whose value stays the same across all delivery attempts for a given message, so you can use it to detect and discard duplicates before processing.
 
 ## Endpoint failures
 
