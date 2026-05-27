@@ -89,13 +89,13 @@ You can support your customer on this journey using the following guides:
 
 #### View customers
 
-You can view all existing customers in the _Spend Insights_ tab or the _Companies_ tab. If your customer's company has multiple subsidiaries, you can expand the parent company to view its children by clicking on the arrow next to company name.
+You can view all existing customers in the _Spend Insights_ tab or the _Companies_ tab. If your customer's company has multiple subsidiaries, you can expand the parent company to view its children by clicking on the arrow next to company name. You can also open the parent company and select **Subsidiaries** in the sidebar to manage its child companies with the full Companies-table controls.
 
 ![An image of the Companies tab with a parent company called Abra Kedabra and its subsidiaries highlighted.](/img/spend-insights/companies-multi-entity.png)
 
 #### Edit and delete customers
 
-To edit or delete your existing customers, navigate to the _Companies_ tab. Click on the triple-dot menu to view the editing options dropdown. 
+To edit or delete your existing customers, navigate to the _Companies_ tab. Click on the triple-dot menu to view the editing options dropdown.
 
 From there, you can click **Edit** to change company details or **Delete** to delete it. To view the company's Link URL, email template, and existing connections, click **Link** in the same dropdown.
 
