@@ -88,13 +88,11 @@ A connection picker at the top of the drawer lists every connection on the compa
 
 Above the timeline, the drawer surfaces the connection's **current status** as a colored pill and the **last successful sync** timestamp in your locale. These values come straight from the connection record, so they are always present even when the underlying transition history is not.
 
-### Honest about data gaps for older connections
+### Older connections fill in over time
 
 Connection transitions are only recorded from the release of this feature forward, and there is no historical backfill. Connections that have not transitioned since the recording started show a **"Timeline not available"** banner alongside the current status and creation date. As soon as those connections next change state (a relink, a deauthorization, an unlink), the timeline starts populating itself, so coverage self-heals over time.
 
 ![Connection Timeline drawer showing the "Timeline not available" empty state for a legacy connection without recorded transitions](/img/updates/timeline-notimeline.png)
-
-The drawer and all of its labels are available in both English and Canadian French.
 
 ## Who is this relevant for?
 
