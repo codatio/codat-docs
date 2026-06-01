@@ -550,12 +550,16 @@ module.exports = {
     },
     // Shopify
     {
+      from: "/integrations/commerce/shopify/commerce-shopify-public-apps",
+      to: "/integrations/commerce/shopify/commerce-shopify-custom-apps",
+    },
+    {
       from: "/integrations/commerce/shopify/commerce-shopify-requirements-public-apps",
-      to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
+      to: "/integrations/commerce/shopify/commerce-shopify-custom-apps",
     },
     {
       from: "/integrations/commerce/shopify/commerce-shopify-setup",
-      to: "/integrations/commerce/shopify/commerce-shopify-public-apps",
+      to: "/integrations/commerce/shopify/commerce-shopify-custom-apps",
     },
     {
       from: "/redirects/integrations/bankfeeds/qalf",
