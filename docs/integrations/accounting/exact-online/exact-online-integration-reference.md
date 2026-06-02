@@ -32,6 +32,14 @@ You can read the following types of journals from Exact Online:
 
 The `postedOn` field is not populated when reading journal entries from Exact Online. This information is not available from the Exact API.
 
+## Accounts (Exact UK)
+
+When reading Accounts, the `description` and `name` fields return the same value (the account name).
+
+## Invoices (Exact UK)
+
+When reading Invoices, only the `totalDiscount` amount is returned. The `discountPercentage` field is not available.
+
 ## Transfers (Exact UK)
 
 Writing Transfers is only supported for transfers between a bank account and a nominal account of type Balance Sheet.
