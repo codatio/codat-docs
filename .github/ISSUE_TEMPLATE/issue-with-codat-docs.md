@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-**Do not use this form to raise issues with Codat's product offering. [Reach out](https://docs.codat.io/support/get-help) to our support instead.**
+**Do not use this form to raise issues with Codat's product offering. [Raise a ticket](https://codat.zendesk.com/hc/en-gb/requests/new) with our support team instead.**
 
 **Description**
 Provide a clear and concise description of the issue. Explain how you encountered the issue and how we can locate and/or replicate it.
