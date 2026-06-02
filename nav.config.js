@@ -78,8 +78,10 @@ module.exports = {
       position: "left",
       items: [
         {
-          to: "support/get-help",
-          label: "Get help",
+          href: "https://codat.zendesk.com/hc/en-gb/requests/new",
+          label: "Raise a ticket",
+          target: "_blank",
+          rel: null,
         },
         {
           href: "https://help.codat.io/",
