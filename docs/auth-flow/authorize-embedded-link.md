@@ -14,29 +14,6 @@ Our Link SDK is a pre-built JavaScript component that neatly sits in your front-
 
 We built it to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey. As a result, clients using the SDK note that **89%** of their users successfully complete their journeys.
 
-```js
-function AuthFlow() {
-  const onConnection = (connection) =>
-    alert(`Connection: ${connection.connectionId}`);
-  const onFinish = () => alert("On finish callback");
-
-  const config = {
-    companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
-    options: {
-      showLandingPage: true,
-    },
-  };
-
-  return (
-    <div>
-      <p>Click the button below to start authing.</p>
-
-      <CodatLink {...config} />
-    </div>
-  );
-}
-```
-
 ## Resources
 
 We've provided you with [rich examples on GitHub](https://github.com/codatio/sdk-link/tree/main/examples) that illustrate how you can add the Link component to your project.
