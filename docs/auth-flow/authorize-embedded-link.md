@@ -14,7 +14,7 @@ Our Link SDK is a pre-built JavaScript component that neatly sits in your front-
 
 We built it to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey. As a result, clients using the SDK note that **89%** of their users successfully complete their journeys.
 
-```jsx live
+```js
 function AuthFlow() {
   const onConnection = (connection) =>
     alert(`Connection: ${connection.connectionId}`);
