@@ -47,12 +47,6 @@ Our user experience team is ready to help you design a high converting and trust
 
 :::
 
-:::info Indicative demo
-
-Curious where Codat's Link flow might fit in your customer's experience? See [our indicative demo](https://sdk-link.vercel.app/).
-
-:::
-
 ## Prerequisites
 
 #### Your application

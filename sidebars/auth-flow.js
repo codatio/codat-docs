@@ -33,11 +33,6 @@ module.exports = [
   },
   {
     type: "link",
-    label: "Try it out",
-    href: "https://sdk-link.vercel.app/",
-  },
-  {
-    type: "link",
     label: "See examples",
     href: "https://github.com/codatio/sdk-link/tree/main/examples",
   },
