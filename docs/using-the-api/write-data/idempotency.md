@@ -28,14 +28,14 @@ You can include an `Idempotency-Key` header with a unique GUID value when making
 
 ### Rate-limited requests and idempotency
 
-Codat does not cache rate-limited responses against an `Idempotency-Key`. If a request returns a `429 Too Many Requests` status code - whether the limit was applied by [Codat](/using-the-api/rate-limits) or by the underlying financial platform - the response is not stored and the `Idempotency-Key` is released.
+A rate limit can come from Codat or from the underlying financial platform. In either case, Codat doesn't cache the resulting `429 Too Many Requests` response against your `Idempotency-Key`. Instead, it discards the response and releases the key.
 
-This means you can safely retry the request with the **same** `Idempotency-Key` once the rate limit clears. The retry is forwarded to its destination as a fresh attempt, rather than the earlier `429` being replayed from the cache.
+This means you can retry the request with the **same** `Idempotency-Key` once the limit clears. Codat treats the retry as a fresh attempt rather than replaying the earlier `429` from its cache.
 
 :::tip Retrying after a 429
 
-Use the `Retry-After` header to determine when to retry, and reuse your original `Idempotency-Key` so that the eventual successful write is still protected against duplication. For more detail, see [Rate limits](/using-the-api/rate-limits).
+Use the `Retry-After` header to decide when to retry, and keep your original `Idempotency-Key` so that Codat still protects the eventual successful write against duplication. For more detail, see [Rate limits](/using-the-api/rate-limits).
 
 :::
 
-This behavior is specific to `429` responses. All other responses are cached as usual and replayed for matching `Idempotency-Key` requests, including deterministic `4xx` errors such as `400`, `409`, and `422`, and `5xx` server errors.
+This applies only to `429` responses. Codat caches every other response as usual and replays it for matching `Idempotency-Key` requests, including deterministic `4xx` errors such as `400`, `409`, and `422`, and `5xx` server errors.
