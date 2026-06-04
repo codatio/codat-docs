@@ -88,7 +88,7 @@ Next, set the redirect URL defined in the demo app as the Codat Redirect URL. Th
 
 7. Click **Get Started** and follow the on-screen instructions.
 
-Like the hosted app, you can now create a company, connect to your sandbox QuickBooks Online company, and view and pay bills.
+You can now create a company, connect to your sandbox QuickBooks Online company, and view and pay bills.
 
 ### Review write history
 
