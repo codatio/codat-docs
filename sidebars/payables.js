@@ -58,7 +58,6 @@ module.exports = [
         id: "payables/guides/bill-pay/introduction",
         label: "Introduction",
       },
-      "payables/guides/bill-pay/use-bill-pay-demo-app",
       "payables/guides/bill-pay/run-demo-app-locally",
       "payables/guides/bill-pay/how-the-demo-app-works",
     ],
