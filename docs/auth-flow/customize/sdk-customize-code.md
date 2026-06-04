@@ -11,7 +11,7 @@ Most of the configuration for the auth flow is currently managed in <a href="htt
 
 However, you can use the SDK's `options` property to override the settings set in the Portal and control them programmatically instead. This is useful if you want more control over the UI based on application-specific logic or want to vary it conditionally.
 
-```jsx live
+```js
 function AuthFlow() {
   const onConnection = (connection) =>
     alert(`Connection: ${connection.connectionId}`);
@@ -92,11 +92,6 @@ The `options` prop is optional and accepts an object containing the following op
 | `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below. |
 
 The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
-
-:::tip Try it out!
-
-Grab our [example file](/documents/example-link-options.json), edit it as desired, and use it in our [Options demo](https://codat-intg-link-sdk-v2-react-18-ui.azurewebsites.net/) to see how the Link UI reflects the changes you make to the properties. You will need a `companyId` to do this.
-:::
 
 ### Non-modal styling
 
