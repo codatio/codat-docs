@@ -4,6 +4,12 @@ codat-bot:
   url: https://github.com/codat-engineering
   image_url: https://github.com/codat-engineering.png
 
+codatchris:
+  name: Chris Farrar
+  title: Senior Software Engineer
+  url: https://github.com/codatchris
+  image_url: https://github.com/codatchris.png
+
 mcclowes:
   name: Max Clayton Clowes
   title: Product Director, Client Experience
