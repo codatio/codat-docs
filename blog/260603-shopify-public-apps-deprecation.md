@@ -13,7 +13,7 @@ Codat is deprecating the **public apps** connection method for the Shopify integ
 
 The Shopify integration historically supported two ways for a merchant to connect their store:
 
-- **Custom apps** — the merchant creates a custom app in their Shopify admin and provides the store name, client ID, and client secret during the Codat Link flow. This is the standard, recommended method.
+- **Custom apps** — the merchant creates a custom app in their Shopify admin and provides the store name, client ID, and client secret during the Codat Link flow. This is the standard method.
 - **Public apps** — the client builds a public Shopify app, submits it to Shopify for approval, hosts an authorization endpoint, and configures the app's credentials in Codat.
 
 The **public apps** method is being deprecated and removed. It places a significant setup burden on clients, who must create and submit a public Shopify app for Shopify's review and approval, and develop and host an endpoint to authorize each merchant. Custom apps remove these requirements, so we are standardizing on the simpler custom apps approach for all Shopify connections.
@@ -22,7 +22,7 @@ The **public apps** method is being deprecated and removed. It places a signific
 
 Use the [custom apps connection method](/integrations/commerce/shopify/commerce-shopify-custom-apps) for all Shopify connections. Compared with public apps, custom apps:
 
-- Require no app review or approval from Shopify.
+- Don't require you to build and submit your own public Shopify app.
 - Don't require you to build and host a merchant authorization endpoint.
 - Guide the merchant through creating the app and entering their credentials with an in-flow, step-by-step **Find your Shopify credentials** section.
 
