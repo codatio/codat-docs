@@ -25,3 +25,17 @@ You can include an `Idempotency-Key` header with a unique GUID value when making
 
 - A request that reuses the same `Idempotency-Key` header with a different body will result in a `422 Unprocessable Content` status code.
 - A request that uses an `Idempotency-Key` matching an existing in-progress request will result in a `409 Conflict` status code.
+
+### Rate-limited requests and idempotency
+
+A rate limit can come from Codat or from the underlying financial platform. In either case, Codat doesn't cache the resulting `429 Too Many Requests` response against your `Idempotency-Key`. Instead, it discards the response and releases the key.
+
+This means you can retry the request with the **same** `Idempotency-Key` once the limit clears. Codat treats the retry as a fresh attempt rather than replaying the earlier `429` from its cache.
+
+:::tip Retrying after a 429
+
+Use the `Retry-After` header to decide when to retry, and keep your original `Idempotency-Key` so that Codat still protects the eventual successful write against duplication. For more detail, see [Rate limits](/using-the-api/rate-limits).
+
+:::
+
+This applies only to `429` responses. Codat caches every other response as usual and replays it for matching `Idempotency-Key` requests, including deterministic `4xx` errors such as `400`, `409`, and `422`, and `5xx` server errors.

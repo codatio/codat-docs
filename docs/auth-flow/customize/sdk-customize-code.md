@@ -11,7 +11,7 @@ Most of the configuration for the auth flow is currently managed in <a href="htt
 
 However, you can use the SDK's `options` property to override the settings set in the Portal and control them programmatically instead. This is useful if you want more control over the UI based on application-specific logic or want to vary it conditionally.
 
-```jsx live
+```js
 function AuthFlow() {
   const onConnection = (connection) =>
     alert(`Connection: ${connection.connectionId}`);
@@ -30,6 +30,7 @@ function AuthFlow() {
       //text: {...},
       enableAdditionalConsent: true,
       enableMultiEntityLinking: true,
+      //nonce: "r4nd0mB4se64Val==",
     },
   };
 
@@ -71,29 +72,26 @@ As the `options` object overrides the Link settings set in the Portal, this may 
     text: {...},
     enableAdditionalConsent: true,
     enableMultiEntityLinking: true,
+    nonce: "r4nd0mB4se64Val==",
   }}
 />
 ```
 
 The `options` prop is optional and accepts an object containing the following optional properties:
 
-| Property                   | Description                                                                                                                      |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `nonModal`                 | Determines whether Link is initialized with non-modal styling (no border and no close button).                                   |
-| `showLandingPage`          | Determines whether an extra landing page is displayed to the user at the start of Link.                                          |
-| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data are displayed for selection.                                        |
-| `theme`                    | Contains options that control the visual appearance of the Link flow.                                                            |
-| `sourceTypes`              | Controls the data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for. |
-| `text`                     | Contains options that control what text is displayed to the user. Markdown is supported.                                         |
-| `enableAdditionalConsent`  | Determines whether an additional consent journey for further use cases is displayed to the user.                                 |
-| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.       |
+| Property                   | Description                                                                                                                                                          |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nonModal`                 | Determines whether Link uses non-modal styling, removing the border and close button.                                                                                |
+| `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                         |
+| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                   |
+| `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                |
+| `sourceTypes`              | Controls which data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for.                                   |
+| `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                            |
+| `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                |
+| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                           |
+| `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below. |
 
 The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
-
-:::tip Try it out!
-
-Grab our [example file](/documents/example-link-options.json), edit it as desired, and use it in our [Options demo](https://codat-intg-link-sdk-v2-react-18-ui.azurewebsites.net/) to see how the Link UI reflects the changes you make to the properties. You will need a `companyId` to do this.
-:::
 
 ### Non-modal styling
 
@@ -215,6 +213,66 @@ By default, this option is set to `false`. Next, use [custom text](/auth-flow/cu
 You may want to enable your customers to authorize access to multiple companies within a single accounting platform in the same connection flow. This is relevant for integrations that allow their users to operate several subsidiaries within the same account.
 
 To provide your customers with this option, set the `enableMultiEntityLinking` option to `true`. This will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support. By default, this option is set to `false`.
+
+## CSP nonce
+
+If your app sets [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers, you can pass a `nonce` through the `options` prop so that every `<style>` tag the SDK injects carries that nonce. This lets you use a strict `style-src` directive instead of `unsafe-inline`.
+
+### Usage example
+
+Your server should generate a unique nonce for every request and expose it to the browser. Below is an example that uses a `<meta>` tag to do so:
+
+```html
+<!-- Rendered by the server on each request -->
+<meta name="csp-nonce" content="r4nd0mB4se64Val==" />
+```
+
+Read the nonce in your frontend code and pass it to the SDK:
+
+```js
+const nonce =
+  document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ??
+  undefined;
+
+<CodatLink
+  companyId={companyId}
+  onConnection={onConnection}
+  onError={onError}
+  onClose={onClose}
+  onFinish={onFinish}
+  options={{ nonce }}
+/>;
+```
+
+Then set your CSP header to allow styles carrying that nonce:
+
+```
+Content-Security-Policy:
+  default-src 'self' *.codat.io;
+  script-src  'self' *.codat.io;
+  style-src   'self' 'nonce-r4nd0mB4se64Val==' *.codat.io;
+  font-src    'self' *.codat.io;
+  connect-src 'self' *.codat.io;
+  img-src     'self' *.codat.io;
+```
+
+#### Backwards compatibility
+
+Omitting the `nonce` option continues to work exactly as before. Consumers who don't set CSP headers or who are happy with `unsafe-inline` don't need to change anything.
+
+#### Mount-time behavior
+
+The SDK reads the `nonce` value once when the component mounts. If your app rotates nonces (for example, on single-page app navigation), you must unmount and remount the SDK component with the new nonce value.
+
+### Migrate from `unsafe-inline`
+
+If you currently allow `style-src 'unsafe-inline'` for the SDK, follow these steps to move to nonce-based CSP:
+
+1. Configure your server to generate a cryptographically random nonce for each request.
+2. Expose the nonce to the frontend, for example, via a `<meta>` tag or a server-rendered variable.
+3. Pass the nonce to the SDK through `options.nonce`.
+4. Update your CSP header and replace `style-src 'unsafe-inline'` with `style-src 'nonce-<value>'`.
+5. Verify that the SDK renders correctly and no CSP violations appear in the browser console.
 
 ---
 

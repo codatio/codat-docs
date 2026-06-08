@@ -28,13 +28,6 @@ const languages = [
     shield: "nuget",
     alt: "Nuget version",
   },
-  {
-    name: "go",
-    namePretty: "Go",
-    icon: "/img/libraries/go.svg",
-    packageLocation: "https://pkg.go.dev/github.com/codatio/client-sdk-go/",
-    alt: "Go version",
-  },
 ];
 
 const capitalizeFirstCharacter = (name: string) =>

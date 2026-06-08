@@ -133,7 +133,14 @@ const Products = ({ mini, products, verbose }) => {
                     href={product.link}
                     className={`icon-wrapper product animated ${product.slug}`}
                   >
-                    <img src={colorMode === "dark" && product.logoDark ? product.logoDark : product.logo} className="icon product" />
+                    <img
+                      src={
+                        colorMode === "dark" && product.logoDark
+                          ? product.logoDark
+                          : product.logo
+                      }
+                      className="icon product"
+                    />
                   </a>
                 </div>
 
@@ -163,7 +170,14 @@ const Products = ({ mini, products, verbose }) => {
                 href={product.link}
                 className={`icon-wrapper product animated ${product.slug}`}
               >
-                <img src={colorMode === "dark" && product.logoDark ? product.logoDark : product.logo} className="icon product" />
+                <img
+                  src={
+                    colorMode === "dark" && product.logoDark
+                      ? product.logoDark
+                      : product.logo
+                  }
+                  className="icon product"
+                />
               </a>
             </div>
             <h3>{product.name}</h3>

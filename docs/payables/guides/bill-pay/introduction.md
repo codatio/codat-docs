@@ -13,11 +13,10 @@ This guide is for developers building a bill payment solution or other applicati
 
 🎯 Our _bill pay demo app_ showcases a simple AP automation workflow, built using standard endpoints of [Bill Pay](/payables/overview). It help you understand the core features of a bill payment solution and how you can build your own solutions to streamline and automate the Accounts Payable (AP).
 
-🛠️ The demo app is built using Next.js and React. You can use a hosted version or run the code locally. The code is stored in a [public GitHub repository](https://github.com/codatio/demo-bill-pay). [Hosted Link](/auth-flow/authorize-hosted-link) is used for the authorization flow.
+🛠️ The demo app is built using Next.js and React. You can clone the code and run it locally. The code is stored in a [public GitHub repository](https://github.com/codatio/demo-bill-pay). [Hosted Link](/auth-flow/authorize-hosted-link) is used for the authorization flow.
 
 ⏳ Estimated time to complete:
 
-- 5&ndash;10 minutes to try out the hosted version of the app
 - 20&ndash;30 minutes to complete the full guide and run the app locally
 
 ### What you need
@@ -28,9 +27,9 @@ Your account will include a US sandbox company containing sample data. You can o
 
 ### Aims of the guide
 
-This guide aims to help you implement your own bill payment solution using Codat's API. It walks you through [using the hosted version of the demo app](/payables/guides/bill-pay/use-bill-pay-demo-app) with data from a QuickBooks Online sandbox company.
+This guide aims to help you implement your own bill payment solution using Codat's API. It walks you through cloning the repository and [running the demo app on your local machine](/payables/guides/bill-pay/run-demo-app-locally) with data from a QuickBooks Online sandbox company.
 
-After using the hosted version, you can clone the repository and [run the demo app on your local machine](/payables/guides/bill-pay/run-demo-app-locally). Finally, you can learn [how the demo app works](/payables/guides/bill-pay/how-the-demo-app-works).
+Once you've run the app, you can learn [how the demo app works](/payables/guides/bill-pay/how-the-demo-app-works).
 
 ### About the demo app
 
@@ -58,4 +57,4 @@ You've understood the functionality of the bill pay demo app and what you'll nee
 
 ### Read next
 
-- [Use the hosted app](/payables/guides/bill-pay/use-bill-pay-demo-app) to discover bill pay
+- [Run the app locally](/payables/guides/bill-pay/run-demo-app-locally) to discover bill pay

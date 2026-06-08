@@ -51,7 +51,7 @@ Enjoy a hassle-free way to integrate your bill pay product with your customers' 
 
 - Synchronous Bill Pay is designed to integrate a real-time bill pay flow into your app as quickly as possible, focusing on simplicity and efficiency of its endpoints.
 
-![Decorative image of schematic graphs, charts, and amounts that represent a customer's risk profile using Codat's Lending solution](/img/use-cases/summary-pages/accounting-automation.png)
+![Decorative image of schematic graphs, charts, and amounts that represent a customer's risk profile using Codat's Lending solution](/img/banners/accounting-automation.png)
 
 ## Guides
 

@@ -55,7 +55,7 @@ If you want to replay a single event (i.e. resend a single message), click on th
 
 Next, click the triple-dot menu next to the message and click **Resend**. This will send the same message to your endpoint again.
 
-![A fragment of the UI that displays a Resend button next to a failed attempt](https://docs.svix.com/assets/images/resend-single-a4fb6e65f27f27e5700becb523135c2f.png)
+![A fragment of the UI that displays a Resend button next to a failed attempt](/img/use-the-api/0055-resend-single-message.png)
 
 ### Multiple messages
 
@@ -71,7 +71,8 @@ During the recovery of multiple messages, we will send all messages at once, app
 
 ### Idempotency
 
-Whilst the Codat system's webhook functionality aims for exactly once delivery of a message, due to the fact messages can be resent, this isn't always possible to guarantee. If idempotency is important for your system, we recommend making use of the HTTP request's webhook-id header, which functions as an idempotency key for a given message, (i.e remains constant across all attempts to deliver that message), and can therefore be used by your system to ensure messages are not reprocessed.
+Codat's webhook service uses an at-least-once delivery model. Every message is guaranteed to be delivered, but conditions such as high load or network instability can cause the same message to be delivered more than once.
+To handle duplicates safely, make your webhook handler idempotent. Every HTTP request includes a `webhook-id` header whose value stays the same across all delivery attempts for a given message, so you can use it to detect and discard duplicates before processing.
 
 ## Endpoint failures
 

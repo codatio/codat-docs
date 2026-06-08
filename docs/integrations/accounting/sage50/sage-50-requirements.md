@@ -10,14 +10,14 @@ sidebar_label: Requirements
 Codat supports the following variations of Sage 50:
 
 - Sage 50 Accounts and Sage 50 Accounts Cloud (Sage 50c)
-- Versions 26, 27, 28, 29, 30, 31 and 32
 - Standard and Professional plans
+- Three most recent versions of the software
 
 This is in line with <a className="external" href="https://gb-kb.sage.com/portal/app/portlets/results/viewsolution.jsp?solutionid=200427112228593" target="_blank">Sage's software lifecycle policy</a>. If you experience issues with the supported versions, please use our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new) to raise a ticket. If you would like to register your interest in an unsupported version, please contact your account manager.
 
 ## Unsupported versions
 
-The Codat Sage 50 Accounts Connector is not compatible with all non-UKI (UK & Ireland) versions of Sage 50.
+The Codat Sage 50 Accounts Connector isn't compatible with Sage Canada and all other non-UKI (UK & Ireland) versions of Sage 50.
 
 The following UKI versions are also not supported:
 
@@ -30,7 +30,7 @@ The following UKI versions are also not supported:
 
 The Codat Sage 50 Accounts Connector is supported for Sage 50 Accounts (UK & Ireland) running on Windows 10 or Windows 11 with the latest service packs installed.
 
-Users have successfully run the connector on older versions of Windows; however, we do not officially support this due to Microsoft's withdrawal of support for these operating systems.
+Users have successfully run the connector on older versions of Windows. We don't officially support this due to Microsoft's withdrawal of support for these operating systems.
 
 The connector will not run on Mac OS.
 

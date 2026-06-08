@@ -16,22 +16,22 @@ In this guide, we will cover how you can generate and download spend reports gen
 
 ## Check report status
 
-Once you onboard the customer, their initial Spend Insights reports generate immediately. In the Codat Portal, navigate to the **Spend Insights** tab, locate the customer's company, and check that the reports are ready. 
+Once you onboard the customer, their initial Spend Insights reports generate immediately. In the Codat Portal, navigate to the **Spend Insights** tab, locate the customer's company, and check that the reports are ready.
 
 You may see one of the following statuses next to the company name:
 
-| **Report status**              | **Action**                                                                                   |
-| ----------------------- | -------------------------------------------------------------------------------------------- |
-| **Available**           | Codat successfully generated the spend report for this customer, and it's ready to download. |
-| **Generating**          | Codat is currently generating the spend report for this customer. Check back later.          |
-| **Unavailable**         | Codat hasn't yet received data from this customer. Onboard the customer first.              |
-| **Failed**         | Codat couldn't generate the report. Contact support to resolve the error.              |
+| **Report status** | **Action**                                                                                   |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| **Available**     | Codat successfully generated the spend report for this customer, and it's ready to download. |
+| **Generating**    | Codat is currently generating the spend report for this customer. Check back later.          |
+| **Unavailable**   | Codat hasn't yet received data from this customer. Onboard the customer first.               |
+| **Failed**        | Codat couldn't generate the report. Contact support to resolve the error.                    |
 
 ![An image of the Portal user interface on the Spend Insights tab with four companies listed and their statuses highlighted.](/img/spend-insights/si-spend-report-statuses.png)
 
 ## Update report
 
-If your customer shared their data with you via [Data streaming](/spend-insights/resources/link-software), you can refresh the data in the Spend Insights report as often as you need. This ensures you are always working with the most up-to-date financial information of your customers. 
+If your customer shared their data with you via [Data streaming](/spend-insights/resources/link-software), you can refresh the data in the Spend Insights report as often as you need. This ensures you are always working with the most up-to-date financial information of your customers.
 
 On-demand report update isn't possible if your customer used [Intelligent Upload](/spend-insights/resources/link-file) to share their financial data.
 
@@ -45,7 +45,7 @@ To generate an updated report, follow these steps:
 
 4. Click **Update reports** in the dropdown menu.
 
-5. Track the progress by checking the _Report Status_ column. 
+5. Track the progress by checking the _Report Status_ column.
 
 Once updated, the status will change from _Generating_ to _Available_, and you can go ahead and download the resulting report.
 
@@ -53,7 +53,7 @@ Once updated, the status will change from _Generating_ to _Available_, and you c
 
 ## Download report
 
-When you are ready to download a company's Spend Insights reports, you can do so from the Spend Insights tab. 
+When you are ready to download a company's Spend Insights reports, you can do so from the Spend Insights tab.
 
 1. Search or scroll to locate the company you require reports for.
 
@@ -69,15 +69,15 @@ This initiates the download and saves the Excel report to your default download 
 
 Codat offers three report types with a different level of detail that serve a different stage of your engagement with a customer. For a full breakdown of each report's columns and how to interpret the data, review the reports' reference pages.
 
-| Report | Format | Description | Target use |
-|---|---|---|---|
-| **[Spend Summary](/spend-insights/reports/spend-summary)** | PowerPoint | A one-page customer-ready snapshot of top supplier opportunities and key metrics, such as cashback potential and time saved. | Sales enablement, quick value demonstration, client-facing conversations |
-| **[Spend Analysis](/spend-insights/reports/spend-analysis)** | Excel | A detailed breakdown of your customer's accounts payable data, payment methods, supplier spend, and settlement terms. | Deep spend analysis, identification of cardable suppliers, input for supplier onboarding campaigns |
-| **[Ongoing Insights](/spend-insights/reports/ongoing-insights)** | Excel | An automated quarterly report that compares the latest spend data to previous periods and highlights new suppliers, trends, and payment method changes. | Continuous monitoring of opportunitites, supplier onboarding prioritization |
-| **[Mastercard Match](/spend-insights/reports/vendor-match)**  | Excel | Supplier data formatted for Mastercard's supplier matching platform. |  Supplier enablement using third party tools.|
-| **[PayTech](/spend-insights/reports/vendor-match)** | Excel | Supplier data formatted for PayTech's supplier matching processes. | Supplier enablement using third party tools.|
-| **[Visa Vendor Match](/spend-insights/reports/vendor-match)** | Excel | Supplier data formatted for Visa's supplier matching processes. | Supplier enablement using third party tools.|
-| **[Wex](/spend-insights/reports/vendor-match)** | Excel | Supplier data formatted for Wex's supplier matching processes. | Supplier enablement using third party tools.|
+| Report                                                           | Format     | Description                                                                                                                                             | Target use                                                                                         |
+| ---------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **[Spend Summary](/spend-insights/reports/spend-summary)**       | PowerPoint | A one-page customer-ready snapshot of top supplier opportunities and key metrics, such as cashback potential and time saved.                            | Sales enablement, quick value demonstration, client-facing conversations                           |
+| **[Spend Analysis](/spend-insights/reports/spend-analysis)**     | Excel      | A detailed breakdown of your customer's accounts payable data, payment methods, supplier spend, and settlement terms.                                   | Deep spend analysis, identification of cardable suppliers, input for supplier onboarding campaigns |
+| **[Ongoing Insights](/spend-insights/reports/ongoing-insights)** | Excel      | An automated quarterly report that compares the latest spend data to previous periods and highlights new suppliers, trends, and payment method changes. | Continuous monitoring of opportunities, supplier onboarding prioritization                         |
+| **[Mastercard Match](/spend-insights/reports/vendor-match)**     | Excel      | Supplier data formatted for Mastercard's supplier matching platform.                                                                                    | Supplier enablement using third party tools.                                                       |
+| **[PayTech](/spend-insights/reports/vendor-match)**              | Excel      | Supplier data formatted for PayTech's supplier matching processes.                                                                                      | Supplier enablement using third party tools.                                                       |
+| **[Visa Vendor Match](/spend-insights/reports/vendor-match)**    | Excel      | Supplier data formatted for Visa's supplier matching processes.                                                                                         | Supplier enablement using third party tools.                                                       |
+| **[Wex](/spend-insights/reports/vendor-match)**                  | Excel      | Supplier data formatted for Wex's supplier matching processes.                                                                                          | Supplier enablement using third party tools.                                                       |
 
 :::tip Missing reports?
 
@@ -91,10 +91,7 @@ If you don't see all reports in the download list, this may be because:
 
 <ReadNext
   links={[
-    [
-      "Spend Summary report reference",
-      "/spend-insights/reports/spend-summary",
-    ],
+    ["Spend Summary report reference", "/spend-insights/reports/spend-summary"],
     [
       "Spend Analysis report reference",
       "/spend-insights/reports/spend-analysis",
@@ -103,9 +100,6 @@ If you don't see all reports in the download list, this may be because:
       "Ongoing Insights report reference",
       "/spend-insights/reports/ongoing-insights",
     ],
-    [
-      "Vendor match report reference",
-      "/spend-insights/reports/vendor-match",
-    ],
+    ["Vendor match report reference", "/spend-insights/reports/vendor-match"],
   ]}
 />

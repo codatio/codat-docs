@@ -1,17 +1,30 @@
 /* Images */
 
+%styled-image {
+  border: 1px solid #B2D4C7;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(24, 16, 58, 0.12);
+  text-align: center;
+  width: auto;
+  max-height: 60vh;
+  margin: auto;
+  margin-bottom: 2em;
+
+  html[data-theme="dark"] & {
+    border-color: rgba(178, 212, 199, 0.3);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
 article .markdown {
   > img,
   > p > img,
   > ol > li > p > img,
-  > ul > li > p > img {
-    border: 2px solid var(--token-secondary-bg-c-alt);
-    border-radius: 6px;
-    text-align: center;
-    width: auto;
-    max-height: 60vh;
-    margin: auto;
-    margin-bottom: 2em;
+  > ul > li > p > img,
+  .tabs-container img,
+  details img,
+  .details img {
+    @extend %styled-image;
   }
 }
 

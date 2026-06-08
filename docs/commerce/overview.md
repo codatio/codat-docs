@@ -9,7 +9,7 @@ hide_description: true
 hide_table_of_contents: true
 banner_title: Sync for Commerce
 banner_class: commerce
-banner_image: "/img/banners/sfc-charts.png"
+banner_image: "/img/banners/commerce.png"
 banner_text: "Embedded accounting integrations for Point of Sale, Payment, and eCommerce software"
 // video_url: "https://www.youtube.com/embed/4zLgo0iP6MI"
 // video_text: What is Sync for Commerce?

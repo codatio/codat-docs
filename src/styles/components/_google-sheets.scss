@@ -3,7 +3,13 @@ iframe.googleSheets {
 
 	border-radius: 8px;
 	overflow: hidden;
-	border: 1px solid #efefef;
+	border: 1px solid #B2D4C7;
+	box-shadow: 0 4px 24px rgba(24, 16, 58, 0.12);
+
+	html[data-theme="dark"] & {
+		border-color: rgba(178, 212, 199, 0.3);
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+	}
     max-width: initial;
 	width: 100%;
     width: -moz-available;          

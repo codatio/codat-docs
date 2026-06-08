@@ -6,6 +6,71 @@
 
 import { themes as prismThemes } from "prism-react-renderer";
 
+const codatDarkTheme = {
+  plain: { color: "#ECEDE5", backgroundColor: "#2a1f55" },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata"],
+      style: { color: "rgba(236,237,229,0.4)", fontStyle: "italic" },
+    },
+    { types: ["punctuation"], style: { color: "rgba(236,237,229,0.6)" } },
+    { types: ["tag"], style: { color: "#B2D4C7" } },
+    {
+      types: ["keyword", "important"],
+      style: { color: "#f07178", fontStyle: "italic" },
+    },
+    {
+      types: ["string", "attr-value", "char", "inserted"],
+      style: { color: "#ffcb6b" },
+    },
+    {
+      types: ["number", "boolean", "constant", "symbol", "property"],
+      style: { color: "#82aaff" },
+    },
+    { types: ["function", "builtin", "atrule"], style: { color: "#c3e88d" } },
+    { types: ["variable", "attr-name"], style: { color: "#a9c4e8" } },
+    { types: ["operator", "entity", "url"], style: { color: "#89ddff" } },
+    { types: ["selector"], style: { color: "#ffcb6b" } },
+    { types: ["regex"], style: { color: "#f07178" } },
+    { types: ["deleted"], style: { color: "#ff5370" } },
+    { types: ["bold"], style: { fontWeight: "bold" } },
+    { types: ["italic"], style: { fontStyle: "italic" } },
+  ],
+};
+
+// Light-mode vampire: dark saturated hues readable on #F0F3F6
+const codatLightTheme = {
+  plain: { color: "#18103A", backgroundColor: "#F0F3F6" },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata"],
+      style: { color: "#6272a4", fontStyle: "italic" },
+    },
+    { types: ["punctuation"], style: { color: "rgba(24,16,58,0.5)" } },
+    { types: ["tag"], style: { color: "#1a6b5e" } },
+    {
+      types: ["keyword", "important"],
+      style: { color: "#c2185b", fontStyle: "italic" },
+    },
+    {
+      types: ["string", "attr-value", "char", "inserted"],
+      style: { color: "#b45309" },
+    },
+    {
+      types: ["number", "boolean", "constant", "symbol", "property"],
+      style: { color: "#7c3aed" },
+    },
+    { types: ["function", "builtin", "atrule"], style: { color: "#15803d" } },
+    { types: ["variable", "attr-name"], style: { color: "#1d4ed8" } },
+    { types: ["operator", "entity", "url"], style: { color: "#0369a1" } },
+    { types: ["selector"], style: { color: "#b45309" } },
+    { types: ["regex"], style: { color: "#c2185b" } },
+    { types: ["deleted"], style: { color: "#b91c1c" } },
+    { types: ["bold"], style: { fontWeight: "bold" } },
+    { types: ["italic"], style: { fontStyle: "italic" } },
+  ],
+};
+
 import { ProvidePlugin } from "webpack";
 
 import path from "path";
@@ -32,6 +97,8 @@ const config = {
   favicon: "img/meta/favicon-96x96.png",
   organizationName: "codat",
   projectName: "codat-docs",
+
+  scripts: [{ src: "https://status.codat.io/embed/script.js", async: true }],
 
   //onBrokenLinks: 'throw',
   onBrokenLinks: "warn",
@@ -316,9 +383,9 @@ const config = {
       },
 
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-        additionalLanguages: ["bash", "diff", "json"],
+        theme: codatLightTheme,
+        darkTheme: codatDarkTheme,
+        additionalLanguages: ["bash", "diff", "json", "http", "csharp"],
       },
 
       liveCodeBlock: {

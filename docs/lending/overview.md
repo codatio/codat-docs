@@ -11,7 +11,7 @@ banner_title: Lending
 banner_class: lending
 banner_icon: "/img/logos/products/logo-lending_clear.svg"
 banner_icon_dark: "/img/logos/products/logo-lending_dark.svg"
-banner_image: "/img/banners/assess.png"
+banner_image: "/img/banners/lending.png"
 banner_text: "Our Lending solution helps you make smarter credit decisions on small businesses by enabling you to read your customers' latest data from accounting, banking, and commerce software they are already using. It also includes features to help providers verify the accuracy of data and process it more efficiently."
 video_url: "https://www.youtube.com/embed/UgtbRe-j0Jo?si=KMRaVzgKCnW7E7tr"
 video_text: Lending with Codat

@@ -14,29 +14,6 @@ Our Link SDK is a pre-built JavaScript component that neatly sits in your front-
 
 We built it to be flexible so that you can integrate and initialize it in any way you want, and provide the user with a native feel of your authorization journey. As a result, clients using the SDK note that **89%** of their users successfully complete their journeys.
 
-```jsx live
-function AuthFlow() {
-  const onConnection = (connection) =>
-    alert(`Connection: ${connection.connectionId}`);
-  const onFinish = () => alert("On finish callback");
-
-  const config = {
-    companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
-    options: {
-      showLandingPage: true,
-    },
-  };
-
-  return (
-    <div>
-      <p>Click the button below to start authing.</p>
-
-      <CodatLink {...config} />
-    </div>
-  );
-}
-```
-
 ## Resources
 
 We've provided you with [rich examples on GitHub](https://github.com/codatio/sdk-link/tree/main/examples) that illustrate how you can add the Link component to your project.
@@ -44,12 +21,6 @@ We've provided you with [rich examples on GitHub](https://github.com/codatio/sdk
 :::note Need help with designing your auth flow experience?
 
 Our user experience team is ready to help you design a high converting and trusted auth flow, and ensure your user journey complies with integration partnerships' requirements. Speak to your account manager to set up time with our experts.
-
-:::
-
-:::info Indicative demo
-
-Curious where Codat's Link flow might fit in your customer's experience? See [our indicative demo](https://sdk-link.vercel.app/).
 
 :::
 

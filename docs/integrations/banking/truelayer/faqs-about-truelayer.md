@@ -39,8 +39,8 @@ This means that depending on the bank, clients may only be allowed to access as 
 
 In layman terms, Codat will retrieve as much data as possible following authentication by your end-user. However, regulatory standards may limit the amount of data initially retrieved to 90 days.
 
-## Why can customers no longer connect their Santander Corporate accounts? 
+## Why can customers no longer connect their Santander Corporate accounts?
 
-As of **March 2026**, Santander have upgraded their API to version 4 of the Open Banking standards. As a result, [TrueLayer have announced](https://support.truelayer.com/hc/en-us/articles/43554236309905-Migration-of-all-Santander-endpoints-to-V4-of-Open-Banking-Spec) they no longer support connections to Santander Corporate accounts. 
+As of **March 2026**, Santander have upgraded their API to version 4 of the Open Banking standards. As a result, [TrueLayer have announced](https://support.truelayer.com/hc/en-us/articles/43554236309905-Migration-of-all-Santander-endpoints-to-V4-of-Open-Banking-Spec) they no longer support connections to Santander Corporate accounts.
 
 Santander Corporate accounts previously connected to Codat via TrueLayer can no longer be relinked. See TrueLayer's [How do I request banking providers to be added to TrueLayer's network?](https://support.truelayer.com/hc/en-us/articles/4522101928593-How-do-I-request-banking-providers-to-be-added-to-TrueLayer-s-network) guide on requesting banking providers to be added.
