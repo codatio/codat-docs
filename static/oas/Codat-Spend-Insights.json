@@ -404,6 +404,82 @@
         }
       }
     },
+    "/companies/{companyId}/reports/bundle": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/companyId"
+        },
+        {
+          "name": "reportId",
+          "description": "The identifier of the report to bundle. Only `latest` is supported.",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "title": "Latest",
+            "enum": [
+              "latest"
+            ]
+          }
+        },
+        {
+          "name": "lang",
+          "description": "The language of the report files to bundle. Defaults to English.",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "title": "Language",
+            "enum": [
+              "en",
+              "en-us",
+              "en-gb",
+              "fr",
+              "fr-ca"
+            ]
+          }
+        }
+      ],
+      "get": {
+        "x-internal": true,
+        "tags": [
+          "Spend analysis"
+        ],
+        "summary": "Download report bundle",
+        "description": "The _Download report bundle_ endpoint returns a ZIP archive containing every file output of the company's latest generated [spend analysis report](https://docs.codat.io/spend-insights-api#/operations/generate-report) for the requested language.\n\nThe archive is returned with `Content-Disposition: attachment; filename={companyName}_SpendReports_{date}.zip`, where `{companyName}` is the company name sanitized for use in a file name and `{date}` is the bundle creation date in `yyyy-MM-dd` format. When a non-English `lang` is requested, a locale marker is appended before the date, for example `{companyName}_SpendReports_fr_{date}.zip`.\n\nEvery archive includes a `manifest.txt` file listing the report type, report ID, company ID, creation timestamp (UTC), and a correlation ID for support traceability, followed by one line per expected file with its status (`INCLUDED` or `FAILED`), timestamp, and failure reason, if any.\n\nIf at least one file can be bundled, the endpoint responds with a `200` status code and records any failed files in the manifest. The `X-Bundle-Partial` response header is set to `true` when one or more files failed, and the `X-Bundle-Included` and `X-Bundle-Total` headers indicate how many of the expected files were included. If no files can be bundled, the endpoint responds with a `500` status code and a correlation ID.\n",
+        "operationId": "download-report-bundle",
+        "x-speakeasy-name-override": "download-report-bundle",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ReportBundle"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "402": {
+            "$ref": "#/components/responses/Payment-Required"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not-Found"
+          },
+          "429": {
+            "$ref": "#/components/responses/Too-Many-Requests"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal-Server-Error"
+          },
+          "503": {
+            "$ref": "#/components/responses/Service-Unavailable"
+          }
+        }
+      }
+    },
     "/companies/{companyId}/data/info": {
       "parameters": [
         {
@@ -1964,6 +2040,49 @@
                   "errorMessage": "Failed to generate the report because...."
                 }
               ]
+            }
+          }
+        }
+      },
+      "ReportBundle": {
+        "description": "OK",
+        "headers": {
+          "Content-Disposition": {
+            "description": "Indicates the response is an attachment and provides the bundle file name, following the convention `attachment; filename={companyName}_SpendReports_{date}.zip`.",
+            "schema": {
+              "type": "string",
+              "example": "attachment; filename=ExampleCompany_SpendReports_2026-06-03.zip"
+            }
+          },
+          "X-Bundle-Partial": {
+            "description": "Set to `true` when one or more expected files could not be included in the bundle. Failed files are recorded in the `manifest.txt` inside the archive.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            }
+          },
+          "X-Bundle-Included": {
+            "description": "The number of files included in the bundle.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          "X-Bundle-Total": {
+            "description": "The total number of files expected in the bundle.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        },
+        "content": {
+          "application/zip": {
+            "schema": {
+              "title": "Data",
+              "type": "string",
+              "format": "binary"
             }
           }
         }

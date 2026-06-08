@@ -3657,7 +3657,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get account* endpoint returns a single account for a given `accountId`.\n\n[Accounts](https://docs.codat.io/sync-for-payables-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support getting a specific account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
+        "description": "The *Get account* endpoint returns a single account for a given `accountId`.\n\n[Accounts](https://docs.codat.io/sync-for-payables-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
         "operationId": "get-account"
       }
     },
@@ -8655,7 +8655,7 @@
           }
         },
         "operationId": "get-create-account-model",
-        "description": "﻿The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/sync-for-payables-api#/schemas/Account) for a given company and integration.\n\n[Accounts](https://docs.codat.io/sync-for-payables-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n"
+        "description": "﻿The *Get create account model* endpoint returns the expected data for the request payload when creating an [account](https://docs.codat.io/sync-for-payables-api#/schemas/Account) for a given company and integration.\n\n[Accounts](https://docs.codat.io/sync-for-payables-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/accounts": {
@@ -8723,7 +8723,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/sync-for-payables-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/sync-for-payables-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-chartOfAccounts-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=chartOfAccounts) for integrations that support creating an account.\n",
+        "description": "The *Create account* endpoint creates a new [account](https://docs.codat.io/sync-for-payables-api#/schemas/Account) for a given company's connection.\n\n[Accounts](https://docs.codat.io/sync-for-payables-api#/schemas/Account) are the categories a business uses to record accounting transactions.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create account model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-chartOfAccounts-model).\n",
         "operationId": "create-account"
       }
     },
@@ -12997,7 +12997,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get bill credit note* endpoint returns a single bill credit note for a given `billCreditNoteId`.\n\n[Bill credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support getting a specific bill credit note.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
+        "description": "The *Get bill credit note* endpoint returns a single bill credit note for a given `billCreditNoteId`.\n\n[Bill credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
         "operationId": "get-bill-credit-note"
       }
     },
@@ -16985,7 +16985,7 @@
           }
         },
         "operationId": "get-create-update-billCreditNote-model",
-        "description": "The *Get create/update bill credit note model* endpoint returns the expected data for the request payload when creating and updating a [bill credit note](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) for a given company and integration.\n\n[Bill credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating and updating a bill credit note.\n"
+        "description": "The *Get create/update bill credit note model* endpoint returns the expected data for the request payload when creating and updating a [bill credit note](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) for a given company and integration.\n\n[Bill credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billCreditNotes": {
@@ -17280,7 +17280,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Create bill credit note* endpoint creates a new [bill credit note](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-billCreditNotes-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating a bill credit note.\n",
+        "description": "The *Create bill credit note* endpoint creates a new [bill credit note](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-billCreditNotes-model).\n",
         "operationId": "create-bill-credit-note"
       }
     },
@@ -17355,7 +17355,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Update bill credit note* endpoint updates an existing [bill credit note](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-billCreditNotes-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billCreditNotes) for integrations that support creating a bill credit note.\n",
+        "description": "The *Update bill credit note* endpoint updates an existing [bill credit note](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) for a given company's connection.\n\n[Bill credit notes](https://docs.codat.io/sync-for-payables-api#/schemas/BillCreditNote) are issued by a supplier for the purpose of recording credit.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill credit note model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-billCreditNotes-model).\n",
         "operationId": "update-bill-credit-note"
       }
     },
@@ -19376,7 +19376,7 @@
           }
         },
         "summary": "Get bill payment",
-        "description": "The *Get bill payment* endpoint returns a single bill payment for a given `billPaymentId`.\n\n[Bill payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) are an allocation of money within any Accounts Payable account.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support getting a specific bill payment.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
+        "description": "The *Get bill payment* endpoint returns a single bill payment for a given `billPaymentId`.\n\n[Bill payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) are an allocation of money within any Accounts Payable account.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
         "operationId": "get-bill-payments"
       }
     },
@@ -21936,7 +21936,7 @@
           }
         },
         "operationId": "get-create-billPayment-model",
-        "description": "The *Get create bill payment model* endpoint returns the expected data for the request payload when creating a [bill payment](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) for a given company and integration.\n\n[Bill payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) are an allocation of money within any Accounts Payable account.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=billPayments) for integrations that support creating a bill payment.\n"
+        "description": "The *Get create bill payment model* endpoint returns the expected data for the request payload when creating a [bill payment](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) for a given company and integration.\n\n[Bill payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) are an allocation of money within any Accounts Payable account.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/billPayments": {
@@ -27003,7 +27003,7 @@
           }
         },
         "summary": "Get bill",
-        "description": "The *Get bill* endpoint returns a single bill for a given `billId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a specific bill.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
+        "description": "The *Get bill* endpoint returns a single bill for a given `billId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
         "operationId": "get-bill"
       }
     },
@@ -31501,7 +31501,7 @@
           }
         },
         "operationId": "get-create-update-bill-model",
-        "description": "﻿The *Get create/update bill model* endpoint returns the expected data for the request payload when creating and updating a [bill](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company and integration.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating and updating a bill.\n"
+        "description": "﻿The *Get create/update bill model* endpoint returns the expected data for the request payload when creating and updating a [bill](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company and integration.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/bills": {
@@ -31898,7 +31898,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Update bill* endpoint updates an existing [bill](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-bills-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support creating a bill.\n",
+        "description": "The *Update bill* endpoint updates an existing [bill](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) for a given company's connection.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update bill model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-bills-model).\n",
         "operationId": "update-bill"
       },
       "delete": {
@@ -32057,7 +32057,7 @@
           }
         },
         "summary": "Get bill attachment",
-        "description": "The *Get bill attachment* endpoint returns a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support getting a bill attachment.\n",
+        "description": "The *Get bill attachment* endpoint returns a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n",
         "operationId": "get-bill-attachment"
       }
     },
@@ -32175,7 +32175,7 @@
           }
         },
         "summary": "Download bill attachment",
-        "description": "The *Download bill attachment* endpoint downloads a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support downloading a bill attachment.\n",
+        "description": "The *Download bill attachment* endpoint downloads a specific attachment for a given `billId` and `attachmentId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n",
         "operationId": "download-bill-attachment"
       }
     },
@@ -32234,7 +32234,7 @@
           }
         },
         "summary": "Upload bill attachment",
-        "description": "The *Upload bill attachment* endpoint uploads an attachment and assigns it against a specific `billId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behavior**\n\nFor more details on supported file types by integration see [Attachments](https://docs.codat.io/sync-for-payables-api#/schemas/Attachment).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=bills) for integrations that support uploading a bill attachment.\n",
+        "description": "The *Upload bill attachment* endpoint uploads an attachment and assigns it against a specific `billId`.\n\n[Bills](https://docs.codat.io/sync-for-payables-api#/schemas/Bill) are invoices that represent the SMB's financial obligations to their supplier for a purchase of goods or services.\n\n**Integration-specific behavior**\n\nFor more details on supported file types by integration see [Attachments](https://docs.codat.io/sync-for-payables-api#/schemas/Attachment).\n",
         "operationId": "upload-bill-attachment"
       }
     },
@@ -33593,7 +33593,7 @@
           }
         },
         "operationId": "get-create-journalEntry-model",
-        "description": "﻿The *Get create journal entry model* endpoint returns the expected data for the request payload when creating a [journal entry](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry) for a given company and integration.\n\n[Journal entries](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n"
+        "description": "﻿The *Get create journal entry model* endpoint returns the expected data for the request payload when creating a [journal entry](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry) for a given company and integration.\n\n[Journal entries](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/journalEntries": {
@@ -33789,7 +33789,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Create journal entry* endpoint creates a new [journal entry](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal entry model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-journalEntries-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journalEntries) for integrations that support creating a journal entry.\n",
+        "description": "The *Create journal entry* endpoint creates a new [journal entry](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry) for a given company's connection.\n\n[Journal entries](https://docs.codat.io/sync-for-payables-api#/schemas/JournalEntry) are  made in a company's general ledger, or accounts, when transactions are approved.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal entry model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-journalEntries-model).\n",
         "operationId": "create-journal-entry"
       }
     },
@@ -34217,7 +34217,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get journal* endpoint returns a single journal for a given `journalId`.\n\n[Journals](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support getting a specific journal.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
+        "description": "The *Get journal* endpoint returns a single journal for a given `journalId`.\n\n[Journals](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
         "operationId": "get-journal"
       }
     },
@@ -34395,7 +34395,7 @@
           }
         },
         "operationId": "get-create-journal-model",
-        "description": "The *Get create journal model* endpoint returns the expected data for the request payload when creating a [journal](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) for a given company and integration.\n\n[Journals](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n"
+        "description": "The *Get create journal model* endpoint returns the expected data for the request payload when creating a [journal](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) for a given company and integration.\n\n[Journals](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/journals": {
@@ -34463,7 +34463,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Create journal* endpoint creates a new [journal](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-journals-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=journals) for integrations that support creating a journal.\n",
+        "description": "The *Create journal* endpoint creates a new [journal](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) for a given company's connection.\n\n[Journals](https://docs.codat.io/sync-for-payables-api#/schemas/Journal) are used to record all the financial transactions of a company.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create journal model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-journals-model).\n",
         "operationId": "create-journal"
       }
     },
@@ -34742,7 +34742,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get payment method* endpoint returns a single payment method for a given `paymentMethodId`.\n\n[Payment methods](https://docs.codat.io/sync-for-payables-api#/schemas/PaymentMethod) are used to pay a Bill. Payment Methods are referenced on [Bill Payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) and [Payments](https://docs.codat.io/sync-for-payables-api#/schemas/Payment).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=paymentMethods) for integrations that support getting a specific payment method.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
+        "description": "The *Get payment method* endpoint returns a single payment method for a given `paymentMethodId`.\n\n[Payment methods](https://docs.codat.io/sync-for-payables-api#/schemas/PaymentMethod) are used to pay a Bill. Payment Methods are referenced on [Bill Payments](https://docs.codat.io/sync-for-payables-api#/schemas/BillPayment) and [Payments](https://docs.codat.io/sync-for-payables-api#/schemas/Payment).\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
         "operationId": "get-payment-method"
       }
     },
@@ -36306,7 +36306,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get supplier* endpoint returns a single supplier for a given `supplierId`.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support getting a specific supplier.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
+        "description": "The *Get supplier* endpoint returns a single supplier for a given `supplierId`.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
         "operationId": "get-supplier"
       }
     },
@@ -41367,7 +41367,7 @@
           }
         },
         "operationId": "get-create-update-supplier-model",
-        "description": "The *Get create/update supplier model* endpoint returns the expected data for the request payload when creating and updating a [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company and integration.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating and updating a supplier.\n"
+        "description": "The *Get create/update supplier model* endpoint returns the expected data for the request payload when creating and updating a [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company and integration.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behavior**\n\nSee the *response examples* for integration-specific indicative models.\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/push/suppliers": {
@@ -41445,7 +41445,7 @@
           }
         },
         "summary": "Create supplier",
-        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-suppliers-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating a supplier.\n",
+        "description": "The *Create supplier* endpoint creates a new [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-suppliers-model).\n",
         "operationId": "create-supplier"
       }
     },
@@ -41520,7 +41520,7 @@
           }
         },
         "summary": "Update supplier",
-        "description": "The *Update supplier* endpoint updates an existing [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-suppliers-model).\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=suppliers) for integrations that support creating a supplier.\n",
+        "description": "The *Update supplier* endpoint updates an existing [supplier](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) for a given company's connection.\n\n[Suppliers](https://docs.codat.io/sync-for-payables-api#/schemas/Supplier) are people or organizations that provide something, such as a product or service.\n\n**Integration-specific behavior**\n\nRequired data may vary by integration. To see what data to post, first call [Get create/update supplier model](https://docs.codat.io/sync-for-payables-api#/operations/get-create-update-suppliers-model).\n",
         "operationId": "update-supplier"
       }
     },
@@ -43198,7 +43198,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get tax rate* endpoint returns a single tax rate for a given `taxRateId`.\n\n[Tax rates](https://docs.codat.io/sync-for-payables-api#/schemas/TaxRate) are a set of taxes and associated rates within the SMB's accounting software.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=taxRates) for integrations that support getting a specific tax rate.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
+        "description": "The *Get tax rate* endpoint returns a single tax rate for a given `taxRateId`.\n\n[Tax rates](https://docs.codat.io/sync-for-payables-api#/schemas/TaxRate) are a set of taxes and associated rates within the SMB's accounting software.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
         "operationId": "get-tax-rate"
       }
     },
@@ -43856,7 +43856,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get tracking category* endpoint returns a single tracking category for a given `trackingCategoryId`.\n\n[Tracking categories](https://docs.codat.io/sync-for-payables-api#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nCheck out our [coverage explorer](https://knowledge.codat.io/supported-features/accounting?view=tab-by-data-type&dataType=trackingCategories) for integrations that support getting a specific tracking category.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
+        "description": "The *Get tracking category* endpoint returns a single tracking category for a given `trackingCategoryId`.\n\n[Tracking categories](https://docs.codat.io/sync-for-payables-api#/schemas/TrackingCategory) are used to monitor cost centres and control budgets that sit outside the standard set of accounts.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/sync-for-payables-api#/operations/refresh-company-data).\n",
         "operationId": "get-tracking-category"
       }
     },
