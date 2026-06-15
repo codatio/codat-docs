@@ -203,6 +203,21 @@ if err == nil && statementResponse.StatusCode == 200 {
 
 </Tabs>
 
+#### Report retention
+
+Categorized bank statement reports are subject to two layers of retention:
+
+- **Time-based:** all reports are retained for approximately 90 days from generation, after which they are automatically removed.
+- **Count-based (categorized bank statements only):** only the most recent report is retained. When a new report is generated, the previous report is immediately deleted, even if it is still within the 90-day window.
+
+Because categorized bank statements are cumulative — each report contains all transactions from connected accounts to date — the latest report always includes all data from prior reports. We recommend fetching the most recent report using the [`/latest` endpoint](/lending-api#/operations/get-categorized-bank-statement) rather than storing and re-requesting a specific `reportId`.
+
+:::note 404 on older report IDs
+
+Requesting a superseded `reportId` via `GET /reports/{reportId}` returns a **404** response. This is expected — the report has been removed by the retention policy, not due to an error. Always use `/latest` to reliably retrieve the current report.
+
+:::
+
 ## Get started
 
 Once you have the Lending solution enabled, configure your instance to work with our bank statements feature.
