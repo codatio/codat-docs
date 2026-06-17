@@ -216,7 +216,6 @@ You can also generate and download a report in an Excel format via the [Portal](
 
 You can also generate and download the **data export** report by clicking the **Export data** button on any of the Lending screens of the Portal.
 
-
 #### Report retention
 
 Lending reports are subject to two layers of retention:
@@ -231,6 +230,7 @@ Because categorized bank statements are cumulative — each report contains all 
 Requesting a superseded `reportId` via `GET /reports/{reportId}` returns a **404** response. This is expected — the report has been removed by the retention policy, not due to an error. Always use `/latest` to reliably retrieve the current report.
 
 :::
+
 ---
 
 ## Read next
