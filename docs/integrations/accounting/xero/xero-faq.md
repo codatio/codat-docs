@@ -36,7 +36,7 @@ You can also review [Xero's own advice](https://developer.xero.com/documentation
 
 ### What is the Xero App Partnership Program? How can I join it?
 
-If you want to have more than 25 Xero connections, you'll need to join the Xero App Partner Program.
+If you want to have more than 5 Xero connections, you'll need to join the Xero App Partner Program.
 
 Follow our guide [here](/integrations/accounting/xero/xero-app-partner-program).
 
