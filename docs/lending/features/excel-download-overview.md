@@ -219,7 +219,7 @@ You can also generate and download the **data export** report by clicking the **
 
 #### Report retention
 
-Categorized bank statement reports are subject to two layers of retention:
+Lending reports are subject to two layers of retention:
 
 - **Time-based:** all reports are retained for approximately 90 days from generation, after which they are automatically removed.
 - **Count-based (categorized bank statements only):** only the most recent report is retained. When a new report is generated, the previous report is immediately deleted, even if it is still within the 90-day window.
