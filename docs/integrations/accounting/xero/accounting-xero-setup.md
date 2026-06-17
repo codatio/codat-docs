@@ -89,4 +89,4 @@ In this setup guide, you've learned how to:
 
 ## Next step: Xero App Partnership
 
-If you plan to use your integration to connect more than 25 companies, you need to [register with Xero as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program). You should begin this process as soon as possible as it can take a significant amount of time to complete.
+If you plan to use your integration to connect more than 5 companies, you need to [register with Xero as an official Xero App Partner](/integrations/accounting/xero/xero-app-partner-program). You should begin this process as soon as possible as it can take a significant amount of time to complete.
