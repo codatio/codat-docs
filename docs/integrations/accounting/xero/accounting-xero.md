@@ -15,7 +15,7 @@ See [Set up the Xero integration](/integrations/accounting/xero/accounting-xero-
 
 ## Xero App Partnership
 
-If you want to have more than 25 Xero connections, you'll need to join the **Xero App Partner Program**. For guidance on the application process, see [Become a Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
+If you want to have more than 5 Xero connections, you'll need to join the **Xero App Partner Program**. For guidance on the application process, see [Become a Xero App Partner](/integrations/accounting/xero/xero-app-partner-program).
 
 ## Xero Bank Feeds
 
