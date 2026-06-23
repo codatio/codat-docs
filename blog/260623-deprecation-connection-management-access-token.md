@@ -25,7 +25,7 @@ If you are using the endpoint above, you will need to instead use the global com
 GET /companies/{companyId}/accessToken
 ```
 
-The replacement endpoint returns an access token in the same way and requires no additional configuration. Update your integration to call the new endpoint ahead of the deprecation date.
+The access token is returned in the same `accessToken` field, so if you read that field you can switch to the new endpoint with no further changes. The replacement response additionally includes `expiresIn` (seconds until the token expires) and `tokenType` (for example, `Bearer`). Update your integration to call the new endpoint ahead of the deprecation date.
 
 ## Expected impact if no action is taken
 
