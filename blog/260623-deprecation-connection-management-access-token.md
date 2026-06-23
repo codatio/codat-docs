@@ -2,22 +2,8 @@
 title: "Upcoming 2026-10-12: Deprecation of the connection management access token endpoint"
 date: "2026-06-23"
 tags: ["Deprecation"]
-draft: true
 authors: rachelcodat
 ---
-
-<!--
-TODO before publishing:
-  1. Confirm the 2026-10-12 sunset date with the team (PEP-1751 acceptance criteria).
-     This is the Q4 2026 enforcement date (first working day on/after Sat 10 Oct).
-     The changelog entry MUST be live before the early-July quarterly developer email
-     (practically ~7 July 2026) to make the Q4 window; otherwise the next date is
-     2027-01-11. See https://docs.codat.io/using-the-api/change-policy#deprecation-schedule
-  2. Set `date` to the publication date.
-  3. Remove the `draft: true` line.
-  4. Add a corresponding entry to the deprecations Google Calendar.
-  5. Confirm with #team-documentation before publishing.
--->
 
 On 2026-10-12, Codat will deprecate the `connectionManagement/accessToken` endpoint used to generate company-specific connection management access tokens.
 
