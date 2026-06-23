@@ -26,7 +26,7 @@ This update takes effect on **24 June 2026**.
 
 ### Xero API limitation
 
-Xero's API only shows feed connections that share the same OAuth application. If a target account is already connected through a *different* Xero OAuth application, it still appears as available. The mapping attempt then fails with an error explaining that the account is already in use.
+Xero's API only shows feed connections that share the same OAuth application. If a target account is already connected through a _different_ Xero OAuth application, it still appears as available. The mapping attempt then fails with an error explaining that the account is already in use.
 
 ## Who is this relevant for?
 
