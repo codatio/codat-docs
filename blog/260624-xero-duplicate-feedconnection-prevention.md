@@ -1,6 +1,6 @@
 ---
 title: "Improved validation for Xero bank feed account mapping"
-date: "2026-06-23"
+date: "2026-06-24"
 tags: ["Product", "Update", "Bank feeds", "Xero"]
 authors: Huweey
 ---
@@ -19,6 +19,10 @@ This update introduces two improvements:
 - **Filtered options**: target Xero bank accounts already connected to a bank feed under any company using the same Xero app are excluded from the available mapping options.
 
 If a source account is already mapped to a Xero target account, attempting to create the same mapping again still succeeds without errors. That behaviour is unchanged. Existing mappings are not modified.
+
+### When does this take effect?
+
+This update takes effect on **24 June 2026**.
 
 ### Xero API limitation
 
