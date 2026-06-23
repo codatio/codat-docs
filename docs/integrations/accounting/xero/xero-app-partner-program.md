@@ -35,6 +35,6 @@ We recommend working closely with Codat to ensure Xero’s technical requirement
 
 #### Xero’s commercial framework
 
-For App Store partners Xero offers a [tiered pricing model based on connections and API usage](https://developer.xero.com/pricing). 
+For App Store partners Xero offers a [tiered pricing model based on connections and API usage](https://developer.xero.com/pricing).
 
 For Financial Services Partners a separate commercial model is in place. For guidance on Xero fees, please speak to your Codat account manager.
