@@ -1,6 +1,6 @@
 ---
 title: "Upcoming 2026-10-12: Deprecation of the connection management access token endpoint"
-date: "2026-06-23"
+date: "2026-06-24"
 tags: ["Deprecation"]
 authors: rachelcodat
 ---
