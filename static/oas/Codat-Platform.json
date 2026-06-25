@@ -4276,6 +4276,85 @@
         }
       }
     },
+    "company.product.added": {
+      "post": {
+        "description": "Called when a product is added to a company in Codat.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyProductWebhook"
+              },
+              "examples": {
+                "Product added": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "eventType": "company.product.added",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "name": "Bank of Dave",
+                      "description": "Requested a loan for refurb.",
+                      "productId": "lending",
+                      "productName": "Lending",
+                      "products": [
+                        "accounting",
+                        "banking",
+                        "lending"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
+    "company.product.removed": {
+      "post": {
+        "description": "Called when a product is removed from a company in Codat.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompanyProductWebhook"
+              },
+              "examples": {
+                "Product removed": {
+                  "value": {
+                    "id": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+                    "eventType": "company.product.removed",
+                    "generatedDate": "2024-08-08T17:10:34.015Z",
+                    "payload": {
+                      "id": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                      "name": "Bank of Dave",
+                      "description": "Requested a loan for refurb.",
+                      "productId": "lending",
+                      "productName": "Lending",
+                      "products": [
+                        "accounting",
+                        "banking"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return a 200 status to indicate that the webhook was received successfully."
+          }
+        }
+      }
+    },
     "connection.created": {
       "post": {
         "description": "Called when a connection is created by the SMB.",
@@ -5473,6 +5552,79 @@
             "tokenType": "Bearer"
           }
         ]
+      },
+      "CompanyProductWebhook": {
+        "title": "Company product webhook",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "example": "ba29118f-5406-4e59-b05c-ba307ca38d01",
+            "description": "Unique identifier of the event."
+          },
+          "eventType": {
+            "type": "string",
+            "description": "The type of event.",
+            "examples": [
+              "company.product.added",
+              "company.product.removed"
+            ]
+          },
+          "generatedDate": {
+            "$ref": "#/components/schemas/DateTime",
+            "description": "The date time in UTC the event was generated in Codat."
+          },
+          "payload": {
+            "$ref": "#/components/schemas/CompanyProductWebhook/definitions/companyProductWebhookPayload"
+          }
+        },
+        "definitions": {
+          "companyProductWebhookPayload": {
+            "title": "Company product webhook payload",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid",
+                "example": "0498e921-9b53-4396-a412-4f2f5983b0a2",
+                "description": "Unique identifier of the company the product change applies to."
+              },
+              "name": {
+                "type": "string",
+                "example": "Bank of Dave",
+                "description": "Name of the company."
+              },
+              "description": {
+                "type": "string",
+                "example": "Requested a loan for refurb.",
+                "description": "A description of the company."
+              },
+              "productId": {
+                "type": "string",
+                "example": "lending",
+                "description": "Unique identifier of the product that was added to or removed from the company."
+              },
+              "productName": {
+                "type": "string",
+                "example": "Lending",
+                "description": "Name of the product that was added to or removed from the company."
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "example": [
+                  "accounting",
+                  "banking",
+                  "lending"
+                ],
+                "description": "The full list of products currently enabled for the company."
+              }
+            }
+          }
+        }
       },
       "CompanyRequestBody": {
         "title": "Create company request",
