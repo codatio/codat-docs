@@ -152,7 +152,7 @@ var prodRework = [
   },
   {
     from: "/guides/bill-pay/use-bill-pay-demo-app",
-    to: "/payables/guides/bill-pay/use-bill-pay-demo-app",
+    to: "/payables/guides/bill-pay/run-demo-app-locally",
   },
   {
     from: "/guides/invoice-finance/introduction",
@@ -587,7 +587,7 @@ module.exports = {
     },
     {
       from: "/accounting-api/guides/bill-pay/use-bill-pay-demo-app",
-      to: "/payables/guides/bill-pay/use-bill-pay-demo-app",
+      to: "/payables/guides/bill-pay/run-demo-app-locally",
     },
     {
       from: "/accounting-api/guides/bill-pay/run-demo-app-locally",
