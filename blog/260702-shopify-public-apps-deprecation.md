@@ -1,6 +1,6 @@
 ---
-title: "2026-06-03: Deprecation of the Shopify public apps connection method"
-date: "2026-06-03"
+title: "2026-07-02: Deprecation of the Shopify public apps connection method"
+date: "2026-07-02"
 tags: ["Deprecation", "Shopify"]
 authors: codatchris
 ---
