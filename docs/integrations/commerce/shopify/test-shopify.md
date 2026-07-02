@@ -8,7 +8,7 @@ Test your Shopify integration by reading commerce data from a Development Store 
 
 ## Prerequisites
 
-- Set up your Shopify integration using either the custom apps or public apps connection method.
+- Set up your Shopify integration using the custom apps connection method.
 - Update your [Commerce data type settings](/integrations/commerce/commerce-sync-settings) to enable commerce data types.
 
 ## Add a test company
@@ -49,22 +49,14 @@ In the Codat Portal:
 
 4. Paste the Link URL into a new browser tab to load Link.
 
-   The following steps apply if you're using public apps. If you're using custom apps, go to step six.
-
 5. Complete the steps in Link; the exact steps shown depend on your Link settings. You'll need to:
    1. When asked to select your commerce software, select the **Shopify** tile.
    2. Authorize access to the listed commerce data types.
-   3. On the Shopify screen, enter the name of your Development Store then click **Continue**.
-   4. Log in to your Development Store, if prompted.
-
-When the Link flow is complete, your Development Store opens and your app is automatically installed into the Store.
-
-<img src="/img/old/d2bf06b-shopify-development-store-app-installed.png" />
-
-6. (If using custom apps.) Complete the steps in Link; the exact steps shown depend on your Link settings. You'll need to:
-   1. On the **Connect your Shopify store** screen, enter the name of your Development Store and your API Access Token, then click **Continue**.
+   3. On the **Connect your Shopify store** screen, enter the name of your Development Store and your API Access Token, then click **Continue**.
 
 When the Link flow is complete, your Development Store opens and your custom app is automatically installed into the Store.
+
+<img src="/img/old/d2bf06b-shopify-development-store-app-installed.png" />
 
 ## Retrieve commerce data
 
