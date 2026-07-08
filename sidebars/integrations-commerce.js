@@ -62,15 +62,7 @@ const integrations = [
         id: "integrations/commerce/shopify/commerce-shopify",
         label: "Overview",
       },
-      {
-        type: "category",
-        label: "Setup",
-        collapsed: true,
-        items: [
-          "integrations/commerce/shopify/commerce-shopify-public-apps",
-          "integrations/commerce/shopify/commerce-shopify-custom-apps",
-        ],
-      },
+      "integrations/commerce/shopify/commerce-shopify-custom-apps",
       "integrations/commerce/shopify/test-shopify",
     ],
   },
