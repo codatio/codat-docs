@@ -375,6 +375,12 @@ res, err := platformClient.Companies.List(ctx, operations.ListCompaniesRequest{
 
 </Tabs>
 
+### View company owners
+
+A company can have one or more owners — [users](/configure/user-management/adding-users) in Codat responsible for that company. Every company response includes a read-only `ownerUserIds` property that lists the IDs of the company's owners. If a company has no owners, `ownerUserIds` is an empty array.
+
+You assign and manage owners in the Codat Portal. The [Create company](/platform-api#/operations/create-company) and [Update company](/platform-api#/operations/update-company) endpoints don't accept the `ownerUserIds` property in request bodies.
+
 ### Authorize access to company data
 
 Once you've created the company, they'll need to give you permission to read their data from a given source, like their accounting software. There are several approaches to doing this, but for simplicity we've just covered our out-of-the-box [hosted link](/auth-flow/authorize-hosted-link) approach.
