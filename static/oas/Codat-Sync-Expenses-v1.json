@@ -2363,6 +2363,18 @@
                 },
                 "description": "A collection of user-defined key-value pairs that store custom metadata against the company."
               },
+              "ownerUserIds": {
+                "type": "array",
+                "nullable": false,
+                "readOnly": true,
+                "description": "The IDs of the users assigned as owners of the company in the Codat Portal. Empty if the company has no owners assigned. Owners are managed in the Codat Portal and can't be set via the API.",
+                "minItems": 0,
+                "items": {
+                  "type": "string",
+                  "format": "uuid",
+                  "example": "3f1a2b4c-5d6e-7f80-91a2-b3c4d5e6f708"
+                }
+              },
               "referenceParentCompany": {
                 "$ref": "#/components/schemas/Company/definitions/companyReference",
                 "nullable": true,
@@ -2426,6 +2438,9 @@
               "region": "us",
               "uid": "f6b0c253-16c7-4da1-a0c5-9c871e9c9d6c"
             },
+            "ownerUserIds": [
+              "3f1a2b4c-5d6e-7f80-91a2-b3c4d5e6f708"
+            ],
             "dataConnections": [
               {
                 "id": "ee2eb431-c0fa-4dc9-93fa-d29781c12bcd",
