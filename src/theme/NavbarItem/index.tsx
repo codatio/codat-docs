@@ -4,7 +4,6 @@ import NavbarIconLink from "@theme/NavbarItem/NavbarIconLink";
 import NavbarSeparator from "@theme/NavbarItem/NavbarSeparator";
 import NavbarCta from "@theme/NavbarItem/NavbarCta";
 
-import { track } from "@vercel/analytics";
 import { trackEvent } from "../../utils/amplitude";
 
 const CustomNavbarItemComponents = {
@@ -18,7 +17,6 @@ export default function NavbarItem(props) {
 
   const onTrack = () => {
     if (props.label === "Sign in") {
-      track("Sign in");
       trackEvent("Navigation Click", {
         element: "Sign in",
         type: "navbar_cta",
