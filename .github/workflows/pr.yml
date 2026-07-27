@@ -1,0 +1,30 @@
+name: PR build
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      # The ADO registry in .npmrc requires auth even to install, so PR
+      # builds need NPM_TOKEN too (fork PRs don't get secrets and will fail)
+      - name: Install dependencies
+        run: npm ci
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Build site
+        run: npm run build
+        env:
+          # plugin-google-gtag requires a trackingID, so PR builds need it too
+          GTM_ID: ${{ vars.GTM_ID }}
+          FEATURE_DEV_FLAG: ${{ vars.FEATURE_DEV_FLAG }}
+          FEATURE_NEW_PRODUCTS_FLAG: ${{ vars.FEATURE_NEW_PRODUCTS_FLAG }}
