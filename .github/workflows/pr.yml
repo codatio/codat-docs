@@ -25,6 +25,6 @@ jobs:
         run: npm run build
         env:
           # plugin-google-gtag requires a trackingID, so PR builds need it too
-          GTM_ID: ${{ vars.GTM_ID }}
-          FEATURE_DEV_FLAG: ${{ vars.FEATURE_DEV_FLAG }}
-          FEATURE_NEW_PRODUCTS_FLAG: ${{ vars.FEATURE_NEW_PRODUCTS_FLAG }}
+          GTM_ID: ${{ secrets.GTM_ID }}
+          FEATURE_DEV_FLAG: ${{ secrets.FEATURE_DEV_FLAG }}
+          FEATURE_NEW_PRODUCTS_FLAG: ${{ secrets.FEATURE_NEW_PRODUCTS_FLAG }}
