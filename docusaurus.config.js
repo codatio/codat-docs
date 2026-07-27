@@ -262,8 +262,6 @@ const config = {
         anonymizeIP: true,
       },
     ],
-
-    "vercel-analytics",
   ],
 
   themes: ["@docusaurus/theme-mermaid", "docusaurus-theme-search-typesense"],
