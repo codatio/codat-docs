@@ -19,6 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          # Images are Git LFS-tracked (.gitattributes); without this the
+          # build ships LFS pointer files instead of the actual binaries
+          lfs: true
 
       - uses: actions/setup-node@v6
         with:
