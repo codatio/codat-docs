@@ -6773,7 +6773,8 @@
           "503": {
             "$ref": "#/components/responses/Service-Unavailable"
           }
-        }
+        },
+        "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Products](https://docs.codat.io/commerce-api#/schemas/Product) are items in the company's inventory that are available for sale.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/codat-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-transactions": {
