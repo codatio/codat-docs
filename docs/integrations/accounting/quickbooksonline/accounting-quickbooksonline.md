@@ -40,7 +40,7 @@ Each tier is allocated a monthly limit of CorePlus API calls, and exceeding this
 
 To avoid unexpected costs, track your app's usage of API calls following these steps:
 
-1. Log in to the [Intuit Developer Portal](https://developer.intuit.com/dashboard?tab=apps).
+1. Log in to the [Intuit Developer Portal](https://accounts.intuit.com/app/sign-in).
 2. Navigate to the _App dashboard_ and select the app you want to review.
 3. In the left-hand menu, click **Analytics**.
 4. In _Analytics_, toggle the environment to **Production**. You will see a chart detailing your Core and CorePlus usage.

@@ -16,14 +16,6 @@ To address this, Codat provides you with Link, our consent and authorization jou
 
 ![](/img/enterprise/implementation/consent/authjourney.png)
 
-:::info Sample consent journey
-
-We prepared a consent journey prototype using an example business insights dashboard use case.
-
-[View the prototype in full screen →](https://www.figma.com/proto/YWkKvsYgeHJskPsfuIpy7w/Codat---Generic-bank---Consent-Journey?page-id=601%3A4488&type=design&node-id=641-11421&viewport=1275%2C-2886%2C0.1&t=rrDznIIhmQ8EayyY-1&scaling=contain&starting-point-node-id=641%3A11421&mode=design)
-
-:::
-
 ### Implementation options
 
 Codat offers two options to implement the Link solution in your application:
