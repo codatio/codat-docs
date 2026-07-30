@@ -35,7 +35,7 @@ When the Options endpoint is called for one of these data types and an AST-enabl
 ## Is QuickBooks Online (FR) supported?
 
 :::caution QBO no longer available in France
-Note that QuickBooks Online (FR) will no longer be available after December 31<sup>st</sup>, 2023, as communicated by [Intuit](https://quickbooks.intuit.com/learn-support/fr-fr/help-article/account-management/faq/L5GgPEpLf_FR_fr_FR).
+Note that QuickBooks Online (FR) will no longer be available after December 31<sup>st</sup>, 2023, as communicated by Intuit.
 :::
 
 Yes. Codat supports the same functionality for QuickBooks Online France (FR) as for QuickBooks Online UK and US.

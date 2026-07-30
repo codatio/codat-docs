@@ -2,10 +2,17 @@ name: PR build
 
 on:
   pull_request:
+  workflow_dispatch: # Allows manual triggering from the GitHub UI
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
         with:
@@ -32,3 +39,73 @@ jobs:
           GTM_ID: ${{ vars.GTM_ID }}
           FEATURE_DEV_FLAG: ${{ vars.FEATURE_DEV_FLAG }}
           FEATURE_NEW_PRODUCTS_FLAG: ${{ vars.FEATURE_NEW_PRODUCTS_FLAG }}
+
+      # Link checking reuses the build above: linkinator serves ./build on an
+      # ephemeral localhost port, so no deployed preview environment is needed.
+      # --silent keeps npm's banner out of the JSON on stdout.
+      - name: Check for broken links
+        if: github.actor != 'codatbot'
+        run: npm run --silent links:check -- --format json > link-results.json
+        continue-on-error: true # Broken links are reported below, not here
+
+      - name: Delete previous link check comments
+        uses: actions/github-script@v8
+        if: github.event_name == 'pull_request' && github.actor != 'codatbot'
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const issue_number = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const comments = await github.rest.issues.listComments({
+              issue_number,
+              owner,
+              repo,
+            });
+            const actionComments = comments.data.filter(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Link check results'));
+            for (const comment of actionComments) {
+              await github.rest.issues.deleteComment({
+                owner,
+                repo,
+                comment_id: comment.id,
+              });
+            }
+
+      - name: Post link check results
+        uses: actions/github-script@v8
+        if: github.actor != 'codatbot'
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const fs = require('fs');
+            if (!fs.existsSync('link-results.json') || fs.statSync('link-results.json').size === 0) {
+              core.setFailed("The link check did not produce any results — see the 'Check for broken links' step.");
+              return;
+            }
+            // --verbosity error means the JSON only contains broken links, so
+            // filter out the statuses that bot protection (403) and flaky or
+            // briefly-down external hosts (0, 5xx) return rather than genuine
+            // link rot. Without this the check goes red on other people's
+            // outages.
+            const results = JSON.parse(fs.readFileSync('link-results.json', 'utf8'));
+            const isNoise = status => status === 0 || status === 403 || status >= 500;
+            const filtered = results.links.filter(link => !isNoise(link.status))
+
+            const printList = filtered
+              .map(link => `[${link.status}] ${link.url}`);
+
+            if (context.eventName === 'pull_request') {
+              const output = `Link check results:\n\`\`\`\n${JSON.stringify(printList, null, 2)}\n\`\`\``;
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: output,
+              });
+            } else {
+              core.info(printList.join('\n'));
+            }
+
+            if (filtered.length > 0) {
+              core.setFailed("There are broken links in the documentation.");
+            }
