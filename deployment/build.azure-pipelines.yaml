@@ -18,12 +18,6 @@ resources:
       type: 'git'
       name: 'Codat/YAMLBuildTemplates'
 
-# Build-time site config — a Key Vault-linked group (EXP-2106) reading
-# docs-* secrets from the codat-integration vault at queue time. KV secret
-# names can't contain underscores, hence the hyphenated $() references below.
-variables:
-  - group: codat-docs-build
-
 # Array values as Variables not supported by ADO
 parameters:
   - name: ImagesToPublish
@@ -63,6 +57,13 @@ stages:
           # pointer files and Docusaurus only WARNS on unreadable images,
           # so the build would stay green while shipping broken images.
           GitLfs: true
+          # Build-time site config, fetched on the agent (the vault blocks
+          # public network access, so a KV-linked variable group can't read
+          # it — only the pool agents can, via the private endpoint). KV
+          # secret names can't contain underscores, hence the hyphenated
+          # $() references; the bake file maps them to the underscored args.
+          KeyVaultName: codat-integration
+          KeyVaultSecretsFilter: 'docs-zendesk-key,docs-amplitude-api-key,docs-gtm-id'
           AdditionalBakeEnvironment:
             ZENDESK_KEY: $(docs-zendesk-key)
             AMPLITUDE_API_KEY: $(docs-amplitude-api-key)
