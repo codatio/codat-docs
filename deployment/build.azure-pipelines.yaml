@@ -18,9 +18,9 @@ resources:
       type: 'git'
       name: 'Codat/YAMLBuildTemplates'
 
-# Build-time site secrets/config (ZENDESK_KEY, AMPLITUDE_API_KEY, GTM_ID,
-# feature flags) — created for EXP-2106; values mirror the GitHub Actions
-# secrets/variables the Pages build uses.
+# Build-time site config (zendesk-key, amplitude-api-key, gtm-id) — a Key
+# Vault-linked group created for EXP-2106. KV secret names can't contain
+# underscores, hence the hyphenated $() references below.
 variables:
   - group: codat-docs-build
 
@@ -64,11 +64,9 @@ stages:
           # so the build would stay green while shipping broken images.
           GitLfs: true
           AdditionalBakeEnvironment:
-            ZENDESK_KEY: $(ZENDESK_KEY)
-            AMPLITUDE_API_KEY: $(AMPLITUDE_API_KEY)
-            GTM_ID: $(GTM_ID)
-            FEATURE_DEV_FLAG: $(FEATURE_DEV_FLAG)
-            FEATURE_NEW_PRODUCTS_FLAG: $(FEATURE_NEW_PRODUCTS_FLAG)
+            ZENDESK_KEY: $(zendesk-key)
+            AMPLITUDE_API_KEY: $(amplitude-api-key)
+            GTM_ID: $(gtm-id)
 
   - ${{ if not(in( variables['Build.Reason'], 'PullRequest' )) }}:
     - ${{ each env in parameters.DeploymentEnvironments }}:

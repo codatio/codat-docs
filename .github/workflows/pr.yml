@@ -46,8 +46,6 @@ jobs:
         env:
           # plugin-google-gtag requires a trackingID, so PR builds need it too
           GTM_ID: ${{ vars.GTM_ID }}
-          FEATURE_DEV_FLAG: ${{ vars.FEATURE_DEV_FLAG }}
-          FEATURE_NEW_PRODUCTS_FLAG: ${{ vars.FEATURE_NEW_PRODUCTS_FLAG }}
 
       # Link checking reuses the build above: linkinator serves ./build on an
       # ephemeral localhost port, so no deployed preview environment is needed.

@@ -20,14 +20,6 @@ variable GTM_ID {
     default = ""
 }
 
-variable FEATURE_DEV_FLAG {
-    default = ""
-}
-
-variable FEATURE_NEW_PRODUCTS_FLAG {
-    default = ""
-}
-
 group "default" {
     targets = [
         "build",
@@ -39,12 +31,10 @@ target "build" {
     context    = "./"
     dockerfile = "deployment/docker/build.dockerfile"
     args       = {
-        DOCKER_REGISTRY           = "${DOCKER_REGISTRY}"
-        ZENDESK_KEY               = "${ZENDESK_KEY}"
-        AMPLITUDE_API_KEY         = "${AMPLITUDE_API_KEY}"
-        GTM_ID                    = "${GTM_ID}"
-        FEATURE_DEV_FLAG          = "${FEATURE_DEV_FLAG}"
-        FEATURE_NEW_PRODUCTS_FLAG = "${FEATURE_NEW_PRODUCTS_FLAG}"
+        DOCKER_REGISTRY   = "${DOCKER_REGISTRY}"
+        ZENDESK_KEY       = "${ZENDESK_KEY}"
+        AMPLITUDE_API_KEY = "${AMPLITUDE_API_KEY}"
+        GTM_ID            = "${GTM_ID}"
     }
     tags       = [ "codat.docs.build:${VERSION}" ]
 }

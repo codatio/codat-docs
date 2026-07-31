@@ -50,8 +50,6 @@ jobs:
           ZENDESK_KEY: ${{ secrets.ZENDESK_KEY }}
           AMPLITUDE_API_KEY: ${{ secrets.AMPLITUDE_API_KEY }}
           GTM_ID: ${{ vars.GTM_ID }}
-          FEATURE_DEV_FLAG: ${{ vars.FEATURE_DEV_FLAG }}
-          FEATURE_NEW_PRODUCTS_FLAG: ${{ vars.FEATURE_NEW_PRODUCTS_FLAG }}
 
       - uses: actions/configure-pages@v6
 
