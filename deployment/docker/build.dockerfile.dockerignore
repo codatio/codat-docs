@@ -1,0 +1,14 @@
+# .git is excluded: no showLastUpdateAuthor/Time in docusaurus.config.js, so
+# the build never reads git history (legal keeps it; we don't need it).
+.git
+.vscode
+.dockerignore
+.gitignore
+.env
+build
+node_modules
+Dockerfile
+README.md
+deployment
+.github
+code_utils

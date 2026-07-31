@@ -29,10 +29,20 @@ jobs:
           node-version: 24
           cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+      # The repo .npmrc is credential-less (the K8s image build authenticates
+      # via ADO npmAuthenticate); GH-hosted builds inject creds here instead.
+      - name: Authenticate to codat-npm feed
+        run: |
+          {
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:username=codat"
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:_password=${NPM_TOKEN}"
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:email=npm-requires-email@example.com"
+          } >> ~/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build site
         run: npm run build
@@ -40,8 +50,6 @@ jobs:
           ZENDESK_KEY: ${{ secrets.ZENDESK_KEY }}
           AMPLITUDE_API_KEY: ${{ secrets.AMPLITUDE_API_KEY }}
           GTM_ID: ${{ vars.GTM_ID }}
-          FEATURE_DEV_FLAG: ${{ vars.FEATURE_DEV_FLAG }}
-          FEATURE_NEW_PRODUCTS_FLAG: ${{ vars.FEATURE_NEW_PRODUCTS_FLAG }}
 
       - uses: actions/configure-pages@v6
 

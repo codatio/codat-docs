@@ -1,0 +1,19 @@
+codat-classic-app:
+  components:
+    - name: ui
+      image: codatintgregistry.azurecr.io/codat.docs.ui
+      routing:
+        - hosts: ["docs-integration.codat.io"]
+      containerPort: 80
+      statusPath: "/"
+      horizontalPodAutoscaling:
+        minReplicas: 1
+        maxReplicas: 2
+      podDisruptionBudget:
+        minAvailable: 0
+      resources:
+        requests:
+          memory: 20Mi
+          cpu: 10m
+        limits:
+          memory: 100Mi
