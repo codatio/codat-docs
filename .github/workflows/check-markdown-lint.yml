@@ -29,10 +29,19 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      # The repo .npmrc is credential-less; inject feed creds into ~/.npmrc
+      - name: Authenticate to codat-npm feed
+        run: |
+          {
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:username=codat"
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:_password=${NPM_TOKEN}"
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:email=npm-requires-email@example.com"
+          } >> ~/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Check markdown formatting with Prettier
         run: npm run format:mdx:check 
