@@ -1,0 +1,84 @@
+name: $(Date:yyyy.M.dd).$(Rev:r)
+
+trigger:
+  branches:
+    include:
+      - 'main'
+  paths:
+    exclude: []
+
+pr:
+  branches:
+    include:
+      - 'main'
+
+resources:
+  repositories:
+    - repository: 'templates'
+      type: 'git'
+      name: 'Codat/YAMLBuildTemplates'
+
+# Build-time site secrets/config (ZENDESK_KEY, AMPLITUDE_API_KEY, GTM_ID,
+# feature flags) — created for EXP-2106; values mirror the GitHub Actions
+# secrets/variables the Pages build uses.
+variables:
+  - group: codat-docs-build
+
+# Array values as Variables not supported by ADO
+parameters:
+  - name: ImagesToPublish
+    type: object
+    default:
+      - 'codat.docs.ui'
+
+  - name: DeploymentEnvironments
+    type: object
+    default:
+      - name: integration
+        shortCode: intg
+        pool:
+          name: codat-intg-managed-devops-pool-linux
+          demands:
+            - CustomCapabilities -equals $(Build.Repository.Name)
+        registryName: codatintgregistry
+
+      - name: production
+        shortCode: prod
+        pool: codat-prod-managed-devops-pool-linux
+        registryName: codatprodregistry
+
+stages:
+  - stage: 'build'
+    pool:
+      name: 'codat-intg-managed-devops-pool-linux'
+      demands:
+        - CustomCapabilities -equals $(Build.Repository.Name)
+    jobs:
+      - template: Helm/build.frontend.job.yaml@templates
+        parameters:
+          ImagesToPublish: ${{ parameters.ImagesToPublish }}
+          Version: '$(Build.BuildNumber)'
+          BuildFolder: deployment
+          # Images are Git LFS-tracked; a plain checkout leaves 130-byte
+          # pointer files and Docusaurus only WARNS on unreadable images,
+          # so the build would stay green while shipping broken images.
+          GitLfs: true
+          AdditionalBakeEnvironment:
+            ZENDESK_KEY: $(ZENDESK_KEY)
+            AMPLITUDE_API_KEY: $(AMPLITUDE_API_KEY)
+            GTM_ID: $(GTM_ID)
+            FEATURE_DEV_FLAG: $(FEATURE_DEV_FLAG)
+            FEATURE_NEW_PRODUCTS_FLAG: $(FEATURE_NEW_PRODUCTS_FLAG)
+
+  - ${{ if not(in( variables['Build.Reason'], 'PullRequest' )) }}:
+    - ${{ each env in parameters.DeploymentEnvironments }}:
+      - ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), ne(env.name, 'production')) }}:
+        - stage: ${{ env.name }}
+          pool: ${{ env.pool }}
+          jobs:
+          - template: Helm/deploy.job.yaml@templates
+            parameters:
+              Environment: ${{ env.name }}
+              RegistryName: ${{ env.registryName }}
+              ImagesToPublish: ${{ parameters.ImagesToPublish }}
+              ArgoApplicationName: docs

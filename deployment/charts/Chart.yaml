@@ -1,0 +1,8 @@
+apiVersion: 'v2'
+name: 'codat.docs'
+type: 'application'
+version: '0.0.1' # this is overwritten by the pipeline
+dependencies:
+  - name: 'codat-classic-app'
+    version: '>=2.6.1'
+    repository: 'oci://codatintgregistry.azurecr.io/base-charts'
