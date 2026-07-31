@@ -130,8 +130,6 @@ The end user would need to authorize a new data connection if you wish to view n
 
 :::tip Codat's connection management
 
-Codat is releasing a low-code embeddable UI component for connection management. Please [let us know](https://forms.gle/d1zuh2iHBLJCNCsj9) if you are interested in using it.
-
 For a detailed best practices article on connection management, see [Connection management](/auth-flow/optimize/connection-management).
 
 :::
