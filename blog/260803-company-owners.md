@@ -16,13 +16,6 @@ One or more owners can optionally be assigned to a company when creating or edit
 
 We've also introduced a new **company permissions** setting. When enabled for your organization, users with the [Onboarding, Advisor, or Analyst role](/configure/user-management/user-roles) can only access companies they've been assigned to as an owner. Administrator and Developer users retain access to all companies.
 
-### Key benefits
-
-- **Control access to company data**: manage which of your users can access which companies, helping you meet internal data access requirements.
-- **A focused view for your users**: relationship managers and advisors only see the companies relevant to them in the Portal.
-- **Clear accountability**: team leads and managers can see who is responsible for each company.
-- **Granular reporting**: report on companies by owner.
-
 ## Who is it relevant for?
 
 Clients who want to establish clear ownership of their companies, or need to control which of their users can access which companies' data - for example, banks that need to restrict client data visibility internally.
