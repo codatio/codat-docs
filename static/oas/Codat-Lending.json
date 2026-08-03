@@ -84578,7 +84578,7 @@
             "$ref": "#/components/responses/Service-Unavailable"
           }
         },
-        "description": "The *Get product* endpoint returns a single product for a given productId.\n\n[Product categories](https://docs.codat.io/lending-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/lending-api#/operations/refresh-company-data).\n"
+        "description": "The *Get product category* endpoint returns a single product category for a given productId.\n\n[Product categories](https://docs.codat.io/lending-api#/schemas/ProductCategory) are used to classify a group of products together, either by type (e.g. \"Furniture\"), or sometimes by tax profile.\n\nBefore using this endpoint, you must have [retrieved data for the company](https://docs.codat.io/lending-api#/operations/refresh-company-data).\n"
       }
     },
     "/companies/{companyId}/connections/{connectionId}/data/commerce-products": {
