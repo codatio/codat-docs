@@ -22,8 +22,8 @@
 
 <link rel="search" type="application/opensearchdescription+xml" title="Codat Docs" href="/codat-docs/pr-preview/pr-1872/opensearch.xml">
 <script src="https://status.codat.io/embed/script.js" async></script><link rel="stylesheet" href="/codat-docs/pr-preview/pr-1872/assets/css/styles.833e4b1b.css">
-<script src="/codat-docs/pr-preview/pr-1872/assets/js/runtime~main.3f91d621.js" defer="defer"></script>
-<script src="/codat-docs/pr-preview/pr-1872/assets/js/main.6acce9c8.js" defer="defer"></script>
+<script src="/codat-docs/pr-preview/pr-1872/assets/js/runtime~main.4a4a09b0.js" defer="defer"></script>
+<script src="/codat-docs/pr-preview/pr-1872/assets/js/main.49e87645.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -86,7 +86,7 @@
 <p>There is a limitation in the data sets returned from Xero when reading Bank transactions to Codat. The <strong>Particulars</strong>, <strong>Reference</strong>, and <strong>Code</strong> values, which are visible in columns in the Xero UI, are returned together in the <code>description</code> field, concatenated and separated with spaces.</p>
 <p>The <strong>Payee</strong> in Xero is read to Codat as the <code>counterparty</code> of the Bank transaction.</p>
 <p>For example, the <strong>Statement line</strong> below will result in a bank statement line with a <code>counterparty</code> of <code>Payee 3</code> and a <code>description</code> with the value: <code>Description 3 Reference 3 3</code>.</p>
-<img src="/img/old/d1325a1-xero-bank-statement-46713.png">
+<img src="/codat-docs/pr-preview/pr-1872/img/old/d1325a1-xero-bank-statement-46713.png">
 <h3 class="anchor anchorTargetHideOnScrollNavbar_vjPI" id="can-i-write-batch-payments-to-xero">Can I write batch payments to Xero?<a href="#can-i-write-batch-payments-to-xero" class="hash-link" aria-label="Direct link to Can I write batch payments to Xero?" title="Direct link to Can I write batch payments to Xero?" translate="no">​</a></h3>
 <p>Yes. To write a batch payment to Xero, you write a <a href="/codat-docs/pr-preview/pr-1872/accounting-api#/operations/post-bill-payment">Bill payment</a> with multiple line items. Writing a batch payment to Xero will create the following business objects:</p>
 <ul>
