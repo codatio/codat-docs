@@ -72,8 +72,16 @@ module.exports = [
     label: "Exact Online (NL)",
   },
   {
-    type: "link",
-    href: "/integrations/accounting/freeagent/accounting-freeagent",
+    type: "category",
     label: "FreeAgent",
+    collapsed: true,
+    items: [
+      {
+        type: "doc",
+        label: "Overview",
+        id: "integrations/bank-feeds/freeagent-bank-feeds/freeagent-bank-feeds",
+      },
+      "integrations/bank-feeds/freeagent-bank-feeds/freeagent-bank-feeds-push-bank-transactions",
+    ],
   },
 ];
