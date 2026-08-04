@@ -22,7 +22,7 @@ FreeAgent takes the direction from the `transactionType` instead, and overrides 
 | ------------------ | ---------------------------------------------------------------------------------------- |
 | Always money out   | `Debit`, `Fee`, `SerChg`, `Xfer`, `Check`, `Payment`, `Cash`, `DirectDebit`, `RepeatPmt` |
 | Always money in    | `Credit`, `Div`, `Dep`, `DirectDep`                                                      |
-| Uses the sign      | `INT`, `ATM`, `POS`, `OTHER`                                                             |
+| Uses the sign      | `Int`, `Atm`, `Pos`, `Other`, `Unknown`                                                  |
 
 So for a transaction sent as `amount: 1.60` with `transactionType: Xfer`, FreeAgent records £1.60 out, while integrations that use the sign, such as Xero and QuickBooks Online, record £1.60 in.
 
@@ -30,7 +30,7 @@ So for a transaction sent as `amount: 1.60` with `transactionType: Xfer`, FreeAg
 
 To keep the direction consistent with the `amount` you send, Codat writes a positive `Xfer` transaction to FreeAgent as `OTHER`. FreeAgent uses the sign for `OTHER` in both directions, so the transaction is recorded as money in, matching the sign of the `amount`.
 
-All other transactions are written to FreeAgent with the `transactionType` you supplied, unchanged. A negative `Xfer` isn't converted, because the type and the sign already agree.
+A negative `Xfer` isn't converted, because the type and the sign already agree. Codat converts no other type, but it does rename `SerChg` to FreeAgent's `SRVCHG` and writes `Unknown` as `OTHER`, neither of which changes the direction.
 
 :::caution Other conflicting types aren't converted
 
