@@ -46400,6 +46400,7 @@
             "$ref": "#/components/parameters/connectionId/schema"
           },
           "integrationId": {
+            "title": "Integration ID",
             "type": "string",
             "format": "uuid",
             "example": "fd321cb6-7963-4506-b873-e99593a45e30",
@@ -46410,6 +46411,7 @@
             "description": "A unique four-character ID that identifies the platform of the company's data connection. This ensures continuity if the platform changes its name in the future."
           },
           "sourceId": {
+            "title": "Source ID",
             "type": "string",
             "format": "uuid",
             "example": "35b92968-9851-4095-ad60-395c95cbcba4",
@@ -48597,6 +48599,7 @@
         "in": "path",
         "required": true,
         "schema": {
+          "title": "Connection ID",
           "type": "string",
           "format": "uuid",
           "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
@@ -48620,6 +48623,7 @@
         "schema": {
           "type": "string",
           "format": "uuid",
+          "title": "Dataset ID",
           "description": "Unique identifier for the dataset that completed its sync."
         },
         "description": "Unique identifier for the dataset that completed its sync."

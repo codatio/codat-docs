@@ -5253,6 +5253,7 @@
         "in": "path",
         "required": true,
         "schema": {
+          "title": "Connection ID",
           "type": "string",
           "format": "uuid",
           "example": "2e9d2c44-f675-40ba-8049-353bfcb5e171",
