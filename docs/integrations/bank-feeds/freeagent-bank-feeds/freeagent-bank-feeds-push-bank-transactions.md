@@ -24,17 +24,17 @@ FreeAgent takes the direction from the `transactionType` instead, and overrides 
 | Always money in    | `Credit`, `Div`, `Dep`, `DirectDep`                                                      |
 | Uses the sign      | `INT`, `ATM`, `POS`, `OTHER`                                                             |
 
-So a transaction sent as `amount: 1.60` with `transactionType: Xfer` is recorded in FreeAgent as £1.60 out, while the same transaction is recorded as £1.60 in by integrations that use the sign, such as Xero and QuickBooks Online.
+So for a transaction sent as `amount: 1.60` with `transactionType: Xfer`, FreeAgent records £1.60 out, while integrations that use the sign, such as Xero and QuickBooks Online, record £1.60 in.
 
 ## Codat converts a positive transfer
 
 To keep the direction consistent with the `amount` you send, Codat writes a positive `Xfer` transaction to FreeAgent as `OTHER`. FreeAgent uses the sign for `OTHER` in both directions, so the transaction is recorded as money in, matching the sign of the `amount`.
 
-All other transactions are written to FreeAgent with the `transactionType` you supplied, unchanged. A negative `Xfer` is not converted, because the type and the sign already agree.
+All other transactions are written to FreeAgent with the `transactionType` you supplied, unchanged. A negative `Xfer` isn't converted, because the type and the sign already agree.
 
-:::caution Other conflicting types are not converted
+:::caution Other conflicting types aren't converted
 
-Codat only converts `Xfer`. If you send a positive amount with any other type from the "Always money out" row above, FreeAgent records it as money out. Send those transactions with a type that matches the direction you want, or use `OTHER`.
+Codat only converts `Xfer`. If you send a positive amount with any other type in the **Always money out** group, FreeAgent records it as money out. Send those transactions with a type that matches the direction you want, or use `OTHER`.
 
 :::
 
