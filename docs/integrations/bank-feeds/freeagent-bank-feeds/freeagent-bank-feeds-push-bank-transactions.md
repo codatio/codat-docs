@@ -30,7 +30,7 @@ A negative `Xfer` isn't converted, because the type and the sign already agree.
 
 Because a converted transaction arrives with a general type rather than the transfer label, FreeAgent doesn't suggest a transfer when your SMB user explains it.
 
-They can still explain it as a transfer exactly as they do now. They select it themselves instead of FreeAgent proposing it.
+They can still explain it as a transfer exactly as they do now, using the **Transfer to Another Account** option. They select it themselves instead of FreeAgent proposing it.
 
 ## The type appears in the description
 
