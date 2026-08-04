@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "@docusaurus/Link";
 import GearFinanceDownIcon from "@components/GearFinanceDownIcon";
 import FeatureBullet from "@components/FeatureBullet";
 import Layout from "@theme/Layout";
@@ -24,7 +25,7 @@ const RaiseSupportTicket = () => {
             </div>
             <p>
               Raise a technical issue with our support team{" "}
-              <a href="/raise-support-ticket">here</a>.
+              <Link to="/raise-support-ticket">here</Link>.
             </p>
           </li>
           <li className="card">

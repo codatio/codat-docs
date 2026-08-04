@@ -1,10 +1,20 @@
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
+
+// Callers pass absolute image/link paths (e.g. /img/...), which bypass
+// baseUrl and break deploys served from a subpath (e.g. PR previews);
+// external URLs pass through withBaseUrl untouched
 const Card = (props) => {
   const { image, icon: Icon, title, children, className } = props;
+  const { withBaseUrl } = useBaseUrlUtils();
 
   return (
     <li className={`card ${className}`}>
       <div className="header">
-        {Icon ? <Icon /> : <img src={image} className="mini-icon" />}
+        {Icon ? (
+          <Icon />
+        ) : (
+          <img src={withBaseUrl(image)} className="mini-icon" />
+        )}
 
         <h3>{title}</h3>
       </div>
@@ -16,11 +26,12 @@ const Card = (props) => {
 
 const CardTwo = (props) => {
   const { image, title, link, linkText, children, className } = props;
+  const { withBaseUrl } = useBaseUrlUtils();
 
   return (
     <li className={`card two ${className}`}>
       <div className="header">
-        <img src={image} className="mini-icon" />
+        <img src={withBaseUrl(image)} className="mini-icon" />
 
         <h3>{title}</h3>
       </div>
@@ -28,7 +39,7 @@ const CardTwo = (props) => {
       {children}
 
       <p>
-        <a href={link}>{linkText} →</a>
+        <a href={withBaseUrl(link)}>{linkText} →</a>
       </p>
     </li>
   );
@@ -36,20 +47,21 @@ const CardTwo = (props) => {
 
 const MiniCard = (props) => {
   const { image, title, subtitle, link, children, className } = props;
+  const { withBaseUrl } = useBaseUrlUtils();
 
   return (
     <li className={`card mini ${className}`}>
       <div className="card-row">
         <div className="header">
-          <a href={link}>
-            <img src={image} className="icon usecase" />
+          <a href={withBaseUrl(link)}>
+            <img src={withBaseUrl(image)} className="icon usecase" />
           </a>
         </div>
 
         <div className="content">
           <h4>{title}</h4>
           <p>
-            <a href={link}>{subtitle} →</a>
+            <a href={withBaseUrl(link)}>{subtitle} →</a>
           </p>
         </div>
       </div>

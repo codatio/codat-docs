@@ -2,6 +2,7 @@ import React, { useState, Suspense } from "react";
 import { Helmet } from "react-helmet";
 
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import Layout from "@theme/Layout";
 import Navbar from "@theme/Navbar";
@@ -21,6 +22,9 @@ const Api = ({
   socialBanner = "https://docs.codat.io/img/meta/codat-bg.png",
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  // The OAS specs live in static/, so the fetch URL must respect baseUrl for
+  // deploys served from a subpath (e.g. PR previews)
+  const specUrl = useBaseUrl(url);
 
   return (
     <Layout title={title}>
@@ -48,7 +52,7 @@ const Api = ({
           <BrowserOnly>
             {() => (
               <Suspense fallback={Fallback}>
-                <LazyStoplight apiDescriptionUrl={url} />
+                <LazyStoplight apiDescriptionUrl={specUrl} />
               </Suspense>
             )}
           </BrowserOnly>

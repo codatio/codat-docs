@@ -1,4 +1,5 @@
 import React from "react";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 
 const repoBaseUrl = "https://github.com/codatio/client-sdk-";
 const repoProductTMP = "/tree/main/bank-feeds";
@@ -93,6 +94,9 @@ const getShieldUrl = (productName, language) => {
 
 const ClientLibraries = ({ productName }) => {
   const productUrl = !productName ? "" : "/tree/main/" + productName;
+  // The language icons are absolute /img/ paths, which bypass baseUrl and
+  // break deploys served from a subpath (e.g. PR previews)
+  const { withBaseUrl } = useBaseUrlUtils();
   return (
     <ul className="card-container mini">
       {languages.map((language, i) => {
@@ -104,7 +108,10 @@ const ClientLibraries = ({ productName }) => {
                   href={repoBaseUrl + language.name + productUrl}
                   target="_blank"
                 >
-                  <img src={language.icon} className="icon usecase" />
+                  <img
+                    src={withBaseUrl(language.icon)}
+                    className="icon usecase"
+                  />
                 </a>
               </div>
 

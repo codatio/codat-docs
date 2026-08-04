@@ -1,5 +1,6 @@
 import React from "react";
 import { useColorMode } from "@docusaurus/theme-common";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 
 const other = [
   {
@@ -104,6 +105,9 @@ const allProducts = [
 
 const Products = ({ mini, products, verbose }) => {
   const { colorMode } = useColorMode();
+  // The logo/link paths above are absolute, which bypasses baseUrl and
+  // breaks deploys served from a subpath (e.g. PR previews)
+  const { withBaseUrl } = useBaseUrlUtils();
   const validProducts = !products
     ? allProducts
     : products
@@ -130,15 +134,15 @@ const Products = ({ mini, products, verbose }) => {
               <div className="card-row">
                 <div className="header">
                   <a
-                    href={product.link}
+                    href={withBaseUrl(product.link)}
                     className={`icon-wrapper product animated ${product.slug}`}
                   >
                     <img
-                      src={
+                      src={withBaseUrl(
                         colorMode === "dark" && product.logoDark
                           ? product.logoDark
-                          : product.logo
-                      }
+                          : product.logo,
+                      )}
                       className="icon product"
                     />
                   </a>
@@ -147,7 +151,7 @@ const Products = ({ mini, products, verbose }) => {
                 <div className="content">
                   <h4>{product.name}</h4>
                   <p>
-                    <a href={product.link}>Explore solution →</a>
+                    <a href={withBaseUrl(product.link)}>Explore solution →</a>
                   </p>
                 </div>
               </div>
@@ -167,15 +171,15 @@ const Products = ({ mini, products, verbose }) => {
           <li key={i} className="card">
             <div className="header">
               <a
-                href={product.link}
+                href={withBaseUrl(product.link)}
                 className={`icon-wrapper product animated ${product.slug}`}
               >
                 <img
-                  src={
+                  src={withBaseUrl(
                     colorMode === "dark" && product.logoDark
                       ? product.logoDark
-                      : product.logo
-                  }
+                      : product.logo,
+                  )}
                   className="icon product"
                 />
               </a>
@@ -183,7 +187,7 @@ const Products = ({ mini, products, verbose }) => {
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p>
-              <a href={product.link}>{product.linkText}</a>
+              <a href={withBaseUrl(product.link)}>{product.linkText}</a>
             </p>
           </li>
         );
