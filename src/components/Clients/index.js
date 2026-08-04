@@ -1,14 +1,18 @@
 import React from "react";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 
 import styles from "./styles.module.scss";
 
 const Client = (props) => {
   const { path, name, scale } = props;
+  // Callers pass absolute /img/ paths, which bypass baseUrl and break
+  // deploys served from a subpath (e.g. PR previews)
+  const { withBaseUrl } = useBaseUrlUtils();
 
   return (
     <div className={styles.client}>
       <img
-        src={path}
+        src={withBaseUrl(path)}
         alt={`${name} logo`}
         style={
           scale

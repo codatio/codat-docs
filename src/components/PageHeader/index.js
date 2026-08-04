@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { useColorMode } from "@docusaurus/theme-common";
+import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 
 import { ModalController } from "../Modal";
 
@@ -35,7 +36,12 @@ const PageHeader = ({
   videoText,
 }) => {
   const { colorMode } = useColorMode();
-  const resolvedIcon = iconDark && colorMode === "dark" ? iconDark : icon;
+  // icon/img arrive as absolute paths from frontmatter (banner_image etc.),
+  // which bypass baseUrl and break deploys served from a subpath
+  const { withBaseUrl } = useBaseUrlUtils();
+  const resolvedIcon = withBaseUrl(
+    iconDark && colorMode === "dark" ? iconDark : icon,
+  );
 
   return (
     <div className={clsx(styles.wrapper, className)}>
@@ -62,7 +68,7 @@ const PageHeader = ({
         {videoUrl && <BannerVideo text={videoText} url={videoUrl} />}
       </div>
 
-      {img && <img src={img} className={styles.heroImg} alt="" />}
+      {img && <img src={withBaseUrl(img)} className={styles.heroImg} alt="" />}
     </div>
   );
 };

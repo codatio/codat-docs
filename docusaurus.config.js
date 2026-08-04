@@ -80,6 +80,7 @@ import navbar from "./nav.config";
 import redirects from "./redirects.config";
 
 import { generateAPISitemaps } from "./src/utils/oas-sitemap.js";
+import rehypeImageBaseUrl from "./src/utils/rehype-image-base-url.js";
 
 // PR preview deploys serve the site from a subpath on GitHub Pages, so the
 // preview workflow overrides this. No trailing slash — baseUrl appends one.
@@ -131,6 +132,7 @@ const config = {
           routeBasePath: "/",
           sidebarPath: "./sidebars.js",
           editUrl: `https://github.com/codatio/codat-docs/edit/${process.env?.BRANCH || "main"}/`,
+          rehypePlugins: [[rehypeImageBaseUrl, { baseUrl: `${BASE_URL}/` }]],
           exclude: ["README.md"],
           lastVersion: "current",
           versions: {
@@ -142,6 +144,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          rehypePlugins: [[rehypeImageBaseUrl, { baseUrl: `${BASE_URL}/` }]],
           blogTitle: "Codat updates",
           blogDescription: "Engineering and product updates from Codat.",
           postsPerPage: 10,
