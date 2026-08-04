@@ -44,4 +44,4 @@ your-transaction-description//OTHER/£1.60
 
 Because the transaction arrives as `OTHER` rather than `Xfer`, FreeAgent doesn't suggest a transfer when your SMB user explains it.
 
-They can still explain it as a transfer exactly as they do now, using the **Transfer to Another Account** option. They select it themselves instead of FreeAgent proposing it.
+They can still explain it as a transfer exactly as they do now, using the **Transfer from Another Account** option. They select it themselves instead of FreeAgent proposing it.
