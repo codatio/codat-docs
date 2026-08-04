@@ -26,6 +26,12 @@ To keep the direction consistent with the `amount` you send, Codat writes a posi
 
 A negative `Xfer` isn't converted, because the type and the sign already agree.
 
+## SMB users explain the transfer themselves
+
+Because a converted transaction arrives with a general type rather than the transfer label, FreeAgent doesn't suggest a transfer when your SMB user explains it.
+
+They can still explain it as a transfer exactly as they do now. They select it themselves instead of FreeAgent proposing it.
+
 ## The type appears in the description
 
 FreeAgent includes the transaction type in the description that the SMB user sees against the bank transaction. A transaction sent as `Xfer` reads as `//XFER/`, followed by the amount:
