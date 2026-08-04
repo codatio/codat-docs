@@ -81,7 +81,9 @@ import redirects from "./redirects.config";
 
 import { generateAPISitemaps } from "./src/utils/oas-sitemap.js";
 
-const BASE_URL = "";
+// PR preview deploys serve the site from a subpath on GitHub Pages, so the
+// preview workflow overrides this. No trailing slash — baseUrl appends one.
+const BASE_URL = process.env.BASE_URL ?? "";
 
 require("dotenv").config();
 

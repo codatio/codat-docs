@@ -2,6 +2,9 @@ name: PR build
 
 on:
   pull_request:
+    # `closed` is included so the preview deployment is torn down when the PR
+    # closes; the build/link-check job skips that event
+    types: [opened, reopened, synchronize, closed]
   workflow_dispatch: # Allows manual triggering from the GitHub UI
 
 permissions:
@@ -11,6 +14,7 @@ permissions:
 
 jobs:
   build:
+    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -116,3 +120,60 @@ jobs:
             if (filtered.length > 0) {
               core.setFailed("There are broken links in the documentation.");
             }
+
+  # Deploys the built site to GitHub Pages under pr-preview/pr-<number>/ and
+  # posts a sticky comment on the PR with the preview URL; the preview is
+  # removed when the PR closes. Builds separately from the job above because
+  # the preview needs a different baseUrl than the link check. Fork PRs are
+  # skipped: they get neither secrets nor a writable GITHUB_TOKEN.
+  deploy-preview:
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Concurrent runs for the same PR would race on pushing to gh-pages
+    concurrency: pr-preview-${{ github.ref }}
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Images are Git LFS-tracked; skip fetching them on teardown, where
+          # the checkout is only needed so the action can push to gh-pages
+          lfs: ${{ github.event.action != 'closed' }}
+
+      - uses: actions/setup-node@v6
+        if: github.event.action != 'closed'
+        with:
+          node-version: 24
+          cache: npm
+
+      # The ADO registry requires auth even to install; the repo .npmrc is
+      # credential-less so creds go into ~/.npmrc here
+      - name: Authenticate to codat-npm feed
+        if: github.event.action != 'closed'
+        run: |
+          {
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:username=codat"
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:_password=${ADO_NPM_FEED_TOKEN}"
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:email=npm-requires-email@example.com"
+          } >> ~/.npmrc
+        env:
+          ADO_NPM_FEED_TOKEN: ${{ secrets.ADO_NPM_FEED_TOKEN }}
+
+      - name: Install dependencies
+        if: github.event.action != 'closed'
+        run: npm ci
+
+      - name: Build site for preview
+        if: github.event.action != 'closed'
+        run: npm run build
+        env:
+          GTM_ID: ${{ vars.GTM_ID }}
+          # GitHub Pages serves the preview from a subpath (no trailing slash)
+          BASE_URL: /codat-docs/pr-preview/pr-${{ github.event.number }}
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./build
