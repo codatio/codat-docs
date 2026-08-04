@@ -26,12 +26,6 @@ To keep the direction consistent with the `amount` you send, Codat writes a posi
 
 A negative `Xfer` isn't converted, because the type and the sign already agree.
 
-:::caution Only transfers are converted
-
-Codat converts `Xfer` only. Other types that FreeAgent treats the same way aren't converted, so a positive amount can still be recorded as money out. Where the direction matters, send a `transactionType` that matches it, or use `OTHER`.
-
-:::
-
 ## The type appears in the description
 
 FreeAgent includes the transaction type in the description that the SMB user sees against the bank transaction. A transaction sent as `Xfer` reads as `//XFER/`, followed by the amount:
