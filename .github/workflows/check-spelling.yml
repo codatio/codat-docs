@@ -23,11 +23,11 @@ jobs:
         run: |
           {
             echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:username=codat"
-            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:_password=${NPM_TOKEN}"
+            echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:_password=${ADO_NPM_FEED_TOKEN}"
             echo "//pkgs.dev.azure.com/codat/Codat/_packaging/codat-npm/npm/registry/:email=npm-requires-email@example.com"
           } >> ~/.npmrc
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          ADO_NPM_FEED_TOKEN: ${{ secrets.ADO_NPM_FEED_TOKEN }}
 
       - name: Install dependencies
         run: npm install -g cspell
