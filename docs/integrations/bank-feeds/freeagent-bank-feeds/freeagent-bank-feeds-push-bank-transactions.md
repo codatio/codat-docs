@@ -6,35 +6,29 @@ description: "Learn how to write your SMB users' bank transactions via our FreeA
 
 When an SMB user has set up a bank feed connection, you can write bank transactions for source bank accounts to FreeAgent. Write them using the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint, as described in [Write transactions](/bank-feeds/pushing-transactions).
 
-This article explains how FreeAgent decides whether a transaction is money in or money out, because it differs from other bank feeds integrations.
+This article explains how FreeAgent decides whether a transfer is money in or money out, because it differs from other bank feeds integrations.
 
 ## Prerequisites
 
 - Your SMB user has an authorized FreeAgent connection and has [established a bank feed](/bank-feeds/mapping/overview).
 
-## Transaction direction comes from the type
+## Transaction direction can come from the type
 
 In Codat's bank transactions schema, the sign of the `amount` determines the direction of a transaction: positive is money in, negative is money out. The `transactionType` describes the kind of transaction.
 
-FreeAgent takes the direction from the `transactionType` instead, and overrides the sign of the `amount` for most types.
+For some transaction types, FreeAgent takes the direction from the `transactionType` and overrides the sign of the `amount`. `Xfer` is one of these types: FreeAgent always treats a transfer as money out.
 
-| FreeAgent behavior | Transaction types                                                                        |
-| ------------------ | ---------------------------------------------------------------------------------------- |
-| Always money out   | `Debit`, `Fee`, `SerChg`, `Xfer`, `Check`, `Payment`, `Cash`, `DirectDebit`, `RepeatPmt` |
-| Always money in    | `Credit`, `Div`, `Dep`, `DirectDep`                                                      |
-| Uses the sign      | `Int`, `Atm`, `Pos`, `Other`, `Unknown`                                                  |
-
-So for a transaction sent as `amount: 1.60` with `transactionType: Xfer`, FreeAgent records £1.60 out, while integrations that use the sign, such as Xero and QuickBooks Online, record £1.60 in.
+Written as sent, a transaction with `amount: 1.60` and `transactionType: Xfer` would be £1.60 out in FreeAgent, while integrations that use the sign, such as Xero and QuickBooks Online, record £1.60 in.
 
 ## Codat converts a positive transfer
 
 To keep the direction consistent with the `amount` you send, Codat writes a positive `Xfer` transaction to FreeAgent as `OTHER`. FreeAgent uses the sign for `OTHER` in both directions, so the transaction is recorded as money in, matching the sign of the `amount`.
 
-A negative `Xfer` isn't converted, because the type and the sign already agree. Codat converts no other type, but it does rename `SerChg` to FreeAgent's `SRVCHG` and writes `Unknown` as `OTHER`, neither of which changes the direction.
+A negative `Xfer` isn't converted, because the type and the sign already agree.
 
-:::caution Other conflicting types aren't converted
+:::caution Only transfers are converted
 
-Codat only converts `Xfer`. If you send a positive amount with any other type in the **Always money out** group, FreeAgent records it as money out. Send those transactions with a type that matches the direction you want, or use `OTHER`.
+Codat converts `Xfer` only. Other types that FreeAgent treats the same way aren't converted, so a positive amount can still be recorded as money out. Where the direction matters, send a `transactionType` that matches it, or use `OTHER`.
 
 :::
 

@@ -19,7 +19,7 @@ Collect transaction data within your own application and map it to Codat's [Bank
 :::caution Transaction signs
 Make sure the transaction `amount` signs align with the `transactionType`. Codat issues a warning for inconsistencies, such as a `Debit` transaction with a positive amount.
 
-Some accounting platforms take the direction of a transaction from its `transactionType` rather than the sign of the `amount`. FreeAgent works this way, and Codat adjusts the transaction so the sign you send is honored. See [Write bank transactions to FreeAgent](/integrations/bank-feeds/freeagent-bank-feeds/freeagent-bank-feeds-push-bank-transactions).
+Some accounting platforms take the direction of a transaction from its `transactionType` rather than the sign of the `amount`. FreeAgent works this way for some types, and Codat adjusts transfers so the sign you send is honored. See [Write bank transactions to FreeAgent](/integrations/bank-feeds/freeagent-bank-feeds/freeagent-bank-feeds-push-bank-transactions).
 :::
 
 ## Write bank transactions
