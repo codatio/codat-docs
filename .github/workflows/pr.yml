@@ -135,6 +135,8 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      # wait-for-pages-deployment polls the Pages builds API
+      pages: read
     steps:
       - uses: actions/checkout@v7
         with:
@@ -177,3 +179,6 @@ jobs:
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./build
+          # Hold the sticky comment until the Pages deployment is live;
+          # otherwise the preview link 404s for the first minute or so
+          wait-for-pages-deployment: true
