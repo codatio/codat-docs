@@ -22,7 +22,7 @@
 
 <link rel="search" type="application/opensearchdescription+xml" title="Codat Docs" href="/codat-docs/pr-preview/pr-1874/opensearch.xml">
 <script src="https://status.codat.io/embed/script.js" async></script><link rel="stylesheet" href="/codat-docs/pr-preview/pr-1874/assets/css/styles.6c0590ee.css">
-<script src="/codat-docs/pr-preview/pr-1874/assets/js/runtime~main.7ca3fdc7.js" defer="defer"></script>
+<script src="/codat-docs/pr-preview/pr-1874/assets/js/runtime~main.6ad1b3af.js" defer="defer"></script>
 <script src="/codat-docs/pr-preview/pr-1874/assets/js/main.b648c78a.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -51,7 +51,7 @@
 <p>The following example shows how to switch Codat to point to Plaid Development instead of the sandbox from the <span class="glossaryTermWrapper_Sa_o"><a href="/glossary#api" class="glossaryTerm_LcEc" aria-describedby="tooltip-api">API</a><span id="tooltip-api" class="tooltip_bRNo tooltipTop_ogDc tooltipFloating_AcsW" role="tooltip"><strong>API</strong> <!-- -->A set of rules and protocols that allows different software applications to communicate with each other. Codat provides APIs for accessing financial data from accounting, banking, and commerce platforms.</span></span>.</p>
 <p>Get your existing environment credentials.</p>
 <ol>
-<li>Open the <a href="https://api.codat.io/swagger/ui/index.html#/Integrations/Integrations_GetCredentials" target="_blank"><code>GET /integrations/credentials/{platformKey}</code></a> endpoint.</li>
+<li>Open the <a href="https://api.codat.io/swagger/index.html#/Integrations/get_integrations_credentials__platformKey_" target="_blank"><code>GET /integrations/credentials/{platformKey}</code></a> endpoint.</li>
 <li>Replace <code>{platformKey}</code> with <code>plaid</code> and send your request to return your current credentials. Save the JSON, you&#x27;ll need it later.</li>
 </ol>
 <div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#18103A;--prism-background-color:#F0F3F6"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#18103A;background-color:#F0F3F6"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#18103A"><span class="token punctuation" style="color:rgba(24,16,58,0.5)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#18103A"><span class="token plain">  </span><span class="token property" style="color:#7c3aed">&quot;publicKey&quot;</span><span class="token operator" style="color:#0369a1">:</span><span class="token plain"> </span><span class="token string" style="color:#b45309">&quot;XXXXXXXXXXXXXXXXXXXXXXXXXXabdd&quot;</span><span class="token punctuation" style="color:rgba(24,16,58,0.5)">,</span><span class="token plain"> </span><span class="token comment" style="color:#6272a4;font-style:italic">// For integrations set up before Aug 20, 2020</span><span class="token plain"></span><br></span><span class="token-line" style="color:#18103A"><span class="token plain">  </span><span class="token property" style="color:#7c3aed">&quot;clientId&quot;</span><span class="token operator" style="color:#0369a1">:</span><span class="token plain"> </span><span class="token string" style="color:#b45309">&quot;XXXXXXXXXXXXXXXXXXXX2a6b&quot;</span><span class="token punctuation" style="color:rgba(24,16,58,0.5)">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#18103A"><span class="token plain">  </span><span class="token property" style="color:#7c3aed">&quot;clientSecret&quot;</span><span class="token operator" style="color:#0369a1">:</span><span class="token plain"> </span><span class="token string" style="color:#b45309">&quot;XXXXXXXXXXXXXXXXXXXXXXXXXX1ad1&quot;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#18103A"><span class="token plain"></span><span class="token punctuation" style="color:rgba(24,16,58,0.5)">}</span><br></span></code></pre></div></div>
@@ -62,7 +62,7 @@
 </ol>
 <p>Update your environment credentials.</p>
 <ol>
-<li>Open the <a href="https://api.codat.io/swagger/ui/index#!/Integrations/Integrations_PutCredentials" target="_blank"><br>
+<li>Open the <a href="https://api.codat.io/swagger/index.html#/Integrations/put_integrations_credentials__platformKey_" target="_blank"><br>
 <code>PUT /integrations/credentials/{platformKey}</code></a> endpoint.</li>
 <li>Replace <code>{platformKey}</code> with <code>plaid</code> and send the following details:<!-- -->
 <ul>
