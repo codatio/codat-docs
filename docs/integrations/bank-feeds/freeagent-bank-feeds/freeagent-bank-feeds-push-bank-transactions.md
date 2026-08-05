@@ -6,8 +6,6 @@ description: "Learn how to write your SMB users' bank transactions via our FreeA
 
 When an SMB user has set up a bank feed connection, you can write bank transactions for source bank accounts to FreeAgent. Write them using the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint, as described in [Write transactions](/bank-feeds/pushing-transactions).
 
-This article explains how FreeAgent decides whether a transfer is money in or money out, because it differs from other bank feeds integrations.
-
 ## Prerequisites
 
 - Your SMB user has an authorized FreeAgent connection and has [established a bank feed](/bank-feeds/mapping/overview).
