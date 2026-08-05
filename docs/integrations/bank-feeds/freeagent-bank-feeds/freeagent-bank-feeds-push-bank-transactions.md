@@ -38,7 +38,7 @@ Because a positive `Xfer` is written as `OTHER`, the SMB user sees `//OTHER/` in
 your-transaction-description//OTHER/£1.60
 ```
 
-## SMB users explain the transfer themselves
+### SMB users explain the transfer themselves
 
 Because the transaction arrives as `OTHER` rather than `Xfer`, FreeAgent doesn't suggest a transfer when your SMB user explains it.
 
