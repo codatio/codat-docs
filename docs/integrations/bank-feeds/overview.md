@@ -18,7 +18,7 @@ Read more about our [Bank Feeds](/bank-feeds/overview) solution.
 - [Xero](/integrations/bank-feeds/xero-bank-feeds/)
 - [NetSuite](/integrations/bank-feeds/netsuite-bank-feeds/netsuite-bank-feeds-setup)
 - [Exact Online (NL)](/integrations/accounting/exact-online/accounting-exact-online)
-- [FreeAgent](/integrations/accounting/freeagent/accounting-freeagent)
+- [FreeAgent](/integrations/bank-feeds/freeagent-bank-feeds/)
 
 ## Relevant solutions
 

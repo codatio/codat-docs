@@ -82,7 +82,7 @@ module.exports = [
   },
   {
     type: "link",
-    href: "/integrations/accounting/freeagent/accounting-freeagent",
+    href: "/integrations/bank-feeds/freeagent-bank-feeds",
     label: "FreeAgent",
   },
   {
