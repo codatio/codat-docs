@@ -42,7 +42,7 @@ The following example shows how to switch Codat to point to Plaid Development in
 
 Get your existing environment credentials.
 
-1. Open the <a href="https://api.codat.io/swagger/ui/index.html#/Integrations/Integrations_GetCredentials" target="_blank">`GET /integrations/credentials/{platformKey}`</a> endpoint.
+1. Open the <a href="https://api.codat.io/swagger/index.html#/Integrations/get_integrations_credentials__platformKey_" target="_blank">`GET /integrations/credentials/{platformKey}`</a> endpoint.
 2. Replace `{platformKey}` with `plaid` and send your request to return your current credentials. Save the JSON, you'll need it later.
 
 ```json
@@ -60,7 +60,7 @@ Find the secret for Plaid's development environment.
 
 Update your environment credentials.
 
-1. Open the <a href="https://api.codat.io/swagger/ui/index#!/Integrations/Integrations_PutCredentials" target="_blank">  
+1. Open the <a href="https://api.codat.io/swagger/index.html#/Integrations/put_integrations_credentials__platformKey_" target="_blank">  
    `PUT /integrations/credentials/{platformKey}`</a> endpoint.
 2. Replace `{platformKey}` with `plaid` and send the following details:
    - The existing environment credentials you fetched earlier, replacing the original **clientSecret** with the secret for the development environment.
