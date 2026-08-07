@@ -131,7 +131,9 @@ This will allow you to synchronize data with that source, fetching or creating s
 | FreeAgent           | `fbrh`      |
 | Oracle NetSuite     | `akxx`      |
 | QuickBooks Online   | `qhyg`      |
+| Sage Intacct        | `knfz`      |
 | Xero                | `gbol`      |
+| Zoho Books          | `rwuv`      |
 
 As an example, let's create a QuickBooks Online (QBO) connection. In response, the endpoint returns a `dataConnection` object with a `PendingAuth` status and a `linkUrl`. Direct your customer to the `linkUrl` to initiate our [Link auth flow](/auth-flow/overview) and enable them to authorize this connection.
 

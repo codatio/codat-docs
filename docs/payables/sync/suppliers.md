@@ -64,7 +64,7 @@ Include all fields in the request, even if their values haven't changed. If you 
 
 :::info Software coverage
 
-This action is currently only supported for FreeAgent, QuickBooks Online, and Xero.
+This action is currently only supported for FreeAgent, Oracle NetSuite, QuickBooks Online, Sage Intacct, Xero, and Zoho Books.
 
 :::
 
@@ -95,6 +95,36 @@ Each accounting software has some limitations when updating suppliers. We've sum
 | **Supplier name**    | If `supplierName` is `null` in the request, FreeAgent uses the value in `contactName` instead (the value must contain a space). If both fields are `null`, FreeAgent returns a `400` response. |
 | **Country**          | It's not possible to clear the supplier's country. Sending a `null` value or excluding the field from the request sets the value to the company's default country.                             |
 | **Default currency** | FreeAgent doesn't support currency at supplier level. Any value sent in the request is ignored, and the response returns the company's base currency.                                          |
+
+#### NetSuite
+
+| Limitation           | Description                                                                                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Status**           | Always include `status` in the request. Omitting it reactivates an archived supplier.                                                                             |
+| **Contact name**     | `contactName` is not supported on update. Any value sent in the request is ignored and the response returns `null`.                                               |
+| **Duplicate names**  | Supplier names must be unique. Updating a name to match an existing supplier returns a `400` response.                                                            |
+| **Supplier name**    | Omitting `supplierName` clears it. Include the existing name if you don't want to change it.                                                                      |
+| **Default currency** | The currency must be enabled in the NetSuite organization, or the update returns a `400` response. Sending a `null` value leaves the existing currency unchanged. |
+| **Country**          | Address `country` must be a 2-character ISO code.                                                                                                                 |
+
+#### Sage Intacct
+
+| Limitation           | Description                                                                                                          |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Supplier name**    | It's not possible to clear the supplier name. Sending a `null` value or excluding the field keeps the existing name. |
+| **Default currency** | Sending a `null` value keeps the existing currency, but sending `""` clears the supplier's currency on the platform. |
+| **Addresses**        | Sage Intacct supports a single address per supplier, and the response returns the first address only.                |
+| **Contact name**     | `contactName` is split on the last space into a first and last name, each limited to 40 characters.                  |
+
+#### Zoho Books
+
+| Limitation             | Description                                                                                                                                                                                                                                                                                                                  |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Supplier name**      | It's not possible to clear the supplier name. Sending a `null` value or excluding the field keeps the existing name.                                                                                                                                                                                                         |
+| **Duplicate names**    | Supplier names must be unique, unless the Zoho Books organization allows duplicate vendor names. Updating a name to match an existing supplier returns a `400` response.                                                                                                                                                     |
+| **Default currency**   | The currency must exist in the Zoho Books organization's currency list, or the update returns a `400` response. Sending a `null` value keeps the existing currency. Changing a supplier's currency also changes the currency of bills created for that supplier, because Zoho Books derives bill currency from the supplier. |
+| **Addresses**          | Billing and delivery addresses are replaced together. Sending only a billing address clears the delivery address.                                                                                                                                                                                                            |
+| **Archived suppliers** | Archived suppliers can still be updated — the field changes are applied and the supplier remains archived. A rejected update never changes the supplier's status.                                                                                                                                                            |
 
 :::tip Recap
 
