@@ -76,11 +76,11 @@ Each accounting software has some limitations when updating suppliers. We've sum
 
 <TabItem value="fa" label="FreeAgent">
 
-| Limitation           | Description                                                                                                                                                                                    |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Supplier name**    | If `supplierName` is `null` in the request, FreeAgent uses the value in `contactName` instead (the value must contain a space). If both fields are `null`, FreeAgent returns a `400` response. |
-| **Country**          | It's not possible to clear the supplier's country. Sending a `null` value or excluding the field from the request sets the value to the company's default country.                             |
-| **Default currency** | FreeAgent doesn't support currency at supplier level. Any value sent in the request is ignored, and the response returns the company's base currency.                                          |
+| Limitation           | Description                                                                                                                                                                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Supplier name**    | If `supplierName` is `null` in the request, FreeAgent uses the value in `contactName` instead (the value must contain a space). Codat rejects a request where both fields are `null` with a `400` response, because FreeAgent requires a name. |
+| **Country**          | It's not possible to clear the supplier's country. Sending a `null` value or excluding the field from the request sets the value to the company's default country.                                                                             |
+| **Default currency** | FreeAgent doesn't support currency at supplier level. Any value sent in the request is ignored, and the response returns the company's base currency.                                                                                          |
 
 </TabItem>
 
