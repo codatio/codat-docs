@@ -75,10 +75,10 @@ Each accounting software has some limitations when updating suppliers. We've sum
 #### Xero
 
 | Limitation             | Description                                                                                                                                                                                  |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Supplier name**      | It's not possible to clear the supplier name. Sending a `null` or `""` value for `supplierName`, or `null` value for both `supplierName` and `contactName` keeps the existing supplier name. |
 | **Duplicate names**    | Supplier names must be unique. Updating a name to match an existing supplier returns a `400` response.                                                                                       |
-| **Archived suppliers** | It's not possible to update archived suppliers via the Xero API. To unarchive, do it manually in Xero.                                                                                       |     |
+| **Archived suppliers** | It's not possible to update archived suppliers via the Xero API. To unarchive, do it manually in Xero.                                                                                       |
 
 #### QuickBooks Online
 
