@@ -193,37 +193,6 @@ We have summarized the key differences between the integrations that support upd
 | **`AccountRef` format**  | Nominal code         | Internal ID                       | Numeric string      | Account record number             | GUID                | Numeric ID                           |
 | **Max line items**       | 40                   | No limit                          | No limit            | No limit                          | No limit            | No limit                             |
 
-### Software-specific behavior
-
-Each accounting software has some limitations when updating bills. We've summarized them below.
-
-#### NetSuite
-
-| Limitation    | Description                                                                                                                                                                         |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Currency**  | It's not possible to change a bill's currency after creation. Sending a different `currency` returns a `400` response.                                                              |
-| **Reference** | It's not possible to clear the reference. Omit the field to keep the existing value; sending `""` returns a `400` response.                                                         |
-| **Tax lines** | NetSuite may add automatically generated tax lines to a bill, so retrieving the bill later can return more line items than were sent in the update.                                 |
-| **Tracking**  | Per-line department, location, and customer references must be valid for the bill's subsidiary. A reference from another subsidiary returns a `400` response, even if it is active. |
-
-#### Sage Intacct
-
-| Limitation        | Description                                                                                                                                                                           |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Reference**     | Omitting `reference` clears the bill number on the platform. Companies that require bill numbers reject the update, so include the existing reference if you don't want to change it. |
-| **Currency rate** | Omitting `currencyRate` applies Sage Intacct's daily exchange rate. Sending an explicit value fixes the rate for the bill.                                                            |
-| **Paid bills**    | Bills that have been paid or partially paid can no longer be updated and return a `400` response.                                                                                     |
-| **Description**   | Line item descriptions are limited to 1000 characters, rather than the usual 4000.                                                                                                    |
-
-#### Zoho Books
-
-| Limitation        | Description                                                                                                                                                                                                                                             |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Currency**      | A bill's currency always follows its supplier. A `currency` value that differs from the supplier's currency is ignored, and the response returns the supplier's currency. To change a bill's currency, move it to a supplier with the desired currency. |
-| **Currency rate** | Zoho Books forces the exchange rate to `1` on bills in the organization's base currency. When you move a bill to a foreign-currency supplier, the rate is **not** recalculated automatically — send `currencyRate` explicitly.                          |
-| **Reference**     | The reference must be unique per supplier; a duplicate returns a `400` response. Omitting `reference` keeps the existing value.                                                                                                                         |
-| **Not found**     | A `404` response is not limited to an unknown bill ID — Zoho Books also returns `404` when the request body contains an invalid supplier, account, or tax rate ID.                                                                                      |
-
 ### Validation errors
 
 You may encounter a validation error when sending a request to update a bill. In the sections below, we`ve included general and software-specific errors to help resolve these.
