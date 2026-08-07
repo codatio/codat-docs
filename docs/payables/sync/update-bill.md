@@ -16,7 +16,7 @@ We distinguish between invoices where the company _owes_ money and those where t
 
 :::info Software coverage
 
-This action is currently only supported for FreeAgent, QuickBooks Online, and Xero.
+This action is currently only supported for FreeAgent, Oracle NetSuite, QuickBooks Online, Sage Intacct, Xero, and Zoho Books.
 
 :::
 
@@ -101,6 +101,50 @@ PUT /companies/{companyId}/connections/{dataConnectionId}/payables/bills/{billId
 
 </TabItem>
 
+<TabItem value="netsuite" label="NetSuite example">
+
+```json
+{
+  "description": "Consulting",
+  "unitAmount": 500,
+  "quantity": 2,
+  "accountRef": { "id": "<account-internal-id>" },
+  "taxRateRef": { "id": "<tax-code-internal-id>" },
+  "trackingRefs": [
+    {
+      "id": "department-<department-internal-id>",
+      "dataType": "trackingCategories"
+    },
+    {
+      "id": "location-<location-internal-id>",
+      "dataType": "trackingCategories"
+    },
+    {
+      "id": "<customer-internal-id>",
+      "dataType": "customers",
+      "isBillable": true
+    }
+  ]
+}
+```
+
+</TabItem>
+
+<TabItem value="intacct" label="Sage Intacct example">
+
+```json
+{
+  "description": "Consulting",
+  "unitAmount": 500,
+  "quantity": 2,
+  "accountRef": { "id": "<account-record-number>" },
+  "taxRateRef": { "id": "<tax-detail-id>" },
+  "taxAmount": 200
+}
+```
+
+</TabItem>
+
 <TabItem value="xero" label="Xero example">
 
 ```json
@@ -116,19 +160,38 @@ PUT /companies/{companyId}/connections/{dataConnectionId}/payables/bills/{billId
 
 </TabItem>
 
+<TabItem value="zoho" label="Zoho Books example">
+
+```json
+{
+  "description": "Consulting",
+  "unitAmount": 500,
+  "quantity": 2,
+  "accountRef": { "id": "<account-id>" },
+  "taxRateRef": { "id": "<tax-rate-id>" },
+  "taxAmount": 200,
+  "trackingRefs": [
+    { "id": "<tag-id>-<tag-option-id>", "dataType": "trackingCategories" },
+    { "id": "<customer-id>", "dataType": "customers", "isBillable": true }
+  ]
+}
+```
+
+</TabItem>
+
 </Tabs>
 
 ### Software requirements
 
 We have summarized the key differences between the integrations that support updates to bills below:
 
-| Feature                  | FreeAgent            | QBO                 | Xero                |
-| ------------------------ | -------------------- | ------------------- | ------------------- |
-| **Reference max length** | 255 characters       | 21 characters       | 255 characters      |
-| **`TaxRateRef`**         | Must be `null`       | Required            | Required            |
-| **Tax handling**         | Use `taxAmount` only | Use `taxRateRef.id` | Use `taxRateRef.id` |
-| **`AccountRef` format**  | Nominal code         | Numeric string      | GUID                |
-| **Max line items**       | 40                   | No limit            | No limit            |
+| Feature                  | FreeAgent            | NetSuite                          | QBO                 | Sage Intacct                      | Xero                | Zoho Books                           |
+| ------------------------ | -------------------- | --------------------------------- | ------------------- | --------------------------------- | ------------------- | ------------------------------------ |
+| **Reference max length** | 255 characters       | 45 characters                     | 21 characters       | 100 characters                    | 255 characters      | 50 characters                        |
+| **`TaxRateRef`**         | Must be `null`       | Required with `taxAmount`         | Required            | Required with `taxAmount`         | Required            | Required with a non-zero `taxAmount` |
+| **Tax handling**         | Use `taxAmount` only | Use `taxRateRef.id` + `taxAmount` | Use `taxRateRef.id` | Use `taxRateRef.id` + `taxAmount` | Use `taxRateRef.id` | Use `taxRateRef.id` + `taxAmount`    |
+| **`AccountRef` format**  | Nominal code         | Internal ID                       | Numeric string      | Account record number             | GUID                | Numeric ID                           |
+| **Max line items**       | 40                   | No limit                          | No limit            | No limit                          | No limit            | No limit                             |
 
 ### Validation errors
 
@@ -165,6 +228,26 @@ You may encounter a validation error when sending a request to update a bill. In
 
 </TabItem>
 
+<TabItem value="netsuite" label="NetSuite">
+
+| Issue                           | Error message                             |
+| ------------------------------- | ----------------------------------------- |
+| Invalid supplier ID             | `Supplier Ref` was not found in NetSuite. |
+| Invalid account ID              | `Account Ref` was not found in NetSuite.  |
+| Invalid tax rate ID             | `Tax Rate Ref` was not found in NetSuite. |
+| Changed or unsupported currency | `Currency` is not supported for supplier. |
+
+</TabItem>
+
+<TabItem value="intacct" label="Sage Intacct">
+
+| Issue                     | Error message                                                           |
+| ------------------------- | ----------------------------------------------------------------------- |
+| Bill fully or partly paid | This bill has been paid or partially paid and can no longer be updated. |
+| Invalid supplier ID       | The Supplier with Id `<id>` was not found.                              |
+
+</TabItem>
+
 <TabItem value="qbo" label="QuickBooks Online">
 
 | Issue                                  | Error message                                                              |
@@ -181,6 +264,17 @@ You may encounter a validation error when sending a request to update a bill. In
 | Invalid account GUID | `Account Ref` was not found in Xero.    |
 | Invalid supplier ID  | `SupplierRef Id` was not found in Xero. |
 | Currency not enabled | No currency exists for code `currency`. |
+
+</TabItem>
+
+<TabItem value="zoho" label="Zoho Books">
+
+| Issue                      | Error message                                     |
+| -------------------------- | ------------------------------------------------- |
+| Duplicate reference        | Reference has already been used for this supplier |
+| Invalid supplier ID        | `SupplierRef Id` was not found in ZohoBooks.      |
+| Negative bill total        | The total amount due cannot be negative.          |
+| Due date before issue date | `dueDate` must be after `issueDate`.              |
 
 </TabItem>
 
