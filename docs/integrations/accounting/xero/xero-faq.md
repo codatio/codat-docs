@@ -22,7 +22,7 @@ When reading account balances from Xero, the balance and the currency always use
 
 The Balance field within the Bank Accounts data type won't be populated for Xero connections.
 
-### Bank Transactions 
+### Bank Transactions
 
 The Bank Transactions dataset is expected to fail with a fetch error for Xero connections.
 
