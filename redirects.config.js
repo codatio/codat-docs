@@ -495,10 +495,6 @@ module.exports = {
       from: "/updates/240314-removing-transfer-transaction-type-SFE",
       to: "/updates/240314-deprecation-transfer-transaction-type-SFE",
     },
-    {
-      from: "/updates/240305-xero-bankstatement-report",
-      to: "/updates/240305-deprecation-xero-bankstatement-report",
-    },
     // New webhooks logic
     {
       from: "/introduction/webhooks/core-rules-webhooks",
