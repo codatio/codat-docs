@@ -18,6 +18,14 @@ The validity of the `taxRateRef.id` property on the Item depends on the value of
 
 When reading account balances from Xero, the balance and the currency always use the company's base currency in Codat. This applies even if the source nominal accounts are in a foreign currency. This is how the information is retrieved from the Xero API.
 
+### Bank Accounts
+
+The Balance field within the Bank Accounts data type won't be populated for Xero connections.
+
+### Bank Transactions 
+
+The Bank Transactions dataset is expected to fail with a fetch error for Xero connections.
+
 ## Your application's user interface
 
 If you provide your SMB customers with an application, we recommend you implement a setup page that allows them to connect to Xero and manage integration settings without any assistance from your support or onboarding teams.
@@ -141,24 +149,6 @@ Our accounting data model allows the reading and writing of Xero _tracking optio
 You can only write a tracking category to Xero if it has a non-null value for `parentId`.
 
 You are unable to write tracking categories that, when they were read, have the property `"hasChildren": true`. A validation error is returned.
-
-### Why do I see only 5 years' of bank transactions for my Xero connections?
-
-For performance reasons, the default date range for reading bank transactions from Xero is the past five years.
-
-If you need to increase or decrease this date range, edit the value of the `syncFromUTC` property for the `bankTransactions` data type in your additional sync settings (via a request to `POST /companies/{companyId}/syncSettings`).
-
-You can set `syncFromUTC` for all companies or individual companies. For more information, see [Advanced sync settings](/knowledge-base/advanced-sync-settings) or raise a ticket with our support team through our [support request form](https://codat.zendesk.com/hc/en-gb/requests/new).
-
-### Why do I see a different reference value when I read bank transactions to Xero that I'd previously written?
-
-There is a limitation in the data sets returned from Xero when reading Bank transactions to Codat. The **Particulars**, **Reference**, and **Code** values, which are visible in columns in the Xero UI, are returned together in the `description` field, concatenated and separated with spaces.
-
-The **Payee** in Xero is read to Codat as the `counterparty` of the Bank transaction.
-
-For example, the **Statement line** below will result in a bank statement line with a `counterparty` of `Payee 3` and a `description` with the value: `Description 3 Reference 3 3`.
-
-<img src="/img/old/d1325a1-xero-bank-statement-46713.png" />
 
 ### Can I write batch payments to Xero?
 
