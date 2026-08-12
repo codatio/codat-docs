@@ -21,9 +21,9 @@ With the new manage connections experience, business users can:
 - Reconnect with confidence - when a user authenticates with their accounting software, Link validates that the company they're reconnecting matches the one originally connected.
 - Catch mistakes before they happen - if the identities don't match, the user sees a clear warning that they're about to connect a different company, with the option to confirm or go back and select the correct one.
 
-<!-- TODO: add screenshot - manage connections view -->
+![A disconnected Oracle NetSuite connection in Link showing connection details and a Reconnect button](/img/updates/Relink-1.png "Reconnect a disconnected platform")
 
-<!-- TODO: add screenshot - company mismatch warning -->
+![A warning in Link showing that the selected company does not match the previously connected company, with options to reselect or cancel](/img/updates/Relink-2.png "Company mismatch warning")
 
 The reconnection experience is available for QuickBooks Online, Oracle NetSuite, and Sage Intacct connections via embedded Link.
 
