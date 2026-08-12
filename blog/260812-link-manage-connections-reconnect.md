@@ -24,29 +24,59 @@ With the new manage connections experience, business users can:
 <div
   style={{
     display: "flex",
-    gap: "1rem",
+    gap: "2rem",
     justifyContent: "center",
+    alignItems: "flex-start",
     flexWrap: "wrap",
+    margin: "1.5rem 0",
   }}
 >
-  <div style={{ textAlign: "center", flex: "1", minWidth: "280px" }}>
+  <figure style={{ margin: 0, textAlign: "center" }}>
     <img
       src="/img/updates/Relink-1.png"
       alt="A disconnected Oracle NetSuite connection in Link showing connection details and a Reconnect button"
+      style={{
+        height: "520px",
+        width: "auto",
+        maxWidth: "100%",
+        border: "1px solid var(--ifm-color-emphasis-200)",
+        borderRadius: "12px",
+        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)",
+      }}
     />
-    <p>
-      <em>Reconnect a disconnected platform</em>
-    </p>
-  </div>
-  <div style={{ textAlign: "center", flex: "1", minWidth: "280px" }}>
+    <figcaption
+      style={{
+        marginTop: "0.75rem",
+        fontSize: "0.85rem",
+        color: "var(--ifm-color-emphasis-600)",
+      }}
+    >
+      Reconnect a disconnected platform
+    </figcaption>
+  </figure>
+  <figure style={{ margin: 0, textAlign: "center" }}>
     <img
       src="/img/updates/Relink-2.png"
       alt="A warning in Link showing that the selected company does not match the previously connected company, with options to reselect or cancel"
+      style={{
+        height: "520px",
+        width: "auto",
+        maxWidth: "100%",
+        border: "1px solid var(--ifm-color-emphasis-200)",
+        borderRadius: "12px",
+        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)",
+      }}
     />
-    <p>
-      <em>Company mismatch warning</em>
-    </p>
-  </div>
+    <figcaption
+      style={{
+        marginTop: "0.75rem",
+        fontSize: "0.85rem",
+        color: "var(--ifm-color-emphasis-600)",
+      }}
+    >
+      Company mismatch warning
+    </figcaption>
+  </figure>
 </div>
 
 The reconnection experience is available for QuickBooks Online, Oracle NetSuite, and Sage Intacct connections via embedded Link.
