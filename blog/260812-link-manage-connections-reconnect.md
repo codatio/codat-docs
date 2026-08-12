@@ -74,7 +74,7 @@ With the new manage connections experience, business users can:
         color: "var(--ifm-color-emphasis-600)",
       }}
     >
-      Company mismatch warning
+      Mismatch warning when reconnecting
     </figcaption>
   </figure>
 </div>
