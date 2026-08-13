@@ -35,7 +35,7 @@ To set up one-time Link URLs:
 1. **Enable the One-time Link URLs setting** in the [Codat Portal](https://app.codat.io) under **[Settings > Auth flow > Link > Onboarding](https://app.codat.io/settings/link-settings/onboarding)**.
 2. **Complete the additional steps for your Link flow**, as described below.
 
-#### If using Hosted or build-your-own Link
+#### If using Hosted Link or your own custom-built Link UI
 
 If you are currently adding query parameters to Link URLs (for example, by appending `?link.showSandboxIntegrations=false`), confirm that your code can handle URLs that already contain query strings.
 
