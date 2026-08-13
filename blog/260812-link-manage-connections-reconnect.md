@@ -24,7 +24,7 @@ With the new manage connections experience, business users can:
 <div
   style={{
     display: "flex",
-    gap: "2rem",
+    gap: "1.5rem",
     justifyContent: "center",
     alignItems: "flex-start",
     flexWrap: "wrap",
@@ -36,7 +36,7 @@ With the new manage connections experience, business users can:
       src="/img/updates/Relink-1.png"
       alt="A disconnected Oracle NetSuite connection in Link showing connection details and a Reconnect button"
       style={{
-        height: "520px",
+        height: "460px",
         width: "auto",
         maxWidth: "100%",
         border: "1px solid var(--ifm-color-emphasis-200)",
@@ -59,7 +59,7 @@ With the new manage connections experience, business users can:
       src="/img/updates/Relink-2.png"
       alt="A warning in Link showing that the selected company does not match the previously connected company, with options to reselect or cancel"
       style={{
-        height: "520px",
+        height: "460px",
         width: "auto",
         maxWidth: "100%",
         border: "1px solid var(--ifm-color-emphasis-200)",
@@ -75,6 +75,29 @@ With the new manage connections experience, business users can:
       }}
     >
       Mismatch warning when reconnecting
+    </figcaption>
+  </figure>
+  <figure style={{ margin: 0, textAlign: "center" }}>
+    <img
+      src="/img/updates/Disconnect.png"
+      alt="A connected Xero connection in Link showing connection details and a Disconnect button"
+      style={{
+        height: "460px",
+        width: "auto",
+        maxWidth: "100%",
+        border: "1px solid var(--ifm-color-emphasis-200)",
+        borderRadius: "12px",
+        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)",
+      }}
+    />
+    <figcaption
+      style={{
+        marginTop: "0.75rem",
+        fontSize: "0.85rem",
+        color: "var(--ifm-color-emphasis-600)",
+      }}
+    >
+      Option to disconnect a connected platform
     </figcaption>
   </figure>
 </div>
