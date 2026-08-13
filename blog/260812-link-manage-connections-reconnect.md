@@ -1,5 +1,5 @@
 ---
-title: "Manage connections and reconnect companies seamlessly with embedded Link"
+title: "Manage connections and reconnect companies seamlessly with Link"
 date: "2026-08-12"
 tags: ["Product", "Update", "Link"]
 hide_table_of_contents: true
@@ -123,6 +123,7 @@ The manage connections experience is available in the Link SDK. To set it up:
 1. **Enable the Manage connections setting** in the [Codat Portal](https://app.codat.io) under [Settings > Auth flow > Link](https://app.codat.io/settings/link-settings/onboarding) to let authenticated users view and manage their existing connections. You can also customize the title and subtitle shown on the manage connections screen.
 
    ![The Manage connections setting in the Codat Portal's Link settings, with a toggle and customizable title and subtitle](/img/updates/manageconnection.png "Manage connections setting in the Codat Portal")
+
 2. **Register your domain** using the [Set CORS settings](/platform-api#/operations/set-cors-settings) endpoint so the component can make authenticated requests from your site.
 3. **Get a company access token.** Authenticated features require an access token, retrieved server-side from the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint (`GET /companies/{companyId}/accessToken`). Tokens are valid for 24 hours and scoped to a single company.
 4. **Pass the token to the Link SDK** via the `accessToken` prop when initializing the component.
