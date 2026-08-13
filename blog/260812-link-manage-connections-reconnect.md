@@ -1,5 +1,5 @@
 ---
-title: "Manage connections and reconnect companies seamlessly with embedded Link"
+title: "Manage connections and reconnect companies seamlessly with Link"
 date: "2026-08-12"
 tags: ["Product", "Update", "Link"]
 hide_table_of_contents: true
