@@ -31,7 +31,7 @@ With the new manage connections experience, business users can:
     margin: "1.5rem 0",
   }}
 >
-  <figure style={{ margin: 0, textAlign: "center", width: "min-content" }}>
+  <figure style={{ margin: 0, textAlign: "center" }}>
     <img
       src="/img/updates/Relink-1.png"
       alt="A disconnected Oracle NetSuite connection in Link showing connection details and a Reconnect button"
@@ -46,6 +46,8 @@ With the new manage connections experience, business users can:
     />
     <figcaption
       style={{
+        width: 0,
+        minWidth: "100%",
         marginTop: "0.75rem",
         fontSize: "0.85rem",
         color: "var(--ifm-color-emphasis-600)",
@@ -54,7 +56,7 @@ With the new manage connections experience, business users can:
       Reconnect a disconnected platform
     </figcaption>
   </figure>
-  <figure style={{ margin: 0, textAlign: "center", width: "min-content" }}>
+  <figure style={{ margin: 0, textAlign: "center" }}>
     <img
       src="/img/updates/Relink-2.png"
       alt="A warning in Link showing that the selected company does not match the previously connected company, with options to reselect or cancel"
@@ -69,6 +71,8 @@ With the new manage connections experience, business users can:
     />
     <figcaption
       style={{
+        width: 0,
+        minWidth: "100%",
         marginTop: "0.75rem",
         fontSize: "0.85rem",
         color: "var(--ifm-color-emphasis-600)",
@@ -77,7 +81,7 @@ With the new manage connections experience, business users can:
       Mismatch warning when reconnecting
     </figcaption>
   </figure>
-  <figure style={{ margin: 0, textAlign: "center", width: "min-content" }}>
+  <figure style={{ margin: 0, textAlign: "center" }}>
     <img
       src="/img/updates/Disconnect.png"
       alt="A connected Xero connection in Link showing connection details and a Disconnect button"
@@ -92,6 +96,8 @@ With the new manage connections experience, business users can:
     />
     <figcaption
       style={{
+        width: 0,
+        minWidth: "100%",
         marginTop: "0.75rem",
         fontSize: "0.85rem",
         color: "var(--ifm-color-emphasis-600)",
