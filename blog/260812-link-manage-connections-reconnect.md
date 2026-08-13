@@ -24,7 +24,7 @@ With the new manage connections experience, business users can:
 <div
   style={{
     display: "flex",
-    gap: "1.5rem",
+    gap: "1rem",
     justifyContent: "center",
     alignItems: "flex-start",
     flexWrap: "wrap",
@@ -36,7 +36,7 @@ With the new manage connections experience, business users can:
       src="/img/updates/Relink-1.png"
       alt="A disconnected Oracle NetSuite connection in Link showing connection details and a Reconnect button"
       style={{
-        height: "460px",
+        height: "440px",
         width: "auto",
         maxWidth: "100%",
         border: "1px solid var(--ifm-color-emphasis-200)",
@@ -59,7 +59,7 @@ With the new manage connections experience, business users can:
       src="/img/updates/Relink-2.png"
       alt="A warning in Link showing that the selected company does not match the previously connected company, with options to reselect or cancel"
       style={{
-        height: "460px",
+        height: "440px",
         width: "auto",
         maxWidth: "100%",
         border: "1px solid var(--ifm-color-emphasis-200)",
@@ -82,7 +82,7 @@ With the new manage connections experience, business users can:
       src="/img/updates/Disconnect.png"
       alt="A connected Xero connection in Link showing connection details and a Disconnect button"
       style={{
-        height: "460px",
+        height: "440px",
         width: "auto",
         maxWidth: "100%",
         border: "1px solid var(--ifm-color-emphasis-200)",
