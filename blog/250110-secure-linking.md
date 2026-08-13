@@ -30,7 +30,7 @@ All clients who want to have stricter rules around Link URLs sent to their custo
 
 ## How to get started?
 
-One-time Link URLs are self-serve. To set them up:
+To set up one-time Link URLs:
 
 1. **Enable the One-time Link URLs setting** in the [Codat Portal](https://app.codat.io) under **[Settings > Auth flow > Link > Onboarding](https://app.codat.io/settings/link-settings/onboarding)**.
 2. **Complete the additional steps for your Link flow**, as described below.
