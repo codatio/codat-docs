@@ -47,8 +47,8 @@ If you are currently adding query parameters to Link URLs (for example, by appen
 
 The Link SDK uses an access token instead of an appended one-time password. To set this up:
 
-1. **Get a company access token.** Retrieve it server-side from the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint (`GET /companies/{companyId}/accessToken`). Tokens are valid for 24 hours and scoped to a single company.
-2. **Pass the token to the Link SDK** via the `accessToken` prop when initializing the component.
-3. **Register your domain** using the [Set CORS settings](/platform-api#/operations/set-cors-settings) endpoint so the component can make authenticated requests from your site.
+1. **Register your domain** using the [Set CORS settings](/platform-api#/operations/set-cors-settings) endpoint so the component can make authenticated requests from your site.
+2. **Get a company access token.** Retrieve it server-side from the [Get company access token](/platform-api#/operations/get-company-access-token) endpoint (`GET /companies/{companyId}/accessToken`). Tokens are valid for 24 hours and scoped to a single company.
+3. **Pass the token to the Link SDK** via the `accessToken` prop when initializing the component.
 
 Reach out to your account manager or our support team if you'd like help getting set up.
