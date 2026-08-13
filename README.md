@@ -59,3 +59,4 @@ Updates feed: <https://codat-docs.vercel.app/updates/rss.xml>
 ---
 
 Built with [Docusaurus](https://docusaurus.io/).
+
