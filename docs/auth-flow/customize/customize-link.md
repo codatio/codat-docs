@@ -86,6 +86,20 @@ This is a mandatory field where you need to specify the message you want to disp
 
 Optionally, you can add a message and a URL for terms and conditions you'd like your clients to read before they share their data with you.
 
+The consent screen groups this messaging into five expandable sections. Each section has a header and a body of content, both of which you can customize for the accounting, banking, and commerce integration categories independently:
+
+| Section             | Default header        |
+| ------------------- | --------------------- |
+| Purpose             | `Purpose`             |
+| Access              | `Access`              |
+| Account information | `Account information` |
+| Platform data       | `Platform data`       |
+| Retention           | `Retention`           |
+
+Headers are plain text and limited to 50 characters. Leave a header field empty to use the default wording.
+
+The Link settings in the Portal apply to the `en-US` locale. To set headers for other locales, or to override them at runtime, use the [custom text options](/auth-flow/customize/sdk-customize-code#custom-text) in the Link SDK.
+
 #### Data type information
 
 List the data you're going to collect for each of the integration categories (accounting, banking, or commerce). This informs the user which data types Codat will use after linking the data source.
