@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkcodat_docs=globalThis.webpackChunkcodat_docs||[]).push([[81903],{1912(a){a.exports=JSON.parse('{"blogBasePath":"/codat-docs/pr-preview/pr-1886/updates","blogTitle":"Codat updates","authorsListPath":"/codat-docs/pr-preview/pr-1886/updates/authors"}')}}]);
