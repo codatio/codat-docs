@@ -24,7 +24,7 @@ jobs:
           # build ships LFS pointer files instead of the actual binaries
           lfs: true
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
@@ -144,7 +144,7 @@ jobs:
           # the checkout is only needed so the action can push to gh-pages
           lfs: ${{ github.event.action != 'closed' }}
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         if: github.event.action != 'closed'
         with:
           node-version: 24
