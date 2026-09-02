@@ -77,7 +77,11 @@ https://{authorizationRedirectUrl}?authorizationId={authId}&redirectUri={redirec
 
 1.  The `authorizationRedirectUrl` is the web app URL that you configured in the Codat Portal for the Sage Bank Feeds integration.
 2.  The `authId` is the unique authorization identifier for the company, this will be supplied by Sage and will be required when creating the dataconnection.
-3.  The `redirectUri` is the URI the SMB user will be redirected to after authentication through your web app, this will also be supplied by Sage.
+3.  The `redirectUri` is the URI your web app redirects the SMB user to after authentication. Sage also supplies this value, and its host varies by Sage product, region, and environment.
+
+:::note Redirect host
+Sage controls the redirect host and can add new ones. Sage Banking V2, released in August 2026, redirects users to `money.sage.com`. The previous `*.sagebankdrive.com` hosts remain in use. If your web app checks or hard-codes the redirect host, update it to accept `money.sage.com`, or remove the check and use the `redirectUri` value exactly as supplied.
+:::
 
 ## Hosted login page
 
@@ -124,14 +128,15 @@ Sample request body:
 
 </Tabs>
 
-If your request responds with a `200` response status code, the next step is to redirect the company to the given `redirectUri`, appending the `authId` as a query parameter.
+If your request responds with a `200` response status code, the next step is to redirect the company to the `redirectUri` exactly as Sage supplied it, adding the `authId` as the `state` query parameter.
 
 ```
 {redirectUri}?state={authId}
 
-// Example:
+// Examples:
 
-redirect_uri=https://snd01eu.Sagebankdrive.com/api/v1/indirectredirect/11111-22222-33333-88888-9999?state=1122-3344-5566-7788
+https://snd01eu.sagebankdrive.com/...?state=1122-3344-5566-7788
+https://money.sage.com/...?state=1122-3344-5566-7788
 ```
 
 ### Establish the bank feed
