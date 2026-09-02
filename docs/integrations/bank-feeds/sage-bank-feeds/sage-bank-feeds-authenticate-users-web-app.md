@@ -55,7 +55,7 @@ There are two authentication flows between Sage, Codat's Sage Bank Feeds integra
 
    1. The `authorizationRedirectUrl` is the web app URL that you configured in the Codat Portal.
    2. The `authId` is the unique authorization identifier for the company.
-   3. The `redirectUri` is the URI the SMB user will be redirected to after authentication through your web app (see step two in the next procedure). Sage supplies this value, and its host varies by Sage product, region, and environment.
+   3. The `redirectUri` is the URI your web app redirects the SMB user to after authentication, as described in step two of the next procedure. Sage supplies this value, and its host varies by Sage product, region, and environment.
    4. The `bankId` is a unique Id that represents the bank the SMB has attempted to link to in Sage (this will be a bank representing your organization).
 
    :::note Redirect host

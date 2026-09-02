@@ -77,7 +77,7 @@ https://{authorizationRedirectUrl}?authorizationId={authId}&redirectUri={redirec
 
 1.  The `authorizationRedirectUrl` is the web app URL that you configured in the Codat Portal for the Sage Bank Feeds integration.
 2.  The `authId` is the unique authorization identifier for the company, this will be supplied by Sage and will be required when creating the dataconnection.
-3.  The `redirectUri` is the URI the SMB user will be redirected to after authentication through your web app, this will also be supplied by Sage. Its host varies by Sage product, region, and environment.
+3.  The `redirectUri` is the URI your web app redirects the SMB user to after authentication. Sage also supplies this value, and its host varies by Sage product, region, and environment.
 
 :::note Redirect host
 Sage controls the redirect host and can add new ones. Sage Banking V2, released in August 2026, redirects users to `money.sage.com`. The previous `*.sagebankdrive.com` hosts remain in use. If your web app checks or hard-codes the redirect host, update it to accept `money.sage.com`, or remove the check and use the `redirectUri` value exactly as supplied.
