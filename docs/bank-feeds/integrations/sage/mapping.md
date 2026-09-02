@@ -128,7 +128,7 @@ Sample request body:
 
 </Tabs>
 
-If your request responds with a `200` response status code, the next step is to redirect the company to the given `redirectUri`, adding the `authId` as the `state` query parameter. Use the `redirectUri` exactly as Sage supplied it. If it already contains a query string, append `&state={authId}` instead of `?state={authId}`.
+If your request responds with a `200` response status code, the next step is to redirect the company to the `redirectUri` exactly as Sage supplied it, adding the `authId` as the `state` query parameter.
 
 ```
 {redirectUri}?state={authId}

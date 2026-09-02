@@ -92,7 +92,7 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
    }
    ```
 
-2. If the `PUT /authorization` request returns a 200 response, your web app should redirect the SMB user to the `redirectUri` for the Company, with the `authId` added as the `state` query parameter. Use the `redirectUri` exactly as Sage supplied it. If it already contains a query string, append `&state={authId}` instead of `?state={authId}`.
+2. If the `PUT /authorization` request returns a 200 response, your web app should redirect the SMB user to the `redirectUri` exactly as Sage supplied it, with the `authId` added as the `state` query parameter:
 
    ```http
    {redirectUri}?state={authId}
