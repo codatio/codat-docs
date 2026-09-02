@@ -55,8 +55,12 @@ There are two authentication flows between Sage, Codat's Sage Bank Feeds integra
 
    1. The `authorizationRedirectUrl` is the web app URL that you configured in the Codat Portal.
    2. The `authId` is the unique authorization identifier for the company.
-   3. The `redirectUri` is the URI the SMB user will be redirected to after authentication through your web app (see step two in the next procedure).
+   3. The `redirectUri` is the URI the SMB user will be redirected to after authentication through your web app (see step two in the next procedure). Sage supplies this value, and its host varies by Sage product, region, and environment.
    4. The `bankId` is a unique Id that represents the bank the SMB has attempted to link to in Sage (this will be a bank representing your organization).
+
+   :::note Redirect host
+   Sage controls the redirect host and can add new ones. Sage Banking V2, released in August 2026, redirects users to `money.sage.com`. The previous `*.sagebankdrive.com` hosts remain in use. If your web app checks or hard-codes the redirect host, update it to accept `money.sage.com`, or remove the check and use the `redirectUri` value exactly as supplied.
+   :::
 
 6. As configured in your web app, the user is redirected to a login or user authorization page.
 
@@ -88,14 +92,15 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
    }
    ```
 
-2. If the `PUT /authorization` request returns a 200 response, your web app should redirect the SMB user to the `redirectUri` for the Company, with the `authId` appended as a query parameter:
+2. If the `PUT /authorization` request returns a 200 response, your web app should redirect the SMB user to the `redirectUri` for the Company, with the `authId` added as the `state` query parameter. Use the `redirectUri` exactly as Sage supplied it. If it already contains a query string, append `&state={authId}` instead of `?state={authId}`.
 
    ```http
    {redirectUri}?state={authId}
 
-   // example:
+   // examples:
 
-   redirect_uri=https://snd01eu.sagebankdrive.com/api/v1/indirectredirect/11111-22222-33333-88888-9999?state=1122-3344-5566-7788
+   https://snd01eu.sagebankdrive.com/api/v1/indirectredirect/11111-22222-33333-88888-9999?state=1122-3344-5566-7788
+   https://money.sage.com/{path-supplied-by-sage}?state=1122-3344-5566-7788
    ```
 
 3. If the SMB user was successfully authenticated with Codat, Sage displays a dialog listing the available source bank accounts&mdash;the bank account in your application that will send bank feeds. For example:
