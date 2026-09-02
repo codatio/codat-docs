@@ -135,8 +135,8 @@ If your request responds with a `200` response status code, the next step is to 
 
 // Examples:
 
-https://snd01eu.sagebankdrive.com/api/v1/indirectredirect/11111-22222-33333-88888-9999?state=1122-3344-5566-7788
-https://money.sage.com/{path-supplied-by-sage}?state=1122-3344-5566-7788
+https://snd01eu.sagebankdrive.com/...?state=1122-3344-5566-7788
+https://money.sage.com/...?state=1122-3344-5566-7788
 ```
 
 ### Establish the bank feed

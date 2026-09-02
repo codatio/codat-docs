@@ -99,8 +99,8 @@ You must include the "Content-Security-Policy" header with a value of `frame-anc
 
    // examples:
 
-   https://snd01eu.sagebankdrive.com/api/v1/indirectredirect/11111-22222-33333-88888-9999?state=1122-3344-5566-7788
-   https://money.sage.com/{path-supplied-by-sage}?state=1122-3344-5566-7788
+   https://snd01eu.sagebankdrive.com/...?state=1122-3344-5566-7788
+   https://money.sage.com/...?state=1122-3344-5566-7788
    ```
 
 3. If the SMB user was successfully authenticated with Codat, Sage displays a dialog listing the available source bank accounts&mdash;the bank account in your application that will send bank feeds. For example:
