@@ -490,12 +490,6 @@ var comm = [
 ];
 module.exports = {
   redirects: [
-    // Accounting API reference retired (EXP-2414); Lending API reference
-    // documents the same properties. Internal copy: accounting-api-ref.codat.ai
-    {
-      from: "/accounting-api",
-      to: "/lending-api",
-    },
     // Deprecations - remove after July
     {
       from: "/updates/240314-removing-transfer-transaction-type-SFE",

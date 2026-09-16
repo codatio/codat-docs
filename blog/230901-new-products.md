@@ -47,7 +47,7 @@ Our products can help you make the most of your customers' consented business da
 
 The API documentation for the products you may be using is available below. These products are not available to new customers from September 4, 2023.
 
-- [Accounting API](/accounting-api#/)
+- Accounting API
 - [Banking API](/banking-api#/)
 - [Commerce API](/commerce-api#/)
 - [Assess API](/assess-api#/)

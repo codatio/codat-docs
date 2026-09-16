@@ -30,11 +30,11 @@ The following data types are required (and are enabled by default):
 
 #### Accounting
 
-- [Company info](/accounting-api#/schemas/CompanyDataset)
-- [Accounts](/accounting-api#/schemas/Account)
-- [Tax rates](/accounting-api#/schemas/TaxRates)
-- [Customers](/accounting-api#/schemas/Customers)
-- [Suppliers](/accounting-api#/schemas/Suppliers)
+- [Company info](/lending-api#/schemas/AccountingCompanyInfo)
+- [Accounts](/lending-api#/schemas/AccountingAccount)
+- [Tax rates](/sync-for-payables-api#/schemas/TaxRates)
+- [Customers](/lending-api#/schemas/AccountingCustomers)
+- [Suppliers](/lending-api#/schemas/AccountingSuppliers)
 
 #### Commerce
 

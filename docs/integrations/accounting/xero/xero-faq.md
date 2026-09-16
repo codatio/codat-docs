@@ -136,7 +136,7 @@ To see which rate limit is exceeded, please contact Codat Support.
 
 ### Why do all of my items from Xero have their status as _Unknown_?
 
-All [Items](/accounting-api#/schemas/Item) from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
+All Items from Xero will have their `itemStatus` mapped as `Unknown` in Codat because an item status is not exposed via Xero's API. If this is a feature you'd like to see made available, please consider voting for <a href="https://developer.xero.com/documentation/api/items/" target="_blank">this feature request on Xero's UserVoice</a>.
 
 ### Can I write discounts to Xero at the invoice level?
 
@@ -152,7 +152,7 @@ You are unable to write tracking categories that, when they were read, have the 
 
 ### Can I write batch payments to Xero?
 
-Yes. To write a batch payment to Xero, you write a [Bill payment](/accounting-api#/operations/post-bill-payment) with multiple line items. Writing a batch payment to Xero will create the following business objects:
+Yes. To write a batch payment to Xero, you write a [Bill payment](/sync-for-payables-api#/operations/create-bill-payment) with multiple line items. Writing a batch payment to Xero will create the following business objects:
 
 - A separate bill payment for each line.
 - An account transaction that links the bill payments together.

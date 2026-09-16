@@ -14,7 +14,7 @@ Connecting to QuickBooks Online bank feeds through the integration is only suppo
 
 ## Overview
 
-With our integration, your SMB customers can connect source bank accounts in your application to target accounts QuickBooks Online (QBO) using one-time credentials. You can then write [Bank transactions](/accounting-api#/schemas/BankTransactions) from source accounts to target accounts via Codat.
+With our integration, your SMB customers can connect source bank accounts in your application to target accounts QuickBooks Online (QBO) using one-time credentials. You can then write [Bank transactions](/bank-feeds-api#/schemas/BankTransactions) from source accounts to target accounts via Codat.
 
 SMB users connect their bank accounts using the QBO Bank Feeds Link UI, which is built and hosted by Codat. Then they can view transactions from source accounts as bank feeds in QBO, allowing them to easily reconcile transactions against accounting entries.
 

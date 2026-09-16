@@ -139,7 +139,7 @@ You can write Direct costs to NetSuite as either [Checks](https://www.netsuite.c
 
 You can write direct incomes to NetSuite as either [Cash Sales](https://www.netsuite.com/help/helpcenter/en_US/srbrowser/Browser2021_2/script/record/cashsale.html) or [Cash Refunds](https://www.netsuite.com/help/helpcenter/en_US/srbrowser/Browser2021_2/script/record/cashrefund.html). Writing Customer Deposits is not supported.
 
-When reading Direct incomes, the default `-Not Taxable-` tax group and tax code are ignored. You can access this information by reading the [Tax Rates](/accounting-api#/schemas/TaxRates) data type.
+When reading Direct incomes, the default `-Not Taxable-` tax group and tax code are ignored. You can access this information by reading the [Tax Rates](/sync-for-payables-api#/schemas/TaxRates) data type.
 
 ## Invoices
 
@@ -225,9 +225,9 @@ The following tables highlight selected fields that are not available in data re
 
 ### Unavailable Codat fields
 
-| Oracle NetSuite record and field                        | Codat data type                                               | Status                                                                                   |
-| ------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `VendorCredit.customForm`, `VendorCredit.postingPeriod` | [Bill credit notes](/accounting-api#/schemas/billcreditnotes) | Not represented in Codat's accounting data model.                                        |
-| `Invoice.customForm`, `Invoice.postingPeriod`           | [Invoices](/accounting-api#/schemas/invoices)                 | Not represented in Codat's accounting data model.                                        |
-| `Vendor.subsidiary`                                     | [Suppliers](/accounting-api#/schemas/Suppliers)               | The Suppliers data type does not show whether or not a supplier company is a subsidiary. |
-| `Vendor.workCalendar`                                   | [Suppliers](/accounting-api#/schemas/Suppliers)               | Not represented in Codat's accounting data model.                                        |
+| Oracle NetSuite record and field                        | Codat data type                                                      | Status                                                                                   |
+| ------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `VendorCredit.customForm`, `VendorCredit.postingPeriod` | [Bill credit notes](/lending-api#/schemas/AccountingBillCreditNotes) | Not represented in Codat's accounting data model.                                        |
+| `Invoice.customForm`, `Invoice.postingPeriod`           | [Invoices](/lending-api#/schemas/AccountingInvoices)                 | Not represented in Codat's accounting data model.                                        |
+| `Vendor.subsidiary`                                     | [Suppliers](/lending-api#/schemas/AccountingSuppliers)               | The Suppliers data type does not show whether or not a supplier company is a subsidiary. |
+| `Vendor.workCalendar`                                   | [Suppliers](/lending-api#/schemas/AccountingSuppliers)               | Not represented in Codat's accounting data model.                                        |

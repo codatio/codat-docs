@@ -27,8 +27,7 @@ Explore the underlying [OpenAPI Spec](https://github.com/codatio/oas).
   <ul>
     <li><a href="/sync-for-commerce-v1-api">Sync for Commerce API v1</a></li>
     <li><a href="/sync-for-expenses-v1-api">Sync for Expenses API v1</a></li>
-    <li><a href="/accounting-api">Accounting API</a></li>
-    <li><a href="/banking-api">Banking API</a></li>
+        <li><a href="/banking-api">Banking API</a></li>
     <li><a href="/commerce-api">Commerce API</a></li>
   </ul>
 </details>

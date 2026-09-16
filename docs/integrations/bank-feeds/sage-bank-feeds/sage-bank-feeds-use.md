@@ -48,7 +48,7 @@ The response contains a list of bank accounts with a status of either `pending` 
 
 ## Write bank transactions from a source bank account
 
-You can write [Bank transactions](/accounting-api#/schemas/BankTransactions) from `connected` source bank accounts to target accounts in supported Sage products. The integration routes these transactions through the Sage Banking Service Provider API.
+You can write [Bank transactions](/bank-feeds-api#/schemas/BankTransactions) from `connected` source bank accounts to target accounts in supported Sage products. The integration routes these transactions through the Sage Banking Service Provider API.
 
 In the user's Sage package, new bank transactions for the target account will appear on the **Incoming Bank Transactions** UI.
 
@@ -59,7 +59,7 @@ Transactions are not automatically downloaded to Sage when the user successfully
 
 Make the following requests to the Codat API. All write requests are asynchronous.
 
-1. Write bank transactions to a target bank account using the <a href="/accounting-api#/operations/create-bank-transactions">Create bank transactions</a> endpoint. Note that:
+1. Write bank transactions to a target bank account using the <a href="/bank-feeds-api#/operations/create-bank-transactions">Create bank transactions</a> endpoint. Note that:
    - You can only write bank transactions to one target account at a time.
    - Bank transactions must be written in chronological order.
    - Bank transactions can't be older than the most recent transaction available on the destination bank account.
