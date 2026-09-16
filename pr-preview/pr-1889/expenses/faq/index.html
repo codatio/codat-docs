@@ -22,8 +22,8 @@
 
 <link rel="search" type="application/opensearchdescription+xml" title="Codat Docs" href="/codat-docs/pr-preview/pr-1889/opensearch.xml">
 <script src="https://status.codat.io/embed/script.js" async></script><link rel="stylesheet" href="/codat-docs/pr-preview/pr-1889/assets/css/styles.6c0590ee.css">
-<script src="/codat-docs/pr-preview/pr-1889/assets/js/runtime~main.408e3090.js" defer="defer"></script>
-<script src="/codat-docs/pr-preview/pr-1889/assets/js/main.07a43cce.js" defer="defer"></script>
+<script src="/codat-docs/pr-preview/pr-1889/assets/js/runtime~main.03dcbee7.js" defer="defer"></script>
+<script src="/codat-docs/pr-preview/pr-1889/assets/js/main.699669d0.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -124,7 +124,7 @@ these and reconcile their payments.
     </p>
 </div></details><details class="question_aVX3"><summary class="header_yq2e"><b>What is the difference between effectiveTaxRate and totalTaxRate?</b></summary><div class="answer_BViU"><p>If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together.</p>
 <p>Alternatively, primary tax can be calculated on the item cost, and another tax component is added on top of that amount.This is known as compounding. In this case, the effective tax rate is the rate that results in the total amount of tax with compounding when applied to the original amount.</p>
-<p>The <code>totalTaxRate</code> is the total, not compounded, sum of the components of a tax rate. You can read more about this in our <a href="https://docs.codat.io/accounting-api#/schemas/TaxRate#tax-components">API documentation covering tax rates</a>.</p>
+<p>The <code>totalTaxRate</code> is the total, not compounded, sum of the components of a tax rate. You can read more about this in our <a href="https://docs.codat.io/sync-for-payables-api#/schemas/TaxRate">API documentation covering tax rates</a>.</p>
     </div></details><details class="question_aVX3"><summary class="header_yq2e"><b>Is the transaction Id unique to each connected company?</b></summary><div class="answer_BViU"><p>Each transaction Id is unique to a client&#39;s company but they aren&#39;t unique across connections. In Codat, it&#39;s only possible to have a single accounting connection per company. If a company wants to swap their accounting software or would like to link to a different entity, we recommend creating a new company.
     </p>
 </div></details><div class="questionsZeroState_h2ib">Try a different search term</div>

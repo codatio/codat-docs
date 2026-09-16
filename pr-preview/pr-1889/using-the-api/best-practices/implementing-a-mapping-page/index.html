@@ -22,8 +22,8 @@
 
 <link rel="search" type="application/opensearchdescription+xml" title="Codat Docs" href="/codat-docs/pr-preview/pr-1889/opensearch.xml">
 <script src="https://status.codat.io/embed/script.js" async></script><link rel="stylesheet" href="/codat-docs/pr-preview/pr-1889/assets/css/styles.6c0590ee.css">
-<script src="/codat-docs/pr-preview/pr-1889/assets/js/runtime~main.408e3090.js" defer="defer"></script>
-<script src="/codat-docs/pr-preview/pr-1889/assets/js/main.07a43cce.js" defer="defer"></script>
+<script src="/codat-docs/pr-preview/pr-1889/assets/js/runtime~main.03dcbee7.js" defer="defer"></script>
+<script src="/codat-docs/pr-preview/pr-1889/assets/js/main.699669d0.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -52,7 +52,7 @@
 <p><a href="/codat-docs/pr-preview/pr-1889/using-the-api/webhooks/create-consumer">Configure a webhook consumer</a> to listen for the <a href="/codat-docs/pr-preview/pr-1889/using-the-api/webhooks/event-types">DatasetDataChanged</a> event that indicates changes in the underlying data for the <code>chartOfAccounts</code> data type. You will receive a notification when the data <span class="glossaryTermWrapper_Sa_o"><a href="/glossary#sync" class="glossaryTerm_LcEc" aria-describedby="tooltip-sync">sync</a><span id="tooltip-sync" class="tooltip_bRNo tooltipTop_ogDc tooltipFloating_AcsW" role="tooltip"><strong>Sync</strong> <!-- -->The process of fetching the latest data from a connected data source. Syncs can be triggered manually or run automatically on a schedule.</span></span> completes successfully.</p>
 </li>
 <li>
-<p>Once notified by the <span class="glossaryTermWrapper_Sa_o"><a href="/glossary#webhook" class="glossaryTerm_LcEc" aria-describedby="tooltip-webhook">webhook</a><span id="tooltip-webhook" class="tooltip_bRNo tooltipTop_ogDc tooltipFloating_AcsW" role="tooltip"><strong>Webhook</strong> <!-- -->An automated notification sent from Codat to your application when specific events occur, such as when data syncs complete or connections change status.</span></span>, call our <a href="/codat-docs/pr-preview/pr-1889/accounting-api#/operations/list-accounts">List accounts</a> endpoint and use the response to display <code>account.name</code> and <code>account.id</code> in a dropdown box for your customer to choose the correct mapping. You can also query the response to simplify the mapping experience for your customer:</p>
+<p>Once notified by the <span class="glossaryTermWrapper_Sa_o"><a href="/glossary#webhook" class="glossaryTerm_LcEc" aria-describedby="tooltip-webhook">webhook</a><span id="tooltip-webhook" class="tooltip_bRNo tooltipTop_ogDc tooltipFloating_AcsW" role="tooltip"><strong>Webhook</strong> <!-- -->An automated notification sent from Codat to your application when specific events occur, such as when data syncs complete or connections change status.</span></span>, call our <a href="/codat-docs/pr-preview/pr-1889/lending-api#/operations/list-accounting-accounts">List accounts</a> endpoint and use the response to display <code>account.name</code> and <code>account.id</code> in a dropdown box for your customer to choose the correct mapping. You can also query the response to simplify the mapping experience for your customer:</p>
 <ul>
 <li>Display only active accounts of relevant account type needed for your mapping page, such as <code>type=income</code> and <code>status=active</code>.</li>
 </ul>
