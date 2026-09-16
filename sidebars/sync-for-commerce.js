@@ -49,7 +49,6 @@ module.exports = [
   //   label: "Build guide",
   //   collapsed: true,
   //   items: [
-  //     "commerce/build/sync-for-commerce-prerequisites",
   //     "commerce/build/sync-platform-selection",
   //     "commerce/build/implementing-codats-no-code-merchant-configuration",
   //     "commerce/build/customizing-the-sync-configuration-flow",
