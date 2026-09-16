@@ -13,7 +13,6 @@ const payroll = require("./sidebars/payroll");
 const payables = require("./sidebars/payables");
 const spendInsights = require("./sidebars/spend-insights");
 
-const accountingAPI = require("./sidebars/accounting-api");
 const bankingAPI = require("./sidebars/banking-api");
 const commerceAPI = require("./sidebars/commerce-api");
 
@@ -177,7 +176,6 @@ module.exports = {
   integrationsBankFeeds: integrationsBankFeeds,
   enterprise: enterprise,
   spendInsights: spendInsights,
-  //accountingAPI: accountingAPI,
   //bankingAPI: bankingAPI,
   //commerceAPI: commerceAPI,
 };
