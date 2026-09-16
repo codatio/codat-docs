@@ -31,7 +31,7 @@ This update enables you to view and assign Locations, Customers, and Classes on 
 
 By using these fields on Codat's Direct cost model, you can provide companies with valuable insights into their spending patterns across multiple locations and departments, and even individual customer profitability.
 
-Review the documentation for [creating a direct cost](https://docs.codat.io/lending-api#/operations/create-direct-cost) and [retrieving a direct cost](https://docs.codat.io/lending-api#/operations/list-accounting-direct-costs)
+Review the documentation for [creating a direct cost](https://docs.codat.io/accounting-api#/operations/create-direct-cost) and [retrieving a direct cost](https://docs.codat.io/accounting-api#/operations/list-direct-costs)
 
 ## Create journals in Microsoft Dynamics 365 Business Central
 
@@ -41,7 +41,7 @@ Codat now supports the creation of journal entries in Microsoft Dynamics 365 Bus
 
 This enhancement empowers you to provide this integration to your customers, streamlining use cases such as payroll reconciliation, purchase amortization, loan repayment reconciliation, and more.
 
-See the [API Reference](https://docs.codat.io/sync-for-payables-api#/operations/create-journal-entry) for more information on how to use the POST journal entry endpoint.
+See the [API Reference](https://docs.codat.io/accounting-api#/operations/create-journal-entry) for more information on how to use the POST journal entry endpoint.
 
 ## Increased Coverage of QuickBooks Online Deletion Support
 
@@ -51,7 +51,7 @@ Codat has added support for the deletion of journal entries, bills, and invoices
 
 This improvement enables you to offer this integration to your customers, simplifying use cases such as reversing erroneous transactions and maintaining accurate financial records.
 
-See Delete data from QuickBooks Online for more information on how to use this feature.
+See [Delete data from QuickBooks Online](https://docs.codat.io/accounting-api#/operations/delete-journal-entry) for more information on how to use this feature.
 
 ## Addition of the QuickBooks Desktop Tracking Object
 
@@ -69,7 +69,7 @@ We've extended our support for creating refunds for expenses in QuickBooks Onlin
 
 This enhancement lets you facilitate use cases such as refunding an erroneous transaction or representing a returned order, and managing accidental duplicate payments.
 
-See [Direct cost](https://docs.codat.io/lending-api#/operations/create-direct-cost) for more information on how to use this feature.
+See [Direct cost](https://docs.codat.io/accounting-api#/operations/create-direct-cost) for more information on how to use this feature.
 
 ## Integration coverage improvements
 
