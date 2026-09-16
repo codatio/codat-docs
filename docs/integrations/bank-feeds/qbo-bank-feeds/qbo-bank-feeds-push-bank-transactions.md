@@ -16,7 +16,7 @@ Bank transactions must be ordered chronologically (from earliest to latest) by t
 
 :::caution Cleared on date field names
 
-The `clearedOnDate` is returned by the [List bank transactions for a bank account](/lending-api#/operations/list-accounting-bank-account-transactions) endpoint. However, when writing transactions with [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions), you must supply the value of the `clearedOnDate` in the `date` field.
+The `clearedOnDate` is returned by the List bank transactions for a bank account endpoint. However, when writing transactions with [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions), you must supply the value of the `clearedOnDate` in the `date` field.
 
 :::
 
