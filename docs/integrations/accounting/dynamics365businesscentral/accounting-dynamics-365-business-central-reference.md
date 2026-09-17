@@ -28,7 +28,7 @@ Line items of invoices, bills, credit notes, and bill credit notes without linke
 
 ## Bill credit notes and currencies
 
-When the currency of a [bill credit note](/accounting-api#/schemas/billcreditnotes) is not set by the supplier, Codat uses the local, or base currency of the company. In Business Central, this is the **LCY code** on the **General Ledger Setup** page.
+When the currency of a [bill credit note](/lending-api#/schemas/AccountingBillCreditNotes) is not set by the supplier, Codat uses the local, or base currency of the company. In Business Central, this is the **LCY code** on the **General Ledger Setup** page.
 
 ## Direct incomes
 
@@ -44,7 +44,7 @@ If the description was edited in Business Central, a validation error is returne
 
 ## Tracking categories
 
-When reading Tracking categories from Business Central, the `subCategories` field within the [tracking category tree model](/accounting-api#/schemas/TrackingCategoryTree) is not populated. This kind of relationship can't be modeled in Business Central.
+When reading Tracking categories from Business Central, the `subCategories` field within the [tracking category tree model](/lending-api#/schemas/AccountingTrackingCategory) is not populated. This kind of relationship can't be modeled in Business Central.
 
 Tracking categories are not updated on Bills when sending PUT or POST requests.
 

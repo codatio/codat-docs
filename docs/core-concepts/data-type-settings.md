@@ -6,7 +6,7 @@ tags:
   - Core concept
 ---
 
-A 'data type' is a specific type of data, like an [invoice](/accounting-api#/schemas/Invoice).
+A 'data type' is a specific type of data, like an [invoice](/lending-api#/schemas/AccountingInvoice).
 
 On the <a className="external" href="https://app.codat.io/settings/data-types" target="_blank">Data type settings</a> page in the Codat Portal, you can view current settings for each data type split by integration type, override the default sync settings, and specify the fetch frequency for refreshing datasets. You can also view `dataType` keys for each data type.
 

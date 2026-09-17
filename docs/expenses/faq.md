@@ -155,7 +155,7 @@ Expenses validates each expense transaction involving foreign currency. We ensur
 		answer={`
 <p>If a transaction has multiple tax components, each component may be calculated based on the original amount separately, and then added together.</p>
 <p>Alternatively, primary tax can be calculated on the item cost, and another tax component is added on top of that amount.This is known as compounding. In this case, the effective tax rate is the rate that results in the total amount of tax with compounding when applied to the original amount.</p>
-<p>The <code>totalTaxRate</code> is the total, not compounded, sum of the components of a tax rate. You can read more about this in our <a href="https://docs.codat.io/accounting-api#/schemas/TaxRate#tax-components">API documentation covering tax rates</a>.</p>
+<p>The <code>totalTaxRate</code> is the total, not compounded, sum of the components of a tax rate. You can read more about this in our <a href="https://docs.codat.io/sync-for-payables-api#/schemas/TaxRate">API documentation covering tax rates</a>.</p>
 		`}
 	/> 
 	<Question

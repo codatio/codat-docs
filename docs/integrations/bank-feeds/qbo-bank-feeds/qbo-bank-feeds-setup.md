@@ -12,7 +12,7 @@ Before setting up the integration, make sure that:
 
 - Your Solutions Engineer has provided you with access to the QuickBooks Online Bank Feeds integration.
 - SMB users who will connect to QBO Bank Feeds are located in the US and Canada only.
-- In the Codat Portal, you've enabled [Bank accounts](/accounting-api#/schemas/BankAccount) and [Bank transactions](/accounting-api#/schemas/BankTransactions) in your [Data type settings](/core-concepts/data-type-settings).
+- In the Codat Portal, you've enabled Bank accounts and [Bank transactions](/bank-feeds-api#/schemas/BankTransactions) in your [Data type settings](/core-concepts/data-type-settings).
 - You've customized the QBO Bank Feeds Link UI for your institution.
 
 ## Enable the QBO Bank Feeds integration

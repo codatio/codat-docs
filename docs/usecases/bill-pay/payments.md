@@ -291,7 +291,7 @@ To do this with Codat, you should leave the `supplierRef` parameter blank when c
 
 :::note
 
-Note that if locations is set to mandatory in the companies NetSuite Account, the `reference` is required and should be an `id` from the [trackingCategories](/accounting-api#/operations/list-tracking-categories) prefixed with location.
+Note that if locations is set to mandatory in the companies NetSuite Account, the `reference` is required and should be an `id` from the [trackingCategories](/sync-for-payables-api#/operations/list-tracking-categories) prefixed with location.
 
 :::
 
@@ -337,7 +337,7 @@ Note that if locations is set to mandatory in the companies NetSuite Account, th
 
 :::note
 
-Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options API](/accounting-api#/operations/get-create-update-bills-model)
+Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options API](/sync-for-payables-api#/operations/get-create-update-bill-model)
 
 :::
 
@@ -440,7 +440,7 @@ If a company receives a credit note from their supplier, the company could use t
 
 With the billPayment API, you can partially or fully offset the balance of an invoice by adding the credit note in the `lines` array.
 
-1. The first step is to create a [`billCreditNote`](/accounting-api#/operations/create-bill-credit-note)
+1. The first step is to create a [`billCreditNote`](/sync-for-payables-api#/operations/create-bill-credit-note)
 2. Once this is successfully created you can create a `billPayment` and include the `billCreditNote` and the `bill` to credit in the links array
 
 ### Creating a Credit Note
@@ -860,7 +860,7 @@ The example below shows a partial billPayment and billCredit note to pay the ful
 
 :::note
 
-Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options API](/accounting-api#/operations/get-create-update-bills-model)
+Sage Intacct uses a `paymentMethodRef`, the payment method's for a company can be retrieved from the [options API](/sync-for-payables-api#/operations/get-create-update-bill-model)
 
 :::
 

@@ -10,13 +10,13 @@ Note the following requirements before writing bank transactions to QBO.
 
 ## Ordered by cleared on date
 
-To be written successfully, bank transactions must be cleared (not pending) and have a `clearedOnDate` of the current or prior day. In the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint, the `clearedOnDate` is set in the `date` field.
+To be written successfully, bank transactions must be cleared (not pending) and have a `clearedOnDate` of the current or prior day. In the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint, the `clearedOnDate` is set in the `date` field.
 
 Bank transactions must be ordered chronologically (from earliest to latest) by the `clearedOnDate`.
 
 :::caution Cleared on date field names
 
-The `clearedOnDate` is returned by the [List bank transactions for a bank account](/accounting-api#/operations/list-bank-account-transactions) endpoint. However, when writing transactions with [Create bank transactions](/accounting-api#/operations/create-bank-transactions), you must supply the value of the `clearedOnDate` in the `date` field.
+The `clearedOnDate` is returned by the List bank transactions for a bank account endpoint. However, when writing transactions with [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions), you must supply the value of the `clearedOnDate` in the `date` field.
 
 :::
 
@@ -49,7 +49,7 @@ QBO requires that bank transactions are sent from Codat in chronological order. 
 
 Make the following requests to the Codat API. All write requests are asynchronous.
 
-1. Write bank transactions from an SMB user's connected source bank account using the [Create bank transactions](/accounting-api#/operations/create-bank-transactions) endpoint.
+1. Write bank transactions from an SMB user's connected source bank account using the [Create bank transactions](/bank-feeds-api#/operations/create-bank-transactions) endpoint.
 
    ```http
    POST https://api.codat.io/companies/COMPANY_ID/connections/CONNECTION_ID/push/bankAccounts/ACCOUNT_ID/bankTransactions
@@ -85,7 +85,7 @@ Make the following requests to the Codat API. All write requests are asynchronou
 
 ## Transactions reference
 
-The following table details how each property in the `transactions` array is handled when writing bank transactions to QBO. For more details, see the [Bank account transactions](/accounting-api#/schemas/BankTransactions) data type.
+The following table details how each property in the `transactions` array is handled when writing bank transactions to QBO. For more details, see the [Bank account transactions](/bank-feeds-api#/schemas/BankTransactions) data type.
 
 | **Property in the `transactions` array** | **Status**                                       |
 | ---------------------------------------- | ------------------------------------------------ |

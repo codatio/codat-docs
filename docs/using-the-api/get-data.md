@@ -25,7 +25,7 @@ You can configure a sync schedule in the Codat portal to keep each data type at 
 
 Codat exposes endpoints that enable you to easily query each of the supported data types.
 
-For example, when querying invoices, you can use the [`GET /companies/{companyId}/data/invoices`](/accounting-api#/operations/list-invoices) endpoint, with query string parameters as below:
+For example, when querying invoices, you can use the [`GET /companies/{companyId}/data/invoices`](/lending-api#/operations/list-accounting-invoices) endpoint, with query string parameters as below:
 
 - `pageSize` – the size of page you wish to retrieve
 - `page` – which page number you wish to retrieve

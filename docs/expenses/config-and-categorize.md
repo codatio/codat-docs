@@ -73,7 +73,7 @@ A bank account (`bankAccount.id`) is required to show where purchases have been 
 
 - To create a new bank account, use the [Create bank account](/sync-for-expenses-api#/operations/create-account) endpoint. You should trigger a data refresh if a new bank account has been created prior to syncing transactions.
 
-- Use the [List accounts](/accounting-api#/operations/get-account) endpoint to fetch a list of your customer's existing accounts from their accounting software and display these to them.
+- Use the [List accounts](/sync-for-expenses-api#/operations/get-create-chartOfAccounts-model) endpoint to fetch a list of your customer's existing accounts from their accounting software and display these to them.
   You can also use [query parameters](/using-the-api/querying) to narrow down the list of results, for example:
   - `query=metadata.isDeleted=false&&isBankAccount=true` returns existing bank accounts.
   - `query=metadata.isDeleted=false&&isBankAccount=true&&type=liability` returns existing liability bank accounts, which are used for credit cards.

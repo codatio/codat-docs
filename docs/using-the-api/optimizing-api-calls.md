@@ -35,7 +35,7 @@ We also recommend using a page size of 100 to return the results faster. This is
 
 :::tip Querying by the record date: example
 
-You can query our [List accounts](/accounting-api#/operations/list-accounts) endpoint with `modifiedDate` as follows:
+You can query our [List accounts](/lending-api#/operations/list-accounting-accounts) endpoint with `modifiedDate` as follows:
 
 ```http
 https://api.codat.io/companies/{companyId}/data/accounts?page=1&pageSize=100&query=modifiedDate>2022-08-23&orderby=-modifiedDate
@@ -53,7 +53,7 @@ These approaches allow you to minimise the number of API calls and the volume of
 
 :::tip Querying for a use case: example
 
-You can query our [Invoices](/accounting-api#/operations/list-invoices) endpoint for an invoice use case as follows:
+You can query our [Invoices](/lending-api#/operations/list-accounting-invoices) endpoint for an invoice use case as follows:
 
 ```http
 https://api.codat.io/companies/{companyId}/data/invoices?page=1&pageSize=100&query=customerRef.companyName=NewCo

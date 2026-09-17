@@ -619,7 +619,7 @@ You can review our detailed instructions for setting up integrations like [Xero]
 
 Codat reads a variety of data types from the source platforms, making it easy to suit the needs of your use case.
 
-With our [accounting integrations](/accounting-api#/), you can read financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/banking-api#/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/commerce-api#/) can show you details of orders, customers, payments, products, and others.
+With our [accounting integrations](/lending-api#/), you can read financial statements, earning and spending detail, journal entries, tax details, and many more. Our [banking integrations](/banking-api#/) provide you with banking transactions, accounts, and account balances. Finally, our [commerce integrations](/commerce-api#/) can show you details of orders, customers, payments, products, and others.
 
 #### Keen to customize the look and feel of the auth flow?
 
