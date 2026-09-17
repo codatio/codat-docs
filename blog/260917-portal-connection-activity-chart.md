@@ -22,6 +22,8 @@ The **Connection activity** chart takes the place of the previous **Companies** 
 - Each bar is labelled with its count, and hovering a period shows a tooltip with both the connected and disconnected totals for that period.
 - The period in progress is shown faded and marked _(so far)_, so a partial week isn't mistaken for a drop in activity.
 
+![The Connection activity chart on the Codat Portal dashboard, showing weekly connections gained and lost over the last 3 months](/img/updates/260917-connection-activity-chart.png)
+
 Connected and disconnected events are tracked from 7 May 2026.
 
 ### The companies behind each bar
