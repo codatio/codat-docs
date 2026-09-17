@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem";
 To enable users to select which bank account a payment should originate from, you can retrieve a list of these from the accounting software you also have the option to create a new one should the account not exist in their platform.
 
 In some cases your platform may support multiple payment methods and each method can be mapped to an account.
-You should store the mapping of the relevant `accountId` as this will be needed when creating the [billPayment](/usecases/bill-pay/payments).
+You should store the mapping of the relevant `accountId` as this will be needed when creating the [billPayment](/payables/sync/pay-bill).
 
 :::tip Foreign exchange payments 💱
 
@@ -162,4 +162,4 @@ GET https://api.codat.io/companies/{companyId}/connections/{connectionId}/data/b
 
 ## Read next
 
-- [Payments](/usecases/bill-pay/payments) - Reconcile payments to the SMB's accounting software
+- [Payments](/payables/sync/pay-bill) - Reconcile payments to the SMB's accounting software

@@ -68,7 +68,7 @@ Alternatively, Bills can also be created within your application and then synchr
 
 Once Authorised, you can use the bank accounts endpoint to retrieve a list of accounts which can be mapped enabling the user to dictate which account their payments should be reconciled to.
 
-### [Payment reconciliation](payments)
+### [Payment reconciliation](/payables/sync/pay-bill)
 
 Once the transaction is completed, a bill payment can then be written to the customers accounting software and reconciled against the bill marking it as paid.
 

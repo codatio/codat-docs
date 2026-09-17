@@ -191,6 +191,10 @@ var prodRework = [
     to: "/integrations/bank-feeds/overview",
   },
   {
+    from: "/payables/async/payments",
+    to: "/payables/sync/pay-bill",
+  },
+  {
     from: "/sfc/coming-soon",
     to: "/commerce/overview",
   },
@@ -245,6 +249,10 @@ var prodRework = [
   {
     from: "/sync-for-expenses/sync-process/uploading-receipts",
     to: "/expenses/sync-process/uploading-receipts",
+  },
+  {
+    from: "/usecases/bill-pay/payments",
+    to: "/payables/sync/pay-bill",
   },
 ];
 var acc = [

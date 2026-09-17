@@ -290,4 +290,4 @@ billDeleteResponse, err := payablesClient.Bills.Delete(ctx, operations.DeleteBil
 
 ## Read next
 
-- Enable your customers to [make payments](/payables/async/payments) covering their outstanding bills.
+- Enable your customers to [make payments](/payables/sync/pay-bill) covering their outstanding bills.
