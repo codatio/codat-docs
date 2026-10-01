@@ -1,5 +1,5 @@
 ---
-title: "Portal: email notifications for company connections and reports"
+title: "Introducing email notifications: stay informed about company events"
 date: "2026-10-01"
 tags: ["Product", "Update", "Portal"]
 authors: rodages
@@ -32,6 +32,8 @@ All clients who use the [Codat Portal](https://app.codat.io), especially onboard
 
 ## How to get started?
 
-The Notifications page is being rolled out gradually. To enable it for your organization, contact your account manager or our support team.
+To turn on notifications for your organization, contact your account manager or our support team.
 
-All three notifications are on by default, so company owners start receiving emails right away. Companies without an owner only email your additional addresses, so [assign owners](/updates/260803-company-owners) to make sure the right people hear about each company.
+The three notifications in this release are enabled by default. If a [company](/configure/portal/companies) has an owner, they'll get an email as soon as an event happens. If you don't use company owners, you can either [assign owners](/updates/260803-company-owners) or add an additional address on the **Notifications** page to receive notifications for all company events.
+
+We'll add more notification events over time. Stay tuned.
