@@ -15,7 +15,7 @@ Under **Settings > Organization settings > Notifications** in the [Codat Portal]
 
 - **Company connected** is sent when a company connects a platform, or reconnects one that had been disconnected.
 - **Company disconnected** is sent when a company unlinks a connection or revokes access to their data.
-- **Spend Insights Report generated** is sent when a Spend Insights report has finished generating.
+- **Spend Insights Report generated** is sent when a Spend Insights report has finished generating. If report generation isn't enabled for your account, the page says so and this notification can't be switched on.
 
 ![The Notifications page in the Codat Portal, showing the Company connected and Company disconnected notifications with their toggles and additional address fields](/img/updates/261001-notification-settings.png)
 
@@ -23,7 +23,7 @@ Each notification has an on/off toggle and a list of **additional addresses**:
 
 - [Company owners](/updates/260803-company-owners) receive the emails for the companies they own.
 - Additional addresses receive the emails for every company in your organization. Use them for a shared inbox, or for teammates who need to know about every company but don't own any.
-- Switching a notification off stops it for everyone, owners included. Your additional addresses are kept, so switching it back on restores them.
+- Switching a notification off stops it for everyone, owners included. Your additional addresses are kept, but can't be edited until you switch the notification back on.
 
 Changes are saved as you make them. Administrators can change these settings; users with any other role can view them.
 
@@ -33,7 +33,7 @@ All clients who use the [Codat Portal](https://app.codat.io) to manage their com
 
 ## How to get started?
 
-The Notifications page is being rolled out gradually. To enable it for your organization, contact your account manager or our support team.
+The Notifications page is being rolled out gradually. To enable it for your organization, contact your account manager or our support team. Once it's enabled, all three notifications are switched on, so company owners start receiving emails straight away.
 
 Once enabled:
 
