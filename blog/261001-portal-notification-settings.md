@@ -1,44 +1,37 @@
 ---
-title: "Email notifications for company connections and reports in the Portal"
+title: "Portal: email notifications for company connections and reports"
 date: "2026-10-01"
 tags: ["Product", "Update", "Portal"]
 authors: rodages
 ---
 
-A new **Notifications** page in the Codat Portal lets you choose which email notifications your organization receives when a company connects, disconnects, or has a Spend Insights report ready, and who receives them.
+You can now choose which email notifications your organization receives from the Codat Portal, and who receives them.
 
 <!--truncate-->
 
 ## What's new?
 
-Under **Settings > Organization settings > Notifications** in the [Codat Portal](https://app.codat.io/settings/notifications), you can now manage three email notifications:
+A new **Notifications** page under **Settings > Organization settings** in the [Codat Portal](https://app.codat.io) lets you manage three email notifications:
 
-- **Company connected** is sent when a company connects a platform, or reconnects one that had been disconnected.
-- **Company disconnected** is sent when a company unlinks a connection or revokes access to their data.
-- **Spend Insights Report generated** is sent when a Spend Insights report has finished generating. If report generation isn't enabled for your account, the page says so and this notification can't be switched on.
+- **Company connected**: a company connects a platform, or reconnects one that had been disconnected.
+- **Company disconnected**: a company unlinks a connection or revokes access to their data. The email says which happened and links to the company in the Portal so you can follow up.
+- **Spend Insights Report generated**: a Spend Insights report is ready. The email includes the total spend and a link to download the report. Available only if report generation is enabled for your account.
 
 ![The Notifications page in the Codat Portal, showing the Company connected and Company disconnected notifications with their toggles and additional address fields](/img/updates/261001-notification-settings.png)
 
-Each notification has an on/off toggle and a list of **additional addresses**:
+For each notification, you can:
 
-- [Company owners](/updates/260803-company-owners) receive the emails for the companies they own.
-- Additional addresses receive the emails for every company in your organization. Use them for a shared inbox, or for teammates who need to know about every company but don't own any.
-- Switching a notification off stops it for everyone, owners included. Your additional addresses are kept, but can't be edited until you switch the notification back on.
+- Switch it on or off. Switching it off stops it for everyone, including company owners.
+- Add **additional addresses**, such as a shared inbox. These receive emails about every company in your organization, while [company owners](/updates/260803-company-owners) only receive emails about the companies they own.
 
-Changes are saved as you make them. Administrators can change these settings; users with any other role can view them.
+Administrators can change these settings, and all other roles can view them. Changes are saved automatically.
 
 ## Who is this relevant for?
 
-All clients who use the [Codat Portal](https://app.codat.io) to manage their companies. It's especially useful for onboarding, support, and customer success teams who need to know as soon as a company connects or disconnects, and for Spend Insights clients who want to know when a new report is ready to download.
+All clients who use the [Codat Portal](https://app.codat.io), especially onboarding, support, and customer success teams who need to know when a company connects or disconnects, and Spend Insights clients who want to know when a report is ready.
 
 ## How to get started?
 
-The Notifications page is being rolled out gradually. To enable it for your organization, contact your account manager or our support team. Once it's enabled, all three notifications are switched on, so company owners start receiving emails straight away.
+The Notifications page is being rolled out gradually. To enable it for your organization, contact your account manager or our support team.
 
-Once enabled:
-
-1. In the [Codat Portal](https://app.codat.io), go to **Settings > Organization settings > Notifications**.
-2. Use the toggle beside each notification to switch it on or off.
-3. Under **Additional addresses**, enter an email address and select **Add**. Remove an address by selecting the cross on it.
-
-To make sure the right people are emailed about the right companies, [assign owners](/updates/260803-company-owners) to your companies.
+All three notifications are on by default, so company owners start receiving emails right away. Companies without an owner only email your additional addresses, so [assign owners](/updates/260803-company-owners) to make sure the right people hear about each company.
