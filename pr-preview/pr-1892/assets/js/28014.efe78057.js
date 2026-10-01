@@ -1,1 +1,0 @@
-(globalThis.webpackChunkcodat_docs=globalThis.webpackChunkcodat_docs||[]).push([[28014],{42634(){},58647(){},97671(a,s,r){"use strict";r.r(s),r.d(s,{default:()=>e});r(96540);var t=r(6114),c=r(74848);const e=({apiDescriptionUrl:a})=>(0,c.jsx)(t.nC,{apiDescriptionUrl:a,router:"hash",hideInternal:"true"})}}]);
