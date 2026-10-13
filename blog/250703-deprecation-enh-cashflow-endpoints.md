@@ -1,5 +1,5 @@
 ---
-title: "2026-07-10: Enhanced Cashflow Report: Deprecation of legacy endpoints"
+title: "Completed 2026-10-13: Enhanced Cashflow Report: Deprecation of legacy endpoints"
 date: "2025-07-03"
 tags: ["Deprecation", "Assess", "Enhanced Cashflow"]
 authors: ivasiutkova
@@ -24,7 +24,7 @@ Only requests for the `enhancedCashFlow` report type will be affected. Other rep
 
 ## Action required
 
-To avoid disruption, update your integration to use the new [Manage Reports](/lending-api#/operations/generate-report) endpoints before July 10, 2026. For detailed, step-by-step instructions, refer to our [Migration guide](https://docs.codat.io/lending/features/enhanced-cash-flow-migration).
+To avoid disruption, update your integration to use the new [Manage Reports](/lending-api#/operations/generate-report) endpoints before July 10, 2026. For details of the new report, see our [Bank statements overview](/lending/features/bank-statements-overview).
 
 ## Expected impact if no action is taken
 
