@@ -8,8 +8,6 @@ image: "/img/banners/social/lending.png"
 import Products from "@components/Products";
 import { IntegrationsList } from "@components/Integrations";
 import { bankingIntegrations } from "@components/Integrations/integrations";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 
 Our **bank statements** feature provides data from a linked company’s banking connections. Transactions are enriched with financial category and payment provider information.
 
@@ -35,7 +33,7 @@ Our banking feature consists of the following components, supported across a num
 
 3. **[Account balances:](/lending-api#/operations/list-banking-account-balances)** balances for a bank account, including the end-of-day batch balance or running balances per transaction
 
-4. **[Categorized bank statements:](/lending-api#/operations/get-categorized-bank-statement)** all connected bank accounts and transactions with enrichments in a single endpoint.
+4. **[Categorized bank statements:](/lending-api#/operations/get-categorized-bank-statement-transactions)** all connected bank accounts and transactions with enrichments in a single report.
 
 <iframe
   src="https://docs.google.com/spreadsheets/d/1VEE7uUH_Q4ZGReonOqfZVT6V4-C40rwsMNEp2K7hOhQ/pubhtml?gid=1760315404&amp;single=true&amp;widget=true&amp;headers=false"
@@ -46,7 +44,7 @@ Our banking feature consists of the following components, supported across a num
 
 ## Feature enrichments
 
-We provide the following enrichments via our [categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) component.
+We provide the following enrichments via our [categorized bank statement](/lending-api#/operations/get-categorized-bank-statement-transactions) component.
 
 #### Transaction categories
 
@@ -80,128 +78,17 @@ Businesses often sell across multiple channels, for example, brick and mortar, o
 
 ## Supported outputs
 
-You can retrieve the data read and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **bank statements** [endpoints of our API](/lending-api#/operations/get-categorized-bank-statement).
+You can retrieve the data read and enriched by the feature by [downloading a report in an Excel format](/lending/features/excel-download-overview) or calling the **categorized bank statement** endpoints of our API.
 
-For example, use the [Get categorized bank statement](/lending-api#/operations/get-categorized-bank-statement) endpoint to precisely calculate the current position of the company's outstanding loans.
+The categorized bank statement is generated asynchronously, so request the report first and wait until it is complete:
 
-<Tabs groupId="language">
+1. [Generate the report](/lending-api#/operations/generate-report) with `POST /companies/{companyId}/reports/categorizedBankStatement`.
 
-<TabItem value="nodejs" label="TypeScript">
+2. Wait for the `reports.categorizedBankStatement.generate.successful` webhook, or [check the report status](/lending-api#/operations/get-report-status) with `GET /companies/{companyId}/reports/categorizedBankStatement/latest/status`.
 
-```javascript
-type Transaction {
-  category: string;
-  amount: number;
-}
+3. Get the [transactions](/lending-api#/operations/get-categorized-bank-statement-transactions) and [accounts](/lending-api#/operations/list-categorized-bank-statement-accounts) of the latest report, or [download it in an Excel format](/lending-api#/operations/download-categorized-bank-statement-excel).
 
-const statementResponse = await lendingClient.banking.categorizedStatement.get({
-    companyId: companyId
-});
-
-if (statementResponse.statusCode != 200) {
-  throw new Error("Could not get categorized bank statement")
-}
-
-const transactions: Transaction[] = statementResponse.enhancedCashFlowTransactions.reportItems.transactions.map(x => ({
-  category: x.transactionCategory.levels.join('.'),
-  amount: x.amount
-}));
-
-const loansPayable = transactions.filter(x => x.category
-  .startsWith('Liability.Current.Debt.LoansPayable'))
-  .reduce((sum, current) => sum + current.amount, 0);
-```
-
-</TabItem>
-
-<TabItem value="python" label="Python">
-
-```python
-@dataclass
-class Transaction:
-  category: str
-  amount: Decimal
-
-statement_request = operations.GetCategorizedBankStatementRequest(
-    company_id=company_id,
-)
-
-statement_response = lending_client.banking.categorized_statement.get(statement_request)
-
-if statement_response.status_code != 200:
-  raise Exception('Could not get categorized bank statement')
-
-transactions = []
-for x in statement_response.enhanced_cash_flow_transactions.report_items.transactions:
-  transactions.append(Transaction(category='.'.join(x.transaction_category.levels), amount=x.amount))
-
-loans_payable = sum(transaction.amount for transaction in transactions \
-    if transaction.category.startswith('Liability.Current.Debt.LoansPayable'))
-```
-
-</TabItem>
-
-<TabItem value="csharp" label="C#">
-
-```csharp
-public record Transaction(string Category, decimal Amount);
-
-var statementResponse = await lendingClient.Banking.CategorizedStatement.GetAsync(new() {
-    CompanyId = companyId
-});
-
-if (statementResponse.StatusCode != 200) {
-  throw new Exception("Could not get categorized bank statement");
-}
-
-var transactions = statementResponse.EnhancedCashFlowTransactions.ReportItems.Transactions
-  .Select(x => new Transaction(){
-    Category = string.Join(".", x.TransactionCategory.Levels),
-    Amount = x.Amount
-  });
-
-var loansPayable = transactions.Sum(x =>
-  x.category.startsWith('Liability.Current.Debt.LoansPayable'));
-```
-
-</TabItem>
-
-<TabItem value="go" label="Go">
-
-```go
-type Transaction struct {
-  Category string
-  Amount float64
-}
-
-ctx := context.Background()
-statementResponse, err := lendingClient.Banking.CategorizedStatement.Get(ctx, operations.GetCategorizedBankStatementRequest{
-    CompanyID: companyID,
-})
-
-if err == nil && statementResponse.StatusCode == 200 {
-  transactions := []Transaction{}
-
-  for _, transaction := range statementResponse.EnhancedCashFlowTransactions.ReportItems.Transactions {
-    category := strings.Join(transaction.TransactionCategory.Levels, ".")
-    amount, _ := transaction.Amount.Float64()
-		transactions = append(transactions, Transaction{category, amount})
-	}
-
-  loansPayable := 0.0
-  for _, transaction := range transactions {
-    if strings.HasPrefix(transaction.Category, "Liability.Current.Debt.LoansPayable") {
-      loansPayable += transaction.Amount
-    }
-  }
-
-  fmt.Println(loansPayable)
-}
-```
-
-</TabItem>
-
-</Tabs>
+For example, add up the amounts of the transactions whose category starts with `Liability.Current.Debt.LoansPayable` to calculate the current position of the company's outstanding loans.
 
 ## Get started
 
