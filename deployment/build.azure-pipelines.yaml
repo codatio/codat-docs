@@ -32,8 +32,6 @@ parameters:
         shortCode: intg
         pool:
           name: codat-intg-managed-devops-pool-linux
-          demands:
-            - CustomCapabilities -equals $(Build.Repository.Name)
         registryName: codatintgregistry
 
       - name: production
@@ -45,8 +43,6 @@ stages:
   - stage: 'build'
     pool:
       name: 'codat-intg-managed-devops-pool-linux'
-      demands:
-        - CustomCapabilities -equals $(Build.Repository.Name)
     jobs:
       - template: Helm/build.frontend.job.yaml@templates
         parameters:
