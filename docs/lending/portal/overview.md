@@ -308,6 +308,6 @@ When a report was successfully generated, the report name (which is also the fil
 ### Report types
 
 - [Audit Report](/lending/excel/audit-report): Identifies indicators of inaccurate or out-of-date accounts, helping you to decision with confidence
-- [Enhanced Cash Flow Report](/lending/excel/enhanced-cash-flow-report): Contains enhanced cash flow data
+- [Enhanced Cash Flow Report](/lending/features/bank-statements-overview): Contains categorized bank transactions
 - [Enhanced Financials Report](/lending/excel/enhanced-financials-report): Contains enhanced profit and loss and balance sheet data, allowing you to calculate key metrics
 - [Enhanced Invoices Report](/lending/excel/enhanced-invoices-report): Contains enhanced invoices which are linked to payments

@@ -18,7 +18,7 @@ Our Excel download feature consists of the following component reports:
 
 - **Enhanced financial statements** provide an output of the categorized profit and loss and balance sheet statements.
 
-- **Enhanced cash flows** provides an output of the categorized bank transactions.
+- **Categorized bank statements** provides an output of the categorized bank transactions.
 
 - **Enhanced invoices** provides an output of reconciled invoices.
 

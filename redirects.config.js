@@ -886,6 +886,10 @@ module.exports = {
       to: "/lending/troubleshooting",
       from: "/assess/troubleshooting",
     },
+    {
+      to: "/lending/features/bank-statements-overview",
+      from: "/lending/features/enhanced-cash-flow-migration",
+    },
   ].concat(
     prodRework,
     _toConsumableArray(mapIntegrationRedirects(acc, "accounting")),

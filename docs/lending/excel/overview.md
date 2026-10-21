@@ -21,7 +21,6 @@ These reports will show you what data is available from our API without writing 
 ## Available report types
 
 - [Audit report](/lending/excel/audit-report) (`reportType=audit`) identifies indicators of inaccurate or out-of-date accounts, helping you to make decisions with confidence.
-- [Enhanced Cash Flow report](/lending/excel/enhanced-cash-flow-report) (`reportType=enhancedCashFlow`) contains enhanced cash flow data.
 - [Enhanced Financials report](/lending/excel/enhanced-financials-report) (`reportType=enhancedFinancials`) contains enhanced profit and loss and balance sheet data, allowing you to calculate key metrics.
 - [Enhanced Invoices report](/lending/excel/enhanced-invoices-report) (`reportType=enhancedInvoices`) contains enhanced invoices that are linked to payments.
 
