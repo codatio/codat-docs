@@ -30,6 +30,7 @@ function AuthFlow() {
       //text: {...},
       enableAdditionalConsent: true,
       enableMultiEntityLinking: true,
+      supportContactEmail: "support@example.com",
       //nonce: "r4nd0mB4se64Val==",
     },
   };
@@ -72,6 +73,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
     text: {...},
     enableAdditionalConsent: true,
     enableMultiEntityLinking: true,
+    supportContactEmail: "support@example.com",
     nonce: "r4nd0mB4se64Val==",
   }}
 />
@@ -79,17 +81,18 @@ As the `options` object overrides the Link settings set in the Portal, this may 
 
 The `options` prop is optional and accepts an object containing the following optional properties:
 
-| Property                   | Description                                                                                                                                                          |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `nonModal`                 | Determines whether Link uses non-modal styling, removing the border and close button.                                                                                |
-| `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                         |
-| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                   |
-| `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                |
-| `sourceTypes`              | Controls which data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for.                                   |
-| `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                            |
-| `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                |
-| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                           |
-| `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below. |
+| Property                   | Description                                                                                                                                                                                        |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nonModal`                 | Determines whether Link uses non-modal styling, removing the border and close button.                                                                                                              |
+| `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                                                       |
+| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                                                 |
+| `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                                              |
+| `sourceTypes`              | Controls which data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for.                                                                 |
+| `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                                                          |
+| `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                                              |
+| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                                                         |
+| `supportContactEmail`      | The email address users can contact for help when uploading files fails. Overrides the support contact email set for you in the Portal. See [Support contact email](#support-contact-email) below. |
+| `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below.                               |
 
 The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
 
@@ -218,6 +221,12 @@ By default, this option is set to `false`. Next, use [custom text](/auth-flow/cu
 You may want to enable your customers to authorize access to multiple companies within a single accounting platform in the same connection flow. This is relevant for integrations that allow their users to operate several subsidiaries within the same account.
 
 To provide your customers with this option, set the `enableMultiEntityLinking` option to `true`. This will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support. By default, this option is set to `false`.
+
+## Support contact email
+
+When a user's file upload fails to submit, Link shows a message suggesting they contact you for support. If a support contact email is set, Link also displays a **Contact bank** button that opens a new email to that address.
+
+Codat sets the support contact email for you in your Link settings. To override it for a session, set the `supportContactEmail` option to a single valid email address. If no support contact email is set, Link only displays the support message.
 
 ## CSP nonce
 
