@@ -88,6 +88,20 @@ html[data-theme="dark"] {
           font-weight: 600;
           border-inline-start-color: var(--toc-marker-c);
         }
+
+        .toc-label {
+          display: grid;
+        }
+
+        .toc-label__text,
+        .toc-label__ghost {
+          grid-area: 1 / 1;
+        }
+
+        .toc-label__ghost {
+          font-weight: 600;
+          visibility: hidden;
+        }
       }
     }
 
