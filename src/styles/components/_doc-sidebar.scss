@@ -141,7 +141,6 @@ a[class^="sidebarLogo"] {
 
   button.menu__caret {
     display: flex;
-    --ifm-menu-link-sublist-icon: url("/img/sidebar/x-circle.svg");
 
     &:hover {
       background: none;
@@ -149,12 +148,9 @@ a[class^="sidebarLogo"] {
     }
 
     &:before {
-      background-size: contain !important;
+      background-size: var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+      background-repeat: no-repeat !important;
     }
-  }
-
-  .menu__list-item--collapsed > .menu__list-item-collapsible > button.menu__caret {
-    display: none;
   }
 
   .menu-item-section-header {
