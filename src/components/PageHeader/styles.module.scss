@@ -2,14 +2,9 @@
   --color-gradient-1: #21524F;
   --color-gradient-2: #18103A;
 
-  background-color: #18103A;
-  background-image:
-    linear-gradient(135deg, rgba(33,82,79,0.85)   0%,   rgba(33,82,79,0.5)   30%,  transparent           60%),
-    linear-gradient(45deg,  transparent            15%,  rgba(178,212,199,0.7) 40%,  transparent           70%),
-    linear-gradient(160deg, rgba(100,130,167,0.8)  0%,   transparent           45%,  rgba(100,130,167,0.5) 80%),
-    linear-gradient(220deg, transparent            20%,  rgba(33,82,79,0.6)    50%,  rgba(178,212,199,0.5) 85%,  transparent 100%),
-    linear-gradient(310deg, rgba(24,16,58,0.9)     0%,   transparent           35%,  rgba(100,130,167,0.6) 65%,  rgba(33,82,79,0.7) 100%),
-    linear-gradient(75deg,  transparent            50%,  rgba(224,233,209,0.55) 70%, transparent           90%);
+  // Emerald → Bedrock, matching help.codat.io; keeps the Canvas banner text at 7.5:1 or better
+  background-color: var(--color-gradient-2);
+  background-image: linear-gradient(270deg, var(--color-gradient-1) 0%, var(--color-gradient-2) 50%, var(--color-gradient-2) 100%);
   overflow: hidden;
   display: flex;
   align-items: center;

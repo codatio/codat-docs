@@ -2,14 +2,19 @@ import React from "react";
 import DocSidebarItem from "@theme-original/DocSidebarItem";
 
 export default function DocSidebarItemWrapper(props) {
+  const hr = !!props?.item?.customProps?.hr;
+  const section = props?.item?.customProps?.section;
+
   return (
     <>
-      {!!props?.item?.customProps?.hr && <hr />}
+      {(hr || section) && (
+        <li>
+          {hr && <hr />}
 
-      {!!props?.item?.customProps?.section && (
-        <div className="menu-item-section-header">
-          {props.item.customProps.section}
-        </div>
+          {!!section && (
+            <div className="menu-item-section-header">{section}</div>
+          )}
+        </li>
       )}
 
       <DocSidebarItem {...props} />

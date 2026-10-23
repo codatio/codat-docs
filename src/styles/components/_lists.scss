@@ -25,17 +25,17 @@ article .markdown ol > li {
 
 article .markdown ol > li::before {
   content: counter(li-counter);
-  color: #18103A;
-  background-color: #E0E9D1;
-  font-weight: 500;
+  color: var(--list-counter-c, var(--codat-emerald-1200));
+  background-color: var(--list-counter-bg, var(--codat-mint-500));
+  font-weight: 600;
   border-radius: 50%;
   font-family: var(--sans-serif);
-  font-size: 12px;
+  font-size: 0.9375rem;
   position: absolute;
   left: -3em;
-  top: 3px;
-  width: 22px;
-  height: 22px;
+  top: 0;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;

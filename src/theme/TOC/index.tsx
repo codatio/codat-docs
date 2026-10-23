@@ -16,7 +16,7 @@ export default function TOC(props) {
 
   return (
     <div className="toc-wrapper">
-      <h2>Contents</h2>
+      <h2>On this page</h2>
       <OriginalTOC toc={toc} {...props} />
       <EditThisPage editUrl={editUrl} />
     </div>

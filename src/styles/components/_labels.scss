@@ -9,9 +9,9 @@
   padding: 0;
   outline: none;
   appearance: none;
-  background: #ECEDE5;
-  color: #18103A;
-  border: 1px solid rgba(24, 16, 58, 0.3);
+  background: var(--label-bg, #ECEDE5);
+  color: var(--label-c, var(--ifm-heading-color));
+  border: 1px solid var(--label-border, #B2D4C7);
   white-space: nowrap;
   border-radius: 4px;
   width: fit-content;

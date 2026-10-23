@@ -29,8 +29,8 @@ html[data-theme="dark"] {
   > ul + div {
     border-radius: 4px;
     padding: 1em;
-    border: 1px solid var(--tabs-panel-border-c);
-    background-color: rgba(100, 130, 167, 0.08);
+    border: 1px solid var(--tab-content-border-color, var(--tabs-panel-border-c));
+    background-color: var(--tab-content-bg, transparent);
 
     html[data-theme="dark"] & {
       background-color: rgba(236, 237, 229, 0.06);
@@ -45,16 +45,9 @@ html[data-theme="dark"] {
     margin: 1.5em 0 !important;
   }
 
-  > .tab-list {
-    .tabs__item--active {
-      border: none;
-      font-weight: bold;
-    }
-  }
-
   > div:nth-child(2) {
-    border: 1px solid var(--tabs-panel-border-c);
-    background-color: rgba(100, 130, 167, 0.08);
+    border: 1px solid var(--tab-content-border-color, var(--tabs-panel-border-c));
+    background-color: var(--tab-content-bg, transparent);
 
     html[data-theme="dark"] & {
       background-color: rgba(236, 237, 229, 0.06);
@@ -64,35 +57,35 @@ html[data-theme="dark"] {
 
 .tabs {
   .tabs__item {
-    border: 2px solid var(--token-secondary-bg-c-alt);
-    font-weight: 400;
+    font-size: var(--tab-font-size, inherit);
+    font-weight: var(--tab-inactive-font-weight, 400);
     line-height: 100%;
-    letter-spacing: 0;
-    border-radius: 4px;
-    border: 0px solid rgba(0, 0, 0, 0);
-    border-bottom: 1px;
-    padding-block-start: calc(var(--ifm-tabs-padding-vertical) - 1px);
-    transition: border-color 0.2s ease-out, opacity 0.2s ease-out;
+    letter-spacing: var(--tab-letter-spacing, 0);
 
-    &:first-child {
-      padding-left: 0;
-    }
+    border-radius: var(--tab-pill-radius, 4px);
+    border: 1px solid var(--tab-inactive-border-color, rgba(0, 0, 0, 0));
+    background-color: var(--tab-inactive-bg, transparent);
+    color: var(--tab-inactive-color, inherit);
+
+    padding: var(--tab-padding, calc(var(--ifm-tabs-padding-vertical) - 1px) var(--ifm-tabs-padding-horizontal));
+
+    transition: border-color 0.2s ease-out, background-color 0.2s ease-out, opacity 0.2s ease-out;
 
     &--active {
-      font-weight: 500;
-      color: var(--ifm-link-color);
+      font-weight: var(--tab-active-font-weight, 500);
+
+      background-color: var(--tab-active-bg, transparent);
+      border-color: var(--tab-active-border-color, var(--tabs-border-c));
+      color: var(--tab-active-color, inherit);
     }
 
     + .tabs__item {
       margin-inline-start: var(--ifm-tabs-spacing);
     }
 
-    &:hover {
-      background-color: inherit;
-
-      &:not(.tabs__item--active) {
-        opacity: 0.7;
-      }
+    &:hover:not(.tabs__item--active) {
+      background-color: var(--tab-inactive-hover-bg, var(--tab-inactive-bg, inherit));
+      color: var(--tab-inactive-hover-color, var(--tab-inactive-color, inherit));
     }
   }
 }
