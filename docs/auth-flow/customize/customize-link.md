@@ -121,6 +121,10 @@ Once you provide your customers with a Link URL, they reach a page where they pr
 
 Customize your help and support messages that are displayed throughout the Link flow.
 
+#### Support contact email
+
+Provide the email address your customers can contact when a file upload fails to submit. Link then displays a **Contact bank** button that opens a new email to that address. Use a single valid email address, or leave the field empty to show only the support message.
+
 #### Data security
 
 Provide a link to your data security policy.

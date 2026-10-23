@@ -91,7 +91,7 @@ The `options` prop is optional and accepts an object containing the following op
 | `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                                                          |
 | `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                                              |
 | `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                                                         |
-| `supportContactEmail`      | The email address users can contact for help when uploading files fails. Overrides the support contact email set for you in the Portal. See [Support contact email](#support-contact-email) below. |
+| `supportContactEmail`      | The email address users can contact for help when uploading files fails. Overrides the support contact email set in your Link settings. See [Support contact email](#support-contact-email) below. |
 | `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below.                               |
 
 The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
@@ -226,7 +226,7 @@ To provide your customers with this option, set the `enableMultiEntityLinking` o
 
 When a user's file upload fails to submit, Link shows a message suggesting they contact you for support. If a support contact email is set, Link also displays a **Contact bank** button that opens a new email to that address.
 
-Codat sets the support contact email for you in your Link settings. To override it for a session, set the `supportContactEmail` option to a single valid email address. If no support contact email is set, Link only displays the support message.
+You can set the support contact email in your [Link settings](/auth-flow/customize/customize-link#support-contact-email). To override it for a session, set the `supportContactEmail` option to a single valid email address. If no support contact email is set, Link only displays the support message.
 
 ## CSP nonce
 
