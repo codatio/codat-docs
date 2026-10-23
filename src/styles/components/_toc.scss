@@ -66,6 +66,15 @@ html[data-theme="dark"] {
         margin: 0;
       }
 
+      // Indent nested items via link padding, not list padding, so the active marker stays on the track
+      ul {
+        padding-inline-start: 0;
+
+        .table-of-contents__link {
+          padding-inline-start: 1.5rem;
+        }
+      }
+
       .table-of-contents__link {
         display: block;
         margin-inline-start: -2px;
