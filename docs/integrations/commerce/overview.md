@@ -50,7 +50,6 @@ Each integration has a unique 4-character key that identifies it in our APIs. Fo
 | Lightspeed K          | ldgh         |
 | Lightspeed K Sandbox  | lrhd         |
 | Lightspeed K Trial    | ltes         |
-| Partner Commerce      | lqai         |
 | Shopify               | fztf         |
 | Square                | zsth         |
 | Square Sandbox        | xcwv         |
