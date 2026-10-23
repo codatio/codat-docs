@@ -111,12 +111,13 @@ const ClientLibraries = ({ productName }) => {
                   <img
                     src={withBaseUrl(language.icon)}
                     className="icon usecase"
+                    alt={capitalizeFirstCharacter(language.name)}
                   />
                 </a>
               </div>
 
               <div className="content">
-                <h4>{language.namePretty}</h4>
+                <h3>{language.namePretty}</h3>
 
                 {productName !== undefined ? (
                   <a

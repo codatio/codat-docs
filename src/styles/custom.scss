@@ -54,6 +54,28 @@
 :root {
   // ------------- Colors
 
+  // Codat Elements primitives (token ids from the design-system manifest, e.g. color.emerald.1100).
+  // The repo can't pull @codat/design-tokens from the public registry, so the values used here are
+  // mirrored by name. Keep these in step with the manifest and reference them instead of hex values.
+  --codat-white: #ffffff;           // color.white / color.surface.default
+  --codat-canvas-500: #f7f8f5;      // color.canvas.500
+  --codat-canvas-1000: #eeefe8;     // color.canvas.1000
+  --codat-echo-500: #f3f6ed;        // color.echo.500
+  --codat-mint-400: #e8f2ee;        // color.mint.400
+  --codat-mint-500: #e0eee9;        // color.mint.500
+  --codat-mint-1100: #b2d4c7;       // color.mint.1100
+  --codat-emerald-300: #d3dcdc;     // color.emerald.300
+  --codat-emerald-1100: #21524f;    // color.emerald.1100
+  --codat-emerald-1200: #173937;    // color.emerald.1200
+  --codat-bedrock-900: #464061;     // color.bedrock.900
+  --codat-bedrock-1100: #18103a;    // color.bedrock.1100
+  --codat-gravity-1300: #324154;    // color.gravity.1300
+  --codat-interface-1000: #667793;  // color.interface.1000
+
+  // Focus ring: emerald.1100 rather than the design-system focus.ring (emerald.700), which is
+  // only 2.95:1 on canvas.500.
+  --focus-ring-c: var(--codat-emerald-1100);
+
   --color-black:              #18103A;
   --color-text:               #18103A;
 
@@ -88,7 +110,9 @@
   --color-codat-primary-dark: #4a6389;
   --color-link-primary:       #6482A7;
 
-  --ifm-color-link:           var(--color-codat-primary);
+  --ifm-color-link:           var(--codat-emerald-1100);
+  --ifm-link-color:           var(--codat-emerald-1100);
+  --ifm-link-hover-color:     var(--codat-emerald-1200);
   --ifm-background-color:     var(--token-primary-bg-c);
   --ifm-pre-core:             #2b3442;
 
@@ -132,7 +156,7 @@
 }
 
 html[data-theme="light"] {
-  --token-primary-bg-c: #F7F8F5;
+  --token-primary-bg-c: var(--codat-white);
   --color-text: #18103A;
   --token-secondary-bg-c: var(--color-interface-5);
   --token-secondary-bg-c-alt: var(--color-interface-10);
@@ -152,15 +176,29 @@ html[data-theme="light"] {
   --ifm-navbar-background-color: var(--token-primary-bg-c);
   --ifm-navbar-shadow: 0 1px 0 0 var(--c-gray-0);
 
-  --header-color: var(--color-black);
+  --header-color: var(--codat-emerald-1100);
   --ifm-heading-color: var(--header-color);
-  --sidebar-category-c: var(--header-color);
-  --ifm-heading-color: var(--color-black);
   --ifm-code-background: var(--c-indigo-10);
-  --ifm-font-color-base: var(--color-black);
-  //--ifm-font-color-base: var(--color-primary);
-  --markdown-text-intro-c: var(--color-primary);
+  --ifm-font-color-base: var(--codat-bedrock-1100);
+  --markdown-text-intro-c: var(--codat-bedrock-900);
   --ifm-hr-background-color: rgba(24, 16, 58, 0.3);
+
+  // Tabs — pill style
+  --tab-pill-radius: 20px;
+  --tab-font-size: 14px;
+  --tab-padding: 5px 14px;
+  --tab-letter-spacing: 0.52px;
+  --tab-active-bg: var(--codat-emerald-1100);
+  --tab-active-border-color: var(--codat-emerald-1100);
+  --tab-active-color: var(--codat-white);
+  --tab-active-font-weight: 600;
+  --tab-inactive-bg: var(--codat-canvas-500);
+  --tab-inactive-border-color: var(--codat-mint-1100);
+  --tab-inactive-color: var(--codat-emerald-1100);
+  --tab-inactive-hover-bg: var(--codat-canvas-1000);
+  --tab-inactive-hover-color: var(--codat-emerald-1200);
+  --tab-content-border-color: var(--codat-emerald-300);
+  --tab-content-bg: var(--codat-canvas-500);
 }
 
 html[data-theme="dark"] {
@@ -239,14 +277,17 @@ p {
   letter-spacing: 0;
 }
 
+// !important required: Infima's .markdown h1 etc. (specificity 0,1,1) beats bare
+// element selectors (0,0,1). Docusaurus 3.9.2 no longer adds a "Heading" class,
+// so the only reliable override is !important on the element selector itself.
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--heading-font);
-  font-weight: 200;
+  font-family: var(--heading-font) !important;
+  font-weight: 200 !important;
   line-height: 122%;
   letter-spacing: normal;
   text-wrap: balance;
@@ -267,7 +308,21 @@ a {
 article {
   a {
     text-decoration: underline;
+    text-underline-offset: 3px;
   }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--focus-ring-c);
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  border-radius: 4px;
 }
 
 article details a,
@@ -418,46 +473,8 @@ html[data-theme="dark"] {
 }
 
 /* =====================
-  TABS — pill style
+  TABS — pill style (light-mode values live in the --tab-* vars above; rules in components/_tabs.scss)
    ===================== */
-
-  ul.tabs {
-    background: transparent !important;
-    border-bottom: none !important;
-    padding: 4px 0 !important;
-    gap: 4px !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-  }
-  
-  ul.tabs .tabs__item {
-    border-radius: 20px !important;
-    padding: 5px 14px !important;
-    font-family: var(--sans-serif) !important;
-    font-size: 0.8125rem !important;
-    font-weight: 500 !important;
-    color: rgba(24, 16, 58, 0.6) !important;
-    background-color: rgba(178, 212, 199, 0.15) !important;
-    border: 1px solid #B2D4C7 !important;
-    cursor: pointer !important;
-    transition: all 0.15s ease !important;
-    line-height: 1.4 !important;
-    letter-spacing: 0.04em !important;
-    margin: 0 !important;
-  }
-
-  ul.tabs .tabs__item:hover:not(.tabs__item--active) {
-    background-color: rgba(178, 212, 199, 0.2) !important;
-    color: #18103A !important;
-    border-color: #B2D4C7 !important;
-  }
-
-  ul.tabs .tabs__item--active {
-    background-color: #B2D4C7 !important;
-    color: #18103A !important;
-    border-color: #B2D4C7 !important;
-    font-weight: 600 !important;
-  }
 
   /* Dark mode */
   [data-theme='dark'] ul.tabs .tabs__item {

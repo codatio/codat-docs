@@ -181,7 +181,8 @@ html[data-theme="dark"] {
     .content {
       padding-left: 1em;
 
-      h4 {
+      h3 {
+        font-size: var(--ifm-h4-font-size);
         margin-bottom: 0.25em;
       }
     }

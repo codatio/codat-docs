@@ -13,7 +13,7 @@ const Card = (props) => {
         {Icon ? (
           <Icon />
         ) : (
-          <img src={withBaseUrl(image)} className="mini-icon" />
+          <img src={withBaseUrl(image)} className="mini-icon" alt="" />
         )}
 
         <h3>{title}</h3>
@@ -31,7 +31,7 @@ const CardTwo = (props) => {
   return (
     <li className={`card two ${className}`}>
       <div className="header">
-        <img src={withBaseUrl(image)} className="mini-icon" />
+        <img src={withBaseUrl(image)} className="mini-icon" alt="" />
 
         <h3>{title}</h3>
       </div>
@@ -54,12 +54,16 @@ const MiniCard = (props) => {
       <div className="card-row">
         <div className="header">
           <a href={withBaseUrl(link)}>
-            <img src={withBaseUrl(image)} className="icon usecase" />
+            <img
+              src={withBaseUrl(image)}
+              className="icon usecase"
+              alt={title}
+            />
           </a>
         </div>
 
         <div className="content">
-          <h4>{title}</h4>
+          <h3>{title}</h3>
           <p>
             <a href={withBaseUrl(link)}>{subtitle} →</a>
           </p>

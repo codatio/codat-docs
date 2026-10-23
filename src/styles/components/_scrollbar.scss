@@ -2,7 +2,7 @@
 
 :root {
   --scrollbar-track-color: var(--token-primary-bg-c);
-  --scrollbar-thumb-color: rgba(24, 16, 58, 0.3);
+  --scrollbar-thumb-color: var(--codat-interface-1000);
 }
 
 html[data-theme="dark"] {

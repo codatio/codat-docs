@@ -1,8 +1,8 @@
 html[data-theme="light"] {
-  --markdown-toc-title-c: var(--c-indigo-60);
-  --markdown-toc-list-item-c: var(--c-indigo-70);
-  --markdown-text-intro-c: var(--c-carbon-80);
-  --markdown-bold-c: #18103A;
+  --markdown-toc-title-c: var(--codat-emerald-1100);
+  --markdown-toc-list-item-c: var(--codat-emerald-1100);
+  --markdown-text-intro-c: var(--codat-bedrock-900);
+  --markdown-bold-c: var(--codat-bedrock-1100);
 }
 
 html[data-theme="dark"] {
@@ -28,7 +28,7 @@ html[data-theme="dark"] {
 
   strong,
   b {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--markdown-bold-c);
   }
 
@@ -72,9 +72,11 @@ html[data-theme="dark"] {
   }
 
   .subtitle {
-    font-size: 1.3em;
-    opacity: 0.8;
-    margin-bottom: 3em;
+    font-size: 1.25rem;
+    line-height: 1.55;
+    font-family: var(--ifm-font-family-base);
+    color: var(--markdown-text-intro-c);
+    margin-bottom: 2.5em;
   }
 
   a {
@@ -125,11 +127,7 @@ html[data-theme="dark"] {
   // intro paragraphs
   > header + p {
     font-size: 1.25rem;
-    color: rgba(24, 16, 58, 0.75);
-
-    html[data-theme="dark"] & {
-      color: rgba(236, 237, 229, 0.75);
-    }
+    color: var(--markdown-text-intro-c);
 
     > strong,
     > b {

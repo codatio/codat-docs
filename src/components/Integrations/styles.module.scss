@@ -14,20 +14,46 @@
 }
 
 .integration {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0 !important;
 
-  background-color: rgba(24, 16, 58, 0.05);
-  border: 1px solid rgba(100, 130, 167, 0.3);
+  --label-bg: var(--codat-white);
+  --label-c: var(--codat-emerald-1200);
+  --label-border: var(--codat-mint-1100);
+  background-color: var(--codat-canvas-500);
+  border: 1px solid var(--codat-mint-1100);
   box-shadow: none;
-  padding: 1em;
+  padding: 1.25em;
   border-radius: 8px;
   font-size: 0.9em !important;
 
   html[data-theme="dark"] & {
+    --label-bg: rgba(236, 237, 229, 0.08);
+    --label-c: #ECEDE5;
+    --label-border: rgba(236, 237, 229, 0.2);
     background-color: rgba(236, 237, 229, 0.05);
     border-color: rgba(236, 237, 229, 0.15);
+  }
+
+  &:hover,
+  &:focus-within {
+    border-color: var(--ifm-link-color);
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--focus-ring-c);
+    outline-offset: 2px;
+  }
+
+  &:hover > div:first-child a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  :global(.labels) :global(.label) {
+    font-size: 0.875rem;
   }
 
   > div:first-child {
@@ -35,13 +61,24 @@
     flex-direction: row;
     align-items: center;
     margin: 0 !important;
-  
+
     a {
       text-decoration: none;
-      padding-left: 0.5em;
+      padding-left: 0.75em;
+      color: var(--ifm-link-color);
+      letter-spacing: 0.02em;
 
-      &:hover {
-        text-decoration: underline;
+      // Stretch the title link over the whole card so the card is clickable without wrapping
+      // it in an <a> (which would make screen readers read every tag as part of the link name)
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 8px;
+      }
+
+      &:focus-visible {
+        outline: none;
       }
     }
   }

@@ -1,8 +1,9 @@
 html[data-theme="light"] {
-  --ifm-table-border-color: #B2D4C7;
-  --ifm-table-header-color: #ECEDE5;
-  --ifm-table-background: #F7F8F5;
-  --table-stripe: #ECEDE5;
+  --ifm-table-border-color: var(--codat-emerald-300);
+  --ifm-table-header-color: var(--codat-echo-500);
+  --ifm-table-background: var(--codat-white);
+  --table-stripe: var(--codat-canvas-500);
+  --table-header-c: var(--codat-emerald-1200);
 }
 
 html[data-theme="dark"] {
@@ -48,9 +49,9 @@ table {
 
 th {
   text-align: start;
-  font-family: var(--heading-font);
-  font-weight: 200;
-  letter-spacing: 0.04em;
+  font-family: var(--ifm-font-family-base);
+  font-weight: 600;
+  color: var(--table-header-c, inherit);
 }
 
 th,
@@ -63,9 +64,8 @@ td {
   font-weight: 300;
 }
 
-html[data-theme="light"] table th,
 html[data-theme="light"] table td {
-  color: #18103A !important;
+  color: var(--codat-bedrock-1100) !important;
 }
 
 html[data-theme="dark"] table th,
@@ -127,7 +127,7 @@ thead th:empty {
     width: auto !important;
 
     table {
-      border: 1px solid #B2D4C7;
+      border: 1px solid var(--table-outline-color, var(--ifm-table-border-color));
       border-radius: 8px;
       overflow: hidden;
       border-collapse: separate;
@@ -146,6 +146,9 @@ thead th:empty {
       thead tr th {
         padding: 1em 13px;
         border-bottom: 1px solid var(--ifm-table-border-color) !important;
+        font-family: var(--ifm-font-family-base);
+        font-weight: 600;
+        color: var(--table-header-c, inherit);
       }
 
       tbody tr td {
@@ -157,6 +160,8 @@ thead th:empty {
       }
 
       tbody tr {
+        background-color: var(--ifm-table-background);
+
         &:nth-child(even) {
           background-color: var(--table-stripe);
         }
