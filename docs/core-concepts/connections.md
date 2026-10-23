@@ -74,7 +74,7 @@ When a connection is set to `Unlinked`, you can continue to access any data that
 Only `Linked` data connections can be unlinked.
 :::
 
-#### Example: Disconnect a data connection
+### Example: Disconnect a data connection
 
 <Tabs>
 
@@ -210,7 +210,7 @@ var res = await codatPlatform.Connections.UnlinkAsync(new UnlinkConnectionReques
 
 </Tabs>
 
-#### Sample response to `Unlinked` request
+### Sample response to `Unlinked` request
 
 ```json Sample response to "Unlinked" request
 {

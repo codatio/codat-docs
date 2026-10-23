@@ -7,7 +7,7 @@
 //   warning  → .alert--warning (separate type, own icon)
 
 // Brand colour tokens used here:
-//   Gravity  #6482A7  (note)
+//   Gravity  #324154  (note; gravity.1300, 9.7:1 on canvas.500)
 //   Mint     #B2D4C7  (info accent)
 //   Emerald  #21524F  (info/tip)
 //   Citron   #D1E100  (caution bg tint)
@@ -15,7 +15,7 @@
 //   error    #750024  (danger)
 
 html[data-theme="light"] {
-  --admonition-note-c:     #6482A7;
+  --admonition-note-c:     var(--codat-gravity-1300);
   --admonition-note-bg:    var(--codat-canvas-500);
   --admonition-note-border: var(--codat-emerald-300);
 

@@ -10,6 +10,7 @@
 html[data-theme="light"] {
   --docsearch-searchbox-shadow: none;
   --search-keys-border-c: rgba(24, 16, 58, 0.2);
+  --search-muted-c: var(--codat-bedrock-900);
 
   .DocSearch-Button {
     &:hover {
@@ -21,6 +22,7 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --docsearch-searchbox-shadow: none;
   --search-keys-border-c: rgba(236, 237, 229, 0.2);
+  --search-muted-c: rgba(236, 237, 229, 0.7);
 
   .DocSearch-Button {
     border-color: rgba(236, 237, 229, 0.3) !important;
@@ -82,14 +84,14 @@ html[data-theme="dark"] {
         width: auto;
         height: auto;
 
-        color: var(--c-indigo-50);
+        color: var(--search-muted-c);
         border-radius: 0;
       }
     }
 
     .DocSearch-Search-Icon {
       max-width: 0.875rem;
-      color: var(--c-indigo-50);
+      color: var(--search-muted-c);
     }
 
     .DocSearch-Button-Placeholder {
@@ -98,7 +100,7 @@ html[data-theme="dark"] {
       line-height: 17px;
       padding-top: 2px;
 
-      color: var(--c-indigo-60);
+      color: var(--search-muted-c);
 
       margin-block-start: -0.125rem;
     }
