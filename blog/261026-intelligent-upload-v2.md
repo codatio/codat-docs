@@ -6,22 +6,20 @@ hide_table_of_contents: true
 authors: rodages
 ---
 
-We've redesigned the Intelligent Upload journey in Link. Your customers now see exactly what each file needs to contain, upload everything on a single screen, and can replace a file before they submit. Two new Link settings let them reach you for help along the way.
+Your customers can now share their accounting reports through Intelligent Upload on a single, guided screen. They see what each file needs to contain, can swap out a wrong file before submitting, and can reach you for help along the way.
 
 <!--truncate-->
 
 ## What's new?
 
-Intelligent Upload lets customers whose accounting software has no direct integration share their data for [Spend Insights](/spend-insights/overview) by uploading reports exported from that software.
+Intelligent Upload is how customers whose accounting software has no direct integration share their data for [Spend Insights](/spend-insights/overview). The previous journey took them through a separate screen for each report, with export instructions that were often out of date, and gave them no way to replace a file once uploaded.
 
-Previously, the journey walked customers through one screen per report, with step-by-step export instructions for their platform. Customers couldn't skip or revisit a step, couldn't replace a file once it was uploaded, and weren't told how much history the reports needed to cover. In practice, many needed a call with their lender to get through it.
+The new journey is one screen:
 
-The new journey has two steps: upload, then confirmation.
-
-- **One upload screen.** The four reports we need appear as expandable sections: _Vendors_, _Bills_ and _Payments_ are required, and _Expenses_ is optional. Each section lists the fields the file should contain and states that we need the last 12 months of data. Where we have export guidance for the customer's platform, a **How to export** link opens it in a new tab.
-- **Upload in any order, and fix mistakes.** Customers choose or drop a CSV or XLSX file of up to 100 MB into each section. Link checks the file type and size immediately, and a file can be replaced or removed at any point before submitting. **Submit files** becomes available once the three required files are in place.
-- **A clear confirmation.** After submitting, customers see a **Files received** screen that lists the reports they shared and explains what happens next.
-- **Recovery when something goes wrong.** If the connection drops during submission, the files stay in place and **Try submitting again** resends only the files we haven't accepted yet. If we can't use a file, Link marks that section so the customer can re-upload just that one.
+- Each report (**Vendors**, **Bills**, **Payments**, and optionally **Expenses**) lists the fields its file should contain and says it needs to cover the last 12 months.
+- Customers upload a CSV or XLSX file for each report, in any order, and can replace a file at any time before submitting.
+- If the connection drops midway, nothing is lost: one tap resends the files we haven't received. If we can't use a file, we say which one, so they re-upload only that.
+- A **Files received** screen confirms what they shared and what happens next.
 
 <div
   style={{
@@ -110,33 +108,31 @@ The new journey has two steps: upload, then confirmation.
   </figure>
 </div>
 
-### New support settings
+### Two ways for customers to reach you
 
-Two new fields in your Link settings let customers get help without leaving the journey. Neither is shown in Link until you set it.
+Set either of these in your Link settings and it appears in the journey. Leave it empty and nothing changes.
 
-- **File upload support email.** When a submission fails, the error message includes a **Contact bank** button that opens a new email to this address.
-- **File upload scheduling link.** Every Intelligent Upload screen shows a **Need assistance? Contact us** link that opens this URL in a new tab, so customers can book a call for help exporting their files. Use any scheduling link, such as a Google Calendar or Calendly booking page.
+- **File upload support email**: if submitting fails, a **Contact bank** button opens an email to this address.
+- **File upload scheduling link**: a **Need assistance? Contact us** link on every screen opens your booking page, so customers can book a call for help exporting their files. Use Google Calendar, Calendly, or any other scheduling link.
 
 ![The Onboarding tab of the Link settings in the Codat Portal, showing the File upload support email and File upload scheduling link fields](/img/updates/261026-intelligent-upload-link-settings.png)
 
-The new journey is available in English and [Canadian French](/updates/260522-french-canadian-localization).
+The journey is available in English and [Canadian French](/updates/260522-french-canadian-localization).
 
 ## Who is this relevant for?
 
-All [Spend Insights](/spend-insights/overview) clients whose customers share their data through [Intelligent Upload](/spend-insights/resources/link-file), whether through [Hosted Link](/auth-flow/authorize-hosted-link) or the [Link SDK](/auth-flow/authorize-embedded-link).
-
-It's especially useful for onboarding and customer success teams who currently join calls to walk customers through the upload.
+[Spend Insights](/spend-insights/overview) clients whose customers share their data through [Intelligent Upload](/spend-insights/resources/link-file), in [Hosted Link](/auth-flow/authorize-hosted-link) or the [Link SDK](/auth-flow/authorize-embedded-link).
 
 ## How to get started?
 
-No action is required. The new journey is live for every customer who starts an Intelligent Upload.
+No action is required. Every customer who starts an Intelligent Upload gets the new journey.
 
-To add the support options in the [Codat Portal](https://app.codat.io):
+To add your contact details in the [Codat Portal](https://app.codat.io):
 
-1. Navigate to **[Settings > Auth flow > Link > Onboarding](https://app.codat.io/settings/link-settings/onboarding)**.
-2. Enter your **File upload support email** and **File upload scheduling link**. Changes are saved automatically.
+1. Go to **[Settings > Auth flow > Link > Onboarding](https://app.codat.io/settings/link-settings/onboarding)**.
+2. Fill in **File upload support email** and **File upload scheduling link**. Changes are saved automatically.
 
-If you're using the Link SDK, you can override either value for a session with the `supportContactEmail` and `codatSupportBookingUrl` options:
+If you use the Link SDK, you can override both for a session:
 
 ```javascript
 options: {
