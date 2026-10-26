@@ -154,7 +154,7 @@ a[class^="sidebarLogo"] {
   }
 
   // Categories without a link get no caret button, so draw the same chevron on the link itself
-  .top-level-item-list > .menu__list-item-collapsible > .menu__link--sublist-caret::before {
+  .menu__list-item-collapsible > .menu__link--sublist-caret::before {
     content: "";
     order: 1;
     flex-shrink: 0;
@@ -394,6 +394,15 @@ html[data-theme="dark"]
 
   // Category rows carry no icon; their labels start where the section headers do
   &.top-level-item-list > div > .menu__link--sublist {
+    margin-left: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  // Link-less categories at any level draw their chevron on the right (::before above), not as a left icon
+  > .menu__list-item-collapsible > .menu__link--sublist-caret {
     margin-left: 0;
 
     &::after {
