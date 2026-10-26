@@ -131,6 +131,12 @@ html[data-theme="dark"] {
       font-weight: 200;
       margin-top: 0;
       margin-bottom: 0.2em;
+
+      // MDX wraps multi-line link text in a <p>, which would otherwise take the card copy size
+      p {
+        font: inherit;
+        margin: 0;
+      }
     }
 
     img + h3,
