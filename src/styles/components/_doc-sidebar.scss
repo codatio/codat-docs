@@ -135,7 +135,8 @@ a[class^="sidebarLogo"] {
 
   margin: 0;
 
-  li:last-of-type {
+  // Breathing room at the foot of the sidebar only, not after every nested group
+  &.theme-doc-sidebar-menu > li:last-of-type {
     padding-block-end: 1.5rem;
   }
 
