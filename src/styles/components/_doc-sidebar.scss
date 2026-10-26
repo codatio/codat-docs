@@ -12,7 +12,7 @@
   --sidebar-horizontal-gap: 0.5em;
   --icon-gap: 1.75em;
 
-  --ifm-menu-link-padding-vertical: 0.5rem;
+  --ifm-menu-link-padding-vertical: var(--sidebar-vertical-gap);
   --ifm-menu-color-active: var(--sidebar-active-c, var(--ifm-link-color));
 
   --sidebar-spacing-horizontal: 1.5rem;
@@ -148,6 +148,8 @@ a[class^="sidebarLogo"] {
     }
 
     &:before {
+      // Glyph box matches the text line so the row is no taller than a plain link
+      height: 1em;
       background-size: var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
       background-repeat: no-repeat !important;
     }
@@ -159,7 +161,7 @@ a[class^="sidebarLogo"] {
     order: 1;
     flex-shrink: 0;
     width: 1.25rem;
-    height: 1.25rem;
+    height: 1em;
     margin-inline-start: auto;
     margin-inline-end: calc(var(--ifm-menu-link-padding-horizontal) - var(--sidebar-horizontal-gap));
     background: var(--ifm-menu-link-sublist-icon) 50% / var(--dropdown-icon-width) var(--dropdown-icon-height) no-repeat;
@@ -178,7 +180,7 @@ a[class^="sidebarLogo"] {
     order: 1;
     flex-shrink: 0;
     width: 1.25rem;
-    height: 1.25rem;
+    height: 1em;
     margin-inline-start: auto;
     margin-inline-end: calc(var(--ifm-menu-link-padding-horizontal) - var(--sidebar-horizontal-gap));
     background-color: currentColor;
@@ -340,7 +342,7 @@ html[data-theme="dark"]
 .theme-doc-sidebar-item-category {
   &-level-1 {
     > .menu__list-item-collapsible > .menu__link--sublist {
-      margin-left: 5px;
+      margin-left: 0;
       padding: var(--sidebar-vertical-gap) var(--sidebar-horizontal-gap) !important;
     }
   }
@@ -355,6 +357,11 @@ html[data-theme="dark"]
       }
     }
   }
+}
+
+// Top-level links start where category rows and section headers do
+.theme-doc-sidebar-menu > .menu__list-item > .menu__link {
+  padding-inline-start: var(--sidebar-horizontal-gap);
 }
 
 .menu__list-item {
