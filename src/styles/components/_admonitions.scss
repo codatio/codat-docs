@@ -7,7 +7,7 @@
 //   warning  → .alert--warning (separate type, own icon)
 
 // Brand colour tokens used here:
-//   Gravity  #6482A7  (note)
+//   Gravity  #324154  (note; gravity.1300, 9.7:1 on canvas.500)
 //   Mint     #B2D4C7  (info accent)
 //   Emerald  #21524F  (info/tip)
 //   Citron   #D1E100  (caution bg tint)
@@ -15,13 +15,13 @@
 //   error    #750024  (danger)
 
 html[data-theme="light"] {
-  --admonition-note-c:     #6482A7;
-  --admonition-note-bg:    color-mix(in srgb, #6482A7 8%, white);
-  --admonition-note-border: color-mix(in srgb, #6482A7 35%, transparent);
+  --admonition-note-c:     var(--codat-gravity-1300);
+  --admonition-note-bg:    var(--codat-canvas-500);
+  --admonition-note-border: var(--codat-emerald-300);
 
   --admonition-info-c:     #21524F;
-  --admonition-info-bg:    color-mix(in srgb, #B2D4C7 35%, white);
-  --admonition-info-border: #B2D4C7;
+  --admonition-info-bg:    var(--codat-mint-400);
+  --admonition-info-border: var(--codat-mint-1100);
 
   --admonition-tip-c:      #21524F;
   --admonition-tip-bg:     color-mix(in srgb, #21524F 8%, white);
@@ -72,6 +72,18 @@ html[data-theme="dark"] {
   border-radius: 4px;
   margin: 2em 0;
   color: var(--ifm-font-color-base);
+
+  a {
+    // Infima rebinds --ifm-link-color to the alert foreground, so point at the body link colour directly
+    color: var(--codat-emerald-1100);
+    font-weight: 600;
+    text-decoration-color: currentColor;
+  }
+
+  strong,
+  b {
+    color: inherit;
+  }
 
   &:first-child { margin-top: 0; }
   &:last-child  { margin-bottom: 0; }

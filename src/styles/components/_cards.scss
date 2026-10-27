@@ -29,26 +29,10 @@ ul.card-container {
 
   &.col-3 {
     grid-template-columns: repeat(3, 1fr);
-
-    p {
-      font-size: 0.95em;
-    }
-
-    .card .header h3 {
-      font-size: 18px;
-    }
   }
 
   &.col-2 {
     grid-template-columns: repeat(2, 1fr);
-
-    p {
-      font-size: 0.98em;
-    }
-
-    .card .header h3 {
-      font-size: 18px;
-    }
   }
 
   &.mini {
@@ -107,15 +91,16 @@ html[data-theme="dark"] {
   box-shadow: none;
   padding: 1.5em;
   border-radius: 8px;
-  font-size: 0.9em !important;
+  font-size: 0.9em;
 
   h3 + p {
     margin-top: 0;
   }
 
-  p {
-    font-size: 14px;
-    
+  p,
+  .markdown & p {
+    font-size: 0.9375rem;
+
     &:first-child {
       margin-top: 0;
     }
@@ -141,11 +126,17 @@ html[data-theme="dark"] {
     }
 
     h3 {
-      font-size: 16px;
+      font-size: 1.125rem;
       font-family: var(--heading-font);
       font-weight: 200;
       margin-top: 0;
       margin-bottom: 0.2em;
+
+      // MDX wraps multi-line link text in a <p>, which would otherwise take the card copy size
+      p {
+        font: inherit;
+        margin: 0;
+      }
     }
 
     img + h3,
@@ -181,7 +172,8 @@ html[data-theme="dark"] {
     .content {
       padding-left: 1em;
 
-      h4 {
+      h3 {
+        font-size: 1.125rem;
         margin-bottom: 0.25em;
       }
     }

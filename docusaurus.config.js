@@ -38,34 +38,34 @@ const codatDarkTheme = {
   ],
 };
 
-// Light-mode vampire: dark saturated hues readable on #F0F3F6
+// Light-mode vampire: dark saturated hues on #F0F3F6, every token at 7:1 or better (WCAG AAA)
 const codatLightTheme = {
   plain: { color: "#18103A", backgroundColor: "#F0F3F6" },
   styles: [
     {
       types: ["comment", "prolog", "doctype", "cdata"],
-      style: { color: "#6272a4", fontStyle: "italic" },
+      style: { color: "#3f4a6b", fontStyle: "italic" },
     },
-    { types: ["punctuation"], style: { color: "rgba(24,16,58,0.5)" } },
-    { types: ["tag"], style: { color: "#1a6b5e" } },
+    { types: ["punctuation"], style: { color: "#464061" } },
+    { types: ["tag"], style: { color: "#134e4a" } },
     {
       types: ["keyword", "important"],
-      style: { color: "#c2185b", fontStyle: "italic" },
+      style: { color: "#9f1239", fontStyle: "italic" },
     },
     {
       types: ["string", "attr-value", "char", "inserted"],
-      style: { color: "#b45309" },
+      style: { color: "#78350f" },
     },
     {
       types: ["number", "boolean", "constant", "symbol", "property"],
-      style: { color: "#7c3aed" },
+      style: { color: "#5b21b6" },
     },
-    { types: ["function", "builtin", "atrule"], style: { color: "#15803d" } },
-    { types: ["variable", "attr-name"], style: { color: "#1d4ed8" } },
-    { types: ["operator", "entity", "url"], style: { color: "#0369a1" } },
-    { types: ["selector"], style: { color: "#b45309" } },
-    { types: ["regex"], style: { color: "#c2185b" } },
-    { types: ["deleted"], style: { color: "#b91c1c" } },
+    { types: ["function", "builtin", "atrule"], style: { color: "#14532d" } },
+    { types: ["variable", "attr-name"], style: { color: "#1e40af" } },
+    { types: ["operator", "entity", "url"], style: { color: "#0c4a6e" } },
+    { types: ["selector"], style: { color: "#78350f" } },
+    { types: ["regex"], style: { color: "#9f1239" } },
+    { types: ["deleted"], style: { color: "#991b1b" } },
     { types: ["bold"], style: { fontWeight: "bold" } },
     { types: ["italic"], style: { fontStyle: "italic" } },
   ],

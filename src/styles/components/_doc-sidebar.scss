@@ -1,5 +1,6 @@
 :root {
-  --sidebar-scale: 0.9em;
+  --sidebar-scale: 0.9375rem;
+  --sidebar-fade-size: 56px;
 
   --doc-sidebar-width: 17.5rem;
 
@@ -11,8 +12,8 @@
   --sidebar-horizontal-gap: 0.5em;
   --icon-gap: 1.75em;
 
-  --ifm-menu-link-padding-vertical: 0.5rem;
-  --ifm-menu-color-active: var(--ifm-link-color);
+  --ifm-menu-link-padding-vertical: var(--sidebar-vertical-gap);
+  --ifm-menu-color-active: var(--sidebar-active-c, var(--ifm-link-color));
 
   --sidebar-spacing-horizontal: 1.5rem;
 
@@ -23,14 +24,19 @@
 }
 
 html[data-theme="light"] {
-  --sidebar-category-c: #18103A;
-  --sidebar-border-c: var(--c-gray-0);
+  --sidebar-category-c: var(--codat-emerald-1100);
+  --sidebar-border-c: var(--codat-emerald-300);
+  --sidebar-section-c: var(--codat-gravity-1300);
+  --sidebar-active-c: var(--codat-emerald-1200);
+  --sidebar-active-bg: var(--codat-mint-400);
+  --sidebar-hover-c: var(--codat-emerald-1200);
+  --sidebar-hover-bg: var(--codat-canvas-1000);
 
-  --ifm-menu-color-background-active: rgba(24, 16, 58, 0.08);
-  --ifm-menu-color: #18103A;
-  --ifm-menu-color-active: #6482A7;
+  --ifm-menu-color-background-active: var(--sidebar-active-bg);
+  --ifm-menu-color: var(--codat-emerald-1100);
+  --ifm-menu-color-active: var(--sidebar-active-c);
 
-  --sidebar-background: var(--token-primary-bg-c);
+  --sidebar-background: var(--codat-canvas-500);
 }
 
 html[data-theme="dark"] {
@@ -58,6 +64,7 @@ aside.theme-doc-sidebar-container {
     height: var(--ifm-navbar-height);
     padding-inline-start: var(--sidebar-spacing-horizontal);
     padding-inline-end: var(--sidebar-spacing-horizontal);
+    border-block-end: 1px solid var(--sidebar-border-c);
 
     .navbar__logo {
       height: auto;
@@ -68,12 +75,34 @@ aside.theme-doc-sidebar-container {
       }
     }
   }
+
+  // Fade at the bottom of the scrolling menu so it's clear there's more below
+  div[class^="sidebarViewport"]::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
+    height: var(--sidebar-fade-size);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--sidebar-background)
+    );
+    pointer-events: none;
+  }
 }
 
 [class^="sidebar_"] {
   max-height: calc(100vh - var(--ifm-navbar-height));
   position: static;
   overflow-y: auto;
+  --scrollbar-thumb-color: var(--codat-emerald-300);
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-color) transparent;
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
   padding-inline-start: var(--sidebar-spacing-horizontal);
   padding-inline-end: var(--sidebar-spacing-horizontal);
   padding-block-start: 1rem;
@@ -81,8 +110,8 @@ aside.theme-doc-sidebar-container {
 
   > .menu {
     overflow-x: initial;
-    padding-block-end: 2rem;
     padding: 0;
+    padding-block-end: var(--sidebar-fade-size);
   }
 }
 
@@ -95,6 +124,7 @@ a[class^="sidebarLogo"] {
     margin: 1em 0 !important;
     height: 1px !important;
     border: 0 !important;
+    background-color: var(--sidebar-border-c);
   }
 }
 
@@ -105,13 +135,13 @@ a[class^="sidebarLogo"] {
 
   margin: 0;
 
-  li:last-of-type {
+  // Breathing room at the foot of the sidebar only, not after every nested group
+  &.theme-doc-sidebar-menu > li:last-of-type {
     padding-block-end: 1.5rem;
   }
 
   button.menu__caret {
     display: flex;
-    --ifm-menu-link-sublist-icon: url("/img/sidebar/x-circle.svg");
 
     &:hover {
       background: none;
@@ -119,22 +149,57 @@ a[class^="sidebarLogo"] {
     }
 
     &:before {
-      background-size: contain !important;
+      // Glyph box matches the text line so the row is no taller than a plain link
+      height: 1em;
+      background-size: var(--dropdown-icon-width) var(--dropdown-icon-height) !important;
+      background-repeat: no-repeat !important;
     }
   }
 
-  .menu__list-item--collapsed > .menu__list-item-collapsible > button.menu__caret {
-    display: none;
+  // Categories without a link get no caret button, so draw the same chevron on the link itself
+  .menu__list-item-collapsible > .menu__link--sublist-caret::before {
+    content: "";
+    order: 1;
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1em;
+    margin-inline-start: auto;
+    margin-inline-end: calc(var(--ifm-menu-link-padding-horizontal) - var(--sidebar-horizontal-gap));
+    background: var(--ifm-menu-link-sublist-icon) 50% / var(--dropdown-icon-width) var(--dropdown-icon-height) no-repeat;
+    filter: var(--ifm-menu-link-sublist-icon-filter);
+    transform: rotate(180deg);
+    transition: transform var(--ifm-transition-fast) linear;
+  }
+
+  .menu__list-item--collapsed > .menu__list-item-collapsible > .menu__link--sublist-caret::before {
+    transform: rotateZ(90deg);
+  }
+
+  // Product links swap the whole sidebar, so mark them with an arrow
+  .top-level-item-single > .menu__link::before {
+    content: "";
+    order: 1;
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1em;
+    margin-inline-start: auto;
+    margin-inline-end: calc(var(--ifm-menu-link-padding-horizontal) - var(--sidebar-horizontal-gap));
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E") 50% / 0.75rem 0.75rem no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E") 50% / 0.75rem 0.75rem no-repeat;
+    opacity: 0.7;
   }
 
   .menu-item-section-header {
+    color: var(--sidebar-section-c, inherit);
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    font-size: 0.95em;
-    font-weight: normal;
+    font-size: 0.8125rem;
+    font-weight: 600;
     font-family: var(--ifm-font-family-base);
-    padding-left: 1rem;
-    color: rgba(24, 16, 58, 0.5);
+    padding-left: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 
     html[data-theme="dark"] & {
       color: rgba(236, 237, 229, 0.5);
@@ -188,10 +253,9 @@ a[class^="sidebarLogo"] {
 
   .menu__list-item-collapsible {
     background: none;
-    
+
     &:hover {
       background: none;
-      opacity: 0.75;
     }
   }
   
@@ -201,7 +265,7 @@ a[class^="sidebarLogo"] {
 }
 
 .menu__link {
-  font-weight: normal;
+  font-weight: 300;
   line-height: 1em;
   display: flex;
   align-items: center;
@@ -216,16 +280,29 @@ a[class^="sidebarLogo"] {
     background: initial;
   }
 
-  &:not(.menu__link--active):not(.menu__link--sublist) {
-    &:hover,
-    &:active,
-    &:focus {
-      opacity: 0.7;
-    }
+  &.menu__link--active:not(.menu__link--sublist) {
+    font-weight: 600;
   }
 
   > span {
     overflow: initial;
+  }
+}
+
+html[data-theme="light"]
+  .menu__link:not(.menu__link--active):not(.menu__link--sublist) {
+  &:hover,
+  &:active {
+    background: var(--sidebar-hover-bg);
+    color: var(--sidebar-hover-c);
+  }
+}
+
+html[data-theme="dark"]
+  .menu__link:not(.menu__link--active):not(.menu__link--sublist) {
+  &:hover,
+  &:active {
+    opacity: 0.7;
   }
 }
 
@@ -266,7 +343,7 @@ a[class^="sidebarLogo"] {
 .theme-doc-sidebar-item-category {
   &-level-1 {
     > .menu__list-item-collapsible > .menu__link--sublist {
-      margin-left: 5px;
+      margin-left: 0;
       padding: var(--sidebar-vertical-gap) var(--sidebar-horizontal-gap) !important;
     }
   }
@@ -281,6 +358,11 @@ a[class^="sidebarLogo"] {
       }
     }
   }
+}
+
+// Top-level links start where category rows and section headers do
+.theme-doc-sidebar-menu > .menu__list-item > .menu__link {
+  padding-inline-start: var(--sidebar-horizontal-gap);
 }
 
 .menu__list-item {
@@ -318,7 +400,25 @@ a[class^="sidebarLogo"] {
     }
   }
 
-  &.top-level-item-list > div > .menu__link--sublist,
+  // Category rows carry no icon; their labels start where the section headers do
+  &.top-level-item-list > div > .menu__link--sublist {
+    margin-left: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  // Link-less categories at any level draw their chevron on the right (::before above), not as a left icon
+  > .menu__list-item-collapsible > .menu__link--sublist-caret {
+    margin-left: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  // Product links keep their icons as product marks
   &.top-level-item-single > a.menu__link {
     margin-left: var(--icon-gap);
 
@@ -404,8 +504,8 @@ nav {
   > .menu__list {
     .menu__list-item:not(.menu__list-item--collapsed) {
       .menu__link.menu__link--sublist.menu__link--active {
-        //color: var(--color-codat-primary);
-        opacity: 0.5;
+        color: var(--sidebar-active-c, inherit);
+        font-weight: 600;
       }
     }
   }

@@ -55,7 +55,7 @@ const PageHeader = ({
                 className,
               )}
             >
-              <img src={resolvedIcon} className="icon product" />
+              <img src={resolvedIcon} className="icon product" alt="" />
             </div>
           )}
           <h1>{title}</h1>

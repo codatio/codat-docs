@@ -144,12 +144,13 @@ const Products = ({ mini, products, verbose }) => {
                           : product.logo,
                       )}
                       className="icon product"
+                      alt={product.name}
                     />
                   </a>
                 </div>
 
                 <div className="content">
-                  <h4>{product.name}</h4>
+                  <h3>{product.name}</h3>
                   <p>
                     <a href={withBaseUrl(product.link)}>Explore solution →</a>
                   </p>
@@ -181,6 +182,7 @@ const Products = ({ mini, products, verbose }) => {
                       : product.logo,
                   )}
                   className="icon product"
+                  alt={product.name}
                 />
               </a>
             </div>

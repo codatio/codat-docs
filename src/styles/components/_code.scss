@@ -28,34 +28,34 @@ html[data-theme="dark"] {
 html[data-theme="light"] .token.plain { color: #18103A !important; }
 html[data-theme="dark"]  .token.plain { color: #ECEDE5 !important; }
 
-/* ── Light mode vampire token colours ── */
+/* ── Light mode vampire token colours (all 7:1+ on #F0F3F6; mirrors codatLightTheme in docusaurus.config.js) ── */
 html[data-theme="light"] .token.comment,
 html[data-theme="light"] .token.prolog,
 html[data-theme="light"] .token.doctype,
-html[data-theme="light"] .token.cdata       { color: #6272a4 !important; font-style: italic; }
-html[data-theme="light"] .token.punctuation { color: rgba(24,16,58,0.5) !important; }
-html[data-theme="light"] .token.tag         { color: #1a6b5e !important; }
-html[data-theme="light"] .token.keyword     { color: #c2185b !important; font-style: italic; }
+html[data-theme="light"] .token.cdata       { color: #3f4a6b !important; font-style: italic; }
+html[data-theme="light"] .token.punctuation { color: #464061 !important; }
+html[data-theme="light"] .token.tag         { color: #134e4a !important; }
+html[data-theme="light"] .token.keyword     { color: #9f1239 !important; font-style: italic; }
 html[data-theme="light"] .token.string,
 html[data-theme="light"] .token.attr-value,
 html[data-theme="light"] .token.char,
-html[data-theme="light"] .token.inserted    { color: #b45309 !important; }
+html[data-theme="light"] .token.inserted    { color: #78350f !important; }
 html[data-theme="light"] .token.number,
 html[data-theme="light"] .token.boolean,
 html[data-theme="light"] .token.constant,
 html[data-theme="light"] .token.symbol,
-html[data-theme="light"] .token.property    { color: #7c3aed !important; }
+html[data-theme="light"] .token.property    { color: #5b21b6 !important; }
 html[data-theme="light"] .token.function,
 html[data-theme="light"] .token.builtin,
-html[data-theme="light"] .token.atrule      { color: #15803d !important; }
+html[data-theme="light"] .token.atrule      { color: #14532d !important; }
 html[data-theme="light"] .token.variable,
-html[data-theme="light"] .token.attr-name   { color: #1d4ed8 !important; }
+html[data-theme="light"] .token.attr-name   { color: #1e40af !important; }
 html[data-theme="light"] .token.operator,
 html[data-theme="light"] .token.entity,
-html[data-theme="light"] .token.url         { color: #0369a1 !important; }
-html[data-theme="light"] .token.selector    { color: #b45309 !important; }
-html[data-theme="light"] .token.regex       { color: #c2185b !important; }
-html[data-theme="light"] .token.deleted     { color: #b91c1c !important; }
+html[data-theme="light"] .token.url         { color: #0c4a6e !important; }
+html[data-theme="light"] .token.selector    { color: #78350f !important; }
+html[data-theme="light"] .token.regex       { color: #9f1239 !important; }
+html[data-theme="light"] .token.deleted     { color: #991b1b !important; }
 
 /* ── Dark mode vampire token colours ── */
 html[data-theme="dark"] .token.comment,
@@ -124,9 +124,9 @@ html[data-theme="dark"] .token.deleted      { color: #ff5370 !important; }
 // Overrides
 #__docusaurus {
   [class*="codeBlockTitle_"] {
-    background-color: #6482A7 !important;
+    background-color: var(--codat-gravity-1300) !important;
     color: #ECEDE5 !important;
-    border-bottom-color: #6482A7 !important;
+    border-bottom-color: var(--codat-gravity-1300) !important;
     font-family: var(--sans-serif) !important;
     font-size: 0.9rem !important;
     letter-spacing: 0.06em !important;

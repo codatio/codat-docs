@@ -7,7 +7,7 @@ const Integration = ({ integration }) => {
   return (
     <div className={styles.integration}>
       <div>
-        <img src={integration.img} className={styles.logo} />
+        <img src={integration.img} className={styles.logo} alt="" />
 
         <a href={integration.to}>{integration.name}</a>
       </div>
@@ -15,7 +15,9 @@ const Integration = ({ integration }) => {
       {integration.tags?.length >= 1 ? (
         <div className="labels">
           {integration.tags.map((tag) => (
-            <div className="label">{tag}</div>
+            <div className="label" key={tag}>
+              {tag}
+            </div>
           ))}
         </div>
       ) : (
