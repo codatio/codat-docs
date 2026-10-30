@@ -58,7 +58,7 @@ This setting is only relevant for integrations that allow their users to operate
 
 #### File upload support email
 
-Provide the email address your customers can contact when their files fail to submit in the intelligent file upload journey. Link always shows a message suggesting they contact you for support. If you set an email address, Link also displays a **Contact bank** button that opens a new email to that address. Use a single valid email address, or leave the field empty to show only the message.
+Provide the email address your customers can contact when their files fail to submit in the [intelligent file upload](/spend-insights/resources/link-file) journey. Link always shows a message suggesting they contact you for support. If you set an email address, Link also displays a **Contact bank** button that opens a new email to that address. Use a single valid email address, or leave the field empty to show only the message.
 
 #### File upload scheduling link
 
@@ -66,7 +66,7 @@ Provide a scheduling link, such as a Calendly page, that your customers can use 
 
 #### Manage connections
 
-Let your customers review and manage their existing connections within Link. When enabled, companies that have already connected at least one platform see the manage connections screen when they open Link. This screen is only shown to authenticated users, for example when you pass an `accessToken` to the SDK. You can also customize the title and subtitle of this screen.
+Let your customers review and manage their existing connections within Link. When enabled, companies that have already connected at least one platform see the manage connections screen when they open Link. The screen is only shown when Link is initialized with an `accessToken` for the company. You can also customize the title and subtitle of this screen.
 
 #### Mobile support warning
 

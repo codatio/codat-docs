@@ -20,7 +20,7 @@ function AuthFlow() {
   const config = {
     companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
     options: {
-      nonModal: false,
+      hideBorder: false,
       showLandingPage: true,
       showSandboxIntegrations: true,
       //theme: {...},
@@ -63,7 +63,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
   onClose={onClose}
   onFinish={onFinish}
   options={{
-    nonModal: true,
+    hideBorder: true,
     showLandingPage: true,
     showSandboxIntegrations: true,
     theme: {...},
@@ -87,8 +87,8 @@ The `options` prop is optional and accepts an object containing the following op
 
 | Property                   | Description                                                                                                                                                                                                           |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `nonModal`                 | ⚠️ **Deprecated**: Use `hideBorder` and omit `onClose` instead. <br/><br/> Determines whether Link uses non-modal styling, removing the border and close button.                                                      |
-| `hideBorder`               | Removes the modal-styled border and padding. See [Non-modal styling](#non-modal-styling) below.                                                                                                                       |
+| `nonModal`                 | ⚠️ **Deprecated**: Use `hideBorder` instead. <br/><br/> Behaves the same as `hideBorder`: removes the modal-styled border.                                                                                            |
+| `hideBorder`               | Removes the modal-styled border. See [Non-modal styling](#non-modal-styling) below.                                                                                                                                   |
 | `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                                                                          |
 | `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                                                                    |
 | `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                                                                 |
@@ -105,12 +105,12 @@ The object is applied **as the `CodatLink` component is mounted**, so doesn't su
 
 ### Non-modal styling
 
-By default, the Link component is designed to be presented in a modal. To override this, set the `hideBorder` option to `true` to remove the modal-styled border and padding, and omit the `onClose` callback to hide the close icon.
+By default, the Link component is designed to be presented in a modal. To override this:
 
-The `nonModal` option is deprecated. When set to `true`, it will:
+- Set the `hideBorder` option to `true` to remove the modal-styled border.
+- Omit the `onClose` callback to hide the close icon.
 
-- Hide the close icon.
-- Remove the modal-styled border and padding.
+The `nonModal` option is deprecated and behaves the same as `hideBorder`. It does not hide the close icon.
 
 You can see an [example of this on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/non-modal).
 
@@ -235,19 +235,19 @@ To provide your customers with this option, set the `enableMultiEntityLinking` o
 
 Authenticated users who return to Link with existing connections can review and manage those connections within Link. Companies that have already connected at least one platform see the manage connections screen when they open Link.
 
-To provide your customers with this option, set the `enableManageConnections` option to `true`. This screen is only shown to authenticated users, for example when you pass an `accessToken` to the SDK. By default, this option is set to `false`. You can also enable it and customize the screen's title and subtitle in your [Link settings](/auth-flow/customize/customize-link#manage-connections).
+To provide your customers with this option, set the `enableManageConnections` option to `true`. The screen is only shown when you initialize the SDK with an `accessToken` for the company, as described in [Authorize user](/auth-flow/authorize-embedded-link#authorize-user). If you don't set this option, Link uses the **Manage connections** setting from your [Link settings](/auth-flow/customize/customize-link#manage-connections), where you can also customize the screen's title and subtitle.
 
 ## File upload support email
 
-When a user's files fail to submit in the intelligent file upload journey, Link shows a message suggesting they contact you for support. If a support email is set, Link also displays a **Contact bank** button that opens a new email to that address.
+When a user's files fail to submit in the [intelligent file upload](/spend-insights/resources/link-file) journey, Link shows a message suggesting they contact you for support. If a support email is set, Link also displays a **Contact bank** button that opens a new email to that address.
 
-You can set the email in your [Link settings](/auth-flow/customize/customize-link#file-upload-support-email). To override it for a session, set the `supportContactEmail` option to a single valid email address. An invalid address fails validation when the component mounts and is reported through `onError`. If no email is set, Link only displays the message.
+You can set the email in your [Link settings](/auth-flow/customize/customize-link#file-upload-support-email). To override it for a session, set the `supportContactEmail` option to a single valid email address. An invalid address fails validation when the component mounts: Link shows an error screen instead of the flow and calls `onError` with `userRecoverable` set to `false`. If no email is set, Link only displays the message.
 
 ## File upload scheduling link
 
 You can let your customers book a call for help exporting files from their software. If a scheduling link is set, the intelligent file upload steps display a **Need assistance? Contact us** footer, and **Contact us** opens the link in a new tab.
 
-You can set the link in your [Link settings](/auth-flow/customize/customize-link#file-upload-scheduling-link). To override it for a session, set the `codatSupportBookingUrl` option to an `http` or `https` URL. An invalid URL fails validation when the component mounts and is reported through `onError`. If no link is set, Link does not display the footer.
+You can set the link in your [Link settings](/auth-flow/customize/customize-link#file-upload-scheduling-link). To override it for a session, set the `codatSupportBookingUrl` option to an `http` or `https` URL. An invalid URL fails validation when the component mounts: Link shows an error screen instead of the flow and calls `onError` with `userRecoverable` set to `false`. If no link is set, Link does not display the footer.
 
 ## CSP nonce
 
@@ -315,4 +315,4 @@ If you currently allow `style-src 'unsafe-inline'` for the SDK, follow these ste
 
 - [Manage Link settings in Portal](/auth-flow/customize/customize-link)
 - [Manage branding settings in Portal](/auth-flow/customize/branding)
-- [Enable your customer to manage connections](/auth-flow/optimize/connection-management)
+- [Use the Connections SDK in your app](/auth-flow/optimize/connection-management)
