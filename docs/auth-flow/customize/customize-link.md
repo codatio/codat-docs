@@ -56,6 +56,18 @@ This setting is only relevant for integrations that allow their users to operate
   alt="A comparison screenshot that shows the difference of the connection flow with the multi-entity setting toggled off and on. Without the setting, the screen displays a dropdown list of multiple entities found in a NetSuite account, and it's only possible to select one entity. With the setting toggled on, the screen displays a checklist of multiple entities found in a NetSuite account and all entities are selected."
 />
 
+#### File upload support email
+
+Provide the email address your customers can contact when their files fail to submit in the intelligent file upload journey. Link always shows a message suggesting they contact you for support. If you set an email address, Link also displays a **Contact bank** button that opens a new email to that address. Use a single valid email address, or leave the field empty to show only the message.
+
+#### File upload scheduling link
+
+Provide a scheduling link, such as a Calendly page, that your customers can use to book a call for help exporting files from their software. When set, the intelligent file upload steps display a **Need assistance? Contact us** footer, and **Contact us** opens the link in a new tab. Use an `http` or `https` URL, or leave the field empty to hide the footer.
+
+#### Manage connections
+
+Let your customers review and manage their existing connections within Link. When enabled, companies that have already connected at least one platform see the manage connections screen when they open Link. This screen is only shown to authenticated users, for example when you pass an `accessToken` to the SDK. You can also customize the title and subtitle of this screen.
+
 #### Mobile support warning
 
 Let your users know that some integrations are not optimized or will not connect via mobile when accessing the connection journey on mobile.
@@ -120,10 +132,6 @@ Once you provide your customers with a Link URL, they reach a page where they pr
 #### Help and support
 
 Customize your help and support messages that are displayed throughout the Link flow.
-
-#### Support contact email
-
-Provide the email address your customers can contact when a file upload fails to submit. Link then displays a **Contact bank** button that opens a new email to that address. Use a single valid email address, or leave the field empty to show only the support message.
 
 #### Data security
 
