@@ -20,7 +20,7 @@ function AuthFlow() {
   const config = {
     companyId: "e0e0462f-d7f3-456f-b3e9-0b40afe0245e",
     options: {
-      nonModal: false,
+      hideBorder: false,
       showLandingPage: true,
       showSandboxIntegrations: true,
       //theme: {...},
@@ -30,6 +30,9 @@ function AuthFlow() {
       //text: {...},
       enableAdditionalConsent: true,
       enableMultiEntityLinking: true,
+      enableManageConnections: true,
+      supportContactEmail: "support@example.com",
+      codatSupportBookingUrl: "https://calendly.com/your-team/support",
       //nonce: "r4nd0mB4se64Val==",
     },
   };
@@ -60,7 +63,7 @@ As the `options` object overrides the Link settings set in the Portal, this may 
   onClose={onClose}
   onFinish={onFinish}
   options={{
-    nonModal: true,
+    hideBorder: true,
     showLandingPage: true,
     showSandboxIntegrations: true,
     theme: {...},
@@ -72,6 +75,9 @@ As the `options` object overrides the Link settings set in the Portal, this may 
     text: {...},
     enableAdditionalConsent: true,
     enableMultiEntityLinking: true,
+    enableManageConnections: true,
+    supportContactEmail: "support@example.com",
+    codatSupportBookingUrl: "https://calendly.com/your-team/support",
     nonce: "r4nd0mB4se64Val==",
   }}
 />
@@ -79,26 +85,32 @@ As the `options` object overrides the Link settings set in the Portal, this may 
 
 The `options` prop is optional and accepts an object containing the following optional properties:
 
-| Property                   | Description                                                                                                                                                          |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `nonModal`                 | Determines whether Link uses non-modal styling, removing the border and close button.                                                                                |
-| `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                         |
-| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                   |
-| `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                |
-| `sourceTypes`              | Controls which data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for.                                   |
-| `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                            |
-| `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                |
-| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                           |
-| `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below. |
+| Property                   | Description                                                                                                                                                                                                           |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nonModal`                 | ⚠️ **Deprecated**: Use `hideBorder` instead. <br/><br/> Behaves the same as `hideBorder`: removes the modal-styled border.                                                                                            |
+| `hideBorder`               | Removes the modal-styled border. See [Non-modal styling](#non-modal-styling) below.                                                                                                                                   |
+| `showLandingPage`          | Determines whether the user sees an extra landing page at the start of Link.                                                                                                                                          |
+| `showSandboxIntegrations`  | Controls whether integrations that only connect Sandbox data appear for selection.                                                                                                                                    |
+| `theme`                    | Contains options that control the visual appearance of the Link flow.                                                                                                                                                 |
+| `sourceTypes`              | Controls which data source types (Accounting, Commerce, Banking, and Business Documents) the user can connect or upload files for.                                                                                    |
+| `text`                     | Contains options that control what text the user sees. Supports Markdown.                                                                                                                                             |
+| `enableAdditionalConsent`  | Determines whether the user sees an additional consent journey for further use cases.                                                                                                                                 |
+| `enableMultiEntityLinking` | Allows users to authorize to multiple companies within a single accounting platform in one go for compatible integrations.                                                                                            |
+| `enableManageConnections`  | Lets authenticated users who return with existing connections view and manage those connections within Link. See [Manage connections](#manage-connections) below.                                                     |
+| `supportContactEmail`      | The email address users can contact for help when their files fail to submit. Overrides the file upload support email set in your Link settings. See [File upload support email](#file-upload-support-email) below.   |
+| `codatSupportBookingUrl`   | A scheduling link users can open to book a call for help exporting files. Overrides the file upload scheduling link set in your Link settings. See [File upload scheduling link](#file-upload-scheduling-link) below. |
+| `nonce`                    | A CSP nonce to apply to all `<style>` tags injected by the SDK so that styles aren't blocked by a strict Content Security Policy. See [CSP nonce](#csp-nonce) below.                                                  |
 
 The object is applied **as the `CodatLink` component is mounted**, so doesn't support hot reloading. Modify the options and refresh the page to see the options reflected.
 
 ### Non-modal styling
 
-By default, the Link component is designed to be presented in a modal. To override this, you can use the `nonModal` options setting. When set to `true`, it will:
+By default, the Link component is designed to be presented in a modal. To override this:
 
-- Hide the close icon.
-- Remove the modal-styled border and padding.
+- Set the `hideBorder` option to `true` to remove the modal-styled border.
+- Omit the `onClose` callback to hide the close icon.
+
+The `nonModal` option is deprecated and behaves the same as `hideBorder`. It does not hide the close icon.
 
 You can see an [example of this on GitHub](https://github.com/codatio/sdk-link/tree/main/examples/non-modal).
 
@@ -219,6 +231,24 @@ You may want to enable your customers to authorize access to multiple companies 
 
 To provide your customers with this option, set the `enableMultiEntityLinking` option to `true`. This will display additional subsidiary selection steps in the auth flow for the integrations that provide multi-entity support. By default, this option is set to `false`.
 
+## Manage connections
+
+Authenticated users who return to Link with existing connections can review and manage those connections within Link. Companies that have already connected at least one platform see the manage connections screen when they open Link.
+
+To provide your customers with this option, set the `enableManageConnections` option to `true`. The screen is only shown when you initialize the SDK with an `accessToken` for the company, as described in [Authorize user](/auth-flow/authorize-embedded-link#authorize-user). If you don't set this option, Link uses the **Manage connections** setting from your [Link settings](/auth-flow/customize/customize-link#manage-connections), where you can also customize the screen's title and subtitle.
+
+## File upload support email
+
+When a user's files fail to submit in the [intelligent file upload](/spend-insights/resources/link-file) journey, Link shows a message suggesting they contact you for support. If a support email is set, Link also displays a **Contact bank** button that opens a new email to that address.
+
+You can set the email in your [Link settings](/auth-flow/customize/customize-link#file-upload-support-email). To override it for a session, set the `supportContactEmail` option to a single valid email address. An invalid address fails validation when the component mounts: Link shows an error screen instead of the flow and calls `onError` with `userRecoverable` set to `false`. If no email is set, Link only displays the message.
+
+## File upload scheduling link
+
+You can let your customers book a call for help exporting files from their software. If a scheduling link is set, the intelligent file upload steps display a **Need assistance? Contact us** footer, and **Contact us** opens the link in a new tab.
+
+You can set the link in your [Link settings](/auth-flow/customize/customize-link#file-upload-scheduling-link). To override it for a session, set the `codatSupportBookingUrl` option to an `http` or `https` URL. An invalid URL fails validation when the component mounts: Link shows an error screen instead of the flow and calls `onError` with `userRecoverable` set to `false`. If no link is set, Link does not display the footer.
+
 ## CSP nonce
 
 If your app sets [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) headers, you can pass a `nonce` through the `options` prop so that every `<style>` tag the SDK injects carries that nonce. This lets you use a strict `style-src` directive instead of `unsafe-inline`.
@@ -285,4 +315,4 @@ If you currently allow `style-src 'unsafe-inline'` for the SDK, follow these ste
 
 - [Manage Link settings in Portal](/auth-flow/customize/customize-link)
 - [Manage branding settings in Portal](/auth-flow/customize/branding)
-- [Enable your customer to manage connections](/auth-flow/optimize/connection-management)
+- [Use the Connections SDK in your app](/auth-flow/optimize/connection-management)
