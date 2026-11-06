@@ -24,6 +24,29 @@ To keep the direction consistent with the `amount` you send, Codat writes a posi
 
 A negative `Xfer` isn't converted, because the type and the sign already agree.
 
+| Codat type  | FreeAgent                                   | Direction in FreeAgent                                 | Codat validation message? |
+|-------------|---------------------------------------------|--------------------------------------------------------|---------------------------|
+| Unknown     | OTHER                                       | Sign-respecting: follows the amount sign given         | none                      |
+| Credit      | CREDIT                                      | Money in: forced positive regardless of sign           | warning if amount < 0     |
+| Debit       | DEBIT                                       | Money out: forced negative                             | warning if amount > 0     |
+| Int         | INT                                         | Sign-respecting                                        | none                      |
+| Div         | DIV                                         | Money in                                               | warning if amount < 0     |
+| Fee         | FEE                                         | Money out                                              | warning if amount > 0     |
+| SerChg      | SRVCHG                                      | Money out                                              | warning if amount > 0     |
+| Dep         | DEP                                         | Money in                                               | warning if amount < 0     |
+| Atm         | ATM                                         | Sign-respecting                                        | none                      |
+| Pos         | POS                                         | Sign-respecting                                        | none                      |
+| Xfer        | XFER, but amount > 0 → overridden to OTHER  | amount ≤ 0: money out; amount > 0: sign-respecting     | warning if amount > 0     |
+| Check       | CHECK                                       | Money out                                              | warning if amount > 0     |
+| Payment     | PAYMENT                                     | Money out                                              | warning if amount > 0     |
+| Cash        | CASH                                        | Money out                                              | warning if amount > 0     |
+| DirectDep   | DIRECTDEP                                   | Money in                                               | warning if amount < 0     |
+| DirectDebit | DIRECTDEBIT                                 | Money out                                              | warning if amount > 0     |
+| RepeatPmt   | REPEATPMT                                   | Money out                                              | warning if amount > 0     |
+| Other       | OTHER                                       | Sign-respecting                                        | none
+
+[There is further information about this behaviour in Freeagent's documentation](https://dev.freeagent.com/docs/bank_transactions#upload-a-bank-statement)
+
 ### The type appears in the description
 
 FreeAgent includes the transaction type in the description that the SMB user sees against the bank transaction. A transaction sent as `Xfer` reads as `//XFER/`, followed by the amount:
