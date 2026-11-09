@@ -27,16 +27,17 @@ Before performing any setup on your side, please fill out the questionnaire belo
 In order to support SSO, you need to connect your Identity Provider (IdP) to Codat. Common examples of integrating IdPs include Active Directory (AD), PingFederate or OKTA.
 In your IdP, perform the following setup:
 
-1. Set up groups corresponding to the four Codat roles (Administrator, Analyst, Onboarding, Developer) for each Codat instance you have, and add at least one test user to each group for later testing.
+1. Set up one group for each [Codat role](/configure/user-management/user-roles) you want to use (Administrator, Developer, Analyst, Advisor, Onboarding) for each Codat instance you have, and add at least one test user to each group for later testing.
 
    Send us the group name to role mappings, including ID and mapping to our roles:
 
    | Codat role name | Your group name | Your group ID |
    | :-------------- | :-------------- | :------------ |
    | Administrator   |                 |               |
-   | Analyst         |                 |               |
-   | Onboarding      |                 |               |
    | Developer       |                 |               |
+   | Analyst         |                 |               |
+   | Advisor         |                 |               |
+   | Onboarding      |                 |               |
 
 2. Provision an SSO app registration (or equivalent) in the IdP. This should be configured to:
 
