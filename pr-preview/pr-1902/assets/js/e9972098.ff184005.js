@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcodat_docs=globalThis.webpackChunkcodat_docs||[]).push([[78424],{72267(s){s.exports=JSON.parse('{"name":"docusaurus-theme-search-typesense","id":"default"}')}}]);
