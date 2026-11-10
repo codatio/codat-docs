@@ -13,7 +13,7 @@ To streamline our platform and enable us to focus on our key products, Codat is 
 
 :::info 23 December, 2025: Update
 
-The deprecation of these integrations has now been completed as scheduled. The **Lightspeed K** integration will be deprecated on **January 10, 2026** instead.
+The deprecation of these integrations has now been completed as scheduled. The **Lightspeed K** integration was removed in **November 2026** instead.
 
 :::
 
