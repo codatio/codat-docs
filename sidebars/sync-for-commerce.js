@@ -100,11 +100,6 @@ module.exports = [
   },
   {
     type: "doc",
-    label: "Lightspeed Restaurant",
-    id: "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
-  },
-  {
-    type: "doc",
     label: "Shopify",
     id: "integrations/commerce/shopify/commerce-shopify",
   },

@@ -71,7 +71,6 @@ Sync for Commerce currently supports the following commerce software:
 | Commerce software | Platform key |
 | ----------------- | ------------ |
 | Clover            | fqly         |
-| Lightspeed K      | ldgh         |
 | Shopify           | fztf         |
 | Zettle by PayPal  | ugxp         |
 

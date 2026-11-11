@@ -405,17 +405,17 @@ var comm = [
   {
     integration: "Commerce Sandbox",
     platformKey: "aiwb",
-    to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+    to: "/integrations/commerce/overview#commerce-sandbox",
   },
   {
     integration: "Lightspeed K",
     platformKey: "ldgh",
-    to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+    to: "/updates/251003-deprecation-of-integrations",
   },
   {
     integration: "Lightspeed K Trial",
     platformKey: "ltes",
-    to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+    to: "/updates/251003-deprecation-of-integrations",
   },
   {
     integration: "Maxio",
@@ -556,6 +556,14 @@ module.exports = {
     {
       from: "/integrations/commerce/shopify/commerce-shopify-setup",
       to: "/integrations/commerce/shopify/commerce-shopify-custom-apps",
+    },
+    {
+      from: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
+      to: "/updates/251003-deprecation-of-integrations",
+    },
+    {
+      from: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k-setup",
+      to: "/updates/251003-deprecation-of-integrations",
     },
     {
       from: "/redirects/integrations/bankfeeds/qalf",
