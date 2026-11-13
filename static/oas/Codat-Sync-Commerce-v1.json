@@ -7669,32 +7669,6 @@
                       }
                     }
                   },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "647208621834538",
-                          "name": "QA Shared - New Test Site",
-                          "address": {
-                            "type": "Unknown",
-                            "country": "AU"
-                          },
-                          "modifiedDate": "2023-03-02T09:48:48Z"
-                        }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 2,
-                      "totalResults": 1,
-                      "_links": {
-                        "current": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-locations?page=1&pageSize=2"
-                        },
-                        "self": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-locations"
-                        }
-                      }
-                    }
-                  },
                   "Shopify": {
                     "value": {
                       "results": [
@@ -7841,17 +7815,6 @@
                         "postalCode": "WC1X 0BE"
                       },
                       "modifiedDate": "2023-01-09T11:01:03Z"
-                    }
-                  },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "id": "647208621834538",
-                      "name": "QA Shared - New Test Site",
-                      "address": {
-                        "type": "Unknown",
-                        "country": "AU"
-                      },
-                      "modifiedDate": "2023-03-02T09:48:48Z"
                     }
                   },
                   "Shopify": {
@@ -8292,158 +8255,6 @@
                         },
                         "next": {
                           "href": "/companies/1535235d-5efb-4d17-9d94-491c1f35ff92/connections/ed802898-f920-486b-b553-d7b4c1ac6c8d/data/commerce-orders?page=2&pageSize=2"
-                        }
-                      }
-                    }
-                  },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "A61465.1",
-                          "orderNumber": "A61465.1",
-                          "country": "AU ",
-                          "currency": "AUD",
-                          "createdDate": "2022-12-09T02:27:14Z",
-                          "closedDate": "2022-12-09T02:27:46Z",
-                          "totalAmount": 5,
-                          "totalRefund": 0,
-                          "totalTaxAmount": 0.45,
-                          "totalDiscount": 0,
-                          "totalGratuity": 0,
-                          "orderLineItems": [
-                            {
-                              "id": "S61465.1",
-                              "quantity": 1,
-                              "taxPercentage": 10,
-                              "totalAmount": 5,
-                              "totalTaxAmount": 0.45,
-                              "unitPrice": 4.5455,
-                              "taxes": [
-                                {
-                                  "taxComponentRef": {
-                                    "id": "GST10",
-                                    "name": "10% GST"
-                                  },
-                                  "taxAmount": 0.45
-                                }
-                              ],
-                              "productRef": {
-                                "id": "647208621834617",
-                                "name": "Hot Chocolate"
-                              },
-                              "discountAllocations": []
-                            }
-                          ],
-                          "payments": [
-                            {
-                              "id": "R61465.1_1_A61465.1_2022-12-09T02:27:46.273Z",
-                              "amount": 5,
-                              "currency": "AUD",
-                              "type": "Unknown",
-                              "status": "Paid",
-                              "dueDate": "0001-01-01T00:00:00",
-                              "createdDate": "2022-12-09T02:27:46",
-                              "modifiedDate": "2023-03-02T09:50:43"
-                            }
-                          ],
-                          "serviceCharges": [],
-                          "locationRef": {
-                            "id": "647208621834538",
-                            "name": "QA Shared - New Test Site"
-                          },
-                          "modifiedDate": "2023-03-08T13:49:34Z"
-                        },
-                        {
-                          "id": "A61465.2",
-                          "orderNumber": "A61465.2",
-                          "country": "AU ",
-                          "currency": "AUD",
-                          "createdDate": "2022-12-12T23:20:12Z",
-                          "closedDate": "2022-12-12T23:21:29Z",
-                          "totalAmount": 10,
-                          "totalRefund": 0,
-                          "totalTaxAmount": 0.91,
-                          "totalDiscount": 0,
-                          "totalGratuity": 0,
-                          "orderLineItems": [
-                            {
-                              "id": "S61465.2",
-                              "quantity": 1,
-                              "taxPercentage": 10,
-                              "totalAmount": 5,
-                              "totalTaxAmount": 0.46,
-                              "unitPrice": 4.5455,
-                              "taxes": [
-                                {
-                                  "taxComponentRef": {
-                                    "id": "GST10",
-                                    "name": "10% GST"
-                                  },
-                                  "taxAmount": 0.46
-                                }
-                              ],
-                              "productRef": {
-                                "id": "647208621834663",
-                                "name": "Royal"
-                              },
-                              "discountAllocations": []
-                            },
-                            {
-                              "id": "S61465.3",
-                              "quantity": 1,
-                              "taxPercentage": 10,
-                              "totalAmount": 5,
-                              "totalTaxAmount": 0.45,
-                              "unitPrice": 4.5455,
-                              "taxes": [
-                                {
-                                  "taxComponentRef": {
-                                    "id": "GST10",
-                                    "name": "10% GST"
-                                  },
-                                  "taxAmount": 0.45
-                                }
-                              ],
-                              "productRef": {
-                                "id": "647208621834623",
-                                "name": "Mocha"
-                              },
-                              "discountAllocations": []
-                            }
-                          ],
-                          "payments": [
-                            {
-                              "id": "R61465.2_1_A61465.2_2022-12-12T23:21:29.006Z",
-                              "amount": 10,
-                              "currency": "AUD",
-                              "type": "Unknown",
-                              "status": "Paid",
-                              "dueDate": "0001-01-01T00:00:00",
-                              "createdDate": "2022-12-12T23:21:29",
-                              "modifiedDate": "2023-03-02T09:50:43"
-                            }
-                          ],
-                          "serviceCharges": [],
-                          "locationRef": {
-                            "id": "647208621834538",
-                            "name": "QA Shared - New Test Site"
-                          },
-                          "modifiedDate": "2023-03-08T13:49:34Z"
-                        }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 2,
-                      "totalResults": 24,
-                      "_links": {
-                        "current": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-orders?page=1&pageSize=2"
-                        },
-                        "self": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-orders"
-                        },
-                        "next": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-orders?page=2&pageSize=2"
                         }
                       }
                     }
@@ -9542,63 +9353,6 @@
                       "sourceModifiedDate": "2021-05-24T10:33:45Z"
                     }
                   },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "id": "A61465.1",
-                      "orderNumber": "A61465.1",
-                      "country": "AU ",
-                      "currency": "AUD",
-                      "createdDate": "2022-12-09T02:27:14Z",
-                      "closedDate": "2022-12-09T02:27:46Z",
-                      "totalAmount": 5,
-                      "totalRefund": 0,
-                      "totalTaxAmount": 0.45,
-                      "totalDiscount": 0,
-                      "totalGratuity": 0,
-                      "orderLineItems": [
-                        {
-                          "id": "S61465.1",
-                          "quantity": 1,
-                          "taxPercentage": 10,
-                          "totalAmount": 5,
-                          "totalTaxAmount": 0.45,
-                          "unitPrice": 4.5455,
-                          "taxes": [
-                            {
-                              "taxComponentRef": {
-                                "id": "GST10",
-                                "name": "10% GST"
-                              },
-                              "taxAmount": 0.45
-                            }
-                          ],
-                          "productRef": {
-                            "id": "647208621834617",
-                            "name": "Hot Chocolate"
-                          },
-                          "discountAllocations": []
-                        }
-                      ],
-                      "payments": [
-                        {
-                          "id": "R61465.1_1_A61465.1_2022-12-09T02:27:46.273Z",
-                          "amount": 5,
-                          "currency": "AUD",
-                          "type": "Unknown",
-                          "status": "Paid",
-                          "dueDate": "0001-01-01T00:00:00",
-                          "createdDate": "2022-12-09T02:27:46",
-                          "modifiedDate": "2023-03-02T09:50:43"
-                        }
-                      ],
-                      "serviceCharges": [],
-                      "locationRef": {
-                        "id": "647208621834538",
-                        "name": "QA Shared - New Test Site"
-                      },
-                      "modifiedDate": "2023-03-08T13:49:34Z"
-                    }
-                  },
                   "Mollie": {
                     "value": {
                       "id": "ord_2at3ck",
@@ -10241,38 +9995,6 @@
                       }
                     }
                   },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "647208621834260",
-                          "name": "Cash",
-                          "status": "Active",
-                          "modifiedDate": "2023-03-02T09:48:56Z"
-                        },
-                        {
-                          "id": "647208621834261",
-                          "name": "Credit Card",
-                          "status": "Active",
-                          "modifiedDate": "2023-03-02T09:48:56Z"
-                        }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 2,
-                      "totalResults": 11,
-                      "_links": {
-                        "current": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-paymentMethods?page=1&pageSize=2"
-                        },
-                        "self": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-paymentMethods"
-                        },
-                        "next": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-paymentMethods?page=2&pageSize=2"
-                        }
-                      }
-                    }
-                  },
                   "Mollie": {
                     "value": {
                       "results": [
@@ -10514,14 +10236,6 @@
                       "modifiedDate": "2023-01-09T11:01:04Z"
                     }
                   },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "id": "647208621834260",
-                      "name": "Cash",
-                      "status": "Active",
-                      "modifiedDate": "2023-03-02T09:48:56Z"
-                    }
-                  },
                   "Mollie": {
                     "value": {
                       "id": "applepay",
@@ -10700,53 +10414,6 @@
                         },
                         "next": {
                           "href": "/companies/aae80eb3-1f56-41ca-a171-a59f9ee03b26/connections/4a5b633b-cd86-4715-a22b-62be98c4bcc5/data/commerce-payments?page=2&pageSize=2"
-                        }
-                      }
-                    }
-                  },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "1_A62084.1_2023-01-05T03:34:50.296Z",
-                          "amount": 0,
-                          "currency": "AUD",
-                          "paymentMethodRef": {
-                            "id": "0"
-                          },
-                          "type": "Unknown",
-                          "status": "Paid",
-                          "dueDate": "0001-01-01T00:00:00",
-                          "createdDate": "2023-01-05T03:34:50Z",
-                          "modifiedDate": "2023-03-02T09:50:43Z"
-                        },
-                        {
-                          "id": "R61465.1_1_A61465.1_2022-12-09T02:27:46.273Z",
-                          "amount": 5,
-                          "currency": "AUD",
-                          "paymentMethodRef": {
-                            "id": "647208621834714",
-                            "name": "LSPay - Mary"
-                          },
-                          "type": "Unknown",
-                          "status": "Paid",
-                          "dueDate": "0001-01-01T00:00:00",
-                          "createdDate": "2022-12-09T02:27:46Z",
-                          "modifiedDate": "2023-03-02T09:50:43Z"
-                        }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 2,
-                      "totalResults": 26,
-                      "_links": {
-                        "current": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-payments?page=1&pageSize=2"
-                        },
-                        "self": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-payments"
-                        },
-                        "next": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-payments?page=2&pageSize=2"
                         }
                       }
                     }
@@ -11116,21 +10783,6 @@
                       "createdDate": "2021-05-24T10:35:08Z",
                       "modifiedDate": "2023-01-09T11:01:02Z",
                       "sourceModifiedDate": "2021-05-24T10:35:08Z"
-                    }
-                  },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "id": "1_A62084.1_2023-01-05T03:34:50.296Z",
-                      "amount": 0,
-                      "currency": "AUD",
-                      "paymentMethodRef": {
-                        "id": "0"
-                      },
-                      "type": "Unknown",
-                      "status": "Paid",
-                      "dueDate": "0001-01-01T00:00:00",
-                      "createdDate": "2023-01-05T03:34:50Z",
-                      "modifiedDate": "2023-03-02T09:50:43Z"
                     }
                   },
                   "Mollie": {
@@ -11567,60 +11219,6 @@
                         },
                         "next": {
                           "href": "/companies/aae80eb3-1f56-41ca-a171-a59f9ee03b26/connections/4a5b633b-cd86-4715-a22b-62be98c4bcc5/data/commerce-products?page=2&pageSize=2"
-                        }
-                      }
-                    }
-                  },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "results": [
-                        {
-                          "id": "647208621834539",
-                          "categorization": "Alcoholic beverages",
-                          "name": "Alcoholic beverages",
-                          "description": "Alcoholic beverages",
-                          "productCategoryRefs": [
-                            {
-                              "id": "647208621834281",
-                              "name": "Alcoholic beverages"
-                            }
-                          ],
-                          "isGiftCard": false,
-                          "variants": [],
-                          "createdDate": "0001-01-01T00:00:00",
-                          "modifiedDate": "2023-03-02T09:50:32Z",
-                          "status": "Published"
-                        },
-                        {
-                          "id": "647208621834542",
-                          "categorization": "NA beverages",
-                          "name": "NA beverages",
-                          "description": "NA beverages",
-                          "productCategoryRefs": [
-                            {
-                              "id": "647208621834282",
-                              "name": "NA beverages"
-                            }
-                          ],
-                          "isGiftCard": false,
-                          "variants": [],
-                          "createdDate": "0001-01-01T00:00:00",
-                          "modifiedDate": "2023-03-02T09:50:32Z",
-                          "status": "Published"
-                        }
-                      ],
-                      "pageNumber": 1,
-                      "pageSize": 2,
-                      "totalResults": 39,
-                      "_links": {
-                        "current": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-products?page=1&pageSize=2"
-                        },
-                        "self": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-products"
-                        },
-                        "next": {
-                          "href": "/companies/36e3213b-02f6-4264-96ce-6dd53ea69e57/connections/278ba962-466a-452b-92b0-4bdee3a23463/data/commerce-products?page=2&pageSize=2"
                         }
                       }
                     }
@@ -12624,25 +12222,6 @@
                       "createdDate": "0001-01-01T00:00:00",
                       "modifiedDate": "2023-01-09T11:01:03Z",
                       "sourceModifiedDate": "2021-05-24T15:50:55Z",
-                      "status": "Published"
-                    }
-                  },
-                  "Lightspeed K Trial": {
-                    "value": {
-                      "id": "647208621834539",
-                      "categorization": "Alcoholic beverages",
-                      "name": "Alcoholic beverages",
-                      "description": "Alcoholic beverages",
-                      "productCategoryRefs": [
-                        {
-                          "id": "647208621834281",
-                          "name": "Alcoholic beverages"
-                        }
-                      ],
-                      "isGiftCard": false,
-                      "variants": [],
-                      "createdDate": "0001-01-01T00:00:00",
-                      "modifiedDate": "2023-03-02T09:50:32Z",
                       "status": "Published"
                     }
                   },
