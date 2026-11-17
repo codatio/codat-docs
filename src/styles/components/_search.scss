@@ -33,6 +33,12 @@ html[data-theme="dark"] {
   }
 }
 
+// The modal renders outside #__docusaurus. Our global input:focus-visible ring
+// outranks DocSearch's own outline reset and collides with "Clear the query".
+.DocSearch-Input:focus-visible {
+  outline: none;
+}
+
 //overrides
 #__docusaurus {
   [class*="navbarSearch"] {
@@ -59,6 +65,9 @@ html[data-theme="dark"] {
   }
 
   .DocSearch-Button {
+    // DocSearch v4 resets the button to content-box, so without this the padding
+    // and border push it past its container and over the navbar CTA.
+    box-sizing: border-box;
     width: 100%;
     box-shadow: var(--docsearch-searchbox-shadow);
     border: 2px solid rgba(24, 16, 58, 0.3);
@@ -71,10 +80,15 @@ html[data-theme="dark"] {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 0.125rem;
 
-      padding: 0.125rem;
+      // One compact pill for the whole shortcut, with room above and below
+      // inside the 32px button.
+      box-sizing: border-box;
+      height: 1.25rem;
+      padding: 0 0.25rem;
       border: 1px solid var(--search-keys-border-c);
-      border-radius: 6px;
+      border-radius: 4px;
 
       .DocSearch-Button-Key {
         position: static;
@@ -84,8 +98,18 @@ html[data-theme="dark"] {
         width: auto;
         height: auto;
 
+        font-size: 0.75rem;
         color: var(--search-muted-c);
+        // DocSearch v4 styles each key as its own chip, which doubles up
+        // with the pill around them.
+        background: none;
+        border: 0;
         border-radius: 0;
+
+        svg {
+          width: auto;
+          height: 0.875rem;
+        }
       }
     }
 
