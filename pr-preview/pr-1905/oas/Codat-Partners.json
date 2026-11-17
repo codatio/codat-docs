@@ -1,0 +1,143 @@
+{
+  "openapi": "3.1.0",
+  "servers": [
+    {
+      "description": "Production",
+      "url": "https://api.codat.io"
+    }
+  ],
+  "info": {
+    "title": "Partners API",
+    "description": "An API for Codat's partners. ",
+    "version": "0.0.0",
+    "contact": {
+      "name": "Codat",
+      "email": "support@codat.io"
+    },
+    "termsOfService": "https://www.codat.io/legals/"
+  },
+  "security": [
+    {
+      "auth_header": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Integrations",
+      "description": "View and manage your available integrations in Codat."
+    }
+  ],
+  "paths": {
+    "/integrations/credentials/{platformKey}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/platformKey"
+        }
+      ],
+      "get": {
+        "summary": "Get credentials",
+        "operationId": "get-credentials",
+        "description": "Get credentials for the given integration.",
+        "tags": [
+          "Integrations"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationCredentials"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update credentials",
+        "operationId": "update-credentials",
+        "description": "Update credentials for the given integration.",
+        "tags": [
+          "Integrations"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IntegrationCredentials"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationCredentials"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete credentials",
+        "operationId": "delete-credentials",
+        "description": "Delete credentials for the given integration.",
+        "tags": [
+          "Integrations"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationCredentials"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "IntegrationCredentials": {
+        "x-internal": true,
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      }
+    },
+    "parameters": {
+      "platformKey": {
+        "name": "platformKey",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 4,
+          "pattern": "[a-z]{4}",
+          "example": "gbol",
+          "description": "A unique 4-letter key to represent a platform in each integration. View [accounting](https://docs.codat.io/integrations/accounting/accounting-platform-keys), [banking](https://docs.codat.io/integrations/banking/banking-platform-keys), and [commerce](https://docs.codat.io/integrations/commerce/commerce-platform-keys) platform keys. "
+        }
+      }
+    },
+    "securitySchemes": {
+      "auth_header": {
+        "name": "Authorization",
+        "description": "The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://app.codat.io/developers/api-keys)",
+        "type": "apiKey",
+        "in": "header",
+        "x-speakeasy-example": "Basic BASE_64_ENCODED(API_KEY)"
+      }
+    }
+  }
+}
