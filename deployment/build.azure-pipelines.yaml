@@ -77,3 +77,48 @@ stages:
               RegistryName: ${{ env.registryName }}
               ImagesToPublish: ${{ parameters.ImagesToPublish }}
               ArgoApplicationName: docs
+
+  # Docs search is an Algolia DocSearch index filled by Algolia's hosted
+  # crawler. Ask it to re-crawl once production is live so search picks up
+  # what just shipped; the crawler's own weekly schedule is the fallback.
+  - ${{ if and(not(in(variables['Build.Reason'], 'PullRequest')), eq(variables['Build.SourceBranch'], 'refs/heads/main')) }}:
+    - stage: reindex_search
+      displayName: Reindex docs search
+      dependsOn: production
+      # The vault blocks public network access, so this has to run on a pool
+      # agent that can reach it (same vault and pool as the build stage).
+      pool:
+        name: 'codat-intg-managed-devops-pool-linux'
+      jobs:
+        - job: trigger_algolia_crawl
+          displayName: Trigger Algolia crawl
+          # The deploy has already succeeded by this point. A failed trigger
+          # should show as a warning, not turn the release red.
+          continueOnError: true
+          steps:
+            - checkout: none
+
+            - task: AzureKeyVault@2
+              displayName: Load Algolia crawler credentials
+              inputs:
+                azureSubscription: 'Azure Resource Manager (Integration/UAT)'
+                KeyVaultName: codat-integration
+                SecretsFilter: 'docs-algolia-crawler-id,docs-algolia-crawler-user-id,docs-algolia-crawler-api-key'
+
+            - bash: |
+                set -euo pipefail
+                status=$(curl --silent --show-error \
+                  --output response.json --write-out '%{http_code}' \
+                  --request POST \
+                  --user "$CRAWLER_USER_ID:$CRAWLER_API_KEY" \
+                  "https://crawler.algolia.com/api/1/crawlers/$CRAWLER_ID/reindex")
+                cat response.json; echo
+                if [ "$status" != "200" ]; then
+                  echo "##vso[task.logissue type=warning]Algolia reindex request failed with HTTP $status"
+                  exit 1
+                fi
+              displayName: Start crawl
+              env:
+                CRAWLER_ID: $(docs-algolia-crawler-id)
+                CRAWLER_USER_ID: $(docs-algolia-crawler-user-id)
+                CRAWLER_API_KEY: $(docs-algolia-crawler-api-key)
