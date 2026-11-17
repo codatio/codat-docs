@@ -41,10 +41,6 @@ We do all the heavy lifting, integrating with merchant’s systems and mapping t
       path: "/img/clients/phorest.png",
     },
     {
-      name: "Lightspeed",
-      path: "/img/clients/lightspeed.png",
-    },
-    {
       name: "Clover",
       path: "/img/clients/clover.png",
     },

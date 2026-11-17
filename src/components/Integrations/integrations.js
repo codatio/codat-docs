@@ -36,12 +36,7 @@ export const integrationsFilterCommerceAcc = [
   "Xero",
 ];
 
-export const integrationsFilterCommerceComm = [
-  "Clover",
-  "Lightspeed Restaurant",
-  "Shopify",
-  "Zettle",
-];
+export const integrationsFilterCommerceComm = ["Clover", "Shopify", "Zettle"];
 
 export const integrationsFilterBillPayAsync = [
   "MYOB Business",
@@ -747,13 +742,6 @@ export const sfccommIntegrations = [
     img: "https://static.codat.io/public/officialLogos/Square/83A4EF46-A57D-4D2A-ACE7-39FE279F43F8.png",
   },
   {
-    name: "Lightspeed Restaurant",
-    to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
-    type: "commerce",
-    tags: ["K Series"],
-    img: "https://static.codat.io/public/officialLogos/Square/E221662A-DDA4-45E0-8F73-5563183A875A.png",
-  },
-  {
     name: "Shopify",
     to: "/integrations/commerce/shopify/commerce-shopify",
     type: "commerce",
@@ -800,13 +788,6 @@ export const commerceIntegrations = [
     to: "/integrations/commerce/clover/commerce-clover",
     sourceType: "commerce",
     img: "https://static.codat.io/public/officialLogos/Square/83A4EF46-A57D-4D2A-ACE7-39FE279F43F8.png",
-  },
-  {
-    name: "Lightspeed Restaurant",
-    to: "/integrations/commerce/lightspeed-k/commerce-lightspeed-k",
-    sourceType: "commerce",
-    tags: ["K Series"],
-    img: "https://static.codat.io/public/officialLogos/Square/E221662A-DDA4-45E0-8F73-5563183A875A.png",
   },
   {
     name: "Shopify",

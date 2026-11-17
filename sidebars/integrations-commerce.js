@@ -41,19 +41,6 @@ const integrations = [
   },
   {
     type: "category",
-    label: "Lightspeed Restaurant (K series)",
-    collapsed: true,
-    items: [
-      {
-        type: "doc",
-        id: "integrations/commerce/lightspeed-k/commerce-lightspeed-k",
-        label: "Overview",
-      },
-      "integrations/commerce/lightspeed-k/commerce-lightspeed-k-setup",
-    ],
-  },
-  {
-    type: "category",
     label: "Shopify",
     collapsed: true,
     items: [
