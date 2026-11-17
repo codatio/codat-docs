@@ -267,7 +267,8 @@ const config = {
     ],
   ],
 
-  themes: ["@docusaurus/theme-mermaid", "docusaurus-theme-search-typesense"],
+  // The glossary preset does not add the search theme for us, unlike preset-classic.
+  themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-search-algolia"],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -363,20 +364,13 @@ const config = {
 
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
 
-      typesense: {
-        typesenseCollectionName: "codat-docs", // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-        typesenseServerConfig: {
-          nodes: [
-            {
-              host: "m6ygplbafcj51wk4p.a1.typesense.net",
-              port: 443,
-              protocol: "https",
-            },
-          ],
-          apiKey: "aWuDOXCgmWy7LXTRBg8RbfjGvjRmiRir",
-        },
-        typesenseSearchParameters: {}, // Optional: Typesense search parameters: https://typesense.org/docs/0.24.0/api/search.html#search-parameters
-        contextualSearch: true, // Optional
+      // Algolia DocSearch. The app ID and search-only API key are public values, safe to commit.
+      // The index is populated by the Algolia-hosted crawler, there is no indexing pipeline in this repo.
+      algolia: {
+        appId: "G2YF720HDJ",
+        apiKey: "d73fdb2d3d9dcf6a50e48347f8e31982", // read-only key, never the admin key
+        indexName: "Codat Docs",
+        contextualSearch: true,
       },
 
       sidebar: {
