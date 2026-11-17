@@ -1,6 +1,6 @@
 import { trackEvent, trackSearch, trackCodeExample } from "./amplitude";
 
-// Track search interactions with Typesense
+// Track search interactions with Algolia DocSearch
 function setupSearchTracking() {
   // Wait for the search box to be available
   const searchObserver = new MutationObserver(() => {
@@ -24,7 +24,7 @@ function setupSearchTracking() {
           if (query.length >= 3) {
             // Count visible results if possible
             const resultsContainer = document.querySelector(
-              ".DocSearch-Dropdown, .typesense-search-results",
+              ".DocSearch-Dropdown",
             );
             let resultsCount = null;
 
@@ -36,7 +36,7 @@ function setupSearchTracking() {
             }
 
             trackSearch(query, resultsCount, {
-              search_method: "typesense",
+              search_method: "algolia",
               search_context: "documentation",
             });
           }
@@ -57,7 +57,7 @@ function setupSearchTracking() {
           trackEvent("Search Result Clicked", {
             result_title: title,
             result_url: url,
-            search_method: "typesense",
+            search_method: "algolia",
           });
         }
       });
